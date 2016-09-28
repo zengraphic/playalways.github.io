@@ -1,0 +1,177 @@
+//customizing page: Windgroup/Azienda Dovesiamo
+
+.tab-content {
+  margin-bottom: 30px;
+}
+
+.title__default--dovesiamo {
+  border: none;
+
+  @media (max-width: 767px) {
+    margin: 2rem 0 0;
+  }
+
+  h3 {
+    @include boxWF(left, 100%);
+
+    font-family: $font_family_light;
+    font-size: 2.1rem;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.map-icons {
+  top: 25px;
+  left: 25px;
+
+  span {
+    height: 26px;
+    width: 25px;
+  }
+
+  // buttons map - Call Mixin Line: 224
+  .zoomin {
+    @include icoImageBtn(0, url("/img/icons-interface/zoomin.svg"));
+    cursor: pointer;
+  }
+
+  .zoomout {
+    @include icoImageBtn(30px, url("/img/icons-interface/zoomout.svg"));
+    cursor: pointer;
+  }
+
+  .map_pointer {
+    @include icoImageBtn(80px, url("/img/icons-interface/map_pointer.svg"));
+    cursor: pointer;
+  }
+}
+
+#mapdovesiamo {
+  height: 434px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.text__detail {
+  @include boxWF(left, 100%);
+
+  margin-bottom: 20px;
+
+  h3 {
+    @include boxWF(left, 100%);
+
+    font-size: 1.4rem;
+    color: $color_dark_grey;
+    font-family: $font_family_bold;
+    padding: 0 0 0.9rem 0;
+    border-bottom: 1px solid #ccd1d9;
+    margin-bottom: 1.1rem;
+    margin-top: 1.3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  img {
+    float: right;
+    font-family: $font_family_regular;
+    display: inline;
+
+    @media (max-width: 767px) {
+      float: left;
+      margin: 1rem 0;
+    }
+  }
+}
+
+img.telmob {
+  width: 127px !important;
+  margin: 0 auto;
+}
+
+//style accordion
+.content__acordeon--dovesiamo {
+  .panel-group {
+    .panel.base__accordion {
+      .panel-heading {
+        &.active {
+          background-color: white !important;
+        }
+
+        a.accordion-toggle {
+          width: 100% !important;
+        }
+      }
+
+      .panel-collapse {
+        .panel-body {
+          padding: 0 !important;
+
+          .map_ref {
+            @include boxWF(left, 100%);
+
+            padding: 0.5rem 0.8rem;
+            margin: 0;
+            background-color: #e6e9ed;
+
+            li {
+              @include boxWF(left, 50%);
+
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              margin-bottom: 0.8rem;
+
+              @media (max-width: 767px) {
+                width: 100%;
+              }
+
+              a {
+                @include boxWF(left, 95%);
+
+                padding: 1rem 0.8rem;
+                color: #444444;
+                font-size: 1rem;
+                font-family: $font_family_regular;
+                text-decoration: none;
+
+                @media (min-width: 768px) and (max-width: 991px) {
+                  font-size: 0.9rem;
+                }
+
+                @media (max-width: 767px) {
+                  width: 100%;
+                  position: relative;
+                  padding-right: 3rem;
+                }
+
+                &:hover {
+                  background-color: #f4f4f4;
+                }
+
+                &.active_btn {
+                  background-color: #f4f4f4;
+                }
+
+                img {
+                  float: right;
+
+                  @media (max-width: 767px) {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -10px;
+                    margin-right: 0.8rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

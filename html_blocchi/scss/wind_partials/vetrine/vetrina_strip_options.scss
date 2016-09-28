@@ -1,0 +1,148 @@
+.strip_options_block {
+    @at-root #{&}__container {
+        background-color: #ffffff;
+        margin: 0 auto;
+        max-width: 1024px;
+        position: relative;
+        padding-top: 16px;
+        padding-bottom: 12px;
+        padding-left: 1.5%;
+        @include breakpoint(small) {
+            padding-left: 0;
+        }
+        .component {
+            display: inline-block;
+            vertical-align: middle;
+            @include breakpoint(small) {
+                display: block;
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 10px;
+            }
+        }
+    }
+    @at-root #{&}__title {
+        width: 8%;
+        margin-top: 18px;
+        font-size: 1em;
+        font-family: $weight-bold;
+        margin-bottom: 18px;
+        padding: 0;
+        &--main {
+            font-size: 20px;
+            font-family: $weight-light;
+            color: $color-lightBlue;
+            @include breakpoint(small) {
+                text-align: center;
+            }
+        }
+    }
+    @at-root #{&}__description {
+        width: 56%;
+        font-size: 1em;
+        font-family: $weight-light;
+        .descriptionContainer {
+            width: 71.4%;
+            margin: 0 auto;
+            @include breakpoint(small) {
+                text-align: center;
+            }
+        }
+        &:before {
+            background-color: #ccd1d9;
+            width: 1px;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 15%;
+            bottom: 10%;
+            left: 12%;
+            min-height: 1px;
+            @include breakpoint(small) {
+                content: none;
+            }
+        }
+        &:after {
+            background-color: #ccd1d9;
+            width: 1px;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 15%;
+            bottom: 10%;
+            right: 34.5%;
+            min-height: 1px;
+            @include breakpoint(small) {
+                content: none;
+            }
+        }
+    }
+    @at-root #{&}__pricing {
+        width: 16.5%;
+        .pricesContainer {
+            .price {
+                display: inline-block;
+                color: $color-lightBlue;
+                margin: 0 3px;
+            }
+            .oldPrice {
+                position: relative;
+                font-size: 25px;
+                small {
+                    font-size: 20px;
+                }
+                &:after {
+                    content: "";
+                    min-height: 1px;
+                    background-color: black;
+                    width: 100%;
+                    display: block;
+                    top: 50%;
+                    position: absolute;
+                }
+            }
+            .newPrice {
+                font-size: 55px;
+                font-family: $weight-light;
+                small {
+                    font-size: 40px;
+                }
+            }
+        }
+        .recurrency {
+            font-size: 13px;
+            float: none;
+            clear: both;
+            width: 100%;
+            position: relative;
+            bottom: 10px;
+        }
+        &:after {
+            background-color: #ccd1d9;
+            width: 1px;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 15%;
+            bottom: 10%;
+            right: 17.5%;
+            min-height: 1px;
+            @include breakpoint(small) {
+                content: none;
+            }
+        }
+    }
+    @at-root #{&}__button {
+        width: 16.5%;
+        text-align: center;
+        .button--slim {
+            padding: 7px 30px 3px 30px;
+            display: inline-block;
+            width: 75%;
+            font-size: 1em;
+            @include breakpoint(small) {
+                padding: 12px 60px 8px 60px;
+            }
+        }
+    }
+}

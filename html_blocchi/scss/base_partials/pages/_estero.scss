@@ -1,0 +1,113 @@
+//customizing page: Estero
+
+.content__estereo-text {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  h3 {
+    width: 100%;
+
+    @include defaultTxt($font_family_regular, 2.2rem);
+
+    color: $color_grey_dark;
+    margin: 0 0 1rem;
+  }
+
+  p {
+    width: 100%;
+
+    @include defaultTxt($font_family_light, 1rem);
+
+    color: $color_grey_dark;
+    margin: 0 0 1rem;
+  }
+}
+
+.table-responsive.table_estero1 {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.left_cont {
+  @include boxWF(left, 49%);
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.right_cont {
+  @include boxWF(right, 49%);
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.pre_select {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @include defaultTxt($font_family_regular, 1rem);
+
+  text-align: center;
+}
+
+.bootstrap-select.base__select--estereo {
+  width: 100% !important;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 767px) {
+    width: 100% !important;
+  }
+
+  &.right {
+    float: right;
+  }
+}
+
+// content right
+.content__card {
+  float: left;
+  margin-top: 3rem;
+
+  h4 {
+    width: 100%;
+    text-align: center;
+
+    @include defaultTxt($font_family_regular, 2.3rem);
+
+    color: $color_grey_dark;
+
+    span {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  }
+
+  a.base__bt {
+    @include boxWF(left, 60%);
+
+    margin: 1rem 0 2rem 20%;
+    background-color: $color_orange;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+  }
+
+  h5 {
+    @include boxWF(left, 33%);
+
+    @include defaultTxt($font_family_regular, 1rem);
+
+    color: $color_grey_dark;
+    text-align: center;
+    margin: 0 0 1.2rem;
+
+    span {
+      width: 100%;
+      font-size: 2rem;
+      margin-top: 0.4rem;
+    }
+  }
+}

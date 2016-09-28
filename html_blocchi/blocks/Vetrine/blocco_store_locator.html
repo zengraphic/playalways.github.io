@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!--- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/wind-style.min.css" />
+    <!--- /CSS -->
+    <!--- JS -->
+    <script type="text/javascript" src="/js/base-libs.min.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <!--- /JS -->
+</head>
+
+<body class="home_page">
+    <div class="container-wind">
+        <div class="row">
+            <div class="blocco_import">
+                <!-- _________________________________ -->
+                <div class="blocco_store_locator">
+                    <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                    <div class="store_locator_block">
+                        <div class="store_locator_block__mainContainer">
+                            <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB_bTdI95ip8CtEMYIQI7Dr8Q5Lczz7kgw&sensor=false&extension=.js'></script>
+                            <script>
+                            google.maps.event.addDomListener(window, 'load', init);
+                            var map;
+
+                            function init() {
+                                var mapOptions = {
+                                    center: new google.maps.LatLng(43.197167, 9.147948),
+                                    zoom: 6,
+                                    zoomControl: true,
+                                    zoomControlOptions: {
+                                        style: google.maps.ZoomControlStyle.DEFAULT,
+                                    },
+                                    disableDoubleClickZoom: true,
+                                    mapTypeControl: false,
+                                    mapTypeControlOptions: {
+                                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                                    },
+                                    scaleControl: true,
+                                    scrollwheel: true,
+                                    panControl: true,
+                                    streetViewControl: true,
+                                    draggable: true,
+                                    overviewMapControl: false,
+                                    overviewMapControlOptions: {
+                                        opened: false,
+                                    },
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                }
+                                var mapElement = document.getElementById('map');
+                                var map = new google.maps.Map(mapElement, mapOptions);
+                                var locations = [
+
+                                ];
+                                for (i = 0; i < locations.length; i++) {
+                                    if (locations[i][1] == 'undefined') {
+                                        description = '';
+                                    } else {
+                                        description = locations[i][1];
+                                    }
+                                    if (locations[i][2] == 'undefined') {
+                                        telephone = '';
+                                    } else {
+                                        telephone = locations[i][2];
+                                    }
+                                    if (locations[i][3] == 'undefined') {
+                                        email = '';
+                                    } else {
+                                        email = locations[i][3];
+                                    }
+                                    if (locations[i][4] == 'undefined') {
+                                        web = '';
+                                    } else {
+                                        web = locations[i][4];
+                                    }
+                                    if (locations[i][7] == 'undefined') {
+                                        markericon = '';
+                                    } else {
+                                        markericon = locations[i][7];
+                                    }
+                                    marker = new google.maps.Marker({
+                                        icon: markericon,
+                                        position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                                        map: map,
+                                        title: locations[i][0],
+                                        desc: description,
+                                        tel: telephone,
+                                        email: email,
+                                        web: web
+                                    });
+                                    link = '';
+                                }
+
+                            }
+                            </script>
+                            <div class="contend_map">
+                                <div class="form_map">
+                                    <div class="container_search">
+                                        <input type="text" name="" class="base__input" placeholder="Cerca luogo o inserisci indirizzo">
+                                        <a href="#" class="button--search button--noMargin"></a>
+                                    </div>
+                                    <div class="check_cont">
+                                        <div class="container_checkbox_firstRow">
+                                            <div class="base__checkbox checkbox checkbox-inline">
+                                                <input type="checkbox" class="styled" id="inlineCheckbox1" value="option1">
+                                                <label for="inlineCheckbox1">
+                                                    <img src="/img/icons-interface/icon_map1.png"> Negozio Wind
+                                                </label>
+                                            </div>
+                                            <div class="base__checkbox checkbox checkbox-inline">
+                                                <input type="checkbox" class="styled" id="inlineCheckbox2" value="option1">
+                                                <label for="inlineCheckbox2">
+                                                    <img src="/img/icons-interface/icon_map2.png"> Rivenditori Wind
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="container_checkbox_secondRow">
+                                            <div class="base__checkbox checkbox checkbox-inline">
+                                                <input type="checkbox" class="styled" id="inlineCheckbox3" value="option1">
+                                                <label for="inlineCheckbox3">
+                                                    <span class="label_map_filter">Digital Home&Life</span>
+                                                </label>
+                                            </div>
+                                            <div class="base__checkbox checkbox checkbox-inline">
+                                                <input type="checkbox" class="styled" id="inlineCheckbox4" value="option1">
+                                                <label for="inlineCheckbox4">
+                                                    <span class="label_map_filter">Assistenza</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="map"></div>
+                                <div class="cont_detail">
+                                    <div class="store_locator_block__additionalOptions">
+                                        <div class="store_locator_block__additionalOptions__tour">
+                                            <img src="/img/icons-interface/store_icon_360.png">
+                                        </div>
+                                        <div class="store_locator_block__additionalOptions__close">
+                                            <span>&times;</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="cont_image">
+                                        <img src="/img/icons-interface/images_detail_vs.jpg">
+                                    </div>
+                                    <div class="cont_text">
+                                        <div class="shop_description">
+                                            <h3>Lorem Ipsum</h3>
+                                            <div class="description">
+                                                Via Torino, 06 - 20123 Milano (MI)
+                                            </div>
+                                        </div>
+                                       <!-- <div class="opening_time">
+                                            <h3>Orari di apertura</h3>
+                                            <p class="description">Lunedì: 15:00 - 20:00</p>
+                                            <p class="description">Martedì: 09:30 - 20:00</p>
+                                            <p class="description">Mercoledì: 09:30 - 20:00</p>
+                                            <p class="description">Giovedì: 09:30 - 20:00</p>
+                                            <p class="description">Venerdì: 09:30 - 20:00</p>
+                                            <p class="description">Sabato: 09:30 - 20:00</p>
+                                            <p class="description">Domenica: chiuso</p>
+                                        </div> -->
+                                        <div class="contact_numbers">
+                                            <h3>Telefono:</h3>
+                                            <p class="description">02/1234567890</p>
+                                            <h3>FAX:</h3>
+                                            <p class="description">02/1234567890</p>
+                                            <h3>Servizi:</h3>
+                                            <p class="description">Assistenza Tecnica</p>
+                                            <p class="description">Digital Home&Life</p>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="open_shop_detail">
+                                        apri scheda negozio
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store_locator_block__container__expand">
+                                <div class="button__expand">
+                                    <img src="/img/icons-interface/slider_arrow_left_white.png" />
+                                </div>
+                                <div class="store_locator_block__container--shops base__scrollable">
+                                    <div class="contend_detailmap">
+                                        <!--                                         <h3 class="title_detail">
+                                                    I negozi più vicini a te
+                                                </h3> -->
+                                        <ul class="detail">
+                                            <li class="active_action">
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="container_shop_data">
+                                                    <div class="title">
+                                                        <h3>Lorem Ipsum</h3>
+                                                        <h4>Via Torino, 66</h4>
+                                                        <h4>20123 Milano (MI)</h4>
+                                                        
+                                                    </div>
+                                                    <div class="buttons">
+                                              <!--          <div class="buttons__icon buttons__icon--map"></div>
+                                                        <span class="icon_title">Mappa</span> -->
+                                                        <div class="buttons__icon buttons__icon--details"></div>
+                                                        <span class="icon_title">Dettagli</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <!-- _________________________________ -->
+                                <!--<div class="vetrina_accordions move_bottom_70">
+                                        <div class="showcase_accordions_block">
+                                            <ul>
+                                                <li class="showcase_accordions_block__single">
+                                                    <input type="checkbox" checked class="accordionBox">
+                                                    <i></i>
+                                                    <h2 class="store_locator_block__shopList">Lista completa dei negozi</h2>
+                                                    <div class="showcase_accordions_block__container">
+                                                        <div class="vetrina_accordions">
+                                                            <div class="showcase_accordions_block alternative_background_grey">
+                                                                <ul>
+                                                                    <li class="showcase_accordions_block__single">
+                                                                        <input type="checkbox" checked class="accordionBox">
+                                                                        <i></i>
+                                                                        <h2>Abruzzo</h2>
+                                                                        <div class="showcase_accordions_block__container">
+                                                                            <div>
+                                                                                <div class="store_locator_block__cities">
+                                                                                    <ul>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <img class="store_locator_block__cities--image" src="/img/icons-interface/icon_map1.png">
+                                                                                            <span><b>&nbsp;Citt&agrave;</b></span>
+                                                                                            <span class="store_locator_block__cities--name">Lorem Ipsum</span>
+                                                                                            <span class="store_locator_block__cities--mainAddress">Via torino</span>
+                                                                                            <span>&#44;</span>
+                                                                                            <span class="store_locator_block__cities--addressNumber">66</span>
+                                                                                            <span>&#45;</span>
+                                                                                            <span class="store_locator_block__cities--cap">20123</span>
+                                                                                            <span class="store_locator_block__cities--province">Milano</span>
+                                                                                            <span class="store_locator_block__cities--provinceMin">(MI)</span>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="showcase_accordions_block__single">
+                                                                        <input type="checkbox" checked class="accordionBox">
+                                                                        <i></i>
+                                                                        <h2>Basilicata</h2>
+                                                                        <div class="showcase_accordions_block__container">
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="showcase_accordions_block__single">
+                                                                        <input type="checkbox" checked class="accordionBox">
+                                                                        <i></i>
+                                                                        <h2>Calabria</h2>
+                                                                        <div class="showcase_accordions_block__container">
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="showcase_accordions_block__single">
+                                                                        <input type="checkbox" checked class="accordionBox">
+                                                                        <i></i>
+                                                                        <h2>Campania</h2>
+                                                                        <div class="showcase_accordions_block__container">
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="showcase_accordions_block__single">
+                                                                        <input type="checkbox" checked class="accordionBox">
+                                                                        <i></i>
+                                                                        <h2>Emilia Romagna</h2>
+                                                                        <div class="showcase_accordions_block__container">
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="showcase_accordions_block__single">
+                                                                        <input type="checkbox" checked class="accordionBox">
+                                                                        <i></i>
+                                                                        <h2>Friuli Venezia Giulia</h2>
+                                                                        <div class="showcase_accordions_block__container">
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+                            <!-- _________________________________ -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+jQuery(document).ready(function($) {
+    var minLeft, maxLeft;
+    minLeft = '-270px';
+    maxLeft = '20px';
+
+    $('.detail li').click(function() {
+
+        $('.detail li').removeClass("active_action");
+        $(this).addClass("active_action");
+        $(".cont_detail").fadeOut("fast");
+        $(".cont_detail").fadeIn("slow");
+    });
+
+    $('.store_locator_block__additionalOptions__close').click(function() {
+        $(".cont_detail").fadeOut("fast");
+    });
+
+    $('.button__expand').click(function() {
+        if (!$(this).hasClass('rotated')) {
+            $(".store_locator_block__container__expand").animate({ //anima il blocco
+                left: minLeft
+            }, 1000, function() {
+                $('.store_locator_block__container--shops').hide();
+            });
+            $(".button__expand").addClass('rotated');
+
+
+            $('.detail li').removeClass("active_action");
+            $(".cont_detail").fadeOut("fast");
+        } else {
+            $('.store_locator_block__container--shops').show();
+            $(".store_locator_block__container__expand").animate({
+                left: maxLeft
+            }, 1000);
+            $(".button__expand").removeClass('rotated');
+        }
+    });
+
+});
+</script>
+
+</html>

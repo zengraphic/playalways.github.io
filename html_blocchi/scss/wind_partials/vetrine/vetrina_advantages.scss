@@ -1,0 +1,157 @@
+// BLOCCO ADVANTAGES
+.advantages_block {
+    margin: 0 auto;
+    max-width: 1024px;
+    &__header {
+        margin-bottom: 1.5625em; //25px
+        height: auto; //62px
+        @include breakpoint(small) {
+            margin-bottom: 0;
+        }
+        &__container {
+            padding-top: 10px;
+        }
+        &--title {
+            font-family: $weight-light;
+            color: $color-standardText;
+            font-size: 1.75em;
+            display: inline-block;
+            @include breakpoint(small) {
+                font-size: 1.6em;
+            }
+        }
+        &--label {
+            font-family: $weight-light;
+            color: $color-blue;
+            font-size: 1.125em;
+            text-transform: uppercase;
+            text-align: right;
+            padding-top: 20px;
+            @include breakpoint(small) {
+                margin-bottom: 10px;
+            }
+        }
+        &--button {}
+    }
+    &__listItem {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        position: relative;
+        &::before {
+            border-left: 1px solid $medium-gray;
+            content: '';
+            position: absolute;
+            left: 16%;
+            top: 25px;
+            bottom: 25px;
+            @include breakpoint(small) {
+                left: 24%;
+            }
+        }
+        &__icon {
+            padding-top: 10px;
+            &--fiber {
+                background: rgba(0, 0, 0, 0) url("/img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 0;
+                width: 65px;
+                height: 48px;
+                margin-left: calc((100% / 2) - 32.5px);
+            }
+            &--browse {
+                background: rgba(0, 0, 0, 0) url("/img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 -48px;
+                width: 65px;
+                height: 48px;
+                margin-left: calc((100% / 2) - 32.5px);
+            }
+            &--xbox {
+                background: rgba(0, 0, 0, 0) url("/img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 -96px;
+                width: 65px;
+                height: 48px;
+                margin-left: calc((100% / 2) - 32.5px);
+            }
+            &--webcam {
+                background: rgba(0, 0, 0, 0) url("/img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 -144px;
+                width: 65px;
+                height: 48px;
+                margin-left: calc((100% / 2) - 32.5px);
+            }
+            &--calls {
+                background: rgba(0, 0, 0, 0) url("/img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 -192px;
+                width: 65px;
+                height: 48px;
+                margin-left: calc((100% / 2) - 32.5px);
+            }
+            @include breakpoint(small) {
+                padding-top: 25px;
+                ::after {
+                    height: 5.625em; //90px
+                    right: 0.5em;
+                }
+            }
+        }
+        &__description {
+            &--title {
+                font-family: $weight-light;
+                color: $color-blue;
+                text-transform: uppercase;
+                padding-bottom: 10px;
+                @include breakpoint(small) {
+                    font-size: 1em;
+                }
+            }
+            & p {
+                font-family: $weight-light;
+                color: $color-standardText;
+                font-size: 1em;
+                @include breakpoint(small) {
+                    font-size: 0.95em;
+                }
+            }
+        }
+        &:nth-of-type(odd) {
+            background-color: $color-lightGray;
+        }
+    }
+}
+
+// ============================== MEDIA QUEfont-size: 1.125em;RIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media (max-width: 992px) {
+    .advantages_block {
+        &__header {
+            &--label {
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .advantages_block {
+        &__header {
+            &--title {
+                font-size: 1.46em;
+            }
+        }
+        &__listItem {
+            &__icon {
+                ::after {
+                    border-right: none;
+                }
+                &--fiber,
+                &--browse,
+                &--xbox,
+                &--webcam,
+                &--calls {
+                    margin-left: 0;
+                    background-image: url("/img/icons-vantaggi/advantages_sprite_small.png");
+                }
+            }
+            &__description {
+                & p {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+}
