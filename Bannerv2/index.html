@@ -1,359 +1,350 @@
 <html>
-<head>	
-	 <meta name=”ad.size” content=”width=300,height=250”>
-	   <link rel="stylesheet" href="css/bootstrap.min.css" />
-	   <link rel="stylesheet" href="css/style.css" />        	  
-	   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>    
-	   <script src="js/bootstrap.min.js"></script>
-	   <script src="js/bootstrap-select.js"></script>
-		<script type="text/javascript">
-			var clickTag1 = ""; 
-			var clickTag2 = ""; 
-			var clickTag3 = ""; 
-		</script>
-</head>
-<body>
 
-<div class="mainContainer_banner">
-	<div class="subcontainer_banner">
-		<div class="container_background_stripes">
-			<div class="colored_bg first_layer colored_bg--blue"></div>
-			<div class="colored_bg second_layer colored_bg--grey"></div>
-			<div class="colored_bg third_layer colored_bg--orange"></div>	
-		</div>		
-		<a href="javascript:window.open(window.clickTag1)">			
-			<div class="container_banner">
-				<div class="subcontainer_banner">
-					<div class="col-xs-4">
-						<div class="text_size_20 text_uppercase text_color_white position_absolute text_on_bg position_top_20 line_height_20 weight_bold">
-							solo <br> online
-						</div>	
-					</div>
-					<div class="floating_image">
-						<img src="img/image_floating.png"/>
-					</div>		
-					<div class="col-xs-8">
-						<div class="container_right float_right text_align_right text_align_right">
-							<div class="price_barred float_left margin_top_15 text_color_blue weight_medium text_size_20">
-								24,95&euro;
-							</div>
-							<div class="price_big float_left margin_top_5 text_color_blue weight_bold">
-								19
-							</div>
-							<div class="price_small float_left margin_top_15 text_color_blue weight_bold text_size_20">
-								,95&euro;
-							</div>
-							<div class="clear"></div>
-							<div class="text_size_16 text_uppercase text_color_blue weight_light">
-								per un anno
-							</div>
-							<div class="text_size_16 text_uppercase text_color_orange margin_bottom_5 margin_top_5 weight_bold">
-								modem incluso
-							</div>	
-							<div class="text_size_16 text_color_blue margin_bottom_5 weight_bold">
-								e in pi&ugrave; 6 mesi di
-							</div>	
-							<div class="container_image">			
-								<img src="img/logo_now.jpg"/>		
-							</div>
-							<div class="clear"></div>		
-						</div>			
-					</div>	
-				</div>					
-			</div>
-		</a>
-		<!-- ====================== FORM ====================== -->
-		<div class="container_form text_align_center" id="idForm">
-		  <form action="http://www.infostrada.it/attivazioni/checkResult.php" method="POST" id="verificacopertura">
-			<div class="top_modal_select">
-				<div class="text_size_14 text_uppercase text_color_orange text_color_white margin_top_15 margin_bottom_5 main_title weight_light">
-					Verifica la copertura infostrada
-				</div>
-		         <div class="select_banner_container">    
-		         <!-- SELECT PROVINCIA -->  
-		            <select class="select_banner selectpicker" title="Provincia" data-size="5" data-live-search="true" tabindex="1">
-						<option>Scegli la Provincia</option>
-                        <option value="AG">Agrigento - AG</option>
-                        <option value="AL">Alessandria - AL</option>
-                        <option value="AN">Ancona - AN</option>
-                        <option value="AO">Aosta - AO</option>
-                        <option value="AQ">Aquila - AQ</option>
-                        <option value="AR">Arezzo - AR</option>
-                        <option value="AP">Ascoli Piceno - AP</option>
-                        <option value="AT">Asti - AT</option>
-                        <option value="AV">Avellino - AV</option>
-                        <option value="BA">Bari - BA</option>
-                        <option value="BT">Barletta-Andria-Trani - BT</option>
-                        <option value="BL">Belluno - BL</option>
-                        <option value="BN">Benevento - BN</option>
-                        <option value="BG">Bergamo - BG</option>
-                        <option value="BI">Biella - BI</option>
-                        <option value="BO">Bologna - BO</option>
-                        <option value="BZ">Bolzano - BZ</option>
-                        <option value="BS">Brescia - BS</option>
-                        <option value="BR">Brindisi - BR</option>
-                        <option value="CA">Cagliari - CA</option>
-                        <option value="CL">Caltanissetta - CL</option>
-                        <option value="CB">Campobasso - CB</option>
-                        <option value="CI">Carbonia-Iglesias - CI</option>
-                        <option value="CE">Caserta - CE</option>
-                        <option value="CT">Catania - CT</option>
-                        <option value="CZ">Catanzaro - CZ</option>
-                        <option value="CH">Chieti - CH</option>
-                        <option value="CO">Como - CO</option>
-                        <option value="CS">Cosenza - CS</option>
-                        <option value="CR">Cremona - CR</option>
-                        <option value="KR">Crotone - KR</option>
-                        <option value="CN">Cuneo - CN</option>
-                        <option value="EN">Enna - EN</option>
-                        <option value="FM">Fermo - FM</option>
-                        <option value="FE">Ferrara - FE</option>
-                        <option value="FI">Firenze - FI</option>
-                        <option value="FG">Foggia - FG</option>
-                        <option value="FC">Forli-Cesena - FC</option>
-                        <option value="FR">Frosinone - FR</option>
-                        <option value="GE">Genova - GE</option>
-                        <option value="GO">Gorizia - GO</option>
-                        <option value="GR">Grosseto - GR</option>
-                        <option value="IM">Imperia - IM</option>
-                        <option value="IS">Isernia - IS</option>
-                        <option value="SP">La Spezia - SP</option>
-                        <option value="LT">Latina - LT</option>
-                        <option value="LE">Lecce - LE</option>
-                        <option value="LC">Lecco - LC</option>
-                        <option value="LI">Livorno - LI</option>
-                        <option value="LO">Lodi - LO</option>
-                        <option value="LU">Lucca - LU</option>
-                        <option value="MC">Macerata - MC</option>
-                        <option value="MN">Mantova - MN</option>
-                        <option value="MS">Massa Carrara - MS</option>
-                        <option value="MT">Matera - MT</option>
-                        <option value="VS">Medio Campidano - VS</option>
-                        <option value="ME">Messina - ME</option>
-                        <option value="MI">Milano - MI</option>
-                        <option value="MO">Modena - MO</option>
-                        <option value="MB">Monza e della Brianza - MB</option>
-                        <option value="NA">Napoli - NA</option>
-                        <option value="NO">Novara - NO</option>
-                        <option value="NU">Nuoro - NU</option>
-                        <option value="OG">Ogliastra - OG</option>
-                        <option value="OT">Olbia-Tempio - OT</option>
-                        <option value="OR">Oristano - OR</option>
-                        <option value="PD">Padova - PD</option>
-                        <option value="PA">Palermo - PA</option>
-                        <option value="PR">Parma - PR</option>
-                        <option value="PV">Pavia - PV</option>
-                        <option value="PG">Perugia - PG</option>
-                        <option value="PU">Pesaro-Urbino - PU</option>
-                        <option value="PE">Pescara - PE</option>
-                        <option value="PC">Piacenza - PC</option>
-                        <option value="PI">Pisa - PI</option>
-                        <option value="PT">Pistoia - PT</option>
-                        <option value="PN">Pordenone - PN</option>
-                        <option value="PZ">Potenza - PZ</option>
-                        <option value="PO">Prato - PO</option>
-                        <option value="RG">Ragusa - RG</option>
-                        <option value="RA">Ravenna - RA</option>
-                        <option value="RC">Reggio Calabria - RC</option>
-                        <option value="RE">Reggio Emilia - RE</option>
-                        <option value="RI">Rieti - RI</option>
-                        <option value="RN">Rimini - RN</option>
-                        <option value="RM">Roma - RM</option>
-                        <option value="RO">Rovigo - RO</option>
-                        <option value="SA">Salerno - SA</option>
-                        <option value="SS">Sassari - SS</option>
-                        <option value="SV">Savona - SV</option>
-                        <option value="SI">Siena - SI</option>
-                        <option value="SR">Siracusa - SR</option>
-                        <option value="SO">Sondrio - SO</option>
-                        <option value="TA">Taranto - TA</option>
-                        <option value="TE">Teramo - TE</option>
-                        <option value="TR">Terni - TR</option>
-                        <option value="TO">Torino - TO</option>
-                        <option value="TP">Trapani - TP</option>
-                        <option value="TN">Trento - TN</option>
-                        <option value="TV">Treviso - TV</option>
-                        <option value="TS">Trieste - TS</option>
-                        <option value="UD">Udine - UD</option>
-                        <option value="VA">Varese - VA</option>
-                        <option value="VE">Venezia - VE</option>
-                        <option value="VB">Verbania - VB</option>
-                        <option value="VC">Vercelli - VC</option>
-                        <option value="VR">Verona - VR</option>
-                        <option value="VV">Vibo Valentia - VV</option>
-                        <option value="VI">Vicenza - VI</option>
-                        <option value="VT">Viterbo - VT</option>	                		                
-		            </select> 
-		        </div>			
-	        </div>
-			<div class="subcontainer_form">	
-			    <div class="input_container input_city margin_top_8">
-			    	 <input class="input_banner" type="text" name="comune" placeholder="Comune" tabindex="2" >   
-			    	 <div class="error_mark">!</div>
-			 	</div>
-			 	<div class="wrapper_address margin_top_8">
-				    <div class="input_container input_address display_inline">
-				    	 <input class="input_banner" type="text" name="indirizzoEsteso" placeholder="Indirizzo" tabindex="3"> 
-				    	 <div class="error_mark">!</div>
-				 	</div>
-				    <div class="input_container input_number display_inline">
-				    	 <input class="input_banner" type="text" name="civico" placeholder="N" tabindex="4">      
-				    	 <div class="error_mark">!</div>
-				 	</div> 
-				 	<div class="clear"></div> 	
-			 	</div>
-			    <a href="#" class="button check_availability weight_light">
+<head>
+    <meta name=”ad.size” content=”width=300,height=250”>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script type="text/javascript">
+    var clickTag1 = "";
+    var clickTag2 = "";
+    var clickTag3 = "";
+    </script>
+</head>
+
+<body>
+    <div class="mainContainer_banner">
+        <div class="subcontainer_banner">
+            <div class="container_background_stripes">
+                <div class="colored_bg first_layer colored_bg--blue"></div>
+                <div class="colored_bg second_layer colored_bg--grey"></div>
+                <div class="colored_bg third_layer colored_bg--orange"></div>
+            </div>
+            <a href="javascript:window.open(window.clickTag1)">
+                <div class="container_banner">
+                    <div class="subcontainer_banner">
+                        <div class="col-xs-4">
+                            <div class="text_size_25 text_uppercase text_color_white position_absolute text_on_bg position_top_20 line_height_25 weight_bold">
+                                solo
+                                <br> online
+                                <div class="margin_top_10 line_height_18 text_size_14 text_uppercase text_color_white weight_bold">
+                                    entro il <br> 04/10
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating_image">
+                            <img src="img/image_floating.png" style="display: none;"/>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="container_right float_right text_align_right text_align_right">
+                                <div class="text_uppercase margin_top_15 text_color_blue weight_bold text_size_18 line_height_18">
+                                    adsl vera
+                                    <br>chiamate illimitate
+                                </div>
+                                <div class="container_price float_right height_65 margin_top_neg5">
+                                    <div class="price_big float_left margin_top_5 text_color_blue weight_bold">
+                                        19
+                                    </div>
+                                    <div class="price_small float_left margin_top_15 text_color_blue weight_bold text_size_20">
+                                        ,95&euro;
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="text_size_16 text_uppercase text_color_blue weight_light">
+                                    prezzo fisso
+                                </div>
+                                <div class="text_size_16 text_uppercase text_color_orange margin_top_5 weight_bold line_height_18">
+                                    attivazione <br>e modem inclusi
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- ====================== FORM ====================== -->
+            <div class="container_form text_align_center" id="idForm">
+                <form action="http://www.infostrada.it/attivazioni/checkResult.php" method="POST" id="verificacopertura">
+                    <div class="top_modal_select">
+                        <div class="text_size_14 text_uppercase text_color_orange text_color_white margin_top_15 margin_bottom_5 main_title weight_light">
+                            Verifica la copertura infostrada
+                        </div>
+                        <div class="select_banner_container">
+                            <!-- SELECT PROVINCIA -->
+                            <select class="select_banner selectpicker" title="Provincia" data-size="5" data-live-search="true" tabindex="1">
+                                <option>Scegli la Provincia</option>
+                                <option value="AG">Agrigento - AG</option>
+                                <option value="AL">Alessandria - AL</option>
+                                <option value="AN">Ancona - AN</option>
+                                <option value="AO">Aosta - AO</option>
+                                <option value="AQ">Aquila - AQ</option>
+                                <option value="AR">Arezzo - AR</option>
+                                <option value="AP">Ascoli Piceno - AP</option>
+                                <option value="AT">Asti - AT</option>
+                                <option value="AV">Avellino - AV</option>
+                                <option value="BA">Bari - BA</option>
+                                <option value="BT">Barletta-Andria-Trani - BT</option>
+                                <option value="BL">Belluno - BL</option>
+                                <option value="BN">Benevento - BN</option>
+                                <option value="BG">Bergamo - BG</option>
+                                <option value="BI">Biella - BI</option>
+                                <option value="BO">Bologna - BO</option>
+                                <option value="BZ">Bolzano - BZ</option>
+                                <option value="BS">Brescia - BS</option>
+                                <option value="BR">Brindisi - BR</option>
+                                <option value="CA">Cagliari - CA</option>
+                                <option value="CL">Caltanissetta - CL</option>
+                                <option value="CB">Campobasso - CB</option>
+                                <option value="CI">Carbonia-Iglesias - CI</option>
+                                <option value="CE">Caserta - CE</option>
+                                <option value="CT">Catania - CT</option>
+                                <option value="CZ">Catanzaro - CZ</option>
+                                <option value="CH">Chieti - CH</option>
+                                <option value="CO">Como - CO</option>
+                                <option value="CS">Cosenza - CS</option>
+                                <option value="CR">Cremona - CR</option>
+                                <option value="KR">Crotone - KR</option>
+                                <option value="CN">Cuneo - CN</option>
+                                <option value="EN">Enna - EN</option>
+                                <option value="FM">Fermo - FM</option>
+                                <option value="FE">Ferrara - FE</option>
+                                <option value="FI">Firenze - FI</option>
+                                <option value="FG">Foggia - FG</option>
+                                <option value="FC">Forli-Cesena - FC</option>
+                                <option value="FR">Frosinone - FR</option>
+                                <option value="GE">Genova - GE</option>
+                                <option value="GO">Gorizia - GO</option>
+                                <option value="GR">Grosseto - GR</option>
+                                <option value="IM">Imperia - IM</option>
+                                <option value="IS">Isernia - IS</option>
+                                <option value="SP">La Spezia - SP</option>
+                                <option value="LT">Latina - LT</option>
+                                <option value="LE">Lecce - LE</option>
+                                <option value="LC">Lecco - LC</option>
+                                <option value="LI">Livorno - LI</option>
+                                <option value="LO">Lodi - LO</option>
+                                <option value="LU">Lucca - LU</option>
+                                <option value="MC">Macerata - MC</option>
+                                <option value="MN">Mantova - MN</option>
+                                <option value="MS">Massa Carrara - MS</option>
+                                <option value="MT">Matera - MT</option>
+                                <option value="VS">Medio Campidano - VS</option>
+                                <option value="ME">Messina - ME</option>
+                                <option value="MI">Milano - MI</option>
+                                <option value="MO">Modena - MO</option>
+                                <option value="MB">Monza e della Brianza - MB</option>
+                                <option value="NA">Napoli - NA</option>
+                                <option value="NO">Novara - NO</option>
+                                <option value="NU">Nuoro - NU</option>
+                                <option value="OG">Ogliastra - OG</option>
+                                <option value="OT">Olbia-Tempio - OT</option>
+                                <option value="OR">Oristano - OR</option>
+                                <option value="PD">Padova - PD</option>
+                                <option value="PA">Palermo - PA</option>
+                                <option value="PR">Parma - PR</option>
+                                <option value="PV">Pavia - PV</option>
+                                <option value="PG">Perugia - PG</option>
+                                <option value="PU">Pesaro-Urbino - PU</option>
+                                <option value="PE">Pescara - PE</option>
+                                <option value="PC">Piacenza - PC</option>
+                                <option value="PI">Pisa - PI</option>
+                                <option value="PT">Pistoia - PT</option>
+                                <option value="PN">Pordenone - PN</option>
+                                <option value="PZ">Potenza - PZ</option>
+                                <option value="PO">Prato - PO</option>
+                                <option value="RG">Ragusa - RG</option>
+                                <option value="RA">Ravenna - RA</option>
+                                <option value="RC">Reggio Calabria - RC</option>
+                                <option value="RE">Reggio Emilia - RE</option>
+                                <option value="RI">Rieti - RI</option>
+                                <option value="RN">Rimini - RN</option>
+                                <option value="RM">Roma - RM</option>
+                                <option value="RO">Rovigo - RO</option>
+                                <option value="SA">Salerno - SA</option>
+                                <option value="SS">Sassari - SS</option>
+                                <option value="SV">Savona - SV</option>
+                                <option value="SI">Siena - SI</option>
+                                <option value="SR">Siracusa - SR</option>
+                                <option value="SO">Sondrio - SO</option>
+                                <option value="TA">Taranto - TA</option>
+                                <option value="TE">Teramo - TE</option>
+                                <option value="TR">Terni - TR</option>
+                                <option value="TO">Torino - TO</option>
+                                <option value="TP">Trapani - TP</option>
+                                <option value="TN">Trento - TN</option>
+                                <option value="TV">Treviso - TV</option>
+                                <option value="TS">Trieste - TS</option>
+                                <option value="UD">Udine - UD</option>
+                                <option value="VA">Varese - VA</option>
+                                <option value="VE">Venezia - VE</option>
+                                <option value="VB">Verbania - VB</option>
+                                <option value="VC">Vercelli - VC</option>
+                                <option value="VR">Verona - VR</option>
+                                <option value="VV">Vibo Valentia - VV</option>
+                                <option value="VI">Vicenza - VI</option>
+                                <option value="VT">Viterbo - VT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="subcontainer_form">
+                        <div class="input_container input_city margin_top_8">
+                            <input class="input_banner" type="text" name="comune" placeholder="Comune" tabindex="2">
+                            <div class="error_mark">!</div>
+                        </div>
+                        <div class="wrapper_address margin_top_8">
+                            <div class="input_container input_address display_inline">
+                                <input class="input_banner" type="text" name="indirizzoEsteso" placeholder="Indirizzo" tabindex="3">
+                                <div class="error_mark">!</div>
+                            </div>
+                            <div class="input_container input_number display_inline">
+                                <input class="input_banner" type="text" name="civico" placeholder="N" tabindex="4">
+                                <div class="error_mark">!</div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <a href="#" class="button check_availability weight_light">
                           Verifica subito<span class="button-arrow-right"></span> <!-- BOTTONE -->  
-			   </a>  
-			    <a href="#" class="number_present text_size_12 text_uppercase text_color_white weight_light">
+			   </a>
+                        <a href="#" class="number_present text_size_12 text_uppercase text_color_white weight_light">
 				        ho gi&agrave; un numero                         <!-- BOTTONE -->  
-			    </a>  	 
-		 	</div>	
-		 	<div class="hidden_input_overlay">
-			    <div class="hidden_input">
-				    <div class="input_container input_telephone margin_top_5">
-				    	 <input class="input_banner input_prefix display_inline" type="text" name="pref" placeholder="Pref." tabindex="5"> 	
-				    	 <div class="error_mark">!</div>				    	 			    
-				    	 <input class="input_banner input_telNumber display_inline" type="text" name="tel" placeholder="Numero di Telefono" tabindex="6">      
-				    	 <div class="error_mark">!</div>
-				 	</div> 		
-				    <a href="#" class="button check_availability weight_light" tabindex="7">
+			    </a>
+                    </div>
+                    <div class="hidden_input_overlay">
+                        <div class="hidden_input">
+                            <div class="input_container input_telephone margin_top_5">
+                                <input class="input_banner input_prefix display_inline" type="text" name="pref" placeholder="Pref." tabindex="5">
+                                <div class="error_mark">!</div>
+                                <input class="input_banner input_telNumber display_inline" type="text" name="tel" placeholder="Numero di Telefono" tabindex="6">
+                                <div class="error_mark">!</div>
+                            </div>
+                            <a href="#" class="button check_availability weight_light" tabindex="7">
 				        verifica subito<span class="button-arrow-right"></span>      
 				                            <!-- BOTTONE -->  
-				   </a>  
-				   	<div class="button_close text_size_12 text_uppercase text_color_white weight_light">Non ho un numero</div>
-			    </div> 	
-		    </div>	
-           </form>		     				 	
-		</div>
-	</div>
-	<div class="container_image text_align_center logo_full">	
-		<img class="margin_top_5 image_logo" src="img/logo_infostrada.png"/>			
-	</div> 	
-</div>
+				   </a>
+                            <div class="button_close text_size_12 text_uppercase text_color_white weight_light">Non ho un numero</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container_image text_align_center logo_full">
+            <img class="margin_top_5 image_logo" src="img/logo_infostrada.png" />
+        </div>
+    </div>
 </body>
-
 <script>
 $(document).ready(function() {
 
-	$('.container_form').on({
-	    mouseenter: function(){
-	        $('.container_form').addClass('form_focused');
-	        console.log('entra');
-	    },
-	    mouseleave: function(){
-	        $('.container_form').removeClass('form_focused');
-	        console.log('esci');	        
-	    }
-	});
+    $('.container_form').on({
+        mouseenter: function() {
+            $('.container_form').addClass('form_focused');
+            console.log('entra');
+        },
+        mouseleave: function() {
+            $('.container_form').removeClass('form_focused');
+            console.log('esci');
+        }
+    });
 
-	 window.setInterval(function(){
-	  		checkFocusBanner();
-	}, 5000);
+    window.setInterval(function() {
+        checkFocusBanner();
+    }, 3000);
 
-	 function checkField(inputName){
-	     	  if($('.input_banner[name='+inputName+']').val() == ""){
-	     	  	$('.input_banner[name='+inputName+']').addClass('error_notification');
-	     	  }	  	     	
-	     	  else{
-	     	  	$('.input_banner[name='+inputName+']').removeClass('error_notification');
-	     	  }	 	
-	 }
-
-	 function printField(){
-	 		var provincia = $('.filter-option.pull-left').text();
-	 		var comune = $('.input_banner[name="comune"]').val();
-	 		var indirizzo = $('.input_banner[name="indirizzoEsteso"]').val();
-	 		var numero = $('.input_banner[name="civico"]').val();
-	 		var prefisso = $('.input_banner[name="pref"]').val();
-	 		var numeroTelefono = $('.input_banner[name="tel"]').val();
-	     	alert('Valido-> Provincia:' + provincia + " Comune: " + comune + " Indirizzo " + indirizzo + " numero " + numero + " Telefono: " + prefisso + " " + numeroTelefono);   
-	     	$('#verificacopertura').submit();
-		 }	 
-
-	 	$('.number_present').click(function() {							
-	 		$('.hidden_input_overlay').slideDown();
-	 		$('.hidden_input_overlay').addClass('checkTelephone');
-	 	});
-
-	 	$('.button_close').click(function() {								
-	 		$('.hidden_input_overlay').slideUp();
-	 		$('.hidden_input_overlay').removeClass('checkTelephone');
-	 		$('.input_banner[name="tel"]').removeClass('error_notification');
-	 	});	 	
-
-		$('.container_form .check_availability').click(function() {
-			checkField('indirizzoEsteso');
-			checkField('comune');
-			checkField('civico');  
-			if($('.hidden_input_overlay').hasClass('checkTelephone')){
-				// controlla se il numero è inserito altrimenti apre la notifica errore.
-				checkField('pref');
-				checkField('tel');
-			}
-     	  if($('.error_notification').length > 0)
-     	  {
-     	  	alert('controlla gli errori');
-     	  }   
-     	  else{
-     	  	printField();
-     	  }	    	     	  	     	     
-	 });
-
-	 var animateTimer = 500;
-	 var LongTimer = 1000;	 
-
-
-
-	 function checkFocusBanner(){ 		 	  		   
-	  if($('.subcontainer_banner').css('left') == '-300px')
-	  {
-	 	if (
-	 	      ($('.input_banner:focus').length == 0 )
-	 		   && (!$('.container_form').hasClass('form_focused'))
-	 		   &&($('.input_banner[name=comune]').val() == "")
-	 		   &&($('.input_banner[name=indirizzoEsteso]').val() == "")
-	 		   &&($('.input_banner[name=civico]').val() == "")
-	 		   &&(!$('.hidden_input_overlay').hasClass('checkTelephone'))	 		   
-	 		   &&($('.error_notification').length == 0)
-	 	       ) {  	
-			 $( ".logo_full" ).animate({
-			    	left: "-75%"
-				},animateTimer);	
-			 $( ".logo_full .image_logo" ).animate({
-			    	width: "130px"
-				},animateTimer);				 		
-				 $( ".container_right" ).animate({
-			    	left: "-300px"
-				},animateTimer);
-				 $( ".container_background_stripes" ).animate({
-				    	left: "0%"
-					},LongTimer);
-		    	 $( ".subcontainer_banner").animate({
-		    		left: "0px"
-		    	 },animateTimer);				    	
-				   
-	 		}
-	 	}
-	 	else{ 
-			 $( ".logo_full" ).delay(animateTimer).animate({
-			    	left: "-100%"
-				},animateTimer);	
-			 $( ".logo_full .image_logo" ).delay(animateTimer).animate({
-			    	width: "90px"
-				},animateTimer);				 		
-			 $( ".container_right" ).animate({
-			    	left: "0px"
-				},animateTimer);	 		
-			 $( ".container_background_stripes" ).animate({
-			    	left: "95%"
-				},LongTimer);		 
-	    	 $( ".subcontainer_banner").delay(animateTimer).animate({
-	    		left: "-300px"
-	    	 },animateTimer);				    	
-	
-	 }
+    function checkField(inputName) {
+        if ($('.input_banner[name=' + inputName + ']').val() == "") {
+            $('.input_banner[name=' + inputName + ']').addClass('error_notification');
+        } else {
+            $('.input_banner[name=' + inputName + ']').removeClass('error_notification');
+        }
     }
-  });
+
+    function printField() {
+        var provincia = $('.filter-option.pull-left').text();
+        var comune = $('.input_banner[name="comune"]').val();
+        var indirizzo = $('.input_banner[name="indirizzoEsteso"]').val();
+        var numero = $('.input_banner[name="civico"]').val();
+        var prefisso = $('.input_banner[name="pref"]').val();
+        var numeroTelefono = $('.input_banner[name="tel"]').val();
+        alert('Valido-> Provincia:' + provincia + " Comune: " + comune + " Indirizzo " + indirizzo + " numero " + numero + " Telefono: " + prefisso + " " + numeroTelefono);
+        $('#verificacopertura').submit();
+    }
+
+    $('.number_present').click(function() {
+        $('.hidden_input_overlay').slideDown();
+        $('.hidden_input_overlay').addClass('checkTelephone');
+    });
+
+    $('.button_close').click(function() {
+        $('.hidden_input_overlay').slideUp();
+        $('.hidden_input_overlay').removeClass('checkTelephone');
+        $('.input_banner[name="tel"]').removeClass('error_notification');
+    });
+
+    $('.container_form .check_availability').click(function() {
+        checkField('indirizzoEsteso');
+        checkField('comune');
+        checkField('civico');
+        if ($('.hidden_input_overlay').hasClass('checkTelephone')) {
+            // controlla se il numero è inserito altrimenti apre la notifica errore.
+            checkField('pref');
+            checkField('tel');
+        }
+        if ($('.error_notification').length > 0) {
+            alert('controlla gli errori');
+        } else {
+            printField();
+        }
+    });
+
+    var animateTimer = 500;
+    var LongTimer = 1000;
+
+
+
+    function checkFocusBanner() {
+        if ($('.subcontainer_banner').css('left') == '-300px') {
+            if (
+                ($('.input_banner:focus').length == 0) && (!$('.container_form').hasClass('form_focused')) && ($('.input_banner[name=comune]').val() == "") && ($('.input_banner[name=indirizzoEsteso]').val() == "") && ($('.input_banner[name=civico]').val() == "") && (!$('.hidden_input_overlay').hasClass('checkTelephone')) && ($('.error_notification').length == 0)
+            ) {
+                $(".logo_full").animate({
+                    left: "-75%"
+                }, animateTimer);
+                $(".logo_full .image_logo").animate({
+                    width: "130px"
+                }, animateTimer);
+                $(".container_right").animate({
+                    left: "-300px"
+                }, animateTimer);
+                $(".container_background_stripes").animate({
+                    left: "0%"
+                }, LongTimer);
+                $(".subcontainer_banner").animate({
+                    left: "0px"
+                }, animateTimer);
+
+            }
+        } else {
+            $(".logo_full").delay(animateTimer).animate({
+                left: "-100%"
+            }, animateTimer);
+            $(".logo_full .image_logo").delay(animateTimer).animate({
+                width: "90px"
+            }, animateTimer);
+            $(".container_right").animate({
+                left: "0px"
+            }, animateTimer);
+            $(".container_background_stripes").animate({
+                left: "95%"
+            }, LongTimer);
+            $(".subcontainer_banner").delay(animateTimer).animate({
+                left: "-300px"
+            }, animateTimer);
+
+        }
+    }
+});
 </script>
+
 </html>

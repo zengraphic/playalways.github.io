@@ -109,14 +109,25 @@ div{
 
 .padding{
   &_left{
+    &_5{
+      padding-left: 5px; 
+   }    
     &_10{
       padding-left: 10px; 
    }
   }
+  &_right{
+    &_5{
+      padding-right: 5px; 
+   }
+  }  
 }
 
 .margin{
   &_top{
+    &_neg5{
+      margin-top: -5px;
+   }        
     &_5{
       margin-top: 5px;
    }    
@@ -184,13 +195,31 @@ div{
     }    
       &_20{
       font-size: 20px;
-    }     
+    } 
+      &_25{
+      font-size: 25px;
+    }         
+      &_30{
+      font-size: 30px;
+    }        
   }
 }
 
-.line_height_20{
-  line-height: 20px;
+.line_height{
+  &_18{
+    line-height: 18px;  
+  }  
+  &_20{
+    line-height: 20px;  
+  }  
+  &_25{
+    line-height: 25px;  
+  }
+  &_30{
+    line-height: 30px;  
+  }  
 }
+
 
 .text_on_bg{
   z-index: 200;
@@ -211,6 +240,9 @@ div{
   display: inline-block;
 }
 
+.height_65{
+  height: 65px;
+}
 /* ==========================================================  */
 
 .error_notification{
