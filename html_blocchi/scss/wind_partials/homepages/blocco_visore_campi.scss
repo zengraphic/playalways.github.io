@@ -1,0 +1,336 @@
+.container_firstBlock {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.standard_blockInfo {
+    margin: 0 auto;
+    -o-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    -webkit-transition: all 0.45s ease-in-out;
+    @at-root #{&}__mainContainer {
+        position: relative;
+        max-width: 1024px;
+        margin: 0 auto;
+        .recurrent_priceRow {
+            margin: 0;
+            font-family: $weight-light;
+            @at-root #{&}__price {
+                font-size: 3.438em;
+                &.text_blue {
+                    color: $color-blue;
+                }
+                &.text_orange {
+                    color: $color-orange;
+                }
+                .currency {
+                    font-size: 0.75em;
+                }
+            }
+            @at-root #{&}__recurrency {
+                color: $color-standardText;
+                font-size: 12px; //12px
+                display: block;
+            }
+        }
+    }
+    @at-root #{&}__sticker {
+        &__wrapper {
+            position: absolute;
+            bottom: 30px;
+            width: 40px;
+            left: 0;
+        }
+        &__container {
+            .sticker_single {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+    @at-root #{&}__coloredBg {
+        width: 150%;
+        height: 100%;
+        position: absolute;
+        &.skew_left {
+            -webkit-transform: skew(20deg);
+            -moz-transform: skew(20deg);
+            -o-transform: skew(20deg);
+        }
+        &.skew_right {
+            -webkit-transform: skew(-20deg);
+            -moz-transform: skew(-20deg);
+            -o-transform: skew(-20deg);
+        }
+        left: 55%;
+    }
+    @at-root #{&}__additional_form {
+        position: absolute;
+        width: 100%;
+        @include transition(all, 0.45s, ease-in-out);
+        &.covered {
+            bottom: -100%;
+            visibility: hidden;
+        }
+        &.uncovered {
+            bottom: 2px;
+            visibility: visible;
+        }
+    }
+    @at-root #{&}__input {
+        &--address {
+            display: inline-block;
+            width: calc(90% - 35px);
+            float: left;
+            input {
+                width: 100%;
+            }
+        }
+        &--civic_number {
+            display: inline-block;
+            width: 60px;
+            float: right;
+            input {
+                width: 100%;
+            }
+        }
+        &--number {
+            display: inline-block;
+            width: calc(90% - 35px);
+            float: right;
+            input {
+                width: 100%;
+            }
+        }
+        &--prefix {
+            display: inline-block;
+            width: 60px;
+            float: left;
+            input {
+                width: 100%;
+            }
+        }
+    }
+    @at-root #{&}__select {
+        .base__select {
+            width: 100% !important;
+            margin-bottom: 10px;
+        }
+        .base__select.bootstrap-select {
+            .dropdown-toggle {
+                width: 100%;
+                padding-top: 15px;
+                padding-bottom: 10px;
+                font-size: 1em;
+                font-family: $weight-light;
+            }
+            .bs-caret .caret {
+                right: 15px;
+                top: 40%;
+            }
+            .filter-option {
+                font-size: 1em;
+                text-align: left;
+            }
+        }
+    }
+    @at-root #{&}__container {}
+    @at-root #{&}__image {
+        position: absolute;
+        bottom: 0;
+        left: 72%;
+        width: 63%;
+        z-index: 2;
+        -o-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -webkit-transition: all 0.45s ease-in-out;
+    }
+    @at-root #{&}__half_block {
+        -o-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -webkit-transition: all 0.45s ease-in-out;
+        &__left {
+            width: 45%;
+            margin-left: 30px;
+            .button {
+                width: 160px;
+                margin: 0 auto;
+            }
+        }
+        &__right {
+            width: 33.3%;
+            margin-right: 30px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 29px;
+            .base__input {
+                width: 100%;
+                margin-bottom: 10px;
+                padding-left: 1.429rem;
+                padding-top: 17px;
+                padding-bottom: 14px;
+                font-family: $weight-light;
+            }
+            .button {
+                margin-bottom: 10px;
+                padding-top: 15px;
+                padding-bottom: 10px;
+                &--ghost {
+                    margin-top: 10px;
+                }
+                &.with_number {}
+            }
+            .without_number {
+                color: $color-white;
+                font-family: $weight-light;
+                text-decoration: underline;
+                text-align: center;
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                &:hover{
+                    @include opacity(0.7);
+                }
+            }
+        }
+        &.image_block {
+            position: relative;
+        }
+    }
+    @at-root #{&}__info {
+        text-align: center;
+    }
+    @at-root #{&}__title {
+        margin-top: 15px;
+        font-size: 2.813em;
+        line-height: 47px;
+        font-family: $weight-light;
+        color: $color-blue;
+    }
+    @at-root #{&}__whiteTitle {
+        margin: 25px 0 20px;
+        text-align: center;
+        font-size: 1.875em;
+        color: $color-white;
+        font-family: $weight-normal;
+    }
+    @at-root #{&}__text {
+        text-align: center;
+        margin: 5px 30px 10px 30px;
+        font-size: 1.125em;
+        line-height: 20px;
+        color: $color-standardText;
+        font-family: $weight-normal;
+    }
+    @at-root #{&}__bundle {
+        &:before {
+            content: "";
+            display: block;
+            max-width: 120px;
+            margin: 0 auto;
+            height: 1px;
+            background-color: #ededed;
+            bottom: 5px;
+            position: relative;
+        }
+        &_logo {
+            margin: 0 auto;
+        }
+        &_text {}
+        &_claim {
+            margin: 15px 0;
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 1024px) {
+    .container_firstBlock {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .standard_blockInfo {
+        &__sticker {
+            &__wrapper {
+                position: static;
+                width: 100%;
+                text-align: center;
+                .sticker_single {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .container_reviews {
+            width: 330px;
+            margin: 0 auto;
+            .share_block__reviews {
+                right: 0;
+            }
+        }
+        &__select {
+            /*float: right;
+          margin-right: 15px;
+          margin-left: auto;*/
+        }
+        &.bg_white_black {
+            height: auto;
+            background: none;
+        }
+        &__whiteTitle {
+            text-align: center;
+            font-size: 1em;
+            margin-right: 0px;
+            color: $color-white;
+        }
+        &__text {
+            margin-bottom: 0px;
+        }
+        &__image {
+            width: 50%;
+            top: 110%;
+            left: 50%;
+            display: none;
+        }
+        &__coloredBg {
+            top: 55%;
+            left: 0;
+            height: 150%;
+            &.skew_right,
+            &.skew_left {
+                -webkit-transform: skew(0);
+                -moz-transform: skew(0);
+                -ms-transform: skew(0);
+                -o-transform: skew(0);
+                transform: skew(0);
+            }
+        }
+        &__half_block {
+            float: none;
+            margin: 0 auto;
+            width: calc(100% - 30px);
+            &__left {
+                /*   height: 300px */
+                ;
+            }
+        }
+        &__title {
+            font-size: 2.0em;
+            line-height: 42px;
+        }
+    }
+    .recurrent_priceRow {
+        margin-bottom: 0px;
+        &__price {
+            margin-top: 0px;
+        }
+    }
+}

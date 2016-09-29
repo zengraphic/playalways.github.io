@@ -1,0 +1,47 @@
+
+.counter_block {
+    width: 100%;
+    background-color: $color-lightGrey;
+    &_container {
+        margin: 0 auto;
+        max-width: 1024px;
+        color: $color-standardText;
+        text-align: center;
+        font-family: $weight-normal;
+        line-height: 50px;
+        padding: 20px 0 10px 0;
+    }
+    &_items--title {
+        font-family: $weight-normal;
+        font-size: 1.3em;
+        line-height: 21px;
+        @include breakpoint(small) {
+            font-size: 0.8em;
+        }
+    }
+}
+
+.counter_block_items--data {
+    font-size: 1.8em;
+    font-family: $weight-light;
+    .time {
+        font-family: $weight-bold !important;
+        margin-left: 5px;
+        position: relative;
+        left: 8px;
+        @include breakpoint(small) {
+            font-size: 24px;
+            margin-left: 2px;           
+            left: 0;
+        }
+    }
+    .gg {
+        font-family: $weight-light;
+        @include breakpoint(small) {
+            font-size: 24px;
+        }
+    }
+     @include breakpoint(small) {
+            font-size: 15px;
+        }
+}

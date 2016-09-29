@@ -1,0 +1,47 @@
+.roadShow_block {
+    &__container {
+        margin-bottom: 20px;
+        display: table;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+    &__image {
+        max-height: 180px;
+        vertical-align: middle;
+        display: table-cell;
+        @include breakpoint(small) {
+            text-align: center;
+            margin-bottom: 15px;
+            display: block;
+        }
+    }
+    &__textContainer {
+        display: table-cell;
+        vertical-align: middle;
+        .button {
+            float: right;
+            width: 210px;
+            @include breakpoint(small) {
+                float: none;
+                margin: 0 auto;
+            }
+        }
+    }
+    &__mainTitle {
+        font-family: $weight-bold;
+        font-size: 1.750em;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    &__description {
+        font-size: 0.875em;
+        font-family: $weight-normal;
+        margin-bottom: 20px;
+        margin-left: 60px;
+        @include breakpoint(small) {
+            text-align: center;
+            margin-left: 0px;
+        }
+    }
+}

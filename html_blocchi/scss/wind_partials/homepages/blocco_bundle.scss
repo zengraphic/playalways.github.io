@@ -1,0 +1,176 @@
+// BUNDLE BLOCCO 2
+.bundle_block {
+    max-width: 1024px;
+    margin: 0 auto;
+    line-height: 1.08;
+    &__container {
+        -o-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -webkit-transition: all 0.45s ease-in-out;
+    }
+    h2 {
+        font-family: $weight-boldCond;
+    }
+    &__showMore {
+        color: $color-orange;
+        font-size: 1.250em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__showOffers {
+        color: $color-orange;
+        margin-left: 30px;
+        width: 100%;
+        display: none;
+        font-size: 1.250em;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @at-root #{&}__tabs {
+        width: 100%;
+        text-align: right;
+        text-transform: uppercase;
+        color: $color-standardText;
+        &--title {
+            margin-right: 40px;
+            cursor: pointer;
+            &:hover {
+                border-bottom: 1px solid $color-orange;
+            }
+            &.active {
+                border-bottom: 1px solid $color-orange;
+            }
+        }
+    }
+    &--title {
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    @at-root #{&}__single {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        &.item {
+            position: relative;
+            &:after {
+                background-color: #ccd1d9;
+                width: 1px;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 15%;
+                bottom: 7%;
+                right: 0%;
+                min-height: 1px;
+            }
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        &--bigAmount {
+            font-size: 1.500em;
+            font-family: $weight-light;
+            margin-bottom: 10px;
+            height: 80px;
+        }
+        &--smallAmount {
+            font-size: 1.250em;
+            font-family: $weight-light;
+            height: 45px;
+        }
+        &--title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            height: 65px;
+            color: $color-lightBlue;
+            font-size: 1.875em;
+            font-family: $weight-bold;
+        }
+        &--disclaimer {
+            font-size: 0.688em;
+            font-family: $weight-light;
+            margin: 20px 0px;
+            height: 35px;
+        }
+        &--mainPrice {
+            font-size: 2.500em;
+            color: $color-lightBlue;
+            font-family: $weight-light;
+            height: 45px;
+            .currency {
+                font-size: 30px;
+            }
+        }
+        &--recurrency {
+            font-family: $weight-light;
+            font-size: 0.813em;
+            margin-bottom: 10px;
+            height: 15px;
+        }
+        &__placeholder {
+            display: none;
+        }
+    }
+}
+
+.arrow_top_orange {
+    float: right;
+    margin-right: 45px;
+    padding-top: 7px;
+    display: none;
+}
+
+.home_page {
+    .bundle_block__tabs {
+        display: none;
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 991px) {
+    .bundle_block {
+        &__single {
+            &__placeholder {
+                display: block;
+            }
+        }
+        &__showMore {
+            display: none;
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    .bundle_block__single {
+        &:after {
+            display: none !important;
+        }
+        &__placeholder {
+            display: none;
+        }
+    }
+    .bundle_block__showOffers,
+    .arrow_top_orange {
+        display: block;
+    }
+    .bundle_block__tabs {
+        display: none;
+    }
+    .bundle_block__single--disclaimer {
+        display: none;
+    }
+}
