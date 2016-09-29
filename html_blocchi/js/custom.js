@@ -136,7 +136,7 @@ r$(document).ready(function() {
                 r$(this).children('li').each(function(i, e) {
                     Sum += r$(e).outerWidth(true);
                 });
-                r$(this).width(Sum + 10);
+                r$(this).width(Sum + 20);
             }
         });
     });
