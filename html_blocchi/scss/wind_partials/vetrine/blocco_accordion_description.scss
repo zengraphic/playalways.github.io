@@ -1,0 +1,61 @@
+// BLOCCO ACCORDION DESCRIPTION v2
+.accordion_description_block {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding-bottom: 10px;
+    &__title {
+        font-family: $weight-light;
+        color: $color-standardText;
+        font-size: 1.5em;
+        padding-bottom: 1.667em;
+        @include breakpoint(small) {
+            font-size: 1.3em;
+            padding-bottom: 0.5em;
+        }
+    }
+    &__container {
+        display: inline-block;
+        padding: 20px 0;
+        &:nth-of-type(odd) {
+            background-color: $color-lightGray;
+        }
+    }
+    &__feature {
+        font-family: $weight-light;
+        color: $color-lightBlue;
+        font-size: 1.25em;
+    }
+    &__featureContent {
+        border-bottom: 1px solid $medium-gray;
+        margin-left: -15px;
+        padding: 5px 0;
+        &:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        @include breakpoint(small) {
+            margin-left: 0;
+        }
+        &--detail {
+            font-family: $weight-bold;
+            color: $color-standardText;
+            font-size: 0.75em;
+            float: left;
+            padding-right: 0;
+            line-height: 1.6em;
+            @include breakpoint(small) {
+                padding-left: 0;
+            }
+        }
+        &--description {
+            font-family: $weight-light;
+            color: $color-standardText;
+            font-size: 0.75em;
+            float: left;
+            line-height: 1.6em;
+            @include breakpoint(small) {
+                padding-left: 0;
+            }
+        }
+    }
+}

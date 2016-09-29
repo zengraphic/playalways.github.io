@@ -1,0 +1,70 @@
+$light-gray: #f4f4f4;
+.rowTabella {
+    background-color: $light-gray;
+}
+
+.lightGray {
+    background-color: $light-gray;
+}
+
+// BLOCCO WORLD BASIC RATES
+.world_rates_block {
+    width: 100%;
+    &__container {
+        margin: 0 auto;
+        max-width: 1024px;
+        &::after {
+            border-bottom: 1px solid $medium-gray;
+            height: 1px;
+            display: block;
+            content: '';
+            margin-top: 0.625em;
+        }
+        &:last-child {
+            &::after {
+                border-bottom: none;
+            }
+        }
+    }
+    &__subContainer {
+        padding: 15px 0 0 5px;
+        background: none;
+        width: 16.6%;
+        display: inline-block;
+        float: left;
+    }
+    &__title {
+        font-family: $weight-light;
+        color: $color-lightBlue;
+        font-size: 1.25em;
+        min-height: 0.375em;
+    }
+    &__subTitle {
+        font-family: $weight-light;
+        color: $color-standardText;
+        font-size: 1em;
+        padding-top: 5px;
+    }
+    &__zone {
+        font-family: $weight-light;
+        color: $color-standardText;
+        font-size: 0.75em;
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media (max-width: 768px) {
+    .world_rates_block{
+        &__title{
+            font-size: 14px;
+        }
+        &__subTitle{
+            font-size: 12px;
+        }
+        &__zone{
+            font-size: 10px;
+        }
+    }
+}

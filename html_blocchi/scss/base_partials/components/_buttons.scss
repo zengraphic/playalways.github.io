@@ -1,0 +1,104 @@
+//default base buttons
+
+.base__bt {
+  color: white;
+  font-size: 1rem;
+  line-height: 1rem;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-block;
+  padding: 1rem 0;
+  letter-spacing: 1px;
+  text-align: center;
+  background: transparent;
+  width: 280px;
+
+  @include radius(4px);
+
+  // sizes
+  // version orange
+  // version orange 2
+  // versione white
+  // contextual
+  &:hover, &:active, &:focus {
+    border: 1px solid transparent;
+    color: white;
+    outline: none;
+  }
+}
+
+.base__bt--sm {
+  padding: 0.75rem 0;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  width: 140px;
+
+  &:hover, &:visited {
+    padding: 0.75rem 0;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    width: 140px;
+  }
+}
+
+.base__bt--lg {
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1rem;
+  width: 280px;
+
+  &:hover, &:visited {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    line-height: 1rem;
+    width: 280px;
+  }
+}
+
+.base__bt--or {
+  @include base-btn(white, $color_orange, 1px, $color_orange);
+
+  &:hover, &:active, &:visited {
+    background-color: $color_orange_light;
+    border: 1px solid $color_orange;
+  }
+
+  &:disabled, &.waves-button:disabled {
+    border-color: $color_grey_medium_light;
+    background: $color_grey_medium_light;
+  }
+}
+
+.base__bt--or2 {
+  @include base-btn($color_orange, transparent, 1px, $color_orange);
+
+  &:hover, &:active, &:visited {
+    background-color: $color_orange_light;
+    border: 1px solid $color_orange;
+  }
+
+  &:disabled, &.waves-button:disabled {
+    border-color: $color_grey_medium_light;
+    background: $color_grey_medium_light;
+  }
+}
+
+.base__bt--wh {
+  @include base-btn($color_orange, white, 1px, white);
+
+  &:hover, &:active, &:visited {
+    @include base-btn($color_orange, white, 1px, $color_orange_light);
+  }
+
+  &:disabled, &.waves-button:disabled {
+    border-color: $color_grey_medium_light;
+    color: $color_grey_medium_light;
+    background-color: white;
+  }
+}
+
+.base__bt [class*='-animate'] {
+  font-size: 1rem;
+}

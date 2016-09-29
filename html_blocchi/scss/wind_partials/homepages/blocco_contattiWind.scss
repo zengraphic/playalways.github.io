@@ -1,0 +1,180 @@
+//BLOCCO 4
+.contactWind_block {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    &.contactWind_business {
+        .contactWind_block__details__container {
+            margin-top: 50px;
+        }
+        .button {
+            display: none;
+        }
+    }
+    @at-root #{&}__container {
+        margin-top: 30px;
+    }
+    @at-root #{&}__title {
+        font-size: 1em;
+        font-family: $weight-bold;
+        margin-bottom: 25px;
+    }
+    @at-root #{&}__details {
+        font-size: 1em;
+        font-family: $weight-normal;
+    }
+    @at-root #{&}__left {
+        .button {
+            margin-top: 25px;
+        }
+    }
+    @at-root #{&}__right {}
+    @at-root #{&}__icon {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        &--firstRow {
+            float: left;
+        }
+        &--linkedin {
+            background: url('../img/social/social_sprite.png') no-repeat;
+            width: 87px;
+            height: 87px;
+            background-position: 0 -387px;
+            float: left;
+        }
+        &--gplus {
+            margin-left: 1em;
+            background: url('../img/social/social_sprite.png') no-repeat;
+            width: 87px;
+            height: 87px;
+            background-position: 0 0;
+            float: left;
+        }
+        &--youtube {
+            margin-left: 1em;
+            background: url('../img/social/social_sprite.png') no-repeat;
+            width: 87px;
+            height: 87px;
+            background-position: 0 -97px;
+            float: left;
+        }
+        &--facebook {
+            margin-left: 1em;
+            background: url('../img/social/social_sprite.png') no-repeat;
+            width: 87px;
+            height: 87px;
+            background-position: 0 -194px;
+            float: left;
+        }
+        &--twitter {
+            margin-left: 1em;
+            background: url('../img/social/social_sprite.png') no-repeat;
+            width: 87px;
+            height: 87px;
+            background-position: 0 -291px;
+            float: left;
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 990px) {
+    .contactWind_block__icon {
+        font-size: 8px;
+    }
+    .clearQuery {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+}
+
+@media all and (max-width: 950px) {
+    .contactWind_block__icon {
+        width: 570px;
+        margin: 0 auto;
+        &--firstRow {
+            float: none;
+            margin-left: 8%;
+        }
+        &--secondRow {
+            float: none;
+            margin-left: 8%;
+            margin-top: 30px;
+        }
+        &--facebook {
+            margin-left: 0px;
+        }
+    }
+    .contactWind_block__left {
+        .button {
+            font-size: 15px;
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    .contactWind_block {
+        text-align: center;
+    }
+    .info_link {
+        margin-bottom: 30px;
+    }
+    .contactWind_block__icon {
+        width: 500px;
+        margin: 0 auto;
+        &--firstRow {
+            float: left;
+            margin-left: 0%
+        }
+        &--secondRow {
+            float: left;
+            margin-left: 0%;
+            margin-top: 0px;
+        }
+        &--facebook {
+            margin-left: 1em;
+        }
+    }
+    .contactWind_block__left {
+        .button {
+            font-size: 12px;
+        }
+    }
+}
+
+@media all and (max-width: 550px) {
+    .contactWind_block__right {
+        padding: 0px;
+    }
+    .contactWind_block__icon {
+        width: 290px;
+        margin: 0 auto;
+        .col-xs-12 {
+            padding: 0px;
+        }
+        &--firstRow {
+            float: none;
+            margin: 0 auto;
+            width: 100%;
+        }
+        &--secondRow {
+            float: none;
+            width: 75%;
+            margin: 0 auto;
+        }
+        &--facebook {
+            margin-left: 1em;
+        }
+    }
+    .contactWind_block__left {
+        .button {
+            font-size: 12px;
+        }
+    }
+}

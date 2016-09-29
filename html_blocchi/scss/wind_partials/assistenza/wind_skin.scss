@@ -1,0 +1,196 @@
+.skin {
+    &_desktop {
+        position: absolute;
+        width: 100vw;
+        height: 1500px;
+        z-index: 20;
+        background-image: url("../../img/skin/skin_desktop.jpg");
+        background-position-x: 50%;
+        background-repeat: no-repeat;
+        display: block;
+        @include transition(all .1 ease-in-out);
+        &__text {
+            font-family: $weight-light;
+            color: $color-white;
+            position: absolute;
+            width: 1024px;
+            z-index: 200;
+            left: calc(50% - 512px);
+            margin-top: 30px;
+            margin-left: 150px;
+            @include breakpoint(min-desktop) {
+                left: 0;
+                margin-left: 100px;
+            }
+            @include breakpoint(medium) {
+                font-size: 14px;
+                margin-top: 40px;
+                width: 100%;
+                left: 0;
+            }
+            @include breakpoint(small) {
+                text-align: center;
+                margin: 10px 0;
+                font-size: 11px;
+                height: 180px;
+            }
+            &__container {
+                &--left {
+                    margin-right: 30px;
+                    float: left;
+                    border-right: 1px solid #fff;
+                    padding-right: 10px;
+                    @include breakpoint(small) {
+                        float: none;
+                        width: 100%;
+                    }
+                }
+                &--middle {
+                    text-align: center;
+                    float: left;
+                    @include breakpoint(small) {
+                        float: none;
+                        width: 100%;
+                    }
+                }
+                &--right {
+                    float: left;
+                    @include breakpoint(small) {
+                        float: none;
+                        width: 100%;
+                    }
+                }
+                .button {
+                    width: 105px;
+                    @include breakpoint(small) {
+                        display: inline-block;
+                        position: relative;
+                        bottom: 7px;
+                        left: 20px;
+                    }
+                }
+            }
+            &__price {
+                font-family: $weight-bold;
+                font-size: 3.125em;
+                text-align: center;
+                @include breakpoint(small) {
+                    display: inline-block;
+                }
+                &__currency {
+                    font-size: 0.600em;
+                }
+            }
+            &__title {
+                font-size: 2.188em;
+                font-family: $weight-bold;
+                margin-bottom: 10px;
+                @include breakpoint(small) {
+                    margin-bottom: 0px;
+                }
+            }
+            &__description {
+                font-size: 0.875em;
+                font-family: $weight-normal;
+                max-width: 230px;
+                @include breakpoint(small) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            &__bundle {
+                text-align: left;
+                @include breakpoint(small) {
+                    text-align: center;
+                }
+                &__note {
+                    font-size: 0.750em;
+                    font-family: $weight-normal;
+                    text-align: left;
+                    margin-top: 15px;
+                    @include breakpoint(small) {
+                        margin-top: 0px;
+                        position: absolute;
+                        bottom: 13px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+                &__container {
+                    position: relative;
+                    @include breakpoint(small) {
+                        margin-top: 5px;
+                    }
+                }
+                &__title {
+                    font-size: 1.563em;
+                    font-family: $weight-bold;
+                }
+                &__titleDescription {
+                    font-size: 1.563em;
+                    font-family: $weight-bold;
+                }
+                &__description {
+                    font-size: 1.563em;
+                    font-family: $weight-normal;
+                }
+            }
+        }
+    }
+    &_mainContainer {
+        position: relative;
+        top: 180px;
+        max-width: 1024px;
+        margin: 0 auto;
+        z-index: 30;
+    }
+    &_mobile {
+        background-image: url("../../img/skin/skin_mobile.jpg");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        &__container {
+            display: none;
+            height: 180px;
+            width: 100%;
+        }
+    }
+}
+
+// ======================= MEDIA QUERY ===================
+// ======================= MEDIA QUERY ===================
+// ======================= MEDIA QUERY ===================
+@media all and (max-width: 1024px) {
+    .skin {
+        &_desktop {
+            display: none;
+            &__text {
+                &__container {
+                    &--left {}
+                    &--middle {}
+                    &--right {}
+                    .button {}
+                }
+                &__price {
+                    &__currency {}
+                }
+                &__bundle {
+                    &__container {}
+                    &__number {}
+                    &__description {}
+                }
+                &__title {}
+                &__description {}
+            }
+        }
+        &_mainContainer {
+            top: 0;
+        }
+        &_mobile {
+            &__container {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+/* ========================================================= */
+
+// ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
+// ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
+// ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
+.device_filter_block {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px auto 20px auto;
+    &__title {
+        font-size: 1em;
+        font-family: $weight-normal;
+        text-transform: uppercase;
+        float: left;
+        padding-top: 10px;
+        margin-right: 40px;
+        margin-left: 15px;
+        @include breakpoint(small) {
+            float: none;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+    &__container {}
+    &__select {
+        float: left;
+        @include breakpoint(small) {
+            float: none;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .base__select {
+            &.bootstrap-select {
+                .dropdown-toggle {
+                    padding-top: 7px;
+                    padding-bottom: 9px;
+                    .filter-option {
+                        font-size: 16px;
+                    }
+                    .bs-caret {
+                        .caret {
+                            /* top: 40%; */
+                        }
+                    }
+                }
+                &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+                    width: 130px;
+                    font-size: 1em;
+                    margin-right: 15px;
+                    @include breakpoint(small) {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
