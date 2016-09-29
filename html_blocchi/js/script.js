@@ -191,16 +191,16 @@
         });
         // BOLLI
         $('#bolloDigital').click(function() {
-            $('.standard_block__sticker__container').append('<img class="sticker_single " src="/img/bolli/bollo_digital_style.png"/>');
+            $('.standard_block__sticker__container').append('<img class="sticker_single " src="../img/bolli/bollo_digital_style.png"/>');
         });
         $('#bolloGigaFree').click(function() {
-            $('.standard_block__sticker__container').append('<img class="sticker_single " src="/img/bolli/bollo_giga_free.png"/>');
+            $('.standard_block__sticker__container').append('<img class="sticker_single " src="../img/bolli/bollo_giga_free.png"/>');
         });
         $('#bolloGiga').click(function() {
-            $('.standard_block__sticker__container').append('<img class="sticker_single " src="/img/bolli/bollo_giga.png"/>');
+            $('.standard_block__sticker__container').append('<img class="sticker_single " src="../img/bolli/bollo_giga.png"/>');
         });
         $('#bolloNoTax').click(function() {
-            $('.standard_block__sticker__container').append('<img class="sticker_single " src="/img/bolli/bollo_notax.png"/>');
+            $('.standard_block__sticker__container').append('<img class="sticker_single " src="../img/bolli/bollo_notax.png"/>');
         });
         //RIMUOVI BOLLI
         $('#rimuoviBolli').click(function() {
@@ -258,7 +258,7 @@
         $('#addBlock1').click(function() {
             $('.all_device_bundle_container')
                 .append(' <div class="showcase_bundle_device__single showcase_bundle_device__single--generic col-xs-12 col-sm-6 col-md-4 col-lg-4 ">' +
-                    '       <img src="/img/products/smartphone_example.png" class="showcase_bundle_device__single--generic__image">' +
+                    '       <img src="../img/products/smartphone_example.png" class="showcase_bundle_device__single--generic__image">' +
                     '       <div class="showcase_bundle_device__single--generic--title">' +
                     '         Samsung Galaxy s6    ' +
                     '       </div>                  ' +
@@ -298,7 +298,7 @@
         $('#addBlock2').click(function() {
             $('.all_device_bundle_container')
               .append(' <div class="showcase_bundle_device__single showcase_bundle_device__single--vAbbina col-xs-12 col-sm-6 col-md-4 col-lg-4 ">' +
-                '         <img src="/img/products/smartphone_example.png" class="showcase_bundle_device__single--generic__image">' +
+                '         <img src="../img/products/smartphone_example.png" class="showcase_bundle_device__single--generic__image">' +
                 '         <div class="showcase_bundle_device__single--vAbbina--title">' +
                 '           Modem     ' +
                 '         </div>                  ' +
@@ -332,7 +332,7 @@
                 '    Samsung Galaxy 1s' +
                 '</div>                       ' +
                 '<div class="clear"></div>  ' +
-                ' <img src="/img/products/smartphone_example.png" class="showcase_bundle_device__single--vPack__image">' +
+                ' <img src="../img/products/smartphone_example.png" class="showcase_bundle_device__single--vPack__image">' +
                 ' <div class="showcase_bundle_device__single--vPack--totalPrice">' +
                 ' <div class="showcase_bundle_device__single--vPack--totalPrice--barred">' +
                 ' <span class="price">159,90</span><span class="currency">&euro;</span></div>' +
@@ -359,7 +359,7 @@
                 '          Gli smartphone pi&ugrave;<br> richiesti a 1&euro;' +
                 '      </div>                                                 ' +
                 '      <div class="clear"></div>  ' +
-                '       <img src="/img/products/smartphone_example.png" class="showcase_bundle_device__single--vPackOffer__image">' +
+                '       <img src="../img/products/smartphone_example.png" class="showcase_bundle_device__single--vPackOffer__image">' +
                 '                                 ' +
                 '       <a href="#" class="button button--noMargin">' +
                 '         scopri ' +
@@ -373,7 +373,7 @@
                 '                 <div class="showcase_bundle_device__single--vCard--mainTitle">' +
                 '                     Musica MMS' +
                 '                 </div>   ' +
-                '                  <img src="/img/cards/card1_example.jpg" class="showcase_bundle_device__single--vCard__image">                                                       ' +
+                '                  <img src="../img/cards/card1_example.jpg" class="showcase_bundle_device__single--vCard__image">                                                       ' +
                 '                  <div class="showcase_bundle_device__single--vCard--description">' +
                 '                     Tutto quanto c&apos;è da sapere sul mondo della musica italiana e internazionale.' +
                 '                 </div>                                        ' +
@@ -394,7 +394,7 @@
         $('#addCard2').click(function() {
             $('.all_device_bundle_container').append('<div class="showcase_bundle_device__single showcase_bundle_device__single--vCardOffer col-xs-12 col-sm-6 col-md-4 col-lg-4 ">' +
                 '              <div class="showcase_bundle_device__single--vCardOffer__bgImage__container">' +
-                '                 <img src="/img/cards/background_card.jpg" class="showcase_bundle_device__single--vCardOffer__bgImage">   ' +
+                '                 <img src="../img/cards/background_card.jpg" class="showcase_bundle_device__single--vCardOffer__bgImage">   ' +
                 '              </div>' +
                 '              <div class="showcase_bundle_device__single--vCardOffer__textContainer">' +
                 '                  <div class="showcase_bundle_device__single--vCardOffer--mainTitle">' +
@@ -418,7 +418,7 @@
         $('#addCard3').click(function() {
             $('.all_device_bundle_container').append('<div class="showcase_bundle_device__single showcase_bundle_device__single--vCardOffer--vPrice col-xs-12 col-sm-6 col-md-4 col-lg-4 ">' +
                 '           <div class="showcase_bundle_device__single--vCardOffer--vPrice__bgImage__container">' +
-                '             <img src="/img/cards/background_card2.jpg" class="showcase_bundle_device__single--vCardOffer--vPrice__bgImage">   ' +
+                '             <img src="../img/cards/background_card2.jpg" class="showcase_bundle_device__single--vCardOffer--vPrice__bgImage">   ' +
                 '          </div>' +
                 '          <div class="showcase_bundle_device__single--vCardOffer--vPrice__textContainer">' +
                 '              <div class="showcase_bundle_device__single--vCardOffer--vPrice--mainTitle">' +
