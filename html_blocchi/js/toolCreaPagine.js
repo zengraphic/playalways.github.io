@@ -412,87 +412,87 @@ jQuery(document).ready(function($) {
         $('.mostra_blocchi').slideToggle();
     });
     //AGGIUNGI VISORE STANDARD
-    CREAPAGINA.addHtmlBlock('#aggiungiVisoreStandard', 'homepages/blocco_visore_standard.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiVisoreStandard', 'blocks/homepages/blocco_visore_standard.html');
     //AGGIUNGI VISORE CAMPI
-    CREAPAGINA.addHtmlBlock('#aggiungiVisoreCampi', 'homepages/blocco_visore_campi.html', 'select');
+    CREAPAGINA.addHtmlBlock('#aggiungiVisoreCampi', 'blocks/homepages/blocco_visore_campi.html', 'select');
     //AGGIUNGI VISORE BUSINESS
-    CREAPAGINA.addHtmlBlock('#aggiungiVisoreBusiness', 'homepages/blocco_visore_campi_business.html', 'select');
+    CREAPAGINA.addHtmlBlock('#aggiungiVisoreBusiness', 'blocks/homepages/blocco_visore_campi_business.html', 'select');
     //AGGIUNGI RICARICA
-    CREAPAGINA.addHtmlBlock('#aggiungiRicarica', 'homepages/blocco_ricarica.html', 'select');
+    CREAPAGINA.addHtmlBlock('#aggiungiRicarica', 'blocks/homepages/blocco_ricarica.html', 'select');
     //AGGIUNGI ASSISTENZA
-    CREAPAGINA.addHtmlBlock('#aggiungiAssistenza', 'homepages/blocco_assistenza.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiAssistenza', 'blocks/homepages/blocco_assistenza.html');
     //AGGIUNGI NEWSLETTER
-    CREAPAGINA.addHtmlBlock('#aggiungiNewsletter', 'homepages/blocco_newsletter.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiNewsletter', 'blocks/homepages/blocco_newsletter.html');
     //HOME AND LIFE
-    CREAPAGINA.addHtmlBlock('#aggiungiHomeLife', 'homepages/blocco_homeandlife.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiHomeLife', 'blocks/homepages/blocco_homeandlife.html');
     //APP CONTATTO
-    CREAPAGINA.addHtmlBlock('#aggiungiAppContatto', 'homepages/blocco_app_contatto.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiAppContatto', 'blocks/homepages/blocco_app_contatto.html');
     //AGGIUNGI VISORE IMMAGINE
-    CREAPAGINA.addHtmlBlock('#aggiungiVisoreImmagine', 'homepages/blocco_visore_immagine.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiVisoreImmagine', 'blocks/homepages/blocco_visore_immagine.html');
     //AGGIUNGI BUNDLE OFFERTA
-    CREAPAGINA.addHtmlBlock('#aggiungiSliderOfferta', 'homepages/blocco_slider.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiSliderOfferta', 'blocks/homepages/blocco_slider.html');
     //AGGIUNGI BUNDLE ESTENDIBILE
-    CREAPAGINA.addHtmlBlock('#aggiungiBundleEstendibile', 'vetrine/vetrina_bundle.html', false, true, '.bundle_block__showMore', '.showcase_bundle_block', '.showcase_bundle_block__single');
+    CREAPAGINA.addHtmlBlock('#aggiungiBundleEstendibile', 'blocks/vetrine/vetrina_bundle.html', false, true, '.bundle_block__showMore', '.showcase_bundle_block', '.showcase_bundle_block__single');
     //AGGIUNGI BUNDLE ESTENDIBILE BUSINESS
-    CREAPAGINA.addHtmlBlock('#aggiungiBundleEstendibileBusiness', 'vetrine/vetrina_bundle_2_business_noSlide.html', false, true, '.bundle_ver2_noSlide_block__showMore', '.bundle_ver2_noSlide_block', '.bundle_ver2_noSlide_block__single');
+    CREAPAGINA.addHtmlBlock('#aggiungiBundleEstendibileBusiness', 'blocks/vetrine/vetrina_bundle_2_business_noSlide.html', false, true, '.bundle_ver2_noSlide_block__showMore', '.bundle_ver2_noSlide_block', '.bundle_ver2_noSlide_block__single');
     //AGGIUNGI BUNDLE
-    CREAPAGINA.addHtmlBlock('#aggiungiBundleHp', 'homepages/blocco_bundle.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiBundleHp', 'blocks/homepages/blocco_bundle.html');
     //AGGIUNGI STRIPMENU
-    CREAPAGINA.addHtmlBlock('#aggiungiStripMenu', 'homepages/blocco_stripMenu.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiStripMenu', 'blocks/homepages/blocco_stripMenu.html');
     //AGGIUNGI immagine destra
-    CREAPAGINA.addHtmlBlock('#aggiungiImmagineDestra', 'homepages/blocco_immagineTestoBottoneDestra.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiImmagineDestra', 'blocks/homepages/blocco_immagineTestoBottoneDestra.html');
     //AGGIUNGI contatti
-    CREAPAGINA.addHtmlBlock('#aggiungiBloccoContatti', 'homepages/blocco_contattiWind.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiBloccoContatti', 'blocks/homepages/blocco_contattiWind.html');
     //AGGIUNGI FATTI CONSIGLIARE
-    CREAPAGINA.addHtmlBlock('#aggiungiFattiConsigliare', 'homepages/blocco_fattiConsigliare.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiFattiConsigliare', 'blocks/homepages/blocco_fattiConsigliare.html');
     //AGGIUNGI IMMAGINE TESTO
-    CREAPAGINA.addHtmlBlock('#aggiungiImmagineTesto', 'homepages/blocco_immagineTesto.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiImmagineTesto', 'blocks/homepages/blocco_immagineTesto.html');
     //AGGIUNGI IMMAGINE TESTO SINISTRA
-    CREAPAGINA.addHtmlBlock('#aggiungiImmagineTestoSinistra', 'homepages/blocco_immagineTestoBottone.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiImmagineTestoSinistra', 'blocks/homepages/blocco_immagineTestoBottone.html');
     //AGGIUNGI CONTATTI BUSINESS
-    CREAPAGINA.addHtmlBlock('#aggiungiContattiBusiness', 'homepages/blocco_contattiWindBusiness.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiContattiBusiness', 'blocks/homepages/blocco_contattiWindBusiness.html');
     //AGGIUNGI INFOGRAFICA
-    CREAPAGINA.addHtmlBlock('#aggiungiInfografica', 'homepages/blocco_infografica.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiInfografica', 'blocks/homepages/blocco_infografica.html');
     //AGGIUNGI TRETESTI
-    CREAPAGINA.addHtmlBlock('#aggiungiBloccoTreTesti', 'homepages/blocco_slidingNews.html', 'differentHTML', '.slidingNews_block', 'slidingNews_block__noImage');
+    CREAPAGINA.addHtmlBlock('#aggiungiBloccoTreTesti', 'blocks/homepages/blocco_slidingNews.html', 'differentHTML', '.slidingNews_block', 'slidingNews_block__noImage');
     //AGGIUNGI TREIMMAGINI
-    CREAPAGINA.addHtmlBlock('#aggiungiBloccoTreImmagini', 'homepages/blocco_slidingNews.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiBloccoTreImmagini', 'blocks/homepages/blocco_slidingNews.html');
     //AGGIUNGI CANDIDATI
-    CREAPAGINA.addHtmlBlock('#aggiungiCandidati', 'homepages/blocco_subscribe.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiCandidati', 'blocks/homepages/blocco_subscribe.html');
     //AGGIUNGI STRIPMENU LIGHT
-    CREAPAGINA.addHtmlBlock('#aggiungiStripMenuLight', 'vetrine/blocco_stripMenuText.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiStripMenuLight', 'blocks/vetrine/blocco_stripMenuText.html');
     //AGGIUNGI BUNDLE DEVICE
-    CREAPAGINA.addHtmlBlock('#aggiungiBundleDevice', 'vetrine/vetrina_bundle_device.html', 'select', true, '.showcase_bundle_device__showMore', '.showcase_bundle_device', '.showcase_bundle_device__single');
+    CREAPAGINA.addHtmlBlock('#aggiungiBundleDevice', 'blocks/vetrine/vetrina_bundle_device.html', 'select', true, '.showcase_bundle_device__showMore', '.showcase_bundle_device', '.showcase_bundle_device__single');
     //AGGIUNGI VETRINA FIBRA
-    CREAPAGINA.addHtmlBlock('#aggiungiVetrinaFibra', 'vetrine/vetrina_fiber.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiVetrinaFibra', 'blocks/vetrine/vetrina_fiber.html');
     //AGGIUNGI OFFERTE ORIZZONTALI
-    CREAPAGINA.addHtmlBlock('#aggiungiOfferteOrizzontali', 'vetrine/vetrina_offerte_orizz.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiOfferteOrizzontali', 'blocks/vetrine/vetrina_offerte_orizz.html');
     //AGGIUNGI ACCORDION
-    CREAPAGINA.addHtmlBlock('#aggiungiAccordion', 'vetrine/vetrina_accordion_demo.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiAccordion', 'blocks/vetrine/vetrina_accordion_demo.html');
     //AGGIUNGI TITOLO GRIGIO
-    CREAPAGINA.addHtmlBlock('#aggiungiTitoloGrigio', 'mini-componenti/blocco_fascia_titolo_grigia.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiTitoloGrigio', 'blocks/mini-componenti/blocco_fascia_titolo_grigia.html');
     //AGGIUNGI STRIP OPTION
-    CREAPAGINA.addHtmlBlock('#aggiungiStripOption', 'vetrine/vetrina_strip_options.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiStripOption', 'blocks/vetrine/vetrina_strip_options.html');
     //AGGIUNGI TARIFFE
-    CREAPAGINA.addHtmlBlock('#aggiungiTariffe', 'vetrine/vetrina_world_rates.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiTariffe', 'blocks/vetrine/vetrina_world_rates.html');
     //AGGIUNGI TESTO
-    CREAPAGINA.addHtmlBlock('#aggiungiTestoGenerico', 'vetrine/blocco_testo_generico.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiTestoGenerico', 'blocks/vetrine/blocco_testo_generico.html');
     //AGGIUNGI MONDO
-    CREAPAGINA.addHtmlBlock('#aggiungiMondo', 'vetrina_country_offers.html', 'selectCountry');
+    CREAPAGINA.addHtmlBlock('#aggiungiMondo', 'blocks/vetrina_country_offers.html', 'selectCountry');
     //AGGIUNGI HOME AND LIFE
-    CREAPAGINA.addHtmlBlock('#aggiungiHomeLifeExt', 'vetrina_homeAndLifeExt.html', 'select', true, '.showcase_homeAndLifeExt_device__showMore', '.blocco_homeAndLifeExt', '.showcase_homeAndLifeExt_device__single');
+    CREAPAGINA.addHtmlBlock('#aggiungiHomeLifeExt', 'blocks/vetrina_homeAndLifeExt.html', 'select', true, '.showcase_homeAndLifeExt_device__showMore', '.blocco_homeAndLifeExt', '.showcase_homeAndLifeExt_device__single');
     //AGGIUNGI VISORE DEVICE
-    CREAPAGINA.addHtmlBlock('#aggiungiVisoreDevice', 'vetrine/blocco_cruscotto_device.html', 'selectBXslider');
+    CREAPAGINA.addHtmlBlock('#aggiungiVisoreDevice', 'blocks/vetrine/blocco_cruscotto_device.html', 'selectBXslider');
     //AGGIUNGI strip plans
-    CREAPAGINA.addHtmlBlock('#aggiungiStripPlans', 'vetrine/vetrina_strip_plans.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiStripPlans', 'blocks/vetrine/vetrina_strip_plans.html');
     //AGGIUNGI OPERATORE
-    CREAPAGINA.addHtmlBlock('#aggiungiOperatore', 'vetrine/blocco_contatto_operatore.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiOperatore', 'blocks/vetrine/blocco_contatto_operatore.html');
     //AGGIUNGI vantaggi
-    CREAPAGINA.addHtmlBlock('#aggiungiVantaggi', 'vetrine/vetrina_advantages.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiVantaggi', 'blocks/vetrine/vetrina_advantages.html');
     //AGGIUNGI MGM
-    CREAPAGINA.addHtmlBlock('#aggiungiMgm', 'homepages/blocco_mgm.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiMgm', 'blocks/homepages/blocco_mgm.html');
     //AGGIUNGI SLIDER SERVIZI
-    CREAPAGINA.addHtmlBlock('#aggiungiBundleServizi', 'homepages/blocco_servizi.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiBundleServizi', 'blocks/homepages/blocco_servizi.html');
     //CREA HP PRIVATI DEVICE
     $('#createHomePagePrivatiDevice').click(function() {
         CREAPAGINA.homePage('#aggiungiVisoreStandard', '#aggiungiStripMenu', '#aggiungiSliderOfferta', '#aggiungiRicarica', '#aggiungiVisoreImmagine', '#aggiungiAppContatto', '#aggiungiSliderOfferta', '#aggiungiMgm', '#aggiungiHomeLife', '#aggiungiAssistenza', '#aggiungiNewsletter');
