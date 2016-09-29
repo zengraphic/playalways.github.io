@@ -3,8 +3,12 @@
     max-width: 1024px;
     position: relative;
     overflow: hidden;
-    .link_contact{
+    .link_contact {
         white-space: nowrap;
+        color: $color-orange;
+        &:hover {
+            color: rgba(244, 129, 53, 0.8);
+        }
     }
     .info_link {
         font-size: 1em;
@@ -52,9 +56,9 @@
         top: 15vh;
         right: -450px;
         z-index: 950;
-        width: 500px;  
-       // @include transition(top .5s ease-in-out);             
-        &.contact_open{              
+        width: 500px;
+        // @include transition(top .5s ease-in-out);             
+        &.contact_open {
             top: 0;
         }
         @include breakpoint(small) {
