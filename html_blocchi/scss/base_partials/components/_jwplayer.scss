@@ -1,0 +1,142 @@
+// default video player
+
+.base__jwplayer {
+  display: inline-block;
+  width: 280px;
+  height: auto;
+}
+
+#vid {
+  .jw-cue, .jw-knob {
+    background: $color_orange;
+  }
+}
+
+.jwplayer {
+  font-size: 1rem;
+  font-family: $font_family_regular;
+  display: inline-block;
+
+  .jw-icon-inline, .jw-icon-tooltip, .jw-text-elapsed, .jw-text-duration {
+    padding: 0 0.5em;
+  }
+
+  .jw-text {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .jw-icon-tooltip:before {
+    font-size: 1.4rem;
+  }
+
+  .jw-icon-fullscreen:before {
+    font-family: "FontAwesome";
+    content: "\f0b2";
+    font-size: 1.4rem;
+  }
+
+  .jw-controls {
+    .jw-controlbar {
+      height: 2rem;
+
+      .jw-icon-playback {
+        padding: 0 1rem;
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        height: 2rem;
+        color: transparent;
+        background: white;
+
+        @include radius(4px);
+
+        &:before {
+          color: $color_orange;
+        }
+      }
+    }
+
+    .jw-display-icon-container {
+      background: transparent !important;
+    }
+
+    div[class*="-group"] {
+      vertical-align: middle;
+    }
+
+    .jw-controlbar-center-group {
+      vertical-align: middle;
+      padding: 0 0.5rem;
+
+      .jw-slider-time {
+        height: 2rem;
+
+        .jw-slider-container {
+          margin-top: 0.5rem;
+          height: 2rem;
+
+          /*background: red; */
+          .jw-rail, .jw-buffer {
+            border: 1px solid white;
+
+            @include radius(4px);
+
+            height: 1rem;
+          }
+
+          .jw-progress {
+            border: 1px solid white;
+
+            @include radius(4px);
+
+            height: 1rem;
+
+            @include radius(4px);
+          }
+
+          .jw-rail {
+            background: $color_orange;
+          }
+
+          .jw-buffer {
+            @include radius(4px);
+
+            background: $color_orange;
+          }
+
+          .jw-knob {
+            top: -0.5rem;
+
+            @include radius(4px);
+
+            width: 1rem;
+            height: 2rem;
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+
+    .jw-controlbar-right-group {
+      padding-right: 0.75rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .jwplayer {
+    width: 100% !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .jwplayer {
+    width: 100%;
+    height: auto;
+
+    .jw-controls .jw-controlbar {
+      height: 4rem;
+    }
+  }
+}

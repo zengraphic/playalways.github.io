@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!--- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/wind-style.min.css" />
+    <!--- /CSS -->
+    <!--- JS -->
+    <script type="text/javascript" src="/js/base-libs.min.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <!--- /JS -->
+</head>
+
+<body class="home_page">
+    <div class="container-wind">
+        <div class="row">
+            <div class="blocco_import">
+                <div class="blocco_tabs_menu">
+                    <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                    <!--___________ ______________________INIZIO BLOCCO MENU_________________________________ -->
+                    <div class="strip_menu_tab">
+                        <div class="strip_menu_tab__container slider_menu_tabs">
+                            <li class="strip_menu_tab__item tab_active"><a class="item" href="#tab1">aggiornamenti</a></li>
+                            <li class="strip_menu_tab__item item"><a href="#tab2">promo offerta </a></li>
+                            <li class="strip_menu_tab__item item"><a href="#tab3">promo device </a></li>
+                            <li class="strip_menu_tab__item item"><a href="#tab3">contattaci </a></li>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!--___________ ______________________FINE BLOCCO MENU_________________________________ -->
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+jQuery(document).ready(function($) {
+    $('.slider_menu_tabs').slick({
+        centerMode: false,
+        centerPadding: '0px',
+        slidesToShow: 4,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '80px',
+                slidesToShow: 1
+            }
+        }]
+    });
+
+});
+</script>
+
+</html>

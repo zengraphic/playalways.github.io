@@ -1,0 +1,234 @@
+.strip_plans {
+    @at-root #{&}__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        @include breakpoint(small) {
+            padding: 15px 0;
+        }
+        &.phone_cash {
+            .strip_plans__payment_block__amount {
+                .item--add {
+                    display: none;
+                }
+                .item--total {
+                    width: 100%;
+                    .price {
+                        font-size: $text-medium;
+                    }
+                }
+            }
+        }
+        .vertical-middle {
+            display: table;
+            @include breakpoint(small) {
+                display: block;
+            }
+        }
+        .component {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 5px;
+            border-left: 1px solid $medium-gray;
+            float: none;
+            &:first-child {
+                border-left: none;
+            }
+            @include breakpoint(small) {
+                display: inline-block;
+                width: 100%;
+                padding-bottom: 20px;
+                border-left: none;
+            }
+        }
+    }
+    @at-root #{&}__title {
+        font-size: 1em;
+        font-family: $weight-bold;
+        @include breakpoint(small) {
+            text-align: center;
+            padding: 10px 0;
+        }
+        &--main {
+            font-size: 20px;
+            font-family: $weight-light;
+            color: $color-lightBlue;
+        }
+    }
+    @at-root #{&}__offer_block {
+        &__container {
+            display: inline-block;
+            width: 100%;
+            font-family: $weight-light;
+            .row {
+                display: table;
+                width: 100%;
+            }
+        }
+        &__item {
+            border-left: 1px solid #e6e9ed;
+            display: table-cell;
+            width: 25%;
+            padding: 7px;
+            .item_amount {
+                font-size: 1.5em;
+                font-family: $weight-bold;
+            }
+            &:first-child {
+                border-left: none;
+            }
+            &--price {
+                display: table-cell;
+                vertical-align: middle;
+                width: 25%;
+                padding: 7px 0;
+                .price {
+                    color: $color-lightBlue;
+                    font-size: $text-medium;
+                    .currency {
+                        font-size: 0.75em;
+                    }
+                }
+            }
+        }
+        &__recurrency {
+            .recurrency {
+                padding-top: 15px;
+                font-size: 0.75em;
+            }
+        }
+    }
+    @at-root #{&}__payment_block {
+        &__heading {
+            padding-bottom: 10px;
+            font-size: $text-standard;
+        }
+        &__tabs {
+            position: relative;
+            font-size: 12px;
+            &__container {
+                padding-left: 0;
+                display: table;
+                width: 100%;
+                margin: 0 auto;
+                border-bottom: 1px solid $medium-gray;
+            }
+            .tab {
+                display: table-cell;
+                width: auto;
+                min-width: 70px;
+                cursor: pointer;
+                position: relative;
+                .text {
+                    display: inline-block;
+                }
+                &:hover,
+                &.active {
+                    .text {
+                        position: relative;
+                        font-family: $weight-bold;
+                    }
+                    .text,
+                    .logo .image {
+                        &:after {
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            height: 2px;
+                            bottom: 0;
+                            background-color: $color-orange;
+                            left: 0;
+                            right: 0;
+                            z-index: 2;
+                        }
+                    }
+                }
+                &:before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    left: -1.8%;
+                    width: 4px;
+                    height: 4px;
+                    background-color: black;
+                    @include border-radius(2px);
+                }
+                &:first-child:before {
+                    content: none;
+                }
+            }
+            &__title {
+                &--logo {
+                    .logo {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 5%;
+                        right: 5%;
+                        text-align: center;
+                        .image {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            background: url("../../img/logos/icon_agos.png") no-repeat center center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        &__amount {
+            display: table;
+            width: 100%;
+            margin-top: 20px;
+            font-family: $weight-light;
+            .item {
+                display: table-cell;
+                vertical-align: middle;
+                &--add {
+                    width: auto;
+                    .price {
+                        font-family: $weight-normal;
+                        font-size: 1.5em;
+                        .currency {
+                            font-size: 0.75em;
+                        }
+                    }
+                }
+                &--total {
+                    width: 40%;
+                    .price {
+                        font-size: 3em;
+                        color: $color-lightBlue;
+                        &~.sub {
+                            font-size: 13px;
+                        }
+                        .currency {
+                            font-size: 0.75em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @at-root #{&}__button {
+        text-align: center;
+        .button--slim {
+            min-width: 90%;
+            display: inline-block;
+            font-size: 1em;
+            @include breakpoint(small) {
+                min-width: 50%;
+            }
+        }
+        .sub {
+            text-transform: uppercase;
+            font-family: $weight-light;
+            font-size: 0.75em;
+            padding-top: 5px;
+        }
+    }
+}

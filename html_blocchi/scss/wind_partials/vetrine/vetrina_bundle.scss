@@ -1,0 +1,226 @@
+// BUNDLE BLOCCO 2
+.showcase_bundle_block {
+    line-height: 1.08;
+    padding-bottom: 30px;
+    .container_secondColumn {
+        padding-top: 5px;
+    }
+    &__container {
+        -o-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -webkit-transition: all 0.45s ease-in-out;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    h2 {
+        font-family: $weight-boldCond;
+    }
+    &__showMore {
+        color: $color-orange;
+        font-size: 1.250em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__showOffers {
+        color: $color-orange;
+        margin-left: 30px;
+        width: 100%;
+        display: none;
+        font-size: 1.250em;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @at-root #{&}__tabs {
+        width: 100%;
+        text-align: right;
+        text-transform: uppercase;
+        color: $color-standardText;
+        background-color: #e6e9ed;
+        padding: 20px 0px 15px 15px;
+        &__container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+        &--title {
+            margin-right: 40px;
+            cursor: pointer;
+            &--Left {
+                float: left;
+                text-transform: none;
+                font-size: 1.500em;
+            }
+            &:hover {
+                border-bottom: 1px solid $color-orange;
+            }
+            &.active {
+                border-bottom: 1px solid $color-orange;
+                color: $color-orange;
+            }
+        }
+    }
+    &--title {
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    &__showMore {
+        color: $color-orange;
+        font-size: 1.250em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @at-root #{&}__single {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        display: none;
+        &:nth-child(-n+3) {
+            display: block;
+        }
+        &.item {
+            position: relative;
+            &:after {
+                background-color: #ccd1d9;
+                width: 1px;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 15%;
+                bottom: 7%;
+                right: 0%;
+                min-height: 1px;
+            }
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        &--bigAmount {
+            font-size: 1.625em;
+            font-family: $weight-light;
+            margin-bottom: 5px;
+            height: 84px;
+            overflow: hidden;
+        }
+        &--smallAmount {
+            font-size: 1.250em;
+            line-height: 1.125em;
+            font-family: $weight-light;
+            height: 44px;
+            overflow: hidden;
+        }
+        &--title {
+            margin-top: 30px;
+            margin-bottom: 5px;
+            height: 65px;
+            color: $color-lightBlue;
+            font-size: 1.875em;
+            font-family: $weight-bold;
+        }
+        &--disclaimer {
+            font-size: 0.688em;
+            font-family: $weight-light;
+            margin: 10px 0px 30px 0px;
+            height: 33px;
+            overflow: hidden;
+        }
+        &--price_discounted {
+            font-size: 1.500em;
+            color: $color-standardText;
+            font-family: $weight-light;
+            position: relative;
+            height: 25px;
+            padding-top: 2px;
+            overflow: hidden;
+            &::after {
+                border-bottom: 1px solid #000;
+                content: "";
+                left: 0;
+                margin-top: calc(0.125em / 2 * -1);
+                position: absolute;
+                left: calc(50% - 45px);
+                right: calc(50% - 45px);
+                top: 50%;
+            }
+            .currency {
+                font-size: 0.875em;
+            }
+        }
+        &--mainPrice {
+            font-size: 3.250em;
+            color: $color-lightBlue;
+            font-family: $weight-light;
+            height: 45px;
+            margin-bottom: 5px;
+            .currency {
+                font-size: 30px;
+            }
+        }
+        &--recurrency {
+            font-family: $weight-light;
+            font-size: 0.813em;
+            margin-bottom: 10px;
+            height: 15px;
+        }
+        &__placeholder {
+            display: none;
+        }
+        // ============ CARD VERSIONE 1 ===========      
+        &--card--V1 {}
+        // ============ FINE CARD VERSIONE 1 ===========
+        &--card--V2 {
+            .showcase_bundle_block__single {
+                &--smallAmount {
+                    height: 110px;
+                    margin-bottom: 7px;
+                }
+                &--disclaimer {
+                    display: none;
+                }
+            }
+        }
+        &--card--V3 {
+            .showcase_bundle_block__single {
+                &--bigAmount {
+                    height: 140px;
+                }
+                &--smallAmount {
+                    display: none;
+                }
+                &--disclaimer {
+                    height: 22px;
+                    margin-top: 24px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 767px) {
+    .showcase_bundle_block {
+        .container_secondColumn {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}

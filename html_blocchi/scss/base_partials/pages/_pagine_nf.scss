@@ -1,0 +1,63 @@
+//customizing page: Page 404
+
+.title__default--nf {
+  border: none;
+}
+
+.image--nf {
+  @include boxWF(left, 100%);
+
+  img {
+    width: 100%;
+  }
+}
+
+.content_text {
+  @include boxWF(left, 100%);
+
+  margin: 0.6rem 0 3rem;
+
+  p {
+    @include boxWF(left, 100%);
+
+    @include defaultTxt($font_family_regular, 1.2rem);
+
+    color: #444444;
+
+    a.btn {
+      float: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.cont_redes {
+  @include boxWF(left, 100%);
+
+  text-align: center;
+  margin-bottom: 1rem;
+
+  a {
+    font-size: 2.5rem;
+    margin: 0 1rem;
+    text-decoration: none;
+
+    &.btn_fb {
+      color: #3949ab;
+    }
+
+    &.btn_tw {
+      color: #42a5f6;
+    }
+
+    &.btn_gp {
+      color: #d74315;
+    }
+
+    &.btn_yt {
+      color: #d74315;
+    }
+  }
+}
