@@ -20,8 +20,76 @@
     <script type="text/javascript" src="js/toolCreaPagine.js"></script>
     <!--- /JS -->
 </head>
-
+<style>
+#snow{
+    background: none;
+    font-family: Androgyne;
+    background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index:3000;
+    -webkit-animation: snow 10s linear infinite;
+    -moz-animation: snow 10s linear infinite;
+    -ms-animation: snow 10s linear infinite;
+    animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}   
+.noMore{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #444;
+    opacity: 0.7;
+    z-index: 1000;
+}
+.testoAddio{
+    font-size: 30px;
+    color: #000;
+    width: 600px;
+    text-align: center;
+    height: 200px;
+    padding: 25px 50px 15px 50px;
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 100px);
+    z-index: 2000;
+    background-color: white;
+    border: 3px solid #F48136;
+}
+.psNotWorking{
+    font-size: 12px;
+}
+</style>
 <body class="home_page">
+    <div id="snow">
+</div>
+    <div class="testoAddio">toolCreaPagine will always love you, but this is the end my friend. <br><br> Fare thee well.
+    <div class="psNotWorking">P.s. questa pagina non funziona più.</div></div>
+    <div class="noMore"></div>
     <div class="container-wind">
         <div class="row">
             <!-- ============================== CREATORE VISORE ========================= -->
@@ -490,5 +558,9 @@
         </div>
     </div>
 </body>
+
+<script>
+
+</script>
 
 </html>
