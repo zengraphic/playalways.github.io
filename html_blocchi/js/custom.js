@@ -213,6 +213,51 @@ r$(document).ready(function() {
         r$("#action_cc1").css('display', 'none');
     });
     var timer = 500;
+    r$("#option_cc1").click(function() {
+        r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+    r$("#option_cc2").click(function() {
+        r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+    r$("#option_cc1b").click(function() {
+        //r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        //r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+    r$("#option_cc2b").click(function() {
+        //r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        //r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+
     r$("#option1").click(function() {
         r$("#action_c1 .cont_item1").slideDown(timer);
         r$("#action_c2 .cont_item1").slideUp(timer);
