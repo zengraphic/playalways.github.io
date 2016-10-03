@@ -126,6 +126,7 @@
             position: relative;
             &.box_2 {
                 padding-top: 0;
+                text-align: center;
                 &.flag {
                     padding-bottom: 2rem;
                 }
@@ -168,34 +169,11 @@
             .base__select.base__select {
                 margin: 0.5rem 0 0 0;
             }
-            .cont_item1 {
-                @include boxWF(left, 100%);
-                display: none;
-                .cont__action-cc1 {
-                    display: none;
-                    margin-left: 15px;
-                }
-                .cvv_container {
-                    position: relative;
-                    float: left;
-                    width: 33%;
-                    .icon_tooltip {
-                        position: absolute;
-                        bottom: 12px;
-                        right: 10px;
-                    }
-                }
-                &.item_da {
-                    padding: 0 1.5rem 1rem 1.5rem;
-                    .radio {
-                        margin-top: 1rem;
-                    }
-                }
-                .cont__item_cc {
+            .cont__item_cc {
                     @include boxWF(left, 100%);
                     border-bottom: 1px solid $color_grey_medium_light;
-                    padding: 1.2rem 0 0.5rem 1.2rem;
-                    margin-bottom: 1.5rem;
+                    padding-bottom: 0.5rem;
+                    margin-bottom: 0.5rem;
                     .radio.base__radio label {
                         &.label_for_creditCard {
                             float: none;
@@ -236,6 +214,30 @@
                         text-transform: uppercase;
                     }
                 }
+            .cont_item1 {
+                @include boxWF(left, 100%);
+                display: none;
+                .cont__action-cc1 {
+                    display: none;
+                    margin-left: 15px;
+                }
+                .cvv_container {
+                    position: relative;
+                    float: left;
+                    width: 33%;
+                    .icon_tooltip {
+                        position: absolute;
+                        bottom: 12px;
+                        right: 10px;
+                    }
+                }
+                &.item_da {
+                    padding: 0 1.5rem 1rem 1.5rem;
+                    .radio {
+                        margin-top: 1rem;
+                    }
+                }
+                    
             }
         }
         h3 {
@@ -573,6 +575,19 @@
         }
     }
 }
+.showMore {
+        color: $color-orange;
+        font-size: 1.250em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font_family_light;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+    }
+    
+    .showMore_content {
+        display: none;
+    }
 
 @media (max-width: 767px) {
     .base__popup.refill_block .container {
