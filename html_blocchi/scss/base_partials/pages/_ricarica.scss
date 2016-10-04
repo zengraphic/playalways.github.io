@@ -151,14 +151,14 @@
         }
         .item-box {
             @include boxWF(left, 100%);
-            padding: 0.5rem 2.3rem 1rem 2.3rem;
+            padding: 0.5rem 2.3rem ;
             &.padding-t {
                 padding-top: 0;
             }
             &.active {
                 background-color: $color_grey_light_light;
                 margin: 0 0 1rem 0;
-                padding-top: 1rem;
+                padding-top: 0.5rem;
                 &.last-i {
                     margin-bottom: 0;
                 }
@@ -267,7 +267,7 @@
                 }
                 .cvv_container {
                     position: relative;
-                    float: left;
+                    float: right;
                     width: 33%;
                     
                     .icon_tooltip {
@@ -467,8 +467,8 @@
                 background-image: url(../img/icons-interface/icon_answer.png);
                 background-repeat: no-repeat;
                 background-position: 87% center; */
-                padding-top: 14px;
-                padding-bottom: 8px;
+                padding-top: 11px;
+                padding-bottom: 12px;
                     &.cvv_carta {
                         @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
                     }
@@ -525,8 +525,8 @@
                 .dropdown-toggle {
                     color: $color_robin;
                     padding: 0.8rem 1.429rem;
-                    padding-top: 10px;
-                    padding-bottom: 20px;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
                     &:focus {
                         border: 1px solid #f48135;
                     }
@@ -655,18 +655,18 @@
 
 @media (max-width: 767px) {
     .base__popup.refill_block .base__select.base__select.select_value span .euro {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 767px) {
     .base__popup.refill_block .base__select.base__select.select_value span .textl {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 767px) {
     .base__popup.refill_block .base__select.base__select.select_value .dropdown-toggle .filter-option {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 }
