@@ -30,7 +30,6 @@
     }
     &.refill_block {
         .container {
-
             height: calc(100% - 43px);
             position: fixed;
             z-index: 2;
@@ -170,50 +169,95 @@
                 margin: 0.5rem 0 0 0;
             }
             .cont__item_cc {
-                    @include boxWF(left, 100%);
-                    border-bottom: 1px solid $color_grey_medium_light;
-                    padding-bottom: 0.5rem;
-                    margin-bottom: 0.5rem;
-                    .radio.base__radio label {
-                        &.label_for_creditCard {
-                            float: none;
-                            width: 100%;
-                        }
-                        .detail-cc {
-                            @include boxWF(left, 100%);
-                            @include defaultTxt($font_family_regular, 1.1rem);
-                            color: #444444;
-                            line-height: normal;
-                            letter-spacing: -0.4px;
-                            .card-image {
-                                float: left;
-                                margin-right: 10px;
-                            }
-                            .card-number-crypted {
-                                font-size: 8px;
-                            }
-                            .card-image,
-                            .card-number-crypted,
-                            .card-number-clear,
-                            .expiration-label,
-                            .expiration-date {
-                                font-family: $font_family_light;
-                            }
-                        }
+                @include boxWF(left, 100%);
+                border-bottom: 1px solid $color_grey_medium_light;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.5rem;
+                .radio.base__radio label {
+                    &.label_for_creditCard {
+                        float: none;
+                        width: 100%;
                     }
-                    a.btn {
-                        @include boxWF(right, auto);
-                        margin: 0.8rem 0 0 0.5rem;
-                        @include defaultTxt($font_family_regular, 0.9rem);
-                        padding: 0;
-                    }
-                    h4 {
-                        @include boxWF(left, auto);
-                        margin: 0.8rem 0 0 2.1rem;
-                        @include defaultTxt($font_family_regular, 0.9rem);
-                        text-transform: uppercase;
+                    .detail-cc {
+                        @include boxWF(left, 100%);
+                        @include defaultTxt($font_family_regular, 1.1rem);
+                        color: #444444;
+                        line-height: normal;
+                        letter-spacing: -0.4px;
+                        .card-image {
+                            float: left;
+                            margin-right: 10px;
+                        }
+                        .card-number-crypted {
+                            font-size: 8px;
+                        }
+                        .card-image,
+                        .card-number-crypted,
+                        .card-number-clear,
+                        .expiration-label,
+                        .expiration-date {
+                            font-family: $font_family_light;
+                        }
                     }
                 }
+                a.btn {
+                    @include boxWF(right, auto);
+                    margin: 0.8rem 0 0 0.5rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    padding: 0;
+                }
+                h4 {
+                    @include boxWF(left, auto);
+                    margin: 0.8rem 0 0 2.1rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    text-transform: uppercase;
+                }
+            }
+            .cont__item_cc2 {
+                @include boxWF(left, 100%);
+                border-bottom: 1px solid $color_grey_medium_light;
+                padding: 1.2rem 0 0.5rem 1.2rem;
+                margin-bottom: 0.5rem;
+                .radio.base__radio label {
+                    &.label_for_creditCard {
+                        float: none;
+                        width: 100%;
+                    }
+                    .detail-cc {
+                        @include boxWF(left, 100%);
+                        @include defaultTxt($font_family_regular, 1.1rem);
+                        color: #444444;
+                        line-height: normal;
+                        letter-spacing: -0.4px;
+                        .card-image {
+                            float: left;
+                            margin-right: 10px;
+                        }
+                        .card-number-crypted {
+                            font-size: 8px;
+                        }
+                        .card-image,
+                        .card-number-crypted,
+                        .card-number-clear,
+                        .expiration-label,
+                        .expiration-date {
+                            font-family: $font_family_light;
+                        }
+                    }
+                }
+                a.btn {
+                    @include boxWF(right, auto);
+                    margin: 0.8rem 0 0 0.5rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    padding: 0;
+                }
+                h4 {
+                    @include boxWF(left, auto);
+                    margin: 0.8rem 0 0 2.1rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    text-transform: uppercase;
+                }
+            }
             .cont_item1 {
                 @include boxWF(left, 100%);
                 display: none;
@@ -225,6 +269,7 @@
                     position: relative;
                     float: left;
                     width: 33%;
+                    
                     .icon_tooltip {
                         position: absolute;
                         bottom: 12px;
@@ -237,7 +282,6 @@
                         margin-top: 1rem;
                     }
                 }
-                    
             }
         }
         h3 {
@@ -425,6 +469,12 @@
                 background-position: 87% center; */
                 padding-top: 14px;
                 padding-bottom: 8px;
+                    &.cvv_carta {
+                        @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
+                    }
+                    &.cvv_mastercard {
+                        @include creditSimbol(url(../img/credit-cards/cvv_mastercard.png));
+                    }
             }
             &[type="text"].email_c,
             &[type="email"].email_c,
@@ -526,7 +576,7 @@
         }
         .radio {
             @include boxWF(left, 100%);
-            margin: 0 0 0.5rem 0;
+            margin: 1.2rem 0 0.5rem 0;
             &.base__radio label {
                 float: left;
                 color: $color_grey_dark;
@@ -575,19 +625,20 @@
         }
     }
 }
+
 .showMore {
-        color: $color-orange;
-        font-size: 1.250em;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $font_family_light;
-        margin-bottom: 0.5rem;
-        cursor: pointer;
-    }
-    
-    .showMore_content {
-        display: none;
-    }
+    color: $color-orange;
+    font-size: 1.250em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font_family_light;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.showMore_content {
+    display: none;
+}
 
 @media (max-width: 767px) {
     .base__popup.refill_block .container {

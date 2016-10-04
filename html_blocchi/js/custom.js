@@ -41,6 +41,8 @@ r$(function() {
 
 });
 
+
+
 /* Validation number (Ricarica) - not affect placeholder */
 function validate(evt) {
     var theEvent = evt || window.event;
@@ -213,6 +215,51 @@ r$(document).ready(function() {
         r$("#action_cc1").css('display', 'none');
     });
     var timer = 500;
+    r$("#option_cc1").click(function() {
+        r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+    r$("#option_cc2").click(function() {
+        r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+    r$("#option_cc1b").click(function() {
+        //r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        //r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+    r$("#option_cc2b").click(function() {
+        //r$("#action_c1 .cont_item1").slideUp(timer);
+        r$("#action_c2 .cont_item1").slideUp(timer);
+        r$("#action_c3 .cont_item1").slideUp(timer);
+        r$("#action_c4 .cont_item1").slideUp(timer);
+        r$("#action_c1").addClass("active");
+        //r$("#action_c1").removeClass("active");
+        r$("#action_c2").removeClass("active");
+        r$("#action_c3").removeClass("active");
+        r$("#action_c4").removeClass("active");
+    });
+
     r$("#option1").click(function() {
         r$("#action_c1 .cont_item1").slideDown(timer);
         r$("#action_c2 .cont_item1").slideUp(timer);
@@ -264,15 +311,23 @@ r$(document).ready(function() {
         r$("#action_c4").addClass("active");
     });
 
-    function clearCard(){
-      r$('#input_cc').removeClass('americane_cc');
-      r$('#input_cc').removeClass('diners_cc');
-      r$('#input_cc').removeClass('visa_cc');
-      r$('#input_cc').removeClass('maestro_cc');
-      r$('#input_cc').removeClass('masterc_cc');  
-      r$('#input_cc').removeClass('general_cc');        
-      r$('#input_cc').removeClass('aura_cc');                              
+    function clearCard(inputToClear, cvvToClear) {
+        if (inputToClear) {
+            r$(inputToClear).removeClass('americane_cc');
+            r$(inputToClear).removeClass('diners_cc');
+            r$(inputToClear).removeClass('visa_cc');
+            r$(inputToClear).removeClass('maestro_cc');
+            r$(inputToClear).removeClass('masterc_cc');
+            r$(inputToClear).removeClass('general_cc');
+            r$(inputToClear).removeClass('aura_cc');
+        }
+        if (cvvToClear) {
+            console.log(cvvToClear);
+            r$(cvvToClear).removeClass('cvv_carta');
+            r$(cvvToClear).removeClass('cvv_mastercard');
+        }
     }
+
 
 
     // Four digits validation (RICARICA) to display simbol credit card
@@ -325,12 +380,28 @@ r$(document).ready(function() {
                     break;
 
             }
-            clearCard();
+            clearCard('#input_cc', false);
             r$("#input_cc").addClass(card);
             r$(".visa_cc").fadeIn(10);
             r$(".tooltip").css("display", "none");
         }
+        else{
+         clearCard('#input_cc', false);   
+        }
+        console.log("lunghezza:" + value.length);
+        if ((value.length >= 4)) {
+            if (r$('#input_cc').hasClass('masterc_cc')) {
+                r$('#security_cc').addClass('cvv_mastercard');
+                r$('.cvv_mastercard').fadeIn(10);
+            } else {
+                r$('#security_cc').addClass('cvv_carta');
+            }
+        } else {
+            clearCard(false, '#security_cc');
+        }
     });
+
+
 
 
     r$('.security_cc').click(function() {
@@ -345,6 +416,8 @@ r$(document).ready(function() {
     r$('.btn-alert_out').click(function() {
         r$(".box__alert").fadeOut("xslow");
     });
+
+
 
     //close dialog squadra
     r$('.btn_close').click(function() {
@@ -437,6 +510,7 @@ r$(document).ready(function() {
     }
 
 });
+
 
 r$(function() {
     r$('#select-prueba').on('change', function() {

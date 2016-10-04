@@ -100,7 +100,7 @@
                                         </a>
                                 </li>
                                 <li>
-                                    <a class="btn_carello" href="#">
+                                    <a class="btn_carrello" href="#">
                                             CARRELLO
                                         </a>
                                 </li>
@@ -134,7 +134,7 @@
                                         </a>
                                 </li>
                                 <li>
-                                    <a class="btn_carello" href="#">
+                                    <a class="btn_carrello" href="#">
                                             CARRELLO
                                         </a>
                                 </li>
@@ -250,7 +250,7 @@
                     <div class="showMore_content">
                         <div class="item-box">
                             <div class="cont__item_cc">
-                            <div class="base__radio radio radio-inline">
+                            <div class="base__radio radio radio-inline optional_card">
                                 <input type="radio" id="option_cc2" value="option_cc2" name="radioInline">
                                 <label class="label_for_creditCard" for="option_cc2">
                                     <div class="detail-cc">
@@ -298,7 +298,7 @@
                                 </select>
                                 <div class="cvv_container">
                                     <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" />
-                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit." />
+                                    <!-- <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip-orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit." /> -->
                                     <div class="clear"></div>
                                 </div>
                                 <div class="base__checkbox checkbox checkbox-inline remember_check">
@@ -366,7 +366,7 @@
                 <div class="row">
                     <div class="top">
                         <a class="btn_sa" href="#">
-                            <img src="../..img/icons-interface/icon_1.png">
+                            <img src="../../img/icons-interface/icon_1.png">
                             <span>Serve aiuto?</span>
                         </a>
                         <a class="mfp-close btn_close" href="#">
@@ -439,8 +439,9 @@ $wind(document).ready(function() {
     $wind('.open_sidebar_topUp').click(function() {
         console.log('entro');
         $wind('.mfp-bg, .mfp-wrap').css('height', '100%');
-        // var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-        // radioCC.prop('checked', true);
+         var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
+         radioCC.prop('checked', true);
+         $wind('.top_up_button_final').prop("disabled", false);
         // $wind('#action_c1').addClass('active').find('.cont_item1').show();
     });
 
@@ -451,7 +452,7 @@ $wind(document).ready(function() {
 
     $wind("#input_cc, #security_cc").keyup(function() {
         var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
-        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
+        //var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
         var securityCC = $wind('#security_cc');
         if (($wind('#input_cc').val().length > 8) && subRadioNewCard.is(':checked') && securityCC.val().length >= 3) {
             $wind('.top_up_button_final').prop("disabled", false);
@@ -466,10 +467,11 @@ $wind(document).ready(function() {
         var radioBill = $wind('.bill_main_radio input[type="radio"]');
         var subRadioBill = $wind('.item_bill input[type="radio"]');
         var subRadioCharge = $wind('.item_charge input[type="radio"]');
-        var subRadioCC = $wind('.cont__item_cc3 input[type="radio"]');
+        var subRadioCC = $wind('.optional_card input[type="radio"]');
         var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
         var securityCC = $wind('#security_cc');
         $wind('.top_up_button_final').prop("disabled", true);
+
         if (radioCC.is(':checked')) {
             console.log('carta di credito checked');
             $wind('.top_up_button_final').prop("disabled", false);
