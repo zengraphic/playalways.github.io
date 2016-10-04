@@ -17,12 +17,150 @@
     <script type="text/javascript" src="../../js/base-libs.min.js"></script>
     <script type="text/javascript" src="../../js/base.js"></script>
     <script type="text/javascript" src="../../js/script.js"></script>
-
     <script type="text/javascript" src="../../js/captcha.js"></script>
     <!--- /JS -->
+    <script type="text/javascript">
+    var onloadCallback = function() {
+
+        var siteKey = '6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT';
+        // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        grecaptcha.render('example-light-1', {
+            'sitekey': siteKey,
+            'theme': 'custom',
+            'size': 'compact'
+        });
+        grecaptcha.render('example-light-2', {
+            'sitekey': siteKey,
+            'theme': 'light',
+            'size': 'normal',
+            'type': 'image'
+        });
+        grecaptcha.render('example-light-3', {
+            'sitekey': siteKey,
+            'theme': 'light',
+            'size': 'normal',
+            'type': 'audio'
+        });
+        grecaptcha.render('example-dark-1', {
+            'sitekey': siteKey,
+            'theme': 'dark',
+            'size': 'compact'
+        });
+        grecaptcha.render('example-dark-2', {
+            'sitekey': siteKey,
+            'theme': 'dark',
+            'size': 'normal',
+            'type': 'image'
+        });
+        grecaptcha.render('example-dark-3', {
+            'sitekey': siteKey,
+            'theme': 'dark',
+            'size': 'normal',
+            'type': 'audio'
+        });
+
+
+
+    };
+    
+    </script>
 </head>
 
 <body>
-	
+    <div class="container_testo_generico">
+        <div style="margin-top:50px;">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <label>
+                    <ul>
+                        <li>theme: light</li>
+                        <li>size: compact</li>
+                    </ul>
+                </label>
+                <form class="" action="javascript:grecaptcha.reset();">
+                    <div id="example-light-1"></div>
+                    <br>
+                    <input class="btn btn-warning" type="submit" value="reset">
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <label>
+                    <ul>
+                        <li>theme: light</li>
+                        <li>size: normal</li>
+                        <li>type: image</li>
+                    </ul>
+                </label>
+                <form class="" action="javascript:grecaptcha.reset();">
+                    <div id="example-light-2"></div>
+                    <br>
+                    <input class="btn btn-warning" type="submit" value="reset">
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <label>
+                    <ul>
+                        <li>theme: light</li>
+                        <li>size: normal</li>
+                        <li>type: audio</li>
+                    </ul>
+                </label>
+                <form class="" action="javascript:grecaptcha.reset();">
+                    <div id="example-light-3"></div>
+                    <br>
+                    <input class="btn btn-warning" type="submit" value="reset">
+                </form>
+            </div>
+        </div>
+        <div style="margin-top:50px;">
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <label>
+                    <ul>
+                        <li>theme: dark</li>
+                        <li>size: compact</li>
+                    </ul>
+                </label>
+                <form class="" action="javascript:grecaptcha.reset();">
+                    <div id="example-dark-1"></div>
+                    <br>
+                    <input class="btn btn-warning" type="submit" value="reset">
+                </form>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <label>
+                    <ul>
+                        <li>theme: dark</li>
+                        <li>size: normal</li>
+                        <li>type: audio</li>
+                    </ul>
+                </label>
+                <form class="" action="javascript:grecaptcha.reset();">
+                    <div id="example-dark-2"></div>
+                    <br>
+                    <input class="btn btn-warning" type="submit" value="reset">
+                </form>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <label>
+                    <ul>
+                        <li>theme: dark</li>
+                        <li>size: normal</li>
+                        <li>type: image</li>
+                    </ul>
+                </label>
+                <form class="" action="javascript:grecaptcha.reset();">
+                    <div id="example-dark-3"></div>
+                    <br>
+                    <input class="btn btn-warning" type="submit" value="reset">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </body>
+
 </html>
