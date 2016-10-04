@@ -151,14 +151,14 @@
         }
         .item-box {
             @include boxWF(left, 100%);
-            padding: 0.5rem 2.3rem 1rem 2.3rem;
+            padding: 0.5rem 2.3rem;
             &.padding-t {
                 padding-top: 0;
             }
             &.active {
                 background-color: $color_grey_light_light;
                 margin: 0 0 1rem 0;
-                padding-top: 1rem;
+                padding-top: 0.5rem;
                 &.last-i {
                     margin-bottom: 0;
                 }
@@ -267,9 +267,8 @@
                 }
                 .cvv_container {
                     position: relative;
-                    float: left;
+                    float: right;
                     width: 33%;
-                    
                     .icon_tooltip {
                         position: absolute;
                         bottom: 12px;
@@ -284,347 +283,351 @@
                 }
             }
         }
-        h3 {
-            @include boxWF(left, 100%);
-            color: $color_grey_dark;
-            @include defaultTxt($font_family_regular, 1.2rem);
-            line-height: normal;
-            letter-spacing: 0.4px;
-            margin-bottom: 1.2rem;
-            &.text2 {
-                margin-top: 1.26rem;
-            }
-            &.text3 {
-                margin-bottom: 1.4rem;
-            }
+    }
+    h3 {
+        @include boxWF(left, 100%);
+        color: $color_grey_dark;
+        @include defaultTxt($font_family_regular, 1.2rem);
+        line-height: normal;
+        letter-spacing: 0.4px;
+        margin-bottom: 1.2rem;
+        &.text2 {
+            margin-top: 1.26rem;
         }
-        h4 {
-            @include boxWF(left, 100%);
-            @include defaultTxt($font_family_regular, 0.9rem);
-            letter-spacing: -0.4px;
-            color: #51565a;
-            margin: 1rem 0 1.4rem;
-            a {
-                text-decoration: none;
-            }
-            &.text_p {
-                float: left;
-                font-size: 1.1rem;
-                a {
-                    font-family: $font_family_bold2;
-                    color: #51565a;
-                    font-weight: 500;
-                    margin-bottom: 0;
-                }
-            }
+        &.text3 {
+            margin-bottom: 1.4rem;
         }
-        h5 {
-            @include boxWF(left, 100%);
-            font-size: 0.8rem;
-            color: #51565a;
-            margin: 0.7rem 0 1.4rem;
+    }
+    h4 {
+        @include boxWF(left, 100%);
+        @include defaultTxt($font_family_regular, 0.9rem);
+        letter-spacing: -0.4px;
+        color: #51565a;
+        margin: 1rem 0 1.4rem;
+        a {
+            text-decoration: none;
+        }
+        &.text_p {
+            float: left;
+            font-size: 1.1rem;
             a {
-                text-decoration: none;
-            }
-            &.new_cc {
-                @include boxWF(left, 100%);
-                margin: 1rem 0 0;
-                @include defaultTxt($font_family_bold2, 1.1rem);
+                font-family: $font_family_bold2;
+                color: #51565a;
                 font-weight: 500;
-                color: $color_grey_dark;
-            }
-        }
-        button.btn_refil {
-            @include boxWF(left, 100%);
-            background-color: $color_orange;
-            color: #FFFFFF;
-            font-size: 1.2rem;
-            height: auto;
-            letter-spacing: 0.04px;
-            line-height: normal;
-            padding: 18px 0 12px;
-            // margin-bottom: 1.5rem;
-            &:hover {
-                opacity: 0.7;
-            }
-            &:disabled {
-                background-color: #ccd0d9;
-            }
-            &.flag,
-            &.btn_icc {
                 margin-bottom: 0;
             }
-            &.btn_save {
-                margin: 1rem 0 0;
-            }
-            &.top_up_newCard {
-                background-color: #fff !important;
-                border: 1px solid #f48135 !important;
-                text-transform: uppercase !important;
-                color: #f48135 !important;
-                padding-top: 18px !important;
-                padding-bottom: 12px !important;
-            }
         }
-        .action_numbert {
-            display: none;
+    }
+    h5 {
+        @include boxWF(left, 100%);
+        font-size: 0.8rem;
+        color: #51565a;
+        margin: 0.7rem 0 1.4rem;
+        a {
+            text-decoration: none;
         }
-        .top_up_button_final {
-            margin-bottom: 30px;
+        &.new_cc {
+            @include boxWF(left, 100%);
+            margin: 1rem 0 0;
+            @include defaultTxt($font_family_bold2, 1.1rem);
+            font-weight: 500;
+            color: $color_grey_dark;
         }
-        .top_up_remove_btn {
-            color: #f48135;
+    }
+    button.btn_refil {
+        @include boxWF(left, 100%);
+        background-color: $color_orange;
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        height: auto;
+        letter-spacing: 0.04px;
+        line-height: normal;
+        padding: 18px 0 12px;
+        // margin-bottom: 1.5rem;
+        &:hover {
+            opacity: 0.7;
         }
-        input {
-            float: left;
-            &[type="text"],
-            &[type="email"],
-            &[type="password"],
-            &[type="number"] {
-                margin-bottom: 0.5rem;
-                @include defaultTxt($font_family_light, 1.1rem);
-                border: 1px solid $color_grey_medium_light;
-                width: 100%;
-                font-weight: 100;
-                background: #ffffff;
-                color: #4a4a4a !important;
-            }
-            //END CREDIC CARD
-            &[type="text"][type="number"],
-            &[type="email"][type="number"],
-            &[type="password"][type="number"],
-            &[type="number"][type="number"] {
-                -webkit-appearance: none;
-            }
-            &[type="text"]:active,
-            &[type="email"]:active,
-            &[type="password"]:active,
-            &[type="number"]:active,
-            &[type="text"]:focus,
-            &[type="email"]:focus,
-            &[type="password"]:focus,
-            &[type="number"]:focus,
-            &[type="text"]:hover,
-            &[type="email"]:hover,
-            &[type="password"]:hover,
-            &[type="number"]:hover {
-                border: 1px solid $color_orange;
-            }
-            &[type="text"].visa_cc,
-            &[type="email"].visa_cc,
-            &[type="password"].visa_cc,
-            &[type="number"].visa_cc {
-                @include creditSimbol(url(../img/credit-cards/visa.jpg));
-            }
-            &[type="text"].americane_cc,
-            &[type="email"].americane_cc,
-            &[type="password"].americane_cc,
-            &[type="number"].americane_cc {
-                @include creditSimbol(url(../img/credit-cards/americanexpress.jpg));
-            }
-            &[type="text"].aura_cc,
-            &[type="email"].aura_cc,
-            &[type="password"].aura_cc,
-            &[type="number"].aura_cc {
-                @include creditSimbol(url(../img/credit-cards/aura.jpg));
-            }
-            &[type="text"].diners_cc,
-            &[type="email"].diners_cc,
-            &[type="password"].diners_cc,
-            &[type="number"].diners_cc {
-                @include creditSimbol(url(../img/credit-cards/diners.jpg));
-            }
-            &[type="text"].general_cc,
-            &[type="email"].general_cc,
-            &[type="password"].general_cc,
-            &[type="number"].general_cc {
-                @include creditSimbol(url(../img/credit-cards/generico.jpg));
-            }
-            &[type="text"].maestro_cc,
-            &[type="email"].maestro_cc,
-            &[type="password"].maestro_cc,
-            &[type="number"].maestro_cc {
-                @include creditSimbol(url(../img/credit-cards/maestro.jpg));
-            }
-            &[type="text"].masterc_cc,
-            &[type="email"].masterc_cc,
-            &[type="password"].masterc_cc,
-            &[type="number"].masterc_cc {
-                @include creditSimbol(url(../img/credit-cards/mastercard.jpg));
-            }
-            &[type="text"].paypal_cc,
-            &[type="email"].paypal_cc,
-            &[type="password"].paypal_cc,
-            &[type="number"].paypal_cc {
-                @include creditSimbol(url(../img/credit-cards/paypal.jpg));
-            }
-            &[type="text"].security_cc,
-            &[type="email"].security_cc,
-            &[type="password"].security_cc,
-            &[type="number"].security_cc {
-                /* float: left;
+        &:disabled {
+            background-color: #ccd0d9;
+        }
+        &.flag,
+        &.btn_icc {
+            margin-bottom: 0;
+        }
+        &.btn_save {
+            margin: 1rem 0 0;
+        }
+        &.top_up_newCard {
+            background-color: #fff !important;
+            border: 1px solid #f48135 !important;
+            text-transform: uppercase !important;
+            color: #f48135 !important;
+            padding-top: 18px !important;
+            padding-bottom: 12px !important;
+        }
+    }
+    .action_numbert {
+        display: none;
+    }
+    .top_up_button_final {
+        margin-bottom: 30px;
+    }
+    .top_up_remove_btn {
+        color: #f48135;
+    }
+    input {
+        float: left;
+        &[type="text"],
+        &[type="email"],
+        &[type="password"],
+        &[type="number"] {
+            margin-bottom: 0.5rem;
+            @include defaultTxt($font_family_light, 1.1rem);
+            border: 1px solid $color_grey_medium_light;
+            width: 100%;
+            font-weight: 100;
+            background: #ffffff;
+            color: #4a4a4a !important;
+        }
+        //END CREDIC CARD
+        &[type="text"][type="number"],
+        &[type="email"][type="number"],
+        &[type="password"][type="number"],
+        &[type="number"][type="number"] {
+            -webkit-appearance: none;
+        }
+        &[type="text"]:active,
+        &[type="email"]:active,
+        &[type="password"]:active,
+        &[type="number"]:active,
+        &[type="text"]:focus,
+        &[type="email"]:focus,
+        &[type="password"]:focus,
+        &[type="number"]:focus,
+        &[type="text"]:hover,
+        &[type="email"]:hover,
+        &[type="password"]:hover,
+        &[type="number"]:hover {
+            border: 1px solid $color_orange;
+        }
+        &[type="text"].visa_cc,
+        &[type="email"].visa_cc,
+        &[type="password"].visa_cc,
+        &[type="number"].visa_cc {
+            @include creditSimbol(url(../img/credit-cards/visa.jpg));
+        }
+        &[type="text"].americane_cc,
+        &[type="email"].americane_cc,
+        &[type="password"].americane_cc,
+        &[type="number"].americane_cc {
+            @include creditSimbol(url(../img/credit-cards/americanexpress.jpg));
+        }
+        &[type="text"].aura_cc,
+        &[type="email"].aura_cc,
+        &[type="password"].aura_cc,
+        &[type="number"].aura_cc {
+            @include creditSimbol(url(../img/credit-cards/aura.jpg));
+        }
+        &[type="text"].diners_cc,
+        &[type="email"].diners_cc,
+        &[type="password"].diners_cc,
+        &[type="number"].diners_cc {
+            @include creditSimbol(url(../img/credit-cards/diners.jpg));
+        }
+        &[type="text"].general_cc,
+        &[type="email"].general_cc,
+        &[type="password"].general_cc,
+        &[type="number"].general_cc {
+            @include creditSimbol(url(../img/credit-cards/generico.jpg));
+        }
+        &[type="text"].maestro_cc,
+        &[type="email"].maestro_cc,
+        &[type="password"].maestro_cc,
+        &[type="number"].maestro_cc {
+            @include creditSimbol(url(../img/credit-cards/maestro.jpg));
+        }
+        &[type="text"].masterc_cc,
+        &[type="email"].masterc_cc,
+        &[type="password"].masterc_cc,
+        &[type="number"].masterc_cc {
+            @include creditSimbol(url(../img/credit-cards/mastercard.jpg));
+        }
+        &[type="text"].paypal_cc,
+        &[type="email"].paypal_cc,
+        &[type="password"].paypal_cc,
+        &[type="number"].paypal_cc {
+            @include creditSimbol(url(../img/credit-cards/paypal.jpg));
+        }
+        &[type="text"].security_cc,
+        &[type="email"].security_cc,
+        &[type="password"].security_cc,
+        &[type="number"].security_cc {
+            /* float: left;
                 width: 33%;
                 background-image: url(../img/icons-interface/icon_answer.png);
                 background-repeat: no-repeat;
                 background-position: 87% center; */
-                padding-top: 14px;
-                padding-bottom: 8px;
-                    &.cvv_carta {
-                        @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
-                    }
-                    &.cvv_mastercard {
-                        @include creditSimbol(url(../img/credit-cards/cvv_mastercard.png));
-                    }
+            padding-top: 11px;
+            padding-bottom: 12px;
+            &.cvv_carta {
+                @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
             }
-            &[type="text"].email_c,
-            &[type="email"].email_c,
-            &[type="password"].email_c,
-            &[type="number"].email_c {
-                margin: 1rem 0 0 0;
-            }
-            &[type="text"].email_confirmation,
-            &[type="email"].email_confirmation,
-            &[type="password"].email_confirmation,
-            &[type="number"].email_confirmation {
-                display: none;
-                margin: 1rem 0 0;
-            }
-            &::-webkit-input-placeholder {
-                color: #4a4a4a;
-            }
-            &:-moz-placeholder,
-            &::-moz-placeholder {
-                color: #4a4a4a;
-                opacity: 1;
+            &.cvv_mastercard {
+                @include creditSimbol(url(../img/credit-cards/cvv_mastercard.png));
             }
         }
-        .action2 {
-            @include boxWF(left, 100%);
+        &[type="text"].email_c,
+        &[type="email"].email_c,
+        &[type="password"].email_c,
+        &[type="number"].email_c {
+            margin: 1rem 0 0 0;
+        }
+        &[type="text"].email_confirmation,
+        &[type="email"].email_confirmation,
+        &[type="password"].email_confirmation,
+        &[type="number"].email_confirmation {
             display: none;
+            margin: 1rem 0 0;
         }
-        .base__select.base__select {
-            &.select_cc {
-                @include boxWF(left, 33%);
-                padding-right: 0.4rem;
-            }
-            &.select_numbert {
-                @include boxWF(left, 100%);
-                margin-bottom: 0.5rem;
-            }
-            &.select_value {
-                @include boxWF(left, 100%);
-                margin-bottom: 1.5rem;
-                span {
-                    .euro {
-                        font-size: 1.8rem;
-                    }
-                    .textl {
-                        font-size: 1.4rem;
-                    }
-                }
-                .dropdown-toggle {
-                    color: $color_robin;
-                    padding: 0.8rem 1.429rem;
-                    padding-top: 10px;
-                    padding-bottom: 20px;
-                    &:focus {
-                        border: 1px solid #f48135;
-                    }
-                    .filter-option {
-                        font-size: 2.8rem;
-                        text-align: center;
-                    }
-                }
-            }
-            &.select_option {
-                @include boxWF(left, 100%);
-                margin-bottom: 1rem;
-            }
+        &::-webkit-input-placeholder {
+            color: #4a4a4a;
         }
-        .checkbox {
-            float: left;
-            &.base__checkbox label {
-                float: left;
-                color: $color_grey_dark;
-                font-size: 1rem;
-                padding-left: 0.7rem;
-            }
-            &.remember_check {
-                @include boxWF(left, 100%);
-                margin-top: 1rem;
-                .remember_me {
-                    position: relative;
-                    top: 2px;
-                }
-            }
-            &.remember_s {
-                @include boxWF(left, 100%);
-                margin: 1rem 0;
-                label {
-                    font-size: 1.1rem;
-                    letter-spacing: -0.4px;
-                }
-            }
-            &.emailnotification {
-                @include boxWF(left, 100%);
-                margin: 0 0;
-                label {
-                    font-size: 1.1rem;
-                    letter-spacing: -0.4px;
-                }
-            }
+        &:-moz-placeholder,
+        &::-moz-placeholder {
+            color: #4a4a4a;
+            opacity: 1;
         }
-        .radio {
+    }
+    .action2 {
+        @include boxWF(left, 100%);
+        display: none;
+    }
+    .base__select.base__select {
+        &.select_cc {
+            @include boxWF(left, 33%);
+            padding-right: 0.4rem;
+        }
+        &.select_numbert {
             @include boxWF(left, 100%);
-            margin: 1.2rem 0 0.5rem 0;
-            &.base__radio label {
-                float: left;
-                color: $color_grey_dark;
-                @include defaultTxt($font_family_bold2, 1.1em);
-                letter-spacing: 0.4px;
-                font-weight: 500;
-                padding-left: 0.8rem;
-                line-height: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        &.select_value {
+            @include boxWF(left, 100%);
+            margin-bottom: 1.5rem;
+            span {
+                .euro {
+                    font-size: 1.8rem;
+                }
+                .textl {
+                    font-size: 1.4rem;
+                }
+            }
+            .dropdown-toggle {
+                color: $color_robin;
+                padding: 0.8rem 1.429rem;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                &:focus {
+                    border: 1px solid #f48135;
+                }
+                .filter-option {
+                    font-size: 2.8rem;
+                    text-align: center;
+                }
             }
         }
-        span {
-            &.line {
-                @include boxWF(left, 100%);
-                height: 1px;
-                background-color: $color_grey_medium_light;
-                margin: 1.4rem 0 1.5rem;
+        &.select_option {
+            @include boxWF(left, 100%);
+            margin-bottom: 1rem;
+        }
+    }
+    .checkbox {
+        float: left;
+        &.base__checkbox label {
+            float: left;
+            color: $color_grey_dark;
+            font-size: 1rem;
+            padding-left: 0.7rem;
+        }
+        &.remember_check {
+            @include boxWF(left, 100%);
+            margin-top: 1rem;
+            .remember_me {
+                position: relative;
+                top: 2px;
             }
-            &.line2 {
-                @include boxWF(left, 100%);
-                height: 1px;
-                background-color: $color_grey_medium_light;
-                margin: 1.4rem 0 0;
+        }
+        &.remember_s {
+            @include boxWF(left, 100%);
+            margin: 1rem 0;
+            label {
+                font-size: 1.1rem;
+                letter-spacing: -0.4px;
+            }
+        }
+        &.emailnotification {
+            @include boxWF(left, 100%);
+            margin: 0 0;
+            label {
+                font-size: 1.1rem;
+                letter-spacing: -0.4px;
             }
         }
     }
-    .back-privacy {
-        border-bottom: 4px solid #f48217;
-    }
-    .box-privacy {
-        h3 {
-            @include defaultTxt($font_family_bold2, 1.2em);
-            font-weight: bold;
-            color: #444;
-            margin: 1.2em 0;
-            &:first-child {
-                margin: 2em 0 1.9em 0;
-            }
+    .radio {
+        @include boxWF(left, 100%);
+        margin: 1.2rem 0 0.5rem 0;
+        &.base__radio label {
+            float: left;
+            color: $color_grey_dark;
+            @include defaultTxt($font_family_bold2, 1.1em);
+            letter-spacing: 0.4px;
+            font-weight: 500;
+            padding-left: 0.8rem;
+            line-height: 1.4rem;
         }
-        p {
-            @include defaultTxt($font_family_regular, 1.07em);
-            color: #444;
-            margin-bottom: 0.5em;
-            &:last-child {
-                margin-bottom: 2em;
-            }
+    }
+    span {
+        &.line {
+            @include boxWF(left, 100%);
+            height: 1px;
+            background-color: $color_grey_medium_light;
+            margin: 1.4rem 0 1.5rem;
+        }
+        &.line2 {
+            @include boxWF(left, 100%);
+            height: 1px;
+            background-color: $color_grey_medium_light;
+            margin: 1.4rem 0 0;
         }
     }
 }
+
+.back-privacy {
+    border-bottom: 4px solid #f48217;
+}
+
+.box-privacy {
+    h3 {
+        @include defaultTxt($font_family_bold2, 1.2em);
+        font-weight: bold;
+        color: #444;
+        margin: 1.2em 0;
+        &:first-child {
+            margin: 2em 0 1.9em 0;
+        }
+    }
+    p {
+        @include defaultTxt($font_family_regular, 1.07em);
+        color: #444;
+        margin-bottom: 0.5em;
+        &:last-child {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+
 
 .showMore {
     color: $color-orange;
@@ -635,38 +638,32 @@
     margin-bottom: 0.5rem;
     cursor: pointer;
 }
-
 .showMore_content {
     display: none;
 }
-
 @media (max-width: 767px) {
     .base__popup.refill_block .container {
         width: 100%;
         max-width: none;
     }
 }
-
 @media (max-width: 767px) {
     .base__popup.refill_block a.btn_sa {
         margin-top: 1.9rem;
     }
 }
-
 @media (max-width: 767px) {
     .base__popup.refill_block .base__select.base__select.select_value span .euro {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 }
-
 @media (max-width: 767px) {
     .base__popup.refill_block .base__select.base__select.select_value span .textl {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
     }
 }
-
 @media (max-width: 767px) {
     .base__popup.refill_block .base__select.base__select.select_value .dropdown-toggle .filter-option {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 }
