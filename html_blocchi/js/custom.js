@@ -328,7 +328,48 @@ r$(document).ready(function() {
         }
     }
 
+    function checkCard($card) {
+        var c = $card;
+        var cl = parseInt(c.substr(c.length - 1));
+        var c = c.slice(0, -1)
+        var c = c.split("").reverse().join("");
+        var c = c.split("");
+        var a = 2;
+        var cm = [];
+        for (var i = 0; i < c.length; i++) {
+            if (a % 2 == 0) {
+                var t = c[i] * 2;
+                if (t > 9) {
+                    var t = (t - 9);
+                }
+                cm.push(t);
+            } else { cm.push(parseInt(c[i])); }
+            a++;
+        }
+        var f = 0;
+        for (var i = 0; i < cm.length; i++) { f += cm[i]; }
+        f = f + cl;
+        if (f % 10 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    r$('#input_cc').blur(function() {
+        var carta = r$('#input_cc').val();
+        var result = checkCard(carta);
+        if (result == true) {
+            // write your own rules if true
+            $wind('.number_cc').removeClass('error');
+            $wind('.number_cc + span').removeClass('error');
+        } else {
+            // write your own rules if false
+            $wind('.number_cc').addClass('error');
+            $wind('.number_cc + span').addClass('error');
+            $wind('.number_cc + span').text('Numero di carta non valido');
+        }
+    });
 
     // Four digits validation (RICARICA) to display simbol credit card
     r$('#input_cc').on('change , keyup', function(e) {
@@ -384,12 +425,6 @@ r$(document).ready(function() {
             r$("#input_cc").addClass(card);
             r$(".visa_cc").fadeIn(10);
             r$(".tooltip").css("display", "none");
-        }
-        else{
-         clearCard('#input_cc', false);   
-        }
-        console.log("lunghezza:" + value.length);
-        if ((value.length >= 4)) {
             if (r$('#input_cc').hasClass('masterc_cc')) {
                 r$('#security_cc').addClass('cvv_mastercard');
                 r$('.cvv_mastercard').fadeIn(10);
@@ -397,8 +432,9 @@ r$(document).ready(function() {
                 r$('#security_cc').addClass('cvv_carta');
             }
         } else {
-            clearCard(false, '#security_cc');
+            clearCard('#input_cc', '#security_cc');
         }
+        console.log("lunghezza:" + value.length);
     });
 
 
