@@ -8362,12 +8362,19 @@ b {
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
 
+html[id^=skin] {
+  overflow: hidden !important; }
+  html[id^=skin] body {
+    overflow: hidden !important; }
+    html[id^=skin] body.base__scrollable {
+      padding: 0; }
+
 .skin_desktop {
   position: absolute;
   width: 100vw;
   height: 1500px;
   z-index: 20;
-  background-image: url("../../img/skin/skin_desktop.jpg");
+  background-image: url("../img/skin/skin_desktop.jpg");
   background-position-x: 50%;
   background-repeat: no-repeat;
   display: block;

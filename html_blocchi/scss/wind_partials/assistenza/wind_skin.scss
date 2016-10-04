@@ -1,10 +1,20 @@
+html[id^=skin] {
+    overflow: hidden !important;
+    body {
+        overflow: hidden !important;
+        &.base__scrollable {
+            padding: 0;
+        }
+    }
+}
+
 .skin {
     &_desktop {
         position: absolute;
         width: 100vw;
         height: 1500px;
         z-index: 20;
-        background-image: url("../../img/skin/skin_desktop.jpg");
+        background-image: url("../img/skin/skin_desktop.jpg");
         background-position-x: 50%;
         background-repeat: no-repeat;
         display: block;
