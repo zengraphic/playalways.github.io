@@ -1784,7 +1784,10 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   transition: all 0.25s ease-in-out;
   outline: 0;
   border: 1px solid #ccd1d9;
-  background-color: white; }
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
   .base__input:focus {
     border: 1px solid #f48135;
     box-shadow: none;
@@ -5169,7 +5172,8 @@ h3.title {
   bottom: 0;
   overflow: scroll;
   padding: 0;
-  max-width: 420px; }
+  max-width: 420px;
+  -webkit-overflow-scrolling: touch; }
 .base__popup.refill_block .row {
   margin: 0px; }
 .base__popup.refill_block .col-lg-12 {
@@ -5465,7 +5469,10 @@ h3.title {
 .base__popup.refill_block .top_up_button_final {
   margin-bottom: 30px; }
 .base__popup.refill_block .top_up_remove_btn {
-  color: #f48135; }
+  color: #f48135;
+  position: absolute;
+  top: 2px;
+  right: 0; }
 .base__popup.refill_block input {
   float: left; }
   .base__popup.refill_block input[type="text"], .base__popup.refill_block input[type="email"], .base__popup.refill_block input[type="password"], .base__popup.refill_block input[type="number"] {

@@ -39,6 +39,7 @@
             overflow: scroll;
             padding: 0;
             max-width: 420px;
+            -webkit-overflow-scrolling:touch;
         }
         .row {
             margin: 0px;
@@ -382,6 +383,9 @@
         }
         .top_up_remove_btn {
             color: #f48135;
+            position:absolute;
+            top:2px;
+            right:0;
         }
         input {
             float: left;
@@ -420,7 +424,7 @@
             &[type="password"]:hover,
             &[type="number"]:hover {
                 border: 1px solid $color_orange;
-                
+
             }
             &[type="text"].visa_cc,
             &[type="email"].visa_cc,
