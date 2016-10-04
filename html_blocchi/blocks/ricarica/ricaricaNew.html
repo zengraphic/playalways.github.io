@@ -134,7 +134,7 @@
                                         </a>
                                 </li>
                                 <li>
-                                    <a class="btn_carello" href="#">
+                                    <a class="btn_carrello" href="#">
                                             CARRELLO
                                         </a>
                                 </li>
@@ -298,7 +298,7 @@
                                 </select>
                                 <div class="cvv_container">
                                     <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" />
-                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit." />
+                                    <!-- <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip-orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit." /> -->
                                     <div class="clear"></div>
                                 </div>
                                 <div class="base__checkbox checkbox checkbox-inline remember_check">
@@ -471,6 +471,7 @@ $wind(document).ready(function() {
         var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
         var securityCC = $wind('#security_cc');
         $wind('.top_up_button_final').prop("disabled", true);
+
         if (radioCC.is(':checked')) {
             console.log('carta di credito checked');
             $wind('.top_up_button_final').prop("disabled", false);
