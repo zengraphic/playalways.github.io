@@ -48,7 +48,7 @@ function validate(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
     key = String.fromCharCode(key);
-    var regex = /[0-9.\t\r]|\./;
+    var regex = /[0-9.\t\r\b]|\./;
     if (!regex.test(key)) {
         theEvent.returnValue = false;
         if (theEvent.preventDefault) theEvent.preventDefault();
@@ -425,9 +425,9 @@ r$(document).ready(function() {
             r$("#input_cc").addClass(card);
             r$(".visa_cc").fadeIn(10);
             r$(".tooltip").css("display", "none");
-            if (r$('#input_cc').hasClass('masterc_cc')) {
-                r$('#security_cc').addClass('cvv_mastercard');
-                r$('.cvv_mastercard').fadeIn(10);
+            if (r$('#input_cc').hasClass('americane_cc')) {
+                r$('#security_cc').addClass('cvv_amex');
+                r$('.cvv_amex').fadeIn(10);
             } else {
                 r$('#security_cc').addClass('cvv_carta');
             }

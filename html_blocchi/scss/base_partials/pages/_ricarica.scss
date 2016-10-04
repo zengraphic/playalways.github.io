@@ -190,7 +190,10 @@
                             margin-right: 10px;
                         }
                         .card-number-crypted {
-                            font-size: 8px;
+                            font-size: 12px;
+                        }
+                        .expiration{
+                            margin-left:15px;
                         }
                         .card-image,
                         .card-number-crypted,
@@ -199,11 +202,14 @@
                         .expiration-date {
                             font-family: $font_family_light;
                         }
+                        .card-number-clear{
+                            margin-left:3px;
+                        }
                     }
                 }
                 a.btn {
                     @include boxWF(right, auto);
-                    margin: 0.8rem 0 0 0.5rem;
+                    // margin: 0.8rem 0 0 0.5rem;
                     @include defaultTxt($font_family_regular, 0.9rem);
                     padding: 0;
                 }
@@ -236,7 +242,7 @@
                             margin-right: 10px;
                         }
                         .card-number-crypted {
-                            font-size: 8px;
+                            font-paypaize: 8px;
                         }
                         .card-image,
                         .card-number-crypted,
@@ -269,7 +275,7 @@
                 }
                 .cvv_container {
                     position: relative;
-                    float: left;
+                    float: right;
                     width: 33%;
                     
                     .icon_tooltip {
@@ -305,7 +311,7 @@
             @include defaultTxt($font_family_regular, 0.9rem);
             letter-spacing: -0.4px;
             color: #51565a;
-            margin: 1rem 0 1.4rem;
+            margin: 1rem 0;
             a {
                 text-decoration: none;
             }
@@ -474,8 +480,8 @@
                     &.cvv_carta {
                         @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
                     }
-                    &.cvv_mastercard {
-                        @include creditSimbol(url(../img/credit-cards/cvv_mastercard.png));
+                    &.cvv_amex {
+                        @include creditSimbol(url(../img/credit-cards/cvv_amex.png));
                     }
             }
             &[type="text"].email_c,
@@ -634,7 +640,7 @@
     text-align: center;
     text-transform: uppercase;
     font-family: $font_family_light;
-    margin-bottom: 0.5rem;
+    margin: 1.4rem 0 1rem 0;
     cursor: pointer;
 }
 
