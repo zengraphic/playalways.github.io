@@ -42,9 +42,27 @@ r$(function() {
 });
 
 /* Preventing iphone scroll on focus */
-jQuery('body').on('focusin focus', function(e){
-  e.preventDefault();
-})
+ function toArray (collection) {
+        return Array.prototype.slice.call(collection);
+    }
+
+    function noScroll (event) {
+        if (event.type === 'focus') {
+            document.body.classList.add('no-scroll');
+        }
+
+        else if (event.type === 'blur') {
+            document.body.classList.remove('no-scroll');
+        }
+    }
+
+    var inputs = toArray(document.querySelectorAll('input'));
+
+
+    inputs.forEach(function(input){
+        input.addEventListener('focus',noScroll,false);
+        input.addEventListener('blur',noScroll,false);
+    });
 
 
 /* Validation number (Ricarica) - not affect placeholder */
