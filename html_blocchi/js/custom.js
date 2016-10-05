@@ -41,14 +41,6 @@ r$(function() {
 
 });
 
-/* Preventing iphone scroll on focus */
-var currentScrollPosition = 0;
-r$(document).scroll(function(){
-    currentScrollPosition = $(this).scrollTop();
-});
-r$('input').focus(function(){
-    r$(document).scrollTop(currentScrollPosition);
-});
 
 
 /* Validation number (Ricarica) - not affect placeholder */
