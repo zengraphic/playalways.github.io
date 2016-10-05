@@ -1,5 +1,30 @@
 .tx-powermail {
     .powermail {
+        &_textarea {
+            display: inline;
+            width: 100%;
+            /* max-width: 320px; */
+            padding: 0.8rem;
+            padding-top: 1.4rem;
+            padding-bottom: 1.4rem;
+            @include border-radius(4px);
+            @include transition(all, 0.25s, ease-in-out);
+            outline: 0;
+            border: 1px solid #ccd1d9;
+            background-color: white;
+            color: $color-darkGrey;
+            // textarea
+            // error
+            &:focus {
+                border: 1px solid $color-orange;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+            &:hover,
+            &:active {
+                border: 1px solid $color-orange;
+            }
+        }
         &_input {
             display: inline;
             width: 100%;
