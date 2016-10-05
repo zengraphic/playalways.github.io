@@ -1,3 +1,55 @@
+.tx-powermail {
+    .powermail {
+        &_input {
+            display: inline;
+            width: 100%;
+            /* max-width: 320px; */
+            padding: 0.8rem;
+            padding-top: 1.4rem;
+            padding-bottom: 1.4rem;
+            @include border-radius(4px);
+            @include transition(all, 0.25s, ease-in-out);
+            outline: 0;
+            border: 1px solid #ccd1d9;
+            background-color: white;
+            color: $color-darkGrey;
+            // textarea
+            // error
+            &:focus {
+                border: 1px solid $color-orange;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+            &:hover,
+            &:active {
+                border: 1px solid $color-orange;
+            }
+        }
+        &_legend {
+            display: none;
+        }
+        &_fieldwrap {
+            text-align: left;
+            margin-bottom: 10px;
+            /* &_recapitotelefonico {
+                float: left;
+                width: 65%;
+            }
+            &_provincia {
+                float: right;
+                width: 30%;
+            } */
+        }
+        &_field {
+            &_nomeecognome {
+                @include placeholder {
+                    content: "Nome e cognome";
+                };
+            }
+        }
+    }
+}
+
 .business_block_viewer {
     width: 100%;
     max-width: 1024px;
