@@ -236,7 +236,7 @@
                                         <div class="clear"></div>
                                     </div>
                                 </label>
-                                <a class="btn top_up_remove_btn">RIMUOVI</a>
+                                <a class="btn top_up_remove_btn" data-toggle="modal" data-target="#removeModal">RIMUOVI</a>
                             </div>
                             <div class="clear"></div>
                             <!--  <h4>predefinito</h4>
@@ -267,8 +267,9 @@
                                             <div class="clear"></div>
                                         </div>
                                     </label>
-                                    <a class="btn top_up_remove_btn">RIMUOVI</a>
+                                    <a class="btn top_up_remove_btn" data-toggle="modal" data-target="#removeModal">RIMUOVI</a>
                                 </div>
+                                <!--  -->
                                 <!--  <h4>predefinito</h4>
                                 <a class="btn">MODIFICA</a>
                                 <a class="btn top_up_remove_btn">RIMUOVI</a> -->
@@ -299,7 +300,7 @@
                                     <option>2021</option>
                                 </select>
                                 <div class="cvv_container">
-                                    <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" autocomplete="off"/>
+                                    <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" autocomplete="off" />
                                     <!-- <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip-orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit." /> -->
                                     <div class="clear"></div>
                                 </div>
@@ -321,7 +322,7 @@
                                 <div class="base__checkbox checkbox checkbox-inline remember_check">
                                     <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
                                     <label for="paypal-checkbox">Ricorda i miei dati</label>
-                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange"/>
+                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati." />
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -369,7 +370,19 @@
                 </div>
             </div>
         </div>
-        
+        <div class="modal fade refill_modal" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                Stai per eliminare la carta
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-refil" data-dismiss="modal">Annulla</button>
+                                                <button type="button" class="btn base__bt--or ">Procedi</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
         <!-- show privacy content -->
         <div id="privacy_block" class="base__popup base__popup--loguin mfp-hide refill_block">
             <div class="container base__scrollable touch_scroll">
