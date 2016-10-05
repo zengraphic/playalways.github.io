@@ -106,33 +106,25 @@
                                                     <fieldset class="powermail_fieldset powermail_fieldset_3 ">
                                                         <legend class="powermail_legend">Fatti consigliare compatta</legend>
                                                         <div class="powermail_fieldwrap powermail_fieldwrap_type_input powermail_fieldwrap_nomeecognome powermail_fieldwrap_half ">
-                                                            <label for="powermail_field_nomeecognome" class="powermail_label" title="">
-                                                                Nome e Cognome
-                                                            </label>
+                                                            <label for="powermail_field_nomeecognome" class="powermail_label" title="">Nome e Cognome</label>
                                                             <div class="powermail_field">
                                                                 <input class="powermail_input  " id="powermail_field_nomeecognome" type="text" name="tx_powermail_pi1[field][nomeecognome]" value="" />
                                                             </div>
                                                         </div>
                                                         <div class="powermail_fieldwrap powermail_fieldwrap_type_input powermail_fieldwrap_provincia powermail_fieldwrap_half ">
-                                                            <label for="powermail_field_provincia" class="powermail_label" title="">
-                                                                Provincia
-                                                            </label>
+                                                            <label for="powermail_field_provincia" class="powermail_label" title="">Provincia</label>
                                                             <div class="powermail_field">
                                                                 <input class="powermail_input  " id="powermail_field_provincia" type="text" name="tx_powermail_pi1[field][provincia]" value="" />
                                                             </div>
                                                         </div>
                                                         <div class="powermail_fieldwrap powermail_fieldwrap_type_input powermail_fieldwrap_recapitotelefonico powermail_fieldwrap_half ">
-                                                            <label for="powermail_field_recapitotelefonico" class="powermail_label" title="">
-                                                                Recapito telefonico
-                                                            </label>
+                                                            <label for="powermail_field_recapitotelefonico" class="powermail_label" title="">Recapito telefonico</label>
                                                             <div class="powermail_field">
                                                                 <input class="powermail_input  " id="powermail_field_recapitotelefonico" type="text" name="tx_powermail_pi1[field][recapitotelefonico]" value="" />
                                                             </div>
                                                         </div>
                                                         <div class="powermail_fieldwrap powermail_fieldwrap_type_input powermail_fieldwrap_email powermail_fieldwrap_half ">
-                                                            <label for="powermail_field_email" class="powermail_label" title="">
-                                                                Email
-                                                            </label>
+                                                            <label for="powermail_field_email" class="powermail_label" title="">Email</label>
                                                             <div class="powermail_field">
                                                                 <input data-parsley-error-message="This is not a valid email address!" class="powermail_input  " id="powermail_field_email" type="email" name="tx_powermail_pi1[field][email]" value="" />
                                                             </div>
@@ -158,7 +150,14 @@
             </div>
         </div>
     </div>
-    </div>
+    <script>
+    jQuery(document).ready(function($) {
+        $.each($(".powermail_fieldwrap"), function() {
+            var placeHolder = $(this).find($("label")).text();
+            $(this).find($("input")).attr("placeholder", placeHolder);
+        });
+    })
+    </script>
 </body>
 
 </html>
