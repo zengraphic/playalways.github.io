@@ -41,6 +41,10 @@ r$(function() {
 
 });
 
+/* Preventing iphone scroll on focus */
+jQuery('body').on('focusin focus', function(e){
+  e.preventDefault();
+})
 
 
 /* Validation number (Ricarica) - not affect placeholder */
