@@ -4,8 +4,8 @@
             max-width: 100%;
             width: 100%;
             font-family: "Trade Gothic";
-            background-color: #f48135;
-            color: #ffffff;
+            background-color: $color-orange;
+            color: $color-white;
             padding: 1rem 0;
             display: block;
             font-size: 1.125em;
@@ -13,24 +13,23 @@
             height: auto;
             text-transform: uppercase;
             border: 1px solid;
-            border-color: #f48135;
+            border-color: $color-orange;
             -webkit-border-radius: 4px;
             border-radius: 4px;
             background-clip: padding-box;
             &:hover,
             &:active,
             &:focus {
-                border: 1px solid transparent;
-                color: white;
-                outline: none;
+                background-color: #f78f4c;
+                color: $color-white;
             }
         }
         &_reset {
             max-width: 100%;
             width: 100%;
             font-family: "Trade Gothic";
-            color: #f48135;
-            background-color: #ffffff;
+            color: $color-orange;
+            background-color: $color-white;
             padding: 1rem 0;
             display: block;
             font-size: 1.125em;
@@ -38,7 +37,7 @@
             height: auto;
             text-transform: uppercase;
             border: 1px solid;
-            border-color: #f48135;
+            border-color: $color-orange;
             -webkit-border-radius: 4px;
             border-radius: 4px;
             background-clip: padding-box;
@@ -231,6 +230,13 @@
         }
         &--formContainer {
             .tx-powermail {
+                h3 {
+                    margin: 25px 0 20px;
+                    text-align: center;
+                    font-size: 1.875em;
+                    color: $color-white;
+                    font-family: $weight-normal;
+                }
                 .powermail {
                     &_fieldwrap {
                         &_recapitotelefonico {
@@ -248,9 +254,18 @@
                     &_label {
                         display: none;
                     }
+                    &_input {
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                    }
+                    &_submit,
+                    &_reset {
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                    }
                 }
             }
-            max-width: 320px;
+            max-width: 340px;
             position: relative;
             z-index: 300;
             margin-left: auto;
@@ -259,10 +274,7 @@
                 margin: 0 auto;
                 max-width: 300px;
             }
-            .button {
-                max-width: 100%;
-                margin: 0 30px 0 auto;
-            }
+            
         }
         .business_block_viewer__doubleButton {
             display: none;
