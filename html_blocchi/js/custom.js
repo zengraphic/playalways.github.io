@@ -41,14 +41,7 @@ r$(function() {
 
 });
 
-/* Preventing iphone scroll on focus */
-var repositioner = null;
-r$('.ricarica').on('blur','input,area',function(){
-  repositioner = setTimeout(function(){window.scrollTo(0,0;},200);
-});
-r$('.ricarica').on('focus','input,area',function(){
-  clearTimeout(repositioner);
-});
+
 
 
 /* Validation number (Ricarica) - not affect placeholder */
