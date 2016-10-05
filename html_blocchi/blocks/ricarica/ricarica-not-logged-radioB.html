@@ -7,6 +7,7 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
    <!--- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
@@ -251,10 +252,17 @@
                         </div>
                         <div class="cont_item1">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
-                            <div style="display:none">
+                            <div class="clear"></div>
+                                <div class="base__checkbox checkbox checkbox-inline remember_check">
+                                    <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
+                                    <label for="paypal-checkbox">Ricorda i miei dati</label>
+                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange"/>
+                                </div>
+                                <div class="clear"></div>
+                           <!--  <div style="display:none">
                                 <input type="text" placeholder="Email" name="" class="base__input ">
                                 <input type="text" placeholder="Password" name="" class="base__input ">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class=" item-box last-i" id="action_c3">
