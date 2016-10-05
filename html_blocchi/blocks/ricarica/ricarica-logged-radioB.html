@@ -7,6 +7,7 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
     <!--- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
@@ -225,43 +226,49 @@
                         <!-- CREDIC CARD -->
                         <div class="cont_item1">
                             <div class="cont__item_cc2">
-                                <div class="base__radio small_radio radio radio-inline">
-                                    <input type="radio" id="option_cc1b" value="option_cc1b" name="radioInline2">
-                                    <label class="label_for_creditCard" for="option_cc1b">
-                                        <div class="detail-cc">
-                                            <div class="pull-left">
-                                                <span class="card-image"><img src="../../img/credit-cards/visa_icon.png"/></span>
-                                                <span class="card-number-crypted">xxxx xxxx xxxx </span>
-                                                <span class="card-number-clear paypal-email">6368</span>
-                                            </div>
-                                            <div class="pull-right">
-                                                <span class="expiration-label">Scad.</span>
-                                                <span class="expiration-date">11/17</span>
-                                            </div>
+                                <div class="base__radio radio base__radio--small radio-inline">
+                                <input type="radio" id="option_cc1" value="option_cc1" name="radioInline">
+                                <label class="label_for_creditCard" for="option_cc1">
+                                    <div class="detail-cc">
+                                        <div class="pull-left">
+                                            <span class="card-image"><img src="../../img/credit-cards/visa_icon.png"/></span>
+                                            <span class="card-number-crypted"> &#149; &#149; &#149; &#149; </span>
+                                            <span class="card-number-clear paypal-email">6368</span>
                                         </div>
-                                    </label>
-                                </div>
+                                        <div class="pull-left expiration">
+                                            <span class="expiration-label">Scad.</span>
+                                            <span class="expiration-date">11/17</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </label>
+                                <a class="btn top_up_remove_btn">RIMUOVI</a>
+                            </div>
+                            <div class="clear"></div>
                                 <!-- <h4>predefinito</h4>
                                 <a class="btn">MODIFICA</a>
                                 <a class="btn top_up_remove_btn">RIMUOVI</a> -->
                             </div>
                             <div class="cont__item_cc2">
-                                <div class="base__radio small_radio radio radio-inline">
-                                    <input type="radio" id="option_cc2b" value="option_cc2b" name="radioInline2">
-                                    <label class="label_for_creditCard" for="option_cc2b">
-                                        <div class="detail-cc">
-                                            <div class="pull-left">
-                                                <span class="card-image"><img src="../../img/credit-cards/visa_icon.png"/></span>
-                                                <span class="card-number-crypted">xxxx xxxx xxxx </span>
-                                                <span class="card-number-clear paypal-email">6368</span>
-                                            </div>
-                                            <div class="pull-right">
-                                                <span class="expiration-label">Scad.</span>
-                                                <span class="expiration-date">11/17</span>
-                                            </div>
+                                <div class="base__radio radio base__radio--small radio-inline">
+                                <input type="radio" id="option_cc1" value="option_cc1" name="radioInline">
+                                <label class="label_for_creditCard" for="option_cc1">
+                                    <div class="detail-cc">
+                                        <div class="pull-left">
+                                            <span class="card-image"><img src="../../img/credit-cards/visa_icon.png"/></span>
+                                            <span class="card-number-crypted"> &#149; &#149; &#149; &#149; </span>
+                                            <span class="card-number-clear paypal-email">6368</span>
                                         </div>
-                                    </label>
-                                </div>
+                                        <div class="pull-left expiration">
+                                            <span class="expiration-label">Scad.</span>
+                                            <span class="expiration-date">11/17</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </label>
+                                <a class="btn top_up_remove_btn">RIMUOVI</a>
+                            </div>
+                            <div class="clear"></div>
                                <!--  <h4>predefinito</h4>
                                  <a class="btn">MODIFICA</a>
                                 <a class="btn top_up_remove_btn">RIMUOVI</a> -->
@@ -320,6 +327,13 @@
                         </div>
                         <div class="cont_item1">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
+                            <div class="clear"></div>
+                                <div class="base__checkbox checkbox checkbox-inline remember_check">
+                                    <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
+                                    <label for="paypal-checkbox">Ricorda i miei dati</label>
+                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange"/>
+                                </div>
+                                <div class="clear"></div>
                         </div>
                     </div>
                     <div class=" item-box last-i" id="action_c3">
@@ -328,11 +342,11 @@
                             <label for="option3"> Addebito su conto </label>
                         </div>
                         <div class="cont_item1 item_da item_charge">
-                            <div class="base__radio small_radio radio radio-inline">
+                            <div class="base__radio base__radio--small radio radio-inline">
                                 <input type="radio" id="option_dc1" value="option1" name="radiooption2">
                                 <label for="option_dc1"> PagOnline by Unicredit</label>
                             </div>
-                            <div class="base__radio small_radio radio radio-inline">
+                            <div class="base__radio base__radio--small radio radio-inline">
                                 <input type="radio" id="option_dc2" value="option2" name="radiooption2">
                                 <label for="option_dc2"> BancoPostaonline </label>
                             </div>
@@ -344,11 +358,11 @@
                             <label for="option4"> Addebito su conto telefonico</label>
                         </div>
                         <div class="cont_item1 item_da item_bill">
-                            <div class="base__radio small_radio radio radio-inline">
+                            <div class="base__radio base__radio--small radio radio-inline">
                                 <input type="radio" id="option_dct1" value="option1" name="radiooption3">
                                 <label for="option_dct1">Contratto n° 1149408593053 Vuoi</label>
                             </div>
-                            <div class="base__radio small_radio radio radio-inline">
+                            <div class="base__radio base__radio--small radio radio-inline">
                                 <input type="radio" id="option_dct2" value="option2" name="radiooption3">
                                 <label for="option_dct2"> Contratto n° 1149408384513 </label>
                             </div>
