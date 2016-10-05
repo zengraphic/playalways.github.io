@@ -113,6 +113,8 @@
     -webkit-border-radius: 0;
     border-radius: 0;
     background-clip: padding-box;
+    padding-top: 14px !important;
+    padding-bottom: 4px;
     /* stops bg color from leaking outside the border: */
     padding-top: 2px;
     box-sizing: border-box;
@@ -154,12 +156,15 @@
     background-size: 20px;
     background-position: 0 -20px;
     display: inline-block; }
-  .inorder .radio input[type="radio"] {
+  .inorder .radio{
     background-image: url("newRadio.png");
     width: 20px;
     height: 20px;
     background-size: 20px;
     display: inline-block; }
+    .inorder .radio + label{
+    	line-height: 27px;
+    }    
   .inorder .radio-select {
     background-image: url("newRadio.png");
     width: 20px;
@@ -225,6 +230,8 @@
     -webkit-border-radius: 0;
     border-radius: 0;
     background-clip: padding-box;
+    padding-top: 14px !important;
+    padding-bottom: 4px;    
     /* stops bg color from leaking outside the border: */
     padding-top: 2px;
     box-sizing: border-box;
@@ -247,17 +254,23 @@
   .inorder input[type='radio'] {
     height: 20px;
     width: 20px; }
-  .inorder .radio-gr.fieldset .ui-radio {
+  .inorder .radio {
     width: 20px;
     height: 20px;
     background-size: 20px; }
+    .inorder .radio + label{
+    	line-height: 27px;
+    }    
   .inorder .checkbox-gr.fieldset + .bt-i {
     margin-top: 13px; }
   .inorder .checkbox-gr.fieldset .ui-checkbox {
     width: 20px;
     height: 20px;
     background-size: 20px;
-    display: inline-block; } }
+    display: inline-block; } 
+.inorder .bt{
+	padding-top: 19px;
+	padding-bottom: 13px;}}
 @media only screen and (max-width: 767px) {
   .inorder .select {
     background-color: #ffffff;
@@ -266,6 +279,8 @@
     -webkit-border-radius: 0;
     border-radius: 0;
     background-clip: padding-box;
+    padding-top: 14px !important;
+    padding-bottom: 4px;    
     /* stops bg color from leaking outside the border: */
     padding-top: 2px;
     box-sizing: border-box;
@@ -277,13 +292,16 @@
     bottom: 4px; }
   .inorder .checkbox-gr.fieldset + .bt-i {
     margin-top: 5px; }
-  .inorder .radio input[type="radio"] {
+  .inorder .radio{
     background-image: url("newRadio.png");
     width: 20px;
     height: 20px;
     background-size: 20px;
     display: inline-block; }
-    .inorder .radio input[type="radio"] ~ .radio {
+    .inorder .radio + label{
+    	line-height: 27px;
+    }
+    .inorder .radio ~ .radio {
       background-image: url("newRadio.png");
       width: 20px;
       height: 20px;
@@ -291,5 +309,11 @@
       display: inline-block; }
   .inorder .container > .row > .col.col-main .box ul li {
     background-image: url("arrowBullet.png"); } }
-
+.inorder .rpg .feat > p{
+	color: #666;
+}
+.inorder .bt{
+	padding-top: 19px;
+	padding-bottom: 13px;
+}
 /*# sourceMappingURL=newRestyle.css.map */
