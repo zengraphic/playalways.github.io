@@ -43,18 +43,6 @@ r$(function() {
 
 });
 
-/* Iphone bounce */
-
-document.ontouchmove = function(e){e.preventDefault()};
-var repositioner = null;
-r$('.base__input').on('blur','input,area',function(){
-  repositioner = setTimeout(function(){window.scrollTo(0,0;},200);
-});
-r$('.base__input').on('focus','input,area',function(){
-  clearTimeout(repositioner);
-});
-
-/* fine Iphone bounce */
 
 
 /* Validation number (Ricarica) - not affect placeholder */
