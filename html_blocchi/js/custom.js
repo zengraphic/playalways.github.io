@@ -46,7 +46,7 @@ var currentScrollPosition = 0;
 r$(document).scroll(function(){
     currentScrollPosition = $(this).scrollTop();
 });
-r$('input,select').focus(function(){
+r$('input').focus(function(){
     r$(document).scrollTop(currentScrollPosition);
 });
 
