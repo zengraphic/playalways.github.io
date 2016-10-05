@@ -154,7 +154,7 @@
     jQuery(document).ready(function($) {
         $.each($(".powermail_fieldwrap"), function() {
             var placeHolder = $(this).find($("label")).text();
-            $(this).find($("input")).attr("placeholder", placeHolder);
+            $(this).find($("input", "textarea")).attr("placeholder", placeHolder);
         });
     })
     </script>

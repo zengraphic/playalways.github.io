@@ -3,6 +3,103 @@
     max-width: 1024px;
     position: relative;
     overflow: hidden;
+    .tx-powermail {
+        h3 {
+            display: none;
+        }
+        legend {
+            display: none;
+        }
+        .powermail {
+            &_fieldset {
+                .powermail_fieldwrap {
+                    &:first-of-type {
+                        .powermail_field {
+                            font-family: "Trade Gothic Light";
+                            color: #292f36;
+                            font-size: 1.125em;
+                            line-height: 1.1250em;
+                            padding: 10px 30px 10px 0;
+                        }
+                    }
+                    &_type_check {
+                        & label.powermail_label {
+                            display: none;
+                        }
+                    }
+                    &_nomeecognome,
+                    &_provincia,
+                    &_recapitotelefonico,
+                    &_email,
+                    &_marker_01 {
+                        label {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &_input {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            &_fieldwrap {
+                margin-bottom: 15px;
+            }
+            &_textarea {
+                resize: none;
+                height: 80px;
+            }
+            &_submit {
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: #f78f4c;
+                }
+            }
+        }
+        h5 {
+            font-family: "Trade Gothic";
+            font-size: 0.750em;
+            padding-bottom: 15px;
+            .btn {
+                padding-left: 0;
+                line-height: 0.5;
+                font-size: 1em;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .checkbox {
+            padding-left: 0;
+            label {
+                width: 100%;
+                padding-left: 0;
+                &::before {
+                    left: 100%;
+                    width: 25px;
+                    height: 25px;
+                    margin-left: -25px;
+                    top: -5px;
+                }
+                &::after {
+                    left: 100%;
+                    width: 25px;
+                    height: 25px;
+                    margin-left: -25px;
+                    top: -5px;
+                    font-size: 1em;
+                    padding-top: 3px;
+                    color: #fff;
+                    font-family: FontAwesome;
+                    content: "\f00c";
+                    background-color: $color_orange;
+                    border-radius: 4px;
+                    border: 1px solid #ccd1d9;
+                }
+            }
+        }
+    }
     .link_contact {
         white-space: nowrap;
         color: $color-white;
@@ -105,7 +202,7 @@
         }
         &__right {
             width: 450px;
-            padding: 20px;
+            padding: 20px 0 0 0;
             background-color: $color-lightGray;
             float: right;
             visibility: hidden;
@@ -120,155 +217,8 @@
         float: right;
         margin-top: -25px;
     }
-    &__title {
-        font-family: $weight-light;
-        color: $color-standardText;
-        font-size: 1.125em;
-        line-height: 1.1250em;
-        padding: 10px 30px 20px 0;
-        @include breakpoint(small) {
-            //font-size: 0.95em;
-        }
-    }
-    &__select {
-        margin-top: 15px;
-        margin-bottom: 15px;
-        & .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-            width: 100%;
-        }
-        & .base__select.bootstrap-select .dropdown-toggle {
-            padding-bottom: 15px;
-            padding-top: 15px;
-            padding-left: 20px;
-            @include breakpoint(small) {
-                //padding: 10px;
-            }
-            & .filter-option {
-                font-size: 16px;
-                @include breakpoint(small) {
-                    //font-size: 14px;
-                }
-            }
-            & .bs-caret .caret {
-                right: 18px;
-            }
-        }
-    }
-    &__privacy {
-        font-size: 0.750em;
-        padding-bottom: 15px;
-        @include breakpoint(small) {
-            //font-size: 12px;
-        }
-        & a {
-            //font-size: 1em;
-        }
-    }
-    &__input {
-        &--name,
-        &--phone {
-            @include breakpoint(small) {
-                //font-size: 0.875em;
-            }
-        }
-        &--email {
-            margin-top: 15px;
-            margin-bottom: 15px;
-            @include breakpoint(small) {
-                //font-size: 0.875em;
-            }
-        }
-    }
-    &__textarea {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 100%;
-        & .base_textarea {
-            width: 100%;
-            padding-top: 25px;
-            padding-left: 20px;
-            padding-right: 0.8em;
-            color: $color-placeholder;
-            &::-webkit-input-placeholder {
-                color: $color-placeholder;
-            }
-            &:-moz-placeholder {
-                color: $color-placeholder;
-                opacity: 1;
-            }
-            &::-moz-placeholder {
-                color: $color-placeholder;
-                opacity: 1;
-            }
-            border: 1px solid #ccd1d9;
-            -webkit-border-radius: 4px;
-            border-radius: 4px;
-            resize: none;
-            &:hover,
-            &:active {
-                border: 1px solid $color-orange;
-            }
-            @include breakpoint(small) {
-                //font-size: 0.875em;
-                //padding-top: 15px;
-            }
-        }
-    }
-    & .checkbox {
-        padding-left: 0;
-    }
-    & .base__checkbox.checkbox label {
-        font-size: 16px;
-        @include breakpoint(small) {
-            //font-size: 0.875em;
-        }
-        &::before {
-            width: 25px;
-            height: 25px;
-            top: -5px;
-            margin-left: -25px;
-            left: 100%;
-        }
-        &::after {
-            margin-left: -25px;
-            left: 100%;
-            font-size: 16px;
-        }
-    }
-    & .checkbox label {
-        padding-left: 0;
-        width: 100%;
-    }
-    & .button {
-        @include breakpoint(small) {
-            //margin: 0;
-        }
-    }
-    & .base__input {
-        padding: 15px 20px;
-        @include breakpoint(small) {
-            //padding: 10px;
-        }
-    }
-    & .checkbox.checkbox-inline,
-    .radio.radio-inline {
-        width: 100%;
-    }
 }
 
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-
-/*
-@media all and (max-width: 500px) {
-    .contact_info_block {
-        &__container {
-            .contact_open {
-                width: 100%;
-                &__right
-            }
-        }
-    }
-}
-*/
