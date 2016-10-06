@@ -166,7 +166,7 @@ function clearCard(inputToClear, cvvToClear) {
     if (cvvToClear) {
         console.log(cvvToClear);
         r$(cvvToClear).removeClass('cvv_carta');
-        r$(cvvToClear).removeClass('cvv_mastercard');
+        r$(cvvToClear).removeClass('cvv_amex');
     }
 }
 
@@ -436,10 +436,13 @@ r$(document).ready(function() {
             r$(".visa_cc").fadeIn(10);
             r$(".tooltip").css("display", "none");
             if (r$('#input_cc').hasClass('americane_cc')) {
+                clearCard(false,'#security_cc');
                 r$('#security_cc').addClass('cvv_amex');
                 r$('.cvv_amex').fadeIn(10);
             } else {
+                clearCard(false,'#security_cc');
                 r$('#security_cc').addClass('cvv_carta');
+
             }
         } else {
             clearCard('#input_cc', '#security_cc');
@@ -596,24 +599,38 @@ r$(function() {
 
 r$(function() {
     r$('#select_numbert').on('change', function() {
-        switch (r$(this).val()) {
-            case 'option1':
-                //alert( 1 );
-                r$(".action_numbert").fadeOut("fast");
-                break;
-            case 'option2':
-                //alert( 2 );
-                r$(".action_numbert").fadeOut("fast");
-                break;
-            case 'option3':
-                //alert( 3 );
-                r$(".action_numbert").fadeOut("fast");
-                break;
-            case 'option4':
-                //alert( 3 );
-                r$(".action_numbert").fadeIn("fast");
-                break;
+
+        var lastOptionIndex = r$('.select_numbert').find('option').length-1;
+        var lastOptionLabel  = r$('.select_numbert').find('option').eq(lastOptionIndex).val();
+
+        if(r$(this).val() == lastOptionLabel){
+             r$(".action_numbert").fadeIn("fast");
+                r$('.top_up_button_final').prop("disabled", true);
+
+        }else{
+            r$(".action_numbert").fadeOut("fast");
+            r$('.top_up_button_final').prop("disabled", false);
         }
+
+        // switch (r$(this).val()) {
+        //     case 'option1':
+        //         //alert( 1 );
+        //         r$(".action_numbert").fadeOut("fast");
+        //         break;
+        //     case 'option2':
+        //         //alert( 2 );
+        //         r$(".action_numbert").fadeOut("fast");
+        //         break;
+        //     case 'option3':
+        //         //alert( 3 );
+        //         r$(".action_numbert").fadeOut("fast");
+        //         break;
+        //     case 'option4':
+        //         //alert( 3 );
+        //         r$(".action_numbert").fadeIn("fast");
+        //         r$('.top_up_button_final').prop("disabled", true);
+        //         break;
+        // }
     });
 });
 

@@ -589,38 +589,39 @@ $wind(document).ready(function() {
         var radioBill = $wind('.bill_main_radio input[type="radio"]'); //addebito su conto telefonico radio apertur
         var subRadioBill = $wind('.item_bill input[type="radio"]'); // contratto
         var subRadioCharge = $wind('.item_charge input[type="radio"]'); // conto
-        var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');// nuva carta
+        var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]'); // nuva carta
         var securityCC = $wind('#security_cc');
 
         $wind('.top_up_button_final').prop("disabled", true);
+        if ((checkNewNumber() == true)) {
+            if (radioCC.is(':checked')) {
 
-        if (radioCC.is(':checked')) {
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
 
-             $wind('.top_up_button_final').prop("disabled", false);
-         }
+            if (subRadioNewCard.is(':checked') && (checkNewCreditCard() == true)) {
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
+            if (subRadioCC.is(':checked')) {
 
-        if (subRadioNewCard.is(':checked') && (checkNewCreditCard() == true)) {
-            $wind('.top_up_button_final').prop("disabled", false);
-        }
-        if (subRadioCC.is(':checked')) {
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
 
-            $wind('.top_up_button_final').prop("disabled", false);
-        }
+            if (radioPay.is(':checked')) {
+                console.log('paypal checked');
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
 
-        if (radioPay.is(':checked')) {
-            console.log('paypal checked');
-            $wind('.top_up_button_final').prop("disabled", false);
-        }
+            if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
+                console.log('addebito checked');
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
 
-        if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
-            console.log('addebito checked');
-            $wind('.top_up_button_final').prop("disabled", false);
-        }
+            if ((radioBill.is(':checked') && subRadioBill.is(':checked'))) {
+                console.log('addebito conto tel checked');
+                $wind('.top_up_button_final').prop("disabled", false);
 
-        if ((radioBill.is(':checked') && subRadioBill.is(':checked'))) {
-            console.log('addebito conto tel checked');
-            $wind('.top_up_button_final').prop("disabled", false);
-
+            }
         }
 
 
@@ -650,18 +651,21 @@ $wind(document).ready(function() {
     }
 
 
-   
+
 
     $wind("#input_cc, #security_cc").keyup(function() {
         checkNewCreditCard();
     });
 
     $wind(".number_top_up_confirm").blur(function() {
+
         checkNextStep();
     });
 
     $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
+
         checkNextStep();
+
     });
 
     $wind('input[type="radio"]').change(function() {
