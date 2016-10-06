@@ -71,19 +71,8 @@
             }
         }
         .checkbox {
-            padding-left: 0;
-            label {
-                width: 100%;
-                padding-left: 0;
-                &::before {
-                    left: 100%;
-                    width: 25px;
-                    height: 25px;
-                    margin-left: -25px;
-                    top: -5px;
-                }
-                &::after {
-                    left: 100%;
+            input[type="checkbox"]:checked + label::after {
+                left: 100%;
                     width: 25px;
                     height: 25px;
                     margin-left: -25px;
@@ -96,7 +85,19 @@
                     background-color: $color_orange;
                     border-radius: 4px;
                     border: 1px solid #ccd1d9;
+            }
+            padding-left: 0;
+            label {
+                width: 100%;
+                padding-left: 0;
+                &::before {
+                    left: 100%;
+                    width: 25px;
+                    height: 25px;
+                    margin-left: -25px;
+                    top: -5px;
                 }
+                
             }
         }
     }
