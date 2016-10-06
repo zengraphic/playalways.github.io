@@ -268,11 +268,7 @@
                         <div class="cont_item1">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
                             <div class="clear"></div>
-                                <div class="base__checkbox checkbox checkbox-inline remember_check">
-                                    <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
-                                    <label for="paypal-checkbox">Ricorda i miei dati</label>
-                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange"  data-toggle="tooltip_ccv" data-placement="top" data-original-title="Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati."/>
-                                </div>
+                               
                                 <div class="clear"></div>
                            <!--  <div style="display:none">
                                 <input type="text" placeholder="Email" name="" class="base__input ">
@@ -312,6 +308,10 @@
                             </div>
                         </div>
                     </div> -->
+                    <div class="box">
+                        <h3>Vuoi ricevere la notifica?</h3>
+                        <input type="email" placeholder="Inserisci mail valida" name="" class="base__input">
+                    </div>
                     <div class="box box_2">
                         <div class="paypal_option">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
@@ -435,7 +435,6 @@ $wind(document).ready(function() {
                         if (radioPay.is(':checked')) {
                             console.log('paypal checked');
                             $wind('.top_up_button_final').prop("disabled", false);
-                            alert('b');
                         }
                         if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
                             console.log('addebito checked');
