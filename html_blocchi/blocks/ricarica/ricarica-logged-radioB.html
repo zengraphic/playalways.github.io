@@ -205,16 +205,20 @@
                             <option value="option4">Altro numero</option>
                         </select>
                         <div class="action_numbert">
-                            <input type="text" placeholder="Inserisci numero da ricaricare" name="" class="base__input" onkeypress='validate(event)'>
+                            <input type="text" placeholder="Inserisci numero da ricaricare" name=""  maxlength="10" class="base__input" onkeypress='validate(event)'>
                             <span class="error error_message">Controlla il campo</span>
-                            <input type="text" placeholder="Conferma numero da ricaricare" name="" class="base__input" onkeypress='validate(event)'>
+                            <input type="text" placeholder="Conferma numero da ricaricare" name=""  maxlength="10" class="base__input" onkeypress='validate(event)'>
                             <span class="error error_message">Controlla il campo</span>
                         </div>
                         <h3 class="text2">Di quanto vuoi ricaricare? </h3>
                         <select class="base__select selectpicker select_value light" title="" data-size="6">
-                            <option data-content="15<span class='euro'>€</span> <span class='textl'>(+1,5€ in regalo)</span>">15€ (+1,5€ in regalo)</option>
-                            <option data-content="30<span class='euro'>€</span> <span class='textl'>(+1,5€ in regalo)</span>">30€ (+1,5€ in regalo)</option>
-                            <option data-content="45<span class='euro'>€</span> <span class='textl'>(+1,5€ in regalo)</span>">45€ (+1,5€ in regalo)</option>
+                            <option data-content="2<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">2€ (+1,5€ in omaggio)</option>
+                            <option data-content="5<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">5€ (+1,5€ in omaggio)</option>
+                            <option data-content="10<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">10€ (+1,5€ in omaggio)</option>
+                            <option data-content="15<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">15€ (+1,5€ in omaggio)</option>
+                            <option data-content="25<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">25€ (+1,5€ in omaggio)</option>
+                            <option data-content="50<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">50€ (+1,5€ in omaggio)</option>
+                            <option data-content="100<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">100€ (+1,5€ in omaggio)</option>
                         </select>
                         <h3 class="text3">Come vuoi pagare?</h3>
                     </div>
@@ -280,7 +284,7 @@
                                     <label for="option5"> Inserisci nuova carta</label>
                                 </div>
                                 <!--                               <h5 class="new_cc">Inserisci dati nuova carta</h5> -->
-                                <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name="" class="base__input number_cc" onkeypress='validate(event)'>
+                                <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name=""  maxlength="16" class="base__input number_cc" onkeypress='validate(event)'>
                                 <span class="error error_message">Controlla il campo</span>
                                 <select class="base__select selectpicker select_cc" title="Mese" data-size="6">
                                     <option>01</option>
@@ -296,6 +300,7 @@
                                     <option>12</option>
                                 </select>
                                 <select class="base__select selectpicker select_cc" title="Anno" data-size="6">
+                                    <option>2016</option>
                                     <option>2017</option>
                                     <option>2018</option>
                                     <option>2019</option>
@@ -305,6 +310,7 @@
                                     <option>2023</option>
                                     <option>2024</option>
                                     <option>2025</option>
+                                    <option>2026</option>
                                 </select>
                                 <div class="cvv_container">
                                     <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='validate(event)' maxlength="4" />

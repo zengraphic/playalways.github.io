@@ -153,7 +153,50 @@ r$(document).ready(function() {
 });
 /* end Breadcrumbs mobile */
 
+function clearCard(inputToClear, cvvToClear) {
+    if (inputToClear) {
+        r$(inputToClear).removeClass('americane_cc');
+        r$(inputToClear).removeClass('diners_cc');
+        r$(inputToClear).removeClass('visa_cc');
+        r$(inputToClear).removeClass('maestro_cc');
+        r$(inputToClear).removeClass('masterc_cc');
+        r$(inputToClear).removeClass('general_cc');
+        r$(inputToClear).removeClass('aura_cc');
+    }
+    if (cvvToClear) {
+        console.log(cvvToClear);
+        r$(cvvToClear).removeClass('cvv_carta');
+        r$(cvvToClear).removeClass('cvv_mastercard');
+    }
+}
 
+function checkCard(card) {
+    var c = card;
+    var cl = parseInt(c.substr(c.length - 1));
+    var c = c.slice(0, -1)
+    var c = c.split("").reverse().join("");
+    var c = c.split("");
+    var a = 2;
+    var cm = [];
+    for (var i = 0; i < c.length; i++) {
+        if (a % 2 == 0) {
+            var t = c[i] * 2;
+            if (t > 9) {
+                var t = (t - 9);
+            }
+            cm.push(t);
+        } else { cm.push(parseInt(c[i])); }
+        a++;
+    }
+    var f = 0;
+    for (var i = 0; i < cm.length; i++) { f += cm[i]; }
+    f = f + cl;
+    if (f % 10 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 /* Multiple actions with ready function dependece */
 r$(document).ready(function() {
@@ -313,50 +356,7 @@ r$(document).ready(function() {
         r$("#action_c4").addClass("active");
     });
 
-    function clearCard(inputToClear, cvvToClear) {
-        if (inputToClear) {
-            r$(inputToClear).removeClass('americane_cc');
-            r$(inputToClear).removeClass('diners_cc');
-            r$(inputToClear).removeClass('visa_cc');
-            r$(inputToClear).removeClass('maestro_cc');
-            r$(inputToClear).removeClass('masterc_cc');
-            r$(inputToClear).removeClass('general_cc');
-            r$(inputToClear).removeClass('aura_cc');
-        }
-        if (cvvToClear) {
-            console.log(cvvToClear);
-            r$(cvvToClear).removeClass('cvv_carta');
-            r$(cvvToClear).removeClass('cvv_mastercard');
-        }
-    }
 
-    function checkCard($card) {
-        var c = $card;
-        var cl = parseInt(c.substr(c.length - 1));
-        var c = c.slice(0, -1)
-        var c = c.split("").reverse().join("");
-        var c = c.split("");
-        var a = 2;
-        var cm = [];
-        for (var i = 0; i < c.length; i++) {
-            if (a % 2 == 0) {
-                var t = c[i] * 2;
-                if (t > 9) {
-                    var t = (t - 9);
-                }
-                cm.push(t);
-            } else { cm.push(parseInt(c[i])); }
-            a++;
-        }
-        var f = 0;
-        for (var i = 0; i < cm.length; i++) { f += cm[i]; }
-        f = f + cl;
-        if (f % 10 == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     r$('#input_cc').blur(function() {
         var carta = r$('#input_cc').val();
@@ -423,6 +423,14 @@ r$(document).ready(function() {
                     break;
 
             }
+            
+            if (card == 'americane_cc') {
+                r$('#security_cc').attr('maxlength',4);
+
+            } else {
+                r$('#security_cc').attr('maxLength', 3);
+            }
+
             clearCard('#input_cc', false);
             r$("#input_cc").addClass(card);
             r$(".visa_cc").fadeIn(10);
@@ -437,6 +445,7 @@ r$(document).ready(function() {
             clearCard('#input_cc', '#security_cc');
         }
         console.log("lunghezza:" + value.length);
+        
     });
 
 

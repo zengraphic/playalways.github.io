@@ -145,6 +145,21 @@
                     padding-bottom: 2rem;
                 }
             }
+            .base__input.error {
+                color: $color_red;
+                border-color: $color_red;
+                @include radius(4px 4px 0px 0px);
+                + span.error {
+                    width: 100%;
+                    display: inline-block;
+                    text-align: center;
+                    color: white;
+                    margin-top: -0.5rem;
+                    padding: 0.5rem 0.5rem;
+                    background-color: $color_red;
+                    @include radius(0px 0px 4px 4px);
+                }
+            }
         }
         .borderb {
             @include boxWF(left, 100%);
@@ -663,84 +678,28 @@
     background-color: rgba(255, 255, 255, 0.8);
     /* top: calc(50% - 100px); */
     z-index: 3000;
-
-    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
     animation-duration: 0.4s
-   
-}
-.refill_modal-paypal {
-    display: none;
-    position: fixed;
-    width: 100%;
-    max-width: 420px;
-    height: 100vh;
-    right: 0;
-    bottom: 0;
-    padding: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* top: calc(50% - 100px); */
-    z-index: 3000;
-
-    -webkit-animation-name: fadeIn; /* Fade in the background */
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s
-   
-}
-.refill_modal-paypal-dialog {
-        position: fixed;
-        bottom: 0;
-        max-width: 420px;
-        margin: 0;
-        height:auto;
-        max-height:450px;
-        position: fixed;
-        background-color: #ffffff !important;
-
-         -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 0.4s;
-    animation-name: slideIn;
-    animation-duration: 0.4s
-    }
-.refill_modal-paypal-header {
-    background-color: #f4f4f4;
-    color: #777a7e;
-    font-size: 1.6rem;
-    
-    font-family: $font_family_regular;
-    padding: 1rem 2.1rem 1rem 2.12rem;
-    line-height: normal;
-    margin: 0;
-    text-align: left;
-}
-
-.refill_modal-paypal-body {
-	color: #777a7e;
-	 padding: 1rem 2.1rem;
-}
-
-.refill_modal-paypal-footer {
-    padding: 1rem 2.1rem;
-    color: #777a7e;
 }
 
 .refill_modal-dialog {
-        position: fixed;
-        bottom: 0;
-        max-width: 420px;
-        margin: 0;
-        height:auto;
-        max-height:450px;
-        position: fixed;
-        background-color: #ffffff !important;
-
-         -webkit-animation-name: slideIn;
+    position: fixed;
+    bottom: 0;
+    max-width: 420px;
+    margin: 0;
+    height: auto;
+    max-height: 450px;
+    position: fixed;
+    background-color: #ffffff !important;
+    -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
     animation-duration: 0.4s
-    }
+}
+
 .refill_modal-header {
     background-color: #f4f4f4;
     color: #777a7e;
@@ -753,8 +712,8 @@
 }
 
 .refill_modal-body {
-	color: #777a7e;
-	 padding: 1rem 2.1rem;
+    color: #777a7e;
+    padding: 1rem 2.1rem;
 }
 
 .refill_modal-footer {
@@ -762,8 +721,118 @@
     color: #777a7e;
 }
 
-.refill_modal-btn{
-	    margin-bottom: 30px;
+.refill_modal-paypal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* top: calc(50% - 100px); */
+    z-index: 3000;
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+.refill_modal-paypal-dialog {
+    position: fixed;
+    bottom: 0;
+    max-width: 420px;
+    margin: 0;
+    height: auto;
+    max-height: 450px;
+    position: fixed;
+    background-color: #ffffff !important;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+.refill_modal-paypal-header {
+    background-color: #f4f4f4;
+    color: #777a7e;
+    font-size: 1.6rem;
+    font-family: $font_family_regular;
+    padding: 1rem 2.1rem 1rem 2.12rem;
+    line-height: normal;
+    margin: 0;
+    text-align: left;
+}
+
+.refill_modal-paypal-body {
+    color: #777a7e;
+    padding: 1rem 2.1rem;
+}
+
+.refill_modal-paypal-footer {
+    padding: 1rem 2.1rem;
+    color: #777a7e;
+}
+
+.refill_modal-cc {
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* top: calc(50% - 100px); */
+    z-index: 3000;
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+.refill_modal-cc-dialog {
+    position: fixed;
+    bottom: 0;
+    max-width: 420px;
+    margin: 0;
+    height: auto;
+    max-height: 450px;
+    position: fixed;
+    background-color: #ffffff !important;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+.refill_modal-cc-header {
+    background-color: #f4f4f4;
+    color: #777a7e;
+    font-size: 1.6rem;
+    font-family: $font_family_regular;
+    padding: 1rem 2.1rem 1rem 2.12rem;
+    line-height: normal;
+    margin: 0;
+    text-align: left;
+}
+
+.refill_modal-cc-body {
+    color: #777a7e;
+    padding: 1rem 2.1rem;
+}
+
+.refill_modal-cc-footer {
+    padding: 1rem 2.1rem;
+    color: #777a7e;
+}
+
+.refill_modal-btn {
+    margin-bottom: 30px;
 }
 
 .top_up_remove_btn {
@@ -776,26 +845,49 @@
     }
 }
 
+
 /* Add Animation */
+
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 @keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
+
 .showMore {
     color: $color-orange;
     font-size: 1.250em;
@@ -809,7 +901,6 @@
 .showMore_content {
     display: none;
 }
-
 
 @media (max-width: 767px) {
     .base__popup.refill_block .container {
