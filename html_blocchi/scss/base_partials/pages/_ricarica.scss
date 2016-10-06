@@ -8,11 +8,22 @@
 }
 
 .no-scroll {
-    overflow:hidden;
+    overflow: hidden;
 }
 
 //end OS Mac
 .ricarica {
+    &__overlay {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        z-index: 3000;
+        width: 100%;
+        height: 100%;
+        background-color: #444;
+        @include opacity(0.8);
+        display: none;
+    }
     .base__input {
         transition: none;
         -o-transition: none;
@@ -155,7 +166,7 @@
         }
         .item-box {
             @include boxWF(left, 100%);
-            padding: 0.5rem 2.3rem ;
+            padding: 0.5rem 2.3rem;
             &.padding-t {
                 padding-top: 0;
             }
@@ -196,8 +207,8 @@
                         .card-number-crypted {
                             font-size: 12px;
                         }
-                        .expiration{
-                            margin-left:15px;
+                        .expiration {
+                            margin-left: 15px;
                         }
                         .card-image,
                         .card-number-crypted,
@@ -206,8 +217,8 @@
                         .expiration-date {
                             font-family: $font_family_light;
                         }
-                        .card-number-clear{
-                            margin-left:3px;
+                        .card-number-clear {
+                            margin-left: 3px;
                         }
                     }
                 }
@@ -227,7 +238,7 @@
             .cont__item_cc2 {
                 @include boxWF(left, 100%);
                 // border-bottom: 1px solid $color_grey_medium_light;
-                padding:0 0 0.5rem 1.2rem;
+                padding: 0 0 0.5rem 1.2rem;
                 margin-top: 0.5rem;
                 .radio.base__radio label {
                     &.label_for_creditCard {
@@ -248,10 +259,9 @@
                         .card-number-crypted {
                             font-size: 12px;
                         }
-                        .expiration{
-                            margin-left:15px;
+                        .expiration {
+                            margin-left: 15px;
                         }
-                        
                         .card-image,
                         .card-number-crypted,
                         .card-number-clear,
@@ -263,7 +273,6 @@
                 }
                 a.btn {
                     @include boxWF(right, auto);
-                    
                     @include defaultTxt($font_family_regular, 0.9rem);
                     padding: 0;
                 }
@@ -285,7 +294,6 @@
                     position: relative;
                     float: right;
                     width: 33%;
-                    
                     .icon_tooltip {
                         position: absolute;
                         bottom: 12px;
@@ -389,7 +397,6 @@
         .top_up_button_final {
             margin-bottom: 30px;
         }
-        
         input {
             float: left;
             &[type="text"],
@@ -403,9 +410,9 @@
                 font-weight: 100;
                 background: #ffffff;
                 color: #4a4a4a !important;
-                appearance:none;
-                -webkit-appearance:none;
-                -moz-appearance:none;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
             }
             //END CREDIC CARD
             &[type="text"][type="number"],
@@ -427,7 +434,6 @@
             &[type="password"]:hover,
             &[type="number"]:hover {
                 border: 1px solid $color_orange;
-
             }
             &[type="text"].visa_cc,
             &[type="email"].visa_cc,
@@ -488,12 +494,12 @@
                 background-position: 87% center; */
                 padding-top: 11px;
                 padding-bottom: 11px;
-                    &.cvv_carta {
-                        @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
-                    }
-                    &.cvv_amex {
-                        @include creditSimbol(url(../img/credit-cards/cvv_amex.png));
-                    }
+                &.cvv_carta {
+                    @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
+                }
+                &.cvv_amex {
+                    @include creditSimbol(url(../img/credit-cards/cvv_amex.png));
+                }
             }
             &[type="text"].email_c,
             &[type="email"].email_c,
@@ -595,7 +601,7 @@
         }
         .radio {
             @include boxWF(left, 100%);
-            margin:  0.5rem 0;
+            margin: 0.5rem 0;
             &.base__radio label {
                 float: left;
                 color: $color_grey_dark;
@@ -645,22 +651,151 @@
     }
 }
 
-.refill_modal{
-    position: absolute;
-    left: calc(50% - 50%);
-    top: calc(50% - 100px);
+.refill_modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* top: calc(50% - 100px); */
     z-index: 3000;
+
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+   
+}
+.refill_modal-paypal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* top: calc(50% - 100px); */
+    z-index: 3000;
+
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+   
+}
+.refill_modal-paypal-dialog {
+        position: fixed;
+        bottom: 0;
+        max-width: 420px;
+        margin: 0;
+        height:auto;
+        max-height:450px;
+        position: fixed;
+        background-color: #ffffff !important;
+
+         -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+    }
+.refill_modal-paypal-header {
+    background-color: #f4f4f4;
+    color: #777a7e;
+    font-size: 1.6rem;
+    
+    font-family: $font_family_regular;
+    padding: 1rem 2.1rem 1rem 2.12rem;
+    line-height: normal;
+    margin: 0;
+    text-align: left;
+}
+
+.refill_modal-paypal-body {
+	color: #777a7e;
+	 padding: 1rem 2.1rem;
+}
+
+.refill_modal-paypal-footer {
+    padding: 1rem 2.1rem;
+    color: #777a7e;
+}
+
+.refill_modal-dialog {
+        position: fixed;
+        bottom: 0;
+        max-width: 420px;
+        margin: 0;
+        height:auto;
+        max-height:450px;
+        position: fixed;
+        background-color: #ffffff !important;
+
+         -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+    }
+.refill_modal-header {
+    background-color: #f4f4f4;
+    color: #777a7e;
+    font-size: 1.6rem;
+    font-family: $font_family_regular;
+    padding: 1rem 2.1rem 1rem 2.12rem;
+    line-height: normal;
+    margin: 0;
+    text-align: left;
+}
+
+.refill_modal-body {
+	color: #777a7e;
+	 padding: 1rem 2.1rem;
+}
+
+.refill_modal-footer {
+    padding: 1rem 2.1rem;
+    color: #777a7e;
+}
+
+.refill_modal-btn{
+	    margin-bottom: 30px;
 }
 
 .top_up_remove_btn {
-            color: #f48135;
-            position:absolute;
-            top:0;
-            right:0;
-            &:active {
-               box-shadow: none;
-            }
-        }
+    color: #f48135;
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:active {
+        box-shadow: none;
+    }
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
 .showMore {
     color: $color-orange;
     font-size: 1.250em;
@@ -674,6 +809,7 @@
 .showMore_content {
     display: none;
 }
+
 
 @media (max-width: 767px) {
     .base__popup.refill_block .container {
