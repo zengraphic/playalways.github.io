@@ -501,10 +501,15 @@ $wind(window).load(function() {
 
 $wind(document).ready(function() {
 
+    var cardToDelete;
     // MODAL PAYPAL ED ELIMINA
     $wind(".btn_removeModal").click(function() {
+        cardToDelete = $wind(this).closest(".cont__item_cc");
         $wind('.refill_modal').css('display', 'block');
     });
+    $wind(".rbtn_icc").click(function() {
+        cardToDelete.slideUp();
+    });    
     $wind(".modalPaypal").click(function() {
         $wind(".refill_modal-paypal").css('display', 'block');
     });
