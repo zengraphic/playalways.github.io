@@ -241,7 +241,7 @@
 jQuery(document).ready(function($) {
 
     $('.container_form').on({
-        mouseenter: function() {
+        mouseover: function() {
             $('.container_form').addClass('form_focused');
             console.log('entra');
         },
@@ -252,6 +252,14 @@ jQuery(document).ready(function($) {
         }
 
     });
+
+    $('.input_container').on({
+        mouseleave: function() {
+            $('.container_form').addClass('form_focused');
+            console.log('esci');
+        }
+    })
+   
 
     window.setInterval(function() {
         checkFocusBanner();
@@ -272,17 +280,16 @@ jQuery(document).ready(function($) {
             $(this).blur();
         },
         'focus': function() {
-            console.log("displayed");
-            $('.container_form').addClass('form_fix_ie');
+            $('.container_form').addClass('select_fix');
         },
         "blur": function() {
-            console.log("not displayed");
-            $('.container_form').removeClass('form_fix_ie');
+            $('.container_form').removeClass('select_fix');
         },
         "keyup": function(e) {
-            if (e.keyCode == 27)
-                console.log("displayed");
-            $('.container_form').addClass('form_fix_ie');
+            if (e.keyCode == 27) {
+                $('.container_form').addClass('select_fix');
+            }
+
         }
     });
 
@@ -326,35 +333,37 @@ jQuery(document).ready(function($) {
         }
     });
 
-    function msieversion() {
-        var ua = window.navigator.userAgent
-        var msie = ua.indexOf("MSIE ")
-
-        if (msie > 0) // If Internet Explorer, return version number
-            return parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)))
-        else // If another browser, return 0
-            return 0
-
-    }
+    
 
     var animateTimer = 500;
     var LongTimer = 1000;
 
+    // function msieversion() {
+    //     var ua = window.navigator.userAgent
+    //     var msie = ua.indexOf("MSIE ")
 
-    function checkIE() {
-        if (msieversion() != 0) {
-            if ($("#provincia").is(":focus" || ":keyup")) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return true;
-        }
-    }
+    //     if (msie > 0) // If Internet Explorer, return version number
+    //         return parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)))
+    //     else // If another browser, return 0
+    //         return 0
+
+    // }
+
+
+    // function checkIE() {
+    //     if (msieversion() != 0) {
+    //         if ($("#provincia").is(":focus" || ":keyup")) {
+    //             return false;
+    //         } else {
+    //             return true;
+    //         }
+    //     } else {
+    //         return true;
+    //     }
+    // }
 
     function checkFocusBanner() {
-        /*console.log("focus banner:(0)" + $('.input_banner:focus').length + " classe focus:(0) " + $('.container_form').hasClass('form_focused') + " comune:(Comune) " + $('.input_banner[name=comune]').val() + " indirizzo:(Indirizzo) " + $('.input_banner[name=indirizzoEsteso]').val() + " civico:(n) " + $('.input_banner[name=civico]').val() + " box aperto:(0) " + $('.hidden_input_overlay').hasClass('checkTelephone') + " errore(0) : " + $('.error_notification').length + " IE fix:(0) " + $('.container_form').hasClass('form_fix_ie'));*/
+        /*console.log("focus banner:(0)" + $('.input_banner:focus').length + " classe focus:(0) " + $('.container_form').hasClass('form_focused') + " comune:(Comune) " + $('.input_banner[name=comune]').val() + " indirizzo:(Indirizzo) " + $('.input_banner[name=indirizzoEsteso]').val() + " civico:(n) " + $('.input_banner[name=civico]').val() + " box aperto:(0) " + $('.hidden_input_overlay').hasClass('checkTelephone') + " errore(0) : " + $('.error_notification').length + " IE fix:(0) " + $('.container_form').hasClass('select_fix'));*/
         if ($('.subcontainer_banner').css('left') == '-300px') {
             if (
                 ($('.input_banner:focus').length == 0) &&
@@ -364,7 +373,7 @@ jQuery(document).ready(function($) {
                 ($('.input_banner[name=civico]').val() == "") &&
                 (!$('.hidden_input_overlay').hasClass('checkTelephone')) &&
                 ($('.error_notification').length == 0) &&
-                (!$('.container_form').hasClass('form_fix_ie')) && checkIE()
+                (!$('.container_form').hasClass('select_fix')) // && checkIE()
             ) {
 
 
