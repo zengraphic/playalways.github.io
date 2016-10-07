@@ -423,9 +423,9 @@ r$(document).ready(function() {
                     break;
 
             }
-            
+
             if (card == 'americane_cc') {
-                r$('#security_cc').attr('maxlength',4);
+                r$('#security_cc').attr('maxlength', 4);
 
             } else {
                 r$('#security_cc').attr('maxLength', 3);
@@ -436,11 +436,11 @@ r$(document).ready(function() {
             r$(".visa_cc").fadeIn(10);
             r$(".tooltip").css("display", "none");
             if (r$('#input_cc').hasClass('americane_cc')) {
-                clearCard(false,'#security_cc');
+                clearCard(false, '#security_cc');
                 r$('#security_cc').addClass('cvv_amex');
                 r$('.cvv_amex').fadeIn(10);
             } else {
-                clearCard(false,'#security_cc');
+                clearCard(false, '#security_cc');
                 r$('#security_cc').addClass('cvv_carta');
 
             }
@@ -448,7 +448,7 @@ r$(document).ready(function() {
             clearCard('#input_cc', '#security_cc');
         }
         console.log("lunghezza:" + value.length);
-        
+
     });
 
 
@@ -597,19 +597,109 @@ r$(function() {
     });
 });
 
+function checkNextStep() {
+    var radioCC = $wind('.credit_card_main_radio input[type="radio"]'); // carta predefinita
+    var subRadioCC = $wind('.optional_card input[type="radio"]'); // seconda carta inserita
+    var radioPay = $wind('.paypal_main_radio input[type="radio"]'); //paypal
+    var radioCharge = $wind('.charge_main_radio input[type="radio"]'); //addebito su conto radio apertura
+    var radioBill = $wind('.bill_main_radio input[type="radio"]'); //addebito su conto telefonico radio apertur
+    var subRadioBill = $wind('.item_bill input[type="radio"]'); // contratto
+    var subRadioCharge = $wind('.item_charge input[type="radio"]'); // conto
+    var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]'); // nuva carta
+    var securityCC = $wind('#security_cc');
+
+    $wind('.top_up_button_final').prop("disabled", true);
+
+    if ($wind('.action_numbert').hasClass('entered')) {
+        if (checkNewNumber()) {
+            if (radioCC.is(':checked') ||
+                (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
+                (subRadioCC.is(':checked')) ||
+                (radioPay.is(':checked')) ||
+                (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
+                (subRadioBill.is(':checked') && radioBill.is(':checked'))) {
+
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
+        }
+    } else {
+        if (radioCC.is(':checked') ||
+            (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
+            (subRadioCC.is(':checked')) ||
+            (radioPay.is(':checked')) ||
+            (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
+            (subRadioBill.is(':checked') && radioBill.is(':checked'))) {
+
+            $wind('.top_up_button_final').prop("disabled", false);
+        }
+    }
+
+
+    // if ((checkNewNumber() == true)) {
+    //     if (radioPay.is(':checked')) {
+    //         console.log('paypal checked');
+    //         $wind('.top_up_button_final').prop("disabled", false);
+    //         alert('b');
+    //     }
+
+    //     // if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
+    //     //     console.log('addebito checked');
+    //     //     $wind('.top_up_button_final').prop("disabled", false);
+
+    //     // }
+    //     // if (subRadioBill.is(':checked') && (radioBill.is(':checked'))) {
+    //     //     console.log('addebito conto tel checked');
+    //     //     $wind('.top_up_button_final').prop("disabled", false);
+
+    //     // }
+    //     // if (($wind('#input_cc').val().length > 8) && subRadioNewCard.is(':checked') && radioCC.is(':checked') && securityCC.val().length >= 3) {
+    //     //     $wind('.top_up_button_final').prop("disabled", false);
+    //     // }
+    // }
+}
+
+function checkNewNumber() {
+    var mainNumber = $wind('.number_top_up').val();
+    var confirmNumber = $wind('.number_top_up_confirm').val();
+    if ((!$wind('.number_top_up_confirm').is(':focus')) && ((confirmNumber.length > 0) && (mainNumber.length > 0))) {
+        if ((mainNumber.length >= 6) && (confirmNumber.length >= 6) && (mainNumber == confirmNumber)) {
+            $wind('.number_top_up_confirm').removeClass('error');
+            $wind('.number_top_up_confirm + span').removeClass('error');
+            return (true);
+        } else {
+            $wind('.number_top_up_confirm').addClass('error');
+            $wind('.number_top_up_confirm + span').addClass('error');
+            $wind('.number_top_up_confirm + span').text('Controlla che i numeri siano uguali');
+            return (false);
+        }
+    } else {
+        return (false);
+    }
+}
+
+function checkNewCreditCard() {
+    var radioCC = $wind('.newCard_main_radio input[type="radio"]');
+    var securityCC = $wind('#security_cc');
+    if (($wind('#input_cc').val().length > 13) && (checkCard($wind('#input_cc').val()) == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
+        $wind('.top_up_button_final').prop("disabled", false);
+    } else {
+        $wind('.top_up_button_final').prop("disabled", true);
+    }
+}
+
 r$(function() {
     r$('#select_numbert').on('change', function() {
 
-        var lastOptionIndex = r$('.select_numbert').find('option').length-1;
-        var lastOptionLabel  = r$('.select_numbert').find('option').eq(lastOptionIndex).val();
+        var lastOptionIndex = r$('.select_numbert').find('option').length - 1;
+        var lastOptionLabel = r$('.select_numbert').find('option').eq(lastOptionIndex).val();
 
-        if(r$(this).val() == lastOptionLabel){
-             r$(".action_numbert").fadeIn("fast");
-                r$('.top_up_button_final').prop("disabled", true);
+        if (r$(this).val() == lastOptionLabel) {
+            r$(".action_numbert").fadeIn("fast").addClass('entered');
+            r$('.top_up_button_final').prop("disabled", true);
 
-        }else{
+        } else {
             r$(".action_numbert").fadeOut("fast");
-            r$('.top_up_button_final').prop("disabled", false);
+            checkNextStep();
         }
 
         // switch (r$(this).val()) {
