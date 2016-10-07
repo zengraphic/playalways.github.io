@@ -1,0 +1,107 @@
+<html>
+
+<head>
+<head>
+	<script type="text/javascript" src="js/lib/highlight.pack.js"></script>
+	<script type="text/javascript" src="js/lib/modernizr.custom.min.js"></script>
+<!-- 	<script type="text/javascript" src="../../js/examples.js"></script> -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/ScrollMagic.js"></script>    
+    <script src="js/lib/greensock/TweenMax.min.js"></script>          
+    <script src="js/plugins/animation.gsap.js"></script>      
+    <script src="js/lib/greensock/easing/EasePack.min.js"></script>    
+    <script src="js/plugins/debug.addindicators.js"></script>         
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/examples.css" />      
+
+<!--     animation.gsap.min.js
+animation.velocity.min.js
+debug.addIndicators.min.js
+jquery.ScrollMagic.min.js   -->
+</head>
+
+<body>
+    <style type="text/css">
+
+    body{
+    	background-color: #fff;
+    }
+    .parallaxParent {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .parallaxParent > * {
+        height: 200%;
+        position: relative;
+        top: -100%;
+        background-position-x: 50%;
+    }
+    </style>
+    <div class="spacer s0"></div>
+    <div id="parallax1" class="parallaxParent">
+        <div style="background-image: url(img/img_parallax.jpg);"></div>
+    </div>
+    <div class="spacer s1">
+        <div class="box2 blue">
+            <p>Content 1</p>
+
+        </div>
+    </div>
+    <div class="spacer s0"></div>
+    <div id="parallax2" class="parallaxParent">
+        <div style="background-image: url(img/img_parallax_2.jpg);"></div>
+    </div>
+    <div class="spacer s1">
+        <div class="box2 blue">
+            <p>Content 2</p>
+
+        </div>
+    </div>
+    <div class="spacer s0"></div>
+    <div id="parallax3" class="parallaxParent">
+        <div style="background-image: url(img/img_parallax_3.jpg);"></div>
+    </div>
+    <script>
+    // init controller
+    var controller = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            triggerHook: "onEnter",
+            duration: "200%"
+        }
+    });
+
+    // build scenes
+    new ScrollMagic.Scene({
+            triggerElement: "#parallax1"
+        })
+        .setTween("#parallax1 > div", {
+            y: "80%",
+            ease: Linear.easeNone
+        })
+        .addIndicators()
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+            triggerElement: "#parallax2"
+        })
+        .setTween("#parallax2 > div", {
+            y: "80%",
+            ease: Linear.easeNone
+        })
+        .addIndicators()
+        .addTo(controller);
+
+    new ScrollMagic.Scene({
+            triggerElement: "#parallax3"
+        })
+        .setTween("#parallax3 > div", {
+            y: "80%",
+            ease: Linear.easeNone
+        })
+        .addIndicators()
+        .addTo(controller);
+    </script>
+</body>
+
+</html>
