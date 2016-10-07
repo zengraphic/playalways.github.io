@@ -1807,9 +1807,30 @@ span.error_message {
 .base__input--textarea {
   width: 100%; }
 
+.select_cc.error {
+  color: #ce4242; }
+  .select_cc.error + span.error {
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    margin-right: 0.4rem;
+    padding: 0.5rem 0.5rem;
+    background-color: #ce4242;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -wekit-border-radius: 0px 0px 4px 4px;
+    -ms-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px; }
+  .select_cc.error button {
+    border-color: #ce4242 !important;
+    -moz-border-radius: 4px 4px 0px 0px;
+    -wekit-border-radius: 4px 4px 0px 0px;
+    -ms-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px; }
+
 .base__input.error {
   color: #ce4242;
-  border-color: #ce4242;
+  border-color: #ce4242 !important;
   -moz-border-radius: 4px 4px 0px 0px;
   -wekit-border-radius: 4px 4px 0px 0px;
   -ms-border-radius: 4px 4px 0px 0px;
@@ -5416,6 +5437,10 @@ h3.title {
     float: left;
     width: 100%;
     display: none; }
+    .base__popup.refill_block .item-box .cont_item1 .select_anno,
+    .base__popup.refill_block .item-box .cont_item1 .select_mese {
+      float: left;
+      width: 33%; }
     .base__popup.refill_block .item-box .cont_item1 .cont__action-cc1 {
       display: none;
       margin-left: 15px; }
@@ -5600,7 +5625,7 @@ h3.title {
   display: none; }
 .base__popup.refill_block .base__select.base__select.select_cc {
   float: left;
-  width: 33%;
+  width: 100%;
   padding-right: 0.4rem; }
 .base__popup.refill_block .base__select.base__select.select_numbert {
   float: left;

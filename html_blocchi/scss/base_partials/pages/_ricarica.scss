@@ -301,6 +301,11 @@
             .cont_item1 {
                 @include boxWF(left, 100%);
                 display: none;
+                .select_anno,
+                .select_mese {
+                    float: left;
+                    width: 33%;
+                }
                 .cont__action-cc1 {
                     display: none;
                     margin-left: 15px;
@@ -544,7 +549,7 @@
         }
         .base__select.base__select {
             &.select_cc {
-                @include boxWF(left, 33%);
+                @include boxWF(left, 100%);
                 padding-right: 0.4rem;
             }
             &.select_numbert {
