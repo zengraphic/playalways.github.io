@@ -456,24 +456,45 @@ r$(document).ready(function() {
         var minYear = new Date().getFullYear();
         var month = parseInt(r$('.select_cc[title="Mese"] option:selected').text(), 10);
         var year = parseInt(r$('.select_cc[title="Anno"] option:selected').text(), 10);
-        
-            if (isNaN(month)) {
-                console.log('seleziona anche il mese');
-                
 
-            } else {
-                if (year > minYear) {
-                    console.log('anno lontano');
+        if (isNaN(month)) {
+            console.log('seleziona anche il mese');
+            $wind('.select_mese .select_cc:first-child').addClass('error');
+            $wind('.select_cc + span').addClass('error');
+            $wind('.select_cc + span').text('Seleziona il mese');
 
-                } else if (year === minYear) {
-                        if(month >= minMonth){
-                            console.log('scadenza ok');
-                        }else{
-                            console.log('data antecedente');
-                        }
-                } 
+
+        } else {
+            $wind('.select_mese .select_cc:first-child').removeClass('error');
+            $wind('.select_anno .select_cc:first-child').removeClass('error');
+            $wind('.select_cc + span').removeClass('error');
+            if (year > minYear) {
+                console.log('anno lontano');
+                $wind('.select_mese .select_cc:first-child').removeClass('error');
+                $wind('.select_anno .select_cc:first-child').removeClass('error');
+                $wind('.select_cc + span').removeClass('error');
+
+            } else if (year === minYear) {
+                if (month > minMonth) {
+                    console.log('scadenza ok');
+                    $wind('.select_mese .select_cc:first-child').removeClass('error');
+                    $wind('.select_anno .select_cc:first-child').removeClass('error');
+                    $wind('.select_cc + span').removeClass('error');
+
+
+
+                } else {
+                    console.log('data antecedente');
+                    $wind('.select_mese .select_cc:first-child').addClass('error');
+                    $wind('.select_cc + span').addClass('error');
+                    $wind('.select_cc + span').text('Controlla i dati inseriti');
+
+                    $wind('.select_anno .select_cc:first-child').addClass('error');
+                    $wind('.select_cc + span').addClass('error');
+                    $wind('.select_cc + span').text('Controlla i dati inseriti');
+                }
             }
-
+        }
     });
 
     r$('.security_cc').click(function() {

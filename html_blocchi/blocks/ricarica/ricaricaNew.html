@@ -398,17 +398,17 @@
                         <h4>Accetto <a class="base__popup-link" href="#privacy_block">le condizioni del servizio e l’informativa sulla privacy </a></h4>
                         <button class="btn btn_refil base__bt top_up_button_final" disabled="true">RICARICA</button>
                     </div>
-                    <div class=" refill_modal">
-                        <div class="refill_modal-dialog">
-                            <div class="refill_modal-header">
+                    <div class="popup">
+                        <div class="popup-dialog">
+                            <div class="popup-header">
                                 Stai per eliminare la carta che finisce per 6368
                             </div>
-                            <div class="refill_modal-body">
+                            <div class="popup-body">
                                 Stai per eliminare la carta predefinita
                             </div>
-                            <div class="refill_modal-footer">
-                                <button class="btn btn_1 btn_refil  base__bt rbtn_icc refill_modal-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
-                                <button class="btn btn_2 btn_refil base__bt refill_modal-btn closeModal waves-effect waves-button waves-float waves-light">annulla</button>
+                            <div class="popup-footer ">
+                                <button class="btn popup-btn_1 btn_refil  base__bt rbtn_icc popup-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
+                                <button class="popup-btn_2 btn_refil base__bt popup-btn closeModal waves-effect waves-button waves-float waves-light">annulla</button>
                             </div>
                         </div>
                     </div>
@@ -478,13 +478,7 @@
     </div>
 </body>
 <style>
-.btn_2 {
-    display: none;
-}
 
-.btn_1 {
-    display: none;
-}
 </style>
 <script>
 var $wind = jQuery.noConflict();
@@ -497,32 +491,30 @@ $wind(window).load(function() {
 $wind(document).ready(function() {
     function bindBtnClose() {
         $wind(".closeModal").click(function() {
-            $wind(".refill_modal").fadeOut("20");
-            $wind(".refill_modal-cc").fadeOut("20");
-            $wind(".refill_modal-paypal").fadeOut("20");
+            $wind(".popup").fadeOut("20");
         });
     }
 
     function callPopUp(title, description, button1, button2, labelBtn1, labelBtn2, function1, function2) {
-        var popup = $wind('.refill_modal');
+        var popup = $wind('.popup');
         popup.find('.popup-header').text(title);
         popup.find('.popup-body').text(description);
         popup.find('.popupbtn_1').text(labelBtn1);
         if (button1) {
-            popup.find('.btn_1').show();
-            popup.find('.btn_1').text(labelBtn1);
+            popup.find('.popup-btn_1').show();
+            popup.find('.popup-btn_1').text(labelBtn1);
         }
         if (button2) {
-            popup.find('.btn_2').show();
-            popup.find('.btn_2').text(labelBtn2);
+            popup.find('.popup-btn_2').show();
+            popup.find('.popup-btn_2').text(labelBtn2);
         }
         function1;
         function2;
-        $wind('.refill_modal').css('display', 'block');
+        $wind('.popup').css('display', 'block');
     }
 
     function removeCard(card, radio) {
-        $wind(".btn_1").click(function() {
+        $wind(".popup-btn_1").click(function() {
             card.slideUp();
             radio.removeAttr('checked');
             checkNextStep();
