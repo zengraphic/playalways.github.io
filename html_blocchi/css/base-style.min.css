@@ -1,5 +1,21 @@
 @charset "UTF-8";
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
+
+@keyframes slideIn {
+  from {
+    bottom: -400px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
+
 @-webkit-keyframes spin-webkit {
   0% {
     -webkit-transform: rotate(0deg); }
@@ -3604,6 +3620,18 @@ h4.trade_l {
       .menu__modal--content-items ul li a:hover {
         color: rgba(244, 129, 53, 0.8); }
 
+.menu__modal--with_labels .menu__modal--item_leaf {
+  margin-left: 1rem; }
+
+.menu__modal--with_labels .menu__modal--group_leaf .group_leaf {
+  font-size: 1.28571rem;
+  font-family: "Trade Gothic Light";
+  color: #777a7e;
+  float: left;
+  width: 100%;
+  margin: 3% 0;
+  text-decoration: none; }
+
 @media (max-width: 767px) {
   .content {
     padding: 0px; } }
@@ -5586,11 +5614,12 @@ h3.title {
   padding: 0;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 3000;
-  -webkit-animation-name: fadeIn;
-  /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s; }
+  -o-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  /* Fade in the background */ }
   .base__popup.refill_block .popup-dialog {
     position: fixed;
     bottom: 0;
@@ -5601,10 +5630,8 @@ h3.title {
     max-height: 450px;
     position: fixed;
     background-color: #ffffff;
-    -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 0.4s;
-    animation-name: slideIn;
-    animation-duration: 0.4s; }
+    -webkit-animation-name: slideIn 0.7s;
+    animation-name: slideIn 0.7s; }
   .base__popup.refill_block .popup-header {
     background-color: #f4f4f4;
     font-size: 1.6rem;
@@ -6070,35 +6097,6 @@ h3.title {
   margin-bottom: 0.5em; }
   .base__popup .box-privacy p:last-child {
     margin-bottom: 2em; }
-
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {
-    bottom: -300px;
-    opacity: 0; }
-  to {
-    bottom: 0;
-    opacity: 1; } }
-
-@keyframes slideIn {
-  from {
-    bottom: -300px;
-    opacity: 0; }
-  to {
-    bottom: 0;
-    opacity: 1; } }
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 
 @media (max-width: 767px) {
   .base__popup.refill_block .container {
