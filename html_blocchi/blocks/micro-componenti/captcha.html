@@ -17,15 +17,10 @@
     <script type="text/javascript" src="../../js/base-libs.min.js"></script>
     <script type="text/javascript" src="../../js/base.js"></script>
     <script type="text/javascript" src="../../js/script.js"></script>
-    <script type="text/javascript" src="../../js/captcha.js"></script>
     <!--- /JS -->
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
     <script type="text/javascript">
-    var lightCaptcha1, 
-        lightCaptcha2, 
-        lightCaptcha3, 
-        darkCaptcha1, 
-        darkCaptcha2, 
-        darkCaptcha3;
+    
     var onloadCallback = function() {
 
         var siteKey = '6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT';
@@ -74,49 +69,49 @@
 
 <body>
     <div class="container_testo_generico">
-        <div style="margin-top:50px;">
-        </div>
+        <div style="margin-top:50px;"></div>
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <label>
-                    <ul>
-                        <li>theme: light</li>
-                        <li>size: compact</li>
-                    </ul>
-                </label>
-                <form class="" action="javascript:grecaptcha.reset(lightCaptcha1);">
-                    <div id="example-light-1"></div>
-                    <br>
-                    <input class="btn btn-warning" type="submit" value="reset">
-                </form>
+                <ul class="list-group">
+                    <li class="list-group-item">Theme: Light</li>
+                    <li class="list-group-item">Size: Compact</li>
+                </ul>
+                <div class="captcha__container">
+                    <script>
+                    var lightCaptcha1 = grecaptcha.render('light_captcha_1', {
+                        'sitekey': '6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT', // required
+                        'theme': 'light', // optional
+                        'size': 'compact' // optional
+                    });
+                    </script>
+                    <form class="" action="?" method="POST">
+                        <div id="light_captcha_1" class=""></div>
+                    </form>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <label>
-                    <ul>
-                        <li>theme: light</li>
-                        <li>size: normal</li>
-                        <li>type: image</li>
-                    </ul>
-                </label>
-                <form class="" action="javascript:grecaptcha.reset(lightCaptcha2);">
-                    <div id="example-light-2"></div>
-                    <br>
-                    <input class="btn btn-warning" type="submit" value="reset">
-                </form>
+                <ul class="list-group">
+                    <li class="list-group-item">Theme: Light</li>
+                    <li class="list-group-item">Size: Normal</li>
+                    <li class="list-group-item">Type: Image</li>
+                </ul>
+                <div class="captcha__container">
+                    <form class="" action="?" method="POST">
+                        <div id="light_captcha_2" class="g-recaptcha" data-sitekey="6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT" data-size="normal" data-theme="light" data-type="image"></div>
+                    </form>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <label>
-                    <ul>
-                        <li>theme: light</li>
-                        <li>size: normal</li>
-                        <li>type: audio</li>
-                    </ul>
-                </label>
-                <form class="" action="javascript:grecaptcha.reset(lightCaptcha3);">
-                    <div id="example-light-3"></div>
-                    <br>
-                    <input class="btn btn-warning" type="submit" value="reset">
-                </form>
+                <ul class="list-group">
+                    <li class="list-group-item">Theme: Light</li>
+                    <li class="list-group-item">Size: Normal</li>
+                    <li class="list-group-item">Type: Audio</li>
+                </ul>
+                <div class="captcha__container">
+                    <form class="" action="?" method="POST">
+                        <div id="light_captcha_3" class="g-recaptcha" data-sitekey="6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT" data-size="normal" data-theme="light" data-type="audio"></div>
+                    </form>
+                </div>
             </div>
         </div>
         <div style="margin-top:50px;">
@@ -165,7 +160,6 @@
             </div>
         </div>
     </div>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </body>
 
 </html>
