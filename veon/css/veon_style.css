@@ -12,6 +12,24 @@
   font-weight: hairline; }
 /* ___________________ MIXIN __________________ 
                BREAKPOINT MIXIN */
+.float_left {
+  float: left; }
+
+.float_right {
+  float: right; }
+
+.only_mobile {
+  display: none; }
+  @media (max-width: 768px) {
+    .only_mobile {
+      display: block; } }
+
+.only_desktop {
+  display: block; }
+  @media (max-width: 768px) {
+    .only_desktop {
+      display: none; } }
+
 .clear-fix:after,
 .clear {
   content: ".";
@@ -31,12 +49,20 @@ h1 {
     h1 {
       font-size: 100px;
       line-height: 102px; } }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 45px;
+      line-height: 47px; } }
 
 h6 {
   font-family: "TP Hero Thin";
   font-size: 24px;
   line-height: 26px;
   margin: 0; }
+  @media (max-width: 768px) {
+    h6 {
+      font-size: 16px;
+      line-height: 18px; } }
 
 .text_align_center {
   text-align: center; }
@@ -54,6 +80,26 @@ h6 {
     .background-image-one {
       height: 1440px; } }
 
+@media (max-width: 1440px) {
+  .button_cta img {
+    width: 170px; } }
+
+@media (max-width: 1440px) {
+  .column_image {
+    padding: 0; } }
+@media (max-width: 768px) {
+  .column_image {
+    padding: 0;
+    height: 300px;
+    overflow: hidden; } }
+
+@media (max-width: 1440px) {
+  .image_veon {
+    width: 400px; } }
+@media (max-width: 768px) {
+  .image_veon {
+    max-width: 320px; } }
+
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
@@ -61,6 +107,9 @@ h6 {
   @media (max-width: 1440px) {
     .wrapper {
       max-width: 1024px; } }
+  @media (max-width: 768px) {
+    .wrapper {
+      margin: 0; } }
   .wrapper.one {
     padding-top: 420px; }
     @media (max-width: 1440px) {
@@ -68,23 +117,40 @@ h6 {
         padding-top: 350px; } }
     .wrapper.one h6 {
       margin-top: 35px; }
+    .wrapper.one .button_cta {
+      position: relative;
+      top: 60px; }
   .wrapper.two {
     margin-top: 180px; }
+    @media (max-width: 768px) {
+      .wrapper.two {
+        margin: 0; } }
     .wrapper.two .container_text {
       padding-left: 105px;
       margin-top: 100px; }
+      @media (max-width: 768px) {
+        .wrapper.two .container_text {
+          margin: 30px 0;
+          padding-left: 15px; } }
       .wrapper.two .container_text .button_cta {
         margin-top: 35px; }
       .wrapper.two .container_text h6 {
         margin-top: 35px; }
   .wrapper.three {
     margin-top: 100px; }
+    @media (max-width: 768px) {
+      .wrapper.three {
+        margin: 0; } }
     .wrapper.three .column_left img {
       margin-left: auto;
       margin-right: 0; }
     .wrapper.three .container_text {
       padding-left: 105px;
       margin-top: 100px; }
+      @media (max-width: 768px) {
+        .wrapper.three .container_text {
+          margin: 30px 0;
+          padding-left: 15px; } }
       .wrapper.three .container_text .button_cta {
         margin-top: 35px; }
       .wrapper.three .container_text h6 {
@@ -94,14 +160,23 @@ h6 {
   position: absolute;
   cursor: pointer;
   z-index: 50; }
+  @media (max-width: 768px) {
+    .slick-slider .slider_navigation {
+      display: none !important; } }
 .slick-slider .left_arrow {
   top: calc(50% - 41px);
   left: 10px; }
+  @media (max-width: 1440px) {
+    .slick-slider .left_arrow {
+      left: 20px; } }
   .slick-slider .left_arrow:hover {
     opacity: 0.5; }
 .slick-slider .right_arrow {
   bottom: 50%;
   right: 10px; }
+  @media (max-width: 1440px) {
+    .slick-slider .right_arrow {
+      right: 20px; } }
   .slick-slider .right_arrow:hover {
     opacity: 0.5; }
 
@@ -109,11 +184,18 @@ h6 {
   text-align: center;
   margin-top: 15px;
   padding-left: 0px; }
+  @media (max-width: 768px) {
+    .slider_dots {
+      text-align: left;
+      padding-left: 30px; } }
   .slider_dots li {
     list-style-type: none;
     display: inline-block;
     margin-right: 30px;
     cursor: pointer; }
+    @media (max-width: 768px) {
+      .slider_dots li {
+        margin-right: 10px; } }
   .slider_dots .slide_single {
     width: 20px;
     height: 20px;
@@ -124,6 +206,10 @@ h6 {
     /* stops bg color from leaking outside the border: */
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
+    @media (max-width: 768px) {
+      .slider_dots .slide_single {
+        width: 10px;
+        height: 10px; } }
   .slider_dots .slick-active .slide_single {
     background: #ffcb24; }
 
