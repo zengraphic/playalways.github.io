@@ -1,0 +1,505 @@
+        //infostrada-inorder-step-5.html
+        //infostrada-inorder-step-6.html
+        //infostrada-inorder-step-7.html        
+        @font-face {
+            font-family: 'Trade Gothic LTS Light';
+            src: url('../fonts/TradeGothicLTStd-Light.otf') format('opentype');
+            font-weight: light;
+        }
+        
+        @font-face {
+            font-family: 'Trade Gothic LTS';
+            src: url('../fonts/TradeGothicLTStd.otf') format('opentype');
+            font-weight: normal;
+        }
+        
+        @font-face {
+            font-family: 'Trade Gothic LTS Bold Cond';
+            src: url('../fonts/TradeGothicLTStd-BdCn20.otf') format('opentype');
+            font-weight: 600;
+        }
+        
+        @font-face {
+            font-family: 'Trade Gothic LTS Bold';
+            src: url('../fonts/TradeGothicLTStd-Bd2.otf') format('opentype');
+            font-weight: 700;
+        }
+        
+        // MIXIN FOR BORDER RADIOUS 
+        @mixin border-radius($radius) {
+            -webkit-border-radius: $radius;
+            border-radius: $radius;
+            background-clip: padding-box;
+            /* stops bg color from leaking outside the border: */
+        }
+        
+        // SINGOLI ANGOLI BORDER RADIOUS
+        @mixin border-top-radius($radius) {
+            -webkit-border-top-right-radius: $radius;
+            border-top-right-radius: $radius;
+            -webkit-border-top-left-radius: $radius;
+            border-top-left-radius: $radius;
+            background-clip: padding-box;
+        }
+        
+        @mixin border-right-radius($radius) {
+            -webkit-border-bottom-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+            -webkit-border-top-right-radius: $radius;
+            border-top-right-radius: $radius;
+            background-clip: padding-box;
+        }
+        
+        @mixin border-bottom-radius($radius) {
+            -webkit-border-bottom-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+            -webkit-border-bottom-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+            background-clip: padding-box;
+        }
+        
+        @mixin border-left-radius($radius) {
+            -webkit-border-bottom-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+            -webkit-border-top-left-radius: $radius;
+            border-top-left-radius: $radius;
+            background-clip: padding-box;
+        }
+        
+        $weight-light: 'Trade Gothic LTS Light';
+        $weight-normal: 'Trade Gothic LTS';
+        $weight-boldCond: 'Trade Gothic LTS Bold Cond';
+        $weight-bold: 'Trade Gothic LTS Bold';
+        $title-big: 3.750em; //60px
+        $text-standard: 0.875em; //14px
+        $text-medium: 2.500em; // 40 in base 16
+        $color-lightBlue: #009bbe;
+        $color-lightGray: #f4f4f4; // new color
+        $color-standardText: #292f36;
+        $color-orange: #f48135;
+        $medium-gray: #d3d3d2;
+        $color-white: #ffffff;
+        $color-placeholder: #4a4a4a;
+        $color-HomeLife-Background: #212121;
+        $color-gray-mediumBg: #e6e9ed;
+        $color-blue: #0069b3;
+        $color-border: #e3e7ec;
+        .inf-inorder {
+            .col-riep {
+                .box {
+                    &.-riep {
+                        .r {
+                            span {
+                                color: $color-standardText;
+                                font-family: $weight-normal;
+                            }
+                            &.nota {
+                                color: $color-standardText;
+                                font-style: normal;
+                                font-size: 13px;
+                            }
+                            &.tot {
+                                span {
+                                    font-size: 16px;
+                                    font-family: $weight-normal;
+                                    color: $color-blue;
+                                }
+                                .price {
+                                    font-family: $weight-bold;
+                                    font-size: 24px;
+                                    color: $color-blue;
+                                    .almese {
+                                        font-size: 14px;
+                                        color: $color-standardText;
+                                        font-family: $weight-normal;
+                                    }
+                                }
+                            }
+                            &.op {
+                                color: $color-standardText;
+                                font-size: 16px;
+                                font-family: $weight-normal;
+                                @include border-radius(5px);
+                                .price {
+                                    font-family: $weight-bold;
+                                }
+                            }
+                            .v {
+                                font-size: 16px;
+                                font-family: $weight-bold;
+                                color: $color-blue;
+                            }
+                            .t {
+                                &.v {
+                                    background-image: none;
+                                    font-size: 20px;
+                                    color: $color-standardText;
+                                    font-family: $weight-light;
+                                    padding-left: 5px;
+                                    padding-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            font-family: $weight-normal;
+            .bt-cta {
+                &.bt-back {
+                    background-image: none;
+                    padding: 23px 0px 17px 0px;
+                    width: 190px;
+                    text-align: center;
+                    font-family: $weight-light;
+                    font-size: 18px;
+                    color: $color-orange;
+                    border: 1px solid $color-orange;
+                    background-color: $color-white;
+                    @include border-radius(5px);
+                }
+                &.bt-next {
+                    background-image: none;
+                    padding: 23px 0px 17px 0px;
+                    width: 190px;
+                    text-align: center;
+                    font-family: $weight-light;
+                    font-size: 18px;
+                    color: $color-white;
+                    border: 1px solid $color-orange;
+                    background-color: $color-orange;
+                    @include border-radius(5px);
+                }
+            }
+            .input-gr {
+                &.input-50 {
+                    input[type='text'] {
+                        background-color: $color-white;
+                        border: 1px solid $color-border;
+                        @include border-radius(0);
+                        padding: 7px 10px;
+                        box-sizing: border-box;
+                    }
+                }
+                &.fieldset {
+                    label {
+                        line-height: initial;
+                    }
+                    .input-50 {
+                        input[type='text'] {
+                            background-color: $color-white;
+                            border: 1px solid $color-border;
+                            @include border-radius(0);
+                            padding: 7px 10px;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+            .select-gr {
+                &.fieldset{
+                    [class*='-error']{
+                            border: 1px solid red !important;
+                    }
+                }
+                .customSelect {
+                    background-color: $color-white;
+                    border: 1px solid $color-border;
+                    font-family: $weight-normal;
+                    @include border-radius(0);
+                    padding-top: 2px;
+                    box-sizing: border-box;
+                    background-image: url('newSelectButton.png');
+                    background-size: 20px;
+                }
+            }
+            input[type='radio'] {
+                height: 20px;
+                width: 20px;
+            }
+            input[type='checkbox'] {
+                height: 20px;
+                width: 20px;
+            }
+            input[type='text'],
+            input[type='tel'],
+            input[type='email'] {
+                background-color: $color-white;
+                border: 1px solid $color-border;
+                font-family: $weight-normal;
+                @include border-radius(0);
+            }
+            .checkbox-gr {
+                &.fieldset {
+                    label {
+                        top: 0;
+                    }
+                    .ui-checkbox {
+                        background-image: url('newCheckbox.png');
+                        width: 20px;
+                        height: 20px;
+                        background-size: 20px;
+                        background-position: 0 0px;
+                        display: inline-block;
+                        & + label {
+                            span {
+                                font-size: 16px;
+                                font-family: $weight-light;
+                                color: $color-standardText;
+                            }
+                        }
+                    }
+                    .ui-checkbox-active {
+                        background-image: url('newCheckbox.png');
+                        width: 20px;
+                        height: 20px;
+                        background-size: 20px;
+                        background-position: 0 -20px;
+                        display: inline-block;
+                    }
+                }
+            }
+            .radio-gr {
+                &.fieldset {
+                    .ui-radio {
+                        background-image: url('newRadio.png');
+                        width: 20px;
+                        height: 20px;
+                        background-size: 20px;
+                        display: inline-block;
+                    }
+                    .ui-radio-active {
+                        background-image: url('newRadio.png');
+                        width: 20px;
+                        height: 20px;
+                        background-size: 20px;
+                        background-position-y: -20px;
+                        display: inline-block;
+                    }
+                }
+            }
+            [class*="-gr"] {
+                &.fieldset {
+                    label {
+                        & > span {
+                            font-size: 16px;
+                            font-family: $weight-normal;
+                            color: $color-standardText;
+                        }
+                    }
+                }
+            }
+            div[class*='col-'] {
+                ul {
+                    li {
+                        font-size: 16px;
+                        font-family: $weight-normal;
+                        background-image: url("arrowBullet.png");
+                        margin-left: 30px;
+                    }
+                }
+            }
+            .container {
+                & > .row {
+                    & > .col {
+                        &.col-main {
+                            .tel-num {
+                                padding-top: 3rem;
+                            }
+                            .-main {
+                                font-family: $weight-light;
+                                color: $color-standardText;
+                            }
+                            .-msg {
+                                font-family: $weight-normal;
+                                color: $color-standardText;
+                                @include border-radius(5px);
+                            }
+                            p {
+                                font-size: 16px;
+                                font-family: $weight-normal;
+                                color: $color-standardText;
+                            }
+                            h2 {
+                                font-family: $weight-light;
+                                color: $color-standardText;
+                                font-size: 20px;
+                                border-bottom: 1px solid #e3e7ec;
+                                padding-bottom: 15px;
+                            }
+                            h3 {
+                                font-size: 20px;
+                                font-family: $weight-bold;
+                                color: $color-blue;
+                                line-height: 22px;
+                            }
+                            h4 {
+                                font-size: 16px;
+                                font-family: $weight-bold;
+                                color: $color-blue;
+                                margin-bottom: 15px;
+                            }
+                            h5 {
+                                font-size: 16px;
+                                font-family: $weight-bold;
+                                color: $color-blue;
+                                margin-top: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            h2 {
+                &.t {
+                    font-family: $weight-bold;
+                    color: $color-standardText;
+                }
+            }
+        }
+        
+        //================= MEDIA QUERY ================ //        
+        @media only screen and (min-width: 768px) {
+            .inf-inorder {
+                .select-gr {
+                    &.fieldset {
+                        .customSelect {
+                            background-color: $color-white;
+                            border: 1px solid $color-border;
+                            font-family: $weight-normal;
+                            @include border-radius(0);
+                            padding-top: 2px;
+                            box-sizing: border-box;
+                            background-image: url('newSelectButton.png');
+                            background-size: 20px;
+                        }
+                    }
+                }
+                .input-gr {
+                    &.fieldset {
+                        input[type='text'],
+                        input[type='tel'],
+                        input[type='email'] {
+                            background-color: $color-white;
+                            border: 1px solid $color-border;
+                            font-family: $weight-normal;
+                            @include border-radius(0);
+                            padding: 7px 10px;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+                h5 {
+                    // margin-top: 16px;
+                }
+                .container {
+                    & > .row {
+                        & > .col {
+                            &.col-main {
+                                .r {
+                                    &.opt {
+                                        .checkbox-gr {
+                                            &.fieldset {
+                                                .ui-checkbox {
+                                                    & + label {
+                                                        top: 4px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                input[type='radio'] {
+                    height: 20px;
+                    width: 20px;
+                }
+                .radio-gr {
+                    &.fieldset {
+                        .ui-radio {
+                            width: 20px;
+                            height: 20px;
+                            background-size: 20px;
+                        }
+                    }
+                }
+                .checkbox-gr {
+                    &.fieldset {
+                        & + .bt-i {
+                            margin-top: 13px;
+                        }
+                        .ui-checkbox {
+                            width: 20px;
+                            height: 20px;
+                            background-size: 20px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media only screen and (max-width: 767px) {
+            .inf-inorder {
+                .select-gr {
+                    &.fieldset {
+                        .customSelect {
+                            background-color: $color-white;
+                            border: 1px solid $color-border;
+                            font-family: $weight-normal;
+                            @include border-radius(0);
+                            padding-top: 2px;
+                            box-sizing: border-box;
+                            background-image: url('newSelectButton.png');
+                            background-size: 20px;
+                        }
+                    }
+                }
+                .checkbox-gr {
+                    &.fieldset {
+                        .ui-checkbox,
+                        .ui-checkbox-active {
+                            position: relative;
+                            bottom: 4px;
+                        }
+                        & + .bt-i {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+                .radio-gr {
+                    &.fieldset {
+                        .ui-radio {
+                            background-image: url('newRadio.png');
+                            width: 20px;
+                            height: 20px;
+                            background-size: 20px;
+                            display: inline-block;
+                            & ~ .ui-radio {
+                                background-image: url('newRadio.png');
+                                width: 20px;
+                                height: 20px;
+                                background-size: 20px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                .container {
+                    & > .row {
+                        & > .col {
+                            &.col-main {
+                                .box {
+                                    ul {
+                                        li {
+                                            background-image: url("arrowBullet.png");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
