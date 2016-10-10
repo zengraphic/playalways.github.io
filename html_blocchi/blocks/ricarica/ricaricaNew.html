@@ -485,13 +485,13 @@ $wind(window).load(function() {
     HEADER.setSlider();
 });
 
-var iphoneScroll = $(window).scrollTop();
+var iphoneScroll = $wind(window).scrollTop();
 
-$( window ).one('scroll', function() {
-    $(window).scrollTop( iphoneScroll ); //disable scroll just once
+$wind( window ).one('scroll', function() {
+    $wind(window).scrollTop( iphoneScroll ); //disable scroll just once
 });
 
-$(':input').focus();
+$wind(':input').focus();
 
 $wind(document).ready(function() {
     function bindBtnClose() {
