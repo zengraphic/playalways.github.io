@@ -198,6 +198,58 @@ function checkCard(card) {
     }
 }
 
+function checkDate() {
+    var minMonth = new Date().getMonth() + 1;
+    var minYear = new Date().getFullYear();
+    var month = parseInt(r$('.select_cc[title="Mese"] option:selected').text(), 10);
+    var year = parseInt(r$('.select_cc[title="Anno"] option:selected').text(), 10);
+
+
+    if (isNaN(month)) {
+        console.log('seleziona anche il mese');
+        $wind('.select_mese .select_cc:first-child').addClass('error');
+        $wind('.select_mese .select_cc + span').addClass('error');
+        $wind('.select_mese .select_cc + span').text('Seleziona il mese');
+        return (false);
+
+
+    } else {
+        $wind('.select_mese .select_cc:first-child').removeClass('error');
+        $wind('.select_anno .select_cc:first-child').removeClass('error');
+        $wind('.select_cc + span').removeClass('error');
+
+        if (year > minYear) {
+            console.log('anno lontano');
+            $wind('.select_mese .select_cc:first-child').removeClass('error');
+            $wind('.select_anno .select_cc:first-child').removeClass('error');
+            $wind('.select_cc + span').removeClass('error');
+             return (true);
+           
+
+        } else if (year === minYear) {
+            if (month > minMonth) {
+                console.log('scadenza ok');
+                $wind('.select_mese .select_cc:first-child').removeClass('error');
+                $wind('.select_anno .select_cc:first-child').removeClass('error');
+                $wind('.select_cc + span').removeClass('error');
+                 return (true);
+                
+
+
+            } else {
+                console.log('data antecedente');
+                $wind('.select_mese .select_cc:first-child').addClass('error');
+                $wind('.select_mese .select_cc + span').addClass('error');
+                $wind('.select_mese .select_cc + span').text('Il mese inserito è antecedente alla data attuale');
+
+                return (false);
+            }
+        }
+    }
+}
+
+
+
 /* Multiple actions with ready function dependece */
 r$(document).ready(function() {
     /*Configurazione*/
@@ -451,51 +503,9 @@ r$(document).ready(function() {
         console.log("lunghezza:" + value.length);
 
     });
-    r$('select.select_cc').on('change', function() {
-        var minMonth = new Date().getMonth() + 1;
-        var minYear = new Date().getFullYear();
-        var month = parseInt(r$('.select_cc[title="Mese"] option:selected').text(), 10);
-        var year = parseInt(r$('.select_cc[title="Anno"] option:selected').text(), 10);
-
-        if (isNaN(month)) {
-            console.log('seleziona anche il mese');
-            $wind('.select_mese .select_cc:first-child').addClass('error');
-            $wind('.select_cc + span').addClass('error');
-            $wind('.select_cc + span').text('Seleziona il mese');
 
 
-        } else {
-            $wind('.select_mese .select_cc:first-child').removeClass('error');
-            $wind('.select_anno .select_cc:first-child').removeClass('error');
-            $wind('.select_cc + span').removeClass('error');
-            if (year > minYear) {
-                console.log('anno lontano');
-                $wind('.select_mese .select_cc:first-child').removeClass('error');
-                $wind('.select_anno .select_cc:first-child').removeClass('error');
-                $wind('.select_cc + span').removeClass('error');
-
-            } else if (year === minYear) {
-                if (month > minMonth) {
-                    console.log('scadenza ok');
-                    $wind('.select_mese .select_cc:first-child').removeClass('error');
-                    $wind('.select_anno .select_cc:first-child').removeClass('error');
-                    $wind('.select_cc + span').removeClass('error');
-
-
-
-                } else {
-                    console.log('data antecedente');
-                    $wind('.select_mese .select_cc:first-child').addClass('error');
-                    $wind('.select_cc + span').addClass('error');
-                    $wind('.select_cc + span').text('Controlla i dati inseriti');
-
-                    $wind('.select_anno .select_cc:first-child').addClass('error');
-                    $wind('.select_cc + span').addClass('error');
-                    $wind('.select_cc + span').text('Controlla i dati inseriti');
-                }
-            }
-        }
-    });
+ 
 
     r$('.security_cc').click(function() {
         r$(".tooltip").css("display", "none");
@@ -727,10 +737,10 @@ function checkNewCreditCard() {
     value = $wind('#input_cc').val();
     value = value.replace(/\s/g, '');
     console.log(value);
-    if ((value.length > 13) && (checkCard(value) == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
-        $wind('.top_up_button_final').prop("disabled", false);
+    if ((value.length > 13)  && (checkCard(value) == true) && (checkDate() == true) && (radioCC.is(':checked')) && (securityCC.val().length >= 3)) {
+        return true;
     } else {
-        $wind('.top_up_button_final').prop("disabled", true);
+        return false;
     }
 }
 

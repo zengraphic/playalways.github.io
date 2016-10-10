@@ -478,7 +478,6 @@
     </div>
 </body>
 <style>
-
 </style>
 <script>
 var $wind = jQuery.noConflict();
@@ -486,7 +485,13 @@ $wind(window).load(function() {
     HEADER.setSlider();
 });
 
+// var iphoneScroll = $(window).scrollTop();
 
+// $( window ).one('scroll', function() {
+//     $(window).scrollTop( iphoneScroll ); //disable scroll just once
+// });
+
+// $(':input').focus();
 
 $wind(document).ready(function() {
     function bindBtnClose() {
@@ -575,6 +580,10 @@ $wind(document).ready(function() {
             })
     });
 
+//     $wind(':input').bind('focusin focus', function(e){
+//   e.preventDefault();
+// })
+
 
 
     // $wind("#input_cc, #security_cc").keyup(function() {
@@ -593,7 +602,7 @@ $wind(document).ready(function() {
 
 
     $wind("#input_cc, #security_cc").keyup(function() {
-        checkNewCreditCard();
+        checkNextStep();
     });
 
     $wind(".number_top_up_confirm").blur(function() {
@@ -610,6 +619,11 @@ $wind(document).ready(function() {
     $wind('input[type="radio"]').change(function() {
         checkNextStep();
     });
+
+    $wind('select.select_cc').change(function() {
+        checkNextStep();
+    });
+
 
     // $wind('input[type="radio"]').change(function() {
     //     var radioCC = $wind('.credit_card_main_radio input[type="radio"]'); // carta predefinita

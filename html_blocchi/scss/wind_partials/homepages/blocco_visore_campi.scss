@@ -117,6 +117,7 @@
         .base__select {
             width: 100% !important;
             margin-bottom: 10px;
+            left: 0;
         }
         .base__select.bootstrap-select {
             .dropdown-toggle {
@@ -237,6 +238,9 @@
             background-color: #ededed;
             bottom: 5px;
             position: relative;
+            @include breakpoint(small) {
+                bottom: 0;
+            }
         }
         &_logo {
             margin: 0 auto;

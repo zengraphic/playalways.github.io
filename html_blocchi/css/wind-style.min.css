@@ -2418,7 +2418,8 @@ b {
       width: 100%; }
   .standard_blockInfo__select .base__select {
     width: 100% !important;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    left: 0; }
   .standard_blockInfo__select .base__select.bootstrap-select .dropdown-toggle {
     width: 100%;
     padding-top: 15px;
@@ -2515,6 +2516,9 @@ b {
     background-color: #ededed;
     bottom: 5px;
     position: relative; }
+    @media (max-width: 768px) {
+      .standard_blockInfo__bundle:before {
+        bottom: 0; } }
   .standard_blockInfo__bundle_logo {
     margin: 0 auto; }
   .standard_blockInfo__bundle_claim {
@@ -2726,6 +2730,20 @@ b {
   -moz-transition: none;
   -ms-transition: none;
   -webkit-transition: none; }
+  .suggestion_block .tx-powermail h3 {
+    display: none; }
+  .suggestion_block .tx-powermail .powermail_fieldwrap_nomeecognome label,
+  .suggestion_block .tx-powermail .powermail_fieldwrap_provincia label,
+  .suggestion_block .tx-powermail .powermail_fieldwrap_recapitotelefonico label,
+  .suggestion_block .tx-powermail .powermail_fieldwrap_email label {
+    display: none; }
+  .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
+    margin-top: 30px; }
+  .suggestion_block .tx-powermail .powermail_input {
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem; }
+  .suggestion_block .info_link {
+    font-size: 0.750em; }
   .suggestion_block__container {
     max-width: 1024px;
     margin: 0 auto;
@@ -2746,7 +2764,7 @@ b {
     margin-bottom: 30px;
     font-family: "Trade Gothic Light"; }
   .suggestion_block__description {
-    font-size: 1.500em;
+    font-size: 1.450em;
     color: #292f36;
     font-family: "Trade Gothic Light";
     position: relative;
@@ -2764,7 +2782,7 @@ b {
     left: 40%;
     z-index: 5; }
   .suggestion_block__image {
-    margin-top: 15px; }
+    margin-top: 31px; }
 
 @media all and (max-width: 890px) {
   .suggestion_block {
@@ -2772,6 +2790,10 @@ b {
     .suggestion_block__imageContainer {
       top: 70%;
       left: 25%; } }
+
+@media (min-width: 768px) and (max-width: 891px) {
+  .suggestion_block__image {
+    margin-top: 16px; } }
 
 @media all and (max-width: 767px) {
   .suggestion_block__right {
@@ -2787,17 +2809,23 @@ b {
     right: -165px;
     left: inherit; }
   .suggestion_block__image {
-    width: 50%; } }
+    width: 50%;
+    margin-top: 14px; } }
 
 @media all and (max-width: 587px) {
+  .suggestion_block .tx-powermail h3 {
+    display: none; }
+  .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
+    margin-bottom: 30px; }
   .suggestion_block__imageContainer {
-    top: 0px;
-    right: -165px;
+    top: 30px;
+    right: -160px;
     left: inherit; }
     .suggestion_block__imageContainer .suggestion_block__image {
       width: 50%; }
   .suggestion_block__description {
-    width: 200px; } }
+    width: 200px;
+    margin-bottom: 30px; } }
 
 .imageText_block {
   -webkit-transition: all 0.45s ease-in-out;
@@ -3709,7 +3737,7 @@ b {
 
 .tx-powermail .powermail_fieldwrap {
   text-align: left;
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
 
 ::-webkit-input-placeholder {
   content: "Nome e cognome"; }
@@ -3824,11 +3852,12 @@ b {
       margin-left: auto;
       margin-right: 30px; }
       .business_block_viewer__half_block--formContainer .tx-powermail h3 {
-        margin: 25px 0 20px;
+        margin: 25px 0 25px;
         text-align: center;
-        font-size: 1.875em;
+        font-size: 1.375em;
         color: #ffffff;
-        font-family: "Trade Gothic"; }
+        font-family: "Trade Gothic";
+        text-transform: uppercase; }
       .business_block_viewer__half_block--formContainer .tx-powermail .powermail_fieldwrap_recapitotelefonico {
         float: left;
         width: 65%; }
@@ -8486,7 +8515,7 @@ html[id^=skin] {
   height: 1500px;
   z-index: 20;
   background-image: url("../img/skin/skin_desktop.jpg");
-  background-position-x: 50%;
+  background-position: 50% 0;
   background-repeat: no-repeat;
   display: block;
   -webkit-transition: all 0.1 ease-in-out;
@@ -8498,27 +8527,29 @@ html[id^=skin] {
     font-family: "Trade Gothic Light";
     color: #ffffff;
     position: absolute;
-    width: 1024px;
+    width: calc( 1024px - 160px);
     z-index: 200;
     left: calc(50% - 512px);
     margin-top: 30px;
-    margin-left: 150px; }
+    margin-left: 160px; }
     @media (max-width: 1024px) {
       .skin_desktop__text {
         left: 0;
-        margin-left: 100px; } }
+        margin-left: 80px;
+        width: calc(100% - 80px); } }
     @media (max-width: 910px) {
       .skin_desktop__text {
         font-size: 14px;
         margin-top: 40px;
-        width: 100%;
-        left: 0; } }
+        left: 0;
+        width: calc( 100% - 80px); } }
     @media (max-width: 768px) {
       .skin_desktop__text {
         text-align: center;
         margin: 10px 0;
         font-size: 11px;
-        height: 180px; } }
+        height: 180px;
+        width: 100%; } }
     .skin_desktop__text__container--left {
       margin-right: 30px;
       float: left;

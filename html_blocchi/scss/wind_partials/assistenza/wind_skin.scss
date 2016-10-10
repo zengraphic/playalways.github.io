@@ -15,7 +15,7 @@ html[id^=skin] {
         height: 1500px;
         z-index: 20;
         background-image: url("../img/skin/skin_desktop.jpg");
-        background-position-x: 50%;
+        background-position: 50% 0;
         background-repeat: no-repeat;
         display: block;
         @include transition(all .1 ease-in-out);
@@ -23,26 +23,28 @@ html[id^=skin] {
             font-family: $weight-light;
             color: $color-white;
             position: absolute;
-            width: 1024px;
+            width: calc( 1024px - 160px);
             z-index: 200;
             left: calc(50% - 512px);
             margin-top: 30px;
-            margin-left: 150px;
+            margin-left: 160px;
             @include breakpoint(min-desktop) {
                 left: 0;
-                margin-left: 100px;
+                margin-left: 80px;
+                width: calc(100% - 80px);
             }
             @include breakpoint(medium) {
                 font-size: 14px;
                 margin-top: 40px;
-                width: 100%;
                 left: 0;
+                width: calc( 100% - 80px);
             }
             @include breakpoint(small) {
                 text-align: center;
                 margin: 10px 0;
                 font-size: 11px;
                 height: 180px;
+                width: 100%;
             }
             &__container {
                 &--left {
