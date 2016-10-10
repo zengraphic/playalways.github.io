@@ -2418,7 +2418,8 @@ b {
       width: 100%; }
   .standard_blockInfo__select .base__select {
     width: 100% !important;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    left: 0; }
   .standard_blockInfo__select .base__select.bootstrap-select .dropdown-toggle {
     width: 100%;
     padding-top: 15px;
@@ -8486,7 +8487,7 @@ html[id^=skin] {
   height: 1500px;
   z-index: 20;
   background-image: url("../img/skin/skin_desktop.jpg");
-  background-position-x: 50%;
+  background-position: 50% 0;
   background-repeat: no-repeat;
   display: block;
   -webkit-transition: all 0.1 ease-in-out;
@@ -8498,7 +8499,7 @@ html[id^=skin] {
     font-family: "Trade Gothic Light";
     color: #ffffff;
     position: absolute;
-    width: 1024px;
+    width: calc( 1024px - 150px);
     z-index: 200;
     left: calc(50% - 512px);
     margin-top: 30px;
@@ -8506,19 +8507,21 @@ html[id^=skin] {
     @media (max-width: 1024px) {
       .skin_desktop__text {
         left: 0;
-        margin-left: 100px; } }
+        margin-left: 100px;
+        width: calc(100% - 100px); } }
     @media (max-width: 910px) {
       .skin_desktop__text {
         font-size: 14px;
         margin-top: 40px;
-        width: 100%;
-        left: 0; } }
+        left: 0;
+        width: calc( 100% - 100px); } }
     @media (max-width: 768px) {
       .skin_desktop__text {
         text-align: center;
         margin: 10px 0;
         font-size: 11px;
-        height: 180px; } }
+        height: 180px;
+        width: 100%; } }
     .skin_desktop__text__container--left {
       margin-right: 30px;
       float: left;
