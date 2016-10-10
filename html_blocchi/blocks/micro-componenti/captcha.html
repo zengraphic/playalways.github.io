@@ -20,40 +20,46 @@
     <script type="text/javascript" src="../../js/captcha.js"></script>
     <!--- /JS -->
     <script type="text/javascript">
+    var lightCaptcha1, 
+        lightCaptcha2, 
+        lightCaptcha3, 
+        darkCaptcha1, 
+        darkCaptcha2, 
+        darkCaptcha3;
     var onloadCallback = function() {
 
         var siteKey = '6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT';
         // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
         // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
-        grecaptcha.render('example-light-1', {
+        lightCaptcha1 = grecaptcha.render('example-light-1', {
             'sitekey': siteKey,
             'theme': 'custom',
             'size': 'compact'
         });
-        grecaptcha.render('example-light-2', {
+        lightCaptcha2 = grecaptcha.render('example-light-2', {
             'sitekey': siteKey,
             'theme': 'light',
             'size': 'normal',
             'type': 'image'
         });
-        grecaptcha.render('example-light-3', {
+        lightCaptcha3 = grecaptcha.render('example-light-3', {
             'sitekey': siteKey,
             'theme': 'light',
             'size': 'normal',
             'type': 'audio'
         });
-        grecaptcha.render('example-dark-1', {
+        darkCaptcha1 = grecaptcha.render('example-dark-1', {
             'sitekey': siteKey,
             'theme': 'dark',
             'size': 'compact'
         });
-        grecaptcha.render('example-dark-2', {
+        darkCaptcha2 = grecaptcha.render('example-dark-2', {
             'sitekey': siteKey,
             'theme': 'dark',
             'size': 'normal',
             'type': 'image'
         });
-        grecaptcha.render('example-dark-3', {
+        darkCaptcha3 = grecaptcha.render('example-dark-3', {
             'sitekey': siteKey,
             'theme': 'dark',
             'size': 'normal',
@@ -63,7 +69,6 @@
 
 
     };
-    
     </script>
 </head>
 
@@ -79,7 +84,7 @@
                         <li>size: compact</li>
                     </ul>
                 </label>
-                <form class="" action="javascript:grecaptcha.reset();">
+                <form class="" action="javascript:grecaptcha.reset(lightCaptcha1);">
                     <div id="example-light-1"></div>
                     <br>
                     <input class="btn btn-warning" type="submit" value="reset">
@@ -93,7 +98,7 @@
                         <li>type: image</li>
                     </ul>
                 </label>
-                <form class="" action="javascript:grecaptcha.reset();">
+                <form class="" action="javascript:grecaptcha.reset(lightCaptcha2);">
                     <div id="example-light-2"></div>
                     <br>
                     <input class="btn btn-warning" type="submit" value="reset">
@@ -107,7 +112,7 @@
                         <li>type: audio</li>
                     </ul>
                 </label>
-                <form class="" action="javascript:grecaptcha.reset();">
+                <form class="" action="javascript:grecaptcha.reset(lightCaptcha3);">
                     <div id="example-light-3"></div>
                     <br>
                     <input class="btn btn-warning" type="submit" value="reset">
@@ -117,20 +122,20 @@
         <div style="margin-top:50px;">
         </div>
         <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <label>
                     <ul>
                         <li>theme: dark</li>
                         <li>size: compact</li>
                     </ul>
                 </label>
-                <form class="" action="javascript:grecaptcha.reset();">
+                <form class="" action="javascript:grecaptcha.reset(darkCaptcha1);">
                     <div id="example-dark-1"></div>
                     <br>
                     <input class="btn btn-warning" type="submit" value="reset">
                 </form>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <label>
                     <ul>
                         <li>theme: dark</li>
@@ -138,13 +143,13 @@
                         <li>type: audio</li>
                     </ul>
                 </label>
-                <form class="" action="javascript:grecaptcha.reset();">
+                <form class="" action="javascript:grecaptcha.reset(darkCaptcha2);">
                     <div id="example-dark-2"></div>
                     <br>
                     <input class="btn btn-warning" type="submit" value="reset">
                 </form>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <label>
                     <ul>
                         <li>theme: dark</li>
@@ -152,7 +157,7 @@
                         <li>type: image</li>
                     </ul>
                 </label>
-                <form class="" action="javascript:grecaptcha.reset();">
+                <form class="" action="javascript:grecaptcha.reset(darkCaptcha3);">
                     <div id="example-dark-3"></div>
                     <br>
                     <input class="btn btn-warning" type="submit" value="reset">
