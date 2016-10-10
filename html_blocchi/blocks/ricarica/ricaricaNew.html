@@ -485,7 +485,13 @@ $wind(window).load(function() {
     HEADER.setSlider();
 });
 
+var iphoneScroll = $(window).scrollTop();
 
+$( window ).one('scroll', function() {
+    $(window).scrollTop( iphoneScroll ); //disable scroll just once
+});
+
+$(':input').focus();
 
 $wind(document).ready(function() {
     function bindBtnClose() {
