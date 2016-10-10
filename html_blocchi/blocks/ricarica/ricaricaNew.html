@@ -580,9 +580,9 @@ $wind(document).ready(function() {
             })
     });
 
-//     $wind(':input').bind('focusin focus', function(e){
-//   e.preventDefault();
-// })
+    //     $wind(':input').bind('focusin focus', function(e){
+    //   e.preventDefault();
+    // })
 
 
 
@@ -601,19 +601,29 @@ $wind(document).ready(function() {
     //inizio check
 
 
+    //ios bounce fix
+    var repositioner = null;
+    $wind('body').on('blur', 'input,area', function() {
+        repositioner = setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 200);
+    });
+    $wind('body').on('focus', 'input,area', function() {
+        clearTimeout(repositioner);
+    });
+
+
+
     $wind("#input_cc, #security_cc").keyup(function() {
         checkNextStep();
     });
 
     $wind(".number_top_up_confirm").blur(function() {
-
         checkNextStep();
     });
 
     $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
-
         checkNextStep();
-
     });
 
     $wind('input[type="radio"]').change(function() {
