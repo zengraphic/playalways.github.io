@@ -106,28 +106,5 @@
         </div>
     </div>
 </body>
-<script>
-
-
-jQuery(document).ready(function($) {
-
-    $.each($(".powermail_fieldwrap"), function() {
-        var placeHolder = $(this).find($("label")).text();
-        $(this).find($("input")).attr("placeholder", placeHolder);
-    });
-
-    $('input')
-        .focus(function() {
-            $(this).removeAttr('placeholder');
-        })
-        .blur(function() {
-            if ($(this).val() == '') {
-                var placeHolder = $(this).closest('.powermail_fieldwrap').find($('label')).text();
-                $(this).attr('placeholder', placeHolder);
-            }
-        });
-    
-});
-</script>
 
 </html>
