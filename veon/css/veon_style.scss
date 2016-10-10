@@ -67,7 +67,7 @@
         'small': ( max-width: 768px),
         'medium': ( max-width: 910px),
         'large': ( max-width: 1025px),
-        'custom': ( min-height: 40em),
+        'largest': ( max-width: 1440px),
         'min-small':( min-width: 767px),
         'min-desktop':( max-width: 1024px));
         // Creating the mixin
@@ -104,7 +104,7 @@
             line-height: 132px;
             text-transform: uppercase;
             margin: 0;
-            @include breakpoint(large){
+            @include breakpoint(largest){
                 font-size: 100px;
                 line-height: 102px;
             }
@@ -130,14 +130,24 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-        }
+            @include breakpoint(largest){
+                height: 1440px;
+
+            }
+        }            
         
         .wrapper {
             max-width: 1440px;
             margin: 0 auto;
             width: 100%;
+            @include breakpoint(largest){
+                max-width: 1024px;
+            }
             &.one {
                 padding-top: 420px;
+                @include breakpoint(largest){
+                    padding-top: 350px;
+                }
                 h6 {
                     margin-top: 35px;
                 }
