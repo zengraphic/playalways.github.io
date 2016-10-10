@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/veon_style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/slick.min.js"></script>
+</head>
+
+<body>
+    <div class="background-image-one">
+        <div class="wrapper one text_align_center">
+            <h1>INESAURIBILE <br> COME TE</h1>
+            <h6>Chatti, chiami e fai il pieno di Giga. <br> Tutto in un&apos;App.</h6>
+        </div>
+    </div>
+    <div class="button_cta text_align_center">
+        <a href="#"><img src="../img/btn_gplay.png" /></a>
+    </div>
+    <div class="background-image-two">
+        <div class="wrapper two">
+            <div class="slider_1">
+                <div class="slide_single">
+                    <div class="col-xs-12 col-lg-7 col-sm-7 column_left container_text">
+                        <h1>veon c&apos;&egrave; <br> per tutti</h1>
+                        <h6>Veon &egrave; la nuova app gratuita di <br> Wind disponibile per tutti.</h6>
+                        <div class="button_cta">
+                            <a href="#"><img src="../img/btn_gplay.png" /></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-5 col-sm-5 column_right">
+                        <img src="../img/veon_photo.png" />
+                    </div>
+                </div>
+                <div class="slide_single">
+                    <div class="col-xs-12 col-lg-7 col-sm-7 column_left container_text">
+                        <h1>veon c&apos;&egrave; <br> per tutti</h1>
+                        <h6>Veon &egrave; la nuova app gratuita di <br> Wind disponibile per tutti.</h6>
+                        <div class="button_cta">
+                            <a href="#"><img src="../img/btn_gplay.png" /></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-5 col-sm-5 column_right">
+                        <img src="../img/veon_photo.png" />
+                    </div>
+                </div>
+                <div class="slide_single">
+                    <div class="col-xs-12 col-lg-7 col-sm-7 column_left container_text">
+                        <h1>veon c&apos;&egrave; <br> per tutti</h1>
+                        <h6>Veon &egrave; la nuova app gratuita di <br> Wind disponibile per tutti.</h6>
+                        <div class="button_cta">
+                            <a href="#"><img src="../img/btn_gplay.png" /></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-5 col-sm-5 column_right">
+                        <img src="../img/veon_photo.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="background-image-three">
+        <div class="wrapper three">
+            <div class="slider_2">
+                <div class="slide_single">
+                    <div class="col-xs-12 col-lg-5 col-sm-5 column_left">
+                        <img src="../img/veon_start.png" />
+                    </div>
+                    <div class="col-xs-12 col-lg-7 col-sm-7 column_right container_text">
+                        <h1>veon &egrave; <br> lorem ipsum</h1>
+                        <h6>Per tutti i clienti Wind Veon <br> ha delle offerte esclusive.</h6>
+                    </div>
+                </div>
+                <div class="slide_single">
+                    <div class="col-xs-12 col-lg-5 col-sm-5 column_left">
+                        <img src="../img/veon_start.png" />
+                    </div>
+                    <div class="col-xs-12 col-lg-7 col-sm-7 column_right container_text">
+                        <h1>veon &egrave; <br> lorem ipsum</h1>
+                        <h6>Per tutti i clienti Wind Veon <br> ha delle offerte esclusive.</h6>
+                    </div>
+                </div>
+                <div class="slide_single">
+                    <div class="col-xs-12 col-lg-5 col-sm-5 column_left">
+                        <img src="../img/veon_start.png" />
+                    </div>
+                    <div class="col-xs-12 col-lg-7 col-sm-7 column_right container_text">
+                        <h1>veon &egrave; <br> lorem ipsum</h1>
+                        <h6>Per tutti i clienti Wind Veon <br> ha delle offerte esclusive.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+<script>
+jQuery(document).ready(function($) {
+
+    $('.slider_1').slick({
+        dots: true,
+        arrows: true,
+        infinite: false,
+        speed: 600,
+        nextArrow: "<img class='slider_navigation right_arrow' src='../img/ic_arrow_right.png'>",
+        prevArrow: "<img class='slider_navigation left_arrow' src='../img/ic_arrow_left.png'>",
+        dotsClass: 'slider_dots',
+        customPaging: function(slider, i) {
+            var thumb = $(slider.$slides[i]).data('thumb');
+            return '<div class="slide_single"></div>';
+        }
+    });
+
+    $('.slider_2').slick({
+        dots: true,
+        arrows: true,
+        infinite: false,
+        speed: 600,
+        nextArrow: "<img class='slider_navigation right_arrow' src='../img/ic_arrow_right.png'>",
+        prevArrow: "<img class='slider_navigation left_arrow' src='../img/ic_arrow_left.png'>",
+        dotsClass: 'slider_dots',
+        customPaging: function(slider, i) {
+            var thumb = $(slider.$slides[i]).data('thumb');
+            return '<div class="slide_single"></div>';
+        }
+    });
+
+});
+</script>
+
+</html>
