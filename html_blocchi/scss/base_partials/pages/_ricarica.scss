@@ -10,11 +10,12 @@
 .no-scroll {
     overflow: hidden;
 }
-
+* {
+word-break:keep-all;
+}
 
 //end OS Mac
 .ricarica {
-    word-wrap: break-word;
     &__overlay {
         position: fixed;
         top: 0px;
@@ -54,6 +55,7 @@
             right: 0;
             bottom: 0;
             overflow: scroll;
+            -webkit-overflow-scrolling: touch;
             padding: 0;
             max-width: 420px;
         }
