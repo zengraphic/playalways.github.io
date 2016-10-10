@@ -30,7 +30,7 @@
                     <div class="contact_info_block__overlay"></div>
                     <div class="contact_info_block">
                         <!-- FORM CONTATTACI -->
-                        <div class="contact_info_block__container">
+                        <div class="contact_info_block__container base__scrollable">
                             <!-- LEFT -->
                             <!-- LINK "CONTATTACI" -->
                             <div class="contact_info_block__container__left contactShow">
@@ -154,12 +154,23 @@ jQuery(document).ready(function($) {
             $(this).find($("input, textarea")).attr("placeholder", placeHolder);
         });
 
+        $('.powermail_input,.powermail_textarea')
+            .focus(function() {
+                $(this).removeAttr('placeholder');
+            })
+            .blur(function() {
+                if ($(this).val() == '') {
+                    var placeHolder = $(this).closest('.powermail_fieldwrap').find($('label')).text();
+                    $(this).attr('placeholder', placeHolder);
+                }
+            });
+
         //$('.contactShow').removeClass('visibleShow');     
         //$('.contactShow').addClass('visibleHidden');  
         $('.contact_info_block__overlay').fadeIn();
         blockRight.addClass('visibleShow');
         blockToMove.animate({
-            "right": '0px'
+            "right": 0
         }, "slow", function() {
             $('.contactHide').addClass('visibleShow');
             $('.contactHide').removeClass('visibleHidden');
@@ -194,13 +205,21 @@ jQuery(document).ready(function($) {
         var blockButton = $('.contact_info_block__item--contact.contact_button');
         if (!blockToMove.hasClass('contact_open')) {
             blockToMove.animate({
-                "top": "0px"
+                "top": 0,
+                "height": "100vh"
             }, 300, function() {
                 openBlock(blockToMove, blockRight, blockLeft, blockButton);
             });
         } else {
             closeBlock(blockToMove, blockRight, blockLeft, blockButton);
         }
+    });
+
+    $(".powermail_reset").click(function(){
+        $.each($(".powermail_fieldwrap"), function() {
+            var placeHolder = $(this).find($("label")).text();
+            $(this).find($("input, textarea")).attr("placeholder", placeHolder);
+        });
     });
 });
 </script>

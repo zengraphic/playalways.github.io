@@ -159,6 +159,9 @@
         &.contact_open {
             top: 0;
         }
+        &.base__scrollable {
+            padding: 0;
+        }
         @include breakpoint(small) {
             &.contact_open {
                 width: 100%;
@@ -184,7 +187,7 @@
             &.contactHide {
                 visibility: hidden;
                 position: absolute;
-                right: 10px; //0
+                right: calc(10px + 1rem); //0
                 top: 5px; //0
                 .contact_info_block__item--contact {
                     width: 20px;
