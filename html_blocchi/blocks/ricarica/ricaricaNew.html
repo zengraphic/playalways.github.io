@@ -202,7 +202,7 @@
                             <option value="option1">328 6612334</option>
                             <option value="option2">329 9012309</option>
                             <option value="option3">327 9012354</option>
-                            <option value="option4">Altro numero</option>
+                            <option value="newNumber">Altro numero</option>
                         </select>
                         <div class="action_numbert">
                             <input type="text" placeholder="Inserisci numero da ricaricare" name="" class="base__input number_top_up" maxlength="10" onkeypress='return validate(event)'>
@@ -286,36 +286,48 @@
                             </div>
                             <!-- CREDIC CARD -->
                             <div class="cont_item1 base__toggle">
-                                <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name="" class="base__input number_cc" onkeypress='return validate(event)' maxlength="16">
+                                <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name="" class="base__input number_cc" onkeypress='return validate(event)' maxlength="19">
                                 <span class="error_message">Controlla il campo</span>
-                                <select class="base__select selectpicker select_cc" title="Mese" data-size="6">
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>04</option>
-                                    <option>05</option>
-                                    <option>06</option>
-                                    <option>07</option>
-                                    <option>08</option>
-                                    <option>09</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                </select>
-                                <select class="base__select selectpicker select_cc" title="Anno" data-size="6">
-                                    <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                    <option>2023</option>
-                                    <option>2024</option>
-                                    <option>2025</option>
-                                    <option>2026</option>
-                                </select>
-                                <div class="cvv_container">
-                                    <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" autocomplete="off" />
+                                <div class="clear"></div>
+                                <div class="container_select_cc">
+                                    <div class="select_mese">
+                                        <select class="base__select selectpicker select_cc" title="Mese" data-size="6">
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>07</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                        <span class="error_message">Controlla il campo</span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="select_anno">
+                                        <select class="base__select selectpicker select_cc" title="Anno" data-size="6">
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                        </select>
+                                        <span class="error_message">Controlla il campo</span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="cvv_container">
+                                        <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" autocomplete="off" />
+                                        <span class="error_message">Controlla il campo</span>
+                                    </div>
                                     <div class="clear"></div>
                                 </div>
                                 <div class="base__checkbox checkbox checkbox-inline remember_check">
@@ -386,43 +398,17 @@
                         <h4>Accetto <a class="base__popup-link" href="#privacy_block">le condizioni del servizio e l’informativa sulla privacy </a></h4>
                         <button class="btn btn_refil base__bt top_up_button_final" disabled="true">RICARICA</button>
                     </div>
-                    <div class=" refill_modal">
-                        <div class="refill_modal-dialog">
-                            <div class="refill_modal-header">
+                    <div class="popup">
+                        <div class="popup-dialog">
+                            <div class="popup-header">
                                 Stai per eliminare la carta che finisce per 6368
                             </div>
-                            <div class="refill_modal-body">
+                            <div class="popup-body">
                                 Stai per eliminare la carta predefinita
                             </div>
-                            <div class="refill_modal-footer">
-                                <button class="btn btn_refil  base__bt rbtn_icc refill_modal-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
-                                <button class="btn btn_refil base__bt refill_modal-btn closeModal waves-effect waves-button waves-float waves-light">annulla</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" refill_modal-cc">
-                        <div class="refill_modal-cc-dialog">
-                            <div class="refill_modal-header">
-                                Ricorda i dati Carta di credito
-                            </div>
-                            <div class="refill_modal-cc-body">
-                                Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire i dati della tua carta di credito. La carta utilizzata resterà disponibile per le successive ricariche. Per ragioni di sicurezza Wind non salva la tua carta ma esclusivamente un codice identificativo della stessa fornito dal sistema di pagamento. Per questo motivo saranno mostrati solo gli ultimi 4 numeri della carta. Potrai sempre modificarla, eliminarla o aggiungerne una nuova.
-                            </div>
-                            <div class="refill_modal-cc-footer">
-                                <button class="btn btn_refil  base__bt refill_modal-btn closeModal waves-effect waves-button waves-float waves-light">chiudi</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" refill_modal-paypal">
-                        <div class="refill_modal-paypal-dialog">
-                            <div class="refill_modal-header">
-                                Ricorda i dati Paypal
-                            </div>
-                            <div class="refill_modal-paypal-body">
-                                Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati.
-                            </div>
-                            <div class="refill_modal-paypal-footer">
-                                <button class="btn btn_refil  base__bt refill_modal-btn closeModal waves-effect waves-button waves-float waves-light">chiudi</button>
+                            <div class="popup-footer ">
+                                <button class="btn popup-btn_1 btn_refil  base__bt rbtn_icc popup-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
+                                <button class="popup-btn_2 btn_refil base__bt popup-btn closeModal waves-effect waves-button waves-float waves-light">annulla</button>
                             </div>
                         </div>
                     </div>
@@ -491,6 +477,9 @@
         <!-- end privacy content -->
     </div>
 </body>
+<style>
+
+</style>
 <script>
 var $wind = jQuery.noConflict();
 $wind(window).load(function() {
@@ -500,32 +489,60 @@ $wind(window).load(function() {
 
 
 $wind(document).ready(function() {
+    function bindBtnClose() {
+        $wind(".closeModal").click(function() {
+            $wind(".popup").fadeOut("20");
+        });
+    }
 
-    var cardToDelete;
-    var radioToDisable;
+    function callPopUp(title, description, button1, button2, labelBtn1, labelBtn2, function1, function2) {
+        var popup = $wind('.popup');
+        popup.find('.popup-header').text(title);
+        popup.find('.popup-body').text(description);
+        popup.find('.popupbtn_1').text(labelBtn1);
+        if (button1) {
+            popup.find('.popup-btn_1').show();
+            popup.find('.popup-btn_1').text(labelBtn1);
+        }
+        if (button2) {
+            popup.find('.popup-btn_2').show();
+            popup.find('.popup-btn_2').text(labelBtn2);
+        }
+        function1;
+        function2;
+        $wind('.popup').css('display', 'block');
+    }
+
+    function removeCard(card, radio) {
+        $wind(".popup-btn_1").click(function() {
+            card.slideUp();
+            radio.removeAttr('checked');
+            checkNextStep();
+        });
+    }
     // MODAL PAYPAL ED ELIMINA
     $wind(".btn_removeModal").click(function() {
-        cardToDelete = $wind(this).closest(".item-box");
-        radioToDisable = $wind(this).siblings('input[type="radio"]');
-        $wind('.refill_modal').css('display', 'block');
+        var cardToDelete = $wind(this).closest(".item-box");
+        var radioToDisable = $wind(this).siblings('input[type="radio"]');
+        var title = 'Stai per eliminare la carta che finisce per 6368';
+        var description = 'Stai per eliminare la carta predefinita';
+        callPopUp(title, description, true, true, 'rimuovi', 'annulla', removeCard(cardToDelete, radioToDisable), bindBtnClose());
 
     });
-    $wind(".rbtn_icc").click(function() {
-        cardToDelete.slideUp();
-        radioToDisable.removeAttr('checked');
-        checkNextStep();
-    });    
+
     $wind(".modalPaypal").click(function() {
-        $wind(".refill_modal-paypal").css('display', 'block');
+        var title = 'Ricorda i dati di Paypal';
+        var description = 'Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati.';
+        callPopUp(title, description, false, true, '', 'chiudi', '', bindBtnClose());
     });
+
     $wind(".modalCc").click(function() {
-        $wind(".refill_modal-cc").css('display', 'block');
+        var title = 'Ricorda i dati Carta di credito';
+        var description = 'Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire i dati della tua carta di credito. La carta utilizzata resterà disponibile per le successive ricariche. Per ragioni di sicurezza Wind non salva la tua carta ma esclusivamente un codice identificativo della stessa fornito dal sistema di pagamento. Per questo motivo saranno mostrati solo gli ultimi 4 numeri della carta. Potrai sempre modificarla, eliminarla o aggiungerne una nuova.';
+        callPopUp(title, description, false, true, '', 'chiudi', '', bindBtnClose());
     });
-    $wind(".closeModal").click(function() {
-        $wind(".refill_modal").fadeOut("20");
-        $wind(".refill_modal-cc").fadeOut("20");
-        $wind(".refill_modal-paypal").fadeOut("20");
-    });
+
+
     // FINE MODAL PAYPAL ED ELIMINA
 
     // SHOWMORE CONTENT
@@ -543,9 +560,21 @@ $wind(document).ready(function() {
         radioCC.prop('checked', true);
         $wind('.top_up_button_final').prop("disabled", false);
 
-
     });
     // FINE OPEN SIDEBAR CONTENT
+
+
+    $wind(function() {
+
+        $wind('#input_cc')
+            .keyup(function() {
+                var value = $wind(this).val();
+                value = value.replace(/\s/g, '');
+                value = value.match(/.{1,4}/g).join(" ");
+                $wind(this).val(value);
+            })
+    });
+
 
 
     // $wind("#input_cc, #security_cc").keyup(function() {

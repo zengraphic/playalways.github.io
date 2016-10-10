@@ -105,9 +105,28 @@ span.error_message {
     width: 100%;
 }
 
-.base__input.error {
+.select_cc.error{
     color: $color_red;
-    border-color: $color_red;
+    
+    + span.error {
+        width: auto;
+        display: inline-block;
+        text-align: center;
+        color: white;
+        margin-right: 0.4rem;
+        padding: 0.5rem 0.5rem;
+        background-color: $color_red;
+        @include radius(0px 0px 4px 4px);
+    }
+    button{
+        border-color: $color_red !important;
+        @include radius(4px 4px 0px 0px);
+
+    }
+}
+.base__input.error{
+    color: $color_red;
+    border-color: $color_red !important;
     @include radius(4px 4px 0px 0px);
     + span.error {
         width: 100%;

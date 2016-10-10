@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
-   <!--- CSS -->
+    <!--- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/base-style.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/wind-style.min.css" />
@@ -17,7 +17,7 @@
     <!--- JS -->
     <script type="text/javascript" src="../../js/base-libs.min.js"></script>
     <script type="text/javascript" src="../../js/base.js"></script>
-     <script type="text/javascript" src="../../js/script.js"></script>
+    <script type="text/javascript" src="../../js/script.js"></script>
     <!-- components script -->
     <script type="text/javascript" src="../../js/header.js"></script>
     <script type="text/javascript" src="../../js/custom.js"></script>
@@ -198,9 +198,9 @@
                     </div>
                     <div class="box">
                         <h3>Che numero vuoi ricaricare?</h3>
-                        <input type="text" placeholder="Inserisci numero da ricaricare" name=""  maxlength="10" class="base__input number_top_up" onkeypress='return validate(event)'>
+                        <input type="text" placeholder="Inserisci numero da ricaricare" name="" maxlength="10" class="base__input number_top_up" onkeypress='return validate(event)'>
                         <span class="error_message">Controlla il campo</span>
-                        <input type="text" placeholder="Conferma numero da ricaricare" name=""  maxlength="10" class="base__input number_top_up_confirm" onkeypress=' return validate(event)'>
+                        <input type="text" placeholder="Conferma numero da ricaricare" name="" maxlength="10" class="base__input number_top_up_confirm" onkeypress=' return validate(event)'>
                         <span class="error_message">Controlla il campo</span>
                         <h3 class="text2">Di quanto vuoi ricaricare? </h3>
                         <select class="base__select selectpicker select_value light" title="" data-size="6">
@@ -223,34 +223,45 @@
                         <div class="cont_item1">
                             <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name="" maxlength="16" class="base__input number_cc" onkeypress='validate(event)'>
                             <span class="error_message">Controlla il campo</span>
-                            <select class="base__select selectpicker select_cc" title="Mese" data-size="6"> 
-                                <option>01</option>
-                                    <option>02</option>
-                                    <option>04</option>
-                                    <option>05</option>
-                                    <option>06</option>
-                                    <option>07</option>
-                                    <option>08</option>
-                                    <option>09</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                            </select>
-                            <select class="base__select selectpicker select_cc" title="Anno" data-size="6">
-                                <option>2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                    <option>2023</option>
-                                    <option>2024</option>
-                                    <option>2025</option>
-                                    <option>2026</option>
-                            </select>
-                            <div class="cvv_container">
-                                <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='validate(event)' maxlength="4" />
+                            <div class="container_select_cc">
+                                <div class="select_mese">
+                                    <select class="base__select selectpicker select_cc" title="Mese" data-size="6">
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                    <span class="error_message">Controlla il campo</span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="select_anno">
+                                    <select class="base__select selectpicker select_cc" title="Anno" data-size="6">
+                                        <option>2016</option>
+                                        <option>2017</option>
+                                        <option>2018</option>
+                                        <option>2019</option>
+                                        <option>2020</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                    </select>
+                                    <span class="error_message">Controlla il campo</span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="cvv_container">
+                                    <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" autocomplete="off" />
+                                    <span class="error_message">Controlla il campo</span>
+                                </div>
                                 <div class="clear"></div>
                             </div>
                             <!--                             <div class="base__checkbox checkbox checkbox-inline remember_check">
@@ -268,13 +279,13 @@
                         <div class="cont_item1">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
                             <div class="clear"></div>
-                                <div class="base__checkbox checkbox checkbox-inline remember_check">
-                                    <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
-                                    <label for="paypal-checkbox">Ricorda i miei dati</label>
-                                    <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange"  data-toggle="tooltip_ccv" data-placement="top" data-original-title="Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati."/>
-                                </div>
-                                <div class="clear"></div>
-                           <!--  <div style="display:none">
+                            <div class="base__checkbox checkbox checkbox-inline remember_check">
+                                <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
+                                <label for="paypal-checkbox">Ricorda i miei dati</label>
+                                <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati." />
+                            </div>
+                            <div class="clear"></div>
+                            <!--  <div style="display:none">
                                 <input type="text" placeholder="Email" name="" class="base__input ">
                                 <input type="text" placeholder="Password" name="" class="base__input ">
                             </div> -->
@@ -391,97 +402,97 @@ $wind(window).load(function() {
 });
 
 $wind(document).ready(function() {
-            function checkNewNumber() {
-                var mainNumber = $wind('.number_top_up').val();
-                var confirmNumber = $wind('.number_top_up_confirm').val();
-                if ((!$wind('.number_top_up_confirm').is(':focus')) && ((confirmNumber.length > 0) && (mainNumber.length > 0))) {
-                    if ((mainNumber.length >= 6) && (confirmNumber.length >= 6) && (mainNumber == confirmNumber)) {
-                        $wind('.number_top_up_confirm').removeClass('error');
-                        $wind('.number_top_up_confirm + span').removeClass('error');
-                        return (true);
-                    } else {
-                        $wind('.number_top_up_confirm').addClass('error');
-                        $wind('.number_top_up_confirm + span').addClass('error');
-                        $wind('.number_top_up_confirm + span').text('Controlla che i numeri siano uguali');
-                        return (false);
-                    }
-                } else {
-                    return (false);
-                }
+    function checkNewNumber() {
+        var mainNumber = $wind('.number_top_up').val();
+        var confirmNumber = $wind('.number_top_up_confirm').val();
+        if ((!$wind('.number_top_up_confirm').is(':focus')) && ((confirmNumber.length > 0) && (mainNumber.length > 0))) {
+            if ((mainNumber.length >= 6) && (confirmNumber.length >= 6) && (mainNumber == confirmNumber)) {
+                $wind('.number_top_up_confirm').removeClass('error');
+                $wind('.number_top_up_confirm + span').removeClass('error');
+                return (true);
+            } else {
+                $wind('.number_top_up_confirm').addClass('error');
+                $wind('.number_top_up_confirm + span').addClass('error');
+                $wind('.number_top_up_confirm + span').text('Controlla che i numeri siano uguali');
+                return (false);
             }
+        } else {
+            return (false);
+        }
+    }
 
-            function checkNewCreditCard() {
-                var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-                var securityCC = $wind('#security_cc');
-                if (($wind('#input_cc').val().length > 8) && (checkNewNumber() == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
-                    $wind('.top_up_button_final').prop("disabled", false);
-                } else {
-                    $wind('.top_up_button_final').prop("disabled", true);
-                }
+    function checkNewCreditCard() {
+        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
+        var securityCC = $wind('#security_cc');
+        if (($wind('#input_cc').val().length > 8) && (checkNewNumber() == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
+            $wind('.top_up_button_final').prop("disabled", false);
+        } else {
+            $wind('.top_up_button_final').prop("disabled", true);
+        }
+    }
+
+    function checkNextStep() {
+        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
+        var radioPay = $wind('.paypal_main_radio input[type="radio"]');
+        var radioCharge = $wind('.charge_main_radio input[type="radio"]');
+        var radioBill = $wind('.bill_main_radio input[type="radio"]');
+        var subRadioBill = $wind('.item_bill input[type="radio"]');
+        var subRadioCharge = $wind('.item_charge input[type="radio"]');
+        var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
+        var cardNumber = $wind('.number_cc').val();
+        var securityCC = $wind('#security_cc');
+        $wind('.top_up_button_final').prop("disabled", true);
+
+        if ((checkNewNumber() == true)) {
+            if (radioPay.is(':checked')) {
+                console.log('paypal checked');
+                $wind('.top_up_button_final').prop("disabled", false);
+                alert('b');
             }
+            if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
+                console.log('addebito checked');
+                $wind('.top_up_button_final').prop("disabled", false);
 
-            function checkNextStep() {
-                var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-                var radioPay = $wind('.paypal_main_radio input[type="radio"]');
-                var radioCharge = $wind('.charge_main_radio input[type="radio"]');
-                var radioBill = $wind('.bill_main_radio input[type="radio"]');
-                var subRadioBill = $wind('.item_bill input[type="radio"]');
-                var subRadioCharge = $wind('.item_charge input[type="radio"]');
-                var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
-                var cardNumber = $wind('.number_cc').val();
-                var securityCC = $wind('#security_cc');
-                $wind('.top_up_button_final').prop("disabled", true);
-                
-                if ((checkNewNumber() == true)) {
-                        if (radioPay.is(':checked')) {
-                            console.log('paypal checked');
-                            $wind('.top_up_button_final').prop("disabled", false);
-                            alert('b');
-                        }
-                        if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
-                            console.log('addebito checked');
-                            $wind('.top_up_button_final').prop("disabled", false);
+            }
+            if (subRadioBill.is(':checked') && (radioBill.is(':checked'))) {
+                console.log('addebito conto tel checked');
+                $wind('.top_up_button_final').prop("disabled", false);
 
-                        }
-                        if (subRadioBill.is(':checked') && (radioBill.is(':checked'))) {
-                            console.log('addebito conto tel checked');
-                            $wind('.top_up_button_final').prop("disabled", false);
+            }
+            if (($wind('#input_cc').val().length > 8) && subRadioNewCard.is(':checked') && radioCC.is(':checked') && securityCC.val().length >= 3) {
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
+        }
+    }
 
-                        }
-                        if (($wind('#input_cc').val().length > 8) && subRadioNewCard.is(':checked') && radioCC.is(':checked') && securityCC.val().length >= 3) {
-                            $wind('.top_up_button_final').prop("disabled", false);
-                        }
-                    }
-                }
+    $wind('.open_sidebar_topUp').click(function() {
+        $wind('.mfp-bg, .mfp-wrap').css('height', '100%');
+        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
+        radioCC.prop('checked', true);
+        $wind('#action_c1').addClass('active').find('.cont_item1').show();
+    });
 
-                $wind('.open_sidebar_topUp').click(function() {
-                    $wind('.mfp-bg, .mfp-wrap').css('height', '100%');
-                    var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-                    radioCC.prop('checked', true);
-                    $wind('#action_c1').addClass('active').find('.cont_item1').show();
-                });
+    $wind('.top_up_newCard').click(function() {
+        var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
+        subRadioNewCard.prop('checked', true);
+    });
 
-                $wind('.top_up_newCard').click(function() {
-                    var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
-                    subRadioNewCard.prop('checked', true);
-                });
+    $wind("#input_cc, #security_cc").keyup(function() {
+        checkNewCreditCard();
+    });
 
-                $wind("#input_cc, #security_cc").keyup(function() {
-                    checkNewCreditCard();
-                });
+    $wind(".number_top_up_confirm").blur(function() {
+        checkNextStep();
+    });
 
-                $wind(".number_top_up_confirm").blur(function() {
-                    checkNextStep();
-                });                
+    $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
+        checkNextStep();
+    });
 
-                $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
-                    checkNextStep();
-                });
-
-                $wind('input[type="radio"]').change(function() {
-                    checkNextStep();
-                });
-            });
+    $wind('input[type="radio"]').change(function() {
+        checkNextStep();
+    });
+});
 </script>
 
 </html>

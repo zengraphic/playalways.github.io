@@ -359,7 +359,7 @@ r$(document).ready(function() {
 
 
     r$('#input_cc').blur(function() {
-        var carta = r$('#input_cc').val();
+        var carta = r$('#input_cc').val().replace(/\s/g, '');
         var result = checkCard(carta);
         if (result == true) {
             // write your own rules if true
@@ -444,15 +444,58 @@ r$(document).ready(function() {
                 r$('#security_cc').addClass('cvv_carta');
 
             }
+
         } else {
             clearCard('#input_cc', '#security_cc');
         }
         console.log("lunghezza:" + value.length);
 
     });
+    r$('select.select_cc').on('change', function() {
+        var minMonth = new Date().getMonth() + 1;
+        var minYear = new Date().getFullYear();
+        var month = parseInt(r$('.select_cc[title="Mese"] option:selected').text(), 10);
+        var year = parseInt(r$('.select_cc[title="Anno"] option:selected').text(), 10);
+
+        if (isNaN(month)) {
+            console.log('seleziona anche il mese');
+            $wind('.select_mese .select_cc:first-child').addClass('error');
+            $wind('.select_cc + span').addClass('error');
+            $wind('.select_cc + span').text('Seleziona il mese');
+
+
+        } else {
+            $wind('.select_mese .select_cc:first-child').removeClass('error');
+            $wind('.select_anno .select_cc:first-child').removeClass('error');
+            $wind('.select_cc + span').removeClass('error');
+            if (year > minYear) {
+                console.log('anno lontano');
+                $wind('.select_mese .select_cc:first-child').removeClass('error');
+                $wind('.select_anno .select_cc:first-child').removeClass('error');
+                $wind('.select_cc + span').removeClass('error');
+
+            } else if (year === minYear) {
+                if (month > minMonth) {
+                    console.log('scadenza ok');
+                    $wind('.select_mese .select_cc:first-child').removeClass('error');
+                    $wind('.select_anno .select_cc:first-child').removeClass('error');
+                    $wind('.select_cc + span').removeClass('error');
 
 
 
+                } else {
+                    console.log('data antecedente');
+                    $wind('.select_mese .select_cc:first-child').addClass('error');
+                    $wind('.select_cc + span').addClass('error');
+                    $wind('.select_cc + span').text('Controlla i dati inseriti');
+
+                    $wind('.select_anno .select_cc:first-child').addClass('error');
+                    $wind('.select_cc + span').addClass('error');
+                    $wind('.select_cc + span').text('Controlla i dati inseriti');
+                }
+            }
+        }
+    });
 
     r$('.security_cc').click(function() {
         r$(".tooltip").css("display", "none");
@@ -678,9 +721,13 @@ function checkNewNumber() {
 }
 
 function checkNewCreditCard() {
-    var radioCC = $wind('.newCard_main_radio input[type="radio"]');
-    var securityCC = $wind('#security_cc');
-    if (($wind('#input_cc').val().length > 13) && (checkCard($wind('#input_cc').val()) == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
+    var radioCC, securityCC, value;
+    radioCC = $wind('.newCard_main_radio input[type="radio"]');
+    securityCC = $wind('#security_cc');
+    value = $wind('#input_cc').val();
+    value = value.replace(/\s/g, '');
+    console.log(value);
+    if ((value.length > 13) && (checkCard(value) == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
         $wind('.top_up_button_final').prop("disabled", false);
     } else {
         $wind('.top_up_button_final').prop("disabled", true);
@@ -689,19 +736,14 @@ function checkNewCreditCard() {
 
 r$(function() {
     r$('#select_numbert').on('change', function() {
-
-        var lastOptionIndex = r$('.select_numbert').find('option').length - 1;
-        var lastOptionLabel = r$('.select_numbert').find('option').eq(lastOptionIndex).val();
-
-        if (r$(this).val() == lastOptionLabel) {
+        if (r$(this).find('option:selected').is(':last-child')) {
             r$(".action_numbert").fadeIn("fast").addClass('entered');
             r$('.top_up_button_final').prop("disabled", true);
-
         } else {
-            r$(".action_numbert").fadeOut("fast");
+            r$(".action_numbert").fadeOut("fast").removeClass('entered');
             checkNextStep();
-        }
 
+        }
         // switch (r$(this).val()) {
         //     case 'option1':
         //         //alert( 1 );
