@@ -30,6 +30,8 @@ function prefixedEventListener(element, type, callback) {
             spacebarenabled: false,
             horizrailenabled: true,
             autohidemode: false,
+            nativeparentscrolling: true,
+            preservenativescrolling: true,
             zindex: 1100
         };
         var obj_nicescroll2 = {

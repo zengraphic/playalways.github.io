@@ -495,7 +495,8 @@ word-break:keep-all;
             &[type="text"],
             &[type="email"],
             &[type="password"],
-            &[type="number"] {
+            &[type="number"],
+            &[type="tel"] {
                 margin-bottom: 0.5rem;
                 @include defaultTxt($font_family_light, 1.1rem);
                 border: 1px solid $color_grey_medium_light;
@@ -511,21 +512,25 @@ word-break:keep-all;
             &[type="text"][type="number"],
             &[type="email"][type="number"],
             &[type="password"][type="number"],
-            &[type="number"][type="number"] {
+            &[type="number"][type="number"],
+            &[type="tel"][type="number"] {
                 -webkit-appearance: none;
             }
             &[type="text"]:active,
             &[type="email"]:active,
             &[type="password"]:active,
             &[type="number"]:active,
+            &[type="tel"]:active,
             &[type="text"]:focus,
             &[type="email"]:focus,
             &[type="password"]:focus,
             &[type="number"]:focus,
+            &[type="tel"]:focus,
             &[type="text"]:hover,
             &[type="email"]:hover,
             &[type="password"]:hover,
-            &[type="number"]:hover {
+            &[type="number"]:hover,
+            &[type="tel"]:hover {
                 border: 1px solid $color_orange;
             }
             &[type="text"].visa_cc,
