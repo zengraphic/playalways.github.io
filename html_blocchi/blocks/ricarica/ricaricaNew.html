@@ -569,16 +569,6 @@ $wind(document).ready(function() {
     // FINE OPEN SIDEBAR CONTENT
 
 
-    $wind(function() {
-
-        $wind('#input_cc')
-            .keyup(function() {
-                var value = $wind(this).val();
-                value = value.replace(/\s/g, '');
-                value = value.match(/.{1,4}/g).join(" ");
-                $wind(this).val(value);
-            })
-    });
 
     //     $wind(':input').bind('focusin focus', function(e){
     //   e.preventDefault();
@@ -600,18 +590,12 @@ $wind(document).ready(function() {
 
     //inizio check
 
-
-    //ios bounce fix
-    var repositioner = null;
-    $wind('body').on('blur', 'input,area', function() {
-        repositioner = setTimeout(function() {
-            window.scrollTo(0, 0);
-        }, 200);
+    $wind('#input_cc').keyup(function() {
+        var value = $wind(this).val();
+        value = value.replace(/\s/g, '');
+        value = value.match(/.{1,4}/g).join(" ");
+        $wind(this).val(value);
     });
-    $wind('body').on('focus', 'input,area', function() {
-        clearTimeout(repositioner);
-    });
-
 
 
     $wind("#input_cc, #security_cc").keyup(function() {

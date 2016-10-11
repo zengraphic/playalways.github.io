@@ -48,7 +48,6 @@ function prefixedEventListener(element, type, callback) {
             weekStart: 1,
             todayBtn: true,
             autoclose: true,
-            todayBtn: true,
             todayHighlight: true,
             startView: 2,
             showMeridian: true,
