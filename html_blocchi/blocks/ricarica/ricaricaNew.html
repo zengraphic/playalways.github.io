@@ -569,20 +569,10 @@ $wind(document).ready(function() {
     // FINE OPEN SIDEBAR CONTENT
 
 
-    $wind(function() {
 
-        $wind('#input_cc')
-            .keyup(function() {
-                var value = $wind(this).val();
-                value = value.replace(/\s/g, '');
-                value = value.match(/.{1,4}/g).join(" ");
-                $wind(this).val(value);
-            })
-    });
-
-//     $wind(':input').bind('focusin focus', function(e){
-//   e.preventDefault();
-// })
+    //     $wind(':input').bind('focusin focus', function(e){
+    //   e.preventDefault();
+    // })
 
 
 
@@ -600,20 +590,24 @@ $wind(document).ready(function() {
 
     //inizio check
 
+    $wind('#input_cc').keyup(function() {
+        var value = $wind(this).val();
+        value = value.replace(/\s/g, '');
+        value = value.match(/.{1,4}/g).join(" ");
+        $wind(this).val(value);
+    });
+
 
     $wind("#input_cc, #security_cc").keyup(function() {
         checkNextStep();
     });
 
     $wind(".number_top_up_confirm").blur(function() {
-
         checkNextStep();
     });
 
     $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
-
         checkNextStep();
-
     });
 
     $wind('input[type="radio"]').change(function() {

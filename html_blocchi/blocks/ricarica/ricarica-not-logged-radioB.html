@@ -215,14 +215,15 @@
                         <h3 class="text3">Come vuoi pagare?</h3>
                     </div>
                     <div class=" item-box " id="action_c1">
-                        <div class="base__radio radio radio-inline ">
+                        <div class="base__radio radio radio-inline newCard_main_radio">
                             <input type="radio" id="option1" value="option1" name="radioInline">
                             <label for="option1"> Carta di credito </label>
                         </div>
                         <!-- CREDIC CARD -->
-                        <div class="cont_item1">
-                            <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name="" maxlength="16" class="base__input number_cc" onkeypress='validate(event)'>
+                        <div class="cont_item1 base__toggle">
+                            <input type="text" placeholder="Numero della Carta di Credito" id="input_cc" name="" class="base__input number_cc" onkeypress='return validate(event)' maxlength="19">
                             <span class="error_message">Controlla il campo</span>
+                            <div class="clear"></div>
                             <div class="container_select_cc">
                                 <div class="select_mese">
                                     <select class="base__select selectpicker select_cc" title="Mese" data-size="6">
@@ -264,11 +265,12 @@
                                 </div>
                                 <div class="clear"></div>
                             </div>
-                            <!--                             <div class="base__checkbox checkbox checkbox-inline remember_check">
+                           <!--  <div class="base__checkbox checkbox checkbox-inline remember_check">
                                 <input type="checkbox" class="styled" id="salvadati-checkbox" value="option1">
-                                <label for="salvadati-checkbox">Ricorda la mia carta per i pagamenti successivi</lessabel>
-                            </div> -->
-                            <!-- insert help comment in [data-original-title] -->
+                                <label for="salvadati-checkbox">Ricorda la mia carta per i pagamenti successivi</label>
+                                <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orangecc modalCc" />
+                            </div>
+                            <!-- insert help comment in [data-original-title] --> -->
                         </div>
                     </div>
                     <div class=" item-box" id="action_c2">
@@ -279,12 +281,12 @@
                         <div class="cont_item1">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
                             <div class="clear"></div>
-                            <div class="base__checkbox checkbox checkbox-inline remember_check">
+                            <!--  <div class="base__checkbox checkbox checkbox-inline remember_check">
                                 <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
                                 <label for="paypal-checkbox">Ricorda i miei dati</label>
                                 <img src="../../img/icons-interface/icon_answer.png" class="icon_tooltip security_cc base__tip--orange" data-toggle="tooltip_ccv" data-placement="top" data-original-title="Questo servizio ti permetterà di effettuare i pagamenti successivi senza dover più inserire le credenziali sul sito di PayPal. Per ragioni di sicurezza Wind non salva le tue credenziali di accesso ma esclusivamente un codice identificativo fornito da PayPal. Potrai sempre modificare la tua scelta, deselezionando la voce Ricorda i miei dati." />
                             </div>
-                            <div class="clear"></div>
+                            <div class="clear"></div> -->
                             <!--  <div style="display:none">
                                 <input type="text" placeholder="Email" name="" class="base__input ">
                                 <input type="text" placeholder="Password" name="" class="base__input ">
@@ -401,75 +403,12 @@ $wind(window).load(function() {
     HEADER.setSlider();
 });
 
+
 $wind(document).ready(function() {
-    function checkNewNumber() {
-        var mainNumber = $wind('.number_top_up').val();
-        var confirmNumber = $wind('.number_top_up_confirm').val();
-        if ((!$wind('.number_top_up_confirm').is(':focus')) && ((confirmNumber.length > 0) && (mainNumber.length > 0))) {
-            if ((mainNumber.length >= 6) && (confirmNumber.length >= 6) && (mainNumber == confirmNumber)) {
-                $wind('.number_top_up_confirm').removeClass('error');
-                $wind('.number_top_up_confirm + span').removeClass('error');
-                return (true);
-            } else {
-                $wind('.number_top_up_confirm').addClass('error');
-                $wind('.number_top_up_confirm + span').addClass('error');
-                $wind('.number_top_up_confirm + span').text('Controlla che i numeri siano uguali');
-                return (false);
-            }
-        } else {
-            return (false);
-        }
-    }
-
-    function checkNewCreditCard() {
-        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-        var securityCC = $wind('#security_cc');
-        if (($wind('#input_cc').val().length > 8) && (checkNewNumber() == true) && radioCC.is(':checked') && securityCC.val().length >= 3) {
-            $wind('.top_up_button_final').prop("disabled", false);
-        } else {
-            $wind('.top_up_button_final').prop("disabled", true);
-        }
-    }
-
-    function checkNextStep() {
-        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-        var radioPay = $wind('.paypal_main_radio input[type="radio"]');
-        var radioCharge = $wind('.charge_main_radio input[type="radio"]');
-        var radioBill = $wind('.bill_main_radio input[type="radio"]');
-        var subRadioBill = $wind('.item_bill input[type="radio"]');
-        var subRadioCharge = $wind('.item_charge input[type="radio"]');
-        var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
-        var cardNumber = $wind('.number_cc').val();
-        var securityCC = $wind('#security_cc');
-        $wind('.top_up_button_final').prop("disabled", true);
-
-        if ((checkNewNumber() == true)) {
-            if (radioPay.is(':checked')) {
-                console.log('paypal checked');
-                $wind('.top_up_button_final').prop("disabled", false);
-                alert('b');
-            }
-            if (subRadioCharge.is(':checked') && (radioCharge.is(':checked'))) {
-                console.log('addebito checked');
-                $wind('.top_up_button_final').prop("disabled", false);
-
-            }
-            if (subRadioBill.is(':checked') && (radioBill.is(':checked'))) {
-                console.log('addebito conto tel checked');
-                $wind('.top_up_button_final').prop("disabled", false);
-
-            }
-            if (($wind('#input_cc').val().length > 8) && subRadioNewCard.is(':checked') && radioCC.is(':checked') && securityCC.val().length >= 3) {
-                $wind('.top_up_button_final').prop("disabled", false);
-            }
-        }
-    }
 
     $wind('.open_sidebar_topUp').click(function() {
         $wind('.mfp-bg, .mfp-wrap').css('height', '100%');
-        var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
-        radioCC.prop('checked', true);
-        $wind('#action_c1').addClass('active').find('.cont_item1').show();
+
     });
 
     $wind('.top_up_newCard').click(function() {
@@ -477,16 +416,30 @@ $wind(document).ready(function() {
         subRadioNewCard.prop('checked', true);
     });
 
+    $wind(function() {
+
+        $wind('#input_cc')
+            .keyup(function() {
+                var value = $wind(this).val();
+                value = value.replace(/\s/g, '');
+                value = value.match(/.{1,4}/g).join(" ");
+                $wind(this).val(value);
+            })
+    });
+
     $wind("#input_cc, #security_cc").keyup(function() {
-        checkNewCreditCard();
+        checkNextStep();
     });
 
     $wind(".number_top_up_confirm").blur(function() {
+
         checkNextStep();
     });
 
     $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
+
         checkNextStep();
+
     });
 
     $wind('input[type="radio"]').change(function() {
