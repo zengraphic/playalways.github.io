@@ -545,8 +545,9 @@ $wind(document).ready(function() {
     // SHOWMORE CONTENT
     $wind(".showMore").click(function() {
         $wind(".showMore_content").fadeIn("slow").css('display:static');
+        $wind(".showMore").slideUp("fast");
         $wind(".showMore_content").getNiceScroll().resize();
-        $wind(".showMore").slideUp("fast")
+        
     });
     // FINE SHOWMORE CONTENT
 
