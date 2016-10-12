@@ -257,6 +257,7 @@ body {
         //768
         width: 400px;
         max-width: 320px;
+        margin: 0 auto;
     }
 }
 
@@ -320,6 +321,10 @@ body {
             img {
                 margin-left: auto;
                 margin-right: 0;
+                @include breakpoint(small) {
+                    //768
+                    margin: 0 auto;
+                }                
             }
         }
         .container_text {
@@ -482,7 +487,7 @@ body {
     & li {
         list-style-type: none;
         display: inline-block;
-        margin-right: 30px;
+        margin-right: 2vw;
         cursor: pointer;
         @include breakpoint(small) {
             //768
@@ -490,8 +495,8 @@ body {
         }
     }
     & .slide_single {
-        width: 20px;
-        height: 20px;
+        width: 1.3vw;
+        height: 1.3vw;
         background: $color-pale-yellow;
         @include border-radius(100%);
         background-clip: padding-box;
