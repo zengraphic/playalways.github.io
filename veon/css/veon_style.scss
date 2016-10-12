@@ -91,9 +91,9 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px),
 //========================================================================//
 //========================== DEFINIZIONE VARIABILI =======================//
 //========================================================================//           
-$weight-thin: 'TP Hero Thin';
-$weight-light: 'TP Hero Light';
-$weight-hairline: 'TP Hero Hairline';
+$weight-light: 'TP Hero Light'; //medium
+$weight-thin: 'TP Hero Thin'; //light
+$weight-hairline: 'TP Hero Hairline'; //thin
 $color-pale-yellow: #ffefbd;
 $color-pale-orange: #ffcb24;
 //============================================================================//
@@ -346,9 +346,15 @@ body {
 
 .bannerFix {
             position: relative;
-            img{
+            img.preFooter{
                 width: 100%;
                 max-width: 2500px;
+            }
+            img.phonePreFooter{
+                position: absolute;
+                width: 20vw;
+                bottom: 80px;
+                right: 26%;
             }
             div.claims{
                 position: absolute;
@@ -365,9 +371,9 @@ body {
                 &.secondClaim{
                     top: 65%;
                     a{
-                        img{
+                        img.buttonFooter{
                             width: 10vw;
-                            margin-top: 20px;
+                            margin-top: 30px;
                         }
                     }
                 }
@@ -381,17 +387,19 @@ body {
         }
     
         footer{
+            position: relative;
             background-color: rgb(25,25,25);
-            height: 300px;
             width: 100%;
             color: #fff;
+            font-size: 18px;
+            line-height: 26px;
             .containerFooter{
                 max-width: 1350px;
                 margin: 0 auto;
                 padding: 30px;
-                font-family: "TP Hero Thin";
+                font-family: $weight-thin;
                 b{
-                    font-weight: bold;
+                    font-family: $weight-light;
                 }
                 p{
                     margin-top: 0;
@@ -408,6 +416,22 @@ body {
                             color: rgb(255,204,0);
                         }
                     }
+                }
+            }
+            .disclaimer{
+                max-width: 1350px;
+                margin: 0 auto;
+                margin-top: 50px;
+                padding: 10px 30px;
+                color: #666;
+            }
+            .floatingFooterLogo{
+                position: absolute;
+                right: 0;
+                top: 30px;
+                
+                img{
+                    width: 150px;    
                 }
             }
         }

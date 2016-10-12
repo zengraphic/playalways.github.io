@@ -194,9 +194,14 @@ body {
 
 .bannerFix {
   position: relative; }
-  .bannerFix img {
+  .bannerFix img.preFooter {
     width: 100%;
     max-width: 2500px; }
+  .bannerFix img.phonePreFooter {
+    position: absolute;
+    width: 20vw;
+    bottom: 80px;
+    right: 26%; }
   .bannerFix div.claims {
     position: absolute;
     left: 25%; }
@@ -209,9 +214,9 @@ body {
       top: 18%; }
     .bannerFix div.claims.secondClaim {
       top: 65%; }
-      .bannerFix div.claims.secondClaim a img {
+      .bannerFix div.claims.secondClaim a img.buttonFooter {
         width: 10vw;
-        margin-top: 20px; }
+        margin-top: 30px; }
 
 .faqContainer {
   width: 100%;
@@ -219,17 +224,19 @@ body {
   background-color: #333333; }
 
 footer {
+  position: relative;
   background-color: #191919;
-  height: 300px;
   width: 100%;
-  color: #fff; }
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px; }
   footer .containerFooter {
     max-width: 1350px;
     margin: 0 auto;
     padding: 30px;
     font-family: "TP Hero Thin"; }
     footer .containerFooter b {
-      font-weight: bold; }
+      font-family: "TP Hero Light"; }
     footer .containerFooter p {
       margin-top: 0; }
     footer .containerFooter .blockFooter {
@@ -240,6 +247,18 @@ footer {
       margin: 0; }
       footer .containerFooter ul li a {
         color: #ffcc00; }
+  footer .disclaimer {
+    max-width: 1350px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px 30px;
+    color: #666; }
+  footer .floatingFooterLogo {
+    position: absolute;
+    right: 0;
+    top: 30px; }
+    footer .floatingFooterLogo img {
+      width: 150px; }
 
 .slick-slider .slider_navigation {
   position: absolute;
