@@ -167,6 +167,23 @@
                     $(this).attr('placeholder', placeHolder);
                 }
             });
+
+
+        $(window).resize(function() {
+            var wViewport = $(window).width();
+            var inputProv = $('#powermail_field_provincia');
+            var labelProv = $('.powermail_fieldwrap_provincia label');
+            if (wViewport < 768) {
+                inputProv.attr('placeholder', 'Prov.');
+                labelProv.text( 'Prov.');
+            } else {
+                inputProv.attr('placeholder', 'Provincia');
+                labelProv.text( 'Provincia');
+            }
+        });
+
+
+
     });
     </script>
 </body>
