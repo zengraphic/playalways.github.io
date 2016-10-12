@@ -73,7 +73,7 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px),
 'medium': ( max-width: 910px),
 'large': ( max-width: 1025px),
 'largest': ( max-width: 1440px),
-'extra-large':( min-width: 1999px),
+'min-small':( min-width: 767px),
 'min-desktop':( max-width: 1024px));
 // Creating the mixin
 @mixin breakpoint($name) {
@@ -160,11 +160,6 @@ h1 {
         //330
         text-align: left;
     }
-    @include breakpoint(extra-large) {
-        //330
-        font-size: 130px;
-        line-height: 132px;
-    }    
 }
 
 h4 {
@@ -183,11 +178,6 @@ h4 {
         //330
         text-align: left;
     }
-    @include breakpoint(extra-large) {
-        //1999
-        font-size: 34px;
-        line-height: 36px;
-    }     
 }
 
 h6 {
@@ -205,11 +195,6 @@ h6 {
         //330
         text-align: left;
     }
-    @include breakpoint(extra-large) {
-        //1999
-        font-size: 30px;
-        line-height: 32px;
-    }     
 }
 
 .floating_logo {
@@ -254,6 +239,8 @@ h6 {
 
 .veon_wrapper {
     background-color: $color-bg-gray;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
 body {
@@ -368,11 +355,6 @@ body {
             h1{
                 font-size: 5vw;
                 line-height: 5.5vw;
-                @include breakpoint(extra-large) {
-                    //1999
-                    font-size: 100px;
-                    line-height: 102px;
-                }                
             }            
             h6 {
                 margin-top: 35px;
@@ -383,10 +365,11 @@ body {
 
 .bannerFix {
             position: relative;
+            text-align: center;
             img.preFooter{
                 width: 100%;
-                max-width: 2500px;
-                margin-top: -22vw;
+                max-width: 2000px;
+                margin-top: -20vw;
             }
             img.phonePreFooter{
                 position: absolute;
