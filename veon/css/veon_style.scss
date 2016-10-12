@@ -97,6 +97,7 @@ $weight-hairline: 'TP Hero Hairline'; //thin
 $color-pale-yellow: #ffefbd;
 $color-pale-orange: #ffcb24;
 $color-bg-gray: #eeeeee;
+$color-yellow: #ffcc00;
 //============================================================================//
 //========================== CLASSI DI STYLE GENERICHE =======================//
 //============================================================================//           
@@ -164,7 +165,7 @@ h1 {
         //330
         font-size: 130px;
         line-height: 132px;
-    }    
+    }
 }
 
 h4 {
@@ -187,7 +188,7 @@ h4 {
         //1999
         font-size: 34px;
         line-height: 36px;
-    }     
+    }
 }
 
 h6 {
@@ -209,7 +210,7 @@ h6 {
         //1999
         font-size: 30px;
         line-height: 32px;
-    }     
+    }
 }
 
 .floating_logo {
@@ -351,7 +352,7 @@ body {
                 @include breakpoint(small) {
                     //768
                     margin: 0 auto;
-                }                
+                }
             }
         }
         .container_text {
@@ -365,15 +366,15 @@ body {
             .button_cta {
                 margin-top: 35px;
             }
-            h1{
+            h1 {
                 font-size: 5vw;
                 line-height: 5.5vw;
                 @include breakpoint(extra-large) {
                     //1999
                     font-size: 100px;
                     line-height: 102px;
-                }                
-            }            
+                }
+            }
             h6 {
                 margin-top: 35px;
             }
@@ -382,97 +383,90 @@ body {
 }
 
 .bannerFix {
-            position: relative;
-            img.preFooter{
-                width: 100%;
-                max-width: 2500px;
-                margin-top: -22vw;
-            }
-            img.phonePreFooter{
-                position: absolute;
-                width: 20vw;
-                bottom: 80px;
-                right: 26%;
-            }
-            div.claims{
-                position: absolute;
-                left: 25%;
-                h1{
-                    text-align: left;
-                    font-size: 5vw;
-                    line-height: 5.5vw;
-                }
-                &.firstClaim{
-                    color: #fff;
-                    top: 18%;
-                }
-                &.secondClaim{
-                    top: 65%;
-                    a{
-                        img.buttonFooter{
-                            width: 10vw;
-                            margin-top: 30px;
-                        }
-                    }
-                }
-            }
+    position: relative;
+    img.preFooter {
+        width: 100%;
+        max-width: 2500px;
+        margin-top: -22vw;
+    }
+    img.phonePreFooter {
+        position: absolute;
+        width: 20vw;
+        bottom: 80px;
+        right: 26%;
+    }
+    div.claims {
+        position: absolute;
+        left: 25%;
+        h1 {
+            text-align: left;
+            font-size: 5vw;
+            line-height: 5.5vw;
         }
-    
-        .faqContainer{
-          width: 100%;
-          height: 300px;
-          background-color: rgb(51,51,51);
-        }
-    
-        footer{
-            position: relative;
-            background-color: rgb(25,25,25);
-            width: 100%;
+        &.firstClaim {
             color: #fff;
-            font-size: 18px;
-            line-height: 26px;
-            .containerFooter{
-                max-width: 1350px;
-                margin: 0 auto;
-                padding: 30px;
-                font-family: $weight-thin;
-                b{
-                    font-family: $weight-light;
-                }
-                p{
-                    margin-top: 0;
-                }
-                .blockFooter{
-                    margin-bottom: 30px;
-                }
-                ul{
-                    list-style-type: none;
-                    padding-left: 0;
-                    margin: 0;
-                    li{
-                        a{
-                            color: rgb(255,204,0);
-                        }
-                    }
-                }
-            }
-            .disclaimer{
-                max-width: 1350px;
-                margin: 0 auto;
-                margin-top: 50px;
-                padding: 10px 30px;
-                color: #666;
-            }
-            .floatingFooterLogo{
-                position: absolute;
-                right: 0;
-                top: 30px;
-                
-                img{
-                    width: 150px;    
+            top: 18%;
+        }
+        &.secondClaim {
+            top: 65%;
+            a {
+                img.buttonFooter {
+                    width: 10vw;
+                    margin-top: 30px;
                 }
             }
         }
+    }
+}
+
+footer {
+    position: relative;
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+    .containerFooter {
+        max-width: 1350px;
+        margin: 0 auto;
+        padding: 30px;
+        font-family: $weight-thin;
+        b {
+            font-family: $weight-light;
+        }
+        p {
+            margin-top: 0;
+        }
+        .blockFooter {
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            li {
+                a {
+                    color: $color-yellow;
+                }
+            }
+        }
+    }
+    .disclaimer {
+        max-width: 1350px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 10px 30px;
+        color: #666;
+    }
+    .floatingFooterLogo {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        img {
+            width: 150px;
+        }
+    }
+}
 
 //============================================================//
 //========================== SLIDER ===========================//
@@ -545,5 +539,81 @@ body {
     }
     & .slick-active .slide_single {
         background: $color-pale-orange;
+    }
+}
+
+//============================================================//
+//========================== STYLE VEON =======================//
+//=============================================================//  
+.faqContainer {
+    width: 100%;    
+    padding-bottom: 10px;
+    background-color: rgb(51, 51, 51); 
+    .more_faq_container{
+        display: none;
+    }   
+    .show_less_faq{
+        display: none;
+    }
+    .show_more_faq, .show_less_faq{
+        color: $color-yellow;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: $weight-hairline;
+        padding-top: 5px;   
+        cursor: pointer;     
+    }
+    .block {
+        color: $color-yellow;
+        padding-top: 5px;
+        margin: 0 30px; 
+        border-bottom: 1px solid #666;   
+        cursor: pointer;            
+    }
+    .block input[type='radio']:checked ~ .info {
+        height: 130px;
+        transition: .3s ease-in;
+    }
+    input[type='radio'] {
+        width: 100%;
+        display: none;
+    }
+    label {
+        width: 450px;
+        max-width: 100%;
+        cursor: pointer;
+    }
+    span {
+        font-family: $weight-hairline;
+        display: block;
+        padding: 10px 12px 12px 15px;
+        margin: 0;
+        cursor: pointer;
+    }
+    .info {
+        color: #fff;
+        width: 100%;
+        height: 0;
+        line-height: 2;
+        padding-left: 15px;
+        display: block;
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: .3s ease-out;
+        font-family: $weight-hairline;        
+    }
+    h4 {
+        color: #111;
+        text-align: right;
+        position: absolute;
+        bottom: 20px;
+        right: 15px;
+    }
+    h4 a {
+        color: #111;
+        text-decoration: none;
+    }
+    ::selection {
+        color: #fff;
     }
 }
