@@ -385,46 +385,65 @@ body {
 
 .bannerFix {
             position: relative;
-            background: url('../img/veon_preFooter_big.png') no-repeat center;
             width: 100%;
+            background: url('../img/veon_preFooter_big.png') no-repeat center;
             height: 1900px;
             margin-top: -280px;
+            @include breakpoint(large) {
+                background: url('../img/bgtest.png') no-repeat center;
+                height: 1691px;
+                margin-top: 0;
+            } 
             img.preFooter{
                 width: 100%;
                 margin-top: -22vw;
             }
-            img.phonePreFooter{
-                position: absolute;
-                width: 450px;
-                top: 650px;
-                right: 15%;
-            }
+            
             .containerBannerFix{
                 width: 1440px;
                 margin: 0 auto;
                 position: relative;
                 top: 32%;
-                left: 90px;
-            }
-            div.claims{
-                h1{
-                    text-align: left;
-                    font-size: 130px;
-                    line-height: 132px;
+                left: 74px;
+                @include breakpoint(large) {
+                    top: 23%;
+                    width: 550px;
+                    margin: 0;
                 }
-                &.firstClaim{
-                    color: #fff;
-                }
-                &.secondClaim{
-                    margin-top: 500px;
-                    a{
-                        img.buttonFooter{
-                            width: 250px;
-                            margin-top: 30px;
+                div.claims{
+                    h1{
+                        text-align: left;
+                        font-size: 130px;
+                        line-height: 132px;
+                        @include breakpoint(largest) {
+                            font-size: 100px;
+                            line-height: 100px;
+                        }
+                         
+                    }
+                    &.firstClaim{
+                        color: #fff;
+                    }
+                    &.secondClaim{
+                        margin-top: 500px;
+                        a{
+                            img.buttonFooter{
+                                width: 250px;
+                                margin-top: 30px;
+                            }
+                        }
+                        @include breakpoint(largest) {
+                            margin-top: 430px;
+                            a{
+                            img.buttonFooter{
+                                width: 150px;
+                            }
+                        }
                         }
                     }
                 }
             }
+            
         }
     
         .faqContainer{

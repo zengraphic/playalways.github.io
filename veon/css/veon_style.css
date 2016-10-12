@@ -224,35 +224,49 @@ body {
 
 .bannerFix {
   position: relative;
-  background: url("../img/veon_preFooter_big.png") no-repeat center;
   width: 100%;
+  background: url("../img/veon_preFooter_big.png") no-repeat center;
   height: 1900px;
   margin-top: -280px; }
+  @media (max-width: 1025px) {
+    .bannerFix {
+      background: url("../img/bgtest.png") no-repeat center;
+      height: 1691px;
+      margin-top: 0; } }
   .bannerFix img.preFooter {
     width: 100%;
     margin-top: -22vw; }
-  .bannerFix img.phonePreFooter {
-    position: absolute;
-    width: 450px;
-    top: 650px;
-    right: 15%; }
   .bannerFix .containerBannerFix {
     width: 1440px;
     margin: 0 auto;
     position: relative;
     top: 32%;
-    left: 90px; }
-  .bannerFix div.claims h1 {
-    text-align: left;
-    font-size: 130px;
-    line-height: 132px; }
-  .bannerFix div.claims.firstClaim {
-    color: #fff; }
-  .bannerFix div.claims.secondClaim {
-    margin-top: 500px; }
-    .bannerFix div.claims.secondClaim a img.buttonFooter {
-      width: 250px;
-      margin-top: 30px; }
+    left: 74px; }
+    @media (max-width: 1025px) {
+      .bannerFix .containerBannerFix {
+        top: 23%;
+        width: 550px;
+        margin: 0; } }
+    .bannerFix .containerBannerFix div.claims h1 {
+      text-align: left;
+      font-size: 130px;
+      line-height: 132px; }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 100px;
+          line-height: 100px; } }
+    .bannerFix .containerBannerFix div.claims.firstClaim {
+      color: #fff; }
+    .bannerFix .containerBannerFix div.claims.secondClaim {
+      margin-top: 500px; }
+      .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
+        width: 250px;
+        margin-top: 30px; }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 430px; }
+          .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
+            width: 150px; } }
 
 .faqContainer {
   width: 100%;
