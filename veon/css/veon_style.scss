@@ -96,6 +96,7 @@ $weight-thin: 'TP Hero Thin'; //light
 $weight-hairline: 'TP Hero Hairline'; //thin
 $color-pale-yellow: #ffefbd;
 $color-pale-orange: #ffcb24;
+$color-bg-gray: #eeeeee;
 //============================================================================//
 //========================== CLASSI DI STYLE GENERICHE =======================//
 //============================================================================//           
@@ -140,10 +141,8 @@ $color-pale-orange: #ffcb24;
 //=============================================================//         
 h1 {
     font-family: $weight-hairline;
-    font-size: 130px;
-    line-height: 132px;
     font-size: 7.5vw;
-    line-height: 7.6vw;
+    line-height: 8vw;
     text-transform: uppercase;
     margin: 0;
     @include breakpoint(largest) {
@@ -163,10 +162,26 @@ h1 {
     }
 }
 
+h4 {
+    font-family: $weight-thin;
+    font-size: 2vw;
+    line-height: 2.1vw;
+    text-transform: uppercase;
+    margin: 0;
+    @include breakpoint(small) {
+        //768
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+    }
+    @include breakpoint(tiny) {
+        //330
+        text-align: left;
+    }
+}
+
 h6 {
     font-family: $weight-thin;
-    font-size: 24px;
-    line-height: 26px;
     font-size: 1.4vw;
     line-height: 1.5vw;
     margin: 0;
@@ -226,11 +241,11 @@ h6 {
 }
 
 .veon_wrapper {
-    background-color: #eee;
+    background-color: $color-bg-gray;
 }
 
 body {
-    background-color: #eee;
+    background-color: $color-bg-gray;
 }
 
 .column_image {
@@ -265,7 +280,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    background-color: #eee;
+    background-color: $color-bg-gray;
     @include breakpoint(largest) {
         //1440
         max-width: 1024px;
@@ -338,6 +353,10 @@ body {
             .button_cta {
                 margin-top: 35px;
             }
+            h1{
+                font-size: 5vw;
+                line-height: 5.5vw;
+            }            
             h6 {
                 margin-top: 35px;
             }
@@ -364,7 +383,7 @@ body {
                 h1{
                     text-align: left;
                     font-size: 5vw;
-                    line-height: 5vw;
+                    line-height: 5.5vw;
                 }
                 &.firstClaim{
                     color: #fff;
