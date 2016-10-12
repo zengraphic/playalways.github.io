@@ -255,6 +255,8 @@ h6 {
 
 .veon_wrapper {
     background-color: $color-bg-gray;
+    max-width: 2560px;
+    margin: 0 auto;
 }
 
 body {
@@ -384,34 +386,41 @@ body {
 
 .bannerFix {
     position: relative;
+    background: url('../img/veon_preFooter_big.png') no-repeat center;
+    width: 100%;
+    height: 1900px;
+    margin-top: -280px;
     img.preFooter {
         width: 100%;
-        max-width: 2500px;
         margin-top: -22vw;
     }
     img.phonePreFooter {
         position: absolute;
-        width: 20vw;
-        bottom: 80px;
-        right: 26%;
+        width: 450px;
+        top: 650px;
+        right: 15%;
+    }
+    .containerBannerFix {
+        width: 1440px;
+        margin: 0 auto;
+        position: relative;
+        top: 32%;
+        left: 90px;
     }
     div.claims {
-        position: absolute;
-        left: 25%;
         h1 {
             text-align: left;
-            font-size: 5vw;
-            line-height: 5.5vw;
+            font-size: 130px;
+            line-height: 132px;
         }
         &.firstClaim {
             color: #fff;
-            top: 18%;
         }
         &.secondClaim {
-            top: 65%;
+            margin-top: 500px;
             a {
                 img.buttonFooter {
-                    width: 10vw;
+                    width: 250px;
                     margin-top: 30px;
                 }
             }
@@ -421,7 +430,9 @@ body {
 
 footer {
     position: relative;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(25,
+    25,
+    25);
     width: 100%;
     color: #fff;
     font-size: 18px;
@@ -434,12 +445,15 @@ footer {
         b {
             font-family: $weight-light;
         }
+        
         p {
             margin-top: 0;
         }
+        
         .blockFooter {
             margin-bottom: 30px;
         }
+        
         ul {
             list-style-type: none;
             padding-left: 0;
@@ -467,7 +481,6 @@ footer {
         }
     }
 }
-
 //============================================================//
 //========================== SLIDER ===========================//
 //=============================================================//
@@ -488,6 +501,7 @@ footer {
             //1440
             left: 20px;
         }
+        
         &:hover {
             opacity: 0.5;
         }
@@ -499,12 +513,12 @@ footer {
             //1440
             right: 20px;
         }
+        
         &:hover {
             opacity: 0.5;
         }
     }
 }
-
 .slider_dots {
     text-align: center;
     margin-top: 15px;
@@ -531,6 +545,7 @@ footer {
         @include border-radius(100%);
         background-clip: padding-box;
         /* stops bg color from leaking outside the border: */
+        
         @include breakpoint(small) {
             //768
             width: 10px;
@@ -541,34 +556,36 @@ footer {
         background: $color-pale-orange;
     }
 }
-
 //============================================================//
 //========================== STYLE VEON =======================//
 //=============================================================//  
 .faqContainer {
-    width: 100%;    
+    width: 100%;
     padding-bottom: 10px;
-    background-color: rgb(51, 51, 51); 
-    .more_faq_container{
-        display: none;
-    }   
-    .show_less_faq{
+    background-color: rgb(51,
+    51,
+    51);
+    .more_faq_container {
         display: none;
     }
-    .show_more_faq, .show_less_faq{
+    .show_less_faq {
+        display: none;
+    }
+    .show_more_faq,
+    .show_less_faq {
         color: $color-yellow;
         text-transform: uppercase;
         text-align: center;
         font-family: $weight-hairline;
-        padding-top: 5px;   
-        cursor: pointer;     
+        padding-top: 5px;
+        cursor: pointer;
     }
     .block {
         color: $color-yellow;
         padding-top: 5px;
-        margin: 0 30px; 
-        border-bottom: 1px solid #666;   
-        cursor: pointer;            
+        margin: 0 30px;
+        border-bottom: 1px solid #666;
+        cursor: pointer;
     }
     .block input[type='radio']:checked ~ .info {
         height: 130px;
@@ -600,7 +617,7 @@ footer {
         overflow: hidden;
         box-sizing: border-box;
         transition: .3s ease-out;
-        font-family: $weight-hairline;        
+        font-family: $weight-hairline;
     }
     h4 {
         color: #111;
