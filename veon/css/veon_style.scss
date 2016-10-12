@@ -96,6 +96,7 @@ $weight-thin: 'TP Hero Thin'; //light
 $weight-hairline: 'TP Hero Hairline'; //thin
 $color-pale-yellow: #ffefbd;
 $color-pale-orange: #ffcb24;
+$color-bg-gray: #eeeeee;
 //============================================================================//
 //========================== CLASSI DI STYLE GENERICHE =======================//
 //============================================================================//           
@@ -140,10 +141,8 @@ $color-pale-orange: #ffcb24;
 //=============================================================//         
 h1 {
     font-family: $weight-hairline;
-    font-size: 130px;
-    line-height: 132px;
     font-size: 7.5vw;
-    line-height: 7.6vw;
+    line-height: 8vw;
     text-transform: uppercase;
     margin: 0;
     @include breakpoint(largest) {
@@ -163,10 +162,26 @@ h1 {
     }
 }
 
+h4 {
+    font-family: $weight-thin;
+    font-size: 2vw;
+    line-height: 2.1vw;
+    text-transform: uppercase;
+    margin: 0;
+    @include breakpoint(small) {
+        //768
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+    }
+    @include breakpoint(tiny) {
+        //330
+        text-align: left;
+    }
+}
+
 h6 {
     font-family: $weight-thin;
-    font-size: 24px;
-    line-height: 26px;
     font-size: 1.4vw;
     line-height: 1.5vw;
     margin: 0;
@@ -197,7 +212,7 @@ h6 {
 }
 
 .background-image-one {
-    max-width: 100vw;
+    max-width: 100%;
     width: 2560px;
     margin: 0 auto;
     height: 1674px;
@@ -226,11 +241,13 @@ h6 {
 }
 
 .veon_wrapper {
-    background-color: #eee;
+    background-color: $color-bg-gray;
+    max-width: 2500px;
+    margin: 0 auto;
 }
 
 body {
-    background-color: #eee;
+    background-color: $color-bg-gray;
 }
 
 .column_image {
@@ -257,6 +274,7 @@ body {
         //768
         width: 400px;
         max-width: 320px;
+        margin: 0 auto;
     }
 }
 
@@ -264,7 +282,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    background-color: #eee;
+    background-color: $color-bg-gray;
     @include breakpoint(largest) {
         //1440
         max-width: 1024px;
@@ -320,6 +338,10 @@ body {
             img {
                 margin-left: auto;
                 margin-right: 0;
+                @include breakpoint(small) {
+                    //768
+                    margin: 0 auto;
+                }                
             }
         }
         .container_text {
@@ -333,6 +355,10 @@ body {
             .button_cta {
                 margin-top: 35px;
             }
+            h1{
+                font-size: 5vw;
+                line-height: 5.5vw;
+            }            
             h6 {
                 margin-top: 35px;
             }
@@ -342,10 +368,11 @@ body {
 
 .bannerFix {
             position: relative;
+            text-align: center;
             img.preFooter{
                 width: 100%;
                 max-width: 2500px;
-                margin-top: -22vw;
+                margin-top: -20vw;
             }
             img.phonePreFooter{
                 position: absolute;
@@ -359,7 +386,7 @@ body {
                 h1{
                     text-align: left;
                     font-size: 5vw;
-                    line-height: 5vw;
+                    line-height: 5.5vw;
                 }
                 &.firstClaim{
                     color: #fff;
@@ -482,7 +509,7 @@ body {
     & li {
         list-style-type: none;
         display: inline-block;
-        margin-right: 30px;
+        margin-right: 2vw;
         cursor: pointer;
         @include breakpoint(small) {
             //768
@@ -490,8 +517,8 @@ body {
         }
     }
     & .slide_single {
-        width: 20px;
-        height: 20px;
+        width: 1.3vw;
+        height: 1.3vw;
         background: $color-pale-yellow;
         @include border-radius(100%);
         background-clip: padding-box;
