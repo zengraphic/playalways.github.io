@@ -155,6 +155,7 @@ function prefixedEventListener(element, type, callback) {
                     midClick: true,
                     alignTop: false,
                     removalDelay: 350,
+                    fixedBgPos: true,
                     callbacks: {
                         beforeClose: function() {},
                         close: function() {
@@ -176,6 +177,28 @@ function prefixedEventListener(element, type, callback) {
                                 });
                             }
                             $("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
+                        }
+                    }
+                });
+
+                $('.base__popup-link--ricarica')
+                .magnificPopup({
+                    type: 'inline',
+                    mainClass: 'mfp-fade',
+                    // closeOnContentClick: true,
+                    midClick: true,
+                    alignTop: false,
+                    removalDelay: 350,
+                    callbacks: {
+                        beforeClose: function() {},
+                        close: function() {
+                            // reset position btn (conferma/avanti) of footer
+                            
+                        },
+                        open: function() {
+                            // position btn conferma/avanti in bottom
+                           
+                           
                         }
                     }
                 });
