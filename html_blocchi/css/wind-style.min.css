@@ -2733,31 +2733,53 @@ b {
   -moz-transition: none;
   -ms-transition: none;
   -webkit-transition: none; }
-  .suggestion_block .tx-powermail h3 {
-    display: none; }
-  .suggestion_block .tx-powermail .powermail_fieldwrap_nomeecognome label,
-  .suggestion_block .tx-powermail .powermail_fieldwrap_provincia label,
-  .suggestion_block .tx-powermail .powermail_fieldwrap_recapitotelefonico label,
-  .suggestion_block .tx-powermail .powermail_fieldwrap_email label {
-    display: none; }
-  .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
-    margin-top: 30px; }
-  .suggestion_block .tx-powermail .powermail_input {
-    padding-bottom: 0.8rem;
-    padding-top: 0.8rem; }
+  .suggestion_block .tx-powermail {
+    margin-top: 70px; }
+    @media (max-width: 768px) {
+      .suggestion_block .tx-powermail {
+        margin-top: 0; } }
+    .suggestion_block .tx-powermail h3 {
+      display: none; }
+    @media (max-width: 768px) {
+      .suggestion_block .tx-powermail .container-fluid {
+        padding: 0; } }
+    .suggestion_block .tx-powermail .powermail_fieldwrap {
+      margin-bottom: 12px; }
+      .suggestion_block .tx-powermail .powermail_fieldwrap_nomeecognome label,
+      .suggestion_block .tx-powermail .powermail_fieldwrap_provincia label,
+      .suggestion_block .tx-powermail .powermail_fieldwrap_recapitotelefonico label,
+      .suggestion_block .tx-powermail .powermail_fieldwrap_email label {
+        display: none; }
+      .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
+        margin-top: 40px; }
+    .suggestion_block .tx-powermail .powermail_input {
+      padding: 1.1rem; }
+      @media (max-width: 768px) {
+        .suggestion_block .tx-powermail .powermail_input {
+          font-size: 1.2em; } }
   .suggestion_block .info_link {
     font-size: 0.750em; }
+    @media (max-width: 768px) {
+      .suggestion_block .info_link {
+        display: block;
+        font-size: 0.85em;
+        margin-top: 1em;
+        margin-bottom: 0; } }
   .suggestion_block__container {
     max-width: 1024px;
     margin: 0 auto;
-    padding-top: 25px;
-    padding-bottom: 60px;
-    height: 450px; }
+    position: relative; }
   .suggestion_block__title {
+    margin-top: 50px;
     margin-bottom: 20px;
     font-size: 3.75em;
     color: #292f36;
     font-family: "Trade Gothic Light"; }
+    @media (max-width: 768px) {
+      .suggestion_block__title {
+        padding-top: 35px;
+        font-size: 3.55em;
+        margin-bottom: 25px; } }
   .suggestion_block__input {
     margin-bottom: 10px; }
     .suggestion_block__input--email {
@@ -2773,62 +2795,65 @@ b {
     position: relative;
     z-index: 100;
     width: 450px; }
+    @media (max-width: 768px) {
+      .suggestion_block__description {
+        line-height: 1.15em;
+        font-size: 1.75em;
+        margin-bottom: 20px; } }
   .suggestion_block__left {
-    padding-left: 30px; }
+    padding-left: 30px;
+    position: static; }
   .suggestion_block__right {
-    padding-left: 115px;
-    padding-right: 30px;
-    margin-top: 30px; }
+    position: static;
+    height: 422px;
+    padding-left: 80px;
+    padding-right: 10px;
+    margin-bottom: 70px; }
   .suggestion_block__imageContainer {
     position: absolute;
-    top: 50%;
-    left: 40%;
+    bottom: 0;
+    right: 45%;
     z-index: 5; }
   .suggestion_block__image {
-    margin-top: 30px; }
+    margin-top: 0; }
 
 @media all and (max-width: 890px) {
   .suggestion_block {
-    font-size: 13px; }
-    .suggestion_block__imageContainer {
-      top: 70%;
-      left: 25%; } }
-
-@media (min-width: 768px) and (max-width: 891px) {
-  .suggestion_block__image {
-    margin-top: 16px; } }
+    font-size: 13px; } }
 
 @media all and (max-width: 767px) {
   .suggestion_block__right {
-    padding: 0px 15px; }
+    padding: 0px 15px;
+    height: 346px; }
     .suggestion_block__right .button, .suggestion_block__right .button--slim, .suggestion_block__right .button--ghost, .suggestion_block__right .button--ghost--transparent, .suggestion_block__right .button--search {
       width: 100%;
       margin-left: 0px;
       margin-right: 0px; }
   .suggestion_block__left {
-    font-size: 10px; }
+    font-size: 10px;
+    padding-left: 16px;
+    padding-right: 16px; }
   .suggestion_block__imageContainer {
-    top: -35px;
-    right: -165px;
-    left: inherit; }
+    bottom: 417px;
+    text-align: right;
+    right: 22px; }
   .suggestion_block__image {
-    width: 50%;
-    margin-top: 10px; } }
+    width: 50%; } }
 
 @media all and (max-width: 587px) {
   .suggestion_block .tx-powermail h3 {
     display: none; }
-  .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
-    margin-bottom: 30px; }
+  .suggestion_block .tx-powermail .powermail_fieldwrap {
+    margin-bottom: 10px; }
+    .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
+      margin-bottom: 30px; }
+  .suggestion_block .tx-powermail .powermail_submit {
+    font-size: 1.2em; }
   .suggestion_block__imageContainer {
-    top: 30px;
-    right: -160px;
-    left: inherit; }
-    .suggestion_block__imageContainer .suggestion_block__image {
-      width: 50%; }
+    bottom: 417px;
+    right: 22px; }
   .suggestion_block__description {
-    width: 200px;
-    margin-bottom: 30px; } }
+    width: 205px; } }
 
 .imageText_block {
   -webkit-transition: all 0.45s ease-in-out;
@@ -3740,7 +3765,10 @@ b {
 
 .tx-powermail .powermail_fieldwrap {
   text-align: left;
-  margin-bottom: 20px; }
+  margin-bottom: 15px; }
+  @media (max-width: 768px) {
+    .tx-powermail .powermail_fieldwrap {
+      margin-bottom: 10px; } }
 
 ::-webkit-input-placeholder {
   content: "Nome e cognome"; }
@@ -3855,12 +3883,16 @@ b {
       margin-left: auto;
       margin-right: 30px; }
       .business_block_viewer__half_block--formContainer .tx-powermail h3 {
-        margin: 25px 0 25px;
+        margin: 36px 0 21px;
         text-align: center;
         font-size: 1.375em;
         color: #ffffff;
         font-family: "Trade Gothic";
         text-transform: uppercase; }
+        @media (max-width: 768px) {
+          .business_block_viewer__half_block--formContainer .tx-powermail h3 {
+            margin: 5px 0 10px;
+            line-height: 1em; } }
       .business_block_viewer__half_block--formContainer .tx-powermail .powermail_fieldwrap_recapitotelefonico {
         float: left;
         width: 65%; }
@@ -3875,8 +3907,13 @@ b {
         padding-top: 15px;
         padding-bottom: 15px; }
       .business_block_viewer__half_block--formContainer .tx-powermail .powermail_submit, .business_block_viewer__half_block--formContainer .tx-powermail .powermail_reset {
+        margin-top: 46px;
         padding-top: 12px;
         padding-bottom: 12px; }
+        @media (max-width: 768px) {
+          .business_block_viewer__half_block--formContainer .tx-powermail .powermail_submit, .business_block_viewer__half_block--formContainer .tx-powermail .powermail_reset {
+            margin-top: 10px;
+            margin-bottom: 30px; } }
       @media (max-width: 768px) {
         .business_block_viewer__half_block--formContainer {
           margin: 0 auto;
@@ -4018,7 +4055,7 @@ b {
       text-align: center; }
   .business_block_viewer__coloredBg {
     left: -50%;
-    top: 53%; }
+    top: 56%; }
   .bundle_orange {
     font-size: 12px; }
   .recurrent_priceRow__price {
