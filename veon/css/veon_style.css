@@ -233,9 +233,17 @@ body {
       background: url("../img/veon_preFooter_medium.png") no-repeat center;
       height: 1691px;
       margin-top: 0; } }
-  .bannerFix img.preFooter {
-    width: 100%;
-    margin-top: -22vw; }
+  @media (max-width: 768px) {
+    .bannerFix {
+      background-image: none;
+      height: auto;
+      margin-top: 0; } }
+  .bannerFix img.image_preFooter {
+    display: none;
+    width: 100%; }
+    @media (max-width: 768px) {
+      .bannerFix img.image_preFooter {
+        display: inline; } }
   .bannerFix .containerBannerFix {
     width: 1440px;
     margin: 0 auto;
@@ -248,6 +256,13 @@ body {
         width: 550px;
         margin: 0;
         left: 30px; } }
+    @media (max-width: 768px) {
+      .bannerFix .containerBannerFix {
+        position: absolute;
+        top: 2%;
+        width: 80%;
+        margin: 0;
+        left: 0; } }
     .bannerFix .containerBannerFix div.claims h1 {
       text-align: left;
       font-size: 130px;
@@ -260,6 +275,10 @@ body {
         .bannerFix .containerBannerFix div.claims h1 {
           font-size: 75px;
           line-height: 75px; } }
+      @media (max-width: 768px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 16vw;
+          line-height: 16vw; } }
     .bannerFix .containerBannerFix div.claims.firstClaim {
       color: #fff; }
     .bannerFix .containerBannerFix div.claims.secondClaim {
@@ -272,6 +291,11 @@ body {
           margin-top: 600px; }
           .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
             width: 150px; } }
+      @media (max-width: 768px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 130vw; }
+          .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
+            width: 35vw; } }
 
 .faqContainer {
   width: 100%;

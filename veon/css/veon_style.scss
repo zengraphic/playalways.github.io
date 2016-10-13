@@ -394,10 +394,17 @@ body {
                 height: 1691px;
                 margin-top: 0;
             }
-           
-            img.preFooter{
+            @include breakpoint(small) {
+                background-image: none;
+                height: auto;
+                margin-top: 0;
+            } 
+            img.image_preFooter{
+                display: none;
                 width: 100%;
-                margin-top: -22vw;
+                @include breakpoint(small) {
+                    display: inline;
+                } 
             }
             
             .containerBannerFix{
@@ -412,6 +419,13 @@ body {
                     margin: 0;
                     left: 30px;
                 }
+                @include breakpoint(small) {
+                    position: absolute;
+                    top: 2%;
+                    width: 80%;
+                    margin: 0;
+                    left: 0;
+                }
                 div.claims{
                     h1{
                         text-align: left;
@@ -424,6 +438,10 @@ body {
                         @include breakpoint(large) {
                             font-size: 75px;
                             line-height: 75px;
+                        }
+                        @include breakpoint(small) {
+                            font-size: 16vw;
+                            line-height: 16vw;
                         }
                     }
                     &.firstClaim{
@@ -440,10 +458,18 @@ body {
                         @include breakpoint(largest) {
                             margin-top: 600px;
                             a{
-                            img.buttonFooter{
-                                width: 150px;
+                                img.buttonFooter{
+                                    width: 150px;
+                                }
                             }
                         }
+                        @include breakpoint(small) {
+                            margin-top: 130vw;
+                            a{
+                                img.buttonFooter{
+                                    width: 35vw;
+                                }
+                            }
                         }
                     }
                 }
