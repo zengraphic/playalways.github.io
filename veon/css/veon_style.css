@@ -219,40 +219,87 @@ body {
           .wrapper.three .container_text h1 {
             font-size: 100px;
             line-height: 102px; } }
+        @media (max-width: 768px) {
+          .wrapper.three .container_text h1 {
+            font-size: 45px;
+            line-height: 47px;
+            text-align: center; } }
       .wrapper.three .container_text h6 {
         margin-top: 35px; }
 
 .bannerFix {
   position: relative;
-  background: url("../img/veon_preFooter_big.png") no-repeat center;
   width: 100%;
-  height: 1900px;
-  margin-top: -280px; }
-  .bannerFix img.preFooter {
-    width: 100%;
-    margin-top: -22vw; }
-  .bannerFix img.phonePreFooter {
-    position: absolute;
-    width: 450px;
-    top: 650px;
-    right: 15%; }
+  background: url("../img/veon_preFooter_big.png") no-repeat center;
+  height: 2460px;
+  margin-top: -580px; }
+  @media (max-width: 1025px) {
+    .bannerFix {
+      background: url("../img/veon_preFooter_medium.png") no-repeat center;
+      height: 1691px;
+      margin-top: -150px; } }
+  @media (max-width: 768px) {
+    .bannerFix {
+      background-image: none;
+      height: auto;
+      margin-top: 0; } }
+  .bannerFix img.image_preFooter {
+    display: none;
+    width: 100%; }
+    @media (max-width: 768px) {
+      .bannerFix img.image_preFooter {
+        display: inline; } }
   .bannerFix .containerBannerFix {
     width: 1440px;
     margin: 0 auto;
     position: relative;
-    top: 32%;
-    left: 90px; }
-  .bannerFix div.claims h1 {
-    text-align: left;
-    font-size: 130px;
-    line-height: 132px; }
-  .bannerFix div.claims.firstClaim {
-    color: #fff; }
-  .bannerFix div.claims.secondClaim {
-    margin-top: 500px; }
-    .bannerFix div.claims.secondClaim a img.buttonFooter {
-      width: 250px;
-      margin-top: 30px; }
+    top: 35%;
+    left: 74px; }
+    @media (max-width: 1025px) {
+      .bannerFix .containerBannerFix {
+        top: 23%;
+        width: 550px;
+        margin: 0;
+        left: 30px; } }
+    @media (max-width: 768px) {
+      .bannerFix .containerBannerFix {
+        position: absolute;
+        top: 2%;
+        width: 80%;
+        margin: 0; } }
+    .bannerFix .containerBannerFix div.claims h1 {
+      text-align: left;
+      font-size: 130px;
+      line-height: 132px; }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 90px;
+          line-height: 90px; } }
+      @media (max-width: 1025px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 75px;
+          line-height: 75px; } }
+      @media (max-width: 768px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 16vw;
+          line-height: 16vw; } }
+    .bannerFix .containerBannerFix div.claims.firstClaim {
+      color: #fff; }
+    .bannerFix .containerBannerFix div.claims.secondClaim {
+      margin-top: 500px; }
+      .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
+        width: 250px;
+        margin-top: 30px; }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 600px; }
+          .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
+            width: 150px; } }
+      @media (max-width: 768px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 115vw; }
+          .bannerFix .containerBannerFix div.claims.secondClaim a img.buttonFooter {
+            width: 35vw; } }
 
 footer {
   position: relative;
@@ -264,14 +311,19 @@ footer {
   footer .containerFooter {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 30px;
     font-family: "TP Hero Thin"; }
     footer .containerFooter b {
       font-family: "TP Hero Light"; }
     footer .containerFooter p {
       margin-top: 0; }
+    footer .containerFooter .logoFooterContainer {
+      padding: 60px 30px; }
     footer .containerFooter .blockFooter {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      padding: 60px 30px 0 30px; }
+      @media (max-width: 768px) {
+        footer .containerFooter .blockFooter.quickLinks {
+          display: none; } }
     footer .containerFooter ul {
       list-style-type: none;
       padding-left: 0;
@@ -281,8 +333,8 @@ footer {
   footer .disclaimer {
     max-width: 1350px;
     margin: 0 auto;
-    margin-top: 50px;
-    padding: 10px 30px;
+    margin-top: 30px;
+    padding: 10px 30px 60px 30px;
     color: #666; }
   footer .floatingFooterLogo {
     position: absolute;
@@ -352,6 +404,14 @@ footer {
   width: 100%;
   padding-bottom: 10px;
   background-color: #333333; }
+  .faqContainer h1 {
+    color: #fff;
+    text-transform: none;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 15px 0;
+    padding-left: 5px;
+    border-bottom: 1px solid #666; }
   .faqContainer .more_faq_container {
     display: none; }
   .faqContainer .show_less_faq {
