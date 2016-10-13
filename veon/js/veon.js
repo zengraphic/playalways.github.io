@@ -17,35 +17,42 @@ jQuery(document).ready(function($) {
 
     // Check if it's time to start the animation.
     function checkAnimation_left() {
-        var $elem = $('.to_animate_left');
+        var count = 0;
+        $('.to_animate_left').each(function() {
+            var $elem = $(this);
 
-        // If the animation has already been started
-        if ($elem.hasClass('fadeInLeftBig')) return;
+            // If the animation has already been started
+            if ($elem.hasClass('fadeInLeftBig')) return;
 
-        if (isElementInViewport($elem)) {
-            // Start the animation
-            $elem.addClass('animated');            
-            $elem.addClass('fadeInLeftBig');
-        }
+            if (isElementInViewport($elem)) {
+                // Start the animation
+                $elem.addClass('animated');
+                $elem.addClass('fadeInLeftBig');
+            }
+            // count = count + 1;
+            // console.log(count);
+        });
     }
 
     function checkAnimation_right() {
-        var $elem = $('.to_animate_right');
+        $('.to_animate_right').each(function() {
+            var $elem = $(this);
 
-        // If the animation has already been started
-        if ($elem.hasClass('fadeInRightBig')) return;
+            // If the animation has already been started
+            if ($elem.hasClass('fadeInRightBig')) return;
 
-        if (isElementInViewport($elem)) {
-            // Start the animation
-            $elem.addClass('animated');            
-            $elem.addClass('fadeInRightBig');
-        }
-    }    
+            if (isElementInViewport($elem)) {
+                // Start the animation
+                $elem.addClass('animated');
+                $elem.addClass('fadeInRightBig');
+            }
+        });
+    }
 
     // Capture scroll events
     $(window).scroll(function() {
         checkAnimation_left();
-        checkAnimation_right();        
+        checkAnimation_right();
     });
 
 
