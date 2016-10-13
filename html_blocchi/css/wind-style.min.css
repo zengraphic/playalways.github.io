@@ -899,34 +899,40 @@ b {
     color: #292f36;
     font-size: 1.125em;
     line-height: 1.1250em;
-    padding: 10px 30px 10px 0; }
+    padding: 0 30px 0 0; }
+  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap:last-of-type {
+    margin-bottom: 20px;
+    margin-top: 20px; }
   .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_type_check label.powermail_label {
     display: none; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_nomeecognome label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_provincia label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_recapitotelefonico label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_email label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_01 label {
-    display: none; }
+  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_nomeecognome, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_provincia, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_recapitotelefonico, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_email {
+    margin-bottom: 14px; }
+    .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_nomeecognome label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_provincia label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_recapitotelefonico label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_email label {
+      display: none; }
+  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_01 {
+    margin-bottom: 5px; }
+    .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_01 label {
+      display: none; }
+  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_02 {
+    height: 32px; }
   .contact_info_block .tx-powermail .powermail_input {
     padding-top: 15px;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    padding-left: 1rem; }
   .contact_info_block .tx-powermail .powermail_fieldwrap {
-    margin-bottom: 15px; }
+    margin-bottom: 12px; }
   .contact_info_block .tx-powermail .powermail_textarea {
     resize: none;
-    height: 80px; }
+    height: 67px;
+    padding-top: 1.7rem;
+    padding-left: 1em; }
   .contact_info_block .tx-powermail .powermail_submit:hover, .contact_info_block .tx-powermail .powermail_submit:active, .contact_info_block .tx-powermail .powermail_submit:focus {
     background-color: #f78f4c; }
-  .contact_info_block .tx-powermail h5 {
-    font-family: "Trade Gothic";
-    font-size: 0.750em;
-    padding-bottom: 15px; }
-    .contact_info_block .tx-powermail h5 .btn {
-      padding-left: 0;
-      line-height: 0.5;
-      font-size: 1em; }
-      .contact_info_block .tx-powermail h5 .btn:hover {
-        opacity: 0.5; }
-  .contact_info_block .tx-powermail .checkbox {
+  .contact_info_block .tx-powermail .powermail_field .checkbox {
+    margin-top: 19px;
+    margin-bottom: 15px;
     padding-left: 0; }
-    .contact_info_block .tx-powermail .checkbox input[type="checkbox"]:checked + label::after {
+    .contact_info_block .tx-powermail .powermail_field .checkbox input[type="checkbox"]:checked + label::after {
       left: 100%;
       width: 25px;
       height: 25px;
@@ -940,15 +946,26 @@ b {
       background-color: #f48135;
       border-radius: 4px;
       border: 1px solid #ccd1d9; }
-    .contact_info_block .tx-powermail .checkbox label {
+    .contact_info_block .tx-powermail .powermail_field .checkbox label {
       width: 100%;
       padding-left: 0; }
-      .contact_info_block .tx-powermail .checkbox label::before {
+      .contact_info_block .tx-powermail .powermail_field .checkbox label::before {
         left: 100%;
         width: 25px;
         height: 25px;
         margin-left: -25px;
         top: -5px; }
+  .contact_info_block .tx-powermail h5 {
+    font-family: "Trade Gothic";
+    font-size: 0.8em;
+    padding-bottom: 15px;
+    line-height: 0.6em; }
+    .contact_info_block .tx-powermail h5 .btn {
+      padding-left: 0;
+      line-height: 0.5;
+      font-size: 1em; }
+      .contact_info_block .tx-powermail h5 .btn:hover {
+        opacity: 0.5; }
   .contact_info_block .link_contact {
     white-space: nowrap;
     color: #ffffff; }
@@ -1012,9 +1029,6 @@ b {
         -ms-transform: rotate(-90deg);
         -webkit-transform: rotate(-90deg);
         transform: rotate(-90deg); }
-        .contact_info_block__container__left.contactShow .contact_info_block__item--contact a:hover,
-        .contact_info_block__container__left.contactShow .contact_info_block__item--contact a:active {
-          opacity: 0.5; }
       .contact_info_block__container__left.contactHide {
         visibility: hidden;
         position: absolute;
@@ -1032,7 +1046,7 @@ b {
             opacity: 0.5; }
     .contact_info_block__container__right {
       width: 450px;
-      padding: 20px 0 0 0;
+      padding: 14px 0 0 0;
       background-color: #e6e9ed;
       float: right;
       visibility: hidden; }
