@@ -25,7 +25,7 @@ function prefixedEventListener(element, type, callback) {
         var obj_nicescroll = {
             cursorcolor: "#f48135",
             cursorwidth: "10px",
-            cursorborder: "0px",
+            cursorborder: "0",
             background: "#e6e9ed",
             spacebarenabled: false,
             horizrailenabled: true,
@@ -34,8 +34,8 @@ function prefixedEventListener(element, type, callback) {
         };
         var obj_nicescroll2 = {
             cursorcolor: "#f48135",
-            cursorwidth: "0px",
-            cursorborder: "0px",
+            cursorwidth: "0",
+            cursorborder: "0",
             background: "#e6e9ed",
             spacebarenabled: false,
             horizrailenabled: true,
@@ -159,7 +159,6 @@ function prefixedEventListener(element, type, callback) {
                         beforeClose: function() {},
                         close: function() {
                             // reset position btn (conferma/avanti) of footer
-                            $('.mfp-bg').css('height', '');
                             $(".modalfooter").css("margin-top", 0);
                         },
                         open: function() {
@@ -176,6 +175,28 @@ function prefixedEventListener(element, type, callback) {
                                 });
                             }
                             $("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
+                        }
+                    }
+                });
+
+
+                //full height dialog (modal ricarica)
+
+
+                $('.base__popup-link--ricarica')
+                .magnificPopup({
+                    type: 'inline',
+                    mainClass: 'mfp-fade',
+                    // closeOnContentClick: true,
+                    midClick: true,
+                    alignTop: false,
+                    removalDelay: 350,
+                    callbacks: {
+                        close: function(){
+                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
+                        },
+                        open: function(){
+                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
                         }
                     }
                 });

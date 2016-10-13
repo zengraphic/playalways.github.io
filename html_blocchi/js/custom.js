@@ -146,8 +146,10 @@ r$(document).ready(function() {
     });
     breadcums_action();
     r$(window).resize(function() {
-        breadcums_action();
-        r$(".base__scrollable2").getNiceScroll(0).doScrollLeft(350, 500);
+        if (r$(".base__scrollable2").length > 0) {
+            breadcums_action();
+            r$(".base__scrollable2").getNiceScroll(0).doScrollLeft(350, 500);
+        }
     });
 
 });
@@ -223,8 +225,8 @@ function checkDate() {
             $wind('.select_mese .select_cc:first-child').removeClass('error');
             $wind('.select_anno .select_cc:first-child').removeClass('error');
             $wind('.select_cc + span').removeClass('error');
-             return (true);
-           
+            return (true);
+
 
         } else if (year === minYear) {
             if (month > minMonth) {
@@ -232,8 +234,8 @@ function checkDate() {
                 $wind('.select_mese .select_cc:first-child').removeClass('error');
                 $wind('.select_anno .select_cc:first-child').removeClass('error');
                 $wind('.select_cc + span').removeClass('error');
-                 return (true);
-                
+                return (true);
+
 
 
             } else {
@@ -514,7 +516,7 @@ r$(document).ready(function() {
     });
 
 
- 
+
 
     r$('.security_cc').click(function() {
         r$(".tooltip").css("display", "none");
@@ -746,7 +748,7 @@ function checkNewCreditCard() {
     value = $wind('#input_cc').val();
     value = value.replace(/\s/g, '');
     console.log(value);
-    if ((value.length > 13)  && (checkCard(value) == true) && (checkDate() == true) && (radioCC.is(':checked')) && (securityCC.val().length >= 3)) {
+    if ((value.length > 13) && (checkCard(value) == true) && (checkDate() == true) && (radioCC.is(':checked')) && (securityCC.val().length >= 3)) {
         return true;
     } else {
         return false;
