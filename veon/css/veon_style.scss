@@ -343,6 +343,9 @@ body {
     }
     &.three {
         margin-top: 100px;
+        z-index: 500;
+        background-color: transparent;
+        position: relative;
         @include breakpoint(small) {
             //768
             margin: 0;
@@ -396,6 +399,7 @@ body {
     background: url('../img/veon_preFooter_big.png') no-repeat center;
     height: 2460px;
     margin-top: -580px;
+    z-index: 200;
     @include breakpoint(large) {
         background: url('../img/veon_preFooter_medium.png') no-repeat center;
         height: 1691px;
@@ -414,16 +418,16 @@ body {
         }
     }
     .containerBannerFix {
-        width: 1440px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
         top: 35%;
-        left: 74px;
+        padding-left: 74px;
         @include breakpoint(large) {
             top: 23%;
-            width: 550px;
+            width: 95%;
             margin: 0;
-            left: 30px;
+            padding-left: 30px;
         }
         @include breakpoint(small) {
             position: absolute;
