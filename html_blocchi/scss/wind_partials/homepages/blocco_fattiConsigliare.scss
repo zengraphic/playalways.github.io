@@ -6,11 +6,21 @@
     -ms-transition: none;
     -webkit-transition: none;
     .tx-powermail {
+        margin-top: 70px;
+        @include breakpoint(small) {
+            margin-top: 0;
+        }
         h3 {
             display: none;
         }
+        .container-fluid {
+            @include breakpoint(small) {
+                padding: 0;
+            }
+        }
         .powermail {
             &_fieldwrap {
+                margin-bottom: 12px;
                 &_nomeecognome label,
                 &_provincia label,
                 &_recapitotelefonico label,
@@ -18,30 +28,42 @@
                     display: none;
                 }
                 &_invia {
-                    margin-top: 30px;
+                    margin-top: 40px;
                 }
             }
             &_input {
-                padding-bottom: 0.8rem;
-                padding-top: 0.8rem;
+                padding: 1.1rem;
+                @include breakpoint(small) {
+                    font-size: 1.2em;
+                }
             }
         }
     }
     .info_link {
         font-size: 0.750em;
+        @include breakpoint(small) {
+            display: block;
+            font-size: 0.85em;
+            margin-top: 1em;
+            margin-bottom: 0;
+        }
     }
     @at-root #{&}__container {
         max-width: 1024px;
         margin: 0 auto;
-        padding-top: 25px;
-        padding-bottom: 60px;
-        height: 450px;
+        position: relative;
     }
     @at-root #{&}__title {
+        margin-top: 50px;
         margin-bottom: 20px;
         font-size: $title-big;
         color: $color-standardText;
         font-family: $weight-light;
+        @include breakpoint(small) {
+            padding-top: 35px;
+            font-size: 3.55em;
+            margin-bottom: 25px;
+        }
     }
     @at-root #{&}__input {
         margin-bottom: 10px;
@@ -61,23 +83,31 @@
         position: relative;
         z-index: 100;
         width: 450px;
+        @include breakpoint(small) {
+            line-height: 1.15em;
+            font-size: 1.75em;
+            margin-bottom: 20px;
+        }
     }
     @at-root #{&}__left {
         padding-left: 30px;
+        position: static;
     }
     @at-root #{&}__right {
-        padding-left: 115px;
-        padding-right: 30px;
-        margin-top: 30px;
+        position: static;
+        height: 422px;
+        padding-left: 80px;
+        padding-right: 10px;
+        margin-bottom: 70px;
     }
     @at-root #{&}__imageContainer {
         position: absolute;
-        top: 50%;
-        left: 40%;
+        bottom: 0;
+        right: 45%;
         z-index: 5;
     }
     @at-root #{&}__image {
-        margin-top: 30px;
+        margin-top: 0;
     }
 }
 
@@ -87,18 +117,6 @@
 @media all and (max-width: 890px) {
     .suggestion_block {
         font-size: 13px;
-        &__imageContainer {
-            top: 70%;
-            left: 25%;
-        }
-    }
-}
-
-@media (min-width: 768px) and (max-width: 891px) {
-    .suggestion_block {
-        &__image {
-            margin-top: 16px;
-        }
     }
 }
 
@@ -106,6 +124,7 @@
     .suggestion_block {
         &__right {
             padding: 0px 15px;
+            height: 346px;
             .button {
                 width: 100%;
                 margin-left: 0px;
@@ -114,15 +133,16 @@
         }
         &__left {
             font-size: 10px;
+            padding-left: 16px;
+            padding-right: 16px;
         }
         &__imageContainer {
-            top: -35px;
-            right: -165px;
-            left: inherit;
+            bottom: 417px;
+            text-align: right;
+            right: 22px;
         }
         &__image {
             width: 50%;
-            margin-top: 10px;
         }
     }
 }
@@ -135,23 +155,22 @@
             }
             .powermail {
                 &_fieldwrap {
+                    margin-bottom: 10px;
                     &_invia {
                         margin-bottom: 30px;
                     }
                 }
+                &_submit {
+                    font-size: 1.2em;
+                }
             }
         }
         &__imageContainer {
-            top: 30px;
-            right: -160px;
-            left: inherit;
-            .suggestion_block__image {
-                width: 50%;
-            }
+            bottom: 417px;
+            right: 22px;
         }
         &__description {
-            width: 200px;
-            margin-bottom: 30px;
+            width: 205px;
         }
     }
 }

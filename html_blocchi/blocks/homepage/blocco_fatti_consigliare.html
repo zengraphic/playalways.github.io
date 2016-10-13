@@ -97,6 +97,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -107,16 +108,14 @@
     </div>
 </body>
 <script>
-
-
 jQuery(document).ready(function($) {
 
     $.each($(".powermail_fieldwrap"), function() {
         var placeHolder = $(this).find($("label")).text();
-        $(this).find($("input")).attr("placeholder", placeHolder);
+        $(this).find($("input, textarea")).attr("placeholder", placeHolder);
     });
 
-    $('input')
+    $('.powermail_input,.powermail_textarea')
         .focus(function() {
             $(this).removeAttr('placeholder');
         })
@@ -126,7 +125,7 @@ jQuery(document).ready(function($) {
                 $(this).attr('placeholder', placeHolder);
             }
         });
-    
+
 });
 </script>
 
