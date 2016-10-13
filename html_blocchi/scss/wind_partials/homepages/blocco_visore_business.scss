@@ -102,7 +102,10 @@
         }
         &_fieldwrap {
             text-align: left;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+              @include breakpoint(small) {
+                        margin-bottom: 10px;
+            }
         }
         &_field {
             &_nomeecognome {
@@ -231,12 +234,16 @@
         &--formContainer {
             .tx-powermail {
                 h3 {
-                    margin: 25px 0 25px;
+                    margin: 36px 0 21px;
                     text-align: center;
                     font-size: 1.375em;
                     color: $color-white;
                     font-family: $weight-normal;
                     text-transform: uppercase;
+                     @include breakpoint(small) {
+                        margin: 5px 0 10px;
+                        line-height: 1em;
+            }
                     
                 }
                 .powermail {
@@ -262,8 +269,13 @@
                     }
                     &_submit,
                     &_reset {
+                        margin-top: 46px;
                         padding-top: 12px;
                         padding-bottom: 12px;
+                          @include breakpoint(small) {
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+            }
                     }
                 }
             }
@@ -459,7 +471,7 @@
         }
         &__coloredBg {
             left: -50%;
-            top: 53%;
+            top: 56%;
         }
     }
     .bundle_orange {

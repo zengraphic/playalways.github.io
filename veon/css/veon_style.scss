@@ -212,12 +212,36 @@ h6 {
         line-height: 32px;
     }
 }
+.promo_message{
+    font-size: 0.8vw;
+    line-height: 0.9vw;
+    font-style: italic;
+    margin-top: 15px; 
+    font-family: $weight-thin;    
+    @include breakpoint(small) {
+        //768
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        margin-top: 10px;        
+    }
+    @include breakpoint(tiny) {
+        //330
+        text-align: left;
+        margin-top: 5px;         
+    }
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 24px;
+        line-height: 26px;
+    }    
+}
 
 .floating_logo {
     position: fixed;
     top: 50px;
     right: 0px;
-    z-index: 500;
+    z-index: 750;
     img {
         width: 10vw;
         min-width: 65px;
@@ -343,6 +367,9 @@ body {
     }
     &.three {
         margin-top: 100px;
+        z-index: 500;
+        background-color: transparent;
+        position: relative;
         @include breakpoint(small) {
             //768
             margin: 0;
@@ -395,11 +422,12 @@ body {
     width: 100%;
     background: url('../img/veon_preFooter_big.png') no-repeat center;
     height: 2460px;
-    margin-top: -280px;
+    margin-top: -580px;
+    z-index: 200;
     @include breakpoint(large) {
         background: url('../img/veon_preFooter_medium.png') no-repeat center;
         height: 1691px;
-        margin-top: 0;
+        margin-top: -150px; 
     }
     @include breakpoint(small) {
         background-image: none;
@@ -414,23 +442,22 @@ body {
         }
     }
     .containerBannerFix {
-        width: 1440px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
         top: 35%;
-        left: 74px;
+        padding-left: 74px;
         @include breakpoint(large) {
             top: 23%;
-            width: 550px;
+            width: 95%;
             margin: 0;
-            left: 30px;
+            padding-left: 30px;
         }
         @include breakpoint(small) {
             position: absolute;
             top: 2%;
             width: 80%;
             margin: 0;
-            left: 0;
         }
         div.claims {
             h1 {
@@ -470,7 +497,7 @@ body {
                     }
                 }
                 @include breakpoint(small) {
-                    margin-top: 130vw;
+                    margin-top: 115vw;
                     a {
                         img.buttonFooter {
                             width: 35vw;
