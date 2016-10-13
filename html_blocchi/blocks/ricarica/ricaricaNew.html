@@ -486,6 +486,13 @@ $wind(window).load(function() {
 
 $wind(document).ready(function() {
 
+    $wind(".closeModal").click(function() {
+         if ($wind(".item-box").hasClass('credit_card_main_radio')){ 
+             $wind(".showMore_content").fadeIn("slow").css('display:static');
+        $wind(".showMore").slideUp("fast");
+        $wind(".showMore_content").getNiceScroll().resize();
+        }
+    });
 
     function bindBtnClose() {
         $wind(".closeModal").click(function() {
@@ -501,10 +508,14 @@ $wind(document).ready(function() {
         if (button1) {
             popup.find('.popup-btn_1').show();
             popup.find('.popup-btn_1').text(labelBtn1);
+        }else{
+            popup.find('.popup-btn_1').hide();
         }
         if (button2) {
             popup.find('.popup-btn_2').show();
             popup.find('.popup-btn_2').text(labelBtn2);
+        }else{
+            popup.find('.popup-btn_2').hide();
         }
         function1;
         function2;
@@ -516,7 +527,14 @@ $wind(document).ready(function() {
             card.slideUp();
             radio.removeAttr('checked');
             checkNextStep();
+            if (card.hasClass('credit_card_main_radio')){ 
+             $wind(".showMore_content").fadeIn("slow").css('display:static');
+        $wind(".showMore").slideUp("fast");
+        $wind(".showMore_content").getNiceScroll().resize();
+        }
         });
+
+       
     }
     // MODAL PAYPAL ED ELIMINA
     $wind(".btn_removeModal").click(function() {
