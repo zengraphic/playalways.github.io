@@ -415,11 +415,10 @@ body {
                         text-align: left;
                         font-size: 130px;
                         line-height: 132px;
-                        @include breakpoint(largest) {
+                        @include breakpoint(large) {
                             font-size: 100px;
                             line-height: 100px;
                         }
-                         
                     }
                     &.firstClaim{
                         color: #fff;
@@ -462,7 +461,6 @@ body {
             .containerFooter{
                 max-width: 1350px;
                 margin: 0 auto;
-                padding: 30px;
                 font-family: $weight-thin;
                 b{
                     font-family: $weight-light;
@@ -470,8 +468,17 @@ body {
                 p{
                     margin-top: 0;
                 }
+                .logoFooterContainer{
+                    padding: 60px 30px;
+                }
                 .blockFooter{
                     margin-bottom: 30px;
+                    padding: 60px 30px 0 30px; 
+                    &.quickLinks{
+                        @include breakpoint(small) {
+                            display: none;
+                        }   
+                    }
                 }
                 ul{
                     list-style-type: none;
@@ -487,8 +494,8 @@ body {
             .disclaimer{
                 max-width: 1350px;
                 margin: 0 auto;
-                margin-top: 50px;
-                padding: 10px 30px;
+                margin-top: 30px;
+                padding: 10px 30px 60px 30px;
                 color: #666;
             }
             .floatingFooterLogo{

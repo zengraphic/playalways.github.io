@@ -251,7 +251,7 @@ body {
       text-align: left;
       font-size: 130px;
       line-height: 132px; }
-      @media (max-width: 1440px) {
+      @media (max-width: 1025px) {
         .bannerFix .containerBannerFix div.claims h1 {
           font-size: 100px;
           line-height: 100px; } }
@@ -283,14 +283,19 @@ footer {
   footer .containerFooter {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 30px;
     font-family: "TP Hero Thin"; }
     footer .containerFooter b {
       font-family: "TP Hero Light"; }
     footer .containerFooter p {
       margin-top: 0; }
+    footer .containerFooter .logoFooterContainer {
+      padding: 60px 30px; }
     footer .containerFooter .blockFooter {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      padding: 60px 30px 0 30px; }
+      @media (max-width: 768px) {
+        footer .containerFooter .blockFooter.quickLinks {
+          display: none; } }
     footer .containerFooter ul {
       list-style-type: none;
       padding-left: 0;
@@ -300,8 +305,8 @@ footer {
   footer .disclaimer {
     max-width: 1350px;
     margin: 0 auto;
-    margin-top: 50px;
-    padding: 10px 30px;
+    margin-top: 30px;
+    padding: 10px 30px 60px 30px;
     color: #666; }
   footer .floatingFooterLogo {
     position: absolute;
