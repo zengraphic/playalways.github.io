@@ -103,8 +103,8 @@
         &_fieldwrap {
             text-align: left;
             margin-bottom: 15px;
-              @include breakpoint(small) {
-                        margin-bottom: 10px;
+            @include breakpoint(small) {
+                margin-bottom: 10px;
             }
         }
         &_field {
@@ -240,11 +240,10 @@
                     color: $color-white;
                     font-family: $weight-normal;
                     text-transform: uppercase;
-                     @include breakpoint(small) {
+                    @include breakpoint(small) {
                         margin: 5px 0 10px;
                         line-height: 1em;
-            }
-                    
+                    }
                 }
                 .powermail {
                     &_fieldwrap {
@@ -272,10 +271,10 @@
                         margin-top: 46px;
                         padding-top: 12px;
                         padding-bottom: 12px;
-                          @include breakpoint(small) {
-                        margin-top: 10px;
-                        margin-bottom: 30px;
-            }
+                        @include breakpoint(small) {
+                            margin-top: 10px;
+                            margin-bottom: 30px;
+                        }
                     }
                 }
             }
@@ -370,10 +369,7 @@
         width: 150%;
         height: 100%;
         position: absolute;
-        -webkit-transform: skew(-20deg);
-        -moz-transform: skew(-20deg);
-        -o-transform: skew(-20deg);
-        background: #009bbe;
+        @include transform(skew(-20deg));
         left: 50%;
         @include breakpoint(small) {
             left: -100%;
