@@ -7,9 +7,7 @@
     -webkit-transition: none;
     .tx-powermail {
         margin-top: 70px;
-        @include breakpoint(small) {
-            margin-top: 0;
-        }
+        
         h3 {
             display: none;
         }
@@ -108,6 +106,7 @@
     }
     @at-root #{&}__image {
         margin-top: 0;
+        width: 80%;
     }
 }
 
@@ -117,10 +116,13 @@
 @media all and (max-width: 890px) {
     .suggestion_block {
         font-size: 13px;
+        &__image {
+
+        }
     }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
     .suggestion_block {
         &__right {
             padding: 0px 15px;
@@ -143,6 +145,9 @@
         }
         &__image {
             width: 50%;
+        }
+        .tx-powermail {
+            margin-top: 0;
         }
     }
 }
