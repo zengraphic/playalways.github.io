@@ -32,7 +32,7 @@
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
     border-radius: .5em;
-    font-weight: normal ;
+    font-weight: normal;
     font-family: "Trade Gothic LTS";
 }
 
@@ -51,22 +51,19 @@
     line-height: 1.2em;
 }
 
-.inorder.step-2 .rpg {
-    border: 1px solid #F07E26;
+.inorder.step-2 .rpg .rp {
+    text-align: left;
+    float: left;
+    display: inline-block;
+    width: 100%;
+    line-height: 2em;
+    font-size: 1.3em;
+    margin: 0 0 1em 0;
+    font-weight: 700;
+    font-family: "Trade Gothic LTS Bold";
 }
 
-.inorder.step-2 .rpg .rp {
-  text-align: left;
-  float: left;
-  display: inline-block;
-  width: 100%;
-  line-height: 2em;
-  font-size: 1.3em;
-  margin: 0 0 1em 0;
-  font-weight: 700;
-  font-family: "Trade Gothic LTS Bold";}
-
-  .inorder.step-2 .box-pnr .cod {
+.inorder.step-2 .box-pnr .cod {
     font-family: Trade Gothic LTS Bold;
     font-weight: 700;
 }
@@ -75,7 +72,6 @@
     background-color: #f07e26;
     border-radius: 0 4px 4px 0;
 }
-
 
 .inorder .checkbox {
     background: url(newCheckbox.png) 0 0 no-repeat transparent;
@@ -101,22 +97,25 @@
     font-family: "Trade Gothic LTS";
     font-size: 1em;
     color: #999;
-    padding:0.85em ;
+    padding: 0.85em;
 }
 
 .inorder.step-2 .row.map .store {
-    border: 1px solid #8599a0;}
+    border: 1px solid #8599a0;
+}
 
 .inorder.step-2 .row.map .store .bt {
     font-family: "Trade Gothic LTS Bold";
-    font-weight: 700;}
+    font-weight: 700;
+}
 
-.inorder.step-2 .row.map .store .bt-more{
-  font-family: "Trade Gothic LTS Bold"
+.inorder.step-2 .row.map .store .bt-more {
+    font-family: "Trade Gothic LTS Bold"
 }
 
 .inorder.step-2 .row.map .store > .results .list .item span h5 {
-    font-family: "Trade Gothic LTS Bold";}
+    font-family: "Trade Gothic LTS Bold";
+}
 
 .inorder .col-riep .box.-riep .r span {
     color: #292f36;
@@ -154,7 +153,6 @@
     -webkit-border-radius: 5px;
     border-radius: 5px;
     background-clip: padding-box;
-   
 }
 
 .inorder .col-riep .box.-riep .r.op .price {
@@ -189,7 +187,6 @@
     -webkit-border-radius: 5px;
     border-radius: 5px;
     background-clip: padding-box;
-    
 }
 
 .inorder .bt-cta.bt-next {
@@ -301,9 +298,9 @@
     background-size: 20px;
     background-position: 0 -20px;
     display: inline-block;
-}*/
+}
 
-.inorder .radio {
+ .inorder .radio {
     background-image: url("newRadio.png");
     width: 20px;
     height: 20px;
@@ -388,52 +385,116 @@
     font-family: "Trade Gothic LTS Bold";
     color: #0069b3;
     margin-top: 16px;
-}*/
+}
 
-.inorder h2.t {
+*/ .inorder h2.t {
     font-family: "Trade Gothic LTS Bold";
     color: #292f36;
 }
 
+@media only screen and (max-width: 767px) {
+    .inorder .select {
+        background-color: #ffffff;
+        border: 1px solid #e3e7ec;
+        font-family: "Trade Gothic LTS";
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        background-clip: padding-box;
+        padding-top: 15px !important;
+        padding-bottom: 14px;
+        /* stops bg color from leaking outside the border: */
+        padding-top: 2px;
+        box-sizing: border-box;
+        background-image: url("newSelectButton.png");
+        background-size: 20px;
+    }
+    .inorder .checkbox {
+        margin-top: 8px;
+    }
+    .inorder .checkbox-select {
+        margin-top: 8px;
+        background-position: 0 -22px;
+    }
+    .inorder .checkbox + label + img {
+        margin-top: 8px;
+    }
+    .inorder.step-2 .row h1 {
+        font-size: 2em;
+        font-family: Trade Gothic LTS Bold;
+        margin: 0.67em 0;
+        color: #f07e26;
+        text-align: left;
+    }
+    .inorder.step-2 .box_form .in-find {
+        padding: 0.88em;
+    }
+    .inorder .checkbox-gr.fieldset .ui-checkbox,
+    .inorder .checkbox-gr.fieldset .ui-checkbox-active {
+        position: relative;
+        bottom: 4px;
+    }
+    .inorder .checkbox-gr.fieldset + .bt-i {
+        margin-top: 5px;
+    }
+    .inorder .radio {
+        background-image: url("newRadio.png");
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        display: inline-block;
+    }
+    .inorder .radio + label {
+        line-height: 27px;
+    }
+    .inorder .radio ~ .radio {
+        background-image: url("newRadio.png");
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        display: inline-block;
+    }
+    .inorder .container > .row > .col.col-main .box ul li {
+        background-image: url("arrowBullet.png");
+    }
+
+    .inorder .footer {
+        margin:30px 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .inorder .select {
+        border: 1px solid #e3e7ec;
+        font-family: "Trade Gothic LTS";
+        padding-top: 11px !important;
+        padding-bottom: 8px;
+        padding-top: 2px;
+        background-image: url(newSelectButton.png);
+        background-size: 20px;
+    }
+    .inorder .rpg .feat > p {
+        color: #666;
+    }
+    .inorder .rpg .opt .lb {
+        float: left;
+        display: inline-block;
+        text-align: left;
+        color: #666;
+        font-weight: normal;
+        vertical-align: middle;
+        font-size: 1em;
+        line-height: 1.3em;
+        -ms-word-break: break-all;
+        word-break: break-word;
+        word-wrap: break-all;
+        width: 64%;
+    }
+}
+
 @media only screen and (min-width: 320px) {
-  .inorder.step-2 .box_form .in-find {
-    padding:0.84em ;
-}
-
-}
-
-@media only screen and (max-width: 640px){
-.inorder .select {
-    border: 1px solid #e3e7ec;
-    font-family: "Trade Gothic LTS";
-    padding-top: 11px !important;
-    padding-bottom: 8px;
-    padding-top: 2px;
-    background-image: url(newSelectButton.png);
-    background-size: 20px;
-}
-
-.inorder .rpg .feat > p {
-    color: #666;
-}
-
-.inorder .rpg .opt .lb {
-    float: left;
-    display: inline-block;
-    text-align: left;
-    color: #666;
-    font-weight: normal;
-    vertical-align: middle;
-    font-size: 1em;
-    line-height: 1.3em;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    word-wrap: break-all;
-    width: 64%;
-}
-
-
-
+    .inorder.step-2 .box_form .in-find {
+        padding: 0.84em;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -452,14 +513,13 @@
         background-image: url("newSelectButton.png");
         background-size: 20px;
     }
-
     .inorder.step-2 .row h1 {
-    font-family: "Trade Gothic LTS Bold";
-    margin: 0.97em 0 0;}
-
+        font-family: "Trade Gothic LTS Bold";
+        margin: 0.97em 0 0;
+    }
     .inorder.step-2 .box_form .in-find {
-    padding:0.65em ;
-}
+        padding: 0.65em;
+    }
     .inorder .input-gr.fieldset input[type='text'],
     .inorder .input-gr.fieldset input[type='tel'],
     .inorder .input-gr.fieldset input[type='email'] {
@@ -496,82 +556,20 @@
         height: 20px;
         background-size: 20px;
         display: inline-block;
-    }*/
+    }
     .inorder .bt {
         padding-top: 15px;
         padding-bottom: 14px;
     }
-
     .inorder .rpg .rp {
-    font-family: "Trade Gothic LTS Bold";
-    font-size: 1em;
-    border-bottom: 1px solid #f0f1f3;
-    font-weight: normal;
-}
-}
-
-
-}
-@media only screen and (max-width: 767px) {
-    .inorder .select {
-        background-color: #ffffff;
-        border: 1px solid #e3e7ec;
-        font-family: "Trade Gothic LTS";
-        -webkit-border-radius: 0;
-        border-radius: 0;
-        background-clip: padding-box;
-        padding-top: 15px !important;
-        padding-bottom: 14px;
-        /* stops bg color from leaking outside the border: */
-        padding-top: 2px;
-        box-sizing: border-box;
-        background-image: url("newSelectButton.png");
-        background-size: 20px;
-    }
-
-    .inorder.step-2 .row h1 {
-    font-size: 2em;
-    font-family: Trade Gothic LTS Bold;
-    margin: 0.67em 0;
-    color: #f07e26;
-    text-align: left;
-}
-
-    .inorder.step-2 .box_form .in-find {
-    padding:0.88em ;
-}
-    .inorder .checkbox-gr.fieldset .ui-checkbox,
-    .inorder .checkbox-gr.fieldset .ui-checkbox-active {
-        position: relative;
-        bottom: 4px;
-    }
-    .inorder .checkbox-gr.fieldset + .bt-i {
-        margin-top: 5px;
-    }
-    .inorder .radio {
-        background-image: url("newRadio.png");
-        width: 20px;
-        height: 20px;
-        background-size: 20px;
-        display: inline-block;
-    }
-    .inorder .radio + label {
-        line-height: 27px;
-    }
-    .inorder .radio ~ .radio {
-        background-image: url("newRadio.png");
-        width: 20px;
-        height: 20px;
-        background-size: 20px;
-        display: inline-block;
-    }
-    .inorder .container > .row > .col.col-main .box ul li {
-        background-image: url("arrowBullet.png");
+        font-family: "Trade Gothic LTS Bold";
+        font-size: 1em;
+        border-bottom: 1px solid #f0f1f3;
+        font-weight: normal;
     }
 }
 
 
-
+}
 
 /*# sourceMappingURL=newRestyle.css.map */
-
