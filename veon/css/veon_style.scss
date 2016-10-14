@@ -142,8 +142,8 @@ $color-yellow: #ffcc00;
 //=============================================================//         
 h1 {
     font-family: $weight-hairline;
-    font-size: 7.5vw;
-    line-height: 8vw;
+    font-size: 5.5vw;
+    line-height: 6vw;
     text-transform: uppercase;
     margin: 0;
     @include breakpoint(largest) {
@@ -153,8 +153,8 @@ h1 {
     }
     @include breakpoint(small) {
         //768
-        font-size: 45px;
-        line-height: 47px;
+        font-size: 35px;
+        line-height: 37px;
         text-align: center;
     }
     @include breakpoint(tiny) {
@@ -163,8 +163,8 @@ h1 {
     }
     @include breakpoint(extra-large) {
         //330
-        font-size: 130px;
-        line-height: 132px;
+        font-size: 100px;
+        line-height: 102px;
     }
 }
 
@@ -194,7 +194,7 @@ h4 {
 h6 {
     font-family: $weight-thin;
     font-size: 1.4vw;
-    line-height: 1.5vw;
+    line-height: 1.7vw;
     margin: 0;
     @include breakpoint(small) {
         //768
@@ -282,6 +282,14 @@ h6 {
     background-color: $color-bg-gray;
     max-width: 2560px;
     margin: 0 auto;
+    background-image: url(../img/middle_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 14%;
+    @include breakpoint(small) {
+        //768
+        background-image: none;
+    }
 }
 
 body {
@@ -338,10 +346,31 @@ body {
         }
         h6 {
             margin-top: 35px;
+            font-size: 2vw;
+            line-height: 2.2vw;
+            @include breakpoint(small) {
+                //768
+                font-size: 18px;
+                line-height: 20px;
+            }
         }
         .button_cta {
             position: relative;
             top: 60px;
+        }
+        h1 {
+            font-size: 7vw;
+            line-height: 7.5vw;
+            @include breakpoint(extra-large) {
+                //1999
+                font-size: 130px;
+                line-height: 132px;
+            }
+            @include breakpoint(small) {
+                //768
+                font-size: 45px;
+                line-height: 47px;
+            }
         }
     }
     &.two {
@@ -409,6 +438,10 @@ body {
                     font-size: 45px;
                     line-height: 47px;
                     text-align: center;
+                }
+                @include breakpoint(tiny) {
+                    //768
+                    text-align: left;
                 }
             }
             h6 {
