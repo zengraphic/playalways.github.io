@@ -201,6 +201,17 @@ function prefixedEventListener(element, type, callback) {
                     }
                 });
 
+                $('.base__popup-link--contract')
+                .magnificPopup({
+                    type: 'inline',
+                    mainClass: 'mfp-fade-contract',
+                    // closeOnContentClick: true,
+                    midClick: true,
+                    alignTop: false,
+                    removalDelay: 350,
+                    
+                });
+
             $('.base__gallery')
                 .magnificPopup({
                     removalDelay: 350,

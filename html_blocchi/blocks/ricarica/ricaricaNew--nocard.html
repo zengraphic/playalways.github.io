@@ -188,10 +188,10 @@
                     </div>
                     <div class="title">
                         <span class="text">Ricarica Online</span>
-                        <span class="right">
+                        <a class="safe-link pull-right" href="#">
+                            <span class="right">
                         <img src="../../img/icons-interface/icon_security.png">
-                        GARANTITA <br>E SICURA
-                    </span>
+                        GARANTITA <br>E SICURA</span></a>
                     </div>
                     <div class="image">
                         <img src="../../img/ricarica/image_ricarica2.jpg">
@@ -353,7 +353,7 @@
                                 Stai per eliminare la carta che finisce per 6368
                             </div>
                             <div class="popup-body">
-                                Stai per eliminare la carta predefinita
+                                Vuoi eliminare la carta predefinita?
                             </div>
                             <div class="popup-footer ">
                                 <button class="btn popup-btn_1 btn_refil  base__bt rbtn_icc popup-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
@@ -450,10 +450,14 @@ $wind(document).ready(function() {
         if (button1) {
             popup.find('.popup-btn_1').show();
             popup.find('.popup-btn_1').text(labelBtn1);
+        } else {
+            popup.find('.popup-btn_1').hide();
         }
         if (button2) {
             popup.find('.popup-btn_2').show();
             popup.find('.popup-btn_2').text(labelBtn2);
+        } else {
+            popup.find('.popup-btn_2').hide();
         }
         function1;
         function2;
@@ -472,7 +476,7 @@ $wind(document).ready(function() {
         var cardToDelete = $wind(this).closest(".item-box");
         var radioToDisable = $wind(this).siblings('input[type="radio"]');
         var title = 'Stai per eliminare la carta che finisce per 6368';
-        var description = 'Stai per eliminare la carta predefinita';
+        var description = 'Vuoi eliminare la carta predefinita?';
         callPopUp(title, description, true, true, 'rimuovi', 'annulla', removeCard(cardToDelete, radioToDisable), bindBtnClose());
 
     });
