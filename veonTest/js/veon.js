@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
         var etop = event.pageY;
         var eleft = event.pageX;
         if ($(elem).parents('.column_right').length) {
-            eleft = 0;
+            eleft = '30px';
         }
         $(".tool_edit").css({
             top: etop,
