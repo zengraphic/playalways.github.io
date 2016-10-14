@@ -21,7 +21,13 @@
 
 //===================================================================//
 //========================== DEFINIZIONE MIXIN =======================//
-//===================================================================//    
+//===================================================================// 
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
 // MIXIN FOR BORDER RADIOUS 
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
@@ -766,5 +772,64 @@ footer {
     }
     ::selection {
         color: #fff;
+    }
+}
+
+.edit_slide {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    z-index: 1000;
+    img {
+        width: 50%;
+        height: auto;
+        cursor: pointer;
+        &:hover {
+            @include opacity(0.5);
+        }
+    }
+}
+
+.tool_edit {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 550px;
+    z-index: 1200;
+    background-color: #666;
+    height: 200px;
+    .legend_edit {
+        position: absolute;
+        left: 5px;
+        top: 8px;
+        font-size: 12px;
+        color: #fff;
+    }
+    .close_edit {
+        position: absolute;
+        right: 15px;
+        top: -4px;
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
+    }
+    textarea {
+        width: 100%;
+        height: 80px;
+    }
+    .choose_pretitle {
+        margin-top: 30px;
+    }
+    .choose_subtitle {
+        margin-bottom: 30px;
+    }
+    input {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 }
