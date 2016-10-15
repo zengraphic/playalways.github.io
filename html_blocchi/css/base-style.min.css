@@ -5493,6 +5493,9 @@ h3.title {
 .base__popup#refill_block .container {
   height: 100%; }
 
+.base__popup#privacy_block .container {
+  height: 100%; }
+
 .base__popup.refill_block .container {
   height: calc(100% - 43px);
   position: fixed;
@@ -5562,7 +5565,7 @@ h3.title {
     float: left;
     font-size: 1.4rem;
     margin-top: 0.8rem; }
-  .base__popup.refill_block .title span.right {
+  .base__popup.refill_block .title a.safe-link {
     float: right;
     color: #f48135;
     font-size: 0.8rem;
@@ -5570,7 +5573,7 @@ h3.title {
     line-height: normal;
     margin-top: 0.6rem;
     text-align: left; }
-    .base__popup.refill_block .title span.right img {
+    .base__popup.refill_block .title a.safe-link img {
       float: left;
       margin-right: 0.3rem; }
 
@@ -5655,6 +5658,39 @@ h3.title {
   .base__popup.refill_block .popup .popup-btn_1,
   .base__popup.refill_block .popup .popup-btn_2 {
     display: none; }
+  .base__popup.refill_block .popup--contract .popup_row {
+    padding: 1rem;
+    font-size: 1.2em; }
+  .base__popup.refill_block .popup--contract .popup-header {
+    background-color: #f48135;
+    color: white;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 1.5em; }
+    .base__popup.refill_block .popup--contract .popup-header:after {
+      width: 2em;
+      color: #f48135;
+      content: "\f0d7";
+      font-family: "Fontawesome";
+      font-size: 4em;
+      line-height: 0.45em;
+      position: absolute;
+      left: calc(50% - 1em);
+      top: calc(100% - 0.15em); }
+  .base__popup.refill_block .popup--contract .popup-body--label {
+    width: 33%;
+    color: #009bbe; }
+  .base__popup.refill_block .popup--contract .popup-body--value {
+    width: 66%;
+    text-align: right;
+    color: #333; }
+  .base__popup.refill_block .popup--contract .popup-body .divider {
+    width: 100%;
+    min-height: 1px;
+    background-color: #ccd1d9; }
+  .base__popup.refill_block .popup--contract .popup-btn_2 {
+    display: block; }
 
 .base__popup.refill_block .showMore {
   color: #f48135;
@@ -6109,23 +6145,19 @@ h3.title {
 @media (max-width: 767px) {
   .base__popup.refill_block .container {
     width: 100%;
-    max-width: none; } }
-
-@media (max-width: 767px) {
+    max-width: none; }
   .base__popup.refill_block a.btn_sa {
-    margin-top: 1.9rem; } }
-
-@media (max-width: 767px) {
+    margin-top: 1.9rem; }
   .base__popup.refill_block .base__select.base__select.select_value span .euro {
-    font-size: 1.4rem; } }
-
-@media (max-width: 767px) {
+    font-size: 1.4rem; }
   .base__popup.refill_block .base__select.base__select.select_value span .textl {
-    font-size: 1.3rem; } }
-
-@media (max-width: 767px) {
+    font-size: 1.3rem; }
   .base__popup.refill_block .base__select.base__select.select_value .dropdown-toggle .filter-option {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  .base__popup.refill_block .popup--contract {
+    max-width: 100%; }
+    .base__popup.refill_block .popup--contract .popup-dialog {
+      max-width: 100%; } }
 
 .cookies {
   position: fixed;

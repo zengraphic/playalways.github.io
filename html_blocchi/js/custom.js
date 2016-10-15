@@ -682,7 +682,9 @@ function checkNextStep() {
                 (radioPay.is(':checked')) ||
                 (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
                 (subRadioBill.is(':checked') && radioBill.is(':checked'))) {
-
+                if (radioPay.is(':checked')) {
+                    $wind('#paypal-checkbox').attr('checked',true);
+                }
                 $wind('.top_up_button_final').prop("disabled", false);
             }
         }
@@ -693,7 +695,9 @@ function checkNextStep() {
             (radioPay.is(':checked')) ||
             (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
             (subRadioBill.is(':checked') && radioBill.is(':checked'))) {
-
+            if (radioPay.is(':checked')) {
+                    $wind('#paypal-checkbox').attr('checked',true);
+                }
             $wind('.top_up_button_final').prop("disabled", false);
         }
     }

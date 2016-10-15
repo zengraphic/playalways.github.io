@@ -188,10 +188,10 @@
                     </div>
                     <div class="title">
                         <span class="text">Ricarica Online</span>
-                        <span class="right">
+                        <a class="safe-link pull-right" href="#">
+                            <span class="right">
                         <img src="../../img/icons-interface/icon_security.png">
-                        GARANTITA <br>E SICURA
-                    </span>
+                        GARANTITA <br>E SICURA</span></a>
                     </div>
                     <div class="image">
                         <img src="../../img/ricarica/image_ricarica2.jpg">
@@ -378,7 +378,7 @@
                             <div class="cont_item1 item_da item_bill">
                                 <div class="base__radio base__radio--small radio radio-inline">
                                     <input type="radio" id="option_dct1" value="option1" name="radiooption3">
-                                    <label for="option_dct1">Contratto n° 1149408593053 Vuoi</label>
+                                    <label for="option_dct1"><span class="contract__popup">Contratto</span><span> n° 1149408593053 Vuoi</span></label>
                                 </div>
                                 <div class="base__radio base__radio--small radio radio-inline">
                                     <input type="radio" id="option_dct2" value="option2" name="radiooption3">
@@ -395,7 +395,7 @@
                         <div class="paypal_option">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
                         </div>
-                        <h4>Accetto <a class="base__popup-link" href="#privacy_block">le condizioni del servizio e l’informativa sulla privacy </a></h4>
+                        <h4>Accetto <a class="base__popup-link--ricarica" href="#privacy_block">le condizioni del servizio e l’informativa sulla privacy </a></h4>
                         <button class="btn btn_refil base__bt top_up_button_final" disabled="true">RICARICA</button>
                     </div>
                     <div class="popup">
@@ -404,11 +404,41 @@
                                 Stai per eliminare la carta che finisce per 6368
                             </div>
                             <div class="popup-body">
-                                Stai per eliminare la carta predefinita
+                                Vuoi eliminare la carta predefinita?
                             </div>
                             <div class="popup-footer ">
                                 <button class="btn popup-btn_1 btn_refil  base__bt rbtn_icc popup-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
                                 <button class="popup-btn_2 btn_refil base__bt popup-btn closeModal waves-effect waves-button waves-float waves-light">annulla</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup popup--contract">
+                        <div class="popup-dialog">
+                            <div class="popup-header">
+                            </div>
+                            <div class="popup-body">
+                                <div class="popup-body--description">
+                                </div>
+                                <div class="popup_row first_row">
+                                    <div class="first-label popup-body--label pull-left"></div>
+                                    <div class="first-value popup-body--value pull-right"></div>                                    
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="popup_row second_row">
+                                    <div class="second-label popup-body--label pull-left"></div>
+                                    <div class="second-value popup-body--value pull-right"></div>                                    
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="popup_row third_row">
+                                    <div class="third-label popup-body--label pull-left"></div>
+                                    <div class="third-value popup-body--value pull-right"></div>                                    
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="popup-footer ">
+                                <button class="btn popup-btn_2 btn_refil  base__bt popup-btn  closeModal waves-effect waves-button waves-float waves-light">Chiudi</button>
                             </div>
                         </div>
                     </div>
@@ -477,7 +507,6 @@
         <!-- end privacy content -->
     </div>
 </body>
-
 <script>
 var $wind = jQuery.noConflict();
 $wind(window).load(function() {
@@ -487,10 +516,10 @@ $wind(window).load(function() {
 $wind(document).ready(function() {
 
     $wind(".closeModal").click(function() {
-         if ($wind(".item-box").hasClass('credit_card_main_radio')){ 
-             $wind(".showMore_content").fadeIn("slow").css('display:static');
-        $wind(".showMore").slideUp("fast");
-        $wind(".showMore_content").getNiceScroll().resize();
+        if ($wind(".item-box").hasClass('credit_card_main_radio')) {
+            $wind(".showMore_content").fadeIn("slow").css('display:static');
+            $wind(".showMore").slideUp("fast");
+            $wind(".showMore_content").getNiceScroll().resize();
         }
     });
 
@@ -498,6 +527,22 @@ $wind(document).ready(function() {
         $wind(".closeModal").click(function() {
             $wind(".popup").fadeOut("20");
         });
+    }
+
+
+    function callPopUpContract(title, description, firstLabel, firstValue, secondLabel, secondValue, thirdLabel, thirdValue, btnLabel, function1) {
+        var popup = $wind('.popup--contract');
+        popup.find('.popup-header').text(title);
+        popup.find('.popup-body--description').text(description);
+        popup.find('.first-label').text(firstLabel);
+        popup.find('.second-label').text(secondLabel);
+        popup.find('.third-label').text(thirdLabel);
+        popup.find('.first-value').text(firstValue);
+        popup.find('.second-value').text(secondValue);
+        popup.find('.third-value').text(thirdValue);
+        popup.find('.popup-btn_2').text(btnLabel);
+        function1;
+        $wind('.popup--contract').css('display', 'block');
     }
 
     function callPopUp(title, description, button1, button2, labelBtn1, labelBtn2, function1, function2) {
@@ -508,13 +553,13 @@ $wind(document).ready(function() {
         if (button1) {
             popup.find('.popup-btn_1').show();
             popup.find('.popup-btn_1').text(labelBtn1);
-        }else{
+        } else {
             popup.find('.popup-btn_1').hide();
         }
         if (button2) {
             popup.find('.popup-btn_2').show();
             popup.find('.popup-btn_2').text(labelBtn2);
-        }else{
+        } else {
             popup.find('.popup-btn_2').hide();
         }
         function1;
@@ -527,21 +572,21 @@ $wind(document).ready(function() {
             card.slideUp();
             radio.removeAttr('checked');
             checkNextStep();
-            if (card.hasClass('credit_card_main_radio')){ 
-             $wind(".showMore_content").fadeIn("slow").css('display:static');
-        $wind(".showMore").slideUp("fast");
-        $wind(".showMore_content").getNiceScroll().resize();
-        }
+            if (card.hasClass('credit_card_main_radio')) {
+                $wind(".showMore_content").fadeIn("slow").css('display:static');
+                $wind(".showMore").slideUp("fast");
+                $wind(".showMore_content").getNiceScroll().resize();
+            }
         });
 
-       
+
     }
     // MODAL PAYPAL ED ELIMINA
     $wind(".btn_removeModal").click(function() {
         var cardToDelete = $wind(this).closest(".item-box");
         var radioToDisable = $wind(this).siblings('input[type="radio"]');
         var title = 'Stai per eliminare la carta che finisce per 6368';
-        var description = 'Stai per eliminare la carta predefinita';
+        var description = 'Vuoi eliminare la carta predefinita?';
         callPopUp(title, description, true, true, 'rimuovi', 'annulla', removeCard(cardToDelete, radioToDisable), bindBtnClose());
 
     });
@@ -558,6 +603,19 @@ $wind(document).ready(function() {
         callPopUp(title, description, false, true, '', 'chiudi', '', bindBtnClose());
     });
 
+    $wind(".contract__popup").click(function() {
+        var title = 'Conto telefonico';
+        var description = 'La ricarica online verrà addebitata sul Conto Telefonico a cui sono associate le seguenti linee/utenze:';
+        var firstLabel = 'Linea/Utenza';
+        var secondLabel = 'Offerta';
+        var thirdLabel = 'Contratto';
+        var firstValue = '0815792897';
+        var secondValue = 'TuttoIncluso';
+        var thirdValue = 'ECPRA0912394378';
+        var btnLabel = 'Chiudi';
+        callPopUpContract(title, description, firstLabel, firstValue, secondLabel, secondValue, thirdLabel, thirdValue, btnLabel, bindBtnClose());
+    });
+
 
     // FINE MODAL PAYPAL ED ELIMINA
 
@@ -566,13 +624,13 @@ $wind(document).ready(function() {
         $wind(".showMore_content").fadeIn("slow").css('display:static');
         $wind(".showMore").slideUp("fast");
         $wind(".showMore_content").getNiceScroll().resize();
-        
+
     });
     // FINE SHOWMORE CONTENT
 
     // OPEN SIDEBAR CONTENT
     $wind('.open_sidebar_topUp').click(function() {
-        
+
 
         var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
         radioCC.prop('checked', true);
