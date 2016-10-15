@@ -159,44 +159,43 @@ jQuery(document).ready(function($) {
         checkAnimation_right();
     });
 
-    function checkFont(variance,element){
+    function checkFont(variance, element) {
         var baseFont;
         var baseLine;
-            baseFont = $(element).css('font-size');
-            baseLine = $(element).css('line-height');            
-            console.log(baseFont);
-        if(variance == 'plus'){            
-            baseFont = (parseInt(baseFont, 10) + 2)+'px';
-            baseLine = (parseInt(baseLine, 10) + 2)+'px';                                  
+        baseFont = $(element).css('font-size');
+        baseLine = $(element).css('line-height');
+        console.log(baseFont);
+        if (variance == 'plus') {
+            baseFont = (parseInt(baseFont, 10) + 2) + 'px';
+            baseLine = (parseInt(baseLine, 10) + 2) + 'px';
+        } else {
+            baseFont = (parseInt(baseFont, 10) - 2) + 'px';
+            baseLine = (parseInt(baseLine, 10) - 2) + 'px';
         }
-        else{
-            baseFont = (parseInt(baseFont, 10) - 2)+'px';
-            baseLine = (parseInt(baseLine, 10) - 2)+'px';             
-        }
-            $(element).css('font-size',baseFont);
-            $(element).css('line-height',baseLine);  
-            console.log(baseFont);                   
+        $(element).css('font-size', baseFont);
+        $(element).css('line-height', baseLine);
+        console.log(baseFont);
     }
     $('.title.plus').click(function() {
-        $('.slide_single h1').each(function(){
-            checkFont('plus',$(this));
+        $('.slide_single h1').each(function() {
+            checkFont('plus', $(this));
         });
     });
     $('.title.minus').click(function() {
-        $('.slide_single h1').each(function(){
-            checkFont('minus',$(this));
+        $('.slide_single h1').each(function() {
+            checkFont('minus', $(this));
         });
-    });   
+    });
     $('.subtitle.plus').click(function() {
-        $('.slide_single h6').each(function(){
-            checkFont('plus',$(this));
+        $('.slide_single h6').each(function() {
+            checkFont('plus', $(this));
         });
     });
     $('.subtitle.minus').click(function() {
-        $('.slide_single h6').each(function(){
-            checkFont('minus',$(this));
+        $('.slide_single h6').each(function() {
+            checkFont('minus', $(this));
         });
-    });          
+    });
 
     $('.show_more_faq').click(function() {
         $('.more_faq_container').slideDown();
@@ -260,6 +259,25 @@ jQuery(document).ready(function($) {
             unbindAll();
         });
     }
+    var $dragging = null;
+
+    $('body').on("mousedown", ".tool_edit", function(e) {
+        $(this).attr('unselectable', 'on').addClass('draggable');
+        var el_w = $('.draggable').outerWidth(),
+            el_h = $('.draggable').outerHeight();
+        $('body').on("mousemove", function(e) {
+            if ($dragging) {
+                $dragging.offset({
+                    top: e.pageY - el_h / 2,
+                    left: e.pageX - el_w / 2
+                });
+            }
+        });
+        $dragging = $('.tool_edit');
+    }).on("mouseup", ".draggable", function(e) {
+        $dragging = null;
+        $(this).removeAttr('unselectable').removeClass('draggable');
+    });
 
     initPage();
 });
