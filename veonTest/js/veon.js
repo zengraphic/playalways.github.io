@@ -261,7 +261,7 @@ jQuery(document).ready(function($) {
     }
     var $dragging = null;
 
-    $('body').on("mousedown", ".tool_edit", function(e) {
+    $('body').on("mousedown touchstart", ".tool_edit", function(e) {
         $(this).attr('unselectable', 'on').addClass('draggable');
         var el_w = $('.draggable').outerWidth(),
             el_h = $('.draggable').outerHeight();
@@ -274,7 +274,7 @@ jQuery(document).ready(function($) {
             }
         });
         $dragging = $('.tool_edit');
-    }).on("mouseup", ".draggable", function(e) {
+    }).on("mouseup touchend", ".draggable", function(e) {
         $dragging = null;
         $(this).removeAttr('unselectable').removeClass('draggable');
     });
