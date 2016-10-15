@@ -159,6 +159,45 @@ jQuery(document).ready(function($) {
         checkAnimation_right();
     });
 
+    function checkFont(variance,element){
+        var baseFont;
+        var baseLine;
+            baseFont = $(element).css('font-size');
+            baseLine = $(element).css('line-height');            
+            console.log(baseFont);
+        if(variance == 'plus'){            
+            baseFont = (parseInt(baseFont, 10) + 2)+'px';
+            baseLine = (parseInt(baseLine, 10) + 2)+'px';                                  
+        }
+        else{
+            baseFont = (parseInt(baseFont, 10) - 2)+'px';
+            baseLine = (parseInt(baseLine, 10) - 2)+'px';             
+        }
+            $(element).css('font-size',baseFont);
+            $(element).css('line-height',baseLine);  
+            console.log(baseFont);                   
+    }
+    $('.title.plus').click(function() {
+        $('.slide_single h1').each(function(){
+            checkFont('plus',$(this));
+        });
+    });
+    $('.title.minus').click(function() {
+        $('.slide_single h1').each(function(){
+            checkFont('minus',$(this));
+        });
+    });   
+    $('.subtitle.plus').click(function() {
+        $('.slide_single h6').each(function(){
+            checkFont('plus',$(this));
+        });
+    });
+    $('.subtitle.minus').click(function() {
+        $('.slide_single h6').each(function(){
+            checkFont('minus',$(this));
+        });
+    });          
+
     $('.show_more_faq').click(function() {
         $('.more_faq_container').slideDown();
         $('.show_less_faq').slideDown();

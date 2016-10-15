@@ -799,6 +799,29 @@ footer {
     z-index: 1200;
     background-color: #666;
     height: 200px;
+    @include breakpoint(small) {
+        width: 320px;
+    }
+    .container_fonts {
+        position: absolute;
+        bottom: -2px;
+        left: 5px;
+        .fonts {
+            display: inline-block;
+            color: #fff;
+        }
+        .control {
+            font-size: 18px;
+            cursor: pointer;
+            color: $color-pale-orange;
+            display: inline-block;
+            margin-left: 5px;
+            margin-right: 5px;
+            &:hover {
+                color: #ff0000;
+            }
+        }
+    }
     .legend_edit {
         position: absolute;
         left: 5px;
