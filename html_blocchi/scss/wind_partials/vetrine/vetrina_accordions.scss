@@ -19,6 +19,9 @@
     .flipIn {
         animation: flipdown 0.5s ease both;
     }
+    .flipOut {
+        animation: flipup 0.5s ease both;
+    }
     .no-select {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         -webkit-touch-callout: none;
@@ -69,7 +72,6 @@
         font-size: 1em;
         position: relative;
         overflow: hidden;
-        ;
         @extend .transition;
         opacity: 1;
         transform: translate( 0, 0);
@@ -77,6 +79,21 @@
         z-index: 2;
         & > div {
             padding-bottom: 10px;
+        }
+        &__image {
+            width: 33%;
+            @include breakpoint(min-desktop) {
+                width: 100%;
+            }
+            .placeholder {
+                @include border-radius(8px);
+            }
+        }
+        &__body {
+            width: 66%;
+            @include breakpoint(min-desktop) {
+                width: 100%;
+            }
         }
     }
     ul {
@@ -94,23 +111,10 @@
         padding-left: 20px;
         padding-right: 20px;
         @extend .flipIn;
-        &:nth-of-type(1) {
-            animation-delay: 0.5s;
-        }
-        &:nth-of-type(2) {
-            animation-delay: 0.75s;
-        }
-        &:nth-of-type(3) {
-            animation-delay: 1.0s;
-        }
-        &:nth-of-type(4) {
-            animation-delay: 1.25s;
-        }
-        &:nth-of-type(5) {
-            animation-delay: 1.5s;
-        }
-        &:nth-of-type(6) {
-            animation-delay: 1.75s;
+        @for $i from 1 through 30 {
+            &:nth-of-type(#{$i}) {
+                animation-delay: #{$i*0.25}s;
+            }
         }
         &:last-of-type {
             padding-bottom: 0;
@@ -160,4 +164,27 @@
             transform: rotateX(0deg);
         }
     } //close flipdown
+    @keyframes flipup {
+        0% {
+            transform-origin: top center;
+            transform: rotateX(0deg);
+        }
+        5% {
+            transform: rotateX(-3deg);
+        }
+        80% {
+            transform: rotateX(6deg);
+        }
+        83% {
+            transform: rotateX(8deg);
+        }
+        92% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform-origin: top center;
+            transform: rotateX(-90deg);
+        }
+    } //close flipup
 }
