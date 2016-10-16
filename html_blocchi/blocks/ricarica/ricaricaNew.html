@@ -378,18 +378,19 @@
                             <div class="cont_item1 item_da item_bill">
                                 <div class="base__radio base__radio--small radio radio-inline">
                                     <input type="radio" id="option_dct1" value="option1" name="radiooption3">
-                                    <label for="option_dct1"><span class="contract__popup">Contratto</span><span> n° 1149408593053 Vuoi</span></label>
+                                    <label for="option_dct1"><span class="contract__popup">Contratto</span><span> n° 1149408593053</span></label>
                                 </div>
                                 <div class="base__radio base__radio--small radio radio-inline">
                                     <input type="radio" id="option_dct2" value="option2" name="radiooption3">
-                                    <label for="option_dct2"> Contratto n° 1149408384513 </label>
+                                    <label for="option_dct2"><span class="contract__popup">Contratto</span><span> n° 1149408593053</span></label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="box">
+                    <div class="box refill_notification">
                         <h3>Vuoi ricevere la notifica?</h3>
-                        <input type="email" placeholder="Inserisci mail valida" name="" class="base__input">
+                        <input type="email" placeholder="Inserisci mail valida" name="" class="base__input notificationMail">
+                        <span class="error_message">Controlla il campo</span>
                     </div>
                     <div class="box box_2">
                         <div class="paypal_option">
@@ -412,11 +413,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="popup popup--contract">
-                        <div class="popup-dialog">
-                            <div class="popup-header">
+                    <div class="popup--contract">
+                        <div class="popup--contract-dialog">
+                            <div class="popup--contract-header">
                             </div>
-                            <div class="popup-body">
+                            <div class="popup--contract-body">
                                 <div class="popup-body--description">
                                 </div>
                                 <div class="popup_row first_row">
@@ -525,14 +526,14 @@ $wind(document).ready(function() {
 
     function bindBtnClose() {
         $wind(".closeModal").click(function() {
-            $wind(".popup").fadeOut("20");
+            $wind(".popup,.popup--contract").fadeOut("20");
         });
     }
 
 
     function callPopUpContract(title, description, firstLabel, firstValue, secondLabel, secondValue, thirdLabel, thirdValue, btnLabel, function1) {
         var popup = $wind('.popup--contract');
-        popup.find('.popup-header').text(title);
+        popup.find('.popup--contract-header').text(title);
         popup.find('.popup-body--description').text(description);
         popup.find('.first-label').text(firstLabel);
         popup.find('.second-label').text(secondLabel);
@@ -549,7 +550,8 @@ $wind(document).ready(function() {
         var popup = $wind('.popup');
         popup.find('.popup-header').text(title);
         popup.find('.popup-body').text(description);
-        popup.find('.popupbtn_1').text(labelBtn1);
+        popup.find('.popup-btn_1').text(labelBtn1);
+        popup.find('.popup-btn_2').text(labelBtn2);
         if (button1) {
             popup.find('.popup-btn_1').show();
             popup.find('.popup-btn_1').text(labelBtn1);
@@ -572,11 +574,6 @@ $wind(document).ready(function() {
             card.slideUp();
             radio.removeAttr('checked');
             checkNextStep();
-            if (card.hasClass('credit_card_main_radio')) {
-                $wind(".showMore_content").fadeIn("slow").css('display:static');
-                $wind(".showMore").slideUp("fast");
-                $wind(".showMore_content").getNiceScroll().resize();
-            }
         });
 
 

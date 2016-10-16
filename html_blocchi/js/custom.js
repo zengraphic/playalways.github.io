@@ -1,5 +1,6 @@
 /**
- * Custom scripts:
+ * Custom scri
+pts:
  * inputs, placeholder...
  */
 
@@ -89,6 +90,22 @@ r$(document).ready(function() {
         }
     })
 });
+
+r$(document).ready(function() {
+    var input = r$(".refill_notification input")
+    input.blur(function() {
+        console.log()
+        if (!ValidateEmail(input.val())) {
+            console.log("Invalid email address.");
+            r$('.notificationMail').addClass('error');
+            r$('.refill_notification .notificationMail + span').addClass('error');
+            r$('.refill_notification .notificationMail + span').text('Email non valida');
+        } else {
+            console.log("facciamo uscire l'errore");
+        }
+    })
+});
+
 
 function ValidateEmail(email) {
     var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
