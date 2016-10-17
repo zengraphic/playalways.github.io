@@ -464,7 +464,7 @@ body {
                 margin-top: 35px;
                 padding-right: 50px;
                 @include breakpoint(small) {
-                  padding-right: 0px; 
+                    padding-right: 0px;
                 }
             }
         }
@@ -568,13 +568,16 @@ footer {
     background-color: rgb(25, 25, 25);
     width: 100%;
     color: #fff;
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
     .containerFooter {
         max-width: 1350px;
         margin: 0 auto;
         font-family: $weight-thin;
         font-size: 14px;
         line-height: 18px;
-
         b {
             font-family: $weight-light;
         }
@@ -598,8 +601,6 @@ footer {
             padding-left: 0;
             margin: 0;
             li {
-                text-indent: -1em;
-                padding-left: 1em;
                 padding-top: 5px;
                 a {
                     color: rgb(255, 204, 0);
@@ -615,10 +616,6 @@ footer {
         color: #666;
         font-size: 12px;
         line-height: 12px;
-        a {
-            color: inherit;
-            text-decoration: underline;
-        }
     }
     .floatingFooterLogo {
         position: absolute;
