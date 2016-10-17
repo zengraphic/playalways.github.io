@@ -113,7 +113,9 @@ jQuery(document).ready(function($) {
         $(this).slideUp();
         $('.show_more_faq').slideDown();
     });
-
+//=================== EASTER EGG ===================//
+//=================== EASTER EGG ===================//
+//=================== EASTER EGG ===================//
     function makeNewPosition() {
 
         // Get viewport dimensions (remove the dimension of the div)
@@ -172,6 +174,8 @@ jQuery(document).ready(function($) {
         }
 
     });
-
+//=================== EASTER EGG ===================//
+//=================== EASTER EGG ===================//
+//=================== EASTER EGG ===================//
     initSliders();
 });
