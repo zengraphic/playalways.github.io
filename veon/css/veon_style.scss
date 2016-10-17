@@ -1,6 +1,6 @@
 //===================================================================//
 //========================== DEFINIZIONE FONT =======================//
-//===================================================================//   
+//===================================================================//
 @font-face {
     font-family: 'TP Hero Light';
     src: url('../fonts/TPHero-Light.woff') format('opentype');
@@ -21,8 +21,8 @@
 
 //===================================================================//
 //========================== DEFINIZIONE MIXIN =======================//
-//===================================================================//    
-// MIXIN FOR BORDER RADIOUS 
+//===================================================================//
+// MIXIN FOR BORDER RADIOUS
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
@@ -64,7 +64,7 @@
 }
 
 
-/* ___________________ MIXIN __________________ 
+/* ___________________ MIXIN __________________
                        BREAKPOINT MIXIN */
 
 $breakpoints: ( 'super-tiny': ( max-width: 480px),
@@ -90,7 +90,7 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px),
 
 //========================================================================//
 //========================== DEFINIZIONE VARIABILI =======================//
-//========================================================================//           
+//========================================================================//
 $weight-light: 'TP Hero Light'; //medium
 $weight-thin: 'TP Hero Thin'; //light
 $weight-hairline: 'TP Hero Hairline'; //thin
@@ -100,7 +100,7 @@ $color-bg-gray: #eeeeee;
 $color-yellow: #ffcc00;
 //============================================================================//
 //========================== CLASSI DI STYLE GENERICHE =======================//
-//============================================================================//           
+//============================================================================//
 .float_left {
     float: left;
 }
@@ -139,13 +139,17 @@ $color-yellow: #ffcc00;
 
 //============================================================//
 //========================== STYLE VEON =======================//
-//=============================================================//         
+//=============================================================//
 h1 {
     font-family: $weight-hairline;
     font-size: 5.5vw;
     line-height: 6vw;
     text-transform: uppercase;
     margin: 0;
+    &.reduced {
+        font-size: 5.0vw;
+        line-height: 5.5vw;
+    }
     @include breakpoint(largest) {
         //1440
         // font-size: 100px;
@@ -156,6 +160,10 @@ h1 {
         font-size: 35px;
         line-height: 37px;
         text-align: center;
+        &.reduced {
+            font-size: 35px;
+            line-height: 37px;
+        }
     }
     @include breakpoint(tiny) {
         //330
@@ -415,7 +423,7 @@ body {
             }
         }
         .container_text {
-            padding-left: 105px;
+            padding-left: 65px;
             margin-top: 3%;
             @include breakpoint(small) {
                 //768
@@ -428,6 +436,10 @@ body {
             h1 {
                 font-size: 5vw;
                 line-height: 5.5vw;
+                &.reduced {
+                    font-size: 4.5vw;
+                    line-height: 5.0vw;
+                }
                 @include breakpoint(extra-large) {
                     //1999
                     font-size: 100px;
@@ -435,9 +447,13 @@ body {
                 }
                 @include breakpoint(small) {
                     //768
-                    font-size: 45px;
-                    line-height: 47px;
+                    font-size: 35px;
+                    line-height: 37px;
                     text-align: center;
+                    &.reduced {
+                        font-size: 35px;
+                        line-height: 37px;
+                    }
                 }
                 @include breakpoint(tiny) {
                     //768
@@ -446,6 +462,10 @@ body {
             }
             h6 {
                 margin-top: 35px;
+                padding-right: 50px;
+                @include breakpoint(small) {
+                    padding-right: 0px;
+                }
             }
         }
     }
@@ -548,12 +568,16 @@ footer {
     background-color: rgb(25, 25, 25);
     width: 100%;
     color: #fff;
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
     .containerFooter {
         max-width: 1350px;
         margin: 0 auto;
         font-family: $weight-thin;
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 18px;
         b {
             font-family: $weight-light;
         }
@@ -577,8 +601,6 @@ footer {
             padding-left: 0;
             margin: 0;
             li {
-                text-indent: -1em;
-                padding-left: 1em;
                 padding-top: 5px;
                 a {
                     color: rgb(255, 204, 0);
@@ -592,12 +614,8 @@ footer {
         margin-top: 30px;
         padding: 10px 15px 60px 15px;
         color: #666;
-        font-size: 14px;
-        line-height: 14px;
-        a {
-            color: inherit;
-            text-decoration: underline;
-        }
+        font-size: 12px;
+        line-height: 12px;
     }
     .floatingFooterLogo {
         position: absolute;
@@ -685,7 +703,7 @@ footer {
 
 //============================================================//
 //========================== STYLE VEON =======================//
-//=============================================================//  
+//=============================================================//
 .faqContainer {
     width: 100%;
     padding-bottom: 10px;
