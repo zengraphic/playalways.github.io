@@ -101,8 +101,8 @@ $color-yellow: #ffcc00;
 //============================================================================//
 //========================== CLASSI DI STYLE GENERICHE =======================//
 //============================================================================//
-.slick-slide{
-        outline: none;
+.slick-slide {
+    outline: none;
 }
 
 .float_left {
@@ -153,6 +153,10 @@ h1 {
     &.reduced {
         font-size: 5.0vw;
         line-height: 5.5vw;
+        @include breakpoint(tiny) {
+            //330
+            text-align: left;
+        }
     }
     @include breakpoint(largest) {
         //1440
@@ -383,6 +387,10 @@ body {
                 font-size: 45px;
                 line-height: 47px;
             }
+            @include breakpoint(tiny) {
+                //330
+                text-align: center;
+            }
         }
     }
     &.two {
@@ -443,6 +451,10 @@ body {
                 &.reduced {
                     font-size: 4.5vw;
                     line-height: 5.0vw;
+                    @include breakpoint(tiny) {
+                        //330
+                        text-align: left;
+                    }
                 }
                 @include breakpoint(extra-large) {
                     //1999
