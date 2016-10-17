@@ -146,6 +146,10 @@ h1 {
     line-height: 6vw;
     text-transform: uppercase;
     margin: 0;
+    &.reduced{
+        font-size: 5.0vw;
+        line-height: 5.5vw;
+    }
     @include breakpoint(largest) {
         //1440
         // font-size: 100px;
@@ -428,6 +432,10 @@ body {
             h1 {
                 font-size: 5vw;
                 line-height: 5.5vw;
+                &.reduced{
+                    font-size: 4.5vw;
+                    line-height: 5.0vw;
+                }                
                 @include breakpoint(extra-large) {
                     //1999
                     font-size: 100px;
