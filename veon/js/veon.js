@@ -182,7 +182,6 @@ jQuery(document).ready(function($) {
             $('img').each(function() {
                 animateDiv($(this));
             });
-            
         }
 
     });
