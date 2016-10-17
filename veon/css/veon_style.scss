@@ -93,7 +93,7 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px),
 //========================================================================//
 $weight-light: 'TP Hero Light'; //medium
 $weight-thin: 'TP Hero Thin'; //light
-$weight-hairline: 'TP Hero Hairline'; //thin
+$weight-hairline: 'TP Hero Thin'; //thin
 $color-pale-yellow: #ffefbd;
 $color-pale-orange: #ffcb24;
 $color-bg-gray: #eeeeee;
@@ -153,10 +153,6 @@ h1 {
     &.reduced {
         font-size: 5.0vw;
         line-height: 5.5vw;
-        @include breakpoint(tiny) {
-            //330
-            text-align: left;
-        }
     }
     @include breakpoint(largest) {
         //1440
@@ -172,10 +168,6 @@ h1 {
             font-size: 35px;
             line-height: 37px;
         }
-    }
-    @include breakpoint(tiny) {
-        //330
-        text-align: left;
     }
     @include breakpoint(extra-large) {
         //330
@@ -218,10 +210,6 @@ h6 {
         line-height: 18px;
         text-align: center;
     }
-    @include breakpoint(tiny) {
-        //330
-        text-align: left;
-    }
     @include breakpoint(extra-large) {
         //1999
         font-size: 30px;
@@ -243,8 +231,6 @@ h6 {
         margin-top: 10px;
     }
     @include breakpoint(tiny) {
-        //330
-        text-align: left;
         margin-top: 5px;
     }
     @include breakpoint(extra-large) {
@@ -451,10 +437,7 @@ body {
                 &.reduced {
                     font-size: 4.5vw;
                     line-height: 5.0vw;
-                    @include breakpoint(tiny) {
-                        //330
-                        text-align: left;
-                    }
+
                 }
                 @include breakpoint(extra-large) {
                     //1999
@@ -470,10 +453,6 @@ body {
                         font-size: 35px;
                         line-height: 37px;
                     }
-                }
-                @include breakpoint(tiny) {
-                    //768
-                    text-align: left;
                 }
             }
             h6 {
