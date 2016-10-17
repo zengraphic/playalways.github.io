@@ -91,21 +91,6 @@ r$(document).ready(function() {
     })
 });
 
-r$(document).ready(function() {
-    var input = r$(".refill_notification input")
-    input.blur(function() {
-        console.log()
-        if (!ValidateEmail(input.val())) {
-            console.log("Invalid email address.");
-            r$('.notificationMail').addClass('error');
-            r$('.refill_notification .notificationMail + span').addClass('error');
-            r$('.refill_notification .notificationMail + span').text('Email non valida');
-        } else {
-            console.log("facciamo uscire l'errore");
-        }
-    })
-});
-
 
 function ValidateEmail(email) {
     var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
@@ -113,6 +98,49 @@ function ValidateEmail(email) {
 };
 // end validate insert email
 
+
+    function controlMail() {
+        var input = r$(".refill_notification input")
+        if (!input.val() == '') {
+            if (!ValidateEmail(input.val())) {
+                console.log("Invalid email address.");
+                r$('.notificationMail').addClass('error');
+                r$('.refill_notification .notificationMail + span').addClass('error');
+                r$('.refill_notification .notificationMail + span').text('Email non valida');
+                return false;
+            } else {
+                r$('.notificationMail').removeClass('error');
+                r$('.refill_notification .notificationMail + span').removeClass('error');
+                return true;
+            }
+        } else {
+            r$('.notificationMail').removeClass('error');
+            r$('.refill_notification .notificationMail + span').removeClass('error');
+            return true;
+        }
+
+    }
+r$(document).ready(function() {
+
+
+    //on keyup, start the countdown
+    r$('.refill_notification input').keyup(function() {
+        r$(this).val(r$(this).val().toLowerCase());
+
+    });
+
+    r$('.refill_notification input').blur(function() {
+        checkNextStep();
+
+    });
+
+     r$('.refill_notification input').focus(function() {
+        r$('.notificationMail').removeClass('error');
+            r$('.refill_notification .notificationMail + span').removeClass('error');
+
+    });
+
+});
 // validate insert code > 4 digit
 r$(document).ready(function() {
     var input = r$("#CodiceDiSicurezza input")
@@ -259,7 +287,7 @@ function checkDate() {
                 console.log('data antecedente');
                 $wind('.select_mese .select_cc:first-child').addClass('error');
                 $wind('.select_mese .select_cc + span').addClass('error');
-                $wind('.select_mese .select_cc + span').text('Il mese inserito è antecedente alla data attuale');
+                $wind('.select_mese .select_cc + span').text('Il mese inserito non è corretto');
 
                 return (false);
             }
@@ -453,6 +481,17 @@ r$(document).ready(function() {
         }
     });
 
+    r$('#input_cc').focus(function() {
+
+
+        // write your own rules if true
+        r$('.number_cc').removeClass('error');
+        r$('.number_cc + span').removeClass('error');
+        r$('.select_cc').removeClass('error');
+
+    });
+
+
     // Four digits validation (RICARICA) to display simbol credit card
     r$('#input_cc').on('change , keyup', function(e) {
         var value = r$('#input_cc').val();
@@ -618,13 +657,13 @@ r$(document).ready(function() {
     });
 
     // Enabled buttom Ricarica
-    r$('.name_cc, .number_cc, .security_cc').keyup(function() {
-        if (r$('.name_cc').val() != '' && r$('.number_cc').val() != '' && r$('.security_cc').val() != '') {
-            r$('.btn_refil').removeAttr('disabled');
-        } else {
-            r$('.btn_refil').attr('disabled');
-        }
-    });
+    // r$('.name_cc, .number_cc, .security_cc').keyup(function() {
+    //     if (r$('.name_cc').val() != '' && r$('.number_cc').val() != '' && r$('.security_cc').val() != '') {
+    //         r$('.btn_refil').removeAttr('disabled');
+    //     } else {
+    //         r$('.btn_refil').attr('disabled');
+    //     }
+    // });
 
     // Position Footer Bottom
     var window_height = r$(window).height();
@@ -693,30 +732,32 @@ function checkNextStep() {
 
     if ($wind('.action_numbert').hasClass('entered')) {
         if (checkNewNumber()) {
-            if (radioCC.is(':checked') ||
+            if ((radioCC.is(':checked') ||
                 (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
                 (subRadioCC.is(':checked')) ||
                 (radioPay.is(':checked')) ||
                 (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
-                (subRadioBill.is(':checked') && radioBill.is(':checked'))) {
+                (subRadioBill.is(':checked') && radioBill.is(':checked'))) &&
+                (controlMail())) {
+                    if (radioPay.is(':checked')) {
+                        $wind('#paypal-checkbox').attr('checked', true);
+                    }
+                    $wind('.top_up_button_final').prop("disabled", false);
+                }
+        }
+    } else {
+        if ((radioCC.is(':checked') ||
+                (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
+                (subRadioCC.is(':checked')) ||
+                (radioPay.is(':checked')) ||
+                (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
+                (subRadioBill.is(':checked') && radioBill.is(':checked'))) &&
+                (controlMail())) {
                 if (radioPay.is(':checked')) {
-                    $wind('#paypal-checkbox').attr('checked',true);
+                    $wind('#paypal-checkbox').attr('checked', true);
                 }
                 $wind('.top_up_button_final').prop("disabled", false);
             }
-        }
-    } else {
-        if (radioCC.is(':checked') ||
-            (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
-            (subRadioCC.is(':checked')) ||
-            (radioPay.is(':checked')) ||
-            (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
-            (subRadioBill.is(':checked') && radioBill.is(':checked'))) {
-            if (radioPay.is(':checked')) {
-                    $wind('#paypal-checkbox').attr('checked',true);
-                }
-            $wind('.top_up_button_final').prop("disabled", false);
-        }
     }
 
 

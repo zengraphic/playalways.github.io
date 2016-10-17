@@ -325,6 +325,11 @@
                             </div>
                         </div>
                     </div> -->
+                    <div class="box refill_notification">
+                        <h3>Vuoi ricevere la notifica?</h3>
+                        <input type="email" placeholder="Inserisci mail valida" name="" class="base__input notificationMail">
+                        <span class="error_message">Controlla il campo</span>
+                    </div>
                     <div class="box box_2">
                         <div class="paypal_option">
                             <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
@@ -390,6 +395,9 @@
                                 </p>
                             </div>
                         </div>
+                        <a class="back back-privacy base__popup-link" href="#refill_block">
+                                <span><i class="fa fa-angle-left"  aria-hidden="true"></i> CHIUDI</span>
+                            </a>
                     </div>
                 </div>
             </div>
@@ -406,15 +414,14 @@ $wind(window).load(function() {
 
 $wind(document).ready(function() {
 
-    $wind('.open_sidebar_topUp').click(function() {
+    $wind('.open_sidebar_topUp').one('click',function() {
         $wind('.mfp-bg, .mfp-wrap').css('height', '100%');
+        $wind('#action_c1').addClass('active');
+        $wind('.newCard_main_radio input[type="radio"]').prop('checked', true);
+        $wind('#action_c1 .cont_item1').css('display','block');
 
     });
 
-    $wind('.top_up_newCard').click(function() {
-        var subRadioNewCard = $wind('.newCard_main_radio input[type="radio"]');
-        subRadioNewCard.prop('checked', true);
-    });
 
     $wind(function() {
 
@@ -427,7 +434,7 @@ $wind(document).ready(function() {
             })
     });
 
-    $wind("#input_cc, #security_cc").keyup(function() {
+    $wind("#input_cc, #security_cc").blur(function() {
         checkNextStep();
     });
 
@@ -436,7 +443,7 @@ $wind(document).ready(function() {
         checkNextStep();
     });
 
-    $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
+    $wind(".number_top_up, .number_top_up_confirm").blur(function() {
 
         checkNextStep();
 
