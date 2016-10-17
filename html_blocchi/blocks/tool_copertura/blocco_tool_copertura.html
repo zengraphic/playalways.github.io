@@ -9,6 +9,9 @@
     <meta name="MobileOptimized" content="320">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
+    <!--- jVectorMap Styles-->
+    <link rel="stylesheet" type="text/css" href="../../css/jquery-jvectormap-2.0.3.css" type="text/css" media="screen" />
+    <!--- /jVectorMap Styles -->
     <!--- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/base-style.min.css" />
@@ -20,9 +23,93 @@
     <!-- components script -->
     <script type="text/javascript" src="../../js/custom.js"></script>
     <!--- /JS -->
+    <!--- jVectorMap Script -->
+    <script type="text/javascript" src="../../js/jquery-jvectormap-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-jvectormap-continents-merc.js"></script>
+    <!--- /jVectorMap Script -->
 </head>
 
-<body>
+<body class="home_page">
+    <div class="container-wind">
+        <div class="row">
+            <div class="blocco_import">
+                <div class="block_coverage__tool">
+                    <div class="container_testo_generico map_container colored_bg--light-grey">
+                        <div id="world-map" class="world_map" style="width: 100%; height: 500px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    jQuery(function($) {
+        $('#world-map').vectorMap({
+            map: 'continents_merc',
+            regionsSelectable: true,
+            backgroundColor: 'transparent',
+            regionStyle: {
+                initial: {
+                    fill: '#d3d3d2'
+                },
+                hover: {
+                    fill: '#f4b083'
+                },
+                selected: {
+                    fill: '#f48135'
+                }
+            },
+            regionLabelStyle: {
+                initial: {
+                    fill: 'white',
+                    'font-size':'10px'
+                },
+                hover: {
+                    fill: 'black'
+                }
+            },
+            labels: {
+                regions: {
+                    render: function(code) {
+                        switch (code) {
+                            case 'AF':
+                                return 'Africa';
+                            case 'NA':
+                                return 'North America';
+                            case 'OC':
+                                return 'Oceania';
+                            case 'AS':
+                                return 'Asia';
+                            case 'EU':
+                                return 'Europe';
+                            case 'SA':
+                                return 'South America';
+                        }
+                        
+                        return code;
+                    },
+                    offsets: function(code) {
+                        switch (code) {
+                            case 'AF':
+                                return [0,-30];
+                            case 'NA':
+                                return [-50,0];
+                            case 'OC':
+                                return [0,3];
+                            case 'AS':
+                                return [0,-30];
+                            case 'EU':
+                                return [0,0];
+                            case 'SA':
+                                return [0,0];
+                        }
+                        
+                        return code;
+                    }
+                }
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

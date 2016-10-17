@@ -3,7 +3,7 @@
     .faq_accordions {
         display: none;
     }
-    .faq_block__firstResultBlock {
+    .faq_block__firstLevelBlock {
         display: none;
     }
 }
@@ -71,7 +71,7 @@
                 width: calc(100% - 60px);
                 border-right: 0px;
             }
-            &:nth-of-type(3) {
+            &:nth-of-type(3n) {
                 border-right: 0px;
             }
             @at-root {
@@ -109,14 +109,14 @@
                 }
             }
         }
-        @at-root .faq_block__firstResultBlock #{&} {
-            /*faq_block__firstResultBlock .faq_block__single*/
+        @at-root .faq_block__firstLevelBlock #{&} {
+            /*faq_block__firstLevelBlock .faq_block__single*/
             @include breakpoint(tiny) {
                 width: 100%;
                 text-align: left;
             }
             @at-root {
-                .faq_block__firstResultBlock {
+                .faq_block__firstLevelBlock {
                     &__container {
                         width: 100%;
                         max-width: 1024px;
@@ -140,6 +140,9 @@
                 margin-top: 5px;
                 margin-bottom: 5px;
                 font-family: $weight-normal;
+                @include breakpoint(medium) {
+                    text-align: left;
+                }
             }
             &__description {
                 font-size: 1em;
@@ -147,14 +150,25 @@
                 color: $color-orange;
                 text-align: left;
                 list-style: none;
+                padding: 0;
                 &--list {
                     //@include transition(margin-left .2s ease-in-out);             
-                    margin-left: 10px;
+                    margin-left: 1.45em;
                     &:hover {
+                        text-decoration: underline;
+                    }
+                    &.faq_second_active {
+                        color: $color-standardText;
                         text-decoration: underline;
                     }
                 }
                 li {
+                    padding-left: 60px;
+                    padding-right: 60px;
+                    @include breakpoint(medium) {
+                        padding-left: 30px;
+                        padding-right: 30px;
+                    }
                     &:before {
                         content: "";
                         border-color: transparent $color-orange;
@@ -163,9 +177,23 @@
                         display: block;
                         height: 0;
                         width: 0;
-                        left: -1em;
                         top: 0.9em;
                         position: relative;
+                    }
+                }
+            }
+        }
+        @at-root .faq_block__firstLevelBlock--no_second #{&} {
+            width: 100%;
+            &__description {
+                li {
+                    float: left;
+                    width: 33%;
+                    @include breakpoint(small) {
+                        width: 50%;
+                    }
+                    @include breakpoint(tiny) {
+                        width: 100%;
                     }
                 }
             }
