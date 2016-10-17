@@ -5103,6 +5103,8 @@ b {
     transition: all 0.25s ease-in-out; }
   .showcase_accordions_block .flipIn, .showcase_accordions_block li.showcase_accordions_block__single {
     animation: flipdown 0.5s ease both; }
+  .showcase_accordions_block .flipOut {
+    animation: flipup 0.5s ease both; }
   .showcase_accordions_block .no-select, .showcase_accordions_block h2 {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -5148,6 +5150,21 @@ b {
     z-index: 2; }
     .showcase_accordions_block__container > div {
       padding-bottom: 10px; }
+    .showcase_accordions_block__container__image {
+      width: 33%; }
+      @media (max-width: 1024px) {
+        .showcase_accordions_block__container__image {
+          width: 100%; } }
+      .showcase_accordions_block__container__image .placeholder {
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        background-clip: padding-box;
+        /* stops bg color from leaking outside the border: */ }
+    .showcase_accordions_block__container__body {
+      width: 66%; }
+      @media (max-width: 1024px) {
+        .showcase_accordions_block__container__body {
+          width: 100%; } }
   .showcase_accordions_block ul {
     list-style: none;
     perspective: 900;
@@ -5162,17 +5179,65 @@ b {
     padding-left: 20px;
     padding-right: 20px; }
     .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(1) {
-      animation-delay: 0.5s; }
+      animation-delay: 0.25s; }
     .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(2) {
-      animation-delay: 0.75s; }
+      animation-delay: 0.5s; }
     .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(3) {
-      animation-delay: 1.0s; }
+      animation-delay: 0.75s; }
     .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(4) {
-      animation-delay: 1.25s; }
+      animation-delay: 1s; }
     .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(5) {
-      animation-delay: 1.5s; }
+      animation-delay: 1.25s; }
     .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(6) {
+      animation-delay: 1.5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(7) {
       animation-delay: 1.75s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(8) {
+      animation-delay: 2s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(9) {
+      animation-delay: 2.25s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(10) {
+      animation-delay: 2.5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(11) {
+      animation-delay: 2.75s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(12) {
+      animation-delay: 3s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(13) {
+      animation-delay: 3.25s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(14) {
+      animation-delay: 3.5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(15) {
+      animation-delay: 3.75s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(16) {
+      animation-delay: 4s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(17) {
+      animation-delay: 4.25s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(18) {
+      animation-delay: 4.5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(19) {
+      animation-delay: 4.75s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(20) {
+      animation-delay: 5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(21) {
+      animation-delay: 5.25s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(22) {
+      animation-delay: 5.5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(23) {
+      animation-delay: 5.75s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(24) {
+      animation-delay: 6s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(25) {
+      animation-delay: 6.25s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(26) {
+      animation-delay: 6.5s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(27) {
+      animation-delay: 6.75s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(28) {
+      animation-delay: 7s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(29) {
+      animation-delay: 7.25s; }
+    .showcase_accordions_block li.showcase_accordions_block__single:nth-of-type(30) {
+      animation-delay: 7.5s; }
     .showcase_accordions_block li.showcase_accordions_block__single:last-of-type {
       padding-bottom: 0;
       border-bottom: 1px solid #d3d3d2; }
@@ -5207,6 +5272,23 @@ b {
   100% {
     transform-origin: top center;
     transform: rotateX(0deg); } }
+
+@keyframes flipup {
+  0% {
+    transform-origin: top center;
+    transform: rotateX(0deg); }
+  5% {
+    transform: rotateX(-3deg); }
+  80% {
+    transform: rotateX(6deg); }
+  83% {
+    transform: rotateX(8deg); }
+  92% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg); } }
 
 .store_locator_block {
   max-width: 1024px;
@@ -8247,7 +8329,7 @@ b {
 .blocco_faq .faq_accordions {
   display: none; }
 
-.blocco_faq .faq_block__firstResultBlock {
+.blocco_faq .faq_block__firstLevelBlock {
   display: none; }
 
 .faq_block {
@@ -8299,7 +8381,7 @@ b {
           border-bottom: 1px solid #d3d3d2;
           width: calc(100% - 60px);
           border-right: 0px; } }
-      .faq_block__secondaryBlock .faq_block__single:nth-of-type(3) {
+      .faq_block__secondaryBlock .faq_block__single:nth-of-type(3n) {
         border-right: 0px; }
       .faq_block__secondaryBlock {
         background-color: #f4f4f4; }
@@ -8325,18 +8407,18 @@ b {
         @media (max-width: 600px) {
           .faq_block__secondaryBlock .faq_block__single__description {
             width: 100%; } }
-    .faq_block__firstResultBlock .faq_block__single {
-      /*faq_block__firstResultBlock .faq_block__single*/ }
+    .faq_block__firstLevelBlock .faq_block__single {
+      /*faq_block__firstLevelBlock .faq_block__single*/ }
       @media (max-width: 600px) {
-        .faq_block__firstResultBlock .faq_block__single {
+        .faq_block__firstLevelBlock .faq_block__single {
           width: 100%;
           text-align: left; } }
-      .faq_block__firstResultBlock__container {
+      .faq_block__firstLevelBlock__container {
         width: 100%;
         max-width: 1024px;
         margin: 0 auto;
         position: relative; }
-        .faq_block__firstResultBlock__container:before {
+        .faq_block__firstLevelBlock__container:before {
           background-color: #d3d3d2;
           content: "";
           display: block;
@@ -8345,32 +8427,56 @@ b {
           right: 5%;
           min-width: 1px;
           height: 1px; }
-      .faq_block__firstResultBlock .faq_block__single__title {
+      .faq_block__firstLevelBlock .faq_block__single__title {
         font-size: 1.250em;
         margin-top: 5px;
         margin-bottom: 5px;
         font-family: "Trade Gothic"; }
-      .faq_block__firstResultBlock .faq_block__single__description {
+        @media (max-width: 910px) {
+          .faq_block__firstLevelBlock .faq_block__single__title {
+            text-align: left; } }
+      .faq_block__firstLevelBlock .faq_block__single__description {
         font-size: 1em;
         font-family: "Trade Gothic";
         color: #f48135;
         text-align: left;
-        list-style: none; }
-        .faq_block__firstResultBlock .faq_block__single__description--list {
-          margin-left: 10px; }
-          .faq_block__firstResultBlock .faq_block__single__description--list:hover {
+        list-style: none;
+        padding: 0; }
+        .faq_block__firstLevelBlock .faq_block__single__description--list {
+          margin-left: 1.45em; }
+          .faq_block__firstLevelBlock .faq_block__single__description--list:hover {
             text-decoration: underline; }
-        .faq_block__firstResultBlock .faq_block__single__description li:before {
-          content: "";
-          border-color: transparent #f48135;
-          border-style: solid;
-          border-width: 0.35em 0 0.35em 0.45em;
-          display: block;
-          height: 0;
-          width: 0;
-          left: -1em;
-          top: 0.9em;
-          position: relative; }
+          .faq_block__firstLevelBlock .faq_block__single__description--list.faq_second_active {
+            color: #292f36;
+            text-decoration: underline; }
+        .faq_block__firstLevelBlock .faq_block__single__description li {
+          padding-left: 60px;
+          padding-right: 60px; }
+          @media (max-width: 910px) {
+            .faq_block__firstLevelBlock .faq_block__single__description li {
+              padding-left: 30px;
+              padding-right: 30px; } }
+          .faq_block__firstLevelBlock .faq_block__single__description li:before {
+            content: "";
+            border-color: transparent #f48135;
+            border-style: solid;
+            border-width: 0.35em 0 0.35em 0.45em;
+            display: block;
+            height: 0;
+            width: 0;
+            top: 0.9em;
+            position: relative; }
+    .faq_block__firstLevelBlock--no_second .faq_block__single {
+      width: 100%; }
+      .faq_block__firstLevelBlock--no_second .faq_block__single__description li {
+        float: left;
+        width: 33%; }
+        @media (max-width: 768px) {
+          .faq_block__firstLevelBlock--no_second .faq_block__single__description li {
+            width: 50%; } }
+        @media (max-width: 600px) {
+          .faq_block__firstLevelBlock--no_second .faq_block__single__description li {
+            width: 100%; } }
 
 .storeDetail_block .slick-track {
   margin: 0 auto; }
@@ -8719,5 +8825,11 @@ html[id^=skin] {
 
 iframe html .rc-anchor-dark {
   background: white !important; }
+
+.block_coverage__tool .map_container {
+  padding: 30px; }
+
+.block_coverage__tool #world-map {
+  margin: 0 auto; }
 
 /*# sourceMappingURL=wind-style.min.css.map */
