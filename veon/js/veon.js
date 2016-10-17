@@ -101,7 +101,18 @@ jQuery(document).ready(function($) {
         checkAnimation_right();
     });
 
-
+    $('.block').click(function() {
+        var elem = $(this);
+        $(elem).addClass('slideFaq');
+        $('.block').each(function() {
+            if (!$(this).hasClass('slideFaq')) {
+                $(this).find('.info').slideUp();
+            } else {
+                $(elem).find('.info').slideDown();
+                $(elem).removeClass('slideFaq');
+            }
+        });
+    });
 
     $('.show_more_faq').click(function() {
         $('.more_faq_container').slideDown();
@@ -113,9 +124,9 @@ jQuery(document).ready(function($) {
         $(this).slideUp();
         $('.show_more_faq').slideDown();
     });
-//=================== EASTER EGG ===================//
-//=================== EASTER EGG ===================//
-//=================== EASTER EGG ===================//
+    //=================== EASTER EGG ===================//
+    //=================== EASTER EGG ===================//
+    //=================== EASTER EGG ===================//
     function makeNewPosition() {
 
         // Get viewport dimensions (remove the dimension of the div)
@@ -140,13 +151,13 @@ jQuery(document).ready(function($) {
 
     function flashingScreen() {
         setTimeout(function() {
-                var letters = '0123456789ABCDEF';
-                var color = '#';
-                for (var i = 0; i < 6; i++) {
-                    color += letters[Math.floor(Math.random() * 16)];
-                }
-                console.log(color);
-            $('.veon_wrapper').css('background-color',color);
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            console.log(color);
+            $('.veon_wrapper').css('background-color', color);
             flashingScreen();
         }, 200);
     }
@@ -174,8 +185,8 @@ jQuery(document).ready(function($) {
         }
 
     });
-//=================== EASTER EGG ===================//
-//=================== EASTER EGG ===================//
-//=================== EASTER EGG ===================//
+    //=================== EASTER EGG ===================//
+    //=================== EASTER EGG ===================//
+    //=================== EASTER EGG ===================//
     initSliders();
 });

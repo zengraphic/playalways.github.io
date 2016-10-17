@@ -729,10 +729,10 @@ footer {
         border-bottom: 1px solid #666;
         cursor: pointer;
     }
-    .block input[type='radio']:checked ~ .info {
-        height: 130px;
-        transition: .3s ease-in;
-    }
+    // .block input[type='radio']:checked ~ .info {
+    //     height: auto;
+    //     transition: .3s ease-in;
+    // }
     input[type='radio'] {
         width: 100%;
         display: none;
@@ -752,13 +752,10 @@ footer {
     .info {
         color: #fff;
         width: 100%;
-        height: 0;
-        line-height: 2;
         padding-left: 15px;
-        display: block;
+        display: none;
         overflow: hidden;
         box-sizing: border-box;
-        transition: .3s ease-out;
         font-family: $weight-hairline;
     }
     h4 {
