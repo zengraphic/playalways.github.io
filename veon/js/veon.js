@@ -114,5 +114,64 @@ jQuery(document).ready(function($) {
         $('.show_more_faq').slideDown();
     });
 
+    function makeNewPosition() {
+
+        // Get viewport dimensions (remove the dimension of the div)
+        var h = $(window).height() - 50;
+        var w = $(window).width() - 50;
+
+        var nh = Math.floor(Math.random() * h);
+        var nw = Math.floor(Math.random() * w);
+
+        return [nh, nw];
+
+    }
+
+    function animateDiv(elem) {
+        var newq = makeNewPosition();
+        $(elem).css('position', 'absolute');
+        $(elem).animate({ top: newq[0], left: newq[1] }, function() {
+            animateDiv(elem);
+        });
+
+    };
+
+    function flashingScreen() {
+        setTimeout(function() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                console.log(color);
+            $('.veon_wrapper').css('background-color',color);
+            flashingScreen();
+        }, 200);
+    }
+    var kkeys = [],
+        konami = "38,38,40,40,37,39,37,39,66,65";
+
+    $(document).keydown(function(e) {
+        kkeys.push(e.keyCode);
+
+        if (kkeys.toString().indexOf(konami) >= 0) {
+
+            $(document).unbind('keydown', arguments.callee);
+
+            // do something awesome
+            flashingScreen();
+            $('h1').each(function() {
+                animateDiv($(this));
+            });
+            $('h6').each(function() {
+                animateDiv($(this));
+            });
+            $('img').each(function() {
+                animateDiv($(this));
+            });
+        }
+
+    });
+
     initSliders();
 });
