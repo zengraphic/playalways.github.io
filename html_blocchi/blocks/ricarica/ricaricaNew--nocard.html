@@ -419,6 +419,9 @@
                                 </p>
                             </div>
                         </div>
+                        <a class="back back-privacy base__popup-link" href="#refill_block">
+                                <span><i class="fa fa-angle-left"  aria-hidden="true"></i> CHIUDI</span>
+                            </a>
                     </div>
                 </div>
             </div>
@@ -435,18 +438,42 @@ $wind(window).load(function() {
 
 $wind(document).ready(function() {
 
+    $wind(".closeModal").click(function() {
+        if ($wind(".item-box").hasClass('credit_card_main_radio')) {
+            $wind(".showMore_content").fadeIn("slow").css('display:static');
+            $wind(".showMore").slideUp("fast");
+            $wind(".showMore_content").getNiceScroll().resize();
+        }
+    });
 
     function bindBtnClose() {
         $wind(".closeModal").click(function() {
-            $wind(".popup").fadeOut("20");
+            $wind(".popup,.popup--contract").fadeOut("20");
         });
+    }
+
+
+    function callPopUpContract(title, description, firstLabel, firstValue, secondLabel, secondValue, thirdLabel, thirdValue, btnLabel, function1) {
+        var popup = $wind('.popup--contract');
+        popup.find('.popup--contract-header').text(title);
+        popup.find('.popup-body--description').text(description);
+        popup.find('.first-label').text(firstLabel);
+        popup.find('.second-label').text(secondLabel);
+        popup.find('.third-label').text(thirdLabel);
+        popup.find('.first-value').text(firstValue);
+        popup.find('.second-value').text(secondValue);
+        popup.find('.third-value').text(thirdValue);
+        popup.find('.popup-btn_2').text(btnLabel);
+        function1;
+        $wind('.popup--contract').css('display', 'block');
     }
 
     function callPopUp(title, description, button1, button2, labelBtn1, labelBtn2, function1, function2) {
         var popup = $wind('.popup');
         popup.find('.popup-header').text(title);
         popup.find('.popup-body').text(description);
-        popup.find('.popupbtn_1').text(labelBtn1);
+        popup.find('.popup-btn_1').text(labelBtn1);
+        popup.find('.popup-btn_2').text(labelBtn2);
         if (button1) {
             popup.find('.popup-btn_1').show();
             popup.find('.popup-btn_1').text(labelBtn1);
@@ -470,6 +497,8 @@ $wind(document).ready(function() {
             radio.removeAttr('checked');
             checkNextStep();
         });
+
+
     }
     // MODAL PAYPAL ED ELIMINA
     $wind(".btn_removeModal").click(function() {
@@ -493,6 +522,19 @@ $wind(document).ready(function() {
         callPopUp(title, description, false, true, '', 'chiudi', '', bindBtnClose());
     });
 
+    $wind(".contract__popup").click(function() {
+        var title = 'Conto telefonico';
+        var description = 'La ricarica online verrà addebitata sul Conto Telefonico a cui sono associate le seguenti linee/utenze:';
+        var firstLabel = 'Linea/Utenza';
+        var secondLabel = 'Offerta';
+        var thirdLabel = 'Contratto';
+        var firstValue = '0815792897';
+        var secondValue = 'TuttoIncluso';
+        var thirdValue = 'ECPRA0912394378';
+        var btnLabel = 'Chiudi';
+        callPopUpContract(title, description, firstLabel, firstValue, secondLabel, secondValue, thirdLabel, thirdValue, btnLabel, bindBtnClose());
+    });
+
 
     // FINE MODAL PAYPAL ED ELIMINA
 
@@ -501,13 +543,13 @@ $wind(document).ready(function() {
         $wind(".showMore_content").fadeIn("slow").css('display:static');
         $wind(".showMore").slideUp("fast");
         $wind(".showMore_content").getNiceScroll().resize();
-        
+
     });
     // FINE SHOWMORE CONTENT
 
     // OPEN SIDEBAR CONTENT
-    $wind('.open_sidebar_topUp').click(function() {
-        $wind('.mfp-bg, .mfp-wrap').css('height', '100%');
+    $wind('.open_sidebar_topUp').one('click',function() {
+
 
         var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
         radioCC.prop('checked', true);
@@ -545,7 +587,7 @@ $wind(document).ready(function() {
     //inizio check
 
 
-    $wind("#input_cc, #security_cc").keyup(function() {
+    $wind("#input_cc, #security_cc").blur(function() {
         checkNextStep();
     });
 
@@ -554,7 +596,7 @@ $wind(document).ready(function() {
         checkNextStep();
     });
 
-    $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
+    $wind(".number_top_up, .number_top_up_confirm").blur(function() {
 
         checkNextStep();
 

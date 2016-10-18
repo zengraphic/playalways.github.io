@@ -282,7 +282,7 @@
                         <div class=" item-box " id="action_c1">
                             <div class="base__radio radio radio-inline newCard_main_radio">
                                 <input type="radio" id="option1" value="option1" name="radioInline">
-                                <label for="option1"> Aggiungi carta </label>
+                                <label for="option1"> Nuova carta </label>
                             </div>
                             <!-- CREDIC CARD -->
                             <div class="cont_item1 base__toggle">
@@ -378,11 +378,11 @@
                             <div class="cont_item1 item_da item_bill">
                                 <div class="base__radio base__radio--small radio radio-inline">
                                     <input type="radio" id="option_dct1" value="option1" name="radiooption3">
-                                    <label for="option_dct1"><span class="contract__popup">Contratto</span><span> n° 1149408593053</span></label>
+                                    <label for="option_dct1"><span class="contract__popup">Conto Telefonico</span><span> con addebito su carta</span></label>
                                 </div>
                                 <div class="base__radio base__radio--small radio radio-inline">
                                     <input type="radio" id="option_dct2" value="option2" name="radiooption3">
-                                    <label for="option_dct2"><span class="contract__popup">Contratto</span><span> n° 1149408593053</span></label>
+                                    <label for="option_dct2"><span class="contract__popup">Conto Telefonico</span><span> con addebito su conto n° 1149408593053</span></label>
                                 </div>
                             </div>
                         </div>
@@ -499,8 +499,12 @@
                                 <p>
                                     Ai sensi dall'art. 13 D.Lgs. 196/03, ti informiamo che i dati personali sono trattati per finalità strumentali all'erogazione del Servizio richiesto. Per l'esercizio dei diritti ai sensi dell'art. 7 D.Lgs. 196/03, si potrà rivolgere richiesta scritta a WIND Telecomunicazioni S.p.a. - Ufficio Privacy- Via Cesare Giulio Viola 48 - 00148 - Roma. Le presenti condizioni si intenderanno accettate con l'invio dell'ordine di acquisto.
                                 </p>
+                                
                             </div>
                         </div>
+                        <a class="back back-privacy base__popup-link" href="#refill_block">
+                                <span><i class="fa fa-angle-left"  aria-hidden="true"></i> CHIUDI</span>
+                            </a>
                     </div>
                 </div>
             </div>
@@ -626,7 +630,7 @@ $wind(document).ready(function() {
     // FINE SHOWMORE CONTENT
 
     // OPEN SIDEBAR CONTENT
-    $wind('.open_sidebar_topUp').click(function() {
+    $wind('.open_sidebar_topUp').one('click',function() {
 
 
         var radioCC = $wind('.credit_card_main_radio input[type="radio"]');
@@ -665,7 +669,7 @@ $wind(document).ready(function() {
     //inizio check
 
 
-    $wind("#input_cc, #security_cc").keyup(function() {
+    $wind("#input_cc, #security_cc").blur(function() {
         checkNextStep();
     });
 
@@ -674,7 +678,7 @@ $wind(document).ready(function() {
         checkNextStep();
     });
 
-    $wind(".number_top_up, .number_top_up_confirm").keyup(function() {
+    $wind(".number_top_up, .number_top_up_confirm").blur(function() {
 
         checkNextStep();
 

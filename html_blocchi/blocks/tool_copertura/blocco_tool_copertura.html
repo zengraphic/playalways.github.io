@@ -33,19 +33,230 @@
     <div class="container-wind">
         <div class="row">
             <div class="blocco_import">
-                <div class="block_coverage__tool">
-                    <div class="container_testo_generico map_container colored_bg--light-grey">
+                <div class="block_coverage_tool ">
+                    <div class="block_coverage_tool__map__container colored_bg--light-grey">
                         <div id="world-map" class="world_map" style="width: 100%; height: 500px"></div>
+                    </div>
+                    <div class="block_coverage_tool__tabs__container">
+                        <div class="blocco_tabs_menu">
+                            <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                            <!--___________ ______________________INIZIO BLOCCO MENU_________________________________ -->
+                            <div class="strip_menu_tab">
+                                <div class="strip_menu_tab__container slider_menu_tabs">
+                                    <li class="strip_menu_tab__item item"><a href="#north-america">Nord America</a></li>
+                                    <li class="strip_menu_tab__item item"><a href="#south-america">Sud America</a></li>
+                                    <li class="strip_menu_tab__item item"><a href="#africa">Africa</a></li>
+                                    <li class="strip_menu_tab__item item"><a href="#europe">Europa</a></li>
+                                    <li class="strip_menu_tab__item item"><a href="#asia">Asia</a></li>
+                                    <li class="strip_menu_tab__item item"><a href="#oceania">Oceania</a></li>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <!--___________ ______________________FINE BLOCCO MENU_________________________________ -->
+                        </div>
+                    </div>
+                    <div class="block_coverage_tool__filter__container ">
+                        <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+                        <div class="country_offers_block">
+                            <!--  SELECT COUNTRY -->
+                            <div class="country_offers_block__container__country--List colored_bg--medium-grey">
+                                <div class="country_offers_block__container__country--List--label col-xs-12 col-sm-7 col-md-7 col-lg-6">Roaming internazione. Verifica copertura:</div>
+                                <div class="country_offers_block__container__country--List--select col-xs-12 col-sm-5 col-md-5 col-lg-6">
+                                    <select class="base__select selectpicker" id="country--List" value="" title="" data-size="6">
+                                        <option value="0" selected="">--Seleziona--</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">Italia</option>
+                                        <option value="3">Giappone</option>
+                                    </select>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <!--  / SELECT COUNTRY -->
+                            <!--  COUNTRY USA -->
+                            <div class="country_offers_block__container__country" id="stat-1">
+                                <!-- COUNTRY SELECT -->
+                                <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="country_offers_block__container-title">Repubblica Turkmenistan</div>
+                                    <div class="country_offers_block__container-image"><img src="../../img/flags/flag_usa.png" /></div>
+                                </div>
+                                <!-- / COUNTRY SELECT -->
+                                <!-- OFFERT DETAILS -->
+                                <div class="country_offers_block__container__country--rates col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            18
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            18
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            18
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--right">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete fissa
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            18
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- / OFFERT DETAILS -->
+                                <!-- TEXT BLOCK -->
+                                <!-- / TEXT BLOCK -->
+                                <div class="clear"></div>
+                            </div>
+                            <!--  / COUNTRY USA -->
+                            <!--  COUNTRY ITALY -->
+                            <div class="country_offers_block__container__country" id="stat-2">
+                                <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="country_offers_block__container-title">Italia</div>
+                                    <div class="country_offers_block__container-image"><img src="../../img/flags/flag_italy.png" /></div>
+                                </div>
+                                <div class="country_offers_block__container__country--rates col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            19
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            19
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            19
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--right">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete fissa
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            19
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <!--  / COUNTRY ITALY -->
+                            <!--  COUNTRY JAPAN -->
+                            <div class="country_offers_block__container__country" id="stat-3">
+                                <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="country_offers_block__container-title">Giappone</div>
+                                    <div class="country_offers_block__container-image"><img src="../../img/flags/flag_japan.png" /></div>
+                                </div>
+                                <div class="country_offers_block__container__country--rates col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            20
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            20
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--left">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete mobile
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            20
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                    <div class="country_offers_block__rates_divider--right">
+                                        <div class="country_offers_block__rates--title">
+                                            costo verso rete fissa
+                                        </div>
+                                        <div class="country_offers_block__rates--price">
+                                            20
+                                        </div>
+                                        <div class="country_offers_block__rates--cent">
+                                            cent/min
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <!--  / COUNTRY JAPAN -->
+                            <div class="clear"></div>
+                        </div>
+                        <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-    jQuery(function($) {
+    jQuery(document).ready(function($) {
         $('#world-map').vectorMap({
             map: 'continents_merc',
             regionsSelectable: true,
+            zoomOnScroll: false,
             backgroundColor: 'transparent',
             regionStyle: {
                 initial: {
@@ -61,10 +272,10 @@
             regionLabelStyle: {
                 initial: {
                     fill: 'white',
-                    'font-size':'10px'
+                    'font-size': '10px'
                 },
                 hover: {
-                    fill: 'black'
+                    fill: 'white'
                 }
             },
             labels: {
@@ -84,29 +295,68 @@
                             case 'SA':
                                 return 'South America';
                         }
-                        
+
                         return code;
                     },
                     offsets: function(code) {
                         switch (code) {
                             case 'AF':
-                                return [0,-30];
+                                return [0, -30];
                             case 'NA':
-                                return [-50,0];
+                                return [-150, 0];
                             case 'OC':
-                                return [0,3];
+                                return [0, 3];
                             case 'AS':
-                                return [0,-30];
+                                return [0, -30];
                             case 'EU':
-                                return [0,0];
+                                return [0, 0];
                             case 'SA':
-                                return [0,0];
+                                return [0, 0];
                         }
-                        
+
                         return code;
                     }
                 }
+            },
+            onRegionTipShow: function(e, tip, code) {
+                return false;
             }
+        });
+        $('.slider_menu_tabs').slick({
+            centerMode: false,
+            centerPadding: '0px',
+            slidesToShow: 6,
+            infinite: true,
+            dots: false,
+            variableWidth: true,
+            arrows: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '60px',
+                    slidesToShow: 3
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '80px',
+                    slidesToShow: 1
+                }
+            }]
+        });
+        $('#country--List').change(function() {
+            var selectedItem = $("#country--List").prop("selectedIndex");
+            var choseCountry = "#stat-" + selectedItem;
+            var blockToHide = '.country_offers_block__container__country';
+            $(blockToHide).each(function(i) {
+                $(this).hide();
+            });
+            $(choseCountry).slideToggle();
+
         });
     });
     </script>

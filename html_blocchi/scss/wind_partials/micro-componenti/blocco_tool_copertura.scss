@@ -1,10 +1,49 @@
-.block_coverage{
-	&__tool{
-		.map_container{
-			padding: 30px;
-		}
-		#world-map {
-			margin: 0 auto;
-		}
-	}
+.block_coverage_tool {
+    &__map {
+        &__container {
+            padding: 30px;
+            #world-map {
+                max-width: 1024px;
+                margin: 0 auto;
+                .jvectormap-zoomin,
+                .jvectormap-zoomout {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__tabs{
+    	&__container{
+    		.blocco_tabs_menu{
+    			.strip_menu_tab {
+    				padding-top: 10px;
+    			}
+    		}
+    	}
+    }
+    &__filter {
+        &__container {
+            .country_offers_block {
+                &__container {
+                    &__country {
+                        border-right: 1px solid #d3d3d2;
+                        &--List {
+                            padding-left: 0.9em;
+                            padding-right: 0.9em;
+                        }
+                    }
+                }
+                &__rates {
+                    &_divider {
+                        &--left {
+                            width: 25%;
+                        }
+                        &--right {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

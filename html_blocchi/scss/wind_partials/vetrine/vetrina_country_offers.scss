@@ -2,8 +2,8 @@
 .country_offers_block {
     margin: 0 auto;
     max-width: 1024px;
-    padding-top: 25px;
-    padding-bottom: 4.0625em;
+    // padding-top: 25px;
+    // padding-bottom: 4.0625em;
     &__container {
         &-title {
             font-family: $weight-light;
@@ -18,10 +18,12 @@
         }
         &__country {
             display: none;
-            padding-top: 20px;
-            padding-bottom: 30px;
+            //padding-top: 20px;
+            //padding-bottom: 30px;
+            margin-top: 20px;
+            margin-bottom: 30px;
             clear: left;
-            height: 200px;
+            //height: 200px;
             &.placeholder_block {
                 height: 30px;
                 display: block;
@@ -29,10 +31,12 @@
             &--flag {
                 border-right: 1px solid $medium-gray;
                 padding-top: 22px;
-                height: 150px; //150px
+                padding-bottom: 22px;
+                //height: 150px; //150px
             }
             &--rates {
                 padding-top: 22px;
+                padding-bottom: 22px;
             }
             &--text {
                 font-size: 0.80em;
@@ -41,18 +45,21 @@
                 border-left: 1px solid $medium-gray;
             }
             &--List {
+                border-bottom: 1px solid $medium-gray;
+                padding: 25px 0 15px;
                 &--label {
                     font-family: $weight-light;
                     color: $color-standardText;
                     font-size: 1.5em;
-                    border-bottom: 1px solid $medium-gray;
-                    height: 70px;
-                    padding-top: 10px;
+                    
+                    // height: 70px;
+                    // padding-top: 10px;
+                    padding-top: 0.5em;
+                    padding-bottom: 0.5em;
                 }
                 &--select {
-                    padding-bottom: 15px;
-                    border-bottom: 1px solid $medium-gray;
-                    height: 70px;
+                    // height: 70px;
+                    // padding-bottom: 15px;
                     .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
                         width: 320px;
                     }
