@@ -150,7 +150,7 @@ h1 {
     line-height: 6vw;
     text-transform: uppercase;
     margin: 0;
-  //  -webkit-text-stroke: 0.5px;
+    //  -webkit-text-stroke: 0.5px;
     &.reduced {
         font-size: 5.0vw;
         line-height: 5.5vw;
@@ -244,7 +244,7 @@ h6 {
     z-index: 750;
     img {
         width: 12vw;
-        min-width: 90px;       
+        min-width: 90px;
     }
 }
 
@@ -341,7 +341,11 @@ body {
         @include breakpoint(largest) {
             //1440
             padding-top: 400px;
-        }   
+        }
+        @include breakpoint(small) {
+            //768
+            padding-top: 350px;
+        }
         h6 {
             margin-top: 35px;
             font-size: 1.7vw;
@@ -433,7 +437,6 @@ body {
                 &.reduced {
                     font-size: 4.5vw;
                     line-height: 5.0vw;
-
                 }
                 @include breakpoint(extra-large) {
                     //1999
