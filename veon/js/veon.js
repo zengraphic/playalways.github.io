@@ -15,6 +15,7 @@ jQuery(document).ready(function($) {
 
         if (is_safari || is_windows) {
             $('h1').css('-webkit-text-stroke', '0.5px');
+            console.log('this');
         }
     }
 
