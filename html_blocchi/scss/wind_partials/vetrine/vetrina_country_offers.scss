@@ -29,14 +29,20 @@
                 display: block;
             }
             &--flag {
-                border-right: 1px solid $medium-gray;
+                //border-right: 1px solid $medium-gray;
                 padding-top: 22px;
                 padding-bottom: 22px;
                 //height: 150px; //150px
             }
             &--rates {
-                padding-top: 22px;
-                padding-bottom: 22px;
+                padding-top: 20px;
+                padding-bottom: 41px;
+                border-left: 1px solid $medium-gray;
+                border-right: 1px solid $medium-gray;
+                @include breakpoint(small) {
+                    border-left: none;
+                    border-right: none;
+                }
             }
             &--text {
                 font-size: 0.80em;
@@ -51,7 +57,6 @@
                     font-family: $weight-light;
                     color: $color-standardText;
                     font-size: 1.5em;
-                    
                     // height: 70px;
                     // padding-top: 10px;
                     padding-top: 0.5em;
