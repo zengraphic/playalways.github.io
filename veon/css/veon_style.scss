@@ -63,7 +63,12 @@
     background-clip: padding-box;
 }
 
-
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
 /* ___________________ MIXIN __________________
                        BREAKPOINT MIXIN */
 
@@ -340,7 +345,7 @@ body {
         background-color: transparent;
         @include breakpoint(largest) {
             //1440
-            padding-top: 400px;
+            padding-top: 300px;
         }
         @include breakpoint(small) {
             //768
@@ -361,8 +366,8 @@ body {
             top: 60px;
         }
         h1 {
-            font-size: 6vw;
-            line-height: 6.5vw;
+            font-size: 9.5vw;
+            line-height: 10vw;
             @include breakpoint(extra-large) {
                 //1999
                 font-size: 130px;
@@ -567,7 +572,7 @@ footer {
         text-decoration: underline;
     }
     .containerFooter {
-        max-width: 1350px;
+        max-width: 1440px;
         margin: 0 auto;
         font-family: $weight-thin;
         font-size: 14px;
@@ -642,7 +647,7 @@ footer {
             left: 20px;
         }
         &:hover {
-            opacity: 0.5;
+            @include opacity(0.5);
         }
     }
     & .right_arrow {
@@ -653,7 +658,7 @@ footer {
             right: 20px;
         }
         &:hover {
-            opacity: 0.5;
+            @include opacity(0.5);
         }
     }
 }
@@ -670,7 +675,7 @@ footer {
     & li {
         list-style-type: none;
         display: inline-block;
-        margin-right: 2vw;
+        margin-right: 1.3vw;
         cursor: pointer;
         @include breakpoint(small) {
             //768
@@ -680,7 +685,8 @@ footer {
     & .slide_single {
         width: 1.3vw;
         height: 1.3vw;
-        background: $color-pale-yellow;
+        background: $color-pale-orange;
+        @include opacity(0.3);        
         @include border-radius(100%);
         background-clip: padding-box;
         /* stops bg color from leaking outside the border: */
@@ -691,7 +697,7 @@ footer {
         }
     }
     & .slick-active .slide_single {
-        background: $color-pale-orange;
+        @include opacity(1);
     }
 }
 
@@ -701,7 +707,11 @@ footer {
 .faqContainer {
     width: 100%;
     padding-bottom: 10px;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(51, 51, 51); 
+    .faqWrapper{
+        max-width: 1440px;  
+        margin: 0 auto;
+    } 
     h1 {
         color: #fff;
         text-transform: none;
@@ -710,6 +720,10 @@ footer {
         padding: 15px 0;
         padding-left: 5px;
         border-bottom: 1px solid #666;
+        @include breakpoint(super-tiny) {
+            //768
+            font-size: 75px;
+        }        
     }
     .more_faq_container {
         display: none;
@@ -752,6 +766,7 @@ footer {
         padding: 10px 12px 12px 15px;
         margin: 0;
         cursor: pointer;
+        font-size: 20px;
     }
     .info {
         color: #fff;
