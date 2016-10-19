@@ -799,7 +799,15 @@ footer {
     z-index: 1200;
     background-color: #666;
     height: 200px;
-    cursor: -webkit-grab; cursor: -moz-grab;    
+    cursor: -webkit-grab; cursor: -moz-grab; 
+    .tool_edit_grab{
+        margin-left: 100px;
+        color: #00fbff;
+    }  
+    .size_font_title,.size_font_subtitle{
+        margin-left: 5px; 
+        color: #00fbff;
+    } 
     @include breakpoint(small) {
         width: 320px;
     }
@@ -807,6 +815,9 @@ footer {
         position: absolute;
         bottom: -2px;
         left: 5px;
+        .subcontainer_fonts{
+            display: inline-block;
+        }
         .fonts {
             display: inline-block;
             color: #fff;

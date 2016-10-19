@@ -191,8 +191,8 @@ jQuery(document).ready(function($) {
         }
         $(element).css('font-size', baseFont);
         $(element).css('line-height', baseLine);
-        $(element).find('.size_font').text(baseFont);        
-        console.log(baseFont);
+        $('.tool_edit .size_font_title').text($('.slide_single h1').css('font-size'));
+        $('.tool_edit .size_font_subtitle').text($('.slide_single h6').css('font-size'));        
     }
     $('.title.plus').click(function() {
         $('.slide_single h1').each(function() {
@@ -279,8 +279,8 @@ jQuery(document).ready(function($) {
     }
     var $dragging = null;
 
-    $('body').on("mousedown touchstart", ".tool_edit", function(e) {
-        $(this).attr('unselectable', 'on').addClass('draggable');
+    $('body').on("mousedown", ".tool_edit_grab", function(e) {
+        $('.tool_edit').attr('unselectable', 'on').addClass('draggable');
         var el_w = $('.draggable').outerWidth(),
             el_h = $('.draggable').outerHeight();
         $('body').on("mousemove", function(e) {
@@ -292,7 +292,7 @@ jQuery(document).ready(function($) {
             }
         });
         $dragging = $('.tool_edit');
-    }).on("mouseup touchend", ".draggable", function(e) {
+    }).on("mouseup", ".tool_edit", function(e) {
         $dragging = null;
         $(this).removeAttr('unselectable').removeClass('draggable');
     });
