@@ -18,6 +18,7 @@
                 .strip_menu_tab {
                     padding-top: 10px;
                     &__item {
+                        padding: 16px 1.875em 4px 1.875em;
                         a {
                             &:hover,
                             &:focus {
@@ -25,7 +26,7 @@
                             }
                         }
                         &.slick-current {
-                                border-bottom: 2px solid $color-orange;
+                            border-bottom: 2px solid $color-orange;
                         }
                     }
                 }
@@ -42,7 +43,7 @@
                 &__container {
                     &-title {
                         text-transform: uppercase;
-                        font-size: 1.1em;
+                        font-size: 1.4em;
                         @include breakpoint(min-desktop) {
                             font-size: 0.9em;
                         }
@@ -52,6 +53,9 @@
                         @include breakpoint(small) {
                             font-size: 1.1em;
                         }
+                    }
+                    &-image {
+                        margin-top: 0.9em;
                     }
                     &__select {
                         width: 100%;
@@ -63,21 +67,43 @@
                         &--List {
                             max-width: 1024px;
                             margin: 0 auto;
-                            padding-left: 0.9em;
-                            padding-right: 0.9em;
-                            &:last-child {}
+                            padding: 2em 0.9em 1.5em;
                             &--select {
+                                padding-left: 6px;
                                 .base__select {
                                     &.bootstrap-select {
+                                        width: 312px!important;
+                                        .dropdown-toggle {
+                                            padding: 0.9em 0.7em;
+                                            font-size: 1.01em;
+                                            .bs-caret {
+                                                .caret {
+                                                    margin: -0.8em 1.3em 0 0;
+                                                }
+                                            }
+                                        }
+                                        .dropdown-menu {
+                                            li {
+                                                a {
+                                                    padding: 0.75em 0.7em;
+                                                }
+                                            }
+                                        }
                                         @include breakpoint(small) {
                                             width: 100% !important;
                                         }
                                     }
                                 }
                             }
+                            &--label {
+                                letter-spacing: 0.014em;
+                            }
+                        }
+                        &--flag {
+                            padding-top: 23px;
                         }
                         &--rates {
-                            padding-top: 25px;
+                            padding-top: 30px;
                             padding-bottom: 60px;
                             @include breakpoint(small) {
                                 padding-left: 0;
@@ -85,10 +111,11 @@
                             }
                         }
                         &--services {
-                            margin-bottom: 20px;
+                            margin-bottom: 25px;
                             .accordion_description_block {
                                 &__container {
                                     background: none;
+                                    padding-top: 23px;
                                 }
                                 &__feature {
                                     padding: 0 15px 10px;
@@ -105,6 +132,7 @@
                                         padding-left: 0;
                                         padding-top: 0.3em;
                                         padding-bottom: 0.3em;
+                                        font-family: $weight-normal;
                                     }
                                     &--description {
                                         display: none;
@@ -112,7 +140,7 @@
                                     &--availability {
                                         text-align: right;
                                         .service--available {
-                                            height: 1.5em;
+                                            height: 1.7em;
                                             width: auto;
                                         }
                                     }
@@ -147,9 +175,10 @@
                     }
                     &--title {
                         height: 2.5em;
-                        font-size: 0.9em;
+                        font-size: 1em;
                     }
                     &--price {
+                        padding-top: 0.1em;
                         @include breakpoint(small) {
                             padding-bottom: 0.5em;
                         }
@@ -161,6 +190,7 @@
     &__operators {
         &__container {
             .showcase_accordions_block {
+                margin-bottom: 0;
                 &__single {
                     padding: 18px 0 !important;
                     &:last-of-type {
@@ -180,14 +210,14 @@
             .accordion_description_block {
                 &__container {
                     background: none;
-                    padding: 0 15px 10px;
+                    padding: 37px 15px 20px;
                     background-color: $color-lightGrey;
                     &:nth-of-type(odd) {
                         background-color: $color-white;
                     }
                 }
                 &__feature {
-                    padding: 20px 0 10px;
+                    padding: 0 0 10px;
                 }
                 &__left {
                     padding-left: 0;
@@ -233,8 +263,9 @@
                     }
                     &--availability {
                         text-align: right;
+                        padding-right: 20px;
                         .service--available {
-                            height: 1.65em;
+                            height: 1.6em;
                             width: auto;
                         }
                     }
@@ -245,31 +276,33 @@
     &__offers {
         &__container {
             .showcase_bundle_block {
-                &__tabs {
-                    padding: 20px 0 15px;
-                    .container {
-                        &_firstColumn {
-                            padding-left: 30px;
-                        }
-                        &_secondColumn {
-                            padding-left: 30px;
-                            @include breakpoint(small) {
-                                padding-left: 15px;
+                &__tabs{
+                    &__container{
+                        .container{
+                            &_firstColumn{
+
+                            }
+                            &_secondColumn{
+                                padding-top: 8px;
                             }
                         }
                     }
-                    &--title {
-                        @include breakpoint(small) {
-                            margin-right: 15px;
-                        }
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
+                    &--title{
+                        padding-bottom: 5px;
                     }
                 }
                 &__single {
-                    margin-top: 30px;
+                    margin-top: 48px;
+                    margin-bottom: 42px;
                     border-right: 1px solid $color-lightGrey;
+                    @include breakpoint(small) {
+                        border-right: none;
+                    }
+                    &:nth-of-type(2n) {
+                        @include breakpoint(med-large) {
+                            border-right: none;
+                        }
+                    }
                     &:nth-of-type(3n) {
                         border-right: none;
                         @include breakpoint(med-large) {
@@ -283,21 +316,13 @@
                     &--title {
                         margin-top: 0;
                     }
-                }
-                .bundle_block__showMore {
-                    &--coverage {
-                        text-align: center;
-                        margin-top: 30px;
-                        a {
-                            color: #f48135;
-                            font-size: 1.250em;
-                            text-transform: uppercase;
-                            font-family: "Trade Gothic Light";
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
+                    &--recurrency {
+                        margin-bottom: 12px;
+                        margin-top: 15px;
                     }
+                }
+                .bundle_block__showMore{
+                    margin-top: 28px;
                 }
             }
         }

@@ -16,12 +16,6 @@
     .transition {
         transition: all 0.25s ease-in-out;
     }
-    .flipIn {
-        animation: flipdown 0.5s ease both;
-    }
-    .flipOut {
-        animation: flipup 0.5s ease both;
-    }
     .no-select {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         -webkit-touch-callout: none;
@@ -110,12 +104,7 @@
         border-top: 1px solid $medium-gray;
         padding-left: 20px;
         padding-right: 20px;
-        @extend .flipIn;
-        @for $i from 1 through 30 {
-            &:nth-of-type(#{$i}) {
-                animation-delay: #{$i*0.25}s;
-            }
-        }
+        
         &:last-of-type {
             padding-bottom: 0;
             border-bottom: 1px solid $medium-gray;
@@ -141,50 +130,5 @@
             }
         } //close i
     } //close li
-    @keyframes flipdown {
-        0% {
-            opacity: 0;
-            transform-origin: top center;
-            transform: rotateX(-90deg);
-        }
-        5% {
-            opacity: 1;
-        }
-        80% {
-            transform: rotateX(8deg);
-        }
-        83% {
-            transform: rotateX(6deg);
-        }
-        92% {
-            transform: rotateX(-3deg);
-        }
-        100% {
-            transform-origin: top center;
-            transform: rotateX(0deg);
-        }
-    } //close flipdown
-    @keyframes flipup {
-        0% {
-            transform-origin: top center;
-            transform: rotateX(0deg);
-        }
-        5% {
-            transform: rotateX(-3deg);
-        }
-        80% {
-            transform: rotateX(6deg);
-        }
-        83% {
-            transform: rotateX(8deg);
-        }
-        92% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-            transform-origin: top center;
-            transform: rotateX(-90deg);
-        }
-    } //close flipup
+    
 }
