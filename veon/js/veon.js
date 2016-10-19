@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
             is_safari = false;
         }
 
-        if (is_safari || is_windows) {
+        if (is_safari) {
             $('h1').css('-webkit-text-stroke', '0.5px');
             console.log('this');
         }

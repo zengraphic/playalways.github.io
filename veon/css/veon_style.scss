@@ -69,16 +69,19 @@
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie); //IE8
 }
+
+
 /* ___________________ MIXIN __________________
                        BREAKPOINT MIXIN */
 
-$breakpoints: (
-'super-tiny': ( max-width: 480px),
+$breakpoints: ( 'super-tiny': ( max-width: 480px),
 'tiny': ( max-width: 400px),
 'small': ( max-width: 768px),
 'medium': ( max-width: 910px),
 'large': ( max-width: 1025px),
 'largest': ( max-width: 1440px),
+'min-largest':( min-width: 1439px),
+'extra-large':( min-width: 1999px),
 'min-desktop':( max-width: 1024px));
 // Creating the mixin
 @mixin breakpoint($name) {
@@ -151,14 +154,19 @@ $color-yellow: #ffcc00;
 //=============================================================//
 h1 {
     font-family: $weight-hairline;
-    font-size: 120px;
-    line-height: 122px;
+    font-size: 5.5vw;
+    line-height: 6vw;
     text-transform: uppercase;
     margin: 0;
-    
+    //  -webkit-text-stroke: 0.5px;
+    &.reduced {
+        font-size: 5.0vw;
+        line-height: 5.5vw;
+    }
     @include breakpoint(largest) {
-        font-size: 8vw;
-        line-height: 9vw;
+        //1440
+        // font-size: 100px;
+        // line-height: 102px;
     }
     @include breakpoint(small) {
         //768
@@ -170,7 +178,11 @@ h1 {
             line-height: 37px;
         }
     }
-    
+    @include breakpoint(extra-large) {
+        //330
+        font-size: 100px;
+        line-height: 102px;
+    }
 }
 
 h4 {
@@ -185,13 +197,17 @@ h4 {
         line-height: 20px;
         text-align: center;
     }
-    
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 34px;
+        line-height: 36px;
+    }
 }
 
 h6 {
     font-family: $weight-thin;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 1.4vw;
+    line-height: 1.7vw;
     margin: 0;
     @include breakpoint(small) {
         //768
@@ -199,7 +215,11 @@ h6 {
         line-height: 18px;
         text-align: center;
     }
-    
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 30px;
+        line-height: 32px;
+    }
 }
 
 .promo_message {
@@ -218,7 +238,11 @@ h6 {
     @include breakpoint(tiny) {
         margin-top: 5px;
     }
-    
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 24px;
+        line-height: 26px;
+    }
 }
 
 .floating_logo {
@@ -332,8 +356,8 @@ body {
         }
         h6 {
             margin-top: 35px;
-            font-size: 24px;
-            line-height: 26px;
+            font-size: 1.7vw;
+            line-height: 2.3vw;
             @include breakpoint(small) {
                 //768
                 font-size: 18px;
@@ -345,16 +369,16 @@ body {
             top: 60px;
         }
         h1 {
-            font-size: 120px;
-            line-height: 122px;
-            @include breakpoint(largest) {
-                font-size: 8vw;
-                line-height: 9vw;
+            font-size: 9.5vw;
+            line-height: 10vw;
+            @include breakpoint(extra-large) {
+                //1999
+                font-size: 130px;
+                line-height: 132px;
             }
             @include breakpoint(small) {
-                //768
-                font-size: 45px;
-                line-height: 47px;
+                font-size: 12.5vw;
+                line-height: 13vw;
             }
             @include breakpoint(tiny) {
                 //330
@@ -404,7 +428,7 @@ body {
             }
         }
         .container_text {
-            padding-left: 50px;
+            padding-left: 65px;
             margin-top: 3%;
             @include breakpoint(small) {
                 //768
@@ -415,11 +439,16 @@ body {
                 margin-top: 35px;
             }
             h1 {
-                font-size: 120px;
-                line-height: 122px;
-                @include breakpoint(largest) {
-                    font-size: 8vw;
-                    line-height: 9vw;
+                font-size: 5vw;
+                line-height: 5.5vw;
+                &.reduced {
+                    font-size: 4.5vw;
+                    line-height: 5.0vw;
+                }
+                @include breakpoint(extra-large) {
+                    //1999
+                    font-size: 100px;
+                    line-height: 102px;
                 }
                 @include breakpoint(small) {
                     //768
@@ -473,7 +502,7 @@ body {
         position: relative;
         top: 35%;
         max-width: 1440px;
-        padding-left: 100px;
+        padding-left: 60px;
         @include breakpoint(largest) {
             top: 38%;
             padding-left: 90px;
@@ -494,8 +523,8 @@ body {
         div.claims {
             h1 {
                 text-align: left;
-                font-size: 120px;
-                line-height: 122px;
+                font-size: 130px;
+                line-height: 132px;
                 @include breakpoint(largest) {
                     font-size: 90px;
                     line-height: 90px;
@@ -513,7 +542,7 @@ body {
                 color: #fff;
             }
             &.secondClaim {
-                margin-top: 650px;
+                margin-top: 500px;
                 a {
                     img.buttonFooter {
                         width: 250px;
@@ -582,7 +611,12 @@ footer {
             padding-left: 0;
             margin: 0;
             li {
+                text-indent: -5px;
                 padding-top: 5px;
+                &:before {
+                    content: "-";
+                    text-indent: -5px;
+                }
                 a {
                     color: rgb(255, 204, 0);
                 }
@@ -690,7 +724,7 @@ footer {
     width: 100%;
     padding-bottom: 10px;
     background-color: rgb(51, 51, 51);
-    .faqWrapper{
+    .faqWrapper {
         max-width: 1440px;
         margin: 0 auto;
     }
@@ -702,14 +736,10 @@ footer {
         padding: 15px 0;
         padding-left: 5px;
         border-bottom: 1px solid #666;
-        font-size: 130px;
-        line-height: 132px;
-        @include breakpoint(largest) {
-            font-size: 8vw;
-            line-height: 9vw;
-        }
         @include breakpoint(super-tiny) {
+            //768
             font-size: 75px;
+            line-height: 77px;
         }
     }
     .more_faq_container {
@@ -726,9 +756,17 @@ footer {
         font-family: $weight-thin;
         padding-top: 5px;
         cursor: pointer;
-        font-size: 80px;
-        @include breakpoint(largest) {
-            font-size: 6vw;
+        font-size: 2.3vw;
+        line-height: 2.9vw;
+        @include breakpoint(min-largest) {
+            //1440
+            font-size: 32px;
+            line-height: 34px;
+        }
+        @include breakpoint(super-tiny) {
+            //768
+            font-size: 28px;
+            line-height: 30px;
         }
     }
     .block {
@@ -757,9 +795,17 @@ footer {
         padding: 10px 12px 12px 15px;
         margin: 0;
         cursor: pointer;
-        font-size: 100px;
-        @include breakpoint(largest) {
-            font-size: 7vw;
+        font-size: 2.3vw;
+        line-height: 2.8vw;
+        @include breakpoint(min-largest) {
+            //1440
+            font-size: 32px;
+            line-height: 34px;
+        }
+        @include breakpoint(super-tiny) {
+            //1440
+            font-size: 28px;
+            line-height: 30px;
         }
     }
     .info {
