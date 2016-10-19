@@ -280,10 +280,19 @@ h6 {
         -o-animation-duration: 1s;
         -o-animation-delay: 0.4s;                 
         -moz-animation-duration: 1s;
-        -moz-animation-delay: 0.4s;        
+        -moz-animation-delay: 0.4s;  
+        @include breakpoint(small) {
+            //768
+            left:calc(50% - 120px);
+            top: 15px;
+        }               
         img{
             width: 300px;
             height: auto;
+            @include breakpoint(small) {
+                //768
+                width: 240px;
+            }            
         }
     }
 }
