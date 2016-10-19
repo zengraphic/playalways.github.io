@@ -1,0 +1,125 @@
+//===================================================================//
+//========================== DEFINIZIONE FONT =======================//
+//===================================================================//
+@font-face {
+    font-family: 'TP Hero Light';
+    src: url('../fonts/TPHero-Light.woff') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'TP Hero Thin';
+    src: url('../fonts/TPHero-Thin.woff') format('opentype');
+    font-weight: thin;
+}
+
+@font-face {
+    font-family: 'TP Hero Hairline';
+    src: url('../fonts/TPHero-Hairline.woff') format('opentype');
+    font-weight: hairline;
+}
+
+//===================================================================//
+//========================== DEFINIZIONE MIXIN =======================//
+//===================================================================//
+// MIXIN FOR BORDER RADIOUS
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// SINGOLI ANGOLI BORDER RADIOUS
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/* ___________________ MIXIN __________________
+                       BREAKPOINT MIXIN */
+
+$breakpoints: ( 'super-tiny': ( max-width: 480px),
+'tiny': ( max-width: 400px),
+'small': ( max-width: 768px),
+'medium': ( max-width: 910px),
+'large': ( max-width: 1025px),
+'largest': ( max-width: 1440px),
+'min-largest':( min-width: 1439px),
+'extra-large':( min-width: 1999px),
+'min-desktop':( max-width: 1024px));
+// Creating the mixin
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints,
+    $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+//========================================================================//
+//========================== DEFINIZIONE VARIABILI =======================//
+//========================================================================//
+$weight-light: 'TP Hero Light'; //medium
+$weight-thin: 'TP Hero Thin'; //light
+$weight-hairline: 'TP Hero Hairline'; //thin
+$color-pale-yellow: #ffefbd;
+$color-pale-orange: #ffcb24;
+$color-bg-gray: #eeeeee;
+$color-yellow: #ffcc00;
+//============================================================================//
+//========================== CLASSI DI STYLE GENERICHE =======================//
+//============================================================================//
+
+html, body {
+    height: 100%;
+}
+
+div {
+    height: 99%;
+}
+
+object {
+    width: 100%;
+    min-height: 100%;
+}       
+
