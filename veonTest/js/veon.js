@@ -191,6 +191,7 @@ jQuery(document).ready(function($) {
         }
         $(element).css('font-size', baseFont);
         $(element).css('line-height', baseLine);
+        $(element).find('.size_font').text(baseFont);        
         console.log(baseFont);
     }
     $('.title.plus').click(function() {
