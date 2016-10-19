@@ -12,112 +12,24 @@
             }
         }
     }
-    &__tabs {
-        &__container {
-            .blocco_tabs_menu {
-                .strip_menu_tab {
-                    padding-top: 10px;
-                    &__item {
-                        a {
-                            &:hover,
-                            &:focus {
-                                color: $color-orange;
-                            }
-                        }
-                        &.slick-current {
-                                border-bottom: 2px solid $color-orange;
-                        }
-                    }
-                }
-            }
-        }
+    &__tabs{
+    	&__container{
+    		.blocco_tabs_menu{
+    			.strip_menu_tab {
+    				padding-top: 10px;
+    			}
+    		}
+    	}
     }
     &__filter {
         &__container {
             .country_offers_block {
-                max-width: none;
-                @include breakpoint(small) {
-                    padding-bottom: 0;
-                }
                 &__container {
-                    &-title {
-                        text-transform: uppercase;
-                        font-size: 1.1em;
-                        @include breakpoint(min-desktop) {
-                            font-size: 0.9em;
-                        }
-                        @include breakpoint(medium) {
-                            font-size: 0.785em;
-                        }
-                        @include breakpoint(small) {
-                            font-size: 1.1em;
-                        }
-                    }
-                    &__select {
-                        width: 100%;
-                    }
                     &__country {
-                        max-width: 1024px;
-                        margin: 20px auto 30px;
-                        padding: 0 15px;
+                        border-right: 1px solid #d3d3d2;
                         &--List {
-                            max-width: 1024px;
-                            margin: 0 auto;
                             padding-left: 0.9em;
                             padding-right: 0.9em;
-                            &:last-child {}
-                            &--select {
-                                .base__select {
-                                    &.bootstrap-select {
-                                        @include breakpoint(small) {
-                                            width: 100% !important;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        &--rates {
-                            padding-top: 25px;
-                            padding-bottom: 60px;
-                            @include breakpoint(small) {
-                                padding-left: 0;
-                                padding-right: 0;
-                            }
-                        }
-                        &--services {
-                            margin-bottom: 20px;
-                            .accordion_description_block {
-                                &__container {
-                                    background: none;
-                                }
-                                &__feature {
-                                    padding: 0 15px 10px;
-                                }
-                                &__featureContent {
-                                    margin-left: 0;
-                                    &:last-of-type {
-                                        @include breakpoint(small) {
-                                            border-bottom: 1px solid #d3d3d2;
-                                            padding-bottom: 5px;
-                                        }
-                                    }
-                                    &--detail {
-                                        padding-left: 0;
-                                        padding-top: 0.3em;
-                                        padding-bottom: 0.3em;
-                                    }
-                                    &--description {
-                                        display: none;
-                                    }
-                                    &--availability {
-                                        text-align: right;
-                                        .service--available {
-                                            height: 1.5em;
-                                            width: auto;
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -125,177 +37,9 @@
                     &_divider {
                         &--left {
                             width: 25%;
-                            @include breakpoint(small) {
-                                width: 50%;
-                            }
-                            &:last-of-type {
-                                border-right: none;
-                            }
-                            &:nth-of-type(2n) {
-                                @include breakpoint(small) {
-                                    border-right: none;
-                                }
-                            }
                         }
-                        //&--right {
-                        //    width: 25%;
-                        //    @include breakpoint(small) {
-                        //        width: 50%;
-                        //        border-right: 1px solid $medium-gray;
-                        //    }
-                        //}
-                    }
-                    &--title {
-                        height: 2.5em;
-                        font-size: 0.9em;
-                    }
-                    &--price {
-                        @include breakpoint(small) {
-                            padding-bottom: 0.5em;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &__operators {
-        &__container {
-            .showcase_accordions_block {
-                &__single {
-                    padding: 18px 0 !important;
-                    &:last-of-type {
-                        border-bottom: none !important;
-                    }
-                    .accordionBox {
-                        width: 100% !important;
-                        bottom: inherit;
-                        top: 0;
-                    }
-                }
-                h2 {
-                    background-color: transparent;
-                    padding: 0 15px;
-                }
-            }
-            .accordion_description_block {
-                &__container {
-                    background: none;
-                    padding: 0 15px 10px;
-                    background-color: $color-lightGrey;
-                    &:nth-of-type(odd) {
-                        background-color: $color-white;
-                    }
-                }
-                &__feature {
-                    padding: 20px 0 10px;
-                }
-                &__left {
-                    padding-left: 0;
-                    @include breakpoint(small) {
-                        padding-left: 15px;
-                    }
-                    .service--available {
-                        display: none;
-                    }
-                }
-                &__right {
-                    padding-right: 0;
-                    @include breakpoint(small) {
-                        padding-right: 15px;
-                    }
-                    .accordion_description_block__featureContent--description {
-                        display: none;
-                    }
-                }
-                &__featureContent {
-                    margin-left: 0;
-                    font-size: 1.05em;
-                    &:last-of-type {
-                        @include breakpoint(small) {
-                            //border-bottom: 1px solid #d3d3d2;
-                            padding-bottom: 5px;
-                        }
-                    }
-                    &.strong {
-                        .accordion_description_block__featureContent--description {
-                            font-family: $weight-bold;
-                            font-size: 0.72em;
-                        }
-                    }
-                    &--detail {
-                        padding-left: 0;
-                        padding-top: 0.3em;
-                        padding-bottom: 0.3em;
-                        font-family: $weight-normal;
-                    }
-                    &--description {
-                        padding-top: 0.3em;
-                    }
-                    &--availability {
-                        text-align: right;
-                        .service--available {
-                            height: 1.65em;
-                            width: auto;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &__offers {
-        &__container {
-            .showcase_bundle_block {
-                &__tabs {
-                    padding: 20px 0 15px;
-                    .container {
-                        &_firstColumn {
-                            padding-left: 30px;
-                        }
-                        &_secondColumn {
-                            padding-left: 30px;
-                            @include breakpoint(small) {
-                                padding-left: 15px;
-                            }
-                        }
-                    }
-                    &--title {
-                        @include breakpoint(small) {
-                            margin-right: 15px;
-                        }
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
-                    }
-                }
-                &__single {
-                    margin-top: 30px;
-                    border-right: 1px solid $color-lightGrey;
-                    &:nth-of-type(3n) {
-                        border-right: none;
-                        @include breakpoint(med-large) {
-                            margin: 0 auto;
-                            float: none;
-                            clear: both;
-                            display: block;
-                            padding-top: 30px;
-                        }
-                    }
-                    &--title {
-                        margin-top: 0;
-                    }
-                }
-                .bundle_block__showMore {
-                    &--coverage {
-                        text-align: center;
-                        margin-top: 30px;
-                        a {
-                            color: #f48135;
-                            font-size: 1.250em;
-                            text-transform: uppercase;
-                            font-family: "Trade Gothic Light";
-                            &:hover {
-                                text-decoration: underline;
-                            }
+                        &--right {
+                            width: 25%;
                         }
                     }
                 }
