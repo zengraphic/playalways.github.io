@@ -270,6 +270,22 @@ h6 {
         //1440
         height: 1440px;
     }
+    .logo_veon{
+        position: absolute;
+        z-index: 800;
+        left: calc(50% - 150px);
+        top: 30px;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 0.4s; 
+        -o-animation-duration: 1s;
+        -o-animation-delay: 0.4s;                 
+        -moz-animation-duration: 1s;
+        -moz-animation-delay: 0.4s;        
+        img{
+            width: 300px;
+            height: auto;
+        }
+    }
 }
 
 .button_cta {
@@ -344,11 +360,11 @@ body {
         margin: 0;
     }
     &.one {
-        padding-top: 420px;
+        padding-top: 400px;
         background-color: transparent;
         @include breakpoint(largest) {
             //1440
-            padding-top: 300px;
+            padding-top: 400px;
         }
         @include breakpoint(small) {
             //768
@@ -369,8 +385,8 @@ body {
             top: 60px;
         }
         h1 {
-            font-size: 9.5vw;
-            line-height: 10vw;
+            font-size: 8.5vw;
+            line-height: 9.0vw;
             @include breakpoint(extra-large) {
                 //1999
                 font-size: 130px;
@@ -476,7 +492,7 @@ body {
     position: relative;
     width: 100%;
     background: url('../img/veon_preFooter_big.png') no-repeat center;
-    height: 2460px;
+    height: 2378px;
     margin-top: -580px;
     z-index: 200;
     @include breakpoint(large) {
