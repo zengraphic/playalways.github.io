@@ -106,20 +106,48 @@ $color-pale-yellow: #ffefbd;
 $color-pale-orange: #ffcb24;
 $color-bg-gray: #eeeeee;
 $color-yellow: #ffcc00;
+$color-white: #fff;
+$color-black: #000;
 //============================================================================//
 //========================== CLASSI DI STYLE GENERICHE =======================//
 //============================================================================//
-
-html, body {
+.margin_left{
+    &_10px{
+        margin-left:10px;
+    }
+}
+#siteloader{
     height: 100%;
+    width: 100%;
+}
+.robbeditor {
+    border-bottom: 2px solid $color-black;
+    padding-bottom: 10px;
+    .insertUrl {
+        height: 23px;
+        width: 300px;
+    }
+    .button {
+        display: inline-block;
+        background-color: $color-pale-orange;
+        color: $color-white;
+        text-align: center;
+        padding: 5px 10px;
+        cursor: pointer;
+        &.edit{
+            background-color: $color-white;
+            border: 1px solid $color-black;
+            color: $color-black;
+        }
+    }
 }
 
-div {
-    height: 99%;
+html,
+body {
+    height: 100%;
 }
 
 object {
     width: 100%;
     min-height: 100%;
-}       
-
+}

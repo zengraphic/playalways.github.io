@@ -11,16 +11,17 @@
 </head>
 
 <body>
-    <iframe src="prova.html" class="ciccio" style="position: absolute;"></iframe>
+    <iframe src="https://playalways.github.io/Banners/Bannerv1prova/prova.html" class="ciccio" style="position: absolute;"></iframe>
 </body>
 <script>
 jQuery(document).ready(function($) {
     $.receiveMessage(
         function(e) {
             console.log(e.data);
+                $('body').css('background-color',e.data);
         },
      //   'http://127.0.0.1/'
-     'http://playalways.github.io'
+     'https://playalways.github.io'
     );
 });
 </script>
