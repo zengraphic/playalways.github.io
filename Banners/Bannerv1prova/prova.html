@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.ba-postmessage.js"></script>    
+    <script src="js/jquery.ba-postmessage.js"></script>
     <script src="js/bootstrap-select.js"></script>
     <script type="text/javascript">
     var clickTag1 = "";
@@ -17,6 +17,7 @@
 
 <body>
     <div class="mainContainer_banner">
+        <div class="casa" style="height: 150px; width: 300px; background-color: red;"></div>
         <div class="subcontainer_banner">
             <div class="container_background_stripes">
                 <div class="colored_bg first_layer colored_bg--blue"></div>
@@ -241,14 +242,19 @@
 <script>
 jQuery(document).ready(function($) {
 
-$.postMessage(
-  'hello world',
-  'http://127.0.0.1:8887',
-  parent
-);
+    var messaggio = "ciao";
+    $('.casa').click(function() {
+        $.postMessage(
+            messaggio,
+            'http://playalways.github.io/',
+            parent
+        );
+    });
 
-    $('.mainContainer_banner').parents('.ciccio').css('top','50px');
-    $('.ciccio').css('top','50px');
+
+
+    $('.mainContainer_banner').parents('.ciccio').css('top', '50px');
+    $('.ciccio').css('top', '50px');
     console.log('try');
 
     $('.container_form').on({
@@ -270,7 +276,7 @@ $.postMessage(
             console.log('esci');
         }
     })
-   
+
 
     window.setInterval(function() {
         checkFocusBanner();
@@ -344,7 +350,7 @@ $.postMessage(
         }
     });
 
-    
+
 
     var animateTimer = 500;
     var LongTimer = 1000;
