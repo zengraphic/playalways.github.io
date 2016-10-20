@@ -242,10 +242,16 @@
 <script>
 jQuery(document).ready(function($) {
 
-var dontmove = false;
-
+var dontmove = '#ff0000';
+    $.postMessage(
+      dontmove,
+     // 'http://playalways.github.io',
+        'http://127.0.0.1:8887/',
+      parent
+    );
+    
 $('.provaaa').click(function(){
-    dontmove = true;
+    dontmove = '#0000ff';
     $.postMessage(
       dontmove,
      // 'http://playalways.github.io',

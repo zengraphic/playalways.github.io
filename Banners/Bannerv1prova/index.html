@@ -18,12 +18,7 @@ jQuery(document).ready(function($) {
     $.receiveMessage(
         function(e) {
             console.log(e.data);
-            if(e.data){
-                $(body).css('background-color','red');
-            }            
-            else{
-                $(body).css('background-color','blue');    
-            }
+                $('body').css('background-color',e.data);
         },
      //   'http://127.0.0.1/'
      'https://playalways.github.io'
