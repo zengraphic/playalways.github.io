@@ -1,12 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// // found in the LICENSE file.
-// // Called when the user clicks on the browser action.
-// chrome.browserAction.onClicked.addListener(function(tab) {
-//   // No tabs or host permissions needed!
-//   console.log('Turning ' + tab.url + ' red!');
-//   chrome.tabs.executeScript(null, {file: "robbeditor_main.js"});
-// });
-// chrome.browserAction.onClicked.addListener(function() { 
-//   alert('Hello, World!'); 
-// })
+var images = document.getElementsByTagName('img');
+for (var i = 0, l = images.length; i < l; i++) {
+  images[i].src = 'http://placekitten.com/' + images[i].width + '/' + images[i].height;
+}

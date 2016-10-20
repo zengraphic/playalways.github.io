@@ -1,23 +1,13 @@
 {
-  "manifest_version": 2,
-  "name": "Edit Everything",
-  "version": "1.0",
-  "description": "This extension allow you to edit and change font sizes",
-  "browser_action": {
-    "name": "Manipulate DOM",
-    "icons": ["/img/robbeditor.png"],
-    "default_icon": "/img/robbeditor.png",
-    "default_popup": "/html/robbeditor.html"
-  },
-  "content_scripts": [ {
-    "js": [ "/js/jquery.js", "/js/robbeditor.js" ],
-    "matches": [ "http://*/*", "https://*/*"]
-  }],
-    "permissions": [
-        "activeTab",
-        "https://ajax.googleapis.com/"
-    ]  
-   // "background": {
-   //     "persistent": true,
-   //   }  
+    "manifest_version": 2,
+
+    "name": "Modify CSS and HTML",
+    "version": "0.1.0",
+    "description": "Lateral blog post demo extension",
+    "icons": { "/img/robbeditor.png" },
+    "content_scripts": [{
+        "css": ["/css/robbeditor.css"],
+        "js": ["/js/robbeditor.js"],
+        "matches": ["http://*/*", "https://*/*"]
+    }]
 }
