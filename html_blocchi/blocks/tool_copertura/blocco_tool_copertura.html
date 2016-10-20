@@ -35,7 +35,7 @@
             <div class="blocco_import">
                 <div class="block_coverage_tool container_testo_generico">
                     <div class="block_coverage_tool__map__container colored_bg--light-grey">
-                        <div id="world-map" class="world_map" style="width: 100%; height: 500px"></div>
+                        <div id="world-map" class="world_map"></div>
                     </div>
                     <div class="block_coverage_tool__tabs__container">
                         <div class="blocco_tabs_menu">
@@ -2034,7 +2034,7 @@
 
 
 
-            var map = new jvm.Map({
+            map = new jvm.Map({
                 container: $('#world-map'),
                 map: 'continents_merc',
                 regionsSelectable: true,
@@ -2108,7 +2108,9 @@
                 }
             });
 
-
+            $(window).resize(map,function(){
+                map.updateSize();
+            });
 
             $('.strip_menu_tab__item').click(map, function() {
                 var item = $(this);
