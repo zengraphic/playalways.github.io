@@ -224,9 +224,9 @@
                                 <!-- primo blocco risultati -->
                                 <div class="faq_block__single secondary_faq_block col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <h3 class="faq_block__single__title">
-                                    <!-- titolo categoria 2 livello -->
-                                    Categoria 2 livello
-                                </h3>
+                                        <!-- titolo categoria 2 livello -->
+                                        Categoria 2 livello
+                                    </h3>
                                     <!-- lista categorie 3 livello -->
                                     <ul class="faq_block__single__description">
                                         <li><span class="faq_block__single__description--list">Categoria 3 livello</span></li>
@@ -237,9 +237,9 @@
                                 <!-- primo blocco risultati -->
                                 <div class="faq_block__single secondary_faq_block col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <h3 class="faq_block__single__title">
-                                    <!-- titolo categoria 2 livello -->
-                                    Categoria 2 livello
-                                </h3>
+                                        <!-- titolo categoria 2 livello -->
+                                        Categoria 2 livello
+                                    </h3>
                                     <ul class="faq_block__single__description">
                                         <li><span class="faq_block__single__description--list">Categoria 3 livello</span></li>
                                         <li><span class="faq_block__single__description--list">Categoria 3 livello</span></li>
@@ -254,9 +254,9 @@
                                 <!-- primo blocco risultati -->
                                 <div class="faq_block__single secondary_faq_block col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                     <h3 class="faq_block__single__title">
-                                    <!-- titolo categoria 2 livello -->
-                                    Categoria 2 livello
-                                </h3>
+                                        <!-- titolo categoria 2 livello -->
+                                        Categoria 2 livello
+                                    </h3>
                                     <ul class="faq_block__single__description">
                                         <li><span class="faq_block__single__description--list">Categoria 3 livello</span></li>
                                         <li><span class="faq_block__single__description--list">Categoria 3 livello</span></li>
@@ -296,7 +296,7 @@
                             <div class="clear"></div>
                         </div>
                     </div>
-                    <div class="faq_block__container faq_block__firstLevelBlock faq_block__firstLevelBlock--only_faq" id="faq_block_4">
+                    <div class="faq_block__container faq_block__firstLevelBlock" id="faq_block_4">
                         <div class="faq_block__firstLevelBlock__container">
                             <div class="faq_block__firstLevelBlock__container__row">
                                 <!-- primo blocco risultati -->
@@ -1503,28 +1503,28 @@
 </body>
 <script>
 jQuery(document).ready(function($) {
-    var allCatFirst = ".faq_block__single.main_faq_block";
-    var allCatFirstOnlyFaq = allCatFirst+"--only_faq";
-    var allCatBlocks = ".faq_block__firstLevelBlock";
-    var allCatSecond = ".faq_block__single__description--list";
-    var allAccordions = ".faq_accordions";
+    var allCatFirst = $(".faq_block__single.main_faq_block");
+    var allCatFirstOnlyFaq = $(".faq_block__single.main_faq_block--only_faq");
+    var allCatBlocks = $(".faq_block__firstLevelBlock");
+    var allCatSecond = $(".faq_block__single__description--list");
+    var allAccordions = $(".faq_accordions");
 
 
-    $(allCatFirst).not($(allCatFirstOnlyFaq)).click(function() {
+    allCatFirst.not(allCatFirstOnlyFaq).click(function() {
         var activeCatFirst = $(this);
-        var faqBlockTarget = activeCatFirst.data('item');
+        var faqBlockTarget = $(activeCatFirst.data('item'));
         if (activeCatFirst.is('.faq_active')) {
             activeCatFirst.removeClass('faq_active');
-            $(faqBlockTarget).hide("slow");
-            $(allAccordions).hide("slow").find('input').prop('checked', true);
+            faqBlockTarget.hide("slow");
+            allAccordions.hide("slow").find('input').prop('checked', true);
         } else {
-            $(allCatFirst).removeClass('faq_active');
-            $(allCatSecond).removeClass('faq_second_active');
-            $(allCatBlocks).hide("slow");
-            $(allAccordions).hide("slow").find('input').prop('checked', true);
+            allCatFirst.removeClass('faq_active');
+            allCatSecond.removeClass('faq_second_active');
+            allCatBlocks.hide("slow");
+            allAccordions.hide("slow").find('input').prop('checked', true);
             activeCatFirst.addClass('faq_active');
-            $(faqBlockTarget).show("slow", function() {
-                var blockTop = $(faqBlockTarget).offset().top;
+            faqBlockTarget.show("slow", function() {
+                var blockTop = faqBlockTarget.offset().top;
                 $("html, body").stop().animate({
                     scrollTop: blockTop
                 }, 'slow');
@@ -1532,20 +1532,20 @@ jQuery(document).ready(function($) {
 
         }
     });
-    $(allCatFirstOnlyFaq).click(function() {
+    allCatFirstOnlyFaq.click(function() {
         var activeCatFirst = $(this);
-        var faqAccordionTarget = activeCatFirst.data('item');
+        var faqAccordionTarget = $(activeCatFirst.data('item'));
         if (activeCatFirst.is('.faq_active')) {
             activeCatFirst.removeClass('faq_active');
-            $(faqAccordionTarget).hide("slow").find('input').prop('checked', true);
+            faqAccordionTarget.hide("slow").find('input').prop('checked', true);
         } else {
-            $(allCatFirst).removeClass('faq_active');
-            $(allCatSecond).removeClass('faq_second_active');
-            $(allCatBlocks).hide("slow");
-            $(allAccordions).hide("slow").find('input').prop('checked', true);
+            allCatFirst.removeClass('faq_active');
+            allCatSecond.removeClass('faq_second_active');
+            allCatBlocks.hide("slow");
+            allAccordions.hide("slow").find('input').prop('checked', true);
             activeCatFirst.addClass('faq_active');
-            $(faqAccordionTarget).show("slow", function() {
-                var accordionTop = $(faqAccordionTarget).offset().top;
+            faqAccordionTarget.show("slow", function() {
+                var accordionTop = faqAccordionTarget.offset().top;
                 $("html, body").stop().animate({
                     scrollTop: accordionTop
                 }, 'slow');

@@ -284,11 +284,18 @@
                             }
                             &_secondColumn{
                                 padding-top: 8px;
+                                @include breakpoint('small') {
+                            text-align: right;
+                        }
                             }
                         }
                     }
                     &--title{
                         padding-bottom: 5px;
+                        
+                        @include breakpoint('super-tiny') {
+                            margin-right: 2px!important;
+                        }
                     }
                 }
                 &__single {
@@ -315,6 +322,7 @@
                     }
                     &--title {
                         margin-top: 0;
+
                     }
                     &--recurrency {
                         margin-bottom: 12px;
