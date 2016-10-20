@@ -17,6 +17,7 @@
 
 <body>
     <div class="mainContainer_banner">
+    <div class="provaaa" style="height: 100px; width: 300px; background: red; cursor: pointer;"></div>
         <div class="subcontainer_banner">
             <div class="container_background_stripes">
                 <div class="colored_bg first_layer colored_bg--blue"></div>
@@ -241,12 +242,18 @@
 <script>
 jQuery(document).ready(function($) {
 
-$.postMessage(
-  'hello world',
- // 'http://playalways.github.io',
-    'http://127.0.0.1:8887/',
-  parent
-);
+var dontmove = false;
+
+$('.provaaa').click(function(){
+    dontmove = true;
+    $.postMessage(
+      dontmove,
+     // 'http://playalways.github.io',
+        'http://127.0.0.1:8887/',
+      parent
+    );
+});
+
 
     $('.mainContainer_banner').parents('.ciccio').css('top','50px');
     $('.ciccio').css('top','50px');
