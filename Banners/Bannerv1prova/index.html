@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta name=”ad.size” content=”width=300,height=250”>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.ba-postmessage.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+</head>
+
+<body>
+    <iframe src="prova.html" class="ciccio" style="position: absolute;"></iframe>
+</body>
+<script>
+jQuery(document).ready(function($) {
+    $.receiveMessage(
+        function(e) {
+            console.log(e.data);
+        },
+        'http://127.0.0.1:8887'
+    );
+});
+</script>
+
+</html>
