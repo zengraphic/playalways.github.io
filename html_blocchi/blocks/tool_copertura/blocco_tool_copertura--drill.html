@@ -26,6 +26,8 @@
     <!--- jVectorMap Script -->
     <script type="text/javascript" src="../../js/jquery-jvectormap-2.0.3.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-jvectormap-continents-merc.js"></script>
+    <script type="text/javascript" src="../../js/jquery-jvectormap-south_america-merc.js"></script>
+    <script type="text/javascript" src="../../js/jquery-jvectormap-north_america-merc.js"></script>
     <!--- /jVectorMap Script -->
 </head>
 
@@ -79,90 +81,154 @@
             multiMap = new jvm.MultiMap({
                 container: $('#world-map'),
                 maxLevel: 1,
+                subMapsOptions: {
+                    regionsSelectable: true,
+                    zoomOnScroll: true,
+                    panOnDrag: true,
+                    regionsSelectableOne: true,
+                    backgroundColor: 'transparent',
+                    regionStyle: {
+                        initial: {
+                            fill: '#d3d3d2'
+                        },
+                        hover: {
+                            fill: '#f4b083'
+                        },
+                        selected: {
+                            fill: '#f48135'
+                        }
+                    },
+                    regionLabelStyle: {
+                        initial: {
+                            fill: 'white',
+                            'font-size': '10px'
+                        },
+                        hover: {
+                            fill: 'white'
+                        }
+                    },
+
+                },
                 main: {
-                    map: 'continents_merc'
+                    map: 'continents_merc',
+                    regionsSelectable: true,
+                    zoomOnScroll: true,
+                    panOnDrag: true,
+                    regionsSelectableOne: true,
+                    backgroundColor: 'transparent',
+                    regionStyle: {
+                        initial: {
+                            fill: '#d3d3d2'
+                        },
+                        hover: {
+                            fill: '#f4b083'
+                        },
+                        selected: {
+                            fill: '#f48135'
+                        }
+                    },
+                    regionLabelStyle: {
+                        initial: {
+                            fill: 'white',
+                            'font-size': '10px'
+                        },
+                        hover: {
+                            fill: 'white'
+                        }
+                    },
+                    labels: {
+                        regions: {
+                            render: function(code) {
+                                switch (code) {
+                                    case 'AF':
+                                        return 'Africa';
+                                    case 'NA':
+                                        return 'Nord America';
+                                    case 'OC':
+                                        return 'Oceania';
+                                    case 'AS':
+                                        return 'Asia';
+                                    case 'EU':
+                                        return 'Europa';
+                                    case 'SA':
+                                        return 'Sud America';
+                                }
+                                return code;
+                            },
+                            offsets: function(code) {
+                                switch (code) {
+                                    case 'AF':
+                                        return [0, -30];
+                                    case 'NA':
+                                        return [-290, 60];
+                                    case 'OC':
+                                        return [-30, -5];
+                                    case 'AS':
+                                        return [0, -30];
+                                    case 'EU':
+                                        return [0, 0];
+                                    case 'SA':
+                                        return [0, -50];
+                                }
+                                return code;
+                            }
+                        }
+                    },
+                },
+
+                mapNameByCode: function(code, multiMap) {
+                    switch (code) {
+                        case 'AF':
+                            code = 'africa';
+                            break;
+                        case 'NA':
+                            code = 'north_america';
+                            break;
+                        case 'OC':
+                            code = 'oceania';
+                            break;
+                        case 'AS':
+                            code = 'asia';
+                            break;
+                        case 'EU':
+                            code = 'europe';
+                            break;
+                        case 'SA':
+                            code = 'south_america';
+                            break;
+                    }
+                    return code.toLowerCase() + '_' +
+                        multiMap.defaultProjection;
                 },
                 mapUrlByCode: function(code, multiMap) {
-                    return '/js/us-counties/jquery-jvectormap-data-' +
+                    switch (code) {
+                        case 'AF':
+                            code = 'africa';
+                            break;
+                        case 'NA':
+                            code = 'north_america';
+                            break;
+                        case 'OC':
+                            code = 'oceania';
+                            break;
+                        case 'AS':
+                            code = 'asia';
+                            break;
+                        case 'EU':
+                            code = 'europe';
+                            break;
+                        case 'SA':
+                            code = 'south_america';
+                            break;
+                    }
+                    return '../../js/jquery-jvectormap-' +
                         code.toLowerCase() + '-' +
-                        multiMap.defaultProjection + '-en.js';
-                }
+                        multiMap.defaultProjection + '.js';
+                },
+
             });
 
 
-            map = new jvm.Map({
-                container: $('#world-map'),
-                map: 'continents_merc',
-                regionsSelectable: true,
-                zoomOnScroll: false,
-                panOnDrag: false,
-                regionsSelectableOne: true,
-                backgroundColor: 'transparent',
-                regionStyle: {
-                    initial: {
-                        fill: '#d3d3d2'
-                    },
-                    hover: {
-                        fill: '#f4b083'
-                    },
-                    selected: {
-                        fill: '#f48135'
-                    }
-                },
-                regionLabelStyle: {
-                    initial: {
-                        fill: 'white',
-                        'font-size': '10px'
-                    },
-                    hover: {
-                        fill: 'white'
-                    }
-                },
-                labels: {
-                    regions: {
-                        render: function(code) {
-                            switch (code) {
-                                case 'AF':
-                                    return 'Africa';
-                                case 'NA':
-                                    return 'Nord America';
-                                case 'OC':
-                                    return 'Oceania';
-                                case 'AS':
-                                    return 'Asia';
-                                case 'EU':
-                                    return 'Europa';
-                                case 'SA':
-                                    return 'Sud America';
-                            }
-                            return code;
-                        },
-                        offsets: function(code) {
-                            switch (code) {
-                                case 'AF':
-                                    return [0, -30];
-                                case 'NA':
-                                    return [-290, 60];
-                                case 'OC':
-                                    return [-30, -5];
-                                case 'AS':
-                                    return [0, -30];
-                                case 'EU':
-                                    return [0, 0];
-                                case 'SA':
-                                    return [0, -50];
-                            }
-                            return code;
-                        }
-                    }
-                },
-                onRegionTipShow: function(e, tip, code) {
-                    return false;
-                },
-                onRegionSelected: function(e, code) {
-                    return true;
-                }
-            });
 
 
         });
