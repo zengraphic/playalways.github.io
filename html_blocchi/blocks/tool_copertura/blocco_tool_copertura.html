@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../../js/base.js"></script>
     <!-- components script -->
     <script type="text/javascript" src="../../js/custom.js"></script>
+    <script type="text/javascript" src="../../js/header.js"></script>
     <!--- /JS -->
     <!--- jVectorMap Script -->
     <script type="text/javascript" src="../../js/jquery-jvectormap-2.0.3.min.js"></script>
@@ -30,10 +31,121 @@
 </head>
 
 <body class="home_page ">
-    <div class="container-wind">
+    <div class="container-wind ">
         <div class="row">
-            <div class="blocco_import">
+            <div class="blocco_import ">
+                <div class="header" id="header">
+                    <div class="header_sup">
+                        <div class="container">
+                            <div class="row">
+                                <div class="menu_sup_container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <ul class="menu_sup slider_topMenu">
+                                        <li>
+                                            <a href="#">
+                                                PRIVATI
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                PROFESSIONISTI
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                AZIENDE
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                GRANDI AZIENDE
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="btn_active">
+                                                WINDGROUP
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="gradient_overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_second">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="logo logo--wind">
+                                        <img src="../../img/logos/wind_logo.png" class="wind">
+                                    </div>
+                                    <div class="menu">
+                                        <ul>
+                                            <li>
+                                                <a class="btn" href="#">
+                                                        Ricarica
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                                        Cerca
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                                        Assistenza
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                                        Passa a Wind
+                                                    </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-right">
+                                        <ul>
+                                            <li>
+                                                <a class="btn_menu" id="menuaction" href="#">
+                                                        MENU
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn_carrello" href="#">
+                                                        CARRELLO
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn_entra" href="#">
+                                                        ENTRA
+                                                    </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="first_container margin_top_header"></div>
                 <div class="block_coverage_tool container_testo_generico">
+                    <div class="block_coverage_tool__breadcrumbs__container">
+                        <div class="content__breadcrumbs">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="breadcrumbs base__scrollable2 touch_scroll">
+                                            <ul class="base__breadcrumbs">
+                                                <li><a class="link" ref="#">Home</a></li>
+                                                <li><a class="link" href="#">Business</a></li>
+                                                <li><span>Fatti consigliare</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="block_coverage_tool__map__container colored_bg--light-grey">
                         <div id="world-map" class="world_map"></div>
                     </div>
@@ -1961,219 +2073,469 @@
                         </div>
                         <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
                     </div>
+                    <!-- /SWIPE -->
+                    <div class="clear"></div>
+                    <div class="block_coverage_tool__assistance__container">
+                        <div class="blocco_assistenza">
+                            <div class="customer_block">
+                                <div class="customer_block__container">
+                                    <div class="customer_block__title">
+                                        Assistenza clienti
+                                        <!-- titolo grande centrale -->
+                                    </div>
+                                    <div class="customer_block__searchContainer">
+                                        <div class="customer_block__search">
+                                            <input class="base__input" type="text" name="search_input" placeholder="Descrivi qui il tuo problema">
+                                            <!-- input cerca -->
+                                        </div>
+                                        <div class="customer_block__searchButton">
+                                            <a href="#" class="button button--noMargin button--searchButton"></a>
+                                            <!-- bottone cerca con immagine di background lente -->
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="customer_block__divider align_center">
+                                        <div class="customer_block__divider--text"><span>Oppure potrebbe interessarti</span></div>
+                                        <!-- divisore con testo -->
+                                    </div>
+                                    <div class="customer_block__tripleContainer col-xs-12">
+                                        <div class="customer_block__find--Device col-sm-6 col-md-4 col-lg-4 base__col-fill align_center">
+                                            <div class="customer_block__icon customer_block__icon--findDevice"></div>
+                                            <!-- sprite icona -->
+                                            <div class="customer_block__find--title">
+                                                Configurazione smartphone e tablet
+                                                <!-- titolo blocco -->
+                                            </div>
+                                            <div class="customer_block__find--Subtitle">
+                                                Seleziona dal men&ugrave; a tendina la marca e il modello del tuo Smartphone o Tablet e clicca sul tasto Conferma.
+                                                <!-- sottotitolo blocco -->
+                                            </div>
+                                            <a href="#" class="button button--noMargin">
+                                   Cerca il mio dispositivo <!-- bottone -->
+                                </a>
+                                        </div>
+                                        <div class="customer_block__find--Store col-sm-6 col-md-4 col-lg-4 base__col-fill align_center">
+                                            <div class="customer_block__icon customer_block__icon--findStore"></div>
+                                            <!-- sprite icona -->
+                                            <div class="customer_block__find--title">
+                                                Trova il negozio pi&ugrave; vicino
+                                                <!-- titolo blocco -->
+                                            </div>
+                                            <div class="customer_block__sameHeight_container">
+                                                <input class="base__input" type="text" name="address_input" placeholder="Indirizzo">
+                                                <!-- input per inserimento indirizzo cerca negozio -->
+                                            </div>
+                                            <a href="#" class="button button--noMargin">
+                                   Cerca negozio        <!-- bottone -->
+                                </a>
+                                        </div>
+                                        <div class="customer_block__find--Coverage col-sm-6 col-md-4 col-lg-4 base__col-fill align_center">
+                                            <div class="customer_block__icon customer_block__icon--findCoverage"></div>
+                                            <div class="customer_block__find--title">
+                                                Controlla la copertura mobile
+                                                <!-- titolo blocco -->
+                                            </div>
+                                            <div class="customer_block__sameHeight_container">
+                                                <input class="base__input" type="text" name="address_input" placeholder="Indirizzo">
+                                                <!-- input per inserimento indirizzo copertura-->
+                                            </div>
+                                            <a href="#" class="button button--noMargin">
+                                   Verifica copertura           <!-- bottone -->
+                                </a>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="block_coverage_tool__newsletter__container">
+                        <div class="blocco_newsletter">
+                            <div class="newsletter_block">
+                                <div class="newsletter_block__container col-xs-12">
+                                    <div class="newsletter_block__left col-sm-5 col-md-5 col-lg-5 base__col-fill">
+                                        <div class="newsletter_block__title">
+                                            Iscriviti alla newsletter
+                                            <!-- label input newsletter -->
+                                        </div>
+                                        <input class="base__input" type="text" name="email_input" placeholder="Indirizzo">
+                                        <!-- input indirizzo mail newsletter-->
+                                        <a href="#" class="button button--noMargin">
+                                    Iscrivimi alla newsletter   <!-- bottone iscrivimi-->
+                                </a>
+                                    </div>
+                                    <div class="newsletter_block__right col-sm-7 col-md-7 col-lg-7 base__col-fill">
+                                        <!-- label pagine social-->
+                                        <div class="newsletter_block__title">
+                                            Visita le nostre pagine social
+                                        </div>
+                                        <div class="newsletter_block__icon">
+                                            <div class="col-xs-12">
+                                                <div class="">
+                                                    <!-- icona gplus-->
+                                                    <div class="newsletter_block__icon--gplus"></div>
+                                                    <!-- icona youtube-->
+                                                    <div class="newsletter_block__icon--youtube"></div>
+                                                </div>
+                                                <div class="newsletter_block__icon--secondRow">
+                                                    <div class="newsletter_block__icon--facebook"></div>
+                                                    <!-- icona facebook-->
+                                                    <div class="newsletter_block__icon--twitter"></div>
+                                                    <!-- icona twitter-->
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="footer" id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <div class="logo">
+                                    <img src="../../img/logos/logo-wind-footer.png">
+                                </div>
+                            </div>
+                            <div id="mobile" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                <ul class="line1" data-role="acordeon">
+                                    <li class="title">Lorem</li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                    <li><a href="#">Lorem Ipsum</a></li>
+                                </ul>
+                                <ul class="line2" data-role="acordeon">
+                                    <li class="title">
+                                        Lorem
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                </ul>
+                                <ul class="line3" data-role="acordeon">
+                                    <li class="title">
+                                        Lorem
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                </ul>
+                                <ul class="line4" data-role="acordeon">
+                                    <li class="title">
+                                        Lorem
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                </ul>
+                                <ul class="line5" data-role="acordeon">
+                                    <li class="title">
+                                        Lorem
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem Ipsum</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            ©WIND TELECOMUNICAZIONI S.p.A. - Partita IVA: 05410741002
+                        </div>
+                    </div>
+                    <!-- fin foter -->
                 </div>
             </div>
         </div>
-        <script>
-        jQuery(document).ready(function($) {
-
-            continents = {
-                NA: [
-                    ['CA', 'Canada'],
-                    ['US', 'Stati Uniti'],
-                    ['GR', 'Groenlandia']
-                ],
-                SA: [
-                    ['BR', 'Brazil'],
-                    ['AG', 'Argentina'],
-                    ['VN', 'Venezuela']
-                ],
-                EU: [
-                    ['FR', 'Francia'],
-                    ['GE', 'Germania'],
-                    ['IT', 'Italia']
-                ],
-                AS: [
-                    ['CH', 'China'],
-                    ['JP', 'Japan'],
-                    ['IN', 'India']
-                ],
-                AF: [
-                    ['ZI', 'Zimbabwe'],
-                    ['BO', 'Botswana'],
-                    ['MD', 'Madagascar']
-                ],
-                OC: [
-                    ['AU', 'Australia'],
-                    ['NZ', 'New Zealand'],
-                    ['FI', 'Fiji']
-                ]
-            };
-
-            $('.slider_menu_tabs').on('init', function(slick) {
-                $(this).find('.slick-current').removeClass('slick-current');
-            });
-
-            var slickCover = $('.slider_menu_tabs').slick({
-                centerMode: false,
-                centerPadding: '0px',
-                infinite: true,
-                slidesToShow: 6,
-                dots: false,
-                variableWidth: true,
-                focusOnSelect: true,
-                arrows: false,
-                responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '60px',
-                        slidesToShow: 3
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '80px',
-                        slidesToShow: 1
-                    }
-                }]
-            });
-
-
-
-            map = new jvm.Map({
-                container: $('#world-map'),
-                map: 'continents_merc',
-                regionsSelectable: true,
-                zoomOnScroll: false,
-                panOnDrag: false,
-                regionsSelectableOne: true,
-                backgroundColor: 'transparent',
-                regionStyle: {
-                    initial: {
-                        fill: '#d3d3d2'
-                    },
-                    hover: {
-                        fill: '#f4b083'
-                    },
-                    selected: {
-                        fill: '#f48135'
-                    }
-                },
-                regionLabelStyle: {
-                    initial: {
-                        fill: 'white',
-                        'font-size': '10px'
-                    },
-                    hover: {
-                        fill: 'white'
-                    }
-                },
-                labels: {
-                    regions: {
-                        render: function(code) {
-                            switch (code) {
-                                case 'AF':
-                                    return 'Africa';
-                                case 'NA':
-                                    return 'Nord America';
-                                case 'OC':
-                                    return 'Oceania';
-                                case 'AS':
-                                    return 'Asia';
-                                case 'EU':
-                                    return 'Europa';
-                                case 'SA':
-                                    return 'Sud America';
-                            }
-                            return code;
-                        },
-                        offsets: function(code) {
-                            switch (code) {
-                                case 'AF':
-                                    return [0, -30];
-                                case 'NA':
-                                    return [-290, 60];
-                                case 'OC':
-                                    return [-30, -5];
-                                case 'AS':
-                                    return [0, -30];
-                                case 'EU':
-                                    return [0, 0];
-                                case 'SA':
-                                    return [0, -50];
-                            }
-                            return code;
-                        }
-                    }
-                },
-                onRegionTipShow: function(e, tip, code) {
-                    return false;
-                },
-                onRegionSelected: function(e, code) {
-                    mapToSlick(code);
-                }
-            });
-
-            $(window).resize(map,function(){
-                map.updateSize();
-            });
-
-            $('.strip_menu_tab__item').click(map, function() {
-                var item = $(this);
-                var regionCode = item.find('a').data().code;
-                map.clearSelectedRegions();
-                map.setSelectedRegions(regionCode);
-                buildSelect(regionCode);
-            });
-
-            $('#country--List').on('changed.bs.select', function(e, clickedIndex) {
-                toggleCountry(clickedIndex);
-
-            }).on('refreshed.bs.select', function(e, clickedIndex) {
-                toggleCountry(clickedIndex);
-
-            });
-
-            $('input.accordionBox').on('change', function() {
-                $('input.accordionBox').not(this).prop('checked', true);
-            });
-
-            function mapToSlick(code) {
-                var targetSlickLink = $('.slider_menu_tabs').find('a[data-code="' + code + '"]');
-                var targetSlickSlide = targetSlickLink.closest('.slick-slide');
-                var currentSlick = $('.slick-current');
-                if (!currentSlick) {
-                    targetSlickSlide.addClass('slick-current');
-                    buildSelect(code);
-
-                } else if (currentSlick != targetSlickSlide) {
-                    $('.slick-current').removeClass('slick-current');
-                    targetSlickSlide.addClass('slick-current');
-                    buildSelect(code);
-                }
-            }
-
-            function buildSelect(regionCode) {
-                var select = $('#country--List');
-                var selectOption = select.find('option');
-                selectOption.remove();
-                var optionDefault = '<option value="none">--Seleziona--</option>';
-                select.append(optionDefault);
-                $.each(continents[regionCode], function(index, val) {
-                    var value = val[0];
-                    var text = val[1];
-                    var option = '<option value="' + value + '">' + text + '</option>';
-                    select.append(option);
-                });
-                select.selectpicker('refresh');
-            }
-
-            function toggleCountry(clickedIndex) {
-                var chosenCountry = "#stat-" + clickedIndex;
-                var blockToHide = '.country_offers_block__container__country';
-                $(blockToHide).each(function() {
-                    $(this).hide();
-                });
-                $(chosenCountry).slideToggle();
-            }
-
-
-        });
-        </script>
 </body>
+<script>
+jQuery(window).load(function($) {
+    HEADER.setSlider();
+});
+jQuery(document).ready(function($) {
+
+    continents = {
+        NA: [
+            ['CA', 'Canada'],
+            ['US', 'Stati Uniti'],
+            ['GR', 'Groenlandia']
+        ],
+        SA: [
+            ['BR', 'Brazil'],
+            ['AG', 'Argentina'],
+            ['VN', 'Venezuela']
+        ],
+        EU: [
+            ['FR', 'Francia'],
+            ['GE', 'Germania'],
+            ['IT', 'Italia']
+        ],
+        AS: [
+            ['CH', 'China'],
+            ['JP', 'Japan'],
+            ['IN', 'India']
+        ],
+        AF: [
+            ['ZI', 'Zimbabwe'],
+            ['BO', 'Botswana'],
+            ['MD', 'Madagascar']
+        ],
+        OC: [
+            ['AU', 'Australia'],
+            ['NZ', 'New Zealand'],
+            ['FI', 'Fiji']
+        ]
+    };
+
+    $('.slider_menu_tabs').on('init', function(slick) {
+        $(this).find('.slick-current').removeClass('slick-current');
+    });
+
+    var slickCover = $('.slider_menu_tabs').slick({
+        centerMode: false,
+        centerPadding: '0px',
+        infinite: true,
+        slidesToShow: 6,
+        dots: false,
+        variableWidth: true,
+        focusOnSelect: true,
+        arrows: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '80px',
+                slidesToShow: 1
+            }
+        }]
+    });
+
+
+
+    map = new jvm.Map({
+        container: $('#world-map'),
+        map: 'continents_merc',
+        regionsSelectable: true,
+        zoomOnScroll: false,
+        panOnDrag: false,
+        regionsSelectableOne: true,
+        backgroundColor: 'transparent',
+        regionStyle: {
+            initial: {
+                fill: '#d3d3d2'
+            },
+            hover: {
+                fill: '#f4b083'
+            },
+            selected: {
+                fill: '#f48135'
+            }
+        },
+        regionLabelStyle: {
+            initial: {
+                fill: 'white',
+                'font-size': '10px'
+            },
+            hover: {
+                fill: 'white'
+            }
+        },
+        labels: {
+            regions: {
+                render: function(code) {
+                    switch (code) {
+                        case 'AF':
+                            return 'Africa';
+                        case 'NA':
+                            return 'Nord America';
+                        case 'OC':
+                            return 'Oceania';
+                        case 'AS':
+                            return 'Asia';
+                        case 'EU':
+                            return 'Europa';
+                        case 'SA':
+                            return 'Sud America';
+                    }
+                    return code;
+                },
+                offsets: function(code) {
+                    switch (code) {
+                        case 'AF':
+                            return [0, -30];
+                        case 'NA':
+                            return [-290, 60];
+                        case 'OC':
+                            return [-30, -5];
+                        case 'AS':
+                            return [0, -30];
+                        case 'EU':
+                            return [0, 0];
+                        case 'SA':
+                            return [0, -50];
+                    }
+                    return code;
+                }
+            }
+        },
+        onRegionTipShow: function(e, tip, code) {
+            return false;
+        },
+        onRegionSelected: function(e, code) {
+            mapToSlick(code);
+        }
+    });
+
+    $(window).resize(map, function() {
+        map.updateSize();
+    });
+
+    $('.strip_menu_tab__item').click(map, function() {
+        var item = $(this);
+        var regionCode = item.find('a').data().code;
+        map.clearSelectedRegions();
+        map.setSelectedRegions(regionCode);
+        buildSelect(regionCode);
+    });
+
+    $('#country--List').on('changed.bs.select', function(e, clickedIndex) {
+        toggleCountry(clickedIndex);
+
+    }).on('refreshed.bs.select', function(e, clickedIndex) {
+        toggleCountry(clickedIndex);
+
+    });
+
+    $('input.accordionBox').on('change', function() {
+        $('input.accordionBox').not(this).prop('checked', true);
+    });
+
+    function mapToSlick(code) {
+        var targetSlickLink = $('.slider_menu_tabs').find('a[data-code="' + code + '"]');
+        var targetSlickSlide = targetSlickLink.closest('.slick-slide');
+        var currentSlick = $('.slick-current');
+        if (!currentSlick) {
+            targetSlickSlide.addClass('slick-current');
+            buildSelect(code);
+
+        } else if (currentSlick != targetSlickSlide) {
+            $('.slick-current').removeClass('slick-current');
+            targetSlickSlide.addClass('slick-current');
+            buildSelect(code);
+        }
+    }
+
+    function buildSelect(regionCode) {
+        var select = $('#country--List');
+        var selectOption = select.find('option');
+        selectOption.remove();
+        var optionDefault = '<option value="none">--Seleziona--</option>';
+        select.append(optionDefault);
+        $.each(continents[regionCode], function(index, val) {
+            var value = val[0];
+            var text = val[1];
+            var option = '<option value="' + value + '">' + text + '</option>';
+            select.append(option);
+        });
+        select.selectpicker('refresh');
+    }
+
+    function toggleCountry(clickedIndex) {
+        var chosenCountry = "#stat-" + clickedIndex;
+        var blockToHide = '.country_offers_block__container__country';
+        $(blockToHide).each(function() {
+            $(this).hide();
+        });
+        $(chosenCountry).slideToggle();
+    }
+
+
+});
+</script>
 
 </html>
