@@ -17,7 +17,7 @@
 
 <body>
     <div class="mainContainer_banner">
-        <div class="casa" style="height: 150px; width: 300px; background-color: red;"></div>
+        <div class="casa" style="height: 150px; width: 300px; background-color: red; cursor: pointer;"></div>
         <div class="subcontainer_banner">
             <div class="container_background_stripes">
                 <div class="colored_bg first_layer colored_bg--blue"></div>
@@ -244,6 +244,7 @@ jQuery(document).ready(function($) {
 
     var messaggio = "ciao";
     $('.casa').click(function() {
+        console.log('entro');
         $.postMessage(
             messaggio,
             'http://playalways.github.io/',
