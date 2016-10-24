@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'TP Hero Light';
+  src: url("../fonts/TPHero-Light.woff") format("woff");
+  src: url("../fonts/TPHero-Light.otf") format("opentype");
+  font-weight: light; }
+
+@font-face {
+  font-family: 'TP Hero Thin';
+  src: url("../fonts/TPHero-Thin.woff") format("woff");
+  src: url("../fonts/TPHero-Thin.otf") format("opentype");
+  font-weight: thin; }
+
+@font-face {
+  font-family: 'TP Hero Hairline';
+  src: url("../fonts/TPHero-Hairline.woff") format("woff");
+  src: url("../fonts/TPHero-Hairline.otf") format("opentype");
+  font-weight: hairline; }
+
+html,
+body,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: lighter; }
+
+.clear-fix:after,
+.clear {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clear-fix {
+  zoom: 1; }
+
+.dummy_block {
+  width: 64%;
+  margin: 0 auto;
+  height: 100px;
+  background-color: white; }
+
+.veon__domination_block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; }
+  .veon__domination_block img {
+    display: block;
+    margin: 0 auto; }
+  .veon__domination_block__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 9000; }
+  .veon__domination_block__background {
+    z-index: 9900;
+    position: absolute;
+    width: 100%; }
+    .veon__domination_block__background .background_image {
+      height: auto; }
+      @media (min-width: 1200px) {
+        .veon__domination_block__background .background_image {
+          width: 1180px; } }
+      @media (max-width: 1199px) {
+        .veon__domination_block__background .background_image {
+          width: 1024px; } }
+      @media (max-width: 1024px) {
+        .veon__domination_block__background .background_image {
+          width: 900px; } }
+      @media (max-width: 998px) {
+        .veon__domination_block__background .background_image {
+          width: 780px; } }
+      @media (max-width: 768px) {
+        .veon__domination_block__background .background_image {
+          position: relative;
+          width: 1200px;
+          left: calc((100% - 1200px) / 2); } }
+      @media (max-width: 480px) {
+        .veon__domination_block__background .background_image {
+          position: relative;
+          width: 1024px;
+          left: calc((100% - 1024px) / 2); } }
+  .veon__domination_block__content {
+    position: relative;
+    z-index: 9990; }
+    .veon__domination_block__content__logo {
+      width: 100%; }
+      .veon__domination_block__content__logo .logo_image {
+        width: 150px;
+        height: auto;
+        margin-top: 50px; }
+    .veon__domination_block__content__claim__text {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 90%;
+      font-family: "TP Hero Hairline";
+      text-transform: uppercase; }
+      @media (min-width: 1200px) {
+        .veon__domination_block__content__claim__text {
+          font-size: 8.2rem;
+          line-height: 8.1rem;
+          margin-top: 4rem;
+          letter-spacing: -0.4rem; } }
+      @media (max-width: 1199px) {
+        .veon__domination_block__content__claim__text {
+          font-size: 7.6rem;
+          line-height: 7.8rem;
+          margin-top: 3rem;
+          letter-spacing: -0.3rem; } }
+      @media (max-width: 1024px) {
+        .veon__domination_block__content__claim__text {
+          font-size: 5rem;
+          line-height: 5.8rem; } }
+      @media (max-width: 998px) {
+        .veon__domination_block__content__claim__text {
+          margin-top: 1rem;
+          line-height: 5.2rem; } }
+      @media (max-width: 768px) {
+        .veon__domination_block__content__claim__text {
+          font-size: 5rem;
+          line-height: 7rem;
+          margin-top: 6rem; } }
+      @media (max-width: 480px) {
+        .veon__domination_block__content__claim__text {
+          font-size: 3.2rem;
+          line-height: 4.1rem;
+          margin-top: 6.7rem; } }
+    .veon__domination_block__content__phone_text__claim {
+      font-family: "TP Hero Thin";
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      margin-top: 12rem; }
+      @media (max-width: 1199px) {
+        .veon__domination_block__content__phone_text__claim {
+          margin-top: 6.5rem; } }
+      @media (max-width: 1024px) {
+        .veon__domination_block__content__phone_text__claim {
+          margin-top: 6rem;
+          font-size: 1rem;
+          line-height: 1.2rem; } }
+      @media (max-width: 998px) {
+        .veon__domination_block__content__phone_text__claim {
+          margin-top: 4.5rem;
+          font-size: 0.9rem;
+          line-height: 1.1rem; } }
+      @media (max-width: 768px) {
+        .veon__domination_block__content__phone_text__claim {
+          margin-top: 12rem;
+          font-size: 1.4rem;
+          line-height: 1.8rem; } }
+      @media (max-width: 480px) {
+        .veon__domination_block__content__phone_text__claim {
+          margin-top: 10rem;
+          font-size: 1.2rem;
+          line-height: 1.5rem; } }
+    .veon__domination_block__content__app_buttons {
+      position: absolute;
+      width: 100%;
+      margin: 0 auto;
+      top: 90%;
+      text-align: center; }
+      @media (max-width: 768px) {
+        .veon__domination_block__content__app_buttons {
+          top: 100%; } }
+      .veon__domination_block__content__app_buttons__container {
+        width: 100%;
+        margin: 0 auto; }
+        .veon__domination_block__content__app_buttons__container .app_btn {
+          width: 130px;
+          height: auto; }
+      .veon__domination_block__content__app_buttons .spacer {
+        width: 250px;
+        display: inline-block; }
+        @media (min-width: 1200px) {
+          .veon__domination_block__content__app_buttons .spacer {
+            width: 300px; } }
+        @media (max-width: 1024px) {
+          .veon__domination_block__content__app_buttons .spacer {
+            width: 320px; } }
+        @media (max-width: 998px) {
+          .veon__domination_block__content__app_buttons .spacer {
+            width: 210px; } }
+        @media (max-width: 768px) {
+          .veon__domination_block__content__app_buttons .spacer {
+            width: 50px; } }
+        @media (max-width: 480px) {
+          .veon__domination_block__content__app_buttons .spacer {
+            width: 16px; } }
+      .veon__domination_block__content__app_buttons .app__apple_store {
+        width: auto;
+        display: inline-block; }
+      .veon__domination_block__content__app_buttons .app__play_store {
+        width: auto;
+        display: inline-block; }
+  .veon__domination_block__close_button {
+    position: absolute;
+    right: 4.5%; }
+    @media (max-width: 998px) {
+      .veon__domination_block__close_button {
+        right: 9%; } }
+    .veon__domination_block__close_button .close_btn__text, .veon__domination_block__close_button .close_btn__icon {
+      font-family: "TP Hero Thin";
+      font-size: 1.8rem;
+      line-height: 2rem;
+      text-transform: uppercase; }
+    @media (max-width: 998px) {
+      .veon__domination_block__close_button .close_btn__text {
+        display: none; } }
+    @media (max-width: 998px) {
+      .veon__domination_block__close_button .close_btn__icon {
+        font-size: 2.2rem;
+        line-height: 1.5rem; } }
+
+/*# sourceMappingURL=veonDomination.min.css.map */
