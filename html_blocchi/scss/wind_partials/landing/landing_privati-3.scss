@@ -1,0 +1,169 @@
+
+.landing_privati {
+    &__visore3 {
+         width: 100%;
+         background: url('../img/landing/sfondo_mare.jpg') no-repeat 0 0;
+         background-size: cover;
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         overflow: hidden;
+         -o-transition: all 0.45s ease-in-out;
+         -moz-transition: all 0.45s ease-in-out;
+         -ms-transition: all 0.45s ease-in-out;
+         -webkit-transition: all 0.45s ease-in-out;
+         &_container {
+             width: 100%;
+             max-width: 1024px;
+             margin: 0 auto;
+             position: relative;
+             @include breakpoint(small) {
+                 padding: 0 15px;
+             }
+         }
+         &__half_block {
+             &--left {
+                 position: relative;
+                 width: calc(40% - 16px);
+                 @include transition(all 0.45s ease-in-out);
+                 @include breakpoint(small) {
+                     width: 100%;
+                 }
+                 .container_mid_row {
+                     padding-top: 73px;
+                 }
+                 .button {
+                     max-width: 280px;
+                     width: 100%;
+                     margin: 0 auto 53px;
+                     position: relative;
+                 }
+                 .column_left {
+                     width: 90%;
+                     margin-left: 51px;
+                     @include breakpoint(small) {
+                         width: 100%;
+                         margin-left: 0;
+                     }
+                 }
+             }
+             &--right {
+                 width: 60%;
+                 position: relative;
+             }
+             &--imageContainer {
+                 position: absolute;
+                 width: 100%;
+                 top: 19px;
+                 right: 19px;
+                 @include breakpoint(small) {
+                     display: none;
+                 }
+             }
+         }
+         &__title {
+             text-align: center;
+             font-size: 3.750em;
+             line-height: 1.1em;
+             color: white;
+             text-transform: uppercase;
+             font-family: $weight-light;
+         }
+         &__text {
+             text-align: center;
+             width: 100%;
+             margin: 14px auto 13px;
+             letter-spacing: 0.6px;
+             font-size: 1.375em;
+             line-height: 1.1em;
+             color: white;
+             font-family: $weight-light;
+         }
+         .priceRow {
+             margin: 0;
+             font-family: $weight-light;
+             .mainPrice {
+                 color: white;
+                 font-size: 5.625em;
+             }
+             .euro {
+                 color: white;
+                 margin-left: -25px;
+                 font-size: 3.750em;
+             }
+         }
+         .client {
+             text-align: center;
+             width: 100%;
+             margin: 16px auto 12px;
+             text-transform: uppercase;
+             font-size: 1.375em;
+             color: white;
+             font-family: $weight-light;
+         }
+     }
+     &__callTo {
+         width: 100%;
+         background-color: $color-lightBlue;
+         padding: 20px 0 10px;
+         &_container {
+             width: 100%;
+             max-width: 1024px;
+             margin: 0 auto;
+             position: relative;
+             padding: 0 30px;
+             -o-transition: all 0.45s ease-in-out;
+             -moz-transition: all 0.45s ease-in-out;
+             -ms-transition: all 0.45s ease-in-out;
+             -webkit-transition: all 0.45s ease-in-out;
+             @include breakpoint(small) {
+                 padding: 0 15px;
+             }
+         }
+         &--title {
+             font-size: 1.375em;
+             color: white;
+             text-transform: uppercase;
+             font-family: $weight-light;
+         }
+         &--subtitle {
+             font-size: 1.125em;
+             color: white;
+             font-family: $weight-light;
+         }
+     }
+    &__store_locator {
+        &_containerv3 {
+            width: 100%;
+            max-width: 1024px;
+            margin: 36px auto 57px;
+            padding: 0 30px;
+            @include breakpoint(small) {
+                padding: 0 15px;
+            }
+            -o-transition: all 0.45s ease-in-out;
+            -moz-transition: all 0.45s ease-in-out;
+            -ms-transition: all 0.45s ease-in-out;
+            -webkit-transition: all 0.45s ease-in-out;
+        }
+        
+        
+    }
+    &__social {
+        
+        .containerv3 {
+            width: 100%;
+            max-width: 1024px;
+            margin: 80px auto 10px;
+            padding: 0 30px;
+            @include breakpoint(small) {
+                padding: 0 15px;
+            }
+            -o-transition: all 0.45s ease-in-out;
+            -moz-transition: all 0.45s ease-in-out;
+            -ms-transition: all 0.45s ease-in-out;
+            -webkit-transition: all 0.45s ease-in-out;
+        }
+    }
+    
+}

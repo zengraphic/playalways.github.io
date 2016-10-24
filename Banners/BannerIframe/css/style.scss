@@ -1,0 +1,645 @@
+@import 'bootstrap-select';  
+
+@font-face {
+  font-family: 'GothamXNarrow Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gotham XNarrow Medium'), local('Gotham-XNarrow-Medium'), url(../font/ufonts.com_gothamxnarrow-medium-opentype.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'GothamXNarrow Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gotham XNarrow Bold'), local('Gotham-XNarrow-Bold'), url(../font/ufonts.com_gothamxnarrow-bold-opentype.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'GothamXNarrow Light';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gotham XNarrow Book'), local('Gotham-XNarrow-Book'), url(../font/ufonts.com_gothamxnarrow-book-opentype.woff) format('woff');
+}
+
+
+$gotham-medium: 'GothamXNarrow Medium';
+$gotham-bold: 'GothamXNarrow Bold';
+$gotham-light: 'GothamXNarrow Light';
+$gothic-bold: 'Trade Gothic Bold';
+$gothic-light: 'Trade Gothic Light';
+$wind-blue: #2d4b9b;
+$wind-gray: #87888a;
+$wind-orange: #ff6a00;
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+//usage ----> 
+// .foo {
+//   @include placeholder {
+//     color: green;
+//   }
+// }
+
+
+// OPACITY
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* ====================CLASSI GENERICHE=====================  */
+
+.btn-default{
+  color: $wind-gray;
+}
+
+div{
+  box-sizing: border-box;
+}
+
+.clear
+{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.float{
+  &_left{
+    float: left;
+  }
+  &_right{
+    float: right;
+  }
+}
+
+.padding{
+  &_left{
+    &_5{
+      padding-left: 5px; 
+   }    
+    &_10{
+      padding-left: 10px; 
+   }
+  }
+  &_right{
+    &_5{
+      padding-right: 5px; 
+   }
+  }  
+}
+
+.margin{
+  &_top{
+    &_neg5{
+      margin-top: -5px;
+   }        
+    &_5{
+      margin-top: 5px;
+   }    
+    &_8{
+      margin-top: 8px;
+   }     
+    &_10{
+      margin-top: 10px;
+   }     
+    &_15{
+      margin-top: 15px;
+   }
+    &_25{
+      margin-top: 25px;
+   }   
+  }
+  &_bottom{
+    &_5{
+      margin-bottom: 5px;
+   }    
+    &_10{
+      margin-bottom: 10px;
+   }    
+    &_15{
+      margin-bottom: 15px;
+   }    
+  }  
+}
+
+.text{
+  &_color{
+      &_blue{
+        color: $wind-blue;
+      }
+      &_orange{
+        color: $wind-orange;
+      }  
+      &_white{
+        color: #fff;
+      }    
+  }
+  &_align{
+    &_right{
+      text-align: right;
+    }
+    &_center{
+      text-align: center;
+    }    
+  }
+  &_uppercase{
+  text-transform: uppercase;
+  }
+  &_size{
+      &_12{
+      font-size: 12px;
+    }     
+      &_14{
+      font-size: 14px;
+    }    
+      &_16{
+      font-size: 16px;
+    }
+      &_18{
+      font-size: 16px;
+    }    
+      &_20{
+      font-size: 20px;
+    } 
+      &_25{
+      font-size: 25px;
+    }         
+      &_30{
+      font-size: 30px;
+    }        
+  }
+}
+
+.line_height{
+  &_18{
+    line-height: 18px;  
+  }  
+  &_20{
+    line-height: 20px;  
+  }  
+  &_25{
+    line-height: 25px;  
+  }
+  &_30{
+    line-height: 30px;  
+  }  
+}
+
+
+.text_on_bg{
+  z-index: 200;
+}
+
+.position{
+  &_absolute{
+    position: absolute;
+  }
+  &_top{
+    &_20{ 
+     top: 20px;
+   }
+  }
+}
+
+.display_inline{
+  display: inline-block;
+}
+
+.height_65{
+  height: 65px;
+}
+/* ==========================================================  */
+
+.error_notification{
+  border-bottom: 3px solid #ff0000 !important;
+}
+
+.error_mark{
+    position: absolute;
+    right: 5px;
+    font-size: 20px;
+    top: 0px;
+    color: red;
+    z-index: 300;
+    display: none;
+}
+
+.error_notification ~ .error_mark{
+  display: block;
+}
+
+/* ====================COLORI BACKGROUND=====================  */
+.colored_bg--orange{
+  background: $wind-orange;
+}
+.colored_bg--blue{
+  background: $wind-blue;
+  transition:background-color 1.5s ease;
+}
+
+.colored_bg--softGrey{
+  background: #ededed;
+  transition:background-color 0.5s ease;
+}
+
+.colored_bg--grey{
+  background: $wind-gray;
+}
+.colored_bg--white{
+  background: #fff;
+}
+/* ========================================================= */
+
+/* ====================FORMATTAZIONE TESTo=====================  */
+.price{
+  &_big{
+    font-size: 50px;
+  }
+  &_small{
+    font-size: 21px;
+  }  
+  &_barred{
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 21px;
+    font-weight: normal;
+    position: relative;
+        &::after {
+      border-bottom: 2px solid #000;
+      content: "";
+      left: 0;
+      margin-top: calc(0.125em / 2 * -1);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      -webkit-transform:rotate(-15deg);
+        -moz-transform:rotate(-15deg);
+        -ms-transform:rotate(-15deg);
+        -o-transform:rotate(-15deg);
+        transform:rotate(-15deg);    
+    }   
+  }    
+}
+/* ========================================================= */
+.floating_image{
+  z-index: 500;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.top_modal_select{
+  position: relative;
+  z-index: 350;
+}
+
+
+.container_right{
+  position: relative;
+  left: -300px;
+}
+
+.weight{
+  &_light{
+    font-family: $gotham-light;
+  }
+  &_medium{
+    font-family: $gotham-medium;
+  }  
+  &_bold{
+    font-family: $gotham-bold;
+  }  
+}
+
+.container_banner{
+  width: 300px;
+  height: 250px;
+  position: relative;
+  border: 1px solid #ccc;
+  float: left;
+  overflow: hidden;
+  font-family: $gotham-light;
+}
+
+.colored_bg{
+    width: 1000%;
+    height: 248px;
+    position: absolute;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -ms-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+      &.first_layer{
+      right: 85%;
+      z-index: 150;
+      }
+      &.second_layer{
+      right: 84%;
+      z-index: 100;      
+      }
+      &.third_layer{
+      right: 82%;
+      z-index: 50;      
+      }            
+}
+/* ============ FORM ============= */
+
+.mainContainer_banner{
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 250px;
+  border: 1px solid #ededed;
+}
+
+.subContainer_banner{
+  position: absolute;
+  width: 600px;
+  height: 250px;
+  z-index: 600;
+  .container_background_stripes{
+    position: relative;
+    left: 0%;  
+    z-index: 500;
+  }  
+}
+
+.container_form{
+  width: 300px;
+  height: 250px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+
+  a{
+    text-decoration: none;
+        &.number_present{
+        text-decoration: underline;  
+          &:hover,&:visited{
+            @include opacity(0.7);
+            color: #fff;
+          }
+    }
+  }
+}
+
+.subcontainer_form{
+  width: 220px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 200;
+
+}
+
+.button{
+    background-color: $wind-orange;
+    color: #fff;
+    padding-top: 11px;
+    padding-bottom: 5px;
+    display: block;
+    font-size: 13px;
+    margin: 8px auto 5px auto;
+    text-align: center;
+    height: auto;
+    width: 220px;
+    font-style: italic;
+    text-transform: uppercase;
+    border-color: $wind-orange;
+    @include border-radius(4px); 
+       &:hover{
+          background-color: #f78f4c; 
+          color: #fff;
+       }
+       &:visited,&:focus{
+          color: #fff;
+       }     
+
+     }
+
+.button-arrow-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.5px 0 3.5px 6.1px;
+  border-color: transparent transparent transparent #ffffff;
+  display: inline-block;
+  margin-left: 5px;  
+  margin-bottom: 2px;
+}
+
+.input{
+    &_banner{
+      height: 27px;
+      box-sizing: border-box;   
+      font-family: $gotham-light;   
+       @include placeholder {
+         color: $wind-gray;
+      }
+    }
+    &_container{
+      position: relative;
+    }
+    &_city{
+      .input_banner{
+         width: 220px;
+      }
+    }    
+    &_telephone{
+      width: 220px;
+      margin: 5px auto 0 auto;
+      .input_telNumber{
+         width: calc(80% - 5px);
+      }
+      .input_prefix{
+        width: 20%;
+      }
+    }      
+    &_address{
+      .input_banner{
+         width: 175px;
+      }
+    }
+    &_number{
+      .input_banner{
+         width: 40px;
+      }
+    }
+    &_banner {
+      width: 280px;
+      padding: 7px 0 3px 10px;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+      outline: 0;
+      border: 1px solid #ccd1d9;
+      background-color: white;
+      &:focus {
+        border: 1px solid #f48135;
+        box-shadow: none;
+        -webkit-box-shadow: none; }
+      &:hover, &:active {
+        border: 1px solid #f48135; }
+      }
+}
+
+
+.container_image{
+  .image_logo{
+    width: 70px;
+    &_2{
+      width: 120px;
+    }
+  }
+}
+
+.logo_full{
+  width: 300%;
+  background-color: #fff;
+  padding-bottom: 5px;
+  position: absolute;
+  bottom: 0;
+  z-index: 150;
+  left: -75%;
+  .image_logo{
+    width: 130px;
+  }
+}
+
+.hidden_input{
+  .error_mark{
+    top: 0px;
+    right: 5px;
+  }
+  &_overlay{
+    width: 100%;
+    height: 44%;
+    display: none;
+    position: absolute;
+    background-color: $wind-blue;
+    z-index: 200;
+    bottom: 0;
+    left: 0px;
+    .button_close{
+      cursor: pointer;
+      color: #fff;
+      z-index: 350;
+      text-decoration: underline;  
+      margin-top: 8px;      
+      &:hover{
+        @include opacity(0.7);
+      }
+    }
+  }
+}
+
+/* ========= SELECT ========== */
+.bootstrap-select{
+    &.btn-group{
+        .dropdown-toggle{
+          .filter-option{
+            font-family: $gotham-light;
+          }
+          .caret{
+            color: $wind-orange;
+          }
+        } 
+      }  
+  .btn{
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+  }
+  .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+    background-color: $wind-orange;
+  }
+}
+
+/* ========= FIX VARI ========== */
+.select_banner_container select {
+    height: 28px;
+    width: 220px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    outline: 0;
+    border: 1px solid #ccd1d9;
+    background-color: white;
+}
+
+.autosuggest {
+    position: absolute;
+    z-index: 220;
+    background-color: #fff;
+    overflow: scroll;
+}
+
+#as_comune {
+    top: 105px !important;
+    left: 41px !important;
+    max-height: 96px;
+}
+
+#as_indirizzoEsteso {
+    top: 139px !important;
+    left: 42px !important;
+    max-height: 65px;
+}
+
+.autosuggest ul {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.autosuggest ul li span {
+    color: #292f36;
+    font-size: 10px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* ========= FIX VARI ========== */
+.html_order{
+  width: 300px;
+  height: 250px;
+  background-color: #666;
+}
