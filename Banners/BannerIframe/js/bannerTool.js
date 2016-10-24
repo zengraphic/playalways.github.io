@@ -7,11 +7,13 @@ jQuery(document).ready(function($) {
         $(elem).removeClass('text_color_white');
         $(elem).removeClass('text_color_orange');
     }
+
     function clearAlign(elem) {
         $(elem).removeClass('text_align_left');
         $(elem).removeClass('text_align_center');
         $(elem).removeClass('text_align_right');
     }
+
     function clearSizes(elem) {
         $(elem).removeClass('text_size_12');
         $(elem).removeClass('text_size_14');
@@ -28,8 +30,8 @@ jQuery(document).ready(function($) {
         $(elem).removeClass('margin_top_8');
         $(elem).removeClass('margin_top_10');
         $(elem).removeClass('margin_top_15');
-        $(elem).removeClass('margin_top_25'); 
-    }    
+        $(elem).removeClass('margin_top_25');
+    }
 
     function clearLine(elem) {
         $(elem).removeClass('line_height_12');
@@ -41,13 +43,16 @@ jQuery(document).ready(function($) {
         $(elem).removeClass('line_height_30');
     }
 
-
     $('.generateHTML').bind("click", function() {
         var html = $('.container_banner').html();
         $('.html_order').slideDown();
+        $('.overlay_html').slideDown();        
         $('.html_order').val(html);
     });
-
+    $('.overlay_html').bind("click",function(){
+         $('.html_order').slideUp();
+        $('.overlay_html').slideUp();        
+    });
 
     $('.color_select').change(function() {
         var color = $(this).find(':selected').data('color');
@@ -76,33 +81,32 @@ jQuery(document).ready(function($) {
         referral = "." + referral;
         clearMarginTop(referral);
         $(referral).addClass(marginTop);
-    });    
-   $('.align_select').change(function() {
+    });
+    $('.align_select').change(function() {
         var alignment = $(this).find(':selected').data('align');
         var referral = $(this).parents('.elemento_creatore').data('referral');
         referral = "." + referral;
         clearAlign(referral);
         $(referral).addClass(alignment);
-    }); 
-   $('.hide_select').change(function() {
+    });
+    $('.hide_select').change(function() {
         var hide = $(this).find(':selected').data('hide');
         var referral = $(this).parents('.elemento_creatore').data('referral');
         referral = "." + referral;
         $(referral).removeClass('hidden');
         $(referral).addClass(hide);
-    }); 
-   $('.barred_select').change(function() {
+    });
+    $('.barred_select').change(function() {
         var barred = $(this).find(':selected').data('barred');
         console.log(barred);
-        if(barred == 'no'){
+        if (barred == 'no') {
             $('.container_prezzo_barrato').slideUp();
-            $('.price_barred').addClass('hidden');            
+            $('.price_barred').addClass('hidden');
+        } else {
+            $('.container_prezzo_barrato').slideDown();
+            $('.price_barred').removeClass('hidden');
         }
-        else{
-             $('.container_prezzo_barrato').slideDown();  
-             $('.price_barred').removeClass('hidden');                    
-        }
-    });          
+    });
 
     //============== BIND INPUTS ==============
     var titleLeft = $('.title_left').html();
@@ -127,40 +131,40 @@ jQuery(document).ready(function($) {
     $('.titolo_destra').bind("keyup", function() {
         titleRight = $(this).val();
         $('.title_right').html(titleRight);
-    });    
+    });
     var price_big = $('.price_big').html();
     price_big = price_big.replace(/ +(?= )/g, '');
     $('.prezzo_grande').val(price_big);
     $('.prezzo_grande').bind("keyup", function() {
         price_big = $(this).val();
         $('.price_big').html(price_big);
-    }); 
+    });
     var price_small = $('.price_small').html();
     price_small = price_small.replace(/ +(?= )/g, '');
     $('.prezzo_piccolo').val(price_small);
     $('.prezzo_piccolo').bind("keyup", function() {
         price_small = $(this).val();
         $('.price_small').html(price_small);
-    });     
+    });
     var price_barred_small = $('.price_barred').html();
     price_barred_small = price_barred_small.replace(/ +(?= )/g, '');
     $('.prezzo_barrato').val(price_barred_small);
     $('.prezzo_barrato').bind("keyup", function() {
         price_barred_small = $(this).val();
         $('.price_barred').html(price_barred_small);
-    }); 
+    });
     var underprice_text = $('.underprice_text').html();
     underprice_text = underprice_text.replace(/ +(?= )/g, '');
     $('.titolo_sotto_prezzo').val(underprice_text);
     $('.titolo_sotto_prezzo').bind("keyup", function() {
         underprice_text = $(this).val();
         $('.underprice_text').html(underprice_text);
-    }); 
+    });
     var cta_text = $('.cta_text').html();
     cta_text = cta_text.replace(/ +(?= )/g, '');
     $('.testo_vantaggi').val(cta_text);
     $('.testo_vantaggi').bind("keyup", function() {
         cta_text = $(this).val();
         $('.cta_text').html(cta_text);
-    });     
+    });
 });
