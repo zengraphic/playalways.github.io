@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
+    <script src="js/bannerTool.js"></script>
 </head>
 
 <body>
@@ -18,56 +19,469 @@
                 <div class="colored_bg third_layer colored_bg--orange"></div>
             </div>
             <!-- <a href="javascript:window.open(window.clickTag1)"> -->
-                <div class="container_banner">
-                    <div class="subcontainer_banner">
-                        <div class="col-xs-4">
-                            <div class="text_size_25 text_uppercase text_color_white position_absolute text_on_bg position_top_20 line_height_25 weight_bold">
+            <div class="container_banner">
+                <div class="subcontainer_banner">
+                    <div class="col-xs-4">
+                        <div class="text_size_25 text_uppercase text_color_white position_absolute text_on_bg position_top_20 line_height_25 weight_bold">
+                            <div class="title_left">
                                 solo
-                                <br> online
-                                <div class="margin_top_10 line_height_18 text_size_14 text_uppercase text_color_white weight_bold">
-                                    entro il
-                                    <br> 04/10
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating_image">
-                            <img src="img/image_floating.png" />
-                        </div>
-                        <div class="col-xs-8">
-                            <div class="container_right float_right text_align_right text_align_right">
-                                <div class="text_uppercase margin_top_15 text_color_blue weight_bold text_size_18 line_height_18">
-                                    adsl vera
-                                    <br>chiamate illimitate
-                                </div>
-                                <div class="container_price float_right height_65 margin_top_neg5">
-                                    <div class="price_big float_left margin_top_5 text_color_blue weight_bold">
-                                        24
-                                    </div>
-                                    <div class="price_small float_left margin_top_15 text_color_blue weight_bold text_size_20">
-                                        ,95&euro;
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="text_size_16 text_uppercase text_color_blue weight_light">
-                                    prezzo fisso
-                                </div>
-                                <div class="text_size_16 text_uppercase text_color_orange margin_top_5 weight_bold line_height_18">
-                                    attivazione
-                                    <br>e modem inclusi
-                                </div>
-                                <div class="clear"></div>
+                                <br> online</div>
+                            <div class="subtitle_left margin_top_10 line_height_18 text_size_14 text_uppercase text_color_white weight_bold">
+                                entro il
+                                <br> 04/10
                             </div>
                         </div>
                     </div>
+                    <div class="floating_image">
+                        <img src="img/image_floating.png" />
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="container_right float_right text_align_right text_align_right">
+                            <div class="title_right text_uppercase margin_top_15 text_color_blue weight_bold text_size_18 line_height_18">
+                                adsl vera
+                                <br>chiamate illimitate
+                            </div>
+                            <div class="container_price float_right height_65 margin_top_neg5">
+                                <div class="price_barred hidden float_left margin_top_15 text_color_blue weight_medium text_size_20">
+                                    24,95€
+                                </div>
+                                <div class="price_big float_left margin_top_5 text_color_blue weight_bold">
+                                    24
+                                </div>
+                                <div class="price_small float_left margin_top_15 text_color_blue weight_bold text_size_20">
+                                    ,95&euro;
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="underprice_text text_size_16 text_uppercase text_color_blue weight_light">
+                                prezzo fisso
+                            </div>
+                            <div class="cta_text text_size_16 text_uppercase text_color_orange margin_top_5 weight_bold line_height_18">
+                                attivazione
+                                <br>e modem inclusi
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
                 </div>
-                <textarea class="html_order"></textarea>                
+            </div>
             <!-- </a> -->
             <!-- ====================== FORM ====================== -->
         </div>
         <div class="container_image text_align_center logo_full">
             <img class="margin_top_5 image_logo" src="img/logo_infostrada.png" />
-        </div>        
+        </div>
     </div>
+    <div class="banner_cms container_prototype">
+        <!-- =========================== TITOLO ALTO SINISTRA ===================== -->
+        <!-- =========================== TITOLO ALTO SINISTRA ===================== -->
+        <!-- =========================== TITOLO ALTO SINISTRA ===================== -->
+        <div class="col-xs-12 col-sm-12 col-lg-12 elemento_creatore" data-referral="title_left">
+            <h3>Titolo principale</h3>
+            <div class="cancella">X</div>
+            <div class="clear"></div>
+            <input class="base__input titolo_sinistra" type="text" name="titoloPrincipale" placeholder="Titolo Principale">
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Colore</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker color_select" title="" data-size="3">
+                    <option data-color="text_color_blue" data-content="<span class='text_color_blue'>Blu</span>"></option>
+                    <option data-color="text_color_orange" data-content="<span class='text_color_orange'>Arancione</span>"></option>
+                    <option data-color="text_color_white" data-content="<span class='text_color_white'>Bianco</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Dimensione</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker size_select" title="" data-size="8">
+                    <option data-size="text_size_12" data-content="<span class='text_size_12'>12</span>"></option>
+                    <option data-size="text_size_14" data-content="<span class='text_size_14'>14</span>"></option>
+                    <option data-size="text_size_16" data-content="<span class='text_size_16'>16</span>"></option>
+                    <option data-size="text_size_18" data-content="<span class='text_size_18'>18</span>"></option>
+                    <option data-size="text_size_20" data-content="<span class='text_size_20'>20</span>"></option>
+                    <option data-size="text_size_25" data-content="<span class='text_size_25'>25</span>"></option>
+                    <option data-size="text_size_30" data-content="<span class='text_size_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Interlinea</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker line_select" title="" data-size="8">
+                    <option data-line="line_height_12" data-content="<span class='line_height_12'>12</span>"></option>
+                    <option data-line="line_height_14" data-content="<span class='line_height_14'>14</span>"></option>
+                    <option data-line="line_height_16" data-content="<span class='line_height_16'>16</span>"></option>
+                    <option data-line="line_height_18" data-content="<span class='line_height_18'>18</span>"></option>
+                    <option data-line="line_height_20" data-content="<span class='line_height_20'>20</span>"></option>
+                    <option data-line="line_height_25" data-content="<span class='line_height_25'>25</span>"></option>
+                    <option data-line="line_height_30" data-content="<span class='line_height_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Marg.Sup.</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker margin_top_select" title="" data-size="8">
+                    <option data-margin-top="margin_top_neg5" data-content="<span>-5</span>"></option>
+                    <option data-margin-top="margin_top_5" data-content="<span>5</span>"></option>
+                    <option data-margin-top="margin_top_8" data-content="<span>8</span>"></option>
+                    <option data-margin-top="margin_top_10" data-content="<span>10</span>"></option>
+                    <option data-margin-top="margin_top_15" data-content="<span>15</span>"></option>
+                    <option data-margin-top="margin_top_25" data-content="<span>25</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Allineamento</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker align_select" title="" data-size="3">
+                    <option data-align="text_align_left" data-content="<span class='text_align_left'>sinistra</span>"></option>
+                    <option data-alignp="text_align_center" data-content="<span class='text_align_center'>centro</span>"></option>
+                    <option data-align="text_align_right" data-content="<span class='text_align_right'>destra</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Nascondi</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker hide_select" title="" data-size="3">
+                    <option data-hide="" data-content="<span class=''>Mostra</span>"></option>
+                    <option data-hide="hidden" data-content="<span class=''>Nascondi</span>"></option>
+                </select>
+            </div>            
+        </div>
+        <!-- =========================== SOTTOTITOLO ALTO SINISTRA ===================== -->
+        <!-- =========================== SOTTOTITOLO ALTO SINISTRA ===================== -->
+        <!-- =========================== SOTTOTITOLO ALTO SINISTRA ===================== -->
+        <div class="clear"></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12 elemento_creatore" data-referral="subtitle_left">
+            <h3>Sottotitolo principale</h3>
+            <div class="cancella">X</div>
+            <div class="clear"></div>
+            <input class="base__input sottotitolo_sinistra" type="text" name="titoloPrincipale" placeholder="Titolo Principale">
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Colore</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker color_select" title="" data-size="3">
+                    <option data-color="text_color_blue" data-content="<span class='text_color_blue'>Blu</span>"></option>
+                    <option data-color="text_color_orange" data-content="<span class='text_color_orange'>Arancione</span>"></option>
+                    <option data-color="text_color_white" data-content="<span class='text_color_white'>Bianco</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Dimensione</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker size_select" title="" data-size="8">
+                    <option data-size="text_size_12" data-content="<span class='text_size_12'>12</span>"></option>
+                    <option data-size="text_size_14" data-content="<span class='text_size_14'>14</span>"></option>
+                    <option data-size="text_size_16" data-content="<span class='text_size_16'>16</span>"></option>
+                    <option data-size="text_size_18" data-content="<span class='text_size_18'>18</span>"></option>
+                    <option data-size="text_size_20" data-content="<span class='text_size_20'>20</span>"></option>
+                    <option data-size="text_size_25" data-content="<span class='text_size_25'>25</span>"></option>
+                    <option data-size="text_size_30" data-content="<span class='text_size_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Interlinea</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker line_select" title="" data-size="8">
+                    <option data-line="line_height_12" data-content="<span class='line_height_12'>12</span>"></option>
+                    <option data-line="line_height_14" data-content="<span class='line_height_14'>14</span>"></option>
+                    <option data-line="line_height_16" data-content="<span class='line_height_16'>16</span>"></option>
+                    <option data-line="line_height_18" data-content="<span class='line_height_18'>18</span>"></option>
+                    <option data-line="line_height_20" data-content="<span class='line_height_20'>20</span>"></option>
+                    <option data-line="line_height_25" data-content="<span class='line_height_25'>25</span>"></option>
+                    <option data-line="line_height_30" data-content="<span class='line_height_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Marg.Sup.</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker margin_top_select" title="" data-size="8">
+                    <option data-margin-top="margin_top_neg5" data-content="<span>-5</span>"></option>
+                    <option data-margin-top="margin_top_5" data-content="<span>5</span>"></option>
+                    <option data-margin-top="margin_top_8" data-content="<span>8</span>"></option>
+                    <option data-margin-top="margin_top_10" data-content="<span>10</span>"></option>
+                    <option data-margin-top="margin_top_15" data-content="<span>15</span>"></option>
+                    <option data-margin-top="margin_top_25" data-content="<span>25</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Allineamento</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker align_select" title="" data-size="3">
+                    <option data-align="text_align_left" data-content="<span class='text_align_left'>sinistra</span>"></option>
+                    <option data-align="text_align_center" data-content="<span class='text_align_center'>centro</span>"></option>
+                    <option data-align="text_align_right" data-content="<span class='text_align_right'>destra</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Nascondi</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker hide_select" title="" data-size="3">
+                    <option data-hide="" data-content="<span class=''>Mostra</span>"></option>
+                    <option data-hide="hidden" data-content="<span class=''>Nascondi</span>"></option>
+                </select>
+            </div>             
+        </div>
+        <!-- =========================== TITOLO ALTO DESTRA ===================== -->
+        <!-- =========================== TITOLO ALTO DESTRA ===================== -->
+        <!-- =========================== TITOLO ALTO DESTRA ===================== -->
+        <div class="clear"></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12 elemento_creatore" data-referral="title_right">
+            <h3>Titolo Destra</h3>
+            <div class="cancella">X</div>
+            <div class="clear"></div>
+            <input class="base__input titolo_destra" type="text" name="titoloPrincipale" placeholder="Titolo Principale">
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Colore</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker color_select" title="" data-size="3">
+                    <option data-color="text_color_blue" data-content="<span class='text_color_blue'>Blu</span>"></option>
+                    <option data-color="text_color_orange" data-content="<span class='text_color_orange'>Arancione</span>"></option>
+                    <option data-color="text_color_white" data-content="<span class='text_color_white'>Bianco</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Dimensione</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker size_select" title="" data-size="8">
+                    <option data-size="text_size_12" data-content="<span class='text_size_12'>12</span>"></option>
+                    <option data-size="text_size_14" data-content="<span class='text_size_14'>14</span>"></option>
+                    <option data-size="text_size_16" data-content="<span class='text_size_16'>16</span>"></option>
+                    <option data-size="text_size_18" data-content="<span class='text_size_18'>18</span>"></option>
+                    <option data-size="text_size_20" data-content="<span class='text_size_20'>20</span>"></option>
+                    <option data-size="text_size_25" data-content="<span class='text_size_25'>25</span>"></option>
+                    <option data-size="text_size_30" data-content="<span class='text_size_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Interlinea</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker line_select" title="" data-size="8">
+                    <option data-line="line_height_12" data-content="<span class='line_height_12'>12</span>"></option>
+                    <option data-line="line_height_14" data-content="<span class='line_height_14'>14</span>"></option>
+                    <option data-line="line_height_16" data-content="<span class='line_height_16'>16</span>"></option>
+                    <option data-line="line_height_18" data-content="<span class='line_height_18'>18</span>"></option>
+                    <option data-line="line_height_20" data-content="<span class='line_height_20'>20</span>"></option>
+                    <option data-line="line_height_25" data-content="<span class='line_height_25'>25</span>"></option>
+                    <option data-line="line_height_30" data-content="<span class='line_height_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Marg.Sup.</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker margin_top_select" title="" data-size="8">
+                    <option data-margin-top="margin_top_neg5" data-content="<span>-5</span>"></option>
+                    <option data-margin-top="margin_top_5" data-content="<span>5</span>"></option>
+                    <option data-margin-top="margin_top_8" data-content="<span>8</span>"></option>
+                    <option data-margin-top="margin_top_10" data-content="<span>10</span>"></option>
+                    <option data-margin-top="margin_top_15" data-content="<span>15</span>"></option>
+                    <option data-margin-top="margin_top_25" data-content="<span>25</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Allineamento</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker align_select" title="" data-size="3">
+                    <option data-align="text_align_left" data-content="<span class='text_align_left'>sinistra</span>"></option>
+                    <option data-align="text_align_center" data-content="<span class='text_align_center'>centro</span>"></option>
+                    <option data-align="text_align_right" data-content="<span class='text_align_right'>destra</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Nascondi</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker hide_select" title="" data-size="3">
+                    <option data-hide="" data-content="<span class=''>Mostra</span>"></option>
+                    <option data-hide="hidden" data-content="<span class=''>Nascondi</span>"></option>
+                </select>
+            </div>             
+        </div>
+        <!-- =========================== PREZZO ===================== -->
+        <!-- =========================== PREZZO ===================== -->
+        <!-- =========================== PREZZO ===================== -->
+        <div class="clear"></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12 elemento_creatore" data-referral="container_price">
+            <h3>Prezzo</h3>
+            <div class="cancella">X</div>
+            <div class="clear"></div>
+            <input class="base__input prezzo_grande" type="text" name="titoloPrincipale" placeholder="Titolo Principale" />
+            <input class="base__input prezzo_piccolo" type="text" name="titoloPrincipale" placeholder="Titolo Principale" />
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Marg.Sup.</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker margin_top_select" title="" data-size="8">
+                    <option data-margin-top="margin_top_neg5" data-content="<span>-5</span>"></option>
+                    <option data-margin-top="margin_top_5" data-content="<span>5</span>"></option>
+                    <option data-margin-top="margin_top_8" data-content="<span>8</span>"></option>
+                    <option data-margin-top="margin_top_10" data-content="<span>10</span>"></option>
+                    <option data-margin-top="margin_top_15" data-content="<span>15</span>"></option>
+                    <option data-margin-top="margin_top_25" data-content="<span>25</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Prezzo barrato</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker barred_select" title="" data-size="3">
+                    <option data-barred="no" data-content="<span class=''>No</span>"></option>
+                    <option data-barred="si" data-content="<span class=''>Si</span>"></option>
+                </select>
+            </div>
+            <div class="container_prezzo_barrato">
+                <input class="base__input prezzo_barrato" type="text" name="titoloPrincipale" placeholder="Titolo Principale" />
+            </div>
+        </div>
+        <!-- =========================== nota sottoprezzo ===================== -->
+        <!-- =========================== nota sottoprezzo ===================== -->
+        <!-- =========================== nota sottoprezzo ===================== -->
+        <div class="clear"></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12 elemento_creatore" data-referral="underprice_text">
+            <h3>Titolo sotto prezzo</h3>
+            <div class="cancella">X</div>
+            <div class="clear"></div>
+            <input class="base__input titolo_sotto_prezzo" type="text" name="titoloPrincipale" placeholder="Titolo Principale">
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Colore</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker color_select" title="" data-size="3">
+                    <option data-color="text_color_blue" data-content="<span class='text_color_blue'>Blu</span>"></option>
+                    <option data-color="text_color_orange" data-content="<span class='text_color_orange'>Arancione</span>"></option>
+                    <option data-color="text_color_white" data-content="<span class='text_color_white'>Bianco</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Dimensione</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker size_select" title="" data-size="8">
+                    <option data-size="text_size_12" data-content="<span class='text_size_12'>12</span>"></option>
+                    <option data-size="text_size_14" data-content="<span class='text_size_14'>14</span>"></option>
+                    <option data-size="text_size_16" data-content="<span class='text_size_16'>16</span>"></option>
+                    <option data-size="text_size_18" data-content="<span class='text_size_18'>18</span>"></option>
+                    <option data-size="text_size_20" data-content="<span class='text_size_20'>20</span>"></option>
+                    <option data-size="text_size_25" data-content="<span class='text_size_25'>25</span>"></option>
+                    <option data-size="text_size_30" data-content="<span class='text_size_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Interlinea</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker line_select" title="" data-size="8">
+                    <option data-line="line_height_12" data-content="<span class='line_height_12'>12</span>"></option>
+                    <option data-line="line_height_14" data-content="<span class='line_height_14'>14</span>"></option>
+                    <option data-line="line_height_16" data-content="<span class='line_height_16'>16</span>"></option>
+                    <option data-line="line_height_18" data-content="<span class='line_height_18'>18</span>"></option>
+                    <option data-line="line_height_20" data-content="<span class='line_height_20'>20</span>"></option>
+                    <option data-line="line_height_25" data-content="<span class='line_height_25'>25</span>"></option>
+                    <option data-line="line_height_30" data-content="<span class='line_height_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Marg.Sup.</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker margin_top_select" title="" data-size="8">
+                    <option data-margin-top="margin_top_neg5" data-content="<span>-5</span>"></option>
+                    <option data-margin-top="margin_top_5" data-content="<span>5</span>"></option>
+                    <option data-margin-top="margin_top_8" data-content="<span>8</span>"></option>
+                    <option data-margin-top="margin_top_10" data-content="<span>10</span>"></option>
+                    <option data-margin-top="margin_top_15" data-content="<span>15</span>"></option>
+                    <option data-margin-top="margin_top_25" data-content="<span>25</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Allineamento</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker align_select" title="" data-size="3">
+                    <option data-align="text_align_left" data-content="<span class='text_align_left'>sinistra</span>"></option>
+                    <option data-align="text_align_center" data-content="<span class='text_align_center'>centro</span>"></option>
+                    <option data-align="text_align_right" data-content="<span class='text_align_right'>destra</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Nascondi</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker hide_select" title="" data-size="3">
+                    <option data-hide="" data-content="<span class=''>Mostra</span>"></option>
+                    <option data-hide="hidden" data-content="<span class=''>Nascondi</span>"></option>
+                </select>
+            </div>             
+        </div>
+        <!-- =========================== nota sottoprezzo ===================== -->
+        <!-- =========================== nota sottoprezzo ===================== -->
+        <!-- =========================== nota sottoprezzo ===================== -->
+        <div class="clear"></div>
+        <div class="col-xs-12 col-sm-12 col-lg-12 elemento_creatore" data-referral="cta_text">
+            <h3>Testo Vantaggi</h3>
+            <div class="cancella">X</div>
+            <div class="clear"></div>
+            <input class="base__input testo_vantaggi" type="text" name="titoloPrincipale" placeholder="Titolo Principale">
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Colore</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker color_select" title="" data-size="3">
+                    <option data-color="text_color_blue" data-content="<span class='text_color_blue'>Blu</span>"></option>
+                    <option data-color="text_color_orange" data-content="<span class='text_color_orange'>Arancione</span>"></option>
+                    <option data-color="text_color_white" data-content="<span class='text_color_white'>Bianco</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Dimensione</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker size_select" title="" data-size="8">
+                    <option data-size="text_size_12" data-content="<span class='text_size_12'>12</span>"></option>
+                    <option data-size="text_size_14" data-content="<span class='text_size_14'>14</span>"></option>
+                    <option data-size="text_size_16" data-content="<span class='text_size_16'>16</span>"></option>
+                    <option data-size="text_size_18" data-content="<span class='text_size_18'>18</span>"></option>
+                    <option data-size="text_size_20" data-content="<span class='text_size_20'>20</span>"></option>
+                    <option data-size="text_size_25" data-content="<span class='text_size_25'>25</span>"></option>
+                    <option data-size="text_size_30" data-content="<span class='text_size_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Interlinea</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker line_select" title="" data-size="8">
+                    <option data-line="line_height_12" data-content="<span class='line_height_12'>12</span>"></option>
+                    <option data-line="line_height_14" data-content="<span class='line_height_14'>14</span>"></option>
+                    <option data-line="line_height_16" data-content="<span class='line_height_16'>16</span>"></option>
+                    <option data-line="line_height_18" data-content="<span class='line_height_18'>18</span>"></option>
+                    <option data-line="line_height_20" data-content="<span class='line_height_20'>20</span>"></option>
+                    <option data-line="line_height_25" data-content="<span class='line_height_25'>25</span>"></option>
+                    <option data-line="line_height_30" data-content="<span class='line_height_30'>30</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Marg.Sup.</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker margin_top_select" title="" data-size="8">
+                    <option data-margin-top="margin_top_neg5" data-content="<span>-5</span>"></option>
+                    <option data-margin-top="margin_top_5" data-content="<span>5</span>"></option>
+                    <option data-margin-top="margin_top_8" data-content="<span>8</span>"></option>
+                    <option data-margin-top="margin_top_10" data-content="<span>10</span>"></option>
+                    <option data-margin-top="margin_top_15" data-content="<span>15</span>"></option>
+                    <option data-margin-top="margin_top_25" data-content="<span>25</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Allineamento</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker align_select" title="" data-size="3">
+                    <option data-align="text_align_left" data-content="<span class='text_align_left'>sinistra</span>"></option>
+                    <option data-align="text_align_center" data-content="<span class='text_align_center'>centro</span>"></option>
+                    <option data-align="text_align_right" data-content="<span class='text_align_right'>destra</span>"></option>
+                </select>
+            </div>
+            <div class="standard_blockInfo__select">
+                <div class="label_banner">Nascondi</div>
+                <!-- SELECT -->
+                <select class="base__select selectpicker hide_select" title="" data-size="3">
+                    <option data-hide="" data-content="<span class=''>Mostra</span>"></option>
+                    <option data-hide="hidden" data-content="<span class=''>Nascondi</span>"></option>
+                </select>
+            </div>             
+        </div>
+        <!--  -->        
+        <!--  -->
+        <div class="clear"></div>
+    </div>
+    <div class="button generateHTML">Genera HTML</div>
+    <textarea class="html_order"></textarea>
 </body>
 
 </html>
