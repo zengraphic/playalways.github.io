@@ -26,6 +26,8 @@ jQuery(document).ready(function($) {
 
     function clearMarginTop(elem) {
         $(elem).removeClass('margin_top_neg5');
+        $(elem).removeClass('margin_top_neg10');                
+        $(elem).removeClass('margin_top_neg15');
         $(elem).removeClass('margin_top_5');
         $(elem).removeClass('margin_top_8');
         $(elem).removeClass('margin_top_10');
