@@ -11,9 +11,10 @@
     <div class="container_form text_align_center" id="idForm">
         <form action="http://www.infostrada.it/attivazioni/checkResult.php" method="POST" id="verificacopertura">
             <div class="top_modal_select">
-                <div class="text_size_14 text_uppercase text_color_orange text_color_white margin_top_15 margin_bottom_5 main_title weight_light">
+                <div class="main_title_banner text_size_14 text_uppercase text_color_orange text_color_white margin_top_15 margin_bottom_5 main_title weight_light">
                     Verifica la copertura infostrada
                 </div>
+                <div class="margin_hidden"></div>
                 <div class="select_banner_container">
                     <span id="AUTOSUGGEST_ACTIVE">
                     <select name="provincia" tabindex="3" id="provincia" onchange="document.getElementById('comune').value='Comune';document.getElementById('indirizzoEsteso').value='Indirizzo';document.getElementById('civico').value='N.';activateIndirizzoComune('provincia');" data-size="5" data-live-search="true">
@@ -217,6 +218,8 @@ jQuery(document).ready(function($) {
 
     $('.number_present').click(function() {
         $('.hidden_input_overlay').slideDown();
+        $('.main_title_banner').slideUp();
+        $('.margin_hidden').slideDown();        
         $('.hidden_input_overlay').addClass('checkTelephone');
     });
 
@@ -224,6 +227,8 @@ jQuery(document).ready(function($) {
         $('.hidden_input_overlay').slideUp();
         $('.hidden_input_overlay').removeClass('checkTelephone');
         $('.input_banner[name="tel"]').removeClass('error_notification');
+        $('.main_title_banner').slideDown();
+        $('.margin_hidden').slideUp();         
     });
 
     $('.container_form .check_availability').click(function() {
