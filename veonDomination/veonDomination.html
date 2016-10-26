@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="veon__domination_block__content__logo">
-            <img data-srcset="img/LogoVeon.png 1x, img/LogoVeon@2x.png 2x" class="lazyload logo_image" />
+                <img data-srcset="img/LogoVeon.png 1x, img/LogoVeon@2x.png 2x" class="lazyload logo_image" />
             </div>
             <div class="veon__domination_block__content__claim">
                 <h1 class="veon__domination_block__content__claim__text">Inesauribile<br/>come te</h1>
@@ -61,6 +61,9 @@
 </body>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1){
+        $("body").addClass("mac");
+    }
     var dominationBlock = $('.veon__domination_block');
     var closeBtn = $('.veon__domination_block__close_button');
     closeBtn.click(function() {
