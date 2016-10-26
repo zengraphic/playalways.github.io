@@ -1,4 +1,4 @@
-.header {
+.landing_header {
     width: 100%;
     height: auto;
     position: fixed;
@@ -68,7 +68,10 @@
             .column_rightv4 {
                 float: right;
                 position: relative;
-                right: 0;
+                left: 5%;
+                 @include breakpoint (small) {
+                    left: 0;
+                }
             }
         }
         @at-root #{&}__container {}
@@ -92,7 +95,7 @@
             &--imageContainer {
                 position: absolute;
                 width: 100%;
-                left: -35%;
+                right: 24%;
                 @include breakpoint(small) {
                     display: none;
                 }
@@ -109,7 +112,7 @@
                     width: 100%;
                     height: 385px;
                     top: 41px;
-                    left: 16px;
+                    left: 4%;
                     @include breakpoint(small) {
                         display: none;
                     }
@@ -157,7 +160,7 @@
             height: 100%;
             position: absolute;
             @include transform(skew(-20deg));
-            left: 58%;
+            left: 59%;
             @include breakpoint(small) {
                 display: none;
             }
@@ -200,6 +203,14 @@
             -webkit-transition: all 0.45s ease-in-out;
             max-width: 1024px;
             margin: 0 auto;
+        }
+        &__containerv4 {
+            -o-transition: all 0.45s ease-in-out;
+            -moz-transition: all 0.45s ease-in-out;
+            -ms-transition: all 0.45s ease-in-out;
+            -webkit-transition: all 0.45s ease-in-out;
+            max-width: 1024px;
+            margin: 40px auto 47px;
         }
         @at-root #{&}__tabs {
             width: 100%;
@@ -359,7 +370,7 @@
         .container_mid_row {
             padding-top: 35px;
             .column_left {
-                margin-left: 103px;
+                margin-left: 22%;
                 text-align: center;
                 float: left;
                 min-height: 200px;
@@ -415,7 +426,7 @@
                 }
                 &__ribbonSale {
                     margin: 25px auto 0;
-                    padding: 10px 0 2px;
+                    padding: 7px 0 5px;
                     color: white;
                     font-family: $weight-bold;
                     font-size: 1.375em;
@@ -466,10 +477,10 @@
             &--imageContainer {
                 position: absolute;
                 width: 100%;
-                right: 5%;
+                right: 3%;
                 &--left {
                     position: absolute;
-                    top: 34px;
+                    top: 35px;
                     width: 100%;
                     left: 4%;
                     @include breakpoint(small) {
@@ -491,19 +502,6 @@
             width: 100%;
             max-width: 1024px;
             margin: 54px auto;
-            padding: 0 30px;
-            @include breakpoint(small) {
-                padding: 0 15px;
-            }
-            -o-transition: all 0.45s ease-in-out;
-            -moz-transition: all 0.45s ease-in-out;
-            -ms-transition: all 0.45s ease-in-out;
-            -webkit-transition: all 0.45s ease-in-out;
-        }
-        &_containerv3 {
-            width: 100%;
-            max-width: 1024px;
-            margin: 32px auto;
             padding: 0 30px;
             @include breakpoint(small) {
                 padding: 0 15px;
@@ -584,20 +582,7 @@
         .container {
             width: 100%;
             max-width: 1024px;
-            margin: 57px auto;
-            padding: 0 30px;
-            @include breakpoint(small) {
-                padding: 0 15px;
-            }
-            -o-transition: all 0.45s ease-in-out;
-            -moz-transition: all 0.45s ease-in-out;
-            -ms-transition: all 0.45s ease-in-out;
-            -webkit-transition: all 0.45s ease-in-out;
-        }
-        .containerv3 {
-            width: 100%;
-            max-width: 1024px;
-            margin: 80px auto 10px;
+            margin: 57px auto 52px;
             padding: 0 30px;
             @include breakpoint(small) {
                 padding: 0 15px;
@@ -626,16 +611,16 @@
         }
         &--icons {
             position: relative;
-            margin: 43px auto 0;
+            margin: 40px auto 0;
             width: 100%;
             &_first_row,
-            &_second_row{
-                width:50%;
+            &_second_row {
+                width: 50%;
                 float: left;
-            //     @include breakpoint(small) {
-            //     width: 100%;
-            //     margin-top:15px;
-            // }
+                //     @include breakpoint(small) {
+                //     width: 100%;
+                //     margin-top:15px;
+                // }
             }
             &--right {
                 float: right;
@@ -660,7 +645,6 @@
                 @include breakpoint(small) {
                     float: right;
                     margin-right: 2em;
-                    
                     margin-top: 15px;
                 }
             }
@@ -686,7 +670,6 @@
                 float: left;
                 @include breakpoint(small) {
                     margin-left: 2em;
-
                     margin-top: 15px;
                 }
             }
@@ -742,12 +725,12 @@
                 font-family: $weight-bold;
                 font-size: 1em;
                 margin-bottom: 20px;
-                margin-top: 36px;
+                margin-top: 32px;
             }
             &--Subtitle {
                 font-family: $weight-light;
                 font-size: 0.87em;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
                 height: 60px;
             }
         }
@@ -782,7 +765,7 @@
         .title {
             font-family: $weight-light;
             font-size: 1.875em;
-            padding: 6px 0 19px 27px;
+            padding: 0px 0 19px 27px;
         }
     }
     &__footer {
@@ -794,5 +777,75 @@
         text-align: center;
         font-size: 0.85rem;
         font-family: $weight-light;
+    }
+}
+
+@media all and(min-width: 901px) and (max-width: 1000px) {
+    .landing_privati {
+        &__visore {
+            &__half_block {
+                width: calc(50% - 50px);
+                &--imageContainer {
+                    right: 32%;
+                }
+                 &--imageContainer--leftv4 {
+                    top: 86px;
+                    left: -15%;
+                }
+            }
+        }
+        &__banner {
+            &__half_block {
+                width: calc(50% - 50px);
+                .container_mid_row {
+                    .column_right {
+                        right: 0;
+                    }
+                }
+                &--imageContainer {
+                    left: 10%;
+                    &--left {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and(min-width: 768px) and (max-width: 900px) {
+    .landing_privati {
+        &__visore {
+            &__half_block {
+                width: calc(50% - 50px);
+                .container_mid_row {
+                    
+                }
+                &--imageContainer {
+                    right: 32%;
+                }
+                &--imageContainer--leftv4 {
+                    top: 86px;
+                    left: -30%;
+                }
+            }
+        }
+        &__banner {
+            &__half_block {
+                width: calc(50% - 50px);
+                .container_mid_row {
+                    .column_right {
+                        right: 0;
+                    }
+                    
+                }
+                &--imageContainer {
+                    left: 10%;
+                    &--left {
+                        left: -40%;
+                    }
+                }
+            }
+        }
     }
 }

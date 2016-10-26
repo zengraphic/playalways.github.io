@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta name=”ad.size” content=”width=300,height=250”>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body style="margin: 0; background-color: transparent;">
+    <div class="container_background_stripes">
+        <div class="colored_bg first_layer colored_bg--blue"></div>
+        <div class="colored_bg second_layer colored_bg--grey"></div>
+        <div class="colored_bg third_layer colored_bg--orange"></div>
+    </div>
+    <div class="container_banner">
+        <div class="subcontainer_banner">
+            <div class="floating_image">
+                <img src="img/image_floating.png" />
+            </div>
+            <div class="margin_left_15 col-xs-4">
+                <div class="text_size_25 text_uppercase text_color_white position_absolute text_on_bg position_top_20 line_height_25 weight_bold">
+                    solo
+                    <br> online
+                    <div class="margin_top_10 line_height_18 text_size_14 text_uppercase text_color_white weight_bold">
+                        entro il
+                        <br> 04/10
+                    </div>
+                </div>
+            </div>
+            <div class="margin_right_15 col-xs-8">
+                <div class="container_right float_right text_align_right text_align_right">
+                    <div class="text_uppercase margin_top_15 text_color_blue weight_bold text_size_18 line_height_18">
+                        adsl vera
+                        <br>chiamate illimitate
+                    </div>
+                    <div class="container_price float_right height_65 margin_top_neg5">
+                        <div class="price_big float_left margin_top_5 text_color_blue weight_bold">
+                            24
+                        </div>
+                        <div class="price_small float_left margin_top_15 text_color_blue weight_bold text_size_20">
+                            ,95&euro;
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="text_size_16 text_uppercase text_color_blue weight_light">
+                        prezzo fisso
+                    </div>
+                    <div class="text_size_16 text_uppercase text_color_orange margin_top_5 weight_bold line_height_18">
+                        attivazione
+                        <br>e modem inclusi
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+jQuery(document).ready(function($) {
+
+    var loop = 0;
+
+    window.setInterval(function() {
+        if (loop == 0) {
+            checkFocusBanner();
+            loop = 1;
+        }
+    }, 5000);
+    
+    var animateTimer = 500;
+    var LongTimer = 1000;
+
+
+    function checkFocusBanner() {
+        $(".logo_full").delay(animateTimer).animate({
+            left: "-100%",
+        }, animateTimer);
+        $('.logo_full').css({
+            'background-color': 'rgba(255, 255, 255, 1.0)'
+        })
+        $(".logo_full .image_logo").delay(animateTimer).animate({
+            width: "90px"
+        }, animateTimer);
+        $(".floating_image").animate({
+            left: "-300px"
+        }, animateTimer);
+        $(".container_right").animate({
+            left: "0px",
+            opacity: 0
+        }, animateTimer);
+        $(".container_background_stripes").animate({
+            left: "95%"
+        }, LongTimer);
+        $(".subcontainer_banner").delay(animateTimer).animate({
+            left: "-300px"
+        }, animateTimer);
+    }
+});
+</script>
+
+</html>

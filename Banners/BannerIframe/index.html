@@ -25,6 +25,9 @@
             <a href="javascript:window.open(window.clickTag1)">
                 <div class="container_banner">
                     <div class="subcontainer_banner">
+                        <div class="floating_image">
+                            <img src="img/image_floating.png" />
+                        </div>
                         <div class="col-xs-4">
                             <div class="text_size_25 text_uppercase text_color_white position_absolute text_on_bg position_top_20 line_height_25 weight_bold">
                                 solo
@@ -34,9 +37,6 @@
                                     <br> 04/10
                                 </div>
                             </div>
-                        </div>
-                        <div class="floating_image">
-                            <img src="img/image_floating.png" />
                         </div>
                         <div class="col-xs-8">
                             <div class="container_right float_right text_align_right text_align_right">
@@ -68,194 +68,54 @@
             </a>
             <!-- ====================== FORM ====================== -->
             <div class="container_form text_align_center" id="idForm">
-                <iframe width="300" height="250" style="border:none; position:relative; z-index: 999;" ; src="http://127.0.0.1:8887/BannerIframe/bannerCopertura.html">Il tuo browser non supporta gli iFrame</iframe>
+                <iframe width="300" height="250" style="border:none; position:relative; z-index: 999;" src="bannerCopertura.html">Il tuo browser non supporta gli iFrame</iframe>
             </div>
         </div>
         <div class="container_image text_align_center logo_full">
             <img class="margin_top_5 image_logo" src="img/logo_infostrada.png" />
         </div>
     </div>
+
 </body>
 <script>
 jQuery(document).ready(function($) {
 
-    $('.container_form').on({
-        mouseover: function() {
-            $('.container_form').addClass('form_focused');
-            console.log('entra');
-        },
-
-        mouseleave: function() {
-            $('.container_form').removeClass('form_focused');
-            console.log('esci');
-        }
-
-    });
-
-    $('.input_container').on({
-        mouseleave: function() {
-            $('.container_form').addClass('form_focused');
-            console.log('esci');
-        }
-    })
-
+    var loop = 0;
 
     window.setInterval(function() {
-        checkFocusBanner();
+        if (loop == 0) {
+            checkFocusBanner();
+            loop = 1;
+        }
     }, 5000);
-
-
-
-    function checkField(inputName) {
-        if ($('.input_banner[name=' + inputName + ']').val() == "") {
-            $('.input_banner[name=' + inputName + ']').addClass('error_notification');
-        } else {
-            $('.input_banner[name=' + inputName + ']').removeClass('error_notification');
-        }
-    }
-
-    $("#provincia").on({
-        "change": function() {
-            $(this).blur();
-        },
-        'focus': function() {
-            $('.container_form').addClass('select_fix');
-        },
-        "blur": function() {
-            $('.container_form').removeClass('select_fix');
-        },
-        "keyup": function(e) {
-            if (e.keyCode == 27) {
-                $('.container_form').addClass('select_fix');
-            }
-
-        }
-    });
-
-
-
-    function printField() {
-        var provincia = $('.filter-option.pull-left').text();
-        var comune = $('.input_banner[name="comune"]').val();
-        var indirizzo = $('.input_banner[name="indirizzoEsteso"]').val();
-        var numero = $('.input_banner[name="civico"]').val();
-        var prefisso = $('.input_banner[name="pref"]').val();
-        var numeroTelefono = $('.input_banner[name="tel"]').val();
-        alert('Valido-> Provincia:' + provincia + " Comune: " + comune + " Indirizzo " + indirizzo + " numero " + numero + " Telefono: " + prefisso + " " + numeroTelefono);
-        $('#verificacopertura').submit();
-    }
-
-    $('.number_present').click(function() {
-        $('.hidden_input_overlay').slideDown();
-        $('.hidden_input_overlay').addClass('checkTelephone');
-    });
-
-    $('.button_close').click(function() {
-        $('.hidden_input_overlay').slideUp();
-        $('.hidden_input_overlay').removeClass('checkTelephone');
-        $('.input_banner[name="tel"]').removeClass('error_notification');
-    });
-
-    $('.container_form .check_availability').click(function() {
-        checkField('indirizzoEsteso');
-        checkField('comune');
-        checkField('civico');
-        if ($('.hidden_input_overlay').hasClass('checkTelephone')) {
-            // controlla se il numero è inserito altrimenti apre la notifica errore.
-            checkField('pref');
-            checkField('tel');
-        }
-        if ($('.error_notification').length > 0) {
-            alert('controlla gli errori');
-        } else {
-            printField();
-        }
-    });
-
-
-
+    
     var animateTimer = 500;
     var LongTimer = 1000;
 
-    // function msieversion() {
-    //     var ua = window.navigator.userAgent
-    //     var msie = ua.indexOf("MSIE ")
-
-    //     if (msie > 0) // If Internet Explorer, return version number
-    //         return parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)))
-    //     else // If another browser, return 0
-    //         return 0
-
-    // }
-
-
-    // function checkIE() {
-    //     if (msieversion() != 0) {
-    //         if ($("#provincia").is(":focus" || ":keyup")) {
-    //             return false;
-    //         } else {
-    //             return true;
-    //         }
-    //     } else {
-    //         return true;
-    //     }
-    // }
 
     function checkFocusBanner() {
-        /*console.log("focus banner:(0)" + $('.input_banner:focus').length + " classe focus:(0) " + $('.container_form').hasClass('form_focused') + " comune:(Comune) " + $('.input_banner[name=comune]').val() + " indirizzo:(Indirizzo) " + $('.input_banner[name=indirizzoEsteso]').val() + " civico:(n) " + $('.input_banner[name=civico]').val() + " box aperto:(0) " + $('.hidden_input_overlay').hasClass('checkTelephone') + " errore(0) : " + $('.error_notification').length + " IE fix:(0) " + $('.container_form').hasClass('select_fix'));*/
-        if ($('.subcontainer_banner').css('left') == '-300px') {
-            if (
-                ($('.input_banner:focus').length == 0) &&
-                (!$('.container_form').hasClass('form_focused')) &&
-                ($('.input_banner[name=comune]').val() == "" || $('.input_banner[name=comune]').val() == "Comune") &&
-                ($('.input_banner[name=indirizzoEsteso]').val() == "" || $('.input_banner[name=indirizzoEsteso]').val() == "") &&
-                ($('.input_banner[name=civico]').val() == "") &&
-                (!$('.hidden_input_overlay').hasClass('checkTelephone')) &&
-                ($('.error_notification').length == 0) &&
-                (!$('.container_form').hasClass('select_fix')) // && checkIE()
-            ) {
-
-
-                //il form fix io deve diventare un checkIie()== false/true
-                //&& checkIE() == false 
-                //checkIE -> checca se siamo su ie, se non siamo su ie automaticamente ritorna per farlo funzionare
-                //se siamo su ie, aggiunti il check sopra , se 
-
-                $(".logo_full").animate({
-                    left: "-75%"
-                }, animateTimer);
-                $(".logo_full .image_logo").animate({
-                    width: "130px"
-                }, animateTimer);
-                $(".container_right").animate({
-                    left: "-300px"
-                }, animateTimer);
-                $(".container_background_stripes").animate({
-                    left: "0%"
-                }, LongTimer);
-                $(".subcontainer_banner").animate({
-                    left: "0px"
-                }, animateTimer);
-
-            }
-        } else {
-            $(".logo_full").delay(animateTimer).animate({
-                left: "-100%"
-            }, animateTimer);
-            $(".logo_full .image_logo").delay(animateTimer).animate({
-                width: "90px"
-            }, animateTimer);
-            $(".container_right").animate({
-                left: "0px"
-            }, animateTimer);
-            $(".container_background_stripes").animate({
-                left: "95%"
-            }, LongTimer);
-            $(".subcontainer_banner").delay(animateTimer).animate({
-                left: "-300px"
-            }, animateTimer);
-
-        }
+        $(".logo_full").delay(animateTimer).animate({
+            left: "-100%",
+        }, animateTimer);
+        $('.logo_full').css({
+            'background-color': 'rgba(255, 255, 255, 1.0)'
+        })
+        $(".logo_full .image_logo").delay(animateTimer).animate({
+            width: "90px"
+        }, animateTimer);
+        $(".floating_image").animate({
+            left: "-300px"
+        }, animateTimer);
+        $(".container_right").animate({
+            left: "0px",
+            opacity: 0
+        }, animateTimer);
+        $(".container_background_stripes").animate({
+            left: "95%"
+        }, LongTimer);
+        $(".subcontainer_banner").delay(animateTimer).animate({
+            left: "-300px"
+        }, animateTimer);
     }
 });
 </script>
