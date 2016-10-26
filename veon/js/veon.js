@@ -1,5 +1,14 @@
 jQuery(document).ready(function($) {
     // Returns true if the specified element has been scrolled into the viewport.
+
+    function acceptCookies(cookieValue) {
+        if (cookieValue != 'enabled' && cookieValue != 'accepted') {
+            console.log('ACCETTATI');
+        } else {
+            console.log('malasorr');
+        }
+    }
+
     function fixFontIOS() {
         is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
         is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
@@ -209,4 +218,29 @@ jQuery(document).ready(function($) {
     //=================== EASTER EGG ===================//
     fixFontIOS();
     initSliders();
+
+    $.cookieBar({
+        fixed: true,
+        policyButton: true,
+        acceptOnScroll: 200,
+        autoEnable: false
+    });
+    if ($.cookieBar('cookies')) {
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-77869231-2', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+
+    }
 });

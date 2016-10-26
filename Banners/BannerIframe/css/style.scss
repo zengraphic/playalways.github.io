@@ -20,6 +20,21 @@
     src: local('Gotham XNarrow Book'), local('Gotham-XNarrow-Book'), url(../font/ufonts.com_gothamxnarrow-book-opentype.woff) format('woff');
 }
 
+
+/* ==================== VARIABILI =====================  */
+
+$gotham-medium: 'GothamXNarrow Medium';
+$gotham-bold: 'GothamXNarrow Bold';
+$gotham-light: 'GothamXNarrow Light';
+$wind-blue: #2d4b9b;
+$wind-gray: #87888a;
+$wind-orange: #ff6a00;
+$title-big: 3.750em; //60px
+$text-standard: 0.875em; //14px
+$text-medium: 2.500em; // 40 in base 16
+
+/* ==================== MIXIN =====================  */
+
 $breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 600px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( min-width: 1200px), 'custom': ( min-height: 40em), 'min-small':( min-width: 767px), 'min-desktop':( max-width: 1024px), 'med-large':( max-width: 992px));
 // Creating the mixin
 @mixin breakpoint($name) {
@@ -33,40 +48,6 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 600px), 
     }
 }
 
-$gotham-medium: 'GothamXNarrow Medium';
-$gotham-bold: 'GothamXNarrow Bold';
-$gotham-light: 'GothamXNarrow Light';
-$gothic-bold: 'Trade Gothic Bold';
-$gothic-light: 'Trade Gothic Light';
-$wind-blue: #2d4b9b;
-$wind-gray: #87888a;
-$wind-orange: #ff6a00;
-$weight-light: 'Trade Gothic Light';
-$weight-normal: 'Trade Gothic';
-$weight-bold: 'Trade Gothic Bold';
-$weight-boldCond: 'Trade Gothic Bold Cond';
-$title-big: 3.750em; //60px
-$text-standard: 0.875em; //14px
-$text-medium: 2.500em; // 40 in base 16
-$color-lighterGrey: #f4f4f4; // new color
-$color-lightGrey: #e6e9ed;
-$color-mediumGrey: #d3d3d2;
-$color-darkGrey: #4a4a4a; // Placeholder
-$color-darkerGrey: #292f36; // Standard Text
-$color-darkestGrey: #212121; // Home and Life
-$color-lightBlue: #009bbe; // Mobile
-$color-mediumBlue: #0069b3; // Infostrada
-$color-orange: #f48135; // Wind
-$color-white: #ffffff;
-$color-black: #000000;
-$color-lightGray: $color-lightGrey;
-$color-gray-mediumBg: $color-mediumGrey;
-$medium-gray: $color-mediumGrey;
-$color-placeholder: $color-darkGrey;
-$color-standardText: $color-darkerGrey;
-$color-HomeLifeBackground: $color-darkestGrey;
-$color-HomeLife-Background: $color-darkestGrey;
-$color-blue: $color-mediumBlue;
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
@@ -528,6 +509,7 @@ div {
         height: 27px;
         box-sizing: border-box;
         font-family: $gotham-light;
+        font-size: 14px;
         @include placeholder {
             color: $wind-gray;
         }
@@ -601,15 +583,15 @@ div {
     z-index: 810;
     left: -75%;
     background-color: rgba(255, 255, 255, 0);
-    -webkit-transition:background-color 0.5s;
-    -moz-transition:background-color 0.5s;
-    transition:background-color 0.5s;  
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    transition: background-color 0.5s;
     .image_logo {
         width: 130px;
     }
 }
 
-.margin_hidden{
+.margin_hidden {
     height: 10px;
     width: 100%;
     display: none;
@@ -673,14 +655,21 @@ div {
 .select_banner_container select {
     height: 28px;
     width: 220px;
-    font-family: "GothamXNarrow Light";
-    color: #666;    
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     outline: 0;
-    border: 1px solid #ccd1d9;
+    border: 0;
+    color: #87888a;
+    font-size: 14px;
+    font-family: "GothamXNarrow Light";
+    padding-left: 10px;
+    padding-top: 2px;
     background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../img/arrow_bottom_orange.png) no-repeat 96% 57% #ffffff;
 }
 
 .autosuggest {
@@ -716,4 +705,3 @@ div {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
-
