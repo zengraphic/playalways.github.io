@@ -121,20 +121,6 @@ $color-yellow: #ffcc00;
     float: right;
 }
 
-.only_mobile {
-    display: none;
-    @include breakpoint(small) {
-        display: block;
-    }
-}
-
-.only_desktop {
-    display: block;
-    @include breakpoint(small) {
-        display: none;
-    }
-}
-
 .clear-fix:after,
 .clear {
     content: ".";
@@ -296,8 +282,23 @@ h6 {
         }
     }
 }
+.button_container{
+    text-align: center;
+}
 
 .button_cta {
+    &.only_mobile {
+        display: none;
+        @include breakpoint(small) {
+            display: inline-block;
+        }
+    }
+    &.only_desktop {
+            display: inline-block;
+        @include breakpoint(small) {
+            display: none;
+        }
+    }
     img {
         @include breakpoint(largest) {
             //1440
@@ -424,8 +425,10 @@ body {
                 //768
                 margin: 30px 0;
                 padding-left: 15px;
+                text-align: center;
             }
             .button_cta {
+                display: inline-block;
                 margin-top: 35px;
             }
             h6 {
@@ -459,8 +462,10 @@ body {
                 //768
                 margin: 30px 0;
                 padding-left: 15px;
+                text-align: center;                
             }
             .button_cta {
+                display: inline-block;                
                 margin-top: 35px;
             }
             h1 {
@@ -589,7 +594,7 @@ body {
                     margin-top: 115vw;
                     a {
                         img.buttonFooter {
-                            width: 35vw;
+                            width: 25vw;
                         }
                     }
                 }
@@ -863,6 +868,10 @@ footer {
     ::selection {
         color: #fff;
     }
+}
+
+.appstore_button{
+    margin-left: 15px;
 }
 
 //============================================================//
