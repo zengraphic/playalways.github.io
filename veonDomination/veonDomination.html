@@ -12,6 +12,7 @@
     <title></title>
     <link rel="stylesheet" href="css/veonDomination.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/lazysizes.min.js" async=""></script>
 </head>
 
 <body>
@@ -21,15 +22,15 @@
         <div class="veon__domination_block__overlay">
         </div>
         <div class="veon__domination_block__background">
-            <img class="background_image" src="img/bg.png" alt="">
+            <img data-srcset="img/BG.png 1x, img/BG@2x.png 2x" class="lazyload background_image" />
             <div class="veon__domination_block__content__app_buttons">
                 <div class="veon__domination_block__content__app_buttons__container">
                     <div class="app__apple_store">
-                        <img class="app_btn btn--apple_store" src="img/AppleStore.png" alt="">
+                        <img data-srcset="img/AppleStore.png 1x, img/AppleStore@2x.png 2x" class="lazyload app_btn btn--apple_store" />
                     </div>
                     <div class="spacer"></div>
                     <div class="app__play_store">
-                        <img class="app_btn btn--play_store" src="img/PlayStore.png" alt="">
+                        <img data-srcset="img/PlayStore.png 1x, img/PlayStore@2x.png 2x" class="lazyload app_btn btn--apple_store" />
                     </div>
                     <div class="clear clear-fix"></div>
                 </div>
@@ -43,7 +44,7 @@
                 </div>
             </div>
             <div class="veon__domination_block__content__logo">
-                <img class="logo_image" src="img/LogoVeon.png" alt="">
+                <img data-srcset="img/LogoVeon.png 1x, img/LogoVeon@2x.png 2x" class="lazyload logo_image" />
             </div>
             <div class="veon__domination_block__content__claim">
                 <h1 class="veon__domination_block__content__claim__text">Inesauribile<br/>come te</h1>
@@ -60,6 +61,9 @@
 </body>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1){
+        $("body").addClass("mac");
+    }
     var dominationBlock = $('.veon__domination_block');
     var closeBtn = $('.veon__domination_block__close_button');
     closeBtn.click(function() {

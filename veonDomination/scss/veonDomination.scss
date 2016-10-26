@@ -1,22 +1,22 @@
 /////////////////// Fonts
 @font-face {
     font-family: 'TP Hero Light';
-    src: url('../fonts/TPHero-Light.woff') format('woff');
-    src: url('../fonts/TPHero-Light.otf') format('opentype');
+    src: url('../fonts/TPHero-Light.woff') format('woff'),
+    url('../fonts/TPHero-Light.otf') format('opentype');
     font-weight: light;
 }
 
 @font-face {
     font-family: 'TP Hero Thin';
-    src: url('../fonts/TPHero-Thin.woff') format('woff');
-    src: url('../fonts/TPHero-Thin.otf') format('opentype');
+    src: url('../fonts/TPHero-Thin.woff') format('woff'),
+    url('../fonts/TPHero-Thin.otf') format('opentype');
     font-weight: thin;
 }
 
 @font-face {
     font-family: 'TP Hero Hairline';
-    src: url('../fonts/TPHero-Hairline.woff') format('woff');
-    src: url('../fonts/TPHero-Hairline.otf') format('opentype');
+    src: url('../fonts/TPHero-Hairline.woff') format('woff'),
+    url('../fonts/TPHero-Hairline.otf') format('opentype');
     font-weight: hairline;
 }
 
@@ -63,7 +63,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-size: 16px;
+    font-size: 2vh;
     font-weight: lighter;
 }
 
@@ -90,10 +90,12 @@ h6 {
 
 .veon {
     &__domination_block {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
+        overflow: hidden;
         img {
             display: block;
             margin: 0 auto;
@@ -110,11 +112,27 @@ h6 {
         }
         &__background {
             z-index: 9900;
-            position: absolute;
-            width: 100%;
+            position: relative;
+            width: auto;
+            height: 100vh;
+            overflow: hidden;
             .background_image {
+                position: absolute;
+                top: -9999px;
+                bottom: -9999px;
+                left: -9999px;
+                right: -9999px;
+                margin: auto;
                 height: auto;
-                @include breakpoint('x-large') {
+                width: auto;
+                max-height: 100vh;
+                max-width: none;
+                @include breakpoint('super-tiny') {
+                    height: 120vh;
+                    max-width: none;
+                    max-height: none;
+                }
+                /* @include breakpoint('x-large') {
                     width: 1180px;
                 }
                 @include breakpoint('large') {
@@ -126,37 +144,52 @@ h6 {
                 @include breakpoint('small') {
                     width: 780px;
                 }
-                @include breakpoint('tiny') {
-                    position: relative;
-                    width: 1200px;
-                    left: calc((100% - 1200px) / 2);
-                }
+               
                 @include breakpoint('super-tiny') {
                     position: relative;
                     width: 1024px;
                     left: calc((100% - 1024px) / 2);
-                }
+                } */
             }
         }
         &__content {
-            position: relative;
+            position: absolute;
+            top: 0;
             z-index: 9990;
+            height: 100vh;
+            width: 100vw;
             &__logo {
                 width: 100%;
+                position: absolute;
+                top: 2%;
                 .logo_image {
-                    width: 150px;
-                    height: auto;
-                    margin-top: 50px;
+                    height: 20vh;
+                    width: auto;
                 }
             }
             &__claim {
+                position: absolute;
+                width: 100%;
+                top: 28vh;
+                
                 &__text {
                     text-align: center;
                     margin: 0 auto;
                     max-width: 90%;
                     font-family: $weight-hairline;
                     text-transform: uppercase;
-                    @include breakpoint('x-large') {
+                    font-size: 5.6rem;
+                    line-height: 5.8rem;
+                    letter-spacing: -0.3rem;
+                    @include breakpoint('small') {
+                        font-size: 4.6rem;
+                        line-height: 4.8rem;
+                    }
+                    @include breakpoint('super-tiny') {
+                        font-size: 4.2rem;
+                        line-height: 4.5rem;
+                    }
+                    /* @include breakpoint('x-large') {
                         font-size: 8.2rem;
                         line-height: 8.1rem;
                         margin-top: 4rem;
@@ -185,17 +218,23 @@ h6 {
                         font-size: 3.2rem;
                         line-height: 4.1rem;
                         margin-top: 6.7rem;
-                    }
+                    } */
                 }
             }
             &__phone_text {
+                position: absolute;
+                width: 100%;
+                top: 58vh;
+                @include breakpoint('super-tiny') {
+                    top: 60vh;
+                }
                 &__claim {
                     font-family: $weight-thin;
                     text-align: center;
-                    font-size: 1.2rem;
-                    line-height: 1.5rem;
-                    margin-top: 12rem;
-                    @include breakpoint('large') {
+                    font-size: 1rem;
+                    line-height: 1.2rem;
+                   
+                    /* @include breakpoint('large') {
                         margin-top: 6.5rem;
                     }
                     @include breakpoint('medium') {
@@ -217,30 +256,33 @@ h6 {
                         margin-top: 10rem;
                         font-size: 1.2rem;
                         line-height: 1.5rem;
-                    }
+                    } */
                 }
             }
             &__app_buttons {
                 position: absolute;
                 width: 100%;
                 margin: 0 auto;
-                top: 90%;
+                bottom: 0;
                 text-align: center;
-                @include breakpoint('tiny') {
-                    top: 100%;
-                }
                 &__container {
                     width: 100%;
                     margin: 0 auto;
                     .app_btn {
                         width: 130px;
                         height: auto;
+                        margin-bottom: 5vh;
+
                     }
                 }
                 .spacer {
-                    width: 250px;
+                    width: 35vw;
+                    max-width: 250px;
                     display: inline-block;
-                    @include breakpoint('x-large') {
+                    @include breakpoint('super-tiny') {
+                        width: 5vw;
+                    }
+                    /* @include breakpoint('x-large') {
                         width: 300px;
                     }
                     @include breakpoint('medium') {
@@ -249,22 +291,24 @@ h6 {
                     @include breakpoint('small') {
                         width: 210px;
                     }
-                    @include breakpoint('tiny') {
-                        width: 50px;
-                    }
+                    
                     @include breakpoint('super-tiny') {
                         width: 16px;
-                    }
+                    } */
                 }
                 .app {
                     &__apple_store {
                         width: auto;
                         display: inline-block;
+                        @include breakpoint('super-tiny') {
+                        }
                         .btn--apple_store {}
                     }
                     &__play_store {
                         width: auto;
                         display: inline-block;
+                        @include breakpoint('super-tiny') {
+                        }
                         .btn--play_store {}
                     }
                 }
@@ -272,9 +316,11 @@ h6 {
         }
         &__close_button {
             position: absolute;
-            right: 4.5%;
+            right: 4%;
+            top: 2%;
+            z-index: 9999;
             @include breakpoint(small) {
-                right: 9%;
+                right: 4%;
             }
             .close_btn {
                 &__text,
@@ -296,6 +342,14 @@ h6 {
                     }
                 }
             }
+        }
+    }
+}
+
+.mac {
+    .veon__domination_block__content__app_buttons__container {
+        .app_btn{
+            margin-bottom: 15vh;
         }
     }
 }

@@ -1,19 +1,16 @@
 @font-face {
   font-family: 'TP Hero Light';
-  src: url("../fonts/TPHero-Light.woff") format("woff");
-  src: url("../fonts/TPHero-Light.otf") format("opentype");
+  src: url("../fonts/TPHero-Light.woff") format("woff"), url("../fonts/TPHero-Light.otf") format("opentype");
   font-weight: light; }
 
 @font-face {
   font-family: 'TP Hero Thin';
-  src: url("../fonts/TPHero-Thin.woff") format("woff");
-  src: url("../fonts/TPHero-Thin.otf") format("opentype");
+  src: url("../fonts/TPHero-Thin.woff") format("woff"), url("../fonts/TPHero-Thin.otf") format("opentype");
   font-weight: thin; }
 
 @font-face {
   font-family: 'TP Hero Hairline';
-  src: url("../fonts/TPHero-Hairline.woff") format("woff");
-  src: url("../fonts/TPHero-Hairline.otf") format("opentype");
+  src: url("../fonts/TPHero-Hairline.woff") format("woff"), url("../fonts/TPHero-Hairline.otf") format("opentype");
   font-weight: hairline; }
 
 html,
@@ -27,7 +24,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-size: 16px;
+  font-size: 2vh;
   font-weight: lighter; }
 
 .clear-fix:after,
@@ -49,10 +46,12 @@ h6 {
   background-color: white; }
 
 .veon__domination_block {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
   .veon__domination_block img {
     display: block;
     margin: 0 auto; }
@@ -68,139 +67,176 @@ h6 {
     z-index: 9000; }
   .veon__domination_block__background {
     z-index: 9900;
-    position: absolute;
-    width: 100%; }
-    .veon__domination_block__background .background_image {
-      height: auto; }
-      @media (min-width: 1200px) {
-        .veon__domination_block__background .background_image {
-          width: 1180px; } }
-      @media (max-width: 1199px) {
-        .veon__domination_block__background .background_image {
-          width: 1024px; } }
-      @media (max-width: 1024px) {
-        .veon__domination_block__background .background_image {
-          width: 900px; } }
-      @media (max-width: 998px) {
-        .veon__domination_block__background .background_image {
-          width: 780px; } }
-      @media (max-width: 768px) {
-        .veon__domination_block__background .background_image {
-          position: relative;
-          width: 1200px;
-          left: calc((100% - 1200px) / 2); } }
-      @media (max-width: 480px) {
-        .veon__domination_block__background .background_image {
-          position: relative;
-          width: 1024px;
-          left: calc((100% - 1024px) / 2); } }
-  .veon__domination_block__content {
     position: relative;
-    z-index: 9990; }
+    width: auto;
+    height: 100vh;
+    overflow: hidden; }
+    .veon__domination_block__background .background_image {
+      position: absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+      height: auto;
+      width: auto;
+      max-height: 100vh;
+      max-width: none;
+      /* @include breakpoint('x-large') {
+                    width: 1180px;
+                }
+                @include breakpoint('large') {
+                    width: 1024px;
+                }
+                @include breakpoint('medium') {
+                    width: 900px;
+                }
+                @include breakpoint('small') {
+                    width: 780px;
+                }
+               
+                @include breakpoint('super-tiny') {
+                    position: relative;
+                    width: 1024px;
+                    left: calc((100% - 1024px) / 2);
+                } */ }
+      @media (max-width: 480px) {
+        .veon__domination_block__background .background_image {
+          height: 120vh;
+          max-width: none;
+          max-height: none; } }
+  .veon__domination_block__content {
+    position: absolute;
+    top: 0;
+    z-index: 9990;
+    height: 100vh;
+    width: 100vw; }
     .veon__domination_block__content__logo {
-      width: 100%; }
+      width: 100%;
+      position: absolute;
+      top: 2%; }
       .veon__domination_block__content__logo .logo_image {
-        width: 150px;
-        height: auto;
-        margin-top: 50px; }
-    .veon__domination_block__content__claim__text {
-      text-align: center;
-      margin: 0 auto;
-      max-width: 90%;
-      font-family: "TP Hero Hairline";
-      text-transform: uppercase; }
-      @media (min-width: 1200px) {
-        .veon__domination_block__content__claim__text {
-          font-size: 8.2rem;
-          line-height: 8.1rem;
-          margin-top: 4rem;
-          letter-spacing: -0.4rem; } }
-      @media (max-width: 1199px) {
-        .veon__domination_block__content__claim__text {
-          font-size: 7.6rem;
-          line-height: 7.8rem;
-          margin-top: 3rem;
-          letter-spacing: -0.3rem; } }
-      @media (max-width: 1024px) {
-        .veon__domination_block__content__claim__text {
-          font-size: 5rem;
-          line-height: 5.8rem; } }
-      @media (max-width: 998px) {
-        .veon__domination_block__content__claim__text {
-          margin-top: 1rem;
-          line-height: 5.2rem; } }
-      @media (max-width: 768px) {
-        .veon__domination_block__content__claim__text {
-          font-size: 5rem;
-          line-height: 7rem;
-          margin-top: 6rem; } }
+        height: 20vh;
+        width: auto; }
+    .veon__domination_block__content__claim {
+      position: absolute;
+      width: 100%;
+      top: 28vh; }
+      .veon__domination_block__content__claim__text {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 90%;
+        font-family: "TP Hero Hairline";
+        text-transform: uppercase;
+        font-size: 5.6rem;
+        line-height: 5.8rem;
+        letter-spacing: -0.3rem;
+        /* @include breakpoint('x-large') {
+                        font-size: 8.2rem;
+                        line-height: 8.1rem;
+                        margin-top: 4rem;
+                        letter-spacing: -0.4rem;
+                    }
+                    @include breakpoint('large') {
+                        font-size: 7.6rem;
+                        line-height: 7.8rem;
+                        margin-top: 3rem;
+                        letter-spacing: -0.3rem;
+                    }
+                    @include breakpoint('medium') {
+                        font-size: 5rem;
+                        line-height: 5.8rem;
+                    }
+                    @include breakpoint('small') {
+                        margin-top: 1rem;
+                        line-height: 5.2rem;
+                    }
+                    @include breakpoint('tiny') {
+                        font-size: 5rem;
+                        line-height: 7rem;
+                        margin-top: 6rem;
+                    }
+                    @include breakpoint('super-tiny') {
+                        font-size: 3.2rem;
+                        line-height: 4.1rem;
+                        margin-top: 6.7rem;
+                    } */ }
+        @media (max-width: 998px) {
+          .veon__domination_block__content__claim__text {
+            font-size: 4.6rem;
+            line-height: 4.8rem; } }
+        @media (max-width: 480px) {
+          .veon__domination_block__content__claim__text {
+            font-size: 4.2rem;
+            line-height: 4.5rem; } }
+    .veon__domination_block__content__phone_text {
+      position: absolute;
+      width: 100%;
+      top: 58vh; }
       @media (max-width: 480px) {
-        .veon__domination_block__content__claim__text {
-          font-size: 3.2rem;
-          line-height: 4.1rem;
-          margin-top: 6.7rem; } }
-    .veon__domination_block__content__phone_text__claim {
-      font-family: "TP Hero Thin";
-      text-align: center;
-      font-size: 1.2rem;
-      line-height: 1.5rem;
-      margin-top: 12rem; }
-      @media (max-width: 1199px) {
-        .veon__domination_block__content__phone_text__claim {
-          margin-top: 6.5rem; } }
-      @media (max-width: 1024px) {
-        .veon__domination_block__content__phone_text__claim {
-          margin-top: 6rem;
-          font-size: 1rem;
-          line-height: 1.2rem; } }
-      @media (max-width: 998px) {
-        .veon__domination_block__content__phone_text__claim {
-          margin-top: 4.5rem;
-          font-size: 0.9rem;
-          line-height: 1.1rem; } }
-      @media (max-width: 768px) {
-        .veon__domination_block__content__phone_text__claim {
-          margin-top: 12rem;
-          font-size: 1.4rem;
-          line-height: 1.8rem; } }
-      @media (max-width: 480px) {
-        .veon__domination_block__content__phone_text__claim {
-          margin-top: 10rem;
-          font-size: 1.2rem;
-          line-height: 1.5rem; } }
+        .veon__domination_block__content__phone_text {
+          top: 60vh; } }
+      .veon__domination_block__content__phone_text__claim {
+        font-family: "TP Hero Thin";
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        /* @include breakpoint('large') {
+                        margin-top: 6.5rem;
+                    }
+                    @include breakpoint('medium') {
+                        margin-top: 6rem;
+                        font-size: 1rem;
+                        line-height: 1.2rem;
+                    }
+                    @include breakpoint('small') {
+                        margin-top: 4.5rem;
+                        font-size: 0.9rem;
+                        line-height: 1.1rem;
+                    }
+                    @include breakpoint('tiny') {
+                        margin-top: 12rem;
+                        font-size: 1.4rem;
+                        line-height: 1.8rem;
+                    }
+                    @include breakpoint('super-tiny') {
+                        margin-top: 10rem;
+                        font-size: 1.2rem;
+                        line-height: 1.5rem;
+                    } */ }
     .veon__domination_block__content__app_buttons {
       position: absolute;
       width: 100%;
       margin: 0 auto;
-      top: 90%;
+      bottom: 0;
       text-align: center; }
-      @media (max-width: 768px) {
-        .veon__domination_block__content__app_buttons {
-          top: 100%; } }
       .veon__domination_block__content__app_buttons__container {
         width: 100%;
         margin: 0 auto; }
         .veon__domination_block__content__app_buttons__container .app_btn {
           width: 130px;
-          height: auto; }
+          height: auto;
+          margin-bottom: 5vh; }
       .veon__domination_block__content__app_buttons .spacer {
-        width: 250px;
-        display: inline-block; }
-        @media (min-width: 1200px) {
-          .veon__domination_block__content__app_buttons .spacer {
-            width: 300px; } }
-        @media (max-width: 1024px) {
-          .veon__domination_block__content__app_buttons .spacer {
-            width: 320px; } }
-        @media (max-width: 998px) {
-          .veon__domination_block__content__app_buttons .spacer {
-            width: 210px; } }
-        @media (max-width: 768px) {
-          .veon__domination_block__content__app_buttons .spacer {
-            width: 50px; } }
+        width: 35vw;
+        max-width: 250px;
+        display: inline-block;
+        /* @include breakpoint('x-large') {
+                        width: 300px;
+                    }
+                    @include breakpoint('medium') {
+                        width: 320px;
+                    }
+                    @include breakpoint('small') {
+                        width: 210px;
+                    }
+                    
+                    @include breakpoint('super-tiny') {
+                        width: 16px;
+                    } */ }
         @media (max-width: 480px) {
           .veon__domination_block__content__app_buttons .spacer {
-            width: 16px; } }
+            width: 5vw; } }
       .veon__domination_block__content__app_buttons .app__apple_store {
         width: auto;
         display: inline-block; }
@@ -209,10 +245,12 @@ h6 {
         display: inline-block; }
   .veon__domination_block__close_button {
     position: absolute;
-    right: 4.5%; }
+    right: 4%;
+    top: 2%;
+    z-index: 9999; }
     @media (max-width: 998px) {
       .veon__domination_block__close_button {
-        right: 9%; } }
+        right: 4%; } }
     .veon__domination_block__close_button .close_btn__text, .veon__domination_block__close_button .close_btn__icon {
       font-family: "TP Hero Thin";
       font-size: 1.8rem;
@@ -225,5 +263,8 @@ h6 {
       .veon__domination_block__close_button .close_btn__icon {
         font-size: 2.2rem;
         line-height: 1.5rem; } }
+
+.mac .veon__domination_block__content__app_buttons__container .app_btn {
+  margin-bottom: 15vh; }
 
 /*# sourceMappingURL=veonDomination.min.css.map */
