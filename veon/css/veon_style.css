@@ -2,14 +2,17 @@
   font-family: 'TP Hero Light';
   src: url("../fonts/TPHero-Light.woff") format("opentype");
   font-weight: light; }
+
 @font-face {
   font-family: 'TP Hero Thin';
   src: url("../fonts/TPHero-Thin.woff") format("opentype");
   font-weight: thin; }
+
 @font-face {
   font-family: 'TP Hero Hairline';
   src: url("../fonts/TPHero-Hairline.woff") format("opentype");
   font-weight: hairline; }
+
 /* ___________________ MIXIN __________________
                        BREAKPOINT MIXIN */
 .slick-slide {
@@ -162,17 +165,32 @@ a img {
   @media (max-width: 768px) {
     .button_cta.only_mobile {
       display: inline-block; } }
+
 .button_cta.only_desktop {
   display: inline-block; }
   @media (max-width: 768px) {
     .button_cta.only_desktop {
       display: none; } }
+
 @media (max-width: 1440px) {
   .button_cta img {
     width: 170px; } }
+
 @media (max-width: 768px) {
   .button_cta img {
     margin: 0 auto; } }
+
+br.only_mobile {
+  display: none; }
+  @media (max-width: 768px) {
+    br.only_mobile {
+      display: block; } }
+
+br.only_desktop {
+  display: block; }
+  @media (max-width: 768px) {
+    br.only_desktop {
+      display: none; } }
 
 .veon_wrapper {
   background-color: #eeeeee;
@@ -192,6 +210,7 @@ body {
 @media (max-width: 1440px) {
   .column_image {
     padding: 0; } }
+
 @media (max-width: 768px) {
   .column_image {
     padding: 0;
@@ -463,6 +482,7 @@ footer {
   @media (max-width: 768px) {
     .slick-slider .slider_navigation {
       display: none !important; } }
+
 .slick-slider .left_arrow {
   top: calc(50% - 41px);
   left: 10px; }
@@ -472,6 +492,7 @@ footer {
   .slick-slider .left_arrow:hover {
     opacity: 0.5;
     filter: alpha(opacity=50); }
+
 .slick-slider .right_arrow {
   bottom: 50%;
   right: 10px; }
