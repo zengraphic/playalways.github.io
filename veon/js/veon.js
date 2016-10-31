@@ -1,14 +1,6 @@
 jQuery(document).ready(function($) {
     // Returns true if the specified element has been scrolled into the viewport.
 
-    function acceptCookies(cookieValue) {
-        if (cookieValue != 'enabled' && cookieValue != 'accepted') {
-            console.log('ACCETTATI');
-        } else {
-            console.log('malasorr');
-        }
-    }
-
     function fixFontIOS() {
         is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
         is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
@@ -26,6 +18,24 @@ jQuery(document).ready(function($) {
             $('h1').css('-webkit-text-stroke', '0.5px');
             console.log('this');
         }
+    }
+
+    function storeOS() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+            //WP
+      }
+
+      if (/android/i.test(userAgent)) {
+          //Android
+          $('.appstore_button').css('display','none');
+      }
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          //iOS
+          $('.gplay_button').css('display','none');
+      }
     }
 
     function initSliders() {
@@ -217,6 +227,7 @@ jQuery(document).ready(function($) {
     //=================== EASTER EGG ===================//
     //=================== EASTER EGG ===================//
     fixFontIOS();
+    storeOS();
     initSliders();
 
     $.cookieBar({
