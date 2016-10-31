@@ -25,14 +25,10 @@ jQuery(document).ready(function($) {
       // Windows Phone must come first because its UA also contains "Android"
       if (/windows phone/i.test(userAgent)) {
             //WP
-      }
-
-      if (/android/i.test(userAgent)) {
+      } else if (/android/i.test(userAgent)) {
           //Android
           $('.appstore_button').css('display','none');
-      }
-
-      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
           //iOS
           $('.gplay_button').css('display','none');
       }
@@ -229,29 +225,4 @@ jQuery(document).ready(function($) {
     fixFontIOS();
     storeOS();
     initSliders();
-
-    $.cookieBar({
-        fixed: true,
-        policyButton: true,
-        acceptOnScroll: 200,
-        autoEnable: false
-    });
-    if ($.cookieBar('cookies')) {
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-77869231-2', 'auto');
-        ga('set', 'anonymizeIp', true);
-        ga('send', 'pageview');
-
-    }
 });
