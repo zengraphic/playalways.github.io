@@ -184,7 +184,7 @@
                             </div>
                             <!--  / SELECT COUNTRY -->
                             <!--  COUNTRY USA -->
-                            <div class="country_offers_block__container__country" id="stat-1">
+                            <div class="country_offers_block__container__country" id="US">
                                 <!-- COUNTRY SELECT -->
                                 <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                     <div class="country_offers_block__container-title">USA</div>
@@ -964,7 +964,7 @@
                             <!--  / COUNTRY USA -->
                             <div class="clear"></div>
                             <!--  COUNTRY ITALY -->
-                            <div class="country_offers_block__container__country" id="stat-2">
+                            <div class="country_offers_block__container__country" id="IT">
                                 <!-- COUNTRY SELECT -->
                                 <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                     <div class="country_offers_block__container-title">Italia</div>
@@ -1744,7 +1744,7 @@
                             <!--  / COUNTRY ITALY -->
                             <div class="clear"></div>
                             <!--  COUNTRY JAPAN -->
-                            <div class="country_offers_block__container__country" id="stat-3">
+                            <div class="country_offers_block__container__country" id="JP">
                                 <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                     <div class="country_offers_block__container-title">Giappone</div>
                                     <div class="country_offers_block__container-image"><img src="../../img/flags/flag_japan.png" /></div>
@@ -2782,49 +2782,10 @@ jQuery(window).load(function($) {
 });
 jQuery(document).ready(function($) {
 
-    continents = {
-        NA: [
-            ['CA', 'Canada'],
-            ['US', 'Stati Uniti'],
-            ['GR', 'Groenlandia']
-        ],
-        SA: [
-            ['BR', 'Brazil'],
-            ['AG', 'Argentina'],
-            ['VN', 'Venezuela']
-        ],
-        EU: [
-            ['FR', 'Francia'],
-            ['GE', 'Germania'],
-            ['IT', 'Italia']
-        ],
-        AS: [
-            ['CH', 'China'],
-            ['JP', 'Japan'],
-            ['IN', 'India']
-        ],
-        AF: [
-            ['ZI', 'Zimbabwe'],
-            ['BO', 'Botswana'],
-            ['MD', 'Madagascar']
-        ],
-        OC: [
-            ['AU', 'Australia'],
-            ['NZ', 'New Zealand'],
-            ['FI', 'Fiji']
-        ]
-    };
-
-    $('.slider_menu_tabs').on('init', function(slick) {
-        $(this).find('.slick-current').removeClass('slick-current');
-    });
 
 
 
-
-
-
-    var slickCover = $('.slider_menu_tabs').slick({
+    var slickMenuTabsConfig = {
         centerMode: false,
         centerPadding: '0px',
         infinite: true,
@@ -2850,16 +2811,82 @@ jQuery(document).ready(function($) {
                 slidesToShow: 1
             }
         }]
-    });
+    };
 
+    continents = {
+        AF: {
+            mapName: 'africa_merc',
+            mapCode: 'AF',
+            continentName: 'africa',
+            displayName: 'Africa',
+            countries: [
+                ['ZI', 'Zimbabwe'],
+                ['MA', 'Madgascar'],
+                ['NI', 'Nigeria']
+            ]
+        },
+        NA: {
+            mapName: 'north_america_merc',
+            mapCode: 'NA',
+            continentName: 'north_america',
+            displayName: 'North America',
+            countries: [
+                ['CA', 'Canada'],
+                ['GR', 'Groenlandia'],
+                ['US', 'USA']
+            ]
+        },
+        OC: {
+            mapName: 'oceania_merc',
+            mapCode: 'OC',
+            continentName: 'oceania',
+            displayName: 'Oceania',
+            countries: [
+                ['AU', 'Austrlia'],
+                ['NZ', 'New Zealand'],
+                ['FI', 'Fiji Islands']
+            ]
+        },
+        AS: {
+            mapName: 'asia_merc',
+            mapCode: 'AS',
+            continentName: 'asia',
+            displayName: 'Asia',
+            countries: [
+                ['CI', 'Cina'],
+                ['VI', 'Vietnam'],
+                ['IN', 'India']
+            ]
+        },
+        EU: {
+            mapName: 'europe_merc',
+            mapCode: 'EU',
+            continentName: 'europe',
+            displayName: 'Europe',
+            countries: [
+                ['FR', 'Francia'],
+                ['GE', 'Germania'],
+                ['ES', 'Spagna']
+            ]
+        },
+        SA: {
+            mapName: 'south_america_merc',
+            mapCode: 'SA',
+            continentName: 'south_america',
+            displayName: 'South America',
+            countries: [
+                ['VE', 'Venezuela'],
+                ['AR', 'Argentina'],
+                ['BR', 'Brazil']
+            ]
+        }
+    };
 
-
-    map = new jvm.Map({
-        container: $('#world-map'),
+    var mainConfig = {
         map: 'continents_merc',
         regionsSelectable: true,
         zoomOnScroll: false,
-        panOnDrag: false,
+        panOnDrag: true,
         regionsSelectableOne: true,
         backgroundColor: 'transparent',
         regionStyle: {
@@ -2926,28 +2953,126 @@ jQuery(document).ready(function($) {
         onRegionSelected: function(e, code) {
             mapToSlick(code);
         }
+    };
+
+    var subConfig = {
+        regionsSelectable: true,
+        zoomOnScroll: false,
+        panOnDrag: true,
+        regionsSelectableOne: true,
+        backgroundColor: 'transparent',
+        regionStyle: {
+            initial: {
+                fill: '#d3d3d2'
+            },
+            hover: {
+                fill: '#f4b083'
+            },
+            selected: {
+                fill: '#f48135'
+            }
+        },
+        regionLabelStyle: {
+            initial: {
+                fill: 'white',
+                'font-size': '10px'
+            },
+            hover: {
+                fill: 'white'
+            }
+        },
+        onRegionSelected: function(e, code, isSelected) {
+            if (code && isSelected) {
+                console.log(code);
+                $('#country--List').selectpicker('val', code);
+                toggleCountry(code);
+
+                /**
+                 map.goBack('continents_merc');
+                 riporta alla mappa principale
+                 per il resto regolati.
+
+                **/
+            }
+
+        }
+
+    };
+
+    var worldMap = true;
+
+    $('.slider_menu_tabs').on('init', function(slick) {
+        $(this).find('.slick-current').removeClass('slick-current');
+    });
+
+    var slickCover = $('.slider_menu_tabs').slick(slickMenuTabsConfig);
+
+    map = new jvm.MultiMap({
+        container: $('#world-map'),
+        maxLevel: 1,
+        subMapsOptions: subConfig,
+        main: mainConfig,
+
+        mapNameByCode: function(code, multiMap) {
+            code = continents[code].continentName;
+            return code.toLowerCase() + '_' + multiMap.defaultProjection;
+        },
+        mapUrlByCode: function(code, multiMap) {
+            code = continents[code].continentName;
+            return '../../js/jquery-jvectormap-' + code.toLowerCase() + '-' + multiMap.defaultProjection + '.js';
+        },
+
     });
 
     $(window).resize(map, function() {
         map.updateSize();
     });
 
+
+
     $('.strip_menu_tab__item').click(map, function() {
         var item = $(this);
         var regionCode = item.find('a').data().code;
-        map.clearSelectedRegions();
-        map.setSelectedRegions(regionCode);
+
+        var regionName;
+        switch (regionCode) {
+            case 'AF':
+                regionName = 'africa_merc';
+                break;
+            case 'NA':
+                regionName = 'north_america_merc';
+                break;
+            case 'OC':
+                regionName = 'oceania_merc';
+                break;
+            case 'AS':
+                regionName = 'asia_merc';
+                break;
+            case 'EU':
+                regionName = 'europe_merc';
+                break;
+            case 'SA':
+                regionName = 'south_america_merc';
+                break;
+        }
+        if (!worldMap) {
+            map.goBack();
+        }
+        map.drillDown(regionName, regionCode);
+        worldMap = false;
         buildSelect(regionCode);
+
     });
 
     $('#country--List').on('changed.bs.select', function(e, clickedIndex) {
+        var clickedCountry = $('#country--List').find('option').eq(clickedIndex).val();
         console.log('changed');
-        toggleCountry(clickedIndex);
+        toggleCountry(clickedCountry);
 
     }).on('refreshed.bs.select', function(e, clickedIndex) {
-        console.log('refreshed');
-        
-        toggleCountry(clickedIndex);
+        //var clickedCountry = $('#country--List').find('option').eq(clickedIndex).val();
+        //console.log('refreshed');
+        //toggleCountry(clickedCountry);
 
     });
 
@@ -2956,6 +3081,7 @@ jQuery(document).ready(function($) {
     });
 
     function mapToSlick(code) {
+
         var targetSlickLink = $('.slider_menu_tabs').find('a[data-code="' + code + '"]');
         var targetSlickSlide = targetSlickLink.closest('.slick-slide');
         var currentSlick = $('.slick-current');
@@ -2968,6 +3094,7 @@ jQuery(document).ready(function($) {
             targetSlickSlide.addClass('slick-current');
             buildSelect(code);
         }
+        worldMap = false;
     }
 
     function buildSelect(regionCode) {
@@ -2976,7 +3103,7 @@ jQuery(document).ready(function($) {
         selectOption.remove();
         var optionDefault = '<option value="none">--Seleziona--</option>';
         select.append(optionDefault);
-        $.each(continents[regionCode], function(index, val) {
+        $.each(continents[regionCode].countries, function(index, val) {
             var value = val[0];
             var text = val[1];
             var option = '<option value="' + value + '">' + text + '</option>';
@@ -2985,8 +3112,9 @@ jQuery(document).ready(function($) {
         select.selectpicker('refresh');
     }
 
-    function toggleCountry(clickedIndex) {
-        var chosenCountry = $("#stat-" + clickedIndex);
+    function toggleCountry(clickedCountry) {
+        var chosenCountry = $("#" + clickedCountry);
+        console.log(chosenCountry);
         var blockToHide = $('.country_offers_block__container__country');
         var activeSlickNav = chosenCountry.find('.container_secondColumn');
         var activeSlickSlider = chosenCountry.find('.showcase_bundle_block__slides');
@@ -3028,7 +3156,19 @@ jQuery(document).ready(function($) {
     }
 
 
+
 });
+
+function clearNavigation() {
+
+    map.maps.continents_merc.clearSelectedRegions();
+    jQuery('.slick-current').removeClass('slick-current');
+    jQuery('.country_offers_block__container__country').each(function() {
+        jQuery(this).hide();
+    });
+    worldMap= true;
+
+}
 </script>
 
 </html>
