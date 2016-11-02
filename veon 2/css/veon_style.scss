@@ -3,20 +3,20 @@
 //===================================================================//
 @font-face {
     font-family: 'TP Hero Light';
-    src: url('../fonts/TPHero-Light.woff') format('woff'), url('../fonts/TPHero-Light.otf') format('opentype');
+    src: url('../fonts/TPHero-Light.woff') format('opentype');
     font-weight: light;
 }
 
 @font-face {
     font-family: 'TP Hero Thin';
-    src: url('../fonts/TPHero-Thin.woff') format('woff'), url('../fonts/TPHero-Thin.otf') format('opentype');
+    src: url('../fonts/TPHero-Thin.woff') format('opentype');
     font-weight: thin;
 }
 
 @font-face {
     font-family: 'TP Hero Hairline';
-    src: url('../fonts/TPHero-Hairline.woff') format('woff'), url('../fonts/TPHero-Hairline.otf') format('opentype');
-    font-weight: hairline; 
+    src: url('../fonts/TPHero-Hairline.woff') format('opentype');
+    font-weight: hairline;
 }
 
 //===================================================================//
@@ -145,6 +145,10 @@ h1 {
     text-transform: uppercase;
     margin: 0;
     //  -webkit-text-stroke: 0.5px;
+    &.reduced {
+        font-size: 5.0vw;
+        line-height: 5.5vw;
+    }
     @include breakpoint(largest) {
         //1440
         // font-size: 100px;
@@ -155,6 +159,10 @@ h1 {
         font-size: 35px;
         line-height: 37px;
         text-align: center;
+        &.reduced {
+            font-size: 35px;
+            line-height: 37px;
+        }
     }
     @include breakpoint(extra-large) {
         //330
@@ -200,11 +208,11 @@ h6 {
     }
 }
 
-a {
-    img {
-        outline: none;
-        border: 0;
-    }
+a{
+  img {
+    outline : none;
+    border: 0;
+  }
 }
 
 .promo_message {
@@ -238,7 +246,6 @@ a {
     img {
         width: 15vw;
         min-width: 90px;
-        max-width: 230px;
     }
 }
 
@@ -282,8 +289,7 @@ a {
         }
     }
 }
-
-.button_container {
+.button_container{
     text-align: center;
 }
 
@@ -295,7 +301,7 @@ a {
         }
     }
     &.only_desktop {
-        display: inline-block;
+            display: inline-block;
         @include breakpoint(small) {
             display: none;
         }
@@ -311,6 +317,8 @@ a {
         }
     }
 }
+
+
 
 .veon_wrapper {
     background-color: $color-bg-gray;
@@ -472,6 +480,10 @@ body {
             h1 {
                 font-size: 5vw;
                 line-height: 5.5vw;
+                &.reduced {
+                    font-size: 4.5vw;
+                    line-height: 5.0vw;
+                }
                 @include breakpoint(extra-large) {
                     //1999
                     font-size: 100px;
@@ -482,6 +494,10 @@ body {
                     font-size: 35px;
                     line-height: 37px;
                     text-align: center;
+                    &.reduced {
+                        font-size: 35px;
+                        line-height: 37px;
+                    }
                 }
             }
             h6 {
@@ -510,7 +526,7 @@ body {
     @include breakpoint(small) {
         background-image: none;
         height: auto;
-        margin-top: -30px;
+        margin-top: 0;
     }
     img.image_preFooter {
         display: none;
@@ -566,17 +582,30 @@ body {
             }
             &.secondClaim {
                 margin-top: 500px;
-                div.buttonFooter {
-                    margin-top: 30px;
+                a {
+                    img.buttonFooter {
+                        width: 250px;
+                        margin-top: 30px;
+                    }
                 }
                 @include breakpoint(largest) {
                     margin-top: 675px;
+                    a {
+                        img.buttonFooter {
+                            width: 150px;
+                        }
+                    }
                 }
                 @include breakpoint(largest) {
                     margin-top: 600px;
                 }
                 @include breakpoint(small) {
                     margin-top: 115vw;
+                    a {
+                        img.buttonFooter {
+                            width: 25vw;
+                        }
+                    }
                 }
             }
         }
@@ -701,7 +730,7 @@ footer {
     & li {
         list-style-type: none;
         display: inline-block;
-        margin-right: 1.5%;
+        margin-right: 1.3vw;
         cursor: pointer;
         @include breakpoint(small) {
             //768
@@ -711,8 +740,6 @@ footer {
     & .slide_single {
         width: 1.3vw;
         height: 1.3vw;
-        max-width: 16px;
-        max-height: 16px;
         background: $color-pale-orange;
         @include opacity(0.3);
         @include border-radius(100%);
@@ -742,7 +769,6 @@ footer {
     width: 100%;
     padding-bottom: 10px;
     background-color: rgb(51, 51, 51);
-    padding: 120px 0px;
     .faqWrapper {
         max-width: 1440px;
         margin: 0 auto;
@@ -755,9 +781,6 @@ footer {
         padding: 15px 0;
         padding-left: 5px;
         border-bottom: 1px solid #666;
-        &.main_title_faq {
-            text-align: left;
-        }
         @include breakpoint(super-tiny) {
             //768
             font-size: 75px;
@@ -773,16 +796,13 @@ footer {
     .show_more_faq,
     .show_less_faq {
         color: $color-yellow;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: $weight-thin;
         padding-top: 5px;
-        border-bottom: 1px solid #666;
-        text-align: left;
-        margin-left: 30px;
-        margin-right: 30px;
-        padding: 10px 12px 12px 15px;
-        font-family: $weight-hairline;
         cursor: pointer;
         font-size: 2.3vw;
-        line-height: 2.8vw;
+        line-height: 2.9vw;
         @include breakpoint(min-largest) {
             //1440
             font-size: 32px;
@@ -790,8 +810,8 @@ footer {
         }
         @include breakpoint(super-tiny) {
             //768
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 28px;
+            line-height: 30px;
         }
     }
     .block {
@@ -859,7 +879,7 @@ footer {
     }
 }
 
-.gplay_button {
+.gplay_button{
     margin-right: 15px;
 }
 
