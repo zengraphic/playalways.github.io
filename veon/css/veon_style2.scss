@@ -191,7 +191,6 @@ h6 {
         //768
         font-size: 16px;
         line-height: 18px;
-        text-align: center;
     }
     @include breakpoint(extra-large) {
         //1999
@@ -217,7 +216,6 @@ a {
         //768
         font-size: 12px;
         line-height: 14px;
-        text-align: center;
         margin-top: 10px;
     }
     @include breakpoint(tiny) {
@@ -301,10 +299,6 @@ a {
         }
     }
     img {
-        @include breakpoint(largest) {
-            //1440
-            width: 170px;
-        }
         @include breakpoint(small) {
             //768
             margin: 0 auto;
@@ -355,6 +349,12 @@ body {
         max-width: 320px;
         margin: 0 auto;
     }
+}
+
+.button_cta{
+  img{
+    max-height: 40px;
+  }
 }
 
 .wrapper {
@@ -783,7 +783,7 @@ footer {
         font-family: $weight-hairline;
         cursor: pointer;
         font-size: 2.3vw;
-        line-height: 2.9vw;
+        line-height: 2.8vw;
         @include breakpoint(min-largest) {
             //1440
             font-size: 32px;
@@ -791,8 +791,8 @@ footer {
         }
         @include breakpoint(super-tiny) {
             //768
-            font-size: 28px;
-            line-height: 30px;
+            font-size: 20px;
+            line-height: 24px;
         }
     }
     .block {
