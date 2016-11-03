@@ -3,9 +3,11 @@ jQuery(document).ready(function($) {
 
     function jumpToUrl(){
 
-        var url = window.location.hash;
-        var hash = url.substring(url.indexOf("#")+1);
-        console.log(url + " " + hash);
+        var currentHash = window.location.hash;
+        if (currentHash == "#faq_veon"){
+            var anchorTag = $("#faq_veon");
+            $('html,body').animate({scrollTop: anchorTag.offset().top},'slow');            
+        }
 
     }
 
