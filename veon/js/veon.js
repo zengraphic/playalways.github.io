@@ -6,7 +6,10 @@ jQuery(document).ready(function($) {
         var currentHash = window.location.hash;
         if (currentHash == "#faq_veon"){
             var anchorTag = $("#faq_veon");
-            $('html,body').animate({scrollTop: anchorTag.offset().top},'slow');            
+            console.log(anchorTag);
+            $('html,body').animate({
+                scrollTop: anchorTag.offset().top
+            },'slow');            
         }
 
     }
