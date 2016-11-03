@@ -285,7 +285,7 @@
                 &__slides {
                     width: 100%;
                 }
-                &__container{
+                &__container {
                     width: 100%;
                 }
                 &__tabs {
@@ -304,6 +304,10 @@
                         padding-bottom: 5px;
                         @include breakpoint('super-tiny') {
                             margin-right: 2px!important;
+                        }
+                        &.slick-current {
+                            color: $color-orange;
+                            border-bottom: 1px solid $color-orange;
                         }
                     }
                 }
