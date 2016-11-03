@@ -2855,7 +2855,8 @@ jQuery(document).ready(function($) {
             countries: [
                 ['CI', 'Cina'],
                 ['VI', 'Vietnam'],
-                ['IN', 'India']
+                ['IN', 'India'],
+                ['JP','Japan']
             ]
         },
         EU: {
@@ -2886,7 +2887,7 @@ jQuery(document).ready(function($) {
     var mainConfig = {
         map: 'continents_merc',
         regionsSelectable: true,
-        zoomOnScroll: false,
+        zoomOnScroll: true,
         panOnDrag: true,
         regionsSelectableOne: true,
         backgroundColor: 'transparent',
@@ -2958,7 +2959,7 @@ jQuery(document).ready(function($) {
 
     var subConfig = {
         regionsSelectable: true,
-        zoomOnScroll: false,
+        zoomOnScroll: true,
         panOnDrag: true,
         regionsSelectableOne: true,
         backgroundColor: 'transparent',
@@ -3000,7 +3001,7 @@ jQuery(document).ready(function($) {
 
     };
 
-    var worldMap = true;
+    worldMap = true;
 
     $('.slider_menu_tabs').on('init', function(slick) {
         $(this).find('.slick-current').removeClass('slick-current');
@@ -3031,7 +3032,8 @@ jQuery(document).ready(function($) {
 
 
 
-    $('.strip_menu_tab__item').click(map, function() {
+    $('.strip_menu_tab__item').click([map,worldMap],function(e,code) {
+        console.log(worldMap);
         var item = $(this);
         var regionCode = item.find('a').data().code;
 
@@ -3056,7 +3058,7 @@ jQuery(document).ready(function($) {
                 regionName = 'south_america_merc';
                 break;
         }
-        if (!worldMap) {
+        if (worldMap==false) {
             map.goBack();
         }
         map.drillDown(regionName, regionCode);
@@ -3167,7 +3169,7 @@ function clearNavigation() {
     jQuery('.country_offers_block__container__country').each(function() {
         jQuery(this).hide();
     });
-    worldMap= true;
+    return worldMap = true;
 
 }
 </script>
