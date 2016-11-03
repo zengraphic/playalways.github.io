@@ -3,12 +3,9 @@ jQuery(document).ready(function($) {
 
     function jumpToUrl(){
 
-    $(location).attr('href');
-
-    //pure javascript
-    var pathname = window.location.pathname;
-    
-    console.log(pathname);
+        var url = window.location.hash;
+        var hash = url.substring(url.indexOf("#")+1);
+        console.log(url + " " + hash);
 
     }
 
