@@ -1,6 +1,17 @@
 jQuery(document).ready(function($) {
     // Returns true if the specified element has been scrolled into the viewport.
 
+    function jumpToUrl(){
+
+    $(location).attr('href');
+
+    //pure javascript
+    var pathname = window.location.pathname;
+    
+    console.log(pathname);
+
+    }
+
     function fixFontIOS() {
         is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
         is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
@@ -225,4 +236,5 @@ jQuery(document).ready(function($) {
     fixFontIOS();
     storeOS();
     initSliders();
+    jumpToUrl();
 });
