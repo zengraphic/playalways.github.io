@@ -11,12 +11,12 @@
     font-family: 'TP Hero Thin';
     src: url('../fonts/TPHero-Thin.woff') format('woff'), url('../fonts/TPHero-Thin.otf') format('opentype');
     font-weight: thin;
-} 
+}
 
 @font-face {
     font-family: 'TP Hero Hairline';
     src: url('../fonts/TPHero-Hairline.woff') format('woff'), url('../fonts/TPHero-Hairline.otf') format('opentype');
-    font-weight: hairline; 
+    font-weight: hairline;
 }
 
 //===================================================================//
@@ -414,7 +414,7 @@ body {
         }
     }
     &.two {
-        margin-top: 180px;
+        margin-top: 0px;
         @include breakpoint(small) {
             //768
             margin: 0;
@@ -599,7 +599,7 @@ footer {
         font-size: 14px;
         line-height: 18px;
         b {
-            font-family: $weight-light; 
+            font-family: $weight-light;
         }
         p {
             margin-top: 0;
@@ -920,5 +920,63 @@ footer {
             bottom: 0;
             top: auto;
         }
+    }
+}
+
+//============================================================//
+//========================== VIDEO =======================//
+//=============================================================//
+.video {
+    &_main {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: auto;
+        display: none;
+        z-index: 1100;
+        position: absolute;
+    }
+    &_noscroll {
+        overflow: hidden;
+    }
+    &_overlay {
+        z-index: 999;
+        display: none;
+        background-color: #444;
+        @include opacity(0.7);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    &_wrapper {
+        position: relative;
+        text-align: center;
+    }
+    &_play {
+        cursor: pointer;
+        img {
+            position: absolute;
+            top: 45%;
+            left: 20%;
+            @include breakpoint(small) {
+                width: 250px;
+            }
+            @include breakpoint(super-tiny) {
+                width: 200px;
+            }
+        }
+    }
+    &_mask {
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        // position: absolute;
+        // top: 0;
+        // left: 0;
     }
 }

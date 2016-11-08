@@ -1,15 +1,15 @@
 jQuery(document).ready(function($) {
     // Returns true if the specified element has been scrolled into the viewport.
 
-    function jumpToUrl(){
+    function jumpToUrl() {
 
         var currentHash = window.location.hash;
-        if (currentHash == "#faq_veon"){
+        if (currentHash == "#faq_veon") {
             var anchorTag = $("#faq_veon");
             console.log(anchorTag);
             $('html,body').animate({
                 scrollTop: anchorTag.offset().top
-            },'slow');            
+            }, 'slow');
         }
 
     }
@@ -34,17 +34,17 @@ jQuery(document).ready(function($) {
     }
 
     function storeOS() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      // Windows Phone must come first because its UA also contains "Android"
-      if (/windows phone/i.test(userAgent)) {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
             //WP
-      } else if (/android/i.test(userAgent)) {
-          //Android
-          $('.appstore_button').css('display','none');
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          //iOS
-          $('.gplay_button').css('display','none');
-      }
+        } else if (/android/i.test(userAgent)) {
+            //Android
+            $('.appstore_button').css('display', 'none');
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            //iOS
+            $('.gplay_button').css('display', 'none');
+        }
     }
 
     function initSliders() {
@@ -170,6 +170,23 @@ jQuery(document).ready(function($) {
         $('.more_faq_container').slideUp();
         $(this).slideUp();
         $('.show_more_faq').slideDown();
+    });
+
+    $('.video_play').click(function() {
+        $('.video_overlay').fadeIn();
+        $('.video_main').fadeIn();
+        $('html,body').animate({
+            scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
+        }, 200, function() {
+            $('.video_main')[0].play();
+        });
+        $('body').addClass('video_noscroll');
+    });
+    $('.video_overlay').click(function() {
+        $('.video_overlay').fadeOut();
+        $('.video_main').fadeOut();
+        $('body').removeClass('video_noscroll');
+        $('.video_main')[0].pause();
     });
     //=================== EASTER EGG ===================//
     //=================== EASTER EGG ===================//
