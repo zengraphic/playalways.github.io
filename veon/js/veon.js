@@ -174,6 +174,8 @@ jQuery(document).ready(function($) {
 
     $('.video_play').click(function() {
         $('.video_overlay').fadeIn();
+        $('.video_preview').fadeIn(); 
+        $('.video_preview').height($('.video_main').height());       
         $('.video_main').fadeIn();
         $('html,body').animate({
             scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
@@ -184,6 +186,7 @@ jQuery(document).ready(function($) {
     });
     $('.video_overlay').click(function() {
         $('.video_overlay').fadeOut();
+        $('.video_preview').fadeOut();          
         $('.video_main').fadeOut();
         $('body').removeClass('video_noscroll');
         $('.video_main')[0].pause();
