@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
     }
 
     function checkVideoSize(videoWidth, videoHeight, winWidth, winHeight) {
-        $('.video_main').width('95vw');
+        $('.video_main').width('92vw');
         $('.video_main').height('auto');
         $('.video_preview').height($('.video_main').height());
         $('.video_preview').width($('.video_main').width());
