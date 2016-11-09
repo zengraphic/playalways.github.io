@@ -208,11 +208,6 @@ jQuery(document).ready(function($) {
         $('.video_preview').width($('.video_main').width());
         $('.video_main').fadeIn();
         $('.video_main').addClass('video_open');
-        $('html,body').animate({
-            scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
-        }, 200, function() {
-            $('.video_main')[0].play();
-        });
         $('body').addClass('video_noscroll');
     });
 
