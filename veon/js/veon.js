@@ -178,10 +178,15 @@ jQuery(document).ready(function($) {
         var winWidth = $(window).width();
         var winHeight = $(window).height(); 
         if(winWidth < winHeight){
-            console.log('Più alto che largo');
-           $('.video_main').width('90vw');
+            console.log('Alto > Largo');
+           $('.video_main').width('95vw');
            $('.video_main').height('auto');            
-        }       
+        }     
+        else{
+            console.log('Largo > Alto');
+           $('.video_main').width('auto');
+           $('.video_main').height('95vh');                         
+        }  
         console.log('videoW: ' + videoWidth + ' videoH: ' + videoHeight + ' windowW: ' + winWidth + ' windowH: ' + winHeight);
         $('.video_overlay').fadeIn();
         $('.video_preview').fadeIn(); 
