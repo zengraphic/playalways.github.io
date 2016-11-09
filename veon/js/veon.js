@@ -200,7 +200,6 @@ jQuery(document).ready(function($) {
         var videoHeight = $('.video_main').height();
         var winWidth = $(window).width();
         var winHeight = $(window).height();
-        checkVideoSize(videoWidth, videoHeight, winWidth, winHeight);
         console.log('videoW: ' + videoWidth + ' videoH: ' + videoHeight + ' windowW: ' + winWidth + ' windowH: ' + winHeight);
         $('.video_overlay').fadeIn();
         $('.video_preview').fadeIn();
@@ -209,6 +208,7 @@ jQuery(document).ready(function($) {
         $('.video_main').fadeIn();
         $('.video_main').addClass('video_open');
         $('body').addClass('video_noscroll');
+        checkVideoSize(videoWidth, videoHeight, winWidth, winHeight);        
     });
 
     $('.video_overlay').click(function() {
