@@ -173,9 +173,20 @@ jQuery(document).ready(function($) {
     });
 
     $('.video_play').click(function() {
+        var videoWidth = $('.video_main').width();
+        var videoHeight = $('.video_main').height();
+        var winWidth = $(window).width();
+        var winHeight = $(window).height(); 
+        if(winWidth < winHeight){
+            console.log('Più alto che largo');
+           $('.video_main').width('90vw');
+           $('.video_main').height('auto');            
+        }       
+        console.log('videoW: ' + videoWidth + ' videoH: ' + videoHeight + ' windowW: ' + winWidth + ' windowH: ' + winHeight);
         $('.video_overlay').fadeIn();
         $('.video_preview').fadeIn(); 
-        $('.video_preview').height($('.video_main').height());       
+        $('.video_preview').height($('.video_main').height()); 
+        $('.video_preview').width($('.video_main').width());         
         $('.video_main').fadeIn();
         $('html,body').animate({
             scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
