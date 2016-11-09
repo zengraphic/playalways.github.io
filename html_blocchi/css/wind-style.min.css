@@ -4277,6 +4277,16 @@ margin-left: auto;*/ }
     -webkit-transition: all 0.45s ease-in-out;
     max-width: 1024px;
     margin: 0 auto; }
+    .showcase_bundle_block__container .bundle_block__showMore {
+      color: #f48135;
+      font-size: 1.250em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Trade Gothic Light";
+      margin-top: 70px;
+      cursor: pointer; }
+      .showcase_bundle_block__container .bundle_block__showMore:hover {
+        text-decoration: underline; }
   .showcase_bundle_block h2 {
     font-family: "Trade Gothic Bold Cond"; }
   .showcase_bundle_block__tabs {
@@ -4293,6 +4303,11 @@ margin-left: auto;*/ }
       margin-right: 40px;
       cursor: pointer;
       padding-bottom: 5px; }
+      @media (max-width: 768px) {
+        .showcase_bundle_block__tabs--title {
+          width: 100%;
+          margin-top: 15px;
+          display: block; } }
       .showcase_bundle_block__tabs--title--Left {
         float: left;
         text-transform: none;
@@ -4409,12 +4424,13 @@ margin-left: auto;*/ }
     .showcase_bundle_block__single--card--V3 .showcase_bundle_block__single--disclaimer {
       height: 22px;
       margin-top: 30px;
-      margin-bottom: 23px; }
+      margin-bottom: 24px; }
 
 @media all and (max-width: 767px) {
   .showcase_bundle_block .container_secondColumn {
     text-align: center;
-    margin-top: 10px; } }
+    margin-top: 10px;
+    padding-left: 0; } }
 .showcase_bundle_device {
   max-width: 1024px;
   margin: 0 auto;
@@ -4519,6 +4535,7 @@ margin-left: auto;*/ }
       right: 0%;
       min-height: 1px; }
   .showcase_bundle_device__single--generic {
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
@@ -4533,16 +4550,15 @@ margin-left: auto;*/ }
       max-height: 100px; }
     .showcase_bundle_device__single--generic--title {
       font-size: 1.875em;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-family: "Trade Gothic Bold"; }
     .showcase_bundle_device__single--generic--description {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-size: 1.250em;
       font-family: "Trade Gothic Light";
       line-height: 22px; }
     .showcase_bundle_device__single--generic--mainPrice {
-      margin-top: 20px;
-      margin-bottom: 30px;
+      margin: 25px auto;
       font-size: 1.875em;
       line-height: 1;
       text-align: center;
@@ -4554,6 +4570,7 @@ margin-left: auto;*/ }
       font-size: 0.813em;
       margin-bottom: 10px; }
   .showcase_bundle_device__single--vAbbina {
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
@@ -4572,11 +4589,11 @@ margin-left: auto;*/ }
       font-family: "Trade Gothic Bold"; }
     .showcase_bundle_device__single--vAbbina--promo {
       font-family: "Trade Gothic Bold";
-      color: #0069b3;
+      color: #009bbe;
       text-transform: uppercase;
       margin-top: 5px; }
     .showcase_bundle_device__single--vAbbina--description {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-size: 1.250em;
       font-family: "Trade Gothic Light";
       line-height: 22px; }
@@ -4584,7 +4601,7 @@ margin-left: auto;*/ }
         font-size: 1.667em; }
     .showcase_bundle_device__single--vAbbina--totalPrice {
       margin-top: 25px;
-      margin-bottom: 5px; }
+      margin-bottom: 10px; }
       .showcase_bundle_device__single--vAbbina--totalPrice--description {
         font-size: 1.250em;
         font-family: "Trade Gothic Light"; }
@@ -4605,6 +4622,7 @@ margin-left: auto;*/ }
       font-size: 0.813em;
       margin-bottom: 10px; }
   .showcase_bundle_device__single--vPack {
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
@@ -4613,6 +4631,7 @@ margin-left: auto;*/ }
     .showcase_bundle_device__single--vPack h2 {
       margin-bottom: 10px; }
     .showcase_bundle_device__single--vPack__image {
+      margin-top: 5px;
       height: 100%;
       max-height: 100px; }
     .showcase_bundle_device__single--vPack--title {
@@ -4659,6 +4678,7 @@ margin-left: auto;*/ }
       font-family: "Trade Gothic Bold";
       color: #009bbe; }
   .showcase_bundle_device__single--vPackOffer {
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
@@ -4712,6 +4732,7 @@ margin-left: auto;*/ }
       font-family: "Trade Gothic Bold";
       color: #009bbe; }
   .showcase_bundle_device__single--vCard {
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
@@ -4753,6 +4774,7 @@ margin-left: auto;*/ }
       font-family: "Trade Gothic Bold";
       color: #009bbe; }
   .showcase_bundle_device__single--vCardOffer {
+    margin-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: center;
@@ -5508,7 +5530,7 @@ margin-left: auto;*/ }
     text-transform: uppercase;
     color: #292f36; }
     .grey_strip__block__tabs__container {
-      padding-top: 25px; }
+      padding-top: 30px; }
       @media (max-width: 768px) {
         .grey_strip__block__tabs__container {
           padding-top: 0px; } }
@@ -5530,17 +5552,20 @@ margin-left: auto;*/ }
     .grey_strip__block__tabs--title {
       margin-right: 15px;
       cursor: pointer;
-      font-size: 13px; }
+      font-size: 1em;
+      padding-bottom: 5px; }
       .grey_strip__block__tabs--title:hover {
         border-bottom: 1px solid #f48135;
-        color: #f48135; }
+        color: #f48135;
+        padding-bottom: 5px; }
       .grey_strip__block__tabs--title.active {
         border-bottom: 1px solid #f48135;
-        color: #f48135; }
+        color: #f48135;
+        padding-bottom: 5px; }
   .grey_strip__block__title {
-    font-size: 1.500em;
+    font-size: 1.563em;
     font-family: "Trade Gothic";
-    padding: 20px 0px 15px 30px;
+    padding: 23px 0px 15px 30px;
     float: left; }
     @media (max-width: 768px) {
       .grey_strip__block__title {
@@ -7272,8 +7297,7 @@ margin-left: auto;*/ }
   max-width: 1024px;
   margin: 0 auto;
   line-height: 1.08;
-  padding-bottom: 30px;
-  padding-top: 30px; }
+  padding-bottom: 30px; }
 .bundle_ver2_noSlide_block h2 {
   font-family: "Trade Gothic Bold Cond";
   margin-bottom: 10px; }
@@ -7320,23 +7344,24 @@ margin-left: auto;*/ }
   .bundle_ver2_noSlide_block__single.bundleVersion_B .bundle_ver2_noSlide_block__single--title {
     margin-bottom: 4px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_B .bundle_ver2_noSlide_block__single--bigAmount {
-    height: 113px;
+    height: 115px;
     font-size: 1.125em;
     line-height: 1.250em; }
   .bundle_ver2_noSlide_block__single.bundleVersion_B .bundle_ver2_noSlide_block__single__container--smallAmount {
-    height: 89px; }
+    height: 90px;
+    margin-bottom: 11px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_C .bundle_ver2_noSlide_block__single--title {
-    height: 128px;
+    height: 132px;
     margin-bottom: 5px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_C .bundle_ver2_noSlide_block__single--bigAmount {
-    height: 132px;
+    height: 142px;
     font-size: 1.125em;
     line-height: 1.250em;
     margin-bottom: 20px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_C .bundle_ver2_noSlide_block__single__container--smallAmount {
     display: none; }
   .bundle_ver2_noSlide_block__single.bundleVersion_D .bundle_ver2_noSlide_block__single--title {
-    height: 128px;
+    height: 132px;
     margin-bottom: 5px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_D .bundle_ver2_noSlide_block__single--bigAmount {
     height: 113px;
@@ -7344,14 +7369,15 @@ margin-left: auto;*/ }
     line-height: 1.250em;
     margin-bottom: 20px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_D .bundle_ver2_noSlide_block__single__container--smallAmount {
-    height: 89px; }
+    height: 89px;
+    margin-bottom: 15px; }
   .bundle_ver2_noSlide_block__single.bundleVersion_D .bundle_ver2_noSlide_block__single--mainPrice {
     display: none; }
   .bundle_ver2_noSlide_block__single.bundleVersion_D .bundle_ver2_noSlide_block__single--recurrency {
     display: none; }
   .bundle_ver2_noSlide_block__single__container--smallAmount {
     margin-bottom: 5px;
-    height: 111px;
+    height: 115px;
     overflow: hidden; }
   .bundle_ver2_noSlide_block__single.item {
     position: relative; }
@@ -7376,7 +7402,7 @@ margin-left: auto;*/ }
     font-size: 1.500em;
     font-family: "Trade Gothic Light";
     margin-bottom: 10px;
-    height: 75px;
+    height: 80px;
     overflow: hidden;
     padding-top: 2px; }
   .bundle_ver2_noSlide_block__single--smallAmount {
@@ -7384,9 +7410,9 @@ margin-left: auto;*/ }
     line-height: 1.250em;
     font-family: "Trade Gothic Light"; }
   .bundle_ver2_noSlide_block__single--title {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 20px;
-    height: 64px;
+    height: 69px;
     overflow: hidden;
     font-size: 1.875em;
     font-family: "Trade Gothic Bold"; }

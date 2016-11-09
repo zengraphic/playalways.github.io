@@ -12,6 +12,18 @@
         -webkit-transition: all 0.45s ease-in-out;
         max-width: 1024px;
         margin: 0 auto;
+        .bundle_block__showMore {
+        color: $color-orange;
+        font-size: 1.250em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        margin-top: 70px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     }
     h2 {
         font-family: $weight-boldCond;
@@ -57,6 +69,11 @@
             margin-right: 40px;
             cursor: pointer;
             padding-bottom: 5px;
+            @include breakpoint ('small'){
+            	    width: 100%;
+    margin-top: 15px;
+    display: block;
+            }
             &--Left {
                 float: left;
                 text-transform: none;
@@ -209,7 +226,7 @@
                 &--disclaimer {
                     height: 22px;
                     margin-top: 30px;
-                    margin-bottom: 23px;
+                    margin-bottom: 24px;
                 }
             }
         }
@@ -224,13 +241,8 @@
         .container_secondColumn {
             text-align: center;
             margin-top: 10px;
+            padding-left: 0;
         }
-        // &__tabs{
-        // 	&--title{
-        // 		display: block;
-        // 		margin-top: 15px;
-        // 		width: 100%;
-        // 	}
-        // }
+        //  
     }
 }
