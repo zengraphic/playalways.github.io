@@ -16,32 +16,32 @@
     h2 {
         font-family: $weight-boldCond;
     }
-    &__showMore {
-        color: $color-orange;
-        font-size: 1.250em;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $weight-light;
-        margin-top: 30px;
-        cursor: pointer;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    &__showOffers {
-        color: $color-orange;
-        margin-left: 30px;
-        width: 100%;
-        display: none;
-        font-size: 1.250em;
-        text-align: left;
-        text-transform: uppercase;
-        font-family: $weight-light;
-        cursor: pointer;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+    // &__showMore {
+    //     color: $color-orange;
+    //     font-size: 1.250em;
+    //     text-align: center;
+    //     text-transform: uppercase;
+    //     font-family: $weight-light;
+    //     margin-top: 70px;
+    //     cursor: pointer;
+    //     &:hover {
+    //         text-decoration: underline;
+    //     }
+    // }
+    // &__showOffers {
+    //     color: $color-orange;
+    //     margin-left: 30px;
+    //     width: 100%;
+    //     display: none;
+    //     font-size: 1.250em;
+    //     text-align: left;
+    //     text-transform: uppercase;
+    //     font-family: $weight-light;
+    //     cursor: pointer;
+    //     &:hover {
+    //         text-decoration: underline;
+    //     }
+    // }
     @at-root #{&}__tabs {
         width: 100%;
         text-align: right;
@@ -56,6 +56,7 @@
         &--title {
             margin-right: 40px;
             cursor: pointer;
+            padding-bottom: 5px;
             &--Left {
                 float: left;
                 text-transform: none;
@@ -63,10 +64,12 @@
             }
             &:hover {
                 border-bottom: 1px solid $color-orange;
+                padding-bottom: 5px;
             }
             &.active {
                 border-bottom: 1px solid $color-orange;
                 color: $color-orange;
+                padding-bottom: 5px;
             }
         }
     }
@@ -80,7 +83,7 @@
         text-align: center;
         text-transform: uppercase;
         font-family: $weight-light;
-        margin-top: 30px;
+        margin-top: 70px;
         cursor: pointer;
         &:hover {
             text-decoration: underline;
@@ -114,7 +117,7 @@
         &--bigAmount {
             font-size: 1.625em;
             font-family: $weight-light;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             height: 84px;
             overflow: hidden;
         }
@@ -126,8 +129,8 @@
             overflow: hidden;
         }
         &--title {
-            margin-top: 30px;
-            margin-bottom: 5px;
+            margin-top: 50px;
+            margin-bottom: 15px;
             height: 65px;
             color: $color-lightBlue;
             font-size: 1.875em;
@@ -175,7 +178,7 @@
         &--recurrency {
             font-family: $weight-light;
             font-size: 0.813em;
-            margin-bottom: 10px;
+            margin: 10px auto;
             height: 15px;
         }
         &__placeholder {
@@ -205,8 +208,8 @@
                 }
                 &--disclaimer {
                     height: 22px;
-                    margin-top: 24px;
-                    margin-bottom: 20px;
+                    margin-top: 30px;
+                    margin-bottom: 23px;
                 }
             }
         }
@@ -222,5 +225,12 @@
             text-align: center;
             margin-top: 10px;
         }
+        // &__tabs{
+        // 	&--title{
+        // 		display: block;
+        // 		margin-top: 15px;
+        // 		width: 100%;
+        // 	}
+        // }
     }
 }
