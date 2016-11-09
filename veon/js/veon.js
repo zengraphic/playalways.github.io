@@ -15,11 +15,13 @@ jQuery(document).ready(function($) {
     }
 
     function checkVideoSize(videoWidth, videoHeight, winWidth, winHeight) {
-            $('.video_main').width('95vw');
-            $('.video_main').height('auto');
-            $('html,body').animate({
-                scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
-            }, 200);        
+        $('.video_main').width('95vw');
+        $('.video_main').height('auto');
+        $('.video_preview').height($('.video_main').height());
+        $('.video_preview').width($('.video_main').width());
+        $('html,body').animate({
+            scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
+        }, 200);
     }
 
     function fixFontIOS() {
