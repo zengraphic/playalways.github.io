@@ -34,22 +34,22 @@
         &--button {}
     }
     &__listItem {
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         position: relative;
         &::before {
             border-left: 1px solid $medium-gray;
             content: '';
             position: absolute;
             left: 16%;
-            top: 25px;
-            bottom: 25px;
+            top: 20px;
+            bottom: 20px;
             @include breakpoint(small) {
                 left: 24%;
             }
         }
         &__icon {
-            padding-top: 10px;
+            padding-top: 15px;
             &--fiber {
                 background: rgba(0, 0, 0, 0) url("../img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 0;
                 width: 65px;
@@ -90,9 +90,10 @@
         }
         &__description {
             &--title {
-                font-family: $weight-light;
+                font-family: $weight-normal;
                 color: $color-blue;
                 text-transform: uppercase;
+                font-size: 1.125em;
                 padding-bottom: 10px;
                 @include breakpoint(small) {
                     font-size: 1em;
@@ -102,6 +103,7 @@
                 font-family: $weight-light;
                 color: $color-standardText;
                 font-size: 1em;
+                line-height: 1.125em;
                 @include breakpoint(small) {
                     font-size: 0.95em;
                 }
