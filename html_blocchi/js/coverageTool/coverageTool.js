@@ -222,7 +222,6 @@ jQuery(function($) {
                     COVERAGETOOL.toggleCountry(code);
                 }
             },
-
         },
         isWorldMap: true,
         map: {},
@@ -264,19 +263,19 @@ jQuery(function($) {
             $.each(mapsToResize, function() {
                 this.updateSize();
             });
-
-
         },
         slickToMap: function(code, clickedTab) {
             var regionCode, regionName;
             regionCode = clickedTab.find('a').data().code;
             regionName = continentsData[regionCode].mapName;
             !this.isWorldMap && this.map.goBack();
-            this.map.drillDown(regionName, regionCode);
+
+            setTimeout(function() {
+                COVERAGETOOL.map.drillDown(regionName, regionCode);
+            }, 400);
             this.isWorldMap = false;
             this.buildSelect(regionCode);
             clickedTab.addClass('slick-current');
-            
         },
         mapToSlick: function(code) {
             var targetSlickLink = this.continentsNav.find('a[data-code="' + code + '"]');
@@ -285,7 +284,6 @@ jQuery(function($) {
             if (!currentSlick) {
                 targetSlickSlide.addClass('slick-current');
                 this.buildSelect(code);
-
             } else if (currentSlick != targetSlickSlide) {
                 $('.slick-current').removeClass('slick-current');
                 targetSlickSlide.addClass('slick-current');
@@ -325,10 +323,6 @@ jQuery(function($) {
                     $(this).addClass('activeCountry');
                 });
             }
-
-
-
-
         },
         clearActiveCountry: function() {
             $('.activeCountry').slideUp("slow", function() {
@@ -349,10 +343,9 @@ jQuery(function($) {
         },
         bindContinentsNavigation: function() {
             var tool = this;
-            $('.strip_menu_tab__item').not('.slick-current').click(tool, function(e, code) {
+            $('.strip_menu_tab__item').click(tool, function(e, code) {
                 var clickedTab = $(this);
                 tool.slickToMap(code, clickedTab);
-
             });
         },
         bindCountriesSelect: function() {
@@ -360,14 +353,15 @@ jQuery(function($) {
             var countryList = $('#country--List');
             countryList.on('changed.bs.select', [tool, countryList], function(e, clickedIndex) {
                 var clickedCountry = countryList.find('option').eq(clickedIndex).val();
+                var theMap = tool.map.history[tool.map.history.length - 1];
                 if (clickedIndex != 0) {
-                    tool.map.history[tool.map.history.length - 1].clearSelectedRegions();
-                    tool.map.history[tool.map.history.length - 1].setSelectedRegions(clickedCountry);
+
+                    theMap.clearSelectedRegions();
+                    theMap.setSelectedRegions(clickedCountry);
                 } else if (clickedIndex == 0) {
-                    tool.map.history[tool.map.history.length - 1].clearSelectedRegions();
+                    theMap.clearSelectedRegions();
                     tool.clearActiveCountry();
                 }
-
             });
         },
         bindOperatorsAccordion: function() {
