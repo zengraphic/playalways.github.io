@@ -321,8 +321,8 @@ h4.trade_l {
     }
 }
 
-#menu-three .slidemenu .back__breadcrumbs--modal {
-    left: -133px;
+.slidemenu .back__breadcrumbs--modal {
+    @include transition-basic(left, 0.45s, ease-in-out);
 }
 
 .slidemenu {
@@ -341,35 +341,73 @@ h4.trade_l {
     &--content {
         &-items {
             margin-top: 16px;
+            padding-left: 15px;
             ul {
-                margin-left: -25px;
+                margin-left: 0;
+                padding-left: 0;
                 li {
+                    display: block;
+                    float: none;
+                    position: relative;
+                    padding-left: 15px;
                     a {
+                        display: inline-block;
+                        float: none;
+                        width: auto;
                         @include font-size(18px);
                         font-family: "Trade Gothic Light";
                         color: $color_orange;
                         &:hover {
                             color: rgba(244, 129, 53, 0.8);
                         }
+                        .menu_parent_icon {
+                            display: block;
+                            position: absolute;
+                            top: 16px;
+                            right: 20px;
+                            width: 14px;
+                            height: 14px;
+                            &:before,
+                            &:after {
+                                content: "";
+                                @include transition-basic(all, 0.25s, ease-in-out);
+                                background-color: #f48135;
+                                width: 2px;
+                                height: 10px;
+                                top: 0;
+                                position: absolute;
+                            }
+                            &:before {
+                                transform: translate(2px, 6px) rotate(-45deg);
+                            }
+                            &:after {
+                                transform: translate(2px, 0) rotate(45deg);
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    &--with_labels {
-        .menu__modal {
-            &--item_leaf {
-                margin-left: 1rem;
-            }
-            &--group_leaf {
-                .group_leaf {
-                    font-size: 1.28571rem;
-                    font-family: "Trade Gothic Light";
-                    color: $color_grey_seven;
-                    float: left;
-                    width: 100%;
-                    margin: 3% 0;
-                    text-decoration: none;
+    &--group-label {
+        font-size: 1.28571rem;
+        font-family: "Trade Gothic Light";
+        color: #777a7e;
+        float: left;
+        width: 100%;
+        text-decoration: none;
+        list-style: none
+    }
+    &--is-parent {
+        &.slideOpened {
+            > a {
+                .menu_parent_icon {
+                    &:before {
+                        transform: translate(0, 4px) rotate(-45deg);
+                    }
+                    &:after {
+                        transform: translate(6px, 4px) rotate(45deg);
+                    }
                 }
             }
         }

@@ -3598,8 +3598,12 @@ h4.trade_l {
   .margin_top_header {
     margin-top: 250px; } }
 
-#menu-three .slidemenu .back__breadcrumbs--modal {
-  left: -133px; }
+.slidemenu .back__breadcrumbs--modal {
+  -o-transition: left 0.45s ease-in-out;
+  -moz-transition: left 0.45s ease-in-out;
+  -ms-transition: left 0.45s ease-in-out;
+  -webkit-transition: left 0.45s ease-in-out;
+  transition: left 0.45s ease-in-out; }
 
 .slidemenu {
   position: relative;
@@ -3611,27 +3615,63 @@ h4.trade_l {
   background-image: none; }
 
 .menu__modal--content-items {
-  margin-top: 16px; }
+  margin-top: 16px;
+  padding-left: 15px; }
   .menu__modal--content-items ul {
-    margin-left: -25px; }
-    .menu__modal--content-items ul li a {
-      font-size: 1.28571rem;
-      font-family: "Trade Gothic Light";
-      color: #f48135; }
-      .menu__modal--content-items ul li a:hover {
-        color: rgba(244, 129, 53, 0.8); }
+    margin-left: 0;
+    padding-left: 0; }
+    .menu__modal--content-items ul li {
+      display: block;
+      float: none;
+      position: relative;
+      padding-left: 15px; }
+      .menu__modal--content-items ul li a {
+        display: inline-block;
+        float: none;
+        width: auto;
+        font-size: 1.28571rem;
+        font-family: "Trade Gothic Light";
+        color: #f48135; }
+        .menu__modal--content-items ul li a:hover {
+          color: rgba(244, 129, 53, 0.8); }
+        .menu__modal--content-items ul li a .menu_parent_icon {
+          display: block;
+          position: absolute;
+          top: 16px;
+          right: 20px;
+          width: 14px;
+          height: 14px; }
+          .menu__modal--content-items ul li a .menu_parent_icon:before, .menu__modal--content-items ul li a .menu_parent_icon:after {
+            content: "";
+            -o-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            -webkit-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+            background-color: #f48135;
+            width: 2px;
+            height: 10px;
+            top: 0;
+            position: absolute; }
+          .menu__modal--content-items ul li a .menu_parent_icon:before {
+            transform: translate(2px, 6px) rotate(-45deg); }
+          .menu__modal--content-items ul li a .menu_parent_icon:after {
+            transform: translate(2px, 0) rotate(45deg); }
 
-.menu__modal--with_labels .menu__modal--item_leaf {
-  margin-left: 1rem; }
-
-.menu__modal--with_labels .menu__modal--group_leaf .group_leaf {
+.menu__modal--group-label {
   font-size: 1.28571rem;
   font-family: "Trade Gothic Light";
   color: #777a7e;
   float: left;
   width: 100%;
-  margin: 3% 0;
-  text-decoration: none; }
+  text-decoration: none;
+  list-style: none; }
+
+.menu__modal--is-parent.slideOpened > a .menu_parent_icon:before {
+  transform: translate(0, 4px) rotate(-45deg); }
+
+.menu__modal--is-parent.slideOpened > a .menu_parent_icon:after {
+  transform: translate(6px, 4px) rotate(45deg); }
 
 @media (max-width: 767px) {
   .content {
