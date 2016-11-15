@@ -117,6 +117,7 @@ jQuery(document).ready(function($) {
     infoBox.append(dataInfo);
     infoBox.show();
     $('.overlay_myTicket__container .myTicket_block__single--vCard--info').show();
+    $("html, body").animate({ scrollTop: 0 }, 500);
     $(dataInfo).animate({top: 0}, 1000);         
     $(infoBox).animate({top: 0}, 1000);             
   });
