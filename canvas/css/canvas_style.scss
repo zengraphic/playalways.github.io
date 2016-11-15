@@ -1,0 +1,78 @@
+
+@import 'partials/vars';
+@import 'partials/reset';
+@import 'partials/typography';
+@import 'partials/mixins';
+
+
+
+
+
+
+@include attributes_classes;
+@include position_classes;
+@include text_classes;
+
+
+
+
+
+
+
+.clear {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.advantages_block {
+    margin: 0 auto;
+    max-width: 876px;
+    position: relative;
+    overflow: hidden;
+    &__reminder {
+        font-family: $font_weight_light;
+        color: $color_orange;
+        font-size: 0.875em;
+        margin-bottom: 15px;
+        @include breakpoint(display_small) {
+            margin-bottom: 26px;
+        }
+        &__container {
+            @include breakpoint(display_small) {
+                text-align: center;
+            }
+            &::before {
+                content: "i";
+                border-radius: 50%;
+                border: 1px solid $color_orange;
+                width: 20px;
+                line-height: 20px;
+                height: 20px;
+                text-align: center;
+                position: absolute;
+                top: 0;
+                @include breakpoint(display_small) {
+                    padding-top: 1px;
+                }
+            }
+            & a.info_link {
+                padding-left: 30px;
+                font-size: 14px;
+                color: $color-orange;
+                cursor: pointer;
+                display: inline-block;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                text-decoration: none;
+                &:hover {
+                    opacity: 0.5;
+                    color: #23527c;
+                }
+            }
+        }
+    }
+}
