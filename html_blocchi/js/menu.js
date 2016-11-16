@@ -79,7 +79,7 @@ jQuery(function($) {
                 if (index != 0) {
                     element
                         .getElements().not('.menu__modal--group-label > ul')
-                        .slideUp();
+                        .slideUp(300);
                 }
             });
 
@@ -158,7 +158,7 @@ jQuery(function($) {
                 if (!isBackButton) {
                     menuList
                         .removeClass('opened')
-                        .slideUp();
+                        .slideUp(300);
                     menuList
                         .parent('.menu__modal--is-parent')
                         .removeClass('slideOpened');
@@ -166,7 +166,7 @@ jQuery(function($) {
                 menuList
                     .find('.opened')
                     .removeClass('opened')
-                    .slideUp();
+                    .slideUp(300);
                 menuList
                     .find('.menu__modal--is-parent')
                     .removeClass('slideOpened');
@@ -176,13 +176,13 @@ jQuery(function($) {
                 $('.opened')
                     .not(menuListRoot)
                     .removeClass('opened')
-                    .slideUp();
+                    .slideUp(300);
                 $('.slideOpened')
                     .not(menuListRootParents)
                     .removeClass('slideOpened');
                 menuList
                     .addClass('opened')
-                    .slideDown();
+                    .slideDown(300);
                 menuList
                     .parent('.menu__modal--is-parent')
                     .addClass('slideOpened');
