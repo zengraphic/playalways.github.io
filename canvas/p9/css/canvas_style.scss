@@ -43,7 +43,7 @@
     max-width: 950px;
     position: relative;
     height: auto;
-    font-family: $font_weight_regular;
+    font-family: 'Trebuchet MS';
     padding: 0 30px;
     @include breakpoint('display_small') {
         padding: 0 15px;
@@ -51,14 +51,28 @@
 }
 
 .hero {
-    &_img {
-        width: 100%;
-        height: auto;
-        img {
-            width: 100%;
-            height: auto;
-        }
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    display: block;
+    &--left{
+        float: left;
+        width: 40%;
     }
+    &--right{
+        float: left;
+        width: 60%;
+    }
+    // &_img {
+    //     width: 100%;
+    //     height: auto;
+    //     img {
+    //         width: 100%;
+    //         height: auto;
+    //     }
+    // }
 }
 
 .offer_tab {
@@ -135,9 +149,9 @@
                         color: $color_orange;
                     }
                 }
-                .tax{
+                .tax {
                     float: left;
-                    width:30%;
+                    width: 30%;
                 }
             }
             &--right {
@@ -164,9 +178,9 @@
                         color: $color_orange;
                     }
                 }
-                .tax{
+                .tax {
                     float: left;
-                    width:30%;
+                    width: 30%;
                 }
             }
         }
