@@ -79,7 +79,10 @@ jQuery(function($) {
                 if (index != 0) {
                     element
                         .getElements().not('.menu__modal--group-label > ul')
-                        .slideUp(300);
+                        .slideUp(300, function() {
+                            $('#menu .base__scrollable').getNiceScroll(0).resize();
+                        });
+
                 }
             });
 
@@ -158,7 +161,10 @@ jQuery(function($) {
                 if (!isBackButton) {
                     menuList
                         .removeClass('opened')
-                        .slideUp(300);
+                        .slideUp(300, function() {
+                            console.log('ok');
+                            $('#menu .base__scrollable').getNiceScroll(0).resize();
+                        });
                     menuList
                         .parent('.menu__modal--is-parent')
                         .removeClass('slideOpened');
@@ -166,7 +172,10 @@ jQuery(function($) {
                 menuList
                     .find('.opened')
                     .removeClass('opened')
-                    .slideUp(300);
+                    .slideUp(300, function() {
+                        console.log('ok');
+                        $('#menu .base__scrollable').getNiceScroll(0).resize();
+                    });
                 menuList
                     .find('.menu__modal--is-parent')
                     .removeClass('slideOpened');
@@ -176,13 +185,19 @@ jQuery(function($) {
                 $('.opened')
                     .not(menuListRoot)
                     .removeClass('opened')
-                    .slideUp(300);
+                    .slideUp(300, function() {
+                        console.log('ok');
+                        $('#menu .base__scrollable').getNiceScroll(0).resize();
+                    });
                 $('.slideOpened')
                     .not(menuListRootParents)
                     .removeClass('slideOpened');
                 menuList
                     .addClass('opened')
-                    .slideDown(300);
+                    .slideDown(300, function() {
+                        console.log('ok');
+                        $('.base__scrollable').getNiceScroll(0).resize();
+                    });
                 menuList
                     .parent('.menu__modal--is-parent')
                     .addClass('slideOpened');

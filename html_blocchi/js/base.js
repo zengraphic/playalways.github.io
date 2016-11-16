@@ -160,6 +160,7 @@ function prefixedEventListener(element, type, callback) {
                         close: function() {
                             // reset position btn (conferma/avanti) of footer
                             $(".modalfooter").css("margin-top", 0);
+                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
                         },
                         open: function() {
                             // position btn conferma/avanti in bottom
@@ -175,6 +176,7 @@ function prefixedEventListener(element, type, callback) {
                                 });
                             }
                             $("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
+                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', 'calc(100% - 43px)');
                         }
                     }
                 });
