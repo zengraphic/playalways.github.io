@@ -1,0 +1,934 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  background: white;
+  color: #333;
+  font-family: "Trade Gothic";
+  font-size: 1em;
+  letter-spacing: 0.25px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: "Trade Gothic Bold";
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.eot");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.woff2") format("woff2");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.ttf") format("truetype");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.svg#TradeGothicLTStd-Bold") format("svg");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Trade Gothic Bold Cond";
+  src: url("../fonts/tradegothic/tradegothic-std-bold-cond/TradeGothicLTStd-BdCn20.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Trade Gothic Bold 2";
+  src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.eot");
+  src: url("../fonts/tradegothic/tradegothic-std-bold-2/TradeGothicLTStd-Bd2.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.woff2") format("woff2");
+  src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.ttf") format("truetype");
+  src: url("../fonts/tradegothic/tradegothic-std-bold-2/TradeGothicLTStd-Bd2.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "Trade Gothic Light";
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.eot");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.woff2") format("woff2");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.ttf") format("truetype");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.svg#TradeGothicLTStd-Light") format("svg");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Trade Gothic";
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.eot");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.woff2") format("woff2");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.ttf") format("truetype");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.svg#TradeGothicLTStd") format("svg");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+.padding_top_5 {
+  padding-top: 5px; }
+
+.padding_top_10 {
+  padding-top: 10px; }
+
+.padding_top_15 {
+  padding-top: 15px; }
+
+.padding_top_20 {
+  padding-top: 20px; }
+
+.padding_top_25 {
+  padding-top: 25px; }
+
+.padding_top_30 {
+  padding-top: 30px; }
+
+.padding_top_35 {
+  padding-top: 35px; }
+
+.padding_top_40 {
+  padding-top: 40px; }
+
+.padding_top_45 {
+  padding-top: 45px; }
+
+.padding_top_50 {
+  padding-top: 50px; }
+
+.padding_right_5 {
+  padding-right: 5px; }
+
+.padding_right_10 {
+  padding-right: 10px; }
+
+.padding_right_15 {
+  padding-right: 15px; }
+
+.padding_right_20 {
+  padding-right: 20px; }
+
+.padding_right_25 {
+  padding-right: 25px; }
+
+.padding_right_30 {
+  padding-right: 30px; }
+
+.padding_right_35 {
+  padding-right: 35px; }
+
+.padding_right_40 {
+  padding-right: 40px; }
+
+.padding_right_45 {
+  padding-right: 45px; }
+
+.padding_right_50 {
+  padding-right: 50px; }
+
+.padding_bottom_5 {
+  padding-bottom: 5px; }
+
+.padding_bottom_10 {
+  padding-bottom: 10px; }
+
+.padding_bottom_15 {
+  padding-bottom: 15px; }
+
+.padding_bottom_20 {
+  padding-bottom: 20px; }
+
+.padding_bottom_25 {
+  padding-bottom: 25px; }
+
+.padding_bottom_30 {
+  padding-bottom: 30px; }
+
+.padding_bottom_35 {
+  padding-bottom: 35px; }
+
+.padding_bottom_40 {
+  padding-bottom: 40px; }
+
+.padding_bottom_45 {
+  padding-bottom: 45px; }
+
+.padding_bottom_50 {
+  padding-bottom: 50px; }
+
+.padding_left_5 {
+  padding-left: 5px; }
+
+.padding_left_10 {
+  padding-left: 10px; }
+
+.padding_left_15 {
+  padding-left: 15px; }
+
+.padding_left_20 {
+  padding-left: 20px; }
+
+.padding_left_25 {
+  padding-left: 25px; }
+
+.padding_left_30 {
+  padding-left: 30px; }
+
+.padding_left_35 {
+  padding-left: 35px; }
+
+.padding_left_40 {
+  padding-left: 40px; }
+
+.padding_left_45 {
+  padding-left: 45px; }
+
+.padding_left_50 {
+  padding-left: 50px; }
+
+.margin_top_5 {
+  margin-top: 5px; }
+
+.margin_top_10 {
+  margin-top: 10px; }
+
+.margin_top_15 {
+  margin-top: 15px; }
+
+.margin_top_20 {
+  margin-top: 20px; }
+
+.margin_top_25 {
+  margin-top: 25px; }
+
+.margin_top_30 {
+  margin-top: 30px; }
+
+.margin_top_35 {
+  margin-top: 35px; }
+
+.margin_top_40 {
+  margin-top: 40px; }
+
+.margin_top_45 {
+  margin-top: 45px; }
+
+.margin_top_50 {
+  margin-top: 50px; }
+
+.margin_right_5 {
+  margin-right: 5px; }
+
+.margin_right_10 {
+  margin-right: 10px; }
+
+.margin_right_15 {
+  margin-right: 15px; }
+
+.margin_right_20 {
+  margin-right: 20px; }
+
+.margin_right_25 {
+  margin-right: 25px; }
+
+.margin_right_30 {
+  margin-right: 30px; }
+
+.margin_right_35 {
+  margin-right: 35px; }
+
+.margin_right_40 {
+  margin-right: 40px; }
+
+.margin_right_45 {
+  margin-right: 45px; }
+
+.margin_right_50 {
+  margin-right: 50px; }
+
+.margin_bottom_5 {
+  margin-bottom: 5px; }
+
+.margin_bottom_10 {
+  margin-bottom: 10px; }
+
+.margin_bottom_15 {
+  margin-bottom: 15px; }
+
+.margin_bottom_20 {
+  margin-bottom: 20px; }
+
+.margin_bottom_25 {
+  margin-bottom: 25px; }
+
+.margin_bottom_30 {
+  margin-bottom: 30px; }
+
+.margin_bottom_35 {
+  margin-bottom: 35px; }
+
+.margin_bottom_40 {
+  margin-bottom: 40px; }
+
+.margin_bottom_45 {
+  margin-bottom: 45px; }
+
+.margin_bottom_50 {
+  margin-bottom: 50px; }
+
+.margin_left_5 {
+  margin-left: 5px; }
+
+.margin_left_10 {
+  margin-left: 10px; }
+
+.margin_left_15 {
+  margin-left: 15px; }
+
+.margin_left_20 {
+  margin-left: 20px; }
+
+.margin_left_25 {
+  margin-left: 25px; }
+
+.margin_left_30 {
+  margin-left: 30px; }
+
+.margin_left_35 {
+  margin-left: 35px; }
+
+.margin_left_40 {
+  margin-left: 40px; }
+
+.margin_left_45 {
+  margin-left: 45px; }
+
+.margin_left_50 {
+  margin-left: 50px; }
+
+.top_2 {
+  top: "2%"; }
+
+.top_4 {
+  top: "4%"; }
+
+.top_6 {
+  top: "6%"; }
+
+.top_8 {
+  top: "8%"; }
+
+.top_10 {
+  top: "10%"; }
+
+.top_12 {
+  top: "12%"; }
+
+.top_14 {
+  top: "14%"; }
+
+.top_16 {
+  top: "16%"; }
+
+.top_18 {
+  top: "18%"; }
+
+.top_20 {
+  top: "20%"; }
+
+.right_2 {
+  right: "2%"; }
+
+.right_4 {
+  right: "4%"; }
+
+.right_6 {
+  right: "6%"; }
+
+.right_8 {
+  right: "8%"; }
+
+.right_10 {
+  right: "10%"; }
+
+.right_12 {
+  right: "12%"; }
+
+.right_14 {
+  right: "14%"; }
+
+.right_16 {
+  right: "16%"; }
+
+.right_18 {
+  right: "18%"; }
+
+.right_20 {
+  right: "20%"; }
+
+.bottom_2 {
+  bottom: "2%"; }
+
+.bottom_4 {
+  bottom: "4%"; }
+
+.bottom_6 {
+  bottom: "6%"; }
+
+.bottom_8 {
+  bottom: "8%"; }
+
+.bottom_10 {
+  bottom: "10%"; }
+
+.bottom_12 {
+  bottom: "12%"; }
+
+.bottom_14 {
+  bottom: "14%"; }
+
+.bottom_16 {
+  bottom: "16%"; }
+
+.bottom_18 {
+  bottom: "18%"; }
+
+.bottom_20 {
+  bottom: "20%"; }
+
+.left_2 {
+  left: "2%"; }
+
+.left_4 {
+  left: "4%"; }
+
+.left_6 {
+  left: "6%"; }
+
+.left_8 {
+  left: "8%"; }
+
+.left_10 {
+  left: "10%"; }
+
+.left_12 {
+  left: "12%"; }
+
+.left_14 {
+  left: "14%"; }
+
+.left_16 {
+  left: "16%"; }
+
+.left_18 {
+  left: "18%"; }
+
+.left_20 {
+  left: "20%"; }
+
+.top_2, .top_4, .top_6, .top_8, .top_10, .top_12, .top_14, .top_16, .top_18, .top_20, .right_2, .right_4, .right_6, .right_8, .right_10, .right_12, .right_14, .right_16, .right_18, .right_20, .bottom_2, .bottom_4, .bottom_6, .bottom_8, .bottom_10, .bottom_12, .bottom_14, .bottom_16, .bottom_18, .bottom_20, .left_2, .left_4, .left_6, .left_8, .left_10, .left_12, .left_14, .left_16, .left_18, .left_20 {
+  position: relative; }
+
+.font_size_12 {
+  font-size: 12px; }
+
+.line_height_12 {
+  line-height: 12px; }
+
+.font_size_14 {
+  font-size: 14px; }
+
+.line_height_14 {
+  line-height: 14px; }
+
+.font_size_16 {
+  font-size: 16px; }
+
+.line_height_16 {
+  line-height: 16px; }
+
+.font_size_18 {
+  font-size: 18px; }
+
+.line_height_18 {
+  line-height: 18px; }
+
+.font_size_20 {
+  font-size: 20px; }
+
+.line_height_20 {
+  line-height: 20px; }
+
+.font_size_22 {
+  font-size: 22px; }
+
+.line_height_22 {
+  line-height: 22px; }
+
+.font_size_24 {
+  font-size: 24px; }
+
+.line_height_24 {
+  line-height: 24px; }
+
+.font_size_26 {
+  font-size: 26px; }
+
+.line_height_26 {
+  line-height: 26px; }
+
+.font_size_28 {
+  font-size: 28px; }
+
+.line_height_28 {
+  line-height: 28px; }
+
+.font_size_30 {
+  font-size: 30px; }
+
+.line_height_30 {
+  line-height: 30px; }
+
+.font_size_32 {
+  font-size: 32px; }
+
+.line_height_32 {
+  line-height: 32px; }
+
+.font_size_34 {
+  font-size: 34px; }
+
+.line_height_34 {
+  line-height: 34px; }
+
+.font_size_36 {
+  font-size: 36px; }
+
+.line_height_36 {
+  line-height: 36px; }
+
+.font_size_38 {
+  font-size: 38px; }
+
+.line_height_38 {
+  line-height: 38px; }
+
+.font_size_40 {
+  font-size: 40px; }
+
+.line_height_40 {
+  line-height: 40px; }
+
+.font_size_42 {
+  font-size: 42px; }
+
+.line_height_42 {
+  line-height: 42px; }
+
+.font_size_44 {
+  font-size: 44px; }
+
+.line_height_44 {
+  line-height: 44px; }
+
+.font_size_46 {
+  font-size: 46px; }
+
+.line_height_46 {
+  line-height: 46px; }
+
+.font_size_48 {
+  font-size: 48px; }
+
+.line_height_48 {
+  line-height: 48px; }
+
+.font_size_50 {
+  font-size: 50px; }
+
+.line_height_50 {
+  line-height: 50px; }
+
+.font_size_52 {
+  font-size: 52px; }
+
+.line_height_52 {
+  line-height: 52px; }
+
+.font_size_54 {
+  font-size: 54px; }
+
+.line_height_54 {
+  line-height: 54px; }
+
+.font_size_56 {
+  font-size: 56px; }
+
+.line_height_56 {
+  line-height: 56px; }
+
+.font_size_58 {
+  font-size: 58px; }
+
+.line_height_58 {
+  line-height: 58px; }
+
+.font_size_60 {
+  font-size: 60px; }
+
+.line_height_60 {
+  line-height: 60px; }
+
+.font_size_62 {
+  font-size: 62px; }
+
+.line_height_62 {
+  line-height: 62px; }
+
+.font_size_64 {
+  font-size: 64px; }
+
+.line_height_64 {
+  line-height: 64px; }
+
+.font_size_66 {
+  font-size: 66px; }
+
+.line_height_66 {
+  line-height: 66px; }
+
+.font_size_68 {
+  font-size: 68px; }
+
+.line_height_68 {
+  line-height: 68px; }
+
+.font_size_70 {
+  font-size: 70px; }
+
+.line_height_70 {
+  line-height: 70px; }
+
+.font_size_72 {
+  font-size: 72px; }
+
+.line_height_72 {
+  line-height: 72px; }
+
+.font_size_74 {
+  font-size: 74px; }
+
+.line_height_74 {
+  line-height: 74px; }
+
+.font_size_76 {
+  font-size: 76px; }
+
+.line_height_76 {
+  line-height: 76px; }
+
+.font_size_78 {
+  font-size: 78px; }
+
+.line_height_78 {
+  line-height: 78px; }
+
+.font_size_80 {
+  font-size: 80px; }
+
+.line_height_80 {
+  line-height: 80px; }
+
+.clear {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.hidden {
+  display: none; }
+
+.strong {
+  color: #444; }
+
+.upper {
+  text-transform: uppercase; }
+
+.text_align_left {
+  text-align: left; }
+.text_align_center {
+  text-align: center; }
+.text_align_right {
+  text-align: right; }
+
+.container {
+  margin: 0 auto;
+  max-width: 950px;
+  position: relative;
+  height: auto;
+  font-family: "Trade Gothic";
+  padding: 0 30px; }
+  @media (max-width: 640px) {
+    .container {
+      padding: 0 15px; } }
+
+.hero_img {
+  width: 100%;
+  height: auto; }
+  .hero_img img {
+    width: 100%;
+    height: auto; }
+
+.offer_tab_nav {
+  position: relative; }
+  .offer_tab_nav li {
+    list-style: none;
+    float: left;
+    width: 49%;
+    margin-right: 1%;
+    text-align: center;
+    background-color: #e6e9ed; }
+    .offer_tab_nav li:last-child {
+      margin-right: 0;
+      width: 50%; }
+    .offer_tab_nav li.active {
+      background-color: #f4f4f4; }
+      .offer_tab_nav li.active img {
+        opacity: 1; }
+    .offer_tab_nav li a {
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      color: #337ab7;
+      text-align: center;
+      padding-top: 15px;
+      padding-bottom: 15px; }
+      .offer_tab_nav li a img {
+        width: 60%;
+        display: inline-block;
+        opacity: 0.5; }
+.offer_tab_content {
+  background-color: #f4f4f4;
+  height: auto; }
+  .offer_tab_content .recurrency {
+    font-family: "Trade Gothic Bold 2";
+    color: #777a7e;
+    width: 100%;
+    float: none; }
+  .offer_tab_content .claim {
+    font-family: "Trade Gothic Bold 2";
+    color: #f48135; }
+  .offer_tab_content_halfBlock--left {
+    width: 48%;
+    margin-right: 2%;
+    float: left; }
+    @media (max-width: 640px) {
+      .offer_tab_content_halfBlock--left {
+        width: 100%; } }
+    .offer_tab_content_halfBlock--left .offer {
+      width: 70%;
+      float: left; }
+      .offer_tab_content_halfBlock--left .offer .offer_title {
+        color: #f48135; }
+        .offer_tab_content_halfBlock--left .offer .offer_title .subscribe {
+          font-family: "Trade Gothic"; }
+        .offer_tab_content_halfBlock--left .offer .offer_title .offer_name {
+          font-family: "Trade Gothic Bold 2"; }
+      .offer_tab_content_halfBlock--left .offer .price {
+        font-family: "Trade Gothic Bold 2";
+        color: #f48135; }
+    .offer_tab_content_halfBlock--left .tax {
+      float: left;
+      width: 30%; }
+  .offer_tab_content_halfBlock--right {
+    width: 48%;
+    margin-left: 2%;
+    float: left; }
+    @media (max-width: 640px) {
+      .offer_tab_content_halfBlock--right {
+        width: 100%; } }
+    .offer_tab_content_halfBlock--right .offer {
+      width: 70%;
+      float: left; }
+      .offer_tab_content_halfBlock--right .offer .offer_title {
+        color: #f48135; }
+        .offer_tab_content_halfBlock--right .offer .offer_title .subscribe {
+          font-family: "Trade Gothic"; }
+        .offer_tab_content_halfBlock--right .offer .offer_title .offer_name {
+          font-family: "Trade Gothic Bold 2"; }
+      .offer_tab_content_halfBlock--right .offer .price {
+        font-family: "Trade Gothic Bold 2";
+        color: #f48135; }
+    .offer_tab_content_halfBlock--right .tax {
+      float: left;
+      width: 30%; }
+
+.offer_promotion {
+  color: #777a7e; }
+
+.active {
+  background-color: #f4f4f4; }
+
+.advantages_block {
+  margin: 0 auto;
+  max-width: 876px;
+  position: relative;
+  overflow: hidden; }
+  .advantages_block__reminder {
+    font-family: "Trade Gothic Light";
+    color: #f48135;
+    font-size: 0.875em;
+    margin-bottom: 15px; }
+    @media (max-width: 640px) {
+      .advantages_block__reminder {
+        margin-bottom: 26px; } }
+    @media (max-width: 640px) {
+      .advantages_block__reminder__container {
+        text-align: center; } }
+    .advantages_block__reminder__container::before {
+      content: "i";
+      border-radius: 50%;
+      border: 1px solid #f48135;
+      width: 20px;
+      line-height: 20px;
+      height: 20px;
+      text-align: center;
+      position: absolute;
+      top: 0; }
+      @media (max-width: 640px) {
+        .advantages_block__reminder__container::before {
+          padding-top: 1px; } }
+    .advantages_block__reminder__container a.info_link {
+      padding-left: 30px;
+      font-size: 14px;
+      color: #f48135;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-decoration: none; }
+      .advantages_block__reminder__container a.info_link:hover {
+        opacity: 0.5;
+        color: #23527c; }
+
+/*# sourceMappingURL=canvas_style.css.map */
