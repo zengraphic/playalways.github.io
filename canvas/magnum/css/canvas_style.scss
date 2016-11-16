@@ -1,24 +1,10 @@
-
 @import 'partials/vars';
 @import 'partials/reset';
 @import 'partials/typography';
 @import 'partials/mixins';
-
-
-
-
-
-
 @include attributes_classes;
 @include position_classes;
 @include text_classes;
-
-
-
-
-
-
-
 .clear {
     content: "";
     display: block;
@@ -28,19 +14,20 @@
     height: 0;
 }
 
-.advantages_block {
+
+.visore_magnum {
+    
+}
+
+.wind_ricorda {
     margin: 0 auto;
-    max-width: 876px;
+    width: 100%;
     position: relative;
-    overflow: hidden;
     &__reminder {
         font-family: $font_weight_light;
         color: $color_orange;
         font-size: 0.875em;
-        margin-bottom: 15px;
-        @include breakpoint(display_small) {
-            margin-bottom: 26px;
-        }
+        @include breakpoint(display_small) {}
         &__container {
             @include breakpoint(display_small) {
                 text-align: center;
@@ -50,14 +37,12 @@
                 border-radius: 50%;
                 border: 1px solid $color_orange;
                 width: 20px;
-                line-height: 20px;
                 height: 20px;
+                line-height: 20px;
                 text-align: center;
                 position: absolute;
                 top: 0;
-                @include breakpoint(display_small) {
-                    padding-top: 1px;
-                }
+                @include breakpoint(display_small) {}
             }
             & a.info_link {
                 padding-left: 30px;

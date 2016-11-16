@@ -78,7 +78,7 @@ jQuery(function($) {
                     .addClass(element.class);
                 if (index != 0) {
                     element
-                        .getElements()
+                        .getElements().not('.menu__modal--group-label > ul')
                         .slideUp();
                 }
             });

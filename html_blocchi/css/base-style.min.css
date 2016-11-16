@@ -3615,16 +3615,21 @@ h4.trade_l {
   background-image: none; }
 
 .menu__modal--content-items {
-  margin-top: 16px;
-  padding-left: 15px; }
+  padding-top: 0px;
+  padding-left: 0px;
+  border-bottom: 1px solid #ccd1d9; }
   .menu__modal--content-items ul {
     margin-left: 0;
-    padding-left: 0; }
+    padding-left: 0;
+    margin-bottom: 0px; }
     .menu__modal--content-items ul li {
       display: block;
       float: none;
       position: relative;
-      padding-left: 15px; }
+      padding-left: 40px;
+      border-bottom: 1px solid #ccd1d9; }
+      .menu__modal--content-items ul li:last-child {
+        border-bottom: none; }
       .menu__modal--content-items ul li a {
         display: inline-block;
         float: none;
@@ -3638,9 +3643,9 @@ h4.trade_l {
           display: block;
           position: absolute;
           top: 16px;
-          right: 20px;
-          width: 14px;
-          height: 14px; }
+          left: 16px;
+          width: 16px;
+          height: 16px; }
           .menu__modal--content-items ul li a .menu_parent_icon:before, .menu__modal--content-items ul li a .menu_parent_icon:after {
             content: "";
             -o-transition: all 0.25s ease-in-out;
@@ -3654,9 +3659,9 @@ h4.trade_l {
             top: 0;
             position: absolute; }
           .menu__modal--content-items ul li a .menu_parent_icon:before {
-            transform: translate(2px, 6px) rotate(-45deg); }
+            transform: translate(6px, 0) rotate(-45deg); }
           .menu__modal--content-items ul li a .menu_parent_icon:after {
-            transform: translate(2px, 0) rotate(45deg); }
+            transform: translate(6px, 6px) rotate(45deg); }
 
 .menu__modal--group-label {
   font-size: 1.28571rem;
@@ -3667,11 +3672,12 @@ h4.trade_l {
   text-decoration: none;
   list-style: none; }
 
-.menu__modal--is-parent.slideOpened > a .menu_parent_icon:before {
-  transform: translate(0, 4px) rotate(-45deg); }
-
-.menu__modal--is-parent.slideOpened > a .menu_parent_icon:after {
-  transform: translate(6px, 4px) rotate(45deg); }
+.menu__modal--is-parent.slideOpened {
+  background-color: #f4f4f4; }
+  .menu__modal--is-parent.slideOpened > a .menu_parent_icon:before {
+    transform: translate(4px, 4px) rotate(-45deg); }
+  .menu__modal--is-parent.slideOpened > a .menu_parent_icon:after {
+    transform: translate(10px, 4px) rotate(45deg); }
 
 @media (max-width: 767px) {
   .content {
