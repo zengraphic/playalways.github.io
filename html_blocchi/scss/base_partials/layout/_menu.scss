@@ -342,34 +342,47 @@ h4.trade_l {
         &-items {
             padding-top: 0px;
             padding-left: 0px;
-            border-bottom: 1px solid $color_grey_light;
+            overflow-x: hidden;
             ul {
                 margin-left: 0;
                 padding-left: 0;
                 margin-bottom: 0px;
+                position: relative;
                 li {
                     display: block;
                     float: none;
                     position: relative;
-                    padding-left: 40px;
-                    border-bottom: 1px solid $color_grey_light;
+                    padding-left: 0;
                     &:last-child {
                         border-bottom: none;
                     }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: -90px;
+                        right: -190px;
+                        height: 1px;
+                        box-shadow: inset 0 1px 0 0 $color_grey_light;
+                        top: 0;
+                    }
                     a {
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                        margin-left: 36px;
                         display: inline-block;
                         float: none;
                         width: auto;
+                        position: static;
                         @include font-size(18px);
                         font-family: "Trade Gothic Light";
                         color: $color_orange;
                         &:hover {
-                            color: rgba(244, 129, 53, 0.8);
+                            color: rgba(244, 129, 53, 0.7);
                         }
                         .menu_parent_icon {
                             display: block;
                             position: absolute;
-                            top: 16px;
+                            top: 13px;
                             left: 16px;
                             width: 16px;
                             height: 16px;
@@ -393,6 +406,34 @@ h4.trade_l {
                     }
                 }
             }
+            .menu_level_ {
+                &0 {
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                        box-shadow: inset 0 -1px 0 0 $color_grey_light;
+                    }
+                }
+                &1 {
+                    padding-left: 24px;
+                    left: 0;
+                }
+                &2 {
+                    padding-left: 48px;
+                    left: -24px;
+                }
+                &3 {
+                    padding-left: 72px;
+                    left: -48px;
+                }
+                &4 {
+                    padding-left: 96px;
+                    left: -72px;
+                }
+            }
         }
     }
     &--group-label {
@@ -402,7 +443,20 @@ h4.trade_l {
         float: left;
         width: 100%;
         text-decoration: none;
-        list-style: none
+        list-style: none;
+        left: 16px;
+        &:after {
+            content: none !important;
+        }
+        > ul {
+            margin-top: 5px;
+            padding-left: 24px !important;
+        }
+    }
+    &--item_leaf {
+        a {
+            margin-left: 16px !important;
+        }
     }
     &--is-parent {
         &.slideOpened {

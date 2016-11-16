@@ -289,42 +289,42 @@
 @font-face {
   font-family: "Trade Gothic Bold";
   /* src: url("../../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.eot"); */
-  src: url("../fonts/tradegothic/TradeGothicLTStd-Bd2.woff") format("woff");
+  src: url("../fonts/tradegothic/TradeGothicLTStd-Bd2.woff") format("woff"), url("../fonts/tradegothic/TradeGothicLTStd-Bd2.otf") format("opentype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Trade Gothic Bold Cond";
   /* src: url("../../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.eot"); */
-  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.woff") format("woff"), url("../fonts/tradegothic/TradeGothicLTStd-BdCn20.otf") format("opentype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Trade Gothic Bold2";
   /* src: url("../../fonts/tradegothic/hinted-TradeGothicLTStd-Bd2.eot"); */
-  src: url("../fonts/tradegothic/TradeGothicLTStd-Bd2.woff") format("woff");
+  src: url("../fonts/tradegothic/TradeGothicLTStd-Bd2.woff") format("woff"), url("../fonts/tradegothic/TradeGothicLTStd-Bd2.otf") format("opentype");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: "Trade Gothic Light";
   /* src: url("../../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.eot"); */
-  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.woff") format("woff"), url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.otf") format("opentype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Trade Gothic Obl";
   /* src: url("../../fonts/tradegothic/tradegothic-std-oblique/TradeGothicLTStd-Obl.eot"); */
-  src: url("../fonts/tradegothic/tradegothic-std-oblique/TradeGothicLTStd-Obl.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-oblique/TradeGothicLTStd-Obl.woff") format("woff"), url("../fonts/tradegothic/tradegothic-std-oblique/TradeGothicLTStd-Obl.otf") format("opentype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Trade Gothic";
   /* src: url("../../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.eot"); */
-  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.woff") format("woff");
+  src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.woff") format("woff"), url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.otf") format("opentype");
   font-weight: normal;
   font-style: normal; }
 
@@ -3617,32 +3617,44 @@ h4.trade_l {
 .menu__modal--content-items {
   padding-top: 0px;
   padding-left: 0px;
-  border-bottom: 1px solid #ccd1d9; }
+  overflow-x: hidden; }
   .menu__modal--content-items ul {
     margin-left: 0;
     padding-left: 0;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    position: relative; }
     .menu__modal--content-items ul li {
       display: block;
       float: none;
       position: relative;
-      padding-left: 40px;
-      border-bottom: 1px solid #ccd1d9; }
+      padding-left: 0; }
       .menu__modal--content-items ul li:last-child {
         border-bottom: none; }
+      .menu__modal--content-items ul li:after {
+        content: "";
+        position: absolute;
+        left: -90px;
+        right: -190px;
+        height: 1px;
+        box-shadow: inset 0 1px 0 0 #ccd1d9;
+        top: 0; }
       .menu__modal--content-items ul li a {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-left: 36px;
         display: inline-block;
         float: none;
         width: auto;
+        position: static;
         font-size: 1.28571rem;
         font-family: "Trade Gothic Light";
         color: #f48135; }
         .menu__modal--content-items ul li a:hover {
-          color: rgba(244, 129, 53, 0.8); }
+          color: rgba(244, 129, 53, 0.7); }
         .menu__modal--content-items ul li a .menu_parent_icon {
           display: block;
           position: absolute;
-          top: 16px;
+          top: 13px;
           left: 16px;
           width: 16px;
           height: 16px; }
@@ -3662,6 +3674,25 @@ h4.trade_l {
             transform: translate(6px, 0) rotate(-45deg); }
           .menu__modal--content-items ul li a .menu_parent_icon:after {
             transform: translate(6px, 6px) rotate(45deg); }
+  .menu__modal--content-items .menu_level_0:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    box-shadow: inset 0 -1px 0 0 #ccd1d9; }
+  .menu__modal--content-items .menu_level_1 {
+    padding-left: 24px;
+    left: 0; }
+  .menu__modal--content-items .menu_level_2 {
+    padding-left: 48px;
+    left: -24px; }
+  .menu__modal--content-items .menu_level_3 {
+    padding-left: 72px;
+    left: -48px; }
+  .menu__modal--content-items .menu_level_4 {
+    padding-left: 96px;
+    left: -72px; }
 
 .menu__modal--group-label {
   font-size: 1.28571rem;
@@ -3670,7 +3701,16 @@ h4.trade_l {
   float: left;
   width: 100%;
   text-decoration: none;
-  list-style: none; }
+  list-style: none;
+  left: 16px; }
+  .menu__modal--group-label:after {
+    content: none !important; }
+  .menu__modal--group-label > ul {
+    margin-top: 5px;
+    padding-left: 24px !important; }
+
+.menu__modal--item_leaf a {
+  margin-left: 16px !important; }
 
 .menu__modal--is-parent.slideOpened {
   background-color: #f4f4f4; }
