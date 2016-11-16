@@ -28,8 +28,8 @@
         width: 100%;
         bottom: 0;
         margin-bottom: -15px;
-        background-image: url("../img/backgrounds/header_bg.png");
-        background-repeat: repeat-x;
+        //background-image: url("../img/backgrounds/header_bg.png");
+        //background-repeat: repeat-x;
         height: 1rem;
         left: 0;
         z-index: 0;
@@ -38,17 +38,15 @@
         margin-bottom: 122px;
     }
     .header_second {
-        @include boxWF(left,
-        100%);
-        @include transition-with-delay(all,
-        1s,
-        linear,
-        1s);
+        display: block;
+        max-width: 950px;
+        margin: 0 auto;
+        transition: (all,1s,linear,1s);
         min-height: 79px;
     }
     .logo {
-        @include boxWF(left,
-        12rem);
+        float: left;
+        width: 100%;
         margin: 0.8rem 0 0 0.1rem;
     }
     .logo--wind {
