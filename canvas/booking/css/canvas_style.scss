@@ -97,9 +97,9 @@ a {
         }
     }
     .blockDesktop {
-        @include breakpoint('display_small') {
-            display: none;
-        }
+        // @include breakpoint('display_small') {
+        //     display: none;
+        // }
         .info_offer {
             color: $color_grey_darker;
             a {
@@ -168,30 +168,45 @@ a {
                 box-sizing: border-box;
                 border-radius: 0 4px 4px 4px;
                 position: relative;
-                top: -1px;
-                .claim {
-                    font-family: $font_weight_bold_2;
-                    color: $color_orange;
+                top: -2px;
+                padding: 50px 50px 30px 50px;
+                @include breakpoint('display_small') {
+                            padding:20px;
+                        }
+                .offer_ClaimLogo {
+                    .claim {
+                        font-family: 'Trebuchet MS';
+                        color: $color_orange;
+                        width: 50%;
+                        float: left;
+                        @include breakpoint('display_small') {
+                            width: 100%;
+                        }
+                    }
+                    .offerLogo{
+                        width: 50%;
+                        float: left;
+                        @include breakpoint('display_small') {
+                            width: 100%;
+                        }
+
+                    }
                 }
                 &_halfBlock {
                     &--left {
-                        width: 48%;
+                        width: 58%;
                         margin-right: 2%;
                         float: left;
                         @include breakpoint('display_small') {
                             width: 100%;
                         }
                         .offer_detail {
-                            .number,
                             .offer {
-                                font-family: $font_weight_bold_2;
-                                .price,
-                                .image {
-                                    float: right;
-                                    margin-left: 2%;
-                                }
                                 .detail {
                                     color: $color_grey_medium_dark;
+                                }
+                                .unlimited{
+                        
                                 }
                                 &_numbers {
                                     color: $color_orange;
@@ -222,7 +237,7 @@ a {
                         }
                     }
                     &--right {
-                        width: 48%;
+                        width: 38%;
                         margin-left: 2%;
                         float: left;
                         @include breakpoint('display_small') {
@@ -231,11 +246,14 @@ a {
                         .offer_detail {
                             .number,
                             .offer {
-                                font-family: $font_weight_bold_2;
-                                .price,
-                                .image {
+                                .price {
                                     float: right;
-                                    margin-left: 2%;
+                                    font-family: 'Trebuchet MS';
+                                    letter-spacing: -0.2em;
+                                }
+                                .image{
+                                    float: right;
+                                    margin-left: 15%
                                 }
                                 &_numbers {
                                     color: $color_orange;
