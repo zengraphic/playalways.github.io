@@ -999,7 +999,7 @@ a {
   border-radius: 0 4px 4px 4px;
   position: relative;
   top: -2px;
-  padding: 50px 50px 30px 50px; }
+  padding: 50px 50px 40px 50px; }
   @media (max-width: 640px) {
     .landing_booking .blockDesktop .offer_tab_content {
       padding: 20px; } }
@@ -1026,6 +1026,17 @@ a {
     @media (max-width: 640px) {
       .landing_booking .blockDesktop .offer_tab_content_halfBlock--left {
         width: 100%; } }
+    .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer_deleted {
+      position: relative;
+      color: #f48135; }
+      .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer_deleted:after {
+        border-bottom: 1px solid #000;
+        content: "";
+        left: 0;
+        position: absolute;
+        left: calc(50% - 45px);
+        right: calc(50% - 45px);
+        top: 50%; }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer .detail {
       color: #333; }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer .unlimited {

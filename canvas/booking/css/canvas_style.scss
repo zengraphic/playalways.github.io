@@ -169,7 +169,7 @@ a {
                 border-radius: 0 4px 4px 4px;
                 position: relative;
                 top: -2px;
-                padding: 50px 50px 30px 50px;
+                padding: 50px 50px 40px 50px;
                 @include breakpoint('display_small') {
                     padding: 20px;
                 }
@@ -203,6 +203,19 @@ a {
                         }
                         .offer_detail {
                             .offer {
+                                &_deleted {
+                                    position: relative;
+                                    color: $color_orange;
+                                    &:after {
+                                        border-bottom: 1px solid #000;
+                                        content: "";
+                                        left: 0;
+                                        position: absolute;
+                                        left: calc(50% - 45px);
+                                        right: calc(50% - 45px);
+                                        top: 50%;
+                                    }
+                                }
                                 .detail {
                                     color: $color_grey_darker;
                                 }
@@ -351,8 +364,8 @@ a {
                         .offerBlock {
                             float: left;
                             width: 60%;
-                            &_details{
-                                .numbers{
+                            &_details {
+                                .numbers {
                                     color: $color_orange;
                                 }
                             }
@@ -369,8 +382,8 @@ a {
                         .offerBlock {
                             float: left;
                             width: 70%;
-                            &_details{
-                                .numbers{
+                            &_details {
+                                .numbers {
                                     color: $color_orange;
                                 }
                             }
