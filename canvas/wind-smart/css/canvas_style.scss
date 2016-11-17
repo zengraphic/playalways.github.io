@@ -23,8 +23,11 @@
         padding: 10px 0 20px 20px;
         border-radius: 4px;
         height: auto;
-        @include breakpoint (display_smallest) {
+        @include breakpoint (display_small) {
             width: 100%;
+            padding-right: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
         }
         &--title {
             font-family: "Trebuchet MS";
@@ -32,6 +35,9 @@
             font-weight: bold;
             font-size: 80px;
             text-transform: uppercase;
+            @include breakpoint (display_smaller) {
+                font-size: 50px;
+            }
         }
         &--img img {
             max-width: 100%;
@@ -46,10 +52,17 @@
             .smaller {
                 font-weight: normal;
                 font-size: 30px;
+                @include breakpoint (display_smaller) {
+                    font-size: 22px;
+                }
             }
             .smaller2 {
                 font-weight: normal;
                 //font-size: 30px;
+            }
+            @include breakpoint (display_smaller) {
+                font-size: 26px;
+                padding-top: 10px;
             }
         }
         &--euro {
@@ -58,6 +71,40 @@
             color: #fff;
             font-weight: bold;
             font-size: 105px;
+            .smaller {
+                font-size: 70px;
+            }
+            @include breakpoint (display_smaller) {
+                font-size: 85px;
+            }
+        }
+        &--delete {
+            font-family: "Trebuchet MS";
+            color: #fff;
+            font-weight: normal;
+            font-size: 25px;
+            text-transform: uppercase;
+            width: 135px;
+            &.strikethrough {
+                position: relative;
+            }
+            &.strikethrough:before {
+                position: absolute;
+                content: "";
+                left: -4px;
+                top: 60%;
+                right: 0;
+                border-top: 1px solid;
+                border-color: inherit;
+                -webkit-transform: rotate(-5deg);
+                -moz-transform: rotate(-5deg);
+                -ms-transform: rotate(-5deg);
+                -o-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+            }
+            @include breakpoint (display_smaller) {
+                font-size: 22px;
+            }
         }
         &--minute {
             font-family: "Trebuchet MS";
@@ -65,6 +112,9 @@
             font-weight: bold;
             font-size: 35px;
             text-transform: uppercase;
+            @include breakpoint (display_smaller) {
+                font-size: 22px;
+            }
         }
         .price_left {
             float: left;
@@ -73,6 +123,9 @@
                 color: #fff;
                 font-weight: normal;
                 font-size: 25px;
+                @include breakpoint (display_smaller) {
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -95,6 +148,19 @@
             position: absolute;
             bottom: 0;
             right: 20px;
+            img {
+                @include breakpoint (display_smaller) {
+                    max-width: 50%;
+                    height: auto;
+                }
+            }
+            @include breakpoint (display_small) {
+                position: relative;
+                background-color: #ef7426;
+                right: 0;
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
         }
     }
     &__viewer {
@@ -182,21 +248,28 @@
                 font-family: "Trebuchet MS";
                 float: left;
                 width: 400px;
-                @include breakpoint (display_smallest) {
+                @include breakpoint (display_small) {
                     text-align: center;
                     width: 100%;
+                }
+                @include breakpoint (display_smaller) {
+                    font-size: 20px;
                 }
             }
             .action {
                 float: left;
                 width: 150px;
-                @include breakpoint (display_smallest) {
+                @include breakpoint (display_small) {
                     width: 100%;
+                    margin-top: 20px;
                 }
             }
             .box {
                 margin: 0 auto;
                 width: 650px;
+                @include breakpoint (display_small) {
+                    width: auto;
+                }
             }
         }
         &_text {
@@ -273,7 +346,7 @@
 .footer_block {
     width: 100%;
     border-top: 1px solid #d3d3d2;
-    @include breakpoint (display_smallest) {
+    @include breakpoint (display_small) {
         display: none;
     }
     &__container {
