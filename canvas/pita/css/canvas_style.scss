@@ -413,16 +413,15 @@ a {
     letter-spacing: -1px;
 }
 
+.fix_image{
+    top: 6px !important;
+}
+
 .pita {
     &_img {
         float: left;
         position: relative;
-        top: 9px;
-    }
-    &_img_2 {
-        float: left;
-        position: relative;
-        bottom: 4px;
+        top: 11px;
     }
     &_container_text {
         float: left;
@@ -475,6 +474,7 @@ a {
             @include border-radius(5px);
         }
         &_right {
+            overflow: hidden;            
             margin-right: 15px;
             height: 125px;
             background-color: #f4f4f4;
