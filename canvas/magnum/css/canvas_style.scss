@@ -3,6 +3,7 @@
 @import 'partials/typography';
 @import 'partials/mixins';
 @import 'partials/header';
+@import 'partials/popup';
 @include attributes_classes;
 @include position_classes;
 @include text_classes;
@@ -15,8 +16,12 @@
     height: 0;
 }
 
-.uppercase {
-    text-transform: uppercase;
+a {
+    color: $color_orange;
+    text-decoration: none;
+    &:hover {
+        color: $color_orange_light;
+    }
 }
 
 .button {
@@ -96,8 +101,16 @@
     &__image {
         padding: 25px 20px;
         img {
-            &.visore_small {
+            &.visore_mobile {
                 display: none;
+                @include breakpoint(display_smallest) {
+                    display: block;
+                }
+            }
+            &.visore_wide {
+                @include breakpoint(display_smallest) {
+                    display: none;
+                }
             }
             display: block;
             width: 100%;
@@ -110,8 +123,6 @@
             font-family: "Trebuchet MS";
             padding: 0 30px;
             text-align: center;
-            font-size: 30px;
-            line-height: 32px;
             letter-spacing: -0.001em;
             font-weight: bold;
             color: #666;
@@ -124,8 +135,6 @@
             font-family: "Trebuchet MS";
             padding: 0 30px;
             text-align: center;
-            font-size: 25px;
-            line-height: 27px;
             letter-spacing: -0.001em;
             font-weight: bold;
             color: #666;
@@ -148,7 +157,15 @@
         text-align: center;
         &__item {
             display: inline-block;
-            width: 32.6%;
+            width: 31%;
+            @include breakpoint(display_smaller) {
+                width: 48%;
+                margin-bottom: 5%;
+            }
+            @include breakpoint(display_smallest) {
+                width: 90%;
+                margin-bottom: 5%;
+            }
             img {
                 width: 100%;
                 display: block;
@@ -157,29 +174,37 @@
         }
     }
     &__options {
-        padding: 25px 0 20px;
-        width: 100%;
+        padding: 25px 5px 20px;
+        width: auto;
         text-align: center;
         &__container {
             border-radius: 4px;
             border: 1px solid $color_grey_light;
             background-color: $color_grey_lightest;
             height: 144px;
+            @include breakpoint(display_small) {
+                height: 210px;
+            }
             &__item {
                 display: inline-block;
                 width: 32.6%;
                 vertical-align: middle;
-                height: 100%;
+                height: auto;
+                -webkit-transform: translateY(50%);
+                -moz-transform: translateY(50%);
+                -ms-transform: translateY(50%);
+                -o-transform: translateY(50%);
+                transform: translateY(50%);
                 div {
                     font-family: "Trebuchet MS";
                     margin-bottom: 5px;
                 }
                 &.left_item {
-                    -webkit-transform: translateY(35%);
-                    -moz-transform: translateY(35%);
-                    -ms-transform: translateY(35%);
-                    -o-transform: translateY(35%);
-                    transform: translateY(35%);
+                    position: relative;
+                    z-index: 2;
+                    @include breakpoint(display_small) {
+                        width: 100%;
+                    }
                     div {
                         display: inline;
                     }
@@ -188,19 +213,42 @@
                         width: 0;
                         height: 0;
                         position: absolute;
-                        top: 15px;
-                        right: -15px;
-                        border-width: 7px 0 7px 10px;
+                        top: 20px;
+                        right: -19px;
+                        border-width: 11px 0 11px 15px;
                         border-color: transparent transparent transparent $color_grey_light;
                         border-style: solid;
+                        @include breakpoint(display_small) {
+                            top: calc(100% + 10px);
+                            right: calc(50% - 11px);
+                            border-width: 15px 11px 0 11px;
+                            border-color: $color_grey_light transparent transparent transparent;
+                        }
+                    }
+                    &:after {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        position: absolute;
+                        top: 20px;
+                        right: -17px;
+                        border-width: 11px 0 11px 15px;
+                        border-color: transparent transparent transparent $color_grey_lightest;
+                        border-style: solid;
+                        @include breakpoint(display_small) {
+                            top: calc(100% + 8px);
+                            right: calc(50% - 11px);
+                            border-width: 15px 11px 0 11px;
+                            border-color: $color_grey_lightest transparent transparent transparent;
+                        }
                     }
                 }
                 &.central_item {
-                    -webkit-transform: translateY(27%);
-                    -moz-transform: translateY(27%);
-                    -ms-transform: translateY(27%);
-                    -o-transform: translateY(27%);
-                    transform: translateY(27%);
+                    @include breakpoint(display_small) {
+                        width: 50%;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                    }
                     div {
                         display: block;
                     }
@@ -212,6 +260,12 @@
                         background-color: $color_grey_light;
                         top: -10px;
                         left: 0;
+                        @include breakpoint(display_small) {
+                            height: 1px;
+                            width: 100%;
+                            left: 50%;
+                            top: -21px;
+                        }
                     }
                     &:after {
                         content: "";
@@ -221,14 +275,19 @@
                         background-color: $color_grey_light;
                         top: -10px;
                         right: 0;
+                        @include breakpoint(display_small) {
+                            height: 75%;
+                            right: 0;
+                            top: 15px;
+                        }
                     }
                 }
                 &.right_item {
-                    -webkit-transform: translateY(27%);
-                    -moz-transform: translateY(27%);
-                    -ms-transform: translateY(27%);
-                    -o-transform: translateY(27%);
-                    transform: translateY(27%);
+                    @include breakpoint(display_small) {
+                        width: 48%;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                    }
                     div {
                         display: block;
                     }
@@ -247,8 +306,12 @@
             padding-bottom: 30px;
             &__description {
                 display: inline-block;
-                font-size: 25px;
                 padding-right: 30px;
+                @include breakpoint(display_smaller) {
+                    text-align: center;
+                    padding-right: 0;
+                    padding-bottom: 20px;
+                }
             }
             &__options {
                 color: $color_orange;
@@ -278,20 +341,26 @@
             font-size: 20px;
             width: auto;
             display: inline-block;
-            padding: 10px 50px 10px 20px;
+            padding: 10px 40px 10px 20px;
             letter-spacing: -0.025em;
             position: relative;
             i {
                 position: absolute;
                 top: 0;
-                right: 10px;
+                right: 0px;
             }
         }
     }
     .wind_ricorda {
         margin: 0 auto;
-        width: 100%;
+        width: 24%;
         position: relative;
+
+        display: inline-block;
+        text-align: left;
+        @include breakpoint(display_smaller) {
+            width: 100%;
+        }
         &__reminder {
             font-family: "Trebuchet MS";
             color: $color_orange;
@@ -329,6 +398,19 @@
                     }
                 }
             }
+        }
+    }
+    .wind_notes {
+        margin: 0 auto;
+        width: 74%;
+        position: relative;
+        display: inline-block;
+        text-align: right;
+        @include breakpoint(display_smaller) {
+            width: 100%;
+        }
+        &__container {
+            font-family: "Trebuchet MS";
         }
     }
 }
