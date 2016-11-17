@@ -1,0 +1,66 @@
+.button {
+    font-family: $font_weight_regular;
+    background-color: $color_orange;
+    color: white;
+    /* padding-top: 21px;
+    padding-bottom: 15px; */
+    padding: 1rem 0;
+    margin: 0px 30px;
+    display: block;
+    font-size: 1.125em; //18px
+    text-align: center;
+    height: auto;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: $color_orange;
+    border-radius: 4px;
+    @at-root #{&}--noMargin {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    &:hover {
+        background-color: #f78f4c;
+        color: white;
+    }
+}
+
+.button--slim {
+    @extend .button;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    &:focus {
+        color: white;
+    }
+}
+
+.button--ghost {
+    @extend .button;
+    color: $color_orange;
+    background-color: white;
+    &:hover {
+        color: $color_orange;
+        opacity: 0.5;
+        background-color: white;
+    }
+}
+
+.button--ghost--transparent {
+    @extend .button;
+    color: $color_orange;
+    background-color: transparent;
+    &:hover {
+        color: $color_orange;
+        opacity: 0.5;
+        background-color: transparent;
+    }
+}
+
+.button--search {
+    background-image: url(../img/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
