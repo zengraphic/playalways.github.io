@@ -26,15 +26,27 @@
 }
 
 @mixin text_classes {
-    @for $i from 6 through $steps*5 {
+    @for $i from 4 through $steps*5 {
         .font_size_#{$i * $delta*2} {
             font-size: $delta*2 * $i +px;
-            @include breakpoint(display_medium) {
-                font-size: $delta*2 * $i * 0.7 +px;
-            }
         }
         .line_height_#{$i * $delta*2} {
             line-height: $delta*2 * $i +2 +px;
+        }
+    }
+}
+
+@mixin text_classes_m {
+    @for $i from 4 through $steps*5 {
+        .font_size_m_#{$i * $delta*2} {
+            @include breakpoint (display_medium_small) {
+                font-size: $delta*2 * $i +px;
+            }
+        }
+        .line_height_m_#{$i * $delta*2} {
+            @include breakpoint (display_medium_small) {
+                line-height: $delta*2 * $i +2 +px;
+            }
         }
     }
 }
@@ -67,7 +79,6 @@
 // @include font_classes(medium);
 // @include font_classes(large);
 // 
-
 @mixin transform($transforms) {
     -moz-transform: $transforms;
     -o-transform: $transforms;
@@ -86,5 +97,3 @@
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */
 }
-
-

@@ -8,16 +8,12 @@
                 padding: 3px;
             }
             .img_swipe1 {
-                width: 100%;
-                height: auto;
                 display: block;
                 @include breakpoint ('display_small') {
                     display: none;
                 }
             }
             .img_swipe2 {
-                width: 100%;
-                height: auto;
                 display: none;
                 @include breakpoint ('display_small') {
                     display: block;
@@ -26,23 +22,9 @@
         }
     }
     .offer_promotion {
-        padding: 0 30px;
+        
         @include breakpoint ('display_small') {
-            padding: 0 15px;
-        }
-        &_title {
-            font-weight: bold;
-            color: $color_orange;
-        }
-        &_text {
-            color: $color_grey_medium_dark;
-            font-family: 'Trebuchet MS';
-            font-weight: normal;
-        }
-        &_price {
-            color: $color_grey_medium_dark;
-            font-family: 'Trebuchet MS';
-            font-weight: bold;
+            padding: 0 15px!important;
         }
     }
     .subscription_block {
@@ -69,9 +51,8 @@
                 color: $color_orange;
             }
             .detail {
-                font-family: 'Trebuchet MS';
                 font-weight: normal;
-                color: #666666;
+                color: $color_grey_six;
             }
         }
         &--right {
@@ -92,10 +73,12 @@
                 color: $color_orange;
             }
             .detail {
-                font-family: 'Trebuchet MS';
                 font-weight: normal;
-                color: #666666;
+                color: $color_grey_six;
             }
+        }
+        .logo{
+            width: 50%;
         }
     }
     .subscriptionTarget {
