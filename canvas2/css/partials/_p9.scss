@@ -22,13 +22,11 @@
         }
     }
     .offer_promotion {
-        
         @include breakpoint ('display_small') {
             padding: 0 15px!important;
         }
     }
     .subscription_block {
-        padding: 0 30px;
         @include breakpoint ('display_small') {
             padding: 0 15px;
         }
@@ -40,7 +38,7 @@
             border-radius: 4px;
             border: 2px solid $color_orange;
             box-sizing: border-box;
-            background-color: white;
+            background-color: $color_white;
             @include breakpoint ('display_small') {
                 width: 100%;
                 margin-bottom: 20px;
@@ -63,29 +61,20 @@
             border-radius: 4px;
             border: 2px solid $color_orange;
             box-sizing: border-box;
-            background-color: white;
+            background-color: $color_white;
             @include breakpoint ('display_small') {
                 width: 100%;
                 margin-left: 0;
             }
-            .price {
-                font-weight: bold;
-                color: $color_orange;
-            }
-            .detail {
-                font-weight: normal;
-                color: $color_grey_six;
-            }
         }
-        .logo{
-            width: 50%;
+        .logo {
+            height: 30px;
         }
     }
     .subscriptionTarget {
-        padding: 0 30px;
         @include breakpoint ('display_small') {
             padding: 0 15px;
         }
-        color:#666666;
+        color:$color_grey_six;
     }
 }
