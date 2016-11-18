@@ -15,7 +15,7 @@
     @each $direction in $directions {
         @for $i from 1 through $steps {
             .#{$direction}_#{$i * $delta*2} {
-                #{$direction}: $delta*2 * $i +%;
+                #{$direction}: $delta*2 * $i +'%';
             }
             $pos-list: append($pos-list, unquote(".#{$direction}_#{$i*$delta*2}"), comma);
         }
