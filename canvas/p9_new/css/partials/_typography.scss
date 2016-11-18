@@ -1,61 +1,41 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
-// wide
-
-// typo
-@font-face {
-    font-family: "Trade Gothic Bold";
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.eot");
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.woff") format("woff");
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.woff2") format("woff2"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.ttf") format("truetype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.svg#TradeGothicLTStd-Bold") format("svg"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.eot?#iefix") format("embedded-opentype");
-    src: url("../fonts/tradegothic/tradegothic-std-bold/TradeGothicLTStd-Bold.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+body {
+    font-family: "Trebuchet MS" !important;
 }
 
-@font-face {
-    font-family: "Trade Gothic Bold Cond";
-    src: url("../fonts/tradegothic/tradegothic-std-bold-cond/TradeGothicLTStd-BdCn20.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+.text_uppercase {
+    text-transform: uppercase;
 }
 
-@font-face {
-    font-family: "Trade Gothic Bold 2";
-    src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.eot"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold-2/TradeGothicLTStd-Bd2.woff") format("woff");
-    src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.eot?#iefix") format("embedded-opentype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.woff2") format("woff2"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold-2/hinted-TradeGothicLTStd-Bd2.ttf") format("truetype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-bold-2/TradeGothicLTStd-Bd2.otf") format("opentype");
-    font-weight: bold;
-    font-style: normal;
+.text_bold {
+    font-weight: 700;
 }
 
-@font-face {
-    font-family: "Trade Gothic Light";
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.eot");
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.woff") format("woff");
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.woff2") format("woff2");
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.ttf") format("truetype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.svg#TradeGothicLTStd-Light") format("svg"); 
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.eot?#iefix") format("embedded-opentype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-light/TradeGothicLTStd-Light.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+a {
+    color: $color_orange;
+    text-decoration: none;
+    &:hover {
+        color: $color_orange_light;
+    }
 }
 
-@font-face {
-    font-family: "Trade Gothic";
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.eot"); 
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.woff") format("woff");
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.woff2") format("woff2");
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.ttf") format("truetype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.svg#TradeGothicLTStd") format("svg"); 
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.eot?#iefix") format("embedded-opentype"); 
-    src: url("../fonts/tradegothic/tradegothic-std-regular/TradeGothicLTStd.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+.text_orange {
+    color: $color_orange;
 }
+
+.text_grey_beast {
+    color: $color_grey_beast;
+}
+
+.text_align {
+    &_left {
+        text-align: left;
+    }
+    &_center {
+        text-align: center;
+    }
+    &_right {
+        text-align: right;
+    }
+}
+

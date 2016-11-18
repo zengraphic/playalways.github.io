@@ -1,0 +1,62 @@
+.button {
+    font-family: 'Trebuchet MS';
+    background-color: $color_orange;
+    color: white !important;
+    padding: 1rem 0;
+    margin: 0px 30px;
+    display: block;
+    font-size: 1.125em;
+    text-align: center;
+    height: auto;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: $color_orange;
+    border-radius: 4px;
+    @at-root #{&}--noMargin {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    &:hover {
+        background-color: #f78f4c;
+        color: white;
+    }
+}
+
+.button--search {
+    background-image: url(../img/icons-interface/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.call_to_action {
+    padding: 25px 0 100px;
+    text-align: center;
+    &__container {
+        font-family: "Trebuchet MS";
+        display: inline-block;
+        position: relative;
+        width: auto;
+        margin: 0;
+        letter-spacing: -0.025em;
+        border-bottom: 1px solid $color_grey_light;
+        border-top: 1px solid $color_grey_light;
+        @include breakpoint(display_small) {
+            font-size: 18px;
+            width: 70%;
+        }
+        i {
+            position: absolute;
+            top: 5px;
+            right: 7px;
+            background-size: 25px 25px;
+            height: 30px;
+            width: 30px;
+            @include breakpoint(display_small) {
+                top: 3px;
+            }
+        }
+    }
+}

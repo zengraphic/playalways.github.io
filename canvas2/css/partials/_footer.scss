@@ -1,0 +1,47 @@
+.landing_footer {
+    width: 100%;
+    border-top: 1px solid #d3d3d2;
+    &__container {
+        max-width: 876px;
+        position: relative;
+        @include breakpoint(display_small) {
+            line-height: 28px;
+            text-align: center;
+        }
+        &__copy {
+            color: #999;
+            float: left;
+            @include breakpoint(display_small) {
+                float: none;
+            }
+            & .wrap {
+                display: none;
+                @include breakpoint(display_small) {
+                    display: block;
+                }
+            }
+        }
+        &__logos {
+            float: right;
+            @include breakpoint(display_small) {
+                margin-top: 30px;
+                float: none;
+                padding-right: 0;
+            }
+            &--list {
+                @include breakpoint(display_small) {
+                    text-align: center;
+                }
+                li {
+                    display: inline;
+                    list-style-type: none;
+                    vertical-align: middle;
+                    &:nth-of-type(2) {
+                        padding-left: 45px;
+                        padding-right: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
