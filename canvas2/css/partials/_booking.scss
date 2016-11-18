@@ -1,4 +1,5 @@
 .landing_booking {
+    padding: 20px;
     @include breakpoint('display_small') {
         padding: 10px;
     }
@@ -77,6 +78,8 @@
                     float: left;
                     @include breakpoint('display_small') {
                         width: 100%;
+                        margin-left: 0;
+                        margin-top: 20px;
                     }
                 }
             }
@@ -111,11 +114,18 @@
                         float: left;
                         width: 50%;
                         text-align: center;
+                        @include breakpoint('display_small') {
+                            width: 100%;
+                        }
                     }
                     &.dx {
                         float: right;
                         width: 46%;
                         margin: 0 2%;
+                        @include breakpoint('display_small') {
+                            width: 100%;
+                            margin: 0;
+                        }
                     }
                 }
             }
@@ -187,15 +197,25 @@
                                 .unlimited {
                                     color: $color_orange;
                                 }
-                                .gigs,
+                                .gigs {
+                                    float: left;
+                                    color: $color_orange;
+                                }
+                                .gigs2 {
+                                    float: left;
+                                    color: $color_orange;
+                                    margin-left: 2%;
+                                }
                                 .under {
                                     float: left;
                                     color: $color_orange;
+                                    margin-left: 2%;
                                 }
                                 .spacer {
                                     float: left;
                                     width: 3px;
                                     height: 40px;
+                                    margin-left: 2%;
                                     background-color: $color_grey_darker;
                                 }
                             }
@@ -349,8 +369,8 @@
                             float: left;
                             width: 60%;
                             @include breakpoint ('display_small') {
-                                    width: 70%;
-                                }
+                                width: 70%;
+                            }
                             &_details {
                                 .numbers {
                                     color: $color_orange;
@@ -361,8 +381,8 @@
                             float: left;
                             width: 35%;
                             @include breakpoint ('display_small') {
-                                    width: 30%;
-                                }
+                                width: 30%;
+                            }
                             img {
                                 margin-right: 5%;
                                 @include breakpoint ('display_small') {
@@ -395,6 +415,24 @@
                     }
                 }
             }
+            .btn_3 {
+                display: none;
+                @include breakpoint ('display_small') {
+                    display: block;
+                }
+            }
+            .btn_2 {
+                
+                @include breakpoint ('display_small') {
+                    display: none;
+                }
+            }
+            
         }
+        .btn_4 {
+                display: none;
+            
+                
+            }
     }
 }

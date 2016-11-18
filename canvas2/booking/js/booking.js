@@ -15,4 +15,20 @@ jQuery(document).ready(function($) {
         }
 
     });
+
+    $(".btn_3").click(function() {
+        $('#offer1').hide();
+        $('.btn_1').hide();
+        $('.btn_2').addClass('active').show();
+        $('.btn_4').show();
+        $('.btn_3').hide();
+    });
+
+    $(".btn_4").click(function() {
+        $(this).addClass('active');
+        $('.btn_2').hide();
+        $('.btn_3').show();
+        $(this).hide();
+        $('.btn_1').show();
+    });
 });
