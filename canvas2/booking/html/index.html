@@ -54,7 +54,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="offer_tab_content">
-                    <div id="offer1 " class="">
+                    <div id="offer1" class="">
                         <div class="offer_ClaimLogo">
                             <div class="claim font_size_60 line_height_44 text_bold text_uppercase margin_top_30">
                                 All Inclusive
@@ -219,9 +219,13 @@
             event.preventDefault();
             $(this).parent().addClass("active");
             $(this).parent().siblings().removeClass("active");
-            var tab = $(this).attr("href");
-            $(".offer_tab_content div").tab.removeClass('hidden');
-            $(".offer_tab_content div").not(tab).addClass('hidden');
+            if (tab == '#offer1') {
+                $('#offer1').show();
+                $('#offer2').hide();
+            } else {
+                $('#offer2').show();
+                $('#offer1').hide();
+            }
 
         });
     });
