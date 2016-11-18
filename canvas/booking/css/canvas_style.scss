@@ -126,6 +126,18 @@ a {
         .offer_tab {
             &_nav {
                 position: relative;
+                .active {
+                            border: 2px solid $color_orange;
+                            box-sizing: border-box;
+                            border-radius: 4px 4px 0 0;
+                            border-bottom: 0;
+                            background-color: white;
+                            padding: 20px;
+                            height: 60px;
+                            a {
+                            color: #000000;
+                        }
+                        }
                 &_link {
                     background-color: $color_orange;
                     position: relative;
@@ -141,18 +153,6 @@ a {
                         float: left;
                         width: 50%;
                         text-align: center;
-                        a {
-                            color: #000000;
-                        }
-                        &.active {
-                            border: 2px solid $color_orange;
-                            box-sizing: border-box;
-                            border-radius: 4px 4px 0 0;
-                            border-bottom: 0;
-                            background-color: white;
-                            padding: 20px;
-                            height: 60px;
-                        }
                     }
                     &.dx {
                         float: right;

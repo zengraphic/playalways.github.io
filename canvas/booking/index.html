@@ -77,9 +77,9 @@
                             <div class="offer_tab_content_halfBlock--left text_align_left margin_top_20">
                                 <div class="offer_detail">
                                     <div class="offer">
-                                        <div class="offer_deleted upper font_size_24">
+                                        <span class="offer_deleted upper font_size_24">
                                             500 minuti
-                                        </div>
+                                        </span> 
                                         <span class="unlimited font_size_34 text_bold upper">Minuti illimitati</span>
                                         <span class="detail font_size_24">  verso tutti per 1 anno</span>
                                     </div>
@@ -132,7 +132,7 @@
                         <div class="offer_recurrency margin_top_30 text_align_center font_size_16 upper"> LE OFFERTE SI RINNOVANO OGNI 4 SETTIMANE.</div>
                         <div class="clear"></div>
                     </div>
-                    <div id="offer2" class="offer2 ">
+                    <div id="offer2" class="offer2 hidden">
                         <div class="claim font_size_40 text_align_center upper text_bold ">
                             All Inclusive Travel
                         </div>
@@ -215,6 +215,22 @@
             <div class="clear"></div>
         </div>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var tab = $(this).attr("href");
+
+        $(".offer_tab_nav_link a").click(function(event) {
+            event.preventDefault();
+            $(this).parent().addClass("active");
+            $(this).parent().siblings().removeClass("active");
+            
+            $(tab).removeClass('hidden');
+            $(".offer_tab_content div").not(tab).addClass('hidden');
+            
+        });
+    });
+    
+    </script>
 </body>
 
 </html>

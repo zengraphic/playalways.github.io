@@ -1206,6 +1206,10 @@ body {
   .pita_container_text {
     float: left; }
 
+@media (max-width: 640px) {
+  .landing_booking {
+    padding: 10px; } }
+
 .landing_booking .hero {
   width: 100%;
   display: block;
@@ -1225,25 +1229,29 @@ body {
       .landing_booking .hero_img .img_swipe2 {
         display: block; } }
 
-.landing_booking .conditions,
-.landing_booking .recurrency {
+.landing_booking .sub_hero .conditions,
+.landing_booking .sub_hero .recurrency {
   width: 50%;
   float: left; }
   @media (max-width: 640px) {
-    .landing_booking .conditions,
-    .landing_booking .recurrency {
+    .landing_booking .sub_hero .conditions,
+    .landing_booking .sub_hero .recurrency {
       width: 100%; } }
 
-.landing_booking .conditions .terms,
-.landing_booking .conditions .paesi {
+.landing_booking .sub_hero .conditions .terms,
+.landing_booking .sub_hero .conditions .paesi {
   display: inline-block; }
-  .landing_booking .conditions .terms a,
-  .landing_booking .conditions .paesi a {
+  .landing_booking .sub_hero .conditions .terms a,
+  .landing_booking .sub_hero .conditions .paesi a {
     text-decoration: none;
     color: #f48135; }
-    .landing_booking .conditions .terms a:hover,
-    .landing_booking .conditions .paesi a:hover {
+    .landing_booking .sub_hero .conditions .terms a:hover,
+    .landing_booking .sub_hero .conditions .paesi a:hover {
       border-bottom: 1px solid #f48135; }
+
+@media (max-width: 640px) {
+  .landing_booking .sub_hero .conditions .terms {
+    float: left; } }
 
 .landing_booking .blockDesktop .info_offer {
   color: #333; }
@@ -1257,7 +1265,8 @@ body {
       .landing_booking .blockDesktop .info_offer__details--left {
         width: 100%; } }
   .landing_booking .blockDesktop .info_offer__details--right {
-    width: 50%;
+    width: 48%;
+    margin-left: 2%;
     float: left; }
     @media (max-width: 640px) {
       .landing_booking .blockDesktop .info_offer__details--right {
@@ -1265,6 +1274,16 @@ body {
 
 .landing_booking .blockDesktop .offer_tab_nav {
   position: relative; }
+  .landing_booking .blockDesktop .offer_tab_nav .active {
+    border: 2px solid #f48135;
+    box-sizing: border-box;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 0;
+    background-color: white;
+    padding: 14px;
+    height: 60px; }
+    .landing_booking .blockDesktop .offer_tab_nav .active a {
+      color: #000000; }
   .landing_booking .blockDesktop .offer_tab_nav_link {
     background-color: #f48135;
     position: relative;
@@ -1279,16 +1298,6 @@ body {
       float: left;
       width: 50%;
       text-align: center; }
-      .landing_booking .blockDesktop .offer_tab_nav_link.sx a {
-        color: #000000; }
-      .landing_booking .blockDesktop .offer_tab_nav_link.sx.active {
-        border: 2px solid #f48135;
-        box-sizing: border-box;
-        border-radius: 4px 4px 0 0;
-        border-bottom: 0;
-        background-color: white;
-        padding: 20px;
-        height: 60px; }
     .landing_booking .blockDesktop .offer_tab_nav_link.dx {
       float: right;
       width: 46%;
@@ -1302,10 +1311,10 @@ body {
   border-radius: 0 4px 4px 4px;
   position: relative;
   top: -2px;
-  padding: 50px 50px 30px 50px; }
+  padding: 50px 50px 40px 50px; }
   @media (max-width: 640px) {
     .landing_booking .blockDesktop .offer_tab_content {
-      padding: 20px; } }
+      padding: 10px; } }
   .landing_booking .blockDesktop .offer_tab_content .offer_ClaimLogo .claim {
     font-family: 'Trebuchet MS';
     color: #f48135;
@@ -1322,13 +1331,30 @@ body {
     @media (max-width: 640px) {
       .landing_booking .blockDesktop .offer_tab_content .offer_ClaimLogo .offerLogo {
         width: 100%; } }
+    .landing_booking .blockDesktop .offer_tab_content .offer_ClaimLogo .offerLogo img {
+      width: 100%;
+      height: auto; }
   .landing_booking .blockDesktop .offer_tab_content_halfBlock--left {
     width: 68%;
     margin-right: 2%;
     float: left; }
     @media (max-width: 640px) {
       .landing_booking .blockDesktop .offer_tab_content_halfBlock--left {
-        width: 100%; } }
+        width: 100%;
+        margin-right: 0; } }
+    .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer_deleted {
+      position: relative;
+      color: #f48135; }
+      .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer_deleted:before {
+        border-bottom: 1px solid #000;
+        content: "";
+        left: -5px;
+        right: -5px;
+        position: absolute;
+        top: 50%;
+        -ms-transform: rotate(7deg);
+        -webkit-transform: rotate(7deg);
+        transform: rotate(-7deg); }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer .detail {
       color: #333; }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--left .offer_detail .offer .unlimited {
@@ -1348,36 +1374,42 @@ body {
     float: left; }
     @media (max-width: 640px) {
       .landing_booking .blockDesktop .offer_tab_content_halfBlock--right {
-        width: 100%; } }
+        width: 100%;
+        margin-left: 0; } }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--right .offer_detail .number .price,
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--right .offer_detail .offer .price {
       float: right;
       font-family: 'Trebuchet MS';
       letter-spacing: -0.2em; }
+      @media (max-width: 640px) {
+        .landing_booking .blockDesktop .offer_tab_content_halfBlock--right .offer_detail .number .price,
+        .landing_booking .blockDesktop .offer_tab_content_halfBlock--right .offer_detail .offer .price {
+          left: 25%;
+          position: absolute; } }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--right .offer_detail .number .image,
     .landing_booking .blockDesktop .offer_tab_content_halfBlock--right .offer_detail .offer .image {
       float: right;
       margin-left: 15%; }
-  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number,
-  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer {
-    font-weight: bold; }
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number .price,
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number .image,
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer .price,
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer .image {
-      float: right;
-      margin-left: 2%; }
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number_numbers,
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer_numbers {
-      color: #f48135; }
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number_detailText,
-    .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer_detailText {
-      color: #777a7e; }
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number .price,
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number .image,
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer .price,
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer .image {
+    float: right;
+    margin-left: 2%; }
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number_numbers,
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer_numbers {
+    color: #f48135; }
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .number_detailText,
+  .landing_booking .blockDesktop .offer_tab_content_halfBlock .offer_detail .offer_detailText {
+    color: #777a7e; }
   .landing_booking .blockDesktop .offer_tab_content .offerAdd {
     color: #333333; }
   .landing_booking .blockDesktop .offer_tab_content .offer_choice--left {
     float: left;
     width: 40%; }
+    @media (max-width: 640px) {
+      .landing_booking .blockDesktop .offer_tab_content .offer_choice--left {
+        width: 100%; } }
     .landing_booking .blockDesktop .offer_tab_content .offer_choice--left .capsule {
       width: 100%;
       float: right; }
@@ -1404,9 +1436,16 @@ body {
     float: left;
     width: 20%;
     color: #666666; }
+    @media (max-width: 640px) {
+      .landing_booking .blockDesktop .offer_tab_content .offer_choice_divider {
+        width: 100%;
+        margin-bottom: 20px; } }
   .landing_booking .blockDesktop .offer_tab_content .offer_choice--right {
     float: left;
     width: 40%; }
+    @media (max-width: 640px) {
+      .landing_booking .blockDesktop .offer_tab_content .offer_choice--right {
+        width: 100%; } }
     .landing_booking .blockDesktop .offer_tab_content .offer_choice--right .capsule {
       width: 100%;
       float: left; }
@@ -1440,18 +1479,38 @@ body {
       float: left;
       border-right: 1px solid #cccccc;
       box-sizing: border-box; }
+      @media (max-width: 640px) {
+        .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left {
+          width: 100%;
+          border-right: 0;
+          border-bottom: 1px solid #cccccc; } }
       .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offerBlock {
         float: left;
         width: 60%; }
+        @media (max-width: 640px) {
+          .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offerBlock {
+            width: 70%; } }
         .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offerBlock_details .numbers {
           color: #f48135; }
       .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offer_stamp {
         float: left;
-        width: 40%; }
+        width: 35%; }
+        @media (max-width: 640px) {
+          .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offer_stamp {
+            width: 30%; } }
+        .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offer_stamp img {
+          margin-right: 5%; }
+          @media (max-width: 640px) {
+            .landing_booking .blockDesktop .offer_tab_content_halfBlock2--left .offer_stamp img {
+              margin-right: 0; } }
     .landing_booking .blockDesktop .offer_tab_content_halfBlock2--right {
       width: 45%;
       margin-left: 5%;
       float: left; }
+      @media (max-width: 640px) {
+        .landing_booking .blockDesktop .offer_tab_content_halfBlock2--right {
+          width: 100%;
+          margin-left: 0; } }
       .landing_booking .blockDesktop .offer_tab_content_halfBlock2--right .offerBlock {
         float: left;
         width: 70%; }
@@ -1461,8 +1520,31 @@ body {
         float: left;
         width: 30%; }
 
+.margin_top_90 {
+  margin-top: 90px; }
+
 .wind_smart_block__landing {
   max-width: 950px; }
+  @media (max-width: 640px) {
+    .wind_smart_block__landing {
+      padding-left: 5px;
+      padding-right: 5px; } }
+  @media (max-width: 640px) {
+    .wind_smart_block__landing .container_text {
+      margin-left: 30px;
+      margin-right: 30px; } }
+  .wind_smart_block__landing .only_mobile {
+    display: none; }
+    @media (max-width: 640px) {
+      .wind_smart_block__landing .only_mobile {
+        display: block; } }
+  .wind_smart_block__landing .only_desktop {
+    display: block; }
+    @media (max-width: 640px) {
+      .wind_smart_block__landing .only_desktop {
+        display: none; } }
+  .wind_smart_block__landing .call_to_action {
+    padding-bottom: 60px; }
 
 .wind_smart_block__top {
   float: left;
@@ -1473,8 +1555,9 @@ body {
   height: auto; }
   @media (max-width: 640px) {
     .wind_smart_block__top {
-      width: 100%;
-      padding-right: 0;
+      width: calc(100% - 10px);
+      padding-right: 5px;
+      padding-left: 5px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0; } }
   .wind_smart_block__top--title {
@@ -1483,12 +1566,28 @@ body {
     font-weight: bold;
     font-size: 80px;
     text-transform: uppercase; }
-    @media (max-width: 480px) {
+    @media (max-width: 940px) {
       .wind_smart_block__top--title {
         font-size: 50px; } }
+    @media (max-width: 640px) {
+      .wind_smart_block__top--title {
+        font-size: 50px;
+        margin-top: 20px;
+        text-align: center; } }
+  @media (max-width: 640px) {
+    .wind_smart_block__top--img {
+      padding-right: 5px;
+      margin-bottom: 20px;
+      text-align: center; } }
   .wind_smart_block__top--img img {
     max-width: 100%;
     height: auto; }
+    @media (max-width: 940px) {
+      .wind_smart_block__top--img img {
+        width: 50%; } }
+    @media (max-width: 640px) {
+      .wind_smart_block__top--img img {
+        width: 90%; } }
   .wind_smart_block__top--giga {
     font-family: "Trebuchet MS";
     color: #fff;
@@ -1498,12 +1597,12 @@ body {
     .wind_smart_block__top--giga .smaller {
       font-weight: normal;
       font-size: 30px; }
-      @media (max-width: 480px) {
+      @media (max-width: 940px) {
         .wind_smart_block__top--giga .smaller {
-          font-size: 22px; } }
+          font-size: 18px; } }
     .wind_smart_block__top--giga .smaller2 {
       font-weight: normal; }
-    @media (max-width: 480px) {
+    @media (max-width: 940px) {
       .wind_smart_block__top--giga {
         font-size: 26px;
         padding-top: 10px; } }
@@ -1514,10 +1613,10 @@ body {
     font-weight: bold;
     font-size: 105px; }
     .wind_smart_block__top--euro .smaller {
-      font-size: 70px; }
-    @media (max-width: 480px) {
+      font-size: 40px; }
+    @media (max-width: 940px) {
       .wind_smart_block__top--euro {
-        font-size: 85px; } }
+        font-size: 60px; } }
   .wind_smart_block__top--delete {
     font-family: "Trebuchet MS";
     color: #fff;
@@ -1540,7 +1639,10 @@ body {
       -ms-transform: rotate(-5deg);
       -o-transform: rotate(-5deg);
       transform: rotate(-5deg); }
-    @media (max-width: 480px) {
+      @media (max-width: 640px) {
+        .wind_smart_block__top--delete.strikethrough:before {
+          width: 90%; } }
+    @media (max-width: 940px) {
       .wind_smart_block__top--delete {
         font-size: 22px; } }
   .wind_smart_block__top--minute {
@@ -1549,7 +1651,7 @@ body {
     font-weight: bold;
     font-size: 35px;
     text-transform: uppercase; }
-    @media (max-width: 480px) {
+    @media (max-width: 940px) {
       .wind_smart_block__top--minute {
         font-size: 22px; } }
   .wind_smart_block__top .price_left {
@@ -1559,7 +1661,7 @@ body {
       color: #fff;
       font-weight: normal;
       font-size: 25px; }
-      @media (max-width: 480px) {
+      @media (max-width: 940px) {
         .wind_smart_block__top .price_left .smaller {
           font-size: 18px; } }
 
@@ -1580,12 +1682,23 @@ body {
     position: absolute;
     bottom: 0;
     right: 20px; }
-    @media (max-width: 480px) {
+    @media (max-width: 940px) {
+      .wind_smart_block__mobile .container_img {
+        bottom: 200px;
+        right: -15vw; } }
+    @media (max-width: 940px) {
+      .wind_smart_block__mobile .container_img img {
+        max-width: 60%;
+        height: auto; } }
+    @media (max-width: 640px) {
       .wind_smart_block__mobile .container_img img {
         max-width: 50%;
         height: auto; } }
     @media (max-width: 640px) {
       .wind_smart_block__mobile .container_img {
+        bottom: auto;
+        padding-bottom: 20px;
+        text-align: center;
         position: relative;
         background-color: #ef7426;
         right: 0;
@@ -1598,36 +1711,65 @@ body {
 
 .wind_smart_block__viewer_mobile {
   display: table; }
+  @media (max-width: 640px) {
+    .wind_smart_block__viewer_mobile {
+      display: block; } }
   .wind_smart_block__viewer_mobile--img {
     display: table-cell;
     vertical-align: middle; }
+    @media (max-width: 640px) {
+      .wind_smart_block__viewer_mobile--img {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px; }
+        .wind_smart_block__viewer_mobile--img img {
+          width: 200px; } }
   .wind_smart_block__viewer_mobile--text {
     display: table-cell;
     font-family: "Trebuchet MS";
     color: #292f36;
     font-size: 1.4rem;
     padding-left: 35px; }
+    @media (max-width: 640px) {
+      .wind_smart_block__viewer_mobile--text {
+        display: block;
+        padding-left: 0;
+        text-align: center; } }
     .wind_smart_block__viewer_mobile--text .highlight {
       color: #f48135; }
     .wind_smart_block__viewer_mobile--text_title {
       font-size: 50px;
       text-transform: uppercase;
       font-weight: bold; }
+      @media (max-width: 940px) {
+        .wind_smart_block__viewer_mobile--text_title {
+          font-size: 30px; } }
     .wind_smart_block__viewer_mobile--text_subTitle {
       font-size: 30px;
       text-transform: uppercase;
       font-weight: normal;
       line-height: 1.2em; }
+      @media (max-width: 940px) {
+        .wind_smart_block__viewer_mobile--text_subTitle {
+          font-size: 22px; } }
+      @media (max-width: 640px) {
+        .wind_smart_block__viewer_mobile--text_subTitle {
+          text-align: center; } }
     .wind_smart_block__viewer_mobile--text_note {
       font-size: 25px;
       font-weight: normal; }
+      @media (max-width: 640px) {
+        .wind_smart_block__viewer_mobile--text_note {
+          text-align: center; } }
 
 .wind_smart_block__button_container {
   margin: 0 auto;
   max-width: 950px;
   position: relative; }
   .wind_smart_block__button_container.border {
-    border-top: 1px solid #e6e9ed; }
+    border-top: 1px solid #e6e9ed;
+    border-bottom: 1px solid #e6e9ed; }
   .wind_smart_block__button_container .button {
     width: 100%;
     margin: 0 auto;
@@ -1673,7 +1815,7 @@ body {
         margin-top: 20px; } }
   .wind_smart_block__button_container .box {
     margin: 0 auto;
-    width: 650px; }
+    width: 560px; }
     @media (max-width: 640px) {
       .wind_smart_block__button_container .box {
         width: auto; } }
