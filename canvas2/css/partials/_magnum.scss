@@ -165,18 +165,6 @@
         }
     }
     &__discover {
-        &.only_mobile{
-            display: none;
-            @include breakpoint(display_small) {
-                    display: block;
-                }
-        }
-        &.only_desktop{
-            display: block;
-            @include breakpoint(display_small) {
-                    display: none;
-                }
-        }
         &__container {
             border-bottom: 1px solid $color_grey_light;
             border-top: 1px solid $color_grey_light;
@@ -191,7 +179,6 @@
                 display: inline-block;
                 .option_item {
                     display: inline-block;
-                    
                     &.option_2 {
                         border-left: 2px solid $color_orange;
                         border-right: 2px solid $color_orange;
@@ -200,7 +187,6 @@
             }
         }
     }
-    
     &__notes {
         width: 73%;
         position: relative;
