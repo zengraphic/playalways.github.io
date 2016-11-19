@@ -16,6 +16,20 @@ jQuery(document).ready(function($) {
 
     });
 
+  // This will execute whenever the window is resized
+  var ww = $(window).resize().width();// New width
+    if (ww <= 640) {
+        $('.info_offer__details--right')
+            .insertAfter('.offer_tab_content')
+            .css({
+                'width':'100%',
+                'margin-top':'20px',
+                'margin-bottom':'20px',
+                'text-align':'center',
+            });
+    }
+
+
     $(".btn_3").click(function() {
         $('#offer1').hide();
         $('.btn_1').hide();
