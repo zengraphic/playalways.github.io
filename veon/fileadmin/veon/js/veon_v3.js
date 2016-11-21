@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
             scrollTop: $('.video_main').offset().top - ($(window).height() - $('.video_main').outerHeight(true)) / 2
         }, 200, function() {
             $('.video_main')[0].play();
-        });  
+        });
     }
 
     function fixFontIOS() {
@@ -67,8 +67,8 @@ jQuery(document).ready(function($) {
             speed: 800,
             autoplay: false,
             autoplaySpeed: 5000,
-            nextArrow: "<img class='slider_navigation right_arrow' src='../img/ic_arrow_right.png'>",
-            prevArrow: "<img class='slider_navigation left_arrow' src='../img/ic_arrow_left.png'>",
+            nextArrow: "<img class='slider_navigation right_arrow' src='/fileadmin/veon/img/ic_arrow_right.png'>",
+            prevArrow: "<img class='slider_navigation left_arrow' src='/fileadmin/veon/img/ic_arrow_left.png'>",
             dotsClass: 'slider_dots',
             customPaging: function(slider, i) {
                 var thumb = $(slider.$slides[i]).data('thumb');
@@ -89,8 +89,8 @@ jQuery(document).ready(function($) {
             speed: 800,
             autoplay: false,
             autoplaySpeed: 5000,
-            nextArrow: "<img class='slider_navigation right_arrow' src='../img/ic_arrow_right.png'>",
-            prevArrow: "<img class='slider_navigation left_arrow' src='../img/ic_arrow_left.png'>",
+            nextArrow: "<img class='slider_navigation right_arrow' src='/fileadmin/veon/img/ic_arrow_right.png'>",
+            prevArrow: "<img class='slider_navigation left_arrow' src='/fileadmin/veon/img/ic_arrow_left.png'>",
             dotsClass: 'slider_dots',
             customPaging: function(slider, i) {
                 var thumb = $(slider.$slides[i]).data('thumb');
@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
         $('.video_main').fadeIn();
         $('.video_main').addClass('video_open');
         $('body').addClass('video_noscroll');
-        checkVideoSize(videoWidth, videoHeight, winWidth, winHeight);        
+        checkVideoSize(videoWidth, videoHeight, winWidth, winHeight);
     });
 
     $('.video_overlay').click(function() {
