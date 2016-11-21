@@ -3,7 +3,7 @@ jQuery(function($) {
     function GetURLParameter(sParam) {
         var sPageHash = window.location.hash;
         var urlMark = sPageURL.indexOf('?');
-        var hashMark = sPageURL.indexOf('#');
+        var hashMark = sPageURL.indexOf('#')+1;
         var hashPart;
         if (hashMark < urlMark) {
             hashPart = sPageHash.substr(hashMark, urlMark);
@@ -20,7 +20,7 @@ jQuery(function($) {
         }
     }
     $(document).ready(function() {
-        if (GetURLParameter('#phones') == 'samsung') {
+        if (GetURLParameter('phones') == 'samsung') {
             $('.landing_magnum__showcase__item');
             $('.landing_magnum__showcase__item:nth-child(3)')
                 .css({
