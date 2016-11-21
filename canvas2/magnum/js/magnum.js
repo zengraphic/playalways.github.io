@@ -8,7 +8,7 @@ jQuery(function($) {
         if (hashMark < urlMark) {
             hashPart = sPageHash.substr(hashMark, urlMark);
         } else {
-            hashPart = sPageHash.substr(hashMark, sPageURL.length - 1);
+            hashPart = sPageHash.substr(hashMark, sPageHash.length - 1);
         }
         var sURLVariables = hashPart.split('&');
 
