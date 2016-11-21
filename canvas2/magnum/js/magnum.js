@@ -2,7 +2,7 @@ jQuery(function($) {
 
     function GetURLParameter(sParam) {
         var sPageURL = window.location.hash;
-        var sPageHash = sPageURL.substr(sPageURL.indexOf('#'), sPageURL.indexOf('?'))
+        var sPageHash = sPageURL.substr(sPageURL.indexOf('#'), (sPageURL.indexOf('?') || sPageURL.length-1))
         var sURLVariables = sPageHash.split('&');
         for (var i = 0; i < sURLVariables.length; i++) {
             var sParameterName = sURLVariables[i].split('=');
