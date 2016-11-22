@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-    $(document).ready(function() {
+    $(window).load(function() {
         if (GetURLParameter('prov') == 'campagna_samsung') {
             $('.landing_magnum__showcase__item');
             $('.landing_magnum__showcase__item:nth-child(3)')
