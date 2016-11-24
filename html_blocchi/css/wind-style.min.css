@@ -1900,7 +1900,7 @@ b {
   .contactApp_block__background {
     overflow: hidden; }
     .contactApp_block__background--shadow {
-      background-image: url(../img/linear_shadow.png);
+      background-image: url(../img/backgrounds/linear_shadow.png);
       background-repeat: no-repeat;
       background-position: 0px;
       height: 24px; }
@@ -1951,7 +1951,7 @@ b {
         font-size: 2.5em;
         color: #ffffff;
         position: relative;
-        bottom: 19px; }
+        bottom: 23px; }
       .contactApp_block__links--single.last:after {
         content: ''; }
   .contactApp_block__checkbox {
@@ -1986,16 +1986,23 @@ b {
   .contactApp_block__title {
     font-size: 1.5em; }
   .contactApp_block__image {
-    left: 25%; }
+    left: 9%; }
+    .contactApp_block__image--big {
+      width: 50%;
+      top: 38px; }
     .contactApp_block__image--small {
-      margin-left: -10%; } }
+      width: 48%;
+      top: 54px;
+      margin-left: -16%; } }
 @media all and (max-width: 767px) {
   .contactApp_block__links--single {
+    margin-top: 40px;
     float: none;
     font-size: 1em; }
     .contactApp_block__links--single:after {
       position: static;
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      display: none; }
     .contactApp_block__links--single a {
       float: none; }
   .contactApp_block__image--small {
@@ -4305,9 +4312,10 @@ margin-left: auto;*/ }
       padding-bottom: 5px; }
       @media (max-width: 768px) {
         .showcase_bundle_block__tabs--title {
-          width: 100%;
+          float: left;
+          margin-right: 20px;
           margin-top: 15px;
-          display: block; } }
+          display: inline-block; } }
       .showcase_bundle_block__tabs--title--Left {
         float: left;
         text-transform: none;

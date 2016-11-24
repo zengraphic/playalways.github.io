@@ -11,7 +11,7 @@
     @at-root #{&}__background {
         overflow: hidden;
         &--shadow {
-            background-image: url(../img/linear_shadow.png);
+            background-image: url(../img/backgrounds/linear_shadow.png);
             background-repeat: no-repeat;
             background-position: 0px;
             height: 24px;
@@ -71,7 +71,7 @@
                 font-size: $text-medium;
                 color: $color-white;
                 position: relative;
-                bottom: 19px;
+                bottom: 23px;
             }
             &.last:after {
                 content: '';
@@ -129,9 +129,15 @@
             font-size: 1.5em;
         }
         &__image {
-            left: 25%;
+            left: 9%;
+            &--big{
+                width:50%;
+                top:38px;
+            }
             &--small {
-                margin-left: -10%;
+                width: 48%;
+                top:54px;
+                margin-left: -16%;
             }
         }
     }
@@ -141,11 +147,13 @@
     .contactApp_block {
         &__links {
             &--single {
+                margin-top: 40px;
                 float: none;
                 font-size: 1em;
                 &:after {
                     position: static;
                     font-size: 1.5em;
+                    display: none;
                 }
                 a {
                     float: none;
