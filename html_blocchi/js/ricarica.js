@@ -2,6 +2,22 @@ RICARICA = {};
 
 jQuery(document).ready(function($) {
 
+    var popups = {
+        paypal:{
+            title='',
+            description=''
+        },
+        cc:{
+            title='',
+            description=''
+        },
+        ct:{
+            title='',
+            description=''
+        }
+        
+    }
+
 RICARICA.setRicarica = function(){
 	var timer = 500;
 

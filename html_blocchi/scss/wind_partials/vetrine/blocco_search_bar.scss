@@ -659,50 +659,6 @@ $standard-border: 1px solid $color-sidebar-border-grey;
             /* FINE STYLING SINGOLA OFFERTA SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
         }
         /* FINE STYLING SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
-        /* INIZIO STYLING PAGER RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
-        &__pager {
-            text-align: center;
-            margin-top: 16px;
-            margin-bottom: 16px;
-            /* INIZIO STYLING CONTAINER PAGER RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
-            .pagination {
-                border: 1px solid #e2e6eb;
-                /* INIZIO STYLING SLOT PAGER */
-                li {
-                    display: inline-block;
-                    padding: 0 !important;
-                    margin: 0 !important;
-                    float: left;
-                    /* INIZIO STYLING LINK SLOT PAGER */
-                    a {
-                        border: none;
-                        color: $color-darkerGrey;
-                        @include breakpoint(small) {
-                            padding: 5px 11px;
-                        }
-                        &[aria-label="Next"],
-                        &[aria-label="Previous"] {
-                            padding-left: 26px !important;
-                            padding-right: 26px !important;
-                            color: $color-orange;
-                            background-color: #e2e6eb;
-                            span {
-                                &:before {
-                                    font-size: 14px;
-                                }
-                            }
-                        }
-                        &.active_page {
-                            color: $color-orange;
-                        }
-                    }
-                    /* FINE STYLING LINK SLOT PAGER */
-                }
-                /* FINE STYLING SLOT PAGER */
-            }
-            /* FINE STYLING CONTAINER PAGER RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
-        }
-        /* FINE STYLING PAGER RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
     }
     /* FINE STYLING RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
 }

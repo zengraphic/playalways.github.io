@@ -20,6 +20,7 @@
     <!-- components script -->
     <script type="text/javascript" src="../../../js/header.js"></script>
     <script type="text/javascript" src="../../../js/custom.js"></script>
+    <script type="text/javascript" src="../../../js/pagination.js"></script>
     <!--- /JS -->
 </head>
 
@@ -393,24 +394,42 @@
                 <!-- ========== FINE SIDEBAR OFFERTE ========== -->
                 <div class="clear"></div>
                 <!-- ========== INIZIO BLOCCO PAGINAZIONE ========== -->
-                <div class="block-full_search__results__pager">
-                    <ul class="base__pag pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#" class="active_page">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">...</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="pagination_block text-center">
+                    <nav class="pagination_block__nav_container">
+                        <ul class="pagination_block__content pagination">
+                            <li class="pagination_ctrl_prev">
+                                <a href="#" class="pagination_previous" aria-label="Previous">
+                                    <span class="pagination_previous_icon" aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="pagination_item active">
+                                <a class="pagination_link" href="#content1">1</a>
+                            </li>
+                            <li class="pagination_item">
+                                <a class="pagination_link" href="#content2">2</a>
+                            </li>
+                            <li class="pagination_item">
+                                <a class="pagination_link" href="#content3">3</a>
+                            </li>
+                            <li class="pagination_item">
+                                <a class="pagination_link" href="#content4">4</a>
+                            </li>
+                            <li class="pagination_item">
+                                <a class="pagination_link" href="#content5">5</a>
+                            </li>
+                            <li class="pagination_item">
+                                <a class="pagination_link" href="#content6">6</a>
+                            </li>
+                            <li class="pagination_item">
+                                <a class="pagination_link" href="#content7">7</a>
+                            </li>
+                            <li class="pagination_ctrl_next">
+                                <a href="#" class="pagination_next" aria-label="Next">
+                                    <span class="pagination_next_icon" aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <!-- ========== FINE BLOCCO PAGINAZIONE ========== -->
             </div>
@@ -452,25 +471,6 @@ jQuery(document).ready(function($) {
                 }
             }]
         });
-
-
-
-
-    $(".strip_menu_tab__item.item a").click(function(event) {
-        event.preventDefault();
-        if (!$(this).parent().hasClass("tab_active")) {
-            $(".strip_menu_tab__item").removeClass("tab_active");
-            $(this).parent().addClass("tab_active");
-        }
-    })
-
-    $(".block-full_search__results__pager li a").click(function(event) {
-        event.preventDefault();
-        if (!$(this).hasClass("active_page")) {
-            $(".block-full_search__results__pager li a").removeClass("active_page");
-            $(this).addClass("active_page");
-        }
-    })
 
     $(".block-full_search__search_bar__resetter .resetter").click(function() {
         $(".block-full_search__search__input").val("").blur();
