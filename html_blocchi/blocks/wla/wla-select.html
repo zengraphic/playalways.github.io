@@ -20,6 +20,8 @@
     <!-- components script -->
     <script type="text/javascript" src="../../js/header.js"></script>
     <script type="text/javascript" src="../../js/custom.js"></script>
+
+    <script type="text/javascript" src="../../js/wla.js"></script>
     <!--- /JS -->
 </head>
 
@@ -363,21 +365,10 @@
 jQuery(window).load(function($) {
     HEADER.setSlider();
 });
-
-
-jQuery(".confirmation-number").click(function() {
-    jQuery('.block_wla__stepForm--step').eq(0).find('.animated').addClass('bounceIn');
-    jQuery('.block_wla__stepForm--step').eq(1).find('.disabled').removeClass('disabled');
-    jQuery('.block_wla__stepForm__inputField--full').hide();
-    jQuery('.block_wla__stepForm__inputField').eq(0).removeClass('hidden').addClass('fadeInLeft');
+jQuery(document).ready(function($) {
+    WLA.wlaSelect(true);
 });
 
-jQuery(".confirmation-code").click(function() {
-    jQuery('.block_wla__stepForm--step').find('.animated').addClass('bounceIn');
-    jQuery('.block_wla__stepForm--step').eq(2).find('.disabled').removeClass('disabled');
-    jQuery('.block_wla__stepForm__inputField').eq(0).hide();
-    jQuery('.block_wla__stepForm__inputField').eq(1).removeClass('hidden').addClass('bounceIn');
-});
 </script>
 
 </html>
