@@ -5,11 +5,14 @@
 .wnd p {
     font-size: 0.9rem;
     line-height: 2.25em;
+    margin-bottom: 0!important;
 }
 
 .wnd h2 {
     font-size: 2.250rem !important;
     line-height: 1.750em;
+    margin-top: 1rem!important;
+    margin-bottom: 0!important;
 }
 
 .wnd h3 {
@@ -19,7 +22,16 @@
 
 .wnd h4 {
     font-size: 1.125rem !important;
-    line-height: auto;
+    line-height: normal;
+}
+
+.wnd h4.first-claim {
+    margin-top: 1rem!important;
+    margin-bottom: 0!important;
+}
+
+.wnd h4.second-claim {
+    margin-top: 2.2rem!important;
     margin-bottom: 0!important;
 }
 
@@ -27,6 +39,59 @@
 .wnd h3,
 .wnd h4 {
     color: #333;
+}
+
+a.bt-up.only-msite {
+    color: #010101;
+}
+
+a.bt-link {
+    font-size: 0.75rem;
+    line-height: 1.25em;
+}
+
+.landing .container > .row > .col.col-ph p {
+    font-size: 1.125rem;
+    line-height: normal;
+}
+
+.landing .container > .row > .col.col-ph h5 {
+    font-size: 1.125rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0;
+}
+
+.landing .container > .row > .col.col-ricarica a.bt-cta {
+    font-size: 1.375rem;
+    font-weight: normal;
+    padding: 1rem 2.9rem;
+}
+
+.landing .container > .row > .col.col-links {
+    padding-left: 0.75rem;
+}
+
+.landing .container > .row > .col.col-links + .col.col-links {
+    padding-left: 0;
+    padding-right: 0.75rem;
+}
+
+.landing .container > .row > .col.col-feat .col.col-feat {
+    margin-top: 3.75rem;
+}
+
+.landing .container > .row > .col.col-feat .txt.double {
+    padding: 0;
+}
+
+.landing .container > .row > .col.col-feat .txt.double p {
+    margin-top: 1.4rem;
+    margin-bottom: 0;
+    line-height: 2.125em;
+}
+
+.landing .container > .row > .col.col-links .txt p {
+    margin-top: 2rem;
 }
 
 
@@ -41,11 +106,32 @@
         padding-bottom: 1rem;
     }
     #img-nova-3 {
-        margin-top: 2rem;
+        margin-top: 3rem;
         max-width: 65%;
     }
     #img-nova-4 {
-        margin: 0 0 0 auto;
+        margin: 2rem 0 0 auto;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat .img-left {
+        width: 60%;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat .img-left img {
+        display: block;
+        width: 100%;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat .img-right {
+        width: 40%;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat .img-right img {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .landing .container > .row .col.col-cta .youtube-link {
+        margin-left: 1rem;
+    }
+    .landing .container > .row .col.col-cta .fb-link {
+        margin-right: 1rem;
     }
 }
 
@@ -53,19 +139,111 @@
 /* <= 767 */
 
 @media (max-width: 767px) {
+    .row {
+        width: 100% !important;
+    }
+    .wnd h2 {
+        font-size: 1.88rem !important;
+        line-height: normal !important;
+    }
+    .wnd h3 {
+        margin-bottom: 0 !important;
+    }
+    .wnd h4 {
+        font-size: 1.57rem !important;
+        line-height: normal;
+    }
+    .wnd h4.second-claim {
+        font-size: 1.2rem!important;
+    }
+    .wnd h4.second-claim + p {
+        margin-top: 2rem!important;
+    }
+    .wnd h5 {
+        font-weight: normal;
+        margin-top: 0!important;
+        line-height: normal;
+        margin-bottom: 4rem!important;
+    }
+    a.bt-up.only-msite {
+        font-size: 1.15rem;
+    }
+    .landing .container > .row > .col.col-vis {
+        margin: 0;
+    }
+    .landing .container > .row > .col.col-vis img {
+        margin: 0;
+    }
+    .landing .container > .row > .col.col-links.links1 {
+        position: relative;
+        top: 70px;
+    }
+    .landing .container > .row > .col.col-ricarica.ricarica1 {
+        position: relative;
+        bottom: 75px;
+    }
+    .landing .container > .row > .col.col-links {
+        width: 96%;
+        margin: 0 2%;
+    }
+    .landing .container > .row > .col.col-links .txt p {
+        text-align: left;
+        font-size: 1.05rem;
+        margin-top: 0.7rem;
+    }
+    .landing .container > .row > .col.col-feat {
+        width: 96%;
+        margin: 0 2%;
+    }
+    .landing .container > .row > .col.col-feat .txt.double p {
+        margin-top: 0.5rem;
+        font-size: 1.05rem;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat {
+        margin-top: 1.75rem;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat .img-left {
+        margin: 0 auto;
+    }
+    .landing .container > .row > .col.col-feat .col.col-feat .img-right {
+        text-align: left;
+        margin: 0;
+    }
+    .landing .container > .row > .col.col-cta {
+        margin-top: 2rem;
+    }
+    .landing .container > .row .col.col-cta .youtube-link,
+    .landing .container > .row .col.col-cta .fb-link {
+        max-width: 200px;
+        width: 60%;
+    }
+    .landing .container > .row > .col.col-cta.dx {
+        margin-top: 3rem;
+    }
+    a.bt-link {
+        font-size: 1.075rem;
+        line-height: 1.75em;
+    }
+    a.bt-cta span {
+        display: inline!important;
+    }
     #img-nova-1 {
         width: 100%;
+        margin: 0 auto;
         padding-bottom: 1rem;
     }
     #img-nova-2 {
         width: 75%;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
+        max-width: 360px;
     }
     #img-nova-3 {
-        width: 100%;
-        padding-bottom: 1rem;
+        width: 80%;
+        max-width: 360px;
+        padding-top: 1rem;
+        padding-left: 0.7rem;
     }
     #img-nova-4 {
-        width: 100%;
+        width: 78%;
     }
 }
