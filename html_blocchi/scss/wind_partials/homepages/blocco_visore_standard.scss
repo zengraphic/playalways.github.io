@@ -2,10 +2,7 @@
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out;
+    @include transition(all 0.45s ease-in-out);
     &__overflowing {
         overflow: hidden;
     }
@@ -45,18 +42,13 @@
         bottom: 0px;
         left: 60px;
         width: 130%;
-        -o-transition: all 0.45s ease-in-out;
-        -moz-transition: all 0.45s ease-in-out;
-        -ms-transition: all 0.45s ease-in-out;
-        -webkit-transition: all 0.45s ease-in-out;
+        @include transition(all 0.45s ease-in-out);
     }
     @at-root #{&}__half_block {
         position: relative;
-        -o-transition: all 0.45s ease-in-out;
-        -moz-transition: all 0.45s ease-in-out;
-        -ms-transition: all 0.45s ease-in-out;
-        -webkit-transition: all 0.45s ease-in-out;
+        @include transition(all 0.45s ease-in-out);
         width: calc(60% - 50px);
+        max-height: 450px;
         .button {
             width: 70%;
             margin: 0 auto;
@@ -64,7 +56,6 @@
             right: 22px;
         }
         .standard_block__doubleButton {
-            display: none;
             margin: 0 auto;
             position: static;
             text-align: center;
@@ -77,7 +68,7 @@
             }
         }
         &.image_block {
-            height: 425px;
+            height: 450px;
             position: relative;
             width: calc(40% - 50px);
         }
@@ -101,7 +92,7 @@
             @at-root #{&}__price {
                 color: $color-lightBlue;
                 font-size: $title-big;
-                line-height: 50px;
+                line-height: 1em;
                 &.price_discounted {
                     position: relative;
                     &::after {
@@ -125,9 +116,11 @@
             @at-root #{&}__recurrency {
                 color: $color-standardText;
                 display: block;
-                font-size: 0.750em; //12px
+                font-size: 0.750em;
+                line-height: 1.2em;
+                height: 1.2em;
                 text-transform: uppercase;
-                margin-top: -15px;
+                overflow: hidden;
             }
         }
         &.bundle_small {
@@ -174,9 +167,7 @@
         width: 150%;
         height: 100%;
         position: absolute;
-        -webkit-transform: skew(-20deg);
-        -moz-transform: skew(-20deg);
-        -o-transform: skew(-20deg);
+        @include transform(skew(-20deg));
         background: #009bbe;
         right: 55%;
     }
@@ -184,15 +175,22 @@
         text-align: center;
         max-width: 350px;
         margin: 0 auto;
-        line-height: 60px;
+        line-height: 1.2em;
         font-size: 2.813em;
         color: $color-lightBlue;
         font-family: $weight-light;
+        height: 1.2em;
+        overflow: hidden;
     }
     @at-root #{&}__subtitle {
         text-align: center;
-        margin-bottom: 5px;
         font-size: 1.563em;
+        line-height: 1.2em;
+        height: 1.2em;
+        overflow: hidden;
+        max-width: 380px;
+        width: 100%;
+        margin: 0 auto 5px;
         color: $color-lightBlue;
         font-family: $weight-light;
     }
@@ -204,6 +202,9 @@
         font-size: $text-standard;
         color: $color-standardText;
         font-family: $weight-normal;
+        line-height: 1.2em;
+        height: 2.3em;
+        overflow: hidden;
     }
 }
 
@@ -224,11 +225,15 @@
         }
     }
     @at-root #{&}__title {
-        font-size: 1em; //16px
+        .description {
+            font-size: 1em;
+            height: 2.4em;
+            overflow: hidden;
+        }
     }
     @at-root #{&}__number {
         font-size: 2.813em; //45px
-        line-height: 30px;
+        line-height: 1em!important;
     }
 }
 

@@ -5,10 +5,7 @@
 
 .standard_blockInfo {
     margin: 0 auto;
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out;
+    @include transition(all 0.45s ease-in-out);
     @at-root #{&}__mainContainer {
         position: relative;
         max-width: 1024px;
@@ -18,6 +15,9 @@
             font-family: $weight-light;
             @at-root #{&}__price {
                 font-size: 3.438em;
+                line-height: 1em;
+                height: 1.5em;
+                overflow: hidden;
                 &.text_blue {
                     color: $color-blue;
                 }
@@ -30,7 +30,8 @@
             }
             @at-root #{&}__recurrency {
                 color: $color-standardText;
-                font-size: 12px; //12px
+                font-size: 0.875rem;
+                line-height: 1em; //12px
                 display: block;
             }
         }
@@ -55,14 +56,10 @@
         height: 100%;
         position: absolute;
         &.skew_left {
-            -webkit-transform: skew(20deg);
-            -moz-transform: skew(20deg);
-            -o-transform: skew(20deg);
+            @include transform(skew(20deg));
         }
         &.skew_right {
-            -webkit-transform: skew(-20deg);
-            -moz-transform: skew(-20deg);
-            -o-transform: skew(-20deg);
+            @include transform(skew(-20deg));
         }
         left: 55%;
     }
@@ -144,19 +141,14 @@
         left: 72%;
         width: 63%;
         z-index: 2;
-        -o-transition: all 0.45s ease-in-out;
-        -moz-transition: all 0.45s ease-in-out;
-        -ms-transition: all 0.45s ease-in-out;
-        -webkit-transition: all 0.45s ease-in-out;
+        @include transition(all 0.45s ease-in-out);
     }
     @at-root #{&}__half_block {
-        -o-transition: all 0.45s ease-in-out;
-        -moz-transition: all 0.45s ease-in-out;
-        -ms-transition: all 0.45s ease-in-out;
-        -webkit-transition: all 0.45s ease-in-out;
+        @include transition(all 0.45s ease-in-out);
         &__left {
             width: 45%;
             margin-left: 30px;
+            min-height: 405px;
             .button {
                 width: 160px;
                 margin: 0 auto;
@@ -194,7 +186,7 @@
                 width: 100%;
                 margin-bottom: 5px;
                 text-transform: uppercase;
-                &:hover{
+                &:hover {
                     @include opacity(0.7);
                 }
             }
@@ -208,15 +200,20 @@
     }
     @at-root #{&}__title {
         margin-top: 15px;
-        font-size: 2.813em;
-        line-height: 47px;
+        font-size: 2.8em;
+        line-height: 1em;
+        height: 2em;
+        overflow: hidden;
         font-family: $weight-light;
         color: $color-blue;
     }
     @at-root #{&}__whiteTitle {
-        margin: 25px 0 20px;
+        margin: 1.275rem 0;
         text-align: center;
         font-size: 1.875em;
+        line-height: 1em;
+        height: 1em;
+        overflow: hidden;
         color: $color-white;
         font-family: $weight-normal;
     }
@@ -224,7 +221,9 @@
         text-align: center;
         margin: 5px 30px 10px 30px;
         font-size: 1.125em;
-        line-height: 20px;
+        line-height: 1em;
+        overflow: hidden;
+        height: 3.3em;
         color: $color-standardText;
         font-family: $weight-normal;
     }
@@ -245,9 +244,18 @@
         &_logo {
             margin: 0 auto;
         }
-        &_text {}
+        &_text {
+            font-size: 1em;
+            line-height: 1em;
+            height: 1.2em;
+            overflow: hidden;
+        }
         &_claim {
-            margin: 15px 0;
+            font-size: 1em;
+            line-height: 1em;
+            height: 1.2em;
+            overflow: hidden;
+            margin: 1rem 0;
         }
     }
 }
@@ -291,7 +299,6 @@
         }
         &__whiteTitle {
             text-align: center;
-            font-size: 1em;
             margin-right: 0px;
             color: $color-white;
         }
@@ -305,16 +312,12 @@
             display: none;
         }
         &__coloredBg {
-            top: 55%;
+            top: 53.7%;
             left: 0;
             height: 150%;
             &.skew_right,
             &.skew_left {
-                -webkit-transform: skew(0);
-                -moz-transform: skew(0);
-                -ms-transform: skew(0);
-                -o-transform: skew(0);
-                transform: skew(0);
+                @include transform(skew(0));
             }
         }
         &__half_block {
@@ -322,13 +325,12 @@
             margin: 0 auto;
             width: calc(100% - 30px);
             &__left {
-                /*   height: 300px */
-                ;
+                /*   height: 300px; */
+                
             }
         }
         &__title {
             font-size: 2.0em;
-            line-height: 42px;
         }
     }
     .recurrent_priceRow {

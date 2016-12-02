@@ -122,29 +122,7 @@
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out;
-    @at-root #{&}__description {
-        font-size: 12px;
-        color: $color-white;
-        margin: 10px 0;
-        .info_link {
-            font-size: 12px;
-        }
-    }
-    @at-root #{&}__whiteTitle {
-        text-transform: uppercase;
-        margin: 25px 10px 20px;
-        text-align: center;
-        font-size: 1.375em;
-        color: $color-white;
-        font-family: $weight-normal;
-        @include breakpoint(small) {
-            margin: 40px auto 25px auto;
-        }
-    }
+    @include transition(all 0.45s ease-in-out);
     .base__input {
         width: 100%;
         max-width: 320px;
@@ -192,7 +170,6 @@
         overflow: hidden;
     }
     .container_mid_row {
-        padding-top: 20px;
         .column_left {
             float: left;
             width: calc(100% - 55px);
@@ -216,9 +193,9 @@
         position: relative;
         @include transition(all 0.45s ease-in-out);
         width: calc(50% - 50px);
+        max-height: 420px;
         .button {
-            max-width: 200px;
-            width: 100%;
+            width: 70%;
             margin: 0 auto;
             position: relative;
         }
@@ -234,9 +211,12 @@
         &--formContainer {
             .tx-powermail {
                 h3 {
-                    margin: 36px 0 21px;
+                    margin: 2rem 0 1.4rem;
                     text-align: center;
                     font-size: 1.375em;
+                    line-height: 1em;
+                    height: 2em;
+                    overflow: hidden;
                     color: $color-white;
                     font-family: $weight-normal;
                     text-transform: uppercase;
@@ -289,13 +269,12 @@
             }
         }
         .business_block_viewer__doubleButton {
-            display: none;
             margin: 0 auto;
             position: static;
             text-align: center;
             .button {
                 display: inline-block;
-                width: 30%;
+                width: 35%;
                 &--ghost {
                     margin-right: 30px;
                 }
@@ -324,7 +303,9 @@
             @at-root #{&}__price {
                 color: $color-lightBlue;
                 font-size: $title-big;
-                line-height: 50px;
+                line-height: 1em;
+                height: 1em;
+                overflow: hidden;
                 &.price_discounted {
                     position: relative;
                     &::after {
@@ -349,8 +330,10 @@
                 color: $color-standardText;
                 display: block;
                 font-size: 0.750em; //12px
+                line-height: 1em;
+                height: 1em;
+                overflow: hidden;
                 text-transform: uppercase;
-                margin-top: -15px;
             }
         }
         &.bundle_small {
@@ -380,15 +363,21 @@
         text-align: center;
         max-width: 350px;
         margin: 0 auto;
-        line-height: 60px;
+        line-height: 1.2em;
+        height: 1.2em;
+        overflow: hidden;
         font-size: 2.813em;
         color: $color-lightBlue;
         font-family: $weight-light;
+        margin-top: 1rem;
     }
     @at-root #{&}__subtitle {
         text-align: center;
         margin-bottom: 5px;
         font-size: 1.250em;
+        line-height: 1.1em;
+        height: 1.1em;
+        overflow: hidden;
         color: $color-lightBlue;
         font-family: $weight-light;
     }
@@ -397,40 +386,12 @@
         width: 100%;
         max-width: 350px;
         margin: 0px auto 25px auto;
+        line-height: 1.2em;
+        height: 2.2em;
+        overflow: hidden;
         font-size: $text-standard;
         color: $color-standardText;
         font-family: $weight-normal;
-    }
-}
-
-.bundle_orange {
-    color: $color-orange;
-    font-family: $weight-light;
-    text-align: center;
-    display: inline-block;
-    padding: 0 20px;
-    vertical-align: middle;
-    &__container {
-        text-align: center;
-    }
-    @at-root #{&}__divider--right {
-        border-right: 1px solid $medium-gray;
-        &:last-of-type {
-            border-right: 0px;
-        }
-    }
-    @at-root #{&}__title {
-        font-size: 1em; //16px
-    }
-    @at-root #{&}__number {
-        font-size: 2.813em; //45px
-        line-height: 30px;
-    }
-}
-
-.bundle_with_text {
-    .bundle_orange__number {
-        font-size: 1.250em; //20px
     }
 }
 

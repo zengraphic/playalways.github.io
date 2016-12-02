@@ -3,25 +3,10 @@ jQuery(function($) {
     $(window).load(function() {
         if (GetURLParameter('prov') == 'campagna_samsung') {
             $('.landing_magnum__showcase__item').addClass('half');
-            $('.s7,.s7_edge')
-                .parent()
+            $('.landing_magnum__showcase__item:nth-child(3)')
                 .css({
                     'display': 'none'
                 });
-             $('h2.phones')
-                .css({
-                    'display': 'none'
-                });   
-        } else {
-            $('.s3_classic')
-                .parent()
-                .css({
-                    'display': 'none'
-                });
-                $('h2.watches')
-                .css({
-                    'display': 'none'
-                });   
         }
     });
 

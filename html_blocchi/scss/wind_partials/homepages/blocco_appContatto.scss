@@ -71,11 +71,14 @@
                 font-size: $text-medium;
                 color: $color-white;
                 position: relative;
-                bottom: 23px;
+                bottom: 0.45em;
             }
-            &.last:after {
-                content: '';
+            &:nth-of-type(4){
+                &:after{
+                   content: ''; 
+                }
             }
+            
         }
     }
     @at-root #{&}__checkbox {

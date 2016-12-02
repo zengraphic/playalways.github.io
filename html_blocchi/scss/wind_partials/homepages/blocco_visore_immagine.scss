@@ -6,10 +6,12 @@
         margin-bottom: 1em;
         text-align: left;
         font-size: 2.500em;
+        line-height: 1em;
         color: $color-white;
         font-family: $weight-bold;
-        height: 145px;
-        white-space: nowrap;
+        height: 2.3em;
+        overflow: hidden;
+        line-height: 1.1em;
     }
     &__partnerImage {
         display: none;
@@ -17,6 +19,8 @@
     @at-root #{&}__price {
         z-index: 50;
         font-size: 3.438em;
+        height: 1.2em;
+        overflow: hidden;
         color: $color-white;
         font-family: $weight-light;
         display: none;
@@ -33,7 +37,7 @@
         font-family: $weight-light;
         display: none;
         text-align: center;
-        &--bottom{
+        &--bottom {
             display: none;
         }
     }
@@ -43,9 +47,10 @@
         margin: 0px;
         margin-bottom: 1em;
         font-size: 1.875em;
+        line-height: 1.2em;
+        height: 3.6em;
         color: $color-white;
         font-family: $weight-light;
-        height: 72px;
     }
     @at-root #{&}__container {}
     @at-root #{&}__half_block {
@@ -112,12 +117,9 @@
                     margin-top: 0px;
                     margin-bottom: 0px;
                     text-align: center;
-                    height: 95px;
                 }
                 &__text {
                     font-size: 1.250em;
-                    font-family: $weight-light;
-                    height: 72px;
                     text-align: center;
                 }
                 &__price {
@@ -126,6 +128,9 @@
                 &__recurrency--bottom {
                     z-index: 50;
                     font-size: 0.750em;
+                    line-height: 1em;
+                    height: 1em;
+                    overflow: hidden;
                     color: $color-white;
                     font-family: $weight-light;
                     display: none;
@@ -135,18 +140,18 @@
                 }
             }
         }
-        &.invertedDisplay { 
-            &.priceVariant{
-             .image_block_display {
-                &__half_block {
+        &.invertedDisplay {
+            &.priceVariant {
+                .image_block_display {
+                    &__half_block {
                         &__title {
-                         text-align: right;   
-                        }        
-                    }   
-                }                                
+                            text-align: right;
+                        }
+                    }
+                }
             }
-            &.withPartner{
-                .image_block_display__partnerImage{
+            &.withPartner {
+                .image_block_display__partnerImage {
                     text-align: right;
                 }
             }
