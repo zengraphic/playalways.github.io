@@ -28,8 +28,8 @@
         &_price {
             display: inline;
             @include breakpoint ('display_small') {
-            display:block;
-        }
+                display: block;
+            }
         }
         &--item {
             &.halfL,
@@ -44,8 +44,8 @@
             }
             &.halfL {
                 text-align: left;
-                position:relative;
-                &:after {
+                position: relative;
+                /*&:after {
                     background-color: #666666;
                     width: 2px;
                     content: "";
@@ -62,22 +62,22 @@
                     right: 26%;
                     height:2px;
                     width:100px;                }
-                }
-                @include breakpoint ('display_small'){
-                    margin-top:20px;
+                }*/
+                @include breakpoint ('display_small') {
+                    margin-top: 20px;
                     padding-bottom: 30px;
-                    text-align:center;
+                    text-align: center;
                 }
             }
-            &.halfR{
-                @include breakpoint ('display_small'){
-                    margin-top:20px;
+            &.halfR {
+                @include breakpoint ('display_small') {
+                    margin-top: 20px;
                 }
-                img{
-                        display: block;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    margin: 0 auto;
                 }
             }
         }
