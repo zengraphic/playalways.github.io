@@ -44,18 +44,13 @@
     &__showcase {
         width: 100%;
         &__item {
-            .product_desktop {
-                display: block;
-                @include breakpoint(display_smaller) {
-                    display: none;
+            &.half{
+                width: 49.5%;
+                @include breakpoint(display_small) {
+                    width: 100%;
                 }
             }
-            .product_mobile {
-                display: none;
-                @include breakpoint(display_smaller) {
-                    display: block;
-                }
-            }
+            
             display: inline-block;
             width: 31%;
             @include breakpoint(display_small) {
