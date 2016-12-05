@@ -1,0 +1,107 @@
+$color-lighterGrey: #f4f4f4; // new color
+$color-lightGrey: #e6e9ed;
+$color-mediumGrey: #d3d3d2;
+$color-mediumLightGrey: #ccd1d9;
+$color-darkGrey: #4a4a4a; // Placeholder
+$color-darkerGrey: #292f36; // Standard Text
+$color-darkestGrey: #212121; // Home and Life
+
+$color-lightBlue: #009bbe; // Mobile
+$color-mediumBlue: #0069b3; // Infostrada
+
+
+$color-orange: #f48135; // Wind
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
+
+$breakpoints: ( 'super-tiny': ( max-width: 480px),
+'tiny': ( max-width: 600px),
+'small': ( max-width: 768px),
+'medium': ( max-width: 910px),
+'large': ( min-width: 1200px),
+'custom': ( min-height: 40em),
+'min-small':( min-width: 767px),
+'min-desktop':( max-width: 1024px),
+'med-large':( max-width: 992px));
+// Creating the mixin
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints,
+    $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+.clear-fix:after,
+.clear {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear-fix {
+    zoom: 1;
+}

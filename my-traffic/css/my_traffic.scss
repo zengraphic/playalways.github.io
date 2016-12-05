@@ -1,0 +1,302 @@
+@import 'vars';
+body {
+    margin: 0;
+    font-size: 16px;
+    @include breakpoint('small') {
+        font-size: 14px;
+    }
+}
+
+a {
+    &:link,
+    &:visited {
+        color: #999;
+    }
+    &:hover,
+    &:active {
+        color: $color-orange;
+    }
+}
+
+.my_traffic {
+    &__container {
+        max-width: 720px;
+        width: 100%;
+        min-height: 100vh;
+    }
+    &__heading {
+        padding: 1rem;
+        margin-bottom: 50px;
+        color: $color-orange;
+        font-family: 'Trebuchet MS';
+        .main_heading {
+            margin: 0;
+            line-height: 1.2em;
+        }
+        .secondary_heading {
+            padding: 1rem;
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.2em;
+        }
+    }
+    &__content {
+        padding: 0.875rem;
+        background-color: #fafafa;
+        max-width: 100%;
+        @include border-radius(4px);
+    }
+    &__contracts_details {
+        @include border-bottom-radius(4px);
+        padding: 1rem;
+        position: relative;
+        top: -1px;
+        background-color: $color-white;
+        &__disclaimer {
+            background-color: $color-mediumLightGrey;
+            padding: 1rem;
+            p {
+                font-family: 'Trebuchet MS';
+                font-size: 0.875rem;
+                line-height: 1.2em;
+            }
+        }
+        &__tabs {
+            position: relative;
+            &.active {
+                .tab_title {
+                    vertical-align: middle;
+                    width: 3rem;
+                    display: inline-block;
+                    text-align: center;
+                    padding-right: 1rem;
+                    position: relative;
+                    .title {
+                        padding: 0;
+                        font-family: 'Trebuchet MS';
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        position: absolute;
+                        top: 100%;
+                        left: -1rem;
+                        width: 5rem;
+                        display: inline-block;
+                        font-size: 0.7rem;
+                    }
+                }
+                .my_traffic__contracts_details__data {
+                    display: block;
+                }
+            }
+        }
+        &__data {
+            position: absolute;
+            display: none;
+            z-index: 2;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 5rem;
+            background-color: $color-mediumLightGrey;
+            @include border-right-radius(4px);
+            &__heading{
+                .data_heading{
+                    margin: 0;
+                    padding: 1rem;
+                    text-transform: uppercase;
+                    font-family: "Helvetica";
+                    font-size: 1.3rem;
+                    line-height: 1.2em;
+                }
+            }
+            &__col_headings {
+                border-bottom: 1px solid $color-darkGrey;
+                padding: 0.5rem 0;
+                .col_heading {
+                    width: 14%;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
+                    font-family: "Helvetica";
+                    font-size: 0.9rem;
+                }
+            }
+            &__row {
+                padding: 0.5rem 0;
+                .row_content{
+                    width: 14%;
+                    display: inline-block;
+                    text-align: center;
+                    font-family: "Helvetica";
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        &__single_tab {
+            &.active {
+                background-color: $color-mediumLightGrey;
+                .tab_title {
+                    i.tab_icon {
+                        &:before{
+                            content:"\f190";
+                        }
+                    }
+                    .title {
+                        display: none;
+                    }
+                }
+            }
+            position: relative;
+            margin-top: 1rem;
+            @include border-radius(4px);
+            border: 1px solid $color-mediumLightGrey;
+            padding: 1rem;
+            i.tab_icon {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            i.tab_icon_expand {
+                display: inline-block;
+                height: 1.5rem;
+                vertical-align: middle;
+                width: 1.5rem;
+                &:before,
+                &:after {
+                    content: "";
+                    @include transition(all 0.45s ease-in-out);
+                    position: absolute;
+                    background-color: $color-orange;
+                    width: 4px;
+                    height: 12px;
+                }
+                &:before {
+                    transform: translate(12px, 11px) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(12px, 5px) rotate(-45deg);
+                }
+            }
+            .tab_title {
+                vertical-align: middle;
+                width: 34%;
+                display: inline-block;
+                .title {
+                    padding: 0 1rem;
+                    font-family: 'Trebuchet MS';
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    display: inline-block;
+                    font-size: 1.2rem;
+                    vertical-align: middle;
+                }
+            }
+            .tab_totals {
+                width: 60%;
+                vertical-align: middle;
+                display: inline-block;
+                &_label {
+                    display: inline-block;
+                    width: 35%;
+                }
+                &_content {
+                    display: inline-block;
+                    width: 65%;
+                    font-weight: bold;
+                }
+                &_duration,
+                &_import {
+                    font-family: 'Helvetica';
+                    line-height: 1.7em;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+    &__contracts_accordion {
+        padding: 2rem 1rem 0;
+        @include border-top-radius(4px);
+        background: rgba(251, 251, 251, 1);
+        background: -moz-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(251, 251, 251, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+        background: -webkit-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -o-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -ms-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(to right, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
+        &__col_headings {
+            border-bottom: 2px solid $color-lightBlue;
+            padding-bottom: 10px;
+            .col_heading {
+                line-height: 1.2em;
+                font-family: 'Trebuchet MS';
+                text-transform: uppercase;
+                display: inline-block;
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: $color-lightBlue;
+                width: 22%;
+                &.h-ricarica {
+                    width: 12%;
+                }
+            }
+        }
+        &__row {
+            border-bottom: 1px solid $color-mediumLightGrey;
+            .row_content {
+                &.c-linea {
+                    a {
+                        text-decoration: none;
+                        &.active {
+                            color: $color-orange;
+                        }
+                    }
+                }
+                &.c-tipo {
+                    text-transform: uppercase;
+                }
+                a.offerta_link {
+                    color: $color-orange;
+                }
+                line-height: 1.2em;
+                font-family: 'Trebuchet MS';
+                font-weight: bold;
+                color: #999;
+                padding: 1rem 0;
+                display: inline-block;
+                width: 22%;
+                &.c-ricarica {
+                    width: 12%;
+                    position: relative;
+                    cursor: pointer;
+                }
+                font-size: 0.8rem;
+                i.icon_ricarica {
+                    background-color: #f48135;
+                    display: block;
+                    height: 1.2rem;
+                    width: 1.2rem;
+                    @include border-radius(50%);
+                    font-size: 1rem;
+                    line-height: 1.2rem;
+                    color: $color-white;
+                    text-align: center;
+                    &:before,
+                    &:after {
+                        content: "";
+                        @include transition(all 0.45s ease-in-out);
+                        position: absolute;
+                        background-color: $color-orange;
+                        width: 2px;
+                        height: 9px;
+                    }
+                    &:before {
+                        transform: translate(69px, 5px) rotate(45deg);
+                    }
+                    &:after {
+                        transform: translate(54px, 5px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
