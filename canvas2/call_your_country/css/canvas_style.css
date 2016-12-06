@@ -905,6 +905,36 @@ body {
   font-size: .9rem;
   margin: 0; }
 
+.landing_magnum__hero__visoreEtnico {
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  background-color: #f48135;
+  padding: 3em 1.250em;
+  box-sizing: border-box; }
+  .landing_magnum__hero__visoreEtnico__claim {
+    width: 60%;
+    font-family: 'Trebuchet MS';
+    font-size: 3em;
+    line-height: 1em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase; }
+    @media (max-width: 640px) {
+      .landing_magnum__hero__visoreEtnico__claim {
+        width: 100%; } }
+  .landing_magnum__hero__visoreEtnico__subclaim {
+    margin-top: 2em;
+    font-family: 'Trebuchet MS';
+    font-size: 1.9em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase; }
+
 .landing_magnum {
   max-width: 950px; }
   @media (max-width: 480px) {
@@ -1095,25 +1125,25 @@ body {
       width: 100%; } }
 .landing_p9 .offer_promotion--item.halfL {
   text-align: left;
-  position: relative; }
-  .landing_p9 .offer_promotion--item.halfL:after {
-    background-color: #666666;
-    width: 2px;
-    content: "";
-    display: block;
-    position: absolute;
-    top: 14%;
-    bottom: 4%;
-    right: 0%;
-    min-height: 1px; }
-    @media (max-width: 640px) {
-      .landing_p9 .offer_promotion--item.halfL:after {
-        left: 38%;
-        top: 100%;
-        bottom: 0%;
-        right: 26%;
-        height: 2px;
-        width: 100px; } }
+  position: relative;
+  /*&:after {
+      background-color: #666666;
+      width: 2px;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 14%;
+      bottom: 4%;
+      right: 0%;
+      min-height: 1px;
+      @include breakpoint ('display_small'){
+      left: 38%;
+      top: 100%;
+      bottom: 0%;
+      right: 26%;
+      height:2px;
+      width:100px;                }
+  }*/ }
   @media (max-width: 640px) {
     .landing_p9 .offer_promotion--item.halfL {
       margin-top: 20px;
