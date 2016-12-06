@@ -1,0 +1,85 @@
+.landing_magnum__hero {
+    &__visoreEtnico {
+        position: relative;
+        width: 100%;
+        height: auto;
+        @include border-radius (4px);
+        background-color: $color-orange;
+        padding: 3em 1.250em;
+        box-sizing: border-box;
+        &__claim {
+            width: 60%;
+            font-family: 'Trebuchet MS';
+            font-size: 3em;
+            line-height: 1em;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            @include breakpoint('display_small') {
+                width: 100%
+            }
+        }
+        &__subclaim {
+            margin-top: 2em;
+            font-family: 'Trebuchet MS';
+            font-size: 1.9em;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.landing_magnum__showcase--ethnic {
+    max-width: 100%;
+    width: auto !important;
+    .landing_magnum__showcase__item {
+        &--ethnic {
+            vertical-align: middle;
+            .showcase__item {
+                &--ethnic {
+                    @include border-radius(4px);
+                    border: 2px solid $color_grey_medium_light;
+                    height: 300px;
+                    position: relative;
+                    @include breakpoint('display_medium') {
+                        height: 260px;
+                    }
+                    @include breakpoint('display_smallest') {
+                        height: 230px;
+                    }
+                }
+                &__title {
+                    max-width: 80%;
+                    height: 2em;
+                    @include breakpoint('display_medium') {
+                        max-width: none;
+                    }
+                }
+                &__detail {
+                    max-width: 65%;
+                    @include breakpoint('display_medium') {
+                        max-width: none;
+                    }
+                }
+                &__price_block {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    &__import {
+                        .currency {
+                            font-size: 0.75em;
+                        }
+                    }
+                    &__recurrency {}
+                }
+                &__footer {
+                    .showcase__item__detail {
+                        max-width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
