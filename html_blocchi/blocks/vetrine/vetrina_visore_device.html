@@ -33,18 +33,18 @@
                                 <div class="dashboard_block__product--imagep col-xs-12 col-sm-12 col-md-7 col-lg-7">
                                     <!-- PRODUCT SLIDER IMAGE -->
                                     <div class="dashboard_block__left ">
-                                        <ul class="bxslider">
+                                        <ul id="phone_gallery" class="phone_gallery">
                                             <li><img src="../../img/products/image_p1.jpg" /></li>
                                             <li><img src="../../img/products/image_p1.jpg" /></li>
                                             <li><img src="../../img/products/image_p1.jpg" /></li>
                                             <li><img src="../../img/products/image_p1.jpg" /></li>
                                         </ul>
-                                        <div id="bx-pager" class="bx-pager">
-                                            <a data-slide-index="0" href=""><img src="../../img/products/tumb1.jpg" /></a>
-                                            <a data-slide-index="1" href=""><img src="../../img/products/tumb2.jpg" /></a>
-                                            <a data-slide-index="2" href=""><img src="../../img/products/tumb3.jpg" /></a>
-                                            <a data-slide-index="3" href=""><img src="../../img/products/tumb4.jpg" /></a>
-                                        </div>
+                                        <ul id="phone_thumbs" class="phone_thumbs">
+                                            <li><img src="../../img/products/tumb1.jpg" /></li>
+                                            <li><img src="../../img/products/tumb2.jpg" /></li>
+                                            <li><img src="../../img/products/tumb3.jpg" /></li>
+                                            <li><img src="../../img/products/tumb4.jpg" /></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div class="dashboard_block__product--detailsp col-xs-12 col-sm-12 col-md-5 col-lg-5">
@@ -126,9 +126,32 @@
 jQuery(document).ready(function($) {
 
     // SLIDER 
-    $('.bxslider').bxSlider({
-        pagerCustom: '#bx-pager'
+    
+    $('.phone_gallery').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        fade: false,
+        asNavFor: '.phone_thumbs'
     });
+
+    $('.phone_thumbs').slick({
+        slidesToShow: 4,
+        vertical: true,
+        slidesToScroll: 1,
+        asNavFor: '.phone_gallery',
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                vertical: false
+            }
+        }]
+    });
+
 });
 </script>
 

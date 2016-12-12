@@ -57,27 +57,41 @@
         margin-top: 30px;
         width: 100%;
         &--imagep {
-            .bx-pager {
+            .phone_thumbs { /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            background: -o-linear-gradient(left, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            /* IE6-9 */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); 
                 left: 0;
                 position: absolute;
                 top: 70px;
                 width: 5.25em;
-                z-index: 999;
-                a {
+                padding: 0;
+                z-index: 250;
+                li {
+                    outline: 0;
                     float: left;
                     height: auto;
                     margin-bottom: 2rem;
                     text-align: center;
                     width: 100%;
+                    cursor:pointer;
                 }
             }
-            ul li {
-                text-align: center;
-                img {
-                    display: inline;
+            .phone_gallery {
+                padding: 0;
+                @include breakpoint(small) {
+                    
                     padding-bottom: 20px;
+                    
+                }
+                li{
+                    outline: 0;
                 }
             }
+           
         }
         &--detailsp {
             &.doubleButton {
@@ -110,7 +124,7 @@
     }
     &__left {
         margin-top: 46px;
-        &#bx-pager {
+        &#phone_thumbs {
             left: 0;
             position: absolute;
             top: 0;
@@ -401,7 +415,7 @@
 @media all and (max-width: 767px) {
     .dashboard_block {
         &__left {
-            #bx-pager {
+            #phone_thumbs {
                 width: 100%;
                 position: relative;
                 top: 0;
