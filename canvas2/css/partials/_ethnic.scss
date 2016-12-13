@@ -15,9 +15,8 @@
             font-weight: bold;
             color: white;
             text-transform: uppercase;
-            position: absolute;
-            top: 0;
-            left:0;
+            position: relative;
+            z-index: 5;
             @include breakpoint('display_small') {
                 width: 100%
             }
@@ -30,8 +29,11 @@
             color: white;
             text-transform: uppercase;
         }
-        img{
-            width: 100%;
+        img {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
         }
     }
 }
@@ -42,6 +44,9 @@
     .landing_magnum__showcase__item {
         &--ethnic {
             vertical-align: middle;
+            @include breakpoint('display_small') {
+                width: 100% !important;
+            }
             .showcase__item {
                 &--ethnic {
                     @include border-radius(4px);
@@ -50,9 +55,6 @@
                     position: relative;
                     @include breakpoint('display_medium') {
                         height: 260px;
-                    }
-                    @include breakpoint('display_smallest') {
-                        height: 230px;
                     }
                 }
                 &__title {
@@ -87,5 +89,9 @@
                 }
             }
         }
+    }
+    @include breakpoint('display_smaller') {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
     }
 }
