@@ -390,7 +390,7 @@ body {
           padding-right: 45px; }
 
 .wind_ricorda {
-  width: 24%;
+  width: 26%;
   position: relative;
   display: inline-block;
   text-align: left; }
@@ -914,32 +914,65 @@ body {
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */
   background-color: #f48135;
-  padding: 3em 1.250em;
+  /*  */
   box-sizing: border-box; }
   .landing_magnum__hero__visoreEtnico__claim {
-    width: 60%;
+    padding: 5% 2%;
+    width: 40%;
+    bottom: 0;
+    top: 0;
     font-family: 'Trebuchet MS';
-    font-size: 3em;
+    font-size: 2.4rem;
     line-height: 1em;
     font-weight: bold;
-    color: white;
-    text-transform: uppercase; }
+    color: #f48135;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 5; }
+    @media (max-width: 880px) {
+      .landing_magnum__hero__visoreEtnico__claim {
+        font-size: 1.9rem; } }
+    @media (max-width: 697px) {
+      .landing_magnum__hero__visoreEtnico__claim {
+        width: auto;
+        font-size: 3.7rem;
+        padding: 24% 3%; } }
     @media (max-width: 640px) {
       .landing_magnum__hero__visoreEtnico__claim {
-        width: 100%; } }
+        font-size: 3rem;
+        padding: 12% 3%; } }
+    @media (max-width: 480px) {
+      .landing_magnum__hero__visoreEtnico__claim {
+        font-size: 2.3rem;
+        padding: 12% 3%; } }
   .landing_magnum__hero__visoreEtnico__subclaim {
-    margin-top: 2em;
-    font-family: 'Trebuchet MS';
-    font-size: 1.9em;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase; }
+    font-size: 0.5em;
+    line-height: 1em;
+    width: 60%;
+    display: block;
+    margin-top: 1.3em; }
+    @media (max-width: 640px) {
+      .landing_magnum__hero__visoreEtnico__subclaim {
+        margin-top: 1em; } }
+    @media (max-width: 480px) {
+      .landing_magnum__hero__visoreEtnico__subclaim {
+        width: 72%;
+        margin-top: 1em; } }
+  .landing_magnum__hero__visoreEtnico img {
+    /* position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0; */
+    width: 100%; }
 
 .landing_magnum__showcase--ethnic {
   max-width: 100%;
   width: auto !important; }
   .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic {
     vertical-align: middle; }
+    @media (max-width: 640px) {
+      .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic {
+        width: 100% !important; } }
     .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
       -webkit-border-radius: 4px;
       border-radius: 4px;
@@ -951,11 +984,8 @@ body {
       @media (max-width: 880px) {
         .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
           height: 260px; } }
-      @media (max-width: 320px) {
-        .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
-          height: 230px; } }
     .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__title {
-      max-width: 80%;
+      max-width: 82%;
       height: 2em; }
       @media (max-width: 880px) {
         .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__title {
@@ -974,6 +1004,10 @@ body {
         font-size: 0.75em; }
     .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__footer .showcase__item__detail {
       max-width: 60%; }
+  @media (max-width: 480px) {
+    .landing_magnum__showcase--ethnic {
+      padding-left: 3px !important;
+      padding-right: 3px !important; } }
 
 .landing_magnum {
   max-width: 950px; }
@@ -1012,7 +1046,7 @@ body {
       display: inline-block;
       width: 31%; }
       .landing_magnum__showcase__item.half {
-        width: 49.5%; }
+        width: calc(50% - 5px); }
         @media (max-width: 640px) {
           .landing_magnum__showcase__item.half {
             width: 98%; } }
@@ -1120,7 +1154,7 @@ body {
           border-left: 2px solid #f48135;
           border-right: 2px solid #f48135; }
   .landing_magnum__notes {
-    width: 73%;
+    width: 74%;
     position: relative;
     display: inline-block; }
     @media (max-width: 640px) {
