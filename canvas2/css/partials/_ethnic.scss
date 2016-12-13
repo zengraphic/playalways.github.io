@@ -5,20 +5,27 @@
         height: auto;
         @include border-radius (4px);
         background-color: $color-orange;
-        /* padding: 3em 1.250em; */
+        /*  */
         box-sizing: border-box;
         &__claim {
-            width: 52%;
+            padding: 7% 2%;
+            width: 40%;
+            height: 100%;
             font-family: 'Trebuchet MS';
-            font-size: 3em;
+            font-size: 2.4rem;
             line-height: 1em;
             font-weight: bold;
-            color: white;
+            color: $color-orange;
             text-transform: uppercase;
-            position: relative;
+            position: absolute;
             z-index: 5;
+            @include breakpoint('display_medium') {
+                font-size: 1.9rem;
+            }
             @include breakpoint('display_small') {
-                width: 100%
+                font-size: 3.7rem;
+                width: auto;
+                padding: 24% 3%;
             }
         }
         &__subclaim {
@@ -34,7 +41,7 @@
             z-index: 1;
             top: 0;
             left: 0; */
-            width:100%
+            width:100%;
         }
     }
 }
