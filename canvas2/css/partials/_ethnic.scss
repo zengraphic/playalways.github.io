@@ -21,11 +21,20 @@
             z-index: 5;
             @include breakpoint('display_medium') {
                 font-size: 1.9rem;
+                
+            }
+            @include breakpoint('display_medium_smaller') {
+                width: auto;
+                font-size: 3.7rem;
+                padding: 24% 3%;
             }
             @include breakpoint('display_small') {
-                font-size: 3.7rem;
-                width: auto;
-                padding: 24% 3%;
+                font-size: 3rem;
+                padding: 12% 3%;  
+            }
+            @include breakpoint('display_smaller') {
+                font-size: 2.4rem;
+                padding: 12% 3%;  
             }
         }
         &__subclaim {
@@ -66,7 +75,7 @@
                     }
                 }
                 &__title {
-                    max-width: 80%;
+                    max-width: 82%;
                     height: 2em;
                     @include breakpoint('display_medium') {
                         max-width: none;
