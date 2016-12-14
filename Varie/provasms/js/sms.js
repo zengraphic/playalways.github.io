@@ -1,5 +1,5 @@
 jQuery(function($) {
-    
+
     function sms() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         // Windows Phone must come first because its UA also contains "Android"
@@ -9,6 +9,7 @@ jQuery(function($) {
         } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             //iOS
             $('.android').css('display', 'none');
+            ('.sms').attr('href').replace('javascript:void(0);', 'sms:123');
         }
     }
 
