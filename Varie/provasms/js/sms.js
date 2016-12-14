@@ -1,4 +1,5 @@
-jQuery(document).ready(function($) {
+jQuery(function($) {
+    
     function sms() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         // Windows Phone must come first because its UA also contains "Android"
