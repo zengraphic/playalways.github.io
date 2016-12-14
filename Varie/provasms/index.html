@@ -8,17 +8,19 @@
 	<script type="text/javascript" src="js/landing.min.js"></script>
 </head>
 <body>
-	<a href="sms:123?body=sa sa prova" style="font-size:40px;" class="smslink">prova sms Android</a>
+	<a href="sms:123?body=sa sa prova" style="font-size:40px;">prova sms Android</a>
+	<br>
+	<a href="sms:123&body=sa sa prova" style="font-size:40px;">prova sms IPhone</a>
 </body>
-<script type="text/javascript">
-	 (function($) {
+<!-- <script type="text/javascript">
+	 (function() {
   if ( !navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ) return;
 
-  $('.smslink').attr('href', function() {
+  jQuery('a[href^="sms:"]').attr('href', function() {
     // Convert: sms:+000?body=example
     // To iOS:  sms:+000;body=example (semicolon, not question mark)
-    return $(this).attr('href').replace(/sms:(\+?([0-9]*))?\?/, 'sms:$1&');
+    return jQuery(this).attr('href').replace(/sms:(\+?([0-9]*))?\?/, 'sms:$1;');
   });
 })();
-</script>
+</script> -->
 </html>
