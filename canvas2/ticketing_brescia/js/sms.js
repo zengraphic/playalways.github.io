@@ -6,11 +6,9 @@ jQuery(function($) {
      if (/android/i.test(userAgent)) {
             //Android
             $('.iphone').css('display', 'none');
-            $('.smsDesk').css('display', 'none');
         } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             //iOS
             $('.android').css('display', 'none');
-            $('.smsDesk').css('display', 'none');
         }
     }
 
