@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/landing.min.js"></script>
+	<script type="text/javascript" src="js/sms.js"></script>
 </head>
 <body>
-	<a href="sms:?body=sa sa prova">prova sms</a>
+	<a href="sms:123?body=sa sa prova" style="font-size:40px;" class="android">prova sms Android</a>
+	<br>
+	<a href="sms:123&body=sa sa prova" style="font-size:40px;" class="iphone">prova sms IPhone</a>
 </body>
+<!-- <script type="text/javascript">
+	 (function() {
+  if ( !navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ) return;
+
+  jQuery('a[href^="sms:"]').attr('href', function() {
+    // Convert: sms:+000?body=example
+    // To iOS:  sms:+000;body=example (semicolon, not question mark)
+    return jQuery(this).attr('href').replace(/sms:(\+?([0-9]*))?\?/, 'sms:$1;');
+  });
+})();
+</script> -->
 </html>
