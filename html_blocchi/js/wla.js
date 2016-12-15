@@ -34,7 +34,7 @@
                     $('.block_wla__stepForm--step').find('.animated').addClass('bounceIn');
                 }
             });
-            $('.parameter').click(function(){
+            $('.parameter').click(function() {
                 $('.block_wla__stepForm__inputField--full').hide();
                 $('.block_wla__stepForm--step').eq(2).find('.animated').addClass('bounceIn');
                 $('.block_wla__stepForm--step').eq(3).find('.disabled').removeClass('disabled');
