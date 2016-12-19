@@ -1870,6 +1870,23 @@ body {
   .line_height_m_100 {
     line-height: 102px; } }
 
+.enhanceTag {
+  color: red;
+  font-size: 30px; }
+
+pre {
+  white-space: pre-wrap; }
+
+.container_edit {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 150px;
+  background-color: #999;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding-left: 10px; }
+
 .area_tool {
   width: 100%;
   height: 300px;
@@ -1877,11 +1894,13 @@ body {
   display: none; }
 
 .edit_tool {
-  position: absolute;
   background-image: url("../img/edit_tool.png");
   background-repeat: no-repeat;
-  width: 25px;
+  width: 130px;
   height: 25px;
+  padding-left: 30px;
+  padding-top: 5px;
+  margin-top: 10px;
   background-size: 25px 25px;
   cursor: pointer; }
   .edit_tool:hover {
@@ -1926,23 +1945,23 @@ body {
   text-align: left;
   position: relative;
   /*&:after {
-      background-color: #666666;
-      width: 2px;
-      content: "";
-      display: block;
-      position: absolute;
-      top: 14%;
-      bottom: 4%;
-      right: 0%;
-      min-height: 1px;
-      @include breakpoint ('display_small'){
-      left: 38%;
-      top: 100%;
-      bottom: 0%;
-      right: 26%;
-      height:2px;
-      width:100px;                }
-  }*/ }
+          background-color: #666666;
+          width: 2px;
+          content: "";
+          display: block;
+          position: absolute;
+          top: 14%;
+          bottom: 4%;
+          right: 0%;
+          min-height: 1px;
+          @include breakpoint ('display_small'){
+          left: 38%;
+          top: 100%;
+          bottom: 0%;
+          right: 26%;
+          height:2px;
+          width:100px;                }
+      }*/ }
   @media (max-width: 640px) {
     .offer_promotion--item.halfL {
       margin-top: 20px;
