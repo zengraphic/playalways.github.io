@@ -4,8 +4,12 @@
         margin-top: 4%;
     }
     .item {
-        margin: 0 5% 0 0 !important;
-        width: 95% !important;
+        margin: 0 2% 0 0 !important;
+        width: 48% !important;
+        display: inline-block;
+        border-radius: 8px;
+        border: 1px solid #f4f4f4;
+        padding: 2%;
         &:last-child {
             margin: 0 !important;
         }
@@ -13,24 +17,35 @@
             .ph-img {
                 img {
                     width: auto !important;
+                    margin: 0 auto;
                 }
             }
         }
         .offers {
-            width: 45%;
+            width: 49%;
             display: inline-block;
-            margin-right: 5%;
             margin-top: 5%;
+            position: relative;
+            padding: 2%;
             &:last-child {
-                margin-right: 0;
+                &:before{
+                    width: 1px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #f4f4f4;
+                    content: "";
+                }
             }
             .ph-lb {
+                text-align: center;
                 .phoneSpec {
                     text-align: left;
                     color: #333;
                     display: inline-block;
                     .ph-name {
-                        font-size: 1.3em;
+                        font-size: 1.2em;
                         line-height: 1.032em;
                     }
                     .ph-detail {
@@ -44,7 +59,29 @@
                     width: 90% !important;
                 }
             }
-            .ph-price {}
+            .ph-price {
+                display: block;
+                width: 100%;
+                margin: 1.0em 0 .5em 0;
+                text-align: center;
+                font-size: 1.4rem;
+                line-height: 1.3em;
+                .prz {
+                    text-decoration: line-through;
+                    color: #333;
+                    font-size: 1.3em;
+                    display: inline-block;
+                    clear: both;
+                    width: 100%;
+                }
+                .eu-m {
+                    color: #f07e26;
+                    font-size: 2.25em;
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: .75rem;
+                }
+            }
         }
     }
     .col-ip {
@@ -89,10 +126,20 @@
     clear: both;
 }
 
+@media (max-width: 45.11em){
+    .wnd{
+        .item{
+            width: 96% !important;
+            margin: 2% !important;
+        }
+    }
+}
+
 @media (max-width: 34.3em) {
     .wnd {
         .item {
-            width: 100% !important;
+            width: 96% !important;
+            margin: 2% !important;
             .offers {
                 .ph-lb {
                     img {
