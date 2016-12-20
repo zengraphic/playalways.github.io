@@ -5,6 +5,11 @@
                 .#{$attribute}_#{$direction}_#{$i * $delta*5} {
                     #{$attribute}-#{$direction}: $delta*5 * $i +px;
                 }
+                .#{$attribute}_#{$direction}_m_#{$i * $delta*5} {
+                    @include breakpoint (display_medium_small) {
+                        #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
+                    }
+                }
             }
         }
     }

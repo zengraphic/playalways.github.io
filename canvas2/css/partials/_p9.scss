@@ -1,3 +1,24 @@
+.p9_halfTab {
+    @include breakpoint ('display_small') {
+        float: none;
+        width: 100%;
+        border: none;
+        text-align: center;
+        margin-bottom: 25px;
+        &:first-child{
+            padding-bottom: 20px;
+            border-bottom: 2px solid $color_orange;
+        }
+    }
+}
+
+.fix_position_tabs{
+    @include breakpoint('display_small'){
+        position: relative;
+        bottom: 50px;
+    }
+}
+
 .landing_p9 {
     .hero {
         width: 100%;
