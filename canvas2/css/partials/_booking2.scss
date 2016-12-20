@@ -28,6 +28,14 @@
                 z-index: 1;
                 color: white;
                 text-decoration: none;
+                &:focus,
+                &:hover {
+                    outline: none;
+                    @include opacity(1);
+                }
+                &.gray_bg {
+                    background-color: $color_grey_light;
+                }
                 @include breakpoint ('display_small') {
                     &:before,
                     &:after {
@@ -59,6 +67,11 @@
                     height: 60px;
                     color: #000000;
                     text-decoration: none;
+                    &:focus,
+                    &:hover {
+                        outline: none;
+                        @include opacity(1);
+                    }
                     @include breakpoint ('display_small') {
                         &:before,
                         &:after {
@@ -96,7 +109,7 @@
                         top: 55px;
                     }
                 }
-            }            
+            }
             width: 46%;
             margin: 0 2%;
             &.active {
@@ -348,12 +361,12 @@
         position: absolute;
         right: 0;
         top: 0;
-            @include breakpoint ('display_small') {
-                right: -15px;
-                img{
-                    width: 70%;
-                }
-            }        
+        @include breakpoint ('display_small') {
+            right: -15px;
+            img {
+                width: 70%;
+            }
+        }
     }
     .landing_booking {
         padding: 20px;

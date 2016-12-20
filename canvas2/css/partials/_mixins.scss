@@ -102,3 +102,10 @@
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */
 }
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
