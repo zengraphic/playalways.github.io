@@ -18,11 +18,15 @@ body {
     body {
       font-size: 14px; } }
 
-a:link, a:visited {
-  color: #999; }
-
-a:hover, a:active {
+a {
   color: #f48135; }
+  a:link, a:visited {
+    color: #666; }
+  a:hover, a:active {
+    color: #ff9b40; }
+
+.text-center {
+  text-align: center; }
 
 .my_traffic__container {
   max-width: 720px;
@@ -31,7 +35,6 @@ a:hover, a:active {
 
 .my_traffic__heading {
   padding: 1rem;
-  margin-bottom: 50px;
   color: #f48135;
   font-family: 'Trebuchet MS'; }
   .my_traffic__heading .main_heading {
@@ -45,172 +48,31 @@ a:hover, a:active {
 
 .my_traffic__content {
   padding: 0.875rem;
-  background-color: #fafafa;
-  max-width: 100%;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */ }
-
-.my_traffic__contracts_details {
-  -webkit-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  background-clip: padding-box;
-  padding: 1rem;
-  position: relative;
-  top: -1px;
-  background-color: #ffffff; }
-  .my_traffic__contracts_details__disclaimer {
-    background-color: #ccd1d9;
-    padding: 1rem; }
-    .my_traffic__contracts_details__disclaimer p {
-      font-family: 'Trebuchet MS';
-      font-size: 0.875rem;
-      line-height: 1.2em; }
-  .my_traffic__contracts_details__tabs {
-    position: relative; }
-    .my_traffic__contracts_details__tabs.active .tab_title {
-      vertical-align: middle;
-      width: 3rem;
-      display: inline-block;
-      text-align: center;
-      padding-right: 1rem;
-      position: relative; }
-      .my_traffic__contracts_details__tabs.active .tab_title .title {
-        padding: 0;
-        font-family: 'Trebuchet MS';
-        text-transform: uppercase;
-        font-weight: bold;
-        position: absolute;
-        top: 100%;
-        left: -1rem;
-        width: 5rem;
-        display: inline-block;
-        font-size: 0.7rem; }
-    .my_traffic__contracts_details__tabs.active .my_traffic__contracts_details__data {
-      display: block; }
-  .my_traffic__contracts_details__data {
-    position: absolute;
-    display: none;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 5rem;
-    background-color: #ccd1d9;
-    -webkit-border-bottom-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-top-right-radius: 4px;
-    background-clip: padding-box; }
-    .my_traffic__contracts_details__data__heading .data_heading {
-      margin: 0;
-      padding: 1rem;
-      text-transform: uppercase;
-      font-family: "Helvetica";
-      font-size: 1.3rem;
-      line-height: 1.2em; }
-    .my_traffic__contracts_details__data__col_headings {
-      border-bottom: 1px solid #4a4a4a;
-      padding: 0.5rem 0; }
-      .my_traffic__contracts_details__data__col_headings .col_heading {
-        width: 14%;
-        display: inline-block;
-        text-align: center;
-        font-weight: bold;
-        font-family: "Helvetica";
-        font-size: 0.9rem; }
-    .my_traffic__contracts_details__data__row {
-      padding: 0.5rem 0; }
-      .my_traffic__contracts_details__data__row .row_content {
-        width: 14%;
-        display: inline-block;
-        text-align: center;
-        font-family: "Helvetica";
-        font-size: 0.8rem; }
-  .my_traffic__contracts_details__single_tab {
-    position: relative;
-    margin-top: 1rem;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    background-clip: padding-box;
-    /* stops bg color from leaking outside the border: */
-    border: 1px solid #ccd1d9;
-    padding: 1rem; }
-    .my_traffic__contracts_details__single_tab.active {
-      background-color: #ccd1d9; }
-      .my_traffic__contracts_details__single_tab.active .tab_title i.tab_icon:before {
-        content: "\f190"; }
-      .my_traffic__contracts_details__single_tab.active .tab_title .title {
-        display: none; }
-    .my_traffic__contracts_details__single_tab i.tab_icon {
-      display: inline-block;
-      vertical-align: middle; }
-    .my_traffic__contracts_details__single_tab i.tab_icon_expand {
-      display: inline-block;
-      height: 1.5rem;
-      vertical-align: middle;
-      width: 1.5rem; }
-      .my_traffic__contracts_details__single_tab i.tab_icon_expand:before, .my_traffic__contracts_details__single_tab i.tab_icon_expand:after {
-        content: "";
-        -webkit-transition: all 0.45s ease-in-out;
-        -moz-transition: all 0.45s ease-in-out;
-        -ms-transition: all 0.45s ease-in-out;
-        -o-transition: all 0.45s ease-in-out;
-        transition: all 0.45s ease-in-out;
-        position: absolute;
-        background-color: #f48135;
-        width: 4px;
-        height: 12px; }
-      .my_traffic__contracts_details__single_tab i.tab_icon_expand:before {
-        transform: translate(12px, 11px) rotate(45deg); }
-      .my_traffic__contracts_details__single_tab i.tab_icon_expand:after {
-        transform: translate(12px, 5px) rotate(-45deg); }
-    .my_traffic__contracts_details__single_tab .tab_title {
-      vertical-align: middle;
-      width: 34%;
-      display: inline-block; }
-      .my_traffic__contracts_details__single_tab .tab_title .title {
-        padding: 0 1rem;
-        font-family: 'Trebuchet MS';
-        text-transform: uppercase;
-        font-weight: bold;
-        display: inline-block;
-        font-size: 1.2rem;
-        vertical-align: middle; }
-    .my_traffic__contracts_details__single_tab .tab_totals {
-      width: 60%;
-      vertical-align: middle;
-      display: inline-block; }
-      .my_traffic__contracts_details__single_tab .tab_totals_label {
-        display: inline-block;
-        width: 35%; }
-      .my_traffic__contracts_details__single_tab .tab_totals_content {
-        display: inline-block;
-        width: 65%;
-        font-weight: bold; }
-      .my_traffic__contracts_details__single_tab .tab_totals_duration, .my_traffic__contracts_details__single_tab .tab_totals_import {
-        font-family: 'Helvetica';
-        line-height: 1.7em;
-        font-size: 0.9rem; }
+  max-width: 100%; }
 
 .my_traffic__contracts_accordion {
-  padding: 2rem 1rem 0;
-  -webkit-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
   background-clip: padding-box;
-  background: #fbfbfb;
-  background: -moz-linear-gradient(left, #fbfbfb 0%, white 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #fbfbfb), color-stop(100%, white));
-  background: -webkit-linear-gradient(left, #fbfbfb 0%, white 100%);
-  background: -o-linear-gradient(left, #fbfbfb 0%, white 100%);
-  background: -ms-linear-gradient(left, #fbfbfb 0%, white 100%);
-  background: linear-gradient(to right, #fbfbfb 0%, white 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1); }
+  /* stops bg color from leaking outside the border: */ }
+  .my_traffic__contracts_accordion__container {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+    padding: 1rem;
+    background: whitesmoke;
+    background: -moz-linear-gradient(left, whitesmoke 0%, white 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, whitesmoke), color-stop(100%, white));
+    background: -webkit-linear-gradient(left, whitesmoke 0%, white 100%);
+    background: -o-linear-gradient(left, whitesmoke 0%, white 100%);
+    background: -ms-linear-gradient(left, whitesmoke 0%, white 100%);
+    background: linear-gradient(to right, whitesmoke 0%, white 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1); }
+    .my_traffic__contracts_accordion__container .fa-spinner {
+      margin: 0 auto; }
   .my_traffic__contracts_accordion__col_headings {
     border-bottom: 2px solid #009bbe;
     padding-bottom: 10px; }
@@ -270,11 +132,311 @@ a:hover, a:active {
           transition: all 0.45s ease-in-out;
           position: absolute;
           background-color: #f48135;
-          width: 2px;
-          height: 9px; }
+          width: 3px;
+          height: 11px; }
         .my_traffic__contracts_accordion__row .row_content i.icon_ricarica:before {
-          transform: translate(69px, 5px) rotate(45deg); }
+          transform: translate(48px, 9px) rotate(45deg); }
         .my_traffic__contracts_accordion__row .row_content i.icon_ricarica:after {
-          transform: translate(54px, 5px) rotate(-45deg); }
+          transform: translate(39px, 3px) rotate(-45deg); }
+    .my_traffic__contracts_accordion__row.active i.icon_ricarica:before {
+      transform: translate(52px, 5px) rotate(45deg); }
+    .my_traffic__contracts_accordion__row.active i.icon_ricarica:after {
+      transform: translate(36px, 5px) rotate(-45deg); }
+
+.my_traffic__contracts_details {
+  position: relative;
+  top: -1px;
+  background-color: #ffffff; }
+  .my_traffic__contracts_details__column_tabs, .my_traffic__contracts_details__column_content, .my_traffic__contracts_details__column_view_all {
+    vertical-align: middle;
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 320px; }
+  .my_traffic__contracts_details__column_tabs {
+    width: 180px;
+    border-right: none;
+    margin-left: 1rem; }
+    .my_traffic__contracts_details__column_tabs .my_traffic__contracts_details__single_tab {
+      margin-left: 1rem; }
+  .my_traffic__contracts_details__column_content {
+    position: relative;
+    width: calc(100% - 180px);
+    border-left: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    .my_traffic__contracts_details__column_content .my_traffic__contracts_details__single_tab {
+      margin-right: 1rem; }
+    .my_traffic__contracts_details__column_content .fa-spinner {
+      position: absolute;
+      top: 45%;
+      z-index: 10; }
+  .my_traffic__contracts_details__column_view_all {
+    width: 100%;
+    display: block;
+    z-index: 5; }
+    .my_traffic__contracts_details__column_view_all .my_traffic__contracts_details__data__content {
+      height: calc(262px - 1rem); }
+    .my_traffic__contracts_details__column_view_all .my_traffic__contracts_details__data__footer {
+      border-left: none;
+      left: 0; }
+    .my_traffic__contracts_details__column_view_all__table {
+      position: relative;
+      -webkit-border-top-right-radius: 8px;
+      border-top-right-radius: 8px;
+      -webkit-border-top-left-radius: 8px;
+      border-top-left-radius: 8px;
+      background-clip: padding-box;
+      background-color: #ffffff; }
+  .my_traffic__contracts_details__disclaimer {
+    padding: 1rem 0; }
+    .my_traffic__contracts_details__disclaimer p {
+      font-family: 'Trebuchet MS';
+      font-size: 0.875rem;
+      margin: 0;
+      line-height: 1.2em; }
+  .my_traffic__contracts_details__tabs {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+    overflow: hidden;
+    margin-top: 1rem;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    position: relative;
+    display: table;
+    opacity: 1;
+    width: calc(100% - 2rem); }
+    .my_traffic__contracts_details__tabs.traffic-selected {
+      opacity: 1;
+      width: calc(100% - 2rem); }
+    .my_traffic__contracts_details__tabs.active .my_traffic__contracts_details__single_tab {
+      border-right: 1px solid #ccd1d9; }
+      .my_traffic__contracts_details__tabs.active .my_traffic__contracts_details__single_tab.active {
+        border-right-color: #ffffff;
+        background-color: #ffffff; }
+    .my_traffic__contracts_details__tabs.active_detail .my_traffic__contracts_details__column_content .my_traffic__contracts_details__single_tab {
+      display: none; }
+    .my_traffic__contracts_details__tabs.active_view_all .my_traffic__contracts_details__column_tabs,
+    .my_traffic__contracts_details__tabs.active_view_all .my_traffic__contracts_details__column_content {
+      display: none; }
+    .my_traffic__contracts_details__tabs__borders {
+      display: table;
+      width: 100%;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */
+      background: whitesmoke;
+      background: -moz-linear-gradient(left, whitesmoke 0%, white 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, whitesmoke), color-stop(100%, white));
+      background: -webkit-linear-gradient(left, whitesmoke 0%, white 100%);
+      background: -o-linear-gradient(left, whitesmoke 0%, white 100%);
+      background: -ms-linear-gradient(left, whitesmoke 0%, white 100%);
+      background: linear-gradient(to right, whitesmoke 0%, white 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1); }
+    .my_traffic__contracts_details__tabs__container {
+      margin: 1rem;
+      width: 100%;
+      display: table-row; }
+    .my_traffic__contracts_details__tabs__view_all {
+      display: table-row;
+      text-align: right; }
+      .my_traffic__contracts_details__tabs__view_all .view_all {
+        display: table-cell;
+        font-family: 'Trebuchet MS';
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        opacity: 1; }
+        .my_traffic__contracts_details__tabs__view_all .view_all_filler {
+          display: table-cell; }
+        .my_traffic__contracts_details__tabs__view_all .view_all_link {
+          padding: 1rem;
+          display: inline-block;
+          color: #f48135; }
+          .my_traffic__contracts_details__tabs__view_all .view_all_link.active {
+            width: 0;
+            padding: 0;
+            overflow: hidden; }
+  .my_traffic__contracts_details__data {
+    width: calc(100% - 1rem);
+    -webkit-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-clip: padding-box;
+    height: 320px;
+    padding: 1rem 0 0 1rem;
+    position: relative;
+    border-left: 1px solid transparent; }
+    .my_traffic__contracts_details__data.active {
+      background-color: #ffffff; }
+    .my_traffic__contracts_details__data__heading .data_heading {
+      margin: 0;
+      padding: 1rem 1rem 0;
+      text-transform: uppercase;
+      font-family: "Trebuchet MS";
+      color: #f48135;
+      font-size: 1rem;
+      line-height: 1.2em; }
+    .my_traffic__contracts_details__data__col_headings {
+      border-bottom: 1px solid #ccd1d9;
+      padding: 0.5rem 0; }
+      .my_traffic__contracts_details__data__col_headings .col_heading {
+        width: 14%;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+        font-family: "Trebuchet MS";
+        font-size: 0.75rem; }
+        .my_traffic__contracts_details__data__col_headings .col_heading.h-ora {
+          width: 12%; }
+        .my_traffic__contracts_details__data__col_headings .col_heading.h-origine {
+          width: 12%; }
+        .my_traffic__contracts_details__data__col_headings .col_heading.h-destinazione, .my_traffic__contracts_details__data__col_headings .col_heading.h-numero {
+          width: 17%; }
+        .my_traffic__contracts_details__data__col_headings .col_heading.h-euro {
+          width: 11%; }
+        .my_traffic__contracts_details__data__col_headings .col_heading:first-child {
+          text-align: left;
+          padding-left: 1rem;
+          width: calc(14% - 1rem); }
+        .my_traffic__contracts_details__data__col_headings .col_heading:last-child {
+          text-align: right; }
+    .my_traffic__contracts_details__data__content {
+      height: calc(285px - 1rem);
+      padding-bottom: 1rem; }
+    .my_traffic__contracts_details__data__row {
+      padding: 0.5rem 0; }
+      .my_traffic__contracts_details__data__row .row_content {
+        width: 14%;
+        display: inline-block;
+        text-align: center;
+        font-family: "Trebuchet MS";
+        font-size: 0.75rem; }
+        .my_traffic__contracts_details__data__row .row_content.c-ora {
+          width: 12%; }
+        .my_traffic__contracts_details__data__row .row_content.c-origine {
+          width: 12%; }
+        .my_traffic__contracts_details__data__row .row_content.c-destinazione, .my_traffic__contracts_details__data__row .row_content.c-numero {
+          width: 17%; }
+        .my_traffic__contracts_details__data__row .row_content.c-euro {
+          width: 11%;
+          text-align: right; }
+    .my_traffic__contracts_details__data__footer {
+      position: absolute;
+      z-index: 3;
+      top: calc(100% - 1px);
+      left: -1px;
+      right: 0;
+      height: 3rem;
+      background-color: #ffffff;
+      border-right: 5px solid #f5f5f5;
+      border-left: 1px solid #ccd1d9;
+      -webkit-border-bottom-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      -webkit-border-bottom-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      background-clip: padding-box;
+      padding: 0 1rem; }
+      .my_traffic__contracts_details__data__footer__content {
+        border-top: 1px solid #ccd1d9;
+        height: 3rem;
+        display: table;
+        width: 100%; }
+        .my_traffic__contracts_details__data__footer__content .cell {
+          display: table-cell;
+          vertical-align: middle;
+          width: 33%; }
+          .my_traffic__contracts_details__data__footer__content .cell_right {
+            text-align: right; }
+        .my_traffic__contracts_details__data__footer__content .back_button,
+        .my_traffic__contracts_details__data__footer__content .xls_button {
+          font-family: "Trebuchet MS";
+          font-size: 0.75rem;
+          text-transform: uppercase; }
+          .my_traffic__contracts_details__data__footer__content .back_button i,
+          .my_traffic__contracts_details__data__footer__content .xls_button i {
+            font-size: 1.25rem; }
+  .my_traffic__contracts_details__single_tab {
+    position: relative;
+    border-bottom: 1px solid #ccd1d9;
+    height: 25%;
+    width: calc(100% - 1rem);
+    display: table; }
+    .my_traffic__contracts_details__single_tab i.tab_icon {
+      padding: 0.5rem;
+      display: table-cell;
+      vertical-align: middle;
+      color: #f48135; }
+    .my_traffic__contracts_details__single_tab i.tab_icon_expand {
+      display: table-cell;
+      height: 1.5rem;
+      vertical-align: middle;
+      width: 1.5rem; }
+      .my_traffic__contracts_details__single_tab i.tab_icon_expand:before, .my_traffic__contracts_details__single_tab i.tab_icon_expand:after {
+        content: "";
+        -webkit-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -o-transition: all 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out;
+        position: absolute;
+        background-color: #f48135;
+        width: 4px;
+        height: 12px; }
+      .my_traffic__contracts_details__single_tab i.tab_icon_expand:before {
+        transform: translate(0, -4px) rotate(45deg); }
+      .my_traffic__contracts_details__single_tab i.tab_icon_expand:after {
+        transform: translate(0, -10px) rotate(-45deg); }
+    .my_traffic__contracts_details__single_tab .tab_title {
+      vertical-align: middle;
+      width: 100%;
+      display: table-row;
+      color: #4a4a4a; }
+      .my_traffic__contracts_details__single_tab .tab_title .title {
+        font-family: 'Trebuchet MS';
+        text-transform: uppercase;
+        font-weight: bold;
+        display: table-cell;
+        font-size: 0.85rem;
+        vertical-align: middle; }
+    .my_traffic__contracts_details__single_tab .tab_totals {
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      vertical-align: middle;
+      display: table-row; }
+      .my_traffic__contracts_details__single_tab .tab_totals.loading {
+        opacity: 0; }
+      .my_traffic__contracts_details__single_tab .tab_totals_label {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding-right: 0.5rem;
+        text-transform: uppercase; }
+      .my_traffic__contracts_details__single_tab .tab_totals_content {
+        display: inline-block;
+        font-weight: bold;
+        color: #f48135;
+        font-size: 0.75rem; }
+        .my_traffic__contracts_details__single_tab .tab_totals_content .number {
+          font-size: 1.25rem; }
+      .my_traffic__contracts_details__single_tab .tab_totals_duration, .my_traffic__contracts_details__single_tab .tab_totals_import {
+        font-family: 'Trebuchet MS';
+        display: table-cell;
+        line-height: 1.7em;
+        font-size: 0.9rem;
+        vertical-align: middle; }
+      .my_traffic__contracts_details__single_tab .tab_totals_duration {
+        width: 65%; }
+        .my_traffic__contracts_details__single_tab .tab_totals_duration .tab_totals_label {
+          width: 90px; }
 
 /*# sourceMappingURL=my_traffic.css.map */

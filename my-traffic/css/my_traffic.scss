@@ -8,14 +8,19 @@ body {
 }
 
 a {
+    color: $color-orange;
     &:link,
     &:visited {
-        color: #999;
+        color: #666;
     }
     &:hover,
     &:active {
-        color: $color-orange;
+        color: $color-orange*1.2;
     }
+}
+
+.text-center {
+    text-align: center;
 }
 
 .my_traffic {
@@ -26,7 +31,6 @@ a {
     }
     &__heading {
         padding: 1rem;
-        margin-bottom: 50px;
         color: $color-orange;
         font-family: 'Trebuchet MS';
         .main_heading {
@@ -42,187 +46,27 @@ a {
     }
     &__content {
         padding: 0.875rem;
-        background-color: #fafafa;
         max-width: 100%;
-        @include border-radius(4px);
-    }
-    &__contracts_details {
-        @include border-bottom-radius(4px);
-        padding: 1rem;
-        position: relative;
-        top: -1px;
-        background-color: $color-white;
-        &__disclaimer {
-            background-color: $color-mediumLightGrey;
-            padding: 1rem;
-            p {
-                font-family: 'Trebuchet MS';
-                font-size: 0.875rem;
-                line-height: 1.2em;
-            }
-        }
-        &__tabs {
-            position: relative;
-            &.active {
-                .tab_title {
-                    vertical-align: middle;
-                    width: 3rem;
-                    display: inline-block;
-                    text-align: center;
-                    padding-right: 1rem;
-                    position: relative;
-                    .title {
-                        padding: 0;
-                        font-family: 'Trebuchet MS';
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        position: absolute;
-                        top: 100%;
-                        left: -1rem;
-                        width: 5rem;
-                        display: inline-block;
-                        font-size: 0.7rem;
-                    }
-                }
-                .my_traffic__contracts_details__data {
-                    display: block;
-                }
-            }
-        }
-        &__data {
-            position: absolute;
-            display: none;
-            z-index: 2;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 5rem;
-            background-color: $color-mediumLightGrey;
-            @include border-right-radius(4px);
-            &__heading{
-                .data_heading{
-                    margin: 0;
-                    padding: 1rem;
-                    text-transform: uppercase;
-                    font-family: "Helvetica";
-                    font-size: 1.3rem;
-                    line-height: 1.2em;
-                }
-            }
-            &__col_headings {
-                border-bottom: 1px solid $color-darkGrey;
-                padding: 0.5rem 0;
-                .col_heading {
-                    width: 14%;
-                    display: inline-block;
-                    text-align: center;
-                    font-weight: bold;
-                    font-family: "Helvetica";
-                    font-size: 0.9rem;
-                }
-            }
-            &__row {
-                padding: 0.5rem 0;
-                .row_content{
-                    width: 14%;
-                    display: inline-block;
-                    text-align: center;
-                    font-family: "Helvetica";
-                    font-size: 0.8rem;
-                }
-            }
-        }
-        &__single_tab {
-            &.active {
-                background-color: $color-mediumLightGrey;
-                .tab_title {
-                    i.tab_icon {
-                        &:before{
-                            content:"\f190";
-                        }
-                    }
-                    .title {
-                        display: none;
-                    }
-                }
-            }
-            position: relative;
-            margin-top: 1rem;
-            @include border-radius(4px);
-            border: 1px solid $color-mediumLightGrey;
-            padding: 1rem;
-            i.tab_icon {
-                display: inline-block;
-                vertical-align: middle;
-            }
-            i.tab_icon_expand {
-                display: inline-block;
-                height: 1.5rem;
-                vertical-align: middle;
-                width: 1.5rem;
-                &:before,
-                &:after {
-                    content: "";
-                    @include transition(all 0.45s ease-in-out);
-                    position: absolute;
-                    background-color: $color-orange;
-                    width: 4px;
-                    height: 12px;
-                }
-                &:before {
-                    transform: translate(12px, 11px) rotate(45deg);
-                }
-                &:after {
-                    transform: translate(12px, 5px) rotate(-45deg);
-                }
-            }
-            .tab_title {
-                vertical-align: middle;
-                width: 34%;
-                display: inline-block;
-                .title {
-                    padding: 0 1rem;
-                    font-family: 'Trebuchet MS';
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    display: inline-block;
-                    font-size: 1.2rem;
-                    vertical-align: middle;
-                }
-            }
-            .tab_totals {
-                width: 60%;
-                vertical-align: middle;
-                display: inline-block;
-                &_label {
-                    display: inline-block;
-                    width: 35%;
-                }
-                &_content {
-                    display: inline-block;
-                    width: 65%;
-                    font-weight: bold;
-                }
-                &_duration,
-                &_import {
-                    font-family: 'Helvetica';
-                    line-height: 1.7em;
-                    font-size: 0.9rem;
-                }
-            }
-        }
     }
     &__contracts_accordion {
-        padding: 2rem 1rem 0;
-        @include border-top-radius(4px);
-        background: rgba(251, 251, 251, 1);
-        background: -moz-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(251, 251, 251, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-        background: -webkit-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: -o-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: -ms-linear-gradient(left, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: linear-gradient(to right, rgba(251, 251, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
+        padding: 1rem;
+        background-color: #f5f5f5;
+        @include border-radius(8px);
+        &__container {
+            @include border-radius(8px);
+            padding: 1rem;
+            background: rgba(245, 245, 245, 1);
+            background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+            background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
+            .fa-spinner {
+                margin: 0 auto;
+            }
+        }
         &__col_headings {
             border-bottom: 2px solid $color-lightBlue;
             padding-bottom: 10px;
@@ -286,14 +130,390 @@ a {
                         @include transition(all 0.45s ease-in-out);
                         position: absolute;
                         background-color: $color-orange;
-                        width: 2px;
-                        height: 9px;
+                        width: 3px;
+                        height: 11px;
                     }
                     &:before {
-                        transform: translate(69px, 5px) rotate(45deg);
+                        transform: translate(48px, 9px) rotate(45deg);
                     }
                     &:after {
-                        transform: translate(54px, 5px) rotate(-45deg);
+                        transform: translate(39px, 3px) rotate(-45deg);
+                    }
+                }
+            }
+            &.active{
+                i.icon_ricarica {
+                    &:before {
+                        transform: translate(52px, 5px) rotate(45deg);
+                    }
+                    &:after {
+                        transform: translate(36px, 5px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+    &__contracts_details {
+        position: relative;
+        top: -1px;
+        background-color: $color-white;
+        &__column {
+            &_tabs,
+            &_content,
+            &_view_all {
+                vertical-align: middle;
+                display: table-cell;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                height: 320px;
+            }
+            &_tabs {
+                width: 180px;
+                border-right: none;
+                margin-left: 1rem;
+                .my_traffic__contracts_details__single_tab {
+                    margin-left: 1rem;
+                }
+            }
+            &_content {
+                position: relative;
+                width: calc(100% - 180px);
+                border-left: none;
+                @include transition(all 0.5s ease-in-out);
+                .my_traffic__contracts_details__single_tab {
+                    margin-right: 1rem;
+                }
+                .fa-spinner {
+                    position: absolute;
+                    top: 45%;
+                    z-index: 10;
+                }
+            }
+            &_view_all{
+                width: 100%;
+                display: block;
+                
+                z-index: 5;
+                .my_traffic__contracts_details__data{
+                   &__content{
+                        height: calc(262px - 1rem);
+                    }
+                    &__footer{
+                        border-left: none;
+                        left: 0;
+                    }
+                }
+                &__table{
+                   position: relative;
+                   @include border-top-radius(8px);
+                   background-color: $color-white;
+
+                }
+            }
+        }
+        &__disclaimer {
+            padding: 1rem 0;
+            p {
+                font-family: 'Trebuchet MS';
+                font-size: 0.875rem;
+                margin: 0;
+                line-height: 1.2em;
+            }
+        }
+        &__tabs {
+            @include border-radius(8px);
+            overflow: hidden;
+            margin-top: 1rem;
+            background-color: #f5f5f5;
+            padding: 1rem;
+            position: relative;
+            display: table;
+
+            //opacity: 0;
+            //width: 0;
+
+            opacity: 1;
+            width: calc(100% - 2rem);
+            &.traffic-selected {
+                opacity: 1;
+                width: calc(100% - 2rem);
+            }
+            &.active {
+                .my_traffic__contracts_details__single_tab {
+                    border-right: 1px solid $color-mediumLightGrey;
+                    &.active{
+                        border-right-color:$color-white;
+                        background-color: $color-white;
+                    }
+                }
+            }
+            &.active_detail{
+                .my_traffic__contracts_details__column_content{
+                    .my_traffic__contracts_details__single_tab {
+                        display: none;
+                    }
+                }
+            }
+            &.active_view_all{
+                .my_traffic__contracts_details__column_tabs,
+                .my_traffic__contracts_details__column_content{
+                    display: none;
+                }
+            }
+            &__borders {
+                display: table;
+                width: 100%;
+                @include border-radius(8px);
+                background: rgba(245, 245, 245, 1);
+                background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+                background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
+            }
+            &__container {
+                margin: 1rem;
+                width: 100%;
+                display: table-row;
+            }
+            &__view_all {
+                display: table-row;
+                text-align: right;
+                .view_all {
+                    display: table-cell;
+                    font-family: 'Trebuchet MS';
+                    text-transform: uppercase;
+                    font-size: 0.75rem;
+                    opacity: 1;
+                    &_filler {
+                        display: table-cell;
+                    }
+                    &_link {
+                        padding: 1rem;
+                        display: inline-block;
+                        color: $color-orange;
+                        &.active{
+                            width:0;
+                            padding:0;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        &__data {
+            width: calc(100% - 1rem);
+            @include border-right-radius(8px);
+            height: 320px;
+            padding: 1rem 0 0 1rem ;
+            position: relative;
+            border-left: 1px solid transparent;
+            &.active{
+                background-color: $color-white;
+            }
+            &__heading {
+                .data_heading {
+                    margin: 0;
+                    padding: 1rem 1rem 0;
+                    text-transform: uppercase;
+                    font-family: "Trebuchet MS";
+                    color: $color-orange;
+                    font-size: 1rem;
+                    line-height: 1.2em;
+                }
+            }
+            &__col_headings {
+                border-bottom: 1px solid $color-mediumLightGrey;
+                padding: 0.5rem 0;
+                .col_heading {
+                    &.h-ora{
+                        width: 12%;   
+                    }
+                    &.h-origine{
+                        width: 12%;   
+                    }
+                    &.h-destinazione,
+                    &.h-numero{
+                        width: 17%;   
+                    }
+                    &.h-euro{
+                        width: 11%;
+                    }
+                    width: 14%;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
+                    font-family: "Trebuchet MS";
+                    font-size: 0.75rem;
+                    &:first-child{
+                        text-align: left;
+                        padding-left: 1rem;
+                        width: calc(14% - 1rem);
+                    }
+                    &:last-child{
+                        text-align: right;
+                        
+                    }
+                    
+                }
+            }
+            &__content{
+                height: calc(285px - 1rem);
+                padding-bottom: 1rem;
+            }
+            &__row {
+                padding: 0.5rem 0;
+                .row_content {
+                    &.c-ora{
+                        width: 12%;   
+                    }
+                    &.c-origine{
+                        width: 12%;   
+                    }
+                    &.c-destinazione,
+                    &.c-numero
+                    {
+                        width: 17%;   
+                    }
+                    &.c-euro{
+                        width: 11%;  
+                        text-align: right;
+                    }
+                    width: 14%;
+                    display: inline-block;
+                    text-align: center;
+                    font-family: "Trebuchet MS";
+                    font-size: 0.75rem;
+                }
+            }
+            &__footer{
+                position: absolute;
+                z-index: 3;
+                top: calc(100% - 1px);
+                left:-1px;
+                right:0;
+                height: 3rem;
+                background-color: $color-white;
+                border-right: 5px solid #f5f5f5;
+                border-left: 1px solid $color-mediumLightGrey;
+                @include border-bottom-radius(8px);
+                padding: 0 1rem;
+                &__content{
+                    border-top: 1px solid $color-mediumLightGrey;
+                    height: 3rem;
+                    display: table;
+                    width: 100%;
+                    .cell{
+                        display: table-cell;
+                        vertical-align: middle;
+                        width: 33%;
+                        &_left{
+                            
+                        }
+                        &_fill{
+                            
+                        }
+                        &_right{
+                            text-align: right;
+                        }
+
+                    }
+                    .back_button,
+                    .xls_button{
+                        font-family: "Trebuchet MS";
+                        font-size: 0.75rem;
+                        text-transform: uppercase;
+                        i {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+        &__single_tab {
+            position: relative;
+            border-bottom: 1px solid $color-mediumLightGrey;
+            height: 25%;
+            width: calc(100% - 1rem);
+            display: table;
+            i.tab_icon {
+                padding: 0.5rem;
+                display: table-cell;
+                vertical-align: middle;
+                color: $color-orange;
+            }
+            i.tab_icon_expand {
+                display: table-cell;
+                height: 1.5rem;
+                vertical-align: middle;
+                width: 1.5rem;
+                &:before,
+                &:after {
+                    content: "";
+                    @include transition(all 0.45s ease-in-out);
+                    position: absolute;
+                    background-color: $color-orange;
+                    width: 4px;
+                    height: 12px;
+                }
+                &:before {
+                    transform: translate(0, -4px) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(0, -10px) rotate(-45deg);
+                }
+            }
+            .tab_title {
+                vertical-align: middle;
+                width: 100%;
+                display: table-row;
+                color: $color-darkGrey;
+                .title {
+                    font-family: 'Trebuchet MS';
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    display: table-cell;
+                    font-size: 0.85rem;
+                    vertical-align: middle;
+                }
+            }
+            .tab_totals {
+                &.loading {
+                    opacity: 0;
+                }
+                @include transition(all 0.5s ease-in-out);
+                vertical-align: middle;
+                display: table-row;
+                &_label {
+                    display: inline-block;
+                    font-size: 0.75rem;
+                    padding-right: 0.5rem;
+                    text-transform: uppercase;
+                }
+                &_content {
+                    display: inline-block;
+                    font-weight: bold;
+                    color: $color-orange;
+                    font-size: 0.75rem;
+                    .number {
+                        font-size: 1.25rem;
+                    }
+                }
+                &_duration,
+                &_import {
+                    font-family: 'Trebuchet MS';
+                    display: table-cell;
+                    line-height: 1.7em;
+                    font-size: 0.9rem;
+                    vertical-align: middle;
+                }
+                &_duration {
+                    width: 65%;
+                    .tab_totals_label {
+                        width: 90px;
                     }
                 }
             }
