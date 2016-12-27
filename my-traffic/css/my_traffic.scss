@@ -1,522 +1,673 @@
-@import 'vars';
-body {
-    margin: 0;
-    font-size: 16px;
-    @include breakpoint('small') {
-        font-size: 14px;
-    }
-}
-
-a {
-    color: $color-orange;
-    &:link,
-    &:visited {
-        color: #666;
-    }
-    &:hover,
-    &:active {
-        color: $color-orange*1.2;
-    }
-}
-
-.text-center {
-    text-align: center;
-}
-
-.my_traffic {
-    &__container {
-        max-width: 720px;
-        width: 100%;
-        min-height: 100vh;
-    }
-    &__heading {
-        padding: 1rem;
-        color: $color-orange;
-        font-family: 'Trebuchet MS';
-        .main_heading {
-            margin: 0;
-            line-height: 1.2em;
-        }
-        .secondary_heading {
-            padding: 1rem;
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.2em;
-        }
-    }
-    &__content {
-        padding: 0.875rem;
-        max-width: 100%;
-    }
-    &__contracts_accordion {
-        padding: 1rem;
-        background-color: #f5f5f5;
-        @include border-radius(8px);
-        &__container {
-            @include border-radius(8px);
-            padding: 1rem;
-            background: rgba(245, 245, 245, 1);
-            background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-            background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-            background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-            background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-            background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
-            .fa-spinner {
-                margin: 0 auto;
-            }
-        }
-        &__col_headings {
-            border-bottom: 2px solid $color-lightBlue;
-            padding-bottom: 10px;
-            .col_heading {
-                line-height: 1.2em;
-                font-family: 'Trebuchet MS';
-                text-transform: uppercase;
-                display: inline-block;
-                font-size: 0.8rem;
-                font-weight: bold;
-                color: $color-lightBlue;
-                width: 22%;
-                &.h-ricarica {
-                    width: 12%;
+            @import 'vars';
+            body {
+                margin: 0;
+                font-size: 16px;
+                @include breakpoint('small') {
+                    font-size: 14px;
                 }
             }
-        }
-        &__row {
-            border-bottom: 1px solid $color-mediumLightGrey;
-            .row_content {
-                &.c-linea {
-                    a {
-                        text-decoration: none;
-                        &.active {
-                            color: $color-orange;
+            
+            a {
+                color: $color-orange;
+                &:link,
+                &:visited {
+                    color: #666;
+                }
+                &:hover,
+                &:active {
+                    color: $color-orange*1.2;
+                }
+            }
+            
+            .text-center {
+                text-align: center;
+            }
+            
+            .my_traffic {
+                &__container {
+                    max-width: 720px;
+                    width: 100%;
+                    min-height: 100vh;
+                }
+                &__heading {
+                    padding: 1rem;
+                    color: $color-orange;
+                    font-family: 'Trebuchet MS';
+                    .main_heading {
+                        margin: 0;
+                        line-height: 1.2em;
+                    }
+                    .secondary_heading {
+                        padding: 1rem;
+                        margin: 0;
+                        font-size: 1rem;
+                        line-height: 1.2em;
+                    }
+                }
+                &__content {
+                    padding: 0.875rem;
+                    max-width: 100%;
+                }
+                &__contracts_accordion {
+                    padding: 1rem;
+                    background-color: #f5f5f5;
+                    @include border-radius(8px);
+                    &__container {
+                        @include border-radius(8px);
+                        padding: 1rem;
+                        background: rgba(245, 245, 245, 1);
+                        background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+                        background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
+                        .fa-spinner {
+                            margin: 0 auto;
+                        }
+                    }
+                    &__col_headings {
+                        border-bottom: 2px solid $color-lightBlue;
+                        padding-bottom: 0.5rem;
+                        @include breakpoint(super-tiny) {
+                            display: inline-block;
+                            text-align: right;
+                            width: 43%;
+                            border-bottom: 1px solid $color-mediumLightGrey;
+                            vertical-align: top;
+                            padding-top: 1rem;
+                            padding-bottom: 1.5rem;
+                            box-sizing: border-box;
+                        }
+                        .col_heading {
+                            line-height: 1rem;
+                            font-family: 'Trebuchet MS';
+                            text-transform: uppercase;
+                            display: inline-block;
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            color: $color-lightBlue;
+                            width: 22%;
+                            &.h-linea {
+                                width: 27%;
+                            }
+                            &.h-offerta {
+                                width: 16%;
+                            }
+                            &.h-ricarica {
+                                width: 12%;
+                                height: 1.2rem;
+                            }
+                            &.h-contratto {
+                                width: 27%;
+                            }
+                            &.h-tipo {
+                                width: 16%;
+                            }
+                            @include breakpoint(super-tiny) {
+                                width: calc(100% - 0.5rem)!important;
+                                font-size: 0.7rem;
+                                padding-top: 0.2rem;
+                                padding-right: 0.5rem;
+                                border-right: 2px solid $color-lightBlue;
+                            }
+                        }
+                    }
+                    &__row {
+                        border-bottom: 1px solid $color-mediumLightGrey;
+                        @include breakpoint(super-tiny) {
+                            display: inline-block;
+                            width: 57%;
+                            padding-bottom: 1.5rem;
+                            padding-top: 1rem;
+                            vertical-align: top;
+                            position: relative;
+                            border-right: 1px solid $color-mediumLightGrey;
+                            border-bottom-right-radius: 11px;
+                            box-sizing: border-box;
+                        }
+                        a.tab_expand_link {
+                            i.tab_icon_expand {
+                                display: inline-block;
+                                height: 1.5rem;
+                                vertical-align: middle;
+                                width: 1.5rem;
+                                cursor: pointer;
+                                @include breakpoint(super-tiny) {
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 0;
+                                    background-color: $color-mediumLightGrey;
+                                    @include border-radius(10px 0);
+                                }
+                                &:before,
+                                &:after {
+                                    content: "";
+                                    @include transition(all 0.45s ease-in-out);
+                                    position: absolute;
+                                    background-color: $color-orange;
+                                    width: 3px;
+                                    height: 12px;
+                                }
+                                &:before {
+                                    transform: translate(14px, 7px) rotate(45deg);
+                                }
+                                &:after {
+                                    transform: translate(7px, 7px) rotate(-45deg);
+                                }
+                            }
+                            &.active {
+                                i.tab_icon_expand {
+                                    @include breakpoint(super-tiny) {
+                                        background-color: $color-orange;
+                                        &:before,
+                                        &:after {
+                                            background-color: $color-white;
+                                        }
+                                    }
+                                    &:before {
+                                        transform: translate(10px, 7px) rotate(45deg);
+                                    }
+                                    &:after {
+                                        transform: translate(10px, 7px) rotate(-45deg);
+                                    }
+                                }
+                            }
+                        }
+                        .row_content {
+                            &.c-linea {
+                                width: 27%;
+                                a {
+                                    text-decoration: none;
+                                    &.active {
+                                        color: $color-orange;
+                                    }
+                                }
+                            }
+                            &.c-tipo {
+                                text-transform: uppercase;
+                                width: 16%;
+                            }
+                            &.c-offerta {
+                                width: 16%;
+                                a.offerta_link {
+                                    color: $color-orange;
+                                }
+                            }
+                            &.c-ricarica {
+                                width: 6%;
+                                position: relative;
+                                cursor: pointer;
+                            }
+                            &.c-contratto {
+                                width: 27%;
+                                position: relative;
+                                cursor: pointer;
+                            }
+                            line-height: 1rem;
+                            font-family: 'Trebuchet MS';
+                            font-weight: bold;
+                            color: #999;
+                            padding: 1rem 0;
+                            display: inline-block;
+                            width: 22%;
+                            font-size: 0.8rem;
+                            i.icon_ricarica {
+                                background-color: #f48135;
+                                display: block;
+                                height: 1.2rem;
+                                width: 1.2rem;
+                                @include border-radius(50%);
+                                font-size: 1rem;
+                                line-height: 1.2rem;
+                                color: $color-white;
+                                text-align: center;
+                                // &:before,
+                                // &:after {
+                                //     content: "";
+                                //     @include transition(all 0.45s ease-in-out);
+                                //     position: absolute;
+                                //     background-color: $color-orange;
+                                //     width: 3px;
+                                //     height: 11px;
+                                //     @include breakpoint(super-tiny) {
+                                //     position: absolute;
+                                // }
+                                // }
+                                // &:before {
+                                //     transform: translate(48px, 9px) rotate(45deg);
+                                // }
+                                // &:after {
+                                //     transform: translate(39px, 3px) rotate(-45deg);
+                                // }
+                            }
+                            @include breakpoint(super-tiny) {
+                                width: calc(100% - 0.5rem)!important;
+                                padding: 0.2rem 0 0 0.5rem;
+                            }
                         }
                     }
                 }
-                &.c-tipo {
-                    text-transform: uppercase;
-                }
-                a.offerta_link {
-                    color: $color-orange;
-                }
-                line-height: 1.2em;
-                font-family: 'Trebuchet MS';
-                font-weight: bold;
-                color: #999;
-                padding: 1rem 0;
-                display: inline-block;
-                width: 22%;
-                &.c-ricarica {
-                    width: 12%;
+                &__contracts_details {
                     position: relative;
-                    cursor: pointer;
-                }
-                font-size: 0.8rem;
-                i.icon_ricarica {
-                    background-color: #f48135;
-                    display: block;
-                    height: 1.2rem;
-                    width: 1.2rem;
-                    @include border-radius(50%);
-                    font-size: 1rem;
-                    line-height: 1.2rem;
-                    color: $color-white;
-                    text-align: center;
-                    &:before,
-                    &:after {
-                        content: "";
-                        @include transition(all 0.45s ease-in-out);
-                        position: absolute;
-                        background-color: $color-orange;
-                        width: 3px;
-                        height: 11px;
-                    }
-                    &:before {
-                        transform: translate(48px, 9px) rotate(45deg);
-                    }
-                    &:after {
-                        transform: translate(39px, 3px) rotate(-45deg);
-                    }
-                }
-            }
-            &.active{
-                i.icon_ricarica {
-                    &:before {
-                        transform: translate(52px, 5px) rotate(45deg);
-                    }
-                    &:after {
-                        transform: translate(36px, 5px) rotate(-45deg);
-                    }
-                }
-            }
-        }
-    }
-    &__contracts_details {
-        position: relative;
-        top: -1px;
-        background-color: $color-white;
-        &__column {
-            &_tabs,
-            &_content,
-            &_view_all {
-                vertical-align: middle;
-                display: table-cell;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                height: 320px;
-            }
-            &_tabs {
-                width: 180px;
-                border-right: none;
-                margin-left: 1rem;
-                .my_traffic__contracts_details__single_tab {
-                    margin-left: 1rem;
-                }
-            }
-            &_content {
-                position: relative;
-                width: calc(100% - 180px);
-                border-left: none;
-                @include transition(all 0.5s ease-in-out);
-                .my_traffic__contracts_details__single_tab {
-                    margin-right: 1rem;
-                }
-                .fa-spinner {
-                    position: absolute;
-                    top: 45%;
-                    z-index: 10;
-                }
-            }
-            &_view_all{
+                    top: -1px;
+                    background-color: $color-white;
+                    &__column {
+                        &_tabs,
+                        &_content,
+                        &_view_all {
+                            vertical-align: middle;
+                            display: table-cell;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            height: 320px;
+                        }
+                        &_tabs {
+                            width: 145px;
+                            border-right: none;
+                            margin-left: 1rem;
+                            .my_traffic__contracts_details__single_tab {
+                                margin-left: 0.8rem;
+                                padding-right: 0.2rem;
+                                cursor: pointer;
+                            }
+                            @include breakpoint(super-tiny) {
+                                width: 60px;
+                            }
+                        }
+                        &_content {
+                            position: relative;
+                            width: calc(100% - 145px);
+                            @include breakpoint(super-tiny) {
+                                width: calc(100% - 60px);
+                            }
+                            border-left: none;
+                            @include transition(all 0.5s ease-in-out);
+                            .my_traffic__contracts_details__single_tab {
+                                margin-right: 1rem;
+                            }
+                            .fa-spinner {
+                                position: absolute;
+                                top: 45%;
+                                z-index: 10;
+                            }
+                        }
+                        /*&_view_all {
                 width: 100%;
                 display: block;
-                
                 z-index: 5;
-                .my_traffic__contracts_details__data{
-                   &__content{
+                .my_traffic__contracts_details__data {
+                    &__content {
                         height: calc(262px - 1rem);
                     }
-                    &__footer{
+                    &__footer {
                         border-left: none;
                         left: 0;
                     }
                 }
-                &__table{
-                   position: relative;
-                   @include border-top-radius(8px);
-                   background-color: $color-white;
-
+                &__table {
+                    position: relative;
+                    @include border-top-radius(8px);
+                    background-color: $color-white;
                 }
-            }
-        }
-        &__disclaimer {
-            padding: 1rem 0;
-            p {
-                font-family: 'Trebuchet MS';
-                font-size: 0.875rem;
-                margin: 0;
-                line-height: 1.2em;
-            }
-        }
-        &__tabs {
-            @include border-radius(8px);
-            overflow: hidden;
-            margin-top: 1rem;
-            background-color: #f5f5f5;
-            padding: 1rem;
-            position: relative;
-            display: table;
-
-            //opacity: 0;
-            //width: 0;
-
-            opacity: 1;
-            width: calc(100% - 2rem);
-            &.traffic-selected {
-                opacity: 1;
-                width: calc(100% - 2rem);
-            }
-            &.active {
-                .my_traffic__contracts_details__single_tab {
-                    border-right: 1px solid $color-mediumLightGrey;
-                    &.active{
-                        border-right-color:$color-white;
-                        background-color: $color-white;
+            }*/
                     }
-                }
-            }
-            &.active_detail{
-                .my_traffic__contracts_details__column_content{
-                    .my_traffic__contracts_details__single_tab {
-                        display: none;
+                    &__disclaimer {
+                        padding: 1rem 0;
+                        p {
+                            font-family: 'Trebuchet MS';
+                            font-size: 0.875rem;
+                            margin: 0;
+                            line-height: 1.2em;
+                        }
                     }
-                }
-            }
-            &.active_view_all{
-                .my_traffic__contracts_details__column_tabs,
-                .my_traffic__contracts_details__column_content{
-                    display: none;
-                }
-            }
-            &__borders {
-                display: table;
-                width: 100%;
-                @include border-radius(8px);
-                background: rgba(245, 245, 245, 1);
-                background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-                background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-                background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-                background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-                background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
-            }
-            &__container {
-                margin: 1rem;
-                width: 100%;
-                display: table-row;
-            }
-            &__view_all {
-                display: table-row;
-                text-align: right;
-                .view_all {
-                    display: table-cell;
-                    font-family: 'Trebuchet MS';
-                    text-transform: uppercase;
-                    font-size: 0.75rem;
-                    opacity: 1;
-                    &_filler {
-                        display: table-cell;
-                    }
-                    &_link {
+                    &__tabs {
+                        @include border-radius(8px);
+                        overflow: hidden;
+                        margin-top: 1rem;
+                        background-color: #f5f5f5;
                         padding: 1rem;
-                        display: inline-block;
-                        color: $color-orange;
-                        &.active{
-                            width:0;
-                            padding:0;
-                            overflow: hidden;
+                        position: relative;
+                        display: table;
+                        //opacity: 0;
+                        //width: 0;
+                        opacity: 1;
+                        width: calc(100% - 2rem);
+                        &.traffic-selected {
+                            opacity: 1;
+                            width: calc(100% - 2rem);
                         }
-                    }
-                }
-            }
-        }
-        &__data {
-            width: calc(100% - 1rem);
-            @include border-right-radius(8px);
-            height: 320px;
-            padding: 1rem 0 0 1rem ;
-            position: relative;
-            border-left: 1px solid transparent;
-            &.active{
-                background-color: $color-white;
-            }
-            &__heading {
-                .data_heading {
-                    margin: 0;
-                    padding: 1rem 1rem 0;
-                    text-transform: uppercase;
-                    font-family: "Trebuchet MS";
-                    color: $color-orange;
-                    font-size: 1rem;
-                    line-height: 1.2em;
-                }
-            }
-            &__col_headings {
-                border-bottom: 1px solid $color-mediumLightGrey;
-                padding: 0.5rem 0;
-                .col_heading {
-                    &.h-ora{
-                        width: 12%;   
-                    }
-                    &.h-origine{
-                        width: 12%;   
-                    }
-                    &.h-destinazione,
-                    &.h-numero{
-                        width: 17%;   
-                    }
-                    &.h-euro{
-                        width: 11%;
-                    }
-                    width: 14%;
-                    display: inline-block;
-                    text-align: center;
-                    font-weight: bold;
-                    font-family: "Trebuchet MS";
-                    font-size: 0.75rem;
-                    &:first-child{
-                        text-align: left;
-                        padding-left: 1rem;
-                        width: calc(14% - 1rem);
-                    }
-                    &:last-child{
-                        text-align: right;
-                        
-                    }
-                    
-                }
-            }
-            &__content{
-                height: calc(285px - 1rem);
-                padding-bottom: 1rem;
-            }
-            &__row {
-                padding: 0.5rem 0;
-                .row_content {
-                    &.c-ora{
-                        width: 12%;   
-                    }
-                    &.c-origine{
-                        width: 12%;   
-                    }
-                    &.c-destinazione,
-                    &.c-numero
-                    {
-                        width: 17%;   
-                    }
-                    &.c-euro{
-                        width: 11%;  
-                        text-align: right;
-                    }
-                    width: 14%;
-                    display: inline-block;
-                    text-align: center;
-                    font-family: "Trebuchet MS";
-                    font-size: 0.75rem;
-                }
-            }
-            &__footer{
-                position: absolute;
-                z-index: 3;
-                top: calc(100% - 1px);
-                left:-1px;
-                right:0;
-                height: 3rem;
-                background-color: $color-white;
-                border-right: 5px solid #f5f5f5;
-                border-left: 1px solid $color-mediumLightGrey;
-                @include border-bottom-radius(8px);
-                padding: 0 1rem;
-                &__content{
-                    border-top: 1px solid $color-mediumLightGrey;
-                    height: 3rem;
-                    display: table;
-                    width: 100%;
-                    .cell{
-                        display: table-cell;
-                        vertical-align: middle;
-                        width: 33%;
-                        &_left{
-                            
+                        &.active {
+                            .my_traffic__contracts_details__single_tab {
+                                border-right: 1px solid $color-mediumLightGrey;
+                                &.active {
+                                    border-right-color: $color-white;
+                                    background-color: $color-white;
+                                    margin: 0;
+                                    padding: 0 0.5rem;
+                                    border-bottom-left-radius: 10px;
+                                    
+                                    
+                                }
+                            }
                         }
-                        &_fill{
-                            
+                        &.active_detail {
+                            .my_traffic__contracts_details__column_content {
+                                .my_traffic__contracts_details__single_tab {
+                                    display: none;
+                                }
+                            }
                         }
-                        &_right{
+                        &.active_view_all {
+                            .my_traffic__contracts_details__column_tabs,
+                            .my_traffic__contracts_details__column_content {
+                                display: none;
+                            }
+                        }
+                        &__borders {
+                            display: table;
+                            width: 100%;
+                            @include border-radius(8px);
+                            background: rgba(245, 245, 245, 1);
+                            background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+                            background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                            background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                            background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                            background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#ffffff', GradientType=1);
+                        }
+                        &__container {
+                            margin: 1rem;
+                            width: 100%;
+                            display: table-row;
+                        }
+                        &__view_all {
+                            display: table-row;
                             text-align: right;
+                            .view_all {
+                                display: table-cell;
+                                font-family: 'Trebuchet MS';
+                                text-transform: uppercase;
+                                font-size: 0.75rem;
+                                opacity: 1;
+                                &_filler {
+                                    display: table-cell;
+                                }
+                                &_link {
+                                    padding: 1rem;
+                                    display: inline-block;
+                                    color: $color-orange;
+                                    &.active {
+                                        width: 0;
+                                        padding: 0;
+                                        overflow: hidden;
+                                    }
+                                }
+                            }
                         }
-
                     }
-                    .back_button,
-                    .xls_button{
-                        font-family: "Trebuchet MS";
-                        font-size: 0.75rem;
-                        text-transform: uppercase;
-                        i {
-                            font-size: 1.25rem;
+                    &__data {
+                        width: calc(100% - 1rem);
+                        @include border-right-radius(8px);
+                        height: 320px;
+                        padding: 1rem 0 0 1rem;
+                        position: relative;
+                        border-left: 1px solid transparent;
+                        &.active {
+                            background-color: $color-white;
+                        }
+                        &__heading {
+                            .data_heading {
+                                margin: 0;
+                                padding: 1rem 1rem 0;
+                                text-transform: uppercase;
+                                font-family: "Trebuchet MS";
+                                color: $color-orange;
+                                font-size: 1rem;
+                                line-height: 1.2em;
+                            }
+                        }
+                        &__col_headings {
+                            border-bottom: 1px solid $color-mediumLightGrey;
+                            padding: 0.5rem 0;
+                            .col_heading {
+                                &.h-ora {
+                                    width: 12%;
+                                }
+                                &.h-origine {
+                                    width: 12%;
+                                }
+                                &.h-destinazione,
+                                &.h-numero {
+                                    width: 17%;
+                                }
+                                &.h-euro {
+                                    width: 11%;
+                                }
+                                width: 14%;
+                                display: inline-block;
+                                text-align: center;
+                                font-weight: bold;
+                                font-family: "Trebuchet MS";
+                                font-size: 0.75rem;
+                                &:first-child {
+                                    text-align: left;
+                                    padding-left: 1rem;
+                                    width: calc(14% - 1rem);
+                                }
+                                &:last-child {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                        &__content {
+                            height: calc(285px - 1rem);
+                            padding-bottom: 1rem;
+                            @include breakpoint(tiny) {
+                                height: calc(285px + 1rem);
+                            }
+                        }
+                        &__row {
+                            padding: 0.5rem 0;
+                            .row_content {
+                                &.c-ora {
+                                    width: 12%;
+                                }
+                                &.c-origine {
+                                    width: 12%;
+                                }
+                                &.c-destinazione,
+                                &.c-numero {
+                                    width: 17%;
+                                }
+                                &.c-euro {
+                                    width: 11%;
+                                    text-align: right;
+                                }
+                                width: 14%;
+                                display: inline-block;
+                                text-align: center;
+                                font-family: "Trebuchet MS";
+                                font-size: 0.75rem;
+                            }
+                        }
+                        &__footer {
+                            position: absolute;
+                            z-index: 3;
+                            top: calc(100% - 1px);
+                            left: -1px;
+                            right: 0;
+                            height: 3.1rem;
+                            background-color: $color-white;
+                            border-right: 5px solid #f5f5f5;
+                            border-left: 1px solid $color-mediumLightGrey;
+                            @include border-bottom-radius(8px);
+                            padding: 0 1rem;
+                            &__content {
+                                border-top: 1px solid $color-mediumLightGrey;
+                                height: 3rem;
+                                display: table;
+                                width: 100%;
+                                .cell {
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                    width: 33%;
+                                    &_left {}
+                                    &_fill {}
+                                    &_right {
+                                        text-align: right;
+                                    }
+                                }
+                                .back_button,
+                                .xls_button {
+                                    font-family: "Trebuchet MS";
+                                    font-size: 0.75rem;
+                                    text-transform: uppercase;
+                                    i {
+                                        font-size: 1.25rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__single_tab {
+                        position: relative;
+                        border-bottom: 1px solid $color-mediumLightGrey;
+                        height: 25%;
+                        width: calc(100% - 1rem);
+                        display: table;
+                        @include breakpoint(super-tiny) {
+                            text-align: center;
+                            vertical-align: middle;
+                        }
+                        i.tab_icon {
+                            padding: 0.5rem;
+                            display: table-cell;
+                            vertical-align: middle;
+                            color: $color-orange;
+                            @include breakpoint(super-tiny) {
+                                display: table;
+                                padding: 0;
+                                width: 100%;
+                            }
+                        }
+                        i.tab_icon_expand {
+                            display: table-cell;
+                            height: 1.5rem;
+                            vertical-align: middle;
+                            width: 1.5rem;
+                            @include breakpoint(super-tiny) {
+                                    text-align: left;
+                            }
+                            &:before,
+                            &:after {
+                                content: "";
+                                @include transition(all 0.45s ease-in-out);
+                                position: absolute;
+                                background-color: $color-orange;
+                                width: 3px;
+                                height: 12px;
+                            }
+                            &:before {
+                                transform: translate(10px, -3px) rotate(45deg);
+                            }
+                            &:after {
+                                transform: translate(10px, -10px) rotate(-45deg);
+                            }
+                        }
+                        .tab_title {
+                            vertical-align: middle;
+                            width: 100%;
+                            display: table-row;
+                            color: $color-darkGrey;
+                            @include breakpoint(super-tiny) {
+                                display: table-cell;
+                                height: 100%;
+                            }
+                            .title {
+                                font-family: 'Trebuchet MS';
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                display: table-cell;
+                                font-size: 0.85rem;
+                                vertical-align: middle;
+                                @include breakpoint(super-tiny) {
+                                    display: table;
+                                    font-size: 0.6rem;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .tab_totals {
+                            @include transition(all 0.5s ease-in-out);
+                            vertical-align: middle;
+                            display: table-cell;
+                            @include breakpoint(super-tiny) {
+                                height: 100%;
+                                padding-left: 0.5rem;
+                            }
+                            &_label {
+                                display: inline-block;
+                                font-size: 0.75rem;
+                                padding-right: 0.5rem;
+                                text-transform: uppercase;
+                                @include breakpoint(super-tiny) {
+                                    display: block;
+                                }
+                            }
+                            &_content {
+                                display: inline-block;
+                                font-weight: bold;
+                                color: $color-orange;
+                                font-size: 0.75rem;
+                                @include breakpoint(super-tiny) {
+                                    display: block;
+                                    font-size: 0.6rem;
+                                }
+                                .number {
+                                    font-size: 1.25rem;
+                                    @include breakpoint(super-tiny) {
+                                        font-size: 1rem;
+                                    }
+                                }
+                            }
+                            &_duration,
+                            &_import {
+                                font-family: 'Trebuchet MS';
+                                display: table-cell;
+                                line-height: 1.5rem;
+                                font-size: 0.9rem;
+                                vertical-align: middle;
+                                @include breakpoint(super-tiny) {
+                                    text-align: left;
+                                    display: table;
+                                    line-height: 1.2rem;
+                                }
+                            }
+                            &_import {
+                                @include breakpoint(super-tiny) {
+                                    .tab_totals {
+                                        &_label,
+                                        &_content {
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+                            }
+                            &_duration {
+                                width: 71%;
+                                @include breakpoint(super-tiny) {
+                                    width: 100%;
+                                }
+                                .tab_totals_label {
+                                    width: 90px;
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
-        &__single_tab {
-            position: relative;
-            border-bottom: 1px solid $color-mediumLightGrey;
-            height: 25%;
-            width: calc(100% - 1rem);
-            display: table;
-            i.tab_icon {
-                padding: 0.5rem;
-                display: table-cell;
-                vertical-align: middle;
-                color: $color-orange;
-            }
-            i.tab_icon_expand {
-                display: table-cell;
-                height: 1.5rem;
-                vertical-align: middle;
-                width: 1.5rem;
-                &:before,
-                &:after {
-                    content: "";
-                    @include transition(all 0.45s ease-in-out);
-                    position: absolute;
-                    background-color: $color-orange;
-                    width: 4px;
-                    height: 12px;
-                }
-                &:before {
-                    transform: translate(0, -4px) rotate(45deg);
-                }
-                &:after {
-                    transform: translate(0, -10px) rotate(-45deg);
-                }
-            }
-            .tab_title {
-                vertical-align: middle;
-                width: 100%;
-                display: table-row;
-                color: $color-darkGrey;
-                .title {
-                    font-family: 'Trebuchet MS';
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    display: table-cell;
-                    font-size: 0.85rem;
-                    vertical-align: middle;
-                }
-            }
-            .tab_totals {
-                &.loading {
-                    opacity: 0;
-                }
-                @include transition(all 0.5s ease-in-out);
-                vertical-align: middle;
-                display: table-row;
-                &_label {
-                    display: inline-block;
-                    font-size: 0.75rem;
-                    padding-right: 0.5rem;
-                    text-transform: uppercase;
-                }
-                &_content {
-                    display: inline-block;
-                    font-weight: bold;
-                    color: $color-orange;
-                    font-size: 0.75rem;
-                    .number {
-                        font-size: 1.25rem;
-                    }
-                }
-                &_duration,
-                &_import {
-                    font-family: 'Trebuchet MS';
-                    display: table-cell;
-                    line-height: 1.7em;
-                    font-size: 0.9rem;
-                    vertical-align: middle;
-                }
-                &_duration {
-                    width: 65%;
-                    .tab_totals_label {
-                        width: 90px;
-                    }
-                }
-            }
-        }
-    }
-}

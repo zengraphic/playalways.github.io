@@ -1,5 +1,5 @@
 !(function($) {
-    linesTable = {
+    /*linesTable = {
         "labels": [{
             "name": "Linea/Utenza",
             "class": "h-linea"
@@ -163,9 +163,7 @@
 
             }
         }
-
-        
-    };
+    };*/
 
     function populateHeadings() {
         var contracts_summary_container = $('.my_traffic__contracts_accordion__container');
@@ -226,14 +224,14 @@
 
     }
 
-    function createIconString(iconName){
-    	var iconStr = '<i class="tab_icon fa fa-'+iconName+' fa-2x fa-fw" aria-hidden="true"></i>';
-    	return iconStr;
+    function createIconString(iconName) {
+        var iconStr = '<i class="tab_icon fa fa-' + iconName + ' fa-2x fa-fw" aria-hidden="true"></i>';
+        return iconStr;
     };
 
-    function createTitleString(titleText){
-    	var titleStr = '<span class="title">'+titleText+'</span>';
-    	return titleStr;
+    function createTitleString(titleText) {
+        var titleStr = '<span class="title">' + titleText + '</span>';
+        return titleStr;
     };
 
 
@@ -242,22 +240,22 @@
 
         $.each(linesTable.contractsTotals, function(contractNumber, contractData) {
 
-        	var contractTabsStr = '<div id="'+contractNumber+'" class="my_traffic__contracts_details__tabs">';
+            var contractTabsStr = '<div id="' + contractNumber + '" class="my_traffic__contracts_details__tabs">';
             contracts_details_container.append(contractTabsStr);
 
-            var contractTabsObj = $('#'+contractNumber);
+            var contractTabsObj = $('#' + contractNumber);
             var contractTabsBorderStr = '<div class="my_traffic__contracts_details__tabs__borders "></div>';
 
             contractTabsObj
-            	.append(contractTabsBorderStr);
+                .append(contractTabsBorderStr);
 
             var contractTabsBorderObj = $(contractTabsObj).find('.my_traffic__contracts_details__tabs__borders');
             var contractTabsContainerStr = '<div class="my_traffic__contracts_details__tabs__container "></div>';
             var contractTabsViewAllStr = '<div class="my_traffic__contracts_details__tabs__view_all"></div>';
 
             contractTabsBorderObj
-            	.append(contractTabsContainerStr)
-            	.append(contractTabsViewAllStr);
+                .append(contractTabsContainerStr)
+                .append(contractTabsViewAllStr);
 
             var contractTabsContainerObj = contractTabsBorderObj.find('.my_traffic__contracts_details__tabs__container');
             var contractTabsViewAllObj = contractTabsBorderObj.find('.my_traffic__contracts_details__tabs__view_all');
@@ -265,256 +263,256 @@
             var contractTabsContentColumnStr = '<div class="my_traffic__contracts_details__column_content"></div>';
 
             contractTabsContainerObj
-            	.append(contractTabsTabColumnStr)
-            	.append(contractTabsContentColumnStr);
+                .append(contractTabsTabColumnStr)
+                .append(contractTabsContentColumnStr);
 
             var contractTabsTabColumnObj = contractTabsBorderObj.find('.my_traffic__contracts_details__column_tabs');
             var contractTabsContentColumnObj = contractTabsBorderObj.find('.my_traffic__contracts_details__column_content');
-            
 
-            $.each(contractData,function(dataType,dataContent){
 
-            	var singleTabStr ='<div class="'+dataType+' my_traffic__contracts_details__single_tab"></div>';
+            $.each(contractData, function(dataType, dataContent) {
 
-            	contractTabsTabColumnObj
-            		.append(singleTabStr);
-            	contractTabsContentColumnObj
-            		.append(singleTabStr);
+                var singleTabStr = '<div class="' + dataType + ' my_traffic__contracts_details__single_tab"></div>';
 
-            	var cycledTabObj = contractTabsTabColumnObj.find('.'+dataType);
-            	var cycledContentObj = contractTabsContentColumnObj.find('.'+dataType);
-            	var tabTitleStr = '<div class="tab_title"></div>';
-            	var tabTotalStr = '<div class="tab_totals"></div>';
-            	var tabTotalDurationStr = '<div class="tab_totals_duration"></div>';
-            	var tabTotalImportStr = '<div class="tab_totals_import"></div>';
-            	var tabTotalIconStr = '<i class="tab_icon_expand"></i>';
-            	var tabTotalContentStr = '<span class="tab_totals_content"></div>';
-            	var tabTotalImportLabelStr= '<span class="tab_totals_label">Importo</span>';
+                contractTabsTabColumnObj
+                    .append(singleTabStr);
+                contractTabsContentColumnObj
+                    .append(singleTabStr);
 
-            	switch(dataType){
-            		case("voce"):
-            			var iconStr = createIconString("phone");
-            			var titleStr = createTitleString(dataType);
+                var cycledTabObj = contractTabsTabColumnObj.find('.' + dataType);
+                var cycledContentObj = contractTabsContentColumnObj.find('.' + dataType);
+                var tabTitleStr = '<div class="tab_title"></div>';
+                var tabTotalStr = '<div class="tab_totals"></div>';
+                var tabTotalDurationStr = '<div class="tab_totals_duration"></div>';
+                var tabTotalImportStr = '<div class="tab_totals_import"></div>';
+                var tabTotalIconStr = '<i class="tab_icon_expand"></i>';
+                var tabTotalContentStr = '<span class="tab_totals_content"></div>';
+                var tabTotalImportLabelStr = '<span class="tab_totals_label">Importo</span>';
 
-            			cycledTabObj
-            				.append(tabTitleStr);
+                switch (dataType) {
+                    case ("voce"):
+                        var iconStr = createIconString("phone");
+                        var titleStr = createTitleString(dataType);
 
-            			var tabTitleObj = cycledTabObj.find('.tab_title');
+                        cycledTabObj
+                            .append(tabTitleStr);
 
-            			tabTitleObj
-            				.append(iconStr)
-            				.append(titleStr);
+                        var tabTitleObj = cycledTabObj.find('.tab_title');
 
-            			cycledContentObj
-            				.append(tabTotalStr);
+                        tabTitleObj
+                            .append(iconStr)
+                            .append(titleStr);
 
-            			var tabTotalObj = cycledContentObj.find('.tab_totals');
+                        cycledContentObj
+                            .append(tabTotalStr);
 
-            			tabTotalObj
-            				.append(tabTotalDurationStr)
-            				.append(tabTotalImportStr)
-            				.append(tabTotalIconStr);
+                        var tabTotalObj = cycledContentObj.find('.tab_totals');
 
-            			var tabTotalDurationObj = tabTotalObj.find('.tab_totals_duration');            			
-            			var tabTotalDurationLabelStr = '<span class="tab_totals_label">Durata totale</span>';
+                        tabTotalObj
+                            .append(tabTotalDurationStr)
+                            .append(tabTotalImportStr)
+                            .append(tabTotalIconStr);
 
-            			tabTotalDurationObj
-            				.append(tabTotalDurationLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalDurationObj = tabTotalObj.find('.tab_totals_duration');
+                        var tabTotalDurationLabelStr = '<span class="tab_totals_label">Durata totale</span>';
 
-            			var tabTotalDurationContentObj = tabTotalDurationObj.find('.tab_totals_content');
+                        tabTotalDurationObj
+                            .append(tabTotalDurationLabelStr)
+                            .append(tabTotalContentStr);
 
-        				$.each(dataContent.amount,function(time,amount){
+                        var tabTotalDurationContentObj = tabTotalDurationObj.find('.tab_totals_content');
 
-        					var tabTotalDurationTimeStr = '<span class="number">'+amount+'</span>'+time+' ';
-        					tabTotalDurationContentObj
-        						.append(tabTotalDurationTimeStr);
+                        $.each(dataContent.amount, function(time, amount) {
 
-        				});
+                            var tabTotalDurationTimeStr = '<span class="number">' + amount + '</span>' + time + ' ';
+                            tabTotalDurationContentObj
+                                .append(tabTotalDurationTimeStr);
 
-            			var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
+                        });
 
-            			tabTotalImportObj
-            				.append(tabTotalImportLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
 
-            			var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
+                        tabTotalImportObj
+                            .append(tabTotalImportLabelStr)
+                            .append(tabTotalContentStr);
 
-            			var tabTotalImportContentStr='<span class="number">'+dataContent.cost+'</span>';
+                        var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
 
-            			tabTotalImportContentObj
-            				.append(tabTotalImportContentStr);
+                        var tabTotalImportContentStr = '<span class="number">' + dataContent.cost + '</span>';
 
-            		break;
-            		case("sms"):
-            			var iconStr = createIconString("envelope-o");
-            			var titleStr = createTitleString(dataType);
+                        tabTotalImportContentObj
+                            .append(tabTotalImportContentStr);
 
-            			cycledTabObj
-            				.append(tabTitleStr);
+                        break;
+                    case ("sms"):
+                        var iconStr = createIconString("envelope-o");
+                        var titleStr = createTitleString(dataType);
 
-            			var tabTitleObj = cycledTabObj.find('.tab_title');
+                        cycledTabObj
+                            .append(tabTitleStr);
 
-            			tabTitleObj
-            				.append(iconStr)
-            				.append(titleStr);
+                        var tabTitleObj = cycledTabObj.find('.tab_title');
 
-            			cycledContentObj
-            				.append(tabTotalStr);
+                        tabTitleObj
+                            .append(iconStr)
+                            .append(titleStr);
 
-            			var tabTotalObj = cycledContentObj.find('.tab_totals');
+                        cycledContentObj
+                            .append(tabTotalStr);
 
-            			tabTotalObj
-            				.append(tabTotalDurationStr)
-            				.append(tabTotalImportStr)
-            				.append(tabTotalIconStr);
+                        var tabTotalObj = cycledContentObj.find('.tab_totals');
 
-            			var tabTotalDurationObj = tabTotalObj.find('.tab_totals_duration');            			
-            			var tabTotalDurationLabelStr = '<span class="tab_totals_label">Numero totale</span>';
+                        tabTotalObj
+                            .append(tabTotalDurationStr)
+                            .append(tabTotalImportStr)
+                            .append(tabTotalIconStr);
 
-            			tabTotalDurationObj
-            				.append(tabTotalDurationLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalDurationObj = tabTotalObj.find('.tab_totals_duration');
+                        var tabTotalDurationLabelStr = '<span class="tab_totals_label">Numero totale</span>';
 
-            			var tabTotalDurationContentObj = tabTotalDurationObj.find('.tab_totals_content');
+                        tabTotalDurationObj
+                            .append(tabTotalDurationLabelStr)
+                            .append(tabTotalContentStr);
 
-        				$.each(dataContent.amount,function(sms,amount){
+                        var tabTotalDurationContentObj = tabTotalDurationObj.find('.tab_totals_content');
 
-        					var tabTotalDurationTimeStr = '<span class="number">'+amount+'</span>SMS ';
-        					tabTotalDurationContentObj
-        						.append(tabTotalDurationTimeStr);
+                        $.each(dataContent.amount, function(sms, amount) {
 
-        				});
+                            var tabTotalDurationTimeStr = '<span class="number">' + amount + '</span>SMS ';
+                            tabTotalDurationContentObj
+                                .append(tabTotalDurationTimeStr);
 
-        				var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
+                        });
 
-            			tabTotalImportObj
-            				.append(tabTotalImportLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
 
-            			var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
+                        tabTotalImportObj
+                            .append(tabTotalImportLabelStr)
+                            .append(tabTotalContentStr);
 
-            			var tabTotalImportContentStr='<span class="number">'+dataContent.cost+'</span>';
+                        var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
 
-            			tabTotalImportContentObj
-            				.append(tabTotalImportContentStr);
+                        var tabTotalImportContentStr = '<span class="number">' + dataContent.cost + '</span>';
 
-            		break;
-            		case("internet"):
-            			var iconStr = createIconString("globe");
-            			var titleStr = createTitleString(dataType);
+                        tabTotalImportContentObj
+                            .append(tabTotalImportContentStr);
 
-            			cycledTabObj
-            				.append(tabTitleStr);
+                        break;
+                    case ("internet"):
+                        var iconStr = createIconString("globe");
+                        var titleStr = createTitleString(dataType);
 
-            			var tabTitleObj = cycledTabObj.find('.tab_title');
+                        cycledTabObj
+                            .append(tabTitleStr);
 
-            			tabTitleObj
-            				.append(iconStr)
-            				.append(titleStr);
+                        var tabTitleObj = cycledTabObj.find('.tab_title');
 
-            			cycledContentObj
-            				.append(tabTotalStr);
+                        tabTitleObj
+                            .append(iconStr)
+                            .append(titleStr);
 
-            			var tabTotalObj = cycledContentObj.find('.tab_totals');
+                        cycledContentObj
+                            .append(tabTotalStr);
 
-            			tabTotalObj
-            				.append(tabTotalDurationStr)
-            				.append(tabTotalImportStr)
-            				.append(tabTotalIconStr);
+                        var tabTotalObj = cycledContentObj.find('.tab_totals');
 
-            			var tabTotalDurationObj = tabTotalObj.find('.tab_totals_duration');            			
-            			var tabTotalDurationLabelStr = '<span class="tab_totals_label">Numero totale</span>';
+                        tabTotalObj
+                            .append(tabTotalDurationStr)
+                            .append(tabTotalImportStr)
+                            .append(tabTotalIconStr);
 
-            			tabTotalDurationObj
-            				.append(tabTotalDurationLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalDurationObj = tabTotalObj.find('.tab_totals_duration');
+                        var tabTotalDurationLabelStr = '<span class="tab_totals_label">Numero totale</span>';
 
-            			var tabTotalDurationContentObj = tabTotalDurationObj.find('.tab_totals_content');
+                        tabTotalDurationObj
+                            .append(tabTotalDurationLabelStr)
+                            .append(tabTotalContentStr);
 
-        				$.each(dataContent.amount,function(gb,amount){
+                        var tabTotalDurationContentObj = tabTotalDurationObj.find('.tab_totals_content');
 
-        					var tabTotalDurationTimeStr = '<span class="number">'+amount+'</span>GB ';
-        					tabTotalDurationContentObj
-        						.append(tabTotalDurationTimeStr);
+                        $.each(dataContent.amount, function(gb, amount) {
 
-        				});
+                            var tabTotalDurationTimeStr = '<span class="number">' + amount + '</span>GB ';
+                            tabTotalDurationContentObj
+                                .append(tabTotalDurationTimeStr);
 
-        				var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
+                        });
 
-            			tabTotalImportObj
-            				.append(tabTotalImportLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
 
-            			var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
+                        tabTotalImportObj
+                            .append(tabTotalImportLabelStr)
+                            .append(tabTotalContentStr);
 
-            			var tabTotalImportContentStr='<span class="number">'+dataContent.cost+'</span>';
+                        var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
 
-            			tabTotalImportContentObj
-            				.append(tabTotalImportContentStr);
+                        var tabTotalImportContentStr = '<span class="number">' + dataContent.cost + '</span>';
 
+                        tabTotalImportContentObj
+                            .append(tabTotalImportContentStr);
 
-            		break;
-            		case("altri_dati"):
-            			var iconStr = createIconString("bookmark-o");
-            			var titleStr = createTitleString(dataType);
 
-            			cycledTabObj
-            				.append(tabTitleStr);
+                        break;
+                    case ("altri_dati"):
+                        var iconStr = createIconString("bookmark-o");
+                        var titleStr = createTitleString(dataType);
 
-            			var tabTitleObj = cycledTabObj.find('.tab_title');
+                        cycledTabObj
+                            .append(tabTitleStr);
 
-            			tabTitleObj
-            				.append(iconStr)
-            				.append(titleStr);
+                        var tabTitleObj = cycledTabObj.find('.tab_title');
 
-            			cycledContentObj
-            				.append(tabTotalStr);
+                        tabTitleObj
+                            .append(iconStr)
+                            .append(titleStr);
 
-            			var tabTotalObj = cycledContentObj.find('.tab_totals');
+                        cycledContentObj
+                            .append(tabTotalStr);
 
-            			tabTotalObj
-            				.append(tabTotalDurationStr)
-            				.append(tabTotalImportStr)
-            				.append(tabTotalIconStr);
+                        var tabTotalObj = cycledContentObj.find('.tab_totals');
 
-            			var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
+                        tabTotalObj
+                            .append(tabTotalDurationStr)
+                            .append(tabTotalImportStr)
+                            .append(tabTotalIconStr);
 
-            			tabTotalImportObj
-            				.append(tabTotalImportLabelStr)
-            				.append(tabTotalContentStr);
+                        var tabTotalImportObj = tabTotalObj.find('.tab_totals_import');
 
-            			var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
+                        tabTotalImportObj
+                            .append(tabTotalImportLabelStr)
+                            .append(tabTotalContentStr);
 
-            			var tabTotalImportContentStr='<span class="number">'+dataContent.cost+'</span>';
+                        var tabTotalImportContentObj = tabTotalImportObj.find('.tab_totals_content');
 
-            			tabTotalImportContentObj
-            				.append(tabTotalImportContentStr);
+                        var tabTotalImportContentStr = '<span class="number">' + dataContent.cost + '</span>';
 
-            		break;
-            		default:
-            		break;
-            	}
+                        tabTotalImportContentObj
+                            .append(tabTotalImportContentStr);
+
+                        break;
+                    default:
+                        break;
+                }
 
             });
 
             contractTabsViewAllFillerStr = '<span class="view_all_filler"></span>';
             contractTabsViewAllContentStr = '<span class="view_all"></span>';
-            
+
             contractTabsViewAllObj
-            	.append(contractTabsViewAllFillerStr)
-            	.append(contractTabsViewAllContentStr);
+                .append(contractTabsViewAllFillerStr)
+                .append(contractTabsViewAllContentStr);
 
             var contractTabsViewAllContentObj = contractTabsViewAllObj.find('.view_all');
 
             contractTabsViewAllLinkStr = '<a href="#" class="view_all_link">Visualizza tutti i dati</a>';
 
             contractTabsViewAllContentObj
-            	.append(contractTabsViewAllLinkStr);
+                .append(contractTabsViewAllLinkStr);
 
 
-            
-            
+
+
             /*var contractDetails = "<div class='" + dataType + " my_traffic__contracts_details__single_tab'></div>";
             console.log(el);
             $('.my_traffic__contracts_details__column_content')
@@ -632,7 +630,7 @@
 
 
     $(document).ready(function() {
-    	var obj_nicescroll = {
+        var obj_nicescroll = {
             cursorcolor: "#f48135",
             cursorwidth: "5px",
             cursorborder: "0",
@@ -645,7 +643,7 @@
 
         if ($(".my_traffic__contracts_details__data .my_traffic__contracts_details__data__content, .my_traffic__contracts_details__column_view_all .my_traffic__contracts_details__data__content").length > 0) {
             $('.my_traffic__contracts_details__data .my_traffic__contracts_details__data__content, .my_traffic__contracts_details__column_view_all .my_traffic__contracts_details__data__content')
-            	.niceScroll(obj_nicescroll);
+                .niceScroll(obj_nicescroll);
         }
 
         //populateSummary();
