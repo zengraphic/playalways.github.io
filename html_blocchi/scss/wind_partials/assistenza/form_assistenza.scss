@@ -38,14 +38,16 @@
 
 .margin_top_header {
     &.assistance {
-        @include breakpoint (small) {
+        @include breakpoint ('small') {
             margin-top: 70px;
         }
     }
 }
 
 .contend {
-    &#step_01, &#step_02, &#step_03 {
+    &#step_01,
+    &#step_02,
+    &#step_03 {
         margin-bottom: 150px;
     }
 }
@@ -79,6 +81,16 @@
                 &.open {
                     width: 100%;
                     overflow: hidden;
+                }
+            }
+            .g-recaptcha {
+                @include breakpoint (super-tiny) {
+                    transform: scale(0.93);
+                    -webkit-transform: scale(0.93);
+                    -moz-transform: scale(0.93);
+                    transform-origin: 0 0;
+                    -webkit-transform-origin: 0 0;
+                    -moz-transform-origin: 0 0;
                 }
             }
         }
@@ -180,6 +192,7 @@
             color: #999;
             @include breakpoint (tiny) {
                 font-size: 0.9em;
+                width: 265px;
             }
         }
         .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
@@ -237,6 +250,18 @@
     &.light {
         &.assistance {
             position: static !important;
+            .br_mobile {
+                display: none;
+                @include breakpoint (super-tiny) {
+                    display: block;
+                }
+            }
+            .mobile {
+                visibility: visible;
+                @include breakpoint (super-tiny) {
+                    visibility: hidden;
+                }
+            }
         }
     }
 }
@@ -267,16 +292,32 @@
         &.form-assistance {
             .top_content {
                 .filter-option {
-                    text-overflow: ellipsis;
-                    width: 270px;
+                    /*text-overflow: ellipsis;
+                    width: 270px;*/
+                    white-space: normal;
                 }
                 .base__select {
                     &.bootstrap-select {
                         .dropdown-toggle {
-                            padding-left: 5px;
+                            padding-left: 10px;
                         }
                         .dropdown-menu>li>a {
-                            padding-left: 5px;
+                            padding-left: 10px;
+                        }
+                    }
+                }
+                .bootstrap-select {
+                    &.btn-group {
+                        .dropdown-menu {
+                            li {
+                                a {
+                                    span {
+                                        &.text {
+                                            white-space: normal;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

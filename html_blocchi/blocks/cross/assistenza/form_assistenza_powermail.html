@@ -62,8 +62,8 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 base__col-fill">
                         <div class="row">
                             <h3 class="centered">
-                                Stai avendo difficolt&agrave; nel completare l’ordine o nell’attivare l’offerta?
-                            </h3>
+                        Stai avendo difficolt&agrave; nel completare l’ordine o nell’attivare l’offerta?
+                    </h3>
                         </div>
                         <div class="row background_wide">
                             <select id="faq_list" class="base__select selectpicker select_cc" title="Come possiamo aiutarti?" data-size="6" style="width: 100% !important;" name="">
@@ -119,51 +119,67 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- FORM -->
+                    <!-- FORM POWERMAIL -->
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 base__col-fill">
-                        <div class="row">
-                            <h3 class="centered3">
-                                Compila il form in tutti i suoi campi. Tutti i campi del form sono obbligatori.<br />
-                                I dati inseriti devono essere quelli forniti al momento della registrazione.
-                            </h3>
+                        <div id="">
+                            <div class="tx-powermail">
+                                <form data-parsley-validate="data-parsley-validate" data-validate="html5" enctype="multipart/form-data" name="field" class="powermail_form powermail_form_1" action="" method="post">
+                                    <fieldset class="powermail_fieldset powermail_fieldset_1 ">
+                                        <!-- TITLE -->
+                                        <div class="row">
+                                            <h3 class="centered3">
+                                                Compila il form in tutti i suoi campi. Tutti i campi del form sono obbligatori.<br />
+                                                I dati inseriti devono essere quelli forniti al momento della registrazione.
+                                        </h3>
+                                        </div>
+                                        <!-- TITLE END -->
+                                        <!-- CODICE FISCALE + EMAIL + TELEFONO + DATA AQUISTO SIM -->
+                                        <div class="row">
+                                            <!-- COLUMN LEFT -->
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 base__col-fill">
+                                                <input type="text" class="base__input" name="" placeholder="Codice fiscale">
+                                                <input type="tel" class="base__input" name="" placeholder="Numero telefono">
+                                            </div>
+                                            <!-- END COLUMN LEFT -->
+                                            <!-- COLUMN RIGHT -->
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 base__col-fill">
+                                                <input type="email" class="base__input" name="" placeholder="Email">
+                                                <input type="text" class="base__input" name="" placeholder="Data di acquisto della SIM">
+                                            </div>
+                                            <!-- END COLUMN RIGHT -->
+                                        </div>
+                                        <!-- CODICE FISCALE + EMAIL + TELEFONO + DATA AQUISTO SIM END -->
+                                        <!-- TEXTAREA -->
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <textarea class="base__input base__input--textarea" placeholder="Scrivi qui il tuo messaggio"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- TEXTAREA END -->
+                                        <!-- CAPTCHA + BUTTON INVIA -->
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                <div class="panel-body">
+                                                    <div class="captcha__container">
+                                                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                                        <form action="?" method="POST">
+                                                            <div class="g-recaptcha" data-theme="light" data-type="image" data-sitekey="6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT"></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 btn_invia">
+                                                <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light" id="btn_invia">invia messaggio</button>
+                                            </div>
+                                        </div>
+                                        <!-- CAPTCHA + BUTTON INVIA END -->
+                                        <div class="clear"></div>
+                                    </fieldset>
+                                </form>
+                            </div>
                         </div>
-                        <div class="row">
-                            <!-- COLUMN LEFT -->
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 base__col-fill">
-                                <input type="text" class="base__input" name="" placeholder="Codice fiscale">
-                                <input type="tel" class="base__input" name="" placeholder="Numero telefono">
-                            </div>
-                            <!-- END COLUMN LEFT -->
-                            <!-- COLUMN RIGHT -->
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 base__col-fill">
-                                <input type="email" class="base__input" name="" placeholder="Email">
-                                <input type="text" class="base__input" name="" placeholder="Data di acquisto della SIM">
-                            </div>
-                            <!-- END COLUMN RIGHT -->
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <textarea class="base__input base__input--textarea" placeholder="Scrivi qui il tuo messaggio"></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="panel-body">
-                                    <div class="captcha__container">
-                                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                        <form action="?" method="POST">
-                                            <div class="g-recaptcha" data-theme="light" data-type="image" data-sitekey="6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 btn_invia">
-                                <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light" id="btn_invia">invia messaggio</button>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
                     </div>
-                    <!-- FORM END -->
+                    <!-- FORM POWERMAIL END -->
                 </div>
             </div>
         </div>
@@ -202,12 +218,11 @@
         </div>
     </div>
     <!-- END CONTAINER STEP 03 -->
-    
     <!-- foter -->
     <div class="footer light assistance" id="footer">
         <div class="container">
             <div class="copyright">
-                &copy;WIND TELECOMUNICAZIONI S.p.A. <br class="br_mobile" /><span class="mobile">-</span> Partita IVA: 05410741002
+                &copy;WIND TELECOMUNICAZIONI S.p.A. - Partita IVA: 05410741002
             </div>
         </div>
         <!-- fin foter -->
