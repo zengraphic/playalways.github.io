@@ -192,7 +192,7 @@
             color: #999;
             @include breakpoint (tiny) {
                 font-size: 0.9em;
-                width: 265px;
+                /*width: 265px;*/
             }
         }
         .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
@@ -300,12 +300,25 @@
                     &.bootstrap-select {
                         .dropdown-toggle {
                             padding-left: 10px;
+                            .filter-option {
+                                width: 250px;
+                            }
                         }
                         .dropdown-menu>li>a {
                             padding-left: 10px;
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 470px) {
+    .container {
+        &.form-assistance {
+            .top_content {
                 .bootstrap-select {
                     &.btn-group {
                         .dropdown-menu {

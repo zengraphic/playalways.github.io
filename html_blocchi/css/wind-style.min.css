@@ -8911,7 +8911,7 @@ html[id^=skin] {
     @media (max-width: 600px) {
       .container.form-assistance .base__select.bootstrap-select .dropdown-toggle .filter-option {
         font-size: 0.9em;
-        width: 265px; } }
+        /*width: 265px;*/ } }
   .container.form-assistance .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
     color: #000; }
   .container.form-assistance input[type="text"],
@@ -8981,8 +8981,12 @@ html[id^=skin] {
     white-space: normal; }
   .container.form-assistance .top_content .base__select.bootstrap-select .dropdown-toggle {
     padding-left: 10px; }
+    .container.form-assistance .top_content .base__select.bootstrap-select .dropdown-toggle .filter-option {
+      width: 250px; }
   .container.form-assistance .top_content .base__select.bootstrap-select .dropdown-menu > li > a {
-    padding-left: 10px; }
+    padding-left: 10px; } }
+
+@media (max-width: 470px) {
   .container.form-assistance .top_content .bootstrap-select.btn-group .dropdown-menu li a span.text {
     white-space: normal; } }
 
