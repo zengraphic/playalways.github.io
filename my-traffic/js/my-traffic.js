@@ -2,21 +2,18 @@
 
     'use strict';
 
-    var obj_nicescroll, mobileActiveAccordion, mobileActiveTables;
+    var obj_newscroll, mobileActiveAccordion, mobileActiveTables;
 
-    obj_nicescroll = {
-        cursorcolor: "#f48135",
-        cursorwidth: "5px",
-        cursorborder: "0",
-        background: "#f5f5f5",
-        spacebarenabled: false,
-        horizrailenabled: false,
-        autohidemode: false,
-        zindex: 1100
+    obj_newscroll = {
+        axys: "y",
+        theme:"wind-theme",
+        updateOnContentResize:true,
+        documentTouchScroll:false,
+        updateOnContentResize:true
+
     };
 
     mobileActiveAccordion = window.innerWidth <= 480 ? true : false;
-
     mobileActiveTables = window.innerWidth <= 600 ? true : false;
 
     function setMobileAccordion(isMobile) {
@@ -37,13 +34,15 @@
     }
 
     function setMobileTables(isMobile) {
-    	var tables,table,headings,rows;
+    	var tables,table,headings,content,rows;
 
     	tables = $('.my_traffic__contracts_details__data');
     	if (tables.length > 0) {
     		$.each(tables,function(index,element){
     			table = $(element);
+
     			headings = table.find('.my_traffic__contracts_details__data__col_headings');
+                content = table.find('.my_traffic__contracts_details__data__content');
     			rows = table.find('.my_traffic__contracts_details__data__row');
     			headings
             		.remove();
@@ -53,10 +52,11 @@
 		        } else {
 		            headings
 		                .first()
-		                .insertBefore(rows.parent());
+		                .insertBefore(content);
 		        }
 		        mobileActiveTables = isMobile;
 	    	});
+            content.mCustomScrollbar("update");
     	}
     }
 
@@ -96,14 +96,20 @@
         contractDetailContentScrollable = contractDetailContent.find('.my_traffic__contracts_details__data__content');
 
         contractDetailContainer
-            .addClass('active active_detail');
-        contractDetailTab
             .addClass('active');
+        
+        if(contractDetailTab){
+            contractDetailTab
+                .addClass('active');
+        }
+
+        
         contractDetailContent
             .show()
             .addClass('active');
+        
         contractDetailContentScrollable
-            .niceScroll(obj_nicescroll);
+            .mCustomScrollbar(obj_newscroll);
     }
 
     function hideContractDetail(contractDetailContainer) {
@@ -115,15 +121,14 @@
 
         if (contractDetailContent.length > 0) {
             contractDetailContainer
-                .removeClass('active active_detail');
+                .removeClass('active');
             contractDetailTab
                 .removeClass('active');
             contractDetailContent
                 .hide()
                 .removeClass('active');
             contractDetailContentScrollable
-                .getNiceScroll()
-                .remove();
+                .mCustomScrollbar("destroy");
         }
 
     }
@@ -154,14 +159,48 @@
                     var alreadyActiveIcon = alreadyActiveContract.find('.tab_expand_link');
                     var alreadyActiveTarget = $(alreadyActiveLink.attr('href'));
                     unSetActive(alreadyActiveContract, alreadyActiveLink, alreadyActiveIcon);
+                    
                     hideContractSummary(alreadyActiveTarget);
+                    hideContractDetail(alreadyActiveTarget);
                 }
                 setActive(currentContract, currentLink, currentIcon);
                 showContractSummary(currentTarget);
             } else {
                 unSetActive(currentContract, currentLink, currentIcon);
+
                 hideContractSummary(currentTarget);
+                hideContractDetail(currentTarget);
             }
+        });
+    }
+
+    function bindBackDetailBtn(){
+        $('.back_button').click(function(event){
+            var clickedLink,
+                activeParent;
+
+            event
+                .preventDefault();
+
+            clickedLink = $(this);   
+            activeParent = clickedLink.closest('.my_traffic__contracts_details__tabs');
+            hideContractDetail(activeParent);
+        });
+    }
+
+    function bindAllDetailsBtn(){
+        $('.view_all_link').click(function(event){
+            var clickedLink,
+                contractDetailContainer,
+                contractDetailTab;
+
+            event
+                .preventDefault();
+
+            clickedLink = $(this);
+            contractDetailContainer = clickedLink.closest('.my_traffic__contracts_details__tabs');
+
+            showContractDetail(contractDetailContainer, false, 'all');
         });
     }
 
@@ -181,11 +220,6 @@
             } else {
                 hideContractDetail(currentContractContainer);
             }
-
-
-
-
-
         });
     }
 
@@ -213,9 +247,16 @@
     $(document).ready(function() {
 
         setMobileAccordion(mobileActiveAccordion);
+        setMobileTables(mobileActiveTables);
         hideAllContracts();
         bindContracts();
         bindContractDetails();
+        bindBackDetailBtn();
+        bindAllDetailsBtn();
+
+        //$('body').niceScroll(obj_nicescroll);
+
+        
 
     });
 

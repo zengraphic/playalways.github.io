@@ -28,6 +28,17 @@ a {
 .text-center {
   text-align: center; }
 
+.mCS-wind-theme.mCSB_inside > .mCSB_container {
+  margin-right: 0; }
+
+.mCS-wind-theme.mCSB_scrollTools {
+  width: 5px; }
+  .mCS-wind-theme.mCSB_scrollTools .mCSB_draggerRail {
+    width: 5px;
+    background-color: #f5f5f5; }
+  .mCS-wind-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #f48135; }
+
 .my_traffic__container {
   max-width: 720px;
   width: 100%;
@@ -84,7 +95,7 @@ a {
         border-bottom: 1px solid #ccd1d9;
         vertical-align: top;
         padding-top: 1rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
         box-sizing: border-box; } }
     .my_traffic__contracts_accordion__col_headings .col_heading {
       line-height: 1rem;
@@ -119,7 +130,7 @@ a {
       .my_traffic__contracts_accordion__row {
         display: inline-block;
         width: 57%;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
         padding-top: 1rem;
         vertical-align: top;
         position: relative;
@@ -218,62 +229,42 @@ a {
   position: relative;
   top: -1px;
   background-color: #ffffff; }
-  .my_traffic__contracts_details__column {
-    /*&_view_all {
-                width: 100%;
-                display: block;
-                z-index: 5;
-                .my_traffic__contracts_details__data {
-                    &__content {
-                        height: calc(262px - 1rem);
-                    }
-                    &__footer {
-                        border-left: none;
-                        left: 0;
-                    }
-                }
-                &__table {
-                    position: relative;
-                    @include border-top-radius(8px);
-                    background-color: $color-white;
-                }
-            }*/ }
-    .my_traffic__contracts_details__column_tabs, .my_traffic__contracts_details__column_content, .my_traffic__contracts_details__column_view_all {
-      vertical-align: middle;
-      display: table-cell;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      height: 320px; }
-    .my_traffic__contracts_details__column_tabs {
-      width: 145px;
-      border-right: none;
-      margin-left: 1rem; }
-      .my_traffic__contracts_details__column_tabs .my_traffic__contracts_details__single_tab {
-        margin-left: 0.8rem;
-        padding-right: 0.2rem;
-        cursor: pointer; }
-      @media (max-width: 480px) {
-        .my_traffic__contracts_details__column_tabs {
-          width: 60px; } }
-    .my_traffic__contracts_details__column_content {
-      position: relative;
-      width: calc(100% - 145px);
-      border-left: none;
-      -webkit-transition: all 0.5s ease-in-out;
-      -moz-transition: all 0.5s ease-in-out;
-      -ms-transition: all 0.5s ease-in-out;
-      -o-transition: all 0.5s ease-in-out;
-      transition: all 0.5s ease-in-out; }
-      @media (max-width: 480px) {
-        .my_traffic__contracts_details__column_content {
-          width: calc(100% - 60px); } }
-      .my_traffic__contracts_details__column_content .my_traffic__contracts_details__single_tab {
-        margin-right: 1rem; }
-      .my_traffic__contracts_details__column_content .fa-spinner {
-        position: absolute;
-        top: 45%;
-        z-index: 10; }
+  .my_traffic__contracts_details__column_tabs, .my_traffic__contracts_details__column_content {
+    vertical-align: middle;
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 320px; }
+  .my_traffic__contracts_details__column_tabs {
+    width: 145px;
+    border-right: none;
+    margin-left: 1rem; }
+    .my_traffic__contracts_details__column_tabs .my_traffic__contracts_details__single_tab {
+      margin-left: 0.8rem;
+      padding-right: 0.2rem;
+      cursor: pointer; }
+    @media (max-width: 480px) {
+      .my_traffic__contracts_details__column_tabs {
+        width: 60px; } }
+  .my_traffic__contracts_details__column_content {
+    position: relative;
+    width: calc(100% - 145px);
+    border-left: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    @media (max-width: 480px) {
+      .my_traffic__contracts_details__column_content {
+        width: calc(100% - 60px); } }
+    .my_traffic__contracts_details__column_content .my_traffic__contracts_details__single_tab {
+      margin-right: 1rem; }
+    .my_traffic__contracts_details__column_content .fa-spinner {
+      position: absolute;
+      top: 45%;
+      z-index: 10; }
   .my_traffic__contracts_details__disclaimer {
     padding: 1rem 0; }
     .my_traffic__contracts_details__disclaimer p {
@@ -297,6 +288,8 @@ a {
     .my_traffic__contracts_details__tabs.traffic-selected {
       opacity: 1;
       width: calc(100% - 2rem); }
+    .my_traffic__contracts_details__tabs.active .my_traffic__contracts_details__column_content .my_traffic__contracts_details__single_tab {
+      display: none; }
     .my_traffic__contracts_details__tabs.active .my_traffic__contracts_details__single_tab {
       border-right: 1px solid #ccd1d9; }
       .my_traffic__contracts_details__tabs.active .my_traffic__contracts_details__single_tab.active {
@@ -305,11 +298,6 @@ a {
         margin: 0;
         padding: 0 0.5rem;
         border-bottom-left-radius: 10px; }
-    .my_traffic__contracts_details__tabs.active_detail .my_traffic__contracts_details__column_content .my_traffic__contracts_details__single_tab {
-      display: none; }
-    .my_traffic__contracts_details__tabs.active_view_all .my_traffic__contracts_details__column_tabs,
-    .my_traffic__contracts_details__tabs.active_view_all .my_traffic__contracts_details__column_content {
-      display: none; }
     .my_traffic__contracts_details__tabs__borders {
       display: table;
       width: 100%;
@@ -343,7 +331,8 @@ a {
         .my_traffic__contracts_details__tabs__view_all .view_all_link {
           padding: 1rem;
           display: inline-block;
-          color: #f48135; }
+          color: #f48135;
+          cursor: pointer; }
           .my_traffic__contracts_details__tabs__view_all .view_all_link.active {
             width: 0;
             padding: 0;
@@ -361,17 +350,51 @@ a {
     border-left: 1px solid transparent; }
     .my_traffic__contracts_details__data.active {
       background-color: #ffffff; }
+      @media (max-width: 600px) {
+        .my_traffic__contracts_details__data.active {
+          padding-top: 0; } }
+      .my_traffic__contracts_details__data.active.data_all {
+        width: calc(100% + 145px - 1rem);
+        height: calc(320px - 1.2rem);
+        left: -145px;
+        border-top-left-radius: 8px;
+        border-left: none;
+        padding-top: 1rem; }
+        @media (max-width: 480px) {
+          .my_traffic__contracts_details__data.active.data_all {
+            width: calc(100% + 60px - 1rem);
+            left: -60px; } }
+        .my_traffic__contracts_details__data.active.data_all .my_traffic__contracts_details__data__content {
+          padding-bottom: 0;
+          height: calc(285px - 2rem); }
+          @media (max-width: 600px) {
+            .my_traffic__contracts_details__data.active.data_all .my_traffic__contracts_details__data__content {
+              height: 285px; } }
+        .my_traffic__contracts_details__data.active.data_all .my_traffic__contracts_details__data__footer {
+          border-left: none;
+          left: 0; }
     .my_traffic__contracts_details__data__heading .data_heading {
       margin: 0;
-      padding: 1rem 1rem 0;
       text-transform: uppercase;
       font-family: "Trebuchet MS";
       color: #f48135;
       font-size: 1rem;
       line-height: 1.2em; }
+      @media (max-width: 600px) {
+        .my_traffic__contracts_details__data__heading .data_heading {
+          width: calc(100% - 1rem);
+          border-bottom: 1px solid #ccd1d9; } }
     .my_traffic__contracts_details__data__col_headings {
       border-bottom: 1px solid #ccd1d9;
       padding: 0.5rem 0; }
+      @media (max-width: 600px) {
+        .my_traffic__contracts_details__data__col_headings {
+          display: inline-block;
+          width: calc(50% - 0.5rem);
+          border-bottom-left-radius: 8px; } }
+      @media (max-width: 480px) {
+        .my_traffic__contracts_details__data__col_headings {
+          width: calc(50% - 0.5rem); } }
       .my_traffic__contracts_details__data__col_headings .col_heading {
         width: 14%;
         display: inline-block;
@@ -389,24 +412,40 @@ a {
           width: 11%; }
         .my_traffic__contracts_details__data__col_headings .col_heading:first-child {
           text-align: left;
-          padding-left: 1rem;
-          width: calc(14% - 1rem); }
+          width: 14%; }
         .my_traffic__contracts_details__data__col_headings .col_heading:last-child {
           text-align: right; }
+        @media (max-width: 600px) {
+          .my_traffic__contracts_details__data__col_headings .col_heading {
+            width: calc(100% - 0.5rem) !important;
+            text-align: right !important;
+            padding-left: 0 !important;
+            padding-right: 0.5rem;
+            border-right: 1px solid #ccd1d9; } }
     .my_traffic__contracts_details__data__content {
-      height: calc(285px - 1rem);
-      padding-bottom: 1rem; }
+      height: 285px; }
       @media (max-width: 600px) {
         .my_traffic__contracts_details__data__content {
-          height: calc(285px + 1rem); } }
+          height: 320px; } }
     .my_traffic__contracts_details__data__row {
       padding: 0.5rem 0; }
+      @media (max-width: 600px) {
+        .my_traffic__contracts_details__data__row {
+          display: inline-block;
+          width: calc(50% - 1rem);
+          border-bottom: 1px solid #ccd1d9;
+          border-bottom-right-radius: 8px; } }
+      @media (max-width: 480px) {
+        .my_traffic__contracts_details__data__row {
+          width: calc(50% - 0.5rem); } }
       .my_traffic__contracts_details__data__row .row_content {
         width: 14%;
         display: inline-block;
         text-align: center;
         font-family: "Trebuchet MS";
         font-size: 0.75rem; }
+        .my_traffic__contracts_details__data__row .row_content.c-data {
+          text-align: left; }
         .my_traffic__contracts_details__data__row .row_content.c-ora {
           width: 12%; }
         .my_traffic__contracts_details__data__row .row_content.c-origine {
@@ -416,6 +455,12 @@ a {
         .my_traffic__contracts_details__data__row .row_content.c-euro {
           width: 11%;
           text-align: right; }
+        @media (max-width: 600px) {
+          .my_traffic__contracts_details__data__row .row_content {
+            width: calc(100% - 0.5rem) !important;
+            text-align: left !important;
+            padding-left: 0.5rem;
+            white-space: nowrap; } }
     .my_traffic__contracts_details__data__footer {
       position: absolute;
       z-index: 3;
@@ -439,18 +484,22 @@ a {
         width: 100%; }
         .my_traffic__contracts_details__data__footer__content .cell {
           display: table-cell;
-          vertical-align: middle;
-          width: 33%; }
+          vertical-align: middle; }
           .my_traffic__contracts_details__data__footer__content .cell_right {
             text-align: right; }
         .my_traffic__contracts_details__data__footer__content .back_button,
         .my_traffic__contracts_details__data__footer__content .xls_button {
           font-family: "Trebuchet MS";
           font-size: 0.75rem;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          cursor: pointer; }
           .my_traffic__contracts_details__data__footer__content .back_button i,
           .my_traffic__contracts_details__data__footer__content .xls_button i {
             font-size: 1.25rem; }
+          @media (max-width: 480px) {
+            .my_traffic__contracts_details__data__footer__content .back_button span,
+            .my_traffic__contracts_details__data__footer__content .xls_button span {
+              display: none; } }
   .my_traffic__contracts_details__single_tab {
     position: relative;
     border-bottom: 1px solid #ccd1d9;
@@ -569,7 +618,5 @@ a {
         @media (max-width: 480px) {
           .my_traffic__contracts_details__single_tab .tab_totals_duration {
             width: 100%; } }
-        .my_traffic__contracts_details__single_tab .tab_totals_duration .tab_totals_label {
-          width: 90px; }
 
 /*# sourceMappingURL=my_traffic.css.map */

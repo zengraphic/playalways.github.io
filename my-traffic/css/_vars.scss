@@ -17,15 +17,12 @@ $color-black: #000000;
 
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
 
-$breakpoints: ( 'super-tiny': ( max-width: 480px),
-'tiny': ( max-width: 600px),
+$breakpoints: ( 'ultra-small': ( max-width: 480px),
+'extra-small': ( max-width: 600px),
 'small': ( max-width: 768px),
 'medium': ( max-width: 910px),
-'large': ( min-width: 1200px),
-'custom': ( min-height: 40em),
-'min-small':( min-width: 767px),
-'min-desktop':( max-width: 1024px),
-'med-large':( max-width: 992px));
+'large': ( max-width: 1200px),
+'extra-large': ( min-width: 1201px));
 // Creating the mixin
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints,
@@ -104,4 +101,48 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px),
 
 .clear-fix {
     zoom: 1;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    @include breakpoint('small') {
+        font-size: 14px;
+    }
+}
+
+a {
+    color: $color-orange;
+    &:link,
+    &:visited {
+        color: #666;
+    }
+    &:hover,
+    &:active {
+        color: $color-orange*1.2;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mCS-wind-theme {
+    &.mCSB_inside{
+        &>.mCSB_container{
+            margin-right: 0;
+        }
+    }
+    &.mCSB_scrollTools{
+        width: 5px;
+        .mCSB_draggerRail {
+            width: 5px;
+            background-color:#f5f5f5;
+        }
+        .mCSB_dragger{
+            .mCSB_dragger_bar{
+                background-color:$color-orange;
+            }
+        }
+    }
 }
