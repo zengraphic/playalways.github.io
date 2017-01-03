@@ -1,0 +1,566 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+//========================== FONT =======================//
+@font-face {
+    font-family: 'TP Hero Light';
+    src: url('../fonts/TPHero-Light.woff') format('woff'), url('../fonts/TPHero-Light.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'TP Hero Thin';
+    src: url('../fonts/TPHero-Thin.woff') format('woff'), url('../fonts/TPHero-Thin.otf') format('opentype');
+    font-weight: thin;
+}
+
+@font-face {
+    font-family: 'TP Hero Hairline';
+    src: url('../fonts/TPHero-Hairline.woff') format('woff'), url('../fonts/TPHero-Hairline.otf') format('opentype');
+    font-weight: hairline;
+}
+
+//========================== MIXIN =======================//
+// MIXIN FOR BORDER RADIOUS
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// SINGOLI ANGOLI BORDER RADIOUS
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/* ___________________ MIXIN __________________
+                       BREAKPOINT MIXIN */
+
+$breakpoints: ( 'super-tiny': ( max-width: 480px),
+'tiny': ( max-width: 400px),
+'small': ( max-width: 768px),
+'medium': ( max-width: 910px),
+'large': ( max-width: 1025px),
+'largest': ( max-width: 1440px),
+'min-largest':( min-width: 1439px),
+'extra-large':( min-width: 1999px),
+'min-desktop':( max-width: 1024px));
+// Creating the mixin
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints,
+    $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+//========================== VARIABILI =======================//
+$weight-light: 'TP Hero Light'; //medium
+$weight-thin: 'TP Hero Thin'; //light
+$weight-hairline: 'TP Hero Hairline'; //thin
+$color-pale-yellow: #ffefbd;
+$color-pale-orange: #ffcb24;
+$color-bg-gray: #eeeeee;
+$color-yellow: #ffcc00;
+//============================================================================//
+//========================== CLASSI DI STYLE GENERICHE =======================//
+//============================================================================//
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.clear-fix:after,
+.clear {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.text {
+    &_lowercase {
+        text-transform: lowercase;
+    }
+    &_uppercase {
+        text-transform: uppercase;
+    }
+}
+
+.text_align {
+    &_left {
+        text-align: left;
+    }
+    &_center {
+        text-align: center;
+    }
+    &_right {
+        text-align: right;
+    }
+}
+
+.strikethrough {
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        top: calc(50% - 2px);
+        height: 4px;
+        display: block;
+        background-color: red;
+    }
+}
+
+//============================================================//
+//========================== STYLE VEON =======================//
+//=============================================================//
+h1 {
+    font-family: $weight-hairline;
+    font-size: 5.5vw;
+    line-height: 6vw;
+    text-transform: uppercase;
+    margin: 0;
+    //  -webkit-text-stroke: 0.5px;
+    @include breakpoint(largest) {
+        //1440
+        // font-size: 100px;
+        // line-height: 102px;
+    }
+    @include breakpoint(small) {
+        //768
+        font-size: 35px;
+        line-height: 37px;
+        text-align: center;
+    }
+    @include breakpoint(extra-large) {
+        //330
+        font-size: 100px;
+        line-height: 102px;
+    }
+}
+
+h4 {
+    font-family: $weight-thin;
+    font-size: 2vw;
+    line-height: 2.1vw;
+    text-transform: uppercase;
+    margin: 0;
+    @include breakpoint(small) {
+        //768
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+    }
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 34px;
+        line-height: 36px;
+    }
+}
+
+h6 {
+    font-family: $weight-thin;
+    font-size: 1.4vw;
+    line-height: 1.7vw;
+    margin: 0;
+    @include breakpoint(small) {
+        //768
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+    }
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 30px;
+        line-height: 32px;
+    }
+}
+
+a {
+    img {
+        outline: none;
+        border: 0;
+    }
+}
+
+body {
+    background-color: $color-bg-gray;
+}
+
+//===================================================//
+//================INIZIO LANDING=====================//
+.landing_veon {
+    .wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+        @include breakpoint(largest) {
+            //1440
+            max-width: 1024px;
+        }
+        @include breakpoint(small) {
+            //768
+            margin: 0;
+        }
+    }
+    .prova {
+        height: 550px;
+        position: relative;
+        z-index: 500;
+        h1 {
+            margin-top: 120px;
+            font-size: 7vw;
+            line-height: 7.2vw;
+        }
+    }
+    &__logo {
+        .logo_veon {
+            position: relative;
+            left: calc(50% - 86px);
+            top: 60px;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-delay: 0.4s;
+            -o-animation-duration: 1s;
+            -o-animation-delay: 0.4s;
+            -moz-animation-duration: 1s;
+            -moz-animation-delay: 0.4s;
+            @include breakpoint(small) {
+                //768
+                left: calc(50% - 120px);
+                top: 15px;
+            }
+            img {
+                width: 172px;
+                height: auto;
+                @include breakpoint(small) {
+                    //768
+                    width: 240px;
+                }
+            }
+        }
+    }
+}
+
+.floating_logo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 750;
+    img {
+        width: 15vw;
+        min-width: 90px;
+        max-width: 230px;
+    }
+}
+
+.bannerFix {
+    position: relative;
+    width: 100%;
+    background: url(../img/veon_preFooter_big.png) no-repeat;
+    background-size: contain;
+    height: 1662px;
+    margin-top: -540px;
+    z-index: 200;
+    @include breakpoint(large) {
+        background: url('../img/veon_preFooter_medium.png') no-repeat center;
+        height: 1691px;
+        margin-top: -150px;
+    }
+    @include breakpoint(small) {
+        background-image: none;
+        height: auto;
+        margin-top: -30px;
+    }
+    img.image_preFooter {
+        display: none;
+        width: 100%;
+        @include breakpoint(small) {
+            display: inline;
+        }
+    }
+    .containerBannerFix {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        top: 35%;
+        max-width: 1440px;
+        padding-left: 60px;
+        @include breakpoint(largest) {
+            top: 30%;
+            padding-left: 90px;
+        }
+        @include breakpoint(large) {
+            top: 28%;
+            width: 95%;
+            margin: 0;
+            padding-left: 60px;
+        }
+        @include breakpoint(small) {
+            position: absolute;
+            top: 2%;
+            width: 80%;
+            margin: 0;
+            padding-left: 20px;
+        }
+        div.claims {
+            h1 {
+                text-align: left;
+                font-size: 130px;
+                line-height: 132px;
+                @include breakpoint(largest) {
+                    font-size: 70px;
+                    line-height: 90px;
+                    letter-spacing: -3px;
+                }
+                @include breakpoint(large) {
+                    font-size: 75px;
+                    line-height: 75px;
+                }
+                @include breakpoint(small) {
+                    font-size: 16vw;
+                    line-height: 16vw;
+                }
+            }
+            &.firstClaim {
+                color: #fff;
+            }
+            &.secondClaim {
+                margin-top: 500px;
+                div.buttonFooter {
+                    margin-top: 30px;
+                }
+                @include breakpoint(largest) {
+                    margin-top: 675px;
+                }
+                @include breakpoint(largest) {
+                    margin-top: 600px;
+                }
+                @include breakpoint(small) {
+                    margin-top: 115vw;
+                }
+            }
+        }
+    }
+}
+
+.call_to {
+    width: 100%;
+    background-color: $color-pale-orange;
+    padding: 40px;
+    font-size: 40px;
+    text-align: center;
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+//==================================================//
+//=============INIZIO FOOTER========================//
+.footer {
+    position: relative;
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    color: #fff;
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+    .containerFooter {
+        max-width: 1440px;
+        margin: 0 auto;
+        font-family: $weight-thin;
+        font-size: 14px;
+        line-height: 18px;
+        b {
+            font-family: $weight-light;
+        }
+        p {
+            margin-top: 0;
+        }
+        .logoFooterContainer {
+            padding: 60px 30px;
+        }
+        .blockFooter {
+            margin-bottom: 30px;
+            padding: 60px 30px 0 30px;
+            &.quickLinks {
+                @include breakpoint(small) {
+                    display: none;
+                }
+            }
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            li {
+                text-indent: -5px;
+                padding-top: 5px;
+                &:before {
+                    content: "-";
+                    text-indent: -5px;
+                }
+                a {
+                    color: rgb(255, 204, 0);
+                }
+            }
+        }
+    }
+    .disclaimer {
+        max-width: 1350px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 10px 15px 60px 15px;
+        color: #666;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .floatingFooterLogo {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        img {
+            width: 150px;
+        }
+    }
+}
+
+//==================================================//
+//=============FINE FOOTER========================//

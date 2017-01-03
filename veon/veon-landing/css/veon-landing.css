@@ -1,0 +1,390 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+@font-face {
+  font-family: 'TP Hero Light';
+  src: url("../fonts/TPHero-Light.woff") format("woff"), url("../fonts/TPHero-Light.otf") format("opentype");
+  font-weight: light; }
+@font-face {
+  font-family: 'TP Hero Thin';
+  src: url("../fonts/TPHero-Thin.woff") format("woff"), url("../fonts/TPHero-Thin.otf") format("opentype");
+  font-weight: thin; }
+@font-face {
+  font-family: 'TP Hero Hairline';
+  src: url("../fonts/TPHero-Hairline.woff") format("woff"), url("../fonts/TPHero-Hairline.otf") format("opentype");
+  font-weight: hairline; }
+/* ___________________ MIXIN __________________
+                       BREAKPOINT MIXIN */
+.float_left {
+  float: left; }
+
+.float_right {
+  float: right; }
+
+.clear-fix:after,
+.clear {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.text_align_center {
+  text-align: center; }
+
+.text_lowercase {
+  text-transform: lowercase; }
+.text_uppercase {
+  text-transform: uppercase; }
+
+.text_align_left {
+  text-align: left; }
+.text_align_center {
+  text-align: center; }
+.text_align_right {
+  text-align: right; }
+
+.strikethrough {
+  position: relative; }
+  .strikethrough:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: calc(50% - 2px);
+    height: 4px;
+    display: block;
+    background-color: red; }
+
+h1 {
+  font-family: "TP Hero Hairline";
+  font-size: 5.5vw;
+  line-height: 6vw;
+  text-transform: uppercase;
+  margin: 0; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 35px;
+      line-height: 37px;
+      text-align: center; } }
+  @media (min-width: 1999px) {
+    h1 {
+      font-size: 100px;
+      line-height: 102px; } }
+
+h4 {
+  font-family: "TP Hero Thin";
+  font-size: 2vw;
+  line-height: 2.1vw;
+  text-transform: uppercase;
+  margin: 0; }
+  @media (max-width: 768px) {
+    h4 {
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center; } }
+  @media (min-width: 1999px) {
+    h4 {
+      font-size: 34px;
+      line-height: 36px; } }
+
+h6 {
+  font-family: "TP Hero Thin";
+  font-size: 1.4vw;
+  line-height: 1.7vw;
+  margin: 0; }
+  @media (max-width: 768px) {
+    h6 {
+      font-size: 16px;
+      line-height: 18px;
+      text-align: center; } }
+  @media (min-width: 1999px) {
+    h6 {
+      font-size: 30px;
+      line-height: 32px; } }
+
+a img {
+  outline: none;
+  border: 0; }
+
+body {
+  background-color: #eeeeee; }
+
+.landing_veon .wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%; }
+  @media (max-width: 1440px) {
+    .landing_veon .wrapper {
+      max-width: 1024px; } }
+  @media (max-width: 768px) {
+    .landing_veon .wrapper {
+      margin: 0; } }
+.landing_veon .prova {
+  height: 550px;
+  position: relative;
+  z-index: 500; }
+  .landing_veon .prova h1 {
+    margin-top: 120px;
+    font-size: 7vw;
+    line-height: 7.2vw; }
+.landing_veon__logo .logo_veon {
+  position: relative;
+  left: calc(50% - 86px);
+  top: 60px;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.4s;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 0.4s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.4s; }
+  @media (max-width: 768px) {
+    .landing_veon__logo .logo_veon {
+      left: calc(50% - 120px);
+      top: 15px; } }
+  .landing_veon__logo .logo_veon img {
+    width: 172px;
+    height: auto; }
+    @media (max-width: 768px) {
+      .landing_veon__logo .logo_veon img {
+        width: 240px; } }
+
+.floating_logo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 750; }
+  .floating_logo img {
+    width: 15vw;
+    min-width: 90px;
+    max-width: 230px; }
+
+.bannerFix {
+  position: relative;
+  width: 100%;
+  background: url(../img/veon_preFooter_big.png) no-repeat;
+  background-size: contain;
+  height: 1662px;
+  margin-top: -540px;
+  z-index: 200; }
+  @media (max-width: 1025px) {
+    .bannerFix {
+      background: url("../img/veon_preFooter_medium.png") no-repeat center;
+      height: 1691px;
+      margin-top: -150px; } }
+  @media (max-width: 768px) {
+    .bannerFix {
+      background-image: none;
+      height: auto;
+      margin-top: -30px; } }
+  .bannerFix img.image_preFooter {
+    display: none;
+    width: 100%; }
+    @media (max-width: 768px) {
+      .bannerFix img.image_preFooter {
+        display: inline; } }
+  .bannerFix .containerBannerFix {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 35%;
+    max-width: 1440px;
+    padding-left: 60px; }
+    @media (max-width: 1440px) {
+      .bannerFix .containerBannerFix {
+        top: 30%;
+        padding-left: 90px; } }
+    @media (max-width: 1025px) {
+      .bannerFix .containerBannerFix {
+        top: 28%;
+        width: 95%;
+        margin: 0;
+        padding-left: 60px; } }
+    @media (max-width: 768px) {
+      .bannerFix .containerBannerFix {
+        position: absolute;
+        top: 2%;
+        width: 80%;
+        margin: 0;
+        padding-left: 20px; } }
+    .bannerFix .containerBannerFix div.claims h1 {
+      text-align: left;
+      font-size: 130px;
+      line-height: 132px; }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 70px;
+          line-height: 90px;
+          letter-spacing: -3px; } }
+      @media (max-width: 1025px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 75px;
+          line-height: 75px; } }
+      @media (max-width: 768px) {
+        .bannerFix .containerBannerFix div.claims h1 {
+          font-size: 16vw;
+          line-height: 16vw; } }
+    .bannerFix .containerBannerFix div.claims.firstClaim {
+      color: #fff; }
+    .bannerFix .containerBannerFix div.claims.secondClaim {
+      margin-top: 500px; }
+      .bannerFix .containerBannerFix div.claims.secondClaim div.buttonFooter {
+        margin-top: 30px; }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 675px; } }
+      @media (max-width: 1440px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 600px; } }
+      @media (max-width: 768px) {
+        .bannerFix .containerBannerFix div.claims.secondClaim {
+          margin-top: 115vw; } }
+
+.call_to {
+  width: 100%;
+  background-color: #ffcb24;
+  padding: 40px;
+  font-size: 40px;
+  text-align: center; }
+  .call_to a {
+    color: #000;
+    text-decoration: none; }
+
+.footer {
+  position: relative;
+  background-color: #191919;
+  width: 100%;
+  color: #fff; }
+  .footer a {
+    color: inherit;
+    text-decoration: underline; }
+  .footer .containerFooter {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: "TP Hero Thin";
+    font-size: 14px;
+    line-height: 18px; }
+    .footer .containerFooter b {
+      font-family: "TP Hero Light"; }
+    .footer .containerFooter p {
+      margin-top: 0; }
+    .footer .containerFooter .logoFooterContainer {
+      padding: 60px 30px; }
+    .footer .containerFooter .blockFooter {
+      margin-bottom: 30px;
+      padding: 60px 30px 0 30px; }
+      @media (max-width: 768px) {
+        .footer .containerFooter .blockFooter.quickLinks {
+          display: none; } }
+    .footer .containerFooter ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0; }
+      .footer .containerFooter ul li {
+        text-indent: -5px;
+        padding-top: 5px; }
+        .footer .containerFooter ul li:before {
+          content: "-";
+          text-indent: -5px; }
+        .footer .containerFooter ul li a {
+          color: #ffcc00; }
+  .footer .disclaimer {
+    max-width: 1350px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 10px 15px 60px 15px;
+    color: #666;
+    font-size: 12px;
+    line-height: 12px; }
+  .footer .floatingFooterLogo {
+    position: absolute;
+    right: 0;
+    top: 30px; }
+    .footer .floatingFooterLogo img {
+      width: 150px; }
+
+/*# sourceMappingURL=veon-landing.css.map */
