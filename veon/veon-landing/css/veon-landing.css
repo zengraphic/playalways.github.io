@@ -2,9 +2,6 @@ html,
 body,
 div,
 span,
-applet,
-object,
-iframe,
 h1,
 h2,
 h3,
@@ -15,70 +12,8 @@ p,
 blockquote,
 pre,
 a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
 ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+li {
   margin: 0;
   padding: 0;
   border: 0; }
@@ -181,24 +116,25 @@ a img {
 body {
   background-color: #eeeeee; }
 
-.landing_veon .wrapper {
+.wrapper {
   max-width: 1440px;
   margin: 0 auto;
   width: 100%; }
   @media (max-width: 1440px) {
-    .landing_veon .wrapper {
+    .wrapper {
       max-width: 1024px; } }
   @media (max-width: 768px) {
-    .landing_veon .wrapper {
+    .wrapper {
       margin: 0; } }
+
 .landing_veon .prova {
   height: 550px;
   position: relative;
   z-index: 500; }
   .landing_veon .prova h1 {
     margin-top: 120px;
-    font-size: 7vw;
-    line-height: 8vw; }
+    font-size: 6vw;
+    line-height: 7vw; }
 .landing_veon__logo .logo_veon {
   position: relative;
   left: calc(50% - 86px);
@@ -258,19 +194,15 @@ body {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    top: 35%;
-    max-width: 1440px;
-    padding-left: 60px; }
+    top: 35%; }
     @media (max-width: 1440px) {
       .bannerFix .containerBannerFix {
-        top: 44%;
-        padding-left: 90px; } }
+        top: 44%; } }
     @media (max-width: 1025px) {
       .bannerFix .containerBannerFix {
         top: 28%;
         width: 95%;
-        margin: 0;
-        padding-left: 60px; } }
+        margin: 0; } }
     @media (max-width: 768px) {
       .bannerFix .containerBannerFix {
         position: absolute;
@@ -303,8 +235,8 @@ body {
         .bannerFix .containerBannerFix div.claims.firstClaim .offer .giga,
         .bannerFix .containerBannerFix div.claims.firstClaim .offer .minuti {
           font-family: "TP Hero Hairline";
-          font-size: 50px;
-          line-height: 55px; }
+          font-size: 4vw;
+          line-height: 4.5vw; }
         .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices {
           margin-top: 20px; }
           .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .strikethrough {
@@ -352,26 +284,42 @@ body {
               text-decoration: none;
               text-transform: uppercase; }
 
-.details {
+.details_block {
   position: relative;
   width: 100%;
   background: url(../img/bg_preFooter.png) no-repeat left bottom;
   background-size: contain;
-  height: 800px; }
-  .details img {
+  height: 860px; }
+  .details_block img {
     width: 100%;
     height: auto; }
-  .details .secondClaim {
-    margin-top: 7%; }
-    .details .secondClaim h1 {
+  .details_block .secondClaim {
+    margin-top: 5%; }
+    .details_block .secondClaim h1 {
       font-family: "TP Hero Hairline";
       font-size: 6vw;
       line-height: 7vw; }
-  .details .call_to {
-    width: 70%;
+  .details_block .text_block {
+    font-family: "TP Hero Light";
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 30px; }
+  .details_block .list {
+    font-size: 16px;
+    font-family: "TP Hero Light"; }
+    .details_block .list ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0; }
+      .details_block .list ul li {
+        text-indent: -5;
+        padding-top: 5px; }
+  .details_block .call_to {
+    width: 55%;
+    font-family: "TP Hero Light";
     background-color: #ffcb24;
     padding: 20px;
-    font-size: 40px;
+    font-size: 2vw;
     display: block;
     margin: 70px auto;
     text-align: center;
@@ -379,21 +327,41 @@ body {
     border-radius: 8px;
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
-    .details .call_to a {
+    .details_block .call_to a {
       color: #000;
       text-decoration: none; }
 
 .block_40 {
   display: inline-block;
-  width: 40%; }
+  width: 40%;
+  float: left; }
 
 .block_60 {
   display: inline-block;
-  width: 59%; }
+  width: 60%;
+  float: left; }
 
 .download {
   width: 100%;
+  padding: 3% 0;
   background-color: #ffcb24; }
+  .download .phone {
+    width: 45%;
+    float: left; }
+    .download .phone img {
+      width: 100%;
+      height: auto; }
+  .download .download_app {
+    float: left;
+    width: 53%;
+    margin-left: 2%;
+    margin-top: 15%; }
+    .download .download_app h1 {
+      font-size: 6.5vw;
+      line-height: 7vw; }
+    .download .download_app .gplay_button {
+      margin-top: 30px;
+      display: block; }
 
 .footer {
   position: relative;
@@ -403,6 +371,15 @@ body {
   .footer a {
     color: inherit;
     text-decoration: underline; }
+  .footer .right_logo {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 750; }
+    .footer .right_logo img {
+      width: 15vw;
+      min-width: 90px;
+      max-width: 230px; }
   .footer .containerFooter {
     max-width: 1440px;
     margin: 0 auto;
@@ -410,9 +387,11 @@ body {
     font-size: 14px;
     line-height: 18px; }
     .footer .containerFooter b {
-      font-family: "TP Hero Light"; }
+      font-family: "TP Hero Light";
+      color: #d2d2d2; }
     .footer .containerFooter p {
-      margin-top: 0; }
+      margin-top: 0;
+      color: #9a9a9a; }
     .footer .containerFooter .logoFooterContainer {
       padding: 60px 30px; }
     .footer .containerFooter .blockFooter {
@@ -421,18 +400,20 @@ body {
       @media (max-width: 768px) {
         .footer .containerFooter .blockFooter.quickLinks {
           display: none; } }
-    .footer .containerFooter ul {
+    .footer .containerFooter ul.links {
       list-style-type: none;
       padding-left: 0;
-      margin: 0; }
-      .footer .containerFooter ul li {
+      margin: 0;
+      color: #ffcb24; }
+      .footer .containerFooter ul.links li {
         text-indent: -5px;
         padding-top: 5px; }
-        .footer .containerFooter ul li:before {
+        .footer .containerFooter ul.links li:before {
           content: "-";
           text-indent: -5px; }
-        .footer .containerFooter ul li a {
-          color: #ffcc00; }
+        .footer .containerFooter ul.links li a {
+          color: #ffcc00;
+          text-decoration: none; }
   .footer .disclaimer {
     max-width: 1350px;
     margin: 0 auto;

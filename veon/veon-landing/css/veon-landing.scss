@@ -2,9 +2,6 @@ html,
 body,
 div,
 span,
-applet,
-object,
-iframe,
 h1,
 h2,
 h3,
@@ -15,70 +12,8 @@ p,
 blockquote,
 pre,
 a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
 ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+li {
     margin: 0;
     padding: 0;
     border: 0;
@@ -310,28 +245,29 @@ body {
 
 //===================================================//
 //================INIZIO LANDING=====================//
-.landing_veon {
-    .wrapper {
-        max-width: 1440px;
-        margin: 0 auto;
-        width: 100%;
-        @include breakpoint(largest) {
-            //1440
-            max-width: 1024px;
-        }
-        @include breakpoint(small) {
-            //768
-            margin: 0;
-        }
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    @include breakpoint(largest) {
+        //1440
+        max-width: 1024px;
     }
+    @include breakpoint(small) {
+        //768
+        margin: 0;
+    }
+}
+
+.landing_veon {
     .prova {
         height: 550px;
         position: relative;
         z-index: 500;
         h1 {
             margin-top: 120px;
-            font-size: 7vw;
-            line-height: 8vw;
+            font-size: 6vw;
+            line-height: 7vw;
         }
     }
     &__logo {
@@ -404,17 +340,17 @@ body {
         margin: 0 auto;
         position: relative;
         top: 35%;
-        max-width: 1440px;
-        padding-left: 60px;
+        //max-width: 1440px;
+        //padding-left: 60px;
         @include breakpoint(largest) {
             top: 44%;
-            padding-left: 90px;
+            //padding-left: 90px;
         }
         @include breakpoint(large) {
             top: 28%;
             width: 95%;
             margin: 0;
-            padding-left: 60px;
+            //padding-left: 60px;
         }
         @include breakpoint(small) {
             position: absolute;
@@ -450,8 +386,8 @@ body {
                     .giga,
                     .minuti {
                         font-family: $weight-hairline;
-                        font-size: 50px;
-                        line-height: 55px;
+                        font-size: 4vw;
+                        line-height: 4.5vw;
                     }
                     .prices {
                         margin-top: 20px;
@@ -524,29 +460,49 @@ body {
     }
 }
 
-.details {
+.details_block {
     position: relative;
     width: 100%;
     background: url(../img/bg_preFooter.png) no-repeat left bottom;
     background-size: contain;
-    height: 800px;
+    height: 860px;
     img {
         width: 100%;
         height: auto;
     }
     .secondClaim {
-        margin-top: 7%;
+        margin-top: 5%;
         h1 {
             font-family: $weight-hairline;
             font-size: 6vw;
             line-height: 7vw;
         }
     }
+    .text_block {
+        font-family: $weight-light;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 30px;
+    }
+    .list {
+        font-size: 16px;
+        font-family: $weight-light;
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            li {
+                text-indent: -5;
+                padding-top: 5px;
+            }
+        }
+    }
     .call_to {
-        width: 70%;
+        width: 55%;
+        font-family: $weight-light;
         background-color: $color-pale-orange;
         padding: 20px;
-        font-size: 40px;
+        font-size: 2vw;
         display: block;
         margin: 70px auto;
         text-align: center;
@@ -561,16 +517,41 @@ body {
 .block_40 {
     display: inline-block;
     width: 40%;
+    float: left;
 }
 
 .block_60 {
     display: inline-block;
-    width: 59%;
+    width: 60%;
+    float: left;
 }
 
 .download {
     width: 100%;
+    padding: 3% 0;
     background-color: $color-pale-orange;
+    .phone {
+        width: 45%;
+        float: left;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .download_app {
+        float: left;
+        width: 53%;
+        margin-left: 2%;
+        margin-top: 15%;
+        h1 {
+            font-size: 6.5vw;
+            line-height: 7vw;
+        }
+        .gplay_button {
+            margin-top: 30px;
+            display:block;
+        }
+    }
 }
 
 //==================================================//
@@ -584,6 +565,17 @@ body {
         color: inherit;
         text-decoration: underline;
     }
+    .right_logo {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 750;
+        img {
+            width: 15vw;
+            min-width: 90px;
+            max-width: 230px;
+        }
+    }
     .containerFooter {
         max-width: 1440px;
         margin: 0 auto;
@@ -592,9 +584,11 @@ body {
         line-height: 18px;
         b {
             font-family: $weight-light;
+            color:#d2d2d2;
         }
         p {
             margin-top: 0;
+            color:#9a9a9a;
         }
         .logoFooterContainer {
             padding: 60px 30px;
@@ -608,10 +602,11 @@ body {
                 }
             }
         }
-        ul {
+        ul.links {
             list-style-type: none;
             padding-left: 0;
             margin: 0;
+            color: $color-pale-orange;
             li {
                 text-indent: -5px;
                 padding-top: 5px;
@@ -621,6 +616,7 @@ body {
                 }
                 a {
                     color: rgb(255, 204, 0);
+                    text-decoration:none;
                 }
             }
         }
