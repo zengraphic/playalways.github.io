@@ -82,7 +82,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: top;
 }
 
 //========================== FONT =======================//
@@ -230,20 +229,6 @@ $color-yellow: #ffcc00;
     }
     &_right {
         text-align: right;
-    }
-}
-
-.strikethrough {
-    position: relative;
-    &:before {
-        content: "";
-        position: absolute;
-        left: -5px;
-        right: -5px;
-        top: calc(50% - 2px);
-        height: 4px;
-        display: block;
-        background-color: red;
     }
 }
 
@@ -460,12 +445,63 @@ body {
             }
             &.firstClaim {
                 color: #fff;
-                .offer{
+                .offer {
+                    font-family: $weight-hairline;
                     .giga,
-                    .minuti{
+                    .minuti {
                         font-family: $weight-hairline;
                         font-size: 50px;
                         line-height: 55px;
+                    }
+                    .prices {
+                        margin-top: 20px;
+                        .strikethrough {
+                            position: relative;
+                            font-size: 50px;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                left: -5px;
+                                right: -5px;
+                                top: calc(50% - 2px);
+                                height: 2px;
+                                display: block;
+                                background-color: white;
+                                -ms-transform: rotate(-25deg);
+                                -webkit-transform: rotate(-25deg);
+                                transform: rotate(-25deg);
+                            }
+                        }
+                        .offer_price {
+                            position: relative;
+                            font-size: 80px;
+                            padding: 0 20px;
+                            &:after {
+                                content: "*";
+                                position: absolute;
+                                right: 5px;
+                                font-size: 30px;
+                                top: 15px;
+                                display: block;
+                            }
+                        }
+                        .ordina {
+                            background-color: $color-pale-orange;
+                            position: relative;
+                            margin-left: 40px;
+                            top: -15px;
+                            padding: 15px 60px;
+                            font-size: 30px;
+                            display: inline-block;
+                            text-align: center;
+                            font-family: $weight-thin;
+                            @include border-radius(8px);
+                            a {
+                                color: #000;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                            }
+                        }
                     }
                 }
             }
@@ -494,17 +530,17 @@ body {
     background: url(../img/bg_preFooter.png) no-repeat left bottom;
     background-size: contain;
     height: 800px;
-    img{
+    img {
         width: 100%;
         height: auto;
     }
-    .secondClaim{
+    .secondClaim {
         margin-top: 7%;
-        h1{
-        font-family: $weight-hairline;
-        font-size: 6vw;
-        line-height: 7vw;
-    }
+        h1 {
+            font-family: $weight-hairline;
+            font-size: 6vw;
+            line-height: 7vw;
+        }
     }
     .call_to {
         width: 70%;

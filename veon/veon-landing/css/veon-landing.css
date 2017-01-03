@@ -81,8 +81,7 @@ audio,
 video {
   margin: 0;
   padding: 0;
-  border: 0;
-  vertical-align: top; }
+  border: 0; }
 
 @font-face {
   font-family: 'TP Hero Light';
@@ -127,18 +126,6 @@ video {
   text-align: center; }
 .text_align_right {
   text-align: right; }
-
-.strikethrough {
-  position: relative; }
-  .strikethrough:before {
-    content: "";
-    position: absolute;
-    left: -5px;
-    right: -5px;
-    top: calc(50% - 2px);
-    height: 4px;
-    display: block;
-    background-color: red; }
 
 h1 {
   font-family: "TP Hero Hairline";
@@ -311,11 +298,59 @@ body {
           line-height: 16vw; } }
     .bannerFix .containerBannerFix div.claims.firstClaim {
       color: #fff; }
-      .bannerFix .containerBannerFix div.claims.firstClaim .offer .giga,
-      .bannerFix .containerBannerFix div.claims.firstClaim .offer .minuti {
-        font-family: "TP Hero Hairline";
-        font-size: 50px;
-        line-height: 55px; }
+      .bannerFix .containerBannerFix div.claims.firstClaim .offer {
+        font-family: "TP Hero Hairline"; }
+        .bannerFix .containerBannerFix div.claims.firstClaim .offer .giga,
+        .bannerFix .containerBannerFix div.claims.firstClaim .offer .minuti {
+          font-family: "TP Hero Hairline";
+          font-size: 50px;
+          line-height: 55px; }
+        .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices {
+          margin-top: 20px; }
+          .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .strikethrough {
+            position: relative;
+            font-size: 50px; }
+            .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .strikethrough:before {
+              content: "";
+              position: absolute;
+              left: -5px;
+              right: -5px;
+              top: calc(50% - 2px);
+              height: 2px;
+              display: block;
+              background-color: white;
+              -ms-transform: rotate(-25deg);
+              -webkit-transform: rotate(-25deg);
+              transform: rotate(-25deg); }
+          .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price {
+            position: relative;
+            font-size: 80px;
+            padding: 0 20px; }
+            .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price:after {
+              content: "*";
+              position: absolute;
+              right: 5px;
+              font-size: 30px;
+              top: 15px;
+              display: block; }
+          .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .ordina {
+            background-color: #ffcb24;
+            position: relative;
+            margin-left: 40px;
+            top: -15px;
+            padding: 15px 60px;
+            font-size: 30px;
+            display: inline-block;
+            text-align: center;
+            font-family: "TP Hero Thin";
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box;
+            /* stops bg color from leaking outside the border: */ }
+            .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .ordina a {
+              color: #000;
+              text-decoration: none;
+              text-transform: uppercase; }
 
 .details {
   position: relative;
