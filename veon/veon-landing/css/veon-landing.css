@@ -82,7 +82,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline; }
+  vertical-align: top; }
 
 @font-face {
   font-family: 'TP Hero Light';
@@ -211,7 +211,7 @@ body {
   .landing_veon .prova h1 {
     margin-top: 120px;
     font-size: 7vw;
-    line-height: 7.2vw; }
+    line-height: 8vw; }
 .landing_veon__logo .logo_veon {
   position: relative;
   left: calc(50% - 86px);
@@ -248,8 +248,8 @@ body {
   width: 100%;
   background: url(../img/veon_preFooter_big.png) no-repeat;
   background-size: contain;
-  height: 1662px;
-  margin-top: -540px;
+  height: 1100px;
+  margin-top: -500px;
   z-index: 200; }
   @media (max-width: 1025px) {
     .bannerFix {
@@ -276,7 +276,7 @@ body {
     padding-left: 60px; }
     @media (max-width: 1440px) {
       .bannerFix .containerBannerFix {
-        top: 30%;
+        top: 44%;
         padding-left: 90px; } }
     @media (max-width: 1025px) {
       .bannerFix .containerBannerFix {
@@ -292,6 +292,7 @@ body {
         margin: 0;
         padding-left: 20px; } }
     .bannerFix .containerBannerFix div.claims h1 {
+      font-family: "TP Hero Hairline";
       text-align: left;
       font-size: 130px;
       line-height: 132px; }
@@ -310,29 +311,54 @@ body {
           line-height: 16vw; } }
     .bannerFix .containerBannerFix div.claims.firstClaim {
       color: #fff; }
-    .bannerFix .containerBannerFix div.claims.secondClaim {
-      margin-top: 500px; }
-      .bannerFix .containerBannerFix div.claims.secondClaim div.buttonFooter {
-        margin-top: 30px; }
-      @media (max-width: 1440px) {
-        .bannerFix .containerBannerFix div.claims.secondClaim {
-          margin-top: 675px; } }
-      @media (max-width: 1440px) {
-        .bannerFix .containerBannerFix div.claims.secondClaim {
-          margin-top: 600px; } }
-      @media (max-width: 768px) {
-        .bannerFix .containerBannerFix div.claims.secondClaim {
-          margin-top: 115vw; } }
+      .bannerFix .containerBannerFix div.claims.firstClaim .offer .giga,
+      .bannerFix .containerBannerFix div.claims.firstClaim .offer .minuti {
+        font-family: "TP Hero Hairline";
+        font-size: 50px;
+        line-height: 55px; }
 
-.call_to {
+.details {
+  position: relative;
   width: 100%;
-  background-color: #ffcb24;
-  padding: 40px;
-  font-size: 40px;
-  text-align: center; }
-  .call_to a {
-    color: #000;
-    text-decoration: none; }
+  background: url(../img/bg_preFooter.png) no-repeat left bottom;
+  background-size: contain;
+  height: 800px; }
+  .details img {
+    width: 100%;
+    height: auto; }
+  .details .secondClaim {
+    margin-top: 7%; }
+    .details .secondClaim h1 {
+      font-family: "TP Hero Hairline";
+      font-size: 6vw;
+      line-height: 7vw; }
+  .details .call_to {
+    width: 70%;
+    background-color: #ffcb24;
+    padding: 20px;
+    font-size: 40px;
+    display: block;
+    margin: 70px auto;
+    text-align: center;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */ }
+    .details .call_to a {
+      color: #000;
+      text-decoration: none; }
+
+.block_40 {
+  display: inline-block;
+  width: 40%; }
+
+.block_60 {
+  display: inline-block;
+  width: 59%; }
+
+.download {
+  width: 100%;
+  background-color: #ffcb24; }
 
 .footer {
   position: relative;

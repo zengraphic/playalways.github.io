@@ -82,7 +82,7 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: baseline;
+    vertical-align: top;
 }
 
 //========================== FONT =======================//
@@ -346,7 +346,7 @@ body {
         h1 {
             margin-top: 120px;
             font-size: 7vw;
-            line-height: 7.2vw;
+            line-height: 8vw;
         }
     }
     &__logo {
@@ -394,8 +394,8 @@ body {
     width: 100%;
     background: url(../img/veon_preFooter_big.png) no-repeat;
     background-size: contain;
-    height: 1662px;
-    margin-top: -540px;
+    height: 1100px;
+    margin-top: -500px;
     z-index: 200;
     @include breakpoint(large) {
         background: url('../img/veon_preFooter_medium.png') no-repeat center;
@@ -422,7 +422,7 @@ body {
         max-width: 1440px;
         padding-left: 60px;
         @include breakpoint(largest) {
-            top: 30%;
+            top: 44%;
             padding-left: 90px;
         }
         @include breakpoint(large) {
@@ -440,6 +440,7 @@ body {
         }
         div.claims {
             h1 {
+                font-family: $weight-hairline;
                 text-align: left;
                 font-size: 130px;
                 line-height: 132px;
@@ -459,36 +460,81 @@ body {
             }
             &.firstClaim {
                 color: #fff;
-            }
-            &.secondClaim {
-                margin-top: 500px;
-                div.buttonFooter {
-                    margin-top: 30px;
-                }
-                @include breakpoint(largest) {
-                    margin-top: 675px;
-                }
-                @include breakpoint(largest) {
-                    margin-top: 600px;
-                }
-                @include breakpoint(small) {
-                    margin-top: 115vw;
+                .offer{
+                    .giga,
+                    .minuti{
+                        font-family: $weight-hairline;
+                        font-size: 50px;
+                        line-height: 55px;
+                    }
                 }
             }
+            // &.secondClaim {
+            //     margin-top: 500px;
+            //     div.buttonFooter {
+            //         margin-top: 30px;
+            //     }
+            //     @include breakpoint(largest) {
+            //         margin-top: 675px;
+            //     }
+            //     @include breakpoint(largest) {
+            //         margin-top: 600px;
+            //     }
+            //     @include breakpoint(small) {
+            //         margin-top: 115vw;
+            //     }
+            // }
         }
     }
 }
 
-.call_to {
+.details {
+    position: relative;
+    width: 100%;
+    background: url(../img/bg_preFooter.png) no-repeat left bottom;
+    background-size: contain;
+    height: 800px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+    .secondClaim{
+        margin-top: 7%;
+        h1{
+        font-family: $weight-hairline;
+        font-size: 6vw;
+        line-height: 7vw;
+    }
+    }
+    .call_to {
+        width: 70%;
+        background-color: $color-pale-orange;
+        padding: 20px;
+        font-size: 40px;
+        display: block;
+        margin: 70px auto;
+        text-align: center;
+        @include border-radius(8px);
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}
+
+.block_40 {
+    display: inline-block;
+    width: 40%;
+}
+
+.block_60 {
+    display: inline-block;
+    width: 59%;
+}
+
+.download {
     width: 100%;
     background-color: $color-pale-orange;
-    padding: 40px;
-    font-size: 40px;
-    text-align: center;
-    a {
-        color: #000;
-        text-decoration: none;
-    }
 }
 
 //==================================================//
