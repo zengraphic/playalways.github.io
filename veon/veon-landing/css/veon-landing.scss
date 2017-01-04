@@ -261,7 +261,7 @@ body {
 
 .landing_veon {
     .topClaim {
-        height: 550px;
+        height: 600px;
         position: relative;
         z-index: 500;
         h1 {
@@ -376,8 +376,8 @@ body {
         //max-width: 1440px;
         //padding-left: 60px;
         @include breakpoint(largest) {
-            top: 35%;
-            //padding-left: 90px;
+            top: 36%;
+            padding-left: 100px;
         }
         @include breakpoint(large) {
             top: 34%;
@@ -545,7 +545,7 @@ body {
     width: 100%;
     background: url(../img/bg_preFooter.png) no-repeat left bottom;
     background-size: contain;
-    height: 1100px;
+    height: 1000px;
     img {
         width: 100%;
         height: auto;
@@ -555,6 +555,10 @@ body {
         @include breakpoint(tiny) {
             width: 100%;
         }
+    }
+    @include breakpoint(large) {
+        height: 800px;
+        text-align: center;
     }
     @include breakpoint(small) {
         height: auto;
@@ -606,7 +610,7 @@ body {
         padding: 20px;
         font-size: 2vw;
         display: block;
-        margin: 50px auto;
+        margin: 30px auto;
         text-align: center;
         @include border-radius(8px);
         a {
@@ -615,7 +619,6 @@ body {
         }
         @include breakpoint(small) {
             font-size: 4vw;
-            margin: 30px auto;
             width: 80%;
         }
     }
@@ -625,6 +628,7 @@ body {
     display: inline-block;
     width: 40%;
     float: left;
+    padding: 30px;
     @include breakpoint(small) {
         padding: 0 20px;
         width: 100%;
@@ -637,6 +641,7 @@ body {
     display: inline-block;
     width: 60%;
     float: left;
+    padding:30px;
     @include breakpoint(small) {
         width: 100%;
         padding: 0 20px;
