@@ -372,9 +372,9 @@ body {
         width: 100%;
         margin: 0 auto;
         position: relative;
-        top: 36%;
+        top: 40%;
         //max-width: 1440px;
-        //padding-left: 60px;
+        padding-left: 60px;
         @include breakpoint(largest) {
             top: 36%;
             padding-left: 100px;
@@ -435,6 +435,9 @@ body {
                     font-family: $weight-hairline;
                     @include breakpoint(small) {
                         width: 80%;
+                    }
+                    @include breakpoint(tiny) {
+                        width: 100%;
                     }
                     .giga,
                     .minuti {
@@ -498,12 +501,12 @@ body {
                             text-align: center;
                             font-family: $weight-thin;
                             @include border-radius(8px);
-                            @include breakpoint(medium) {
+                             @include breakpoint(medium) {
                                 display: block;
                                 width: 40%;
                                 margin-top: 50px;
                                 margin-left: 0;
-                            }
+                                }
                             @include breakpoint(small) {
                                 margin-left: 0;
                                 width: 70%;
@@ -569,6 +572,7 @@ body {
     }
     .secondClaim {
         margin-top: 5%;
+        text-align: left;
         @include breakpoint(small) {
             margin-top: 13%;
         }
