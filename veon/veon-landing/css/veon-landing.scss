@@ -260,14 +260,38 @@ body {
 }
 
 .landing_veon {
-    .prova {
+    .topClaim {
         height: 550px;
         position: relative;
         z-index: 500;
         h1 {
             margin-top: 120px;
-            font-size: 6vw;
-            line-height: 7vw;
+            font-size: 7vw;
+            line-height: 9vw;
+        }
+        
+        @include breakpoint(large) {
+            //768
+            height: 400px;
+            h1 {
+                font-size: 9vw;
+                line-height: 11vw;
+            }
+        }
+        @include breakpoint(small) {
+            //768
+            height: 400px;
+            h1 {
+                font-size: 9vw;
+                line-height: 11vw;
+            }
+        }
+        @include breakpoint(tiny) {
+            //768
+            h1 {
+                font-size: 15vw;
+                line-height: 18vw;
+            }
         }
     }
     &__logo {
@@ -315,13 +339,22 @@ body {
     width: 100%;
     background: url(../img/veon_preFooter_big.png) no-repeat;
     background-size: contain;
-    height: 1100px;
+    height: 1444px;
     margin-top: -500px;
     z-index: 200;
+    @include breakpoint(largest) {
+        height: 1100px;
+        //padding-left: 90px;
+    }
     @include breakpoint(large) {
         background: url('../img/veon_preFooter_medium.png') no-repeat center;
-        height: 1691px;
+        height: 1100px;
         margin-top: -150px;
+    }
+    @include breakpoint(medium) {
+        margin-top: -400px;
+        height: 1281px;
+
     }
     @include breakpoint(small) {
         background-image: none;
@@ -339,23 +372,36 @@ body {
         width: 100%;
         margin: 0 auto;
         position: relative;
-        top: 35%;
+        top: 36%;
         //max-width: 1440px;
         //padding-left: 60px;
         @include breakpoint(largest) {
-            top: 44%;
+            top: 35%;
             //padding-left: 90px;
         }
         @include breakpoint(large) {
-            top: 28%;
+            top: 34%;
             width: 95%;
             margin: 0;
+            padding-left: 30px;
+            //padding-left: 60px;
+        }
+        @include breakpoint(medium) {
+            top: 38%;
+            padding-left: 20px;
             //padding-left: 60px;
         }
         @include breakpoint(small) {
             position: absolute;
-            top: 2%;
+            top: 10%;
             width: 80%;
+            margin: 0;
+            padding-left: 20px;
+        }
+        @include breakpoint(tiny) {
+            position: absolute;
+            top: 10%;
+            width: 90%;
             margin: 0;
             padding-left: 20px;
         }
@@ -363,37 +409,50 @@ body {
             h1 {
                 font-family: $weight-hairline;
                 text-align: left;
-                font-size: 130px;
-                line-height: 132px;
+                font-size: 5vw;
+                line-height: 6vw;
                 @include breakpoint(largest) {
-                    font-size: 70px;
-                    line-height: 90px;
+                    font-size: 5vw;
+                    line-height: 6vw;
                     letter-spacing: -3px;
                 }
                 @include breakpoint(large) {
-                    font-size: 75px;
-                    line-height: 75px;
+                    font-size: 5vw;
+                    line-height: 6vw;
                 }
                 @include breakpoint(small) {
-                    font-size: 16vw;
-                    line-height: 16vw;
+                    font-size: 9vw;
+                    line-height: 10vw;
+                }
+                @include breakpoint(tiny) {
+                    font-size: 10vw;
+                    line-height: 11vw;
                 }
             }
             &.firstClaim {
                 color: #fff;
                 .offer {
                     font-family: $weight-hairline;
+                    @include breakpoint(small) {
+                        width: 80%;
+                    }
                     .giga,
                     .minuti {
                         font-family: $weight-hairline;
                         font-size: 4vw;
                         line-height: 4.5vw;
+                        @include breakpoint(small) {
+                            font-size: 8vw;
+                            line-height: 7.5vw;
+                        }
                     }
                     .prices {
-                        margin-top: 20px;
                         .strikethrough {
                             position: relative;
                             font-size: 50px;
+                            @include breakpoint(tiny) {
+                                display: inline-block;
+                            }
                             &:before {
                                 content: "";
                                 position: absolute;
@@ -412,6 +471,10 @@ body {
                             position: relative;
                             font-size: 80px;
                             padding: 0 20px;
+                            @include breakpoint(tiny) {
+                                display: block;
+                                padding: 0;
+                            }
                             &:after {
                                 content: "*";
                                 position: absolute;
@@ -419,6 +482,9 @@ body {
                                 font-size: 30px;
                                 top: 15px;
                                 display: block;
+                                @include breakpoint(tiny) {
+                                    right: 100px;
+                                }
                             }
                         }
                         .ordina {
@@ -432,6 +498,20 @@ body {
                             text-align: center;
                             font-family: $weight-thin;
                             @include border-radius(8px);
+                            @include breakpoint(medium) {
+                                display: block;
+                                width: 40%;
+                                margin-top: 50px;
+                                margin-left: 0;
+                            }
+                            @include breakpoint(small) {
+                                margin-left: 0;
+                                width: 70%;
+                            }
+                            @include breakpoint(tiny) {
+                                margin-left: 0;
+                                width: 100%;
+                            }
                             a {
                                 color: #000;
                                 text-decoration: none;
@@ -465,17 +545,37 @@ body {
     width: 100%;
     background: url(../img/bg_preFooter.png) no-repeat left bottom;
     background-size: contain;
-    height: 860px;
+    height: 1100px;
     img {
         width: 100%;
         height: auto;
+        @include breakpoint(small) {
+            width: 60%;
+        }
+        @include breakpoint(tiny) {
+            width: 100%;
+        }
+    }
+    @include breakpoint(small) {
+        height: auto;
+        text-align: center;
+    }
+    @include breakpoint(tiny) {
+        height: 1280px;
     }
     .secondClaim {
         margin-top: 5%;
+        @include breakpoint(small) {
+            margin-top: 13%;
+        }
         h1 {
             font-family: $weight-hairline;
             font-size: 6vw;
             line-height: 7vw;
+            @include breakpoint(small) {
+                font-size: 13vw;
+                line-height: 14vw;
+            }
         }
     }
     .text_block {
@@ -483,10 +583,12 @@ body {
         font-size: 16px;
         line-height: 24px;
         margin-top: 30px;
+        text-align: left;
     }
     .list {
         font-size: 16px;
         font-family: $weight-light;
+        text-align: left;
         ul {
             list-style-type: none;
             padding-left: 0;
@@ -504,12 +606,17 @@ body {
         padding: 20px;
         font-size: 2vw;
         display: block;
-        margin: 70px auto;
+        margin: 50px auto;
         text-align: center;
         @include border-radius(8px);
         a {
             color: #000;
             text-decoration: none;
+        }
+        @include breakpoint(small) {
+            font-size: 4vw;
+            margin: 30px auto;
+            width: 80%;
         }
     }
 }
@@ -518,12 +625,22 @@ body {
     display: inline-block;
     width: 40%;
     float: left;
+    @include breakpoint(small) {
+        padding: 0 20px;
+        width: 100%;
+        float: none;
+        margin-top: 40px;
+    }
 }
 
 .block_60 {
     display: inline-block;
     width: 60%;
     float: left;
+    @include breakpoint(small) {
+        width: 100%;
+        padding: 0 20px;
+    }
 }
 
 .download {
@@ -536,6 +653,15 @@ body {
         img {
             width: 100%;
             height: auto;
+            @include breakpoint(small) {
+                width: 60%;
+            }
+        }
+        @include breakpoint(small) {
+            width: 100%;
+            padding: 0 20px;
+            margin-top: 15%;
+            text-align: center;
         }
     }
     .download_app {
@@ -546,10 +672,20 @@ body {
         h1 {
             font-size: 6.5vw;
             line-height: 7vw;
+            @include breakpoint(small) {
+                font-size: 13vw;
+                line-height: 14vw
+            }
+        }
+        @include breakpoint(small) {
+            width: 100%;
+            padding: 0 20px;
+            margin-left: 0;
+            text-align: center;
         }
         .gplay_button {
-            margin-top: 30px;
-            display:block;
+            margin: 30px 0;
+            display: block;
         }
     }
 }
@@ -570,11 +706,6 @@ body {
         top: 60px;
         right: 0;
         z-index: 750;
-        img {
-            width: 15vw;
-            min-width: 90px;
-            max-width: 230px;
-        }
     }
     .containerFooter {
         max-width: 1440px;
@@ -584,11 +715,11 @@ body {
         line-height: 18px;
         b {
             font-family: $weight-light;
-            color:#d2d2d2;
+            color: #d2d2d2;
         }
         p {
             margin-top: 0;
-            color:#9a9a9a;
+            color: #9a9a9a;
         }
         .logoFooterContainer {
             padding: 60px 30px;
@@ -616,7 +747,7 @@ body {
                 }
                 a {
                     color: rgb(255, 204, 0);
-                    text-decoration:none;
+                    text-decoration: none;
                 }
             }
         }
