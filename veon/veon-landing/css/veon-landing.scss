@@ -261,13 +261,13 @@ body {
 
 .landing_veon {
     .topClaim {
-        height: 600px;
+        height: 480px;
         position: relative;
         z-index: 500;
         h1 {
-            margin-top: 120px;
+            margin-top: 60px;
             font-size: 6vw;
-            line-height: 9vw;
+            line-height: 7vw;
         }
         
         @include breakpoint(large) {
@@ -275,7 +275,7 @@ body {
             height: 400px;
             h1 {
                 font-size: 9vw;
-                line-height: 11vw;
+                line-height: 10vw;
             }
         }
         @include breakpoint(small) {
@@ -283,14 +283,14 @@ body {
             height: 400px;
             h1 {
                 font-size: 9vw;
-                line-height: 11vw;
+                line-height: 10vw;
             }
         }
         @include breakpoint(tiny) {
             //768
             h1 {
                 font-size: 15vw;
-                line-height: 18vw;
+                line-height: 17vw;
             }
         }
     }
@@ -419,7 +419,8 @@ body {
             &.firstClaim {
                 color: #fff;
                 .offer {
-                    font-family: $weight-light;
+                    margin-top: 30px;
+                    font-family: $weight-hairline;
                     @include breakpoint(small) {
                         width: 80%;
                     }
@@ -428,7 +429,7 @@ body {
                     }
                     .giga,
                     .minuti {
-                        font-family: $weight-light;
+                        font-family: $weight-hairline;
                         font-size: 4vw;
                         line-height: 4.5vw;
                         @include breakpoint(small) {
@@ -437,9 +438,11 @@ body {
                         }
                     }
                     .prices {
+                        margin-top: 30px;
                         .strikethrough {
                             position: relative;
                             font-size: 50px;
+                            line-height: 50px;
                             @include breakpoint(tiny) {
                                 display: inline-block;
                             }
@@ -460,6 +463,7 @@ body {
                         .offer_price {
                             position: relative;
                             font-size: 80px;
+                            line-height: 80px;
                             padding: 0 20px;
                             @include breakpoint(tiny) {
                                 display: block;
