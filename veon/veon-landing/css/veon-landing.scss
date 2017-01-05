@@ -269,7 +269,6 @@ body {
             font-size: 6vw;
             line-height: 7vw;
         }
-        
         @include breakpoint(large) {
             //768
             height: 400px;
@@ -303,7 +302,6 @@ body {
             img {
                 width: 172px;
                 height: auto;
-                
             }
         }
     }
@@ -341,7 +339,6 @@ body {
     @include breakpoint(medium) {
         margin-top: -400px;
         height: 1281px;
-
     }
     @include breakpoint(small) {
         background-image: none;
@@ -359,11 +356,12 @@ body {
         width: 100%;
         margin: 0 auto;
         position: relative;
-        top: 40%;
+        top: 37%;
+        padding-top: 20px;
         //max-width: 1440px;
         padding-left: 60px;
         @include breakpoint(largest) {
-            top: 36%;
+            top: 30%;
             padding-left: 100px;
         }
         @include breakpoint(large) {
@@ -418,9 +416,15 @@ body {
             }
             &.firstClaim {
                 color: #fff;
+                @include breakpoint(largest) {
+                        padding-top: 2%;
+                    }
                 .offer {
-                    margin-top: 30px;
+                    margin-top: 15px;
                     font-family: $weight-hairline;
+                    @include breakpoint(largest) {
+                        margin-top: 15px;
+                    }
                     @include breakpoint(small) {
                         width: 80%;
                     }
@@ -438,7 +442,10 @@ body {
                         }
                     }
                     .prices {
-                        margin-top: 30px;
+                        margin-top: 15px;
+                        @include breakpoint(largest) {
+                        margin-top: 15px;
+                    }
                         .strikethrough {
                             position: relative;
                             font-size: 50px;
@@ -474,10 +481,11 @@ body {
                                 position: absolute;
                                 right: 5px;
                                 font-size: 30px;
-                                top: 15px;
+                                top: 0;
                                 display: block;
                                 @include breakpoint(tiny) {
-                                    right: 100px;
+                                    left: 140px;
+                                    top: -20px;
                                 }
                             }
                         }
@@ -492,12 +500,12 @@ body {
                             text-align: center;
                             font-family: $weight-thin;
                             @include border-radius(8px);
-                             @include breakpoint(medium) {
+                            @include breakpoint(medium) {
                                 display: block;
                                 width: 40%;
                                 margin-top: 50px;
                                 margin-left: 0;
-                                }
+                            }
                             @include breakpoint(small) {
                                 margin-left: 0;
                                 width: 100%;
@@ -636,7 +644,7 @@ body {
     display: inline-block;
     width: 60%;
     float: left;
-    padding:30px;
+    padding: 30px;
     @include breakpoint(small) {
         width: 100%;
         padding: 0 20px;
