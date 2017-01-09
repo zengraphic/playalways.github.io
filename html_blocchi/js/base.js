@@ -5,8 +5,8 @@ function set_bt_process(bt) {
 function on_bt_feedback(bt, flag, secs) {
     bt.innerHTML = (flag === 0) ? "<span class='fa fa-check rotatey-animate'></span>" : "<span class='fa fa-close fadein-animate'></span>";
     setTimeout(function() {
-        bt.innerHTML = "<span class='fadein-animate'>" + bt.getAttribute("data-label") + "</span>"
-    }, secs * 1000)
+        bt.innerHTML = "<span class='fadein-animate'>" + bt.getAttribute("data-label") + "</span>";
+    }, secs * 1000);
 }
 
 // prefixer helper function
@@ -76,20 +76,20 @@ function prefixedEventListener(element, type, callback) {
                 .on('hidden.bs.collapse', function(e) {
                     $(e.target)
                         .prev('.panel-heading')
-                        .removeClass("active")
+                        .removeClass("active");
                 });
             $('.base__accordion')
                 .on('shown.bs.collapse', function(e) {
                     $(e.target)
                         .prev('.panel-heading')
-                        .addClass("active")
+                        .addClass("active");
                 });
 
             //checkbox
             $(".base__checkbox")
                 .on("change", function(e) {
                     var $chk = $(e.target);
-                    $chk.toggleClass("on")
+                    $chk.toggleClass("on");
                 });
 
             //spinners
@@ -137,12 +137,12 @@ function prefixedEventListener(element, type, callback) {
             }
 
             //datepicker
-            $.fn.datetimepicker.dates['en'].days = ["Domenica", "Lunedi", "Martedi", "Mercoledi", "Giovedi", "Venerdi", "Sabato", "Domenica"];
-            $.fn.datetimepicker.dates['en'].daysShort = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
-            $.fn.datetimepicker.dates['en'].daysMin = ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa", "Do"];
-            $.fn.datetimepicker.dates['en'].months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-            $.fn.datetimepicker.dates['en'].monthsShort = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
-            $.fn.datetimepicker.dates['en'].today = "Oggi";
+            $.fn.datetimepicker.dates.en.days = ["Domenica", "Lunedi", "Martedi", "Mercoledi", "Giovedi", "Venerdi", "Sabato", "Domenica"];
+            $.fn.datetimepicker.dates.en.daysShort = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
+            $.fn.datetimepicker.dates.en.daysMin = ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa", "Do"];
+            $.fn.datetimepicker.dates.en.months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+            $.fn.datetimepicker.dates.en.monthsShort = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
+            $.fn.datetimepicker.dates.en.today = "Oggi";
             $('.base__datepicker--input')
                 .datetimepicker(obj_datepicker);
 
@@ -182,10 +182,10 @@ function prefixedEventListener(element, type, callback) {
                 });
 
 
-                //full height dialog (modal ricarica)
+            //full height dialog (modal ricarica)
 
 
-                $('.base__popup-link--ricarica')
+            $('.base__popup-link--ricarica')
                 .magnificPopup({
                     type: 'inline',
                     mainClass: 'mfp-fade',
@@ -194,16 +194,16 @@ function prefixedEventListener(element, type, callback) {
                     alignTop: false,
                     removalDelay: 350,
                     callbacks: {
-                        close: function(){
+                        close: function() {
                             $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
                         },
-                        open: function(){
+                        open: function() {
                             $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
                         }
                     }
                 });
 
-                $('.base__popup-link--contract')
+            $('.base__popup-link--contract')
                 .magnificPopup({
                     type: 'inline',
                     mainClass: 'mfp-fade-contract',
@@ -211,7 +211,7 @@ function prefixedEventListener(element, type, callback) {
                     midClick: true,
                     alignTop: false,
                     removalDelay: 350,
-                    
+
                 });
 
             $('.base__gallery')
@@ -286,7 +286,7 @@ function prefixedEventListener(element, type, callback) {
                                     navigationText: ["", ""],
                                     autoHeight: true,
                                     responsiveBaseWidth: ".base__popup > .container"
-                                })
+                                });
                         }
                     }
                 });
@@ -298,12 +298,12 @@ function prefixedEventListener(element, type, callback) {
             // Copyright 2014-2015 Twitter, Inc.
             // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
             if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-                var msViewportStyle = document.createElement('style')
+                var msViewportStyle = document.createElement('style');
                 msViewportStyle.appendChild(
                     document.createTextNode(
                         '@-ms-viewport{width:auto!important}'
                     )
-                )
+                );
                 document.querySelector('head').appendChild(msViewportStyle);
             }
 

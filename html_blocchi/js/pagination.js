@@ -31,7 +31,7 @@ jQuery(function($) {
          * Reference to pagination previous button
          */
         var pagPrev = currentPagination.find('.pagination_previous');
-        
+
         /**
          * [pagNext description]
          * @type {[object]}
@@ -59,31 +59,31 @@ jQuery(function($) {
         ///////////////////////////////////
         // Previous button click binding //
         ///////////////////////////////////
-        
+
         pagPrev.click(function(e) {
             e.preventDefault();
             currentIndex = currentPagination.find('.active').index();
-            if (currentIndex === 1){
+            if (currentIndex === 1) {
                 return false;
             }
             activateNav(currentIndex, 'previous');
-            checkNavButtons(currentIndex, 'previous');  
+            checkNavButtons(currentIndex, 'previous');
 
         });
 
         ///////////////////////////////
         // Next button click binding //
         ///////////////////////////////
-        
+
         pagNext.click(function(e) {
             e.preventDefault();
             currentIndex = currentPagination.find('.active').index();
-            if (currentIndex === pagItems.length){
+            if (currentIndex === pagItems.length) {
                 return false;
             }
             activateNav(currentIndex, 'next');
             checkNavButtons(currentIndex, 'next');
-            
+
         });
 
 
