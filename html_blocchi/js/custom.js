@@ -1,6 +1,5 @@
 /**
- * Custom scri
-pts:
+ * Custom scripts:
  * inputs, placeholder...
  */
 
@@ -63,8 +62,8 @@ function validate(evt) {
 
 // validate insert phone
 r$(document).ready(function() {
-    var input = r$("#pecuperoCredenziali input")
-    var boton = r$("#pecuperoCredenziali button")
+    var input = r$("#pecuperoCredenziali input");
+    var boton = r$("#pecuperoCredenziali button");
     input.keyup(function() {
         if (r$(this).val().length >= 7) {
             boton.removeAttr('disabled');
@@ -72,54 +71,54 @@ r$(document).ready(function() {
         if (r$(this).val().length < 7) {
             boton.attr('disabled', '');
         }
-    })
+    });
 });
 // end validate insert phone
 
 // validate insert email
 r$(document).ready(function() {
-    var input = r$("#recuperoCredenziali input")
-    var boton = r$("#recuperoCredenziali button")
+    var input = r$("#recuperoCredenziali input");
+    var boton = r$("#recuperoCredenziali button");
     input.keyup(function() {
-        console.log()
+        console.log();
         if (!ValidateEmail(input.val())) {
             console.log("Invalid email address.");
             boton.attr('disabled', '');
         } else {
             boton.removeAttr('disabled');
         }
-    })
+    });
 });
 
 
 function ValidateEmail(email) {
     var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     return expr.test(email);
-};
+}
 // end validate insert email
 
 
-    function controlMail() {
-        var input = r$(".refill_notification input")
-        if (!input.val() == '') {
-            if (!ValidateEmail(input.val())) {
-                console.log("Invalid email address.");
-                r$('.notificationMail').addClass('error');
-                r$('.refill_notification .notificationMail + span').addClass('error');
-                r$('.refill_notification .notificationMail + span').text('Email non valida');
-                return false;
-            } else {
-                r$('.notificationMail').removeClass('error');
-                r$('.refill_notification .notificationMail + span').removeClass('error');
-                return true;
-            }
+function controlMail() {
+    var input = r$(".refill_notification input");
+    if (input.val() !== '') {
+        if (!ValidateEmail(input.val())) {
+            console.log("Invalid email address.");
+            r$('.notificationMail').addClass('error');
+            r$('.refill_notification .notificationMail + span').addClass('error');
+            r$('.refill_notification .notificationMail + span').text('Email non valida');
+            return false;
         } else {
             r$('.notificationMail').removeClass('error');
             r$('.refill_notification .notificationMail + span').removeClass('error');
             return true;
         }
-
+    } else {
+        r$('.notificationMail').removeClass('error');
+        r$('.refill_notification .notificationMail + span').removeClass('error');
+        return true;
     }
+
+}
 r$(document).ready(function() {
 
 
@@ -134,17 +133,17 @@ r$(document).ready(function() {
 
     });
 
-     r$('.refill_notification input').focus(function() {
+    r$('.refill_notification input').focus(function() {
         r$('.notificationMail').removeClass('error');
-            r$('.refill_notification .notificationMail + span').removeClass('error');
+        r$('.refill_notification .notificationMail + span').removeClass('error');
 
     });
 
 });
 // validate insert code > 4 digit
 r$(document).ready(function() {
-    var input = r$("#CodiceDiSicurezza input")
-    var boton = r$("#CodiceDiSicurezza button")
+    var input = r$("#CodiceDiSicurezza input");
+    var boton = r$("#CodiceDiSicurezza button");
     input.keyup(function() {
         if (r$(this).val().length >= 4) {
             boton.removeAttr('disabled');
@@ -152,22 +151,22 @@ r$(document).ready(function() {
         if (r$(this).val().length < 4) {
             boton.attr('disabled', '');
         }
-    })
+    });
 });
 // end validate insert code > 4 digit
 
 // validate inputs passwords
 r$(document).ready(function() {
-    var winput = r$("#NuovaPassword input.wPass")
-    var cinput = r$("#NuovaPassword input.cPass")
-    var boton = r$("#NuovaPassword button")
+    var winput = r$("#NuovaPassword input.wPass");
+    var cinput = r$("#NuovaPassword input.cPass");
+    var boton = r$("#NuovaPassword button");
     cinput.keyup(function() {
         if ((winput.val()) == cinput.val()) {
             boton.removeAttr('disabled');
         } else {
             boton.attr('disabled', '');
         }
-    })
+    });
 });
 // end validate inputs passwords
 
@@ -220,25 +219,29 @@ function clearCard(inputToClear, cvvToClear) {
 function checkCard(card) {
     var c = card;
     var cl = parseInt(c.substr(c.length - 1));
-    var c = c.slice(0, -1)
-    var c = c.split("").reverse().join("");
-    var c = c.split("");
+    c = c.slice(0, -1);
+    c = c.split("").reverse().join("");
+    c = c.split("");
     var a = 2;
     var cm = [];
-    for (var i = 0; i < c.length; i++) {
-        if (a % 2 == 0) {
+    for (i = 0; i < c.length; i++) {
+        if (a % 2 === 0) {
             var t = c[i] * 2;
             if (t > 9) {
-                var t = (t - 9);
+                t = (t - 9);
             }
             cm.push(t);
-        } else { cm.push(parseInt(c[i])); }
+        } else {
+            cm.push(parseInt(c[i]));
+        }
         a++;
     }
     var f = 0;
-    for (var i = 0; i < cm.length; i++) { f += cm[i]; }
+    for (i = 0; i < cm.length; i++) {
+        f += cm[i];
+    }
     f = f + cl;
-    if (f % 10 == 0) {
+    if (f % 10 === 0) {
         return true;
     } else {
         return false;
@@ -301,7 +304,7 @@ function checkDate() {
 r$(document).ready(function() {
     /*Configurazione*/
     r$('#action_c1').click(function() {
-        r$('.action_c1').fadeIn("slow")
+        r$('.action_c1').fadeIn("slow");
     });
     r$('#action_1').click(function() {
         r$('#action_1-1').fadeIn("slow");
@@ -322,7 +325,7 @@ r$(document).ready(function() {
     r$('.sostebilita_list li a').click(function() {
         r$('.sostebilita_list li a').removeClass('active_btn');
         r$(this).addClass('active_btn');
-        r$(this).parent().find(".second_list").slideToggle("slow")
+        r$(this).parent().find(".second_list").slideToggle("slow");
     });
 
     /* assitence */
@@ -330,7 +333,7 @@ r$(document).ready(function() {
         r$(this).each(function() {
             var destination = r$(this).attr("href");
             r$(destination).fadeIn(800);
-            r$(this).parent().parent().parent().css('display', 'none')
+            r$(this).parent().parent().parent().css('display', 'none');
         });
     });
 
@@ -469,7 +472,7 @@ r$(document).ready(function() {
     r$('#input_cc').blur(function() {
         var carta = r$('#input_cc').val().replace(/\s/g, '');
         var result = checkCard(carta);
-        if (result == true) {
+        if (result) {
             // write your own rules if true
             $wind('.number_cc').removeClass('error');
             $wind('.number_cc + span').removeClass('error');
@@ -532,7 +535,9 @@ r$(document).ready(function() {
                     card = 'visa_cc';
                     break;
                 case '50':
-                    if (firstDigits2 == '507') { card = "aura_cc"; }
+                    if (firstDigits2 == '507') {
+                        card = "aura_cc";
+                    }
                     if ((firstDigits2 == '501') || (firstDigits2 == '502') || (firstDigits2 == '503')) {
                         card = "maestro_cc";
                     }
@@ -733,17 +738,17 @@ function checkNextStep() {
     if ($wind('.action_numbert').hasClass('entered')) {
         if (checkNewNumber()) {
             if ((radioCC.is(':checked') ||
-                (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
-                (subRadioCC.is(':checked')) ||
-                (radioPay.is(':checked')) ||
-                (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
-                (subRadioBill.is(':checked') && radioBill.is(':checked'))) &&
+                    (subRadioNewCard.is(':checked') && checkNewCreditCard()) ||
+                    (subRadioCC.is(':checked')) ||
+                    (radioPay.is(':checked')) ||
+                    (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
+                    (subRadioBill.is(':checked') && radioBill.is(':checked'))) &&
                 (controlMail())) {
-                    if (radioPay.is(':checked')) {
-                        $wind('#paypal-checkbox').attr('checked', true);
-                    }
-                    $wind('.top_up_button_final').prop("disabled", false);
+                if (radioPay.is(':checked')) {
+                    $wind('#paypal-checkbox').attr('checked', true);
                 }
+                $wind('.top_up_button_final').prop("disabled", false);
+            }
         }
     } else {
         if ((radioCC.is(':checked') ||
@@ -752,12 +757,12 @@ function checkNextStep() {
                 (radioPay.is(':checked')) ||
                 (subRadioCharge.is(':checked') && radioCharge.is(':checked')) ||
                 (subRadioBill.is(':checked') && radioBill.is(':checked'))) &&
-                (controlMail())) {
-                if (radioPay.is(':checked')) {
-                    $wind('#paypal-checkbox').attr('checked', true);
-                }
-                $wind('.top_up_button_final').prop("disabled", false);
+            (controlMail())) {
+            if (radioPay.is(':checked')) {
+                $wind('#paypal-checkbox').attr('checked', true);
             }
+            $wind('.top_up_button_final').prop("disabled", false);
+        }
     }
 
 
@@ -810,7 +815,7 @@ function checkNewCreditCard() {
     value = $wind('#input_cc').val();
     value = value.replace(/\s/g, '');
     console.log(value);
-    if ((value.length > 13) && (checkCard(value) == true) && (checkDate() == true) && (radioCC.is(':checked')) && (securityCC.val().length >= 3)) {
+    if ((value.length > 13) && (checkCard(value)) && (checkDate()) && (radioCC.is(':checked')) && (securityCC.val().length >= 3)) {
         return true;
     } else {
         return false;

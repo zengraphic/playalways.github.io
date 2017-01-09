@@ -66,17 +66,17 @@ jQuery(function($) {
         initMenu: function() {
 
             /***************************************************************
-            
-            Class naming for menu DOM traversing, each ul slides up except 
+
+            Class naming for menu DOM traversing, each ul slides up except
             the lower navigation level.
-        
+
             ***************************************************************/
 
             $.each(this.navDomLevels, function(index, element) {
                 element
                     .getElements()
                     .addClass(element.class);
-                if (index != 0) {
+                if (index !== 0) {
                     element
                         .getElements().not('.menu__modal--group-label > ul')
                         .slideUp(300, function() {
@@ -87,9 +87,9 @@ jQuery(function($) {
             });
 
             /***************************************************************
-            
+
             Parent icon init
-        
+
             ***************************************************************/
 
             $('.menu__modal--is-parent > a')
@@ -97,9 +97,9 @@ jQuery(function($) {
 
 
             /***************************************************************
-            
+
             Navigation links binding function
-        
+
             ***************************************************************/
 
             this.bindMenuLinks();
@@ -107,10 +107,10 @@ jQuery(function($) {
         bindMenuLinks: function() {
 
             /***************************************************************
-                    
-            Binding click function to menu link prevent event default 
+
+            Binding click function to menu link prevent event default
             only for sliding links.
-                
+
             ***************************************************************/
 
             $(".menu__modal--content-items a").click(function(e) {
@@ -119,7 +119,7 @@ jQuery(function($) {
                     var menuLink = $(this);
 
                     /***************************************************************
-                            
+
                     Call link processing function:
 
                     -- menuLink : clicked menu link passed to function as parameter.
@@ -135,19 +135,19 @@ jQuery(function($) {
         processLink: function(menuLink, isBackButton) {
 
             /***************************************************************
-                    
+
             Link processing function getting clicked link as parameter:
-            
+
             PHASE 1:
             -- menuList : menu list next to menuLink.
 
             PHASE 2:
-            If the clicked link is already opened, automatically slides up 
+            If the clicked link is already opened, automatically slides up
             clicked tab and its descendants, if not, slides down current link.
 
             PHASE 3:
             Match navigation level function
-                
+
             ***************************************************************/
 
             /***** PHASE 1 *****/
@@ -211,13 +211,13 @@ jQuery(function($) {
         matchNavigationLevel: function(menuLink, menuList, breadcrumbs) {
 
             /***************************************************************
-                    
+
             Navigation level matching function
 
-            Cycles through menu levels to match current one, then triggers 
-            breadcrumbs dynamics, to clear, insert current, and build 
+            Cycles through menu levels to match current one, then triggers
+            breadcrumbs dynamics, to clear, insert current, and build
             breadcrumbs section.
-                
+
             ***************************************************************/
 
             for (var levelNumber = 1; levelNumber < 5; levelNumber++) {
@@ -231,18 +231,18 @@ jQuery(function($) {
         clearBreadcrumbs: function(levelNumber, breadcrumbs) {
 
             /***************************************************************
-                    
-            Breadcrumbs clearing function getting navigation level and 
+
+            Breadcrumbs clearing function getting navigation level and
             breadcrumbs dom object as parameters.
-            
+
             PHASE 1:
             Removes all existing breadcrumbs.
 
             PHASE 2:
-            Cycles through navigation levels object from current to the highest, 
-            setting the navigation level to not-active 
+            Cycles through navigation levels object from current to the highest,
+            setting the navigation level to not-active
             and clearing level label value.
-                
+
             ***************************************************************/
 
             /***** PHASE 1 *****/
@@ -260,13 +260,13 @@ jQuery(function($) {
         insertBreadcrumbs: function(levelNumber, menuLink) {
 
             /***************************************************************
-                    
-            Breadcrumbs insertion function getting navigation level and 
+
+            Breadcrumbs insertion function getting navigation level and
             clicked menu link as parameters.
-            
+
             Matches proper navigation level inside navigation level object,
             then sets navigation level to active and label with proper text
-                
+
             ***************************************************************/
 
             var levelToFill = this.navDomLevels[levelNumber];
@@ -276,10 +276,10 @@ jQuery(function($) {
         buildBreadcrumbs: function(levelNumber, menuLink, breadcrumbs) {
 
             /***************************************************************
-                    
-            Breadcrumbs building function getting navigation level, 
+
+            Breadcrumbs building function getting navigation level,
             clicked menu link and breadcrumbs dom object as parameters.
-            
+
             PHASE 1:
             Cycles through all navDomLevels object to match active levels,
             if true inits breadcrumb types to append.
@@ -288,9 +288,9 @@ jQuery(function($) {
             finally if it's last breadcrumb adds a non linked element.
 
             PHASE 2:
-            If first navigation level manages to remove back button and 
+            If first navigation level manages to remove back button and
             gradient, for deeper levels moves the breadcrumb element to left.
-                
+
             ***************************************************************/
 
             /***** PHASE 1 *****/
@@ -334,16 +334,16 @@ jQuery(function($) {
         },
 
         /***************************************************************
-                    
-        Breadcrumbs init function for back button, gradient and position, 
-        getting navigation level, clicked menu link and breadcrumbs 
+
+        Breadcrumbs init function for back button, gradient and position,
+        getting navigation level, clicked menu link and breadcrumbs
         dom object as parameters.
-        
-        Adds gradient to breadcrumbs container, removes previous buttons 
-        and appends the right one, and binds click function to trigger 
-        link processing function from upper navigation level, 
+
+        Adds gradient to breadcrumbs container, removes previous buttons
+        and appends the right one, and binds click function to trigger
+        link processing function from upper navigation level,
         with navigation and breadcrumbs update.
-            
+
         ***************************************************************/
 
         initBreadcrumbs: function(levelNumber, menuLink, breadcrumbs) {
@@ -365,9 +365,9 @@ jQuery(function($) {
 });
 
 /***************************************************************
-                
+
 FIRE MENU INITIALIZATION
-    
+
 ***************************************************************/
 
 jQuery(document).ready(function($) {
