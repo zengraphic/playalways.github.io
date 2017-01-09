@@ -1,0 +1,111 @@
+@mixin attributes_classes {
+    @each $attribute in $attributes {
+        @each $direction in $directions {
+            @for $i from 1 through $steps {
+                .#{$attribute}_#{$direction}_#{$i * $delta*5} {
+                    #{$attribute}-#{$direction}: $delta*5 * $i +px;
+                }
+                .#{$attribute}_#{$direction}_m_#{$i * $delta*5} {
+                    @include breakpoint (display_medium_small) {
+                        #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin position_classes {
+    $pos-list: null;
+    @each $direction in $directions {
+        @for $i from 1 through $steps {
+            .#{$direction}_#{$i * $delta*2} {
+                #{$direction}: $delta*2 * $i +%;
+            }
+            $pos-list: append($pos-list, unquote(".#{$direction}_#{$i*$delta*2}"), comma);
+        }
+    }
+    #{$pos-list} {
+        position: relative;
+    }
+}
+
+@mixin text_classes {
+    @for $i from 4 through $steps*5 {
+        .font_size_#{$i * $delta*2} {
+            font-size: $delta*2 * $i +px;
+        }
+        .line_height_#{$i * $delta*2} {
+            line-height: $delta*2 * $i +2 +px;
+        }
+    }
+}
+
+@mixin text_classes_m {
+    @for $i from 4 through $steps*5 {
+        .font_size_m_#{$i * $delta*2} {
+            @include breakpoint (display_medium_small) {
+                font-size: $delta*2 * $i +px;
+            }
+        }
+        .line_height_m_#{$i * $delta*2} {
+            @include breakpoint (display_medium_small) {
+                line-height: $delta*2 * $i +2 +px;
+            }
+        }
+    }
+}
+
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+// $font_pairs:('small':2,'medium':4,'large':6);
+// @mixin font_classes($font_pair) {
+//     @if map-has-key($font_pairs, $font_pair){
+//         @debug map-get($font_pairs, $font_pair);
+//         @debug $font_pair;
+//         @for $i from 1 through $steps {
+//                 .font_size_#{$i * map-get($font_pairs, $font_pair)} {
+//                     font-size: map-get($font_pairs, $font_pair) * $i +px;
+//                     line-height: map-get($font_pairs, $font_pair) * $i * 1.2 +px;
+//                 }
+//             }
+//     }
+// }
+// @include font_classes(small);
+// @include font_classes(medium);
+// @include font_classes(large);
+// 
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
