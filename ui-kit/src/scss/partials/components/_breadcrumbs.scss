@@ -1,0 +1,29 @@
+//breadcrumbs
+.base__breadcrumbs {
+  float: left;
+  padding-left: 0;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 2rem;
+
+  /*cambio en margin top */
+  li {
+    display: inline;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &:after {
+      content: " / ";
+      color: $color_orange;
+    }
+
+    &:last-child {
+      cursor: default;
+
+      &:after {
+        content: "";
+      }
+    }
+  }
+}

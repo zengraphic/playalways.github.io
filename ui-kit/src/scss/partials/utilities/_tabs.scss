@@ -1,0 +1,139 @@
+/* */
+/* Original previous LESS format, converted to SASS */
+/* */
+
+.base {
+  .hvr-underline-reveal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $color_orange;
+      height: 2px;
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+
+    &:hover:before, &:focus:before, &:active:before {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}
+
+.base__tabs.nav-tabs {
+  background: white;
+  text-align: right;
+  border-bottom-color: transparent;
+  border-bottom-width: 0px;
+  background-color: #f7f7f7;
+
+  > li {
+    float: none;
+    display: inline-block;
+
+    > a {
+      color: $color_grey_medium_light;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      padding: 1rem 0.5rem;
+      border: 1px solid transparent;
+      border-bottom-width: 0px;
+      -o-transition: all 0.35s ease-in-out;
+      -moz-transition: all 0.35s ease-in-out;
+      -ms-transition: all 0.35s ease-in-out;
+      -webkit-transition: all 0.35s ease-in-out;
+      transition: all 0.35s ease-in-out;
+
+      &:hover {
+        color: $color_orange;
+        background-color: transparent;
+      }
+    }
+
+    &.active > a {
+      color: $color_orange;
+      background-color: white;
+      border: 1px solid transparent;
+      border-bottom-width: 0px;
+      border-bottom-color: $color_orange;
+      background-color: transparent;
+
+      &.hvr-underline-reveal:before {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.base .tab-content {
+  float: left;
+  display: block;
+  padding: 1rem 0;
+
+  > .tab-pane {
+    position: relative;
+
+    &.active {
+      -webkit-animation: tabin-webkit 0.7s 0s 1 linear;
+      animation: tabin 0.7s 0s 1 linear;
+      -moz-transform: tabin-moz 0.7s 0s 1 linear;
+    }
+  }
+}
+
+@-webkit-keyframes tabin-webkit {
+  0% {
+    opacity: 0.25;
+    -webik-transform: translate3d(0px, -5px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes tabin-moz {
+  0% {
+    opacity: 0;
+    -moz-transform: translate3d(0px, -5px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes tabin {
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}

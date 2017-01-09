@@ -1,0 +1,59 @@
+/* */
+/* Original previous LESS format, converted to SASS */
+/* */
+
+.base__checkbox.checkbox {
+  label {
+    font-size: 1rem;
+
+    &::after {
+      margin-left: -1.5rem;
+      padding-left: 4px;
+      padding-top: 0px;
+      font-size: 1rem;
+    }
+
+    &::before {
+      content: "";
+      width: 1.4rem;
+      height: 1.4rem;
+      border: 1px solid $color_grey_medium_light;
+      border-radius: 4px;
+    }
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+
+    &:disabled + label::before {
+      background-color: white;
+      cursor: not-allowed;
+    }
+
+    &:checked + label {
+      &::before {
+        background-color: $color_orange;
+        border-color: $color_grey_medium_light;
+        outline: none;
+      }
+
+      &::after {
+        color: #fff;
+      }
+    }
+
+    &:focus + label {
+      &::before {
+        outline: none;
+      }
+    }
+
+    &.styled:checked + label:after {
+      color: #fff;
+    }
+
+    &:checked:disabled + label::before {
+      background-color: $color_grey_medium_light;
+    }
+  }
+}

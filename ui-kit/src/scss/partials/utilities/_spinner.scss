@@ -1,0 +1,65 @@
+//
+
+.base .bootstrap-touchspin {
+  width: 8rem;
+
+  .base__spinner {
+    outline: none;
+    height: 34px;
+    padding: 6px 12px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:focus, &:active {
+      outline: none !important;
+    }
+  }
+
+  .input-group-btn > {}
+
+  .bootstrap-touchspin-down {
+    color: $color_orange;
+    background: white;
+    padding: 9px 11px;
+    border: 1px solid $color_grey_medium_light;
+    font-size: 0;
+
+    .bootstrap-touchspin-up {
+      color: $color_orange;
+      background: white;
+      padding: 9px 11px;
+      border: 1px solid $color_grey_medium_light;
+      font-size: 0;
+
+      &:before {
+        font-size: 10px;
+        color: $color_orange;
+        font-family: FontAwesome;
+      }
+    }
+
+    .bootstrap-touchspin-down {
+      &:before {
+        font-size: 10px;
+        color: $color_orange;
+        font-family: FontAwesome;
+      }
+
+      &.btn-arr--sx:before {
+        content: "";
+      }
+    }
+
+    .bootstrap-touchspin-up.btn-arr--dx:before {
+      content: "";
+    }
+
+    .bootstrap-touchspin-down.btn-pm--sx:before {
+      content: "";
+    }
+
+    .bootstrap-touchspin-up.btn-pm--dx:before {
+      content: "";
+    }
+  }
+}

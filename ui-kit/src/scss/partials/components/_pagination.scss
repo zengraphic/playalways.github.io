@@ -1,0 +1,33 @@
+//pagination
+.base__pag.pagination {
+  padding-left: 0;
+  margin: 1rem auto;
+
+  li > a {
+    > span {
+      font-size: 0;
+    }
+
+    &[aria-label="Previous"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      span:before {
+        font-size: 0.9rem;
+        font-family: "FontAwesome";
+        content: "";
+      }
+    }
+
+    &[aria-label="Next"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      span:before {
+        font-size: 0.9rem;
+        font-family: "FontAwesome";
+        content: "";
+      }
+    }
+  }
+}
