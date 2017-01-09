@@ -1,6 +1,6 @@
 //BLOCCO 4
 .topUp_block {
-    background-color: $color-gray-mediumBg;
+    background-color: $color-lighterGrey;
     @include transition(all 0.45s ease-in-out);
     @at-root #{&}__container {
         max-width: 1024px;
@@ -69,22 +69,12 @@
     }
 }
 
-@media all and (max-width: 400px) {
-    .topUp_block {
-        &__image {
-            width: 100%;
-        }
-        &__imageContainer {
-            height: 150px;
-            overflow: hidden;
-        }
-    }
-}
 
 @media all and (max-width: 767px) {
     .topUp_block {
         &__left {
             font-size: 10px;
+            padding-left:15px;
         }
         &__right {
             padding: 0px 15px;
@@ -96,6 +86,14 @@
         }
         &__image {
             width: 50%;
+        }
+    }
+}
+
+@media all and (max-width: 400px) {
+    .topUp_block {
+        &__image {
+            width: 100%;
         }
     }
 }
