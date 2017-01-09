@@ -1,0 +1,100 @@
+/*
+/* Original previous LESS format, converted to SASS
+/*
+
+.base__jwplayer
+  display: inline-block
+  width: 280px
+  height: auto
+
+.base
+  #vid
+    .jw-cue, .jw-knob
+      background: $color_orange
+  .jwplayer
+    font-size: 1rem
+    font-family: $font_family_regular
+    display: inline-block
+    .jw-icon-inline, .jw-icon-tooltip, .jw-text-elapsed, .jw-text-duration
+      padding: 0 .5em
+    .jw-text
+      font-size: 1.0rem
+      color: white
+    .jw-icon-tooltip:before
+      font-size: 1.4rem
+    .jw-icon-fullscreen:before
+      font-family: "FontAwesome"
+      content: "\f0b2"
+      font-size: 1.4rem
+    .jw-controls
+      .jw-controlbar
+        height: 2rem
+        .jw-icon-playback
+          padding: 0 1rem
+          margin-left: .75rem
+          margin-right: .75rem
+          height: 2rem
+          color: transparent
+          background: white
+          border-radius: 4px
+          -webkit-border-radius: 4px
+          -moz-border-radius: 4px
+          &:before
+            color: $color_orange
+      .jw-display-icon-container
+        background: transparent !important
+      div[class*="-group"]
+        vertical-align: middle
+      .jw-controlbar-center-group
+        vertical-align: middle
+        padding: 0 .5rem
+        .jw-slider-time
+          height: 2rem
+          .jw-slider-container
+            margin-top: .5rem
+            height: 2rem
+            /*background: red;
+            .jw-rail, .jw-buffer
+              border: 1px solid white
+              border-radius: 4px
+              -webkit-border-radius: 4px
+              -moz-border-radius: 4px
+              height: 1rem
+            .jw-progress
+              border: 1px solid white
+              border-radius: 4px
+              -webkit-border-radius: 4px
+              -moz-border-radius: 4px
+              height: 1rem
+              border-radius: 0px
+              -webkit-border-radius: 0px
+              -moz-border-radius: 0px
+            .jw-rail
+              background: $color_orange
+            .jw-buffer
+              border-radius: 0px
+              -webkit-border-radius: 0px
+              -moz-border-radius: 0px
+              background: $color_orange
+            .jw-knob
+              top: -0.5rem
+              border-radius: 0px
+              -webkit-border-radius: 0px
+              -moz-border-radius: 0px
+              width: 1rem
+              height: 2rem
+              border: 1px solid white
+      .jw-controlbar-right-group
+        padding-right: .75rem
+
+@media (max-width: 767px)
+  .base .jwplayer
+    width: 100% !important
+    height: auto
+
+@media (min-width: 768px)
+  .base .jwplayer
+    width: 100%
+    height: auto
+    .jw-controls .jw-controlbar
+      height: 4rem

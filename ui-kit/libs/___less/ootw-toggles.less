@@ -1,0 +1,58 @@
+@charset "UTF-8";
+.ootw {
+    &__toogle {
+        display: none;
+        & + label {
+            position: relative;
+            display: block;
+            height: 26px;
+            width: 44px;
+            border-radius: 100px;
+            cursor: pointer;
+            background: white;
+            border: 1px solid #ccc;
+            .transitions( .35s );
+        }
+        & + label:after {
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            display: block;
+            width: 26px;
+            height: 26px;
+            border-radius: 100px;
+            border: 1px solid #ccc;
+            background: #fff;
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+            content: '';
+            .transitions( .35s );;
+        }
+        & + label:active:after {
+            transform: scale(1.15, 0.85);
+        }
+        &:checked ~ label {
+            background: @color_orange;
+            border: 1px solid #ccc;
+        }
+        &:checked ~ label:after {
+            left: 20px;
+            background: white;
+            border: 1px solid #ccc;
+        }
+        &:disabled ~ label {
+            background: #d5d5d5;
+            pointer-events: none;
+        }
+
+        &:disabled ~ label:after {
+            background: #e2e5ea;
+        }
+
+        &:disabled ~ label{
+            background: #bdc3cf
+        }
+        
+
+
+    }
+}

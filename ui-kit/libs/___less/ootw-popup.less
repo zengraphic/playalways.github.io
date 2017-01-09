@@ -1,0 +1,86 @@
+
+.ootw{
+
+    .mfp-close-btn-in .mfp-close {
+            position: fixed;
+        color: white;
+        right: 0;
+        top: 0;
+    }
+    &__popup{
+
+        font-size: 1rem;
+  
+        color: white;
+        background: transparent;
+        padding: 20px;
+        width: auto;
+       
+        margin: 0  auto;
+
+        .scrollable {
+            width: auto;
+            height: auto;
+            margin: 1em 1em 1em 0;
+            overflow-y: hidden;
+        }
+
+        .scrollable p {
+            padding: 0 1em 0 0;
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* loading */
+
+        &--loading{
+
+            text-align: center;
+            height: 100%;
+
+            .ootw__loading{
+
+                span{
+                    display: block;
+                    width: 100%;
+                    font-size: 1rem;
+                    padding: 2rem 0;
+
+                }
+                .fa-spinner{
+
+                    font-size: 4rem;
+                    color: @color_orange;
+                    
+                }
+            }
+
+            /* dialog */
+
+            &--dialog{
+                max-width: 580px;
+                width: auto;
+
+                .container{
+                        @media (min-width: 940px){
+                             width: 100%;
+                        }
+                   
+                    @media (min-width: 768px){
+                     
+                            width: 100%;
+                      
+                    }
+
+                    &  &__bt{
+                        margin-left: .25rem;
+                        margin-right: .25rem;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,132 @@
+
+//_datepicker.sass
+//last update 30/06
+
+.base__datepicker
+  position: relative
+  width: 100%
+  &:after
+    position: absolute
+    right: 1rem
+    top: .5rem
+    font-family: "FontAwesome"
+    font-size: 1.4rem
+    content: "\F073"
+  .base__input
+    width: 100%
+
+.base__datepicker--input
+  width: 100%
+
+.base .datetimepicker
+  padding: .5rem 0
+  box-shadow: none
+  -moz-box-shadow: none
+  -webkit-box-shadow: none
+  font-size: 1rem
+  min-width: 320px
+  > div
+    width: 100%
+  table tr
+    td
+      border: 1px solid white
+      &.day:hover, &.hour:hover, &.minute:hover
+        background: $color_orange
+        color: white
+      span
+        background: white
+        color: $color_grey_light_light
+        border: 1px solid white
+        font-size: 1rem
+        height: 2rem
+        line-height: 2rem
+        vertical-align: middle
+        &:hover
+          background: white
+          border: 1px solid $color_orange
+          -o-transition: all 0.35s ease-in-out
+          -moz-transition: all 0.35s ease-in-out
+          -ms-transition: all 0.35s ease-in-out
+          -webkit-transition: all 0.35s ease-in-out
+          transition: all 0.35s ease-in-out
+        &.active
+          background: $color_orange
+          border-color: $color_orange
+          color: white
+          &.disabled
+            background: $color_orange
+            border-color: $color_orange
+            color: white
+            &:hover
+              background: $color_orange
+              border-color: $color_orange
+              color: white
+          &:hover
+            background: $color_orange
+            border-color: $color_orange
+            color: white
+        &.hour, &.minute
+          color: $color_grey_dark_light
+        &.hour.active, &.minute.active
+          color: white !important
+      &.day
+        color: $color_grey_dark_light
+        &.old, &.new
+          color: $color_grey_medium_light
+        &.old:hover, &.new:hover
+          color: #ffffff
+    th
+      &[class="prev"]
+        padding-left: .5rem
+        i:after
+          font-family: "FontAwesome"
+          font-size: 2rem
+          content: "\F0D9"
+          line-height: 2rem
+          color: $color_orange
+      &[class="next"]
+        padding-rigth: .5rem
+        i:after
+          font-family: "FontAwesome"
+          font-size: 2rem
+          line-height: 2rem
+          content: "\F0DA"
+          color: $color_orange
+  .table-condensed
+    width: 100%
+    >
+    tbody > tr >
+      td, th
+        padding: .25rem
+        width: 1rem
+        height: 1rem
+        border-radius: 0px
+        -webkit-border-radius: 0px
+        -moz-border-radius: 0px
+        background: white
+        border: 1px solid transparent
+      tfoot > tr >
+      td, th
+        padding: .25rem
+        width: 1rem
+        height: 1rem
+        border-radius: 0px
+        -webkit-border-radius: 0px
+        -moz-border-radius: 0px
+        background: white
+        border: 1px solid transparent
+      thead > tr >
+      td, th
+        padding: .25rem
+        width: 1rem
+        height: 1rem
+        border-radius: 0px
+        -webkit-border-radius: 0px
+        -moz-border-radius: 0px
+        background: white
+        border: 1px solid transparent
+      tfoot > tr > th.today:hover
+        background: $color_orange
+        color: white
+  .glyphicon
+    font-family: sans-serif

@@ -1,0 +1,74 @@
+/*
+/* Original previous LESS format, converted to SASS
+/*
+
+.base
+  .popover, .tooltip
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+  &__tip
+    display: inline-block
+    .fa
+      font-size: 1.75rem
+    & + .tooltip
+      display: inline-block
+      width: 350px
+      .tooltip-arrow
+        position: relative
+      .tooltip-inner
+        max-width: 200px
+        font-size: 12px
+        padding: 3px 8px
+    &--grey
+      color: $color_grey_medium !important
+    &--grey  + .tooltip > .tooltip-arrow
+      border-bottom-color: $color_grey_medium !important
+    &--grey  + .tooltip > .tooltip-inner
+      background-color: $color_grey_medium !important
+    &--grey-dark
+      color: $color_grey_light !important
+    &--grey-dark  + .tooltip > .tooltip-arrow
+      border-bottom-color: $color_grey_light !important
+    &--grey-dark  + .tooltip > .tooltip-inner
+      background-color: $color_grey_light !important
+    &--info
+      color: $color_blue_light !important
+    &--info  + .tooltip > .tooltip-arrow
+      border-bottom-color: $color_blue_light !important
+    &--info + .tooltip > .tooltip-inner
+      background-color: $color_blue_light !important
+    &--robin
+      color: $color_robin_light !important
+    &--robin + .tooltip > .tooltip-arrow
+      border-bottom-color: $color_robin_light !important
+    &--robin + .tooltip > .tooltip-inner
+      background-color: $color_robin_light !important
+    &--red
+      color: $color_red_light !important
+    &--red + .tooltip > .tooltip-arrow
+      border-bottom-color: $color_red_light !important
+    &--red + .tooltip > .tooltip-inner
+      background-color: $color_red_light !important
+    &--orange
+      color: $color_orange !important
+    &--orange + .tooltip > .tooltip-arrow
+      border-bottom-color: $color_orange !important
+    &--orange + .tooltip > .tooltip-inner
+      background-color: $color_orange !important
+  .tooltip--ccv
+    width: 120px
+    .tooltip-inner
+      max-width: 200px
+    .tooltip-arrow--ccv
+      margin-left: 3rem
+      @media (max-width: 767px)
+      margin-left: 2rem
+  .tooltip--input
+    left: 0 !important
+    width: 100%
+    .tooltip-arrow--input
+      margin-left: 10.2rem
+    .tooltip-inner
+      max-width: 420px !important
+      width: 85%
+      padding: .5rem
+      margin-left: 2.3rem

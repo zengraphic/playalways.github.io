@@ -1,0 +1,61 @@
+/*
+/* Original previous LESS format, converted to SASS
+/*
+
+.base__select.bootstrap-select
+  width: 280px
+  &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn)
+    width: 280px
+  &.disabled .dropdown-toggle
+    opacity: (0.6)
+    .bs-caret .caret
+      color: $color_orange
+  .dropdown-toggle
+    outline: none !important
+    padding: .8rem 1.429rem
+    background-color: white
+    border-color: $color_grey_medium_light
+    box-shadow: none
+    -webkit-box-shadow: none
+    .filter-option
+      font-size: 1.1rem
+    .bs-caret .caret
+      color: $color_orange
+      position: absolute
+      right: 1rem
+      top: 50%
+      margin: -0.8rem 1rem 0 0
+      border: 0
+      &:before
+        font-family: FontAwesome
+        content: "\F078"
+  &.open .dropdown-toggle .bs-caret .caret:before
+    font-family: "FontAwesome"
+    top: 0
+    left: -5px
+    padding-right: .5rem
+    content: "\F077"
+  .dropdown-toggle:focus
+    outline: none
+  &.open .dropdown-toggle
+    border: 1px solid $color_grey_medium_light
+    box-shadow: none
+    -webkit-box-shadow: none
+    background-color: white !important
+    &:hover, &:focus
+      border: 1px solid $color_grey_medium_light
+      box-shadow: none
+      -webkit-box-shadow: none
+      background-color: white !important
+  .dropdown-menu
+    padding-top: 0
+    padding-bottom: 0
+    margin: 0 0 0
+    box-shadow: none
+    li a
+      padding-top: .75rem
+      padding-bottom: .75rem
+    > li > a
+      &:hover, &:focus
+        background-color: $color_orange
+        color: white

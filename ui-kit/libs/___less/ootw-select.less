@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+.ootw {
+  
+    &__select.bootstrap-select {
+
+        width: @wide_lg;
+
+
+        &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+               width: @wide_lg;
+        }
+
+
+        &.disabled .dropdown-toggle{
+            background-color: @color_border
+        }
+
+        &.disabled .dropdown-toggle .bs-caret .caret {
+            color: #666;
+        }
+
+        & .dropdown-toggle {
+
+            outline: none!important;
+
+            padding: 1rem 20px;
+            background-color: white;
+            border-color: @color_border;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+
+        & .dropdown-toggle .filter-option {
+            font-size: 1.1rem
+        }
+
+        & .dropdown-toggle .bs-caret .caret {
+            color: @color_orange;
+            position: relative;
+            margin-top: -1.5rem;
+            border: 0;
+        }
+
+        & .dropdown-toggle .bs-caret .caret:before {
+            font-family: FontAwesome;
+            top: 0;
+            left: -5px;
+            padding-right: .5rem;
+            content: "\F078";
+        }
+
+        &.open .dropdown-toggle .bs-caret .caret:before {
+            font-family: "FontAwesome";
+            top: 0;
+            left: -5px;
+            padding-right: .5rem;
+            content: "\F077";
+        }
+
+        & .dropdown-toggle:focus{
+            outline: none;
+        }
+
+        &.open .dropdown-toggle,
+        &.open .dropdown-toggle:hover,
+        &.open .dropdown-toggle:focus{
+            border: 1px solid @color_border;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            background-color: white!important;
+        }
+        
+        //menu
+
+        & .dropdown-menu {
+            padding-top:0;
+            padding-bottom:0;
+            margin: 0 0 0;
+            box-shadow: none;
+        }
+
+        & .dropdown-menu li a {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+        }
+
+        &  .dropdown-menu > li > a:hover, 
+        &  .dropdown-menu > li > a:focus {
+            background-color: @color_orange;
+            color: white;
+        }
+
+    }
+}

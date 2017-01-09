@@ -1,0 +1,202 @@
+/* mixins/helpers
+
+.touch_scroll
+  -webkit-overflow-scrolling: touch
+
+=vertical-align
+  position: relative
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+=center-cont-block($width)
+  width: $width
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+.center
+  position: relative
+  +center-cont-block(400px)
+
+=equidistant
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flexbox
+  display: -o-flex
+  display: flex
+  justify-content: space-between
+
+
+//
+
+.base   
+  .container .row
+    .hr-divider
+      display: inline-block
+      height: 1px
+      background-color: #ccd1d9
+      width: 60%
+      margin: 2rem 20%
+    &.v-divider [class*='col-']:not(:last-child):after
+      background-color: #ccd1d9
+      width: 1px
+      content: ""
+      display: block
+      position: absolute
+      top: 20%
+      bottom: 20%
+      right: 10%
+      min-height: 1px
+    [class*='col-'] > img
+      width: 100%
+      max-width: 100%
+    &.v-divider [class*='col-'] p
+      width: 85%
+
+  img
+    border: 0
+    outline: 0
+    display: block
+    -ms-interpolation: bicubic
+  a
+    color: #f48135
+    &:link, &:visited, &:hover, &:active
+      color: #f48135
+  .btn
+    &:focus, &:active:focus, &.active:focus
+      outline-color: transparent
+      outline-style: none
+    font-family: 'TradeGothicLTStd-Light', sans-serif
+  .menu_sup
+    margin-top: .1em
+    li a
+      font-family: 'TradeGothicLTStd-Light', sans-serif
+  .menu
+    padding-top: .4em
+  .header .menu-right li a.btn_entra .logued
+    border-radius: 32px
+  textarea:focus
+    border-color: #f48135
+    outline-color: transparent
+    outline-style: none
+    outline-offset: 0
+  /*outline: thin dotted \9; /* IE6-9
+  input
+    &[type="text"]:focus, &[type="password"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="date"]:focus, &[type="month"]:focus, &[type="time"]:focus, &[type="week"]:focus, &[type="number"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="color"]:focus, &[type=file]:focus, &[type=checkbox]:focus, &[type=radio]:focus
+      border-color: #f48135
+      outline-color: transparent
+      outline-style: none
+      outline-offset: 0
+  /*outline: thin dotted \9; /* IE6-9
+  .uneditable-input:focus
+    border-color: #f48135
+    outline-color: transparent
+    outline-style: none
+    outline-offset: 0
+  /*outline: thin dotted \9; /* IE6-9
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+    background-color: rgba(244, 129, 53, 0.2)
+    background-image: none
+    color: #000000
+
+.base__scrollable
+  width: 100%
+  min-height: 50px
+  padding: 0 2rem 0 0
+  overflow-y: hidden
+
+.base__breadcrumbs
+  float: left
+  padding-left: 0
+  display: inline-block
+  list-style: none
+  margin-bottom: 0
+  margin-top: 2rem
+  /*cambio en margin top
+  li
+    display: inline
+    cursor: pointer
+    vertical-align: middle
+    &:after
+      content: " / "
+      color: #f48135
+    &:last-child
+      cursor: default
+      &:after
+        content: ""
+
+.base__bullet-list
+  list-style-type: none
+  margin-bottom: 0
+  display: inline-block
+  padding-left: 0rem
+  .fa-li
+    font-size: 1.25rem
+    padding-right: 1.25rem
+    color: #f48135
+  li
+    padding-bottom: 1rem
+
+.base__pag.pagination
+  margin: 1rem auto
+  li > a
+    > span
+      font-size: 0
+    &[aria-label="Previous"]
+      padding-left: 1.5rem
+      padding-right: 1.5rem
+      span:before
+        font-size: .9rem
+        font-family: "FontAwesome"
+        content: "\F053"
+    &[aria-label="Next"]
+      padding-left: 1.5rem
+      padding-right: 1.5rem
+      span:before
+        font-size: .9rem
+        font-family: "FontAwesome"
+        content: "\F054"
+
+.base__gallery--carousel
+  .owl-wrapper-outer .owl-wrapper .owl-item .item
+    width: 100%
+    display: inline-block
+    img
+      max-width: 100%
+  .owl-controls
+    .owl-pagination .owl-page span
+      background-color: #f48135
+      border-radius: 1rem
+      -webkit-border-radius: 1rem
+      -moz-border-radius: 1rem
+    .owl-buttons
+      display: inline-block
+      width: 100%
+      div
+        padding: 1rem
+        font-size: 1rem
+        margin: .5rem
+        line-height: 1
+        border-radius: 2rem
+        -webkit-border-radius: 2rem
+        -moz-border-radius: 2rem
+      .owl-prev
+        position: fixed
+        top: 45%
+        left: 0px
+        &:before
+          font-family: "FontAwesome"
+          content: "\f053"
+          font-size: 1rem
+          color: #f48135
+      .owl-next
+        &:before
+          font-family: "FontAwesome"
+          content: "\f054"
+          font-size: 1rem
+          color: #f48135
+        position: fixed
+        top: 45%
+        right: 0px
