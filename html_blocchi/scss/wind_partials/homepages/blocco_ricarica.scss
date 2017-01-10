@@ -6,6 +6,7 @@
         max-width: 1024px;
         margin: 0 auto;
         padding-top: 25px;
+
     }
     @at-root #{&}__title {
         margin-bottom: 15px;
@@ -46,6 +47,8 @@
     }
     @at-root #{&}__left {
         padding-left: 30px;
+        position: relative;
+        height:450px;
     }
     @at-root #{&}__right {
         padding-left: 115px;
@@ -55,8 +58,13 @@
             font-size: 1.125em;
         }
     }
+    @at-root #{&}__imageContainer {
+        position:absolute;
+        bottom: 0;
+    }
     @at-root #{&}__image {
         margin-top: 15px;
+        width:100%;
     }
 }
 
@@ -70,11 +78,13 @@
 }
 
 
+
 @media all and (max-width: 767px) {
     .topUp_block {
         &__left {
             font-size: 10px;
-            padding-left:15px;
+           height:400px;
+           padding-left:15px;
         }
         &__right {
             padding: 0px 15px;
@@ -84,16 +94,13 @@
                 margin-right: 0px;
             }
         }
-        &__image {
-            width: 50%;
-        }
     }
 }
-
 @media all and (max-width: 400px) {
     .topUp_block {
-        &__image {
-            width: 100%;
+        &__left {
+            height:350px;
+            padding-left:15px;
         }
     }
 }

@@ -1684,15 +1684,21 @@ b {
     font-size: 1.500em;
     color: #292f36; }
   .topUp_block__left {
-    padding-left: 30px; }
+    padding-left: 30px;
+    position: relative;
+    height: 450px; }
   .topUp_block__right {
     padding-left: 115px;
     padding-right: 30px;
     margin-top: 30px; }
     .topUp_block__right .topUp_block__label {
       font-size: 1.125em; }
+  .topUp_block__imageContainer {
+    position: absolute;
+    bottom: 0; }
   .topUp_block__image {
-    margin-top: 15px; }
+    margin-top: 15px;
+    width: 100%; }
 
 @media all and (max-width: 991px) {
   .topUp_block__left {
@@ -1701,19 +1707,19 @@ b {
 @media all and (max-width: 767px) {
   .topUp_block__left {
     font-size: 10px;
+    height: 400px;
     padding-left: 15px; }
   .topUp_block__right {
     padding: 0px 15px; }
     .topUp_block__right .button, .topUp_block__right .button--slim, .topUp_block__right .button--ghost, .topUp_block__right .button--ghost--transparent, .topUp_block__right .button--search {
       width: 100%;
       margin-left: 0px;
-      margin-right: 0px; }
-  .topUp_block__image {
-    width: 50%; } }
+      margin-right: 0px; } }
 
 @media all and (max-width: 400px) {
-  .topUp_block__image {
-    width: 100%; } }
+  .topUp_block__left {
+    height: 350px;
+    padding-left: 15px; } }
 
 .customer_block {
   background-color: #f4f4f4; }
