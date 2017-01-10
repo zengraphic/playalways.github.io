@@ -1,4 +1,4 @@
-!(function($, window) {
+(function($, window) {
 
     'use strict';
 
@@ -8,9 +8,7 @@
         axys: "y",
         theme:"wind-theme",
         updateOnContentResize:true,
-        documentTouchScroll:false,
-        updateOnContentResize:true
-
+        documentTouchScroll:false
     };
 
     mobileActiveAccordion = window.innerWidth <= 480 ? true : false;
@@ -89,25 +87,25 @@
             .hide();
     }
 
-    function showContractDetail(contractDetailContainer, contractDetailTab, detailToActivate) {
-        var contractDetailContent, contractDetailContentScrollable;
-
+    function showContractDetail(contractDetailContainer, detailToActivate) {
+        var contractDetailTab, contractDetailContent, contractDetailContentScrollable;
+        contractDetailTab = contractDetailContainer.find('.my_traffic__contracts_details__column_tabs ' + '.data_' + detailToActivate);
         contractDetailContent = contractDetailContainer.find('.my_traffic__contracts_details__data' + '.data_' + detailToActivate);
         contractDetailContentScrollable = contractDetailContent.find('.my_traffic__contracts_details__data__content');
 
         contractDetailContainer
             .addClass('active');
-        
-        if(contractDetailTab){
+
+        if(detailToActivate!=='all'){
             contractDetailTab
                 .addClass('active');
         }
 
-        
+
         contractDetailContent
             .show()
             .addClass('active');
-        
+
         contractDetailContentScrollable
             .mCustomScrollbar(obj_newscroll);
     }
@@ -147,19 +145,19 @@
 
             event
                 .preventDefault();
-            var clicked = $(this);
-            var currentContract = clicked.parents('.my_traffic__contracts_accordion__row');
-            var currentLink = currentContract.find('.linea_link');
-            var currentIcon = currentContract.find('.tab_expand_link');
-            var currentTarget = $(currentLink.attr('href'));
+            clicked = $(this);
+            currentContract = clicked.parents('.my_traffic__contracts_accordion__row');
+            currentLink = currentContract.find('.linea_link');
+            currentIcon = currentContract.find('.tab_expand_link');
+            currentTarget = $(currentLink.attr('href'));
             if (!clicked.hasClass('active')) {
-                var alreadyActiveContract = $('.my_traffic__contracts_accordion__row.active');
+                alreadyActiveContract = $('.my_traffic__contracts_accordion__row.active');
                 if (alreadyActiveContract.length > 0) {
-                    var alreadyActiveLink = alreadyActiveContract.find('.linea_link');
-                    var alreadyActiveIcon = alreadyActiveContract.find('.tab_expand_link');
-                    var alreadyActiveTarget = $(alreadyActiveLink.attr('href'));
+                    alreadyActiveLink = alreadyActiveContract.find('.linea_link');
+                    alreadyActiveIcon = alreadyActiveContract.find('.tab_expand_link');
+                    alreadyActiveTarget = $(alreadyActiveLink.attr('href'));
                     unSetActive(alreadyActiveContract, alreadyActiveLink, alreadyActiveIcon);
-                    
+
                     hideContractSummary(alreadyActiveTarget);
                     hideContractDetail(alreadyActiveTarget);
                 }
@@ -182,7 +180,7 @@
             event
                 .preventDefault();
 
-            clickedLink = $(this);   
+            clickedLink = $(this);
             activeParent = clickedLink.closest('.my_traffic__contracts_details__tabs');
             hideContractDetail(activeParent);
         });
@@ -200,23 +198,23 @@
             clickedLink = $(this);
             contractDetailContainer = clickedLink.closest('.my_traffic__contracts_details__tabs');
 
-            showContractDetail(contractDetailContainer, false, 'all');
+            showContractDetail(contractDetailContainer, 'all');
         });
     }
 
     function bindContractDetails() {
-        $('.my_traffic__contracts_details__tabs').on("click", ".my_traffic__contracts_details__column_tabs .my_traffic__contracts_details__single_tab", function(event) {
+        $('.my_traffic__contracts_details__tabs').on("click", ".my_traffic__contracts_details__column_tabs .my_traffic__contracts_details__single_tab,.my_traffic__contracts_details__column_content .tab_icon_expand_link", function(event) {
             var currentContractContainer,
-                currentDetailTab,
+                currentDetailClicked,
                 currentDetailTarget;
 
-            currentDetailTab = $(this);
-            currentContractContainer = currentDetailTab.parents('.my_traffic__contracts_details__tabs');
-            currentDetailTarget = currentDetailTab.data().detail;
+            currentDetailClicked = $(this);
+            currentContractContainer = currentDetailClicked.parents('.my_traffic__contracts_details__tabs');
+            currentDetailTarget = currentDetailClicked.data().detail;
 
             if (!$(this).hasClass('active')) {
                 hideContractDetail(currentContractContainer);
-                showContractDetail(currentContractContainer, currentDetailTab, currentDetailTarget);
+                showContractDetail(currentContractContainer, currentDetailTarget);
             } else {
                 hideContractDetail(currentContractContainer);
             }
@@ -256,7 +254,7 @@
 
         //$('body').niceScroll(obj_nicescroll);
 
-        
+
 
     });
 
@@ -274,4 +272,4 @@
             }
 
         });
-})(jQuery, window)
+})(jQuery, window);
