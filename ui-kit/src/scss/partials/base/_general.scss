@@ -48,50 +48,53 @@
   -webkit-overflow-scrolling: touch;
 }
 
-img {
-  border: 0;
-  outline: 0;
-  display: block;
-  image-rendering: auto;
-  -ms-interpolation: bicubic;
-}
-
-a {
-  color: $color_orange;
-
-  &:link, &:visited, &:hover, &:active {}
-
-  color: $color_orange;
-}
-
 /* base */
 
 .base {
   .title_page h3 {
-    font-size: 2.143rem;
+    color: $color_custom_black;
     font-family: $font_family_light;
-    color: #212121;
+    font-size: 2.143rem;
+  }
+
+  img {
+    display: block;
+    border: 0;
+    outline: 0;
+    image-rendering: auto;
+    -ms-interpolation: bicubic;
+  }
+
+  a {
+    color: $color_orange;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $color_orange;
+    }
   }
 
   .container .row {
     .hr-divider {
       display: inline-block;
-      height: 1px;
-      background-color: $color_grey_medium_light;
       width: 60%;
+      height: 1px;
       margin: 2rem 20%;
+      background-color: $color_grey_medium_light;
     }
 
     &.v-divider [class*='col-']:not(:last-child):after {
-      background-color: $color_grey_medium_light;
-      width: 1px;
-      content: "";
       display: block;
       position: absolute;
       top: 20%;
-      bottom: 20%;
       right: 10%;
+      bottom: 20%;
+      width: 1px;
       min-height: 1px;
+      background-color: $color_grey_medium_light;
+      content: "";
     }
 
     [class*='col-'] > img {
@@ -105,16 +108,17 @@ a {
   }
 
   .btn {
-    &:focus, &:active:focus, &.active:focus {
+    &:focus,
+    &:active:focus,
+    &.active:focus {
       outline-color: transparent;
       outline-style: none;
     }
 
-    font-family: $font_family_light;
   }
 
   .menu_sup {
-    margin-top: 0.1em;
+    margin-top: .1em;
 
     li a {
       font-family: $font_family_light;
@@ -122,7 +126,7 @@ a {
   }
 
   .menu {
-    padding-top: 0.4em;
+    padding-top: .4em;
   }
 
   .header .menu-right li a.btn_entra .logued {
