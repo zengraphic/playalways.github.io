@@ -23,11 +23,9 @@
 
   &:hover,
   &:active,
+  &:visited,
   &:focus {
     padding: .9rem 0;
-    border: 1px solid transparent;
-    outline: none;
-    color: white;
     font-size: .9rem;
     line-height: 1em;
   }
@@ -39,6 +37,7 @@
   font-size: .75rem;
 
   &:hover,
+  &:active,
   &:visited,
   &:focus {
     padding: .75rem 0;
@@ -53,6 +52,7 @@
   font-size: 1.1rem;
 
   &:hover,
+  &:active,
   &:visited,
   &:focus {
     padding: 1.1rem 0;
@@ -62,90 +62,67 @@
 }
 
 .base__bt--or {
-  color: white;
-  background-color: $color_orange;
   border: 1px solid $color_orange;
+  background-color: $color_orange;
+  color: white;
 
-  &:hover, &:active, &:visited {
-    background-color: $color_orange_light;
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     border: 1px solid $color_orange;
+    background-color: $color_orange_light;
+    color: white;
   }
 
-  &:disabled, &.waves-button:disabled {
+  &:disabled,
+  &.waves-button:disabled {
     border-color: $color_grey_medium_light;
     background: $color_grey_medium_light;
   }
 }
 
 .base__bt--or2 {
-  color: $color_orange;
-  background-color: transparent;
   border: 1px solid $color_orange;
+  background-color: $color_trasparent;
+  color: $color_orange;
 
-  &:hover, &:active, &:visited {
-    background-color: $color_orange_light;
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     border: 1px solid $color_orange;
+    background-color: $color_orange_light;
+    color: white;
   }
 
-  &:disabled, &.waves-button:disabled {
+  &:disabled,
+  &.waves-button:disabled {
     border-color: $color_grey_medium_light;
-    background: $color_grey_medium_light;
+    background: $color_trasparent;
+    color: $color_grey_medium_light;
   }
 }
 
 .base__bt--wh {
-  color: $color_orange;
-  background-color: white;
   border: 1px solid white;
-
-  &:hover, &:active, &:visited {
-    color: $color_orange;
-    background-color: white;
-    border: 1px solid $color_grey_medium_light;
-  }
-
-  &:disabled, &.waves-button:disabled {
-    border-color: $color_grey_medium_light;
-    color: $color_grey_medium_light;
-    background-color: white;
-  }
-}
-
-//bg color: white
-.base__bt--bgw {
-  color: $color_orange;
   background-color: white;
-  border: 1px solid white;
+  color: $color_orange;
 
-  &:hover, &:active, &:visited {
-    color: $color_orange;
-    background-color: white;
-    border: 1px solid white;
-  }
-
-  &:disabled, &.waves-button:disabled {
-    border-color: $color_grey_medium_light;
-    color: $color_grey_medium_light;
-    background-color: white;
-  }
-}
-
-//bg color: black
-.base__bt--bgb {
-  color: $color_trasparent;
-  background-color: $color_grey_medium_light;
-  border: 1px solid $color_grey_medium_light;
-
-  &:hover, &:active, &:visited {
-    color: $color_orange;
-    background-color: white;
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     border: 1px solid $color_grey_medium_light;
+    background-color: white;
+    color: $color_orange;
   }
 
-  &:disabled, &.waves-button:disabled {
+  &:disabled,
+  &.waves-button:disabled {
     border-color: $color_grey_medium_light;
-    color: $color_grey_medium_light;
     background-color: white;
+    color: $color_grey_medium_light;
   }
 }
 
