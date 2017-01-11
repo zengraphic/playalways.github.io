@@ -59,6 +59,11 @@ function validate(evt) {
 }
 /* end validation number */
 
+function ValidateEmail(email) {
+    var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    return expr.test(email);
+};
+
 /* validate credentials */
 
 // validate insert phone
@@ -91,56 +96,6 @@ r$(document).ready(function() {
     })
 });
 
-
-function ValidateEmail(email) {
-    var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-    return expr.test(email);
-};
-// end validate insert email
-
-
-    // function controlMail() {
-    //     var input = r$(".refill_notification input")
-    //     if (!input.val() == '') {
-    //         if (!ValidateEmail(input.val())) {
-    //             console.log("Invalid email address.");
-    //             r$('.notificationMail').addClass('error');
-    //             r$('.refill_notification .notificationMail + span').addClass('error');
-    //             r$('.refill_notification .notificationMail + span').text('Email non valida');
-    //             return false;
-    //         } else {
-    //             r$('.notificationMail').removeClass('error');
-    //             r$('.refill_notification .notificationMail + span').removeClass('error');
-    //             return true;
-    //         }
-    //     } else {
-    //         r$('.notificationMail').removeClass('error');
-    //         r$('.refill_notification .notificationMail + span').removeClass('error');
-    //         return true;
-    //     }
-
-    // }
-// r$(document).ready(function() {
-
-
-//     //on keyup, start the countdown
-//     r$('.refill_notification input').keyup(function() {
-//         r$(this).val(r$(this).val().toLowerCase());
-
-//     });
-
-//     r$('.refill_notification input').blur(function() {
-//         checkNextStep();
-
-//     });
-
-//      r$('.refill_notification input').focus(function() {
-//         r$('.notificationMail').removeClass('error');
-//             r$('.refill_notification .notificationMail + span').removeClass('error');
-
-//     });
-
-// });
 
 
 // validate insert code > 4 digit

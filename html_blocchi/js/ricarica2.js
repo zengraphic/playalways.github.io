@@ -4,7 +4,7 @@ jQuery(function($) {
     $('.open_sidebar_topUp').one('click', function() {
         var radioCC = $('.credit_card_main_radio input[type="radio"]');
         radioCC.prop('checked', true);
-        $('.top_up_button_final').prop("disabled", false);
+        checkNextStep();
     });
     // FINE OPEN SIDEBAR CONTENT
 
@@ -497,7 +497,7 @@ jQuery(function($) {
                 console.log('data antecedente');
                 $('.select_mese .select_cc:first-child').addClass('error');
                 $('.select_mese .select_cc + span').addClass('error');
-                $('.select_mese .select_cc + span').text('Il mese inserito non è corretto');
+                $('.select_mese .select_cc + span').text('Dato non corretto');
 
                 return (false);
             }
@@ -507,11 +507,7 @@ jQuery(function($) {
 
     //FINE CHECK DATE
 
-
-    
-
-
-
+    //CHECK CARD
     function checkNewCreditCard() {
         var radioCC, securityCC, value;
         radioCC = $('.newCard_main_radio input[type="radio"]');
@@ -525,37 +521,9 @@ jQuery(function($) {
             return false;
         }
     }
+    //FINE CHECK CARD
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //COMPLETE CHECK
     function checkNextStep() {
         var radioCC = $('.credit_card_main_radio input[type="radio"]'); // carta predefinita
         var subRadioCC = $('.optional_card input[type="radio"]'); // seconda carta inserita
@@ -598,36 +566,43 @@ jQuery(function($) {
         }
     }
 
-
     function controlMail() {
-        var input = $(".refill_notification input")
-        if (!ValidateEmail(input.val())) {
-            console.log("Invalid email address.");
-            $('.notificationMail').addClass('error');
-            $('.refill_notification .notificationMail + span').addClass('error');
-            $('.refill_notification .notificationMail + span').text('Email non valida');
+        var input = r$(".refill_notification input")
+        if (!input.val() == '') {
+            if (!ValidateEmail(input.val())) {
+                console.log("Invalid email address.");
+                r$('.notificationMail').addClass('error');
+                r$('.refill_notification .notificationMail + span').addClass('error');
+                r$('.refill_notification .notificationMail + span').text('Email non valida');
+                return false;
+            } else {
+                r$('.notificationMail').removeClass('error');
+                r$('.refill_notification .notificationMail + span').removeClass('error');
+                return true;
+            }
         } else {
-            $('.notificationMail').removeClass('error');
-            $('.refill_notification .notificationMail + span').removeClass('error');
+            r$('.notificationMail').removeClass('error');
+            r$('.refill_notification .notificationMail + span').removeClass('error');
+            return true;
         }
+
     }
 
-
-
-
-
-
-
-    $('.refill_notification input').keyup(function() {
-        $(this).val($(this).val().toLowerCase());
+    r$('.refill_notification input').keyup(function() {
+        r$(this).val(r$(this).val().toLowerCase());
 
     });
 
-        r$('.refill_notification input').blur(function() {
-        checkNextStep();
+    r$('.refill_notification input').blur(function() {
+        controlMail();
 
     });
 
+     r$('.refill_notification input').focus(function() {
+        r$('.notificationMail').removeClass('error');
+            r$('.refill_notification .notificationMail + span').removeClass('error');
+
+    });
 
     $("#input_cc, #security_cc").blur(function() {
         checkNextStep();
