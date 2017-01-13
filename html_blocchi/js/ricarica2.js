@@ -610,7 +610,7 @@ jQuery(function($) {
 
     $(".number_top_up_confirm").blur(function() {
 
-        checkNextStep();
+        checkNewNumber();
     });
 
     $(".number_top_up, .number_top_up_confirm").blur(function() {
