@@ -15,8 +15,6 @@
     <!--- /CSS -->
     <!--- JS -->
     <script type="text/javascript" src="../../../js/base-libs.min.js"></script>
-    <script type="text/javascript" src="../../../js/base.js"></script>
-    <script type="text/javascript" src="../../../js/script.js"></script>
     <!-- components script -->
     <script type="text/javascript" src="../../../js/custom.js"></script>
     <!--- /JS -->
@@ -24,19 +22,6 @@
 
 <body>
     <!-- HEADER -->
-    <!--<div class="header" id="header">
-        <div class="header_second shadow">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="logo logo--wind centered">
-                            <img src="../../../img/logos/wind_logo.png" class="wind">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
     <div class="header_simple">
         <img src="../../../img/logos/wind_logo.png">
     </div>
@@ -51,7 +36,7 @@
                     <img src="../../../img/icons-customer-care/operator_icon_orange.png" class="icon_assistance" />
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-12">
                         <!-- TEST TITTLE WITH CENTER ALIGN -->
                         <h2 class="bigger">Help Wind</h2>
                         <!-- END TEST TITTLE -->
@@ -59,48 +44,407 @@
                 </div>
                 <div class="row">
                     <!--  -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 base__col-fill">
+                    <div class="col-xs-12 base__col-fill">
                         <div class="row">
                             <h3 class="centered">
-                                Stai avendo difficolt&agrave; nel completare l’ordine o nell’attivare l’offerta?
+                                Stai avendo difficolt&agrave; nel completare l'ordine o nell’attivare l'offerta?
                             </h3>
                         </div>
-                        <div class="row background_wide">
+                        <!-- QUESTIONS FREEDOM POP -->
+                        <div class="row background_wide visible">
                             <select id="faq_list" class="base__select selectpicker select_cc" title="Come possiamo aiutarti?" data-size="6" style="width: 100% !important;" name="">
-                                <option value="faq_1">Nel pacco che mi ha consegnato il corriere non c’è la ricarica</option>
-                                <option value="faq_2">Faq 2</option>
-                                <option value="faq_3">Faq 3</option>
+                                <option value="faq_1">Ho bisogno di un'informazione generica</option>
+                                <option value="faq_2">Non ho ricevuto la SIM</option>
+                                <option value="faq_3">Nel pacco che mi ha consegnato il corriere non c'&egrave; la ricarica</option>
+                                <option value="faq_4">Ho ricevuto la SIM ma ancora non &egrave; stata attivata</option>
+                                <option value="faq_5">Ho ricevuto un rifiuto relativo alla portabilit&agrave; del numero</option>
+                                <option value="faq_6">L'offerta che ho acquistato non mi &egrave; stata attivata</option>
+                                <option value="faq_7">Mi &egrave; stata attivata un offerta errata</option>
+                                <option value="faq_8">Vorrei recedere o annullare il mio acquisto</option>
+                                <option value="faq_9">Ho una domanda riguardo la fattura che ho ricevuto</option>
+                                <option value="faq_10">La mia domanda non &egrave; in elenco</option>
                             </select>
                         </div>
+                        <!-- END QUESTIONS FREEDOM POP -->
+                        <!-- QUESTIONS AMAZON -->
+                        <div class="row background_wide hidden">
+                            <select id="faq_list" class="base__select selectpicker select_cc" title="Come possiamo aiutarti?" data-size="6" style="width: 100% !important;" name="">
+                                <option value="faq_1">Questions Amazon</option>
+                                <option value="faq_2">Non ho ricevuto la SIM</option>
+                                <option value="faq_3">Nel pacco che mi ha consegnato il corriere non c'&egrave; la ricarica</option>
+                                <option value="faq_4">Ho ricevuto la SIM ma ancora non &egrave; stata attivata</option>
+                                <option value="faq_5">Ho ricevuto un rifiuto relativo alla portabilit&agrave; del numero</option>
+                                <option value="faq_6">L'offerta che ho acquistato non mi &egrave; stata attivata</option>
+                                <option value="faq_7">Mi &egrave; stata attivata un offerta errata</option>
+                                <option value="faq_8">Vorrei recedere o annullare il mio acquisto</option>
+                                <option value="faq_9">Ho una domanda riguardo la fattura che ho ricevuto</option>
+                                <option value="faq_10">La mia domanda non &egrave; in elenco</option>
+                            </select>
+                        </div>
+                        <!-- END QUESTIONS AMAZON -->
+                        <!-- QUESTIONS E-COMMERCE -->
+                        <div class="row background_wide hidden">
+                            <select id="faq_list" class="base__select selectpicker select_cc" title="Come possiamo aiutarti?" data-size="6" style="width: 100% !important;" name="">
+                                <option value="faq_1">Questions E-commerce</option>
+                                <option value="faq_2">Non ho ricevuto la SIM</option>
+                                <option value="faq_3">Nel pacco che mi ha consegnato il corriere non c'&egrave; la ricarica</option>
+                                <option value="faq_4">Ho ricevuto la SIM ma ancora non &egrave; stata attivata</option>
+                                <option value="faq_5">Ho ricevuto un rifiuto relativo alla portabilit&agrave; del numero</option>
+                                <option value="faq_6">L'offerta che ho acquistato non mi &egrave; stata attivata</option>
+                                <option value="faq_7">Mi &egrave; stata attivata un offerta errata</option>
+                                <option value="faq_8">Vorrei recedere o annullare il mio acquisto</option>
+                                <option value="faq_9">Ho una domanda riguardo la fattura che ho ricevuto</option>
+                                <option value="faq_10">La mia domanda non &egrave; in elenco</option>
+                            </select>
+                        </div>
+                        <!-- END QUESTIONS E-COMMERCE -->
                         <div class="clear"></div>
                     </div>
                     <!--  -->
                 </div>
             </div>
-            <!-- ANSWER 01 -->
-            <div class="faq_answer" id="faq_01">
-                <div class="row answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <!-- ANSWERS FREEDOM POP -->
+            <div class="visible">
+                <!-- ANSWER 01 -->
+                <div class="faq_answer" id="faq_1">
+                    <div class="row answer">Limited Edition &egrave; un'offerta dedicata ad alcuni clienti che ti permette di ricevere:
+                        <br />
+                        <br />
+                        <ul class="base__bullet-list fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Una nuova SIM ricaricabile «Triple Cut» compatibile con qualsiasi telefono da utilizzare con o senza portabilit&agrave; del numero</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Un piano tariffario vantaggioso e dedicato</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>
+                                    Una ricarica dell'importo di 10 euro da utilizzare chiamando il 4242</p>
+                            </li>
+                        </ul>
+                        La nuova SIM verr&agrave; inviata direttamente al tuo domicilio e consegnata nella data da te indicata da l nostro corriere. Ti ricordiamo che la SIM pu&ograve; essere consegnata solo all'intestatario dell'ordine e che &egrave; necessario consegnare al corriere copia fronte retro del documento di identit&agrave; che ci hai comunicato. Se hai richiesto MNP possibilmente anche una fotocopia della SIM con numero seriale SIM leggibile.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
                 </div>
-                <div class="row label_button">La risposta non ti ha aiutato?</div>
-                <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
-            </div>
-            <!-- END ANSWER 01 -->
-            <!-- ANSWER 02 -->
-            <div class="faq_answer" id="faq_02">
-                <div class="row answer">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatu
+                <!-- END ANSWER 01 -->
+                <!-- ANSWER 02 -->
+                <div class="faq_answer" id="faq_2">
+                    <div class="row answer">Il nostro corriere «Ceva Logistic» effettuer&agrave; 3 tentativi di consegna a partire dalla data di consegna che ci hai segnalato, ti ricordiamo che la SIM pu&ograve; essere consegnata solo all'intestatario dell'ordine e che &egrave; necessario consegnare al corriere copia fronte/retro del documento di identit&agrave; utilizzato per l'ordine.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
                 </div>
-                <div class="row label_button">La risposta non ti ha aiutato?</div>
-                <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
-            </div>
-            <!-- END ANSWER 02 -->
-            <!-- ANSWER 03 -->
-            <div class="faq_answer" id="faq_03">
-                <div class="row answer">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
+                <!-- END ANSWER 02 -->
+                <!-- ANSWER 03 -->
+                <div class="faq_answer" id="faq_3">
+                    <div class="row answer">Ti invitiamo a contattarci selezionando il pulsante sotto e indicando, oltre ai dati richiesti nei campi, anche il numero di telefono che hai ricevuto. Provvederemo a ricontattarti.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
                 </div>
-                <div class="row label_button">La risposta non ti ha aiutato?</div>
-                <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                <!-- END ANSWER 03 -->
+                <!-- ANSWER 04 -->
+                <div class="faq_answer" id="faq_4">
+                    <div class="row answer">Sono necessarie fino a 72 ore per l’attivazione della SIM dall'avvenuta consegna per completare il processo di attivazione. Se sono trascorse più di 72 ore ti invitiamo a contattarci selezionando il pulsante sotto.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 04 -->
+                <!-- ANSWER 05 -->
+                <div class="faq_answer" id="faq_5">
+                    <div class="row answer">La SIM da te richiesta e l'offerta sono stati comunque attivati, ti chiediamo di recarti presso un qualsiasi rivenditore Wind per richiedere nuovamente la portabilit&agrave; del numero.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 05 -->
+                <!-- ANSWER 06 -->
+                <div class="faq_answer" id="faq_6">
+                    <div class="row answer">Se la tua SIM &egrave; gi&agrave; stata consegnata ed attivata ma non risulta l'attivazione dell'offerta da te sottoscritta ti invitiamo a contattare l'155.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 06 -->
+                <!-- ANSWER 07 -->
+                <div class="faq_answer" id="faq_7">
+                    <div class="row answer">Se la tua SIM &egrave; gi&agrave; stata consegnata ed attivata ma ti risulta l'attivazione di un'offerta errata ti invitiamo a contattare l'155.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 07 -->
+                <!-- ANSWER 08 -->
+                <div class="faq_answer" id="faq_8">
+                    <div class="row answer">
+                        <ul class="base__bullet-list fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se non hai ancora ricevuto la SIM basta rifiutare la consegna al corriere indicando la volont&agrave; di recedere dall'acquisto</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se la tua SIM &egrave; Attiva da più di 14 giorni ti informiamo che non &egrave; possibile accettare la sua richiesta di recesso in quanto l'art.52 del Codice del Consumo e delle Condizioni Generali di contratto che regolamenta il diritto di recesso del servizio senza alcun costo relativo ad una vendita a distanza prevede il recesso entro 14gg dall'attivazione del servizio</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se la tua SIM &egrave; attiva da meno di 14 giorni ti invitiamo a contattarci selezionando il pulsante sotto per procedere con il recesso</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 08 -->
+                <!-- ANSWER 09 -->
+                <div class="faq_answer" id="faq_9">
+                    <div class="row answer">Per tutti i clienti che hanno aderito all’offerta promozionale verr&agrave; emessa una fattura per il pagamento effettuato di 20 euro, si tratta solo della fattura del pagamento gi&agrave; effettuato, non dovrai corrispondere più nulla a Wind. Se per errore non hai ricevuto la sim ma hai comunque ricevuto la fattura ti preghiamo di non tenerne conto.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 09 -->
+                <!-- ANSWER 10 -->
+                <div class="faq_answer" id="faq_10">
+                    <div class="row label_button">Ti invitiamo a contattarci tramite il pulsante sotto.</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 10 -->
             </div>
-            <!-- END ANSWER 03 -->
+            <!-- END ANSWERS FREEDOM POP -->
+            <!-- ANSWERS AMAZON POP -->
+            <div class="hidden">
+                <!-- ANSWER 01 -->
+                <div class="faq_answer" id="faq_1">
+                    <div class="row answer">Limited Edition &egrave; un'offerta dedicata ad alcuni clienti che ti permette di ricevere:
+                        <br />
+                        <br />
+                        <ul class="base__bullet-list fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Una nuova SIM ricaricabile «Triple Cut» compatibile con qualsiasi telefono da utilizzare con o senza portabilit&agrave; del numero</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Un piano tariffario vantaggioso e dedicato</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>
+                                    Una ricarica dell'importo di 10 euro da utilizzare chiamando il 4242</p>
+                            </li>
+                        </ul>
+                        La nuova SIM verr&agrave; inviata direttamente al tuo domicilio e consegnata nella data da te indicata da l nostro corriere. Ti ricordiamo che la SIM pu&ograve; essere consegnata solo all'intestatario dell'ordine e che &egrave; necessario consegnare al corriere copia fronte retro del documento di identit&agrave; che ci hai comunicato. Se hai richiesto MNP possibilmente anche una fotocopia della SIM con numero seriale SIM leggibile.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 01 -->
+                <!-- ANSWER 02 -->
+                <div class="faq_answer" id="faq_2">
+                    <div class="row answer">Il nostro corriere «Ceva Logistic» effettuer&agrave; 3 tentativi di consegna a partire dalla data di consegna che ci hai segnalato, ti ricordiamo che la SIM pu&ograve; essere consegnata solo all'intestatario dell'ordine e che &egrave; necessario consegnare al corriere copia fronte/retro del documento di identit&agrave; utilizzato per l'ordine.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 02 -->
+                <!-- ANSWER 03 -->
+                <div class="faq_answer" id="faq_3">
+                    <div class="row answer">Ti invitiamo a contattarci selezionando il pulsante sotto e indicando, oltre ai dati richiesti nei campi, anche il numero di telefono che hai ricevuto. Provvederemo a ricontattarti.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 03 -->
+                <!-- ANSWER 04 -->
+                <div class="faq_answer" id="faq_4">
+                    <div class="row answer">Sono necessarie fino a 72 ore per l’attivazione della SIM dall'avvenuta consegna per completare il processo di attivazione. Se sono trascorse più di 72 ore ti invitiamo a contattarci selezionando il pulsante sotto.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 04 -->
+                <!-- ANSWER 05 -->
+                <div class="faq_answer" id="faq_5">
+                    <div class="row answer">La SIM da te richiesta e l'offerta sono stati comunque attivati, ti chiediamo di recarti presso un qualsiasi rivenditore Wind per richiedere nuovamente la portabilit&agrave; del numero.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 05 -->
+                <!-- ANSWER 06 -->
+                <div class="faq_answer" id="faq_6">
+                    <div class="row answer">Se la tua SIM &egrave; gi&agrave; stata consegnata ed attivata ma non risulta l'attivazione dell'offerta da te sottoscritta ti invitiamo a contattare l'155.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 06 -->
+                <!-- ANSWER 07 -->
+                <div class="faq_answer" id="faq_7">
+                    <div class="row answer">Se la tua SIM &egrave; gi&agrave; stata consegnata ed attivata ma ti risulta l'attivazione di un'offerta errata ti invitiamo a contattare l'155.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 07 -->
+                <!-- ANSWER 08 -->
+                <div class="faq_answer" id="faq_8">
+                    <div class="row answer">
+                        <ul class="base__bullet-list fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se non hai ancora ricevuto la SIM basta rifiutare la consegna al corriere indicando la volont&agrave; di recedere dall'acquisto</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se la tua SIM &egrave; Attiva da più di 14 giorni ti informiamo che non &egrave; possibile accettare la sua richiesta di recesso in quanto l'art.52 del Codice del Consumo e delle Condizioni Generali di contratto che regolamenta il diritto di recesso del servizio senza alcun costo relativo ad una vendita a distanza prevede il recesso entro 14gg dall'attivazione del servizio</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se la tua SIM &egrave; attiva da meno di 14 giorni ti invitiamo a contattarci selezionando il pulsante sotto per procedere con il recesso</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 08 -->
+                <!-- ANSWER 09 -->
+                <div class="faq_answer" id="faq_9">
+                    <div class="row answer">Per tutti i clienti che hanno aderito all’offerta promozionale verr&agrave; emessa una fattura per il pagamento effettuato di 20 euro, si tratta solo della fattura del pagamento gi&agrave; effettuato, non dovrai corrispondere più nulla a Wind. Se per errore non hai ricevuto la sim ma hai comunque ricevuto la fattura ti preghiamo di non tenerne conto.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 09 -->
+                <!-- ANSWER 10 -->
+                <div class="faq_answer" id="faq_10">
+                    <div class="row label_button">Ti invitiamo a contattarci tramite il pulsante sotto.</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 10 -->
+            </div>
+            <!-- END ANSWERS AMAZON POP -->
+            <!-- ANSWERS E-COMMERCE POP -->
+            <div class="hidden">
+                <!-- ANSWER 01 -->
+                <div class="faq_answer" id="faq_1">
+                    <div class="row answer">Limited Edition &egrave; un'offerta dedicata ad alcuni clienti che ti permette di ricevere:
+                        <br />
+                        <br />
+                        <ul class="base__bullet-list fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Una nuova SIM ricaricabile «Triple Cut» compatibile con qualsiasi telefono da utilizzare con o senza portabilit&agrave; del numero</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Un piano tariffario vantaggioso e dedicato</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>
+                                    Una ricarica dell'importo di 10 euro da utilizzare chiamando il 4242</p>
+                            </li>
+                        </ul>
+                        La nuova SIM verr&agrave; inviata direttamente al tuo domicilio e consegnata nella data da te indicata da l nostro corriere. Ti ricordiamo che la SIM pu&ograve; essere consegnata solo all'intestatario dell'ordine e che &egrave; necessario consegnare al corriere copia fronte retro del documento di identit&agrave; che ci hai comunicato. Se hai richiesto MNP possibilmente anche una fotocopia della SIM con numero seriale SIM leggibile.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 01 -->
+                <!-- ANSWER 02 -->
+                <div class="faq_answer" id="faq_2">
+                    <div class="row answer">Il nostro corriere «Ceva Logistic» effettuer&agrave; 3 tentativi di consegna a partire dalla data di consegna che ci hai segnalato, ti ricordiamo che la SIM pu&ograve; essere consegnata solo all'intestatario dell'ordine e che &egrave; necessario consegnare al corriere copia fronte/retro del documento di identit&agrave; utilizzato per l'ordine.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 02 -->
+                <!-- ANSWER 03 -->
+                <div class="faq_answer" id="faq_3">
+                    <div class="row answer">Ti invitiamo a contattarci selezionando il pulsante sotto e indicando, oltre ai dati richiesti nei campi, anche il numero di telefono che hai ricevuto. Provvederemo a ricontattarti.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 03 -->
+                <!-- ANSWER 04 -->
+                <div class="faq_answer" id="faq_4">
+                    <div class="row answer">Sono necessarie fino a 72 ore per l’attivazione della SIM dall'avvenuta consegna per completare il processo di attivazione. Se sono trascorse più di 72 ore ti invitiamo a contattarci selezionando il pulsante sotto.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 04 -->
+                <!-- ANSWER 05 -->
+                <div class="faq_answer" id="faq_5">
+                    <div class="row answer">La SIM da te richiesta e l'offerta sono stati comunque attivati, ti chiediamo di recarti presso un qualsiasi rivenditore Wind per richiedere nuovamente la portabilit&agrave; del numero.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 05 -->
+                <!-- ANSWER 06 -->
+                <div class="faq_answer" id="faq_6">
+                    <div class="row answer">Se la tua SIM &egrave; gi&agrave; stata consegnata ed attivata ma non risulta l'attivazione dell'offerta da te sottoscritta ti invitiamo a contattare l'155.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 06 -->
+                <!-- ANSWER 07 -->
+                <div class="faq_answer" id="faq_7">
+                    <div class="row answer">Se la tua SIM &egrave; gi&agrave; stata consegnata ed attivata ma ti risulta l'attivazione di un'offerta errata ti invitiamo a contattare l'155.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 07 -->
+                <!-- ANSWER 08 -->
+                <div class="faq_answer" id="faq_8">
+                    <div class="row answer">
+                        <ul class="base__bullet-list fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se non hai ancora ricevuto la SIM basta rifiutare la consegna al corriere indicando la volont&agrave; di recedere dall'acquisto</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se la tua SIM &egrave; Attiva da più di 14 giorni ti informiamo che non &egrave; possibile accettare la sua richiesta di recesso in quanto l'art.52 del Codice del Consumo e delle Condizioni Generali di contratto che regolamenta il diritto di recesso del servizio senza alcun costo relativo ad una vendita a distanza prevede il recesso entro 14gg dall'attivazione del servizio</p>
+                            </li>
+                            <li>
+                                <i class="fa-li fa fa-caret-right"></i>
+                                <p>Se la tua SIM &egrave; attiva da meno di 14 giorni ti invitiamo a contattarci selezionando il pulsante sotto per procedere con il recesso</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 08 -->
+                <!-- ANSWER 09 -->
+                <div class="faq_answer" id="faq_9">
+                    <div class="row answer">Per tutti i clienti che hanno aderito all’offerta promozionale verr&agrave; emessa una fattura per il pagamento effettuato di 20 euro, si tratta solo della fattura del pagamento gi&agrave; effettuato, non dovrai corrispondere più nulla a Wind. Se per errore non hai ricevuto la sim ma hai comunque ricevuto la fattura ti preghiamo di non tenerne conto.
+                    </div>
+                    <div class="row label_button">La risposta non ti ha aiutato?</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 09 -->
+                <!-- ANSWER 10 -->
+                <div class="faq_answer" id="faq_10">
+                    <div class="row label_button">Ti invitiamo a contattarci tramite il pulsante sotto.</div>
+                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light btn_assistance" id="">contatta l'assistenza</button>
+                </div>
+                <!-- END ANSWER 10 -->
+            </div>
+            <!-- END ANSWERS E-COMMERCE POP -->
         </div>
     </div>
     <!-- END CONTAINER STEP 01 -->
@@ -112,7 +456,7 @@
                     <img src="../../../img/icons-customer-care/operator_icon_orange.png" class="icon_assistance" />
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-12">
                         <!-- TEST TITTLE WITH CENTER ALIGN -->
                         <h2 class="bigger">Help Wind</h2>
                         <!-- END TEST TITTLE -->
@@ -120,7 +464,7 @@
                 </div>
                 <div class="row">
                     <!-- FORM -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 base__col-fill">
+                    <div class="col-xs-12">
                         <div class="row">
                             <h3 class="centered3">
                                 Compila il form in tutti i suoi campi. Tutti i campi del form sono obbligatori.<br />
@@ -128,36 +472,48 @@
                             </h3>
                         </div>
                         <div class="row">
-                            <!-- COLUMN LEFT -->
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 base__col-fill">
-                                <input type="text" class="base__input" name="" placeholder="Codice fiscale">
-                                <input type="tel" class="base__input" name="" placeholder="Numero telefono">
+                            <!-- SUMMARY -->
+                            <div class="col-xs-12 summary">
+                                <h3>Riepilogo dell'ordine</h3>
+                                <li>Codice Fiscale: LCUMLN80B12H501S</li>
+                                <li>Data di Acquisto: 12/02/2017</li>
+                                <li>Numero dell'Ordine: 12312412312312</li>
+                                <li>Codice Cliente: 1231231231</li>
+                                <li>Nome e Cognome: Luca Meloni</li>
                             </div>
-                            <!-- END COLUMN LEFT -->
-                            <!-- COLUMN RIGHT -->
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 base__col-fill">
-                                <input type="email" class="base__input" name="" placeholder="Email">
-                                <input type="text" class="base__input" name="" placeholder="Data di acquisto della SIM">
-                            </div>
-                            <!-- END COLUMN RIGHT -->
+                            <!-- END SUMMARY -->
                         </div>
                         <div class="row">
+                            <!-- TOPIC -->
+                            <div class="col-xs-12 summary">
+                                <h3>Problematica riscontrata</h3>
+                                <li>Nel pacco che mi ha consegnato il corriere non c'&egrave; la ricarica</li>
+                            </div>
+                            <!-- ENDTOPIC -->
+                        </div>
+                        <div class="row">
+                            <!-- EMAIL -->
+                            <div class="col-xs-12">
+                                <input type="email" class="base__input" name="" placeholder="luca@email.it">
+                            </div>
+                            <!-- END EMAIL -->
+                        </div>
+                        <div class="row">
+                            <!-- MOBILE -->
+                            <div class="col-xs-12">
+                                <input type="tel" class="base__input" name="" placeholder="3291231223">
+                            </div>
+                            <!-- END MOBILE -->
+                        </div>
+                        <div class="row">
+                            <!-- TEXTAREA -->
                             <div class="col-xs-12">
                                 <textarea class="base__input base__input--textarea" placeholder="Scrivi qui il tuo messaggio"></textarea>
                             </div>
+                            <!-- END TEXTAREA -->
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="panel-body">
-                                    <div class="captcha__container">
-                                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                        <form action="?" method="POST">
-                                            <div class="g-recaptcha" data-theme="light" data-type="image" data-sitekey="6LesXQgUAAAAABi0S33-pPZIo5M6FwjEIRjRIBJT"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 btn_invia">
+                            <div class="col-xs-12 btn_invia">
                                 <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light" id="btn_invia">invia messaggio</button>
                             </div>
                         </div>
@@ -172,12 +528,13 @@
     <!-- CONTAINER STEP 03 -->
     <div class="contend" id="step_03">
         <div class="container form-assistance">
+            <!-- OK -->
             <div class="top_content">
                 <div class="row">
                     <img src="../../../img/icons-customer-care/send_request_icon.png" class="icon_assistance" />
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-12">
                         <!-- TEST TITTLE WITH CENTER ALIGN -->
                         <h2 class="big">Complimenti!<br />Messaggio inviato con successo.</h2>
                         <!-- END TEST TITTLE -->
@@ -185,7 +542,7 @@
                 </div>
                 <div class="row">
                     <!--  -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 base__col-fill">
+                    <div class="col-xs-12 base__col-fill">
                         <div class="row">
                             <h3 class="centered2">
                                 Il messaggio &egrave; stato inviato.<br />Riceverai una risposta non appena possibile.
@@ -196,21 +553,48 @@
                     <!--  -->
                 </div>
             </div>
+            <!-- END OK -->
+            <!-- KO -->
+            <div class="top_content">
+                <div class="row">
+                    <img src="../../../img/icons-customer-care/nosend_request_icon.png" class="icon_assistance" />
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- TEST TITTLE WITH CENTER ALIGN -->
+                        <h2 class="big">C'&egrave; stato un problema!<br />Il messaggio non &egrave; stato inviato.</h2>
+                        <!-- END TEST TITTLE -->
+                    </div>
+                </div>
+                <div class="row">
+                    <!--  -->
+                    <div class="col-xs-12 base__col-fill">
+                        <div class="row">
+                            <h3 class="centered2">
+                                Ti invitiamo a riprovare.
+                            </h3>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <!-- END KO -->
             <div class="btn_chiudi">
                 <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light" id="btn_chiudi">chiudi</button>
             </div>
         </div>
     </div>
     <!-- END CONTAINER STEP 03 -->
-    
-    <!-- foter -->
+    <!-- FOOTER -->
     <div class="footer light assistance" id="footer">
         <div class="container">
             <div class="copyright">
-                &copy;WIND TELECOMUNICAZIONI S.p.A. <br class="br_mobile" /><span class="mobile">-</span> Partita IVA: 05410741002
+                &copy;Wind Tre S.p.A. con Socio Unico
+                <br class="br_mobile" /><span class="mobile">-</span> Partita IVA: 13378520152
             </div>
         </div>
-        <!-- fin foter -->
+        <!-- END FOOTER -->
         <div class="clear"></div>
 </body>
 <script>
@@ -218,7 +602,7 @@ jQuery(document).ready(function($) {
     $("#faq_list").change(function() {
 
         var selectedFaq = $("#faq_list").prop("selectedIndex");
-        var choseFaq = "#faq_0" + selectedFaq;
+        var choseFaq = "#faq_" + selectedFaq;
         $(".faq_answer").each(function(i) {
             $(this).hide();
         });
