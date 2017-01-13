@@ -4,16 +4,47 @@
 
 */
 
-function set_bt_process(bt) {
-    bt.innerHTML = '<i class="btn_icon"><img class="spin-animate" src="img/spinner_white.svg"></i>';
-}
+jQuery(function($){
 
-function on_bt_feedback(bt, flag, secs) {
-    bt.innerHTML = (flag === 0) ? "<span class='fa fa-check rotatey-animate'></span>" : "<span class='fa fa-close fadein-animate'></span>";
+   function set_bt_process(element) {
+     var spinner_string = '<i class="btn_icon"><img class="spin-animate" src="img/spinner_white.svg"></i>';
+      element.html(spinner_string);
+  }
+
+  function on_bt_feedback(element, flag, secs) {
+    var confirm_string = '<i class="btn_icon"><img class="rotatey-animate" src="img/confirm_white.svg"></i>';
+    var cancel_string = '<i class="btn_icon"><img class="fadein-animate" src="img/cancel_white.svg"></i>';
+    if(flag === 0) {
+      element.html(confirm_string);
+    } else {
+      element.html(cancel_string);
+    }
     setTimeout(function() {
-        bt.innerHTML = "<span class='fadein-animate'>" + bt.getAttribute("data-label") + "</span>";
+      var result_string = "<span class='fadein-animate'>" + element.data().label + "</span>";
+      element.html(result_string);
+      element.removeClass('base__bt--icon');
     }, secs * 1000);
-}
+  }
+
+  function simulazione_click(element){
+    element.addClass('base__bt--icon');
+    set_bt_process(element);
+    setTimeout(function() {
+        on_bt_feedback(element, 0, 1.5);
+    }, 3000);
+  }
+
+  $('.base__bt--process').click(function(event){
+    event.preventDefault();
+    var element = $(this);
+    simulazione_click(element);
+  });
+
+});
+
+
+
+
 
 // prefixer helper function
 var pfx = ["webkit", "moz", "MS", "o", ""];
