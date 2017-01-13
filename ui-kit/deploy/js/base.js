@@ -5,7 +5,7 @@
 */
 
 function set_bt_process(bt) {
-    bt.innerHTML = "<span class='fa fa-spinner spin-animate'></span>";
+    bt.innerHTML = '<i class="btn_icon"><img class="spin-animate" src="img/spinner_white.svg"></i>';
 }
 
 function on_bt_feedback(bt, flag, secs) {
