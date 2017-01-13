@@ -225,19 +225,56 @@ select:-webkit-autofill {
 }
 
 .base__bullet-list {
-    list-style-type: none;
-    margin-bottom: 0;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 2rem;
+  padding-left: 0;
+  list-style-type: none;
+
+  .li_icon {
     display: inline-block;
-    padding-left: 0rem;
-    .fa-li {
-        font-size: 1.2rem;
-        padding-right: 1.2rem;
-        color: $color_orange;
+    position: absolute;
+    top: .375rem;
+    left: -2rem;
+    width: 2rem;
+    height: .625rem;
+    padding-right: 1.2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 1.2rem;
+    text-align: center;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+  }
+
+  li {
+    position: relative;
+    padding-bottom: 1rem;
+
+
+    > .li_icon {
+      background-image: url('../img/caret_right.svg');
     }
-    li {
-        padding-bottom: 1rem;
+
+    .base__bullet-list {
+      li {
+        > .li_icon {
+          background-image: url('../img/caret_right_white.svg');
+        }
+
+        .base__bullet-list {
+          li {
+            > .li_icon {
+              background-image: url('../img/caret_right.svg');
+            }
+          }
+        }
+      }
     }
+  }
 }
+
 
 
 
