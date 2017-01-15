@@ -15,484 +15,481 @@
     <script src="js/base-libs.min.js"></script>
     <script src="js/base.js"></script>
 </head>
-<style media="screen">
-.btn_example {
-    border: 1px solid lightgrey;
-    padding: .3rem;
-    border-radius: 4px;
-    margin-bottom: .5rem;
-}
-</style>
 <body class="base base__scrollable">
     <div class="container">
       <div class="title_page">
           <h3>Buttons</h3>
           <hr>
       </div>
-      <div class="panel-group" id="buttons-kit">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#small-buttons">Small Buttons</a>
-            </h4>
-          </div>
-          <div id="small-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--sm base__bt--or">small button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--sm base__bt--or2">small button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--sm base__bt--wh">small button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--sm base__bt--or" disabled>small button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--sm base__bt--or2" disabled>small button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--sm base__bt--wh" disabled>small button</button>
-                  <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="panel-group base__accordion" id="buttons-kit">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#buttons-kit" href="#small-buttons">Small Buttons<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="small-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--sm base__bt--or">small button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--sm base__bt--or2">small button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--sm base__bt--wh">small button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--sm base__bt--or" disabled>small button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--sm base__bt--or2" disabled>small button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--sm base__bt--wh" disabled>small button</button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#normal-buttons">Normal Buttons</a>
-            </h4>
-          </div>
-          <div id="normal-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--md base__bt--or">normal button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--md base__bt--or2">normal button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--md base__bt--wh">normal button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--md base__bt--or" disabled>normal button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--md base__bt--or2" disabled>normal button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--md base__bt--wh" disabled>normal button</button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#normal-buttons">Normal Buttons<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="normal-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--md base__bt--or">normal button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--md base__bt--or2">normal button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--md base__bt--wh">normal button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--md base__bt--or" disabled>normal button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--md base__bt--or2" disabled>normal button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--md base__bt--wh" disabled>normal button</button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#large-buttons">Large Buttons</a>
-            </h4>
-          </div>
-          <div id="large-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--lg base__bt--or">large button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--lg base__bt--or2">large button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--lg base__bt--wh">large button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--lg base__bt--or" disabled>large button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--lg base__bt--or2" disabled>large button</button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--lg base__bt--wh" disabled>large button</button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#large-buttons">Large Buttons<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="large-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--lg base__bt--or">large button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--lg base__bt--or2">large button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--lg base__bt--wh">large button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--lg base__bt--or" disabled>large button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--lg base__bt--or2" disabled>large button</button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--lg base__bt--wh" disabled>large button</button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#spin-buttons">Spin Buttons</a>
-            </h4>
-          </div>
-          <div id="spin-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
-                    <i class="btn_icon">
-                      <img class="spin-animate" src="img/spinner_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
-                    <i class="btn_icon">
-                      <img class="spin-animate" src="img/spinner.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
-                    <i class="btn_icon">
-                      <img class="spin-animate" src="img/spinner.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="spin-animate" src="img/spinner_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="spin-animate" src="img/spinner.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="spin-animate" src="img/spinner.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="spin-animate" src="img/spinner_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="spin-animate" src="img/spinner.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="spin-animate" src="img/spinner.svg">
-                    </i>
-                  </button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#spin-buttons">Spin Buttons<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="spin-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
+                        <i class="btn_icon">
+                          <img class="spin-animate" src="img/spinner_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
+                        <i class="btn_icon">
+                          <img class="spin-animate" src="img/spinner.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
+                        <i class="btn_icon">
+                          <img class="spin-animate" src="img/spinner.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="spin-animate" src="img/spinner_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="spin-animate" src="img/spinner.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="spin-animate" src="img/spinner.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="spin-animate" src="img/spinner_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="spin-animate" src="img/spinner.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="spin-animate" src="img/spinner.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#confirm-buttons">Confirm Buttons</a>
-            </h4>
-          </div>
-          <div id="confirm-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/confirm.svg">
-                    </i>
-                  </button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#confirm-buttons">Confirm Buttons<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="confirm-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/confirm.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#cancel-buttons">Cancel Buttons</a>
-            </h4>
-          </div>
-          <div id="cancel-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="fadein-animate" src="img/cancel.svg">
-                    </i>
-                  </button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#cancel-buttons">Cancel Buttons<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="cancel-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="fadein-animate" src="img/cancel.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#search-buttons">Search Buttons</a>
-            </h4>
-          </div>
-          <div id="search-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search_white.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search.svg">
-                    </i>
-                  </button>
-                  <hr>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
-                    <i class="btn_icon ">
-                      <img class="rotatey-animate" src="img/icon_search.svg">
-                    </i>
-                  </button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#search-buttons">Search Buttons<i class="icon_expand pull-right"></i></a>
+
+                </span>
+              </div>
+              <div id="search-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--sm base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--md base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search_white.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--or2">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button class="btn base__bt base__bt--icon base__bt--lg base__bt--wh">
+                        <i class="btn_icon ">
+                          <img class="rotatey-animate" src="img/icon_search.svg">
+                        </i>
+                      </button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#buttons-kit" href="#process-buttons">Process Button with spinner and result</a>
-            </h4>
-          </div>
-          <div id="process-buttons" class="panel-collapse collapse">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                  <button data-label="start process" class="btn base__bt base__bt--process base__bt--lg base__bt--or">start process</button>
-                  <hr>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="panel-title">
+                  <a data-toggle="collapse" data-parent="#buttons-kit" href="#process-buttons">Process Button with spinner and result<i class="icon_expand pull-right"></i></a>
+                </span>
+              </div>
+              <div id="process-buttons" class="panel-collapse collapse">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                      <button data-label="start process" class="btn base__bt base__bt--process base__bt--lg base__bt--or">start process</button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
