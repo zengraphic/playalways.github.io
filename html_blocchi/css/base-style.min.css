@@ -2829,6 +2829,7 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: left;
     letter-spacing: -0.5px; }
   .base__popup .back i.fa-angle-left {
+    display: none;
     margin: 0 2.071rem 0 0; }
   .base__popup .back i.fa-arrow-left {
     float: left;
@@ -3434,7 +3435,8 @@ h4.trade_l {
     margin-right: 30px;
     margin-left: auto;
     margin-bottom: 0;
-    padding: 0; }
+    padding: 0;
+    opacity: 0; }
     .header .menu_sup li {
       list-style: none;
       float: left;
@@ -8421,13 +8423,6 @@ p.text_c {
 .content {
   min-height: 640px; }
 
-.title_dovesiamo {
-  border-bottom: 1px solid;
-  padding: 0 0 2rem; }
-  @media (max-width: 767px) {
-    .title_dovesiamo {
-      display: none; } }
-
 .cont__fatti {
   float: left;
   width: 100%;
@@ -8443,26 +8438,26 @@ p.text_c {
     width: 100%;
     font-family: "Trade Gothic", sans-serif;
     font-size: 1.1rem;
-    color: #444444;
-    margin: 0.7rem 0 2rem; }
+    margin: .7rem 0 2rem;
+    color: #444; }
+  .cont__fatti form > h3 {
+    display: none; }
+  .cont__fatti .powermail_fieldwrap_half {
+    display: inline-block;
+    width: 49.5%; }
+    .cont__fatti .powermail_fieldwrap_half:nth-of-type(odd) {
+      float: right; }
+    .cont__fatti .powermail_fieldwrap_half:nth-of-type(even) {
+      float: left; }
+  .cont__fatti .powermail_label {
+    display: none; }
   .cont__fatti .base__input {
     margin-bottom: 1.5rem; }
     @media (max-width: 767px) {
       .cont__fatti .base__input {
+        width: 100%;
         margin-bottom: 1.6rem;
         padding: 1rem; } }
-    .cont__fatti .base__input.left {
-      float: left;
-      width: 49%; }
-      @media (max-width: 767px) {
-        .cont__fatti .base__input.left {
-          width: 100%; } }
-    .cont__fatti .base__input.right {
-      float: right;
-      width: 49%; }
-      @media (max-width: 767px) {
-        .cont__fatti .base__input.right {
-          width: 100%; } }
     .cont__fatti .base__input::-webkit-input-placeholder {
       color: #333; }
     .cont__fatti .base__input:-moz-placeholder, .cont__fatti .base__input::-moz-placeholder {
@@ -8471,16 +8466,16 @@ p.text_c {
   .cont__fatti .checkbox {
     float: right;
     width: 49%;
-    margin-top: 0.4rem; }
+    margin-top: .4rem; }
     @media (max-width: 767px) {
       .cont__fatti .checkbox {
         width: 100%; } }
   .cont__fatti .base__input--textarea {
     float: left;
     width: 100%;
-    resize: none;
+    height: 103px;
     margin: 2.4rem 0 0;
-    height: 103px; }
+    resize: none; }
     @media (max-width: 767px) {
       .cont__fatti .base__input--textarea {
         height: 148px; } }
@@ -8489,15 +8484,14 @@ p.text_c {
     width: auto;
     font-family: "Trade Gothic", sans-serif;
     font-size: 1.1rem;
-    color: #444444;
-    margin: 0.9rem 0 0.3rem;
-    letter-spacing: -0.4px;
+    margin: .9rem 0 .3rem;
+    color: #444;
+    letter-spacing: -.4px;
     line-height: normal; }
     .cont__fatti h5 a.btn {
-      float: none;
-      padding: 0;
       margin: 0;
-      font-size: 1.1rem;
+      padding: 0;
+      float: none;
       line-height: normal;
       vertical-align: baseline; }
       @media (max-width: 767px) {
@@ -8505,9 +8499,9 @@ p.text_c {
           margin: 0;
           font-size: 1rem; } }
   .cont__fatti a.btn {
-    float: right;
-    margin: 0.9rem 0 0;
+    margin: .9rem 0 0;
     padding: 0;
+    float: right;
     font-size: 1.2rem; }
     @media (max-width: 991px) {
       .cont__fatti a.btn {
@@ -8516,16 +8510,16 @@ p.text_c {
   .cont__fatti button.base__bt {
     float: right;
     width: 278px;
-    background-color: #f48135;
-    color: #FFFFFF;
     margin-top: 68px;
-    font-size: 1.2rem;
     padding: 1.1rem 0;
+    background-color: #f48135;
+    color: #FFF;
+    font-size: 1.2rem;
     line-height: normal; }
     @media (max-width: 767px) {
       .cont__fatti button.base__bt {
-        margin: 2.8rem 0 2.2rem 0;
         width: 100%;
+        margin: 2.8rem 0 2.2rem;
         padding: 1.2rem 0;
         font-size: 1.2rem; } }
 
