@@ -3498,6 +3498,7 @@ h4.trade_l {
   .header .logo img.wind {
     float: left; }
   .header a.btn_sa {
+    display: none;
     float: left;
     margin: 0;
     padding: 1.5rem 0 0 1rem; }
@@ -8442,15 +8443,45 @@ p.text_c {
     color: #444; }
   .cont__fatti form > h3 {
     display: none; }
-  .cont__fatti .powermail_fieldwrap_half {
+  .cont__fatti form .powermail_legend {
+    display: none; }
+  .cont__fatti form .powermail_label {
+    display: none; }
+  .cont__fatti form .powermail_fieldwrap_half {
     display: inline-block;
     width: 49.5%; }
-    .cont__fatti .powermail_fieldwrap_half:nth-of-type(odd) {
+    @media (max-width: 767px) {
+      .cont__fatti form .powermail_fieldwrap_half {
+        width: 100%; } }
+    .cont__fatti form .powermail_fieldwrap_half:nth-of-type(odd) {
       float: right; }
-    .cont__fatti .powermail_fieldwrap_half:nth-of-type(even) {
+    .cont__fatti form .powermail_fieldwrap_half:nth-of-type(even) {
       float: left; }
-  .cont__fatti .powermail_label {
-    display: none; }
+  .cont__fatti form .powermail_fieldwrap.powermail_fieldwrap_type_check {
+    float: right; }
+  .cont__fatti form .powermail_fieldwrap.powermail_fieldwrap_type_text {
+    margin: .7rem 0 2rem;
+    color: #292F36;
+    font-family: "Trade Gothic", sans-serif;
+    font-size: 1.1rem; }
+  .cont__fatti form .powermail_fieldwrap.powermail_fieldwrap_type_html {
+    width: auto; }
+  .cont__fatti form .powermail_fieldwrap.powermail_fieldwrap_type_reset {
+    width: auto; }
+    .cont__fatti form .powermail_fieldwrap.powermail_fieldwrap_type_reset .powermail_reset {
+      margin: .9rem 0 0;
+      padding: 0;
+      background-color: transparent;
+      color: #f48135;
+      font-size: 1.2rem;
+      text-transform: uppercase; }
+  .cont__fatti form .powermail_fieldwrap.powermail_fieldwrap_type_submit {
+    width: 100%;
+    margin: .9rem 0 0;
+    padding: 0;
+    float: right;
+    clear: both;
+    font-size: 1.2rem; }
   .cont__fatti .base__input {
     margin-bottom: 1.5rem; }
     @media (max-width: 767px) {
@@ -8464,8 +8495,6 @@ p.text_c {
       color: #333;
       opacity: 1; }
   .cont__fatti .checkbox {
-    float: right;
-    width: 49%;
     margin-top: .4rem; }
     @media (max-width: 767px) {
       .cont__fatti .checkbox {
@@ -8498,15 +8527,6 @@ p.text_c {
         .cont__fatti h5 a.btn {
           margin: 0;
           font-size: 1rem; } }
-  .cont__fatti a.btn {
-    margin: .9rem 0 0;
-    padding: 0;
-    float: right;
-    font-size: 1.2rem; }
-    @media (max-width: 991px) {
-      .cont__fatti a.btn {
-        float: left;
-        clear: both; } }
   .cont__fatti button.base__bt {
     float: right;
     width: 278px;

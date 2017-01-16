@@ -1006,7 +1006,7 @@ b {
         right: 80px; }
   .contact_info_block__container {
     position: fixed;
-    top: 15vh;
+    top: 20vh;
     right: -450px;
     z-index: 950;
     width: 500px; }
@@ -2520,8 +2520,7 @@ b {
       width: 33.3%;
       margin-right: 30px;
       position: relative;
-      z-index: 10;
-      padding-bottom: 29px; }
+      z-index: 10; }
       .standard_blockInfo__half_block__right .base__input {
         width: 100%;
         margin-bottom: 10px;
@@ -2560,7 +2559,7 @@ b {
     font-family: "Trade Gothic Light";
     color: #0069b3; }
   .standard_blockInfo__whiteTitle {
-    margin: 1.275rem 0;
+    margin: 1rem 0;
     text-align: center;
     font-size: 1.875em;
     line-height: 1em;
@@ -3742,7 +3741,9 @@ b {
       font-family: "Trade Gothic";
       color: #f48135; }
 
-.tx-powermail .powermail_submit {
+.business_block_viewer .tx-powermail .powermail_submit,
+.contact_info_block .tx-powermail .powermail_submit,
+.suggestion_block .tx-powermail .powermail_submit {
   max-width: 100%;
   width: 100%;
   font-family: "Trade Gothic";
@@ -3759,11 +3760,19 @@ b {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box; }
-  .tx-powermail .powermail_submit:hover, .tx-powermail .powermail_submit:active, .tx-powermail .powermail_submit:focus {
+  .business_block_viewer .tx-powermail .powermail_submit:hover, .business_block_viewer .tx-powermail .powermail_submit:active, .business_block_viewer .tx-powermail .powermail_submit:focus,
+  .contact_info_block .tx-powermail .powermail_submit:hover,
+  .contact_info_block .tx-powermail .powermail_submit:active,
+  .contact_info_block .tx-powermail .powermail_submit:focus,
+  .suggestion_block .tx-powermail .powermail_submit:hover,
+  .suggestion_block .tx-powermail .powermail_submit:active,
+  .suggestion_block .tx-powermail .powermail_submit:focus {
     background-color: #f78f4c;
     color: #ffffff; }
 
-.tx-powermail .powermail_reset {
+.business_block_viewer .tx-powermail .powermail_reset,
+.contact_info_block .tx-powermail .powermail_reset,
+.suggestion_block .tx-powermail .powermail_reset {
   max-width: 100%;
   width: 100%;
   font-family: "Trade Gothic";
@@ -3780,12 +3789,16 @@ b {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   background-clip: padding-box; }
-  .tx-powermail .powermail_reset:hover {
+  .business_block_viewer .tx-powermail .powermail_reset:hover,
+  .contact_info_block .tx-powermail .powermail_reset:hover,
+  .suggestion_block .tx-powermail .powermail_reset:hover {
     color: #f48135;
     opacity: 0.8;
     background-color: #ffffff; }
 
-.tx-powermail .powermail_textarea {
+.business_block_viewer .tx-powermail .powermail_textarea,
+.contact_info_block .tx-powermail .powermail_textarea,
+.suggestion_block .tx-powermail .powermail_textarea {
   display: inline;
   width: 100%;
   /* max-width: 320px; */
@@ -3805,14 +3818,22 @@ b {
   border: 1px solid #ccd1d9;
   background-color: white;
   color: #4a4a4a; }
-  .tx-powermail .powermail_textarea:focus {
+  .business_block_viewer .tx-powermail .powermail_textarea:focus,
+  .contact_info_block .tx-powermail .powermail_textarea:focus,
+  .suggestion_block .tx-powermail .powermail_textarea:focus {
     border: 1px solid #f48135;
     box-shadow: none;
     -webkit-box-shadow: none; }
-  .tx-powermail .powermail_textarea:hover, .tx-powermail .powermail_textarea:active {
+  .business_block_viewer .tx-powermail .powermail_textarea:hover, .business_block_viewer .tx-powermail .powermail_textarea:active,
+  .contact_info_block .tx-powermail .powermail_textarea:hover,
+  .contact_info_block .tx-powermail .powermail_textarea:active,
+  .suggestion_block .tx-powermail .powermail_textarea:hover,
+  .suggestion_block .tx-powermail .powermail_textarea:active {
     border: 1px solid #f48135; }
 
-.tx-powermail .powermail_input {
+.business_block_viewer .tx-powermail .powermail_input,
+.contact_info_block .tx-powermail .powermail_input,
+.suggestion_block .tx-powermail .powermail_input {
   display: inline;
   width: 100%;
   /* max-width: 320px; */
@@ -3832,21 +3853,33 @@ b {
   border: 1px solid #ccd1d9;
   background-color: white;
   color: #4a4a4a; }
-  .tx-powermail .powermail_input:focus {
+  .business_block_viewer .tx-powermail .powermail_input:focus,
+  .contact_info_block .tx-powermail .powermail_input:focus,
+  .suggestion_block .tx-powermail .powermail_input:focus {
     border: 1px solid #f48135;
     box-shadow: none;
     -webkit-box-shadow: none; }
-  .tx-powermail .powermail_input:hover, .tx-powermail .powermail_input:active {
+  .business_block_viewer .tx-powermail .powermail_input:hover, .business_block_viewer .tx-powermail .powermail_input:active,
+  .contact_info_block .tx-powermail .powermail_input:hover,
+  .contact_info_block .tx-powermail .powermail_input:active,
+  .suggestion_block .tx-powermail .powermail_input:hover,
+  .suggestion_block .tx-powermail .powermail_input:active {
     border: 1px solid #f48135; }
 
-.tx-powermail .powermail_legend {
+.business_block_viewer .tx-powermail .powermail_legend,
+.contact_info_block .tx-powermail .powermail_legend,
+.suggestion_block .tx-powermail .powermail_legend {
   display: none; }
 
-.tx-powermail .powermail_fieldwrap {
+.business_block_viewer .tx-powermail .powermail_fieldwrap,
+.contact_info_block .tx-powermail .powermail_fieldwrap,
+.suggestion_block .tx-powermail .powermail_fieldwrap {
   text-align: left;
   margin-bottom: 15px; }
   @media (max-width: 768px) {
-    .tx-powermail .powermail_fieldwrap {
+    .business_block_viewer .tx-powermail .powermail_fieldwrap,
+    .contact_info_block .tx-powermail .powermail_fieldwrap,
+    .suggestion_block .tx-powermail .powermail_fieldwrap {
       margin-bottom: 10px; } }
 
 ::-webkit-input-placeholder {
