@@ -165,8 +165,8 @@ jQuery(document).ready(function($) {
                 }
             });
 
-        //$('.contactShow').removeClass('visibleShow');     
-        //$('.contactShow').addClass('visibleHidden');  
+        //$('.contactShow').removeClass('visibleShow');
+        //$('.contactShow').addClass('visibleHidden');
         $('.contact_info_block__overlay').fadeIn();
         blockRight.addClass('visibleShow');
         blockToMove.animate({
@@ -206,7 +206,7 @@ jQuery(document).ready(function($) {
         if (!blockToMove.hasClass('contact_open')) {
             blockToMove.animate({
                 "top": '122px',
-                "height": "90vh"
+                "height": "calc(100vh - 122px)"
             }, 300, function() {
                 openBlock(blockToMove, blockRight, blockLeft, blockButton);
             });

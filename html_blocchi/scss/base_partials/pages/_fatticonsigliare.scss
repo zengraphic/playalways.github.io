@@ -4,15 +4,6 @@
   min-height: 640px;
 }
 
-.title_dovesiamo {
-  border-bottom: 1px solid;
-  padding: 0 0 2rem;
-
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
-
 .cont__fatti {
   @include boxWF(left, 100%);
 
@@ -28,35 +19,41 @@
 
   h4 {
     @include boxWF(left, 100%);
-
     @include defaultTxt($font_family_regular, 1.1rem);
+    margin: .7rem 0 2rem;
+    color: #444;
+  }
 
-    color: #444444;
-    margin: 0.7rem 0 2rem;
+  form {
+    > h3 {
+      display: none;
+    }
+  }
+
+  .powermail_fieldwrap_half {
+    display: inline-block;
+    width: 49.5%;
+
+    &:nth-of-type(odd) {
+      float: right;
+    }
+
+    &:nth-of-type(even) {
+      float: left;
+    }
+  }
+
+  .powermail_label {
+    display: none;
   }
 
   .base__input {
     margin-bottom: 1.5rem;
 
     @media (max-width: 767px) {
+      width: 100%;
       margin-bottom: 1.6rem;
       padding: 1rem;
-    }
-
-    &.left {
-      @include boxWF(left, 49%);
-
-      @media (max-width: 767px) {
-        width: 100%;
-      }
-    }
-
-    &.right {
-      @include boxWF(right, 49%);
-
-      @media (max-width: 767px) {
-        width: 100%;
-      }
     }
 
     &::-webkit-input-placeholder {
@@ -72,7 +69,7 @@
   .checkbox {
     @include boxWF(right, 49%);
 
-    margin-top: 0.4rem;
+    margin-top: .4rem;
 
     @media (max-width: 767px) {
       width: 100%;
@@ -81,10 +78,9 @@
 
   .base__input--textarea {
     @include boxWF(left, 100%);
-
-    resize: none;
-    margin: 2.4rem 0 0;
     height: 103px;
+    margin: 2.4rem 0 0;
+    resize: none;
 
     @media (max-width: 767px) {
       height: 148px;
@@ -93,19 +89,16 @@
 
   h5 {
     @include boxWF(left, auto);
-
     @include defaultTxt($font_family_regular, 1.1rem);
-
-    color: #444444;
-    margin: 0.9rem 0 0.3rem;
-    letter-spacing: -0.4px;
+    margin: .9rem 0 .3rem;
+    color: #444;
+    letter-spacing: -.4px;
     line-height: normal;
 
     a.btn {
-      float: none;
-      padding: 0;
       margin: 0;
-      font-size: 1.1rem;
+      padding: 0;
+      float: none;
       line-height: normal;
       vertical-align: baseline;
 
@@ -117,9 +110,9 @@
   }
 
   a.btn {
-    float: right;
-    margin: 0.9rem 0 0;
+    margin: .9rem 0 0;
     padding: 0;
+    float: right;
     font-size: 1.2rem;
 
     @media (max-width: 991px) {
@@ -131,16 +124,16 @@
   button.base__bt {
     @include boxWF(right, 278px);
 
-    background-color: $color_orange;
-    color: #FFFFFF;
     margin-top: 68px;
-    font-size: 1.2rem;
     padding: 1.1rem 0;
+    background-color: $color_orange;
+    color: #FFF;
+    font-size: 1.2rem;
     line-height: normal;
 
     @media (max-width: 767px) {
-      margin: 2.8rem 0 2.2rem 0;
       width: 100%;
+      margin: 2.8rem 0 2.2rem;
       padding: 1.2rem 0;
       font-size: 1.2rem;
     }
