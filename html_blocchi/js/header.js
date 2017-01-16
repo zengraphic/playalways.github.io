@@ -66,7 +66,7 @@ jQuery(document).ready(function($) {
         HEADER.checkHeader();
         $('.slider_topMenu')
           .animate({
-            opacity: 1
+            'opacity': 1
           },500);
     };
 

@@ -48,6 +48,9 @@
 
         <div class="content" id="content">
             <div id="c160">
+              <div class="title__default">
+                  <h3>Fatti consigliare</h3>
+              </div>
                 <div class="tx-powermail cont__fatti">
                     <div class="container-fluid">
                         <form data-parsley-validate="data-parsley-validate" data-validate="html5" enctype="multipart/form-data" name="field" class="powermail_form powermail_form_1   " action="http://pre.wind.it/demo/pagina-componenti/?tx_powermail_pi1%5Baction%5D=create&amp;tx_powermail_pi1%5Bcontroller%5D=Form&amp;cHash=18106381ae079bfdaa543731dbda9d07"
@@ -96,11 +99,11 @@
                                 <div class="powermail_fieldwrap powermail_fieldwrap_type_check powermail_fieldwrap_marker powermail_fieldwrap_half ">
                                     <label class="powermail_label" title=""> Contatto preferenziale via email </label>
                                     <div class="powermail_field">
-                                        <div class="checkbox ">
+                                        <div class="checkbox checkbox-inline base__checkbox ">
                                             <input type="hidden" name="tx_powermail_pi1[field][marker]" value="">
-                                            <input data-parsley-errors-container=".powermail_field_error_container_marker" data-parsley-class-handler=".powermail_fieldwrap_marker div:first > div" class="powermail_checkbox powermail_checkbox_6" id="powermail_field_marker_1" type="checkbox" name="tx_powermail_pi1[field][marker][]"
+                                            <input data-parsley-errors-container=".powermail_field_error_container_marker" data-parsley-class-handler=".powermail_fieldwrap_marker div:first > div" class="powermail_checkbox styled powermail_checkbox_6" id="powermail_field_marker_1" type="checkbox" name="tx_powermail_pi1[field][marker][]"
                                                 value="Contatto preferenziale via email" data-parsley-multiple="tx_powermail_pi1fieldmarker" data-parsley-id="13">
-                                                <label>Contatto preferenziale via email</label>
+                                                <label for="powermail_field_marker_1">Contatto preferenziale via email</label>
                                         </div>
                                         <div class="powermail_field_error_container powermail_field_error_container_marker"></div>
                                     </div>
@@ -108,22 +111,22 @@
                                 <div class="powermail_fieldwrap powermail_fieldwrap_type_textarea powermail_fieldwrap_marker_01  ">
                                     <label for="powermail_field_marker_01" class="powermail_label" title=""> Note </label>
                                     <div class="powermail_field">
-                                        <textarea rows="5" cols="20" class="powermail_textarea  " id="powermail_field_marker_01" name="tx_powermail_pi1[field][marker_01]" data-parsley-id="15"></textarea>
+                                        <textarea rows="5" cols="20" class="powermail_textarea base__input base__input--textarea" id="powermail_field_marker_01" name="tx_powermail_pi1[field][marker_01]" data-parsley-id="15"></textarea>
                                     </div>
                                 </div>
                                 <div class="powermail_fieldwrap powermail_fieldwrap_type_html powermail_fieldwrap_marker_02 powermail_fieldwrap_half ">
-                                    <div class="powermail_field ">
+                                    <div class="powermail_field">
                                         <h5>Inviando i dati presto il consenso ai contatti commerciali di cui all'<a class="btn btn_f1" href="#">informativa privacy.</a></h5>
                                     </div>
                                 </div>
                                 <div class="powermail_fieldwrap powermail_fieldwrap_type_reset powermail_fieldwrap_reset powermail_fieldwrap_half ">
                                     <div class="powermail_field ">
-                                        <input type="reset" value="Reset" class="powermail_reset btn btn-primary btn-danger">
+                                        <button type="reset" value="Reset" class="powermail_reset btn">Reset</button>
                                     </div>
                                 </div>
                                 <div class="powermail_fieldwrap powermail_fieldwrap_type_submit powermail_fieldwrap_invia  ">
                                     <div class="powermail_field ">
-                                        <input class="powermail_submit btn btn-primary" type="submit" value="Invia">
+                                        <button class="powermail_submit btn base__bt base__bt--sm base__bt--or waves-effect waves-button waves-float waves-light" type="submit" value="Invia">Invia</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -138,3 +141,31 @@
     <div class="clearfix"></div>
     <!-- foter -->
 </body>
+<script>
+jQuery(document).ready(function($) {
+
+  $.each($(".powermail_fieldwrap"), function() {
+      var placeHolder = $(this).find($("label")).text();
+      $(this).find($("input, textarea")).attr("placeholder", placeHolder);
+  });
+
+  $('.powermail_input,.powermail_textarea')
+      .focus(function() {
+          $(this).removeAttr('placeholder');
+      })
+      .blur(function() {
+          if ($(this).val() == '') {
+              var placeHolder = $(this).closest('.powermail_fieldwrap').find($('label')).text();
+              $(this).attr('placeholder', placeHolder);
+          }
+      });
+
+      $(".powermail_reset").click(function(){
+          $.each($(".powermail_fieldwrap"), function() {
+              var placeHolder = $(this).find($("label")).text();
+              $(this).find($("input, textarea")).attr("placeholder", placeHolder);
+          });
+      });
+
+});
+</script>

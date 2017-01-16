@@ -25,27 +25,80 @@
   }
 
   form {
+
     > h3 {
       display: none;
     }
-  }
 
-  .powermail_fieldwrap_half {
-    display: inline-block;
-    width: 49.5%;
-
-    &:nth-of-type(odd) {
-      float: right;
+    .powermail_legend {
+      display: none;
     }
 
-    &:nth-of-type(even) {
-      float: left;
+    .powermail_label {
+      display: none;
+    }
+
+    .powermail_fieldwrap {
+
+      &_half {
+        display: inline-block;
+        width: 49.5%;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+
+        &:nth-of-type(odd) {
+          float: right;
+        }
+
+        &:nth-of-type(even) {
+          float: left;
+        }
+      }
+
+      &.powermail_fieldwrap_type_check {
+        float: right;
+      }
+
+      &.powermail_fieldwrap_type_text {
+        margin: .7rem 0 2rem;
+        color: #292F36;
+        font-family: "Trade Gothic", sans-serif;
+        font-size: 1.1rem;
+      }
+
+      &.powermail_fieldwrap_type_html {
+        width: auto;
+      }
+
+      &.powermail_fieldwrap_type_reset  {
+        width: auto;
+
+
+        .powermail_reset {
+          margin: .9rem 0 0;
+          padding: 0;
+          background-color: transparent;
+          color: $color_orange;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+        }
+      }
+
+      &.powermail_fieldwrap_type_submit  {
+        width: 100%;
+        margin: .9rem 0 0;
+        padding: 0;
+        float: right;
+        clear: both;
+        font-size: 1.2rem;
+
+
+      }
     }
   }
 
-  .powermail_label {
-    display: none;
-  }
 
   .base__input {
     margin-bottom: 1.5rem;
@@ -60,14 +113,15 @@
       color: $color_grey_dark_light;
     }
 
-    &:-moz-placeholder, &::-moz-placeholder {
+    &:-moz-placeholder,
+    &::-moz-placeholder {
       color: $color_grey_dark_light;
       opacity: 1;
     }
   }
 
   .checkbox {
-    @include boxWF(right, 49%);
+    //@include boxWF(right, 49%);
 
     margin-top: .4rem;
 
@@ -109,17 +163,6 @@
     }
   }
 
-  a.btn {
-    margin: .9rem 0 0;
-    padding: 0;
-    float: right;
-    font-size: 1.2rem;
-
-    @media (max-width: 991px) {
-      float: left;
-      clear: both;
-    }
-  }
 
   button.base__bt {
     @include boxWF(right, 278px);
