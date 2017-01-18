@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="msapplication-tap-highlight" content="no" />
-
+    <title>UiKit - Input Fields</title>
     <link rel="stylesheet" type="text/css" href="./css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/base-style.min.css" />
 
@@ -17,37 +18,95 @@
 
 </head>
 
-<body class="base">
+<body class="base base__scrollable">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <span>Input Text</span>
-            </div>
+        <div class="title_page">
+            <h3>Input Fields</h3>
+            <hr>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div class="base__form base__form--sm">
-                         <input class="base__input" type="text" value="value text"/>
-                   </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                 <div class="base__form base__form--sm">
-                        <input class="base__input" type="mail" value=""/>                 
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h4>Reference</h4>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <span>**Required</span>
+            <ul class="base__bullet-list">
+              <li><i class="li_icon"></i><span>.base__input</span></li>
+            </ul>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <ul class="base__bullet-list">
+              <li><i class="li_icon"></i><span>.base__bt--textarea</span></li>
+            </ul>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <span>**Must be used in combination small + smaller</span>
+            <ul class="base__bullet-list">
+              <li><i class="li_icon"></i><span>.base__bt--small (width 70% + 5% margin-right)</span></li>
+              <li><i class="li_icon"></i><span>.base__bt--smaller (width 25%)</span></li>
+            </ul>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <ul class="base__bullet-list">
+              <li><i class="li_icon"></i><span>.error (must be followed by span with class error)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h4>Examples with Code Samples</h4>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <h5>Input Field w/Error Version</h5>
+                <form class="base__form">
+                  <div class="r">
+                    <input class="base__input" type="text" placeholder="Placeholder Text" />
                   </div>
+                  <div class="r">
+                    <input class="base__input error" type="text" value="value text" />
+                    <span class="error">Insert Correct Data</span>
+                  </div>
+                </form>
+                <div class="clearfix"></div>
+                <hr>
             </div>
-        </div>
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                  <div class="base__form base__form--sm">
-                    <input class="base__input error" type="text" value="value text"/>
-                            <span class="error">Insert Correct Data</span>
-                </div>
-
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <h5>Textarea Input Field</h5>
+                <form class="base__form">
+                  <div class="r">
+                    <textarea class="base__input base__input--textarea" placeholder="Placeholder Text"></textarea>
+                  </div>
+                </form>
+                <div class="clearfix"></div>
+                <hr>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <h5>Two input field combined</h5>
+                <form class="base__form">
+                  <div class="r">
+                    <input class="base__input base__input--small pull-left error" type="text" placeholder="Placeholder Text" /><span class="error pull-left">Insert Correct Data</span>
+                    <input class="base__input base__input--smaller error" type="text" placeholder="Placeholder Text" /><span class=" error">Insert Correct Data</span>
+                  </div>
+                </form>
+                <div class="clearfix"></div>
+                <hr>
             </div>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.base__form')
+      .each(function() {
+        var form = $(this);
+        var htmlString = form[0].outerHTML;
+        var codeString = $('<pre></pre>').text(htmlString);
+        $(codeString)
+          .insertAfter(form.siblings('hr'));
+      });
+  });
+</script>
 
 </html>

@@ -1,44 +1,44 @@
-/* */
-/* Original previous LESS format, converted to SASS */
-/* */
-
 .base__checkbox.checkbox {
+  padding-left: 1.4rem;
+
   label {
     font-size: 1rem;
 
+    &::before,
     &::after {
-      margin-left: -1.5rem;
-      padding-left: 4px;
-      padding-top: 0px;
-      font-size: 1rem;
+      left: -1.4rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0;
+      padding: 0;
+      content: "";
     }
 
     &::before {
-      content: "";
-      width: 1.4rem;
-      height: 1.4rem;
       border: 1px solid $color_grey_medium_light;
       border-radius: 4px;
+
+    }
+
+    &::after {
+      font-size: 1rem;
     }
   }
 
   input[type="checkbox"] {
-    -webkit-appearance: none;
+    margin: 0;
+    appearance: none;
 
     &:disabled + label::before {
-      background-color: white;
+      background-color: $color_white;
       cursor: not-allowed;
     }
 
     &:checked + label {
       &::before {
-        background-color: $color_orange;
         border-color: $color_grey_medium_light;
         outline: none;
-      }
-
-      &::after {
-        color: #fff;
+        background-color: $color_orange;
       }
     }
 
@@ -49,7 +49,10 @@
     }
 
     &.styled:checked + label:after {
-      color: #fff;
+      background-image: url('../img/confirm_white.svg');
+      background-position: -.04rem 0;
+      background-size: 1.4rem;
+      content: "";
     }
 
     &:checked:disabled + label::before {

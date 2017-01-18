@@ -1,83 +1,157 @@
 <!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="msapplication-tap-highlight" content="no" />
+  <meta charset="utf-8">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="msapplication-tap-highlight" content="no" />
+  <title>UiKit - Forms</title>
+  <link rel="stylesheet" type="text/css" href="./css/base-libs.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/base-style.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="./css/base-libs.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/base-style.min.css" />
-
-    <script src="js/base-libs.min.js"></script>
-    <script src="js/base.js"></script>
-
+  <script src="js/base-libs.min.js"></script>
+  <script src="js/base.js"></script>
 </head>
 
 <body class="base">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <span>Form Login</span>
-            </div>
-        </div>
-        <div class="row">
-           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                <form class="base__form base__form--login form-group">
-                    <div class="r">
-                        <input type="text" class="base__input" value="" />
-                    </div>
-                    <div class="r">
-                        <input type="password" class="base__input" value="" />
-                    </div>
-                    <div class="r">
-                        <div class="base__checkbox checkbox checkbox-inline">
-                            <input type="checkbox" class="styled" id="salvadati-checkbox" value="option1">
-                            <label for="salvadati-checkbox">Salva dati di accesso</lessabel>
-                        </div>
-                    </div>
-                    <div class="r">
-                        <button class="btn base__bt base__bt--md base__bt--or">login</button>
-                    </div>
-                    <div class="r dx">
-                        <a href="#">Recupero credenziali</a>
-                    </div>
-                </dorm>
-
-            </div>
-        </div>
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <span>Form di contatto</span>
-            </div>
-        </div>
-         <div class="row">
-           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                <div class="base__form base__form--contact">
-                    <div class="r">
-                        <input type="text" class="base__input" value="Nome" /><input type="email" class="base__input col--2" value="user@email.com" />
-                    </div>
-                    <div class="r">
-                        <input type="password" class="base__input" value="Carica Documento..." /><input type="tel" class="base__input col--2" value="Telefono" />
-                    </div>
-                    <div class="r">
-                        <textarea class="base__input base__input--textarea">Scrivi il tuo messaggio</textarea>
-                    </div>
-
-                    <div class="r">
-                        <button class="btn base__bt base__bt--lg base__bt--or">invia</button>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
+  <div class="container">
+    <div class="title_page">
+      <h3>Forms</h3>
+      <hr>
     </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h4>Reference</h4>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <span>**Required</span>
+        <ul class="base__bullet-list">
+          <li><i class="li_icon"></i><span>.base__form</span></li>
+        </ul>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <ul class="base__bullet-list">
+          <li><i class="li_icon"></i><span>.base__bt--full (width 100%)</span></li>
+          <li><i class="li_icon"></i><span>.base__bt--contact (width 580px)</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h4>Examples with Code Samples</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h5>Login Form Example</h5>
+        <form class="base__form">
+          <div class="r">
+            <input type="text" class="base__input" placeholder="Username" value="" />
+          </div>
+          <div class="r">
+            <input type="password" class="base__input" placeholder="Password" value="" />
+          </div>
+          <div class="r">
+            <div class="base__checkbox checkbox checkbox-inline">
+              <input type="checkbox" class="styled" id="salvadati-checkbox" value="option1">
+              <label for="salvadati-checkbox">Salva dati di accesso</label>
+            </div>
+          </div>
+          <div class="r">
+            <button class="btn base__bt base__bt--md base__bt--or">login</button>
+          </div>
+          <div class="r dx">
+            <a href="#">Recupero credenziali</a>
+          </div>
+        </form>
+        <hr>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h5>Check Form Example</h5>
+        <form class="base__form">
+          <div class="r">
+            <input type="text" class="base__input" placeholder="Nome" />
+          </div>
+          <div class="r">
+            <input type="text" class="base__input" placeholder="Cognome" />
+          </div>
+          <div class="r">
+            <select class="base__select base__select--small selectpicker" title="Regione" data-size="6">
+                <option>Italy</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+                <option>Italy</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+            </select><select class="base__select base__select--smaller selectpicker" title="Pr" data-size="6">
+                <option>Italy</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+                <option>Italy</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+            </select>
+          </div>
+          <div class="r">
+            <button class="btn base__bt base__bt--md base__bt--full base__bt--or">Button 1</button>
+          </div>
+          <div class="r">
+            <button class="btn base__bt base__bt--md base__bt--full base__bt--or2">Button 2</button>
+          </div>
+        </form>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h5>Contact Form Example</h5>
+        <form class="base__form base__form--contact">
+          <div class="r">
+            <input type="text" class="base__input" placeholder="Nome" /><input type="email" class="base__input col--2" placeholder="user@email.com" />
+          </div>
+          <div class="r">
+            <select class="base__select selectpicker" title="Select Country" data-size="6">
+                <option>Italy</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+                <option>Italy</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Brazil</option>
+            </select><input type="tel" class="base__input col--2" placeholder="Telefono" />
+          </div>
+          <div class="r">
+            <textarea class="base__input base__input--textarea" placeholder="Scrivi il tuo messaggio"></textarea>
+          </div>
+          <div class="r">
+            <button class="btn base__bt base__bt--lg base__bt--or">invia</button>
+          </div>
+        </form>
+        <hr>
+      </div>
+    </div>
+  </div>
 </body>
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.base__form')
+      .each(function() {
+        var example = $(this);
+        var htmlString = example[0].outerHTML;
+        var codeString = $('<pre></pre>').text(htmlString);
+        $(codeString)
+          .insertAfter(example.siblings('hr'));
+      });
+  });
+</script>
 
 </html>

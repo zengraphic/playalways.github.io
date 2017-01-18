@@ -1,20 +1,36 @@
-/* */
-/* Original previous LESS format, converted to SASS */
-/* */
-
 .base__radio.radio {
+  padding-left: 1.4rem;
+
   label {
     font-size: 1rem;
 
+    &::before,
+    &::after {
+      margin-left: -1.4rem;
+    }
+
     &::before {
-      width: 20px;
-      height: 20px;
       top: 0;
       left: 0;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    &::after {
+      top: .25rem;
+      left: .25rem;
+      width: .9rem;
+      height: .9rem;
+      background: $color_orange;
     }
   }
 
+  input[type="radio"] {
+    margin: 0;
+  }
+
   input[type="radio"]:checked {
+    appearance: none;
     -webkit-appearance: none;
 
     + label::before {
@@ -23,6 +39,7 @@
     }
 
     &:disabled + label {
+
       &::before {
         border: 1px solid $color_grey_medium_light;
       }
@@ -37,13 +54,5 @@
     + label::before {
       outline: none;
     }
-  }
-
-  label::after {
-    width: 12px;
-    height: 12px;
-    left: 4px;
-    top: 4px;
-    background: $color_orange;
   }
 }

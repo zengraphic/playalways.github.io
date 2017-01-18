@@ -1,88 +1,40 @@
-/* */
-/* Original previous LESS format, converted to SASS */
-/* */
+/*outline: thin dotted \9;  IE6-9 */
+
+input {
+  &[type="text"]:focus,
+  &[type="password"]:focus,
+  &[type="datetime"]:focus,
+  &[type="datetime-local"]:focus,
+  &[type="date"]:focus,
+  &[type="month"]:focus,
+  &[type="time"]:focus,
+  &[type="week"]:focus,
+  &[type="number"]:focus,
+  &[type="email"]:focus,
+  &[type="url"]:focus,
+  &[type="search"]:focus,
+  &[type="tel"]:focus,
+  &[type="color"]:focus,
+  &[type="file"]:focus,
+  &[type="checkbox"]:focus,
+  &[type="radio"]:focus {
+    border-color: $color_orange;
+    outline-color: transparent;
+    outline-offset: 0;
+    outline-style: none;
+  }
+}
+
+/*outline: thin dotted \9;  IE6-9 */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: rgba(244, 129, 53, .2);
+  background-image: none;
+  color: $color_black;
+}
 
 /* input */
-
-.base__form {
-  display: block;
-  width: auto;
-  float: left;
-
-
-  /* login */
-  /* contact */
-  .r {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: .5rem 0;
-    float: left;
-
-
-    &.dx {
-      text-align: right;
-    }
-
-    .col--2 {
-      margin-left: 1rem;
-    }
-  }
-
-  &.full {
-    width: 100%;
-  }
-}
-
-@media (max-width: 767px) {
-  .base__form .r .col--2 {
-    margin-left: auto;
-  }
-}
-
-.base__form--sm {
-  width: 140px;
-}
-
-.base__form--lg {
-  width: 280px;
-}
-
-@media (max-width: 767px) {
-  .base__form--login {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .base__form--login {
-    width: 280px;
-  }
-}
-
-@media (max-width: 767px) {
-  .base__form--contact {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .base__form--contact {
-    width: 580px;
-  }
-}
-
-@media (max-width: 767px) {
-  .base__form {
-    .base__bt {
-      width: 100%;
-    }
-
-    .r {
-      padding: .5rem 0;
-    }
-  }
-}
 
 .base__input {
   display: inline-block;
@@ -96,10 +48,10 @@
   background-color: $color_white;
   font-size: 1.125rem;
   appearance: none;
+  -webkit-transition: all .25s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
-
-  /* textarea */
-  /* error */
   &:focus {
     border: 1px solid $color_orange;
     box-shadow: none;
@@ -110,25 +62,59 @@
   &:active {
     border: 1px solid $color_orange;
   }
+
+  &.error {
+    border-radius: 4px 4px 0 0;
+    border-color: $color_red;
+    color: $color_red;
+
+    +.error {
+      display: inline-block;
+      width: 280px;
+      padding: .5rem;
+      border-radius: 0 0 4px 4px;
+      background-color: $color_red;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  &--small {
+    width: 70%;
+    margin-right: 5%;
+
+    &.error {
+      +.error {
+        width: 70%;
+        margin-right: 5%;
+      }
+    }
+  }
+
+  &--smaller {
+    width: 25%;
+
+    &.error {
+      +.error {
+        width: 25%;
+      }
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
 }
 
 .base__input--textarea {
   width: 100%;
-}
+  height: auto;
 
-.base__input.error {
-  border-radius: 4px 4px 0 0;
-  border-color: $color_red;
-  color: $color_red;
-
-  + span.error {
-    display: inline-block;
-    width: 280px;
-    padding: .5rem;
-    border-radius: 0 0 4px 4px;
-    background-color: $color_red;
-    color: white;
-    text-align: center;
+  &:focus {
+    border-color: $color_orange;
+    outline-color: transparent;
+    outline-offset: 0;
+    outline-style: none;
   }
 }
 
@@ -140,6 +126,77 @@
       +span.error {
         width: 100%;
       }
+    }
+
+    &--small {
+      width: 70%;
+
+      &.error {
+        +span.error {
+          width: 70%;
+        }
+      }
+    }
+
+    &--smaller {
+      width: 25%;
+
+      &.error {
+        +span.error {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
+
+
+/* forms */
+
+.base__form {
+  display: block;
+  width: 280px;
+
+  .r {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: .5rem 0;
+
+    &.dx {
+      text-align: right;
+    }
+
+    .col--2 {
+      margin-left: 20px;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--contact {
+    width: 580px;
+  }
+}
+
+@media (max-width: 767px) {
+  .base__form .r .col--2 {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .base__form {
+    width: 100%;
+
+    .base__bt {
+      width: 100%;
+    }
+
+    .r {
+      padding: .5rem 0;
     }
   }
 }
