@@ -22,12 +22,12 @@
 <body class="base">
   <div class="container">
     <div class="title_page">
-      <h3>Input Fields</h3>
+      <h3>Select Fields</h3>
       <hr>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <form class="base__form base__form--contact">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <form class="base__form">
           <div class="r">
             <select class="base__select selectpicker" title="Select Country" data-size="6">
                 <option>Italy</option>
@@ -38,8 +38,15 @@
                 <option>China</option>
                 <option>Germany</option>
                 <option>Brazil</option>
-            </select><!--
-         --><select class="base__select selectpicker col--2" title="Select Country" data-size="6" disabled>
+            </select>
+            <hr>
+          </div>
+        </form>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <form class="base__form">
+          <div class="r">
+            <select class="base__select selectpicker" title="Select Country" data-size="6" disabled>
                 <option>Italy</option>
                 <option>China</option>
                 <option>Germany</option>
@@ -49,17 +56,21 @@
                 <option>Germany</option>
                 <option>Brazil</option>
             </select>
+            <hr>
           </div>
-
-        </form>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <form class="base__form">
-
         </form>
       </div>
     </div>
   </div>
 </body>
-
+<script type="text/javascript">
+  jQuery(function($){
+    $('.base__select').each(function(){
+      var example = $(this);
+      var htmlString = example[0].outerHTML;
+      var codeString = $('<pre></pre>').text(htmlString);
+      $(codeString).insertAfter(example.next());
+    });
+  });
+</script>
 </html>

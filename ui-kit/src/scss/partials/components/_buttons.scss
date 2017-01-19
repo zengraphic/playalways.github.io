@@ -18,7 +18,7 @@
 
 .base__bt {
   background: transparent;
-  color: white;
+  color: $color_white;
   font-family: $font_family_light;
   letter-spacing: .05em;
   line-height: 1em;
@@ -88,7 +88,7 @@
   &--or {
     border: 1px solid $color_orange;
     background-color: $color_orange;
-    color: white;
+    color: $color_white;
 
     &:hover,
     &:active,
@@ -96,13 +96,13 @@
     &:focus {
       border: 1px solid $color_orange;
       background-color: $color_orange_light;
-      color: white;
+      color: $color_white;
     }
 
     &:disabled,
     &.waves-button:disabled {
-      border-color: $color_grey_medium_light;
-      background: $color_grey_medium_light;
+      border-color: $color_grey_stroke;
+      background: $color_grey_stroke;
     }
   }
 
@@ -123,16 +123,16 @@
 
     &:disabled,
     &.waves-button:disabled {
-      border-color: $color_grey_medium_light;
+      border-color: $color_grey_stroke;
       background: $color_trasparent;
-      color: $color_grey_medium_light;
+      color: $color_grey_stroke;
     }
   }
 
 
   &--wh {
-    border: 1px solid white;
-    background-color: white;
+    border: 1px solid $color_white;
+    background-color: $color_white;
     color: $color_orange;
 
     &:hover,
@@ -140,19 +140,19 @@
     &:visited,
     &:focus {
       border: 1px solid $color_orange_light;
-      background-color: white;
+      background-color: $color_white;
       color: $color_orange_light;
     }
 
     &:disabled,
     &.waves-button:disabled {
       border-color: none;
-      background-color: white;
-      color: $color_grey_medium_light;
+      background-color: $color_white;
+      color: $color_grey_stroke;
 
 
       &:hover {
-        border-color: $color_grey_medium_light;
+        border-color: $color_grey_stroke;
       }
     }
   }
@@ -213,8 +213,3 @@
     }
   }
 }
-
-
-//.base__bt [class*='-animate'] {
-//  font-size: 1rem;
-//}

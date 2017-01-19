@@ -42,7 +42,7 @@ select:-webkit-autofill {
   height: 3.25rem;
   padding: 1rem;
   transition: all .25s ease-in-out;
-  border: 1px solid $color_grey_medium_light;
+  border: 1px solid $color_grey_stroke;
   border-radius: 4px;
   outline: 0;
   background-color: $color_white;
@@ -74,7 +74,7 @@ select:-webkit-autofill {
       padding: .5rem;
       border-radius: 0 0 4px 4px;
       background-color: $color_red;
-      color: white;
+      color: $color_white;
       text-align: center;
     }
   }
@@ -146,57 +146,6 @@ select:-webkit-autofill {
           width: 25%;
         }
       }
-    }
-  }
-}
-
-
-/* forms */
-
-.base__form {
-  display: block;
-  width: 280px;
-
-  .r {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: .5rem 0;
-
-    &.dx {
-      text-align: right;
-    }
-
-    .col--2 {
-      margin-left: 20px;
-    }
-  }
-
-  &--full {
-    width: 100%;
-  }
-
-  &--contact {
-    width: 580px;
-  }
-}
-
-@media (max-width: 767px) {
-  .base__form .r .col--2 {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .base__form {
-    width: 100%;
-
-    .base__bt {
-      width: 100%;
-    }
-
-    .r {
-      padding: .5rem 0;
     }
   }
 }

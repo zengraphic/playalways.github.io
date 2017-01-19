@@ -6,9 +6,10 @@
     padding: 1rem;
     transition: all .25s ease-in-out;
     border-radius: 4px;
-    border-color: $color_grey_medium_light;
+    border-color: $color_grey_stroke;
     outline: none !important;
     background-color: $color_white;
+    color: $color_grey_dark;
     box-shadow: none;
     appearance: none;
     -webkit-transition: all .25s ease-in-out;
@@ -63,38 +64,45 @@
   }
 
   &.disabled .dropdown-toggle {
+    background-color: $color_grey_stroke;
+    color: $color_white;
     opacity: .6;
+
 
     .bs-caret .caret {
       &:before,
       &:after {
-        background-color: $color_grey_medium_light;
+        background-color: $color_white;
       }
     }
   }
 
-  &.open .dropdown-toggle {
-    border: 1px solid $color_grey_medium_light;
-    background-color: $color_white !important;
-    box-shadow: none;
 
-    .bs-caret .caret {
-      &:before {
-        transform: translate(5px, 4px) rotate(45deg);
-        -webkit-transform: translate(5px, 4px) rotate(45deg);
-      }
-
-      &:after {
-        transform: translate(10px, 4px) rotate(-45deg);
-        -webkit-transform: translate(10px, 4px) rotate(-45deg);
-      }
-    }
-
-    &:hover,
-    &:focus {
-      border: 1px solid $color_grey_medium_light;
-      background-color: $color_white !important;
+  &.open {
+    .dropdown-toggle {
+      border: 1px solid $color_grey_stroke;
+      background-color: $color_white;
       box-shadow: none;
+
+
+      .bs-caret .caret {
+        &:before {
+          transform: translate(5px, 4px) rotate(45deg);
+          -webkit-transform: translate(5px, 4px) rotate(45deg);
+        }
+
+        &:after {
+          transform: translate(10px, 4px) rotate(-45deg);
+          -webkit-transform: translate(10px, 4px) rotate(-45deg);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        border: 1px solid $color_grey_medium_light;
+        background-color: $color_white;
+        box-shadow: none;
+      }
     }
   }
 
@@ -116,12 +124,14 @@
     li a {
       padding-top: .75rem;
       padding-bottom: .75rem;
+      color: $color_grey_dark;
       font-size: 1rem;
     }
 
     > li > a {
       &:hover,
       &:focus {
+        outline: 0;
         background-color: $color_orange;
         color: $color_white;
       }
