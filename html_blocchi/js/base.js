@@ -109,6 +109,11 @@ function prefixedEventListener(element, type, callback) {
                 })
                 .on('show.bs.select', function(e) {
                     // do something...
+                })
+                .on('loaded.bs.select', function(e){
+                    $(this).selectpicker({
+                        'size': 6
+                    });
                 });
 
             //tooltip
