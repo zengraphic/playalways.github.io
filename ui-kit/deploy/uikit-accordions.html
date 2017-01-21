@@ -64,13 +64,11 @@
 </body>
 <script type="text/javascript">
   jQuery(function($) {
-    $('.base__accordion').each(function(i) {
-      if (i == 0) {
-        var example = $(this);
-        var htmlString = example[0].outerHTML;
-        var codeString = $('<pre></pre>').text(htmlString);
-        $(codeString).insertAfter(example.next());
-      }
+    $('.base__accordion').each(function() {
+      var example = $(this);
+      var htmlString = example[0].outerHTML;
+      var codeString = $('<pre></pre>').text(htmlString);
+      $(codeString).insertAfter(example.next());
     });
   });
 </script>
