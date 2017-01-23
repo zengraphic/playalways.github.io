@@ -6,13 +6,10 @@
 
 .cont__fatti {
   @include boxWF(none, 100%);
-
   padding: 0 8.2rem 3rem;
-
   @media (min-width: 768px) and (max-width: 992px) {
     padding: 0 3.2rem 3rem;
   }
-
   @media (max-width: 767px) {
     padding: 0 0 2rem;
   }
@@ -25,7 +22,6 @@
   }
 
   form {
-
     > h3 {
       display: none;
     }
@@ -39,26 +35,33 @@
     }
 
     .powermail_fieldwrap {
+      &.powermail_fieldwrap_nomeecognome,
+      &.powermail_fieldwrap_recapitotelefonico {
+        float: left;
+      }
+
+      &.powermail_fieldwrap_email,
+      &.powermail_fieldwrap_marker,
+      &.powermail_fieldwrap_provincia,
+      &.powermail_fieldwrap_type_reset,
+      &.powermail_fieldwrap_type_submit {
+        float: right;
+      }
+
+      &.powermail_fieldwrap_marker_01 {
+        clear: both;
+      }
+
+      &.powermail_fieldwrap_marker_02 {
+        width: auto;
+      }
 
       &_half {
         display: inline-block;
         width: 49.5%;
-
         @media (max-width: 767px) {
           width: 100%;
         }
-
-        &:nth-of-type(odd) {
-          float: right;
-        }
-
-        &:nth-of-type(even) {
-          float: left;
-        }
-      }
-
-      &.powermail_fieldwrap_type_check {
-        float: right;
       }
 
       &.powermail_fieldwrap_type_text {
@@ -68,13 +71,8 @@
         font-size: 1.1rem;
       }
 
-      &.powermail_fieldwrap_type_html {
+      &.powermail_fieldwrap_type_reset {
         width: auto;
-      }
-
-      &.powermail_fieldwrap_type_reset  {
-        width: auto;
-
 
         .powermail_reset {
           margin: .9rem 0 0;
@@ -86,7 +84,7 @@
         }
       }
 
-      &.powermail_fieldwrap_type_submit  {
+      &.powermail_fieldwrap_type_submit {
         width: 100%;
         margin: .9rem 0 0;
         padding: 0;
@@ -94,20 +92,29 @@
         clear: both;
         font-size: 1.2rem;
 
-
+        .base__bt {
+          margin-top: 68px;
+          padding: 1.1rem 0;
+          float: right;
+          background-color: $color_orange;
+          color: #FFF;
+          font-size: 1.2rem;
+          line-height: normal;
+          @media (max-width: 767px) {
+            width: 100%;
+            margin: 2.8rem 0 2.2rem;
+            padding: 1.2rem 0;
+            font-size: 1.2rem;
+          }
+        }
       }
     }
   }
 
-
-  .base__input {
+  .base__input,
+  .base__select.bootstrap-select {
+    width: 100% !important;
     margin-bottom: 1.5rem;
-
-    @media (max-width: 767px) {
-      width: 100%;
-      margin-bottom: 1.6rem;
-      padding: 1rem;
-    }
 
     &::-webkit-input-placeholder {
       color: $color_grey_dark_light;
@@ -121,13 +128,7 @@
   }
 
   .checkbox {
-    //@include boxWF(right, 49%);
-
     margin-top: .4rem;
-
-    @media (max-width: 767px) {
-      width: 100%;
-    }
   }
 
   .base__input--textarea {
@@ -135,7 +136,6 @@
     height: 103px;
     margin: 2.4rem 0 0;
     resize: none;
-
     @media (max-width: 767px) {
       height: 148px;
     }
@@ -155,30 +155,10 @@
       float: none;
       line-height: normal;
       vertical-align: baseline;
-
       @media (max-width: 767px) {
         margin: 0;
         font-size: 1rem;
       }
-    }
-  }
-
-
-  button.base__bt {
-    @include boxWF(right, 278px);
-
-    margin-top: 68px;
-    padding: 1.1rem 0;
-    background-color: $color_orange;
-    color: #FFF;
-    font-size: 1.2rem;
-    line-height: normal;
-
-    @media (max-width: 767px) {
-      width: 100%;
-      margin: 2.8rem 0 2.2rem;
-      padding: 1.2rem 0;
-      font-size: 1.2rem;
     }
   }
 }
