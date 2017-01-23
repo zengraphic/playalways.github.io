@@ -1,3 +1,35 @@
+    // ================= BUTTON  ================== //
+    // ================= BUTTON  ================== //
+    // ================= BUTTON  ================== //
+    .v-button {
+        background-image: none !important;
+        background-color: $color_orange !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border: 1px solid #ccc !important;
+        color: $color_white !important;
+        font-size: 18px !important;
+        width: 280px !important;
+        padding: 16px 0 !important;
+        height: 52px !important;
+        line-height: 1em !important;
+        &:focus {
+            border: 1px solid $color_orange !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            &:after {
+                border: 1px solid $color_orange !important;
+                box-shadow: none !important;
+            }
+        }
+        &-wrap {
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+    
     // ================= ACCORDION  ================== //
     // ================= ACCORDION  ================== //
     // ================= ACCORDION  ================== //
@@ -57,6 +89,8 @@
                         border: 1px solid #ccc !important;
                         background-image: none !important;
                         background: none !important;
+                        box-shadow: none !important;
+                        text-shadow: none !important;
                     }
                 }
                 &:checked {
@@ -64,10 +98,10 @@
                         &:after {
                             background: $color_orange !important;
                             border: 1px solid $color_orange !important;
-                            width: 9px;
-                            height: 9px;
-                            top: 5px;
-                            left: 5px;
+                            width: 11px !important;
+                            height: 11px !important;
+                            top: 4px !important;
+                            left: 4px !important;
                         }
                         &:before {
                             border: 1px solid $color_orange !important;
@@ -133,22 +167,50 @@
                 height: 50px;
                 background-color: transparent;
                 box-shadow: none;
+                padding-left: 10px;
+                &:focus {
+                    border-color: $color_orange;
+                    box-shadow: none;
+                }
             }
             & [class*="button"] {
                 top: 12px;
                 border-right: none;
+                display: none;
+                &:before {
+                    content: "";
+                }
             }
         }
         // ================= CARET  ================== //
         // ================= CARET  ================== //
         // ================= CARET  ================== //
         .v-filterselect {
+            &-suggestpopup {
+                margin-top: 0px !important;
+                & [class$="suggestmenu"] {
+                    padding: 0;
+                }
+                .gwt-MenuItem-selected {
+                    background-color: $color_orange;
+                    color: $color_white;
+                    background-image: none;
+                    border-radius: 0px;
+                }
+            }
             &-focus {
                 &:before {
                     transform: translate(10px, 4px) rotate(45deg) !important;
                 }
                 &:after {
                     transform: translate(10px, 4px) rotate(-45deg) !important;
+                }
+            }
+            & [class$="input"] {
+                height: 50px;
+                &:focus {
+                    border-color: $color_orange;
+                    box-shadow: none;
                 }
             }
             & [class$="button"] {
@@ -188,6 +250,10 @@
                     height: 50px;
                     box-shadow: none;
                     background: none !important;
+                    &:focus {
+                        border-color: $color_orange;
+                        box-shadow: none;
+                    }
                 }
             }
         }

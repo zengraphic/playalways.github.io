@@ -474,6 +474,29 @@ body {
           padding-left: 45px;
           padding-right: 45px; }
 
+.v-button {
+  background-image: none !important;
+  background-color: #f48135 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border: 1px solid #ccc !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  width: 280px !important;
+  padding: 16px 0 !important;
+  height: 52px !important;
+  line-height: 1em !important; }
+  .v-button:focus {
+    border: 1px solid #f48135 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+    .v-button:focus:after {
+      border: 1px solid #f48135 !important;
+      box-shadow: none !important; }
+  .v-button-wrap:focus {
+    outline: none !important; }
+
 .v-accordion-item-open .v-captiontext:before {
   transform: translate(10px, 4px) rotate(45deg) !important; }
 .v-accordion-item-open .v-captiontext:after {
@@ -506,14 +529,16 @@ body {
 .additionaldata .v-radiobutton > input ~ label:before, .additionaldata .v-radiobutton > input ~ label:after {
   border: 1px solid #ccc !important;
   background-image: none !important;
-  background: none !important; }
+  background: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important; }
 .additionaldata .v-radiobutton > input:checked ~ label:after {
   background: #f48135 !important;
   border: 1px solid #f48135 !important;
-  width: 9px;
-  height: 9px;
-  top: 5px;
-  left: 5px; }
+  width: 11px !important;
+  height: 11px !important;
+  top: 4px !important;
+  left: 4px !important; }
 .additionaldata .v-radiobutton > input:checked ~ label:before {
   border: 1px solid #f48135 !important; }
 .additionaldata .v-radiobutton > input:focus ~ label:before, .additionaldata .v-radiobutton > input:active ~ label:before {
@@ -542,14 +567,35 @@ body {
 .additionaldata .v-datefield [class*="textfield"] {
   height: 50px;
   background-color: transparent;
-  box-shadow: none; }
+  box-shadow: none;
+  padding-left: 10px; }
+  .additionaldata .v-datefield [class*="textfield"]:focus {
+    border-color: #f48135;
+    box-shadow: none; }
 .additionaldata .v-datefield [class*="button"] {
   top: 12px;
-  border-right: none; }
+  border-right: none;
+  display: none; }
+  .additionaldata .v-datefield [class*="button"]:before {
+    content: ""; }
+.additionaldata .v-filterselect-suggestpopup {
+  margin-top: 0px !important; }
+  .additionaldata .v-filterselect-suggestpopup [class$="suggestmenu"] {
+    padding: 0; }
+  .additionaldata .v-filterselect-suggestpopup .gwt-MenuItem-selected {
+    background-color: #f48135;
+    color: #ffffff;
+    background-image: none;
+    border-radius: 0px; }
 .additionaldata .v-filterselect-focus:before {
   transform: translate(10px, 4px) rotate(45deg) !important; }
 .additionaldata .v-filterselect-focus:after {
   transform: translate(10px, 4px) rotate(-45deg) !important; }
+.additionaldata .v-filterselect [class$="input"] {
+  height: 50px; }
+  .additionaldata .v-filterselect [class$="input"]:focus {
+    border-color: #f48135;
+    box-shadow: none; }
 .additionaldata .v-filterselect [class$="button"] {
   display: none;
   top: 15px;
@@ -582,6 +628,9 @@ body {
   height: 50px;
   box-shadow: none;
   background: none !important; }
+  .additionaldata .v-filterselect-no-input [class*="input"]:focus {
+    border-color: #f48135;
+    box-shadow: none; }
 .additionaldata .v-textfield {
   height: 50px;
   border-color: #ccc; }
