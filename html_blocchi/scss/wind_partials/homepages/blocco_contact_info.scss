@@ -1,246 +1,281 @@
 .contact_info_block {
-    margin: 0 auto;
-    max-width: 1024px;
-    position: relative;
-    overflow: hidden;
-    .tx-powermail {
-        h3 {
-            display: none;
-        }
-        legend {
-            display: none;
-        }
-        .powermail {
-            &_fieldset {
-                .powermail_fieldwrap {
-                    //margin-bottom: 10px;
-                    &:first-of-type {
-                        .powermail_field {
-                            font-family: "Trade Gothic Light";
-                            color: #292f36;
-                            font-size: 1.125em;
-                            line-height: 1.1250em;
-                            padding: 0 30px 0 0;
-                        }
-                    }
-                    &:last-of-type {
-                        margin-bottom: 20px;
-                        margin-top: 20px;
-                    }
-                    &_type_check {
-                        & label.powermail_label {
-                            display: none;
-                        }
-                    }
-                    &_nomeecognome,
-                    &_provincia,
-                    &_recapitotelefonico,
-                    &_email {
-                        margin-bottom: 14px;
-                        label {
-                            display: none;
-                        }
-                    }
-                    &_marker_01 {
-                        margin-bottom: 5px;
-                        label {
-                            display: none;
-                        }
-                    }
-                    &_marker_02 {
-                        height: 32px;
-                    }
-                }
-            }
-            &_input {
-                padding-top: 15px;
-                padding-bottom: 15px;
-                padding-left: 1rem;
-            }
-            &_fieldwrap {
-                margin-bottom: 12px;
-            }
-            &_textarea {
-                resize: none;
-                height: 67px;
-                padding-top: 1.7rem;
-                padding-left: 1em;
-            }
-            &_submit {
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: #f78f4c;
-                }
-            }
-            &_field {
-                .checkbox {
-                    margin-top: 19px;
-                    margin-bottom: 15px;
-                    input[type="checkbox"]:checked + label::after {
-                        left: 100%;
-                        width: 25px;
-                        height: 25px;
-                        margin-left: -25px;
-                        top: -5px;
-                        font-size: 1em;
-                        padding-top: 3px;
-                        color: #fff;
-                        font-family: FontAwesome;
-                        content: "\f00c";
-                        background-color: $color_orange;
-                        border-radius: 4px;
-                        border: 1px solid #ccd1d9;
-                    }
-                    padding-left: 0;
-                    label {
-                        width: 100%;
-                        padding-left: 0;
-                        &::before {
-                            left: 100%;
-                            width: 25px;
-                            height: 25px;
-                            margin-left: -25px;
-                            top: -5px;
-                        }
-                    }
-                }
-            }
-        }
-        h5 {
-            font-family: "Trade Gothic";
-            font-size: 0.8em;
-            padding-bottom: 15px;
-            line-height: 0.6em;
-            .btn {
-                padding-left: 0;
-                line-height: 0.5;
-                font-size: 1em;
-                &:hover {
-                    opacity: 0.5;
-                }
-            }
-        }
-    }
-    .link_contact {
-        white-space: nowrap;
-        color: $color-white;
-        &:hover {
-            color: rgba(255, 255, 255, 0.8);
-        }
-    }
-    .info_link {
-        font-size: 1em;
-    }
-    &__overlay {
-        position: fixed;
-        top: 0px;
-        bottom: 0px;
-        z-index: 900;
-        width: 100%;
-        height: 100%;
-        background-color: #444;
-        @include opacity(0.8);
-        display: none;
-    }
-    &__item {
-        vertical-align: middle;
-        padding-right: 5px;
-        &--active {
-            color: $color-standardText;
-        }
-        &--contact {
-            color: $color-white;
-            text-transform: uppercase;
-            padding: 15px 20px;
-            background-color: $color-orange;
-            right: 0;
-            width: 150px;
-            cursor: pointer;
-            @include breakpoint(small) {
-                &.contact_open {
-                    &.contact_button {
-                        display: none;
-                    }
-                }
-            }
-            &.positionRight {
-                position: relative;
-                right: 80px;
-            }
-        }
-    }
-    &__container {
-        position: fixed;
-        top: 20vh;
-        right: -450px;
-        z-index: 950;
-        width: 500px;
-        // @include transition(top .5s ease-in-out);             
-        &.contact_open {
-            top: 0;
-        }
-        &.base__scrollable {
-            padding: 0;
-        }
-        @include breakpoint(small) {
-            &.contact_open {
-                width: 100%;
-                top: 0;
-                height: 100vh;
-                overflow: scroll;
-            }
-        }
-        &__left {
-            float: left;
-            //width: 50px *****
-            &.contactShow {
-                visibility: visible;
-                width: 50px;
-                .contact_info_block__item--contact {
-                    
-                }
-                @include transform(rotate(-90deg));
-            }
-            &.contactHide {
-                visibility: hidden;
-                position: absolute;
-                right: calc(10px + 1rem); //0
-                top: 5px; //0
-                .contact_info_block__item--contact {
-                    width: 20px;
-                    height: 40px;
-                    padding: 0;
-                    background-color: transparent;
-                    color: $color-orange;
-                    font-family: 'Verdana';
-                    font-size: 1.8em;
-                    &:hover,
-                    &:active {
-                        opacity: 0.5;
-                    }
-                }
-            }
-        }
-        &__right {
-            width: 450px;
-            padding: 14px 0 0 0;
-            background-color: $color-lightGray;
-            float: right;
-            visibility: hidden;
-            @include breakpoint(small) {
-                &.visibleShow {
-                    width: 100%;
-                }
-            }
-        }
-    }
-    &__close {
-        float: right;
-        margin-top: -25px;
-    }
-}
+  margin: 0 auto;
+  max-width: 1024px;
+  position: relative;
+  overflow: hidden;
 
+  .tx-powermail {
+    h3 {
+      display: none;
+    }
+
+    legend {
+      display: none;
+    }
+
+    .powermail {
+      &_fieldset {
+        .powermail_fieldwrap {
+          //margin-bottom: 10px;
+          &:first-of-type {
+            .powermail_field {
+              font-family: "Trade Gothic Light";
+              color: #292f36;
+              font-size: 1.125em;
+              line-height: 1.1250em;
+              padding: 0 30px 0 0;
+            }
+          }
+
+          &:last-of-type {
+            margin-bottom: 20px;
+            margin-top: 20px;
+          }
+
+          &_type_check {
+            & label.powermail_label {
+              display: none;
+            }
+          }
+
+          &_email,
+          &_nomeecognome,
+          &_provincia,
+          &_recapitotelefonico {
+            margin-bottom: 14px;
+
+            label {
+              display: none;
+            }
+          }
+
+          &_marker_01 {
+            margin-bottom: 5px;
+
+            label {
+              display: none;
+            }
+          }
+
+          &_marker_02 {
+            height: 32px;
+          }
+        }
+      }
+
+      &_input {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 1rem;
+      }
+
+      &_fieldwrap {
+        margin-bottom: 12px;
+      }
+
+      &_textarea {
+        resize: none;
+        height: 67px;
+        padding-top: 1.7rem;
+        padding-left: 1em;
+      }
+
+      &_submit {
+        &:active,
+        &:focus,
+        &:hover {
+          background-color: #f78f4c;
+        }
+      }
+
+      &_field {
+        .checkbox {
+          margin-top: 19px;
+          margin-bottom: 15px;
+
+          input[type="checkbox"]:checked + label::after {
+            left: 100%;
+            width: 25px;
+            height: 25px;
+            margin-left: -25px;
+            top: -5px;
+            font-size: 1em;
+            padding-top: 3px;
+            color: #fff;
+            font-family: FontAwesome;
+            content: "\f00c";
+            background-color: $color_orange;
+            border-radius: 4px;
+            border: 1px solid #ccd1d9;
+          }
+          padding-left: 0;
+
+          label {
+            width: 100%;
+            padding-left: 0;
+
+            &::before {
+              left: 100%;
+              width: 25px;
+              height: 25px;
+              margin-left: -25px;
+              top: -5px;
+            }
+          }
+        }
+      }
+    }
+
+    h5 {
+      font-family: "Trade Gothic";
+      font-size: .8em;
+      padding-bottom: 15px;
+      line-height: .6em;
+
+      .btn {
+        padding-left: 0;
+        line-height: .5;
+        font-size: 1em;
+
+        &:hover {
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+  .link_contact {
+    white-space: nowrap;
+    color: $color-white;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .info_link {
+    font-size: 1em;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background-color: #444;
+    @include opacity(0.8);
+    display: none;
+  }
+
+  &__item {
+    vertical-align: middle;
+    padding-right: 5px;
+
+    &--active {
+      color: $color-standardText;
+    }
+
+    &--contact {
+      color: $color-white;
+      text-transform: uppercase;
+      padding: 15px 20px;
+      background-color: $color-orange;
+      right: 0;
+      width: 150px;
+      cursor: pointer;
+      @include breakpoint(small) {
+        &.contact_open {
+          &.contact_button {
+            display: none;
+          }
+        }
+      }
+
+      &.positionRight {
+        position: relative;
+        right: 80px;
+      }
+    }
+  }
+
+  &__container {
+    position: fixed;
+    top: 20vh;
+    right: -450px;
+    z-index: 950;
+    width: 500px;
+    // @include transition(top .5s ease-in-out);
+    &.contact_open {
+      top: 0;
+    }
+
+    &.base__scrollable {
+      padding: 0;
+    }
+    @include breakpoint(small) {
+      &.contact_open {
+        width: 100%;
+        top: 0;
+        height: 100vh;
+        overflow: scroll;
+      }
+    }
+
+    &__left {
+      float: left;
+      //width: 50px *****
+      &.contactShow {
+        visibility: visible;
+        width: 50px;
+
+        .contact_info_block__item--contact {}
+        @include transform(rotate(-90deg));
+      }
+
+      &.contactHide {
+        visibility: hidden;
+        position: absolute;
+        right: calc(10px + 1rem); //0
+        top: 5px; //0
+
+        .contact_info_block__item--contact {
+          width: 20px;
+          height: 40px;
+          padding: 0;
+          background-color: transparent;
+          color: $color-orange;
+          font-family: 'Verdana';
+          font-size: 1.8em;
+
+          &:active,
+          &:hover {
+            opacity: .5;
+          }
+        }
+      }
+    }
+
+    &__right {
+      width: 450px;
+      padding: 14px 0 0;
+      background-color: $color-lightGray;
+      float: right;
+      visibility: hidden;
+      @include breakpoint(small) {
+        &.visibleShow {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__close {
+    float: right;
+    margin-top: -25px;
+  }
+}
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
