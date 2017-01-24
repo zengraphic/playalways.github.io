@@ -36,7 +36,7 @@
 .icon-servizi:before {
   content: "\79"; }
 
-/* ___________________ MIXIN __________________ 
+/* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
 /* USAGE */
 h1 {
@@ -2207,21 +2207,25 @@ b {
     text-align: center;
     display: inline-block;
     cursor: pointer; }
+    .stripMenuText__item a {
+      color: #aab2bd; }
+      .stripMenuText__item a:hover {
+        color: #f48135; }
     .stripMenuText__item__title {
       display: inline-block;
       position: relative;
       padding: 30px 0 10px; }
-    .stripMenuText__item.active, .stripMenuText__item:hover {
+    .stripMenuText__item.active a, .stripMenuText__item:hover a {
       color: #f48135; }
-      .stripMenuText__item.active .stripMenuText__item__title:after, .stripMenuText__item:hover .stripMenuText__item__title:after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 2px;
-        background-color: #f48135; }
+    .stripMenuText__item.active .stripMenuText__item__title:after, .stripMenuText__item:hover .stripMenuText__item__title:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: #f48135; }
 
 @media all and (max-width: 768px) {
   .stripMenuText {
@@ -5097,6 +5101,8 @@ b {
       @media (max-width: 1024px) {
         .showcase_accordions_block__container__body {
           width: 100%; } }
+    .showcase_accordions_block__container .ce-bodytext ul {
+      list-style-type: disc; }
   .showcase_accordions_block ul {
     list-style: none;
     perspective: 900;
@@ -8470,9 +8476,17 @@ b {
     @media (max-width: 910px) {
       .strip_menu_tab__item {
         margin: 0; } }
+    .strip_menu_tab__item a {
+      color: #aab2bd; }
+      .strip_menu_tab__item a:hover {
+        color: #f48135; }
     .strip_menu_tab__item.tab_active {
       border-color: #f48135;
       color: #f48135; }
+      .strip_menu_tab__item.tab_active a {
+        color: #f48135; }
+        .strip_menu_tab__item.tab_active a:hover {
+          color: #f48135; }
     .strip_menu_tab__item:hover {
       border-color: #f48135;
       color: #f48135;
