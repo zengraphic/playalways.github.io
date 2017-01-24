@@ -31,6 +31,13 @@
         text-align: center;
         display: inline-block;
         cursor: pointer;
+        a{
+            color:#aab2bd;
+            &:hover{
+            color: $color-orange;
+            }
+        }
+
         &__title {
             display: inline-block;
             position: relative;
@@ -38,7 +45,8 @@
         }
         &.active,
         &:hover {
-            color: $color-orange;
+            a{color: $color-orange;}
+            
             .stripMenuText__item__title:after {
                 content: "";
                 display: inline-block;
