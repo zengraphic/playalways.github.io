@@ -681,7 +681,7 @@ r$(document).ready(function() {
     }
     // If the content is large, the footer follows the end and separated 2rem
     else {
-        r$('#footer').css('margin-top', 28);
+        //r$('#footer').css('margin-top', 28);
     }
 
 });
