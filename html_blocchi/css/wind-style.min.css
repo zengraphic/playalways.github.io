@@ -36,7 +36,7 @@
 .icon-servizi:before {
   content: "\79"; }
 
-/* ___________________ MIXIN __________________ 
+/* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
 /* USAGE */
 h1 {
@@ -68,6 +68,9 @@ img {
   .base__input::-moz-placeholder {
     color: #4a4a4a;
     opacity: 1; }
+
+.full_height {
+  height: 100%; }
 
 .rotated {
   -moz-transform: rotate(180deg);
@@ -6549,39 +6552,81 @@ b {
 .country_offers_block {
   margin: 0 auto;
   max-width: 1024px; }
+  @media (max-width: 768px) {
+    .country_offers_block {
+      padding-bottom: 2em; } }
   .country_offers_block__container-title {
     font-family: "Trade Gothic Light";
     color: #009bbe;
     font-size: 1.1875em; }
+    @media (max-width: 992px) {
+      .country_offers_block__container-title {
+        font-size: 0.93em; } }
+    @media (max-width: 768px) {
+      .country_offers_block__container-title {
+        font-size: 1.4em; } }
   .country_offers_block__container-image {
     margin-top: 0.625em; }
+    @media (max-width: 768px) {
+      .country_offers_block__container-image {
+        margin-top: 1.6em; } }
     .country_offers_block__container-image img {
-      max-width: 100%; }
+      max-width: 100%;
+      border: 1px solid #ddd; }
+  .country_offers_block__container-text {
+    padding-top: 20px; }
+    @media (max-width: 768px) {
+      .country_offers_block__container-text {
+        font-size: 0.89em; } }
   .country_offers_block__container__country {
     display: none;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 30px;
-    clear: left; }
+    clear: left;
+    height: 150px; }
+    @media (max-width: 768px) {
+      .country_offers_block__container__country .center_flag {
+        text-align: center; } }
+    @media (max-width: 768px) {
+      .country_offers_block__container__country {
+        padding-bottom: 0px; } }
     .country_offers_block__container__country.placeholder_block {
-      height: 30px;
-      display: block; }
+      height: 10px;
+      display: block;
+      margin: 0; }
     .country_offers_block__container__country--flag {
-      padding-top: 22px;
-      padding-bottom: 22px; }
+      padding-top: 15px;
+      padding-bottom: 22px;
+      padding-right: 10px;
+      border-right: 1px solid #d3d3d2;
+      height: 150px; }
+      @media (max-width: 768px) {
+        .country_offers_block__container__country--flag {
+          margin: 0 auto;
+          border-right: none; } }
     .country_offers_block__container__country--rates {
-      padding-top: 20px;
-      padding-bottom: 41px;
-      border-left: 1px solid #d3d3d2;
-      border-right: 1px solid #d3d3d2; }
+      padding-top: 22px;
+      padding-bottom: 30px; }
       @media (max-width: 768px) {
         .country_offers_block__container__country--rates {
           border-left: none;
           border-right: none; } }
+      @media (max-width: 480px) {
+        .country_offers_block__container__country--rates {
+          padding-bottom: 0;
+          padding-right: 5px;
+          padding-left: 5px; } }
     .country_offers_block__container__country--text {
       font-size: 0.80em;
       padding-top: 22px;
-      height: 150px;
-      border-left: 1px solid #d3d3d2; }
+      border-left: 1px solid #d3d3d2;
+      height: 100%; }
+      @media (max-width: 768px) {
+        .country_offers_block__container__country--text {
+          border-left: none;
+          margin-top: 10px;
+          height: auto;
+          font-size: 0.85em; } }
     .country_offers_block__container__country--List {
       border-bottom: 1px solid #d3d3d2;
       padding: 25px 0 15px; }
@@ -6591,12 +6636,24 @@ b {
         font-size: 1.5em;
         padding-top: 0.5em;
         padding-bottom: 0.5em; }
+        @media (max-width: 600px) {
+          .country_offers_block__container__country--List--label {
+            font-size: 1.2em; } }
       .country_offers_block__container__country--List--select .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
         width: 320px; }
+        @media (max-width: 768px) {
+          .country_offers_block__container__country--List--select .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+            width: 100%; } }
       .country_offers_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .filter-option {
         font-size: 1em; }
+        @media (max-width: 768px) {
+          .country_offers_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .filter-option {
+            /*text-align: center;*/ } }
       .country_offers_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
         margin-right: 2em; }
+        @media (max-width: 480px) {
+          .country_offers_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
+            margin-right: 10px; } }
       .country_offers_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle {
         padding-top: 1.1em;
         padding-bottom: 1.1em; }
@@ -6614,7 +6671,7 @@ b {
   .country_offers_block__rates--title {
     font-family: "Trade Gothic Light";
     color: #292f36;
-    font-size: 1em;
+    font-size: 0.8em;
     text-transform: uppercase; }
   .country_offers_block__rates--price {
     font-family: "Trade Gothic Bold";
@@ -6624,27 +6681,9 @@ b {
   .country_offers_block__rates--cent {
     font-family: "Trade Gothic Light";
     color: #292f36;
-    font-size: 0.75em;
+    font-size: 0.7em;
     padding-top: 5px;
     text-transform: uppercase; }
-
-@media (max-width: 767px) {
-  .country_offers_block {
-    padding-bottom: 2em; }
-    .country_offers_block__container__country {
-      padding-bottom: 0px; }
-      .country_offers_block__container__country--text {
-        border-left: none;
-        margin-top: 10px;
-        height: auto;
-        font-size: 0.85em; }
-    .country_offers_block__container__countryList--label {
-      border-bottom: none;
-      height: 50px; }
-    .country_offers_block__container__countryList--select .base__select.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-      width: 100%; }
-    .country_offers_block__container-text {
-      padding-top: 15px; } }
 
 @media (max-width: 943px) {
   .country_offers_block__container__countryList--label {
@@ -6653,12 +6692,175 @@ b {
 
 @media (max-width: 520px) {
   .country_offers_block__rates--title {
-    font-size: 0.76em; }
+    font-size: 0.76em;
+    height: 25px; }
   .country_offers_block__rates--cent {
     font-size: 0.5em; }
   .country_offers_block__rates_divider--left {
     padding: 0 8px; }
   .country_offers_block__rates_divider--right {
+    padding: 0 8px; } }
+
+.country_calling_cards_block {
+  margin: 0 auto;
+  max-width: 1024px; }
+  @media (max-width: 768px) {
+    .country_calling_cards_block {
+      padding-bottom: 2em; } }
+  .country_calling_cards_block__container-title {
+    font-family: "Trade Gothic Light";
+    color: #009bbe;
+    font-size: 1.6em; }
+    @media (max-width: 992px) {
+      .country_calling_cards_block__container-title {
+        font-size: 0.93em; } }
+    @media (max-width: 768px) {
+      .country_calling_cards_block__container-title {
+        font-size: 1.4em; } }
+  .country_calling_cards_block__container-image {
+    margin-top: 0.625em; }
+    @media (max-width: 768px) {
+      .country_calling_cards_block__container-image {
+        margin-top: 1.6em; } }
+    .country_calling_cards_block__container-image img {
+      max-width: 100%;
+      border: 1px solid #ddd; }
+  .country_calling_cards_block__container-text {
+    padding-top: 20px; }
+    @media (max-width: 768px) {
+      .country_calling_cards_block__container-text {
+        font-size: 0.89em; } }
+  .country_calling_cards_block__container__country {
+    display: none;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    clear: left;
+    height: auto; }
+    @media (max-width: 768px) {
+      .country_calling_cards_block__container__country .center_flag {
+        text-align: center; } }
+    .country_calling_cards_block__container__country .padding_10 {
+      padding-bottom: 10px;
+      padding-top: 10px; }
+      @media (max-width: 480px) {
+        .country_calling_cards_block__container__country .padding_10 {
+          padding-bottom: 15px; } }
+      .country_calling_cards_block__container__country .padding_10:nth-child(even) {
+        background-color: #f9f9f9; }
+    @media (max-width: 768px) {
+      .country_calling_cards_block__container__country {
+        padding-bottom: 0px; } }
+    .country_calling_cards_block__container__country.placeholder_block {
+      height: 10px;
+      display: block;
+      margin: 0; }
+    .country_calling_cards_block__container__country--flag {
+      padding-top: 15px;
+      padding-bottom: 20px;
+      padding-right: 10px;
+      border-right: 1px solid #d3d3d2;
+      height: 130px; }
+      @media (max-width: 768px) {
+        .country_calling_cards_block__container__country--flag {
+          margin: 0 auto;
+          border-right: none; } }
+    .country_calling_cards_block__container__country--rates {
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      @media (max-width: 768px) {
+        .country_calling_cards_block__container__country--rates {
+          border-left: none;
+          border-right: none; } }
+      @media (max-width: 480px) {
+        .country_calling_cards_block__container__country--rates {
+          padding-bottom: 0;
+          padding-right: 5px;
+          padding-left: 5px; } }
+    .country_calling_cards_block__container__country--text {
+      font-size: 0.80em;
+      padding-top: 22px;
+      border-left: 1px solid #d3d3d2;
+      height: 100%; }
+      @media (max-width: 768px) {
+        .country_calling_cards_block__container__country--text {
+          border-left: none;
+          margin-top: 10px;
+          height: auto;
+          font-size: 0.85em; } }
+    .country_calling_cards_block__container__country--List {
+      border-bottom: 1px solid #d3d3d2;
+      padding: 25px 0 15px; }
+      .country_calling_cards_block__container__country--List--label {
+        font-family: "Trade Gothic Light";
+        color: #292f36;
+        font-size: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em; }
+        @media (max-width: 600px) {
+          .country_calling_cards_block__container__country--List--label {
+            font-size: 1.2em; } }
+      .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 320px; }
+        @media (max-width: 768px) {
+          .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+            width: 100%; } }
+      .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .filter-option {
+        font-size: 1em; }
+        @media (max-width: 768px) {
+          .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .filter-option {
+            /*text-align: center;*/ } }
+      .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
+        margin-right: 2em; }
+        @media (max-width: 480px) {
+          .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
+            margin-right: 10px; } }
+      .country_calling_cards_block__container__country--List--select .base__select.bootstrap-select .dropdown-toggle {
+        padding-top: 1.1em;
+        padding-bottom: 1.1em; }
+  .country_calling_cards_block__rates_divider--left {
+    border-right: 1px solid #d3d3d2;
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 0 0.625em; }
+  .country_calling_cards_block__rates_divider--right {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 0 0.625em; }
+  .country_calling_cards_block__rates--title {
+    font-family: "Trade Gothic Light";
+    color: #292f36;
+    font-size: 1.2em;
+    text-transform: uppercase; }
+  .country_calling_cards_block__rates--price {
+    font-family: "Trade Gothic Bold";
+    color: #009bbe;
+    font-size: 2.3em;
+    padding-top: 5px; }
+  .country_calling_cards_block__rates--cent {
+    font-family: "Trade Gothic Light";
+    color: #292f36;
+    font-size: 0.7em;
+    padding-top: 5px;
+    text-transform: uppercase; }
+
+@media (max-width: 943px) {
+  .country_calling_cards_block__container__countryList--label {
+    font-size: 1.1em;
+    padding-top: 15px; } }
+
+@media (max-width: 520px) {
+  .country_calling_cards_block__rates--title {
+    font-size: 1em;
+    height: 25px; }
+  .country_calling_cards_block__rates--cent {
+    font-size: 0.8em; }
+  .country_calling_cards_block__rates--price {
+    font-size: 2em; }
+  .country_calling_cards_block__rates_divider--left {
+    padding: 0 8px; }
+  .country_calling_cards_block__rates_divider--right {
     padding: 0 8px; } }
 
 .strip_plans__container {
