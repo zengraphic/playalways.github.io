@@ -1,56 +1,260 @@
-    // ================= BUTTON  ================== //
-    // ================= BUTTON  ================== //
-    // ================= BUTTON  ================== //
-    .v-button {
+// ================= LABEL  ================== //
+// ================= LABEL  ================== //
+// ================= LABEL  ================== //
+.v-label {
+    display: none;
+}
+
+// ================= BUTTON  ================== //
+// ================= BUTTON  ================== //
+// ================= BUTTON  ================== //
+.v-button {
+    background-image: none !important;
+    background-color: $color_orange !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border: 1px solid #ccc !important;
+    color: $color_white !important;
+    font-size: 18px !important;
+    width: 280px !important;
+    padding: 16px 0 !important;
+    height: 52px !important;
+    line-height: 1em !important;
+    &:focus {
+        border: 1px solid $color_orange !important;
         background-image: none !important;
-        background-color: $color_orange !important;
         box-shadow: none !important;
         text-shadow: none !important;
-        border: 1px solid #ccc !important;
-        color: $color_white !important;
-        font-size: 18px !important;
-        width: 280px !important;
-        padding: 16px 0 !important;
-        height: 52px !important;
-        line-height: 1em !important;
-        &:focus {
+        &:after {
             border: 1px solid $color_orange !important;
-            background-image: none !important;
             box-shadow: none !important;
-            text-shadow: none !important;
-            &:after {
-                border: 1px solid $color_orange !important;
-                box-shadow: none !important;
-            }
         }
-        &-wrap {
-            &:focus {
-                outline: none !important;
+    }
+    &-wrap {
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+// ================= ACCORDION  ================== //
+// ================= ACCORDION  ================== //
+// ================= ACCORDION  ================== //
+.v-accordion {
+    &-item-open {
+        .v-captiontext {
+            &:before {
+                transform: translate(10px, 4px) rotate(45deg) !important;
+            }
+            &:after {
+                transform: translate(10px, 4px) rotate(-45deg) !important;
             }
         }
     }
-    
-    // ================= ACCORDION  ================== //
-    // ================= ACCORDION  ================== //
-    // ================= ACCORDION  ================== //
-    .v-accordion {
-        &-item-open {
-            .v-captiontext {
-                &:before {
-                    transform: translate(10px, 4px) rotate(45deg) !important;
-                }
+    .v-captiontext {
+        &:before {
+            position: absolute;
+            width: 2px;
+            right: 25px;
+            height: 8px;
+            top: 10px;
+            transition: all .1s ease-in-out;
+            background: $color_orange;
+            content: "";
+            transform: translate(10px, 4px) rotate(-45deg);
+        }
+        &:after {
+            position: absolute;
+            width: 2px;
+            right: 20px;
+            height: 8px;
+            top: 10px;
+            transition: all .1s ease-in-out;
+            background: $color_orange;
+            content: "";
+            transform: translate(10px, 4px) rotate(45deg);
+        }
+    }
+    &-item-caption {
+        & > .v-caption {
+            background: none !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.additionaldata {
+    // ================= BODY  ================== //
+    // ================= BODY  ================== //
+    // ================= BODY  ================== //
+    @at-root{
+    	.v-layout{
+    		&.v-widget{
+    			padding: 0 !important;
+    		}
+    	}
+    }
+    &.v-app{
+    	background-color: $color_white;
+    	max-width: 1024px;
+    	width: 100%;
+    	margin: 0 auto;
+    	border: 1px solid #ccc;
+    }
+    // ================= RADIOBUTTON  ================== //
+    // ================= RADIOBUTTON  ================== //
+    // ================= RADIOBUTTON  ================== //	
+    .v-radiobutton {
+        & > input {
+            & ~ label {
+                &:before,
                 &:after {
-                    transform: translate(10px, 4px) rotate(-45deg) !important;
+                    border: 1px solid #ccc !important;
+                    background-image: none !important;
+                    background: none !important;
+                    box-shadow: none !important;
+                    text-shadow: none !important;
+                }
+            }
+            &:checked {
+                & ~ label {
+                    &:after {
+                        background: $color_orange !important;
+                        border: 1px solid $color_orange !important;
+                        width: 11px !important;
+                        height: 11px !important;
+                        top: 4px !important;
+                        left: 4px !important;
+                    }
+                    &:before {
+                        border: 1px solid $color_orange !important;
+                    }
+                }
+            }
+            &:focus,
+            &:active {
+                & ~ label {
+                    &:before {
+                        border-color: $color_orange;
+                        box-shadow: none !important;
+                        text-shadow: none !important;
+                    }
                 }
             }
         }
-        .v-captiontext {
+    }
+    // ================= CHECKBOX  ================== //
+    // ================= CHECKBOX  ================== //
+    // ================= CHECKBOX  ================== //
+    .v-checkbox {
+        & > input {
+            &:active {
+                & ~ label {
+                    &:after {
+                        background-color: transparent !important;
+                        border: 1px solid #ccc !important;
+                        background: none !important;
+                    }
+                }
+            }
+            & ~ label {
+                &:before {
+                    text-shadow: none !important;
+                    box-shadow: none !important;
+                    border: 1px solid #ccc !important;
+                    background: none !important;
+                }
+            }
+            &:checked {
+                & ~ label {
+                    &:after {
+                        color: $color_white !important;
+                        background-color: $color_orange !important;
+                        text-shadow: none !important;
+                        box-shadow: none !important;
+                        border: 1px solid #ccc !important;
+                        background-image: url(https://playalways.github.io/ui-kit/deploy/img/confirm_white.svg);
+                        background-position: -3px -2px;
+                        background-size: 20px;
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+    // ================= DATE FIELD  ================== //
+    // ================= DATE FIELD  ================== //
+    // ================= DATE FIELD  ================== //  
+    .v-datefield {
+        & [class*="textfield"] {
+            height: 50px;
+            background-color: transparent;
+            box-shadow: none;
+            padding-left: 10px;
+            &:focus {
+                border-color: $color_orange;
+                box-shadow: none;
+            }
+        }
+        & [class*="button"] {
+            top: 12px;
+            border-right: none;
+            display: none;
+            &:before {
+                content: "";
+            }
+        }
+    }
+    // ================= CARET  ================== //
+    // ================= CARET  ================== //
+    // ================= CARET  ================== //
+    .v-filterselect {
+    	width: 300px !important;
+    	display: inline-block !important;
+        &-suggestpopup {
+            margin-top: 0px !important;
+            & [class$="suggestmenu"] {
+                padding: 0;
+            }
+            .gwt-MenuItem {
+                height: 50px;
+                line-height: 50px;
+                &-selected {
+                    background-color: $color_orange;
+                    color: $color_white;
+                    background-image: none;
+                    border-radius: 0px;
+                }
+            }
+        }
+        &-focus {
+            &:before {
+                transform: translate(10px, 4px) rotate(45deg) !important;
+            }
+            &:after {
+                transform: translate(10px, 4px) rotate(-45deg) !important;
+            }
+        }
+        & [class$="input"] {
+            height: 50px;
+            &:focus {
+                border-color: $color_orange;
+                box-shadow: none;
+            }
+        }
+        & [class$="button"] {
+            display: none;
+            top: 15px;
+            border-left: none;
+        }
+        &-no-input {
             &:before {
                 position: absolute;
                 width: 2px;
-                right: 25px;
-                height: 8px;
-                top: 10px;
+                right: 33px;
+                height: 10px;
+                top: 18px;
                 transition: all .1s ease-in-out;
                 background: $color_orange;
                 content: "";
@@ -59,217 +263,65 @@
             &:after {
                 position: absolute;
                 width: 2px;
-                right: 20px;
-                height: 8px;
-                top: 10px;
+                right: 27px;
+                height: 10px;
+                top: 18px;
                 transition: all .1s ease-in-out;
                 background: $color_orange;
                 content: "";
                 transform: translate(10px, 4px) rotate(45deg);
             }
-        }
-        &-item-caption {
-            & > .v-caption {
-                background: none !important;
-                text-shadow: none !important;
-                box-shadow: none !important;
-            }
-        }
-    }
-    
-    .additionaldata {
-        // ================= RADIOBUTTON  ================== //
-        // ================= RADIOBUTTON  ================== //
-        // ================= RADIOBUTTON  ================== //	
-        .v-radiobutton {
-            & > input {
-                & ~ label {
-                    &:before,
-                    &:after {
-                        border: 1px solid #ccc !important;
-                        background-image: none !important;
-                        background: none !important;
-                        box-shadow: none !important;
-                        text-shadow: none !important;
-                    }
-                }
-                &:checked {
-                    & ~ label {
-                        &:after {
-                            background: $color_orange !important;
-                            border: 1px solid $color_orange !important;
-                            width: 11px !important;
-                            height: 11px !important;
-                            top: 4px !important;
-                            left: 4px !important;
-                        }
-                        &:before {
-                            border: 1px solid $color_orange !important;
-                        }
-                    }
-                }
-                &:focus,
-                &:active {
-                    & ~ label {
-                        &:before {
-                            border-color: $color_orange;
-                            box-shadow: none !important;
-                            text-shadow: none !important;
-                        }
-                    }
-                }
-            }
-        }
-        // ================= CHECKBOX  ================== //
-        // ================= CHECKBOX  ================== //
-        // ================= CHECKBOX  ================== //
-        .v-checkbox {
-            & > input {
-                &:active {
-                    & ~ label {
-                        &:after {
-                            background-color: transparent !important;
-                            border: 1px solid #ccc !important;
-                            background: none !important;
-                        }
-                    }
-                }
-                & ~ label {
-                    &:before {
-                        text-shadow: none !important;
-                        box-shadow: none !important;
-                        border: 1px solid #ccc !important;
-                        background: none !important;
-                    }
-                }
-                &:checked {
-                    & ~ label {
-                        &:after {
-                            color: $color_white !important;
-                            background-color: $color_orange !important;
-                            text-shadow: none !important;
-                            box-shadow: none !important;
-                            border: 1px solid #ccc !important;
-                            background-image: url(https://playalways.github.io/ui-kit/deploy/img/confirm_white.svg);
-                            background-position: -3px -2px;
-                            background-size: 20px;
-                            content: "";
-                        }
-                    }
-                }
-            }
-        }
-        // ================= DATE FIELD  ================== //
-        // ================= DATE FIELD  ================== //
-        // ================= DATE FIELD  ================== //  
-        .v-datefield {
-            & [class*="textfield"] {
-                height: 50px;
-                background-color: transparent;
-                box-shadow: none;
-                padding-left: 10px;
-                &:focus {
-                    border-color: $color_orange;
-                    box-shadow: none;
-                }
-            }
-            & [class*="button"] {
-                top: 12px;
-                border-right: none;
-                display: none;
-                &:before {
-                    content: "";
-                }
-            }
-        }
-        // ================= CARET  ================== //
-        // ================= CARET  ================== //
-        // ================= CARET  ================== //
-        .v-filterselect {
-            &-suggestpopup {
-                margin-top: 0px !important;
-                & [class$="suggestmenu"] {
-                    padding: 0;
-                }
-                .gwt-MenuItem {
-                	height: 50px;
-                	line-height: 50px;
-                    &-selected {
-                        background-color: $color_orange;
-                        color: $color_white;
-                        background-image: none;
-                        border-radius: 0px;
-                    }
-                }
-            }
-            &-focus {
-                &:before {
-                    transform: translate(10px, 4px) rotate(45deg) !important;
-                }
-                &:after {
-                    transform: translate(10px, 4px) rotate(-45deg) !important;
-                }
-            }
-            & [class$="input"] {
-                height: 50px;
-                &:focus {
-                    border-color: $color_orange;
-                    box-shadow: none;
-                }
-            }
-            & [class$="button"] {
-                display: none;
-                top: 15px;
-                border-left: none;
-            }
-            &-no-input {
-                &:before {
-                    position: absolute;
-                    width: 2px;
-                    right: 33px;
-                    height: 10px;
-                    top: 18px;
-                    transition: all .1s ease-in-out;
-                    background: $color_orange;
-                    content: "";
-                    transform: translate(10px, 4px) rotate(-45deg);
-                }
-                &:after {
-                    position: absolute;
-                    width: 2px;
-                    right: 27px;
-                    height: 10px;
-                    top: 18px;
-                    transition: all .1s ease-in-out;
-                    background: $color_orange;
-                    content: "";
-                    transform: translate(10px, 4px) rotate(45deg);
-                }
-                &:focus {
-                    border-color: $color_orange;
-                    box-shadow: none;
-                    background: none !important;
-                }
-                & [class*="input"] {
-                    height: 50px;
-                    box-shadow: none;
-                    background: none !important;
-                    &:focus {
-                        border-color: $color_orange;
-                        box-shadow: none;
-                    }
-                }
-            }
-        }
-        // ================= INPUT FIELD  ================== //
-        // ================= INPUT FIELD  ================== //
-        // ================= INPUT FIELD  ================== //
-        .v-textfield {
-            height: 50px;
-            border-color: #ccc;
             &:focus {
                 border-color: $color_orange;
                 box-shadow: none;
+                background: none !important;
+            }
+            & [class*="input"] {
+                height: 50px;
+                box-shadow: none;
+                background: none !important;
+                &:focus {
+                    border-color: $color_orange;
+                    box-shadow: none;
+                }
             }
         }
     }
+    // ================= INPUT FIELD  ================== //
+    // ================= INPUT FIELD  ================== //
+    // ================= INPUT FIELD  ================== //
+    .v-textfield {
+        height: 50px;
+        border-color: #ccc;
+        width: 620px !important;
+        &:focus {
+            border-color: $color_orange;
+            box-shadow: none;
+        }
+    }
+    // ================= LAYOUT  ================== //
+    // ================= LAYOUT  ================== //
+    // ================= LAYOUT  ================== //
+    .v-panel {
+    	background: none;
+    	color: #444;
+    	border: none;
+    	box-shadow: none;
+        &-content {
+            & > .v-margin {
+                &-left {
+                    padding-left: 0px;
+                }
+                &-right {
+                    padding-right: 0px;
+                }
+                &-bottom {
+                    padding-bottom: 15px !important;
+                }
+                &-top {
+                    padding-top: 15px !important;
+                }
+            }
+        }
+    }
+}

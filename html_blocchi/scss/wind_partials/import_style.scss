@@ -56,8 +56,8 @@ $text-medium: 2.500em; // 40 in base 16
 
 $color-lighterGrey: #f4f4f4; // new color
 $color-lightGrey: #e6e9ed;
-$color-mediumGrey: #d3d3d2; 
-$color-mediumLightGrey: #ccd1d9; 
+$color-mediumGrey: #d3d3d2;
+$color-mediumLightGrey: #ccd1d9;
 $color-darkGrey: #4a4a4a; // Placeholder
 $color-darkerGrey: #292f36; // Standard Text
 $color-darkestGrey: #212121; // Home and Life
@@ -80,7 +80,7 @@ $color-HomeLife-Background: $color-darkestGrey;
 
 $color-blue: $color-mediumBlue;
 
-/* ___________________ MIXIN __________________ 
+/* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
 
 $breakpoints: ( 'super-tiny': ( max-width: 480px),
@@ -114,7 +114,7 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px),
 //     font-size: 10px;
 //   }
 // }
-// MIXIN FOR BORDER RADIOUS 
+// MIXIN FOR BORDER RADIOUS
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
@@ -214,7 +214,7 @@ $y) {
     }
 }
 
-//usage ----> 
+//usage ---->
 // .foo {
 //   @include placeholder {
 //     color: green;
@@ -242,7 +242,7 @@ $y) {
 // }
 // .object-to-animate {
 //   @include animation('move-the-object .5s 1', 'move-the-object-again .5s 1 .5s');
-// } 
+// }
 // ============== ANIMATIONS =========
 @mixin animation($animate...) {
     $max: length($animate);
@@ -296,6 +296,10 @@ img {
         color: $color-placeholder;
         opacity: 1;
     }
+}
+
+.full_height {
+  height: 100%;
 }
 
 .rotated {
@@ -385,7 +389,7 @@ a {
     &:active {
         text-decoration: none;
         outline: none;
-        
+
     }
 }
 
@@ -468,7 +472,7 @@ b {
 
 .info_link {
     color: $color-orange;
-    /* font-size: 0.750em; Prevent too small sized text*/ 
+    /* font-size: 0.750em; Prevent too small sized text*/
     text-decoration: none;
     cursor: pointer;
     &:hover {
@@ -484,7 +488,7 @@ b {
     padding-bottom: 15px; */
     padding: 1rem 0;
     margin: 0px 30px;
-    
+
     display: block;
     font-size: 1.125em; //18px
     text-align: center;
@@ -594,7 +598,7 @@ b {
     &--orange {
         background-color: $color-orange !important;
     }
-    
+
 }
 
 

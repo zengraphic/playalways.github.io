@@ -21,143 +21,76 @@
     color: #444;
   }
 
-  form {
-    > h3 {
-      display: none;
-    }
-
-    .powermail_legend {
-      display: none;
-    }
-
-    .powermail_label {
-      display: none;
-    }
-
-    .powermail_fieldwrap {
-      &.powermail_fieldwrap_nomeecognome,
-      &.powermail_fieldwrap_recapitotelefonico {
-        float: left;
-      }
-
-      &.powermail_fieldwrap_email,
-      &.powermail_fieldwrap_marker,
-      &.powermail_fieldwrap_provincia,
-      &.powermail_fieldwrap_type_reset,
-      &.powermail_fieldwrap_type_submit {
-        float: right;
-      }
-
-      &.powermail_fieldwrap_marker_01 {
-        clear: both;
-      }
-
-      &.powermail_fieldwrap_marker_02 {
-        width: auto;
-      }
-
-      &_half {
-        display: inline-block;
-        width: 49.5%;
-        @media (max-width: 767px) {
-          width: 100%;
+  .tx-powermail {
+    .powermail {
+      &_fieldwrap {
+        &.powermail_fieldwrap_nomeecognome,
+        &.powermail_fieldwrap_recapitotelefonico {
+          float: left;
         }
-      }
 
-      &.powermail_fieldwrap_type_text {
-        margin: .7rem 0 2rem;
-        color: #292F36;
-        font-family: "Trade Gothic", sans-serif;
-        font-size: 1.1rem;
-      }
-
-      &.powermail_fieldwrap_type_reset {
-        width: auto;
-
-        .powermail_reset {
-          margin: .9rem 0 0;
-          padding: 0;
-          background-color: transparent;
-          color: $color_orange;
-          font-size: 1.2rem;
-          text-transform: uppercase;
-        }
-      }
-
-      &.powermail_fieldwrap_type_submit {
-        width: 100%;
-        margin: .9rem 0 0;
-        padding: 0;
-        float: right;
-        clear: both;
-        font-size: 1.2rem;
-
-        .base__bt {
-          margin-top: 68px;
-          padding: 1.1rem 0;
+        &_email,
+        &_marker,
+        &_provincia,
+        &_type_reset,
+        &_type_submit {
           float: right;
-          background-color: $color_orange;
-          color: #FFF;
-          font-size: 1.2rem;
-          line-height: normal;
-          @media (max-width: 767px) {
-            width: 100%;
-            margin: 2.8rem 0 2.2rem;
-            padding: 1.2rem 0;
-            font-size: 1.2rem;
+        }
+
+        &_marker_01 {
+          clear: both;
+        }
+
+        &_marker_02 {
+          width: auto;
+
+          h5 {
+            margin-bottom: .3rem;
+            float: left;
+            font-family: $font_family_regular;
+            font-size: 1.1rem;
+            letter-spacing: -.025rem;
+            line-height: 1em;
+
+            a {
+              margin: 0;
+              padding: 0;
+              float: none;
+              line-height: normal;
+              vertical-align: baseline;
+              @media (max-width: 767px) {
+                margin: 0;
+                font-size: 1rem;
+              }
+            }
           }
         }
-      }
-    }
-  }
 
-  .base__input,
-  .base__select.bootstrap-select {
-    width: 100% !important;
-    margin-bottom: 1.5rem;
+        &_type {
+          &_text {
+            margin: .7rem 0 2rem;
+            font-size: 1.1rem;
+          }
 
-    &::-webkit-input-placeholder {
-      color: $color_grey_dark_light;
-    }
+          &_check {
+            margin-bottom: 2.4rem;
+          }
 
-    &:-moz-placeholder,
-    &::-moz-placeholder {
-      color: $color_grey_dark_light;
-      opacity: 1;
-    }
-  }
+          &_input {
+            margin-bottom: 1.5rem;
+          }
 
-  .checkbox {
-    margin-top: .4rem;
-  }
+          &_select {
+            margin-bottom: 1.5rem;
+          }
 
-  .base__input--textarea {
-    @include boxWF(left, 100%);
-    height: 103px;
-    margin: 2.4rem 0 0;
-    resize: none;
-    @media (max-width: 767px) {
-      height: 148px;
-    }
-  }
-
-  h5 {
-    @include boxWF(left, auto);
-    @include defaultTxt($font_family_regular, 1.1rem);
-    margin: .9rem 0 .3rem;
-    color: #444;
-    letter-spacing: -.4px;
-    line-height: normal;
-
-    a.btn {
-      margin: 0;
-      padding: 0;
-      float: none;
-      line-height: normal;
-      vertical-align: baseline;
-      @media (max-width: 767px) {
-        margin: 0;
-        font-size: 1rem;
+          &_submit {
+            .base__bt {
+              margin-top: 68px;
+              float: right;
+            }
+          }
+        }
       }
     }
   }

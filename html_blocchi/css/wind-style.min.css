@@ -367,6 +367,72 @@ b {
   .button, .button--slim, .button--ghost, .button--ghost--transparent, .button--search {
     margin: 0px 15px 15px 15px; } }
 
+.tx-powermail h3 {
+  display: none; }
+
+.tx-powermail .powermail_legend {
+  display: none; }
+
+.tx-powermail .powermail_label {
+  display: none; }
+
+.tx-powermail .powermail_fieldwrap_half {
+  display: inline-block;
+  width: 49.5%; }
+  @media (max-width: 767px) {
+    .tx-powermail .powermail_fieldwrap_half {
+      width: 100%; } }
+
+.tx-powermail .powermail_fieldwrap_type_check {
+  margin-bottom: 1rem; }
+
+.tx-powermail .powermail_fieldwrap_type_textarea .base__input {
+  height: 103px;
+  padding: 1.4rem .9rem;
+  resize: none; }
+  @media (max-width: 767px) {
+    .tx-powermail .powermail_fieldwrap_type_textarea .base__input {
+      height: 148px; } }
+
+.tx-powermail .powermail_fieldwrap_type_input .base__input {
+  padding: 1.4rem .9rem;
+  font-size: 1.2rem;
+  line-height: 1em; }
+
+.tx-powermail .powermail_fieldwrap_type_select .base__select.bootstrap-select {
+  width: 100% !important; }
+  .tx-powermail .powermail_fieldwrap_type_select .base__select.bootstrap-select::-webkit-input-placeholder {
+    color: #656D78; }
+  .tx-powermail .powermail_fieldwrap_type_select .base__select.bootstrap-select:-moz-placeholder, .tx-powermail .powermail_fieldwrap_type_select .base__select.bootstrap-select::-moz-placeholder {
+    color: #656D78;
+    opacity: 1; }
+  .tx-powermail .powermail_fieldwrap_type_select .base__select.bootstrap-select .dropdown-toggle {
+    padding: 1.4rem .9rem; }
+    .tx-powermail .powermail_fieldwrap_type_select .base__select.bootstrap-select .dropdown-toggle .filter-option {
+      font-size: 1.2rem;
+      line-height: 1em; }
+
+.tx-powermail .powermail_fieldwrap_type_reset {
+  width: auto; }
+  .tx-powermail .powermail_fieldwrap_type_reset .powermail_reset {
+    padding: 0;
+    background-color: transparent;
+    color: #f48135;
+    font-size: 1.2rem;
+    text-transform: uppercase; }
+
+.tx-powermail .powermail_fieldwrap_type_submit {
+  width: 100%; }
+  .tx-powermail .powermail_fieldwrap_type_submit .base__bt {
+    padding: 1.4rem .9rem;
+    font-size: 1.2rem;
+    line-height: normal; }
+    @media (max-width: 767px) {
+      .tx-powermail .powermail_fieldwrap_type_submit .base__bt {
+        width: 100%;
+        margin: 2.8rem 0 2.2rem;
+        font-size: 1.2rem; } }
+
 .torna_su {
   text-align: center;
   color: #f48135;
@@ -887,176 +953,129 @@ b {
       color: #009bbe; }
 
 .contact_info_block {
-  margin: 0 auto;
-  max-width: 1024px;
   position: relative;
-  overflow: hidden; }
-  .contact_info_block .tx-powermail h3 {
-    display: none; }
-  .contact_info_block .tx-powermail legend {
-    display: none; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap:first-of-type .powermail_field {
-    font-family: "Trade Gothic Light";
-    color: #292f36;
-    font-size: 1.125em;
-    line-height: 1.1250em;
-    padding: 0 30px 0 0; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap:last-of-type {
-    margin-bottom: 20px;
-    margin-top: 20px; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_type_check label.powermail_label {
-    display: none; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_nomeecognome, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_provincia, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_recapitotelefonico, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_email {
-    margin-bottom: 14px; }
-    .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_nomeecognome label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_provincia label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_recapitotelefonico label, .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_email label {
-      display: none; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_01 {
-    margin-bottom: 5px; }
-    .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_01 label {
-      display: none; }
-  .contact_info_block .tx-powermail .powermail_fieldset .powermail_fieldwrap_marker_02 {
-    height: 32px; }
-  .contact_info_block .tx-powermail .powermail_input {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 1rem; }
+  max-width: 1024px;
+  margin: 0 auto; }
   .contact_info_block .tx-powermail .powermail_fieldwrap {
-    margin-bottom: 12px; }
-  .contact_info_block .tx-powermail .powermail_textarea {
-    resize: none;
-    height: 67px;
-    padding-top: 1.7rem;
-    padding-left: 1em; }
-  .contact_info_block .tx-powermail .powermail_submit:hover, .contact_info_block .tx-powermail .powermail_submit:active, .contact_info_block .tx-powermail .powermail_submit:focus {
-    background-color: #f78f4c; }
-  .contact_info_block .tx-powermail .powermail_field .checkbox {
-    margin-top: 19px;
-    margin-bottom: 15px;
-    padding-left: 0; }
-    .contact_info_block .tx-powermail .powermail_field .checkbox input[type="checkbox"]:checked + label::after {
-      left: 100%;
-      width: 25px;
-      height: 25px;
-      margin-left: -25px;
-      top: -5px;
-      font-size: 1em;
-      padding-top: 3px;
-      color: #fff;
-      font-family: FontAwesome;
-      content: "\f00c";
-      background-color: #f48135;
-      border-radius: 4px;
-      border: 1px solid #ccd1d9; }
-    .contact_info_block .tx-powermail .powermail_field .checkbox label {
-      width: 100%;
+    margin-bottom: 15px; }
+    @media (max-width: 768px) {
+      .contact_info_block .tx-powermail .powermail_fieldwrap {
+        margin-bottom: 10px; } }
+    .contact_info_block .tx-powermail .powermail_fieldwrap:first-of-type .powermail_field {
+      padding: .7rem 2rem 0 0;
+      font-size: 1.125em;
+      line-height: 1.125em; }
+    .contact_info_block .tx-powermail .powermail_fieldwrap_half {
+      width: 100%; }
+    .contact_info_block .tx-powermail .powermail_fieldwrap_type_check .checkbox {
+      margin: 0;
       padding-left: 0; }
-      .contact_info_block .tx-powermail .powermail_field .checkbox label::before {
-        left: 100%;
-        width: 25px;
-        height: 25px;
-        margin-left: -25px;
-        top: -5px; }
-  .contact_info_block .tx-powermail h5 {
-    font-family: "Trade Gothic";
-    font-size: 0.8em;
-    padding-bottom: 15px;
-    line-height: 0.6em; }
-    .contact_info_block .tx-powermail h5 .btn {
-      padding-left: 0;
-      line-height: 0.5;
-      font-size: 1em; }
-      .contact_info_block .tx-powermail h5 .btn:hover {
-        opacity: 0.5; }
-  .contact_info_block .link_contact {
-    white-space: nowrap;
-    color: #ffffff; }
-    .contact_info_block .link_contact:hover {
-      color: rgba(255, 255, 255, 0.8); }
-  .contact_info_block .info_link {
-    font-size: 1em; }
+      .contact_info_block .tx-powermail .powermail_fieldwrap_type_check .checkbox label {
+        width: 100%;
+        padding-left: 0;
+        font-size: 1.2rem; }
+        .contact_info_block .tx-powermail .powermail_fieldwrap_type_check .checkbox label:after, .contact_info_block .tx-powermail .powermail_fieldwrap_type_check .checkbox label:before {
+          right: 0;
+          bottom: 0;
+          left: auto;
+          width: 25px;
+          height: 25px; }
+        .contact_info_block .tx-powermail .powermail_fieldwrap_type_check .checkbox label:before {
+          margin-left: 0; }
+        .contact_info_block .tx-powermail .powermail_fieldwrap_type_check .checkbox label:after {
+          top: 0;
+          padding: 0;
+          font-size: 1em;
+          text-align: center; }
+    .contact_info_block .tx-powermail .powermail_fieldwrap_type_reset .btn, .contact_info_block .tx-powermail .powermail_fieldwrap_type_submit .btn {
+      width: 100%;
+      padding: 1rem; }
+    .contact_info_block .tx-powermail .powermail_fieldwrap_type_reset .btn {
+      display: block;
+      border-color: #f48135;
+      background-clip: padding-box;
+      background-color: #ffffff;
+      font-size: 1.2rem; }
+    .contact_info_block .tx-powermail .powermail_fieldwrap_marker_02 h5 {
+      font-family: "Trade Gothic";
+      font-size: .8em;
+      font-weight: 400;
+      line-height: 1em; }
+      .contact_info_block .tx-powermail .powermail_fieldwrap_marker_02 h5 a {
+        padding: 0; }
   .contact_info_block__overlay {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    display: none;
     position: fixed;
-    top: 0px;
-    bottom: 0px;
-    z-index: 900;
+    top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: #444;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    display: none; }
-  .contact_info_block__item {
-    vertical-align: middle;
-    padding-right: 5px; }
-    .contact_info_block__item--active {
-      color: #292f36; }
-    .contact_info_block__item--contact {
-      color: #ffffff;
-      text-transform: uppercase;
-      padding: 15px 20px;
-      background-color: #f48135;
-      right: 0;
-      width: 150px;
-      cursor: pointer; }
-      @media (max-width: 768px) {
-        .contact_info_block__item--contact.contact_open.contact_button {
-          display: none; } }
-      .contact_info_block__item--contact.positionRight {
-        position: relative;
-        right: 80px; }
+    z-index: 900; }
+  .contact_info_block__item--active {
+    color: #292f36; }
+  @media (max-width: 768px) {
+    .contact_info_block__item--contact.contact_open.contact_button {
+      display: none; } }
   .contact_info_block__container {
     position: fixed;
     top: 20vh;
     right: -450px;
-    z-index: 950;
-    width: 500px; }
+    width: 500px;
+    z-index: 950; }
     .contact_info_block__container.contact_open {
-      top: 0; }
-    .contact_info_block__container.base__scrollable {
-      padding: 0; }
+      top: 0;
+      bottom: 0; }
     @media (max-width: 768px) {
       .contact_info_block__container.contact_open {
-        width: 100%;
         top: 0;
-        height: 100vh;
-        overflow: scroll; } }
-    .contact_info_block__container__left {
-      float: left; }
-      .contact_info_block__container__left.contactShow {
-        visibility: visible;
-        width: 50px;
-        -moz-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -webkit-transform: rotate(-90deg);
-        transform: rotate(-90deg); }
-      .contact_info_block__container__left.contactHide {
-        visibility: hidden;
-        position: absolute;
-        right: calc(10px + 1rem);
-        top: 5px; }
-        .contact_info_block__container__left.contactHide .contact_info_block__item--contact {
-          width: 20px;
-          height: 40px;
-          padding: 0;
-          background-color: transparent;
-          color: #f48135;
-          font-family: 'Verdana';
-          font-size: 1.8em; }
-          .contact_info_block__container__left.contactHide .contact_info_block__item--contact:hover, .contact_info_block__container__left.contactHide .contact_info_block__item--contact:active {
-            opacity: 0.5; }
+        width: 100%; } }
+    .contact_info_block__container__left.contactShow {
+      position: absolute;
+      height: 135px;
+      transform: translateY(100%) rotate(-90deg);
+      transform-origin: top left;
+      visibility: visible; }
+      .contact_info_block__container__left.contactShow .contact_button .link_contact {
+        display: inline-block;
+        width: 135px;
+        padding: 15px 20px;
+        background-color: #f48135;
+        color: #ffffff;
+        white-space: nowrap; }
+        .contact_info_block__container__left.contactShow .contact_button .link_contact:hover {
+          color: rgba(255, 255, 255, 0.8); }
+    .contact_info_block__container__left.contactHide {
+      position: absolute;
+      top: .5rem;
+      right: 1rem;
+      visibility: hidden;
+      z-index: 500; }
+      .contact_info_block__container__left.contactHide .close_button .link_contact {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        border-radius: 50%;
+        background-color: #f48135;
+        color: #ffffff;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        text-align: center; }
+        .contact_info_block__container__left.contactHide .close_button .link_contact:active, .contact_info_block__container__left.contactHide .close_button .link_contact:hover {
+          opacity: .5; }
     .contact_info_block__container__right {
       width: 450px;
-      padding: 14px 0 0 0;
-      background-color: #e6e9ed;
+      height: 100%;
+      padding: 0;
       float: right;
+      background-color: #e6e9ed;
       visibility: hidden; }
       @media (max-width: 768px) {
         .contact_info_block__container__right.visibleShow {
           width: 100%; } }
-  .contact_info_block__close {
-    float: right;
-    margin-top: -25px; }
 
 .standard_block {
   width: 100%;
@@ -1449,19 +1468,19 @@ b {
   margin: 0 auto;
   line-height: 1.08; }
   .bundle_block__container {
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out; }
+    -o-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    -ms-transition: all .45s ease-in-out;
+    -webkit-transition: all .45s ease-in-out; }
   .bundle_block h2 {
     font-family: "Trade Gothic Bold Cond"; }
   .bundle_block__showMore {
+    margin-top: 70px;
     color: #f48135;
     font-size: 1.250em;
     text-align: center;
     text-transform: uppercase;
     font-family: "Trade Gothic Light";
-    margin-top: 70px;
     cursor: pointer; }
     .bundle_block__showMore:hover {
       text-decoration: underline; }
@@ -1506,7 +1525,7 @@ b {
         position: absolute;
         top: 15%;
         bottom: 7%;
-        right: 0%;
+        right: 0;
         min-height: 1px; }
     .bundle_block__single h2 {
       margin-bottom: 10px; }
@@ -1528,9 +1547,9 @@ b {
       font-size: 1.875em;
       font-family: "Trade Gothic Bold"; }
     .bundle_block__single--disclaimer {
-      font-size: 0.688em;
+      font-size: .688em;
       font-family: "Trade Gothic Light";
-      margin: 10px 0px 30px 0px;
+      margin: 10px 0 30px;
       height: 35px; }
     .bundle_block__single--mainPrice {
       font-size: 2.500em;
@@ -1541,7 +1560,7 @@ b {
         font-size: 30px; }
     .bundle_block__single--recurrency {
       font-family: "Trade Gothic Light";
-      font-size: 0.813em;
+      font-size: .813em;
       margin-bottom: 10px;
       height: 15px; }
     .bundle_block__single__placeholder {
@@ -1551,9 +1570,6 @@ b {
   float: right;
   margin-right: 45px;
   padding-top: 7px;
-  display: none; }
-
-.home_page .bundle_block__tabs {
   display: none; }
 
 @media all and (max-width: 991px) {
@@ -1567,8 +1583,8 @@ b {
     display: none !important; }
   .bundle_block__single__placeholder {
     display: none; }
-  .bundle_block__showOffers,
-  .arrow_top_orange {
+  .arrow_top_orange,
+  .bundle_block__showOffers {
     display: block; }
   .bundle_block__tabs {
     display: none; }
@@ -2190,21 +2206,25 @@ b {
     text-align: center;
     display: inline-block;
     cursor: pointer; }
+    .stripMenuText__item a {
+      color: #aab2bd; }
+      .stripMenuText__item a:hover {
+        color: #f48135; }
     .stripMenuText__item__title {
       display: inline-block;
       position: relative;
       padding: 30px 0 10px; }
-    .stripMenuText__item.active, .stripMenuText__item:hover {
+    .stripMenuText__item.active a, .stripMenuText__item:hover a {
       color: #f48135; }
-      .stripMenuText__item.active .stripMenuText__item__title:after, .stripMenuText__item:hover .stripMenuText__item__title:after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 2px;
-        background-color: #f48135; }
+    .stripMenuText__item.active .stripMenuText__item__title:after, .stripMenuText__item:hover .stripMenuText__item__title:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: #f48135; }
 
 @media all and (max-width: 768px) {
   .stripMenuText {
@@ -2660,20 +2680,20 @@ b {
       margin-top: 0px; } }
 
 .bundle_ver2_block {
-  padding-top: 30px;
   max-width: 1024px;
   margin: 0 auto;
-  line-height: 1.08;
-  padding-bottom: 30px; }
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 1.08; }
   .bundle_ver2_block.bundle__business .bundle_ver2_block__single--bigAmount {
     height: 75px; }
   .bundle_ver2_block.bundle__business .bundle_ver2_block__single__container--smallAmount {
     height: 90px; }
   .bundle_ver2_block__container {
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out; }
+    -o-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    -ms-transition: all .45s ease-in-out;
+    -webkit-transition: all .45s ease-in-out; }
   .bundle_ver2_block h2 {
     font-family: "Trade Gothic Bold Cond"; }
   .bundle_ver2_block__showMore {
@@ -2690,7 +2710,6 @@ b {
     color: #f48135;
     margin-left: 30px;
     width: 100%;
-    display: none;
     font-size: 1.250em;
     text-align: left;
     text-transform: uppercase;
@@ -2699,7 +2718,6 @@ b {
     .bundle_ver2_block__showOffers:hover {
       text-decoration: underline; }
   .bundle_ver2_block__tabs {
-    display: none;
     width: 100%;
     text-align: right;
     text-transform: uppercase;
@@ -2731,7 +2749,7 @@ b {
         position: absolute;
         top: 15%;
         bottom: 7%;
-        right: 0%;
+        right: 0;
         min-height: 1px; }
     .bundle_ver2_block__single h2 {
       margin-bottom: 10px; }
@@ -2753,9 +2771,9 @@ b {
       font-size: 1.8em;
       font-family: "Trade Gothic Bold"; }
     .bundle_ver2_block__single--disclaimer {
-      font-size: 0.688em;
+      font-size: .688em;
       font-family: "Trade Gothic Light";
-      margin: 20px 0px;
+      margin: 20px 0;
       height: 35px; }
     .bundle_ver2_block__single--mainPrice {
       font-size: 2.500em;
@@ -2766,7 +2784,7 @@ b {
         font-size: 30px; }
     .bundle_ver2_block__single--recurrency {
       font-family: "Trade Gothic Light";
-      font-size: 0.813em;
+      font-size: .813em;
       margin-bottom: 15px;
       height: 15px; }
     .bundle_ver2_block__single__placeholder {
@@ -2792,8 +2810,8 @@ b {
     display: none !important; }
   .bundle_ver2__single__placeholder {
     display: none; }
-  .bundle_ver2__showOffers,
-  .arrow_top_orange {
+  .arrow_top_orange,
+  .bundle_ver2__showOffers {
     display: block; }
   .bundle_ver2__tabs {
     display: none; }
@@ -2802,37 +2820,28 @@ b {
 
 .suggestion_block {
   background-color: #f4f4f4;
-  -o-transition: none;
+  transition: none;
+  -webkit-transition: none;
   -moz-transition: none;
-  -ms-transition: none;
-  -webkit-transition: none; }
+  -ms-transition: none; }
   .suggestion_block .tx-powermail {
     margin-top: 70px; }
-    .suggestion_block .tx-powermail h3 {
-      display: none; }
-    @media (max-width: 768px) {
-      .suggestion_block .tx-powermail .container-fluid {
-        padding: 0; } }
     .suggestion_block .tx-powermail .powermail_fieldwrap {
-      margin-bottom: 12px; }
-      .suggestion_block .tx-powermail .powermail_fieldwrap_nomeecognome label,
-      .suggestion_block .tx-powermail .powermail_fieldwrap_provincia label,
-      .suggestion_block .tx-powermail .powermail_fieldwrap_recapitotelefonico label,
-      .suggestion_block .tx-powermail .powermail_fieldwrap_email label {
-        display: none; }
-      .suggestion_block .tx-powermail .powermail_fieldwrap_invia {
-        margin-top: 40px; }
-    .suggestion_block .tx-powermail .powermail_input {
-      padding: 1.1rem; }
+      margin-bottom: 15px; }
       @media (max-width: 768px) {
-        .suggestion_block .tx-powermail .powermail_input {
-          font-size: 1.2em; } }
+        .suggestion_block .tx-powermail .powermail_fieldwrap {
+          margin-bottom: 10px; } }
+      .suggestion_block .tx-powermail .powermail_fieldwrap_half {
+        width: 100%; }
+      .suggestion_block .tx-powermail .powermail_fieldwrap_type_submit .base__bt {
+        margin-top: 2rem;
+        width: 100%; }
   .suggestion_block .info_link {
-    font-size: 0.750em; }
+    font-size: .750em; }
     @media (max-width: 768px) {
       .suggestion_block .info_link {
         display: block;
-        font-size: 0.85em;
+        font-size: .85em;
         margin-top: 1em;
         margin-bottom: 0; } }
   .suggestion_block__container {
@@ -2894,12 +2903,12 @@ b {
 
 @media all and (max-width: 767px) {
   .suggestion_block__right {
-    padding: 0px 15px;
+    padding: 0 15px;
     height: 346px; }
     .suggestion_block__right .button, .suggestion_block__right .button--slim, .suggestion_block__right .button--ghost, .suggestion_block__right .button--ghost--transparent, .suggestion_block__right .button--search {
       width: 100%;
-      margin-left: 0px;
-      margin-right: 0px; }
+      margin-left: 0;
+      margin-right: 0; }
   .suggestion_block__left {
     font-size: 10px;
     padding-left: 16px;
@@ -3741,129 +3750,6 @@ b {
       font-family: "Trade Gothic";
       color: #f48135; }
 
-/*
-.business_block_viewer,
-.contact_info_block,
-.suggestion_block {
-  .tx-powermail {
-      .powermail {
-          &_submit {
-              max-width: 100%;
-              width: 100%;
-              font-family: "Trade Gothic";
-              background-color: $color-orange;
-              color: $color-white;
-              padding: 1rem 0;
-              display: block;
-              font-size: 1.125em;
-              text-align: center;
-              height: auto;
-              text-transform: uppercase;
-              border: 1px solid;
-              border-color: $color-orange;
-              -webkit-border-radius: 4px;
-              border-radius: 4px;
-              background-clip: padding-box;
-              &:hover,
-              &:active,
-              &:focus {
-                  background-color: #f78f4c;
-                  color: $color-white;
-              }
-          }
-          &_reset {
-              max-width: 100%;
-              width: 100%;
-              font-family: "Trade Gothic";
-              color: $color-orange;
-              background-color: $color-white;
-              padding: 1rem 0;
-              display: block;
-              font-size: 1.125em;
-              text-align: center;
-              height: auto;
-              text-transform: uppercase;
-              border: 1px solid;
-              border-color: $color-orange;
-              -webkit-border-radius: 4px;
-              border-radius: 4px;
-              background-clip: padding-box;
-              &:hover {
-                  color: $color-orange;
-                  opacity: 0.8;
-                  background-color: $color-white;
-              }
-          }
-          &_textarea {
-              display: inline;
-              width: 100%;
-              padding: 0.8rem;
-              padding-top: 1.4rem;
-              padding-bottom: 1.4rem;
-              @include border-radius(4px);
-              @include transition(all, 0.25s, ease-in-out);
-              outline: 0;
-              border: 1px solid #ccd1d9;
-              background-color: white;
-              color: $color-darkGrey;
-              // textarea
-              // error
-              &:focus {
-                  border: 1px solid $color-orange;
-                  box-shadow: none;
-                  -webkit-box-shadow: none;
-              }
-              &:hover,
-              &:active {
-                  border: 1px solid $color-orange;
-              }
-          }
-          &_input {
-              display: inline;
-              width: 100%;
-              padding: 0.8rem;
-              padding-top: 1.4rem;
-              padding-bottom: 1.4rem;
-              @include border-radius(4px);
-              @include transition(all, 0.25s, ease-in-out);
-              outline: 0;
-              border: 1px solid #ccd1d9;
-              background-color: white;
-              color: $color-darkGrey;
-              // textarea
-              // error
-              &:focus {
-                  border: 1px solid $color-orange;
-                  box-shadow: none;
-                  -webkit-box-shadow: none;
-              }
-              &:hover,
-              &:active {
-                  border: 1px solid $color-orange;
-              }
-          }
-          &_legend {
-              display: none;
-          }
-          &_fieldwrap {
-              text-align: left;
-              margin-bottom: 15px;
-              @include breakpoint(small) {
-                  margin-bottom: 10px;
-              }
-          }
-          &_field {
-              &_nomeecognome {
-                  @include placeholder {
-                      content: "Nome e cognome";
-                  }
-                  ;
-              }
-          }
-      }
-  }
-}
-*/
 .business_block_viewer {
   width: 100%;
   max-width: 1024px;
@@ -5214,6 +5100,8 @@ b {
       @media (max-width: 1024px) {
         .showcase_accordions_block__container__body {
           width: 100%; } }
+    .showcase_accordions_block__container .ce-bodytext ul {
+      list-style-type: disc; }
   .showcase_accordions_block ul {
     list-style: none;
     perspective: 900;
@@ -8587,9 +8475,17 @@ b {
     @media (max-width: 910px) {
       .strip_menu_tab__item {
         margin: 0; } }
+    .strip_menu_tab__item a {
+      color: #aab2bd; }
+      .strip_menu_tab__item a:hover {
+        color: #f48135; }
     .strip_menu_tab__item.tab_active {
       border-color: #f48135;
       color: #f48135; }
+      .strip_menu_tab__item.tab_active a {
+        color: #f48135; }
+        .strip_menu_tab__item.tab_active a:hover {
+          color: #f48135; }
     .strip_menu_tab__item:hover {
       border-color: #f48135;
       color: #f48135;
