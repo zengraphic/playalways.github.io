@@ -127,27 +127,33 @@
     <div class="clearfix"></div>
     <div class="first_container margin_top_header"></div>
     <!-- MODAL PANEL LOGIN -->
-    <div id="login" class="base__popup base__popup--loguin mfp-hide loguin_block">
+    <div id="login" class="base__popup mfp-hide loguin_block">
         <div class="container base__scrollable touch_scroll">
-            <div class="header" id="header">
+            <div class="top">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="logo logo--wind">
+                            <img src="../../../img/logos/wind_logo.png" class="wind">
+                        </div>
+                        <a class="btn_sa" href="#">
+                            <img src="../../../img/icons-interface/icon_1.png">
+                            <span>Serve aiuto?</span>
+                        </a>
                         <div class="menu-right">
                             <ul>
                                 <li>
-                                    <a class="btn_menu" id="menuaction" href="#">
-                                            MENU
-                                        </a>
+                                    <a class="mfp-close btn_close" href="#">
+                        CHIUDI</a>
                                 </li>
                                 <li>
-                                    <a class="btn_carrello" href="#">
+                                    <!-- <a class="btn_carrello" href="#">
                                             CARRELLO
-                                        </a>
+                                        </a> -->
                                 </li>
                                 <li>
-                                    <a class="btn_entra mfp-close" title="" href="#">
+                                    <!-- <a class="btn_entra mfp-close" title="" href="#">
                                             ENTRA
-                                        </a>
+                                        </a> -->
                                 </li>
                             </ul>
                         </div>
@@ -157,12 +163,14 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
                     <a class="back" href="#">
-                        <span><i class="fa fa-angle-left"  aria-hidden="true"></i> Entra in Wind</span>
+                        <span>Entra in Wind</span>
                     </a>
                     <div class="form form_loguin">
                         <h3>Inserisci nome utente e password per utilizzare i servizi Wind.</h3>
                         <input class="base__input" type="text" name="username" placeholder="Username">
+                        <span class="error error_message">Controlla il campo</span>
                         <input class="base__input" type="password" name="password" placeholder="Password">
+                        <span class="error error_message">Controlla il campo</span>
                         <div class="base__checkbox checkbox checkbox-inline">
                             <input type="checkbox" class="styled" id="inlineCheckbox1" value="option1">
                             <label for="inlineCheckbox1"> Ricordami </label>
