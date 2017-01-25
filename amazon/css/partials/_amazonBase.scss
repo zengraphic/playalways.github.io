@@ -2,9 +2,9 @@
 // ================= LABEL  ================== //
 // ================= LABEL  ================== //
 .v-label {
-    display: none;
+    //display: none;
 }
-
+ 
 // ================= BUTTON  ================== //
 // ================= BUTTON  ================== //
 // ================= BUTTON  ================== //
@@ -53,26 +53,26 @@
     }
     .v-captiontext {
         &:before {
-            position: absolute;
-            width: 2px;
-            right: 25px;
-            height: 8px;
-            top: 10px;
-            transition: all .1s ease-in-out;
-            background: $color_orange;
-            content: "";
-            transform: translate(10px, 4px) rotate(-45deg);
+            position: absolute !important;
+            width: 2px !important;
+            right: 25px !important;
+            height: 8px !important;
+            top: 10px !important;
+            transition: all .1s ease-in-out !important;
+            background: $color_orange !important;
+            content: "" !important;
+            transform: translate(10px, 4px) rotate(-45deg) !important;
         }
         &:after {
-            position: absolute;
-            width: 2px;
-            right: 20px;
-            height: 8px;
-            top: 10px;
-            transition: all .1s ease-in-out;
-            background: $color_orange;
-            content: "";
-            transform: translate(10px, 4px) rotate(45deg);
+            position: absolute !important;
+            width: 2px !important;
+            right: 20px !important;
+            height: 8px !important;
+            top: 10px !important;
+            transition: all .1s ease-in-out !important;
+            background: $color_orange !important;
+            content: "" !important;
+            transform: translate(10px, 4px) rotate(45deg) !important;
         }
     }
     &-item-caption {
@@ -88,19 +88,19 @@
     // ================= BODY  ================== //
     // ================= BODY  ================== //
     // ================= BODY  ================== //
-    @at-root{
-    	.v-layout{
-    		&.v-widget{
-    			padding: 0 !important;
-    		}
-    	}
+    @at-root {
+        .v-layout {
+            &.v-widget {
+                padding: 0 !important;
+            }
+        }
     }
-    &.v-app{
-    	background-color: $color_white;
-    	max-width: 1024px;
-    	width: 100%;
-    	margin: 0 auto;
-    	border: 1px solid #ccc;
+    &.v-app {
+        background-color: $color_white !important;
+        max-width: 1024px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        border: 1px solid #ccc !important;
     }
     // ================= RADIOBUTTON  ================== //
     // ================= RADIOBUTTON  ================== //
@@ -136,7 +136,7 @@
             &:active {
                 & ~ label {
                     &:before {
-                        border-color: $color_orange;
+                        border-color: $color_orange !important;;
                         box-shadow: none !important;
                         text-shadow: none !important;
                     }
@@ -174,10 +174,10 @@
                         text-shadow: none !important;
                         box-shadow: none !important;
                         border: 1px solid #ccc !important;
-                        background-image: url(https://playalways.github.io/ui-kit/deploy/img/confirm_white.svg);
-                        background-position: -3px -2px;
-                        background-size: 20px;
-                        content: "";
+                        background-image: url(https://playalways.github.io/ui-kit/deploy/img/confirm_white.svg) !important;
+                        background-position: -3px -2px !important;
+                        background-size: 20px !important;
+                        content: "" !important;
                     }
                 }
             }
@@ -188,21 +188,21 @@
     // ================= DATE FIELD  ================== //  
     .v-datefield {
         & [class*="textfield"] {
-            height: 50px;
-            background-color: transparent;
-            box-shadow: none;
-            padding-left: 10px;
+            height: 50px !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            padding-left: 10px !important;
             &:focus {
-                border-color: $color_orange;
-                box-shadow: none;
+                border-color: $color_orange !important;
+                box-shadow: none !important;
             }
         }
         & [class*="button"] {
-            top: 12px;
-            border-right: none;
-            display: none;
+            top: 12px !important;
+            border-right: none !important;
+            display: none !important;
             &:before {
-                content: "";
+                content: "" !important;
             }
         }
     }
@@ -210,21 +210,21 @@
     // ================= CARET  ================== //
     // ================= CARET  ================== //
     .v-filterselect {
-    	width: 300px !important;
-    	display: inline-block !important;
+        width: 300px !important;
+        display: inline-block !important;
         &-suggestpopup {
             margin-top: 0px !important;
             & [class$="suggestmenu"] {
-                padding: 0;
+                padding: 0 !important;
             }
             .gwt-MenuItem {
-                height: 50px;
-                line-height: 50px;
+                height: 50px !important;
+                line-height: 50px !important;
                 &-selected {
-                    background-color: $color_orange;
-                    color: $color_white;
-                    background-image: none;
-                    border-radius: 0px;
+                    background-color: $color_orange !important;
+                    color: $color_white !important;
+                    background-image: none !important;
+                    border-radius: 0px !important;
                 }
             }
         }
@@ -239,50 +239,50 @@
         & [class$="input"] {
             height: 50px;
             &:focus {
-                border-color: $color_orange;
-                box-shadow: none;
+                border-color: $color_orange !important;
+                box-shadow: none !important;
             }
         }
         & [class$="button"] {
-            display: none;
-            top: 15px;
-            border-left: none;
+            display: none !important;
+            top: 15px !important;
+            border-left: none !important;
         }
         &-no-input {
             &:before {
-                position: absolute;
-                width: 2px;
-                right: 33px;
-                height: 10px;
-                top: 18px;
-                transition: all .1s ease-in-out;
-                background: $color_orange;
-                content: "";
-                transform: translate(10px, 4px) rotate(-45deg);
+                position: absolute !important;
+                width: 2px !important;
+                right: 33px !important;
+                height: 10px !important;
+                top: 18px !important;
+                transition: all .1s ease-in-out !important;
+                background: $color_orange !important;
+                content: "" !important;
+                transform: translate(10px, 4px) rotate(-45deg) !important;
             }
             &:after {
-                position: absolute;
-                width: 2px;
-                right: 27px;
-                height: 10px;
-                top: 18px;
-                transition: all .1s ease-in-out;
-                background: $color_orange;
-                content: "";
-                transform: translate(10px, 4px) rotate(45deg);
+                position: absolute !important;
+                width: 2px !important;
+                right: 27px !important;
+                height: 10px !important;
+                top: 18px !important;
+                transition: all .1s ease-in-out !important;
+                background: $color_orange !important;
+                content: "" !important;
+                transform: translate(10px, 4px) rotate(45deg) !important;
             }
             &:focus {
-                border-color: $color_orange;
-                box-shadow: none;
+                border-color: $color_orange !important;
+                box-shadow: none !important;
                 background: none !important;
             }
             & [class*="input"] {
-                height: 50px;
-                box-shadow: none;
+                height: 50px !important;
+                box-shadow: none !important;
                 background: none !important;
                 &:focus {
-                    border-color: $color_orange;
-                    box-shadow: none;
+                    border-color: $color_orange !important;
+                    box-shadow: none !important;
                 }
             }
         }
@@ -291,29 +291,29 @@
     // ================= INPUT FIELD  ================== //
     // ================= INPUT FIELD  ================== //
     .v-textfield {
-        height: 50px;
-        border-color: #ccc;
+        height: 50px !important;
+        border-color: #ccc !important;
         width: 620px !important;
         &:focus {
-            border-color: $color_orange;
-            box-shadow: none;
+            border-color: $color_orange !important;
+            box-shadow: none !important;
         }
     }
     // ================= LAYOUT  ================== //
     // ================= LAYOUT  ================== //
     // ================= LAYOUT  ================== //
     .v-panel {
-    	background: none;
-    	color: #444;
-    	border: none;
-    	box-shadow: none;
+        background: none !important;
+        color: #444 !important;
+        border: none !important;
+        box-shadow: none !important;
         &-content {
             & > .v-margin {
                 &-left {
-                    padding-left: 0px;
+                    padding-left: 0px !important;
                 }
                 &-right {
-                    padding-right: 0px;
+                    padding-right: 0px !important;
                 }
                 &-bottom {
                     padding-bottom: 15px !important;
