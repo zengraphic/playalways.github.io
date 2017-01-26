@@ -427,6 +427,8 @@ html {
     font-size: 14px; } }
 
 .base__icon {
+  display: inline-block;
+  position: relative;
   width: 40px;
   height: 40px; }
   .base__icon--sm {
@@ -435,6 +437,19 @@ html {
   .base__icon--lg {
     width: 80px;
     height: 80px; }
+  .base__icon:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: ""; }
+  .base__icon.icon_cancel--color:before {
+    background: url("../img/prova.svg#icon_cancel--color"); }
+  .base__icon.icon_cancel--grey:before {
+    background: url("../img/prova.svg#icon_cancel--grey"); }
+  .base__icon.icon_cancel--white:before {
+    background: url("../img/prova.svg#icon_cancel--white"); }
 
 .waves-button,
 .waves-button-input,

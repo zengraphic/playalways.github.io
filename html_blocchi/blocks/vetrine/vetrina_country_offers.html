@@ -26,12 +26,12 @@
                 <div class="blocco_offerte_per_nazione">
                     <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
                     <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
-                    <div class="country_offers_block">
+                    <div class="country_offers_block containerTop">
                         <!--  SELECT COUNTRY -->
                         <div class="country_offers_block__container__country--List">
                             <div class="country_offers_block__container__country--List--label col-xs-12 col-sm-5 col-md-5 col-lg-5">Scopri le offerte per nazione</div>
                             <div class="country_offers_block__container__country--List--select col-xs-12 col-sm-7 col-md-7 col-lg-7">
-                                <select class="base__select selectpicker" id="country--List" value="" title="" data-size="6">
+                                <select class="base__select selectpicker country--List" id="" value="" title="" data-size="6">
                                     <option value="0" selected="">-- Scegli la Nazione --</option>
                                     <option value="1">Commonwealth di Puerto Rico</option>
                                     <option value="2">Saint Vincent e Grenadines</option>
@@ -41,10 +41,10 @@
                             <div class="clear"></div>
                         </div>
                         <!--  / SELECT COUNTRY -->
-                        <div class="country_offers_block__container__country placeholder_block" id="stat-0">
+                        <div class="country_offers_block__container__country placeholder_block containerSelected">
                         </div>
                         <!--  COUNTRY COMMONWEALTH -->
-                        <div class="country_offers_block__container__country" id="stat-1">
+                        <div class="country_offers_block__container__country containerSelected">
                             <!-- COUNTRY SELECT -->
                             <div class="center_flag">
                                 <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
@@ -89,7 +89,7 @@
                         </div>
                         <!--  / COUNTRY COMMONWEALTH -->
                         <!--  COUNTRY SAINT VINCENT -->
-                        <div class="country_offers_block__container__country" id="stat-2">
+                        <div class="country_offers_block__container__country containerSelected">
                             <div class="center_flag">
                                 <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                     <div class="country_offers_block__container-title">Saint Vincent e Grenadines</div>
@@ -128,7 +128,7 @@
                         </div>
                         <!--  / COUNTRY SAINT VINCENT -->
                         <!--  COUNTRY JAPAN -->
-                        <div class="country_offers_block__container__country" id="stat-3">
+                        <div class="country_offers_block__container__country containerSelected">
                             <div class="center_flag">
                                 <div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">
                                     <div class="country_offers_block__container-title">Giappone</div>
@@ -183,19 +183,26 @@
         <!-- container wind -->
     </div>
 </body>
+
+
 <script>
 jQuery(document).ready(function($) {
 
-    $('#country--List').change(function() {
-        var selectedItem = $("#country--List").prop("selectedIndex");
-        var choseCountry = "#stat-" + selectedItem;
-        var blockToHide = '.country_offers_block__container__country';
-        $(blockToHide).each(function(i) {
-            $(this).hide();
-        });
-        $(choseCountry).slideToggle();
+    $('.country--List')
+        .on('changed.bs.select', function(e, is) {
+            var parent = $(this).closest('.containerTop');
+            var countries = parent.find('.containerSelected');
 
-    });
+            $(countries).each(function(i) {
+                if (is !== i) {
+                    $(this).hide();
+                } else {
+                    $(this).slideToggle();
+                }
+
+            });
+
+        });
 });
 </script>
 
