@@ -76,7 +76,7 @@ jQuery(function($) {
                 element
                     .getElements()
                     .addClass(element.class);
-                if (index !== 0) {
+                if (parseInt(index,10) !== 0) {
                     element
                         .getElements().not('.menu__modal--group-label > ul')
                         .slideUp(300, function() {
@@ -108,26 +108,32 @@ jQuery(function($) {
 
             /***************************************************************
 
-            Binding click function to menu link prevent event default
+            Binding click function to icon to prevent event default
             only for sliding links.
 
             ***************************************************************/
 
-            $(".menu__modal--content-items a").click(function(e) {
-                if ($(this).siblings('ul').length > 0) {
-                    e.preventDefault();
-                    var menuLink = $(this);
 
-                    /***************************************************************
+            $(".menu__modal")
+                .on('click','.menu__modal--content-items a i', function(event){
 
-                    Call link processing function:
+                    var menuLink = $(this).parent();
 
-                    -- menuLink : clicked menu link passed to function as parameter.
+                    if (menuLink.siblings('ul').length > 0) {
+                        event
+                            .preventDefault();                        
 
-                    ***************************************************************/
+                        /***************************************************************
 
-                    MENU.processLink(menuLink, false);
-                }
+                        Call link processing function:
+
+                        -- menuLink : clicked menu link passed to function as parameter.
+
+                        ***************************************************************/
+
+                        MENU
+                            .processLink(menuLink, false);
+                    }
             });
         },
 
@@ -162,8 +168,9 @@ jQuery(function($) {
                     menuList
                         .removeClass('opened')
                         .slideUp(300, function() {
-                            console.log('ok');
-                            $('#menu .base__scrollable').getNiceScroll(0).resize();
+                            $('#menu .base__scrollable')
+                                .getNiceScroll(0)
+                                .resize();
                         });
                     menuList
                         .parent('.menu__modal--is-parent')
@@ -173,8 +180,9 @@ jQuery(function($) {
                     .find('.opened')
                     .removeClass('opened')
                     .slideUp(300, function() {
-                        console.log('ok');
-                        $('#menu .base__scrollable').getNiceScroll(0).resize();
+                        $('#menu .base__scrollable')
+                            .getNiceScroll(0)
+                            .resize();
                     });
                 menuList
                     .find('.menu__modal--is-parent')
