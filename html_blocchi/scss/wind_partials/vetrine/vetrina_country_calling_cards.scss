@@ -28,9 +28,12 @@
             }
         }
         &-text {
-            padding-top: 20px;
+            padding-top: 10px;
             @include breakpoint(small) {
                 font-size: 0.89em;
+            }
+            @include breakpoint(super-tiny) {
+                padding-top: 0;
             }
         }
         &__country {
@@ -50,8 +53,8 @@
                 }
             }
             display: none;
-            margin-top: 25px;
-            margin-bottom: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
             clear: left;
             height: auto;
             //height: 200px;
@@ -65,10 +68,10 @@
             }
             &--flag {
                 padding-top: 15px;
-                padding-bottom: 20px;
+                padding-bottom: 15px;
                 padding-right: 10px;
                 border-right: 1px solid $medium-gray;
-                height: 130px;
+                height: 150px;
                 @include breakpoint(small) {
                     margin: 0 auto;
                     border-right: none;
@@ -77,6 +80,7 @@
             &--rates {
                 padding-top: 20px;
                 padding-bottom: 20px;
+                margin-top: 15px;
                 @include breakpoint(small) {
                     border-left: none;
                     border-right: none;
@@ -85,6 +89,8 @@
                     padding-bottom: 0;
                     padding-right: 5px;
                     padding-left: 5px;
+                    padding-top: 10px;
+                    margin-top: 0;
                 }
             }
             &--text {
