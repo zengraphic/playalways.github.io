@@ -1,0 +1,945 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@-moz-document url-prefix() {
+    .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price_instead {
+        bottom: 0px !important;
+    }
+}
+
+//========================== FONT =======================//
+@font-face {
+    font-family: 'TP Hero Light';
+    src: url('../fonts/TPHero-Light.woff') format('woff'), url('../fonts/TPHero-Light.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'TP Hero Thin';
+    src: url('../fonts/TPHero-Thin.woff') format('woff'), url('../fonts/TPHero-Thin.otf') format('opentype');
+    font-weight: thin;
+}
+
+@font-face {
+    font-family: 'TP Hero Hairline';
+    src: url('../fonts/TPHero-Hairline.woff') format('woff'), url('../fonts/TPHero-Hairline.otf') format('opentype');
+    font-weight: hairline;
+}
+
+//========================== MIXIN =======================//
+// MIXIN FOR BORDER RADIOUS
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// SINGOLI ANGOLI BORDER RADIOUS
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/* ___________________ MIXIN __________________
+                       BREAKPOINT MIXIN */
+
+$breakpoints: ( 'tiny': ( max-width: 400px),
+'super-tiny': ( max-width: 480px),
+'extra-tiny': ( max-width: 540px),
+'small': ( max-width: 768px),
+'medium': ( max-width: 910px),
+'min-medium': ( min-width: 910px),
+'large': ( max-width: 1025px),
+'large-1200': ( max-width: 1200px),
+'largest': ( max-width: 1440px),
+'min-largest':( min-width: 1439px),
+'min-largest-custom':( min-width: 1460px),
+'extra-large':( min-width: 1999px),
+'min-desktop':( max-width: 1024px));
+// Creating the mixin
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints,
+    $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+//========================== VARIABILI =======================//
+$weight-light: 'TP Hero Light'; //medium
+$weight-thin: 'TP Hero Thin'; //light
+$weight-hairline: 'TP Hero Hairline'; //thin
+$color-pale-yellow: #ffefbd;
+$color-pale-orange: #ffcb24;
+$color-bg-gray: #eeeeee;
+$color-yellow: #ffcc00;
+//============================================================================//
+//========================== CLASSI DI STYLE GENERICHE =======================//
+//============================================================================//
+a {
+    color: black;
+    &:focus,
+    &:hover {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.clear-fix:after,
+.clear {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.text {
+    &_lowercase {
+        text-transform: lowercase;
+    }
+    &_uppercase {
+        text-transform: uppercase;
+    }
+}
+
+.text_align {
+    &_left {
+        text-align: left;
+    }
+    &_center {
+        text-align: center;
+    }
+    &_right {
+        text-align: right;
+    }
+}
+
+//============================================================//
+//========================== STYLE VEON =======================//
+//=============================================================//
+h1 {
+    font-family: $weight-hairline;
+    font-size: 5.5vw;
+    line-height: 6vw;
+    text-transform: uppercase;
+    margin: 0;
+    //  -webkit-text-stroke: 0.5px;
+    @include breakpoint(largest) {
+        //1440
+        // font-size: 100px;
+        // line-height: 102px;
+    }
+    @include breakpoint(small) {
+        //768
+        font-size: 35px;
+        line-height: 37px;
+        text-align: center;
+    }
+    @include breakpoint(extra-large) {
+        //330
+        font-size: 70px !important;
+        line-height: 72px !important;
+    }
+}
+
+h4 {
+    font-family: $weight-thin;
+    font-size: 2vw;
+    line-height: 2.1vw;
+    text-transform: uppercase;
+    margin: 0;
+    @include breakpoint(small) {
+        //768
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+    }
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 34px;
+        line-height: 36px;
+    }
+}
+
+h6 {
+    font-family: $weight-thin;
+    font-size: 1.4vw;
+    line-height: 1.7vw;
+    margin: 0;
+    @include breakpoint(small) {
+        //768
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+    }
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 30px;
+        line-height: 32px;
+    }
+}
+
+a {
+    img {
+        outline: none;
+        border: 0;
+    }
+}
+
+body {
+    background-color: $color-bg-gray;
+}
+
+//===================================================//
+//================INIZIO LANDING=====================//
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    @include breakpoint(largest) {
+        //1440
+        max-width: 1024px;
+    }
+    @include breakpoint(small) {
+        //768
+        margin: 0;
+    }
+    &_cta {
+        position: relative;
+        .preFooter_shadow {
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+        }
+    }
+    &_blocks {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        @include breakpoint(largest) {
+            //1440
+            max-width: 1024px;
+        }
+    }
+}
+
+.landing_veon {
+    .topClaim {
+        height: 480px;
+        position: relative;
+        z-index: 500;
+        h1 {
+            margin-top: 60px;
+            font-size: 7vw;
+            line-height: 8vw;
+        }
+        h4 {
+            text-transform: none;
+            font-size: 3vw;
+            line-height: 3.5vw;
+            text-align: center;
+        }
+        @include breakpoint(large) {
+            //768
+            height: 550px;
+            h1 {
+                font-size: 9vw;
+                line-height: 10vw;
+            }
+        }
+        @include breakpoint(extra-tiny) {
+            //768
+            height: 250px;
+            h1 {
+                font-size: 9vw;
+                line-height: 10vw;
+            }
+        }
+        @include breakpoint(tiny) {
+            //400
+            h1 {
+                font-size: 15vw;
+                line-height: 17vw;
+            }
+            h4 {
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+        @include breakpoint(extra-large) {
+            //1999
+            h1 {
+                font-size: 130px;
+                line-height: 130px;
+            }
+            h4 {
+                font-size: 50px;
+                line-height: 52px;
+            }
+        }
+        @include breakpoint(small) {
+            height: auto;
+            margin-bottom: 30px;
+        }
+    }
+    &__logo {
+        position: relative;
+        .logo_veon {
+            position: relative;
+            text-align: center;
+            margin-top: 60px;
+            img {
+                width: 172px;
+                height: auto;
+            }
+        }
+    }
+}
+
+.floating_logo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 750;
+    img {
+        width: 15vw;
+        min-width: 90px;
+        max-width: 230px;
+    }
+}
+
+.bannerFix {
+    position: relative;
+    width: 100%;
+    z-index: 200;
+    img.image_preFooter {
+        display: none;
+        width: 100%;
+        &Small {
+            display: none;
+            @include breakpoint(small) {
+                width: 100vw;
+                display: block;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+    .containerBannerFix {
+        position: relative;
+        background: url(../img/veon_preFooter_big.png) no-repeat;
+        background-size: 100vw;
+        height: 66vw;
+        margin-top: -450px;
+        @include breakpoint(small) {
+            background: none;
+            margin-top: 0;
+            height: auto;
+        }
+        @include breakpoint(extra-tiny) {
+            margin-top: 15px;
+            height: auto;
+        }
+        div.claims {
+            position: relative;
+            top: 35vw;
+            @include breakpoint(large-1200) {
+                top: 33vw;
+            }
+            @include breakpoint(large) {
+                top: 36vw;
+            }
+            @include breakpoint(small) {
+                top: 60px;
+                min-height: calc(100vw + 100px);
+                height: 100%;
+            }
+            @include breakpoint(extra-tiny) {
+                top: 10vw;
+                min-height: calc(100vw + 50px);
+                height: 100%;
+            }
+            @include breakpoint(extra-tiny) {
+                min-height: calc(100vw + 70px);
+                top: 5vw;
+            }
+            h1 {
+                font-family: $weight-hairline;
+                text-align: left;
+                font-size: 5.5vw;
+                line-height: 6vw;
+                @include breakpoint(small) {
+                    font-size: 9vw;
+                    line-height: 10vw;
+                }
+                br {
+                    // display: none;
+                    // @include breakpoint(small) {
+                    //     display: block;
+                    // }
+                }
+            }
+            &.firstClaim {
+                color: #fff;
+                padding-left: 30px;
+                br.mobileShow {
+                    display: none;
+                    @include breakpoint(large) {
+                        display: block;
+                    }
+                }
+                h1 {
+                    @include breakpoint(extra-tiny) {
+                        font-size: 9vw;
+                        line-height: 9.5vw;
+                    }
+                }
+                .offer {
+                    margin-top: 15px;
+                    font-family: $weight-thin;
+                    @include breakpoint(largest) {
+                        margin-top: 15px;
+                    }
+                    @include breakpoint(small) {
+                        width: 80%;
+                    }
+                    @include breakpoint(tiny) {
+                        width: 100%;
+                    }
+                    .conjunction {
+                        display: none;
+                        @include breakpoint(large) {
+                            display: inline-block;
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            font-size: 4vw;
+                            line-height: 4.5vw;
+                        }
+                        @include breakpoint(small) {
+                            display: none;
+                        }
+                    }
+                    .container_giga {
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        @include breakpoint(largest) {
+                            padding: 0;
+                        }
+                        @include breakpoint(small) {
+                            margin-top: 13vw;
+                        }
+                        @include breakpoint(extra-tiny) {
+                            margin-top: 7vw;
+                        }
+                    }
+                    .giga,
+                    .minuti {
+                        font-family: $weight-thin;
+                        font-size: 4vw;
+                        line-height: 4.5vw;
+                        @include breakpoint(small) {
+                            font-size: 9vw;
+                            line-height: 10vw;
+                            margin-top: 10px;
+                        }
+                        @include breakpoint(large) {
+                            display: inline-block;
+                        }
+                        @include breakpoint(extra-tiny) {
+                            font-size: 9vw;
+                            line-height: 10vw;
+                            margin-top: 10px;
+                        }
+                    }
+                    .prices {
+                        margin-top: 15px;
+                        @include breakpoint(largest) {
+                            margin-top: 15px;
+                        }
+                        @include breakpoint(small) {
+                            margin-top: 10vw;
+                        }
+                        @include breakpoint(extra-tiny) {
+                            margin-top: 7vw;
+                        }
+                        .strikethrough {
+                            position: relative;
+                            font-size: 60px !important;
+                            line-height: 60px !important;
+                            font-family: $weight-hairline !important;
+                            @include breakpoint(small) {
+                                font-size: 40px !important;
+                                line-height: 42px !important;
+                            }
+                            @include breakpoint(tiny) {
+                                display: inline-block;
+                            }
+                        }
+                        .offer_price {
+                            position: relative;
+                            font-size: 80px;
+                            line-height: 80px;
+                            font-family: $weight-thin;
+                            @include breakpoint(extra-large) {
+                                //1999
+                                font-size: 100px !important;
+                                line-height: 104px !important;
+                            }
+                            @include breakpoint(large) {
+                                font-size: 60px;
+                                line-height: 62px;
+                            }
+                            @include breakpoint(small) {
+                                font-size: 60px;
+                                line-height: 62px;
+                            }
+                            @include breakpoint(tiny) {
+                                display: block;
+                                padding: 0;
+                            }
+                            @include breakpoint(extra-tiny) {
+                                display: block;
+                                padding: 0;
+                            }
+                            &_instead {
+                                font-size: 3vw;
+                                line-height: 3.5vw;
+                                position: relative;
+                                padding: 0 10px;
+                                @include breakpoint(extra-large) {
+                                    //1999
+                                    font-size: 90px !important;
+                                    line-height: 94px !important;
+                                }
+                                @include breakpoint(small) {
+                                    padding: 0px;
+                                    line-height: 40px;
+                                }
+                                @include breakpoint(extra-tiny) {
+                                    left: 0px;
+                                    bottom: 10px;
+                                    font-size: 16px;
+                                    line-height: 18px;
+                                }
+                                br {
+                                    display: none;
+                                    @include breakpoint(small) {
+                                        display: block;
+                                    }
+                                }
+                            }
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                right: 5px;
+                                font-size: 30px;
+                                top: 0;
+                                display: block;
+                                @include breakpoint(tiny) {
+                                    left: 140px;
+                                    top: -20px;
+                                }
+                                @include breakpoint(extra-tiny) {
+                                    left: 140px;
+                                    top: -20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // &.secondClaim {
+            //     margin-top: 500px;
+            //     div.buttonFooter {
+            //         margin-top: 30px;
+            //     }
+            //     @include breakpoint(largest) {
+            //         margin-top: 675px;
+            //     }
+            //     @include breakpoint(largest) {
+            //         margin-top: 600px;
+            //     }
+            //     @include breakpoint(small) {
+            //         margin-top: 115vw;
+            //     }
+            // }
+        }
+    }
+}
+
+.ordina {
+    background-color: $color-pale-orange;
+    padding: 15px 60px;
+    font-size: 2vw;
+    width: 100%;
+    margin-top: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $weight-thin;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover {
+        opacity: 0.9;
+    }
+    @include border-radius(8px);
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 40px !important;
+        line-height: 44px !important;
+    }
+    @include breakpoint(large) {
+        margin-top: 15px;
+        padding: 10px 50px;
+    }
+    @include breakpoint(small) {
+        margin-left: 0;
+        width: 100%;
+        font-size: 16px;
+        line-height: 18px;
+        white-space: normal;
+    }
+    @include breakpoint(tiny) {
+        margin-left: 0;
+        width: 100%;
+    }
+    @include breakpoint(extra-tiny) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.details {
+    .text_block {
+        font-family: $weight-thin;
+        font-size: 26px;
+        line-height: 30px;
+        margin-top: 20px;
+        text-align: left;
+        @include breakpoint(largest) {
+            font-size: 18px;
+            line-height: 20px;
+        }
+        @include breakpoint(large) {
+            br {
+                display: none;
+            }
+        }
+    }
+    .list {
+        line-height: 30px;
+        margin-top: 10px;
+        font-size: 26px;
+        font-family: $weight-thin;
+        text-align: left;
+        @include breakpoint(large) {
+            font-size: 14px;
+            line-height: 16px;
+            br {
+                display: none;
+            }
+        }
+        @include breakpoint(largest) {
+            font-size: 18px;
+            line-height: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            li {
+                text-indent: -5;
+                padding-top: 5px;
+            }
+        }
+    }
+}
+
+.call_to {
+    font-family: $weight-thin;
+    background-color: $color-pale-orange;
+    padding: 15px 60px;
+    font-size: 2vw;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.9;
+    }
+    @include border-radius(8px);
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    @include breakpoint(small) {
+        font-size: 4vw;
+        width: 80%;
+    }
+}
+
+.block_40 {
+    display: inline-block;
+    width: 40%;
+    float: left;
+    padding: 30px;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 100;
+    @include breakpoint(small) {
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        max-width: calc(50% + 11vw);
+        @include breakpoint(medium) {
+            max-width: 100%;
+        }
+    }
+    @include breakpoint(small) {
+        padding: 0 20px;
+        width: 100%;
+        float: none;
+        margin-top: 40px;
+    }
+}
+
+.block_60 {
+    display: inline-block;
+    width: 60%;
+    float: left;
+    padding: 0 30px;
+    position: relative;
+    z-index: 100;
+    .title {
+        font-size: 6vw;
+        line-height: 6.5vw;
+        font-family: $weight-thin;
+        text-transform: uppercase;
+        margin-bottom: 80px;
+        margin-top: 10vw;
+        @include breakpoint(small) {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+    @include breakpoint(small) {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.download {
+    width: 100%;
+    padding: 3% 0;
+    background-color: $color-pale-orange;
+    .phone {
+        width: 45%;
+        float: left;
+        img {
+            width: 100%;
+            height: auto;
+            @include breakpoint(small) {
+                width: 60%;
+            }
+        }
+        @include breakpoint(small) {
+            width: 100%;
+            padding: 0 20px;
+            margin-top: 15%;
+            text-align: center;
+        }
+    }
+    .download_app {
+        float: left;
+        width: 53%;
+        margin-left: 2%;
+        margin-top: 15%;
+        h1 {
+            font-size: 6.5vw;
+            line-height: 7vw;
+            @include breakpoint(small) {
+                font-size: 13vw;
+                line-height: 14vw
+            }
+            @include breakpoint(extra-large) {
+                font-size: 130px !important;
+                line-height: 132px !important;
+            }
+        }
+        @include breakpoint(small) {
+            width: 100%;
+            padding: 0 20px;
+            margin-left: 0;
+            text-align: center;
+        }
+        .gplay_button,
+        .appstore_button {
+            margin: 30px 0;
+            display: inline-block;
+        }
+    }
+}
+
+//==================================================//
+//=============INIZIO FOOTER========================//
+.footer {
+    position: relative;
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    color: #fff;
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+    .right_logo {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 750;
+    }
+    .containerFooter {
+        max-width: 1440px;
+        margin: 0 auto;
+        font-family: $weight-thin;
+        font-size: 14px;
+        line-height: 18px;
+        b {
+            font-family: $weight-light;
+            color: #d2d2d2;
+        }
+        p {
+            margin-top: 0;
+            color: #9a9a9a;
+        }
+        .logoFooterContainer {
+            padding: 60px 30px;
+        }
+        .blockFooter {
+            margin-bottom: 30px;
+            padding: 60px 30px 0 30px;
+            &.quickLinks {
+                @include breakpoint(small) {
+                    display: none;
+                }
+            }
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            color: #9a9a9a;
+            li {
+                text-indent: -5px;
+                padding-top: 5px;
+                &:before {
+                    content: "-";
+                    text-indent: -5px;
+                }
+                a {
+                    color: rgb(255, 204, 0);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .disclaimer {
+        max-width: 1350px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 10px 15px 60px 15px;
+        color: #666;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .floatingFooterLogo {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        img {
+            width: 150px;
+        }
+    }
+}
+
+//==================================================//
+//=============FINE FOOTER========================//

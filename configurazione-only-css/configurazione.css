@@ -28,13 +28,20 @@ body {
           user-select: none;
           background: #ffffff;
           border: 1px solid #ccd1d9;
-          border-radius: 4px; }
+          border-radius: 4px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: url(arrow_bottom_orange.png) no-repeat 96% 57% #ffffff;
+          background-size: 13px 8px; }
           body #choose-model table tr td select:hover {
             border-color: #f48135; }
           body #choose-model table tr td select:focus {
             border-color: #f48135 !important;
             outline: none !important;
             outline-offset: 0 !important; }
+        body #choose-model table tr td select::-ms-expand {
+          opacity: 0.1; }
         body #choose-model table tr td a {
           width: 100%;
           display: block;
