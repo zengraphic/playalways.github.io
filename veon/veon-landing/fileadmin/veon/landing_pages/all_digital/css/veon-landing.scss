@@ -19,6 +19,12 @@ li {
     border: 0;
 }
 
+@-moz-document url-prefix() {
+    .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price_instead {
+        bottom: 0px !important;
+    }
+}
+
 //========================== FONT =======================//
 @font-face {
     font-family: 'TP Hero Light';
@@ -202,8 +208,8 @@ h1 {
     }
     @include breakpoint(extra-large) {
         //330
-        font-size: 100px;
-        line-height: 102px;
+        font-size: 70px !important;
+        line-height: 72px !important;
     }
 }
 
@@ -396,7 +402,7 @@ body {
         position: relative;
         background: url(../img/veon_preFooter_big.png) no-repeat;
         background-size: 100vw;
-        height: 58vw;
+        height: 66vw;
         margin-top: -450px;
         @include breakpoint(small) {
             background: none;
@@ -433,17 +439,17 @@ body {
             h1 {
                 font-family: $weight-hairline;
                 text-align: left;
-                font-size: 4.5vw;
-                line-height: 5vw;
+                font-size: 5.5vw;
+                line-height: 6vw;
                 @include breakpoint(small) {
                     font-size: 9vw;
                     line-height: 10vw;
                 }
                 br {
-                    display: none;
-                    @include breakpoint(small) {
-                        display: block;
-                    }
+                    // display: none;
+                    // @include breakpoint(small) {
+                    //     display: block;
+                    // }
                 }
             }
             &.firstClaim {
@@ -487,11 +493,16 @@ body {
                         }
                     }
                     .container_giga {
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        @include breakpoint(largest) {
+                            padding: 0;
+                        }
                         @include breakpoint(small) {
                             margin-top: 13vw;
                         }
                         @include breakpoint(extra-tiny) {
-                            margin-top: 15px;
+                            margin-top: 7vw;
                         }
                     }
                     .giga,
@@ -522,7 +533,7 @@ body {
                             margin-top: 10vw;
                         }
                         @include breakpoint(extra-tiny) {
-                            margin-top: 15px;
+                            margin-top: 7vw;
                         }
                         .strikethrough {
                             position: relative;
@@ -542,6 +553,11 @@ body {
                             font-size: 80px;
                             line-height: 80px;
                             font-family: $weight-thin;
+                            @include breakpoint(extra-large) {
+                                //1999
+                                font-size: 100px !important;
+                                line-height: 104px !important;
+                            }
                             @include breakpoint(large) {
                                 font-size: 60px;
                                 line-height: 62px;
@@ -563,12 +579,17 @@ body {
                                 line-height: 3.5vw;
                                 position: relative;
                                 padding: 0 10px;
+                                @include breakpoint(extra-large) {
+                                    //1999
+                                    font-size: 90px !important;
+                                    line-height: 94px !important;
+                                }
                                 @include breakpoint(small) {
                                     padding: 0px;
                                     line-height: 40px;
                                 }
                                 @include breakpoint(extra-tiny) {
-                                    left: 20px;
+                                    left: 0px;
                                     bottom: 10px;
                                     font-size: 16px;
                                     line-height: 18px;
@@ -635,6 +656,11 @@ body {
         opacity: 0.9;
     }
     @include border-radius(8px);
+    @include breakpoint(extra-large) {
+        //1999
+        font-size: 40px !important;
+        line-height: 44px !important;
+    }
     @include breakpoint(large) {
         margin-top: 15px;
         padding: 10px 50px;
@@ -644,6 +670,7 @@ body {
         width: 100%;
         font-size: 16px;
         line-height: 18px;
+        white-space: normal;
     }
     @include breakpoint(tiny) {
         margin-left: 0;
@@ -812,8 +839,8 @@ body {
                 line-height: 14vw
             }
             @include breakpoint(extra-large) {
-                font-size: 130px;
-                line-height: 132px;
+                font-size: 130px !important;
+                line-height: 132px !important;
             }
         }
         @include breakpoint(small) {

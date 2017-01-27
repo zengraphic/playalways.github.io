@@ -18,6 +18,9 @@ li {
   padding: 0;
   border: 0; }
 
+@-moz-document url-prefix() {
+  .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price_instead {
+    bottom: 0px !important; } }
 @font-face {
   font-family: 'TP Hero Light';
   src: url("../fonts/TPHero-Light.woff") format("woff"), url("../fonts/TPHero-Light.otf") format("opentype");
@@ -81,8 +84,8 @@ h1 {
       text-align: center; } }
   @media (min-width: 1999px) {
     h1 {
-      font-size: 100px;
-      line-height: 102px; } }
+      font-size: 70px !important;
+      line-height: 72px !important; } }
 
 h4 {
   font-family: "TP Hero Thin";
@@ -230,7 +233,7 @@ body {
     position: relative;
     background: url(../img/veon_preFooter_big.png) no-repeat;
     background-size: 100vw;
-    height: 58vw;
+    height: 66vw;
     margin-top: -450px; }
     @media (max-width: 768px) {
       .bannerFix .containerBannerFix {
@@ -267,17 +270,12 @@ body {
       .bannerFix .containerBannerFix div.claims h1 {
         font-family: "TP Hero Hairline";
         text-align: left;
-        font-size: 4.5vw;
-        line-height: 5vw; }
+        font-size: 5.5vw;
+        line-height: 6vw; }
         @media (max-width: 768px) {
           .bannerFix .containerBannerFix div.claims h1 {
             font-size: 9vw;
             line-height: 10vw; } }
-        .bannerFix .containerBannerFix div.claims h1 br {
-          display: none; }
-          @media (max-width: 768px) {
-            .bannerFix .containerBannerFix div.claims h1 br {
-              display: block; } }
       .bannerFix .containerBannerFix div.claims.firstClaim {
         color: #fff;
         padding-left: 30px; }
@@ -314,12 +312,18 @@ body {
             @media (max-width: 768px) {
               .bannerFix .containerBannerFix div.claims.firstClaim .offer .conjunction {
                 display: none; } }
-          @media (max-width: 768px) {
-            .bannerFix .containerBannerFix div.claims.firstClaim .offer .container_giga {
-              margin-top: 13vw; } }
-          @media (max-width: 540px) {
-            .bannerFix .containerBannerFix div.claims.firstClaim .offer .container_giga {
-              margin-top: 15px; } }
+          .bannerFix .containerBannerFix div.claims.firstClaim .offer .container_giga {
+            padding-top: 15px;
+            padding-bottom: 15px; }
+            @media (max-width: 1440px) {
+              .bannerFix .containerBannerFix div.claims.firstClaim .offer .container_giga {
+                padding: 0; } }
+            @media (max-width: 768px) {
+              .bannerFix .containerBannerFix div.claims.firstClaim .offer .container_giga {
+                margin-top: 13vw; } }
+            @media (max-width: 540px) {
+              .bannerFix .containerBannerFix div.claims.firstClaim .offer .container_giga {
+                margin-top: 7vw; } }
           .bannerFix .containerBannerFix div.claims.firstClaim .offer .giga,
           .bannerFix .containerBannerFix div.claims.firstClaim .offer .minuti {
             font-family: "TP Hero Thin";
@@ -351,7 +355,7 @@ body {
                 margin-top: 10vw; } }
             @media (max-width: 540px) {
               .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices {
-                margin-top: 15px; } }
+                margin-top: 7vw; } }
             .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .strikethrough {
               position: relative;
               font-size: 60px !important;
@@ -369,6 +373,10 @@ body {
               font-size: 80px;
               line-height: 80px;
               font-family: "TP Hero Thin"; }
+              @media (min-width: 1999px) {
+                .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price {
+                  font-size: 100px !important;
+                  line-height: 104px !important; } }
               @media (max-width: 1025px) {
                 .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price {
                   font-size: 60px;
@@ -390,13 +398,17 @@ body {
                 line-height: 3.5vw;
                 position: relative;
                 padding: 0 10px; }
+                @media (min-width: 1999px) {
+                  .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price_instead {
+                    font-size: 90px !important;
+                    line-height: 94px !important; } }
                 @media (max-width: 768px) {
                   .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price_instead {
                     padding: 0px;
                     line-height: 40px; } }
                 @media (max-width: 540px) {
                   .bannerFix .containerBannerFix div.claims.firstClaim .offer .prices .offer_price_instead {
-                    left: 20px;
+                    left: 0px;
                     bottom: 10px;
                     font-size: 16px;
                     line-height: 18px; } }
@@ -439,6 +451,10 @@ body {
   /* stops bg color from leaking outside the border: */ }
   .ordina:hover {
     opacity: 0.9; }
+  @media (min-width: 1999px) {
+    .ordina {
+      font-size: 40px !important;
+      line-height: 44px !important; } }
   @media (max-width: 1025px) {
     .ordina {
       margin-top: 15px;
@@ -448,7 +464,8 @@ body {
       margin-left: 0;
       width: 100%;
       font-size: 16px;
-      line-height: 18px; } }
+      line-height: 18px;
+      white-space: normal; } }
   @media (max-width: 400px) {
     .ordina {
       margin-left: 0;
@@ -600,8 +617,8 @@ body {
           line-height: 14vw; } }
       @media (min-width: 1999px) {
         .download .download_app h1 {
-          font-size: 130px;
-          line-height: 132px; } }
+          font-size: 130px !important;
+          line-height: 132px !important; } }
     @media (max-width: 768px) {
       .download .download_app {
         width: 100%;
