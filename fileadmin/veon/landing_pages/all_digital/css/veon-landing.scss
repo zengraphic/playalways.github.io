@@ -774,12 +774,38 @@ body {
         @include breakpoint(medium) {
             max-width: 100%;
         }
+        @include breakpoint(small) {
+            max-width: 60%;
+        }
     }
     @include breakpoint(small) {
         padding: 0 20px;
         width: 100%;
         float: none;
         margin-top: 40px;
+    }
+}
+
+.container_legal_note {
+    width: 100%;
+    width: 100%;
+    background-color: #191919;
+    .legal_note {
+        max-width: 1440px;
+        margin: 0 auto;
+        color: #fff;
+        b {
+            font-size: 2vw;
+            line-height: 2.5vw;
+        }
+        p {
+            font-size: 1vw;
+            line-height: 1.5vw;
+        }
+        @include breakpoint(largest) {
+            //1440
+            max-width: 1024px;
+        }
     }
 }
 
@@ -790,6 +816,19 @@ body {
     padding: 0 30px;
     position: relative;
     z-index: 100;
+    padding-top: 4vw;
+    @include breakpoint(largest) {
+        padding-top: 2vw;
+    }
+    @include breakpoint(large) {
+        padding-top: 3vw;
+    }
+    @include breakpoint(medium) {
+        padding-top: 4vw;
+    }
+    @include breakpoint(small) {
+        padding-top: 4vw;
+    }
     .title {
         font-size: 6vw;
         line-height: 6.5vw;
@@ -810,7 +849,7 @@ body {
 
 .download {
     width: 100%;
-    padding: 3% 0;
+    padding-top: 20px;
     background-color: $color-pale-orange;
     .phone {
         width: 45%;
@@ -830,16 +869,13 @@ body {
         }
     }
     .download_app {
-        float: left;
-        width: 53%;
-        margin-left: 2%;
-        margin-top: 15%;
+        padding-left: 30px;
         h1 {
-            font-size: 6.5vw;
-            line-height: 7vw;
+            font-size: 4.5vw;
+            line-height: 5vw;
             @include breakpoint(small) {
-                font-size: 13vw;
-                line-height: 14vw
+                font-size: 8vw;
+                line-height: 9vw
             }
             @include breakpoint(extra-large) {
                 font-size: 130px !important;
@@ -855,13 +891,31 @@ body {
         .gplay_button,
         .appstore_button {
             margin: 30px 0;
+            margin-top: 15px;
             display: inline-block;
+            img {
+                @include breakpoint(extra-tiny) {
+                    width: 75%;
+                }
+            }
         }
     }
 }
 
 //==================================================//
 //=============INIZIO FOOTER========================//
+.what_is_veon{
+    b{
+        text-transform: uppercase;
+    }
+    ul{
+        line-height: 14px;
+    }
+    p{
+        line-height: normal;
+    }
+}
+
 .footer {
     position: relative;
     background-color: rgb(25, 25, 25);
@@ -886,6 +940,10 @@ body {
         b {
             font-family: $weight-light;
             color: #d2d2d2;
+            &.main_note{
+                font-size: 18px;
+                line-height: 20px;
+            }
         }
         p {
             margin-top: 0;
@@ -897,6 +955,9 @@ body {
         .blockFooter {
             margin-bottom: 30px;
             padding: 60px 30px 0 30px;
+            @include breakpoint(large-1200) {
+                padding: 15px 30px 0 30px;
+            }
             &.quickLinks {
                 @include breakpoint(small) {
                     display: none;
