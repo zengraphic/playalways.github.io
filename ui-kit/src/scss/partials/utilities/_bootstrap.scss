@@ -1,51 +1,73 @@
-//
-@media (max-width: 480px) {
-  .base {
-    div[class^='col-'] {
-      padding: 2px;
-    }
+// custom bootstrap behavior
 
-    .container {
-      width: 100%;
-    }
-  }
+.row {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-//
-@media (min-width: 481px) and (max-width: 767px) {
-  .base {
-    div[class^='col-'] {
-      padding: 2px;
-    }
+.col-lg-12, .col-md-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
 
-    .container {
-      width: 100%;
-    }
+@media (max-width: 767px) {
+  div[class^='col-'] {
+    padding: 2px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
 @media (min-width: 768px) {
-  .base div[class^='col-'] {
-    padding: 10px;
+  div[class^='col-'] {
+    // padding: 10px
+ 
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
 @media (min-width: 940px) {
-  .base .base__popup .container {
+  .base__popup .container {
     width: 100%;
     max-width: 580px;
   }
 }
 
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+
 @media (min-width: 1024px) {
-  .base .container {
-    padding-left: 10px;
-    padding-right: 10px;
+  .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .base .container {
-    width: 1044px;
+  .container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
