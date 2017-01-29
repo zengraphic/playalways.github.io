@@ -556,6 +556,9 @@ body {
     @media (max-width: 910px) {
       .block_40 img {
         max-width: 100%; } }
+    @media (max-width: 768px) {
+      .block_40 img {
+        max-width: 60%; } }
   @media (max-width: 768px) {
     .block_40 {
       padding: 0 20px;
@@ -563,13 +566,44 @@ body {
       float: none;
       margin-top: 40px; } }
 
+.container_legal_note {
+  width: 100%;
+  width: 100%;
+  background-color: #191919; }
+  .container_legal_note .legal_note {
+    max-width: 1440px;
+    margin: 0 auto;
+    color: #fff; }
+    .container_legal_note .legal_note b {
+      font-size: 2vw;
+      line-height: 2.5vw; }
+    .container_legal_note .legal_note p {
+      font-size: 1vw;
+      line-height: 1.5vw; }
+    @media (max-width: 1440px) {
+      .container_legal_note .legal_note {
+        max-width: 1024px; } }
+
 .block_60 {
   display: inline-block;
   width: 60%;
   float: left;
   padding: 0 30px;
   position: relative;
-  z-index: 100; }
+  z-index: 100;
+  padding-top: 4vw; }
+  @media (max-width: 1440px) {
+    .block_60 {
+      padding-top: 2vw; } }
+  @media (max-width: 1025px) {
+    .block_60 {
+      padding-top: 3vw; } }
+  @media (max-width: 910px) {
+    .block_60 {
+      padding-top: 4vw; } }
+  @media (max-width: 768px) {
+    .block_60 {
+      padding-top: 4vw; } }
   .block_60 .title {
     font-size: 6vw;
     line-height: 6.5vw;
@@ -588,7 +622,7 @@ body {
 
 .download {
   width: 100%;
-  padding: 3% 0;
+  padding-top: 20px;
   background-color: #ffcb24; }
   .download .phone {
     width: 45%;
@@ -606,17 +640,14 @@ body {
         margin-top: 15%;
         text-align: center; } }
   .download .download_app {
-    float: left;
-    width: 53%;
-    margin-left: 2%;
-    margin-top: 15%; }
+    padding-left: 30px; }
     .download .download_app h1 {
-      font-size: 6.5vw;
-      line-height: 7vw; }
+      font-size: 4.5vw;
+      line-height: 5vw; }
       @media (max-width: 768px) {
         .download .download_app h1 {
-          font-size: 13vw;
-          line-height: 14vw; } }
+          font-size: 8vw;
+          line-height: 9vw; } }
       @media (min-width: 1999px) {
         .download .download_app h1 {
           font-size: 130px !important;
@@ -630,7 +661,19 @@ body {
     .download .download_app .gplay_button,
     .download .download_app .appstore_button {
       margin: 30px 0;
+      margin-top: 15px;
       display: inline-block; }
+      @media (max-width: 540px) {
+        .download .download_app .gplay_button img,
+        .download .download_app .appstore_button img {
+          width: 75%; } }
+
+.what_is_veon b {
+  text-transform: uppercase; }
+.what_is_veon ul {
+  line-height: 14px; }
+.what_is_veon p {
+  line-height: normal; }
 
 .footer {
   position: relative;
@@ -654,6 +697,9 @@ body {
     .footer .containerFooter b {
       font-family: "TP Hero Light";
       color: #d2d2d2; }
+      .footer .containerFooter b.main_note {
+        font-size: 18px;
+        line-height: 20px; }
     .footer .containerFooter p {
       margin-top: 0;
       color: #9a9a9a; }
@@ -662,6 +708,9 @@ body {
     .footer .containerFooter .blockFooter {
       margin-bottom: 30px;
       padding: 60px 30px 0 30px; }
+      @media (max-width: 1200px) {
+        .footer .containerFooter .blockFooter {
+          padding: 15px 30px 0 30px; } }
       @media (max-width: 768px) {
         .footer .containerFooter .blockFooter.quickLinks {
           display: none; } }
