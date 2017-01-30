@@ -20,7 +20,7 @@
         display: block; /*changed from inline-block*/
         max-width: 1024px;
         margin: 0 auto;
-        color: #aab2bd;
+        color: $color_grey_medium;
     }
     &__icon {
         font-size: 2.375em;
@@ -33,14 +33,24 @@
         display: inline-block;
         cursor: pointer;
         &.active {
-            color: $color-orange;
+            color: $color_orange;
+            a{
+                color:$color_orange;
+            }
         }
         &:hover {
-            color: $color-orange;
+            color: $color_orange;
         }
         &__title {
             display: block;
             padding-top: 5px;
+        }
+        a{
+            color:$color_grey_medium;
+            &:hover{
+                 color: $color_orange;
+            }
+
         }
     }
     &__container {
