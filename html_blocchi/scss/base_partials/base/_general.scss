@@ -69,7 +69,7 @@
 .title_page h3 {
     font-size: 2.143rem;
     font-family: $font_family_light;
-    color: #212121;
+    color: $color_text; 
 }
 
 //title default page content
@@ -77,11 +77,11 @@
     //float: left;
     width: 100%;
     margin: 1.2rem auto;
-    border-bottom: 1px solid #ccd1d9;
+    border-bottom: 1px solid $color_stroke; 
     h3 {
         font-family: $font_family_light;
         font-size: 2.1rem;
-        color: #212121;
+        color: $color_text; 
     }
 }
 
@@ -108,12 +108,12 @@
     .hr-divider {
         display: inline-block;
         height: 1px;
-        background-color: $color_grey_medium_light;
+        background-color: $color_stroke; 
         width: 60%;
         margin: 2rem 20%;
     }
     &.v-divider [class*='col-']:not(:last-child):after {
-        background-color: $color_grey_medium_light;
+        background-color: $color_stroke; 
         width: 1px;
         content: "";
         display: block;
@@ -140,7 +140,7 @@ img {
 }
 
 a {
-    color: $color_orange;
+    color: $color_wind ; 
     &:link,
     &:visited,
     &:hover,
@@ -176,7 +176,7 @@ a {
 }
 
 textarea:focus {
-    @include focusInputs($color_orange, transparent, none, 0);
+    @include focusInputs($color_wind, transparent, none, 0); 
 }
 
 //outline: thin dotted \9;  IE6-9
@@ -198,7 +198,7 @@ input {
     &[type=file]:focus,
     &[type=checkbox]:focus,
     &[type=radio]:focus {
-        @include focusInputs($color_orange, transparent, none, 0);
+        @include focusInputs($color_wind, transparent, none, 0); 
     }
 }
 
@@ -206,9 +206,9 @@ input {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-    background-color: rgba(244, 129, 53, 0.2);
+    background-color: rgba(244, 129, 53, 0.2); 
     background-image: none;
-    color: #000000;
+    color: $color_text; 
 }
 
 // default modal scroll
@@ -232,7 +232,7 @@ select:-webkit-autofill {
     .fa-li {
         font-size: 1.2rem;
         padding-right: 1.2rem;
-        color: $color_orange;
+        color: $color_wind;
     }
     li {
         padding-bottom: 1rem;
@@ -251,7 +251,7 @@ select:-webkit-autofill {
     }
     .owl-controls {
         .owl-pagination .owl-page span {
-            background-color: $color_orange;
+            background-color: $color_wind; 
             @include radius(1em);
         }
         .owl-buttons {
@@ -272,7 +272,7 @@ select:-webkit-autofill {
                     font-family: "FontAwesome";
                     content: "\F053";
                     font-size: 1rem;
-                    color: $color_orange;
+                    color: $color_wind; 
                 }
             }
             .owl-next {
@@ -280,7 +280,7 @@ select:-webkit-autofill {
                     font-family: "FontAwesome";
                     content: "\F054";
                     font-size: 1rem;
-                    color: $color_orange;
+                    color: $color_wind ; 
                 }
                 position: fixed;
                 top: 45%;
