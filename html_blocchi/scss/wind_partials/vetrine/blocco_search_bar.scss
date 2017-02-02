@@ -3,10 +3,9 @@
 
 /* INIZIO VARIABILI */
 
-$color-results-border-grey: #d7d5d0;
-$color-sidebar-border-grey: #b8b8b8;
-$color-overlay-transparent: rgba(68, 68, 68, 0.7);
-$standard-border: 1px solid $color-sidebar-border-grey;
+
+$color-overlay-transparent: rgba(68, 68, 68, 0.7); //444
+$standard-border: 1px solid $color_stroke;
 
 /* FINE VARIABILI */
 
@@ -54,7 +53,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
 .overlay-grey {
     background-color: $color-overlay-transparent;
     @include breakpoint(small) {
-        background-color: $color-white;
+        background-color: $color_white;
     }
 }
 
@@ -137,7 +136,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
             @extend .visible-large-hidden-small;
             padding-right: 10px;
             right: 0;
-            color: $color-orange;
+            color: $color_wind;
             .hint {
                 padding-top: 15px;
                 padding-bottom: 15px;
@@ -163,7 +162,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
             @extend .hidden-large-visible-small;
             padding: 16px 10px 15px;
             right: 0;
-            color: $color-orange;
+            color: $color_wind;
             @include breakpoint(small) {
                 padding: 23px 0 15px;
             }
@@ -199,7 +198,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                     }
                     /* INIZIO STYLING BARRA RICERCA SINGOLO RISULTATO NORMALE */
                     .result_item {
-                        background-color: $color-white;
+                        background-color: $color_white;
                         border-left: $standard-border;
                         border-right: $standard-border;
                         font-family: $weight-light;
@@ -236,7 +235,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                                 font-family: $weight-bold;
                                 font-size: 18px;
                                 line-height: 19.5px;
-                                color: $color-lightBlue !important;
+                                color: $color_robin !important;
                                 &:hover {}
                             }
                         }
@@ -261,7 +260,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                                 display: inline;
                             }
                             &__link {
-                                color: $color-orange;
+                                color: $color_wind;
                                 &:hover {}
                             }
                         }
@@ -275,7 +274,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                     /* FINE STYLING BARRA RICERCA SINGOLO RISULTATO NORMALE */
                     /* INIZIO STYLING BARRA RICERCA SHOW MORE */
                     .show_more {
-                        background-color: white;
+                        background-color: $color_white;
                         @include border-bottom-radius(4px);
                         border: $standard-border;
                         border-top: none;
@@ -284,7 +283,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                         }
                         /* INIZIO STYLING BARRA RICERCA CONTAINER SHOW MORE */
                         &__content {
-                            color: $color-orange;
+                            color: $color_wind;
                             text-transform: uppercase;
                             padding: 14px 0 13px;
                             font-size: 14px;
@@ -296,7 +295,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                         /* FINE STYLING BARRA RICERCA CONTAINER SHOW MORE */
                         /* INIZIO STYLING BARRA RICERCA LINK SHOW MORE */
                         &__link:hover {
-                            color: #f78f4c;
+                            color: $color_orange_light;
                         }
                         /* FINE STYLING BARRA RICERCA LINK SHOW MORE */
                     }
@@ -312,7 +311,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                     /* INIZIO STYLING BARRA RICERCA SINGOLO RISULTATO VIRTUAL AGENT */
                     .result_item {
                         @include border-radius(4px);
-                        background-color: $color-orange;
+                        background-color: $color_orange;
                         font-family: $weight-light;
                         margin-bottom: 5px;
                         padding: 10px 21px 12px;
@@ -329,7 +328,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                         &__title {
                             /* INIZIO STYLING BARRA RICERCA LINK SINGOLO RISULTATO VIRTUAL AGENT */
                             &__link {
-                                color: white;
+                                color: $color_white;
                                 font-size: 20px;
                                 letter-spacing: 0.025em;
                                 @include breakpoint(small) {
@@ -391,7 +390,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                 padding: 22px 15px 20px;
                 margin: 24px 30px 18px;
                 right: 0;
-                color: $color-orange;
+                color: $color_wind;
                 @include breakpoint(small) {
                     padding: 15px 10px 12px;
                     margin: 11px 16px 16px;
@@ -432,14 +431,14 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                     margin-right: 0;
                 }
                 a {
-                    color: $color-sidebar-border-grey;
+                    color: $color_stroke;
                     &:hover {
-                        color: $color-orange;
+                        color: $color_wind;
                     }
                 }
                 &.tab_active {
                     a {
-                        color: $color-orange;
+                        color: $color_wind;
                     }
                 }
             }
@@ -457,7 +456,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
         /* INIZIO STYLING COUNTER BLOCCO RISULTATI RICERCA COMPLETO */
         &__counter {
             padding: 17px 0;
-            color: $color-sidebar-border-grey;
+            color: $color_stroke;
             font-size: 15px;
             line-height: 18px;
             border-bottom: $standard-border;
@@ -512,7 +511,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                             font-family: $weight-bold;
                             font-size: 18px;
                             line-height: 18px;
-                            color: $color-lightBlue !important;
+                            color: $color_robin !important;
                             letter-spacing: 0.025em;
                             &:hover {}
                         }
@@ -521,7 +520,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                     /* INIZIO STYLING CATEGORIA SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
                     &__category {
                         display: inline;
-                        color: $color-orange;
+                        color: $color_wind;
                         letter-spacing: -0.05em;
                         &:after {
                             content: "-";
@@ -595,7 +594,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
             /* INIZIO STYLING SINGOLA OFFERTA SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
             .sidebar_offer {
                 padding: 16px 0 12px;
-                color: $color-darkerGrey;
+                color: $color_text;
                 border-bottom: $standard-border;
                 /* INIZIO STYLING CONTAINER SINGOLA OFFERTA SIDEBAR */
                 .offer {
@@ -640,7 +639,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                             text-decoration: line-through;
                         }
                         .promo {
-                            color: $color-lightBlue;
+                            color: $color_robin;
                         }
                     }
                     /* FINE STYLING SCONTO SINGOLA OFFERTA SIDEBAR */
@@ -650,7 +649,7 @@ $standard-border: 1px solid $color-sidebar-border-grey;
                         padding-top: 9px;
                         font-size: 18px;
                         line-height: 18px;
-                        color: $color-orange;
+                        color: $color_wind;
                     }
                     /* FINE STYLING LINK SINGOLA OFFERTA SIDEBAR */
                 }

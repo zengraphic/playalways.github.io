@@ -25,7 +25,7 @@
     @include boxWF(left, 100%);
 
     font-size: 1.2rem;
-    color: #444444;
+    color: $color_text;
     margin: 3.5rem 0 1.8rem;
     font-family: $font_family_bold;
   }
@@ -45,9 +45,9 @@
       float: left;
       padding: 0 1.3rem 1.5rem;
       font-size: 1.1rem;
-      color: #212121;
+      color: $color_text;
       font-family: $font_family_regular;
-      border-bottom: 1px solid #d7d5d0;
+      border-bottom: 1px solid $color_stroke;
     }
 
     h5 {
@@ -65,21 +65,21 @@
 
     padding: 0;
     margin: 0;
-    border-top: 1px solid #d7d5d0;
+    border-top: 1px solid $color_stroke;
     list-style: none;
 
     li {
       @include boxWF(left, 100%);
 
       list-style: none;
-      border-bottom: 1px solid #d7d5d0;
+      border-bottom: 1px solid $color_stroke;
 
       &.title {
-        background-color: #f4f4f4;
+        background-color: $color_grey_light_light;
         padding: 1.8rem 1.3rem 1.7rem;
 
         a {
-          color: $color_orange;
+          color: $color_wind;
           padding: 0;
 
           &.left {
@@ -94,7 +94,7 @@
 
           i {
             font-size: 1.5rem;
-            -webkit-text-stroke: 1px white;
+            -webkit-text-stroke: 1px $color_white;
           }
         }
       }
@@ -103,7 +103,7 @@
         @include boxWF(left, 100%);
 
         padding: 1.8rem 1.3rem 1.7rem;
-        color: #212121;
+        color: $color_text;
         font-size: 1.1rem;
         text-decoration: none;
         font-family: $font_family_regular;
@@ -114,7 +114,7 @@
         }
 
         i {
-          color: $color_orange;
+          color: $color_wind;
           float: right;
           position: relative;
 

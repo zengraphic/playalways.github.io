@@ -20,36 +20,33 @@
     <!-- components script -->
     <script type="text/javascript" src="../../../js/header.js"></script>
     <script type="text/javascript" src="../../../js/custom.js"></script>
-    <!--- /JS -->   
+    <!--- /JS -->
 </head>
 
 <body>
-
-<!-- breadcrumbs -->
-<div class="content__breadcrumbs">
-   <div class="container">
-        <div class="row ">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                
-                <div class="breadcrumbs base__scrollable2 touch_scroll">
-                    <ul class="base__breadcrumbs">
-                        <li><a class="link" ref="#">Home</a></li>
-                        <li><a class="link" href="#">Section Hover</a></li>
-                        <li><a class="link" href="#">Second level</a></li>
-                        <li><span>Third Level Visited</span></li>          
-                    </ul>
+    <!-- breadcrumbs -->
+    <div class="content__breadcrumbs">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="breadcrumbs base__scrollable2 touch_scroll">
+                        <ul class="base__breadcrumbs">
+                            <li><a class="link" ref="#">Home</a></li>
+                            <li><a class="link" href="#">Section Hover</a></li>
+                            <li><a class="link" href="#">Second level</a></li>
+                            <li><span>Third Level Visited</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end breadcrumbs -->
-<div class="clearfix"></div>
+    <!-- end breadcrumbs -->
+    <div class="clearfix"></div>
     <!-- CONTAINER -->
     <div class="wrp">
         <div class="content" id="content">
-
             <div class="container hpshop">
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="title__default title__default--copertura">
@@ -57,101 +54,119 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB_bTdI95ip8CtEMYIQI7Dr8Q5Lczz7kgw&sensor=false&extension=.js'></script>
+                        <script>
+                        google.maps.event.addDomListener(window, 'load', init);
+                        var map;
 
-                            <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB_bTdI95ip8CtEMYIQI7Dr8Q5Lczz7kgw&sensor=false&extension=.js'></script>
+                        function init() {
+                            var mapOptions = {
+                                center: new google.maps.LatLng(43.197167, 9.147948),
+                                zoom: 6,
+                                zoomControl: true,
+                                zoomControlOptions: {
+                                    style: google.maps.ZoomControlStyle.DEFAULT,
+                                },
+                                disableDoubleClickZoom: true,
+                                mapTypeControl: true,
+                                mapTypeControlOptions: {
+                                    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                                },
+                                scaleControl: true,
+                                scrollwheel: true,
+                                panControl: true,
+                                streetViewControl: true,
+                                draggable: true,
+                                overviewMapControl: false,
+                                overviewMapControlOptions: {
+                                    opened: false,
+                                },
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            }
+                            var mapElement = document.getElementById('map');
+                            var map = new google.maps.Map(mapElement, mapOptions);
+                            var locations = [
 
-                            <script>
-                                google.maps.event.addDomListener(window, 'load', init);
-                                var map;
-                                function init() {
-                                    var mapOptions = {
-                                        center: new google.maps.LatLng(43.197167,9.147948),
-                                        zoom: 6,
-                                        zoomControl: true,
-                                        zoomControlOptions: {
-                                            style: google.maps.ZoomControlStyle.DEFAULT,
-                                        },
-                                        disableDoubleClickZoom: true,
-                                        mapTypeControl: true,
-                                        mapTypeControlOptions: {
-                                            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-                                        },
-                                        scaleControl: true,
-                                        scrollwheel: true,
-                                        panControl: true,
-                                        streetViewControl: true,
-                                        draggable : true,
-                                        overviewMapControl: false,
-                                        overviewMapControlOptions: {
-                                            opened: false,
-                                        },
-                                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                                    }
-                                    var mapElement = document.getElementById('map');
-                                    var map = new google.maps.Map(mapElement, mapOptions);
-                                    var locations = [
-
-                                    ];
-                                    for (i = 0; i < locations.length; i++) {
-                                        if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
-                                        if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
-                                        if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-                                       if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-                                       if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-                                        marker = new google.maps.Marker({
-                                            icon: markericon,
-                                            position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-                                            map: map,
-                                            title: locations[i][0],
-                                            desc: description,
-                                            tel: telephone,
-                                            email: email,
-                                            web: web
-                                            });
-                                link = '';     }
-
+                            ];
+                            for (i = 0; i < locations.length; i++) {
+                                if (locations[i][1] == 'undefined') {
+                                    description = '';
+                                } else {
+                                    description = locations[i][1];
                                 }
-                            </script>
+                                if (locations[i][2] == 'undefined') {
+                                    telephone = '';
+                                } else {
+                                    telephone = locations[i][2];
+                                }
+                                if (locations[i][3] == 'undefined') {
+                                    email = '';
+                                } else {
+                                    email = locations[i][3];
+                                }
+                                if (locations[i][4] == 'undefined') {
+                                    web = '';
+                                } else {
+                                    web = locations[i][4];
+                                }
+                                if (locations[i][7] == 'undefined') {
+                                    markericon = '';
+                                } else {
+                                    markericon = locations[i][7];
+                                }
+                                marker = new google.maps.Marker({
+                                    icon: markericon,
+                                    position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                                    map: map,
+                                    title: locations[i][0],
+                                    desc: description,
+                                    tel: telephone,
+                                    email: email,
+                                    web: web
+                                });
+                                link = '';
+                            }
 
-                            <div class="content_map form3">
-                                <div class="form_map2">
-                                    <input type="text" name="" class="base__input" placeholder="Cerca luogo o inserisci indirizzo">
-                                    <a class="check_cont_action"></a>
-
+                        }
+                        </script>
+                        <div class="content_map form3">
+                            <div class="copertura">
+                                <div class="copertura_2g">
+                                    <div class="radio">
+                                        <input type="radio" name="connection" id="2g">
+                                        <label for="2g" class="radio_label"></label>
+                                    </div>
                                 </div>
-
-
-
-                                <div id='map'></div>
+                                <div class="copertura_3g">
+                                    <div class="radio">
+                                        <input type="radio" name="connection" id="3g" checked="">
+                                        <label for="3g" class="radio_label"></label>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="copertura__detail">
-                                <h3>La copertura 2G include servizi GSM e GPRS. La copertura 3G (HSDPA fino a 42,2 Mbps) e 4G (LTE fino a 150 Mbps) fornisce Internet ad alta velocità; </h3>
-
-                                <p>
-                                la colorazione più intensa indica le zone dove è disponibile la navigazione 4G. <br>
-                                Le informazioni sono relative alla copertura all’esterno degli edifici. La Rete Mobile Wind è in costante evoluzione, verifica periodicamente sul sito gli aggiornamenti. Per maggiori informazioni sulla copertura, chiama il Servizio Clienti dal tuo telefonino Wind.
-                                </p>
-
-                                <h4>Ultimo aggiornamento: Maggio 2016</h4>
-
+                            <div class="form_map2">
+                                <input type="text" name="" class="base__input" placeholder="Cerca luogo o inserisci indirizzo">
+                                <a class="check_cont_action"></a>
                             </div>
-
+                            <div id='map'></div>
+                        </div>
+                        <div class="copertura__detail">
+                            <h3>La copertura 2G include servizi GSM e GPRS. La copertura 3G (HSDPA fino a 42,2 Mbps) e 4G (LTE fino a 150 Mbps) fornisce Internet ad alta velocità; </h3>
+                            <p>
+                                la colorazione più intensa indica le zone dove è disponibile la navigazione 4G.
+                                <br> Le informazioni sono relative alla copertura all’esterno degli edifici. La Rete Mobile Wind è in costante evoluzione, verifica periodicamente sul sito gli aggiornamenti. Per maggiori informazioni sulla copertura, chiama il Servizio Clienti dal tuo telefonino Wind.
+                            </p>
+                            <h4>Ultimo aggiornamento: Maggio 2016</h4>
+                        </div>
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>
     <!-- END CONTAINER -->
-<div class="clearfix"></div>
+    <div class="clearfix"></div>
     <!-- foter -->
     <!-- /SWIPE -->
-
 </body>

@@ -1,10 +1,10 @@
 //default base buttons
 
 .base__bt {
-  color: white;
+  color: $color_white;
   font-size: 1rem;
   line-height: normal;
-  border: 1px solid transparent;
+  border: 1px solid $color_transparent;
   text-transform: uppercase;
   text-decoration: none;
   box-shadow: none;
@@ -12,7 +12,7 @@
   padding: 1rem 0;
   letter-spacing: 1px;
   text-align: center;
-  background: transparent;
+  background: $color_transparent;
   width: 280px;
   @include radius(4px);
   // sizes
@@ -23,8 +23,8 @@
   &:active,
   &:focus,
   &:hover {
-    border: 1px solid transparent;
-    color: white;
+    border: 1px solid $color_transparent;
+    color: $color_white;
     outline: none;
   }
 }
@@ -60,54 +60,54 @@
 }
 
 .base__bt--or {
-  @include base-btn(white, $color_orange, 1px, $color_orange);
+  @include base-btn($color_white, $color_wind, 1px, $color_wind);
 
   &:active,
   &:hover,
   &:visited {
     background-color: $color_orange_light;
-    border: 1px solid $color_orange;
-    color: white;
+    border: 1px solid $color_wind;
+    color: $color_white;
   }
 
   &.waves-button:disabled,
   &:disabled {
-    border-color: $color_grey_medium_light;
+    border-color: $color_stroke;
     background: $color_grey_medium_light;
   }
 }
 
 .base__bt--or2 {
-  @include base-btn($color_orange, transparent, 1px, $color_orange);
+  @include base-btn($color_wind, $color_transparent, 1px, $color_wind);
 
   &:active,
   &:hover,
   &:visited {
     background-color: $color_orange_light;
-    border: 1px solid $color_orange;
+    border: 1px solid $color_wind;
   }
 
   &.waves-button:disabled,
   &:disabled {
-    border-color: $color_grey_medium_light;
+    border-color: $color_stroke;
     background: $color_grey_medium_light;
   }
 }
 
 .base__bt--wh {
-  @include base-btn($color_orange, white, 1px, white);
+  @include base-btn($color_wind, $color_white, 1px, $color_white);
 
   &:active,
   &:hover,
   &:visited {
-    @include base-btn($color_orange, white, 1px, $color_orange_light);
+    @include base-btn($color_wind, $color_white, 1px, $color_orange_light);
   }
 
   &.waves-button:disabled,
   &:disabled {
-    border-color: $color_grey_medium_light;
-    color: $color_grey_medium_light;
-    background-color: white;
+    border-color: $color_stroke;//$color_grey_medium_light;
+    color: $color_text_lighter; //$color_grey_medium_light;
+    background-color: $color_white;
   }
 }
 

@@ -99,7 +99,7 @@
                     line-height: 1em;
                     height: 2em;
                     overflow: hidden;
-                    color: $color-white;
+                    color: $color_white;
                     font-family: $weight-normal;
                     text-transform: uppercase;
                     @include breakpoint(small) {
@@ -183,7 +183,7 @@
             margin-bottom: 20px;
             font-family: $weight-light;
             @at-root #{&}__price {
-                color: $color-lightBlue;
+                color: $color_mobile;
                 font-size: $title-big;
                 line-height: 1em;
                 height: 1em;
@@ -191,7 +191,7 @@
                 &.price_discounted {
                     position: relative;
                     &::after {
-                        border-bottom: 2px solid #000;
+                        border-bottom: 2px solid $color_stroke;
                         content: "";
                         left: 0;
                         margin-top: calc(0.125em / 2 * -1);
@@ -209,7 +209,7 @@
                 }
             }
             @at-root #{&}__recurrency {
-                color: $color-standardText;
+                color: $color_text;
                 display: block;
                 font-size: 0.750em; //12px
                 line-height: 1em;
@@ -249,7 +249,7 @@
         height: 1.2em;
         overflow: hidden;
         font-size: 2.813em;
-        color: $color-lightBlue;
+        color: $color_mobile;
         font-family: $weight-light;
         margin-top: 1rem;
     }
@@ -260,7 +260,7 @@
         line-height: 1.1em;
         height: 1.1em;
         overflow: hidden;
-        color: $color-lightBlue;
+        color: $color_mobile;
         font-family: $weight-light;
     }
     @at-root #{&}__text {
@@ -272,7 +272,7 @@
         height: 2.2em;
         overflow: hidden;
         font-size: $text-standard;
-        color: $color-standardText;
+        color: $color_text;
         font-family: $weight-normal;
     }
 }

@@ -1,7 +1,7 @@
 //customizing page: Windgroup/Sostenibilita
 
 .base__tabs.nav-tabs.sostenibilita {
-  background-color: #e6e9ed;
+  background-color: $color_grey_light;
   margin: 0 -5px;
 
   li {
@@ -15,7 +15,7 @@
 
     &.active {
       a {
-        color: $color_orange;
+        color: $color_wind;
       }
     }
 
@@ -23,8 +23,8 @@
       padding: 1rem 0;
       width: 100%;
       text-align: center;
-      background-color: transparent;
-      color: $color_grey_dark;
+      background-color: $color_transparent;
+      color: $color_text;
       letter-spacing: -1px;
       font-size: 1.1rem;
 
@@ -36,7 +36,7 @@
 }
 
 .hvr-underline-reveal:before {
-  background: $color_orange;
+  background: $color_wind;
 }
 
 .banner_ch.left .cont_text {
@@ -63,7 +63,7 @@
 
     @include defaultTxt($font_family_regular, 1rem);
 
-    color: #444444;
+    color: $color_text;
 
     @media (max-width: 767px) {
       &:first-child {
@@ -79,14 +79,14 @@
 
     margin: 1.2rem 0 0;
     padding-bottom: 1.2rem;
-    border-bottom: 1px solid #d7d5d0;
+    border-bottom: 1px solid $color_stroke;
   }
 
   .item_sup {
     @include boxWF(left, 100%);
 
-    border-bottom: 1px solid #d7d5d0;
-    border-top: 1px solid #d7d5d0;
+    border-bottom: 1px solid $color_stroke;
+    border-top: 1px solid $color_stroke;
     padding: 1.2rem 1rem;
     margin: 1.5rem 0;
 
@@ -99,7 +99,7 @@
 
       @include defaultTxt($font_family_regular, 1rem);
 
-      color: #444444;
+      color: $color_text;
       margin-top: 0.8rem;
 
       @media (max-width: 767px) {
@@ -110,8 +110,8 @@
     a.base__bt {
       @include boxWF(right, auto);
 
-      background-color: $color_orange;
-      color: #FFFFFF;
+      background-color: $color_wind;
+      color: $color_white;
       font-size: 1.2rem;
       margin: 0;
       padding: 0.4rem 2rem;
@@ -127,7 +127,7 @@
   .item_down {
     @include boxWF(left, 100%);
 
-    border-bottom: 1px solid #d7d5d0;
+    border-bottom: 1px solid $color_stroke;
     padding: 1rem;
 
     h4 {
@@ -135,7 +135,7 @@
 
       @include defaultTxt($font_family_regular, 1.1rem);
 
-      color: #212121;
+      color: $color_stroke;
       margin-top: 0.6rem;
     }
 
@@ -144,7 +144,7 @@
 
       @include defaultTxt($font_family_regular, 1rem);
 
-      color: $color_orange;
+      color: $color_wind;
       line-height: 1.8rem;
 
       img {
@@ -157,7 +157,7 @@
 
 .title_dovesiamo {
   float: left;
-  border-bottom: 1px solid #ccd1d9;
+  border-bottom: 1px solid $color_stroke;
   margin: 18px 0 0 0;
 }
 
@@ -179,7 +179,7 @@
     h3 {
       @include defaultTxt($font_family_regular, 1.429rem);
 
-      color: #333333;
+      color: $color_text; //#333333;
       margin: 3.5rem 0;
 
       @media (max-width: 767px) {
@@ -190,19 +190,19 @@
     h4 {
       @include defaultTxt($font_family_regular, 1.429rem);
 
-      color: #444444;
+      color: $color_text; //#444444;
       margin: 0 0 3.5rem 0;
     }
 
     a.base__bt {
-      border: 1px solid $color_orange;
+      border: 1px solid $color_wind;
       width: auto;
       padding: 1rem 7.5rem;
       line-height: normal;
 
       @include defaultTxt($font_family_regular, 1.286rem);
 
-      color: $color_orange;
+      color: $color_wind;
       margin-bottom: 1rem;
       box-shadow: none;
 
@@ -219,7 +219,7 @@
   margin: 0 0 3rem;
   padding: 0;
   position: relative;
-  border-right: 1px solid #ccd1d9;
+  border-right: 1px solid $color_stroke;
 
   @media (max-width: 767px) {
     width: 100%;
@@ -241,23 +241,23 @@
 
       @include defaultTxt($font_family_regular, 1.429rem);
 
-      color: $color_orange;
+      color: $color_wind;
       text-decoration: none;
       padding: 0.6rem 1rem 0 0;
       cursor: pointer;
 
       @media (max-width: 767px) {
-        border-bottom: 1px solid #e6e9ed;
+        border-bottom: 1px solid $color_stroke;
         padding: 0.8rem 1rem;
         font-size: 1rem;
       }
 
       &:hover {
-        color: #444444;
+        color: $color_text;//#444444;
       }
 
       &.active_btn {
-        color: #444444;
+        color: $color_text; //#444444;
       }
 
       &.list-arrow:after {
@@ -290,7 +290,7 @@
         top: 0;
         right: 0;
         padding: 0 1rem;
-        border-bottom: 1px solid #e6e9ed;
+        border-bottom: 1px solid $color_stroke;
       }
 
       a {

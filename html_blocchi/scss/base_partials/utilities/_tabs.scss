@@ -37,9 +37,9 @@
 }
 
 .base__tabs.nav-tabs {
-  background: white;
+  background: $color_white;
   text-align: right;
-  border-bottom-color: transparent;
+  border-bottom-color: $color_transparent;
   border-bottom-width: 0px;
   height: 50px;
 
@@ -52,28 +52,28 @@
     display: inline-block;
 
     > a {
-      color: $color_grey_medium_light;
+      color: $color_text_lighter; //$color_grey_medium_light;
       text-transform: uppercase;
       font-size: 1.1rem;
       padding: 1rem 0.5rem;
-      border: 1px solid transparent;
+      border: 1px solid $color_transparent;
       border-bottom-width: 0px;
 
       @include transition-basic(all, 0.35s, ease-in-out);
 
       &:hover {
-        color: $color_orange;
-        background-color: white;
+        color: $color_wind;
+        background-color: $color_white;
       }
     }
 
     &.active > a {
-      color: $color_orange;
-      background-color: white;
-      border: 1px solid transparent;
+      color: $color_wind;
+      background-color: $color_white;
+      border: 1px solid $color_transparent;
       border-bottom-width: 0px;
-      border-bottom-color: $color_orange;
-      background-color: white;
+      border-bottom-color: $color_wind;
+      background-color: $color_white;
 
       &.hvr-underline-reveal:before {
         -webkit-transform: translateY(0);

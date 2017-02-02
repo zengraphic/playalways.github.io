@@ -1,6 +1,6 @@
 .strip_options_block {
     @at-root #{&}__container {
-        background-color: #ffffff;
+        background-color: $color_white;
         margin: 0 auto;
         max-width: 1024px;
         position: relative;
@@ -31,7 +31,7 @@
         &--main {
             font-size: 20px;
             font-family: $weight-light;
-            color: $color-lightBlue;
+            color: $color_robin;
             @include breakpoint(small) {
                 text-align: center;
             }
@@ -49,7 +49,7 @@
             }
         }
         &:before {
-            background-color: #ccd1d9;
+            background-color: $color_stroke;
             width: 1px;
             content: "";
             display: block;
@@ -63,7 +63,7 @@
             }
         }
         &:after {
-            background-color: #ccd1d9;
+            background-color: $color_stroke;
             width: 1px;
             content: "";
             display: block;
@@ -82,7 +82,7 @@
         .pricesContainer {
             .price {
                 display: inline-block;
-                color: $color-lightBlue;
+                color: $color_robin;
                 margin: 0 3px;
             }
             .oldPrice {
@@ -94,7 +94,7 @@
                 &:after {
                     content: "";
                     min-height: 1px;
-                    background-color: black;
+                    background-color: $color_text;
                     width: 100%;
                     display: block;
                     top: 50%;
@@ -118,7 +118,7 @@
             bottom: 10px;
         }
         &:after {
-            background-color: #ccd1d9;
+            background-color: $color_stroke;
             width: 1px;
             content: "";
             display: block;

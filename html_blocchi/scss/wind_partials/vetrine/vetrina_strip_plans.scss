@@ -30,7 +30,7 @@
             display: table-cell;
             vertical-align: middle;
             padding: 0 5px;
-            border-left: 1px solid $medium-gray;
+            border-left: 1px solid $color_stroke;
             float: none;
             &:first-child {
                 border-left: none;
@@ -53,7 +53,7 @@
         &--main {
             font-size: 20px;
             font-family: $weight-light;
-            color: $color-lightBlue;
+            color: $color_robin;
         }
     }
     @at-root #{&}__offer_block {
@@ -67,7 +67,7 @@
             }
         }
         &__item {
-            border-left: 1px solid #e6e9ed;
+            border-left: 1px solid $color_stroke;
             display: table-cell;
             width: 25%;
             padding: 7px;
@@ -84,7 +84,7 @@
                 width: 25%;
                 padding: 7px 0;
                 .price {
-                    color: $color-lightBlue;
+                    color: $color_robin;
                     font-size: $text-medium;
                     .currency {
                         font-size: 0.75em;
@@ -112,7 +112,7 @@
                 display: table;
                 width: 100%;
                 margin: 0 auto;
-                border-bottom: 1px solid $medium-gray;
+                border-bottom: 1px solid $color_stroke;
             }
             .tab {
                 display: table-cell;
@@ -137,7 +137,7 @@
                             position: absolute;
                             height: 2px;
                             bottom: 0;
-                            background-color: $color-orange;
+                            background-color: $color_orange;
                             left: 0;
                             right: 0;
                             z-index: 2;
@@ -151,7 +151,7 @@
                     left: -1.8%;
                     width: 4px;
                     height: 4px;
-                    background-color: black;
+                    background-color: $color_text;
                     @include border-radius(2px);
                 }
                 &:first-child:before {
@@ -202,7 +202,7 @@
                     width: 40%;
                     .price {
                         font-size: 3em;
-                        color: $color-lightBlue;
+                        color: $color_robin;
                         &~.sub {
                             font-size: 13px;
                         }

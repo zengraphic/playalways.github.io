@@ -69,7 +69,7 @@
           &_reset {
             .btn {
               display: block;
-              border-color: $color_orange;
+              border-color: $color_wind;
               background-clip: padding-box;
               background-color: $color_white;
               font-size: 1.2rem;
@@ -101,14 +101,14 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: #444;
+    background-color: $color_business;
     z-index: 900;
   }
 
   &__item {
 
-    &--active {
-      color: $color-standardText;
+    &--active { // classe nn presente https://playalways.github.io/html_blocchi/blocks/vetrine/blocco_contact_info.html
+      color: $color_text; //$color-standardText;
     }
 
     &--contact {
@@ -154,7 +154,7 @@
             display: inline-block;
             width: 135px;
             padding: 15px 20px;
-            background-color: $color_orange;
+            background-color: $color_wind;
             color: $color_white;
             white-space: nowrap;
 
@@ -179,7 +179,7 @@
             height: 2rem;
             padding: 0;
             border-radius: 50%;
-            background-color: $color_orange;
+            background-color: $color_wind;
             color: $color_white;
             font-size: 1.2rem;
             line-height: 2rem;
@@ -200,7 +200,7 @@
       height: 100%;
       padding: 0;
       float: right;
-      background-color: $color-lightGray;
+      background-color: $color_grey_light; //$color-lightGray;
       visibility: hidden;
       @include breakpoint(small) {
         &.visibleShow {

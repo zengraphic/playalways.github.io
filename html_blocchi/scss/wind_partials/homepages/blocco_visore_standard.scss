@@ -90,13 +90,13 @@
             margin-bottom: 20px;
             font-family: $weight-light;
             @at-root #{&}__price {
-                color: $color-lightBlue;
+                color: $color_mobile;
                 font-size: $title-big;
                 line-height: 1em;
                 &.price_discounted {
                     position: relative;
                     &::after {
-                        border-bottom: 2px solid #000;
+                        border-bottom: 2px solid $color_stroke;
                         content: "";
                         left: 0;
                         margin-top: calc(0.125em / 2 * -1);
@@ -114,7 +114,7 @@
                 }
             }
             @at-root #{&}__recurrency {
-                color: $color-standardText;
+                color: $color_text;
                 display: block;
                 font-size: 0.750em;
                 line-height: 1.2em;
@@ -168,7 +168,7 @@
         height: 100%;
         position: absolute;
         @include transform(skew(-20deg));
-        background: #009bbe;
+        background: $color_mobile;
         right: 55%;
     }
     @at-root #{&}__title {
@@ -177,7 +177,7 @@
         margin: 0 auto;
         line-height: 1.2em;
         font-size: 2.813em;
-        color: $color-lightBlue;
+        color: $color_mobile;
         font-family: $weight-light;
         height: 1.2em;
         overflow: hidden;
@@ -191,7 +191,7 @@
         max-width: 380px;
         width: 100%;
         margin: 0 auto 5px;
-        color: $color-lightBlue;
+        color: $color_mobile;
         font-family: $weight-light;
     }
     @at-root #{&}__text {
@@ -200,7 +200,7 @@
         max-width: 350px;
         margin: 0px auto 25px auto;
         font-size: $text-standard;
-        color: $color-standardText;
+        color: $color_text;
         font-family: $weight-normal;
         line-height: 1.2em;
         height: 2.3em;
@@ -209,7 +209,7 @@
 }
 
 .bundle_orange {
-    color: $color-orange;
+    color: $color_wind;
     font-family: $weight-light;
     text-align: center;
     display: inline-block;
@@ -219,7 +219,7 @@
         text-align: center;
     }
     @at-root #{&}__divider--right {
-        border-right: 1px solid $medium-gray;
+        border-right: 1px solid $color_stroke;
         &:last-of-type {
             border-right: 0px;
         }

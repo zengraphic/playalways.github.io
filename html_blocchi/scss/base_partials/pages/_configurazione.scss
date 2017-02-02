@@ -43,7 +43,7 @@
         @media (max-width: 767px) {
           @include boxWF(left, 100%);
 
-          border-bottom: 1px solid #d7d5d0;
+          border-bottom: 1px solid $color_stroke;
         }
 
         figure {
@@ -216,7 +216,7 @@
     }
 
     .base__bt {
-      border: 1px solid $color_orange;
+      border: 1px solid $color_wind;
       width: 48%;
       margin: 0 1% 0 0;
       font-size: 1.4rem;
@@ -243,16 +243,16 @@
   // mobile version (accordion)
   .panel-group {
     .panel {
-      border-top: 1px solid #d7d5d0;
+      border-top: 1px solid $color_stroke;
       padding: 3px 0;
 
       &:last-child {
-        border-bottom: 1px solid #d7d5d0;
+        border-bottom: 1px solid $color_stroke;
       }
     }
 
     .panel-default > .panel-heading + .panel-collapse > .panel-body {
-      border-top-color: transparent;
+      border-top-color: $color_transparent;
     }
 
     .panel-title {
@@ -266,7 +266,7 @@
         h3 {
           @include defaultTxt($font_family_regular, 1.2rem);
 
-          color: #000;
+          color: $color_text;
           margin-top: 0.8rem;
         }
       }
@@ -275,7 +275,7 @@
         position: absolute;
         right: 0;
         bottom: 0.5rem;
-        color: $color_orange;
+        color: $color_wind;
       }
     }
   }

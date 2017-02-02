@@ -12,10 +12,10 @@
 .base__accordion {
   .panel-heading {
     .panel-title {
-      color: $color_orange;
+      color: $color_wind;
 
       a {
-        color: $color_grey;
+        color: $color_text;
 
         @include defaultTxt($font_family_regular, 1rem);
       }
@@ -24,10 +24,10 @@
 }
 
 .panel-group .panel-heading + .panel-collapse > .panel-body {
-  background-color: #f4f4f4;
+  background-color: $color_grey_light_light;
 
   article {
-    color: $color_grey;
+    color: $color_text;
 
     @include defaultTxt($font_family_regular, 1rem);
 
@@ -47,27 +47,27 @@
 .base__tabs--storia.nav-tabs {
   @include defaultTxt($font_family_light, 1.429rem);
 
-  background: #e6e9ed;
+  background: $color_grey_light;
   text-align: center;
   border: none;
   height: 55px;
 
   > li > a {
-    color: $color_grey_dark;
+    color: $color_text;
 
     @include defaultTxt($font_family_light, 1.429rem);
 
     padding: 1rem;
 
     &:hover {
-      color: $color_grey;
-      background-color: #f7f7f7;
+      color: $color_text;
+      background-color: $color_grey_light_light;
     }
   }
 
   > li.active > a {
     color: $color_grey_dark;
-    background-color: #e6e9ed;
+    background-color: $color_grey_light;
   }
 }
 
@@ -87,7 +87,7 @@
       position: absolute;
       content: " ";
       width: 2px;
-      background-color: #ccd1d9;
+      background-color: $color_stroke;
       left: 50%;
       margin-left: -1.5px;
     }
@@ -95,8 +95,8 @@
     .tldate {
       display: block;
       width: 70px;
-      color: #444;
-      background: #fff;
+      color: $color_text;
+      background: $color_white;
 
       @include defaultTxt($font_family_regular, 1.429rem);
 
@@ -139,7 +139,7 @@
       .timeline-panel {
         @include boxWF(left, 46%);
 
-        background: #e6e9ed;
+        background: $color_grey_light;
         padding: 20px 25px;
         position: relative;
 
@@ -152,7 +152,7 @@
           display: inline-block;
 
           //triangle select time line
-          @include border(15px solid transparent, 0 solid #e6e9ed, 15px solid transparent, 15px solid #e6e9ed);
+          @include border(15px solid $color_transparent, 0 solid $color_stroke, 15px solid $color_transparent, 15px solid $color_stroke);
 
           content: " ";
         }
@@ -164,7 +164,7 @@
           display: inline-block;
 
           //triangle select time line
-          @include border(14px solid transparent, 0 solid #e6e9ed, 14px solid transparent, 14px solid #e6e9ed);
+          @include border(14px solid $color_transparent, 0 solid $color_stroke, 14px solid $color_transparent, 14px solid $color_stroke);
 
           content: " ";
         }
@@ -203,7 +203,7 @@
         top: 28px;
         left: 50%;
         text-align: center;
-        background: $color_orange;
+        background: $color_wind;
         width: 22px;
         height: 22px;
         line-height: 22px;
@@ -221,7 +221,7 @@
 
         @include radius(50%);
 
-        box-shadow: 0 0 0 8px #c5c4c2, inset -2px 3px 5px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 0 8px $color_grey_medium, inset -2px 3px 5px rgba(0, 0, 0, 0.8);
         overflow: hidden;
         position: relative;
 

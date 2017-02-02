@@ -1,35 +1,109 @@
-//customizing page: Copertura
-
-.title__default--copertura {
-  border: none;
-}
-
-.copertura__detail {
-  @include boxWF(left, 100%);
-
-  h3 {
-    @include boxWF(left, 100%);
-
-    @include defaultTxt($font_family_regular, 1.2rem);
-
-    color: #212121;
-    margin: 2.5rem 0;
-  }
-
-  p {
-    @include boxWF(left, 100%);
-
-    font-size: 1.1rem;
-    color: #212121;
-    margin-bottom: 2.5rem;
-  }
-
-  h4 {
-    @include boxWF(left, 100%);
-
-    color: #898989;
-    margin-bottom: 2.5rem;
-
-    @include defaultTxt($font_family_regular, 1rem);
-  }
-}
+    //customizing page: Copertura
+    .title__default--copertura {
+        border: none;
+    }
+    
+    .content_map {
+        .copertura {
+            position: absolute;
+            z-index: 99;
+            bottom: 70px;
+            left: 20px;
+            &_3g {
+                .radio {
+                    position: relative;
+                    display: block;
+                    padding-left: 0;
+                    top: 0;
+                    width: 29px;
+                    height: 52px;
+                    input[type=radio] {
+                        display: none;
+                       &:checked + .radio_label{
+                          background-position: -29px 0;
+                          &:before{
+                            content:none;
+                          }
+                          &:after{
+                            content:none;
+                          }
+                        }
+                    }
+                    .radio_label{
+                      width: 29px;
+                        height: 52px;
+                        margin: 0;
+                        background: url('../img/icons-interface/copertura_3g_sprite.png') 0 0 no-repeat transparent;
+                         &:before{
+                            content:none;
+                          }
+                          &:after{
+                            content:none;
+                          }
+                    }
+                }
+            }
+            &_2g {
+                .radio {
+                    position: relative;
+                    display: block;
+                    padding-left: 0;
+                    top: 0;
+                    width: 29px;
+                    height: 27px;
+                    input[type=radio] {
+                        display: none;
+                        &:checked + .radio_label{
+                          background-position: -29px 0;
+                          &:before{
+                            content:none;
+                          }
+                          &:after{
+                            content:none;
+                          }
+                        }
+                    }
+                    .radio_label{
+                      width: 29px;
+                        height: 27px;
+                        margin: 0;
+                        background: url('../img/icons-interface/copertura_2g_sprite.png') 0 0 no-repeat transparent;
+                         &:before{
+                            content:none;
+                          }
+                          &:after{
+                            content:none;
+                          }
+                    }
+                }
+            }
+        }
+    }
+    
+    .copertura__detail {
+        @include boxWF(left,
+        100%);
+        h3 {
+            @include boxWF(left,
+            100%);
+            @include defaultTxt($font_family_regular,
+            1.2rem);
+            color: #212121;
+            margin: 2.5rem 0;
+        }
+        p {
+            @include boxWF(left,
+            100%);
+            font-size: 1.1rem;
+            color: #212121;
+            margin-bottom: 2.5rem;
+        }
+        h4 {
+            @include boxWF(left,
+            100%);
+            color: #898989;
+            margin-bottom: 2.5rem;
+            @include defaultTxt($font_family_regular,
+            1rem);
+        }
+    }

@@ -4,9 +4,9 @@
     position: fixed;
     top: 0;
     min-height: 79px;
-    background-color: #fff;
+    background-color: $color_white;
     z-index: 999;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $color_stroke;
     -webkit-animation: fadein 2s;
     -moz-animation: fadein 2s;
     -ms-animation: fadein 2s;
@@ -45,11 +45,11 @@
         -webkit-transition: all 0.45s ease-in-out;
         &__overflowing {
             overflow: hidden;
-            background-color: $color-lighterGrey;
+            background-color: $color_grey_light_light; 
         }
         &__overflowingv4 {
             overflow: hidden;
-            background-color: white;
+            background-color: $color_white;
         }
         .container_mid_row {
             padding-top: 50px;
@@ -133,7 +133,7 @@
                 font-family: $weight-light;
                 &__gigs {
                     font-family: $weight-bold;
-                    color: $color-darkerGrey;
+                    color: $color_text;
                     font-size: 1.750em;
                 }
                 &__offerDetail {
@@ -145,11 +145,11 @@
                 margin-top: 5px;
                 font-family: $weight-light;
                 .mainPrice {
-                    color: $color-lightBlue;
+                    color: $color_mobile;
                     font-size: 5.625em;
                 }
                 .euro {
-                    color: $color-lightBlue;
+                    color: $color_mobile;
                     margin-left: -25px;
                     font-size: 3.750em;
                 }
@@ -170,7 +170,7 @@
                 height: 100%;
                 position: absolute;
                 @include transform(skew(-20deg));
-                background-color: $color-lightBlue;
+                background-color: $color_robin;
                 @include breakpoint(small) {
                     display: none;
                 }
@@ -181,7 +181,7 @@
             margin: 0 auto;
             line-height: 60px;
             font-size: 3.125em;
-            color: $color-darkerGrey;
+            color: $color_text;
             font-family: $weight-light;
         }
         @at-root #{&}__text {
@@ -189,7 +189,7 @@
             width: 90%;
             margin: 13px auto;
             font-size: 1.125em;
-            color: $color-darkerGrey;
+            color: $color_text; 
             font-family: $weight-light;
         }
     }
@@ -216,7 +216,7 @@
             width: 100%;
             text-align: center;
             text-transform: uppercase;
-            color: $color-standardText;
+            color: $color_text;
             padding: 20px 15px 15px;
             @include breakpoint (small) {
                 padding: 20px 15px;
@@ -235,13 +235,13 @@
                     margin-top: 20px;
                 }
                 &:hover {
-                    border-bottom: 1px solid $color-orange;
+                    border-bottom: 1px solid $color_orange;
                     padding-bottom: 5px;
                 }
                 &.active {
                     padding-bottom: 5px;
-                    border-bottom: 1px solid $color-orange;
-                    color: $color-orange;
+                    border-bottom: 1px solid $color_orange;
+                    color: $color_wind;
                 }
             }
         }
@@ -250,7 +250,7 @@
             text-transform: uppercase;
         }
         &__showMore {
-            color: $color-orange;
+            color: $color_wind;
             font-size: 1.250em;
             text-align: center;
             text-transform: uppercase;
@@ -272,7 +272,7 @@
             &.item {
                 position: relative;
                 &:after {
-                    background-color: #ccd1d9;
+                    background-color: $color_grey_medium_light;
                     width: 1px;
                     content: "";
                     display: block;
@@ -297,7 +297,7 @@
             &--title {
                 margin-top: 40px;
                 height: 65px;
-                color: $color-lightBlue;
+                color: $color_mobile;
                 font-size: 26px;
                 font-family: $weight-normal;
             }
@@ -310,14 +310,14 @@
             }
             &--price_discounted {
                 font-size: 1.500em;
-                color: $color-standardText;
+                color: $color_text;
                 font-family: $weight-light;
                 position: relative;
                 height: 25px;
                 padding-top: 2px;
                 overflow: hidden;
                 &::after {
-                    border-bottom: 1px solid #000;
+                    border-bottom: 1px solid $color_stroke;
                     content: "";
                     left: 0;
                     margin-top: calc(0.125em / 2 * -1);
@@ -332,7 +332,7 @@
             }
             &--mainPrice {
                 font-size: 3.250em;
-                color: $color-lightBlue;
+                color: $color_mobile;
                 font-family: $weight-light;
                 .currency {
                     font-size: 0.731em;
@@ -361,10 +361,10 @@
         &__overflowing {
             overflow: hidden;
             &--left {
-                background-color: $color-lighterGrey;
+                background-color: $color_grey_light_light; 
             }
             &--right {
-                background-color: $color-lightGrey;
+                background-color: $color_grey_light; 
             }
         }
         .container_mid_row {
@@ -411,7 +411,7 @@
                 font-family: $weight-light;
                 &__price {
                     font-family: $weight-bold;
-                    color: $color-darkerGrey;
+                    color: $color_text; 
                     font-size: 1.750em;
                     line-height: 1.375em;
                     margin-left: 5px;
@@ -427,22 +427,22 @@
                 &__ribbonSale {
                     margin: 25px auto 0;
                     padding: 7px 0 5px;
-                    color: white;
+                    color: $color_white;
                     font-family: $weight-bold;
                     font-size: 1.375em;
                     max-width: 250px;
-                    background-color: $color-lightBlue;
+                    background-color: $color_mobile;
                 }
             }
             .priceRow {
                 font-family: $weight-light;
                 margin-top: 15px;
                 .mainPrice {
-                    color: $color-darkerGrey;
+                    color: $color_text; 
                     font-size: 5.625em;
                 }
                 .euro {
-                    color: $color-darkerGrey;
+                    color: $color_text; 
                     margin-left: -25px;
                     font-size: 3.750em;
                 }
@@ -453,7 +453,7 @@
             width: 100%;
             margin: 20px auto;
             font-size: 1.125em;
-            color: $color-darkerGrey;
+            color: $color_text;
             font-family: $weight-light;
         }
         @at-root #{&}__singleButton {}
@@ -469,7 +469,7 @@
                 width: 100%;
                 font-size: 1.125em;
                 font-family: $weight-bold;
-                color: $color-standardText;
+                color: $color_text;
                 text-transform: uppercase;
                 margin: 0 auto 37px;
                 position: relative;
@@ -514,18 +514,18 @@
         &--title {
             font-family: $weight-light;
             font-size: 2.500em;
-            color: $color-standardText;
+            color: $color_text;
         }
         &--subtitle {
             margin: 10px auto 20px;
             font-family: $weight-bold;
             font-size: 1em;
-            color: $color-orange;
+            color: $color_wind;
         }
         &--text {
             font-family: $weight-light;
             font-size: 0.875em;
-            color: $color-standardText;
+            color: $color_text;
             width: 60%;
             margin: 0 auto;
             @include breakpoint(small) {
@@ -596,12 +596,12 @@
             font-family: $weight-light;
             font-size: 2.500em;
             margin-bottom: 15px;
-            color: $color-standardText;
+            color: $color_text;
         }
         &--text {
             font-family: $weight-light;
             font-size: 0.875em;
-            color: $color-standardText;
+            color: $color_text;
             width: 53%;
             margin: 0 auto 25px;
             @include breakpoint(small) {
@@ -771,9 +771,9 @@
     &__footer {
         margin-top: 40px;
         width: 100%;
-        background-color: $color-darkerGrey;
+        background-color: $color_business;
         padding: 1.429rem 0 1.071rem 0;
-        color: white;
+        color: $color_white;
         text-align: center;
         font-size: 0.85rem;
         font-family: $weight-light;
