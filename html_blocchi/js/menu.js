@@ -108,7 +108,7 @@ jQuery(function($) {
 
             this
                 .bindMenuLinks();
-            
+
         },
         bindMenuLinks: function() {
 
@@ -153,24 +153,27 @@ jQuery(function($) {
             var currentLocationPath = window.location.href;
             var menuLinks = $('.menu__modal--content-items a');
             var matchingLink;
-            $.each(menuLinks,function(i,el){
-                if(currentLocationPath === el.getAttribute('href')){
+            $.each(menuLinks, function(i, el) {
+                if (currentLocationPath === el.getAttribute('href')) {
                     matchingLink = $(this).addClass('current');
                     return false
                 }
             });
 
             var matchingTree = [];
-            var matchingLinkIcon = matchingLink.find('i');
-            var matchingTreeIcons = matchingLink.parents('.menu__modal--item_list').siblings('a').find('i');
-            
-            matchingLinkIcon ? matchingTree.push(matchingLinkIcon):false;
-            matchingTreeIcons ? matchingTree.push(matchingTreeIcons):false;
 
-            $.each(matchingTreeIcons,function(){
-                $(this)
-                    .trigger('click');
-            });
+            if (matchingLink) {
+                var matchingLinkIcon = matchingLink.find('i');
+                var matchingTreeIcons = matchingLink.parents('.menu__modal--item_list').siblings('a').find('i');
+
+                matchingLinkIcon ? matchingTree.push(matchingLinkIcon) : false;
+                matchingTreeIcons ? matchingTree.push(matchingTreeIcons) : false;
+
+                $.each(matchingTreeIcons, function() {
+                    $(this)
+                        .trigger('click');
+                });
+            }
 
         },
 
@@ -418,7 +421,7 @@ jQuery(function($) {
                     var targetLink = target.children('a');
                     MENU
                         .processLink(targetLink, true);
-            });
+                });
         },
 
     };
