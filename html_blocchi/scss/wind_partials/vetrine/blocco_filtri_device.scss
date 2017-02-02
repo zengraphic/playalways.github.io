@@ -32,8 +32,8 @@
         .base__select {
             &.bootstrap-select {
                 .dropdown-toggle {
-                    padding-top: 7px;
-                    padding-bottom: 9px;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     .filter-option {
                         font-size: 16px;
                     }
@@ -49,9 +49,21 @@
                     margin-right: 15px;
                     @include breakpoint(small) {
                         width: 300px;
+                        margin-right: 0;
                     }
                 }
             }
+            
         }
+        .base__bt {
+                font-size: 16px;
+                padding: 8px 0;
+                line-height: 1.42857143;
+                width: 130px;
+                @include breakpoint(small) {
+                        width: 300px;
+                    }
+            }
+
     }
 }
