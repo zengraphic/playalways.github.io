@@ -8,7 +8,7 @@
 
 #vid {
   .jw-cue, .jw-knob {
-    background: $color_orange;
+    background: $color_wind;
   }
 }
 
@@ -23,7 +23,7 @@
 
   .jw-text {
     font-size: 1rem;
-    color: white;
+    color: $color_white;
   }
 
   .jw-icon-tooltip:before {
@@ -45,19 +45,19 @@
         margin-left: 0.75rem;
         margin-right: 0.75rem;
         height: 2rem;
-        color: transparent;
-        background: white;
+        color: $color_transparent;
+        background: $color_white;
 
         @include radius(4px);
 
         &:before {
-          color: $color_orange;
+          color: $color_wind;
         }
       }
     }
 
     .jw-display-icon-container {
-      background: transparent !important;
+      background: $color_transparent !important;
     }
 
     div[class*="-group"] {
@@ -77,7 +77,7 @@
 
           /*background: red; */
           .jw-rail, .jw-buffer {
-            border: 1px solid white;
+            border: 1px solid $color_white;
 
             @include radius(4px);
 
@@ -85,7 +85,7 @@
           }
 
           .jw-progress {
-            border: 1px solid white;
+            border: 1px solid $color_white;
 
             @include radius(4px);
 
@@ -95,13 +95,13 @@
           }
 
           .jw-rail {
-            background: $color_orange;
+            background: $color_wind;
           }
 
           .jw-buffer {
             @include radius(4px);
 
-            background: $color_orange;
+            background: $color_wind;
           }
 
           .jw-knob {
@@ -111,7 +111,7 @@
 
             width: 1rem;
             height: 2rem;
-            border: 1px solid white;
+            border: 1px solid $color_white;
           }
         }
       }

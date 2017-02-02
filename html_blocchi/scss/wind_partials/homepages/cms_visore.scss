@@ -3,28 +3,28 @@
 // ============================== CREATORE VISORE =========================
 .torna_su {
     text-align: center;
-    color: $color-orange;
+    color: $color_wind;
     cursor: pointer;
     display: none;
     &:hover {
-        color: #333;
+        color: $color_text_light;
     }
 }
 
 .container_prototype {
     margin: 30px;
-    background-color: #ededed;
+    background-color: $color_grey_light_light;
     padding: 5px;
     @include border-radius(10px);
     .aggiunto_blocco {
         width: calc(100% - 30px);
-        color: $color-lightBlue;
-        background-color: white;
+        color: $color_blue;
+        background-color: $color_white;
         height: 50px;
         position: fixed;
         bottom: 30px;
         z-index: 450;
-        border: 1px solid $color-lightBlue;
+        border: 1px solid $color_blue;
         right: 15px;
         padding-top: 15px;
         text-align: center;
@@ -34,7 +34,7 @@
     }
     .overlay_loader {
         @include opacity(0.7);
-        background-color: #444;
+        background-color: $color_business;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -45,9 +45,9 @@
     }
     .loader {
         display: none;
-        border: 16px solid #f3f3f3;
+        border: 16px solid $color_stroke;
         /* Light grey */
-        border-top: 16px solid #3498db;
+        border-top: 16px solid $color_robin_light; //#3498db;
         /* Blue */
         border-radius: 50%;
         width: 120px;
@@ -94,13 +94,13 @@
                 margin-left: 5px;
             }
             &.enhance {
-                background-color: white;
-                border: 1px solid red;
-                color: $color-orange;
+                background-color: $color_white;
+                border: 1px solid $color_red;
+                color: $color_wind;
             }
             &:hover {
-                background-color: $color-orange;
-                color: white;
+                background-color: $color_wind;
+                color: $color_white;
             }
         }
         .standard_blockInfo__select {
@@ -110,25 +110,25 @@
             position: relative;
             height: 100px;
             text-align: center;
-            border: 1px solid #dedede;
+            border: 1px solid $color_stroke;
         }
         .container_immagine_cms {
             position: relative;
         }
         .action_red {
-            background-color: red !important;
+            background-color: $color_red !important;
             height: auto;
         }
         .action_grey {
-            background-color: #a1a3bb !important;
+            background-color: $color_grey_medium !important;
             height: auto;
         }
         .action_black {
-            background-color: #333 !important;
+            background-color: $color_business !important; /// 333
             height: auto;
         }
         .action_blue {
-            background-color: blue !important;
+            background-color: blue !important; //?
             height: auto;
             @include breakpoint(tiny) {
                 margin-top: 15px;
@@ -144,12 +144,12 @@
             width: 300px;
             height: auto;
             z-index: 300;
-            background-color: #444;
+            background-color: $color_business;
             position: fixed;
             top: 0;
             left: 0;
             display: none;
-            border: 5px solid red;
+            border: 5px solid $color_red;
         }
         .immagine_creaPagine {
             max-height: 50px;
@@ -187,12 +187,12 @@
         &.btn-group {
             .dropdown-menu {
                 min-width: 50px;
-                background-color: #ededed !important;
+                background-color: $color_grey_light_light !important;
             }
         }
     }
     .btn-default {
-        background-color: #ededed !important;
+        background-color: $color_grey_light_light !important;
     }
     .immBollo {
         height: 40px;
@@ -210,7 +210,7 @@
         margin-left: 0;
     }
     .remove {
-        background: red;
+        background: $color_red;
         color: white;
         font-family: 'Helvetica', 'Arial', sans-serif;
         font-size: 12px;
@@ -224,8 +224,8 @@
         padding-top: 6px;
         cursor: pointer;
         &.hide_cms {
-            background: $color-orange;
-            color: #fff;
+            background: $color_wind;
+            color: $color_white;
             padding-left: 5px;
             padding-right: 5px;
             width: 70px;
@@ -233,22 +233,22 @@
             float: left;
         }
         &.riduci {
-            background-color: $color-lightBlue;
-            color: #fff;
+            background-color: $color_mobile;
+            color: $color_white;
         }
         &:hover {
-            background-color: #333;
+            background-color: $color_grey_dark_light;
         }
     }
     .cancella {
         float: left;
-        color: red;
+        color: $color_red;
         position: relative;
         top: 8px;
         cursor: pointer;
         left: 10px;
         &:hover {
-            color: white;
+            color: $color_white;
         }
     }
     .confirm {
@@ -260,10 +260,10 @@
         margin-left: 15px;
         cursor: pointer;
         border-width: 12.5px 0 12.5px 21.7px;
-        border-color: transparent transparent transparent $color-orange;
+        border-color: transparent transparent transparent $color_wind;
         float: left;
         &:hover {
-            border-color: transparent transparent transparent $color-lightBlue;
+            border-color: transparent transparent transparent $color_mobile;
         }
     }
     h3 {
@@ -296,18 +296,18 @@
 
 .color {
     &--lightBlue {
-        color: $color-lightBlue !important;
+        color: $color_mobile !important;
     }
     &--orange {
-        color: $color-orange !important;
+        color: $color_wind !important;
     }
     &--black {
-        color: $color-standardText !important;
+        color: $color_text !important;
     }
     &--white {
-        color: $color-white !important;
+        color: $color_white !important;
     }
     &--blue {
-        color: $color-mediumBlue !important;
+        color: $color_infostrada !important; //? 0 matches
     }
 }

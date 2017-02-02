@@ -154,7 +154,7 @@ a {
     &:focus,
     &:active:focus,
     &.active:focus {
-        outline-color: transparent;
+        outline-color: $color_transparent;
         outline-style: none;
     }
     font-family: $font_family_light;
@@ -176,7 +176,7 @@ a {
 }
 
 textarea:focus {
-    @include focusInputs($color_wind, transparent, none, 0); 
+    @include focusInputs($color_wind, $color_transparent, none, 0); 
 }
 
 //outline: thin dotted \9;  IE6-9
@@ -198,7 +198,7 @@ input {
     &[type=file]:focus,
     &[type=checkbox]:focus,
     &[type=radio]:focus {
-        @include focusInputs($color_wind, transparent, none, 0); 
+        @include focusInputs($color_wind, $color_transparent, none, 0); 
     }
 }
 

@@ -7,24 +7,24 @@
     &.disabled .dropdown-toggle {
         background-color: $color_grey_medium_light;
         .bs-caret .caret {
-            color: #666;
+            color: $color_text_light; //#666
         }
     }
     .dropdown-toggle {
         outline: none !important;
         padding: 0.9rem 0.9rem;
-        background-color: white;
-        border-color: $color_grey_medium_light;
+        background-color: $color_white;
+        border-color: $color_stroke;
         box-shadow: none;
         -webkit-box-shadow: none;
         &:hover {
-            border-color: $color_orange;
+            border-color: $color_wind;
         }
         .filter-option {
             font-size: 16px;
         }
         .bs-caret .caret {
-            color: $color_orange;
+            color: $color_wind;
             position: absolute;
             right: 1rem;
             top: 50%;
@@ -50,16 +50,16 @@
         outline: none;
     }
     &.open .dropdown-toggle {
-        border: 1px solid $color_grey_medium_light;
+        border: 1px solid $color_stroke;
         box-shadow: none;
         -webkit-box-shadow: none;
-        background-color: white !important;
+        background-color: $color_white !important;
         &:hover,
         &:focus {
-            border: 1px solid $color_grey_medium_light;
+            border: 1px solid $color_stroke;
             box-shadow: none;
             -webkit-box-shadow: none;
-            background-color: white !important;
+            background-color: $color_white !important;
         }
     }
     .dropdown-menu {
@@ -74,8 +74,8 @@
         > li > a {
             &:hover,
             &:focus {
-                background-color: $color_orange;
-                color: white;
+                background-color: $color_wind;
+                color: $color_white;
             }
         }
     }

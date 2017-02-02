@@ -8,7 +8,7 @@
     &__container {
         &-title {
             font-family: $weight-light;
-            color: $color-lightBlue;
+            color: $color_robin;
             font-size: 1.1875em;
             @include breakpoint(med-large) {
                 font-size: 0.93em;
@@ -24,7 +24,7 @@
             }
             img {
                 max-width: 100%;
-                border: 1px solid #ddd;
+                border: 1px solid $color_stroke;
             }
         }
         &-text {
@@ -57,7 +57,7 @@
                 padding-top: 15px;
                 padding-bottom: 22px;
                 padding-right: 10px;
-                border-right: 1px solid $medium-gray;
+                border-right: 1px solid $color_stroke;
                 height: 150px;
                 @include breakpoint(small) {
                     margin: 0 auto;
@@ -80,7 +80,7 @@
             &--text {
                 font-size: 0.80em;
                 padding-top: 22px;
-                border-left: 1px solid $medium-gray;
+                border-left: 1px solid $color_stroke;
                 height: 100%; // 9.375em 150px
                 @include breakpoint(small) {
                     border-left: none;
@@ -90,11 +90,11 @@
                 }
             }
             &--List {
-                border-bottom: 1px solid $medium-gray;
+                border-bottom: 1px solid $color_stroke;
                 padding: 25px 0 15px;
                 &--label {
                     font-family: $weight-light;
-                    color: $color-standardText;
+                    color: $color_text;
                     font-size: 1.5em;
                     padding-top: 0.5em;
                     padding-bottom: 0.5em;
@@ -131,7 +131,7 @@
     }
     &__rates {
         &_divider--left {
-            border-right: 1px solid $medium-gray;
+            border-right: 1px solid $color_stroke;
             width: 50%;
             float: left;
             text-align: center;
@@ -145,19 +145,19 @@
         }
         &--title {
             font-family: $weight-light;
-            color: $color-standardText;
+            color: $color_text;
             font-size: 0.8em;
             text-transform: uppercase;
         }
         &--price {
             font-family: $weight-bold;
-            color: $color-lightBlue;
+            color: $color_robin;
             font-size: 1.5em;
             padding-top: 5px;
         }
         &--cent {
             font-family: $weight-light;
-            color: $color-standardText;
+            color: $color_text;
             font-size: 0.7em;
             padding-top: 5px;
             text-transform: uppercase;

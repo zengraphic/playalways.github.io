@@ -1,7 +1,7 @@
 .stripMenuText {
     margin: 0 auto;
     line-height: 1.08;
-    background-color: #f4f4f4;
+    background-color: $color_grey_light_light; //#f4f4f4;
     .owl-theme {
         .owl-controls {
             .owl-buttons {
@@ -14,7 +14,7 @@
         display: block;
         max-width: 1024px;
         margin: 0 auto;
-        color: #aab2bd;
+        color: $color_text_lighter;
         -o-transition: all 0.45s ease-in-out;
         -moz-transition: all 0.45s ease-in-out;
         -ms-transition: all 0.45s ease-in-out;
@@ -32,9 +32,9 @@
         display: inline-block;
         cursor: pointer;
         a{
-            color:#aab2bd;
+            color: $color_text_lighter;
             &:hover{
-            color: $color-orange;
+            color: $color_wind;
             }
         }
 
@@ -45,7 +45,7 @@
         }
         &.active,
         &:hover {
-            a{color: $color-orange;}
+            a{color: $color_wind;}
             
             .stripMenuText__item__title:after {
                 content: "";
@@ -55,7 +55,7 @@
                 right: 0;
                 bottom: 0;
                 height: 2px;
-                background-color: $color-orange;
+                background-color: $color_wind;
             }
         }
     }

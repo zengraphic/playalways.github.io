@@ -12,26 +12,26 @@
             content: "";
             width: 1.4rem;
             height: 1.4rem;
-            border: 1px solid $color_grey_medium_light;
+            border: 1px solid $color_stroke; 
             @include radius(4px);
         }
     }
     input[type="checkbox"] {
         &:disabled + label::before {
-            background-color: white;
+            background-color: $color_white;
             cursor: not-allowed;
         }
         &:checked + label {
             &::before {
-                background-color: $color_orange;
-                border-color: $color_grey_medium_light;
+                background-color: $color_wind;
+                border-color: $color_stroke; 
             }
             &::after {
-                color: #fff;
+                color: $color_white;
             }
         }
         &.styled:checked + label:after {
-            color: #fff;
+            color: $color_white;
         }
         &:checked:disabled + label::before {
             background-color: $color_grey_medium_light;

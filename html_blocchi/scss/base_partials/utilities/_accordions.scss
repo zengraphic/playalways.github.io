@@ -8,21 +8,21 @@
   @include boxWF(left, 100%);
 
   border: 0;
-  background: white;
+  background: $color_white;
 
   @include radius(4px);
 
   .panel-heading {
-    color: $color_grey_dark_light;
-    background-color: #fff;
-    border: 0px solid #fff;
+    color: $color_text_light;
+    background-color: $color_white;
+    border: 0px solid $color_white; // px ?
     cursor: pointer;
 
     .panel-title {
       display: inline-block;
       width: 100%;
       font-size: 1.2rem;
-      color: $color_grey_dark_light;
+      color: $color_text_light;
 
       a {
         text-decoration: none;
@@ -39,7 +39,7 @@
     }
 
     &.active .panel-title {
-      color: $color_orange;
+      color: $color_wind;
 
       .indicator:after {
         font-family: "FontAwesome";

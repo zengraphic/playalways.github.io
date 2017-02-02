@@ -7,22 +7,22 @@
 .black_cont {
   @include boxWF(left, 100%);
 
-  background-color: #212121;
+  background-color: $color_black; //#212121;
   padding: 20px;
 
   &.black {
-    background-color: #212121;
+    background-color: $color_black; //#212121;
 
     .title_slider .left li a {
-      color: #ffffff;
+      color: $color_white;
     }
 
     .slider_products .box_item {
-      border-right-color: #FFFFFF;
+      border-right-color: $color_white;
 
       span {
         &.name_p, &.detail_p1, &.detail_p2, &.detail_p3, &.prices_1, &.prices_2 {
-          color: #FFFFFF;
+          color: $color_white;
         }
       }
     }
@@ -44,7 +44,7 @@
 
           @include defaultTxt($font_family_light, 1.1rem);
 
-          color: $color_grey_dark_light;
+          color: $color_text_light; //$color_grey_dark_light;
           position: relative;
 
           &.active_b::before {
@@ -54,7 +54,7 @@
             width: 60%;
             content: "";
             height: 1px;
-            background-color: $color_orange;
+            background-color: $color_wind;
           }
 
           &:hover {
@@ -67,7 +67,7 @@
               width: 60%;
               content: "";
               height: 1px;
-              background-color: $color_orange;
+              background-color: $color_wind;
             }
           }
         }
@@ -91,7 +91,7 @@
 
           @include defaultTxt($font_family_light, 1.1rem);
 
-          color: $color_grey_dark_light;
+          color: $color_text_light; //$color_grey_dark_light;
           position: relative;
           line-height: normal;
           &.active_b::before {
@@ -101,7 +101,7 @@
             width: 60%;
             content: "";
             height: 1px;
-            background-color: $color_orange;
+            background-color: $color_wind;
           }
 
           &:hover {
@@ -114,7 +114,7 @@
               width: 60%;
               content: "";
               height: 1px;
-              background-color: $color_orange;
+              background-color: $color_wind;
             }
           }
         }
@@ -128,7 +128,7 @@ h3.title {
 
   @include defaultTxt($font_family_regular, 2rem);
 
-  color: #212121;
+  color: $color_text; //#212121;
 }
 
 .cont_tabs_s {
@@ -137,7 +137,7 @@ h3.title {
   /* TABS */
   &.class4 {
     ul.base__tabs {
-      background-color: transparent;
+      background-color: $color_transparent;
 
       li h3 {
         margin-top: 0;
@@ -166,14 +166,14 @@ h3.title {
       .text__s {
         @include genericCenterContent;
 
-        border-right: 1px solid #d3d3d2;
+        border-right: 1px solid $color_stroke;
         float: none;
         padding: 0 1rem;
 
         h3 {
           @include boxWF(left, 100%);
 
-          color: $color_grey_dark_light;
+          color: $color_text_light; //$color_grey_dark_light;
 
           @include defaultTxt($font_family_regular, 1.2rem);
 
@@ -183,7 +183,7 @@ h3.title {
         p {
           @include boxWF(left, 100%);
 
-          color: $color_grey_dark_light;
+          color: $color_text_light; //$color_grey_dark_light;
 
           @include defaultTxt($font_family_regular, 1.1rem);
 
@@ -216,22 +216,22 @@ h3.title {
 
       a {
         &:hover {
-          background-color: transparent;
+          background-color: $color_transparent;
         }
 
         &.btn_blue {
-          color: #026ab4;
+          color: $color_infostrada;
           padding: 0 1rem;
         }
 
         &.base__bt {
           @include boxWF(right, auto);
 
-          border: 1px solid $color_orange;
+          border: 1px solid $color_wind;
           padding-top: 0.4rem;
           padding-bottom: 0.4rem;
           font-size: 0.8rem;
-          color: $color_orange;
+          color: $color_wind;
           line-height: normal;
           margin: 0 2rem 0 0;
 
@@ -250,7 +250,7 @@ h3.title {
   ul.base__tabs {
     @include boxWF(left, 100%);
 
-    background-color: #f7f7f7;
+    background-color: $color_grey_light_light; //#f7f7f7;
     padding: 0 1rem;
 
     li {
@@ -266,7 +266,7 @@ h3.title {
       h3.title_left {
         @include boxWF(left, 100%);
 
-        color: #212121;
+        color: $color_text; //#212121;
 
         @include defaultTxt($font_family_light, 2rem);
 
@@ -291,7 +291,7 @@ h3.title {
       }
 
       a.hvr-underline-reveal:hover, &.active a {
-        background: transparent;
+        background: $color_transparent;
       }
     }
   }
@@ -374,7 +374,7 @@ h3.title {
 
                 @include defaultTxt($font_family_light, 1.1rem);
 
-                color: #212121;
+                color: $color_text; //#212121;
 
                 span.text__2 {
                   @include boxWF(left, 100%);
@@ -404,7 +404,7 @@ h3.title {
                 @include defaultTxt($font_family_light, 0.9rem);
 
                 text-align: center;
-                color: #212121;
+                color: $color_text; //#212121;
                 margin-top: 0.6rem;
               }
             }
@@ -419,14 +419,14 @@ h3.title {
               @include genericCenterContent;
 
               padding: 0 0 0;
-              border-right: 1px solid #d3d3d2;
+              border-right: 1px solid $color_stroke;
 
               h5 {
                 @include boxWF(left, 33%);
 
                 @include defaultTxt($font_family_light, 1.1rem);
 
-                color: #212121;
+                color: $color_text; //#212121;
                 text-align: center;
 
                 span.price {
@@ -445,7 +445,7 @@ h3.title {
 
                 @include defaultTxt($font_family_light, 0.9rem);
 
-                color: #212121;
+                color: $color_text; //#212121;
                 text-align: center;
 
                 span.price {
@@ -459,7 +459,7 @@ h3.title {
           }
 
           &.gray {
-            background-color: #f7f7f7;
+            background-color: $color_grey_light_light; // #f7f7f7;
           }
 
           .image {
@@ -467,7 +467,7 @@ h3.title {
 
             @include genericCenterContent;
 
-            border-right: 1px solid #d3d3d2;
+            border-right: 1px solid $color_stroke;
 
             img {
               display: inline-block;
@@ -479,7 +479,7 @@ h3.title {
 
             @include genericCenterContent;
 
-            border-right: 1px solid #d3d3d2;
+            border-right: 1px solid $color_stroke;
             padding: 0 0 0 1rem;
 
             h3 {
@@ -487,13 +487,13 @@ h3.title {
 
               @include defaultTxt($font_family_regular, 1.2rem);
 
-              color: $color_blue;
+              color: $color_infostrada; //$color_blue;
             }
 
             p {
               @include boxWF(left, 73%);
 
-              color: $color_grey_dark_light;
+              color: $color_text_light; //$color_grey_dark_light;
 
               @include defaultTxt($font_family_regular, 1.1rem);
 
@@ -544,8 +544,8 @@ h3.title {
             a.btn.btn_view {
               @include boxWF(none, auto);
 
-              background-color: $color_orange;
-              color: #FFFFFF;
+              background-color: $color_wind;
+              color: $color_white;
 
               @include defaultTxt($font_family_regular, 1.1rem);
 
@@ -575,20 +575,20 @@ h3.title {
 
   .panel-group .panel.base__accordion {
     box-shadow: none;
-    border-bottom: 1px solid #d7d5d0;
+    border-bottom: 1px solid $color_stroke;
   }
 
   .panel-heading .panel-title {
     a.accordion-toggle {
       @include boxWF(left, 100%);
 
-      color: #212121;
+      color: $color_text; //#212121;
 
       @include defaultTxt($font_family_regular, 1.1rem);
     }
 
     .pull-right {
-      color: $color_orange;
+      color: $color_wind;
     }
   }
 }
@@ -603,7 +603,7 @@ h3.title {
     width: 100%;
     background-image: url("../img/icons-interface/points.jpg");
     background-repeat: no-repeat;
-    background-color: #FFFFFF;
+    background-color: $color_white;
     background-position: center center;
     height: 24px;
     position: absolute;
@@ -624,7 +624,7 @@ h3.title {
     width: 40%;
     background-image: url("../img/icons-interface/points.jpg");
     background-repeat: no-repeat;
-    background-color: #FFFFFF;
+    background-color: $color_white;
     background-position: center center;
     height: 24px;
     position: absolute;
@@ -663,7 +663,7 @@ h3.title {
         bottom: 0;
         right: 20%;
         width: 60%;
-        background-color: #FFFFFF;
+        background-color: $color_white;
         z-index: 99;
         padding: 1rem;
 
@@ -692,7 +692,7 @@ h3.title {
     .check_cont {
       @include boxWF(right, auto);
 
-      background-color: #FFFFFF;
+      background-color: $color_white;
       padding: 0.5rem 1rem;
       margin: 0;
     }
@@ -747,7 +747,7 @@ h3.title {
     }
 
     a {
-      color: #4272db;
+      color: $color_blue_light; //#4272db;
     }
   }
 }
@@ -765,7 +765,7 @@ h3.title {
 
     @include defaultTxt($font_family_bold, 1.7rem);
 
-    color: $color_grey_dark_light;
+    color: $color_text_light;
   }
 
   ul {
@@ -806,10 +806,10 @@ h3.title {
 
         .title {
           background-image: url("../img/icons-interface/icon_list1.png");
-          background-color: #FFFFFF;
-          border-top: 1px solid #ececec;
-          border-bottom: 1px solid #ececec;
-          border-left: 1px solid #ececec;
+          background-color: $color_white;
+          border-top: 1px solid $color_stroke;
+          border-bottom: 1px solid $color_stroke;
+          border-left: 1px solid $color_stroke;
         }
       }
 
@@ -825,7 +825,7 @@ h3.title {
 
         &:hover {
           background-image: url("../img/icons-interface/icon_list1.png");
-          background-color: #FFFFFF;
+          background-color: $color_white;
         }
 
         h3 {
@@ -839,7 +839,7 @@ h3.title {
           @include defaultTxt($font_family_regular, 0.9rem);
 
           float: left;
-          color: $color_grey_dark_light;
+          color: $color_text_light;
         }
       }
 
@@ -847,7 +847,7 @@ h3.title {
         display: none;
         position: absolute;
         width: 70%;
-        border: 1px solid #ececec;
+        border: 1px solid $color_stroke;
         padding: 1rem 1.5rem;
         top: 0;
         right: 1px;
@@ -863,13 +863,13 @@ h3.title {
           h3 {
             @include defaultTxt($font_family_bold, 1rem);
 
-            color: $color_grey_dark_light;
+            color: $color_text_light;
           }
 
           p {
             @include defaultTxt($font_family_regular, 0.9rem);
 
-            color: $color_grey_dark_light;
+            color: $color_text_light;
 
             @media (max-width: 767px) {
               margin-bottom: 1rem;
@@ -915,7 +915,7 @@ h3.title {
 
         @include defaultTxt($font_family_light, 3.5rem);
 
-        color: #424a54;
+        color: $color_text; //#424a54; 
       }
 
       .bx-pager {
@@ -973,7 +973,7 @@ h3.title {
 
         @include defaultTxt($font_family_light, 3.5rem);
 
-        color: #424a54;
+        color: $color_text; //#424a54;
       }
 
       .stars {
@@ -981,7 +981,7 @@ h3.title {
         margin-right: 1rem;
 
         i {
-          color: $color_orange;
+          color: $color_wind;
         }
       }
 
@@ -990,11 +990,11 @@ h3.title {
         margin-right: 1rem;
 
         i {
-          color: $color_orange;
+          color: $color_wind;
         }
 
         span {
-          color: $color_orange;
+          color: $color_wind;
 
           @include defaultTxt($font_family_regular, 0.9rem);
         }
@@ -1004,11 +1004,11 @@ h3.title {
         float: left;
 
         i {
-          color: $color_orange;
+          color: $color_wind;
         }
 
         span {
-          color: $color_orange;
+          color: $color_wind;
 
           @include defaultTxt($font_family_regular, 0.9rem);
         }
@@ -1019,7 +1019,7 @@ h3.title {
 
         @include defaultTxt($font_family_regular, 1rem);
 
-        color: $color_grey_dark_light;
+        color: $color_text_light; //$color_grey_dark_light;
         line-height: normal;
         margin: 1rem 0;
       }
@@ -1029,7 +1029,7 @@ h3.title {
 
         @include defaultTxt($font_family_light, 1.1rem);
 
-        color: $color_grey_dark_light;
+        color: $color_text_light; //$color_grey_dark_light;
       }
 
       ul {
@@ -1049,16 +1049,16 @@ h3.title {
             @include boxWF(left, 100%);
 
             height: 100%;
-            border: 1px solid $color_grey_light;
+            border: 1px solid $color_stroke;
             text-align: center;
             display: inline-block;
-            color: #000000;
+            color: $color_text; //#000000;
             text-decoration: none;
             padding: 0.8rem 0 0.8rem;
             position: relative;
 
             &:hover {
-              border: 1px solid $color_orange;
+              border: 1px solid $color_wind;
             }
 
             &.item {
@@ -1067,7 +1067,7 @@ h3.title {
 
                 @include defaultTxt($font_family_regular, 0.9rem);
 
-                color: #000000;
+                color: $color_text; //#000000;
               }
 
               span {
@@ -1080,19 +1080,19 @@ h3.title {
                 margin: 0 0 0.2rem 1.3rem;
 
                 &.grey {
-                  background-color: #dddfde;
+                  background-color: $color_grey_light_light; //#dddfde;
                 }
 
                 &.black {
-                  background-color: #434343;
+                  background-color: $color_grey_dark; //#434343;
                 }
 
                 &.gold {
-                  background-color: #e2d0bb;
+                  background-color: $color_grey_light_light; //#e2d0bb;
                 }
 
                 &.goldp {
-                  background-color: #ecccbe;
+                  background-color: $color_grey_light_light; //#ecccbe;
                 }
               }
             }
@@ -1100,7 +1100,7 @@ h3.title {
             &.item1 {
               @include defaultTxt($font_family_regular, 0.9rem);
 
-              color: #000000;
+              color: $color_text; //#000000;
 
               span {
                 @include boxWF(left, 100%);
@@ -1119,7 +1119,7 @@ h3.title {
 
                 @include defaultTxt($font_family_regular, 0.9rem);
 
-                color: #000000;
+                color: $color_text; //#000000;
               }
             }
           }
@@ -1139,9 +1139,9 @@ h3.title {
         &.btn_buy {
           @include boxWF(left, 40%);
 
-          background-color: transparent;
-          border: 1px solid $color_orange;
-          color: $color_orange;
+          background-color: $color_transparent;
+          border: 1px solid $color_wind;
+          color: $color_wind;
           margin-right: 0.5rem;
 
           &:hover {
@@ -1152,8 +1152,8 @@ h3.title {
         &.btn_awp {
           @include boxWF(left, 40%);
 
-          background-color: $color_orange;
-          color: #FFFFFF;
+          background-color: $color_wind;
+          color: $color_white;
 
           &:hover {
             background-color: $color_orange_light;
@@ -1169,16 +1169,16 @@ h3.title {
     z-index: 3;
 
     .base__breadcrumbs li span {
-      color: #FFFFFF;
+      color: $color_white;
     }
 
     .bx-wrapper .bx-viewport {
-      background: transparent;
+      background: $color_transparent;
     }
 
     .box__productod .text__cont {
       h3, p {
-        color: #FFFFFF;
+        color: $color_white;
       }
     }
   }
@@ -1212,7 +1212,7 @@ h3.title {
       @include defaultTxt($font_family_regular, 1rem);
 
       float: left;
-      color: #FFFFFF;
+      color: $color_white;
       margin: 0 0 1.5rem 0;
       letter-spacing: 0;
       line-height: 1.6rem;
@@ -1220,8 +1220,8 @@ h3.title {
   }
 
   a.btn.btn_back {
-    background: $color_orange;
-    color: #FFFFFF;
+    background: $color_wind;
+    color: $color_white;
     position: relative;
     opacity: 1;
     padding: 1rem 0;
@@ -1271,7 +1271,7 @@ h3.title {
 
 @media (min-width: 681px) and (max-width: 1024px) {
   .hpshop .slider_products .box_item:nth-child(3n) {
-    border-right: 1px solid #bdbdbd;
+    border-right: 1px solid $color_stroke;
   }
 }
 
@@ -1439,7 +1439,7 @@ h3.title {
 
 @media (max-width: 767px) {
   .cont_tabs_s .tab-content .tab-pane ul li.gray {
-    background-color: transparent;
+    background-color: $color_transparent;
   }
 }
 
@@ -1597,7 +1597,7 @@ h3.title {
     width: 100%;
     border: none;
     background-color: $color_orange;
-    color: #FFFFFF;
+    color: $color_white;
   }
 }
 

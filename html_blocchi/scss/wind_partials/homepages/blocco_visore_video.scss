@@ -8,11 +8,11 @@
     margin: 10px;
     padding: 5px 20px;
     width: auto;
-    color: white;
-    background-color: red;
+    color: $color_white;
+    background-color: $color_red;
     font-size: 1em;
     ul {
-        color: black;
+        color: $color_text; //black;
     }
 }
 
@@ -175,7 +175,7 @@
                 @include opacity(1);
             }
             .video_block_display__wrapper_right {
-                color: white;
+                color: $color_white;
             }
         }
         &_50 {
@@ -186,7 +186,7 @@
                 }
             }
             .video_block_display__wrapper_right {
-                color: white;
+                color: $color_white;
             }
         }
         &_0 {
@@ -235,8 +235,8 @@
                                 top: calc(100% - 50px)!important;
                                 display: inline-block;
                                 vertical-align: middle;
-                                border-right: 50px solid $color-blue;
-                                border-top: 50px double transparent;
+                                border-right: 50px solid $color_blue;
+                                border-top: 50px double $color_transparent;
                                 width: 0;
                                 height: 0;
                                 right: 0;
@@ -247,7 +247,7 @@
                                     height: 20px;
                                     position: absolute;
                                     content: "X";
-                                    color: white;
+                                    color: $color_white;
                                     bottom: 0;
                                     left: 30px;
                                     cursor: pointer;

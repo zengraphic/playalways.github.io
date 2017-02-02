@@ -4,40 +4,40 @@
         &_item {
             &.active {
                 .pagination_link {
-                    color: $color-orange;
-                    background-color: $color-lighterGrey!important;
-                    border-color: $color-lightGrey;
+                    color: $color_wind;
+                    background-color: $color_grey_light_light !important;
+                    border-color: $color_stroke;
                 }
             }
         }
         &_link {
             border-right: none;
             border-left: none;
-            color: $color-darkerGrey;
-            border-color: $color-lightGrey;
+            color: $color_text;
+            border-color: $color_stroke;
             &:hover {
-                color: $color-orange;
+                color: $color_wind;
             }
             &:visited,
             &:active {
-                background-color: white;
+                background-color: $color_white;
             }
         }
         &_previous,
         &_next {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
-            background-color: $color-lightGrey;
-            border-color: $color-lightGrey;
+            background-color: $color_grey_light;
+            border-color: $color_stroke;
             span:before {
-                color: $color-orange;
+                color: $color_wind;
                 font-size: 0.9rem;
                 font-family: "FontAwesome";
             }
             &.disabled {
                 pointer-events: none;
                 span:before {
-                    color: $color-mediumLightGrey!important;
+                    color: $color_text_lighter; //$color-mediumLightGrey!important; 
                 }
             }
             &_icon {

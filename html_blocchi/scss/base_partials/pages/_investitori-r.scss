@@ -6,11 +6,11 @@
 
 .content_acordeon--report {
   .panel-heading.active {
-    background-color: #f4f4f4;
+    background-color: $color_grey_light_light; //#f4f4f4;
   }
 
   .panel-collapse {
-    background-color: #f4f4f4;
+    background-color: $color_grey_light_light; //#f4f4f4;
 
     .panel-body {
       padding: 0 0 0 1.5rem;
@@ -28,11 +28,11 @@
   width: 100%;
 
   .panel-heading.active {
-    background-color: white;
+    background-color: $color_white; //white;
   }
 
   .collapse.in.in {
-    background-color: white;
+    background-color: $color_white; //white;
   }
 
   .panel-collapse .panel-body {
@@ -43,10 +43,10 @@
     }
 
     .base__accordion-mobile {
-      border-bottom: 1px solid #d7d5d0;
+      border-bottom: 1px solid $color_stroke;//#d7d5d0;
 
       &:last-child {
-        border-bottom: transparent;
+        border-bottom: $color_transparent;
       }
 
       .panel-heading {
@@ -55,22 +55,22 @@
       }
 
       .panel-heading.active {
-        background-color: #f4f4f4;
+        background-color: $color_grey_light_light;// #f4f4f4;
       }
 
       .pull-right {
-        color: $color_orange;
+        color: $color_wind;
       }
 
       .panel-collapse .panel-body {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        background-color: #f4f4f4;
+        background-color:  $color_grey_light_light; //#f4f4f4;
 
         .btn_pdf {
           padding-left: 0;
           padding-right: 1rem;
-          border-top: 1px solid white;
+          border-top: 1px solid $color_white; //white;
         }
       }
     }
@@ -79,7 +79,7 @@
 
 .tabs_cont {
   .base__tabs--investitori.nav-tabs {
-    background-color: #e6e9ed;
+    background-color: $color_grey_light;// #e6e9ed;
     height: 50px;
 
     li a {
@@ -87,7 +87,7 @@
 
       @include defaultTxt($font_family_light, 1.143rem);
 
-      color: $color_grey_dark;
+      color: $color_text;// $color_grey_dark;
     }
 
     li {
@@ -95,23 +95,23 @@
 
       a {
         &:hover {
-          color: $color_orange;
-          background-color: #e6e9ed;
+          color: $color_wind;
+          background-color: $color_grey_light; //#e6e9ed;
         }
       }
 
       &.active {
         a {
-          color: $color_orange;
-          border-bottom-color: $color_orange;
-          background-color: #e6e9ed;
+          color: $color_wind;
+          border-bottom-color: $color_wind;
+          background-color: $color_grey_light; //#e6e9ed;
         }
       }
     }
   }
 
   .hvr-underline-reveal:before {
-    background: $color_orange;
+    background: $color_wind;
   }
 
   .base__select.select_irp.bootstrap-select {
@@ -137,21 +137,21 @@
     @include boxWF(left, 100%);
 
     padding: 0.9rem 1.5rem 0.6rem 0;
-    border-top: 1px solid #d7d5d0;
+    border-top: 1px solid $color_stroke; //#d7d5d0;
 
     h5 {
       @include boxWF(left, 45%);
 
       @include defaultTxt($font_family_light, 1rem);
 
-      color: #444444;
+      color: $color_text; //#444444;
       padding: 4px 0 0 0;
     }
 
     a.btn {
       @include boxWF(right, auto);
 
-      color: $color_orange;
+      color: $color_wind;
       padding: 0;
       line-height: 2rem;
 

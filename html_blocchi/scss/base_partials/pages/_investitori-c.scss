@@ -3,12 +3,12 @@
 .banner_ic {
   @include boxWF(left, 100%);
 
-  background-color: #f4f4f4;
+  background-color: $color_grey_light_light; //#f4f4f4;
   position: relative;
   height: auto;
 
   @media (max-width: 767px) {
-    background-color: transparent;
+    background-color: $color_transparent;
   }
 
   &.left {
@@ -48,7 +48,7 @@
         @include genericCenterContent($tAlign: 0);
 
         width: 100%;
-        color: $color_dark_grey;
+        color: $color_text; //$color_dark_grey;
 
         @include defaultTxt($font_family_light, 2.5rem);
 
@@ -72,7 +72,7 @@
         @include genericCenterContent($tAlign: 0);
 
         width: 100%;
-        color: #444444;
+        color: $color_text; // #444444;
 
         @include defaultTxt($font_family_light, 1.429rem);
 
@@ -103,7 +103,7 @@
 
     @include defaultTxt($font_family_regular, 1rem);
 
-    color: #444444;
+    color: $color_text; //#444444;
     margin-bottom: 1rem;
   }
 
@@ -119,7 +119,7 @@
 
       @include defaultTxt($font_family_light, 1rem);
 
-      color: #444444;
+      color: $color_text; // #444444;
       list-style: none;
       padding: 2px 0 0 0;
 
@@ -132,7 +132,7 @@
         height: 0;
         border-style: solid;
         border-width: 5px 0 5px 9px;
-        border-color: transparent transparent transparent $color_orange;
+        border-color: $color_transparent $color_transparent $color_transparent $color_wind;
       }
     }
   }
@@ -140,8 +140,8 @@
   .btn_pdf {
     @include boxWF(left, 100%);
 
-    border-bottom: 1px solid #d7d5d0;
-    border-top: 1px solid #d7d5d0;
+    border-bottom: 1px solid $color_stroke; //#d7d5d0;
+    border-top: 1px solid $color_stroke; //#d7d5d0;
     padding: 1.2rem 1rem 1rem;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
@@ -151,13 +151,13 @@
 
       @include defaultTxt($font_family_regular, 1rem);
 
-      color: #212121;
+      color: $color_stroke; //#212121;
       margin-top: 0.3rem;
     }
 
     a.btn {
       float: right;
-      color: $color_orange;
+      color: $color_wind;
       font-size: 0.9rem;
 
       img {
