@@ -193,6 +193,10 @@ h4.trade_l {
         img {
             float: left;
         }
+        .base__icon{
+            float:left;
+            display:inline-block;
+        }
         span {
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -254,6 +258,9 @@ h4.trade_l {
             @media (min-width: 320px) and (max-width: 399px) {
                 margin-right: 1rem;
             }
+            .base__icon{
+                margin-bottom:0.5rem;
+            }
             a {
                 @include boxWF(right, auto);
                 background-repeat: no-repeat;
@@ -270,9 +277,7 @@ h4.trade_l {
                     opacity: 0.7;
                 }
                 &.btn_entra {
-                    background-image: url(../img/icons-menu/icon_entra.png);
-                    background-position: center top;
-                    background-repeat: no-repeat;
+                    
                     .logued {
                         width: 32px;
                         height: 32px;
@@ -288,24 +293,16 @@ h4.trade_l {
                     }
                 }
                 &.btn_carrello {
-                    background-image: url(../img/icons-menu/icon_carrello.png);
-                    background-position: center 3px;
-                    background-repeat: no-repeat;
+                    
                 }
                 &.btn_menu {
-                    background-image: url(../img/icons-menu/icon_menu.png);
-                    background-position: center 6px;
-                    background-repeat: no-repeat;
+                   
                 }
                 &.btn_logout {
-                    background-image: url(../img/icons-menu/icon_logout.png);
-                    background-position: center top;
-                    background-repeat: no-repeat;
+                   
                 }
                 &.btn_close {
-                    background-image: url(../img/icons-menu/icon_c.png);
-                    background-position: center 9px;
-                    background-repeat: no-repeat;
+                    
                 }
             }
         }

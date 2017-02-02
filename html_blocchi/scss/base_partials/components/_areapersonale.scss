@@ -1,6 +1,7 @@
 //base default modal (login, ricarica, registrazione)
 
 .areapersonale {
+
   .left {
     span.title {
       @include boxWF(left, 100%);
@@ -248,6 +249,104 @@
     a {
       text-decoration: none;
     }
+    .top {
+            @include boxWF(left, 100%);
+            height: 80px;
+            position: relative;
+            .logo {
+                @include boxWF(left, 12rem);
+                margin: 0.8rem 0 0 0.1rem;
+            }
+            .logo--wind {
+                margin: 0.8rem 0 0 0;
+            }
+            a.btn_sa {
+                //display: none;
+                float: left;
+                margin: 0;
+                padding: 1.5rem 0 0 2rem;
+                img {
+                    float: left;
+                }
+                .base__icon{
+                float:left;
+                display:inline-block;
+            }
+                span {
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    color: $color_wind;
+                    float: left;
+                    margin: 0.9rem 0 0 0.5rem;
+                    @media (min-width: 320px) and (max-width: 399px) {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            .menu-right {
+                float: right;
+                margin-right: 2rem;
+                margin-top: 1.1rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                ul {
+                    padding: 0;
+                    margin-bottom: 0;
+                    float: right;
+                }
+                li {
+                    float: right;
+                    list-style: none;
+                    margin-right: 1.3rem;
+                    @media (min-width: 320px) and (max-width: 399px) {
+                        margin-right: 1rem;
+                    }
+                    .base__icon{
+                margin-bottom:0.5rem;
+            }
+                    a {
+                        @include boxWF(right, auto);
+                        background-repeat: no-repeat;
+                        color: $color_text_light;
+                        font-size: 0.7857rem;
+                        position: relative;
+                        margin: 0;
+                        line-height: normal;
+                        opacity: 1;
+                        font-family: $font_family_regular;
+                        height: auto;
+                        &:hover {
+                            text-decoration: none;
+                            opacity: 0.7;
+                        }
+                        &.btn_entra {
+                            .logued {
+                                width: 32px;
+                                height: 32px;
+                                position: absolute;
+                                top: -2px;
+                                left: 50%;
+                                margin-left: -16px;
+                                border: 2px solid $color_wind;
+                                @include radius(16px);
+                                overflow: hidden;
+                                text-align: center;
+                                background-color: $color_white;
+                            }
+                        }
+                        &.btn_carrello {
+                        }
+                        &.btn_menu {
+                        }
+                        &.btn_logout {
+                        }
+                        &.btn_close {
+                        }
+                    }
+                }
+            }
+        }
 
     .back {
       float: left;
