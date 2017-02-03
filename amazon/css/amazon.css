@@ -264,10 +264,10 @@ body {
 .v-radiobutton > input:checked ~ label:after {
   background: #f48135 !important;
   border: 1px solid #f48135 !important;
-  width: 11px !important;
+  width: 12px !important;
   height: 11px !important;
   top: 4px !important;
-  left: 4px !important; }
+  left: 3px !important; }
 .v-radiobutton > input:checked ~ label:before {
   border: 1px solid #f48135 !important; }
 .v-radiobutton > input:focus ~ label:before, .v-radiobutton > input:active ~ label:before {
@@ -405,9 +405,79 @@ body {
   .v-panel-content > .v-margin-top {
     padding-top: 15px !important; }
 
-.v-verticallayout-vlButtonAlign .v-align-right {
-  text-align: center; }
+.v-horizontallayout {
+  height: 100%; }
 
+.v-verticallayout.v-widget.v-vertical {
+  height: 100%;
+  position: relative; }
+.v-verticallayout-vlButtonAlign {
+  min-height: 100%;
+  position: relative; }
+  .v-verticallayout-vlButtonAlign .v-align-right {
+    text-align: center; }
+
+.v-slot.v-slot-wizard {
+  min-height: 100%;
+  margin-bottom: -125px;
+  height: auto !important;
+  height: 100%; }
+  .v-slot.v-slot-wizard:after {
+    content: "";
+    clear: both;
+    width: 100% !important;
+    overflow: auto !important;
+    display: block !important;
+    height: 125px !important; }
+  .v-slot.v-slot-wizard ~ .v-slot {
+    margin-top: 25px;
+    width: 100%;
+    height: 125px;
+    position: relative;
+    box-sizing: border-box; }
+.v-slot-vl-comeVuoiAttivareLoffertaAppenaAcquistata {
+  font-size: 22px;
+  font-family: "Trade Gothic Bold2", sans-serif;
+  color: #656d78;
+  width: 100%;
+  background-color: #f4f4f4; }
+  .v-slot-vl-comeVuoiAttivareLoffertaAppenaAcquistata #comeVuoiAttivareLoffertaAppenaAcquistata {
+    text-align: center;
+    padding: 40px 30px; }
+.v-slot-vlButtonAlign {
+  overflow: visible;
+  height: 100%; }
+.v-slot-vl-text-comefunziona {
+  font-size: 18px !important;
+  color: #656d78 !important;
+  background-color: #f4f4f4; }
+  .v-slot-vl-text-comefunziona .v-label {
+    font-family: "Trade Gothic Light", sans-serif !important;
+    text-align: center;
+    padding: 15px 0px;
+    padding-left: 40px; }
+    .v-slot-vl-text-comefunziona .v-label:before {
+      content: "?";
+      background-color: #f48135;
+      color: #ffffff;
+      position: absolute;
+      text-align: center;
+      margin-left: -40px;
+      white-space: nowrap;
+      height: 25px;
+      width: 25px;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */ }
+.v-slot-vl-text-copyright {
+  font-size: 14px !important;
+  color: #ffffff !important;
+  background-color: #292f36; }
+  .v-slot-vl-text-copyright .v-label {
+    font-family: "Trade Gothic Light", sans-serif !important;
+    text-align: center;
+    padding: 10px 0px; }
 .v-slot-vl-vuoiPortareIlTuoNumeroInWind {
   margin-bottom: 30px !important; }
 .v-slot-vl-numeroDiTelefono1 {
@@ -526,6 +596,51 @@ body {
   display: block !important;
   width: 100% !important; }
   .v-slot-vl-numeroDocumento .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-indirizzo, .v-slot-vl-indirizzo1 {
+  display: inline-block !important;
+  width: calc(50% - 25px) !important;
+  margin-right: 25px;
+  margin-bottom: 15px; }
+  .v-slot-vl-indirizzo .v-textfield, .v-slot-vl-indirizzo1 .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-nCivico, .v-slot-vl-nCivico1 {
+  display: inline-block !important;
+  width: 50% !important;
+  margin-bottom: 15px; }
+  .v-slot-vl-nCivico .v-textfield, .v-slot-vl-nCivico1 .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-citt, .v-slot-vl-citt1 {
+  display: inline-block !important;
+  width: calc(50% - 25px) !important;
+  margin-right: 25px;
+  margin-bottom: 15px; }
+  .v-slot-vl-citt .v-textfield, .v-slot-vl-citt1 .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-comune, .v-slot-vl-comune1 {
+  display: inline-block !important;
+  width: 50% !important;
+  margin-bottom: 15px; }
+  .v-slot-vl-comune .v-textfield, .v-slot-vl-comune1 .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-cAP, .v-slot-vl-cAP1 {
+  display: inline-block !important;
+  width: calc(50% - 25px) !important;
+  margin-right: 25px;
+  margin-bottom: 15px; }
+  .v-slot-vl-cAP .v-textfield, .v-slot-vl-cAP1 .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-provincia {
+  display: inline-block !important;
+  width: 50% !important;
+  margin-bottom: 15px; }
+  .v-slot-vl-provincia .v-textfield {
+    width: 100% !important; }
+.v-slot-vl-nazione {
+  display: inline-block !important;
+  width: 50% !important;
+  margin-bottom: 15px; }
+  .v-slot-vl-nazione .v-filterselect {
     width: 100% !important; }
 
 /*# sourceMappingURL=amazon.css.map */
