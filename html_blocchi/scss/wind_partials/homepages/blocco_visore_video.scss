@@ -172,6 +172,8 @@
     @at-root #{&}--bg_opacity {
         &_100 {
             .caption_background {
+
+                background-color: $color_robin;
                 @include opacity(1);
             }
             .video_block_display__wrapper_right {
@@ -242,17 +244,26 @@
                                 right: 0;
                                 padding: 0 !important;
                                 margin: 0 !important;
-                                .closeBtn {
+                                .base__icon{
                                     width: 20px;
                                     height: 20px;
                                     position: absolute;
-                                    content: "X";
-                                    color: $color_white;
-                                    bottom: 0;
-                                    left: 30px;
-                                    cursor: pointer;
-                                    display: inline !important;
+                                     bottom: 5px;
+                                    left: 25px;
+                                     cursor: pointer;
+                                     display: inline !important;
                                 }
+                                // .closeBtn {
+                                //     width: 20px;
+                                //     height: 20px;
+                                //     position: absolute;
+                                //     content: "X";
+                                //     color: $color_white;
+                                //     bottom: 0;
+                                //     left: 30px;
+                                //     cursor: pointer;
+                                //     display: inline !important;
+                                // }
                             }
                         }
                     }
