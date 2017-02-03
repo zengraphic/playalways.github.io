@@ -63,6 +63,13 @@
         }
         form {
             //height: 3.571rem;
+            .base__icon {
+                position: absolute;
+                right: 16px;
+                top: 26px;
+                width: 24px;
+                height: 24px;
+            }
             input {
                 margin-top: 1em;
                 &.error {
@@ -74,9 +81,6 @@
                 }
                 &.tooltip100 {
                     float: left;
-                    background-image: url("../img/icons-interface/icon_answer.png");
-                    background-repeat: no-repeat;
-                    background-position: 95% center;
                 }
                 &.base__tip--orange {
                     margin-left: 0;
@@ -91,7 +95,8 @@
             color: #292f36;
         }
         p {
-            @include defaultTxt($font_family_regular, 1.143rem);
+            @include defaultTxt($font_family_regular,
+            1.143rem);
             color: $color_text; // #444;
             i {
                 color: $color_wind;
@@ -106,9 +111,16 @@
         }
         .spacep {
             margin-bottom: 1.4em;
+            position: relative;
+            .base__icon{
+                display:inline-block;
+                width:24px;
+                height:24px;
+            }   
         }
         .spacei {
             line-height: 3rem;
+
         }
         .spacef {
             margin-bottom: 10px;
@@ -143,7 +155,8 @@
             font-size: 1.2rem;
         }
         h4 {
-            @include defaultTxt($font_family_regular, 1.143rem);
+            @include defaultTxt($font_family_regular,
+            1.143rem);
             letter-spacing: -0.18px;
             margin: -0.8rem 0 0.85rem 0;
         }
@@ -187,7 +200,7 @@
             &-content {
                 background-color: $color_white;
                 &-1 {
-                    background: $color_grey_light_light;// #f4f4f4;
+                    background: $color_grey_light_light; // #f4f4f4;
                     color: $color_text; //#444;
                     border-top: 1px solid $color_stroke; //#d7d7d7;
                     p {
