@@ -1183,6 +1183,105 @@ select:-webkit-autofill {
     .base__form .r {
       padding: .5rem 0; } }
 
+.base__datepicker {
+  position: relative;
+  width: 320px; }
+  .base__datepicker .base__input {
+    width: 100%; }
+
+.base__datepicker--input {
+  width: 100%; }
+
+.base .datetimepicker {
+  padding: 0.5rem;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-size: 1rem;
+  min-width: 320px; }
+  .base .datetimepicker > div {
+    width: 100%; }
+  .base .datetimepicker table tr td {
+    border: 1px solid white; }
+    .base .datetimepicker table tr td.day:hover, .base .datetimepicker table tr td.hour:hover, .base .datetimepicker table tr td.minute:hover {
+      background: #F48135;
+      border-radius: 4px;
+      color: #FFF; }
+    .base .datetimepicker table tr td span {
+      background: #FFF;
+      color: #656D78;
+      border: 1px solid #FFF;
+      font-size: 1rem;
+      height: 2rem;
+      line-height: 2rem;
+      vertical-align: middle; }
+      .base .datetimepicker table tr td span:hover {
+        background: white;
+        border: 1px solid #F48135;
+        -o-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -ms-transition: all 0.35s ease-in-out;
+        -webkit-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out; }
+      .base .datetimepicker table tr td span.active {
+        background: #F48135;
+        border-color: #F48135;
+        color: white; }
+        .base .datetimepicker table tr td span.active.disabled {
+          background: #F48135;
+          border-color: #F48135;
+          color: white; }
+          .base .datetimepicker table tr td span.active.disabled:hover {
+            background: #F48135;
+            border-color: #F48135;
+            color: white; }
+        .base .datetimepicker table tr td span.active:hover {
+          background: #F48135;
+          border-color: #F48135;
+          color: white; }
+      .base .datetimepicker table tr td span.hour, .base .datetimepicker table tr td span.minute {
+        color: #656D78; }
+      .base .datetimepicker table tr td span.hour.active, .base .datetimepicker table tr td span.minute.active {
+        color: #FFF !important; }
+    .base .datetimepicker table tr td.day {
+      color: #292F36; }
+      .base .datetimepicker table tr td.day.old, .base .datetimepicker table tr td.day.new {
+        color: #656D78; }
+      .base .datetimepicker table tr td.day.old:hover, .base .datetimepicker table tr td.day.new:hover {
+        color: #FFF; }
+  .base .datetimepicker table tr th[class="prev"] {
+    padding-left: 0.5rem; }
+    .base .datetimepicker table tr th[class="prev"] i:after {
+      background-image: url("../img/icons/icon_buttons.svg#icon_caret_right_outline--color");
+      font-family: "FontAwesome";
+      font-size: 2rem;
+      content: "";
+      line-height: 2rem;
+      color: #F48135; }
+  .base .datetimepicker table tr th[class="next"] {
+    padding-rigth: 0.5rem; }
+    .base .datetimepicker table tr th[class="next"] i:after {
+      font-family: "FontAwesome";
+      font-size: 2rem;
+      line-height: 2rem;
+      content: "";
+      color: #F48135; }
+  .base .datetimepicker .table-condensed {
+    width: 100%; }
+    .base .datetimepicker .table-condensed tbody > tr > td,
+    .base .datetimepicker .table-condensed tbody > tr > th {
+      padding: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      background: #FFF;
+      border: 1px solid transparent; }
+    .base .datetimepicker .table-condensed tbody > tr > tfoot > tr > th.today:hover {
+      background: #F48135;
+      color: white; }
+
 /*.base__pag.pagination {
   padding-left: 0;
   margin: 1rem auto;
@@ -1550,7 +1649,7 @@ select:-webkit-autofill {
 
 
 @import "partials/components/owl-carousel";
-@import "partials/components/datapicker";
+
 @import "partials/components/eventcounter";
 
 @import "partials/components/jwplayer";

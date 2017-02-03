@@ -1,0 +1,672 @@
+
+
+// ================================================================ STILE BASE  =============================================== //
+// ================================================================ STILE BASE  =============================================== //
+// ================================================================ STILE BASE  =============================================== //
+// ================= RESET  ================== //
+// ================= RESET  ================== //
+// ================= RESET  ================== //
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+
+body {
+    background: white;
+    color: $color_grey_darker;
+    font-size: 1em;
+    letter-spacing: 0.25px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote {
+    &:before,
+    &:after {
+        content: '';
+        content: none;
+    }
+}
+
+q {
+    &:before,
+    &:after {
+        content: '';
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// ================= TYPOGRAPHY  ================== //
+// ================= TYPOGRAPHY  ================== //
+// ================= TYPOGRAPHY  ================== //
+
+@font-face {
+    font-family: "Trade Gothic Bold";
+   src:url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix");
+        src:url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix") format("eot"),url("../fonts/tradelicense/7cf07212-d52a-4cf9-9983-4942ecc34b0d.woff2") format("woff2"),url("../fonts/tradelicense/81ca1fb3-a435-4db8-b09c-f74e270eec60.woff") format("woff"),url("../fonts/tradelicense/28a5f1a0-5ec3-4aae-a58e-2453166d7918.ttf") format("truetype"),url("../fonts/tradelicense/11be2b3f-f734-422c-bdb7-a4f797bfa3f3.svg#11be2b3f-f734-422c-bdb7-a4f797bfa3f3") format("svg");
+}
+
+@font-face {
+    font-family: "Trade Gothic Bold Cond";
+    src:url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix");
+        src:url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix") format("eot"),url("../fonts/tradelicense/7cf07212-d52a-4cf9-9983-4942ecc34b0d.woff2") format("woff2"),url("../fonts/tradelicense/81ca1fb3-a435-4db8-b09c-f74e270eec60.woff") format("woff"),url("../fonts/tradelicense/28a5f1a0-5ec3-4aae-a58e-2453166d7918.ttf") format("truetype"),url("../fonts/tradelicense/11be2b3f-f734-422c-bdb7-a4f797bfa3f3.svg#11be2b3f-f734-422c-bdb7-a4f797bfa3f3") format("svg");
+}
+
+@font-face {
+    font-family: "Trade Gothic Bold2";
+    src:url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix");
+        src:url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix") format("eot"),url("../fonts/tradelicense/7cf07212-d52a-4cf9-9983-4942ecc34b0d.woff2") format("woff2"),url("../fonts/tradelicense/81ca1fb3-a435-4db8-b09c-f74e270eec60.woff") format("woff"),url("../fonts/tradelicense/28a5f1a0-5ec3-4aae-a58e-2453166d7918.ttf") format("truetype"),url("../fonts/tradelicense/11be2b3f-f734-422c-bdb7-a4f797bfa3f3.svg#11be2b3f-f734-422c-bdb7-a4f797bfa3f3") format("svg");
+}
+
+@font-face {
+    font-family: "Trade Gothic Light";
+    src:url("../fonts/tradelicense/ab88c69c-d345-4c07-bf49-c0cc984095fa.eot?#iefix");
+        src:url("../fonts/tradelicense/ab88c69c-d345-4c07-bf49-c0cc984095fa.eot?#iefix") format("eot"),url("../fonts/tradelicense/6de16bd6-1e13-400f-80e8-8f5c69d8a2b8.woff2") format("woff2"),url("../fonts/tradelicense/73c7abdc-45a3-42a3-a1af-f07d8a348917.woff") format("woff"),url("../fonts/tradelicense/73494c38-422a-4bae-9e2c-b86e7703c1b3.ttf") format("truetype"),url("../fonts/tradelicense/b84e9482-10dd-4d9d-8ef2-539fbc5eb441.svg#b84e9482-10dd-4d9d-8ef2-539fbc5eb441") format("svg");
+}
+
+@font-face {
+    font-family: "Trade Gothic Obl";
+    src:url("../fonts/tradelicense/b088d8f2-83ab-4662-a771-1f8dfe65dc32.eot?#iefix");
+        src:url("../fonts/tradelicense/b088d8f2-83ab-4662-a771-1f8dfe65dc32.eot?#iefix") format("eot"),url("../fonts/tradelicense/5a871dd4-95c1-4157-af67-a012e7ba4358.woff2") format("woff2"),url("../fonts/tradelicense/847d5cf1-1a60-4418-9d5e-44927ff99235.woff") format("woff"),url("../fonts/tradelicense/2882b13c-d7fa-4698-bab1-4a01805326d8.ttf") format("truetype"),url("../fonts/tradelicense/1a4c3fba-e1f0-47c8-9e50-2b2cb1c4c0f7.svg#1a4c3fba-e1f0-47c8-9e50-2b2cb1c4c0f7") format("svg");
+}
+
+@font-face {
+    font-family: "Trade Gothic";
+    src:url("../fonts/tradelicense/52926f65-1323-4d02-be2d-934b4de477fb.eot?#iefix");
+        src:url("../fonts/tradelicense/52926f65-1323-4d02-be2d-934b4de477fb.eot?#iefix") format("eot"),url("../fonts/tradelicense/54b9363e-aa6c-48e2-85c7-80683d83e617.woff2") format("woff2"),url("../fonts/tradelicense/c092dbc5-48eb-4b39-a898-4d4150c06459.woff") format("woff"),url("../fonts/tradelicense/1009b9de-005c-4462-9495-767c25320e42.ttf") format("truetype"),url("../fonts/tradelicense/26ce2652-3a0b-4804-87b6-58c68e5d60f6.svg#26ce2652-3a0b-4804-87b6-58c68e5d60f6") format("svg");
+}
+
+html {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    overflow-x: hidden;
+}
+
+body {
+    background: white;
+    color: #444;
+    font-family: $font_family_regular;
+    font-size: 1em;
+    letter-spacing: 0.25px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    }
+
+
+
+
+
+
+// ================= VARS  ================== //
+// ================= VARS  ================== //
+// ================= VARS  ================== //
+
+$color_orange: #f48135;
+$color_black: #000000;
+$color_white: #ffffff;
+
+$font_family_regular: "Trade Gothic", sans-serif;
+$font_family_bold: "Trade Gothic Bold", sans-serif;
+$font_family_bold2: "Trade Gothic Bold2", sans-serif;
+$font_family_oblique: "Trade Gothic Obl", sans-serif;
+$font_family_light: "Trade Gothic Light", sans-serif;
+
+
+// Breakpoint Vars
+
+$breakpoints:( 'display_largest':(min-width: 1600px),
+'display_larger':(max-width: 1599px),
+'display_large':(max-width: 1200px),
+'display_medium_large':(max-width: 940px),
+'display_medium':(max-width: 880px),
+'display_medium_small':(max-width: 768px),
+'display_medium_smaller':(max-width: 697px),
+'display_small':(max-width: 640px),
+'display_smaller':(max-width: 480px),
+'display_smallest':(max-width: 320px));
+
+// ================= MIXIN  ================== //
+// ================= MIXIN  ================== //
+// ================= MIXIN  ================== //
+
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+ 
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// ============================================================= FINE STYLE BASE  ============================================ //
+// ============================================================= FINE STYLE BASE  ============================================ //
+// ============================================================= FINE STYLE BASE  ============================================ //
+
+// ================= LABEL  ================== //
+// ================= LABEL  ================== //
+// ================= LABEL  ================== //
+.v-label {
+    //display: none;
+}
+
+.v-spacing {
+    display: none !important;
+}
+
+.v-panel-content{
+    width: 625px !important;
+    margin: 0 auto !important;
+}
+// ================= BUTTON  ================== //
+// ================= BUTTON  ================== //
+// ================= BUTTON  ================== //
+.v-button {
+    background-image: none !important;
+    background-color: $color_orange !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border: 1px solid #ccc !important;
+    color: $color_white !important;
+    font-size: 18px !important;
+    width: 280px !important;
+    padding: 16px 0 !important;
+    height: 52px !important;
+    line-height: 1em !important;
+    &:focus {
+        border: 1px solid $color_orange !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        &:after {
+            border: 1px solid $color_orange !important;
+            box-shadow: none !important;
+        }
+    }
+    &-wrap {
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+// ================= ACCORDION  ================== //
+// ================= ACCORDION  ================== //
+// ================= ACCORDION  ================== //
+.v-accordion {
+    &-item-open {
+        .v-captiontext {
+            &:before {
+                transform: translate(10px, 4px) rotate(45deg) !important;
+            }
+            &:after {
+                transform: translate(10px, 4px) rotate(-45deg) !important;
+            }
+        }
+    }
+    .v-captiontext {
+        &:before {
+            position: absolute !important;
+            width: 2px !important;
+            right: 25px !important;
+            height: 8px !important;
+            top: 10px !important;
+            transition: all .1s ease-in-out !important;
+            background: $color_orange !important;
+            content: "" !important;
+            transform: translate(10px, 4px) rotate(-45deg) !important;
+        }
+        &:after {
+            position: absolute !important;
+            width: 2px !important;
+            right: 20px !important;
+            height: 8px !important;
+            top: 10px !important;
+            transition: all .1s ease-in-out !important;
+            background: $color_orange !important;
+            content: "" !important;
+            transform: translate(10px, 4px) rotate(45deg) !important;
+        }
+    }
+    &-item-caption {
+        & > .v-caption {
+            background: none !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+// ================= BODY  ================== //
+// ================= BODY  ================== //
+// ================= BODY  ================== //
+@at-root {
+    .v-layout {
+        &.v-widget {
+            padding: 0 !important;
+        }
+    }
+}
+
+.v-app {
+    background-color: $color_white !important;
+    max-width: 1024px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    border: 1px solid #ccc !important;
+}
+
+// ================= RADIOBUTTON  ================== //
+// ================= RADIOBUTTON  ================== //
+// ================= RADIOBUTTON  ================== // 
+.v-radiobutton {
+    & > input {
+        & ~ label {
+            &:before,
+            &:after {
+                border: 1px solid #ccc !important;
+                background-image: none !important;
+                background: none !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+        }
+        &:checked {
+            & ~ label {
+                &:after {
+                    background: $color_orange !important;
+                    border: 1px solid $color_orange !important;
+                    width: 11px !important;
+                    height: 11px !important;
+                    top: 4px !important;
+                    left: 4px !important;
+                }
+                &:before {
+                    border: 1px solid $color_orange !important;
+                }
+            }
+        }
+        &:focus,
+        &:active {
+            & ~ label {
+                &:before {
+                    border-color: $color_orange !important;
+                    ;
+                    box-shadow: none !important;
+                    text-shadow: none !important;
+                }
+            }
+        }
+    }
+}
+
+// ================= CHECKBOX  ================== //
+// ================= CHECKBOX  ================== //
+// ================= CHECKBOX  ================== //
+.v-checkbox {
+    & > input {
+        &:active {
+            & ~ label {
+                &:after {
+                    background-color: transparent !important;
+                    border: 1px solid #ccc !important;
+                    background: none !important;
+                }
+            }
+        }
+        & ~ label {
+            &:before {
+                text-shadow: none !important;
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+                background: none !important;
+            }
+        }
+        &:checked {
+            & ~ label {
+                &:after {
+                    color: $color_white !important;
+                    background-color: $color_orange !important;
+                    text-shadow: none !important;
+                    box-shadow: none !important;
+                    border: 1px solid #ccc !important;
+                    background-image: url(https://playalways.github.io/ui-kit/deploy/img/confirm_white.svg) !important;
+                    background-position: -3px -2px !important;
+                    background-size: 20px !important;
+                    content: "" !important;
+                }
+            }
+        }
+    }
+}
+
+// ================= DATE FIELD  ================== //
+// ================= DATE FIELD  ================== //
+// ================= DATE FIELD  ================== //  
+.v-datefield {
+    & [class*="textfield"] {
+        height: 50px !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        padding-left: 10px !important;
+        &:focus {
+            border-color: $color_orange !important;
+            box-shadow: none !important;
+        }
+    }
+    & [class*="button"] {
+        top: 12px !important;
+        border-right: none !important;
+        display: none !important;
+        &:before {
+            content: "" !important;
+        }
+    }
+}
+
+// ================= CARET  ================== //
+// ================= CARET  ================== //
+// ================= CARET  ================== //
+.v-filterselect {
+    width: 300px !important;
+    display: inline-block !important;
+    &-suggestpopup {
+        margin-top: 0px !important;
+        & [class$="suggestmenu"] {
+            padding: 0 !important;
+        }
+        .gwt-MenuItem {
+            height: 50px !important;
+            line-height: 50px !important;
+            &-selected {
+                background-color: $color_orange !important;
+                color: $color_white !important;
+                background-image: none !important;
+                border-radius: 0px !important;
+            }
+        }
+    }
+    &-focus {
+        &:before {
+            transform: translate(10px, 4px) rotate(45deg) !important;
+        }
+        &:after {
+            transform: translate(10px, 4px) rotate(-45deg) !important;
+        }
+    }
+    & [class$="input"] {
+        height: 50px;
+        &:focus {
+            border-color: $color_orange !important;
+            box-shadow: none !important;
+        }
+    }
+    & [class$="button"] {
+        display: none !important;
+        top: 15px !important;
+        border-left: none !important;
+    }
+    &-no-input {
+        &:before {
+            position: absolute !important;
+            width: 2px !important;
+            right: 33px !important;
+            height: 10px !important;
+            top: 18px !important;
+            transition: all .1s ease-in-out !important;
+            background: $color_orange !important;
+            content: "" !important;
+            transform: translate(10px, 4px) rotate(-45deg) !important;
+        }
+        &:after {
+            position: absolute !important;
+            width: 2px !important;
+            right: 27px !important;
+            height: 10px !important;
+            top: 18px !important;
+            transition: all .1s ease-in-out !important;
+            background: $color_orange !important;
+            content: "" !important;
+            transform: translate(10px, 4px) rotate(45deg) !important;
+        }
+        &:focus {
+            border-color: $color_orange !important;
+            box-shadow: none !important;
+            background: none !important;
+        }
+        & [class*="input"] {
+            height: 50px !important;
+            box-shadow: none !important;
+            background: none !important;
+            background-color: $color_white !important;
+            &:focus {
+                border-color: $color_orange !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+// ================= INPUT FIELD  ================== //
+// ================= INPUT FIELD  ================== //
+// ================= INPUT FIELD  ================== //
+.v-textfield {
+    height: 50px !important;
+    border-color: #ccc !important;
+    width: 620px !important;
+    &:focus {
+        border-color: $color_orange !important;
+        box-shadow: none !important;
+    }
+}
+
+// ================= LAYOUT  ================== //
+// ================= LAYOUT  ================== //
+// ================= LAYOUT  ================== //
+.v-panel {
+    background: none !important;
+    color: #444 !important;
+    border: none !important;
+    box-shadow: none !important;
+    &-content {
+        & > .v-margin {
+            &-left {
+                padding-left: 0px !important;
+            }
+            &-right {
+                padding-right: 0px !important;
+            }
+            &-bottom {
+                padding-bottom: 15px !important;
+            }
+            &-top {
+                padding-top: 15px !important;
+            }
+        }
+    }
+}
+
+// ================= ID STYLE  ================== //
+// ================= ID STYLE  ================== //
+// ================= ID STYLE  ================== //
+.v-vertical{
+    & > .v-slot{
+        
+    }
+}
+
+.v-slot {
+    &-vl {
+        &-vuoiPortareIlTuoNumeroInWind{
+            margin-bottom: 30px !important;
+        }
+        &-numeroDiTelefono1{
+            margin-bottom: 15px !important;            
+        }
+        &-tariffaDiProvenienza {
+            display: inline-block !important;
+            margin-bottom: 30px !important;
+        }
+        &-operatoreDiProvenienza {
+            display: inline-block !important;
+            margin-bottom: 30px !important;  
+            margin-right: 20px !important;          
+        }
+    }
+}
