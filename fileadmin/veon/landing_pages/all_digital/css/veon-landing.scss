@@ -28,19 +28,19 @@ li {
 //========================== FONT =======================//
 @font-face {
     font-family: 'TP Hero Light';
-    src: url('../fonts/TPHero-Light.woff') format('woff'), url('../fonts/TPHero-Light.otf') format('opentype');
+    src: url('/fileadmin/veon/fonts/TPHero-Light.woff') format('woff'), url('/fileadmin/veon/fonts/TPHero-Light.otf') format('opentype');
     font-weight: light;
 }
 
 @font-face {
     font-family: 'TP Hero Thin';
-    src: url('../fonts/TPHero-Thin.woff') format('woff'), url('../fonts/TPHero-Thin.otf') format('opentype');
+    src: url('/fileadmin/veon/fonts/TPHero-Thin.woff') format('woff'), url('/fileadmin/veon/fonts/TPHero-Thin.otf') format('opentype');
     font-weight: thin;
 }
 
 @font-face {
     font-family: 'TP Hero Hairline';
-    src: url('../fonts/TPHero-Hairline.woff') format('woff'), url('../fonts/TPHero-Hairline.otf') format('opentype');
+    src: url('/fileadmin/veon/fonts/TPHero-Hairline.woff') format('woff'), url('/fileadmin/veon/fonts/TPHero-Hairline.otf') format('opentype');
     font-weight: hairline;
 }
 
@@ -401,7 +401,7 @@ body {
     }
     .containerBannerFix {
         position: relative;
-        background: url(../img/veon_preFooter_big.png) no-repeat;
+        background: url(../img/veon_preFooter_big-v2.png) no-repeat;
         background-size: 100vw;
         height: 66vw;
         margin-top: -450px;
@@ -1004,3 +1004,69 @@ body {
 
 //==================================================//
 //=============FINE FOOTER========================//
+
+//============================================================//
+//========================== COOKIES =======================//
+//=============================================================//
+#cookie-bar {
+    background: #111111;
+    height: auto;
+    line-height: 24px;
+    color: #eeeeee;
+    text-align: left;
+    padding: 3px 30px;
+    z-index: 2999;
+    .cb-policy {
+        color: $color-pale-orange;
+        text-decoration: underline;
+        position: relative;
+        z-index: 1000;
+        &:hover {
+            color: $color-yellow;
+        }
+    }
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include opacity(0.7);
+        .cb-enable {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 800;
+        }
+        #cookie-bar {
+            #cookie-bar {
+                .cb-enable {
+                    background: #007700;
+                    &::hover {
+                        background: #009900;
+                    }
+                }
+            }
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            a {
+                color: #ffffff;
+                display: inline-block;
+                border-radius: 3px;
+                text-decoration: none;
+                padding: 0 6px;
+                margin-left: 8px;
+            }
+        }
+        &.bottom {
+            bottom: 0;
+            top: auto;
+        }
+    }
+}
+
+
