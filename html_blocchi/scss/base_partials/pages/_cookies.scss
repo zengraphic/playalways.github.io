@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: auto;
-  background-color: #282828;
+  background-color: $color_black;
   padding: 1.4rem 0 2rem;
   opacity: 0.8;
   z-index: 999;
@@ -16,7 +16,7 @@
   .btn__close_c {
     @include defaultTxt(Arial, 2rem);
 
-    color: #FFFFFF;
+    color: $color_white;
     position: absolute;
     top: 0;
     right: 0.85rem;
@@ -35,14 +35,14 @@
 
       @include defaultTxt($font_family_regular, 1.14rem);
 
-      color: #FFFFFF;
+      color: $color_white;
       opacity: 1;
       letter-spacing: -0.4px;
       line-height: 1.3rem;
       text-align: justify;
 
       a {
-        color: $color_orange;
+        color: $color_wind;
         text-decoration: none;
         padding: 0;
         float: none;
@@ -54,7 +54,7 @@
 }
 
 .content_acordeon_s.content_acordeon_cookies {
-  border-top: 1px solid #d7d5d0;
+  border-top: 1px solid $color_stroke;
   margin-bottom: 2rem;
 
   .panel-body {
@@ -67,22 +67,22 @@
   }
 
   .panel-heading {
-    background-color: transparent;
+    background-color: $color_transparent;
 
     @include transition-basic(all, 0.8s, ease-in-out);
 
     &.active {
-      background-color: #e6e9ed;
+      background-color: $color_grey_light;
     }
   }
 
   .collapse.in {
-    background-color: transparent;
+    background-color: $color_transparent;
 
     @include transition-basic(all, 0.8s, ease-in-out);
 
     &.in {
-      background-color: #e6e9ed;
+      background-color: $color_grey_light;
     }
   }
 }
@@ -95,7 +95,7 @@
   p {
     @include defaultTxt($font_family_regular, 1.1rem);
 
-    color: #444444;
+    color: $color_text;
   }
 }
 
@@ -108,7 +108,7 @@
 
   .panel-heading {
     padding: 0.86rem 1.5rem 1.1rem;
-    background-color: transparent;
+    background-color: $color_transparent;
   }
 
   .collapse {
@@ -116,14 +116,14 @@
 
     &.in {
       .panel.panel-default.base__accordion {
-        background-color: transparent;
+        background-color: $color_transparent;
         border-bottom: none;
 
         .panel-heading {
           border-bottom: none;
 
           .pull-right {
-            color: #5a5b5d;
+            color: $color_grey_dark;
           }
         }
       }
@@ -143,18 +143,18 @@
     }
 
     .in {
-      background-color: transparent !important;
+      background-color: $color_transparent !important;
     }
 
     .in .panel-body {
-      border-bottom: 1px solid #FFFFFF;
+      border-bottom: 1px solid $color_white;
       border-top: none;
     }
 
     .panel-heading {
       padding: 0.8rem 3rem 0.6rem 1.5rem;
-      border-bottom: 1px solid #FFFFFF !important;
-      background-color: transparent !important;
+      border-bottom: 1px solid $color_white !important;
+      background-color: $color_transparent !important;
 
       @media (max-width: 767px) {
         padding: 0.8rem 1rem 0.6rem;
@@ -186,7 +186,7 @@
 
       span.privacity {
         margin-top: -0.4rem;
-        color: $color_orange;
+        color: $color_wind;
         font-size: 0.8rem;
         float: right;
 
@@ -200,7 +200,7 @@
         }
 
         .pull-right {
-          color: $color_orange !important;
+          color: $color_wind !important;
           float: right;
           margin-left: 0.4rem;
         }

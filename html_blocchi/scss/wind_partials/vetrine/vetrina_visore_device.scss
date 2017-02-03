@@ -1,6 +1,6 @@
 //BLOCCO DASHBOARD
 .dashboard_block {
-    background-color: #fff;
+    background-color: $color_white;
     @include transition (all 0.45s ease-in-out 0s);
     &__container {
         margin: 0 auto 30px;
@@ -9,7 +9,7 @@
     }
     &__icon {
         display: none;
-        background-color: $color-white;
+        background-color: $color_white;
         padding: 10px 4px 4px 7px;
         margin-top: 30px;
         position: absolute;
@@ -18,35 +18,35 @@
         left: 54px;
         float: left;
         &--gplus {
-            background: rgba(0, 0, 0, 0) url("../../img/social/social_sprite_small.png") no-repeat scroll 0 0;
+            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 0;
             width: 39px;
             height: 39px;
             margin-right: 1px;
             float: left;
         }
         &--youtube {
-            background: rgba(0, 0, 0, 0) url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -39px;
+            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -39px;
             width: 39px;
             height: 39px;
             margin-right: 1px;
             float: left;
         }
         &--facebook {
-            background: rgba(0, 0, 0, 0) url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -78px;
+            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -78px;
             width: 39px;
             height: 39px;
             margin-right: 1px;
             float: left;
         }
         &--twitter {
-            background: rgba(0, 0, 0, 0) url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -117px;
+            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -117px;
             width: 39px;
             height: 39px;
             margin-right: 1px;
             float: left;
         }
         &--mail {
-            background: rgba(0, 0, 0, 0) url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -156px;
+            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -156px;
             width: 39px;
             height: 39px;
             float: left;
@@ -58,12 +58,12 @@
         width: 100%;
         &--imagep {
             .phone_thumbs { /* FF3.6-15 */
-            background: -webkit-linear-gradient(left, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-            background: -o-linear-gradient(left, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            background: -webkit-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+            background: -o-linear-gradient(left, $color_white 50%, $color_transparent 100%);
             /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            background: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(to right, $color_white 50%, $color_transparent 100%);
             /* IE6-9 */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}',GradientType=1 ); // 00ffffff ?
                 left: 0;
                 position: absolute;
                 top: 70px;
@@ -162,9 +162,9 @@
             margin-bottom: 10px;
         }
         .items a {
-            border: 1px solid #dddfde;
+            border: 1px solid $color_stroke;
             border-radius: 3px;
-            color: #292f36;
+            color: $color_text;
             display: block;
             height: 100%;
             padding: 0.8rem 0;
@@ -180,16 +180,16 @@
                     height: 1.25em;
                     margin: 0 auto 5px;
                     &.grey {
-                        background-color: #dddfde;
+                        background-color: #dddfde; //$color_grey_light_light
                     }
                     &.black {
-                        background-color: #434343;
+                        background-color: #434343; //$color_grey_dark
                     }
                     &.gold {
-                        background-color: #e2d0bb;
+                        background-color: #e2d0bb; //
                     }
                     &.goldp {
-                        background-color: #ecccbe;
+                        background-color: #ecccbe; //
                     }
                 }
                 h6 {
@@ -200,12 +200,12 @@
                 }
             }
             &:hover {
-                border-color: $color-orange;
+                border-color: $color_wind;
             }
         }
     }
     &__title {
-        color: $color-standardText;
+        color: $color_text;
         font-size: 2.500em;
         text-align: center;
         line-height: 42px;
@@ -220,10 +220,10 @@
         width: 100%;
         &__price {
             font-family: $weight-normal;
-            color: $color-orange;
+            color: $color_wind;
             font-size: 3.438em;
             & .currency {
-                color: $color-orange;
+                color: $color_wind;
                 font-size: 40px;
             }
             @include breakpoint(super-tiny) {
@@ -242,7 +242,7 @@
             width: 33.333%;
             display: table-cell;
             text-align: center;
-            border-right: 1px solid $medium-gray;
+            border-right: 1px solid $color_stroke;
             vertical-align: bottom;
             &:nth-of-type(3) {
                 border-right: none;
@@ -250,7 +250,7 @@
             &--price {
                 font-family: $weight-normal;
                 font-size: 3.438em;
-                color: $color-orange;
+                color: $color_wind;
                 & .currency {
                     font-size: 40px;
                 }
@@ -314,7 +314,7 @@
             float: left;
             margin-right: 1.8em;
             i {
-                color: $color-orange;
+                color: $color_wind;
                 &:hover {
                     opacity: 0.5;
                 }
@@ -334,7 +334,7 @@
             float: left;
             margin-right: 1.8em;
             i {
-                color: $color-orange;
+                color: $color_wind;
             }
             &_fa {
                 font-style: normal;
@@ -347,7 +347,7 @@
         &--share {
             float: left;
             i {
-                color: $color-orange;
+                color: $color_wind;
             }
             &_fa {
                 font-style: normal;

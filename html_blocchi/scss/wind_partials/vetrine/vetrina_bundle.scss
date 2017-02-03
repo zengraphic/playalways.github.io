@@ -13,7 +13,7 @@
         max-width: 1024px;
         margin: 0 auto;
         .bundle_block__showMore {
-            color: $color-orange;
+            color: $color_wind;
             font-size: 1.250em;
             text-align: center;
             text-transform: uppercase;
@@ -58,8 +58,8 @@
         width: 100%;
         text-align: right;
         text-transform: uppercase;
-        color: $color-standardText;
-        background-color: #e6e9ed;
+        color: $color_text;
+        background-color: $color_grey_light;
         padding: 20px 0px 15px 15px;
         &__container {
             max-width: 1024px;
@@ -80,12 +80,12 @@
                 font-size: 1.500em;
             }
             &:hover {
-                border-bottom: 1px solid $color-orange;
+                border-bottom: 1px solid $color_orange;
                 padding-bottom: 5px;
             }
             &.active {
-                border-bottom: 1px solid $color-orange;
-                color: $color-orange;
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
                 padding-bottom: 5px;
             }
         }
@@ -95,7 +95,7 @@
         text-transform: uppercase;
     }
     &__showMore {
-        color: $color-orange;
+        color: $color_wind;
         font-size: 1.250em;
         text-align: center;
         text-transform: uppercase;
@@ -117,7 +117,7 @@
         &.item {
             position: relative;
             &:after {
-                background-color: #ccd1d9;
+                background-color: $color_grey_medium_light;
                 width: 1px;
                 content: "";
                 display: block;
@@ -149,7 +149,7 @@
             margin-top: 50px;
             margin-bottom: 15px;
             height: 65px;
-            color: $color-lightBlue;
+            color: $color_mobile;
             font-size: 1.875em;
             font-family: $weight-bold;
         }
@@ -162,14 +162,14 @@
         }
         &--price_discounted {
             font-size: 1.500em;
-            color: $color-standardText;
+            color: $color_text;
             font-family: $weight-light;
             position: relative;
             height: 25px;
             padding-top: 2px;
             overflow: hidden;
             &::after {
-                border-bottom: 1px solid #000;
+                border-bottom: 1px solid $color_stroke;
                 content: "";
                 left: 0;
                 // margin-top: calc(0.125em / 2 * -1);
@@ -184,7 +184,7 @@
         }
         &--mainPrice {
             font-size: 3.250em;
-            color: $color-lightBlue;
+            color: $color_mobile;
             font-family: $weight-light;
             height: 45px;
             margin-bottom: 5px;

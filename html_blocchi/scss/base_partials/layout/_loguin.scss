@@ -52,7 +52,7 @@
             left: 0.8rem;
             z-index: 2;
             // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/$color_grey_light_light+0,f4f4f4+100&1+0,0+100
-            @include gradient-generic(to right, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+            @include gradient-generic(to right, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%); //$color_grey_light_light
         }
         // IE6-9
         img {
@@ -70,7 +70,7 @@
         }
         span {
             @include boxWF(left, auto);
-            color: $color_grey_seven;
+            color: $color_text_light;
             margin: 0 0.3rem;
             padding: 0;
             font-size: 1.5rem;
@@ -91,7 +91,7 @@
         }
         a {
             @include boxWF(left, auto);
-            color: #c3c4c5;
+            color: $color_text_lighter;
             margin: 0 0.3rem 0;
             padding: 0;
             position: relative;
@@ -100,7 +100,7 @@
             text-align: left;
             letter-spacing: -0.5px;
             &.btn_more {
-                color: $color_grey_seven;
+                color: $color_text_light;
                 font-size: 2rem;
                 left: 0;
                 margin: 0.4rem 0 0 0.6rem;
@@ -109,7 +109,7 @@
                 z-index: 9;
             }
             &.btn_back2 {
-                color: $color_grey_seven;
+                color: $color_text_light;
                 font-size: 2rem;
                 right: 0;
                 margin: 0.4rem 0.6rem 0 0;
@@ -130,7 +130,7 @@
             height: calc(100% - 43px);
             position: fixed;
             z-index: 2;
-            background-color: #FFFFFF;
+            background-color: $color_white;
             right: 0;
             bottom: 0;
             overflow: scroll;
@@ -162,10 +162,14 @@
                 img {
                     float: left;
                 }
+                .base__icon{
+            float:left;
+            display:inline-block;
+        }
                 span {
                     font-size: 0.9rem;
                     text-transform: uppercase;
-                    color: $color_orange;
+                    color: $color_wind;
                     float: left;
                     margin: 0.9rem 0 0 0.5rem;
                     @media (min-width: 320px) and (max-width: 399px) {
@@ -192,11 +196,13 @@
                     @media (min-width: 320px) and (max-width: 399px) {
                         margin-right: 1rem;
                     }
+                    .base__icon{
+                margin-bottom:0.5rem;
+            }
                     a {
                         @include boxWF(right, auto);
-                        padding: 33px 0 0 0;
                         background-repeat: no-repeat;
-                        color: $color_grey_seven;
+                        color: $color_text_light;
                         font-size: 0.7857rem;
                         position: relative;
                         margin: 0;
@@ -209,9 +215,6 @@
                             opacity: 0.7;
                         }
                         &.btn_entra {
-                            background-image: url(../img/icons-menu/icon_entra.png);
-                            background-position: center top;
-                            background-repeat: no-repeat;
                             .logued {
                                 width: 32px;
                                 height: 32px;
@@ -219,32 +222,20 @@
                                 top: -2px;
                                 left: 50%;
                                 margin-left: -16px;
-                                border: 2px solid $color_orange;
+                                border: 2px solid $color_wind;
                                 @include radius(16px);
                                 overflow: hidden;
                                 text-align: center;
-                                background-color: #FFFFFF;
+                                background-color: $color_white;
                             }
                         }
                         &.btn_carrello {
-                            background-image: url(../img/icons-menu/icon_carrello.png);
-                            background-position: center 3px;
-                            background-repeat: no-repeat;
                         }
                         &.btn_menu {
-                            background-image: url(../img/icons-menu/icon_menu.png);
-                            background-position: center 6px;
-                            background-repeat: no-repeat;
                         }
                         &.btn_logout {
-                            background-image: url(../img/icons-menu/icon_logout.png);
-                            background-position: center top;
-                            background-repeat: no-repeat;
                         }
                         &.btn_close {
-                            background-image: url(../img/icons-menu/icon_c.png);
-                            background-position: center 9px;
-                            background-repeat: no-repeat;
                         }
                     }
                 }
@@ -259,14 +250,14 @@
         font-size: 1.1rem;
         letter-spacing: -0.4px;
         line-height: normal;
-        color: $color_grey_dark;
+        color: $color_text;
         font-family: $font_family_regular;
         margin: 1.5rem 0 1.8rem;
         padding: 0;
         text-align: left;
     }
     h4{
-      color:#51565a;
+      color: $color_text_light;
     }
     a {
         @include boxWF(left, 100%);
@@ -278,9 +269,9 @@
         }
     }
     .btn_register {
-        background-color: #FFFFFF;
-        color: $color_orange;
-        border: 1px solid $color_orange;
+        background-color: $color_white;
+        color: $color_wind;
+        border: 1px solid $color_wind;
         float: left;
         margin: (-7px) 0 0 0;
         font-size: 1.2rem;
@@ -296,8 +287,8 @@
         margin: (-7px) 0 1.5rem 0;
     }
     .btn_registerfb {
-        color: #FFFFFF;
-        background-color: #3b5998;
+        color: $color_white;
+        background-color: #3b5998;// FACEBOOK
         margin: 1.5rem 0 1rem;
         font-size: 1.2rem;
         height: auto;
@@ -319,14 +310,14 @@
                 margin-bottom: 1.3rem;
                 font-family: $font_family_light;
                 font-size: 1.1rem;
-                color: #4a4a4a;
+                color: $color_text_light;
             }
             &::-webkit-input-placeholder {
-                color: $color_grey_dark_light;
+                color: $color_text_light;
             }
             &:-moz-placeholder,
             &::-moz-placeholder {
-                color: $color_grey_dark_light;
+                color: $color_text_light;
                 opacity: 1;
             }
             &.error{
@@ -344,8 +335,8 @@
             }
         }
         a.btn_loguin {
-            background-color: $color_orange;
-            color: #FFFFFF;
+            background-color: $color_wind;
+            color: $color_white;
             margin: 1.4rem 0 1rem 0;
             font-size: 1.2rem;
             height: auto;
@@ -359,7 +350,7 @@
         h4 {
             float: left;
             font-size: 0.8rem;
-            color: $color_grey_light_light;
+            color: $color_text_lighter;
             padding: 0;
         }
         a {
@@ -367,7 +358,7 @@
                 @include boxWF(right, auto);
                 background: none;
                 border: 0 none;
-                color: $color_orange;
+                color: $color_wind;
                 text-transform: uppercase;
                 font-size: -1rem;
                 font-family: $font_family_light;
@@ -379,7 +370,7 @@
                 margin-top: 0.6em;
                 background: none;
                 border: 0 none;
-                color: $color_orange;
+                color: $color_wind;
                 text-transform: uppercase;
                 font-size: 0.8rem;
                 font-family: $font_family_light;
@@ -401,7 +392,7 @@
         padding-left: 2.5rem;
         padding-right: 2rem;
         &.borde_left {
-            border-right: 1px solid #a7a7a7;
+            border-right: 1px solid $color_stroke;
             padding-left: 2.4rem;
             padding-right: 2rem;
         }
@@ -412,7 +403,7 @@
         padding: 0;
         text-align: center;
         font-size: 2.5rem;
-        color: #FFFFFF;
+        color: $color_white;
         font-family: $font_family_light;
     }
     h3 {
@@ -421,7 +412,7 @@
         font-family: $font_family_regular;
         text-align: left;
         margin: 0 0 1.2rem;
-        color: #FFFFFF;
+        color: $color_white;
         line-height: normal;
     }
     h4 {
@@ -429,11 +420,11 @@
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
         margin-top: 3.3rem;
-        color: $color_orange;
+        color: $color_wind;
     }
     p {
         @include boxWF(left, 100%);
-        color: #FFFFFF;
+        color: $color_white;
         margin-bottom: 0.5rem;
         font-family: $font_family_light;
         font-size: 1rem;
@@ -447,23 +438,23 @@
             margin-bottom: 1.5rem;
             font-family: $font_family_light;
             font-size: 1.1rem;
-            border: 1px solid #FFFFFF;
+            border: 1px solid $color_white;
             width: 100%;
             font-weight: 100;
             background: none;
-            color: #FFFFFF;
+            color: $color_white;
         }
         &::-webkit-input-placeholder {
-            color: #fff;
+            color: $color_white;
         }
         &:-moz-placeholder,
         &::-moz-placeholder {
-            color: #fff;
+            color: $color_white;
             opacity: 1;
         }
     }
     .checkbox label::before {
-        background-color: transparent;
+        background-color: $color_transparent;
     }
     .base__checkbox.checkbox span {
         font-family: $font_family_light;
@@ -478,7 +469,7 @@
             background: none;
             border: 0 none;
             text-decoration: none;
-            color: $color_orange;
+            color: $color_wind;
             margin: 0.5rem 0 0 0;
             padding: 0;
             letter-spacing: -0.4px;
@@ -495,9 +486,9 @@
         text-align: center;
         margin: 1rem 0;
         &.btn_loguin {
-            background-color: $color_orange;
+            background-color: $color_wind;
             border: 0 none;
-            color: #ffffff;
+            color: $color_white;
             font-size: 1.2rem;
             height: auto;
             letter-spacing: 0.04px;
@@ -511,8 +502,8 @@
     }
     .btn_registrer {
         background-color: none;
-        color: $color_orange;
-        border: 1px solid $color_orange;
+        color: $color_wind;
+        border: 1px solid $color_wind;
         float: left;
         margin: 0.3rem 0 0 0;
         font-size: 1.2rem;
@@ -525,8 +516,8 @@
         }
     }
     .btn_registrerfb {
-        color: #FFFFFF;
-        background-color: #3b5998;
+        color: $color_white;
+        background-color: #3b5998;//facebook
         margin: 0 0;
         font-size: 1.2rem;
         height: auto;
@@ -551,7 +542,7 @@
         padding-left: 2.5rem;
         padding-right: 2rem;
         &.borde_left {
-            border-right: 1px solid #a7a7a7;
+            border-right: 1px solid $color_stroke;
             padding-left: 2.4rem;
             padding-right: 2rem;
         }
@@ -563,7 +554,7 @@
         padding-top: 0.6rem;
         text-align: left;
         font-size: 2.5rem;
-        color: $color_grey_dark_light;
+        color: $color_text_light;
         font-family: $font_family_light;
     }
     h3 {
@@ -572,7 +563,7 @@
         font-family: $font_family_regular;
         text-align: left;
         margin: 0 0 1.2rem;
-        color: $color_grey_dark_light;
+        color: $color_text_light;
         line-height: normal;
     }
     h4 {
@@ -581,7 +572,7 @@
         margin-bottom: 0.5rem;
         -webkit-margin-before: 2.3rem !important;
         margin-top: 1.8rem;
-        color: $color_orange;
+        color: $color_wind;
         font-family: $font_family_regular;
         &.msup {
             margin-top: 0;
@@ -595,7 +586,7 @@
         font-family: $font_family_light;
         text-align: left;
         margin: 0 0 1.2rem;
-        color: $color_grey_dark_light;
+        color: $color_text_light;
         line-height: normal;
     }
     input {
@@ -606,19 +597,19 @@
             font-family: $font_family_light;
             width: 100%;
             background: none;
-            color: $color_grey_dark_light;
+            color: $color_text_light;
         }
         &::-webkit-input-placeholder {
-            color: $color_grey_dark_light;
+            color: $color_text_light;
         }
         &:-moz-placeholder,
         &::-moz-placeholder {
-            color: $color_grey_dark_light;
+            color: $color_text_light;
             opacity: 1;
         }
     }
     .checkbox label::before {
-        background-color: transparent;
+        background-color: $color_transparent;
     }
     .base__checkbox.checkbox span {
         font-family: $font_family_light;
@@ -633,7 +624,7 @@
             background: none;
             border: 0 none;
             text-decoration: none;
-            color: $color_orange;
+            color: $color_wind;
             margin: 0.5rem 0 0 0;
             padding: 0;
             letter-spacing: -0.4px;
@@ -650,9 +641,9 @@
         text-align: center;
         margin: 1rem 0;
         &.btn_loguin {
-            background-color: $color_orange;
+            background-color: $color_wind;
             border: 0 none;
-            color: #ffffff;
+            color: $color_white;
             font-size: 1.2rem;
             height: auto;
             letter-spacing: 0.04px;
@@ -666,8 +657,8 @@
     }
     .btn_registrer {
         background-color: none;
-        color: $color_orange;
-        border: 1px solid $color_orange;
+        color: $color_wind;
+        border: 1px solid $color_wind;
         float: left;
         margin: 0.3rem 0 0 0;
         font-size: 1.2rem;
@@ -680,8 +671,8 @@
         }
     }
     .btn_registrerfb {
-        color: #FFFFFF;
-        background-color: #3b5998;
+        color: $color_white;
+        background-color: #3b5998; //facebook
         margin: 0 0;
         font-size: 1.2rem;
         height: auto;

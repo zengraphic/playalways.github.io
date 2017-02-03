@@ -15,24 +15,24 @@
 .black_cont {
   @include boxWF(left, 100%);
 
-  background-color: #212121;
+  background-color: $color_black; //#212121;
   padding: 20px;
 }
 
 .hpshop {
   &.black {
-    background-color: #212121;
+    background-color: $color_black; //#212121;
 
     .title_slider .left li a {
-      color: #ffffff;
+      color: $color_white;
     }
 
     .slider_products .box_item {
-      border-right-color: #FFFFFF;
+      border-right-color: $color_white;
 
       span {
         &.name_p, &.detail_p1, &.detail_p2, &.detail_p3, &.prices_1, &.prices_2 {
-          color: #FFFFFF;
+          color: $color_white;
         }
       }
     }
@@ -66,7 +66,7 @@
 
     &.sixth .box_item {
       &:nth-child(3n) {
-        border-right: 1px solid #bdbdbd;
+        border-right: 1px solid $color_stroke;
       }
 
       span {
@@ -141,7 +141,7 @@
         display: inline-block;
 
         &.slick-active button {
-          background-color: $color_orange;
+          background-color: $color_wind;
         }
 
         button {
@@ -150,7 +150,7 @@
 
           @include radius(3px);
 
-          background-color: #cdcdcd;
+          background-color: $color_grey_light; //#cdcdcd;
           border: none;
           padding: 0;
           margin: 0 0.5rem;
@@ -164,7 +164,7 @@
 
       position: relative;
       padding: 0 1rem 0.5rem 0.9rem;
-      border-right: 1px solid #bdbdbd;
+      border-right: 1px solid $color_stroke;
 
       &:nth-child(3n) {
         border-right: none;
@@ -195,7 +195,7 @@
       }
 
       a.like {
-        color: $color_orange;
+        color: $color_wind;
         font-size: 1.3rem;
         position: absolute;
         z-index: 99;
@@ -234,7 +234,7 @@
           text-align: center;
           line-height: normal;
           font-size: 2rem;
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           margin: 0.8rem 0 0;
 
           span {
@@ -247,7 +247,7 @@
           text-align: left;
           font-size: 1.14rem;
           line-height: 1.3rem;
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           margin: 0.8rem 0 0 0;
           height: 4.5rem;
           letter-spacing: -0.4px;
@@ -256,7 +256,7 @@
         &.detail_p2 {
           text-align: left;
           font-size: 1.42rem;
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           margin: 0 0 0 0;
           height: 5.4rem;
           letter-spacing: -0.4px;
@@ -270,7 +270,7 @@
           a.btn {
             @include boxWF(none, auto);
 
-            color: $color_orange;
+            color: $color_wind;
             font-size: 1.42rem;
             margin: 0;
             padding: 0;
@@ -280,7 +280,7 @@
         &.detail_p3 {
           text-align: left;
           font-size: 1.42rem;
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           margin: 0.8rem 0 0 0;
         }
 
@@ -289,7 +289,7 @@
 
           @include defaultTxt($font_family_regular, 1.1rem);
 
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           margin: 0.8rem 0 0;
         }
 
@@ -298,7 +298,7 @@
 
           @include defaultTxt($font_family_regular, 1.4rem);
 
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           margin: 1.5rem 0 0.8rem;
 
           span {
@@ -310,14 +310,14 @@
         &.prices_1 {
           text-align: center;
           text-decoration: none;
-          color: $color_grey_dark_light;
+          color: $color_text_light;
           font-size: 2.5rem;
           line-height: normal;
           margin-top: 4.1rem;
 
           span {
             font-size: 1.7rem;
-            color: $color_orange;
+            color: $color_wind;
             float: none;
             text-decoration: line-through;
           }
@@ -340,8 +340,8 @@
         @include boxWF(left, 100%);
 
         &.btn_plan {
-          color: #FFFFFF;
-          background-color: $color_orange;
+          color: $color_white;
+          background-color: $color_wind;
           font-size: 1.2rem;
           letter-spacing: 0.4px;
           line-height: normal;
@@ -352,9 +352,9 @@
         }
 
         &.btn_purchase {
-          color: $color_orange;
-          border: 1px solid $color_orange;
-          background-color: #FFFFFF;
+          color: $color_wind;
+          border: 1px solid $color_wind;
+          background-color: $color_white;
           font-size: 1.2rem;
           letter-spacing: 0.4px;
           line-height: normal;
@@ -386,7 +386,7 @@
 
       @include defaultTxt($font_family_bold, 2rem);
 
-      color: $color_grey_dark_light;
+      color: $color_text_light;
       font-weight: 500;
     }
 

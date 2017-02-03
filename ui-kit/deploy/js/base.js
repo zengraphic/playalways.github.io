@@ -7,13 +7,25 @@
 jQuery(function($){
 
    function set_bt_process(element) {
-     var spinner_string = '<i class="btn_icon"><img class="spin-animate" src="img/spinner_white.svg"></i>';
+    var spinner_string = "";
+    if (element.hasClass('base__bt--or')) {
+        spinner_string = '<svg class="base__icon spin-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_spinner--white" /> </svg>';
+    } else {
+        spinner_string = '<svg class="base__icon spin-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_spinner--color" /> </svg>';
+    }
+      
       element.html(spinner_string);
   }
 
   function on_bt_feedback(element, flag, secs) {
-    var confirm_string = '<i class="btn_icon"><img class="rotatey-animate" src="img/confirm_white.svg"></i>';
-    var cancel_string = '<i class="btn_icon"><img class="fadein-animate" src="img/cancel_white.svg"></i>';
+    var confirm_string,cancel_string;
+    if (element.hasClass('base__bt--or')) {
+        confirm_string = '<svg class="base__icon rotatey-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_confirm--white" /> </svg>';
+        cancel_string = '<svg class="base__icon fadein-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_cancel--white" /> </svg>';
+    } else {
+        confirm_string = '<svg class="base__icon rotatey-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_confirm--color" /> </svg>';
+        cancel_string = '<svg class="base__icon fadein-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_cancel--color" /> </svg>';
+    }
     if(flag === 0) {
       element.html(confirm_string);
     } else {

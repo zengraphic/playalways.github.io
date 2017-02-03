@@ -20,17 +20,17 @@
                 height: 1.5em;
                 overflow: hidden;
                 &.text_blue {
-                    color: $color-blue;
+                    color: $color_infostrada;
                 }
                 &.text_orange {
-                    color: $color-orange;
+                    color: $color_wind;
                 }
                 .currency {
                     font-size: 0.75em;
                 }
             }
             @at-root #{&}__recurrency {
-                color: $color-standardText;
+                color: $color_text;
                 font-size: 0.875rem;
                 line-height: 1em; //12px
                 display: block;
@@ -160,6 +160,7 @@
             margin-right: 30px;
             position: relative;
             z-index: 10;
+                min-height: 403px;
             //padding-bottom: 29px;
             .base__input {
                 width: 100%;
@@ -179,7 +180,7 @@
                 &.with_number {}
             }
             .without_number {
-                color: $color-white;
+                color: $color_white;
                 font-family: $weight-light;
                 text-decoration: underline;
                 text-align: center;
@@ -206,7 +207,7 @@
         height: 2em;
         overflow: hidden;
         font-family: $weight-light;
-        color: $color-blue;
+        color: $color_infostrada;
     }
     @at-root #{&}__whiteTitle {
         margin: 1rem 0;
@@ -215,7 +216,7 @@
         line-height: 1em;
         height: 1em;
         overflow: hidden;
-        color: $color-white;
+        color: $color_white;
         font-family: $weight-normal;
     }
     @at-root #{&}__text {
@@ -225,7 +226,7 @@
         line-height: 1em;
         overflow: hidden;
         height: 3.3em;
-        color: $color-standardText;
+        color: $color_text;
         font-family: $weight-normal;
     }
     @at-root #{&}__bundle {
@@ -235,7 +236,7 @@
             max-width: 120px;
             margin: 0 auto;
             height: 1px;
-            background-color: #ededed;
+            background-color: $color_grey_light_light;
             bottom: 5px;
             position: relative;
             @include breakpoint(small) {
@@ -301,7 +302,7 @@
         &__whiteTitle {
             text-align: center;
             margin-right: 0px;
-            color: $color-white;
+            color: $color_white;
         }
         &__text {
             margin-bottom: 0px;

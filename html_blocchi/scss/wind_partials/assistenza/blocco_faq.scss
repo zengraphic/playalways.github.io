@@ -20,25 +20,33 @@
         @at-root .faq_block__mainBlock #{&} {
             //@include transition(transform .2s ease-in); 
             &.faq_active {
-                background-color: $color-orange;
-                color: $color-white;
+                background-color: $color_wind;
+                color: $color_white;
                 .faq_block__single__icon {
-                    color: $color-white;
+                    .icon_mobile_fisso--color{
+                        background-position: 50% 7.59493670886072%;
+                    }
                 }
             }
             &:hover {
-                background-color: $color-orange;
-                color: $color-white;
+                background-color: $color_wind;
+                color: $color_white;
                 // @include translate(0, 2px);           
                 .faq_block__single__icon {
-                    color: $color-white;
+                    .icon_mobile_fisso--color{
+                        background-position: 50% 7.59493670886072%;
+                    }
                 }
             }
             &__imageIcon {}
+            .base__icon{
+                width:44px;
+                height:44px;
+            }
             &__icon {
                 line-height: 0px;
                 font-size: 2.8em;
-                color: $color-orange;
+                color: $color_wind;
             }
             &__title {
                 font-size: 1.250em;
@@ -60,14 +68,14 @@
         }
         @at-root .faq_block__secondaryBlock #{&} {
             /*faq_block__secondaryBlock .faq_block__single*/
-            border-right: 1px solid $medium-gray;
+            border-right: 1px solid $color_stroke;
             margin: 30px 0px;
             padding: 30px 60px;
             //@include transition(transform .2s ease-in-out);
             @include breakpoint(small) {
                 margin: 0px 30px;
                 padding: 30px 30px;
-                border-bottom: 1px solid $medium-gray;
+                border-bottom: 1px solid $color_stroke;
                 width: calc(100% - 60px);
                 border-right: 0px;
             }
@@ -76,7 +84,7 @@
             }
             @at-root {
                 .faq_block__secondaryBlock {
-                    background-color: #f4f4f4;
+                    background-color: $color_grey_light_light;
                     &__container {
                         width: 100%;
                         max-width: 1024px;
@@ -93,7 +101,7 @@
             &__title {
                 font-size: 1.250em;
                 margin-top: 5px;
-                color: $color-orange;
+                color: $color_wind;
                 margin-bottom: 5px;
                 font-family: $weight-normal;
             }
@@ -123,7 +131,7 @@
                         margin: 0 auto;
                         position: relative;
                         &:before {
-                            background-color: $medium-gray;
+                            background-color: $color_stroke;
                             content: "";
                             display: block;
                             position: absolute;
@@ -147,7 +155,7 @@
             &__description {
                 font-size: 1em;
                 font-family: $weight-normal;
-                color: $color-orange;
+                color: $color_wind;
                 text-align: left;
                 list-style: none;
                 padding: 0;
@@ -158,7 +166,7 @@
                         text-decoration: underline;
                     }
                     &.faq_second_active {
-                        color: $color-standardText;
+                        color: $color_text;
                         text-decoration: underline;
                     }
                 }
@@ -171,7 +179,7 @@
                     }
                     &:before {
                         content: "";
-                        border-color: transparent $color-orange;
+                        border-color: $color_transparent $color_wind;
                         border-style: solid;
                         border-width: 0.35em 0 0.35em 0.45em;
                         display: block;

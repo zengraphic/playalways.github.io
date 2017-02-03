@@ -4,11 +4,11 @@
 // ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
 // ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
 .grey_strip__block {
-    background-color: #e6e9ed;
+    background-color: $color_grey_light;
     width: 100%;
     @at-root #{&}__tabs {
         text-transform: uppercase;
-        color: $color-standardText;
+        color: $color_text;
         &__container {
             padding-top: 30px;
             @include breakpoint(small) {
@@ -38,13 +38,13 @@
             font-size: 1em;
             padding-bottom: 5px;
             &:hover {
-                border-bottom: 1px solid $color-orange;
-                color: $color-orange;
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
                 padding-bottom: 5px;
             }
             &.active {
-                border-bottom: 1px solid $color-orange;
-                color: $color-orange;
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
                 padding-bottom: 5px;
             }
         }

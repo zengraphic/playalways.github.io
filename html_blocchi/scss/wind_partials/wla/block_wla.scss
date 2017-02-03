@@ -20,20 +20,20 @@
         &__title {
             text-align: left;
             font-size: 1.875em;
-            color: #595959;
+            color: $color_text;
             padding: 20px 0;
-            border-bottom: 1px solid #ccd1d9;
+            border-bottom: 1px solid $color_stroke;
             @include breakpoint ('small') {
                 padding: 20px;
                 border: 0;
-                background-color: $color-lighterGrey;
+                background-color: $color_grey_light_light;
             }
         }
         &__text {
             padding: 30px 0 0;
             font-family: $weight-normal;
             font-size: 1em;
-            color: $color-darkestGrey;
+            color: $color_text; //$color-darkestGrey;
             @include breakpoint ('small') {
                 padding: 15px;
             }
@@ -48,21 +48,21 @@
                 }
             }
             .activeText {
-                color: $color-orange;
+                color: $color_wind;
             }
         }
     }
     &__stepForm {
         margin: 30px 0;
         .disabled {
-            color: #ccd1d9;
+            color: $color_text_lighter;
         }
         &--step {
             position: relative;
             text-align: center;
             @include breakpoint ('small') {
                 padding: 10px 0;
-                border-top: 1px solid $color-lightGrey;
+                border-top: 1px solid $color_stroke;
             }
         }
         &__header {
@@ -73,60 +73,82 @@
                 background-image: url("../img/icons-config/confirm.png");
                 background-position: 0 0;
                 bottom: 0;
-                right: 5px;
+                left: -5px;
                 @include opacity(0);
             }
             .image {
                 &--number {
-                    background-image: url("../img/icons-config/sprite_wla.png");
-                    background-position: 0 -50px;
-                    height: 50px;
-                    width: 50px;
-                    margin: 0 auto;
-                    position: relative;
-                    display: block;
-                    background-repeat: no-repeat;
                     @include breakpoint ('small') {
                         float: left;
+                    }
+                    .base__icon {
+                        position: relative;
+                        height: 40px;
+                        width: 40px;
+                        @include breakpoint ('small') {
+                            margin-left: 10px;
+                        }
                     }
                 }
                 &--code {
-                    background-image: url("../img/icons-config/sprite_wla.png");
-                    background-position: -50px -50px;
-                    height: 50px;
-                    width: 50px;
-                    margin: 0 auto;
-                    position: relative;
-                    display: block;
-                    background-repeat: no-repeat;
                     &.disabled {
-                        background-position: -50px 0;
+                        .base__icon {
+                            background-position: 25% 20.2531645569619%;
+                        }
                     }
                     @include breakpoint ('small') {
                         float: left;
+                    }
+                    .base__icon {
+                        position: relative;
+                        height: 40px;
+                        width: 40px;
+                        @include breakpoint ('small') {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                &--parameter {
+                    &.disabled {
+                        .base__icon {
+                            background-position: 25% 20.2531645569619%;
+                        }
+                    }
+                    @include breakpoint ('small') {
+                        float: left;
+                    }
+                    .base__icon {
+                        position: relative;
+                        height: 40px;
+                        width: 40px;
+                        @include breakpoint ('small') {
+                            margin-left: 10px;
+                        }
                     }
                 }
                 &--activation {
-                    background-image: url("../img/icons-config/sprite_wla.png");
-                    background-position: -100px -50px;
-                    height: 50px;
-                    width: 50px;
-                    margin: 0 auto;
-                    position: relative;
-                    display: block;
-                    background-repeat: no-repeat;
                     &.disabled {
-                        background-position: -100px 0;
+                         .base__icon {
+                            background-position: 25% 20.2531645569619%;
+                        }
                     }
                     @include breakpoint ('small') {
                         float: left;
+                    }
+                    .base__icon {
+                        position: relative;
+                        height: 40px;
+                        width: 40px;
+                        @include breakpoint ('small') {
+                            margin-left: 10px;
+                        }
                     }
                 }
             }
             &--title {
                 font-family: $weight-bold;
                 font-size: 1em;
-                margin-top: 10px;
+                margin-top: 1.125em;
                 @include breakpoint ('small') {
                     float: left;
                     margin-top: 15px;
@@ -159,12 +181,12 @@
                         height: 50px;
                     }
                     .helpText {
-                    font-size: 0.813em;
-                    margin: 10px 0;
-                    @include breakpoint ('small') {
-                        margin: 10px 0 20px;
+                        font-size: 0.813em;
+                        margin: 10px 0;
+                        @include breakpoint ('small') {
+                            margin: 10px 0 20px;
+                        }
                     }
-                }
                 }
                 &--select {
                     float: left;
@@ -194,7 +216,7 @@
                         margin-left: 0;
                         max-width: normal;
                     }
-                    .confirmation-number{
+                    .confirmation-number {
                         height: 50px;
                     }
                 }
@@ -202,7 +224,7 @@
             &.confirmationBox {
                 @include border-radius(4px);
                 padding: 30px 50px;
-                background-color: $color-lightGrey;
+                background-color: $color_grey_light;
                 @include breakpoint ('small') {
                     border-radius: 0;
                 }

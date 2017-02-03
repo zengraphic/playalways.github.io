@@ -45,6 +45,47 @@
 
 
 
+// vars colors
+$color_orange_light: #F69A5D;
+$color_orange: #F48135;
+
+$color_red_light: #D76767;
+$color_red: #CE4242;
+
+$color_blue_light: #287BBD;
+$color_blue: #0069B3;
+
+$color_robin_light: #24A5C6;
+$color_robin: #009BBE;
+
+$color_white: #FFF;
+$color_grey_stroke: #D3D3D2;
+$color_black: #212121;
+$color_transparent: transparent;
+
+$color_grey_dark_light: #656D78;
+$color_grey_dark: #292F36;
+
+$color_grey_medium_light: #CCD1D9;
+$color_grey_medium: #AAB2BD;
+
+$color_grey_light_light: #F4F4F4;
+$color_grey_light: #E6E9ED;
+
+$color_stroke: $color_grey_stroke;
+$color_text: $color_grey_dark;
+$color_text_light: $color_grey_dark_light;
+$color_text_lighter: $color_grey_medium;
+
+$color_wind: $color_orange;
+$color_infostrada: $color_blue;
+$color_mobile: $color_robin;
+$color_home_life: $color_black;
+$color_business: $color_grey_dark;
+
+
+
+
 $weight-light: 'Trade Gothic Light';
 $weight-normal: 'Trade Gothic';
 $weight-bold: 'Trade Gothic Bold';
@@ -54,7 +95,7 @@ $text-standard: 0.875em; //14px
 $text-medium: 2.500em; // 40 in base 16
 
 
-$color-lighterGrey: #f4f4f4; // new color
+/*$color-lighterGrey: #f4f4f4; // new color
 $color-lightGrey: #e6e9ed;
 $color-mediumGrey: #d3d3d2;
 $color-mediumLightGrey: #ccd1d9;
@@ -73,12 +114,12 @@ $color-black: #000000;
 $color-lightGray: $color-lightGrey;
 $color-gray-mediumBg: $color-mediumGrey;
 $medium-gray: $color-mediumGrey;
-$color-placeholder: $color-darkGrey;
+$color_grey_medium: $color-darkGrey;
 $color-standardText: $color-darkerGrey;
 $color-HomeLifeBackground: $color-darkestGrey;
 $color-HomeLife-Background: $color-darkestGrey;
 
-$color-blue: $color-mediumBlue;
+$color-blue: $color-mediumBlue;*/
 
 /* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
@@ -284,16 +325,16 @@ img {
     width: 100%;
     padding-top: 0.9rem;
     padding-bottom: 0.9rem;
-    color: $color-placeholder;
+    color: $color_grey_medium;
     &::-webkit-input-placeholder {
-        color: $color-placeholder;
+        color: $color_grey_medium;
     }
     &:-moz-placeholder {
-        color: $color-placeholder;
+        color: $color_grey_medium;
         opacity: 1;
     }
     &::-moz-placeholder {
-        color: $color-placeholder;
+        color: $color_grey_medium;
         opacity: 1;
     }
 }
@@ -558,22 +599,25 @@ b {
 
 /* ====================COLORI BACKGROUND=====================  */
 
-.colored_bg {
+/*.colored_bg {
     &--white {
-        background-color: $color-white !important;
+        background-color: $color_white !important;
     }
     &--lighter-grey {
-        background-color: $color-lighterGrey !important;
+        background-color: $color_grey_light_light !important;
     }
     &--light-grey {
-        background-color: $color-lightGrey !important;
+        background-color: $color_grey_light !important;
     }
     &--medium-grey {
-        background-color: $color-mediumGrey !important;
+        background-color: $color_grey_medium !important;
+    }
+    &--medium-grey {
+        background-color: $color_grey_medium !important;
     }
     &--dark-grey,
     &--placeholder {
-        background-color: $color-darkGrey !important;
+        background-color: $color_grey_dark !important;
     }
     &--darker-grey,
     &--standard-text,
@@ -599,7 +643,7 @@ b {
         background-color: $color-orange !important;
     }
 
-}
+}*/
 
 
 
@@ -607,7 +651,7 @@ b {
 /* ====================COLORI TESTI=====================  */
 
 
-.colored_text {
+/*.colored_text {
     &--white {
         color: $color-white !important;
     }
@@ -646,7 +690,7 @@ b {
     &--orange {
         color: $color-orange !important;
     }
-}
+}*/
 
 
 /* ====================DIMENSIONE TESTI=====================  */

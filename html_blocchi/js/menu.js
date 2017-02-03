@@ -76,15 +76,19 @@ jQuery(function($) {
                 element
                     .getElements()
                     .addClass(element.class);
-                if (parseInt(index,10) !== 0) {
+                if (parseInt(index, 10) !== 0) {
                     element
-                        .getElements().not('.menu__modal--group-label > ul')
+                        .getElements()
+                        .not('.menu__modal--group-label > ul')
                         .slideUp(300, function() {
-                            $('#menu .base__scrollable').getNiceScroll(0).resize();
+                            $('#menu .base__scrollable')
+                                .getNiceScroll(0)
+                                .resize();
                         });
 
                 }
             });
+
 
             /***************************************************************
 
@@ -102,7 +106,9 @@ jQuery(function($) {
 
             ***************************************************************/
 
-            this.bindMenuLinks();
+            this
+                .bindMenuLinks();
+
         },
         bindMenuLinks: function() {
 
@@ -115,13 +121,15 @@ jQuery(function($) {
 
 
             $(".menu__modal")
-                .on('click','.menu__modal--content-items a i', function(event){
+                .on('click', '.menu__modal--content-items a i', function(event) {
 
                     var menuLink = $(this).parent();
 
+
+
                     if (menuLink.siblings('ul').length > 0) {
                         event
-                            .preventDefault();                        
+                            .preventDefault();
 
                         /***************************************************************
 
@@ -134,7 +142,39 @@ jQuery(function($) {
                         MENU
                             .processLink(menuLink, false);
                     }
+                });
+
+            MENU
+                .navigateToLocalPath();
+        },
+
+        navigateToLocalPath: function() {
+
+            var currentLocationPath = window.location.href;
+            var menuLinks = $('.menu__modal--content-items a');
+            var matchingLink;
+            $.each(menuLinks, function(i, el) {
+                if (currentLocationPath === el.getAttribute('href')) {
+                    matchingLink = $(this).addClass('current');
+                    return false
+                }
             });
+
+            var matchingTree = [];
+
+            if (matchingLink) {
+                var matchingLinkIcon = matchingLink.find('i');
+                var matchingTreeIcons = matchingLink.parents('.menu__modal--item_list').siblings('a').find('i');
+
+                matchingLinkIcon ? matchingTree.push(matchingLinkIcon) : false;
+                matchingTreeIcons ? matchingTree.push(matchingTreeIcons) : false;
+
+                $.each(matchingTreeIcons, function() {
+                    $(this)
+                        .trigger('click');
+                });
+            }
+
         },
 
 
@@ -160,6 +200,7 @@ jQuery(function($) {
 
             var menuList = menuLink.siblings('ul');
             var breadcrumbs = $('.back__breadcrumbs--modal');
+            var scrollbar = $('#menu .base__scrollable').getNiceScroll(0);
 
             /***** PHASE 2 *****/
 
@@ -168,8 +209,7 @@ jQuery(function($) {
                     menuList
                         .removeClass('opened')
                         .slideUp(300, function() {
-                            $('#menu .base__scrollable')
-                                .getNiceScroll(0)
+                            scrollbar
                                 .resize();
                         });
                     menuList
@@ -180,8 +220,7 @@ jQuery(function($) {
                     .find('.opened')
                     .removeClass('opened')
                     .slideUp(300, function() {
-                        $('#menu .base__scrollable')
-                            .getNiceScroll(0)
+                        scrollbar
                             .resize();
                     });
                 menuList
@@ -194,8 +233,8 @@ jQuery(function($) {
                     .not(menuListRoot)
                     .removeClass('opened')
                     .slideUp(300, function() {
-                        console.log('ok');
-                        $('#menu .base__scrollable').getNiceScroll(0).resize();
+                        scrollbar
+                            .resize();
                     });
                 $('.slideOpened')
                     .not(menuListRootParents)
@@ -203,8 +242,8 @@ jQuery(function($) {
                 menuList
                     .addClass('opened')
                     .slideDown(300, function() {
-                        console.log('ok');
-                        $('.base__scrollable').getNiceScroll(0).resize();
+                        scrollbar
+                            .resize();
                     });
                 menuList
                     .parent('.menu__modal--is-parent')
@@ -213,7 +252,8 @@ jQuery(function($) {
 
             /***** PHASE 3 *****/
 
-            this.matchNavigationLevel(menuLink, menuList, breadcrumbs);
+            this
+                .matchNavigationLevel(menuLink, menuList, breadcrumbs);
 
         },
         matchNavigationLevel: function(menuLink, menuList, breadcrumbs) {
@@ -230,9 +270,12 @@ jQuery(function($) {
 
             for (var levelNumber = 1; levelNumber < 5; levelNumber++) {
                 if (menuList.hasClass('menu_level_' + levelNumber)) {
-                    this.clearBreadcrumbs(levelNumber, breadcrumbs);
-                    this.insertBreadcrumbs(levelNumber, menuLink);
-                    this.buildBreadcrumbs(levelNumber, menuLink, breadcrumbs);
+                    this
+                        .clearBreadcrumbs(levelNumber, breadcrumbs);
+                    this
+                        .insertBreadcrumbs(levelNumber, menuLink);
+                    this
+                        .buildBreadcrumbs(levelNumber, menuLink, breadcrumbs);
                 }
             }
         },
@@ -255,7 +298,9 @@ jQuery(function($) {
 
             /***** PHASE 1 *****/
 
-            breadcrumbs.children().remove();
+            breadcrumbs
+                .children()
+                .remove();
 
             /***** PHASE 2 *****/
 
@@ -308,14 +353,18 @@ jQuery(function($) {
                     var prevBreadcrumb = '<li><span>/</span><a data-label="' + element.label + '" >' + element.label + '</a></li>';
                     var currentBreadcrumb = '<li><span>/</span><span data-label="' + element.label + '" >' + element.label + '</span></li>';
                     if (index == 1) {
-                        breadcrumbs.append('<li><a data-label="' + element.label + '" >' + element.label + '</a></li>');
+                        breadcrumbs
+                            .append('<li><a data-label="' + element.label + '" >' + element.label + '</a></li>');
                     } else {
                         if (index == levelNumber) {
-                            breadcrumbs.append(currentBreadcrumb);
+                            breadcrumbs
+                                .append(currentBreadcrumb);
                         } else {
-                            breadcrumbs.append(prevBreadcrumb);
+                            breadcrumbs
+                                .append(prevBreadcrumb);
                         }
-                        MENU.initBreadcrumbs(levelNumber, menuLink, breadcrumbs);
+                        MENU
+                            .initBreadcrumbs(levelNumber, menuLink, breadcrumbs);
                     }
                 }
             });
@@ -357,16 +406,22 @@ jQuery(function($) {
         initBreadcrumbs: function(levelNumber, menuLink, breadcrumbs) {
             var backButton = '<a class="btn_more menu_back_btn" style="cursor:pointer" data-parent="' + this.navDomLevels[levelNumber - 1].label + '"><i class="fa fa-angle-left"></i></a>';
 
-            $('.back__breadcrumbs').addClass('breadGradient');
+            $('.back__breadcrumbs')
+                .addClass('breadGradient');
 
-            $('.menu_back_btn').remove();
-            breadcrumbs.closest('.back__breadcrumbs').prepend(backButton);
+            $('.menu_back_btn')
+                .remove();
+            breadcrumbs
+                .closest('.back__breadcrumbs')
+                .prepend(backButton);
 
-            $('.menu_back_btn').click(function() {
-                var target = menuLink.parents('.menu__modal--is-parent').eq(1);
-                var targetLink = target.children('a');
-                MENU.processLink(targetLink, true);
-            });
+            $('.menu_back_btn')
+                .click(function() {
+                    var target = menuLink.parents('.menu__modal--is-parent').eq(1);
+                    var targetLink = target.children('a');
+                    MENU
+                        .processLink(targetLink, true);
+                });
         },
 
     };

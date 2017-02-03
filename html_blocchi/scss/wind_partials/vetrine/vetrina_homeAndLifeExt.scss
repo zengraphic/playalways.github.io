@@ -1,11 +1,11 @@
 // SLIDER BLOCK
 .blocco_homeAndLifeExt {
     &__container {
-        background-color: $color-HomeLife-Background;
+        background-color: $color_home_life; 
     }
     .device_filter_block {
         &__title {
-            color: white;
+            color: $color_white;
             margin-right: 15px;
         }
     }
@@ -19,7 +19,7 @@
         }
         @at-root #{&}__tabs {
             text-transform: uppercase;
-            color: $color-standardText;
+            color: $color_text;
             &__container {
                 margin-bottom: 30px;
                 padding-top: 25px;
@@ -36,11 +36,11 @@
                 margin-right: 40px;
                 cursor: pointer;
                 &:hover {
-                    border-bottom: 1px solid $color-orange;
+                    border-bottom: 1px solid $color_orange;
                 }
                 &.active {
-                    border-bottom: 1px solid $color-orange;
-                    color: $color-orange;
+                    border-bottom: 1px solid $color_orange;
+                    color: $color_wind;
                 }
             }
         }
@@ -83,7 +83,7 @@
                 }
             }
             &:after {
-                background-color: #ccd1d9;
+                background-color: $color_grey_medium_light;
                 width: 1px;
                 content: "";
                 display: block;
@@ -100,7 +100,7 @@
             text-align: center;
             float: left;
             font-family: $weight-normal;
-            color: white;
+            color: $color_white;
             h2 {
                 margin-bottom: 10px;
             }
@@ -136,13 +136,13 @@
                     }
                 }
                 .offer_name {
-                    color: $color-orange;
+                    color: $color_wind;
                     font-size: 20px;
                 }
             }
         }
         &__showMore {
-            color: $color-orange;
+            color: $color_wind;
             font-size: 1.250em;
             text-align: center;
             text-transform: uppercase;

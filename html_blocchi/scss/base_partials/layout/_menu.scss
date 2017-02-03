@@ -49,9 +49,9 @@ h4.trade_l {
     height: auto;
     position: fixed;
     top: 0;
-    background-color: #fff;
+    background-color: $color_white;
     z-index: 999;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $color_stroke;
     // ANIMATION
     -webkit-animation: fadein 2s;
     // Safari, Chrome and Opera > 12.1
@@ -94,12 +94,12 @@ h4.trade_l {
     .header_sup {
         @include boxWF(left, 100%);
         height: 43px;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid $color_stroke;
         background-color: $color_grey_light_light;
         padding: 0;
         .title_header {
             float: left;
-            color: $color_grey_seven;
+            color: $color_text_light; //$color_grey_seven;
             font-size: 1rem;
             margin: 0.8rem 0 0 2.8rem;
         }
@@ -122,13 +122,13 @@ h4.trade_l {
                 /* Addition */
                 font-size: 0.8571rem;
                 margin: 0;
-                color: $color_grey_seven;
+                color: $color_text_light;
                 padding: 0 0 0.15rem;
                 letter-spacing: 0.4px;
                 position: relative;
                 text-decoration: none;
                 &:visited {
-                    color: $color_grey_seven;
+                    color: $color_text_light;
                 }
                 &:hover {
                     text-decoration: none;
@@ -138,7 +138,7 @@ h4.trade_l {
                         width: 70%;
                         margin-left: 15%;
                         height: 1px;
-                        background-color: $color_grey_seven;
+                        background-color: $color_grey_dark_light;
                         bottom: 0;
                         left: 0;
                         display: block;
@@ -151,7 +151,7 @@ h4.trade_l {
                     width: 70%;
                     margin-left: 15%;
                     height: 1px;
-                    background-color: $color_grey_seven;
+                    background-color: $color_grey_dark_light;
                     bottom: 0;
                     left: 0;
                     display: block;
@@ -193,10 +193,14 @@ h4.trade_l {
         img {
             float: left;
         }
+        .base__icon{
+            float:left;
+            display:inline-block;
+        }
         span {
             font-size: 0.9rem;
             text-transform: uppercase;
-            color: $color_orange;
+            color: $color_wind;
             float: left;
             margin: 0.9rem 0 0 0.5rem;
             @media (min-width: 320px) and (max-width: 399px) {
@@ -219,7 +223,7 @@ h4.trade_l {
             }
             a {
                 float: left;
-                color: $color_orange;
+                color: $color_wind;
                 font-size: 1.286rem;
                 margin: 0;
                 padding: 0;
@@ -254,11 +258,13 @@ h4.trade_l {
             @media (min-width: 320px) and (max-width: 399px) {
                 margin-right: 1rem;
             }
+            .base__icon{
+                margin-bottom:0.5rem;
+            }
             a {
                 @include boxWF(right, auto);
-                padding: 33px 0 0 0;
                 background-repeat: no-repeat;
-                color: $color_grey_seven;
+                color: $color_text_light;
                 font-size: 0.7857rem;
                 position: relative;
                 margin: 0;
@@ -271,9 +277,7 @@ h4.trade_l {
                     opacity: 0.7;
                 }
                 &.btn_entra {
-                    background-image: url(../img/icons-menu/icon_entra.png);
-                    background-position: center top;
-                    background-repeat: no-repeat;
+                    
                     .logued {
                         width: 32px;
                         height: 32px;
@@ -281,32 +285,24 @@ h4.trade_l {
                         top: -2px;
                         left: 50%;
                         margin-left: -16px;
-                        border: 2px solid $color_orange;
+                        border: 2px solid $color_wind;
                         @include radius(16px);
                         overflow: hidden;
                         text-align: center;
-                        background-color: #FFFFFF;
+                        background-color: $color_white;
                     }
                 }
                 &.btn_carrello {
-                    background-image: url(../img/icons-menu/icon_carrello.png);
-                    background-position: center 3px;
-                    background-repeat: no-repeat;
+                    
                 }
                 &.btn_menu {
-                    background-image: url(../img/icons-menu/icon_menu.png);
-                    background-position: center 6px;
-                    background-repeat: no-repeat;
+                   
                 }
                 &.btn_logout {
-                    background-image: url(../img/icons-menu/icon_logout.png);
-                    background-position: center top;
-                    background-repeat: no-repeat;
+                   
                 }
                 &.btn_close {
-                    background-image: url(../img/icons-menu/icon_c.png);
-                    background-position: center 9px;
-                    background-repeat: no-repeat;
+                    
                 }
             }
         }
@@ -386,9 +382,9 @@ h4.trade_l {
                         font-size: 18px;
                         line-height: 30px;
                         font-family: "Trade Gothic Light";
-                        color: $color_orange;
+                        color: $color_wind;
                         &:hover {
-                            color: rgba(244, 129, 53, 0.7);
+                            color: $color_orange_light;
                         }
                         .menu_parent_icon {
                             display: block;
@@ -401,7 +397,7 @@ h4.trade_l {
                             &:after {
                                 content: "";
                                 @include transition-basic(all, 0.25s, ease-in-out);
-                                background-color: #f48135;
+                                background-color: $color_orange;
                                 width: 2px;
                                 height: 10px;
                                 top: 0;
@@ -450,7 +446,7 @@ h4.trade_l {
     &--group-label {
         font-size: 1.28571rem;
         font-family: "Trade Gothic Light";
-        color: #777a7e;
+        color: $color_text_light;
         float: left;
         width: 100%;
         text-decoration: none;

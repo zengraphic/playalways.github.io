@@ -48,6 +48,10 @@
 /* base */
 
 .base {
+
+  &--with_header {
+    margin-top: 122px;
+  }
   .title_page h3 {
     color: $color_grey_dark;
     font-family: $font_family_light;
@@ -72,8 +76,11 @@
       color: $color_orange;
     }
   }
-
   .container {
+    &--wind {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
     .row {
       .hr-divider {
         display: inline-block;
@@ -103,15 +110,6 @@
       &.v-divider [class*='col-'] p {
         width: 85%;
       }
-    }
-  }
-
-
-  .menu_sup {
-    margin-top: .1em;
-
-    li a {
-      font-family: $font_family_light;
     }
   }
 

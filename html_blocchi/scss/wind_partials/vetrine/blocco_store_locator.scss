@@ -13,18 +13,18 @@
         }
     }
     .alternative_background_grey {
-        background-color: #f7f7f7;
+        background-color: $color_grey_light_light;
         h2 {
-            background-color: #f7f7f7 !important;
+            background-color: $color_grey_light_light !important;
         }
     }
     &__shopList {
-        color: $color-orange;
+        color: $color_wind;
         font-size: 1em;
         text-transform: uppercase;
     }
     &__cities {
-        color: $color-standardText;
+        color: $color_text;
         ul {
             -moz-column-count: 2;
             -moz-column-gap: 20px;
@@ -43,7 +43,7 @@
             li {
                 padding: 5px;
                 &:nth-of-type(odd) {
-                    background-color: $color-white;
+                    background-color: $color_white;
                     ;
                 }
             }
@@ -54,7 +54,7 @@
         }
         &--name {
             font-size: 0.875em;
-            color: $color-lightBlue;
+            color: $color_robin;
         }
         &--mainAddress {
             font-size: 0.750em;
@@ -90,8 +90,8 @@
                 position: absolute;
                 width: 40px;
                 height: 40px;
-                color: $color-white;
-                background-color: $color-HomeLife-Background;
+                color: $color_white;
+                background-color: $color_black; //$color-HomeLife-Background;
                 top: 0px;
                 left: 290px;
                 z-index: 100;
@@ -100,7 +100,7 @@
                 padding-right: 5px;
                 @include transition(transform 0.4s ease-in);
                 &:hover {
-                    background-color: $color-orange;
+                    background-color: $color_orange;
                 }
                 img {
                     height: 25px;
@@ -113,7 +113,7 @@
             top: 0px;
             left: 0px;
             overflow-y: hidden;
-            background-color: $color-white;
+            background-color: $color_white;
             height: 485px;
             width: 290px;
         }
@@ -125,8 +125,8 @@
         &__close {
             text-align: center;
             cursor: pointer;
-            color: $color-white;
-            background-color: $color-HomeLife-Background;
+            color: $color_white;
+            background-color: $color_black; //$color-HomeLife-Background;
             float: left;
             width: 40px;
             height: 40px;
@@ -139,7 +139,7 @@
         &__tour {
             text-align: center;
             float: left;
-            background-color: $color-orange;
+            background-color: $color_orange;
             width: 40px;
             height: 40px;
             padding-top: 2px;
@@ -153,25 +153,24 @@
     }
     .cont_detail {
         position: absolute;
-        border: 1px solid #ececec;
+        border: 1px solid $color_stroke;
         top: 85px;
         width: 300px;
         left: 50%;
         z-index: 3;
-        background-color: #fff;
-        display: none;
+        background-color: $color_white;
         font-size: 0.750em;
         font-family: $weight-normal;
         .open_shop_detail {
             padding-bottom: 10px;
             margin-top: 10px;
             text-transform: uppercase;
-            color: $color-orange;
+            color: $color_wind;
             font-size: 1em;
             text-align: center;
             cursor: pointer;
             &:hover {
-                color: #f78f4c;
+                color: $color_orange_light; //#f78f4c;
             }
         }
         .cont_image {
@@ -182,7 +181,7 @@
         .cont_text {
             margin: 0 1.250em;
             padding-bottom: 15px;
-            border-bottom: 1px solid $medium-gray;
+            border-bottom: 1px solid $color_stroke;
             .description {
                 margin: 0px;
             }
@@ -204,12 +203,12 @@
             }
             .shop_description {
                 background: url(../img/icons-interface/icon_list1.png) no-repeat 0 15px;
-                border-bottom: 1px solid $medium-gray;
+                border-bottom: 1px solid $color_stroke;
                 padding-bottom: 20px;
                 padding-top: 20px;
                 padding-left: 50px;
                 h3 {
-                    color: $color-lightBlue;
+                    color: $color_robin;
                     font-family: $weight-bold;
                     font-size: 1.167em;
                     margin-top: 0px;
@@ -240,9 +239,9 @@
             top: 3px;
         }
         .gm-style-iw {
-            background: red;
+            background: $color_red;
             a {
-                color: #4272db;
+                color: $color_blue_light; //?
             }
             h4,
             p {
@@ -261,7 +260,7 @@
             z-index: 1;
         }
         .form_map {
-            background-color: $color-white;
+            background-color: $color_white;
             width: 100%;
             float: left;
             padding: 0 0 1rem 0;
@@ -320,7 +319,7 @@
                 }
                 .check_cont {
                     width: auto;
-                    background-color: #FFFFFF;
+                    background-color: $color_white;
                     padding: 0.5rem 1rem;
                     float: right;
                     margin: 0;
@@ -338,13 +337,13 @@
             height: auto;
             top: 83px;
             li {
-                background-color: white;
+                background-color: $color_white;
                 list-style: none;
                 cursor: pointer;
                 width: 100%;
-                border: 1px solid $medium-gray;
+                border: 1px solid $color_stroke;
                 &:last-of-type {
-                    border-bottom: 1px solid $medium-gray;
+                    border-bottom: 1px solid $color_stroke;
                 }
                 &:after {
                     content: ".";
@@ -356,7 +355,7 @@
                 }
                 .container_shop_data {
                     border-bottom: 0px;
-                    border-left: 4px solid #ffffff;
+                    border-left: 4px solid $color_stroke;
                     .text_telephone_number {
                         position: relative;
                         top: 12px;
@@ -368,7 +367,7 @@
                         margin: 10px 0;
                         padding: 10px 0;
                         text-align: center;
-                        border-left: 1px solid $medium-gray;
+                        border-left: 1px solid $color_stroke;
                         .icon_title {
                             font-size: 0.750em;
                             font-family: $weight-normal;
@@ -397,7 +396,7 @@
                         background-position: 0.4rem center;
                         position: relative;
                         z-index: 4;
-                        background-color: #ffffff;
+                        background-color: $color_white;
                         /* border-right: 1px solid $medium-gray; */
                         &__icon {
                             width: 25px;
@@ -409,14 +408,14 @@
                             }
                         }
                         h3 {
-                            color: $color-lightBlue;
+                            color: $color_robin;
                             font-family: $weight-bold;
                             margin: 0 0 0.5rem 0;
                             font-size: 0.875em;
                         }
                         h4 {
                             font-size: 0.875em;
-                            color: #333333;
+                            color: $color_text;
                             font-family: $weight-normal;
                         }
                          &:hover {
@@ -428,11 +427,11 @@
                 }
                 &.active_action {
                     .container_shop_data {
-                        border-left: 4px solid $color-lightBlue;
+                        border-left: 4px solid $color_robin;
                     }
                     .title {
                         // background-image: url(../img/icons-interface/icon_list1.png);
-                        background-color: #FFFFFF;
+                        background-color: $color_white;
                     }
                     .cont_detail {
                         display: none;
@@ -444,7 +443,7 @@
             float: left;
             padding: 1rem 0;
             font-size: 1.7rem;
-            color: #333333;
+            color: $color_text;
             font-family: $weight-bold;
         }
     } //fine detailMap

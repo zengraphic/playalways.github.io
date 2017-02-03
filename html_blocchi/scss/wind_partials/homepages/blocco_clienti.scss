@@ -12,7 +12,7 @@
         top: 0;
         left: 0;
         @include opacity(0.8);
-        background-color: #fff;
+        background-color: $color_white;
     }
     &__expand {
         display: none;
@@ -21,11 +21,11 @@
         position: absolute;
         top: -50vw;
         left: calc(50% - 175px);
-        background-color: $color-white;
+        background-color: $color_white;
         z-index: 250;
         padding: 30px;
         //box-shadow: 1px 1px 1px #333;
-        border: 1px solid #ededed;
+        border: 1px solid $color_stroke;
         .button {
             position: absolute;
             bottom: 15px;
@@ -161,7 +161,7 @@
         font-family: $weight-boldCond;
     }
     &__showMore {
-        color: $color-orange;
+        color: $color_wind;
         font-size: 1.250em;
         text-align: center;
         margin-top: 20px;
@@ -174,7 +174,7 @@
         }
     }
     &__showOffers {
-        color: $color-orange;
+        color: $color_wind;
         margin-left: 15px;
         width: 100%;
         display: none;
@@ -189,7 +189,7 @@
     }
     @at-root #{&}__tabs {
         text-transform: uppercase;
-        color: $color-standardText;
+        color: $color_text;
         &__container {
             margin-bottom: 30px;
             padding-top: 25px;
@@ -206,11 +206,11 @@
             margin-right: 40px;
             cursor: pointer;
             &:hover {
-                border-bottom: 1px solid $color-orange;
+                border-bottom: 1px solid $color_wind;
             }
             &.active {
-                border-bottom: 1px solid $color-orange;
-                color: $color-orange;
+                border-bottom: 1px solid $color_wind;
+                color: $color_wind;
             }
         }
     }
@@ -252,9 +252,9 @@
             z-index: 150;
             width: 100%;
             text-align: center;
-            color: $color-orange;
+            color: $color_wind;
             font-size: 0.750em;
-            background-color: #fff;
+            background-color: $color_white;
             padding-top: 1px;
             bottom: 15px;
             cursor: pointer;
@@ -274,7 +274,7 @@
             }
         }
         &:after {
-            background-color: #ccd1d9;
+            background-color: $color_grey_medium_light;
             width: 1px;
             content: "";
             display: block;
@@ -322,12 +322,12 @@
             margin-top: 10px;
             overflow: hidden;
         }
-        &--mainTitle {
+        &--mainTitle { // classe nn trovata  https://playalways.github.io/html_blocchi/blocks/micro-componenti/blocco_clienti.html
             font-size: 1.300em;
             text-align: center;
             line-height: 32px;
             font-family: $weight-bold;
-            color: $color-lightBlue;
+            color: $color_mobile; //$color-lightBlue;
         }
     }
 }

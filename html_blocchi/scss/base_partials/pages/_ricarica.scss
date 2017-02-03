@@ -24,7 +24,7 @@
         z-index: 3000;
         width: 100%;
         height: 100%;
-        background-color: $color_grey;
+        background-color: $color_grey_dark;//$color_grey; ?
         @include opacity(0.8);
         display: none;
     }
@@ -67,7 +67,7 @@
             height: calc(100% - 43px);
             position: fixed;
             z-index: 2;
-            background-color: #FFFFFF;
+            background-color: $color_white; 
             right: 0;
             bottom: 0;
             overflow: hidden;
@@ -99,7 +99,7 @@
                 span {
                     font-size: 0.9rem;
                     text-transform: uppercase;
-                    color: $color_orange;
+                    color: $color_wind;
                     float: left;
                     margin: 0.9rem 0 0 0.5rem;
                     @media (min-width: 320px) and (max-width: 399px) {
@@ -130,7 +130,7 @@
                         @include boxWF(right, auto);
                         padding: 33px 0 0 0;
                         background-repeat: no-repeat;
-                        color: $color_grey_seven;
+                        color: $color_text_light; //$color_grey_seven;
                         font-size: 0.7857rem;
                         position: relative;
                         margin: 0;
@@ -153,11 +153,11 @@
                                 top: -2px;
                                 left: 50%;
                                 margin-left: -16px;
-                                border: 2px solid $color_orange;
+                                border: 2px solid $color_wind;
                                 @include radius(16px);
                                 overflow: hidden;
                                 text-align: center;
-                                background-color: #FFFFFF;
+                                background-color: $color_white;
                             }
                         }
                         &.btn_carrello {
@@ -188,10 +188,10 @@
         .title {
             @include boxWF(left, 100%);
             background-color: $color_grey_light_light;
-            color: #51565a;
+            color: $color_text; //#51565a;
             padding: 0 2.3rem 0 2.3rem;
             height: 50px;
-            border-bottom: 4px solid #f48217;
+            border-bottom: 4px solid $color_wind; //#f48217;
             span {
                 &.text {
                     float: left;
@@ -202,7 +202,7 @@
             a {
                 &.safe-link {
                     float: right;
-                    color: $color_orange;
+                    color: $color_wind;
                     font-size: 0.8rem;
                     letter-spacing: -0.4px;
                     line-height: normal;
@@ -253,10 +253,10 @@
                 max-width: 420px;
                 margin: 0;
                 height: auto;
-                color: $color_grey_seven;
+                color: $color_text_light; //$color_grey_seven;
                 max-height: 450px;
                 position: fixed;
-                background-color: #ffffff;
+                background-color: $color_white;
                 -webkit-animation-name: slideIn 0.7s;
                 ;
                 animation-name: slideIn 0.7s;
@@ -284,7 +284,7 @@
             }
         }
         .contract__popup{
-                color:$color_orange;
+                color: $color_wind;
         }
         .popup--contract {
             display: none;
@@ -304,18 +304,18 @@
                 max-width: 420px;
                 margin: 0;
                 height: auto;
-                color: $color_grey_seven;
+                color: $color_text_light;
                 max-height: 450px;
                 position: fixed;
-                background-color: #ffffff;
+                background-color: $color_white;
                 -webkit-animation-name: slideIn 0.7s;
                 ;
                 animation-name: slideIn 0.7s;
                 ;
                 .popup--contract {
                     &-header {
-                        background-color: $color_orange;
-                        color: white;
+                        background-color: $color_wind;
+                        color: $color_white;
                         font-size: 1.6rem;
                         font-family: $font_family_regular;
                         text-align: center;
@@ -325,7 +325,7 @@
                         padding: 1rem 2.1rem;
                         &:after {
                             width: 2em;
-                            color: #f48135;
+                            color: $color_wind;// #f48135;
                             content: "\f0d7";
                             font-family: "Fontawesome";
                             font-size: 4em;
@@ -354,7 +354,7 @@
                     &--value {
                         width: 66%;
                         text-align: right;
-                        color: $color_grey_dark;
+                        color: $color_text; //$color_grey_dark;
                     }
                     .divider {
                         width: 100%;
@@ -368,7 +368,7 @@
             }
         }
         .showMore {
-            color: $color-orange;
+            color: $color-wind;
             font-size: 1.250em;
             text-align: center;
             text-transform: uppercase;
@@ -393,7 +393,7 @@
                 @include boxWF(left, 100%);
                 @include defaultTxt($font_family_regular, 0.9rem);
                 letter-spacing: -0.4px;
-                color: #51565a;
+                color: $color_text; //#51565a;
                 margin: 1rem 0 1.4rem;
             }
         }
@@ -429,7 +429,7 @@
                     .detail-cc {
                         @include boxWF(left, 100%);
                         @include defaultTxt($font_family_regular, 1.1rem);
-                        color: $color_grey;
+                        color: $color_text; //$color_grey;
                         line-height: normal;
                         letter-spacing: -0.4px;
                         .card-image {
@@ -489,7 +489,7 @@
                     .detail-cc {
                         @include boxWF(left, 100%);
                         @include defaultTxt($font_family_regular, 1.1rem);
-                        color: $color_grey;
+                        color: $color_text; //$color_grey;
                         line-height: normal;
                         letter-spacing: -0.4px;
                         .card-image {
@@ -556,7 +556,7 @@
         }
         h3 {
             @include boxWF(left, 100%);
-            color: $color_grey_dark;
+            color: $color_text; //$color_grey_dark;
             @include defaultTxt($font_family_regular, 1.2rem);
             line-height: normal;
             letter-spacing: 0.4px;
@@ -572,7 +572,7 @@
             @include boxWF(left, 100%);
             @include defaultTxt($font_family_regular, 0.9rem);
             letter-spacing: -0.4px;
-            color: #51565a;
+            color: $color_text; //#51565a;
             margin: 1rem 0;
             a {
                 text-decoration: none;
@@ -583,7 +583,7 @@
                 word-wrap: break-word;
                 a {
                     font-family: $font_family_bold2;
-                    color: #51565a;
+                    color: $color_text; //#51565a;
                     font-weight: 500;
                     margin-bottom: 0;
                 }
@@ -592,7 +592,7 @@
         h5 {
             @include boxWF(left, 100%);
             font-size: 0.8rem;
-            color: #51565a;
+            color: $color_text;
             margin: 0.7rem 0 1.4rem;
             a {
                 text-decoration: none;
@@ -602,13 +602,13 @@
                 margin: 1rem 0 0;
                 @include defaultTxt($font_family_bold2, 1.1rem);
                 font-weight: 500;
-                color: $color_grey_dark;
+                color: $color_text; //$color_grey_dark;
             }
         }
         button.btn_refil {
             @include boxWF(left, 100%);
-            background-color: $color_orange;
-            color: #FFFFFF;
+            background-color: $color_wind;
+            color: $color_white;
             font-size: 1.2rem;
             height: auto;
             letter-spacing: 0.04px;
@@ -619,7 +619,7 @@
                 opacity: 0.7;
             }
             &:disabled {
-                background-color: #ccd0d9;
+                background-color: $color_grey_medium_light; //////////
             }
             &.flag,
             &.btn_icc {
@@ -629,10 +629,10 @@
                 margin: 1rem 0 0;
             }
             &.top_up_newCard {
-                background-color: #fff !important;
-                border: 1px solid #f48135 !important;
+                background-color: $color_white !important;
+                border: 1px solid $color_wind !important;
                 text-transform: uppercase !important;
-                color: #f48135 !important;
+                color: $color_wind !important;
                 padding-top: 18px !important;
                 padding-bottom: 12px !important;
             }
@@ -652,11 +652,11 @@
             &[type="tel"] {
                 margin-bottom: 0.5rem;
                 @include defaultTxt($font_family_light, 1.1rem);
-                border: 1px solid $color_grey_medium_light;
+                border: 1px solid $color_stroke;
                 width: 100%;
                 font-weight: 100;
-                background: #ffffff;
-                color: #4a4a4a !important;
+                background: $color_white;
+                color: $color_text_light !important;// #4a4a4a
                 appearance: none;
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -684,7 +684,7 @@
             &[type="password"]:hover,
             &[type="number"]:hover,
             &[type="tel"]:hover {
-                border: 1px solid $color_orange;
+                border: 1px solid $color_wind;
             }
             &[type="text"].visa_cc,
             &[type="email"].visa_cc,
@@ -774,11 +774,11 @@
                 margin: 1rem 0 0;
             }
             &::-webkit-input-placeholder {
-                color: #4a4a4a;
+                color: $color_text_light;//#4a4a4a;
             }
             &:-moz-placeholder,
             &::-moz-placeholder {
-                color: #4a4a4a;
+                color: $color_text_light; //#4a4a4a;
                 opacity: 1;
             }
         }
@@ -812,7 +812,7 @@
                     padding-top: 15px;
                     padding-bottom: 15px;
                     &:focus {
-                        border: 1px solid #f48135;
+                        border: 1px solid $color_wind;
                     }
                     .filter-option {
                         font-size: 2.8rem;
@@ -829,7 +829,7 @@
             float: left;
             &.base__checkbox label {
                 float: left;
-                color: $color_grey_dark;
+                color: $color_text;
                 font-size: 1rem;
                 padding-left: 0.7rem;
             }
@@ -863,7 +863,7 @@
             margin: 0.5rem 0;
             &.base__radio label {
                 float: left;
-                color: $color_grey_dark;
+                color: $color_text;
                 @include defaultTxt($font_family_bold2, 1.1em);
                 letter-spacing: 0.4px;
                 font-weight: 500;
@@ -887,13 +887,13 @@
         }
     }
     .back-privacy {
-        border-bottom: 4px solid #f48217;
+        border-bottom: 4px solid $color_wind;
     }
     .box-privacy {
         h3 {
             @include defaultTxt($font_family_bold2, 1.2em);
             font-weight: bold;
-            color: #444;
+            color: $color_text;
             margin: 1.2em 0;
             &:first-child {
                 margin: 2em 0 1.9em 0;
@@ -901,7 +901,7 @@
         }
         p {
             @include defaultTxt($font_family_regular, 1.07em);
-            color: #444;
+            color: $color_text;
             margin-bottom: 0.5em;
             &:last-child {
                 margin-bottom: 2em;
