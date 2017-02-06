@@ -7,7 +7,8 @@ $color-standardText: #292f36;
 $color-blue: #18398a;
 $color-orange: #f48135;
 $color-lightGrey: #f5f6f7;
-$breakpoints: ( 'tiny': ( max-width: 600px), 'smaller': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 928px), 'max': ( min-width: 1024px));
+$radius-border: 5px;
+$breakpoints: ( 'tiny': ( max-width: 600px), 'smaller': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 928px), 'medium-max': ( max-width: 990px), 'max': ( min-width: 1024px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -28,10 +29,26 @@ $breakpoints: ( 'tiny': ( max-width: 600px), 'smaller': ( max-width: 700px), 'sm
 }
 
 @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
     border-radius: $radius;
-    background-clip: padding-box;
-    /* stops bg color from leaking outside the border: */
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+    border-top-left-radius: $topleft;
+    border-top-right-radius: $topright;
+    border-bottom-right-radius: $bottomright;
+    border-bottom-left-radius: $bottomleft;
+    -webkit-border-top-left-radius: $topleft;
+    -webkit-border-top-right-radius: $topright;
+    -webkit-border-bottom-right-radius: $bottomright;
+    -webkit-border-bottom-left-radius: $bottomleft;
+    -moz-border-radius-topleft: $topleft;
+    -moz-border-radius-topright: $topright;
+    -moz-border-radius-bottomright: $bottomright;
+    -moz-border-radius-bottomleft: $bottomleft;
 }
 
 body {
@@ -77,6 +94,22 @@ body {
 .strong {
     font-family: $weight-bold;
     font-weight: 600;
+}
+
+.header {
+    .header_second {
+        @include breakpoint(small) {
+            min-height: 60px;
+            ;
+        }
+    }
+    .logo {
+        img.wind {
+            @include breakpoint(small) {
+                width: 70%;
+            }
+        }
+    }
 }
 
 .price {
@@ -139,7 +172,7 @@ br.mobile {
     border: 1px solid;
     border-color: $color-orange;
     @include border-radius(4px);
-    @include breakpoint(small){
+    @include breakpoint(small) {
         margin: 0;
         width: 100%;
     }
@@ -443,16 +476,20 @@ br.mobile {
     margin: 0 auto;
     position: relative;
     .container_tripleBlock {
-        border: 1px solid #f0f1f3;
         margin: 0;
         margin-bottom: 50px;
-        @include border-radius(5px);
-        @include breakpoint(medium) {
+        @include breakpoint(medium-max) {
             text-align: center;
         }
         .left_block {
             background-color: #e6e7e8;
             padding: 20px 15px;
+            //@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+            @include border-radii($radius-border, 0, 0, $radius-border);
+            @include breakpoint(medium-max) {
+                @include border-radii($radius-border, $radius-border, 0, 0);
+                padding: 25px;
+            }
             .title {
                 text-transform: uppercase;
                 font-weight: 600;
@@ -460,7 +497,8 @@ br.mobile {
             }
         }
         .center_block {
-            padding: 20px 15px;
+            padding: 23px 15px;
+            border: 1px solid #f0f1f3;
             .description {
                 letter-spacing: -1px;
                 line-height: 25px;
@@ -472,6 +510,10 @@ br.mobile {
         .right_block {
             background-color: $color-blue;
             padding: 20px 0px 20px 15px;
+            @include border-radii(0, $radius-border, $radius-border, 0);
+            @include breakpoint(medium-max) {
+                @include border-radii(0, 0, $radius-border, $radius-border);
+            }
             .call_to_action {
                 padding: 0;
                 vertical-align: middle;
@@ -491,6 +533,9 @@ br.mobile {
                 width: calc(50% - 15px);
                 font-size: 17px;
                 color: #fff;
+                @include breakpoint(medium-max) {
+                    padding-top: 10px;
+                }
                 &_big {
                     font-size: 44px;
                     font-weight: 600;
