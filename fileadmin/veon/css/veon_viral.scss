@@ -287,6 +287,27 @@ a {
     text-align: center;
 }
 
+br {
+    &.tiny{
+        display: none;
+        @include breakpoint(tiny){
+            display: block;
+        }
+    }
+    &.mobile {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+    &.desktop {
+        display: block;
+        @include breakpoint(small) {
+            display: none;
+        }
+    }    
+}
+
 .button_cta {
     &.only_mobile {
         display: none;
