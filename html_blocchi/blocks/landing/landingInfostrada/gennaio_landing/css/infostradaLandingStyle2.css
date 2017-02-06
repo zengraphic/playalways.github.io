@@ -59,6 +59,21 @@ br.mobile {
       right: 0px;
       background-position-x: 50%; } }
 
+.container_pre_footer {
+  width: 100%; }
+
+.offer_renewal {
+  display: inline-block;
+  float: right;
+  color: #292f36;
+  font-size: 15px; }
+  @media (max-width: 768px) {
+    .offer_renewal {
+      float: none;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px; } }
+
 .button {
   font-family: "Trebuchet MS";
   background-color: #f48135;
@@ -66,7 +81,6 @@ br.mobile {
   margin: 0px 30px;
   cursor: pointer;
   display: block;
-  font-size: 1.125em;
   text-align: center;
   height: auto;
   text-transform: uppercase;
@@ -76,6 +90,10 @@ br.mobile {
   border-radius: 4px;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */ }
+  @media (max-width: 768px) {
+    .button {
+      margin: 0;
+      width: 100%; } }
 
 @media (min-width: 768px) {
   .container {
@@ -89,10 +107,11 @@ br.mobile {
 .main_title {
   font-size: 40px;
   line-height: 47px;
-  color: #0069b3;
+  color: #18398a;
   text-align: center;
   font-weight: 600;
-  padding: 30px 0; }
+  padding: 30px 0;
+  hyphens: initial; }
 
 .block_viewer {
   position: relative;
@@ -345,189 +364,63 @@ br.mobile {
     .block_counter .time:first-child {
       margin-left: 0; }
 
-.block_tabs {
-  position: relative;
-  max-width: 876px;
-  margin: 0 auto; }
-  .block_tabs .nav-tabs li {
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-    display: inline-block;
-    width: 49.5%;
-    float: left;
-    margin-right: 1%;
-    border: none !important;
-    text-transform: uppercase; }
-    .block_tabs .nav-tabs li:last-child {
-      margin-right: 0; }
-    .block_tabs .nav-tabs li:after {
-      position: absolute;
-      bottom: 0;
-      height: 2px;
-      width: 100%;
-      background-color: #ced4e0;
-      content: ""; }
-    .block_tabs .nav-tabs li a {
-      vertical-align: middle;
-      margin-bottom: 0;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-      background-color: #dee3ee;
-      border: none !important;
-      font-family: "Trebuchet MS";
-      font-size: 13px;
-      color: #18398a; }
-      .block_tabs .nav-tabs li a .break {
-        display: none; }
-        @media (max-width: 600px) {
-          .block_tabs .nav-tabs li a .break {
-            display: inline; } }
-    .block_tabs .nav-tabs li.active:after {
-      content: none; }
-    .block_tabs .nav-tabs li.active a {
-      background-color: #f5f6f7;
-      color: #18398a; }
-  .block_tabs a:hover {
-    border: none; }
-  .block_tabs .nav-tabs li.active a {
-    background-color: #f5f6f7;
-    border: none;
-    color: #18398a; }
-    .block_tabs .nav-tabs li.active a:hover {
-      border: none; }
-  .block_tabs .tab-content {
-    background-color: #f5f6f7; }
-  .block_tabs .infoForm {
-    margin: 0 auto;
-    padding: 15px 33px 18px;
-    font-size: 14px;
-    font-family: "Trebuchet MS";
-    text-align: center; }
-    @media (max-width: 768px) {
-      .block_tabs .infoForm {
-        padding-left: 18px;
-        padding-right: 18px; } }
-    .block_tabs .infoForm #prefisso {
-      width: 8.7%; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm #prefisso {
-          float: left;
-          width: 49.5%; } }
-    .block_tabs .infoForm #numero {
-      width: 9.5%; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm #numero {
-          float: right;
-          width: 49.5%; } }
-    .block_tabs .infoForm #provincia {
-      width: 23%;
-      padding: 0; }
-      .block_tabs .infoForm #provincia .btn {
-        font-size: 1em;
-        padding: 13px 5px;
-        border: none;
-        color: #07122c; }
-        .block_tabs .infoForm #provincia .btn .caret {
-          color: #18398a;
-          border-width: 6px 4px 0;
-          margin-top: -4px; }
-        @media (max-width: 768px) {
-          .block_tabs .infoForm #provincia .btn {
-            padding: 13px 15px; } }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm #provincia {
-          width: 100%; } }
-    .block_tabs .infoForm #comune {
-      width: 21%; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm #comune {
-          width: 100%; } }
-    .block_tabs .infoForm #indirizzo {
-      width: 23.3%; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm #indirizzo {
-          float: left;
-          width: 74.5%; } }
-    .block_tabs .infoForm #civico {
-      width: 7%;
-      margin-right: 0; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm #civico {
-          float: right;
-          width: 24.5%; } }
-    .block_tabs .infoForm .infoInput {
-      margin-top: 15px;
-      margin-right: 0.8%;
-      padding-left: 5px;
-      padding-right: 5px;
-      font-size: 1em;
-      border: none;
-      color: #07122c; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm .infoInput {
-          margin-right: 0;
-          padding: 15px; } }
-    .block_tabs .infoForm .button {
-      margin: 30px 0 0;
-      font-size: 14px; }
-      @media (max-width: 768px) {
-        .block_tabs .infoForm .button {
-          display: inline-block;
-          width: 100%;
-          margin: 33px 0 auto; } }
-    .block_tabs .infoForm .form-control::-webkit-input-placeholder {
-      color: #07122c; }
-
 .advantages_block {
   margin: 0 auto;
-  max-width: 876px;
-  position: relative;
-  padding-top: 50px;
-  overflow: hidden; }
-  .advantages_block__listItem {
-    padding-bottom: 50px; }
-    @media (max-width: 768px) {
-      .advantages_block__listItem {
-        padding: 0 35px 50px; } }
-    .advantages_block__listItem__icon {
-      float: left;
-      width: 25%; }
-      .advantages_block__listItem__icon--fiber {
-        background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -3px;
-        width: 65px;
-        height: 48px; }
-      .advantages_block__listItem__icon--calls {
-        background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -198px;
-        width: 65px;
-        height: 48px; }
-      .advantages_block__listItem__icon--browse {
-        background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -54px;
-        width: 65px;
-        height: 48px; }
-      .advantages_block__listItem__icon--xbox {
-        background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -103px;
-        width: 65px;
-        height: 41px; }
-      .advantages_block__listItem__icon--webcam {
-        background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -144px;
-        width: 65px;
-        height: 48px; }
-    .advantages_block__listItem__description {
-      float: left;
-      padding-left: 10px;
-      width: 75%; }
-      .advantages_block__listItem__description--title {
-        font-family: "Trebuchet MS";
-        color: #18398a;
-        font-size: 0.875em;
-        line-height: 1em;
+  position: relative; }
+  .advantages_block .container_tripleBlock {
+    border: 1px solid #f0f1f3;
+    margin: 0;
+    margin-bottom: 50px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */ }
+    @media (max-width: 928px) {
+      .advantages_block .container_tripleBlock {
+        text-align: center; } }
+    .advantages_block .container_tripleBlock .left_block {
+      background-color: #e6e7e8;
+      padding: 20px 15px; }
+      .advantages_block .container_tripleBlock .left_block .title {
         text-transform: uppercase;
-        padding-bottom: 15px; }
-      .advantages_block__listItem__description p {
-        font-family: "Trebuchet MS";
-        color: #292f36;
-        font-size: 0.875em; }
+        font-weight: 600;
+        color: #18398a; }
+    .advantages_block .container_tripleBlock .center_block {
+      padding: 20px 15px; }
+      .advantages_block .container_tripleBlock .center_block .description {
+        letter-spacing: -1px;
+        line-height: 25px; }
+        .advantages_block .container_tripleBlock .center_block .description strong {
+          font-weight: 600; }
+    .advantages_block .container_tripleBlock .right_block {
+      background-color: #18398a;
+      padding: 20px 0px 20px 15px; }
+      .advantages_block .container_tripleBlock .right_block .call_to_action {
+        padding: 0;
+        vertical-align: middle;
+        width: calc(50% - 15px);
+        display: inline-block;
+        max-width: 200px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-clip: padding-box;
+        /* stops bg color from leaking outside the border: */
+        background: #f48135; }
+        .advantages_block .container_tripleBlock .right_block .call_to_action a {
+          background-color: #f48135; }
+      .advantages_block .container_tripleBlock .right_block .description {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 28px;
+        width: calc(50% - 15px);
+        font-size: 17px;
+        color: #fff; }
+        .advantages_block .container_tripleBlock .right_block .description_big {
+          font-size: 44px;
+          font-weight: 600; }
+        .advantages_block .container_tripleBlock .right_block .description_medium {
+          font-size: 24px;
+          font-weight: 600; }
   .advantages_block__reminder {
     font-family: "Trebuchet MS";
     color: #f48135;

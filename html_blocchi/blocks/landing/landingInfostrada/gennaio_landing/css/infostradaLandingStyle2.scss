@@ -4,6 +4,7 @@ $weight-boldCond: 'Trebuchet MS';
 $weight-bold: 'Trebuchet MS';
 $weight-cond: 'Trebuchet MS';
 $color-standardText: #292f36;
+$color-blue: #18398a;
 $color-orange: #f48135;
 $color-lightGrey: #f5f6f7;
 $breakpoints: ( 'tiny': ( max-width: 600px), 'smaller': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 928px), 'max': ( min-width: 1024px));
@@ -108,6 +109,23 @@ br.mobile {
     }
 }
 
+.container_pre_footer {
+    width: 100%;
+}
+
+.offer_renewal {
+    display: inline-block;
+    float: right;
+    color: $color-standardText;
+    font-size: 15px;
+    @include breakpoint(small) {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
 .button {
     font-family: $weight-normal;
     background-color: $color-orange;
@@ -115,13 +133,16 @@ br.mobile {
     margin: 0px 30px;
     cursor: pointer;
     display: block;
-    font-size: 1.125em; //18px
     text-align: center;
     height: auto;
     text-transform: uppercase;
     border: 1px solid;
     border-color: $color-orange;
     @include border-radius(4px);
+    @include breakpoint(small){
+        margin: 0;
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -143,10 +164,11 @@ br.mobile {
 .main_title {
     font-size: 40px;
     line-height: 47px;
-    color: #0069b3;
+    color: $color-blue;
     text-align: center;
     font-weight: 600;
     padding: 30px 0;
+    hyphens: initial;
 }
 
 .block_viewer {
@@ -271,7 +293,7 @@ br.mobile {
             &_center {
                 padding: 8px 40px 0 7px;
                 text-transform: uppercase;
-                color: #18398a;
+                color: $color-blue;
                 background-color: #e6e9ed;
                 font-family: "Trade Gothic LTS Bold Cond";
                 position: relative;
@@ -324,7 +346,7 @@ br.mobile {
                     }
                 }
                 .blue_stripe {
-                    background-color: #18398a;
+                    background-color: $color-blue;
                     height: 100%;
                     display: inline-block;
                     position: relative;
@@ -416,225 +438,67 @@ br.mobile {
     }
 }
 
-.block_tabs {
-    position: relative;
-    max-width: 876px;
-    margin: 0 auto;
-    .nav-tabs li {
-        padding-left: 0;
-        padding-right: 0;
-        position: relative;
-        display: inline-block;
-        width: 49.5%;
-        float: left;
-        margin-right: 1%;
-        border: none !important;
-        text-transform: uppercase;
-        &:last-child {
-            margin-right: 0;
-        }
-        &:after {
-            position: absolute;
-            bottom: 0;
-            height: 2px;
-            width: 100%;
-            background-color: #ced4e0;
-            content: "";
-        }
-        a {
-            vertical-align: middle;
-            margin-bottom: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-            background-color: #dee3ee;
-            border: none !important;
-            font-family: $weight-bold;
-            font-size: 13px;
-            color: #18398a;
-            .break {
-                display: none;
-                @include breakpoint(tiny) {
-                    display: inline;
-                }
-            }
-        }
-        &.active {
-            &:after {
-                content: none;
-            }
-            a {
-                background-color: $color-lightGrey;
-                color: #18398a;
-            }
-        }
-    }
-    a {
-        &:hover {
-            border: none;
-        }
-    }
-    .nav-tabs li.active a {
-        background-color: $color-lightGrey;
-        border: none;
-        color: #18398a;
-        &:hover {
-            border: none;
-        }
-    }
-    .tab-content {
-        background-color: $color-lightGrey;
-    }
-    .infoForm {
-        margin: 0 auto;
-        padding: 15px 33px 18px;
-        font-size: 14px;
-        font-family: $weight-normal;
-        text-align: center;
-        @include breakpoint(small) {
-            padding-left: 18px;
-            padding-right: 18px;
-        }
-        #prefisso {
-            width: 8.7%;
-            @include breakpoint(small) {
-                float: left;
-                width: 49.5%;
-            }
-        }
-        #numero {
-            width: 9.5%;
-            @include breakpoint(small) {
-                float: right;
-                width: 49.5%;
-            }
-        }
-        #provincia {
-            width: 23%;
-            padding: 0;
-            .btn {
-                font-size: 1em;
-                padding: 13px 5px;
-                border: none;
-                color: #07122c;
-                .caret {
-                    color: #18398a;
-                    border-width: 6px 4px 0;
-                    margin-top: -4px;
-                }
-                @include breakpoint(small) {
-                    padding: 13px 15px;
-                }
-            }
-            @include breakpoint(small) {
-                width: 100%;
-            }
-        }
-        #comune {
-            width: 21%;
-            @include breakpoint(small) {
-                width: 100%;
-            }
-        }
-        #indirizzo {
-            width: 23.3%;
-            @include breakpoint(small) {
-                float: left;
-                width: 74.5%;
-            }
-        }
-        #civico {
-            width: 7%;
-            margin-right: 0;
-            @include breakpoint(small) {
-                float: right;
-                width: 24.5%;
-            }
-        }
-        .infoInput {
-            margin-top: 15px;
-            margin-right: 0.8%;
-            padding-left: 5px;
-            padding-right: 5px;
-            font-size: 1em;
-            border: none;
-            color: #07122c;
-            @include breakpoint(small) {
-                margin-right: 0;
-                padding: 15px;
-            }
-        }
-        .button {
-            margin: 30px 0 0;
-            font-size: 14px;
-            @include breakpoint(small) {
-                display: inline-block;
-                width: 100%;
-                margin: 33px 0 auto;
-            }
-        }
-        .form-control::-webkit-input-placeholder {
-            color: #07122c;
-        }
-    }
-}
-
 // BLOCCO VANTAGGI INFOSTRADA
 .advantages_block {
     margin: 0 auto;
-    max-width: 876px;
     position: relative;
-    padding-top: 50px;
-    overflow: hidden;
-    &__listItem {
-        padding-bottom: 50px;
-        @include breakpoint(small) {
-            padding: 0 35px 50px;
+    .container_tripleBlock {
+        border: 1px solid #f0f1f3;
+        margin: 0;
+        margin-bottom: 50px;
+        @include border-radius(5px);
+        @include breakpoint(medium) {
+            text-align: center;
         }
-        &__icon {
-            float: left;
-            width: 25%;
-            &--fiber {
-                background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -3px;
-                width: 65px;
-                height: 48px;
-            }
-            &--calls {
-                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -198px;
-                width: 65px;
-                height: 48px;
-            }
-            &--browse {
-                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -54px;
-                width: 65px;
-                height: 48px;
-            }
-            &--xbox {
-                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -103px;
-                width: 65px;
-                height: 41px;
-            }
-            &--webcam {
-                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -144px;
-                width: 65px;
-                height: 48px;
-            }
-        }
-        &__description {
-            float: left;
-            padding-left: 10px;
-            width: 75%;
-            &--title {
-                font-family: $weight-bold;
-                color: #18398a;
-                font-size: 0.875em;
-                line-height: 1em;
+        .left_block {
+            background-color: #e6e7e8;
+            padding: 20px 15px;
+            .title {
                 text-transform: uppercase;
-                padding-bottom: 15px;
+                font-weight: 600;
+                color: $color-blue;
             }
-            & p {
-                font-family: $weight-light;
-                color: $color-standardText;
-                font-size: 0.875em;
+        }
+        .center_block {
+            padding: 20px 15px;
+            .description {
+                letter-spacing: -1px;
+                line-height: 25px;
+                strong {
+                    font-weight: 600;
+                }
+            }
+        }
+        .right_block {
+            background-color: $color-blue;
+            padding: 20px 0px 20px 15px;
+            .call_to_action {
+                padding: 0;
+                vertical-align: middle;
+                width: calc(50% - 15px);
+                display: inline-block;
+                max-width: 200px;
+                @include border-radius(5px);
+                background: $color-orange;
+                a {
+                    background-color: $color-orange;
+                }
+            }
+            .description {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 28px;
+                width: calc(50% - 15px);
+                font-size: 17px;
+                color: #fff;
+                &_big {
+                    font-size: 44px;
+                    font-weight: 600;
+                }
+                &_medium {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
             }
         }
     }
