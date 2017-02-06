@@ -82,13 +82,15 @@ $icon_names: (
  'offerta',
  'offerta_sim',
  'confirm',
- 'fail',
  'spinner',
+ 'fail', 
  'inserisci_numero',
  'inserisci_codice',
  'attivazione',
  'parametro',
- 'internet');
+ 'internet',
+ 'arrow_right',
+ 'arrow_left');
 $variations: ( 
  'color',
  'grey',
@@ -104,18 +106,18 @@ $variations: (
             $total_variations: length($variations);
             @if $icon_name==pin {
                 &.icon_#{$icon_name}--#{$variation} {
-                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.9 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((100 / ($total_icons - 1)) * ($i - 1)) + '%'};
                 }
             }
             @else if ($icon_name==wind_music_award or $icon_name==windforfund or $icon_name==visa or $icon_name==mastercard or $icon_name==paypal or $icon_name==visa_electron or $icon_name==diners_club or $icon_name==american_express or $icon_name==cartasi) and ($i2 > 0 and $i2 < 2) {
                 &.icon_#{$icon_name} {
-                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.9 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((100 / ($total_icons - 1)) * ($i - 1)) + '%'};
                 }
             }
             @else {
                 @if ($i2 > 0 and $i2 < 4) {
                     &.icon_#{$icon_name}--#{$variation} {
-                        background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.9 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                        background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((100 / ($total_icons - 1)) * ($i - 1)) + '%'};
                     }
                 }
             }
