@@ -1,14 +1,7 @@
-
-
-
 .base__datepicker {
     position: relative;
     width: 320px;
-    &:after{
-
-    }
-
-    
+    &:after {}
     .base__input {
         width: 100%;
     }
@@ -28,7 +21,11 @@
     > div {
         width: 100%;
     }
+    table {
+        border-collapse: separate;
+    }
     table tr {
+        border: none;
         td {
             border: 1px solid white;
             &.day:hover,
@@ -37,6 +34,18 @@
                 background: $color_orange;
                 border-radius: 4px;
                 color: $color_white;
+            }
+            &.day.today {
+                background-color: $color_white;
+                border: 1px solid $color_orange;
+                color: $color_orange;
+                border-radius: 4px;
+                border-collapse: separate;
+                &:hover {
+                    background: $color_orange;
+                    border-radius: 4px;
+                    color: $color_white;
+                }
             }
             span {
                 background: $color_white;
@@ -49,13 +58,12 @@
                 &:hover {
                     background: white;
                     border: 1px solid $color_orange;
-                    @include transition-basic(all ,0.35s ,ease-in-out);
+                    @include transition-basic(all, 0.35s, ease-in-out);
                 }
                 &.active {
                     background: $color_orange;
                     border-color: $color_orange;
                     color: white;
-
                     &.disabled {
                         background: $color_orange;
                         border-color: $color_orange;
@@ -97,28 +105,39 @@
             &[class="prev"] {
                 padding-left: 0.5rem;
                 i:after {
-                    background-image: url('../img/icons/icon_buttons.svg#icon_caret_right_outline--color');
-                    font-family: "FontAwesome";
-                    font-size: 2rem;
-                    content: "";
-                    line-height: 2rem;
-                    color: $color_orange;
+                    background-image: url('../img/icons/icons_sprite.svg');
+                    background-size: 500%;
+                    background-position: 0% 100%;
+                    width: 24px;
+                    height: 24px;
+                    content: "";
+                    display: block;
                 }
             }
             &[class="next"] {
                 padding-rigth: 0.5rem;
                 i:after {
-                    font-family: "FontAwesome";
-                    font-size: 2rem;
-                    line-height: 2rem;
-                    content: "";
-                    color: $color_orange;
+                    background-image: url('../img/icons/icons_sprite.svg');
+                    background-size: 500%;
+                    background-position: 0% 98.8764%;
+                    width: 24px;
+                    height: 24px;
+                    content: "";
+                    display: block;
                 }
             }
         }
     }
     .table-condensed {
         width: 100%;
+        thead {
+            background-color: $color_grey_light;
+            > tr {
+                th {
+                    border-radius: 0;
+                }
+            }
+        }
         tbody > tr > {
             td,
             th {
@@ -130,7 +149,7 @@
                 -moz-border-radius: 0px;
                 background: $color_white;
                 border: 1px solid $color_transparent;
-              }
+            }
             tfoot > tr > th.today:hover {
                 background: $color_orange;
                 color: white;
