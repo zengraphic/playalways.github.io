@@ -90,7 +90,9 @@ $icon_names: (
  'parametro',
  'internet',
  'arrow_right',
- 'arrow_left');
+ 'arrow_left',
+ 'caret',
+ 'caret_outline');
 $variations: ( 
  'color',
  'grey',
@@ -106,18 +108,18 @@ $variations: (
             $total_variations: length($variations);
             @if $icon_name==pin {
                 &.icon_#{$icon_name}--#{$variation} {
-                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.9 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.96 / ($total_icons - 1)) * ($i - 1)) + '%'};
                 }
             }
             @else if ($icon_name==wind_music_award or $icon_name==windforfund or $icon_name==visa or $icon_name==mastercard or $icon_name==paypal or $icon_name==visa_electron or $icon_name==diners_club or $icon_name==american_express or $icon_name==cartasi) and ($i2 > 0 and $i2 < 2) {
                 &.icon_#{$icon_name} {
-                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.9 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.96 / ($total_icons - 1)) * ($i - 1)) + '%'};
                 }
             }
             @else {
                 @if ($i2 > 0 and $i2 < 4) {
                     &.icon_#{$icon_name}--#{$variation} {
-                        background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.9 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                        background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.96 / ($total_icons - 1)) * ($i - 1)) + '%'};
                     }
                 }
             }
@@ -135,14 +137,14 @@ $variations: (
     width: 32px;
     height: 32px;
     margin:0 auto;
-    // &--sm {
-    //     width: 32px;
-    //     height: 32px;
-    // }
-    // &--lg {
-    //     width: 128px;
-    //     height: 128px;
-    // }
+    &--md {
+        width: 48px;
+        height: 48px;
+    }
+    &--lg {
+        width: 128px;
+        height: 128px;
+    }
     @include icons($icon_names);
     
 }
