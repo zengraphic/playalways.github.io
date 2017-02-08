@@ -486,7 +486,7 @@ h4.trade_l {
         margin-left: 0rem;
     }
     .header_sup{
-         &::before, &::after {
+          &::after {
     content: "";
     width: 20%;
     height: 43px;
@@ -495,11 +495,7 @@ h4.trade_l {
     z-index: 8;
   }
 
-  &::before {
-    left: 0;
 
-    @include gradient-generic(to right, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
-  }
 
   &::after {
     right: 0;
