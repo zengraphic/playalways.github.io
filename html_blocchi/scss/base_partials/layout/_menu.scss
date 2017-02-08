@@ -485,6 +485,28 @@ h4.trade_l {
     .header .header_sup .title_header {
         margin-left: 0rem;
     }
+    .header_sup{
+         &::before, &::after {
+    content: "";
+    width: 20%;
+    height: 43px;
+    position: absolute;
+    top: 0;
+    z-index: 8;
+  }
+
+  &::before {
+    left: 0;
+
+    @include gradient-generic(to right, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+  }
+
+  &::after {
+    right: 0;
+
+    @include gradient-generic(to left, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+  }
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
