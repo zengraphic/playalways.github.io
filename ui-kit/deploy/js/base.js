@@ -9,9 +9,9 @@ jQuery(function($){
    function set_bt_process(element) {
     var spinner_string = "";
     if (element.hasClass('base__bt--or')) {
-        spinner_string = '<svg class="base__icon spin-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_spinner--white" /> </svg>';
+        spinner_string = '<i class="base__icon icon_spinner--white spin-animate"></i>';
     } else {
-        spinner_string = '<svg class="base__icon spin-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_spinner--color" /> </svg>';
+        spinner_string = '<i class="base__icon icon_spinner--color spin-animate"></i>';
     }
       
       element.html(spinner_string);
@@ -20,11 +20,11 @@ jQuery(function($){
   function on_bt_feedback(element, flag, secs) {
     var confirm_string,cancel_string;
     if (element.hasClass('base__bt--or')) {
-        confirm_string = '<svg class="base__icon rotatey-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_confirm--white" /> </svg>';
-        cancel_string = '<svg class="base__icon fadein-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_cancel--white" /> </svg>';
+        confirm_string = '<i class="base__icon icon_confirm--white rotatey-animate"></i>';
+        cancel_string = '<i class="base__icon icon_fail--white fadein-animate"></i>';
     } else {
-        confirm_string = '<svg class="base__icon rotatey-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_confirm--color" /> </svg>';
-        cancel_string = '<svg class="base__icon fadein-animate"> <use xlink:href="img/icons/icon_buttons.svg#icon_cancel--color" /> </svg>';
+        confirm_string = '<i class="base__icon icon_confirm--color rotatey-animate"></i>';
+        cancel_string = '<i class="base__icon icon_fail--color fadein-animate"></i>';
     }
     if(flag === 0) {
       element.html(confirm_string);
@@ -96,18 +96,24 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
         zindex: 1100
     };
 
-    var obj_datepicker = {
+    var obj_datepicker_lite = {
         language: "it",
         weekStart: 1,
-        todayBtn: true,
+        minView: 2,
+        autoclose: true,
+        showMeridian: false,
+        pickerPosition: "bottom-left"
+    };
+
+    var obj_datepicker_full = {
+        language: "it",
+        weekStart: 1,
         autoclose: true,
         todayHighlight: true,
         startView: 2,
-        showMeridian: true,
+        showMeridian: false,
         minuteStep: 5,
         pickerPosition: "bottom-left"
-            //fontAwesome: true
-
     };
 
     //init ui
@@ -202,15 +208,21 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
 
         //datepicker
 
-        $wind.fn.datetimepicker.dates.en.days = ["Domenica", "Lunedi", "Martedi", "Mercoledi", "Giovedi", "Venerdi", "Sabato", "Domenica"];
-        $wind.fn.datetimepicker.dates.en.daysShort = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
-        $wind.fn.datetimepicker.dates.en.daysMin = ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa", "Do"];
-        $wind.fn.datetimepicker.dates.en.months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-        $wind.fn.datetimepicker.dates.en.monthsShort = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
-        $wind.fn.datetimepicker.dates.en.today = "Oggi";
+        $wind.fn.datetimepicker.dates['en'] = {
+            days: ["Domenica", "Lunedi", "Martedi", "Mercoledi", "Giovedi", "Venerdi", "Sabato", "Domenica"],
+            daysShort: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"],
+            daysMin:["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"],
+            months: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+            monthsShort:["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"],
+            meridiem: '',
+            today: "Oggi"
+        }
+        
+        $wind('.base__datepicker--input.lite')
+            .datetimepicker(obj_datepicker_lite);
 
-        $wind('.base__datepicker--input')
-            .datetimepicker(obj_datepicker);
+        $wind('.base__datepicker--input.full')
+            .datetimepicker(obj_datepicker_full);
 
         //semplice dialog
         $wind('.base__popup-link')

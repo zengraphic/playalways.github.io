@@ -2,7 +2,7 @@
     max-width: 1024px;
     margin: 0 auto;
     position: relative;
-    .move_bottom_70{
+    .move_bottom_70 {
         position: relative;
         top: 70px;
     }
@@ -91,16 +91,23 @@
                 width: 40px;
                 height: 40px;
                 color: $color_white;
-                background-color: $color_black; //$color-HomeLife-Background;
+                background-color: $color_grey_light_light; //$color-HomeLife-Background;
                 top: 0px;
                 left: 290px;
                 z-index: 100;
                 text-align: center;
-                padding-top: 8px;
-                padding-right: 5px;
+               // padding-top: 8px;
+               // padding-right: 5px;
                 @include transition(transform 0.4s ease-in);
                 &:hover {
                     background-color: $color_orange;
+                    .base__icon{
+                        background-position: 50% 97.76308%;
+                    }
+                }
+                .base__icon{
+                    width:38px;
+                    height:38px;
                 }
                 img {
                     height: 25px;
@@ -122,16 +129,20 @@
         position: absolute;
         top: 0px;
         right: -40px;
+        .base__icon{
+            width:38px;
+            height:38px;
+        }
         &__close {
             text-align: center;
             cursor: pointer;
             color: $color_white;
-            background-color: $color_black; //$color-HomeLife-Background;
+            background-color: $color_grey_light_light; //$color-HomeLife-Background;
             float: left;
             width: 40px;
             height: 40px;
-            font-size: 1.5em;
-            padding-top: 10px;
+            //font-size: 1.5em;
+            //padding-top: 10px;
             &:hover {
                 @include opacity(0.7);
             }
@@ -142,13 +153,13 @@
             background-color: $color_orange;
             width: 40px;
             height: 40px;
-            padding-top: 2px;
-            padding-left: 2px;
+            //padding-top: 2px;
+           // padding-left: 2px;
             cursor: pointer;
-            img {
-                height: 35px;
-                width: auto;
-            }
+            // img {
+            //     height: 35px;
+            //     width: auto;
+            // }
         }
     }
     .cont_detail {
@@ -202,11 +213,18 @@
                 margin-bottom: 0px;
             }
             .shop_description {
-                background: url(../img/icons-interface/icon_list1.png) no-repeat 0 15px;
+                //background: url(../img/icons-interface/icon_list1.png) no-repeat 0 15px;
                 border-bottom: 1px solid $color_stroke;
                 padding-bottom: 20px;
                 padding-top: 20px;
-                padding-left: 50px;
+                //padding-left: 50px;
+                .base__icon{
+                    width:40px;
+                    height:40px;
+                    margin:0 5px;
+                    display:inline-block;
+                    float:left;
+                }
                 h3 {
                     color: $color_robin;
                     font-family: $weight-bold;
@@ -271,6 +289,11 @@
                     img {
                         display: inline-block;
                     }
+                    .base__icon {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                    }
                 }
             }
             .container_search {
@@ -281,6 +304,7 @@
                     height: 55px;
                     width: 65px;
                     margin-left: 20px;
+                    background-image: none;
                 }
             }
             .base__input {
@@ -293,7 +317,7 @@
                 margin: 1rem 0 0 0;
                 float: right;
                 text-align: right;
-                width: 60%; 
+                width: 60%;
                 input[type=checkbox] {
                     cursor: pointer;
                 }
@@ -368,45 +392,57 @@
                         padding: 10px 0;
                         text-align: center;
                         border-left: 1px solid $color_stroke;
+                        
+                            &:hover{
+                                opacity:0.7;
+                            }
+                        
                         .icon_title {
                             font-size: 0.750em;
                             font-family: $weight-normal;
                         }
-                        &__icon {
-                            margin: 0 auto;
-                            width: 25px;
-                            height: 28px;
-                            background: url('../img/icons-negozio/sprite_negozio.png') no-repeat 0 0;
-                            &--map {
-                                background-position: 0 -28px;
-                            }
-                            &--details {
-                                margin-top: 5px;
-                                background-position: 0 -60px;
-                            }
-                        }
+                        // &__icon {
+                        //     margin: 0 auto;
+                        //     width: 25px;
+                        //     height: 28px;
+                        //     background: url('../img/icons-negozio/sprite_negozio.png') no-repeat 0 0;
+                        //     &--map {
+                        //         background-position: 0 -28px;
+                        //     }
+                        //     &--details {
+                        //         margin-top: 5px;
+                        //         background-position: 0 -60px;
+                        //     }
+                        // }
                     }
                     .title {
                         float: left;
                         width: 75%;
-                        padding: 0 0 0 50px;
+                        //padding: 0 0 0 50px;
                         margin: 1.04rem 0 1.05rem 0;
-                        background-image: url(../img/icons-interface/icon_list2.png);
-                        background-repeat: no-repeat;
-                        background-position: 0.4rem center;
+                        //background-image: url(../img/icons-interface/icon_list2.png);
+                        // background-repeat: no-repeat;
+                        //background-position: 0.4rem center;
                         position: relative;
                         z-index: 4;
                         background-color: $color_white;
-                        /* border-right: 1px solid $medium-gray; */
-                        &__icon {
-                            width: 25px;
-                            height: 28px;
-                            background: url('../img/icons-negozio/sprite_negozio.png') no-repeat 0 0;
+                        /* border-right: 1px solid $medium_stroke; */
+                        .base__icon {
+                            display: inline-block;
+                            height: 40px;
+                            width: 40px;
                             float: left;
-                            &--telephone {
-                                background-position: 0 5px;
-                            }
+                            margin: 10px 5px;
                         }
+                        // &__icon {
+                        //     width: 25px;
+                        //     height: 28px;
+                        //     background: url('../img/icons-negozio/sprite_negozio.png') no-repeat 0 0;
+                        //     float: left;
+                        //     &--telephone {
+                        //         background-position: 0 5px;
+                        //     }
+                        // }
                         h3 {
                             color: $color_robin;
                             font-family: $weight-bold;
@@ -418,11 +454,11 @@
                             color: $color_text;
                             font-family: $weight-normal;
                         }
-                         &:hover {
-                        //     background-image: url(../img/icons-interface/icon_list1.png);
-                        //     background-color: #FFFFFF;
-                       @include opacity(0.7); 
-                         }
+                        &:hover {
+                            //     background-image: url(../img/icons-interface/icon_list1.png);
+                            //     background-color: #FFFFFF;
+                            @include opacity(0.7);
+                        }
                     } //close title   
                 }
                 &.active_action {

@@ -66,16 +66,16 @@
             }
         }
         &__header {
-            .confirm {
-                position: absolute;
-                height: 20px;
-                width: 20px;
-                background-image: url("../img/icons-config/confirm.png");
-                background-position: 0 0;
-                bottom: 0;
-                left: -5px;
-                @include opacity(0);
-            }
+            // .confirm {
+            //     position: absolute;
+            //     height: 20px;
+            //     width: 20px;
+            //     background-image: url("../img/icons-config/confirm.png");
+            //     background-position: 0 0;
+            //     bottom: 0;
+            //     left: -5px;
+            //     @include opacity(0);
+            // }
             .image {
                 &--number {
                     @include breakpoint ('small') {
@@ -88,12 +88,21 @@
                         @include breakpoint ('small') {
                             margin-left: 10px;
                         }
+                        .icon_confirm--color {
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            bottom: 0;
+                            right: -3px;
+                            @include opacity(0);
+                        }
                     }
                 }
                 &--code {
                     &.disabled {
                         .base__icon {
-                            background-position-x: 25%;
+                            background-position: 25% 92.27077%;
+                            ;
                         }
                     }
                     @include breakpoint ('small') {
@@ -105,13 +114,21 @@
                         width: 40px;
                         @include breakpoint ('small') {
                             margin-left: 10px;
+                        }
+                         .icon_confirm--color {
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            bottom: 0;
+                            right: -3px;
+                            @include opacity(0);
                         }
                     }
                 }
                 &--parameter {
                     &.disabled {
                         .base__icon {
-                            background-position-x: 25%;
+                         background-position: 25% 94.46769%;
                         }
                     }
                     @include breakpoint ('small') {
@@ -123,13 +140,21 @@
                         width: 40px;
                         @include breakpoint ('small') {
                             margin-left: 10px;
+                        }
+                         .icon_confirm--color {
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            bottom: 0;
+                            right: -3px;
+                            @include opacity(0);
                         }
                     }
                 }
                 &--activation {
                     &.disabled {
-                         .base__icon {
-                            background-position-x: 25%;
+                        .base__icon {
+                             background-position: 25% 93.36923%;
                         }
                     }
                     @include breakpoint ('small') {
@@ -141,6 +166,14 @@
                         width: 40px;
                         @include breakpoint ('small') {
                             margin-left: 10px;
+                        }
+                         .icon_confirm--color {
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            bottom: 0;
+                            right: -3px;
+                            @include opacity(0);
                         }
                     }
                 }

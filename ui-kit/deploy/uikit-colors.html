@@ -16,28 +16,30 @@
     <script src="js/base.js"></script>
 </head>
 <style>
-    .color_category {
-        display: inline-block;
-        margin-bottom: .5rem;
-    }
+.color_category {
+    display: block;
+    margin-bottom: .5rem;
+    min-height: 4rem;
+    border-top: 1px solid #D3D3D2;
+}
 
-    .color_example {
-        border: 1px solid lightgrey;
-        padding: .3rem;
-        border-radius: 4px;
-        margin-bottom: .5rem;
-    }
+.color_example {
+    border: 1px solid lightgrey;
+    padding: .3rem;
+    border-radius: 4px;
+    margin-bottom: .5rem;
+}
 
-    .color_swatch {
-        height: 4rem;
-        border-radius: 4px;
-        margin-bottom: .3rem;
-    }
+.color_swatch {
+    height: 4rem;
+    border-radius: 4px;
+    margin-bottom: .3rem;
+}
 
-    .color_label {
-        color: grey;
-        font-size: .7rem;
-    }
+.color_label {
+    color: grey;
+    font-size: .7rem;
+}
 </style>
 
 <body class="base">
@@ -48,7 +50,7 @@
                     <h3>Color Palette</h3>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 <span class="color_category">Orange</span>
                 <div class="color_example">
                     <div class="color_swatch" style="background-color:#F48135;">
@@ -68,8 +70,27 @@
                         <span>#F69A5D</span>
                     </div>
                 </div>
+                <span class="color_category">Grey Medium</span>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#AAB2BD;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_medium</span>
+                        <br>
+                        <span>#AAB2BD</span>
+                    </div>
+                </div>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#CCD1D9;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_medium_light</span>
+                        <br>
+                        <span>#CCD1D9</span>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 <span class="color_category">Red (da utilizzare per background/testi di errore)</span>
                 <div class="color_example">
                     <div class="color_swatch" style="background-color:#CE4242;">
@@ -81,16 +102,35 @@
                     </div>
                 </div>
                 <div class="color_example">
-                    <div class="color_swatch" style="background-color:#D55C5B;">
+                    <div class="color_swatch" style="background-color:#D76767;">
                     </div>
                     <div class="color_label">
                         <span>$color_red_light</span>
                         <br>
-                        <span>#D55C5B</span>
+                        <span>#D76767</span>
+                    </div>
+                </div>
+                <span class="color_category">Grey Light</span>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#E6E9ED;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_light</span>
+                        <br>
+                        <span>#E6E9ED</span>
+                    </div>
+                </div>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#F4F4F4;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_light_light</span>
+                        <br>
+                        <span>#F4F4F4</span>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="col-xs-6 col-sm-3 col-md-3">
                 <span class="color_category">Blue</span>
                 <div class="color_example">
                     <div class="color_swatch" style="background-color:#0069B3;">
@@ -110,29 +150,6 @@
                         <span>#287BBD</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <span class="color_category">Robin</span>
-                <div class="color_example">
-                    <div class="color_swatch" style="background-color:#009BBE;">
-                    </div>
-                    <div class="color_label">
-                        <span>$color_robin</span>
-                        <br>
-                        <span>#009BBE</span>
-                    </div>
-                </div>
-                <div class="color_example">
-                    <div class="color_swatch" style="background-color:#24A5C6;">
-                    </div>
-                    <div class="color_label">
-                        <span>$color_robin_light</span>
-                        <br>
-                        <span>#24A5C6</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                 <span class="color_category">Base (colore da utilizzare per tinte piene di bianco e nero)</span>
                 <div class="color_example">
                     <div class="color_swatch" style="background-color:#212121;">
@@ -152,81 +169,56 @@
                         <span>#FFF</span>
                     </div>
                 </div>
+                <span class="color_category">Grey Layout (Da utilizzare per bordi e filetti)</span>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#D3D3D2;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_stroke</span>
+                        <br>
+                        <span>#D3D3D2</span>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-              <span class="color_category">Grey Dark (Da utilizzare per tutti i testi neri, la variante light per i testi più chiari)</span>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#292F36;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_dark</span>
-                      <br>
-                      <span>#292F36</span>
-                  </div>
-              </div>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#54595E;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_dark_light</span>
-                      <br>
-                      <span>#54595E</span>
-                  </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-              <span class="color_category">Grey Medium</span>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#AAB2BD;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_medium</span>
-                      <br>
-                      <span>#AAB2BD</span>
-                  </div>
-              </div>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#BBC1CA;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_medium_light</span>
-                      <br>
-                      <span>#BBC1CA</span>
-                  </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-              <span class="color_category">Grey Light</span>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#E6E9ED;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_light</span>
-                      <br>
-                      <span>#E6E9ED</span>
-                  </div>
-              </div>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#EBEDF1;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_light_light</span>
-                      <br>
-                      <span>#EBEDF1</span>
-                  </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-              <span class="color_category">Grey Layout (Da utilizzare per bordi e filetti)</span>
-              <div class="color_example">
-                  <div class="color_swatch" style="background-color:#D3D3D2;">
-                  </div>
-                  <div class="color_label">
-                      <span>$color_grey_stroke</span>
-                      <br>
-                      <span>#D3D3D2</span>
-                  </div>
-              </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <span class="color_category">Robin</span>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#009BBE;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_robin</span>
+                        <br>
+                        <span>#009BBE</span>
+                    </div>
+                </div>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#24A5C6;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_robin_light</span>
+                        <br>
+                        <span>#24A5C6</span>
+                    </div>
+                </div>
+                <span class="color_category">Grey Dark (Da utilizzare per tutti i testi neri, la variante light per i testi più chiari)</span>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#292F36;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_dark</span>
+                        <br>
+                        <span>#292F36</span>
+                    </div>
+                </div>
+                <div class="color_example">
+                    <div class="color_swatch" style="background-color:#656D78;">
+                    </div>
+                    <div class="color_label">
+                        <span>$color_grey_dark_light</span>
+                        <br>
+                        <span>#656D78</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
