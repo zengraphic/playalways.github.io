@@ -9,11 +9,13 @@ $color_black: #000000;
 $color_white: #ffffff;
 $color_standard: #292f36;
 $color_grey_darker: #333;
-$font_family_regular: "Trade Gothic", 
+$font_family_regular: "Trade Gothic",
 sans-serif;
 $font_family_bold: "Trade Gothic Bold",
 sans-serif;
 $font_family_bold2: "Trade Gothic Bold2",
+sans-serif;
+$font_family_boldC: "Trade Gothic Bold Cond",
 sans-serif;
 $font_family_oblique: "Trade Gothic Obl",
 sans-serif;
@@ -217,7 +219,6 @@ table {
 
 html {
     font-size: 14px;
-    font-weight: 400;
     line-height: 18px;
     overflow-x: hidden;
 }
@@ -408,6 +409,19 @@ $y) {
     border: 1px solid #ccc !important;
 }
 
+.v-select-optiongroup-horizontal {
+    text-align: center !important;
+    display: block !important;
+    margin-bottom: 30px !important;
+    .v-radiobutton{
+        margin-left: 30px !important;
+        margin-right: 30px !important;        
+    }
+    label {
+        font-family: $font_family_boldC;
+    }
+}
+
 // ================= RADIOBUTTON  ================== //
 // ================= RADIOBUTTON  ================== //
 // ================= RADIOBUTTON  ================== // 
@@ -428,10 +442,10 @@ $y) {
                 &:after {
                     background: $color_orange !important;
                     border: 1px solid $color_orange !important;
-                    width: 12px !important;
+                    width: 11px !important;
                     height: 11px !important;
                     top: 4px !important;
-                    left: 3px !important;
+                    left: 4px !important;
                 }
                 &:before {
                     border: 1px solid $color_orange !important;
@@ -672,6 +686,27 @@ $y) {
                 position: relative;
             }
         }
+        &-lindirizzoDiResidenzaUgualeAQuelloDiSpedizione {
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+        &-trasferimentoCreditoResiduo {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-size: 12px;
+            font-family: $font_family_light;
+        }
+        //CONTATTI
+        &-windComunication {
+            margin-top: 30px;
+            font-size: 12px;
+            font-family: $font_family_light;
+        }
+        &-thirdComunication {
+            margin-top: 30px;
+            font-size: 12px;
+            font-family: $font_family_light;
+        }
         &-vlButtonAlign {
             min-height: 100%;
             position: relative;
@@ -697,9 +732,10 @@ $y) {
 }
 
 .v-slot {
+    &-sectionTitle {}
     &.v-slot-wizard {
         min-height: 100%;
-        margin-bottom: -91px;
+        margin-bottom: -99px;
         height: auto !important;
         height: 100%;
         &:after {
@@ -708,21 +744,66 @@ $y) {
             width: 100% !important;
             overflow: auto !important;
             display: block !important;
-            height: 91px !important;
+            height: 98px !important;
         }
         &~.v-slot {
-            padding-top: 25px;
             width: 100%;
-            height: 91px;
+            height: 98px;
             position: relative;
             box-sizing: border-box;
         }
     }
     &-vl {
+        //==========CONDIZIONI GENERALI & PRIVACY =======//
+        //ANAGRAFICA E HP
+        &-generalConditions {
+            margin-top: 15px;
+            font-size: 12px;
+            font-family: $font_family_light;
+        }
+        &-infoprivacy {
+            font-size: 14px;
+            font-family: $font_family_light;
+            margin: 30px;
+            .v-widget {
+                text-align: center !important;
+                hyphens: initial !important;
+            }
+        }
+        //DOCUMENTO E CONTATTI
+        &-contactscondition {
+            margin-top: 15px;
+            font-size: 12px;
+            font-family: $font_family_light;
+        }
+        &-contactsaccept {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            font-size: 12px;
+            font-family: $font_family_light;
+        }
+        //DOCUMENTO
+        &-stampaCopiaDelDocumento {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-family: $font_family_boldC;
+            .v-label {
+                text-align: center !important;
+            }
+        }
+        &-ricordati {
+            font-size: 14px;
+            font-family: $font_family_light;
+            margin-bottom: 50px;
+            .v-label {
+                text-align: center !important;
+            }
+        }
         //========== HEADER ========= //
         &-comeVuoiAttivareLoffertaAppenaAcquistata {
             font-size: 22px;
-            font-family: $font_family_bold2;
+            font-family: $font_family_boldC;
             color: #656d78;
             width: 100%;
             background-color: #f4f4f4;
@@ -930,6 +1011,14 @@ $y) {
             }
         }
         // =========== INDIRIZZO ==========//  
+        &-name {
+            display: inline-block !important;
+            width: 100% !important;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }
         &-indirizzo,
         &-indirizzo1 {
             display: inline-block !important;
@@ -994,6 +1083,85 @@ $y) {
                 width: 100% !important;
             }
         }
+        // =========== CARTA DI CREDITO ==========//
+        &-nome2 {
+            display: inline-block !important;
+            width: calc(50% - 25px) !important;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }
+        &-cognome2 {
+            display: inline-block !important;
+            width: 50% !important;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }
+        &-tipo1 {
+            display: inline-block !important;
+            width: calc(50% - 25px) !important;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            .v-filterselect {
+                width: 100% !important;
+            }
+        }
+        &-numeroCartaDiCredito {
+            display: inline-block !important;
+            width: 50% !important;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }
+        &-meseScadenza,
+        &-annoScadenza {
+            display: inline-block !important;
+            width: calc(25% - 25px) !important;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            .v-filterselect {
+                width: 100% !important;
+            }
+        }
+        &-cvv {
+            display: inline-block !important;
+            width: 50% !important;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }
+        //======= BANCARIO =========  
+        &-nomeIntestatarioCC {
+            display: inline-block !important;
+            width: calc(50% - 25px) !important;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }
+        &-cognomeIntestatarioCC {
+            display: inline-block !important;
+            width: 50% !important;
+            margin-bottom: 15px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }  
+        &-iBAN {
+            display: inline-block !important;
+            width: 100% !important;
+            margin-bottom: 50px;
+            .v-textfield {
+                width: 100% !important;
+            }
+        }               
     }
 }
 

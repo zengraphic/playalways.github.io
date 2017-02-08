@@ -58,7 +58,7 @@ br.mobile {
   right: 75px;
   height: 100%;
   width: 100%;
-  background-position: 0px -300px;
+  background-position: -75px -300px;
   transform: skew(20deg); }
   @media (max-width: 768px) {
     .background_image_stripe {
@@ -120,6 +120,140 @@ br.mobile {
   font-weight: 600;
   padding: 30px 0;
   hyphens: initial; }
+
+.block_tabs {
+  position: relative;
+  max-width: 876px;
+  margin: 0 auto; }
+  .block_tabs .nav-tabs li {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    display: inline-block;
+    width: 49.5%;
+    float: left;
+    margin-right: 1%;
+    border: none !important;
+    text-transform: uppercase; }
+    .block_tabs .nav-tabs li:last-child {
+      margin-right: 0; }
+    .block_tabs .nav-tabs li:after {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #ced4e0;
+      content: ""; }
+    .block_tabs .nav-tabs li a {
+      vertical-align: middle;
+      margin-bottom: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      background-color: #dee3ee;
+      border: none !important;
+      font-family: "Trebuchet MS";
+      font-size: 13px;
+      color: #18398a; }
+      .block_tabs .nav-tabs li a .break {
+        display: none; }
+        @media (max-width: 600px) {
+          .block_tabs .nav-tabs li a .break {
+            display: inline; } }
+    .block_tabs .nav-tabs li.active:after {
+      content: none; }
+    .block_tabs .nav-tabs li.active a {
+      background-color: #f5f6f7;
+      color: #18398a; }
+  .block_tabs a:hover {
+    border: none; }
+  .block_tabs .nav-tabs li.active a {
+    background-color: #f5f6f7;
+    border: none;
+    color: #18398a; }
+    .block_tabs .nav-tabs li.active a:hover {
+      border: none; }
+  .block_tabs .tab-content {
+    background-color: #f5f6f7; }
+  .block_tabs .infoForm {
+    margin: 0 auto;
+    padding: 15px 33px 18px;
+    font-size: 14px;
+    font-family: "Trebuchet MS";
+    text-align: center; }
+    @media (max-width: 768px) {
+      .block_tabs .infoForm {
+        padding-left: 18px;
+        padding-right: 18px; } }
+    .block_tabs .infoForm #prefisso {
+      width: 8.7%; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm #prefisso {
+          float: left;
+          width: 49.5%; } }
+    .block_tabs .infoForm #numero {
+      width: 9.5%; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm #numero {
+          float: right;
+          width: 49.5%; } }
+    .block_tabs .infoForm #provincia {
+      width: 23%;
+      padding: 0; }
+      .block_tabs .infoForm #provincia .btn {
+        font-size: 1em;
+        padding: 13px 5px;
+        border: none;
+        color: #07122c; }
+        .block_tabs .infoForm #provincia .btn .caret {
+          color: #18398a;
+          border-width: 6px 4px 0;
+          margin-top: -4px; }
+        @media (max-width: 768px) {
+          .block_tabs .infoForm #provincia .btn {
+            padding: 13px 15px; } }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm #provincia {
+          width: 100%; } }
+    .block_tabs .infoForm #comune {
+      width: 21%; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm #comune {
+          width: 100%; } }
+    .block_tabs .infoForm #indirizzo {
+      width: 23.3%; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm #indirizzo {
+          float: left;
+          width: 74.5%; } }
+    .block_tabs .infoForm #civico {
+      width: 7%;
+      margin-right: 0; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm #civico {
+          float: right;
+          width: 24.5%; } }
+    .block_tabs .infoForm .infoInput {
+      margin-top: 15px;
+      margin-right: 0.8%;
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 1em;
+      border: none;
+      color: #07122c; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm .infoInput {
+          margin-right: 0;
+          padding: 15px; } }
+    .block_tabs .infoForm .button {
+      margin: 30px 0 0;
+      font-size: 14px; }
+      @media (max-width: 768px) {
+        .block_tabs .infoForm .button {
+          display: inline-block;
+          width: 100%;
+          margin: 33px 0 auto; } }
+    .block_tabs .infoForm .form-control::-webkit-input-placeholder {
+      color: #07122c; }
 
 .block_viewer {
   position: relative;

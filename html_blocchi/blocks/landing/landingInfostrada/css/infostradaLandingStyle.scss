@@ -1,16 +1,48 @@
-$weight-light: 'Trebuchet MS';
-$weight-normal: 'Trebuchet MS';
-$weight-boldCond: 'Trebuchet MS';
-$weight-bold: 'Trebuchet MS';
-$weight-cond: 'Trebuchet MS';
+@font-face {
+    font-family: 'Trade Gothic LTS Light';
+    src: url('../fonts/TradeGothicLTStd-Light.otf') format('opentype');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'Trade Gothic LTS';
+    src: url('../fonts/TradeGothicLTStd.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Trade Gothic LTS Bold Cond';
+    src: url('../fonts/TradeGothicLTStd-BdCn20.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Trade Gothic LTS Cond';
+    src: url('../fonts/TradeGothicLTStd-Cn18.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Trade Gothic LTS Bold';
+    src: url('../fonts/TradeGothicLTStd-Bd2.otf') format('opentype');
+    font-weight: 700;
+}
+
+$weight-light: 'Trade Gothic LTS Light';
+$weight-normal: 'Trade Gothic LTS';
+$weight-boldCond: 'Trade Gothic LTS Bold Cond';
+$weight-bold: 'Trade Gothic LTS Bold';
+$weight-cond: 'Trade Gothic LTS Cond';
 $color-standardText: #292f36;
-$color-blue: #18398a;
 $color-orange: #f48135;
 $color-lightGrey: #f5f6f7;
-$radius-border: 5px;
-$breakpoints: ( 'tiny': ( max-width: 600px), 'smaller': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 928px), 'medium-max': ( max-width: 990px), 'max': ( min-width: 1024px));
+$breakpoints: ( 'tiny': ( max-width: 600px),
+'smaller': ( max-width: 700px),
+'small': ( max-width: 768px),
+'medium': ( max-width: 928px));
 @mixin breakpoint($name) {
-    @if map-has-key($breakpoints, $name) {
+    @if map-has-key($breakpoints,
+    $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
             @content;
         }
@@ -29,26 +61,10 @@ $breakpoints: ( 'tiny': ( max-width: 600px), 'smaller': ( max-width: 700px), 'sm
 }
 
 @mixin border-radius($radius) {
-    border-radius: $radius;
     -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-}
-
-@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
-    border-top-left-radius: $topleft;
-    border-top-right-radius: $topright;
-    border-bottom-right-radius: $bottomright;
-    border-bottom-left-radius: $bottomleft;
-    -webkit-border-top-left-radius: $topleft;
-    -webkit-border-top-right-radius: $topright;
-    -webkit-border-bottom-right-radius: $bottomright;
-    -webkit-border-bottom-left-radius: $bottomleft;
-    -moz-border-radius-topleft: $topleft;
-    -moz-border-radius-topright: $topright;
-    -moz-border-radius-bottomright: $bottomright;
-    -moz-border-radius-bottomleft: $bottomleft;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
 }
 
 body {
@@ -93,70 +109,6 @@ body {
 
 .strong {
     font-family: $weight-bold;
-    font-weight: 600;
-}
-
-.header {
-    .header_second {
-        @include breakpoint(small) {
-            min-height: 60px;
-            ;
-        }
-    }
-    .logo {
-        img.wind {
-            @include breakpoint(small) {
-                width: 70%;
-            }
-        }
-    }
-}
-
-.price {
-    font-size: 60px;
-    font-weight: 600;
-    color: $color-orange;
-    line-height: 85px;
-}
-
-br.mobile {
-    display: none;
-    @include breakpoint(small) {
-        display: block;
-    }
-}
-
-.background_image_stripe {
-    background-image: url(../img/logos/sfondo_visore.jpg);
-    background-repeat: no-repeat;
-    position: relative;
-    right: 75px;
-    height: 100%;
-    width: 100%;
-    background-position: 0px -300px;
-    transform: skew(+20deg);
-    @include breakpoint(small) {
-        transform: skew(0deg);
-        right: 0px;
-        background-position-x: 50%;
-    }
-}
-
-.container_pre_footer {
-    width: 100%;
-}
-
-.offer_renewal {
-    display: inline-block;
-    float: right;
-    color: $color-standardText;
-    font-size: 15px;
-    @include breakpoint(small) {
-        float: none;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
-    }
 }
 
 .button {
@@ -166,49 +118,20 @@ br.mobile {
     margin: 0px 30px;
     cursor: pointer;
     display: block;
+    font-size: 1.125em; //18px
     text-align: center;
     height: auto;
     text-transform: uppercase;
     border: 1px solid;
     border-color: $color-orange;
     @include border-radius(4px);
-    @include breakpoint(small) {
-        margin: 0;
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        width: auto !important;
-    }
-}
-
-.header {
-    .logo {
-        width: auto;
-        &.logo--tre {
-            margin-top: 12px;
-            float: right;
-        }
-    }
-}
-
-.main_title {
-    font-size: 40px;
-    line-height: 47px;
-    color: $color-blue;
-    text-align: center;
-    font-weight: 600;
-    padding: 30px 0;
-    hyphens: initial;
 }
 
 .block_viewer {
     position: relative;
+    max-width: 876px;
     margin: 0 auto;
     background-color: $color-lightGrey;
-    min-height: 390px;
     &_left {
         z-index: 1;
         height: 290px;
@@ -229,22 +152,16 @@ br.mobile {
             }
         }
         .offer_title {
-            font-size: 9vw;
-            line-height: 9.5vw;
+            font-size: 56px;
+            line-height: 1em;
             margin-bottom: 20px;
             margin-top: 28px;
-            color: $color-orange;
-            font-weight: 600;
+            color: #18398a;
             white-space: nowrap;
-            @include breakpoint(max) {
-                font-size: 100px;
-                line-height: 110px;
-            }
             @include breakpoint(small) {
-                font-size: 52px;
+                font-size: 42px;
                 margin-top: 14px;
                 margin-bottom: 17px;
-                text-align: center;
             }
         }
         .offer_text {
@@ -252,36 +169,35 @@ br.mobile {
             font-size: 1.35em;
             color: #6f6f6f;
             margin-bottom: 13px;
-            color: #004f9e;
             .offer_list {
                 list-style: none;
                 padding-left: 15px;
                 margin-bottom: 0;
                 &_item {
-                    font-size: 3vw;
-                    line-height: 3.5vw;
+                    font-size: 22px;
+                    line-height: 27px;
                     position: relative;
                     white-space: nowrap;
-                    @include breakpoint(max) {
-                        font-size: 30px;
-                        line-height: 32px;
+                    .strong {
+                        font-size: 19px;
+                    }
+                    &:before {
+                        content: "";
+                        background-color: #18398a;
+                        width: 5px;
+                        height: 5px;
+                        position: absolute;
+                        left: -17px;
+                        border-radius: 3px;
+                        top: 10px;
+                        @include breakpoint(small) {
+                            left: -13px;
+                        }
                     }
                     @include breakpoint(small) {
-                        font-size: 30px;
-                        line-height: 32px;
-                        text-align: center;
-                    }
-                    .strong {
-                        font-size: 2.2vw;
-                        @include breakpoint(max) {
-                            font-size: 30px;
-                            line-height: 32px;
-                        }
-                        @include breakpoint(small) {
-                            font-size: 30px;
-                            line-height: 32px;
-                            text-align: center;
-                        }
+                        font-size: 19px;
+                        white-space: normal;
+                        line-height: 26px;
                     }
                 }
             }
@@ -298,7 +214,6 @@ br.mobile {
         @include breakpoint(small) {
             position: relative;
             overflow: hidden;
-            height: 350px;
         }
         .ribbon {
             position: absolute;
@@ -326,7 +241,7 @@ br.mobile {
             &_center {
                 padding: 8px 40px 0 7px;
                 text-transform: uppercase;
-                color: $color-blue;
+                color: #18398a;
                 background-color: #e6e9ed;
                 font-family: "Trade Gothic LTS Bold Cond";
                 position: relative;
@@ -379,11 +294,10 @@ br.mobile {
                     }
                 }
                 .blue_stripe {
-                    background-color: $color-blue;
+                    background-color: #18398a;
                     height: 100%;
                     display: inline-block;
                     position: relative;
-                    overflow: hidden;
                     width: 95%;
                     float: left;
                     @include breakpoint(small) {
@@ -471,79 +385,225 @@ br.mobile {
     }
 }
 
+.block_tabs {
+    position: relative;
+    max-width: 876px;
+    margin: 0 auto;
+    .nav-tabs li {
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        display: inline-block;
+        width: 49.5%;
+        float: left;
+        margin-right: 1%;
+        border: none !important;
+        text-transform: uppercase;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:after {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background-color: #ced4e0;
+            content: "";
+        }
+        a {
+            vertical-align: middle;
+            margin-bottom: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #dee3ee;
+            border: none !important;
+            font-family: $weight-bold;
+            font-size: 13px;
+            color: #18398a;
+            .break {
+                display: none;
+                @include breakpoint(tiny) {
+                    display: inline;
+                }
+            }
+        }
+        &.active {
+            &:after {
+                content: none;
+            }
+            a {
+                background-color: $color-lightGrey;
+                color: #18398a;
+            }
+        }
+    }
+    a {
+        &:hover {
+            border: none;
+        }
+    }
+    .nav-tabs li.active a {
+        background-color: $color-lightGrey;
+        border: none;
+        color: #18398a;
+        &:hover {
+            border: none;
+        }
+    }
+    .tab-content {
+        background-color: $color-lightGrey;
+    }
+    .infoForm {
+        margin: 0 auto;
+        padding: 15px 33px 18px;
+        font-size: 14px;
+        font-family: $weight-normal;
+        text-align: center;
+        @include breakpoint(small) {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        #prefisso {
+            width: 8.7%;
+            @include breakpoint(small) {
+                float: left;
+                width: 49.5%;
+            }
+        }
+        #numero {
+            width: 9.5%;
+            @include breakpoint(small) {
+                float: right;
+                width: 49.5%;
+            }
+        }
+        #provincia {
+            width: 23%;
+            padding: 0;
+            .btn {
+                font-size: 1em;
+                padding: 13px 5px;
+                border: none;
+                color: #07122c;
+                .caret {
+                    color: #18398a;
+                    border-width: 6px 4px 0;
+                    margin-top: -4px;
+                }
+                @include breakpoint(small) {
+                    padding: 13px 15px;
+                }
+            }
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+        #comune {
+            width: 21%;
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+        #indirizzo {
+            width: 23.3%;
+            @include breakpoint(small) {
+                float: left;
+                width: 74.5%;
+            }
+        }
+        #civico {
+            width: 7%;
+            margin-right: 0;
+            @include breakpoint(small) {
+                float: right;
+                width: 24.5%;
+            }
+        }
+        .infoInput {
+            margin-top: 15px;
+            margin-right: 0.8%;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 1em;
+            border: none;
+            color: #07122c;
+            @include breakpoint(small) {
+                margin-right: 0;
+                padding: 15px;
+            }
+        }
+        .button {
+            margin: 30px 0 0;
+            font-size: 14px;
+            @include breakpoint(small) {
+                display: inline-block;
+                width: 100%;
+                margin: 33px 0 auto;
+            }
+        }
+        .form-control::-webkit-input-placeholder {
+            color: #07122c;
+        }
+    }
+}
+
 // BLOCCO VANTAGGI INFOSTRADA
 .advantages_block {
     margin: 0 auto;
+    max-width: 876px;
     position: relative;
-    .container_tripleBlock {
-        margin: 0;
-        margin-bottom: 50px;
-        @include breakpoint(medium-max) {
-            text-align: center;
+    padding-top: 50px;
+    overflow: hidden;
+    &__listItem {
+        padding-bottom: 50px;
+        @include breakpoint(small) {
+            padding: 0 35px 50px;
         }
-        .left_block {
-            background-color: #e6e7e8;
-            padding: 20px 15px;
-            //@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
-            @include border-radii($radius-border, 0, 0, $radius-border);
-            @include breakpoint(medium-max) {
-                @include border-radii($radius-border, $radius-border, 0, 0);
-                padding: 25px;
+        &__icon {
+            float: left;
+            width: 25%;
+            &--fiber {
+                background: transparent url("../img/advantages_sprite.png") no-repeat scroll 0 -3px;
+                width: 65px;
+                height: 48px;
             }
-            .title {
+            &--calls {
+                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -198px;
+                width: 65px;
+                height: 48px;
+            }
+            &--browse {
+                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -54px;
+                width: 65px;
+                height: 48px;
+            }
+            &--xbox {
+                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -103px;
+                width: 65px;
+                height: 41px;
+            }
+            &--webcam {
+                background: rgba(0, 0, 0, 0) url("../img/advantages_sprite.png") no-repeat scroll 0 -144px;
+                width: 65px;
+                height: 48px;
+            }
+        }
+        &__description {
+            float: left;
+            padding-left: 10px;
+            width: 75%;
+            &--title {
+                font-family: $weight-bold;
+                color: #18398a;
+                font-size: 0.875em;
+                line-height: 1em;
                 text-transform: uppercase;
-                font-weight: 600;
-                color: $color-blue;
+                padding-bottom: 15px;
             }
-        }
-        .center_block {
-            padding: 23px 15px;
-            border: 1px solid #f0f1f3;
-            .description {
-                letter-spacing: -1px;
-                line-height: 25px;
-                strong {
-                    font-weight: 600;
-                }
-            }
-        }
-        .right_block {
-            background-color: $color-blue;
-            padding: 20px 0px 20px 15px;
-            @include border-radii(0, $radius-border, $radius-border, 0);
-            @include breakpoint(medium-max) {
-                @include border-radii(0, 0, $radius-border, $radius-border);
-            }
-            .call_to_action {
-                padding: 0;
-                vertical-align: middle;
-                width: calc(50% - 15px);
-                display: inline-block;
-                max-width: 200px;
-                @include border-radius(5px);
-                background: $color-orange;
-                a {
-                    background-color: $color-orange;
-                }
-            }
-            .description {
-                display: inline-block;
-                vertical-align: middle;
-                line-height: 28px;
-                width: calc(50% - 15px);
-                font-size: 17px;
-                color: #fff;
-                @include breakpoint(medium-max) {
-                    padding-top: 10px;
-                }
-                &_big {
-                    font-size: 44px;
-                    font-weight: 600;
-                }
-                &_medium {
-                    font-size: 24px;
-                    font-weight: 600;
-                }
+            & p {
+                font-family: $weight-light;
+                color: $color-standardText;
+                font-size: 0.875em;
             }
         }
     }
