@@ -11,9 +11,12 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <title>UiKit Datepicker</title>
     <link rel="stylesheet" type="text/css" href="./css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/base-style.min.css" />
-    <script src="js/base-libs.min.js"></script>
-    <script src="js/base.js"></script>
+    <script type="text/javascript" src="./js/base-libs.min.js"></script>
+    <script type="text/javascript" src="./js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="./js/base.js"></script>
 </head>
 
 <body class="base base__scrollable">
@@ -24,25 +27,108 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="base__datepicker input-group date">
-                    <input class="base__datepicker--input full base__input " size="16" type="text" value="10/02/2017 16:45" readonly data-date-format="dd/MM/yyyy - HH:ii">
-                    <span class="add-on"><i class="icon-th"></i></span>
+                <div class="base__datepicker delivery input-group date" id="delivery-datepicker">
+                    <input id="delivery-select" class="base__datepicker--input base__input" type="text">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="base__datepicker input-group date">
-                    <input class="base__datepicker--input lite base__input " size="16" type="text" value="10/02/2017" readonly data-date-format="dd/MM/yyyy">
-                    <span class="add-on"><i class="icon-th"></i></span>
+                <div class="base__datepicker birth input-group date" id="birth-datepicker">
+                    <input id="birth-select" class="base__datepicker--input base__input" type="text">
                 </div>
             </div>
         </div>
         <div class="row">
             <hr>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                plugin <a href="http://www.malot.fr/bootstrap-datetimepicker/">http://www.malot.fr/bootstrap-datetimepicker/</a>
+                plugin <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">http://eonasdan.github.io/bootstrap-datetimepicker/</a>
             </div>
         </div>
     </div>
 </body>
+<script>
+!(function($) {
+
+    var obj_datepicker_new_lite = {
+        format: "DD/MM/YYYY",
+        widgetParent: '.base__datepicker.birth',
+        allowInputToggle: true,
+        useCurrent: true,
+        viewMode: 'days',
+        locale: 'it',
+        icons: {
+            previous: 'base__icon icon_arrow_left--color',
+            next: 'base__icon icon_arrow_right--color'
+        }
+    };
+
+    var obj_datepicker_new_full = {
+        format: "DD/MM/YYYY - HH",
+        minDate: moment(),
+        allowInputToggle: true,
+        daysOfWeekDisabled: [0, 6],
+        sideBySide: true,
+        viewMode: 'days',
+
+        widgetParent: '.base__datepicker.delivery',
+        locale: 'it',
+        enabledHours: [9, 14],
+        icons: {
+            previous: 'base__icon icon_arrow_left--color',
+            next: 'base__icon icon_arrow_right--color'
+        }
+    };
+
+    moment
+        .locale('it');
+
+    $('.base__datepicker.birth .base__datepicker--input')
+        .datetimepicker(obj_datepicker_new_lite);
+
+
+    $('.base__datepicker.delivery .base__datepicker--input')
+        .datetimepicker(obj_datepicker_new_full)
+        .on({
+            'dp.show': function() {
+                var self = $(this);
+                self
+                    .next()
+                    .find('.timepicker-hour')
+                    .trigger('click');
+                var ranges = self.next().find('.hour').not('.disabled');
+                formatRanges(ranges);
+                bindRanges(self, ranges);
+            },
+            'dp.change': function() {
+                var self = $(this);
+                var ranges = self.next().find('.hour').not('.disabled');
+                formatRanges(ranges);
+                bindRanges(self, ranges);
+            }
+        });
+
+    function bindRanges(self, ranges) {
+        ranges
+            .on({
+                'click': function() {
+                    self
+                        .data("DateTimePicker")
+                        .toggle();
+                }
+            });
+    }
+
+    function formatRanges(ranges) {
+        ranges
+            .each(function(i, el) {
+                var $el = $(el);
+                if ($el.text() == "09") {
+                    $el.html('Mattino<br>09:00 - 13:00');
+                } else if ($el.text() == "14") {
+                    $el.html('Sera<br>14:00 - 18:00');
+                }
+            });
+    }
+}(jQuery))
+</script>
 
 </html>

@@ -4,53 +4,53 @@
 
 */
 
-jQuery(function($){
+jQuery(function($) {
 
-   function set_bt_process(element) {
-    var spinner_string = "";
-    if (element.hasClass('base__bt--or')) {
-        spinner_string = '<i class="base__icon icon_spinner--white spin-animate"></i>';
-    } else {
-        spinner_string = '<i class="base__icon icon_spinner--color spin-animate"></i>';
+    function set_bt_process(element) {
+        var spinner_string = "";
+        if (element.hasClass('base__bt--or')) {
+            spinner_string = '<i class="base__icon icon_spinner--white spin-animate"></i>';
+        } else {
+            spinner_string = '<i class="base__icon icon_spinner--color spin-animate"></i>';
+        }
+
+        element.html(spinner_string);
     }
-      
-      element.html(spinner_string);
-  }
 
-  function on_bt_feedback(element, flag, secs) {
-    var confirm_string,cancel_string;
-    if (element.hasClass('base__bt--or')) {
-        confirm_string = '<i class="base__icon icon_confirm--white rotatey-animate"></i>';
-        cancel_string = '<i class="base__icon icon_fail--white fadein-animate"></i>';
-    } else {
-        confirm_string = '<i class="base__icon icon_confirm--color rotatey-animate"></i>';
-        cancel_string = '<i class="base__icon icon_fail--color fadein-animate"></i>';
+    function on_bt_feedback(element, flag, secs) {
+        var confirm_string, cancel_string;
+        if (element.hasClass('base__bt--or')) {
+            confirm_string = '<i class="base__icon icon_confirm--white rotatey-animate"></i>';
+            cancel_string = '<i class="base__icon icon_fail--white fadein-animate"></i>';
+        } else {
+            confirm_string = '<i class="base__icon icon_confirm--color rotatey-animate"></i>';
+            cancel_string = '<i class="base__icon icon_fail--color fadein-animate"></i>';
+        }
+        if (flag === 0) {
+            element.html(confirm_string);
+        } else {
+            element.html(cancel_string);
+        }
+        setTimeout(function() {
+            var result_string = "<span class='fadein-animate'>" + element.data().label + "</span>";
+            element.html(result_string);
+            element.removeClass('base__bt--icon');
+        }, secs * 1000);
     }
-    if(flag === 0) {
-      element.html(confirm_string);
-    } else {
-      element.html(cancel_string);
+
+    function simulazione_click(element) {
+        element.addClass('base__bt--icon');
+        set_bt_process(element);
+        setTimeout(function() {
+            on_bt_feedback(element, 0, 1.5);
+        }, 3000);
     }
-    setTimeout(function() {
-      var result_string = "<span class='fadein-animate'>" + element.data().label + "</span>";
-      element.html(result_string);
-      element.removeClass('base__bt--icon');
-    }, secs * 1000);
-  }
 
-  function simulazione_click(element){
-    element.addClass('base__bt--icon');
-    set_bt_process(element);
-    setTimeout(function() {
-        on_bt_feedback(element, 0, 1.5);
-    }, 3000);
-  }
-
-  $('.base__bt--process').click(function(event){
-    event.preventDefault();
-    var element = $(this);
-    simulazione_click(element);
-  });
+    $('.base__bt--process').click(function(event) {
+        event.preventDefault();
+        var element = $(this);
+        simulazione_click(element);
+    });
 
 });
 
@@ -96,7 +96,7 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
         zindex: 1100
     };
 
-    var obj_datepicker_lite = {
+    /*var obj_datepicker_lite = {
         language: "it",
         weekStart: 1,
         minView: 2,
@@ -107,14 +107,48 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
 
     var obj_datepicker_full = {
         language: "it",
+        daysOfWeekDisabled: '0,6',
         weekStart: 1,
         autoclose: true,
         todayHighlight: true,
         startView: 2,
+        minView: 2,
         showMeridian: false,
-        minuteStep: 5,
         pickerPosition: "bottom-left"
+    };*/
+
+
+    /*var obj_datepicker_new_lite = {
+        format: "DD/MM/YYYY",
+        widgetParent: '.base__datepicker.birth',
+        allowInputToggle: true,
+        useCurrent: true,
+        viewMode: 'days',
+        locale: 'it',
+        icons: {
+            previous: 'base__icon icon_arrow_left--color',
+            next: 'base__icon icon_arrow_right--color'
+        }
     };
+
+
+    var obj_datepicker_new_full = {
+        format: "DD/MM/YYYY - HH",
+        minDate: moment(),
+        allowInputToggle: true,
+        daysOfWeekDisabled: [0, 6],
+        sideBySide: true,
+        viewMode: 'days',
+        
+        widgetParent: '.base__datepicker.delivery',
+        locale: 'it',
+        enabledHours: [9, 14],
+        icons: {
+            previous: 'base__icon icon_arrow_left--color',
+            next: 'base__icon icon_arrow_right--color'
+        }
+
+    };*/
 
     //init ui
 
@@ -208,7 +242,7 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
 
         //datepicker
 
-        $wind.fn.datetimepicker.dates['en'] = {
+        /*$wind.fn.datetimepicker.dates['en'] = {
             days: ["Domenica", "Lunedi", "Martedi", "Mercoledi", "Giovedi", "Venerdi", "Sabato", "Domenica"],
             daysShort: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"],
             daysMin:["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"],
@@ -216,13 +250,74 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
             monthsShort:["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"],
             meridiem: '',
             today: "Oggi"
-        }
-        
-        $wind('.base__datepicker--input.lite')
-            .datetimepicker(obj_datepicker_lite);
+        }*/
+        /*
+        moment
+            .locale('it');
 
-        $wind('.base__datepicker--input.full')
-            .datetimepicker(obj_datepicker_full);
+        $wind('.base__datepicker.birth .base__datepicker--input')
+            .datetimepicker(obj_datepicker_new_lite);
+
+
+        $wind('.base__datepicker.delivery .base__datepicker--input')
+            .datetimepicker(obj_datepicker_new_full)
+            .on({
+                'dp.show': function() {
+                    var self = $wind(this);
+
+                    self
+                        .next()
+                        .find('.timepicker-hour')
+                        .trigger('click');
+
+                    var ranges = self.next().find('.hour').not('.disabled');
+
+                    bindRanges(ranges);
+
+
+                    ranges.on({
+                        'click': function() {
+
+                            self
+                                .data("DateTimePicker")
+                                .toggle();
+                        }
+                    });
+                },
+                'dp.change': function() {
+                    var self = $wind(this);
+
+                    var ranges = self.next().find('.hour').not('.disabled');
+
+                    bindRanges(ranges);
+
+                    ranges.on({
+                        'click': function() {
+
+                            self
+                                .data("DateTimePicker")
+                                .toggle();
+                        }
+                    });
+
+                }
+
+            });
+
+            function bindRanges(ranges){
+                ranges
+                    .each(function(i, el) {
+                        var $el = $wind(el);
+                        if ($el.text() == "09") {
+                            $el.html('Mattino<br>09:00 - 13:00');
+                        } else if ($el.text() == "14") {
+                            $el.html('Sera<br>14:00 - 18:00');
+                        }
+                    });
+            }
+            */
+
+
 
         //semplice dialog
         $wind('.base__popup-link')
@@ -242,6 +337,7 @@ prefixedEventListener(monkey,"AnimationStart",function(e){
                     },
                     open: function() {
                         resizeTargets();
+
                         function resizeTargets() {
                             $wind(".modalfooter")
                                 .each(function() {
