@@ -9,6 +9,8 @@ $color_black: #000000;
 $color_white: #ffffff;
 $color_standard: #292f36;
 $color_grey_darker: #333;
+$color_error: #ce4242;
+$margin_mobile: 10px !important;
 $font_family_regular: "Trade Gothic",
 sans-serif;
 $font_family_bold: "Trade Gothic Bold",
@@ -22,7 +24,7 @@ sans-serif;
 $font_family_light: "Trade Gothic Light",
 sans-serif;
 // Breakpoint Vars
-$breakpoints:( 'display_largest':(min-width: 1600px), 'display_larger':(max-width: 1599px), 'display_large':(max-width: 1200px), 'display_medium_large':(max-width: 940px), 'display_medium':(max-width: 880px), 'display_medium_small':(max-width: 768px), 'display_medium_smaller':(max-width: 697px), 'display_small':(max-width: 640px), 'display_smaller':(max-width: 480px), 'display_smallest':(max-width: 320px));
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 650px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
 // ================= RESET  ================== //
 // ================= RESET  ================== //
 // ================= RESET  ================== //
@@ -241,6 +243,7 @@ body {
 // ================= MIXIN  ================== //
 // ================= MIXIN  ================== //
 // ================= MIXIN  ================== //
+// Creating the mixin
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints,
     $name) {
@@ -284,6 +287,19 @@ $y) {
 // ============================================================= FINE STYLE BASE  ============================================ //
 // ============================================================= FINE STYLE BASE  ============================================ //
 // ============================================================= FINE STYLE BASE  ============================================ //
+// ================= ERRORS  ================== //
+// ================= ERRORS  ================== //
+// ================= ERRORS  ================== //
+.err_msg_text {
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    background-color: red;
+    color: $color_white;
+    @include border-radius(5px);
+}
+
 // ================= LABEL  ================== //
 // ================= LABEL  ================== //
 // ================= LABEL  ================== //
@@ -298,6 +314,9 @@ $y) {
 .v-panel-content {
     width: 625px !important;
     margin: 0 auto !important;
+    @include breakpoint(small_650) {
+        width: 100% !important;
+    }
 }
 
 // ================= BUTTON  ================== //
@@ -393,6 +412,10 @@ $y) {
 // ================= BODY  ================== //
 // ================= BODY  ================== //
 // ================= BODY  ================== //
+* {
+    hyphens: initial;
+}
+
 @at-root {
     .v-layout {
         &.v-widget {
@@ -401,21 +424,35 @@ $y) {
     }
 }
 
-.v-app {
-    background-color: $color_white !important;
+.v-customcomponent-wizard {
     max-width: 1024px !important;
     width: 100% !important;
     margin: 0 auto !important;
-    border: 1px solid #ccc !important;
+    display: block !important;
+}
+
+.v-app {
+    background-color: $color_white !important;
+    width: 100% !important;
+    margin: 0 auto !important;
 }
 
 .v-select-optiongroup-horizontal {
     text-align: center !important;
     display: block !important;
     margin-bottom: 30px !important;
-    .v-radiobutton{
+    @include breakpoint(small_650) {
+        text-align: left !important;
+        margin-left: 20px !important;
+    }
+    .v-radiobutton {
         margin-left: 30px !important;
-        margin-right: 30px !important;        
+        margin-right: 30px !important;
+        @include breakpoint(small_650) {
+            margin: 0 !important;
+            display: block !important;
+            margin-bottom: 15px !important;
+        }
     }
     label {
         font-family: $font_family_boldC;
@@ -540,6 +577,9 @@ $y) {
 .v-filterselect {
     width: 300px !important;
     display: inline-block !important;
+    @include breakpoint(small_650) {
+        width: 100% !important;
+    }
     &-suggestpopup {
         margin-top: 0px !important;
         & [class$="suggestmenu"] {
@@ -689,23 +729,43 @@ $y) {
         &-lindirizzoDiResidenzaUgualeAQuelloDiSpedizione {
             margin-top: 15px;
             margin-bottom: 30px;
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                width: calc(100% - 20px) !important;
+            }
         }
         &-trasferimentoCreditoResiduo {
             margin-top: 20px;
             margin-bottom: 30px;
             font-size: 12px;
             font-family: $font_family_light;
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                width: calc(100% - 20px) !important;
+            }
         }
         //CONTATTI
         &-windComunication {
             margin-top: 30px;
             font-size: 12px;
             font-family: $font_family_light;
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-thirdComunication {
             margin-top: 30px;
             font-size: 12px;
             font-family: $font_family_light;
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-vlButtonAlign {
             min-height: 100%;
@@ -732,6 +792,9 @@ $y) {
 }
 
 .v-slot {
+    &-error_style {
+        line-height: 0px !important;
+    }
     &-sectionTitle {}
     &.v-slot-wizard {
         min-height: 100%;
@@ -760,6 +823,10 @@ $y) {
             margin-top: 15px;
             font-size: 12px;
             font-family: $font_family_light;
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-infoprivacy {
             font-size: 14px;
@@ -769,18 +836,36 @@ $y) {
                 text-align: center !important;
                 hyphens: initial !important;
             }
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         //DOCUMENTO E CONTATTI
         &-contactscondition {
             margin-top: 15px;
             font-size: 12px;
             font-family: $font_family_light;
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                .v-widget {
+                    text-align: center !important;
+                }
+            }
         }
         &-contactsaccept {
             margin-top: 40px;
             margin-bottom: 30px;
             font-size: 12px;
             font-family: $font_family_light;
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                .v-widget {
+                    text-align: center !important;
+                }
+            }
         }
         //DOCUMENTO
         &-stampaCopiaDelDocumento {
@@ -861,15 +946,29 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-tariffaDiProvenienza {
             display: inline-block !important;
             margin-bottom: 30px !important;
+            @include breakpoint(small_650) {
+                display: block !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-operatoreDiProvenienza {
             display: inline-block !important;
             margin-bottom: 30px !important;
             margin-right: 20px !important;
+            @include breakpoint(small_650) {
+                display: block !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-numeroSerialeSIM {
             .v-textfield {
@@ -891,6 +990,10 @@ $y) {
                     @include border-radius(50%);
                 }
             }
+            @include breakpoint(small_650) {
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         // =========== ANAGRAFICA ==========//
         &-nome1 {
@@ -901,6 +1004,12 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-cognome1 {
             display: inline-block !important;
@@ -908,6 +1017,12 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         &-codiceFiscale1 {
@@ -918,6 +1033,12 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-provinciaDiNascita1 {
             display: inline-block !important;
@@ -925,6 +1046,13 @@ $y) {
             margin-bottom: 15px;
             .v-filterselect {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                padding-bottom: 15px !important;
             }
         }
         &-comuneDiNascita1 {
@@ -935,6 +1063,12 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-dataDiNascita1 {
             display: inline-block !important;
@@ -944,6 +1078,12 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-nazioneDiNascita {
             display: inline-block !important;
@@ -952,6 +1092,13 @@ $y) {
             .v-filterselect {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                padding-bottom: 15px !important;
+            }
         }
         &-genere {
             display: inline-block !important;
@@ -959,6 +1106,12 @@ $y) {
             margin-bottom: 15px;
             .v-filterselect {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         // =========== CONTATTI ==========//
@@ -969,6 +1122,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-email {
             display: block !important;
@@ -977,12 +1135,22 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-confermaEmail {
             display: block !important;
             width: 100% !important;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         // =========== DOCUMENTO ==========//   
@@ -994,6 +1162,13 @@ $y) {
             .v-filterselect {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                padding-bottom: 15px !important;
+            }
         }
         &-dataDiRilascio {
             display: inline-block !important;
@@ -1002,12 +1177,22 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-numeroDocumento {
             display: block !important;
             width: 100% !important;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         // =========== INDIRIZZO ==========//  
@@ -1017,6 +1202,11 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         &-indirizzo,
@@ -1028,6 +1218,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-nCivico,
         &-nCivico1 {
@@ -1036,6 +1231,11 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         &-citt,
@@ -1047,6 +1247,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-comune,
         &-comune1 {
@@ -1055,6 +1260,11 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         &-cAP,
@@ -1066,6 +1276,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-provincia {
             display: inline-block !important;
@@ -1074,6 +1289,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-nazione {
             display: inline-block !important;
@@ -1081,6 +1301,13 @@ $y) {
             margin-bottom: 15px;
             .v-filterselect {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                padding-bottom: 15px !important;
             }
         }
         // =========== CARTA DI CREDITO ==========//
@@ -1092,6 +1319,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-cognome2 {
             display: inline-block !important;
@@ -1099,6 +1331,11 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         &-tipo1 {
@@ -1109,6 +1346,13 @@ $y) {
             .v-filterselect {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                padding-bottom: 15px !important;
+            }
         }
         &-numeroCartaDiCredito {
             display: inline-block !important;
@@ -1116,6 +1360,11 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         &-meseScadenza,
@@ -1127,6 +1376,13 @@ $y) {
             .v-filterselect {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                display: block !important;
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+                padding-bottom: 15px !important;
+            }
         }
         &-cvv {
             display: inline-block !important;
@@ -1134,6 +1390,11 @@ $y) {
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
+            }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
             }
         }
         //======= BANCARIO =========  
@@ -1145,6 +1406,11 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
         }
         &-cognomeIntestatarioCC {
             display: inline-block !important;
@@ -1153,7 +1419,12 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
-        }  
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
+        }
         &-iBAN {
             display: inline-block !important;
             width: 100% !important;
@@ -1161,7 +1432,12 @@ $y) {
             .v-textfield {
                 width: 100% !important;
             }
-        }               
+            @include breakpoint(small_650) {
+                width: calc(100% - 20px) !important;
+                margin-left: $margin_mobile;
+                margin-right: $margin_mobile;
+            }
+        }
     }
 }
 

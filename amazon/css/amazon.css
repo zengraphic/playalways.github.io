@@ -177,12 +177,27 @@ body {
   -ms-hyphens: auto;
   hyphens: auto; }
 
+.err_msg_text {
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  background-color: red;
+  color: #ffffff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */ }
+
 .v-spacing {
   display: none !important; }
 
 .v-panel-content {
   width: 625px !important;
   margin: 0 auto !important; }
+  @media (max-width: 650px) {
+    .v-panel-content {
+      width: 100% !important; } }
 
 .v-button {
   background-image: none !important;
@@ -245,22 +260,38 @@ body {
   text-shadow: none !important;
   box-shadow: none !important; }
 
+* {
+  hyphens: initial; }
+
 .v-layout.v-widget {
   padding: 0 !important; }
-.v-app {
-  background-color: #ffffff !important;
+.v-customcomponent-wizard {
   max-width: 1024px !important;
   width: 100% !important;
   margin: 0 auto !important;
-  border: 1px solid #ccc !important; }
+  display: block !important; }
+
+.v-app {
+  background-color: #ffffff !important;
+  width: 100% !important;
+  margin: 0 auto !important; }
 
 .v-select-optiongroup-horizontal {
   text-align: center !important;
   display: block !important;
   margin-bottom: 30px !important; }
+  @media (max-width: 650px) {
+    .v-select-optiongroup-horizontal {
+      text-align: left !important;
+      margin-left: 20px !important; } }
   .v-select-optiongroup-horizontal .v-radiobutton {
     margin-left: 30px !important;
     margin-right: 30px !important; }
+    @media (max-width: 650px) {
+      .v-select-optiongroup-horizontal .v-radiobutton {
+        margin: 0 !important;
+        display: block !important;
+        margin-bottom: 15px !important; } }
   .v-select-optiongroup-horizontal label {
     font-family: "Trade Gothic Bold Cond", sans-serif; }
 
@@ -327,6 +358,9 @@ body {
 .v-filterselect {
   width: 300px !important;
   display: inline-block !important; }
+  @media (max-width: 650px) {
+    .v-filterselect {
+      width: 100% !important; } }
   .v-filterselect-suggestpopup {
     margin-top: 0px !important; }
     .v-filterselect-suggestpopup [class$="suggestmenu"] {
@@ -426,19 +460,39 @@ body {
 .v-verticallayout-lindirizzoDiResidenzaUgualeAQuelloDiSpedizione {
   margin-top: 15px;
   margin-bottom: 30px; }
+  @media (max-width: 650px) {
+    .v-verticallayout-lindirizzoDiResidenzaUgualeAQuelloDiSpedizione {
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      width: calc(100% - 20px) !important; } }
 .v-verticallayout-trasferimentoCreditoResiduo {
   margin-top: 20px;
   margin-bottom: 30px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
+  @media (max-width: 650px) {
+    .v-verticallayout-trasferimentoCreditoResiduo {
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      width: calc(100% - 20px) !important; } }
 .v-verticallayout-windComunication {
   margin-top: 30px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
+  @media (max-width: 650px) {
+    .v-verticallayout-windComunication {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-verticallayout-thirdComunication {
   margin-top: 30px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
+  @media (max-width: 650px) {
+    .v-verticallayout-thirdComunication {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-verticallayout-vlButtonAlign {
   min-height: 100%;
   position: relative; }
@@ -446,6 +500,8 @@ body {
     text-align: center;
     margin-bottom: 30px; }
 
+.v-slot-error_style {
+  line-height: 0px !important; }
 .v-slot.v-slot-wizard {
   min-height: 100%;
   margin-bottom: -99px;
@@ -467,6 +523,10 @@ body {
   margin-top: 15px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
+  @media (max-width: 650px) {
+    .v-slot-vl-generalConditions {
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-infoprivacy {
   font-size: 14px;
   font-family: "Trade Gothic Light", sans-serif;
@@ -474,15 +534,31 @@ body {
   .v-slot-vl-infoprivacy .v-widget {
     text-align: center !important;
     hyphens: initial !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-infoprivacy {
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-contactscondition {
   margin-top: 15px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
+  @media (max-width: 650px) {
+    .v-slot-vl-contactscondition {
+      margin-left: 10px !important;
+      margin-right: 10px !important; }
+      .v-slot-vl-contactscondition .v-widget {
+        text-align: center !important; } }
 .v-slot-vl-contactsaccept {
   margin-top: 40px;
   margin-bottom: 30px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
+  @media (max-width: 650px) {
+    .v-slot-vl-contactsaccept {
+      margin-left: 10px !important;
+      margin-right: 10px !important; }
+      .v-slot-vl-contactsaccept .v-widget {
+        text-align: center !important; } }
 .v-slot-vl-stampaCopiaDelDocumento {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -545,13 +621,27 @@ body {
   margin-bottom: 15px !important; }
   .v-slot-vl-numeroDiTelefono1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-numeroDiTelefono1 {
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-tariffaDiProvenienza {
   display: inline-block !important;
   margin-bottom: 30px !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-tariffaDiProvenienza {
+      display: block !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-operatoreDiProvenienza {
   display: inline-block !important;
   margin-bottom: 30px !important;
   margin-right: 20px !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-operatoreDiProvenienza {
+      display: block !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-numeroSerialeSIM .v-textfield {
   width: 100% !important; }
 .v-slot-vl-numeroSerialeSIM .v-slot {
@@ -571,6 +661,10 @@ body {
     border-radius: 50%;
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
+@media (max-width: 650px) {
+  .v-slot-vl-numeroSerialeSIM {
+    margin-left: 10px !important;
+    margin-right: 10px !important; } }
 .v-slot-vl-nome1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -578,12 +672,24 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-nome1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-nome1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-cognome1 {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-cognome1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-cognome1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-codiceFiscale1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -591,12 +697,25 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-codiceFiscale1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-codiceFiscale1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-provinciaDiNascita1 {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-provinciaDiNascita1 .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-provinciaDiNascita1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      padding-bottom: 15px !important; } }
 .v-slot-vl-comuneDiNascita1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -604,6 +723,12 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-comuneDiNascita1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-comuneDiNascita1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-dataDiNascita1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -611,35 +736,69 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-dataDiNascita1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-dataDiNascita1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-nazioneDiNascita {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-nazioneDiNascita .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-nazioneDiNascita {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      padding-bottom: 15px !important; } }
 .v-slot-vl-genere {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-genere .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-genere {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-numeroDiTelefono {
   display: block !important;
   width: 100% !important;
   margin-bottom: 15px; }
   .v-slot-vl-numeroDiTelefono .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-numeroDiTelefono {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-email {
   display: block !important;
   width: 100% !important;
   margin-bottom: 15px; }
   .v-slot-vl-email .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-email {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-confermaEmail {
   display: block !important;
   width: 100% !important; }
   .v-slot-vl-confermaEmail .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-confermaEmail {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-tipoDiDocumento {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -647,23 +806,45 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-tipoDiDocumento .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-tipoDiDocumento {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      padding-bottom: 15px !important; } }
 .v-slot-vl-dataDiRilascio {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-dataDiRilascio .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-dataDiRilascio {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-numeroDocumento {
   display: block !important;
   width: 100% !important; }
   .v-slot-vl-numeroDocumento .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-numeroDocumento {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-name {
   display: inline-block !important;
   width: 100% !important;
   margin-bottom: 15px; }
   .v-slot-vl-name .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-name {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-indirizzo, .v-slot-vl-indirizzo1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -671,12 +852,22 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-indirizzo .v-textfield, .v-slot-vl-indirizzo1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-indirizzo, .v-slot-vl-indirizzo1 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-nCivico, .v-slot-vl-nCivico1 {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-nCivico .v-textfield, .v-slot-vl-nCivico1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-nCivico, .v-slot-vl-nCivico1 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-citt, .v-slot-vl-citt1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -684,12 +875,22 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-citt .v-textfield, .v-slot-vl-citt1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-citt, .v-slot-vl-citt1 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-comune, .v-slot-vl-comune1 {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-comune .v-textfield, .v-slot-vl-comune1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-comune, .v-slot-vl-comune1 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-cAP, .v-slot-vl-cAP1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -697,18 +898,35 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-cAP .v-textfield, .v-slot-vl-cAP1 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-cAP, .v-slot-vl-cAP1 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-provincia {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-provincia .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-provincia {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-nazione {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-nazione .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-nazione {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      padding-bottom: 15px !important; } }
 .v-slot-vl-nome2 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -716,12 +934,22 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-nome2 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-nome2 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-cognome2 {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-cognome2 .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-cognome2 {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-tipo1 {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -729,12 +957,24 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-tipo1 .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-tipo1 {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      padding-bottom: 15px !important; } }
 .v-slot-vl-numeroCartaDiCredito {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-numeroCartaDiCredito .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-numeroCartaDiCredito {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-meseScadenza, .v-slot-vl-annoScadenza {
   display: inline-block !important;
   width: calc(25% - 25px) !important;
@@ -742,12 +982,24 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-meseScadenza .v-filterselect, .v-slot-vl-annoScadenza .v-filterselect {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-meseScadenza, .v-slot-vl-annoScadenza {
+      display: block !important;
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+      padding-bottom: 15px !important; } }
 .v-slot-vl-cvv {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-cvv .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-cvv {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-nomeIntestatarioCC {
   display: inline-block !important;
   width: calc(50% - 25px) !important;
@@ -755,17 +1007,32 @@ body {
   margin-bottom: 15px; }
   .v-slot-vl-nomeIntestatarioCC .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-nomeIntestatarioCC {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-cognomeIntestatarioCC {
   display: inline-block !important;
   width: 50% !important;
   margin-bottom: 15px; }
   .v-slot-vl-cognomeIntestatarioCC .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-cognomeIntestatarioCC {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 .v-slot-vl-iBAN {
   display: inline-block !important;
   width: 100% !important;
   margin-bottom: 50px; }
   .v-slot-vl-iBAN .v-textfield {
     width: 100% !important; }
+  @media (max-width: 650px) {
+    .v-slot-vl-iBAN {
+      width: calc(100% - 20px) !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 
 /*# sourceMappingURL=amazon.css.map */
