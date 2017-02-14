@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
     }
 
 
-    function showCards(btn) {
+    function activeBtns(btn) {
 
         if (btn.hasClass('active') && (!btn.parents('[class*="__tabs__container"]').hasClass('locked'))) {
             btn.removeClass('active');
@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
     $('.home_page').on({
         'click': function() {
             var $self = $(this);
-            showCards($self);
+            activeBtns($self);
         }
     }, '.tab_button');
 });
