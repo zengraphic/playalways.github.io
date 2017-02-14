@@ -1,5 +1,4 @@
 jQuery(document).ready(function($) {
-
     var btnSx = 0;
     var btnDx = 0;
     var $cards = $('div[class*="tab_link_"]');
@@ -13,6 +12,8 @@ jQuery(document).ready(function($) {
         });
     });
 
+
+
     function manageCardShow(element) {
         element.show();
         element.addClass('card_visible');
@@ -23,10 +24,46 @@ jQuery(document).ready(function($) {
         element.removeClass('card_visible');
     }
 
+    function cardShow(cards) {
+        cards.each(function() {
+            if (btnSx == 0) {
+                if ($(this).hasClass(btnDx)) {
+                    manageCardShow($(this));
+                } else {
+                    manageCardHide($(this));
+                }
+            }
+            if (btnDx == 0) {
+                if ($(this).hasClass(btnSx)) {
+                    manageCardShow($(this));
+                } else {
+                    manageCardHide($(this));
+                }
+            }
+            if ((btnDx != 0) && (btnSx != 0)) {
+                if ($(this).hasClass(btnDx) && $(this).hasClass(btnSx)) {
+                    manageCardShow($(this));
+                } else {
+                    manageCardHide($(this));
+                }
+            }
+            if ((btnDx == 0) && (btnSx == 0)) {
+                manageCardShow($(this));
+
+                $(this).parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
+            }
+        });
+        if (cards.not(':hidden').length > 3) {
+            cards.not(':hidden').slice(3).hide();
+            cards.parents('.tab_cards__container').find('div[class*="__showMore"]').show();
+        } else {
+            $card.parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
+        }
+    }
+
 
     function showCards(btn) {
-        var btnSx = 0;
-        var btnDx = 0;
+
         if (btn.hasClass('active') && (!btn.parents('[class*="__tabs__container"]').hasClass('locked'))) {
             btn.removeClass('active');
             if (btn.hasClass('tab_rightFilter')) {
@@ -48,6 +85,13 @@ jQuery(document).ready(function($) {
             }
         }
         var $card = btn.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
+        cardShow($card);
+
+
+    }
+
+    function showCards2(btns) {
+        var $card = btns.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
         $card.each(function() {
             if (btnSx == 0) {
                 if ($(this).hasClass(btnDx)) {
@@ -82,48 +126,15 @@ jQuery(document).ready(function($) {
         } else {
             $card.parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
         }
+
     }
 
-    function showCards2(btn) {
-        var $card = btn.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
-        $card.each(function() {
-            if (btnSx == 0) {
-                if ($(this).hasClass(btnDx)) {
-                    manageCardShow($(this));
-                } else {
-                    manageCardHide($(this));
-                }
-            }
-            if (btnDx == 0) {
-                if ($(this).hasClass(btnSx)) {
-                    manageCardShow($(this));
-                } else {
-                    manageCardHide($(this));
-                }
-            }
-            if ((btnDx != 0) && (btnSx != 0)) {
-                if ($(this).hasClass(btnDx) && $(this).hasClass(btnSx)) {
-                    manageCardShow($(this));
-                } else {
-                    manageCardHide($(this));
-                }
-            }
-            if ((btnDx == 0) && (btnSx == 0)) {
-                manageCardShow($(this));
-
-                $(this).parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
-            }
-        });
-        if ($card.not(':hidden').length > 3) {
-            $card.not(':hidden').slice(3).hide();
-            $card.parents('.tab_cards__container').find('div[class*="__showMore"]').show();
-        } else {
-            $card.parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
-        }
-    }
     //fine funzione
     //ogni componente
+    var btnSx = 0;
+    var btnDx = 0;
     $('.tab_links__container').each(function() {
+
         var tab = $(this).find('.tab_button');
         //se nessuno ha la classe active fai partire showcards col bottone altrimenti
         tab.each(function() {
@@ -135,12 +146,18 @@ jQuery(document).ready(function($) {
                 }
             }
         });
-        //        var tabActive = $(this);
+        var tabActive = $(this).find('.tab_button.active')
         console.log('sx' + btnSx + ' dx' + btnDx);
-        showCards2(tab);
+        var $card = tabActive.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
+        showCards2(tabActive);
+
 
     });
+    var btnSx = 0;
+    var btnDx = 0;
+    $('.home_page').one('ready', function() {
 
+    });
 
     //fine
     $('.home_page').on({
