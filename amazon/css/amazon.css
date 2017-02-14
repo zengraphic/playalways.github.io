@@ -181,13 +181,23 @@ body {
   line-height: 30px;
   width: 100%;
   text-align: center;
+  margin-top: -2px;
   display: block;
   background-color: red;
   color: #ffffff;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */ }
+  font-weight: 600;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px; }
 
 .v-spacing {
   display: none !important; }
@@ -500,8 +510,14 @@ body {
     text-align: center;
     margin-bottom: 30px; }
 
+.v-slot-consenso0, .v-slot-consenso1, .v-slot-consenso2, .v-slot-consenso3, .v-slot-consenso4, .v-slot-consenso5 {
+  font-size: 12px !important;
+  margin-bottom: 10px; }
 .v-slot-error_style {
   line-height: 0px !important; }
+  .v-slot-error_style:after {
+    content: "" !important;
+    display: none !important; }
 .v-slot.v-slot-wizard {
   min-height: 100%;
   margin-bottom: -99px;
@@ -540,6 +556,7 @@ body {
       margin-right: 10px !important; } }
 .v-slot-vl-contactscondition {
   margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 12px;
   font-family: "Trade Gothic Light", sans-serif; }
   @media (max-width: 650px) {
