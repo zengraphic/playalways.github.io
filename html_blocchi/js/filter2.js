@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
     function activeBtns(btn) {
 
         console.log('dinamica bottoni entrata sx' + btnSx + ' dx' + btnDx);
-        btn.parents('.tab_links__container').find('.tab_button').each(function() {
+        btn.parents('.tab_links__container').find('.tab_button.active').each(function() {
             if ($(this).hasClass('active')) {
                 if ($(this).hasClass('tab_rightFilter')) {
                     btnDx = $(this).data('filter');
