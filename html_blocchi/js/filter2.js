@@ -10,6 +10,8 @@ jQuery(document).ready(function($) {
             thisItem.hide();
         });
     });
+    var btnSx = 0;
+    var btnDx = 0;
 
     function manageCardShow(element) {
         element.show();
@@ -24,8 +26,9 @@ jQuery(document).ready(function($) {
 
     //Dinamica dei bottoni dei filtri e dinamica cards
     function activeBtns(btn) {
-            var btnSx = 0;
-    var btnDx = 0;
+        
+        console.log('dinamica bottoni entrata sx' + btnSx + ' dx' + btnDx);
+
         if (btn.hasClass('active') && (!btn.parents('[class*="__tabs__container"]').hasClass('locked'))) {
             btn.removeClass('active');
             if (btn.hasClass('tab_rightFilter')) {
@@ -33,15 +36,21 @@ jQuery(document).ready(function($) {
             } else {
                 btnSx = 0;
             }
+            btn.parents('.tab_links__container').find('.tab_button.active').each(function() {
+            if ($(this).hasClass('active')) {
+                if ($(this).hasClass('tab_rightFilter')) {
+                    btnDx = $(this).data('filter');
+                } else {
+                    btnSx = $(this).data('filter');
+                }
+            }else{}
+        });
+
         } else { //se non ha classe
-            if (btn.siblings().hasClass('active')) { //se altro active
+            if (btn.siblings().hasClass('active')) {
+                //se altro active
                 //rimuovi la classe agli altri btn presenti
                 btn.siblings('.active').removeClass('active');
-                if (btn.hasClass('tab_rightFilter')) {
-                    btnDx = 0;
-                } else {
-                    btnSx = 0;
-                }
             } //se altro active fine
 
             btn.addClass('active');
@@ -51,6 +60,7 @@ jQuery(document).ready(function($) {
                 btnSx = btn.data('filter');
             }
         }
+
         var $card = btn.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
         $card.each(function() {
             if (btnSx == 0) {
@@ -86,9 +96,8 @@ jQuery(document).ready(function($) {
         } else {
             $card.parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
         }
-
+         console.log('dinamica bottoni fine 2 sx' + btnSx + ' dx' + btnDx);
     }
-
     //Mostra le carte associate alle variabili btnDx btn Sx per il document ready
     function showCards(btns) {
         var $card = btns.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
@@ -126,14 +135,14 @@ jQuery(document).ready(function($) {
         } else {
             $card.parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
         }
-
+        btnSx = 0;
+        btnDx = 0;
     }
 
-    var btnSx = 0;
-    var btnDx = 0;
-    $('.tab_links__container').each(function() {
 
+    $('.tab_links__container').each(function() {
         var tab = $(this).find('.tab_button');
+
         tab.each(function() {
             if ($(this).hasClass('active')) {
                 if ($(this).hasClass('tab_rightFilter')) {
@@ -144,12 +153,10 @@ jQuery(document).ready(function($) {
             }
         });
         var tabActive = $(this).find('.tab_button.active')
-        console.log('sx' + btnSx + ' dx' + btnDx);
-        var $card = tabActive.parents('.tab_links__container').siblings('.tab_cards__container').find('div[class*="tab_link_"]');
+        console.log('document ready sx' + btnSx + ' dx' + btnDx);
         showCards(tabActive);
+
     });
-    var btnSx = 0;
-    var btnDx = 0;
 
     $('.home_page').on({
         'click': function() {
@@ -158,6 +165,5 @@ jQuery(document).ready(function($) {
 
         }
     }, '.tab_button');
-    var btnSx = 0;
-    var btnDx = 0;
+
 });
