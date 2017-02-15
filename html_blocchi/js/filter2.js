@@ -26,9 +26,20 @@ jQuery(document).ready(function($) {
 
     //Dinamica dei bottoni dei filtri e dinamica cards
     function activeBtns(btn) {
-        
-        console.log('dinamica bottoni entrata sx' + btnSx + ' dx' + btnDx);
 
+        console.log('dinamica bottoni entrata sx' + btnSx + ' dx' + btnDx);
+        btn.parents('.tab_links__container').find('.tab_button').each(function() {
+            if ($(this).hasClass('active')) {
+                if ($(this).hasClass('tab_rightFilter')) {
+                    btnDx = $(this).data('filter');
+                } else {
+                    btnSx = $(this).data('filter');
+                }
+            } else {
+                btnSx = 0;
+                btnDx = 0;
+            }
+        });
         if (btn.hasClass('active') && (!btn.parents('[class*="__tabs__container"]').hasClass('locked'))) {
             btn.removeClass('active');
             if (btn.hasClass('tab_rightFilter')) {
@@ -36,15 +47,7 @@ jQuery(document).ready(function($) {
             } else {
                 btnSx = 0;
             }
-            btn.parents('.tab_links__container').find('.tab_button.active').each(function() {
-            if ($(this).hasClass('active')) {
-                if ($(this).hasClass('tab_rightFilter')) {
-                    btnDx = $(this).data('filter');
-                } else {
-                    btnSx = $(this).data('filter');
-                }
-            }else{}
-        });
+
 
         } else { //se non ha classe
             if (btn.siblings().hasClass('active')) {
@@ -96,7 +99,7 @@ jQuery(document).ready(function($) {
         } else {
             $card.parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
         }
-         console.log('dinamica bottoni fine 2 sx' + btnSx + ' dx' + btnDx);
+        console.log('dinamica bottoni fine 2 sx' + btnSx + ' dx' + btnDx);
     }
     //Mostra le carte associate alle variabili btnDx btn Sx per il document ready
     function showCards(btns) {
@@ -125,7 +128,6 @@ jQuery(document).ready(function($) {
             }
             if ((btnDx == 0) && (btnSx == 0)) {
                 manageCardShow($(this));
-
                 $(this).parents('.tab_cards__container').find('div[class*="__showMore"]').hide();
             }
         });
@@ -153,7 +155,6 @@ jQuery(document).ready(function($) {
             }
         });
         var tabActive = $(this).find('.tab_button.active')
-        console.log('document ready sx' + btnSx + ' dx' + btnDx);
         showCards(tabActive);
 
     });
