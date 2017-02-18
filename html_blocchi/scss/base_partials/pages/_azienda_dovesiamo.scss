@@ -1,177 +1,215 @@
 //customizing page: Windgroup/Azienda Dovesiamo
-
 .tab-content {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .title__default--dovesiamo {
-  border: none;
-
-  @media (max-width: 767px) {
-    margin: 2rem 0 0;
-  }
-
-  h3 {
-    @include boxWF(left, 100%);
-
-    font-family: $font_family_light;
-    font-size: 2.1rem;
-    color: $color_text;
-    margin: 0;
-    padding: 0;
-  }
+    border: none;
+    @media (max-width: 767px) {
+        margin: 2rem 0 0;
+    }
+    h3 {
+        @include boxWF(left, 100%);
+        font-family: $font_family_light;
+        font-size: 2.1rem;
+        color: $color_text;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .map-icons {
-  top: 25px;
-  left: 25px;
-
-  span {
-    height: 26px;
-    width: 25px;
-  }
-
-  // buttons map - Call Mixin Line: 224
-  .zoomin {
-    @include icoImageBtn(0, url("../img/icons-interface/zoomin.svg"));
-    cursor: pointer;
-  }
-
-  .zoomout {
-    @include icoImageBtn(30px, url("../img/icons-interface/zoomout.svg"));
-    cursor: pointer;
-  }
-
-  .map_pointer {
-    @include icoImageBtn(80px, url("../img/icons-interface/map_pointer.svg"));
-    cursor: pointer;
-  }
+    top: 25px;
+    left: 25px;
+    span {
+        height: 26px;
+        width: 25px;
+    }
+    // buttons map - Call Mixin Line: 224
+    .zoomin {
+        @include icoImageBtn(0, url("../img/icons-interface/zoomin.svg"));
+        cursor: pointer;
+    }
+    .zoomout {
+        @include icoImageBtn(30px,
+        url("../img/icons-interface/zoomout.svg"));
+        cursor: pointer;
+    }
+    .map_pointer {
+        @include icoImageBtn(80px,
+        url("../img/icons-interface/map_pointer.svg"));
+        cursor: pointer;
+    }
 }
 
 #mapdovesiamo {
-  height: 434px;
-  width: 100%;
-  background-color: $color_grey_medium_light; 
+    height: 434px;
+    width: 100%;
+    background-color: $color_grey_medium_light;
 }
 
 .text__detail {
-  @include boxWF(left, 100%);
-
-  margin-bottom: 20px;
-
-  h3 {
-    @include boxWF(left, 100%);
-
-    font-size: 1.4rem;
-    color: $color_text;
-    font-family: $font_family_bold;
-    padding: 0 0 0.9rem 0;
-    border-bottom: 1px solid $color_stroke;
-    margin-bottom: 1.1rem;
-    margin-top: 1.3rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  img {
-    float: right;
-    font-family: $font_family_regular;
-    display: inline;
-
-    @media (max-width: 767px) {
-      float: left;
-      margin: 1rem 0;
+    .description--container {
+        width: 70%;
+        float: left;
+        @media (max-width: 1024px) {
+            float: left;
+            margin: 1rem 0;
+        }
     }
-  }
+    @include boxWF(left,
+    100%);
+    margin-bottom: 20px;
+    h3 {
+        @include boxWF(left,
+        100%);
+        font-size: 1.4rem;
+        color: $color_text;
+        font-family: $font_family_bold;
+        padding: 0 0 0.9rem 0;
+        border-bottom: 1px solid $color_stroke;
+        margin-bottom: 1.1rem;
+        margin-top: 1.3rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    img {
+        float: right;
+        font-family: $font_family_regular;
+        display: inline;
+        @media (max-width: 767px) {
+            float: left;
+            margin: 1rem 0;
+        }
+    }
 }
 
 img.telmob {
-  width: 127px !important;
-  margin: 0 auto;
+    width: 127px !important;
+    margin: 0 auto;
 }
 
 //style accordion
 .content__acordeon--dovesiamo {
-  .panel-group {
-    .panel.base__accordion {
-      .panel-heading {
-        &.active {
-          background-color: $color_white !important;
-        }
-
-        a.accordion-toggle {
-          width: 100% !important;
-        }
-      }
-
-      .panel-collapse {
-        .panel-body {
-          padding: 0 !important;
-
-          .map_ref {
-            @include boxWF(left, 100%);
-
-            padding: 0.5rem 0.8rem;
-            margin: 0;
-            background-color: $color_grey_light;
-
-            li {
-              @include boxWF(left, 50%);
-
-              list-style: none;
-              margin: 0;
-              padding: 0;
-              margin-bottom: 0.8rem;
-
-              @media (max-width: 767px) {
-                width: 100%;
-              }
-
-              a {
-                @include boxWF(left, 95%);
-
-                padding: 1rem 0.8rem;
-                color: $color_text;
-                font-size: 1rem;
-                font-family: $font_family_regular;
-                text-decoration: none;
-
-                @media (min-width: 768px) and (max-width: 991px) {
-                  font-size: 0.9rem;
+    .panel-group {
+        .panel.base__accordion {
+            .panel-heading {
+                &.active {
+                    background-color: $color_white !important;
                 }
-
-                @media (max-width: 767px) {
-                  width: 100%;
-                  position: relative;
-                  padding-right: 3rem;
+                a.accordion-toggle {
+                    width: 100% !important;
                 }
-
-                &:hover {
-                  background-color: $color_grey_light_light;
-                }
-
-                &.active_btn {
-                  background-color: $color_grey_light_light;
-                }
-
-                img {
-                  float: right;
-
-                  @media (max-width: 767px) {
-                    position: absolute;
-                    right: 0;
-                    top: 50%;
-                    margin-top: -10px;
-                    margin-right: 0.8rem;
-                  }
-                }
-              }
             }
-          }
+            .panel-collapse {
+                .panel-body {
+                    padding: 0 !important;
+                    .map_ref {
+                        @include boxWF(left,
+                        100%);
+                        padding: 0.5rem 0.8rem;
+                        margin: 0;
+                        background-color: $color_grey_light;
+                        li {
+                            @include boxWF(left,
+                            50%);
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            margin-bottom: 0.8rem;
+                            @media (max-width: 767px) {
+                                width: 100%;
+                            }
+                            a {
+                                @include boxWF(left,
+                                95%);
+                                padding: 1rem 0.8rem;
+                                color: $color_text;
+                                font-size: 1rem;
+                                font-family: $font_family_regular;
+                                text-decoration: none;
+                                @media (min-width: 768px) and (max-width: 991px) {
+                                    font-size: 0.9rem;
+                                }
+                                @media (max-width: 767px) {
+                                    width: 100%;
+                                    position: relative;
+                                    padding-right: 1rem;
+                                }
+                                .address_pin {
+                                    float: left;
+                                    width: 89%;
+                                    @media (min-width: 754px) and (max-width: 790px) {
+                                        width: 66%;
+                                    }
+                                    @media (max-width: 753px) {
+                                        width: 75%;
+                                    }
+                                }
+                                .base__icon {
+                                    float: right;
+                                    position: relative;
+                                    top: -2px;
+                                    margin: auto;
+                                }
+                                &:hover {
+                                    background-color: $color_grey_light_light;
+                                }
+                                &.active_btn {
+                                    background-color: $color_grey_light_light;
+                                }
+                                img {
+                                    float: right;
+                                    @media (max-width: 767px) {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 50%;
+                                        margin-top: -10px;
+                                        margin-right: 0.8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
+}
+
+.contact_center--container {
+    .content_details {
+        width: 192px;
+        float: right;
+        position: relative;
+        right: -15px;
+        .base__icon {
+            float: left;
+            width: 72px;
+            height: 72px;
+            top: -7px;
+            position: relative;
+        }
+        .contact_center--num {
+            color: $color_text;
+            text-transform: uppercase;
+            font-size: 18px;
+            float: right;
+            .contact_word {
+                font-size: 17px;
+            }
+            .contact_num {
+                font-family: $font_family_bold;
+                font-size: 25px;
+            }
+        }
+        @media (max-width: 997px) {
+            float: none;
+            left: -15px;
+        }
+    }
+    /*@media (max-width: 990px) {
+        margin-top: 15px;
+    }*/
 }
