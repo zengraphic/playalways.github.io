@@ -125,7 +125,7 @@
     }       
       &:after
       {
-        background-color: $color_grey_medium_light;
+        background-color: $color_stroke;
         width: 1px;
         content: "";
         display: block;
@@ -290,7 +290,7 @@
                 font-size: 0.731em;
               }                      
             &::after {
-                border-bottom: 2px solid $color_stroke;
+                border-bottom: 2px solid $color_text;//$color_stroke
                 content: "";
                 left: 15%;
                 margin-top: calc(0.125em / 2 * -1);
@@ -305,7 +305,7 @@
             color: $color_mobile;
             .currency{
                 font-size: 0.731em;
-                margin-left: -10px;
+                margin-left: 0;
               }
         }
         &--description{
@@ -547,6 +547,9 @@
           width: 282px;
           z-index: 50;
           margin: 0 auto;
+          /*@media (max-width: 345px){
+            width: auto;
+          }*/
         }
       }    
       &--title{
