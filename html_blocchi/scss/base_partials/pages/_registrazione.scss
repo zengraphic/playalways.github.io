@@ -8,6 +8,9 @@
         height: 4px;
         width: 32.82%;
         margin-right: 3px;
+        @media (max-width: 380px) {
+            width: 31.82%;
+        }
         &:last-child {
             margin-right: 0;
         }
@@ -39,16 +42,17 @@
             margin-right: 1rem;
         }
         .box--register__user-pic {
-            @include boxWF(left, 12%);
+            float: left;
             img {
                 width: 2.571rem !important;
                 max-width: 2.571rem !important;
                 height: 2.571rem;
-                @include radius(72px);
+                @include radius(50%);
             }
         }
         .box--register__user-data {
             @include boxWF(left, 80%);
+            margin-left: 10px;
             h3 {
                 @include defaultTxt($font_family_regular, 1.143rem);
                 margin: 0;
@@ -95,8 +99,7 @@
             color: #292f36;
         }
         p {
-            @include defaultTxt($font_family_regular,
-            1.143rem);
+            @include defaultTxt($font_family_regular, 1.143rem);
             color: $color_text; // #444;
             i {
                 color: $color_wind;
@@ -112,18 +115,17 @@
         .spacep {
             margin-bottom: 1.4em;
             position: relative;
-            color:$color_text;
-            .base__icon{
-                display:inline-block;
-                margin-right:1em;
-                width:24px;
-                height:24px;
-            }   
+            color: $color_text;
+            .base__icon {
+                display: inline-block;
+                margin-right: 1em;
+                width: 24px;
+                height: 24px;
+            }
         }
         .spacei {
-            color:$color_text;
-            margin-top:1em;
-
+            color: $color_text;
+            margin-top: 1em;
         }
         .spacef {
             margin-bottom: 10px;
@@ -158,10 +160,9 @@
             font-size: 1.2rem;
         }
         h4 {
-            @include defaultTxt($font_family_regular,
-            1.143rem);
+            @include defaultTxt($font_family_regular, 1.143rem);
             letter-spacing: -0.18px;
-            margin: -0.8rem 0 0.85rem 0;
+            margin: 1.2rem 0 0.85rem 0;
         }
         .tag {
             color: $color_wind;
@@ -175,6 +176,10 @@
         .base__radio--regist {
             width: auto;
             margin-right: 1rem;
+            @media (max-width: 340px) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
             label {
                 font-family: $font_family_regular !important;
                 font-size: 1.1em;
@@ -197,9 +202,7 @@
             bottom: 10px;
             left: 0;
             display: none;
-            @include transition-basic(opacity,
-            0.2s,
-            ease);
+            @include transition-basic(opacity, 0.2s, ease);
             &-content {
                 background-color: $color_white;
                 &-1 {
@@ -207,8 +210,7 @@
                     color: $color_text; //#444;
                     border-top: 1px solid $color_stroke; //#d7d7d7;
                     p {
-                        @include defaultTxt($font_family_regular,
-                        1.429rem);
+                        @include defaultTxt($font_family_regular, 1.429rem);
                         color: $color_text_light; //#595959;
                         padding: 14px 0 14px 18px;
                         letter-spacing: 0.1px;
@@ -217,8 +219,7 @@
                 &-2 {
                     height: 9.5rem;
                     p {
-                        @include defaultTxt($font_family_regular,
-                        1.2rem);
+                        @include defaultTxt($font_family_regular, 1.2rem);
                         color: $color_text; //$color_grey;
                         padding: 20px 0 0 18px;
                         letter-spacing: 0.1px;
