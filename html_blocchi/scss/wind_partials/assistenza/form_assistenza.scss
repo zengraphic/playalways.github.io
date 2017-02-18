@@ -32,7 +32,7 @@
     &#step_02,
     &#step_03 {
         margin-bottom: 150px;
-        @include breakpoint (super-tiny) {
+        @include breakpoint ('super-tiny') {
             margin-bottom: 0;
         }
     }
@@ -42,7 +42,7 @@
     &.form-assistance {
         width: 800px;
         margin: 0 auto;
-        @include breakpoint (super-tiny) {
+        @include breakpoint ('super-tiny') {
             width: 100%;
             margin-bottom: 50px;
         }
@@ -55,7 +55,7 @@
             /* 652 */
             /* 620 al netto del gap 16px */
             margin: 0 auto;
-            @include breakpoint (super-tiny) {
+            @include breakpoint ('super-tiny') {
                 width: 100%;
             }
             .panel-body {
@@ -76,7 +76,7 @@
                 }
             }
             .g-recaptcha {
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     transform: scale(0.93);
                     -webkit-transform: scale(0.93);
                     -moz-transform: scale(0.93);
@@ -95,23 +95,23 @@
                     margin: 5px 0;
                     color: $color_text_light;
                     position: relative;
-                    padding-left:20px;
+                    padding-left:30px;
                     &::before {
                         content: "";
                          position: absolute;
-                         top: 4px;
+                         top: 0;
                          left: 0;
                          display: block;
                         background: url(../img/icons/icons_sprite.svg);
                         background-color: transparent;
                         background-repeat: no-repeat;
-                        height: 12px;
-                        width: 12px;
+                        height: 18px;
+                        width: 18px;
                         background-size: 500%;
                         background-position: 0% 99.96%;
                        
                     }
-                    @include breakpoint (super-tiny) {
+                    @include breakpoint ('super-tiny') {
                         font-size: 0.8em;
                     }
                 }
@@ -170,7 +170,7 @@
             font-family: "Trade Gothic Light", sans-serif;
             &.big {
                 font-size: 1.875em;
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     font-size: 1.1em;
                 }
             }
@@ -187,7 +187,7 @@
             margin: 0 0 1.2rem;
             color: $color_text_light;
             line-height: normal;
-            @include breakpoint (super-tiny) {
+            @include breakpoint ('super-tiny') {
                 font-size: 0.8em;
             }
             &.centered {
@@ -201,7 +201,7 @@
             &.centered2 {
                 text-align: center;
                 padding: 0 140px;
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     padding: 0;
                 }
             }
@@ -209,7 +209,7 @@
                 text-align: center;
                 padding: 0;
                 margin-bottom: 30px;
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     padding: 0 20px;
                 }
             }
@@ -272,7 +272,7 @@
             padding-bottom: 50px;
             button {
                 width: 300px;
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     width: 100%;
                 }
             }
@@ -283,7 +283,7 @@
         }
         .btn_invia {
             margin-top: 25px;
-            @include breakpoint (super-tiny) {
+            @include breakpoint ('super-tiny') {
                 margin-bottom: 60px;
             }
             button {
@@ -303,13 +303,13 @@
             position: static !important;
             .br_mobile {
                 display: none;
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     display: block;
                 }
             }
             .mobile {
                 visibility: visible;
-                @include breakpoint (super-tiny) {
+                @include breakpoint ('super-tiny') {
                     visibility: hidden;
                 }
             }
