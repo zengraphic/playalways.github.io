@@ -1,97 +1,84 @@
 //customizing page: Fatticonsigliare form
-
 .content {
-  min-height: 640px;
+    min-height: 640px;
 }
 
 .cont__fatti {
-  @include boxWF(none, 100%);
-  padding: 0 8.2rem 3rem;
-  @media (min-width: 768px) and (max-width: 992px) {
-    padding: 0 3.2rem 3rem;
-  }
-  @media (max-width: 767px) {
-    padding: 0 0 2rem;
-  }
-
-  h4 {
-    @include boxWF(left, 100%);
-    @include defaultTxt($font_family_regular, 1.1rem);
-    margin: .7rem 0 2rem;
-    color: $color_text;// #444; 
-  }
-
-  .tx-powermail {
-    .powermail {
-      &_fieldwrap {
-        &.powermail_fieldwrap_nomeecognome,
-        &.powermail_fieldwrap_recapitotelefonico {
-          float: left;
-        }
-
-        &_email,
-        &_marker,
-        &_provincia,
-        &_type_reset,
-        &_type_submit {
-          float: right;
-        }
-
-        &_marker_01 {
-          clear: both;
-        }
-
-        &_marker_02 {
-          width: auto;
-
-          h5 {
-            margin-bottom: .3rem;
-            float: left;
-            font-family: $font_family_regular;
-            font-size: 1.1rem;
-            letter-spacing: -.025rem;
-            line-height: 1em;
-
-            a {
-              margin: 0;
-              padding: 0;
-              float: none;
-              line-height: normal;
-              vertical-align: baseline;
-              @media (max-width: 767px) {
-                margin: 0;
-                font-size: 1rem;
-              }
-            }
-          }
-        }
-
-        &_type {
-          &_text {
-            margin: .7rem 0 2rem;
-            font-size: 1.1rem;
-          }
-
-          &_check {
-            margin-bottom: 2.4rem;
-          }
-
-          &_input {
-            margin-bottom: 1.5rem;
-          }
-
-          &_select {
-            margin-bottom: 1.5rem;
-          }
-
-          &_submit {
-            .base__bt {
-              margin-top: 68px;
-              float: right;
-            }
-          }
-        }
-      }
+    @include boxWF(none, 100%);
+    padding: 0 8.2rem 3rem;
+    @media (min-width: 768px) and (max-width: 992px) {
+        padding: 0 3.2rem 3rem;
     }
-  }
+    @media (max-width: 767px) {
+        padding: 0 0 2rem;
+    }
+    h4 {
+        @include boxWF(left, 100%);
+        @include defaultTxt($font_family_regular, 1.1rem);
+        margin: .7rem 0 2rem;
+        color: $color_text; // #444; 
+    }
+    .tx-powermail {
+        .powermail {
+            &_fieldwrap {
+                &.powermail_fieldwrap_nomeecognome,
+                &.powermail_fieldwrap_recapitotelefonico {
+                    float: left;
+                }
+                &_email,
+                &_marker,
+                &_provincia,
+                &_type_reset,
+                &_type_submit {
+                    float: right;
+                }
+                &_marker_01 {
+                    clear: both;
+                }
+                &_marker_02 {
+                    width: auto;
+                    h5 {
+                        margin-bottom: .3rem;
+                        float: left;
+                        font-family: $font_family_regular;
+                        font-size: 1.1rem;
+                        letter-spacing: -.025rem;
+                        line-height: 1em;
+                        a {
+                            margin: 0;
+                            padding: 0;
+                            float: none;
+                            line-height: normal;
+                            vertical-align: baseline;
+                            @media (max-width: 767px) {
+                                margin: 0;
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+                &_type {
+                    &_text {
+                        margin: .7rem 0 2rem;
+                        font-size: 1.1rem;
+                    }
+                    &_check {
+                        margin-bottom: 2.4rem;
+                    }
+                    &_input {
+                        margin-bottom: 1.5rem;
+                    }
+                    &_select {
+                        margin-bottom: 1.5rem;
+                    }
+                    &_submit {
+                        .base__bt {
+                            margin-top: 68px;
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
