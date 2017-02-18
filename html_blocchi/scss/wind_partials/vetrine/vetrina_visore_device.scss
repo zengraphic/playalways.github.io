@@ -7,51 +7,51 @@
         max-width: 1024px;
         padding-top: 0;
     }
-    /*&__icon {
-        display: none;
-        background-color: $color_white;
-        padding: 10px 4px 4px 7px;
-        margin-top: 30px;
-        position: absolute;
-        z-index: 400;
-        top: -47px;
-        left: 54px;
-        float: left;
-        &--gplus {
-            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 0;
-            width: 39px;
-            height: 39px;
-            margin-right: 1px;
-            float: left;
-        }
-        &--youtube {
-            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -39px;
-            width: 39px;
-            height: 39px;
-            margin-right: 1px;
-            float: left;
-        }
-        &--facebook {
-            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -78px;
-            width: 39px;
-            height: 39px;
-            margin-right: 1px;
-            float: left;
-        }
-        &--twitter {
-            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -117px;
-            width: 39px;
-            height: 39px;
-            margin-right: 1px;
-            float: left;
-        }
-        &--mail {
-            background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -156px;
-            width: 39px;
-            height: 39px;
-            float: left;
-        }
-    }*/
+    // &__icon {
+    //     display: none;
+    //     background-color: $color_white;
+    //     padding: 10px 4px 4px 7px;
+    //     margin-top: 30px;
+    //     position: absolute;
+    //     z-index: 400;
+    //     top: -47px;
+    //     left: 54px;
+    //     float: left;
+    //     &--gplus {
+    //         background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 0;
+    //         width: 39px;
+    //         height: 39px;
+    //         margin-right: 1px;
+    //         float: left;
+    //     }
+    //     &--youtube {
+    //         background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -39px;
+    //         width: 39px;
+    //         height: 39px;
+    //         margin-right: 1px;
+    //         float: left;
+    //     }
+    //     &--facebook {
+    //         background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -78px;
+    //         width: 39px;
+    //         height: 39px;
+    //         margin-right: 1px;
+    //         float: left;
+    //     }
+    //     &--twitter {
+    //         background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -117px;
+    //         width: 39px;
+    //         height: 39px;
+    //         margin-right: 1px;
+    //         float: left;
+    //     }
+    //     &--mail {
+    //         background: $color_transparent url("../../img/social/social_sprite_small.png") no-repeat scroll 0 -156px;
+    //         width: 39px;
+    //         height: 39px;
+    //         float: left;
+    //     }
+    // }
     &__product {
         float: left;
         margin-top: 30px;
@@ -74,7 +74,7 @@
                 z-index: 250;
                 @include breakpoint('super-tiny') {
                     top: auto;
-                    bottom:0;
+                    bottom: 0;
                     width: 100%;
                 }
                 li {
@@ -98,11 +98,9 @@
                 }
                 li {
                     outline: 0;
-                    img {
-                       @include breakpoint('super-tiny') {
-                    width: 100%;
-                    height: auto;
-                } 
+                    @include breakpoint('super-tiny') {
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }
@@ -138,23 +136,23 @@
     }
     &__left {
         margin-top: 46px;
-        /*.phone_thumbs {
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 6rem;
-            z-index: 999;
-            a {
-                float: left;
-                height: auto;
-                margin-bottom: 2rem;
-                text-align: center;
-                width: 100%;
-            }
-        }
-        & .bx-wrapper .bx-controls .bx-controls-direction {
-            display: none;
-        }*/
+        // &#phone_thumbs {
+        //     left: 0;
+        //     position: absolute;
+        //     top: 0;
+        //     width: 6rem;
+        //     z-index: 999;
+        //     a {
+        //         float: left;
+        //         height: auto;
+        //         margin-bottom: 2rem;
+        //         text-align: center;
+        //         width: 100%;
+        //     }
+        // }
+        // & .bx-wrapper .bx-controls .bx-controls-direction {
+        //     display: none;
+        // }
     }
     &__right {
         p {
@@ -192,6 +190,7 @@
                 }
                 span {
                     border-radius: 50%;
+                    border: 1px solid $color_stroke;
                     display: block;
                     width: 1.25em;
                     height: 1.25em;
@@ -324,85 +323,86 @@
         float: left;
         width: 100%;
     }
-    /*&__reviews {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        &--stars {
-            float: left;
-            margin-right: 1.8em;
-            i {
-                color: $color_wind;
-                &:hover {
-                    opacity: 0.5;
-                }
-            }
-            &_fa {
-                font-style: normal;
-                font-family: FontAwesome;
-                &-star::before {
-                    content: "\f005";
-                }
-                &-star-o::before {
-                    content: "\f006";
-                }
-            }
-        }
-        &--comments {
-            float: left;
-            margin-right: 1.8em;
-            i {
-                color: $color_wind;
-            }
-            &_fa {
-                font-style: normal;
-                font-family: FontAwesome;
-                &-comment-o::before {
-                    content: "\f0e5";
-                }
-            }
-        }
-        &--share {
-            float: left;
-            i {
-                color: $color_wind;
-            }
-            &_fa {
-                font-style: normal;
-                font-family: FontAwesome;
-                &-share-alt::before {
-                    content: "\f1e0";
-                }
-            }
-            a,
-            a:hover {
-                text-decoration: none;
-            }
-        }
-    }*/
+    // &__reviews {
+    //     margin-top: 10px;
+    //     margin-bottom: 10px;
+    //     &--stars {
+    //         float: left;
+    //         margin-right: 1.8em;
+    //         i {
+    //             color: $color_wind;
+    //             &:hover {
+    //                 opacity: 0.5;
+    //             }
+    //         }
+    //         &_fa {
+    //             font-style: normal;
+    //             font-family: FontAwesome;
+    //             &-star::before {
+    //                 content: "\f005";
+    //             }
+    //             &-star-o::before {
+    //                 content: "\f006";
+    //             }
+    //         }
+    //     }
+    //     &--comments {
+    //         float: left;
+    //         margin-right: 1.8em;
+    //         i {
+    //             color: $color_wind;
+    //         }
+    //         &_fa {
+    //             font-style: normal;
+    //             font-family: FontAwesome;
+    //             &-comment-o::before {
+    //                 content: "\f0e5";
+    //             }
+    //         }
+    //     }
+    //     &--share {
+    //         float: left;
+    //         i {
+    //             color: $color_wind;
+    //         }
+    //         &_fa {
+    //             font-style: normal;
+    //             font-family: FontAwesome;
+    //             &-share-alt::before {
+    //                 content: "\f1e0";
+    //             }
+    //         }
+    //         a,
+    //         a:hover {
+    //             text-decoration: none;
+    //         }
+    //     }
+    // }
 }
 
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-/*@media all and (max-width: 320px) {
-    .dashboard_block {
-        &__reviews {
-            &--stars {
-                width: auto;
-            }
-        }
-    }
-}
 
-@media all and (min-width: 321px) and (max-width: 399px) {
-    .dashboard_block {
-        &__reviews {
-            &--stars {
-                width: 33.333%;
-            }
-        }
-    }
-}*/
+// @media all and (max-width: 320px) {
+//     .dashboard_block {
+//         &__reviews {
+//             &--stars {
+//                 width: auto;
+//             }
+//         }
+//     }
+// }
+
+// @media all and (min-width: 321px) and (max-width: 399px) {
+//     .dashboard_block {
+//         &__reviews {
+//             &--stars {
+//                 width: 33.333%;
+//             }
+//         }
+//     }
+// }
 
 @media all and (max-width: 400px) {
     .dashboard_block {
@@ -425,21 +425,21 @@
 }
 
 // SLIDER > PAGER
-/*@media all and (max-width: 767px) {
-    .dashboard_block {
-        &__left {
-            #phone_thumbs {
-                width: 100%;
-                position: relative;
-                top: 0;
-                a {
-                    width: 25%;
-                    margin-top: 25px;
-                    img {
-                        display: inline;
-                    }
-                }
-            }
-        }
-    }
-}*/
+// @media all and (max-width: 767px) {
+//     .dashboard_block {
+//         &__left {
+//             #phone_thumbs {
+//                 width: 100%;
+//                 position: relative;
+//                 top: 0;
+//                 a {
+//                     width: 25%;
+//                     margin-top: 25px;
+//                     img {
+//                         display: inline;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+}
