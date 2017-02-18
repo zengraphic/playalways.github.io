@@ -114,7 +114,7 @@
         &:nth-child(-n+3) {
             display: block;
         }
-        &.item {
+        &:not(:nth-child(3n)):not(:last-child) {
             position: relative;
             &:after {
                 background-color: $color_stroke;
@@ -126,6 +126,9 @@
                 bottom: 7%;
                 right: 0%;
                 min-height: 1px;
+                @include breakpoint(small) {
+                    content: none;
+                }
             }
         }
         h2 {
@@ -168,18 +171,18 @@
             height: 25px;
             padding-top: 2px;
             overflow: hidden;
-            &::after {
-                border-bottom: 1px solid $color_stroke;
-                content: "";
-                left: 0;
-                // margin-top: calc(0.125em / 2 * -1);
-                position: absolute;
-                left: calc(50% - 45px);
-                right: calc(50% - 45px);
-                top: 50%;
-            }
             .currency {
                 font-size: 0.875em;
+                &::after {
+                    border-bottom: 1px solid $color_text;
+                    content: "";
+                    left: 0;
+                    // margin-top: calc(0.125em / 2 * -1);
+                    position: absolute;
+                    left: calc(50% - 45px);
+                    right: calc(50% - 45px);
+                    top: 50%;
+                }
             }
         }
         &--mainPrice {
