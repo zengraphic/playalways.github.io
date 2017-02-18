@@ -1,15 +1,13 @@
 @font-face {
     font-family: 'iconFontWind';
-    src:    url('../fonts/iconFontWind.eot?vzn35l');
-    src:    url('../fonts/iconFontWind.eot?vzn35l#iefix') format('embedded-opentype'),
-        url('../fonts/iconFontWind.ttf?vzn35l') format('truetype'),
-        url('../fonts/iconFontWind.woff?vzn35l') format('woff'),
-        url('../fonts/iconFontWind.svg?vzn35l#iconFontWind') format('svg');
+    src: url('../fonts/iconFontWind.eot?vzn35l');
+    src: url('../fonts/iconFontWind.eot?vzn35l#iefix') format('embedded-opentype'), url('../fonts/iconFontWind.ttf?vzn35l') format('truetype'), url('../fonts/iconFontWind.woff?vzn35l') format('woff'), url('../fonts/iconFontWind.svg?vzn35l#iconFontWind') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'iconFontWind' !important;
     speak: none;
@@ -18,7 +16,6 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -27,65 +24,55 @@
 .icon-convergenza:before {
     content: "\71";
 }
+
 .icon-device:before {
     content: "\77";
 }
+
 .icon-fisso:before {
     content: "\65";
 }
+
 .icon-mobile:before {
     content: "\72";
 }
+
 .icon-promo:before {
     content: "\74";
 }
+
 .icon-servizi:before {
     content: "\79";
 }
 
-
-
 // vars colors
 $color_orange_light: #F69A5D;
 $color_orange: #F48135;
-
 $color_red_light: #D76767;
 $color_red: #CE4242;
-
 $color_blue_light: #287BBD;
 $color_blue: #0069B3;
-
 $color_robin_light: #24A5C6;
 $color_robin: #009BBE;
-
 $color_white: #FFF;
 $color_grey_stroke: #D3D3D2;
 $color_black: #212121;
 $color_transparent: transparent;
-
 $color_grey_dark_light: #656D78;
 $color_grey_dark: #292F36;
-
 $color_grey_medium_light: #CCD1D9;
 $color_grey_medium: #AAB2BD;
-
 $color_grey_light_light: #F4F4F4;
 $color_grey_light: #E6E9ED;
-
 $color_stroke: $color_grey_stroke;
 $color_text: $color_grey_dark;
 $color_text_light: $color_grey_dark_light;
 $color_text_lighter: $color_grey_medium;
-
 $color_wind: $color_orange;
 $color_infostrada: $color_blue;
 $color_mobile: $color_robin;
 $color_home_life: $color_black;
 $color_business: $color_grey_dark;
-
-
-
-
 $weight-light: 'Trade Gothic Light';
 $weight-normal: 'Trade Gothic';
 $weight-bold: 'Trade Gothic Bold';
@@ -93,7 +80,6 @@ $weight-boldCond: 'Trade Gothic Bold Cond';
 $title-big: 3.750em; //60px
 $text-standard: 0.875em; //14px
 $text-medium: 2.500em; // 40 in base 16
-
 
 /*$color-lighterGrey: #f4f4f4; // new color
 $color-lightGrey: #e6e9ed;
@@ -120,6 +106,7 @@ $color-HomeLifeBackground: $color-darkestGrey;
 $color-HomeLife-Background: $color-darkestGrey;
 
 $color-blue: $color-mediumBlue;*/
+
 
 /* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
@@ -340,7 +327,7 @@ img {
 }
 
 .full_height {
-  height: 100%;
+    height: 100%;
 }
 
 .rotated {
@@ -357,7 +344,7 @@ img {
     background: -moz-linear-gradient(left, #f4f4f4 0, rgba(244, 244, 244, 0) 100%);
     background: -webkit-linear-gradient(left, #f4f4f4 0, rgba(244, 244, 244, 0) 100%);
     background: linear-gradient(to right, #f4f4f4 0, rgba(244, 244, 244, 0) 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#00f4f4f4', GradientType=1)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#00f4f4f4', GradientType=1)
 }
 
 //SLICK STYLING
@@ -430,14 +417,14 @@ a {
     &:active {
         text-decoration: none;
         outline: none;
-
     }
 }
 
-.visibleShow{
+.visibleShow {
     visibility: visible !important;
 }
-.visibleHidden{
+
+.visibleHidden {
     visibility: hidden !important;
 }
 
@@ -529,7 +516,6 @@ b {
     padding-bottom: 15px; */
     padding: 1rem 0;
     margin: 0px 30px;
-
     display: block;
     font-size: 1.125em; //18px
     text-align: center;
@@ -546,9 +532,12 @@ b {
         background-color: #f78f4c;
         color: $color-white;
     }
+    @include breakpoint('small') {
+        margin: 0px 15px 15px 15px;
+    }
 }
 
-.button--slim{
+.button--slim {
     @extend .button;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -619,13 +608,11 @@ b {
     &--placeholder {
         background-color: $color_grey_dark !important;
     }
-    &--grey_dark_light
-     {
+    &--grey_dark_light {
         background-color: $color_grey_dark_light !important;
     }
     &--grey_dark,
-    &--business
-     {
+    &--business {
         background-color: $color_grey_dark !important;
     }
     &--black,
@@ -663,78 +650,72 @@ b {
     &--robin_light {
         background-color: $color_robin_light !important;
     }
-
 }
-
-
 
 
 /* ====================COLORI TESTI=====================  */
 
-
 .colored_text {
     &--white {
-        background-color: $color_white !important;
+        color: $color_white !important;
     }
     &--grey_light_light {
-        background-color: $color_grey_light_light !important;
+        color: $color_grey_light_light !important;
     }
     &--grey_light {
-        background-color: $color_grey_light !important;
+        color: $color_grey_light !important;
     }
     &--grey_medium_light {
-        background-color: $color_grey_medium_light !important;
+        color: $color_grey_medium_light !important;
     }
     &--grey_medium {
-        background-color: $color_grey_medium !important;
+        color: $color_grey_medium !important;
     }
     &--grey_dark,
     &--placeholder {
-        background-color: $color_grey_dark !important;
+        color: $color_grey_dark !important;
     }
-    &--grey_dark_light
-     {
-        background-color: $color_grey_dark_light !important;
+    &--grey_dark_light {
+        color: $color_grey_dark_light !important;
     }
     &--grey_dark,
-    &--business
-     {
-        background-color: $color_grey_dark !important;
+    &--business {
+        color: $color_grey_dark !important;
     }
     &--black,
     &--home_life {
-        background-color: $color_black !important;
+        color: $color_black !important;
     }
     &--mobile,
     &--blue_light {
-        background-color: $color_blue_light !important;
+        color: $color_blue_light !important;
     }
     &--infostrada,
     &--blue {
-        background-color: $color_blue !important;
+        color: $color_blue !important;
     }
     &--blue_light {
-        background-color: $color_blue_light !important;
+        color: $color_blue_light !important;
     }
     &--wind,
     &--orange {
-        background-color: $color_orange !important;
+        color: $color_orange !important;
     }
     &--orange_light {
-        background-color: $color_orange_light !important;
+        color: $color_orange_light !important;
     }
     &--error,
     &--red {
-        background-color: $color_red !important;
+        color: $color_red !important;
     }
     &--red_light {
-        background-color: $color_red_light !important;
+        color: $color_red_light !important;
     }
     &--robin {
-        background-color: $color_robin !important;
+        color: $color_robin !important;
     }
     &--robin_light {
-        background-color: $color_robin_light !important;
+        color: $color_robin_light !important;
     }
 }
 
@@ -762,11 +743,7 @@ b {
     }
     line-height: 1.2em;
 }
+
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-@media all and (max-width: 767px) {
-    .button {
-        margin: 0px 15px 15px 15px;
-    }
-}
