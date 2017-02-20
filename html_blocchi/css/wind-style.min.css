@@ -5239,8 +5239,11 @@ b {
   .showcase_accordions_block ul {
     list-style: none;
     perspective: 900;
-    padding: 0 30px;
+    padding: 0 0px;
     margin: 0; }
+    @media (max-width: 768px) {
+      .showcase_accordions_block ul {
+        padding: 0 15px; } }
   .showcase_accordions_block li.showcase_accordions_block__single {
     position: relative;
     padding: 22px 10px 16px 10px;
@@ -7410,30 +7413,28 @@ b {
     .fiber_block__container__button {
       padding-top: 29px;
       padding-bottom: 29px; }
-      .fiber_block__container__button::before {
-        border-left: 1px solid #D3D3D2;
-        content: '';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        left: 0; }
       .fiber_block__container__button .button--slim {
         display: inline-block;
         width: 100%;
         font-size: 1em; }
+        .fiber_block__container__button .button--slim::before {
+          border-left: 1px solid #D3D3D2;
+          content: '';
+          position: absolute;
+          top: 0;
+          height: 100%;
+          left: 0; }
+          @media (max-width: 768px) {
+            .fiber_block__container__button .button--slim::before {
+              border-top: 1px solid #D3D3D2;
+              height: 1px;
+              margin-top: 10px;
+              left: 15px;
+              right: 15px; } }
       @media (max-width: 768px) {
         .fiber_block__container__button {
           padding-top: 20px;
-          padding-bottom: 10px; }
-          .fiber_block__container__button::before {
-            border-top: 1px solid #D3D3D2;
-            content: '';
-            position: absolute;
-            top: 0;
-            height: 1px;
-            margin-top: 10px;
-            left: 15px;
-            right: 15px; } }
+          padding-bottom: 10px; } }
     .fiber_block__container:nth-of-type(even) {
       background-color: #E6E9ED; }
   .fiber_block__note {

@@ -97,8 +97,11 @@
     ul {
         list-style: none;
         perspective: 900;
-        padding: 0 30px;
+        padding: 0 0px;
         margin: 0;
+        @include breakpoint('small') {
+            padding: 0 15px;
+        }
     }
     li.showcase_accordions_block__single {
         position: relative;
