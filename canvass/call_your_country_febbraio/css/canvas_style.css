@@ -110,9 +110,9 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
   line-height: 1; }
 
 ol,
@@ -312,7 +312,8 @@ body {
   text-transform: uppercase;
   border: 1px solid;
   border-color: #f48135;
-  border-radius: 4px; }
+  border-radius: 4px;
+  text-decoration: none; }
   .button--noMargin {
     margin-left: 0px;
     margin-right: 0px; }
@@ -1183,7 +1184,7 @@ body {
   /*  */
   box-sizing: border-box; }
   .landing_magnum__hero__visoreEtnico__claim {
-    padding: 5% 2%;
+    padding: 3% 2%;
     width: 40%;
     bottom: 0;
     top: 0;
@@ -1194,24 +1195,34 @@ body {
     color: #f48135;
     text-transform: uppercase;
     position: absolute;
-    z-index: 5; }
-    @media (max-width: 880px) {
+    z-index: 5;
+    /*@include breakpoint('display_medium') {
+                font-size: 1.9rem;
+            }*/
+    /*@include breakpoint('display_medium_smaller') {
+                width: auto;
+                //font-size: 3rem;
+                padding: 3%;
+            }*/ }
+    @media (max-width: 935px) {
       .landing_magnum__hero__visoreEtnico__claim {
-        font-size: 1.9rem; } }
-    @media (max-width: 697px) {
+        font-size: 2rem; } }
+    @media (max-width: 810px) {
       .landing_magnum__hero__visoreEtnico__claim {
-        width: auto;
-        font-size: 3.7rem;
-        padding: 5% 3%;
         position: static; } }
+    @media (max-width: 810px) {
+      .landing_magnum__hero__visoreEtnico__claim {
+        width: 100%; } }
     @media (max-width: 640px) {
       .landing_magnum__hero__visoreEtnico__claim {
-        font-size: 3rem;
+        font-size: 2.5rem;
         padding: 3% 3%; } }
     @media (max-width: 480px) {
       .landing_magnum__hero__visoreEtnico__claim {
-        font-size: 2.3rem;
-        padding: 5% 3%; } }
+        font-size: 1.6rem;
+        padding: 3% 5%;
+        line-height: 2rem;
+        width: auto; } }
   .landing_magnum__hero__visoreEtnico__subclaim {
     font-size: 0.5em;
     line-height: 1em;
@@ -1232,54 +1243,69 @@ body {
             left: 0; */
     width: 100%; }
 
-.landing_magnum__showcase--ethnicxxxx {
+.landing_magnum__showcase--ethnic {
   max-width: 100%;
   width: auto !important; }
-  .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic {
+  .landing_magnum__showcase--ethnic .landing_magnum__showcase__item.half.new {
+    width: calc(50% - 8px); }
+  .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic {
     vertical-align: middle; }
     @media (max-width: 640px) {
-      .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic {
+      .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic {
         width: 100% !important; } }
     @media (max-width: 640px) {
-      .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic.padding_left_5 {
+      .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic.padding_left_5 {
         padding-left: 0; } }
-    .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
+    .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
       -webkit-border-radius: 4px;
       border-radius: 4px;
       background-clip: padding-box;
       /* stops bg color from leaking outside the border: */
       border: 2px solid #ccd1d9;
-      height: 300px;
-      position: relative; }
-      @media (max-width: 880px) {
-        .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
+      height: 310px;
+      position: relative;
+      /*@include breakpoint('display_small') {
+                        height: 245px;//330
+                    }*/ }
+      @media (max-width: 389px) {
+        .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
           height: 260px; } }
-    .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__title {
-      height: 2em; }
+      @media (min-width: 641px) and (max-width: 765px) {
+        .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
+          height: 260px; } }
+      @media (min-width: 390px) and (max-width: 640px) {
+        .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item--ethnic {
+          height: 210px; } }
+    @media (max-width: 880px) {
+      .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__title {
+        max-width: none; } }
+    @media (max-width: 786px) {
+      .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__title.font_size_m_32 {
+        font-size: 32px; } }
+    .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__detail {
+      max-width: 100%; }
       @media (max-width: 880px) {
-        .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__title {
+        .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__detail {
           max-width: none; } }
-      @media (max-width: 786px) {
-        .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__title.font_size_m_32 {
-          font-size: 32px; } }
-    .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__detail {
-      max-width: 90% !important; }
-      @media (max-width: 880px) {
-        .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__detail {
-          max-width: none; } }
-    .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__price_block {
+    .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__price_block {
       position: absolute;
       bottom: 0;
       right: 0;
       left: 0; }
-      .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__price_block__import .currency {
+      .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__price_block__import .currency {
         font-size: 0.75em; }
-    .landing_magnum__showcase--ethnicxxxx .landing_magnum__showcase__item--ethnic .showcase__item__footer .showcase__item__detail {
-      max-width: 90%; }
+    .landing_magnum__showcase--ethnic .landing_magnum__showcase__item--ethnic .showcase__item__footer .showcase__item__detail {
+      max-width: 100%; }
   @media (max-width: 480px) {
-    .landing_magnum__showcase--ethnicxxxx {
+    .landing_magnum__showcase--ethnic {
       padding-left: 3px !important;
       padding-right: 3px !important; } }
+
+.landing_magnum__notes.new {
+  width: 73%; }
+  @media (max-width: 640px) {
+    .landing_magnum__notes.new {
+      width: 100%; } }
 
 .landing_magnum {
   max-width: 950px; }
