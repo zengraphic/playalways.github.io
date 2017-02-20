@@ -1,777 +1,689 @@
 @import 'vars';
-
 .my_traffic {
-  &__container {
-    width: 100%;
-    max-width: 720px;
-    min-height: 100vh;
-  }
-
-  &__heading {
-    padding: 1rem;
-    color: $color_orange;
-    font-family: 'Trebuchet MS';
-
-    .main_heading {
-      margin: 0;
-      line-height: 1.2em;
-    }
-
-    .secondary_heading {
-      margin: 0;
-      padding: 1rem;
-      font-size: 1rem;
-      line-height: 1.2em;
-    }
-  }
-
-  &__content {
-    max-width: 100%;
-    padding: .875rem;
-  }
-
-  &__contracts_accordion {
-    @include border-radius(8px);
-    padding: 1rem;
-    background-color: #F5F5F5;
-
     &__container {
-      // sass-lint:disable-block no-duplicate-properties
-      @include border-radius(8px);
-      padding: 1rem;
-      background: rgba(245, 245, 245, 1);
-      background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-      background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-      background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-      background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-      background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FBFBFB', endColorstr='#FFF', GradientType=1);
-
-      .fa-spinner {
-        margin: 0 auto;
-      }
-    }
-
-    &__col_headings {
-      padding-bottom: .5rem;
-      border-bottom: 2px solid $color_blue_light;
-      @include breakpoint('ultra_small') {
-        display: inline-block;
-        width: 43%;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid $color_grey_medium_light;
-        text-align: right;
-        vertical-align: top;
-        box-sizing: border-box;
-      }
-
-      .col_heading {
-        display: inline-block;
-        width: 22%;
-        color: $color_blue_light;
-        font-family: 'Trebuchet MS';
-        font-size: .8rem;
-        font-weight: bold;
-        line-height: 1rem;
-        text-transform: uppercase;
-
-        &.h-linea {
-          width: 27%;
+        width: 100%;
+        max-width: 720px;
+        min-height: 100vh;
+        * {
+          float: none;
         }
 
-        &.h-offerta {
-          width: 16%;
-        }
-
-        &.h-ricarica {
-          width: 12%;
-          height: 1.2rem;
-        }
-
-        &.h-contratto {
-          width: 27%;
-        }
-
-        &.h-tipo {
-          width: 16%;
-        }
-        @include breakpoint('ultra_small') {
-          width: calc(100% - .5rem)!important;
-          padding-top: .2rem;
-          padding-right: .5rem;
-          border-right: 2px solid $color_blue_light;
-          font-size: .7rem;
-        }
-      }
-    }
-
-    &__row {
-      border-bottom: 1px solid $color_grey_medium_light;
-      @include breakpoint('ultra_small') {
-        display: inline-block;
-        position: relative;
-        width: 57%;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-right: 1px solid $color_grey_medium_light;
-        border-bottom-right-radius: 11px;
-        vertical-align: top;
-        box-sizing: border-box;
-      }
-
-      a.tab_expand_link {
-        i.tab_icon_expand {
-          display: inline-block;
-          width: 1.5rem;
-          height: 1.5rem;
-          cursor: pointer;
-          vertical-align: middle;
-          @include breakpoint('ultra_small') {
-            @include border-radius(10px 0);
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            background-color: $color_grey_medium_light;
-          }
-
-          &:before,
-          &:after {
-            @include transition(all .45s ease-in-out);
-            position: absolute;
-            width: 3px;
-            height: 12px;
-            background-color: $color_orange;
-            content: "";
-          }
-
-          &:before {
-            transform: translate(14px, 7px) rotate(45deg);
-          }
-
-          &:after {
-            transform: translate(7px, 7px) rotate(-45deg);
-          }
-        }
-
-        &.active {
-          i.tab_icon_expand {
-            @include breakpoint('ultra_small') {
-              background-color: $color_orange;
-
-              &:before,
-              &:after {
-                background-color: $color_white;
-              }
-            }
-
-            &:before {
-              transform: translate(10px, 7px) rotate(45deg);
-            }
-
-            &:after {
-              transform: translate(10px, 7px) rotate(-45deg);
-            }
-          }
-        }
-      }
-
-      .row_content {
-        display: inline-block;
-        width: 22%;
-        padding: 1rem 0;
-        color: #999;
-        font-family: 'Trebuchet MS';
-        font-size: .8rem;
-        font-weight: bold;
-        line-height: 1rem;
-
-        &.c-linea {
-          width: 27%;
-
-          a {
-            text-decoration: none;
-
-            &.active {
-              color: $color_orange;
-            }
-          }
-        }
-
-        &.c-tipo {
-          width: 16%;
-          text-transform: uppercase;
-        }
-
-        &.c-offerta {
-          width: 16%;
-
-          a.offerta_link {
-            color: $color_orange;
-          }
-        }
-
-        &.c-ricarica {
-          position: relative;
-          width: 6%;
-          cursor: pointer;
-        }
-
-        &.c-contratto {
-          position: relative;
-          width: 27%;
-          cursor: pointer;
-        }
-
-        i.icon_ricarica {
-          @include border-radius(50%);
+        div,
+        h1,
+        h2,
+        p {
           display: block;
-          width: 1.2rem;
-          height: 1.2rem;
-          background-color: $color_orange;
-          color: $color_white;
-          font-size: 1rem;
-          line-height: 1.2rem;
-          text-align: center;
+          width: auto;
+          float: none;
         }
-        @include breakpoint('ultra_small') {
-          width: calc(100% - .5rem)!important;
-          padding: .2rem 0 0 .5rem;
+        .my_traffic {
+            &__heading {
+                padding: 1rem;
+                color: $color_orange;
+                font-family: 'Trebuchet MS';
+                .main_heading {
+                    margin: 0;
+                    line-height: 1.2em;
+                }
+                .secondary_heading {
+                    margin: 0;
+                    padding: 1rem;
+                    font-size: 1rem;
+                    line-height: 1.2em;
+                }
+            }
+            &__content {
+                max-width: 100%;
+                padding: .875rem;
+            }
+            &__contracts_accordion {
+                @include border-radius(8px);
+                padding: 1rem;
+                background-color: #F5F5F5;
+                &__container {
+                    // sass-lint:disable-block no-duplicate-properties
+                    @include border-radius(8px);
+                    padding: 1rem;
+                    background: rgba(245, 245, 245, 1);
+                    background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+                    background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                    background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                    background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                    background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FBFBFB', endColorstr='#FFF', GradientType=1);
+                    .fa-spinner {
+                        margin: 0 auto;
+                    }
+                }
+                &__col_headings {
+                    padding-bottom: .5rem;
+                    border-bottom: 2px solid $color_blue_light;
+                    @include breakpoint('ultra_small') {
+                        display: inline-block;
+                        width: 43%;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                        border-bottom: 1px solid $color_grey_medium_light;
+                        text-align: right;
+                        vertical-align: top;
+                        box-sizing: border-box;
+                    }
+                    .col_heading {
+                        display: inline-block;
+                        width: 22%;
+                        color: $color_blue_light;
+                        font-family: 'Trebuchet MS';
+                        font-size: .8rem;
+                        font-weight: bold;
+                        line-height: 1rem;
+                        text-transform: uppercase;
+                        &.h-linea {
+                            width: 27%;
+                        }
+                        &.h-offerta {
+                            width: 16%;
+                        }
+                        &.h-ricarica {
+                            width: 12%;
+                            height: 1.2rem;
+                        }
+                        &.h-contratto {
+                            width: 27%;
+                        }
+                        &.h-tipo {
+                            width: 16%;
+                        }
+                        @include breakpoint('ultra_small') {
+                            width: calc(100% - .5rem)!important;
+                            padding-top: .2rem;
+                            padding-right: .5rem;
+                            border-right: 2px solid $color_blue_light;
+                            font-size: .7rem;
+                        }
+                    }
+                }
+                &__row {
+                    border-bottom: 1px solid $color_grey_medium_light;
+                    @include breakpoint('ultra_small') {
+                        display: inline-block;
+                        position: relative;
+                        width: 57%;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                        border-right: 1px solid $color_grey_medium_light;
+                        border-bottom-right-radius: 11px;
+                        vertical-align: top;
+                        box-sizing: border-box;
+                    }
+                    a.tab_expand_link {
+                        i.tab_icon_expand {
+                            display: inline-block;
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            cursor: pointer;
+                            vertical-align: middle;
+                            @include breakpoint('ultra_small') {
+                                @include border-radius(10px 0);
+                                position: absolute;
+                                right: 0;
+                                bottom: 0;
+                                background-color: $color_grey_medium_light;
+                            }
+                            &:before,
+                            &:after {
+                                @include transition(all .45s ease-in-out);
+                                position: absolute;
+                                width: 3px;
+                                height: 12px;
+                                background-color: $color_orange;
+                                content: "";
+                            }
+                            &:before {
+                                transform: translate(14px, 7px) rotate(45deg);
+                            }
+                            &:after {
+                                transform: translate(7px, 7px) rotate(-45deg);
+                            }
+                        }
+                        &.active {
+                            i.tab_icon_expand {
+                                @include breakpoint('ultra_small') {
+                                    background-color: $color_orange;
+                                    &:before,
+                                    &:after {
+                                        background-color: $color_white;
+                                    }
+                                }
+                                &:before {
+                                    transform: translate(10px, 7px) rotate(45deg);
+                                }
+                                &:after {
+                                    transform: translate(10px, 7px) rotate(-45deg);
+                                }
+                            }
+                        }
+                    }
+                    .row_content {
+                        display: inline-block;
+                        width: 22%;
+                        padding: 1rem 0;
+                        color: #999;
+                        font-family: 'Trebuchet MS';
+                        font-size: .8rem;
+                        font-weight: bold;
+                        line-height: 1rem;
+                        &.c-linea {
+                            width: 27%;
+                            a {
+                                text-decoration: none;
+                                &.active {
+                                    color: $color_orange;
+                                }
+                            }
+                        }
+                        &.c-tipo {
+                            width: 16%;
+                            text-transform: uppercase;
+                        }
+                        &.c-offerta {
+                            width: 16%;
+                            a.offerta_link {
+                                color: $color_orange;
+                            }
+                        }
+                        &.c-ricarica {
+                            position: relative;
+                            width: 6%;
+                            cursor: pointer;
+                        }
+                        &.c-contratto {
+                            position: relative;
+                            width: 27%;
+                            cursor: pointer;
+                        }
+                        i.icon_ricarica {
+                            @include border-radius(50%);
+                            display: block;
+                            width: 1.2rem;
+                            height: 1.2rem;
+                            background-color: $color_orange;
+                            color: $color_white;
+                            font-size: 1rem;
+                            line-height: 1.2rem;
+                            text-align: center;
+                        }
+                        @include breakpoint('ultra_small') {
+                            width: calc(100% - .5rem)!important;
+                            padding: .2rem 0 0 .5rem;
+                        }
+                    }
+                }
+            }
+            &__contracts_details {
+                position: relative;
+                top: -1px;
+                background-color: $color_white;
+                &__column {
+                    &_tabs,
+                    &_content {
+                        display: table-cell;
+                        height: 320px;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                    }
+                    &_tabs {
+                        width: 145px;
+                        margin-left: 1rem;
+                        border-right: 0;
+                        .my_traffic__contracts_details__single_tab {
+                            margin-left: .8rem;
+                            padding-right: .2rem;
+                            cursor: pointer;
+                        }
+                        @include breakpoint('ultra_small') {
+                            width: 60px;
+                        }
+                    }
+                    &_content {
+                        @include transition(all .5s ease-in-out);
+                        position: relative;
+                        width: calc(100% - 145px);
+                        border-left: 0;
+                        @include breakpoint('ultra_small') {
+                            width: calc(100% - 60px);
+                        }
+                        .my_traffic__contracts_details__single_tab {
+                            margin-right: 1rem;
+                        }
+                        .fa-spinner {
+                            position: absolute;
+                            top: 45%;
+                            z-index: 10;
+                        }
+                    }
+                }
+                &__disclaimer {
+                    padding: 1rem 0;
+                    p {
+                        margin: 0;
+                        font-family: 'Trebuchet MS';
+                        font-size: .875rem;
+                        line-height: 1.2em;
+                    }
+                }
+                &__tabs {
+                    @include border-radius(8px);
+                    display: table;
+                    position: relative;
+                    width: calc(100% - 2rem);
+                    margin-top: 1rem;
+                    padding: 1rem;
+                    background-color: #F5F5F5;
+                    opacity: 1;
+                    overflow: hidden;
+                    &.traffic-selected {
+                        width: calc(100% - 2rem);
+                        opacity: 1;
+                    }
+                    &.active {
+                        .my_traffic__contracts_details__column_content {
+                            .my_traffic__contracts_details__single_tab {
+                                display: none;
+                            }
+                        }
+                        .my_traffic__contracts_details__single_tab {
+                            border-right: 1px solid $color_grey_medium_light;
+                            &.active {
+                                margin: 0;
+                                padding: 0 .5rem;
+                                border-bottom-left-radius: 10px;
+                                border-right-color: $color_white;
+                                background-color: $color_white;
+                            }
+                        }
+                    }
+                    &__borders {
+                        // sass-lint:disable-block no-duplicate-properties
+                        @include border-radius(8px);
+                        display: table;
+                        width: 100%;
+                        background: rgba(245, 245, 245, 1);
+                        background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+                        background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FBFBFB', endColorstr='#FFF', GradientType=1);
+                    }
+                    &__container {
+                        display: table-row;
+                        width: 100%;
+                        margin: 1rem;
+                    }
+                    &__view_all {
+                        display: table-row;
+                        text-align: right;
+                        .view_all {
+                            display: table-cell;
+                            font-family: 'Trebuchet MS';
+                            font-size: .75rem;
+                            text-transform: uppercase;
+                            opacity: 1;
+                            &_filler {
+                                display: table-cell;
+                            }
+                            &_link {
+                                display: inline-block;
+                                padding: 1rem;
+                                color: $color_orange;
+                                cursor: pointer;
+                                &.active {
+                                    width: 0;
+                                    padding: 0;
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__data {
+                    @include border-right-radius(8px);
+                    position: relative;
+                    width: calc(100% - 1rem);
+                    height: 320px;
+                    padding: 1rem 0 0 1rem;
+                    border-left: 1px solid transparent;
+                    &.active {
+                        background-color: $color_white;
+                        @include breakpoint('extra_small') {
+                            padding-top: 0;
+                        }
+                        &.data_all {
+                            left: -145px;
+                            width: calc(100% + 145px - 1rem);
+                            height: calc(320px - 1.2rem);
+                            padding-top: 1rem;
+                            border-left: 0;
+                            border-top-left-radius: 8px;
+                            @include breakpoint('ultra_small') {
+                                left: -60px;
+                                width: calc(100% + 60px - 1rem);
+                            }
+                            .my_traffic__contracts_details__data__content {
+                                height: calc(285px - 2rem);
+                                padding-bottom: 0;
+                                @include breakpoint('extra_small') {
+                                    height: 285px;
+                                }
+                            }
+                            .my_traffic__contracts_details__data__footer {
+                                left: 0;
+                                border-left: 0;
+                            }
+                        }
+                    }
+                    &__heading {
+                        .data_heading {
+                            margin: 0;
+                            color: $color_orange;
+                            font-family: "Trebuchet MS";
+                            font-size: 1rem;
+                            line-height: 1.2em;
+                            text-transform: uppercase;
+                            @include breakpoint('extra_small') {
+                                width: calc(100% - 1rem);
+                                border-bottom: 1px solid $color_grey_medium_light;
+                            }
+                        }
+                    }
+                    &__col_headings {
+                        padding: .5rem 0;
+                        border-bottom: 1px solid $color_grey_medium_light;
+                        @include breakpoint('extra_small') {
+                            display: inline-block;
+                            width: calc(50% - .5rem);
+                            border-bottom-left-radius: 8px;
+                        }
+                        @include breakpoint('ultra_small') {
+                            width: calc(50% - .5rem);
+                        }
+                        .col_heading {
+                            display: inline-block;
+                            width: 14%;
+                            font-family: "Trebuchet MS";
+                            font-size: .75rem;
+                            font-weight: bold;
+                            text-align: center;
+                            &.h-ora {
+                                width: 12%;
+                            }
+                            &.h-origine {
+                                width: 12%;
+                            }
+                            &.h-destinazione,
+                            &.h-numero {
+                                width: 17%;
+                            }
+                            &.h-euro {
+                                width: 11%;
+                            }
+                            &:first-child {
+                                width: 14%;
+                                text-align: left;
+                            }
+                            &:last-child {
+                                text-align: right;
+                            }
+                            @include breakpoint('extra_small') {
+                                width: calc(100% - .5rem)!important;
+                                padding-right: .5rem;
+                                padding-left: 0!important;
+                                border-right: 1px solid $color_grey_medium_light;
+                                text-align: right!important;
+                            }
+                        }
+                    }
+                    &__content {
+                        height: 285px;
+                        @include breakpoint('extra_small') {
+                            height: 320px;
+                        }
+                    }
+                    &__row {
+                        padding: .5rem 0;
+                        @include breakpoint('extra_small') {
+                            display: inline-block;
+                            width: calc(50% - 1rem);
+                            border-bottom: 1px solid $color_grey_medium_light;
+                            border-bottom-right-radius: 8px;
+                        }
+                        @include breakpoint('ultra_small') {
+                            width: calc(50% - .5rem);
+                        }
+                        .row_content {
+                            display: inline-block;
+                            width: 14%;
+                            font-family: "Trebuchet MS";
+                            font-size: .75rem;
+                            text-align: center;
+                            &.c-data {
+                                text-align: left;
+                            }
+                            &.c-ora {
+                                width: 12%;
+                            }
+                            &.c-origine {
+                                width: 12%;
+                            }
+                            &.c-destinazione,
+                            &.c-numero {
+                                width: 17%;
+                            }
+                            &.c-euro {
+                                width: 11%;
+                                text-align: right;
+                            }
+                            @include breakpoint('extra_small') {
+                                width: calc(100% - .5rem)!important;
+                                padding-left: .5rem;
+                                text-align: left!important;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                    &__footer {
+                        @include border-bottom-radius(8px);
+                        position: absolute;
+                        top: calc(100% - 1px);
+                        right: 0;
+                        left: -1px;
+                        height: 3.1rem;
+                        padding: 0 1rem;
+                        border-right: 5px solid #F5F5F5;
+                        border-left: 1px solid $color_grey_medium_light;
+                        background-color: $color_white;
+                        z-index: 3;
+                        &__content {
+                            display: table;
+                            width: 100%;
+                            height: 3rem;
+                            border-top: 1px solid $color_grey_medium_light;
+                            .cell {
+                                display: table-cell;
+                                vertical-align: middle;
+                                &_right {
+                                    text-align: right;
+                                }
+                            }
+                            .back_button,
+                            .xls_button {
+                                font-family: "Trebuchet MS";
+                                font-size: .75rem;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                                i {
+                                    font-size: 1.25rem;
+                                }
+                                span {
+                                    @include breakpoint('ultra_small') {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &__single_tab {
+                    display: table;
+                    position: relative;
+                    width: calc(100% - 1rem);
+                    height: 25%;
+                    border-bottom: 1px solid $color_grey_medium_light;
+                    @include breakpoint('ultra_small') {
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    a.tab_icon_expand_link {
+                        display: table-cell;
+                        width: 1.5rem;
+                        padding: .5rem 0;
+                        text-align: right;
+                        vertical-align: middle;
+                        @include breakpoint('ultra_small') {
+                            text-align: left;
+                        }
+                    }
+                    i.tab_icon {
+                        display: table-cell;
+                        color: $color_orange;
+                        vertical-align: middle;
+                        @include breakpoint('ultra_small') {
+                            display: table;
+                            width: 100%;
+                            padding: 0;
+                        }
+                    }
+                    i.tab_icon_expand {
+                        display: table-cell;
+                        position: relative;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        vertical-align: middle;
+                        @include breakpoint('ultra_small') {
+                            text-align: left;
+                        }
+                        &:before,
+                        &:after {
+                            @include transition(all .45s ease-in-out);
+                            position: absolute;
+                            left: 0;
+                            width: 3px;
+                            height: 12px;
+                            background-color: $color_orange;
+                            content: "";
+                        }
+                        &:before {
+                            transform: translate(10px, -3px) rotate(45deg);
+                        }
+                        &:after {
+                            transform: translate(10px, -10px) rotate(-45deg);
+                        }
+                    }
+                    .tab_title {
+                        display: table-row;
+                        width: 100%;
+                        color: $color_grey_dark;
+                        vertical-align: middle;
+                        @include breakpoint('ultra_small') {
+                            display: table-cell;
+                            height: 100%;
+                        }
+                        .title {
+                            display: table-cell;
+                            font-family: 'Trebuchet MS';
+                            font-size: .85rem;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            vertical-align: middle;
+                            @include breakpoint('ultra_small') {
+                                display: table;
+                                width: 100%;
+                                font-size: .6rem;
+                            }
+                        }
+                    }
+                    .tab_totals {
+                        @include transition(all .5s ease-in-out);
+                        display: table;
+                        width: calc(100% - 1.5rem);
+                        height: 100%;
+                        vertical-align: middle;
+                        @include breakpoint('ultra_small') {
+                            width: calc(100% - .5rem);
+                            padding-left: .5rem;
+                        }
+                        &_label {
+                            display: inline-block;
+                            padding-right: .5rem;
+                            font-size: .75rem;
+                            text-transform: uppercase;
+                            @include breakpoint('ultra_small') {
+                                display: block;
+                            }
+                        }
+                        &_content {
+                            display: inline-block;
+                            color: $color_orange;
+                            font-size: .75rem;
+                            font-weight: bold;
+                            @include breakpoint('ultra_small') {
+                                display: block;
+                                font-size: .6rem;
+                            }
+                            .number {
+                                font-size: 1.25rem;
+                                @include breakpoint('ultra_small') {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                        &_duration,
+                        &_import {
+                            display: table-cell;
+                            font-family: 'Trebuchet MS';
+                            font-size: .9rem;
+                            line-height: 1.5rem;
+                            vertical-align: middle;
+                            @include breakpoint('ultra_small') {
+                                display: table;
+                                width: 100% !important;
+                                line-height: 1.2rem;
+                                text-align: left;
+                            }
+                        }
+                        &_import {
+                            width: 29%;
+                            @include breakpoint('ultra_small') {
+                                .tab_totals {
+                                    &_label,
+                                    &_content {
+                                        display: inline-block;
+                                        width: 100%;
+                                        vertical-align: middle;
+                                    }
+                                }
+                            }
+                        }
+                        &_duration {
+                            width: 71%;
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-
-  &__contracts_details {
-    position: relative;
-    top: -1px;
-    background-color: $color_white;
-
-    &__column {
-      &_tabs,
-      &_content {
-        display: table-cell;
-        height: 320px;
-        vertical-align: middle;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-      }
-
-      &_tabs {
-        width: 145px;
-        margin-left: 1rem;
-        border-right: 0;
-
-        .my_traffic__contracts_details__single_tab {
-          margin-left: .8rem;
-          padding-right: .2rem;
-          cursor: pointer;
-        }
-        @include breakpoint('ultra_small') {
-          width: 60px;
-        }
-      }
-
-      &_content {
-        @include transition(all .5s ease-in-out);
-        position: relative;
-        width: calc(100% - 145px);
-        border-left: 0;
-        @include breakpoint('ultra_small') {
-          width: calc(100% - 60px);
-        }
-
-        .my_traffic__contracts_details__single_tab {
-          margin-right: 1rem;
-        }
-
-        .fa-spinner {
-          position: absolute;
-          top: 45%;
-          z-index: 10;
-        }
-      }
-    }
-
-    &__disclaimer {
-      padding: 1rem 0;
-
-      p {
-        margin: 0;
-        font-family: 'Trebuchet MS';
-        font-size: .875rem;
-        line-height: 1.2em;
-      }
-    }
-
-    &__tabs {
-      @include border-radius(8px);
-      display: table;
-      position: relative;
-      width: calc(100% - 2rem);
-      margin-top: 1rem;
-      padding: 1rem;
-      background-color: #F5F5F5;
-      opacity: 1;
-      overflow: hidden;
-
-      &.traffic-selected {
-        width: calc(100% - 2rem);
-        opacity: 1;
-      }
-
-      &.active {
-        .my_traffic__contracts_details__column_content {
-          .my_traffic__contracts_details__single_tab {
-            display: none;
-          }
-        }
-
-        .my_traffic__contracts_details__single_tab {
-          border-right: 1px solid $color_grey_medium_light;
-
-          &.active {
-            margin: 0;
-            padding: 0 .5rem;
-            border-bottom-left-radius: 10px;
-            border-right-color: $color_white;
-            background-color: $color_white;
-          }
-        }
-      }
-
-      &__borders {
-        // sass-lint:disable-block no-duplicate-properties
-        @include border-radius(8px);
-        display: table;
-        width: 100%;
-        background: rgba(245, 245, 245, 1);
-        background: -moz-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
-        background: -webkit-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: -o-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: -ms-linear-gradient(left, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FBFBFB', endColorstr='#FFF', GradientType=1);
-      }
-
-      &__container {
-        display: table-row;
-        width: 100%;
-        margin: 1rem;
-      }
-
-      &__view_all {
-        display: table-row;
-        text-align: right;
-
-        .view_all {
-          display: table-cell;
-          font-family: 'Trebuchet MS';
-          font-size: .75rem;
-          text-transform: uppercase;
-          opacity: 1;
-
-          &_filler {
-            display: table-cell;
-          }
-
-          &_link {
-            display: inline-block;
-            padding: 1rem;
-            color: $color_orange;
-            cursor: pointer;
-
-            &.active {
-              width: 0;
-              padding: 0;
-              overflow: hidden;
-            }
-          }
-        }
-      }
-    }
-
-    &__data {
-      @include border-right-radius(8px);
-      position: relative;
-      width: calc(100% - 1rem);
-      height: 320px;
-      padding: 1rem 0 0 1rem;
-      border-left: 1px solid transparent;
-
-      &.active {
-        background-color: $color_white;
-        @include breakpoint('extra_small') {
-          padding-top: 0;
-        }
-
-        &.data_all {
-          left: -145px;
-          width: calc(100% + 145px - 1rem);
-          height: calc(320px - 1.2rem);
-          padding-top: 1rem;
-          border-left: 0;
-          border-top-left-radius: 8px;
-          @include breakpoint('ultra_small') {
-            left: -60px;
-            width: calc(100% + 60px - 1rem);
-          }
-
-          .my_traffic__contracts_details__data__content {
-            height: calc(285px - 2rem);
-            padding-bottom: 0;
-            @include breakpoint('extra_small') {
-              height: 285px;
-            }
-          }
-
-          .my_traffic__contracts_details__data__footer {
-            left: 0;
-            border-left: 0;
-          }
-        }
-      }
-
-      &__heading {
-        .data_heading {
-          margin: 0;
-          color: $color_orange;
-          font-family: "Trebuchet MS";
-          font-size: 1rem;
-          line-height: 1.2em;
-          text-transform: uppercase;
-          @include breakpoint('extra_small') {
-            width: calc(100% - 1rem);
-            border-bottom: 1px solid $color_grey_medium_light;
-          }
-        }
-      }
-
-      &__col_headings {
-        padding: .5rem 0;
-        border-bottom: 1px solid $color_grey_medium_light;
-        @include breakpoint('extra_small') {
-          display: inline-block;
-          width: calc(50% - .5rem);
-          border-bottom-left-radius: 8px;
-        }
-        @include breakpoint('ultra_small') {
-          width: calc(50% - .5rem);
-        }
-
-        .col_heading {
-          display: inline-block;
-          width: 14%;
-          font-family: "Trebuchet MS";
-          font-size: .75rem;
-          font-weight: bold;
-          text-align: center;
-
-          &.h-ora {
-            width: 12%;
-          }
-
-          &.h-origine {
-            width: 12%;
-          }
-
-          &.h-destinazione,
-          &.h-numero {
-            width: 17%;
-          }
-
-          &.h-euro {
-            width: 11%;
-          }
-
-          &:first-child {
-            width: 14%;
-            text-align: left;
-          }
-
-          &:last-child {
-            text-align: right;
-          }
-          @include breakpoint('extra_small') {
-            width: calc(100% - .5rem)!important;
-            padding-right: .5rem;
-            padding-left: 0!important;
-            border-right: 1px solid $color_grey_medium_light;
-            text-align: right!important;
-          }
-        }
-      }
-
-      &__content {
-        height: 285px;
-        @include breakpoint('extra_small') {
-          height: 320px;
-        }
-      }
-
-      &__row {
-        padding: .5rem 0;
-        @include breakpoint('extra_small') {
-          display: inline-block;
-          width: calc(50% - 1rem);
-          border-bottom: 1px solid $color_grey_medium_light;
-          border-bottom-right-radius: 8px;
-        }
-
-        @include breakpoint('ultra_small') {
-          width: calc(50% - .5rem);
-        }
-
-        .row_content {
-          display: inline-block;
-          width: 14%;
-          font-family: "Trebuchet MS";
-          font-size: .75rem;
-          text-align: center;
-
-          &.c-data {
-            text-align: left;
-          }
-
-          &.c-ora {
-            width: 12%;
-          }
-
-          &.c-origine {
-            width: 12%;
-          }
-
-          &.c-destinazione,
-          &.c-numero {
-            width: 17%;
-          }
-
-          &.c-euro {
-            width: 11%;
-            text-align: right;
-          }
-
-          @include breakpoint('extra_small') {
-            width: calc(100% - .5rem)!important;
-            padding-left: .5rem;
-            text-align: left!important;
-            white-space: nowrap;
-          }
-        }
-      }
-
-      &__footer {
-        @include border-bottom-radius(8px);
-        position: absolute;
-        top: calc(100% - 1px);
-        right: 0;
-        left: -1px;
-        height: 3.1rem;
-        padding: 0 1rem;
-        border-right: 5px solid #F5F5F5;
-        border-left: 1px solid $color_grey_medium_light;
-        background-color: $color_white;
-        z-index: 3;
-
-        &__content {
-          display: table;
-          width: 100%;
-          height: 3rem;
-          border-top: 1px solid $color_grey_medium_light;
-
-          .cell {
-            display: table-cell;
-            vertical-align: middle;
-
-            &_right {
-              text-align: right;
-            }
-          }
-
-          .back_button,
-          .xls_button {
-            font-family: "Trebuchet MS";
-            font-size: .75rem;
-            text-transform: uppercase;
-            cursor: pointer;
-
-            i {
-              font-size: 1.25rem;
-            }
-
-            span {
-              @include breakpoint('ultra_small') {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    &__single_tab {
-      display: table;
-      position: relative;
-      width: calc(100% - 1rem);
-      height: 25%;
-      border-bottom: 1px solid $color_grey_medium_light;
-      @include breakpoint('ultra_small') {
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      a.tab_icon_expand_link {
-        display: table-cell;
-        width: 1.5rem;
-        padding: .5rem 0;
-        text-align: right;
-        vertical-align: middle;
-        @include breakpoint('ultra_small') {
-          text-align: left;
-        }
-      }
-
-      i.tab_icon {
-        display: table-cell;
-        color: $color_orange;
-        vertical-align: middle;
-        @include breakpoint('ultra_small') {
-          display: table;
-          width: 100%;
-          padding: 0;
-        }
-      }
-
-      i.tab_icon_expand {
-        display: table-cell;
-        position: relative;
-        width: 1.5rem;
-        height: 1.5rem;
-        vertical-align: middle;
-        @include breakpoint('ultra_small') {
-          text-align: left;
-        }
-
-        &:before,
-        &:after {
-          @include transition(all .45s ease-in-out);
-          position: absolute;
-          left: 0;
-          width: 3px;
-          height: 12px;
-          background-color: $color_orange;
-          content: "";
-        }
-
-        &:before {
-          transform: translate(10px, -3px) rotate(45deg);
-        }
-
-        &:after {
-          transform: translate(10px, -10px) rotate(-45deg);
-        }
-      }
-
-      .tab_title {
-        display: table-row;
-        width: 100%;
-        color: $color_grey_dark;
-        vertical-align: middle;
-        @include breakpoint('ultra_small') {
-          display: table-cell;
-          height: 100%;
-        }
-
-        .title {
-          display: table-cell;
-          font-family: 'Trebuchet MS';
-          font-size: .85rem;
-          font-weight: bold;
-          text-transform: uppercase;
-          vertical-align: middle;
-          @include breakpoint('ultra_small') {
-            display: table;
-            width: 100%;
-            font-size: .6rem;
-          }
-        }
-      }
-
-      .tab_totals {
-        @include transition(all .5s ease-in-out);
-        display: table;
-        width: calc(100% - 1.5rem);
-        height: 100%;
-        vertical-align: middle;
-        @include breakpoint('ultra_small') {
-          width: calc(100% - .5rem);
-          padding-left: .5rem;
-        }
-
-        &_label {
-          display: inline-block;
-          padding-right: .5rem;
-          font-size: .75rem;
-          text-transform: uppercase;
-          @include breakpoint('ultra_small') {
-            display: block;
-          }
-        }
-
-        &_content {
-          display: inline-block;
-          color: $color_orange;
-          font-size: .75rem;
-          font-weight: bold;
-          @include breakpoint('ultra_small') {
-            display: block;
-            font-size: .6rem;
-          }
-
-          .number {
-            font-size: 1.25rem;
-            @include breakpoint('ultra_small') {
-              font-size: 1rem;
-            }
-          }
-        }
-
-        &_duration,
-        &_import {
-          display: table-cell;
-          font-family: 'Trebuchet MS';
-          font-size: .9rem;
-          line-height: 1.5rem;
-          vertical-align: middle;
-          @include breakpoint('ultra_small') {
-            display: table;
-            width: 100% !important;
-            line-height: 1.2rem;
-            text-align: left;
-          }
-        }
-
-        &_import {
-          width: 29%;
-          @include breakpoint('ultra_small') {
-            .tab_totals {
-              &_label,
-              &_content {
-                display: inline-block;
-                width: 100%;
-                vertical-align: middle;
-              }
-            }
-          }
-        }
-
-        &_duration {
-          width: 71%;
-        }
-      }
-    }
-  }
 }

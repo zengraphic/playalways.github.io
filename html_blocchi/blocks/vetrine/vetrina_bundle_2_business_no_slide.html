@@ -293,8 +293,8 @@
                                     </a>
                             </div>
                             <!-- 2 di 3 -->
-                            <div class="clear"></div>
                         </div>
+                        <div class="clear"></div>
                         <div class="bundle_ver2_noSlide_block__showMore">
                             mostra altre tariffe
                         </div>
@@ -309,7 +309,7 @@
 jQuery(document).ready(function($) {
     $('.bundle_ver2_noSlide_block__showMore').click(function() {
         var thisItem = $(this);
-        $(this).parents('.bundle_ver2_noSlide_block').find('.bundle_ver2_noSlide_block__single').each(function(index) {
+        thisItem.parents('.bundle_ver2_noSlide_block').find('.bundle_ver2_noSlide_block__single').each(function(index) {
             if ($(this).css('display', 'none')) {
                 $(this).show();
                 thisItem.hide();

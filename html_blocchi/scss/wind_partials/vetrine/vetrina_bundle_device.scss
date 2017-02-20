@@ -1,619 +1,616 @@
-
 // SLIDER BLOCK
-.showcase_bundle_device{
-  max-width: 1024px;
-  margin: 0 auto;
-  padding-bottom: 30px;  
-  
-  .slick-slider{
-    .left__arrow{
-        top: calc(20% - 41px);
-    } 
-    .right__arrow{
-      bottom: 80%;
-    }
-  }  
-  &__mainTitle{
-    font-size: $text-medium;
-    font-family: $weight-light;
-    margin-top: 30px;
-    margin-bottom: 40px;
-  }
-  &__container{
+.showcase_bundle_device {
     max-width: 1024px;
     margin: 0 auto;
-    @include transition(all 0.45s ease-in-out);
-  }
-  h2{
-    font-family: $weight-boldCond;
-  }
-  &__showMore{
-    color: $color_wind;
-    font-size: 1.250em;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: $weight-light;
-    cursor: pointer;
-    &:hover{
-      text-decoration: underline;
+    padding-bottom: 30px;
+    .slick-slider {
+        .left__arrow {
+            top: calc(20% - 41px);
+        }
+        .right__arrow {
+            bottom: 80%;
+        }
     }
-  }
-  &__showOffers{
-    color: $color_wind;
-    margin-left: 15px;
-    width: 100%;
-    display: none;
-    font-size: 1.250em;
-    text-align: left;
-    text-transform: uppercase;
-    font-family: $weight-light;
-    cursor: pointer;
-    &:hover{
-      text-decoration: underline;
+    &__mainTitle {
+        font-size: $text-medium;
+        font-family: $weight-light;
+        margin-top: 30px;
+        margin-bottom: 40px;
     }
-  }  
-  @at-root #{&}__tabs{
-    text-transform: uppercase;
-    color: $color_text;
-    &__container{
-      margin-bottom: 30px;
-      padding-top: 25px;
+    &__container {
+        max-width: 1024px;
+        margin: 0 auto;
+        @include transition(all 0.45s ease-in-out);
     }
-    &--left{
-      float: left;
-      margin-left: 30px;
+    h2 {
+        font-family: $weight-boldCond;
     }
-    &--right{
-      float: right;
-      margin-right: 30px;      
-    }    
-    &--title{
-      margin-right: 40px;
-      cursor: pointer;
-      &:hover{
-        border-bottom: 1px solid $color_orange;
-      }
-      &.active{
-        border-bottom: 1px solid $color_orange;
+    &__showMore {
         color: $color_wind;
-      }
-    }
-  }
-   &__select{
-    float: left;
-    width: calc(50% - 10px);    
-    &--second{
-      margin-left: 20px;
-    }
-    .base__select{
-      &.bootstrap-select {
-        width: 100% !important;
-        .dropdown-toggle{
-          padding: 12px 20px 8px 20px;
-          .caret{
-            margin-top: -11px;
-          }
-          .filter-option{
-            font-size: 1em;
-            font-family: $weight-normal;
-          }
-        }
-     }
-    } 
-   }
-   &--title{
-    font-size: 1em;
-    text-transform: uppercase;
-   } 
-   @at-root #{&}__single{
-    position: relative;
-    height: 495px;   
-    display: none;
-    @include breakpoint(small){      
-        height: auto;
-        margin-bottom: 30px;
-    }
-    &:nth-child(-n+3)
-    {
-      display: block;
-    }    
-    &:nth-child(n+3)
-    {
-      &:after{
-        display: none;
-      }
-    }       
-      &:after
-      {
-        background-color: $color_grey_medium_light;
-        width: 1px;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 5%;
-        bottom: 20%;
-        right: 0%;
-        min-height: 1px;
-      } 
-   }
-   @at-root #{&}__single--generic{
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;       
-    h2{
-      margin-bottom: 10px;
-    }     
-      &__image{
-        margin: 0 auto;    
-        margin-bottom: 10px; 
-        height: 100%;
-        max-height: 100px;   
-      }    
-      &--title{
-          font-size: 1.875em;
-          margin-bottom: 15px;
-          font-family: $weight-bold;
-      } 
-      &--description{
-        margin-bottom: 15px;
         font-size: 1.250em;
-        font-family: $weight-light;  
-        line-height: 22px;     
-      }
-      &--mainPrice{
-        margin:25px auto;        
-        font-size: 1.875em;
-        line-height: 1;
         text-align: center;
-        font-family: $weight-light;
-        .recurrency{
-          font-size: 20px;
-          margin-left: -10px;
-        }
-      }
-      &--recurrency{
-        font-family: $weight-light;
-        font-size: 0.813em;
-        margin-bottom: 10px;
-      }
-   } 
-   // ====================== BLOCCO CON COMPONENTE ABBINA ======================
-   // ====================== BLOCCO CON COMPONENTE ABBINA ======================
-   // ====================== BLOCCO CON COMPONENTE ABBINA ======================
-   @at-root #{&}__single--vAbbina{
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;   
-    .button--ghost{
-      padding-top: 6px;
-      padding-bottom: 6px;
-      width: 165px;
-      margin: 0 auto;
-    }  
-    h2{
-      margin-bottom: 10px;
-    }     
-      &--title{
-          font-size: 1.875em;
-          margin-bottom: 20px;
-          font-family: $weight-bold;
-      } 
-      &--promo{
-        font-family: $weight-bold;
-        color: $color_robin;
         text-transform: uppercase;
-        margin-top: 5px;
-      }
-      &--description{
-        margin-bottom: 15px;
-        font-size: 1.250em;
-        font-family: $weight-light;  
-        line-height: 22px;
-        &--price{
-          font-size: 1.667em;
-        }      
-      }
-      &--totalPrice{
-        margin-top: 25px;
-        margin-bottom: 10px;
-        &--description{
-          font-size: 1.250em;  
-          font-family: $weight-light;
-        }
-        &--price{
-          font-size: 1.875em;  
-          font-family: $weight-light;
-        }        
-      }
-      &--mainPrice{
-        margin-top: 20px;
-        margin-bottom: 30px;
-        font-size: 1.875em;
-        text-align: center;        
-        line-height: 1;
-        font-family: $weight-light;        
-        .recurrency{
-          font-size: 20px;
-          margin-left: -10px;
-        }
-      }
-      &--recurrency{
         font-family: $weight-light;
-        font-size: 0.813em;
-        margin-bottom: 10px;
-      }
-   }    
-   // ====================== BLOCCO CON COMPONENTE PACK ======================
-   // ====================== BLOCCO CON COMPONENTE PACK ======================
-   // ====================== BLOCCO CON COMPONENTE PACK ======================
-   @at-root #{&}__single--vPack{
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;       
-    h2{
-      margin-bottom: 10px;
-    }    
-      &__image{
-        margin-top: 5px;
-        height: 100%;
-        max-height: 100px;
-      }
-      &--title{
-          font-size: 1.333em;
-          font-family: $weight-bold;
-          margin-top: 17px;
-      } 
-      &--description{
-        font-size: 1.333em;
-        font-family: $weight-normal;  
-        line-height: 26px;
-        &--price{
-          font-size: 1.667em;
-        }      
-      }
-      &--totalPrice{
-        &--barred{
-            position: relative;
-            width: 100px;
-            margin: 0 auto;
-            font-family: $weight-light;  
-            .currency{
-                font-size: 0.731em;
-              }                      
-            &::after {
-                border-bottom: 2px solid $color_stroke;
-                content: "";
-                left: 15%;
-                margin-top: calc(0.125em / 2 * -1);
-                position: absolute;
-                top: 40%;
-                width: 70%;
-            } 
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
         }
-        &--price{
-            font-family: $weight-light;          
-            font-size: 2.889em;
-            color: $color_mobile;
-            .currency{
-                font-size: 0.731em;
-                margin-left: -10px;
-              }
-        }
-        &--description{
-            font-family: $weight-light;          
-            font-size: 0.722em;
-            text-transform: uppercase;
-            margin-bottom: 15px;     
-        }
-      }
-      &--mainTitle{
-        font-size: 1.875em;
-        text-align: center; 
-        margin-bottom: 25px;       
-        line-height: 32px;
-        font-family: $weight-bold;
-        color: $color_mobile;        
-      }
-   }   
-   // ====================== BLOCCO CON COMPONENTE PACK OFFER ======================
-   // ====================== BLOCCO CON COMPONENTE PACK OFFER ======================
-   // ====================== BLOCCO CON COMPONENTE PACK OFFER ======================
-   @at-root #{&}__single--vPackOffer{
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;      
-    h2{
-      margin-bottom: 10px;
-    }    
-      &__image{
-        height: 100%;
-        max-height: 100px;
-        margin-bottom: 32px;
-        margin-top: 10px;
-      }
-      &--description{
-        font-size: 1.333em;
-        margin-top: 25px;
-        font-family: $weight-normal;  
-        line-height: 26px;
-        &--price{
-          font-size: 1.667em;
-        }      
-      }
-      &--totalPrice{
-        &--barred{
-            position: relative;
-            width: 100px;
-            margin: 0 auto;
-            font-family: $weight-light;  
-            .currency{
-                font-size: 0.731em;
-              }                      
-            &::after {
-                border-bottom: 2px solid $color_stroke;
-                content: "";
-                left: 15%;
-                margin-top: calc(0.125em / 2 * -1);
-                position: absolute;
-                top: 40%;
-                width: 70%;
-            } 
-        }
-        &--price{
-            font-family: $weight-light;          
-            font-size: 2.889em;
-            color: $color_robin;
-            .currency{
-                font-size: 0.731em;
-                margin-left: -10px;
-              }
-        }
-        &--description{
-            font-family: $weight-light;          
-            font-size: 0.722em;
-            text-transform: uppercase;
-            margin-bottom: 15px;     
-        }
-      }
-      &--mainTitle{
-        font-size: 1.875em;
-        text-align: center; 
-        margin-bottom: 25px;       
-        line-height: 32px;
-        font-family: $weight-bold;
-        color: $color_mobile;        
-      }
-   }    
-   // ====================== CARD UNO  ======================
-   // ====================== CARD UNO ======================
-   // ====================== CARD UNO ======================
-   @at-root #{&}__single--vCard{ 
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;       
-    h2{
-      margin-bottom: 10px;
-    }    
-      &__image{
-        height: 100%;
-        max-height: 100px;
-      }
-      &--title{
-          font-size: 1.333em;
-          font-family: $weight-bold;
-          margin-top: 17px;
-      } 
-      &--description{
-        font-size: 1.333em;
-        font-family: $weight-normal;  
-        line-height: 26px;
-        margin-top: 21px;
-        height: 105px;
-        overflow: hidden;     
-      }
-      &--totalPrice{
-        margin-top: 20px;
-        &--price{
-            font-family: $weight-light;          
-            font-size: 2.889em;
-            color: $color_robin;
-            .currency{
-                font-size: 0.731em;
-              }
-        }
-        &--description{
-            font-family: $weight-normal;          
-            font-size: 0.722em;
-            margin-bottom: 13px;     
-        }
-      }
-      &--mainTitle{
-        font-size: 1.875em;
-        text-align: center; 
-        margin-bottom: 25px;       
-        line-height: 32px;
-        font-family: $weight-bold;
-        color: $color_mobile;        
-      }
-   }  
-   // ====================== CARD DUE  ======================
-   // ====================== CARD DUE ======================
-   // ====================== CARD DUE ======================
-   @at-root #{&}__single--vCardOffer{ 
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;      
-    position: relative; 
-    .button{
-      width: 282px;
-      margin: 0 auto;
     }
-    h2{
-      margin-bottom: 10px;
-    }    
-      &__textContainer{
-        z-index: 150;
-        position: relative;
-        height: 371px;
-      }
-      &__bgImage{
-        position: absolute;
-        top: 0;
-        left: 0;
+    &__showOffers {
+        color: $color_wind;
+        margin-left: 15px;
         width: 100%;
-        &__container{
-          position: relative;
-          width: 282px;
-          z-index: 50;
-          margin: 0 auto;
+        display: none;
+        font-size: 1.250em;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
         }
-      }    
-      &--title{
-          font-size: 1.333em;
-          font-family: $weight-bold;
-          margin-top: 17px;
-      } 
-      &--description{
-        font-size: 1.333em;
-        font-family: $weight-normal;  
-        line-height: 26px;
-        margin-top: 21px;
-        position: absolute;
-        bottom: 15px;    
-        width: 100%;        
-      }
-      &--mainTitle{
-        font-size: 1.500em;
-        text-align: center; 
-        margin-top: 15px;      
-        line-height: 32px;
-        font-family: $weight-normal;
-        color: $color_white;   
-        &--big{
-          font-size: 1.667em;
-          font-family: $weight-bold;
-          color: $color_white;           
-          line-height: 52px;
-        }     
-      }
-   }       
-   // ====================== CARD DUE BIS (TRE) ======================
-   // ====================== CARD DUE BIS (TRE) ======================
-   // ====================== CARD DUE BIS (TRE) ======================
-   @at-root #{&}__single--vCardOffer--vPrice{ 
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    float: left;
-    font-family: $weight-normal;      
-    position: relative; 
-    .button{
-      margin: 5px auto 0 auto;
-      width: 282px; 
     }
-    h2{
-      margin-bottom: 10px;
-    }    
-      &__textContainer{
-        z-index: 150;
+    @at-root #{&}__tabs {
+        text-transform: uppercase;
+        color: $color_text;
+        &__container {
+            margin-bottom: 30px;
+            padding-top: 25px;
+        }
+        &--left {
+            float: left;
+            margin-left: 30px;
+        }
+        &--right {
+            float: right;
+            margin-right: 30px;
+        }
+        &--title {
+            margin-right: 40px;
+            cursor: pointer;
+            &:hover {
+                border-bottom: 1px solid $color_orange;
+            }
+            &.active {
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
+            }
+        }
+    }
+    &__select {
+        float: left;
+        width: calc(50% - 10px);
+        &--second {
+            margin-left: 20px;
+        }
+        .base__select {
+            &.bootstrap-select {
+                width: 100% !important;
+                .dropdown-toggle {
+                    padding: 12px 20px 8px 20px;
+                    .caret {
+                        margin-top: -11px;
+                    }
+                    .filter-option {
+                        font-size: 1em;
+                        font-family: $weight-normal;
+                    }
+                }
+            }
+        }
+    }
+    &--title {
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    @at-root #{&}__single {
         position: relative;
-        height: 370px;
-      }
-      &__bgImage{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        &__container{
-          position: relative;
-          width: 282px;
-          z-index: 50;
-          margin: 0 auto;
+        height: 495px;
+        display: none;
+        @include breakpoint(small) {
+            height: auto;
+            margin-bottom: 30px;
         }
-      }    
-      &--title{
-          font-size: 1.333em;
-          font-family: $weight-bold;
-          margin-top: 17px;
-      } 
-      &--description{
-        font-size: 1.333em;
-        font-family: $weight-normal;  
-        line-height: 26px;        
-      }
-      &--totalPrice{
+        &:nth-child(-n+3) {
+            display: block;
+        }
+        &:not(:nth-child(3n)):not(:last-child()) {
+            &:after {
+                background-color: $color_stroke;
+                width: 1px;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 5%;
+                bottom: 20%;
+                right: 0%;
+                min-height: 1px;
+                @include breakpoint(small) {
+                    content: none;
+                }
+            }
+        }
+    }
+    @at-root #{&}__single--generic {
         margin-top: 20px;
-        position: absolute;
-        bottom: 0px;    
-        width: 100%;         
-        &--price{
-            font-family: $weight-light;          
-            font-size: 2.889em;
-            color: $color_robin;
-            .currency{
-                font-size: 0.731em;
-              }
-        }
-        &--description{
-            font-family: $weight-normal;          
-            font-size: 0.722em;
-            margin-bottom: 15px;     
-        }
-      }      
-      &--mainTitle{
-        font-size: 1.500em;
-        text-align: center; 
-        margin-top: 10px;      
-        margin-bottom: 5px;
-        line-height: 32px;
-        font-family: $weight-bold;
-        color: $color_mobile;       
-      }
-   }             
-}
-
-// ============================== MEDIA QUERIES =========================
-// ============================== MEDIA QUERIES =========================
-// ============================== MEDIA QUERIES =========================
-
-
-
-@media all and (max-width: 767px){  
-  .showcase_bundle_device{
-    &__tabs--left{
-        margin-left: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
         text-align: center;
-        float: none;
-        font-size: 0.8em;
-      }    
-    &__tabs--right{
-      display: none;
-    }    
-    &__single{
-          &:after{
-            display: none !important;
-          }
-      }
-  }  
+        float: left;
+        font-family: $weight-normal;
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__image {
+            margin: 0 auto;
+            margin-bottom: 10px;
+            height: 100%;
+            max-height: 100px;
+        }
+        &--title {
+            font-size: 1.875em;
+            margin-bottom: 15px;
+            font-family: $weight-bold;
+        }
+        &--description {
+            margin-bottom: 15px;
+            font-size: 1.250em;
+            font-family: $weight-light;
+            line-height: 22px;
+        }
+        &--mainPrice {
+            margin: 25px auto;
+            font-size: 1.875em;
+            line-height: 1;
+            text-align: center;
+            font-family: $weight-light;
+            .recurrency {
+                font-size: 20px;
+                margin-left: -10px;
+            }
+        }
+        &--recurrency {
+            font-family: $weight-light;
+            font-size: 0.813em;
+            margin-bottom: 10px;
+        }
+
+    }
+    // ====================== BLOCCO CON COMPONENTE ABBINA ======================
+    // ====================== BLOCCO CON COMPONENTE ABBINA ======================
+    // ====================== BLOCCO CON COMPONENTE ABBINA ======================
+    @at-root #{&}__single--vAbbina {
+        margin-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        float: left;
+        font-family: $weight-normal;
+        .button--ghost {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            width: 165px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        &--title {
+            font-size: 1.875em;
+            margin-bottom: 20px;
+            font-family: $weight-bold;
+        }
+        &--promo {
+            font-family: $weight-bold;
+            color: $color_robin;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        &--description {
+            margin-bottom: 15px;
+            font-size: 1.250em;
+            font-family: $weight-light;
+            line-height: 22px;
+            &--price {
+                font-size: 1.667em;
+            }
+        }
+        &--totalPrice {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            &--description {
+                font-size: 1.250em;
+                font-family: $weight-light;
+            }
+            &--price {
+                font-size: 1.875em;
+                font-family: $weight-light;
+            }
+        }
+        &--mainPrice {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-size: 1.875em;
+            text-align: center;
+            line-height: 1;
+            font-family: $weight-light;
+            .recurrency {
+                font-size: 20px;
+                margin-left: -10px;
+            }
+        }
+        &--recurrency {
+            font-family: $weight-light;
+            font-size: 0.813em;
+            margin-bottom: 10px;
+        }
+    }
+    // ====================== BLOCCO CON COMPONENTE PACK ======================
+    // ====================== BLOCCO CON COMPONENTE PACK ======================
+    // ====================== BLOCCO CON COMPONENTE PACK ======================
+    @at-root #{&}__single--vPack {
+        margin-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        float: left;
+        font-family: $weight-normal;
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__image {
+            margin-top: 5px;
+            height: 100%;
+            max-height: 100px;
+        }
+        &--title {
+            font-size: 1.333em;
+            font-family: $weight-bold;
+            margin-top: 17px;
+        }
+        &--description {
+            font-size: 1.333em;
+            font-family: $weight-normal;
+            line-height: 26px;
+            &--price {
+                font-size: 1.667em;
+            }
+        }
+        &--totalPrice {
+            &--barred {
+                position: relative;
+                width: 100px;
+                margin: 0 auto;
+                font-family: $weight-light;
+                height: 18px;
+                .currency {
+                    font-size: 0.731em;
+                    &:after {
+                        border-bottom: 2px solid $color_text; //$color_stroke
+                        content: "";
+                        left: 15%;
+                        margin-top: calc(0.125em / 2 * -1);
+                        position: absolute;
+                        top: 40%;
+                        width: 70%;
+                        @include breakpoint(small) {
+                            content: none;
+                        }
+                    }
+                }
+            }
+            &--price {
+                font-family: $weight-light;
+                font-size: 2.889em;
+                color: $color_mobile;
+                .currency {
+                    font-size: 0.731em;
+                    margin-left: 0;
+                }
+            }
+            &--description {
+                font-family: $weight-light;
+                font-size: 0.722em;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+        }
+        &--mainTitle {
+            font-size: 1.875em;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 32px;
+            font-family: $weight-bold;
+            color: $color_mobile;
+        }
+    }
+    // ====================== BLOCCO CON COMPONENTE PACK OFFER ======================
+    // ====================== BLOCCO CON COMPONENTE PACK OFFER ======================
+    // ====================== BLOCCO CON COMPONENTE PACK OFFER ======================
+    @at-root #{&}__single--vPackOffer {
+        margin-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        float: left;
+        font-family: $weight-normal;
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__image {
+            height: 100%;
+            max-height: 100px;
+            margin-bottom: 32px;
+            margin-top: 10px;
+        }
+        &--description {
+            font-size: 1.333em;
+            margin-top: 25px;
+            font-family: $weight-normal;
+            line-height: 26px;
+            &--price {
+                font-size: 1.667em;
+            }
+        }
+        &--totalPrice {
+            &--barred {
+                position: relative;
+                width: 100px;
+                margin: 0 auto;
+                font-family: $weight-light;
+                .currency {
+                    font-size: 0.731em;
+                    &::after {
+                        border-bottom: 2px solid $color_stroke;
+                        content: "";
+                        left: 15%;
+                        margin-top: calc(0.125em / 2 * -1);
+                        position: absolute;
+                        top: 40%;
+                        width: 70%;
+                    }
+                }
+            }
+            &--price {
+                font-family: $weight-light;
+                font-size: 2.889em;
+                color: $color_robin;
+                .currency {
+                    font-size: 0.731em;
+                    margin-left: -10px;
+                }
+            }
+            &--description {
+                font-family: $weight-light;
+                font-size: 0.722em;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+        }
+        &--mainTitle {
+            font-size: 1.875em;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 32px;
+            font-family: $weight-bold;
+            color: $color_mobile;
+        }
+    }
+    // ====================== CARD UNO  ======================
+    // ====================== CARD UNO ======================
+    // ====================== CARD UNO ======================
+    @at-root #{&}__single--vCard {
+        margin-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        float: left;
+        font-family: $weight-normal;
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__image {
+            height: 100%;
+            max-height: 100px;
+        }
+        &--title {
+            font-size: 1.333em;
+            font-family: $weight-bold;
+            margin-top: 17px;
+        }
+        &--description {
+            font-size: 1.333em;
+            font-family: $weight-normal;
+            line-height: 26px;
+            margin-top: 21px;
+            height: 105px;
+            overflow: hidden;
+        }
+        &--totalPrice {
+            margin-top: 20px;
+            &--price {
+                font-family: $weight-light;
+                font-size: 2.889em;
+                color: $color_robin;
+                .currency {
+                    font-size: 0.731em;
+                }
+            }
+            &--description {
+                font-family: $weight-normal;
+                font-size: 0.722em;
+                margin-bottom: 13px;
+            }
+        }
+        &--mainTitle {
+            font-size: 1.875em;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 32px;
+            font-family: $weight-bold;
+            color: $color_mobile;
+        }
+    }
+    // ====================== CARD DUE  ======================
+    // ====================== CARD DUE ======================
+    // ====================== CARD DUE ======================
+    @at-root #{&}__single--vCardOffer {
+        margin-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        float: left;
+        font-family: $weight-normal;
+        position: relative;
+        .button {
+            width: 282px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__textContainer {
+            z-index: 150;
+            position: relative;
+            height: 371px;
+        }
+        &__bgImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            &__container {
+                position: relative;
+                width: 282px;
+                z-index: 50;
+                margin: 0 auto;
+            }
+        }
+        &--title {
+            font-size: 1.333em;
+            font-family: $weight-bold;
+            margin-top: 17px;
+        }
+        &--description {
+            font-size: 1.333em;
+            font-family: $weight-normal;
+            line-height: 26px;
+            margin-top: 21px;
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+        }
+        &--mainTitle {
+            font-size: 1.500em;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 32px;
+            font-family: $weight-normal;
+            color: $color_white;
+            &--big {
+                font-size: 1.667em;
+                font-family: $weight-bold;
+                color: $color_white;
+                line-height: 52px;
+            }
+        }
+    }
+    // ====================== CARD DUE BIS (TRE) ======================
+    // ====================== CARD DUE BIS (TRE) ======================
+    // ====================== CARD DUE BIS (TRE) ======================
+    @at-root #{&}__single--vCardOffer--vPrice {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        float: left;
+        font-family: $weight-normal;
+        position: relative;
+        .button {
+            margin: 5px auto 0 auto;
+            width: 282px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__textContainer {
+            z-index: 150;
+            position: relative;
+            height: 370px;
+        }
+        &__bgImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            &__container {
+                position: relative;
+                width: 282px;
+                z-index: 50;
+                margin: 0 auto;
+                /*@media (max-width: 345px){
+            width: auto;
+          }*/
+            }
+        }
+        &--title {
+            font-size: 1.333em;
+            font-family: $weight-bold;
+            margin-top: 17px;
+        }
+        &--description {
+            font-size: 1.333em;
+            font-family: $weight-normal;
+            line-height: 26px;
+        }
+        &--totalPrice {
+            margin-top: 20px;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            &--price {
+                font-family: $weight-light;
+                font-size: 2.889em;
+                color: $color_robin;
+                .currency {
+                    font-size: 0.731em;
+                }
+            }
+            &--description {
+                font-family: $weight-normal;
+                font-size: 0.722em;
+                margin-bottom: 15px;
+            }
+        }
+        &--mainTitle {
+            font-size: 1.500em;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            line-height: 32px;
+            font-family: $weight-bold;
+            color: $color_mobile;
+        }
+    }
 }
 
-
-
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 767px) {
+    .showcase_bundle_device {
+        &__tabs--left {
+            margin-left: 0px;
+            text-align: center;
+            float: none;
+            font-size: 0.8em;
+        }
+        &__tabs--right {
+            display: none;
+        }
+        &__single {
+            &:after {
+                display: none !important;
+            }
+        }
+    }
+}

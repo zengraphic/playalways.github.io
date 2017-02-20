@@ -84,7 +84,7 @@
             // sotto css per la parte business
             .bundle_ver2_noSlide_block__single--title {
                 height: 132px;
-                    line-height: 1.1em;
+                line-height: 1.1em;
             }
             .bundle_ver2_noSlide_block__single--bigAmount {
                 height: 109px;
@@ -129,26 +129,23 @@
         }
         &.item {
             position: relative;
-            &:after {
-                background-color: $color_grey_medium_light;
-                width: 1px;
-                content: "";
-                display: block;
-                position: absolute;
-                top: 15%;
-                bottom: 7%;
-                right: 0%;
-                min-height: 1px;
-                @include breakpoint(small) {
-                    content: none;
-                }
-            }
             &:nth-child(-n+3) {
                 display: block;
             }
-            &:nth-child(3n) {
+            &:not(:nth-child(3n)):not(:last-child()) {
                 &:after {
-                    content: none;
+                    background-color: $color_stroke;
+                    width: 1px;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 15%;
+                    bottom: 7%;
+                    right: 0%;
+                    min-height: 1px;
+                    @include breakpoint(small) {
+                        content: none;
+                    }
                 }
             }
         }
@@ -197,7 +194,7 @@
             height: 15px;
         }
         &__placeholder {
-            display: none;  
+            display: none;
         }
     }
 }

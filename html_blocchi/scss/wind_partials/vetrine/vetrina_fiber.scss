@@ -30,32 +30,29 @@
         &__button {
             padding-top: 29px;
             padding-bottom: 29px;
-            &::before {
-                border-left: 1px solid $color_stroke;
-                content: '';
-                position: absolute;
-                top: 0;
-                height: 100%;
-                left: 0;
-            }
-            & .button--slim {
+            .button--slim {
                 display: inline-block;
                 width: 100%;
                 font-size: 1em;
+                &::before {
+                    border-left: 1px solid $color_stroke;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    left: 0;
+                    @include breakpoint(small) {
+                        border-top: 1px solid $color_stroke;
+                        height: 1px;
+                        margin-top: 10px;
+                        left: 15px;
+                        right: 15px;
+                    }
+                }
             }
             @include breakpoint(small) {
                 padding-top: 20px;
                 padding-bottom: 10px;
-                &::before {
-                    border-top: 1px solid $color_stroke;
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    height: 1px;
-                    margin-top: 10px;
-                    left: 15px;
-                    right: 15px;
-                }
             }
         }
         &:nth-of-type(even) {

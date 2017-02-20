@@ -45,7 +45,7 @@
                         </div>
                         <div class="showcase_bundle_block__container">
                             <!-- 1 di 3 -->
-                            <div class="showcase_bundle_block__single showcase_bundle_block__single--card--V1 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <div class="showcase_bundle_block__single item showcase_bundle_block__single--card--V1 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                                 <!-- singolo item per il ciclo -->
                                 <div class="showcase_bundle_block__single--title">
                                     pjqQypgpjqQYp
@@ -89,10 +89,10 @@
                             </div>
                             <!-- 2 di 3 -->
                             <!-- esempio blocco aggiuntivo per slider -->
-                            <div class="showcase_bundle_block__single showcase_bundle_block__single--card--V2 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <div class="showcase_bundle_block__single item showcase_bundle_block__single--card--V2 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                                 <!-- singolo item per il ciclo -->
                                 <div class="showcase_bundle_block__single--title">
-                                     pjqQypgpjqQYp
+                                    pjqQypgpjqQYp
                                     <br/>pjqQypgpjqQYp
                                     <!-- titolo max due righe, grande -->
                                 </div>
@@ -135,7 +135,7 @@
                                 </a>
                             </div>
                             <!-- 3 di 3 -->
-                            <div class="showcase_bundle_block__single showcase_bundle_block__single--card--V3 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <div class="showcase_bundle_block__single item showcase_bundle_block__single--card--V3 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                                 <!-- singolo item per il ciclo -->
                                 <div class="showcase_bundle_block__single--title">
                                     Internet
@@ -182,7 +182,7 @@
                                 </a>
                             </div>
                             <!-- 4 di 3 -->
-                            <div class="showcase_bundle_block__single showcase_bundle_block__single--card--V3 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <div class="showcase_bundle_block__single item showcase_bundle_block__single--card--V3 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                                 <!-- singolo item per il ciclo -->
                                 <div class="showcase_bundle_block__single--title">
                                     Internet
@@ -203,7 +203,7 @@
                                 </div>
                                 <div class="showcase_bundle_block__single--price_discounted">
                                     24,95<span class="currency">&euro;</span>
-                                </div>                                
+                                </div>
                                 <div class="showcase_bundle_block__single--mainPrice">
                                     10<span class="currency">&nbsp;&euro;</span>
                                     <!-- riga prezzo e currency -->
@@ -217,7 +217,7 @@
                                 </a>
                             </div>
                             <!-- 5 di 3 -->
-                            <div class="showcase_bundle_block__single showcase_bundle_block__single--card--V1 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <div class="showcase_bundle_block__single item showcase_bundle_block__single--card--V1 col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                                 <!-- singolo item per il ciclo -->
                                 <div class="showcase_bundle_block__single--title">
                                     Internet
@@ -259,12 +259,12 @@
                                    scopri  <!-- bottone -->
                                 </a>
                             </div>
-                            <div class="clear"></div>
                             <!-- parte mostra altri se necessaria -->
-                            <div class="bundle_block__showMore">
-                                mostra altre tariffe
-                            </div>
                             <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+                        </div>
+                        <div class="clear"></div>
+                        <div class="bundle_block__showMore">
+                            mostra altre tariffe
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
 jQuery(document).ready(function($) {
     $('.bundle_block__showMore').click(function() {
         var thisItem = $(this);
-        $(this).parents('.showcase_bundle_block').find('.showcase_bundle_block__single').each(function(index) {
+        thisItem.parents('.showcase_bundle_block').find('.showcase_bundle_block__single').each(function(index) {
             if ($(this).css('display', 'none')) {
                 $(this).show();
                 thisItem.hide();
