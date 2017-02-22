@@ -480,7 +480,7 @@ jQuery(document).ready(function($) {
     //AGGIUNGI STRIPMENU *DONE*
     CREAPAGINA.addHtmlBlock('#aggiungiStripMenu', 'blocks/homepage/blocco_strip_menu.html');
     //AGGIUNGI immagine destra *DONE*
-    CREAPAGINA.addHtmlBlock('#aggiungiImmagineDestra', 'blocks/homepages/blocco_immagine_testo_bottone_destra.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiImmagineDestra', 'blocks/homepage/blocco_immagine_testo_bottone_destra.html');
     //AGGIUNGI contatti *DONE*
     CREAPAGINA.addHtmlBlock('#aggiungiBloccoContatti', 'blocks/homepage/blocco_contatti_wind.html');
     //AGGIUNGI FATTI CONSIGLIARE *DONE*
@@ -488,7 +488,7 @@ jQuery(document).ready(function($) {
     //AGGIUNGI IMMAGINE TESTO *DONE*
     CREAPAGINA.addHtmlBlock('#aggiungiImmagineTesto', 'blocks/homepage/blocco_immagine_testo.html');
     //AGGIUNGI IMMAGINE TESTO SINISTRA *DONE*
-    CREAPAGINA.addHtmlBlock('#aggiungiImmagineTestoSinistra', 'blocks/homepages/blocco_immagine_testo_bottone.html');
+    CREAPAGINA.addHtmlBlock('#aggiungiImmagineTestoSinistra', 'blocks/homepage/blocco_immagine_testo_bottone.html');
     //AGGIUNGI CONTATTI BUSINESS *DONE*
     CREAPAGINA.addHtmlBlock('#aggiungiContattiBusiness', 'blocks/homepage/blocco_contatti_wind_business.html');
     //AGGIUNGI INFOGRAFICA *DONE*
