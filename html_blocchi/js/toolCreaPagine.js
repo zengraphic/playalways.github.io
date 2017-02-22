@@ -1,5 +1,34 @@
 CREAPAGINA = {};
 jQuery(document).ready(function($) {
+
+    CREAPAGINA.disclaimerAnimate = function(element, timer, timeout, timerFade) {
+        window.setTimeout(function() {
+            $(element).stop().animate({
+                'font-size': '+=80px',
+                'opacity': '1',
+            }, {
+                duration: timer,
+                easing: 'swing',
+                complete: function() {                    
+                    $(element).animate({
+                        'opacity': '0',
+                    } ,timerFade);        
+                }
+            });
+        }, timeout);
+    }
+
+    CREAPAGINA.newAndImproved = function() {
+        CREAPAGINA.disclaimerAnimate($('.testoAddio'), 1000,1000,300);
+        CREAPAGINA.disclaimerAnimate($('.testoAddio2'), 1000,2000,300);
+        CREAPAGINA.disclaimerAnimate($('.testoAddio3'), 1000,3000,300);
+        window.setTimeout(function() {
+            $('.noMore').slideUp();
+        },4000);
+    }
+
+
+    CREAPAGINA.newAndImproved();
     CREAPAGINA.hoverItem = function(item) {
 
     }
@@ -30,7 +59,10 @@ jQuery(document).ready(function($) {
                         console.log(checkShowMore + " " + clickShowMore);
                         $(newHtmlAwesome).find(checkShowMore).addClass(clickShowMore);
                     }
-                    //newHtmlAwesome = $(newHtmlAwesome).find(imgReplace).replaceWith(imgToReplace);
+                    $(newHtmlAwesome).find('img').each(function(index) {
+                        var subStr = $(this).attr('src').replace('../../img/', 'img/');
+                        $(this).attr('src', subStr);
+                    });
                     $('.awesomePage').append(newHtmlAwesome);
                     //============== ENDAPPEND HTMl
                     if (checkParameter == 'select') {
@@ -95,7 +127,6 @@ jQuery(document).ready(function($) {
         }, timer);
     }
     CREAPAGINA.attivaSliders = function() {
-
         if ($('.slider__stripMenuText').length) {
             $('.slider__stripMenuText').slick({
                 centerMode: false,
@@ -106,8 +137,8 @@ jQuery(document).ready(function($) {
                 infinite: false,
                 slidesToShow: 6,
                 slidesToScroll: 6,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -145,8 +176,8 @@ jQuery(document).ready(function($) {
                 speed: 300,
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -183,8 +214,8 @@ jQuery(document).ready(function($) {
                 infinite: false,
                 slidesToShow: 6,
                 slidesToScroll: 6,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -223,8 +254,8 @@ jQuery(document).ready(function($) {
                 speed: 300,
                 slidesToShow: 4,
                 slidesToScroll: 4,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right_white.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left_white.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right_white.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left_white.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -265,8 +296,8 @@ jQuery(document).ready(function($) {
                 speed: 300,
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -301,8 +332,8 @@ jQuery(document).ready(function($) {
                 speed: 300,
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -338,8 +369,8 @@ jQuery(document).ready(function($) {
                 speed: 300,
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
-                prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
+                nextArrow: "<img class='slider__navigation right__arrow' src='img/icons-interface/slider_arrow_right.png'>",
+                prevArrow: "<img class='slider__navigation left__arrow' src='img/icons-interface/slider_arrow_left.png'>",
                 dotsClass: 'slider__dots',
                 customPaging: function(slider, i) {
                     var thumb = $(slider.$slides[i]).data('thumb');
@@ -417,7 +448,7 @@ jQuery(document).ready(function($) {
     //AGGIUNGI BUNDLE BUSINESS *todo*
     CREAPAGINA.addHtmlBlock('#aggiungiBloccoBusiness', 'blocks/homepage/blocco_bundle_2_business.html');
     //AGGIUNGI BUNDLE BUSINESS *todo*
-    CREAPAGINA.addHtmlBlock('#aggiungiBloccoVideo', 'blocks/homepage/blocco_visore_video.html');    
+    CREAPAGINA.addHtmlBlock('#aggiungiBloccoVideo', 'blocks/homepage/blocco_visore_video.html');
     //AGGIUNGI BUNDLE 2 *todo*
     CREAPAGINA.addHtmlBlock('#aggiungiBlocco2', 'blocks/homepage/blocco_bundle_2.html');
     //AGGIUNGI VISORE STANDARD *DONE*
