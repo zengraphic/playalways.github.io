@@ -23,6 +23,7 @@ jQuery(document).ready(function($) {
         CREAPAGINA.disclaimerAnimate($('.testoAddio img'), 2000,100,300);
         window.setTimeout(function() {
             $('.noMore').slideUp();
+            $('.testoAddio').slideUp();            
         },2000);
     }
 
