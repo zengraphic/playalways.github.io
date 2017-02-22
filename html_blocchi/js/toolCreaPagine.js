@@ -4,7 +4,8 @@ jQuery(document).ready(function($) {
     CREAPAGINA.disclaimerAnimate = function(element, timer, timeout, timerFade) {
         window.setTimeout(function() {
             $(element).stop().animate({
-                'font-size': '+=80px',
+                'width': '+=80px',
+                'left': '-=40',
                 'opacity': '1',
             }, {
                 duration: timer,
@@ -19,12 +20,10 @@ jQuery(document).ready(function($) {
     }
 
     CREAPAGINA.newAndImproved = function() {
-        CREAPAGINA.disclaimerAnimate($('.testoAddio'), 1000,1000,300);
-        CREAPAGINA.disclaimerAnimate($('.testoAddio2'), 1000,2000,300);
-        CREAPAGINA.disclaimerAnimate($('.testoAddio3'), 1000,3000,300);
+        CREAPAGINA.disclaimerAnimate($('.testoAddio img'), 2000,100,300);
         window.setTimeout(function() {
             $('.noMore').slideUp();
-        },4000);
+        },2000);
     }
 
 
