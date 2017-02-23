@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/base-style.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/wind-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/landing.css" />
     <!--- /CSS -->
     <!--- JS -->
     <script type="text/javascript" src="../js/base-libs.min.js"></script>
@@ -42,6 +43,11 @@
                                 <!-- BACKGROUND COLORATO DI DIVISIONE TRASVERSALE-->
                                 <div class="slider__landing">
                                     <div class="slider__landing__single">
+                                        <div class="landing_privati__visore__half_block float_right">
+                                            <div class="landing_privati__visore__half_block--imageContainer">
+                                                <img src="../img/landing/headphones.png" class="landing_privati__visore__image" />
+                                            </div>
+                                        </div>
                                         <div class="landing_privati__visore__half_block float_left">
                                             <div class="container_mid_row">
                                                 <div class="column_left float_left">
@@ -58,32 +64,27 @@
                                                     </div>
                                                     <div class="clear"></div>
                                                     <div class="priceRow align_center">
-                                                        <span class="mainPrice">
-                                                15
-                                                </span>
-                                                        <span class="euro">
-                                                €
-                                                </span>
+                                                        <span class="mainPrice">15&nbsp;</span>
+                                                        <span class="euro">€</span>
                                                     </div>
                                                     <div class="clear"></div>
                                                     <div class="landing_privati__visore__singleButton">
-                                                        <a href="#" class="button">scopri      <!-- BOTTONE ARANCIONE -->
-                                        </a>
+                                                        <a href="#" class="button">scopri</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="slider__landing__single">
                                         <div class="landing_privati__visore__half_block float_right">
                                             <div class="landing_privati__visore__half_block--imageContainer">
                                                 <img src="../img/landing/headphones.png" class="landing_privati__visore__image" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="slider__single">
                                         <div class="landing_privati__visore__half_block float_left">
                                             <div class="container_mid_row">
                                                 <div class="column_left float_left">
-                                                    <div class="landing_privati__visore__title align_center">Wind Magnum 2
+                                                    <div class="landing_privati__visore__title align_center">Wind Magnum
                                                         <!-- TITOLO GRANDE-->
                                                     </div>
                                                     <div class="landing_privati__visore__text">Wind Magnum, l'offerte NO TAX con 2 SIM e tanti GIGA da condividere su Smartphone, Tablet e PC
@@ -96,27 +97,50 @@
                                                     </div>
                                                     <div class="clear"></div>
                                                     <div class="priceRow align_center">
-                                                        <span class="mainPrice">
-                                                15
-                                                </span>
-                                                        <span class="euro">
-                                                €
-                                                </span>
+                                                        <span class="mainPrice">15&nbsp;</span>
+                                                        <span class="euro">€</span>
                                                     </div>
                                                     <div class="clear"></div>
                                                     <div class="landing_privati__visore__singleButton">
-                                                        <a href="#" class="button">scopri      <!-- BOTTONE ARANCIONE -->
-                                        </a>
+                                                        <a href="#" class="button">scopri</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="landing_privati__visore__half_block float_right ">
+                                    </div>
+                                    <div class="slider__landing__single">
+                                        <div class="landing_privati__visore__half_block float_right">
                                             <div class="landing_privati__visore__half_block--imageContainer">
                                                 <img src="../img/landing/headphones.png" class="landing_privati__visore__image" />
                                             </div>
                                         </div>
-                                    </div>
+                                        <div class="landing_privati__visore__half_block float_left">
+                                            <div class="container_mid_row">
+                                                <div class="column_left float_left">
+                                                    <div class="landing_privati__visore__title align_center">Wind Magnum
+                                                        <!-- TITOLO GRANDE-->
+                                                    </div>
+                                                    <div class="landing_privati__visore__text">Wind Magnum, l'offerte NO TAX con 2 SIM e tanti GIGA da condividere su Smartphone, Tablet e PC
+                                                        <!-- DESCRIZIONE-->
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div class="offer_detail align_center">
+                                                        <span class="offer_detail__gigs"> 4 GIGA</span>
+                                                        <span class="offer_detail__offerDetail">Tutto illimitato</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div class="priceRow align_center">
+                                                        <span class="mainPrice">15&nbsp;</span>
+                                                        <span class="euro">€</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div class="landing_privati__visore__singleButton">
+                                                        <a href="#" class="button">scopri</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                                                        
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -618,111 +642,30 @@
 <script>
 jQuery(document).ready(function($) {
 
-    $('.slider__landing').slick({
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        touchMove: true,
-        appendDots: $('.dots_prova'),
-        // nextArrow: "<img class='slider__navigation right__arrow' src='../../img/icons-interface/slider_arrow_right.png'>",
-        // prevArrow: "<img class='slider__navigation left__arrow' src='../../img/icons-interface/slider_arrow_left.png'>",
-        dotsClass: 'slider__dots',
-        customPaging: function(slider, i) {
-            var thumb = $(slider.$slides[i]).data('thumb');
-            return '<div class="slider__single"></div>';
-        },
-    });
+
+    function initSliders() {
+        $('.slider__landing').slick({
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 800,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            dotsClass: 'slider__dots',
+            touchMove: true,
+            appendDots: $('.dots_prova'),
+            customPaging: function(slider, i) {
+                var thumb = $(slider.$slides[i]).data('thumb');
+                return '<div class="slider__single"></div>';
+            },
+            responsive: [{
+                breakpoint: 768,
+            }]
+        });
+    }
+    initSliders();
 
 });
-// jQuery(document).ready(function($) {
-//     $('.landing_privati__offers__showMore').click(function() {
-//         var thisItem = $(this);
-//         $(this).parents('.landing_privati__offers').find('.landing_privati__offers__single').each(function(index) {
-//             if ($(this).css('display', 'none')) {
-//                 $(this).show();
-//                 thisItem.hide();
-//             }
-//         });
-//     });
-
-// });
-// jQuery(document).ready(function($) {
-//     var allCatFirst = ".faq_block__single.main_faq_block";
-//     var allCatFirstOnlyFaq = allCatFirst+"--only_faq";
-//     var allCatBlocks = ".faq_block__firstLevelBlock";
-//     var allCatSecond = ".faq_block__single__description--list";
-//     var allAccordions = ".faq_accordions";
-
-
-//     $(allCatFirst).not($(allCatFirstOnlyFaq)).click(function() {
-//         var activeCatFirst = $(this);
-//         var faqBlockTarget = activeCatFirst.data('item');
-//         if (activeCatFirst.is('.faq_active')) {
-//             activeCatFirst.removeClass('faq_active');
-//             $(faqBlockTarget).hide("slow");
-//             $(allAccordions).hide("slow").find('input').prop('checked', true);
-//         } else {
-//             $(allCatFirst).removeClass('faq_active');
-//             $(allCatSecond).removeClass('faq_second_active');
-//             $(allCatBlocks).hide("slow");
-//             $(allAccordions).hide("slow").find('input').prop('checked', true);
-//             activeCatFirst.addClass('faq_active');
-//             $(faqBlockTarget).show("slow", function() {
-//                 var blockTop = $(faqBlockTarget).offset().top;
-//                 $("html, body").stop().animate({
-//                     scrollTop: blockTop
-//                 }, 'slow');
-//             });
-
-//         }
-//     });
-//     $(allCatFirstOnlyFaq).click(function() {
-//         var activeCatFirst = $(this);
-//         var faqAccordionTarget = activeCatFirst.data('item');
-//         if (activeCatFirst.is('.faq_active')) {
-//             activeCatFirst.removeClass('faq_active');
-//             $(faqAccordionTarget).hide("slow").find('input').prop('checked', true);
-//         } else {
-//             $(allCatFirst).removeClass('faq_active');
-//             $(allCatSecond).removeClass('faq_second_active');
-//             $(allCatBlocks).hide("slow");
-//             $(allAccordions).hide("slow").find('input').prop('checked', true);
-//             activeCatFirst.addClass('faq_active');
-//             $(faqAccordionTarget).show("slow", function() {
-//                 var accordionTop = $(faqAccordionTarget).offset().top;
-//                 $("html, body").stop().animate({
-//                     scrollTop: accordionTop
-//                 }, 'slow');
-//             });
-
-//         }
-//     });
-//     $(allCatSecond).click(function() {
-//         var activeCatSecond = $(this);
-//         var faqAccordionTarget = activeCatSecond.data('item');
-//         if (activeCatSecond.is('.faq_second_active')) {
-//             activeCatSecond.removeClass('faq_second_active');
-//             $(faqAccordionTarget).hide("slow").find('input').prop('checked', true);
-//         } else {
-//             $('.faq_accordions').not(faqAccordionTarget).hide('slow').find('input').prop('checked', true);
-//             $(allCatSecond).removeClass('faq_second_active');
-//             activeCatSecond.addClass('faq_second_active');
-//             $(faqAccordionTarget).show("slow", function() {
-//                 var accordionTop = $(faqAccordionTarget).offset().top;
-//                 $("html, body").stop().animate({
-//                     scrollTop: accordionTop
-//                 }, 'slow');
-//             });
-
-//         }
-//     });
-//     $('input.accordionBox').on('change', function() {
-//         $('input.accordionBox').not(this).prop('checked', true);
-//     });
-// });
 </script>
 
 </html>
