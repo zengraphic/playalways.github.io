@@ -351,7 +351,7 @@ r$(document).ready(function() {
     r$('.bxslider').bxSlider({
         pagerCustom: '#bx-pager'
     });
-    r$('.base__scrollable').css('overflow', 'overlay');
+    //r$('.base__scrollable').css('overflow', 'overlay');
     r$('.detail li').click(function() {
         r$('.detail li').removeClass("active_action");
         r$(this).addClass("active_action");

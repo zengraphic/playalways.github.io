@@ -1,38 +1,49 @@
-
 var r$ = jQuery.noConflict();
 
 // end validate insert email
 
 
-r$(document).ready(function () {
+r$(document).ready(function() {
 
 
-    r$('body').on('keyup','input[type=tel]', function(event){
+    r$('body').on('keyup', 'input[type=tel]', function(event) {
         var self = $(this);
         var value = $(this).val();
         var testCondition = new RegExp(/^[0-9]{1,10}$/);
-        if(!testCondition.test(value)){
-            $(this).val(value.slice(0,-1));
+        if (!testCondition.test(value)) {
+            $(this).val(value.slice(0, -1));
             return false;
         } else {
             return true;
         }
     });
 
+    r$('body').on({
+        'keypress': function(event) {
+            var $input = r$(this);
+            if (event.which == 13) {
+                $input
+                    .closest('form')
+                    .submit();
+                return false; //<---- Add this line
+            }
+        }
+    }, '.base__input' );
+
 });
 
 /* end validate credentials */
 
 
-r$(document).ready(function () {
+r$(document).ready(function() {
     /* Breadcrumbs mobile */
-    var breadcums_action = (function () {
-        r$('.base__breadcrumbs').each(function () {
+    var breadcums_action = (function() {
+        r$('.base__breadcrumbs').each(function() {
             var liItems = r$(this);
             var Sum = 0;
 
             if (liItems.children('li').length >= 1) {
-                r$(this).children('li').each(function (i, e) {
+                r$(this).children('li').each(function(i, e) {
                     Sum += r$(e).outerWidth(true);
                 });
                 r$(this).width(Sum + 20);
@@ -40,7 +51,7 @@ r$(document).ready(function () {
         });
     });
     breadcums_action();
-    r$(window).resize(function () {
+    r$(window).resize(function() {
         if (r$(".base__scrollable2").length > 0) {
             breadcums_action();
             r$(".base__scrollable2").getNiceScroll(0).doScrollLeft(350, 500);
@@ -64,7 +75,7 @@ r$(document).ready(function () {
 /**
  * DA QUI L'INIZIALIZZAZIONE CON LO SLICK CORRETTA PER  I COMPONENTI REALIZZATI
  */
-r$(document).ready(function () {
+r$(document).ready(function() {
 
 
     if (r$('.slider__stripMenu').length) {
@@ -80,28 +91,28 @@ r$(document).ready(function () {
             nextArrow: "<img class='slider__navigation right__arrow' src='/img/icons-interface/slider_arrow_right.png'>",
             prevArrow: "<img class='slider__navigation left__arrow' src='/img/icons-interface/slider_arrow_left.png'>",
             dotsClass: 'slider__dots',
-            customPaging: function (slider, i) {
+            customPaging: function(slider, i) {
                 var thumb = r$(slider.$slides[i]).data('thumb');
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                breakpoint: 840,
-                settings: {
-                    centerMode: true,
-                    centerPadding: '75px',
-                    slidesToShow: 4,
-                    initialSlide: 3,
-                    slidesToScroll: 4,
-                }
-            }, {
-                breakpoint: 585,
-                settings: {
-                    centerMode: true,
-                    centerPadding: '55px',
-                    initialSlide: 1,
-                    slidesToShow: 3,
-                }
-            },
+                    breakpoint: 840,
+                    settings: {
+                        centerMode: true,
+                        centerPadding: '75px',
+                        slidesToShow: 4,
+                        initialSlide: 3,
+                        slidesToScroll: 4,
+                    }
+                }, {
+                    breakpoint: 585,
+                    settings: {
+                        centerMode: true,
+                        centerPadding: '55px',
+                        initialSlide: 1,
+                        slidesToShow: 3,
+                    }
+                },
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
@@ -111,7 +122,7 @@ r$(document).ready(function () {
 
 });
 
-r$(document).ready(function () {
+r$(document).ready(function() {
 
 
     if (r$('.slider__bundle').length) {
@@ -125,25 +136,25 @@ r$(document).ready(function () {
             nextArrow: "<img class='slider__navigation right__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_right.png'>",
             prevArrow: "<img class='slider__navigation left__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_left.png'>",
             dotsClass: 'slider__dots',
-            customPaging: function (slider, i) {
+            customPaging: function(slider, i) {
                 var thumb = r$(slider.$slides[i]).data('thumb');
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                breakpoint: 840,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            }, {
-                breakpoint: 585,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
+                    breakpoint: 840,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 585,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
@@ -152,7 +163,7 @@ r$(document).ready(function () {
     }
 });
 
-r$(document).ready(function () {
+r$(document).ready(function() {
 
     if (r$('.slider__slidingNews').length) {
         r$('.slider__slidingNews').slick({
@@ -166,25 +177,25 @@ r$(document).ready(function () {
             nextArrow: "<img class='slider__navigation right__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_right.png'>",
             prevArrow: "<img class='slider__navigation left__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_left.png'>",
             dotsClass: 'slider__dots',
-            customPaging: function (slider, i) {
+            customPaging: function(slider, i) {
                 var thumb = $(slider.$slides[i]).data('thumb');
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                breakpoint: 840,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            }, {
-                breakpoint: 585,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
+                    breakpoint: 840,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 585,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
@@ -194,7 +205,7 @@ r$(document).ready(function () {
 });
 
 
-r$(document).ready(function () {
+r$(document).ready(function() {
 
 
     if (r$('.slider__offer').length) {
@@ -210,25 +221,25 @@ r$(document).ready(function () {
             nextArrow: "<img class='slider__navigation right__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_right.png'>",
             prevArrow: "<img class='slider__navigation left__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_left.png'>",
             dotsClass: 'slider__dots',
-            customPaging: function (slider, i) {
+            customPaging: function(slider, i) {
                 var thumb = r$(slider.$slides[i]).data('thumb');
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                breakpoint: 840,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            }, {
-                breakpoint: 585,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
+                    breakpoint: 840,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 585,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
@@ -239,8 +250,7 @@ r$(document).ready(function () {
 
             try {
                 r$('.slider__offer').slick(slickConfig);
-            }
-            catch (e) {
+            } catch (e) {
 
                 //se va la prima volta non è mai stato fatto
                 //altrimenti non va la seconda volta (switch-tab)
@@ -263,7 +273,7 @@ r$(document).ready(function () {
     }
 });
 
-r$(document).ready(function () {
+r$(document).ready(function() {
 
     if (r$('.slider__homeandlife').length) {
         r$('.slider__homeandlife').slick({
@@ -276,31 +286,31 @@ r$(document).ready(function () {
             nextArrow: "<img class='slider__navigation right__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_right_white.png'>",
             prevArrow: "<img class='slider__navigation left__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_left_white.png'>",
             dotsClass: 'slider__dots',
-            customPaging: function (slider, i) {
+            customPaging: function(slider, i) {
                 var thumb = r$(slider.$slides[i]).data('thumb');
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                breakpoint: 979,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            }, {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            }, {
-                breakpoint: 550,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
+                    breakpoint: 979,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 550,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
@@ -310,7 +320,7 @@ r$(document).ready(function () {
 });
 
 
-r$(document).ready(function ($) {
+r$(document).ready(function($) {
 
     if ($('.service__bundle').length) {
 
@@ -324,25 +334,25 @@ r$(document).ready(function ($) {
             nextArrow: "<img class='slider__navigation right__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_right.png'>",
             prevArrow: "<img class='slider__navigation left__arrow' src='/fileadmin/Img/ContentElements/icons-interface/slider_arrow_left.png'>",
             dotsClass: 'slider__dots',
-            customPaging: function (slider, i) {
+            customPaging: function(slider, i) {
                 var thumb = $(slider.$slides[i]).data('thumb');
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                breakpoint: 840,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            }, {
-                breakpoint: 585,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
+                    breakpoint: 840,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 585,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
@@ -353,14 +363,14 @@ r$(document).ready(function ($) {
 
 });
 
-r$(document).ready(function ($) {
+r$(document).ready(function($) {
     var windowsize = $(window).width();
     var numberOfSingle;
     $('.close_client_block').click(function() {
         $('.client_block__overlay').fadeOut();
         $('.client_block__expand').animate({
             top: '-50vw'
-        }, 500, function () {
+        }, 500, function() {
             $('.client_block__expand--append').html('');
             $('.client_block__expand').hide();
         });
@@ -388,8 +398,8 @@ r$(document).ready(function ($) {
 
 });
 
-r$(document).ready(function () {
-    r$("#ecommerce-shoulder-wind").click(function () {
+r$(document).ready(function() {
+    r$("#ecommerce-shoulder-wind").click(function() {
         r$('.mfp-bg, .mfp-wrap').css('height', '100%');
         r$('base__popup.refill_block .container').css('height', '100%');
     });
@@ -491,7 +501,7 @@ r$(document).ready(function($) {
         }
     });
 
-    $(".powermail_reset").click(function(){
+    $(".powermail_reset").click(function() {
         $.each($(".powermail_fieldwrap"), function() {
             var placeHolder = $(this).find($("label")).text();
             $(this).find($("input, textarea")).attr("placeholder", placeHolder);
@@ -519,23 +529,23 @@ jQuery(document).ready(function($) {
             return '<div class="slider__single"></div>';
         },
         responsive: [{
-            breakpoint: 840,
-            settings: {
-                centerMode: true,
-                centerPadding: '75px',
-                slidesToShow: 4,
-                initialSlide: 3,
-                slidesToScroll: 4,
-            }
-        }, {
-            breakpoint: 585,
-            settings: {
-                centerMode: true,
-                centerPadding: '55px',
-                initialSlide: 1,
-                slidesToShow: 3,
-            }
-        },
+                breakpoint: 840,
+                settings: {
+                    centerMode: true,
+                    centerPadding: '75px',
+                    slidesToShow: 4,
+                    initialSlide: 3,
+                    slidesToScroll: 4,
+                }
+            }, {
+                breakpoint: 585,
+                settings: {
+                    centerMode: true,
+                    centerPadding: '55px',
+                    initialSlide: 1,
+                    slidesToShow: 3,
+                }
+            },
             // You can unslick at a given breakpoint now by adding:
             // settings: "unslick"
             // instead of a settings object
@@ -549,7 +559,7 @@ function addRopz(obj) {
 
     if (ropz != "" && ropz != undefined) {
         var cookies = readCookies();
-        Ember.instrument('ecommerce.add_to_cart', {'productIds': [ropz], 'cookies': cookies});
+        Ember.instrument('ecommerce.add_to_cart', { 'productIds': [ropz], 'cookies': cookies });
         openShoulder();
     }
 }
@@ -561,14 +571,14 @@ function addRopz(obj) {
 function isValidPhoneNumberBloccoRicarica() {
     var regex = /^[03][0-9]{8,11}$/g;
     var secure = r$("input[name=insert_number]").val();
-    if(!isNumberWind(secure) &&!regex.test(secure)) {
+    if (!isNumberWind(secure) && !regex.test(secure)) {
         r$(".base__input#insert_number").addClass("error");
         r$("#error_messageBloccoInsert_number").addClass("error");
-        r$("#sendBloccoRicarica").attr("disabled",true);
+        r$("#sendBloccoRicarica").attr("disabled", true);
     } else {
         r$(".base__input#insert_number").removeClass("error");
         r$("#error_messageBloccoInsert_number").removeClass("error");
-        r$("#sendBloccoRicarica").attr("disabled",false);
+        r$("#sendBloccoRicarica").attr("disabled", false);
     }
 }
 
@@ -576,12 +586,11 @@ function checkNumberBloccoRicarica() {
     if (r$('input[name=confirm_number]').val() == r$('input[name=insert_number]').val()) {
         r$(".base__input#confirm_number").removeClass("error");
         r$("#error_messageBloccoConfirm_number").removeClass("error");
-        r$("#sendBloccoRicarica").attr("disabled",false);
-    }
-    else {
+        r$("#sendBloccoRicarica").attr("disabled", false);
+    } else {
         r$(".base__input#confirm_number").addClass("error");
         r$("#error_messageBloccoConfirm_number").addClass("error");
-        r$("#sendBloccoRicarica").attr("disabled",true);
+        r$("#sendBloccoRicarica").attr("disabled", true);
     }
 
 }
@@ -604,7 +613,7 @@ jQuery(document).ready(function($) {
             }
         });
 
-    $(".powermail_reset").click(function(){
+    $(".powermail_reset").click(function() {
         $.each($(".powermail_fieldwrap"), function() {
             var placeHolder = $(this).find($("label")).text();
             $(this).find($("input, textarea")).attr("placeholder", placeHolder);
@@ -635,26 +644,27 @@ function initializeSlide() {
             return '<div class="slider__single"></div>';
         },
         responsive: [{
-            breakpoint: 840,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-            }
-        }, {
-            breakpoint: 585,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
+                breakpoint: 840,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            }, {
+                breakpoint: 585,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
             // You can unslick at a given breakpoint now by adding:
             // settings: "unslick"
             // instead of a settings object
         ]
     });
-}r$('.result_item').hide();
+}
+r$('.result_item').hide();
 
 
 r$(document).ready(function($) {
@@ -700,7 +710,7 @@ r$(document).ready(function($) {
             }]
         });
 
-    r$(".search-link").click(function (event) {
+    r$(".search-link").click(function(event) {
         event.preventDefault();
 
         if (r$("body").hasClass('no_scroll')) {
@@ -725,7 +735,7 @@ r$(document).ready(function($) {
 
     r$('.result_item').hide();
 
-    r$(".block-search__search_bar__input").keypress(function () {
+    r$(".block-search__search_bar__input").keypress(function() {
         if (!r$(this).val()) {
             r$(".block-search__results__container").addClass('ghost_block');
         } else {
@@ -734,7 +744,7 @@ r$(document).ready(function($) {
         }
     });
 
-    r$(".block-search__search_bar__input").blur(function () {
+    r$(".block-search__search_bar__input").blur(function() {
         if (!r$(this).val()) {
             r$('.result_item').hide();
             r$("body").removeClass('no_scroll');
@@ -747,7 +757,7 @@ r$(document).ready(function($) {
 
     });
 
-    r$(".block-search__search_bar__resetter .resetter").click(function () {
+    r$(".block-search__search_bar__resetter .resetter").click(function() {
         r$(".block-search__search_bar__input").val("").blur();
     });
 
@@ -822,10 +832,10 @@ function ValidateEmail(email) {
 /* validate credentials */
 
 // validate insert phone
-r$(document).ready(function () {
+r$(document).ready(function() {
     var input = r$("#shoulderBox input")
     var boton = r$("#shoulderBox button")
-    input.keyup(function () {
+    input.keyup(function() {
         if (r$(this).val().length >= 7) {
             boton.removeAttr('disabled');
         }
