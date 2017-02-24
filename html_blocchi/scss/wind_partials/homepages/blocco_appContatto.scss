@@ -64,6 +64,7 @@
                 &:hover {
                     color: $color_orange_light;
                 }
+                
             }
             &:after {
                 padding: 0px 9px;
@@ -73,12 +74,19 @@
                 position: relative;
                 bottom: 0.45em;
             }
-            &:nth-of-type(4){
-                &:after{
-                   content: '';
+            &:nth-of-type(4) {
+                &:after {
+                    content: '';
                 }
             }
-
+            &.white {
+                    a{
+                        color: $color_white;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                    }
+                }
         }
     }
     @at-root #{&}__checkbox {
@@ -133,13 +141,13 @@
         }
         &__image {
             left: 9%;
-            &--big{
-                width:50%;
-                top:38px;
+            &--big {
+                width: 50%;
+                top: 38px;
             }
             &--small {
                 width: 48%;
-                top:54px;
+                top: 54px;
                 margin-left: -16%;
             }
         }

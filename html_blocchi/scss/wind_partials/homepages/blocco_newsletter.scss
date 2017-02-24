@@ -20,52 +20,33 @@
     @at-root #{&}__icon {
         margin-top: 40px;
         margin-bottom: 30px;
-        // &--gplus {
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 0;
-        //     float: left;
-        // }
-        // &--youtube {
-        //     margin-left: 4em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -97px;
-        //     float: left;
-        // }
-        // &--facebook {
-        //     margin-left: 4em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -194px;
-        //     float: left;
-        // }
-        // &--twitter {
-        //     margin-left: 4em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -291px;
-        //     float: left;
-        // }
-        // 
-        .base__icon{
-            float:left;
-            width:88px;
-            height:88px;
-            &.icon_twitter--color{
-                margin-left:1em;
+        &.centered {
+            .newsletter_block__icon {
+                &--firstRow {
+                    width: 50%;
+                    .base__icon {
+                        float: right;
+                    }
+                }
+                &--secondRow {
+                    width: 50%;
+                }
             }
-            &.icon_youtube--color{
-                margin-left:1em;
-            }
-            &.icon_gplus--color{
-                margin-left:1em;
-            }
-
+        }
+        .col-xs-12 {
+            padding: 0;
+        }
+        &--firstRow {
+            float: left;
+        }
+        &--secondRow {
+            float: left;
+        }
+        .base__icon {
+            float: left;
+            width: 88px;
+            height: 88px;
+            margin-right: 0.5em;
         }
     }
 }
@@ -73,83 +54,34 @@
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-@media all and (min-width: 767px) {
+@media all and (max-width: 767px) {
     .newsletter_block {
-        &__icon {
-            font-size: 5px;
-        }
-
+        text-align: center;
     }
-}
-
-@media all and (min-width: 940px) {
-    .newsletter_block {
-        &__icon {
-            font-size: 1em;
-        }
-    }
-}
-
-@media all and (max-width: 667px) {
-    .newsletter_block {
-        &__icon {
-            
+    .newsletter_block__icon {
+        margin: 0 auto;
+        &--firstRow {
+            float: left;
             margin: 0 auto;
-            &--youtube {
-                margin-left: 3.5em;
+            width: 50%;
+            .base__icon {
+                float: right;
             }
-            &--twitter {
-                margin-left: 3.5em;
-                margin-top: 30px;
-            }
-            &--facebook {
-                margin-left: 0px;
-                margin-top: 30px;
-            }
-            .base__icon{
-            float:left;
-            width:88px;
-            height:88px;
-            &.icon_twitter--color{
-                width:70px;
-            height:70px;
-                margin-left:0.5em;
-            }
-            &.icon_youtube--color{
-                width:70px;
-            height:70px;
-                margin-left:0.5em;
-            }
-            &.icon_gplus--color{
-                width:70px;
-            height:70px;
-                margin-left:0.5em;
-            }
-             &.icon_facebook--color{
-                width:70px;
-            height:70px;
-                margin-left:2em;
-            }
-
         }
-        }
-        &__left {
-            .button {
-                font-size: 15px;
-            }
+        &--secondRow {
+            float: left;
+            width: 50%;
         }
     }
-}
-
-@media all and (min-width: 668px) {
-    .newsletter_block {
-        &__left {
-            .button {
-                font-size: 15px;
-            }
+    .newsletter_block__left {
+        input {
+            width: 100%;
+            max-width: 280px;
         }
-        &__icon {
-            margin: 0 auto;
+        .button {
+            width: 100%;
+            max-width: 280px;
+            margin: 25px auto;
         }
     }
 }

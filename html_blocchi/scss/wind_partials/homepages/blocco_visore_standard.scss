@@ -89,6 +89,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
             font-family: $weight-light;
+            height:80px;
             @at-root #{&}__price {
                 color: $color_mobile;
                 font-size: $title-big;
@@ -96,7 +97,7 @@
                 &.price_discounted {
                     position: relative;
                     &::after {
-                        border-bottom: 2px solid $color_robin;  // oppure $color_text;
+                        border-bottom: 2px solid $color_stroke;
                         content: "";
                         left: 0;
                         margin-top: calc(0.125em / 2 * -1);
@@ -112,6 +113,7 @@
                 .currency {
                     font-size: 40px;
                 }
+
             }
             @at-root #{&}__recurrency {
                 color: $color_text;
@@ -127,7 +129,8 @@
             .bundle_orange {
                 padding: 0 10px;
                 &__number {
-                    display: none;
+                    //display: none;
+                    font-size:2.2em
                 }
                 &__title {
                     font-size: 0.875em;
