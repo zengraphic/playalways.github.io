@@ -1,89 +1,85 @@
 /* */
+
+
 /* Original previous LESS format, converted to SASS */
+
+
 /* */
 
 .base__accordion {
-  .panel-heading {
-    padding: 1.1rem 1.5rem;
-    border: 0;
-    background-color: $color_white;
-    color: $color_grey_dark;
-
-    .panel-title {
-      display: inline-block;
-      width: 100%;
-      color: $color_orange;
-      font-size: 1.2rem;
-
-      a {
-        display: inline-block;
-        width: 96%;
-        transition: all .35s ease-in-out;
+    .panel-heading {
+        padding: 1.1rem 1.5rem;
+        border: 0;
+        background-color: $color_white;
         color: $color_grey_dark;
-        font-size: 1.1rem;
-        text-decoration: none;
-      }
-
-      .icon_expand {
-        position: absolute;
-        right: 2rem;
-      }
+        .panel-title {
+            display: inline-block;
+            width: 100%;
+            color: $color_orange;
+            font-size: 1.2rem;
+            a {
+                display: inline-block;
+                width: 96%;
+                transition: all .35s ease-in-out;
+                color: $color_grey_dark;
+                font-size: 1.1rem;
+                text-decoration: none;
+            }
+            .icon_expand {
+                position: absolute;
+                right: 2rem;
+            }
+        }
+        &.active {
+            .panel-title {
+                color: $color_orange;
+            }
+        }
     }
-
-    &.active {
-      .panel-title {
-        color: $color_orange;
-      }
+    .panel {
+        border: 0;
+        border-bottom: 1px solid $color_grey_stroke;
+        background: $color_white;
+        border-radius: 0;
+        box-shadow: none;
     }
-  }
-
-  .panel {
-    border: 0;
-    border-bottom: 1px solid $color_grey_stroke;
-    background: $color_white;
-  }
 }
 
 .icon_expand {
-  display: inline-block;
-  position: relative;
-  width: 1.125rem;
-  height: 1.125rem;
-
-  &:before,
-  &:after {
-    position: absolute;
-    width: 2px;
-    height: 9px;
-    transition: all .45s ease-in-out;
-    background-color: $color_orange;
-    content: "";
-  }
-
-  &:before {
-    transform: translate(10px, 4px) rotate(45deg);
-  }
-
-  &:after {
-    transform: translate(5px, 4px) rotate(-45deg);
-  }
-
-  @at-root {
-    .active #{&} {
-      &:before {
-        transform: translate(5px, 4px) rotate(45deg);
-      }
-
-      &:after {
-        transform: translate(10px, 4px) rotate(-45deg);
-      }
+    display: inline-block;
+    position: relative;
+    width: 1.125rem;
+    height: 1.125rem;
+    &:before,
+    &:after {
+        position: absolute;
+        width: 2px;
+        height: 9px;
+        transition: all .45s ease-in-out;
+        background-color: $color_orange;
+        content: "";
     }
-  }
+    &:before {
+        transform: translate(10px, 4px) rotate(45deg);
+    }
+    &:after {
+        transform: translate(5px, 4px) rotate(-45deg);
+    }
+    @at-root {
+        .active #{&} {
+            &:before {
+                transform: translate(5px, 4px) rotate(45deg);
+            }
+            &:after {
+                transform: translate(10px, 4px) rotate(-45deg);
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
-  .base__accordion {
-    width: 96%;
-    margin: .25rem 2%;
-  }
+    .base__accordion {
+        width: 96%;
+        margin: .25rem 2%;
+    }
 }
