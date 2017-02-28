@@ -3,6 +3,10 @@
     max-width: 1024px;
     margin: 0 auto;
     margin-bottom: 30px;
+    .button {
+        width: 100%;
+        max-width: 280px;
+    }
     &.contactWind_business {
         .contactWind_block__details__container {
             margin-top: 50px;
@@ -30,116 +34,41 @@
     }
     @at-root #{&}__right {}
     @at-root #{&}__icon {
-        margin-top: 40px;
         margin-bottom: 30px;
+        &>div {
+            padding: 0;
+        }
         &--firstRow {
             float: left;
         }
-        .base__icon{
-            float:left;
-            width:88px;
-            height:88px;
-            &.icon_twitter--color{
-                margin-left:1em;
-            }
-            &.icon_youtube--color{
-                margin-left:1em;
-            }
-            &.icon_gplus--color{
-                margin-left:1em;
-            }
-
-        }
-        // &--linkedin {
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -387px;
-        //     float: left;
-        // }
-        // &--gplus {
-        //     margin-left: 1em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 0;
-        //     float: left;
-        // }
-        // &--youtube {
-        //     margin-left: 1em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -97px;
-        //     float: left;
-        // }
-        // &--facebook {
-        //     margin-left: 1em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -194px;
-        //     float: left;
-        // }
-        // &--twitter {
-        //     margin-left: 1em;
-        //     background: url('../img/social/social_sprite.png') no-repeat;
-        //     width: 87px;
-        //     height: 87px;
-        //     background-position: 0 -291px;
-        //     float: left;
-        // }
-        // 
-        
-    }
-}
-
-// ============================== MEDIA QUERIES =========================
-// ============================== MEDIA QUERIES =========================
-// ============================== MEDIA QUERIES =========================
-@media all and (max-width: 990px) {
-    .contactWind_block__icon {
-        font-size: 8px;
-    }
-    .clearQuery {
-        content: ".";
-        display: block;
-        clear: both;
-        visibility: hidden;
-        line-height: 0;
-        height: 0;
-    }
-}
-
-@media all and (max-width: 950px) {
-    .contactWind_block__icon {
-        width: 570px;
-        margin: 0 auto;
-        &--firstRow {
-            float: none;
-           // margin-left: 8%;
-        }
         &--secondRow {
-            float: none;
-            //margin-left: 8%;
-            margin-top: 30px;
+            float: left;
         }
-        // &--facebook {
-        //     margin-left: 0px;
-        // }
-        .base__icon{
-            &.icon_youtube--color{
-                margin-left:0em;
-            }}
-        
-    }
-    .contactWind_block__left {
-        .button {
-            font-size: 15px;
+        .base__icon {
+            float: left;
+            width: 88px;
+            height: 88px;
+            margin-right: 0.5em;
+        }
+        &.centered {
+            .contactWind_block__icon {
+                &--firstRow {
+                    width: 50%;
+                    .base__icon {
+                        float: right;
+                    }
+                }
+                &--secondRow {
+                    width: 50%;
+                }
+            }
         }
     }
 }
 
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
 @media all and (max-width: 767px) {
     .contactWind_block {
         text-align: center;
@@ -148,69 +77,19 @@
         margin-bottom: 30px;
     }
     .contactWind_block__icon {
-        width: 500px;
         margin: 0 auto;
         &--firstRow {
             float: left;
-            margin-left: 13%;
-        }
-        &--secondRow {
-            float: left;
-            margin-left: 0%;
-            margin-top: 0px;
-        }
-        &--facebook {
-            margin-left: 1em;
-        }
-        .base__icon{
-            &.icon_youtube--color{
-                margin-left:1em;
-            }}
-    }
-    .contactWind_block__left {
-        .button {
-            font-size: 12px;
-        }
-    }
-}
-
-@media all and (max-width: 550px) {
-    .contactWind_block__right {
-        padding: 0px;
-    }
-    .contactWind_block__icon {
-        width: 290px;
-        margin: 0 auto;
-        .col-xs-12 {
-            padding: 0px;
-        }
-        &--firstRow {
-            float: none;
             margin: 0 auto;
-            width: 100%;
+            width: 50%;
+            .base__icon {
+                float: right;
+            }
         }
         &--secondRow {
-            float: none;
-            margin: 2em auto;
-        }
-        &--facebook {
-            margin-left: 1em;
-        }
-         .base__icon{
-            &.icon_youtube--color{
-                margin-left:0em;
-            }
-            &.icon_facebook--color{
-                margin-left:19%;
-            }
-            &.icon_youtube--color{
-                margin-left:19%;
-            }
+            float: left;
+            width: 50%;
         }
     }
-    .contactWind_block__left {
-        .button {
-            font-size: 12px;
-        }
-    }
+    
 }

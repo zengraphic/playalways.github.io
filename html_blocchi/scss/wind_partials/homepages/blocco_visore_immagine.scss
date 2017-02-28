@@ -49,6 +49,7 @@
         font-size: 1.875em;
         line-height: 1.2em;
         height: 3.6em;
+        overflow:hidden;
         color: $color_white;
         font-family: $weight-light;
     }
@@ -73,6 +74,7 @@
         margin: 0 auto;
         max-height: 500px;
         height: 100%;
+        
         &.withPartner {
             .image_block_display {
                 &__half_block {
@@ -87,6 +89,13 @@
                 &__partnerImage {
                     display: block;
                 }
+                &__title{
+                        height:3.6em;
+                        margin-bottom:0.5em;
+                    }
+                    &__text{
+                        height:2.3em;
+                    }
                 &__recurrency--bottom {
                     z-index: 50;
                     font-size: 0.750em;
@@ -125,6 +134,9 @@
                 &__price {
                     display: block;
                 }
+                &__recurrency {
+                    display: block;
+                }
                 &__recurrency--bottom {
                     z-index: 50;
                     font-size: 0.750em;
@@ -146,6 +158,9 @@
                     &__title,
                     &__text {
                         text-align: center;
+                    }
+                    &__recurrency {
+                        display: block;
                     }
                 }
             }

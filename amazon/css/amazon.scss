@@ -180,6 +180,10 @@ table {
     border-spacing: 0;
 }
 
+b{
+	font-weight: 600;
+}
+
 // ================= TYPOGRAPHY  ================== //
 // ================= TYPOGRAPHY  ================== //
 // ================= TYPOGRAPHY  ================== //
@@ -815,6 +819,14 @@ $bottomleft) {
     }
 }
 
+.clear {
+    clear: both;
+    height: 0;
+    margin: 0;
+    font-size: 1px;
+    line-height: 0;
+}
+
 .v-slot {
     &-consent0,
     &-consent1,
@@ -835,7 +847,7 @@ $bottomleft) {
     &-sectionTitle {}
     &.v-slot-wizard {
         min-height: 100%;
-        margin-bottom: -99px;
+        margin-bottom: -98px;
         height: auto !important;
         height: 100%;
         &:after {
@@ -1253,8 +1265,7 @@ $bottomleft) {
         &-indirizzo,
         &-indirizzo1 {
             display: inline-block !important;
-            width: calc(50% - 25px) !important;
-            margin-right: 25px;
+            width: 100% !important;
             margin-bottom: 15px;
             .v-textfield {
                 width: 100% !important;
@@ -1282,7 +1293,7 @@ $bottomleft) {
         &-citt,
         &-citt1 {
             display: inline-block !important;
-            width: calc(50% - 25px) !important;
+            width: calc(50% -25px)!important;
             margin-right: 25px;
             margin-bottom: 15px;
             .v-textfield {
@@ -1311,7 +1322,7 @@ $bottomleft) {
         &-cAP,
         &-cAP1 {
             display: inline-block !important;
-            width: calc(50% - 25px) !important;
+            width: calc(50% -25px)!important;
             margin-right: 25px;
             margin-bottom: 15px;
             .v-textfield {
