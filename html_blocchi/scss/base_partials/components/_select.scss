@@ -28,23 +28,30 @@
             position: absolute;
             right: 1rem;
             top: 50%;
-            margin: (-0.8rem) 1rem 0 0;
+            margin: (-0.6rem) 1rem 0 0;
             border: 0;
+            &:before,
+            &:after {
+                position: absolute;
+                width: 2px;
+                height: 9px;
+                transition: all .45s ease-in-out;
+                background-color: $color_orange;
+                content: "";
+            }
             &:before {
-                font-family: FontAwesome;
-                top: 0;
-                left: -5px;
-                padding-right: 0.5rem;
-                content: "\F078";
+                transform: translate(10px, 4px) rotate(45deg);
+            }
+            &:after {
+                transform: translate(5px, 4px) rotate(-45deg);
             }
         }
     }
     &.open .dropdown-toggle .bs-caret .caret:before {
-        font-family: "FontAwesome";
-        top: 0;
-        left: -5px;
-        padding-right: 0.5rem;
-        content: "\F077";
+        transform: translate(5px, 4px) rotate(45deg);
+    }
+    &.open .dropdown-toggle .bs-caret .caret:after {
+        transform: translate(10px, 4px) rotate(-45deg);
     }
     .dropdown-toggle:focus {
         outline: none;
