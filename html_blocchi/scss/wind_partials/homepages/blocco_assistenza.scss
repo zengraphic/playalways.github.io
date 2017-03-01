@@ -29,6 +29,37 @@
             height:65px;
             margin:45px auto 0 auto;
         }
+        .onlyOne{
+            width:100%;
+            margin-top:30px;
+            .base__icon{
+                float:left;
+                margin:20px auto;
+            }
+            div[class*="--title"]{
+                position:absolute;
+                left:120px;
+                margin-top:20px;
+            }
+            div[class*="--Subtitle"]{
+                position:absolute;
+                left:120px;
+                top:50px;
+                width:45%;
+                text-align: left;
+            }
+            .button{
+                float:right;
+                padding:1em;
+                margin-top:25px;
+            }
+            @include breakpoint ('small'){
+                .base__icon{float:none;}
+                div[class*="--title"]{position:static;}
+                 div[class*="--Subtitle"]{position:static;width:100%;text-align:center;}
+                 .button{float:none;font-size:0.9em;padding: 1em 0.5em;}
+            }
+        }
     }
     @at-root #{&}__searchContainer {
         margin-left: 30px;
