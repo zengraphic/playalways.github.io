@@ -41,9 +41,9 @@
                 z-index: 5;
                 @include breakpoint('display_small') {
                     position: static;
-                        width: 100%;
-    				background-color: #212121;
-    				box-sizing: border-box;
+                    width: 100%;
+                    background-color: #212121;
+                    box-sizing: border-box;
                 }
             }
             img {
@@ -105,12 +105,22 @@
                 display: inline-block;
                 max-width: 100%;
                 @include breakpoint('display_small') {
-                margin-top:30px;
-            }
+                    margin-top: 30px;
+                }
             }
             @include breakpoint('display_small') {
                 display: block;
                 width: 100%;
+            }
+            .claim {
+                @include breakpoint('display_small') {
+                    text-align: center;
+                }
+            }
+            .option {
+                @include breakpoint('display_small') {
+                    text-align: center;
+                }
             }
         }
         &__price {
@@ -124,9 +134,12 @@
             &--recurrency {
                 display: inline-block;
             }
+            @include breakpoint('display_small') {
+                    text-align: center !important;
+                }
         }
     }
-    &__ricorda{
-    	margin-top:0;
+    &__ricorda {
+        margin-top: 0;
     }
 }
