@@ -9,7 +9,7 @@
             var $sliderBlock = r$('.dashboard_block');
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock, '000000000000008453');
+                .initSlider($sliderBlock, '000000000000008452');
         });
 
     var PRODUCTSLIDER = {
@@ -256,12 +256,51 @@
         setActiveModel: function() {
             var $SLIDER = this;
             var colorSap = $SLIDER.activeColor.data().sap.split(' ');
+            var memorySap = $SLIDER.activeMemory.data().sap.split(' ');
+            var activeSap;
 
-            $SLIDER.activeModel = $SLIDER.models.filter(function() {
-                var currentModelSap = r$(this).data().sap;
-                return currentModelSap == colorSap[0];
+            r$.each(colorSap, function(i, colorSapCode) {
+                if (colorSapCode != '') {
+                    r$.each(memorySap, function(i, memorySapCode) {
+                        if (colorSapCode == memorySapCode) {
+                            activeSap = colorSapCode;
+                        }
+                    });
+                }
             });
 
+            var candidateModel = $SLIDER.models.filter(function() {
+                var currentModelSap = r$(this).data().sap;
+                return currentModelSap == activeSap;
+            });
+
+            var candidateGalleryContent = candidateModel.find('li');
+            if (candidateGalleryContent.length == 0) {
+                r$.each(colorSap, function(i, colorSapCode) {
+                    var filteredModel = $SLIDER.models.filter(function() {
+                        return r$(this).data().sap == colorSapCode;
+                    });
+                    candidateGalleryContent = filteredModel.find('li');
+                    if (candidateGalleryContent.length > 0) {
+                        $SLIDER.activeModel = filteredModel;
+                        return false;
+                    } else {
+
+                        $SLIDER
+                            .models
+                            .each(function(i, model) {
+                                var modelHasGallery = r$(model).find('li');
+                                if (modelHasGallery.length > 0) {
+                                    $SLIDER.activeModel = r$(model);
+                                    return false;
+
+                                }
+                            });
+                    }
+                });
+            } else {
+                $SLIDER.activeModel = candidateModel;
+            }
             $SLIDER
                 .hideAndShowRelated('models');
 
