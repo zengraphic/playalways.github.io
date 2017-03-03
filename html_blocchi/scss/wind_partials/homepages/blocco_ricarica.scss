@@ -6,26 +6,28 @@
         max-width: 1024px;
         margin: 0 auto;
         padding-top: 25px;
-
     }
     @at-root #{&}__title {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         font-size: $title-big;
         color: $color_mobile;
         font-family: $weight-light;
     }
     @at-root #{&}__input {
-        &--number {
-            margin-top: 15px;
-        }
-        &--confirmnumber {
-            margin-top: 10px;
-            margin-bottom: 15px;
+        padding-bottom: 36px;
+        position: relative;
+        .base__input {
+            &.error {
+                margin-bottom: 0;
+                + span.error {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
         }
     }
     @at-root #{&}__select {
         margin-bottom: 30px;
-        margin-top: 15px;
         .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
             width: 100%;
         }
@@ -48,26 +50,24 @@
     @at-root #{&}__left {
         padding-left: 30px;
         position: relative;
-        height:450px;
+        height: 450px;
     }
     @at-root #{&}__right {
         padding-left: 115px;
         padding-right: 30px;
-        margin-top: 30px;
+        margin-top: 15px;
         .topUp_block__label {
             font-size: 1.125em;
-        }
-        .base__input.error + span.error{
-            margin-bottom:-25px;
+            margin-bottom: 10px;
         }
     }
     @at-root #{&}__imageContainer {
-        position:absolute;
+        position: absolute;
         bottom: 0;
     }
     @at-root #{&}__image {
         margin-top: 15px;
-        width:100%;
+        width: 100%;
     }
 }
 
@@ -80,14 +80,12 @@
     }
 }
 
-
-
 @media all and (max-width: 767px) {
     .topUp_block {
         &__left {
             font-size: 10px;
-           height:400px;
-           padding-left:15px;
+            height: 400px;
+            padding-left: 15px;
         }
         &__right {
             padding: 0px 15px;
@@ -99,11 +97,12 @@
         }
     }
 }
+
 @media all and (max-width: 400px) {
     .topUp_block {
         &__left {
-            height:350px;
-            padding-left:15px;
+            height: 350px;
+            padding-left: 15px;
         }
     }
 }

@@ -1762,18 +1762,20 @@ a.button--search {
     margin: 0 auto;
     padding-top: 25px; }
   .topUp_block__title {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 3.75em;
     color: #009BBE;
     font-family: "Trade Gothic Light"; }
-  .topUp_block__input--number {
-    margin-top: 15px; }
-  .topUp_block__input--confirmnumber {
-    margin-top: 10px;
-    margin-bottom: 15px; }
+  .topUp_block__input {
+    padding-bottom: 36px;
+    position: relative; }
+    .topUp_block__input .base__input.error {
+      margin-bottom: 0; }
+      .topUp_block__input .base__input.error + span.error {
+        position: absolute;
+        bottom: 0; }
   .topUp_block__select {
-    margin-bottom: 30px;
-    margin-top: 15px; }
+    margin-bottom: 30px; }
     .topUp_block__select .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
       width: 100%; }
     .topUp_block__select .base__select.bootstrap-select .dropdown-toggle {
@@ -1794,11 +1796,10 @@ a.button--search {
   .topUp_block__right {
     padding-left: 115px;
     padding-right: 30px;
-    margin-top: 30px; }
+    margin-top: 15px; }
     .topUp_block__right .topUp_block__label {
-      font-size: 1.125em; }
-    .topUp_block__right .base__input.error + span.error {
-      margin-bottom: -25px; }
+      font-size: 1.125em;
+      margin-bottom: 10px; }
   .topUp_block__imageContainer {
     position: absolute;
     bottom: 0; }
@@ -4484,7 +4485,7 @@ a.button--search {
     .showcase_bundle_block__single h2 {
       margin-bottom: 10px; }
     .showcase_bundle_block__single--bigAmount {
-      font-size: 1.625em;
+      font-size: 1.525em;
       font-family: "Trade Gothic Light";
       margin-bottom: 15px;
       height: 84px;
