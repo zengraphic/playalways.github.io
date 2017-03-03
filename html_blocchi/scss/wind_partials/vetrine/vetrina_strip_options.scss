@@ -1,6 +1,9 @@
 .strip_options_block {
+    &:nth-of-type(odd) {
+        background-color: $color_grey_light;
+    }
     @at-root #{&}__container {
-        background-color: $color_white;
+        //background-color: $color_white;
         margin: 0 auto;
         max-width: 1024px;
         position: relative;
@@ -22,7 +25,7 @@
         }
     }
     @at-root #{&}__title {
-        width: 8%;
+        width: 16%;
         margin-top: 18px;
         font-size: 1em;
         font-family: $weight-bold;
@@ -38,12 +41,12 @@
         }
     }
     @at-root #{&}__description {
-        width: 56%;
+        width: 50%;
         font-size: 1em;
         font-family: $weight-light;
         .descriptionContainer {
-            width: 71.4%;
-            margin: 0 auto;
+            width: 90%;
+            margin: 1rem auto;
             @include breakpoint(small) {
                 text-align: center;
             }
@@ -56,29 +59,29 @@
             position: absolute;
             top: 15%;
             bottom: 10%;
-            left: 12%;
+            left: 18%;
             min-height: 1px;
             @include breakpoint(small) {
                 content: none;
             }
         }
-        &:after {
-            background-color: $color_stroke;
-            width: 1px;
-            content: "";
-            display: block;
-            position: absolute;
-            top: 15%;
-            bottom: 10%;
-            right: 34.5%;
-            min-height: 1px;
-            @include breakpoint(small) {
-                content: none;
-            }
-        }
+        // &:after {
+        //     background-color: $color_stroke;
+        //     width: 1px;
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     top: 15%;
+        //     bottom: 10%;
+        //     right: 34.5%;
+        //     min-height: 1px;
+        //     @include breakpoint(small) {
+        //         content: none;
+        //     }
+        // }
     }
     @at-root #{&}__pricing {
-        width: 16.5%;
+        width: 15%;
         .pricesContainer {
             .price {
                 display: inline-block;
@@ -107,6 +110,23 @@
                 small {
                     font-size: 40px;
                 }
+                &.three_digits {
+                    font-size: 40px
+                }
+            }
+            &:before {
+                background-color: $color_stroke;
+                width: 1px;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 15%;
+                bottom: 10%;
+                right: 33%;
+                min-height: 1px;
+                @include breakpoint(small) {
+                    content: none;
+                }
             }
         }
         .recurrency {
@@ -117,7 +137,35 @@
             position: relative;
             bottom: 10px;
         }
-        &:after {
+        // &:after {
+        //     background-color: $color_stroke;
+        //     width: 1px;
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     top: 15%;
+        //     bottom: 10%;
+        //     right: 17.5%;
+        //     min-height: 1px;
+        //     @include breakpoint(small) {
+        //         content: none;
+        //     }
+        // }
+    }
+    @at-root #{&}__button {
+        width: 16%;
+        text-align: center;
+        .button--slim {
+            //padding: 7px 30px 3px 30px;
+            padding: 0.5em;
+            display: inline-block;
+            width: 75%;
+            font-size: 1em;
+            // @include breakpoint(small) {
+            //     padding: 12px 60px 8px 60px;
+            // }
+        }
+        &:before {
             background-color: $color_stroke;
             width: 1px;
             content: "";
@@ -125,23 +173,10 @@
             position: absolute;
             top: 15%;
             bottom: 10%;
-            right: 17.5%;
+            right: 17%;
             min-height: 1px;
             @include breakpoint(small) {
                 content: none;
-            }
-        }
-    }
-    @at-root #{&}__button {
-        width: 16.5%;
-        text-align: center;
-        .button--slim {
-            padding: 7px 30px 3px 30px;
-            display: inline-block;
-            width: 75%;
-            font-size: 1em;
-            @include breakpoint(small) {
-                padding: 12px 60px 8px 60px;
             }
         }
     }
