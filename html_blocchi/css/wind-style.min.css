@@ -3443,8 +3443,6 @@ a.button--search {
     .image_block_display__mainContainer.invertedDisplay .image_block_display__half_block.text_block {
       right: 30px;
       left: auto; }
-    .image_block_display__mainContainer.invertedDisplay .image_block_display__half_block.image_block {
-      right: 50%; }
   .image_block_display__coloredBg {
     width: 150%;
     height: 100%;
@@ -6471,8 +6469,10 @@ a.button--search {
     .world_rates_block__zone {
       font-size: 10px; } }
 
+.strip_options_block:nth-of-type(odd) {
+  background-color: #E6E9ED; }
+
 .strip_options_block__container {
-  background-color: #FFF;
   margin: 0 auto;
   max-width: 1024px;
   position: relative;
@@ -6493,7 +6493,7 @@ a.button--search {
         margin-top: 10px; } }
 
 .strip_options_block__title {
-  width: 8%;
+  width: 16%;
   margin-top: 18px;
   font-size: 1em;
   font-family: "Trade Gothic Bold";
@@ -6508,12 +6508,12 @@ a.button--search {
         text-align: center; } }
 
 .strip_options_block__description {
-  width: 56%;
+  width: 50%;
   font-size: 1em;
   font-family: "Trade Gothic Light"; }
   .strip_options_block__description .descriptionContainer {
-    width: 71.4%;
-    margin: 0 auto; }
+    width: 90%;
+    margin: 1rem auto; }
     @media (max-width: 768px) {
       .strip_options_block__description .descriptionContainer {
         text-align: center; } }
@@ -6525,27 +6525,14 @@ a.button--search {
     position: absolute;
     top: 15%;
     bottom: 10%;
-    left: 12%;
+    left: 18%;
     min-height: 1px; }
     @media (max-width: 768px) {
       .strip_options_block__description:before {
         content: none; } }
-  .strip_options_block__description:after {
-    background-color: #D3D3D2;
-    width: 1px;
-    content: "";
-    display: block;
-    position: absolute;
-    top: 15%;
-    bottom: 10%;
-    right: 34.5%;
-    min-height: 1px; }
-    @media (max-width: 768px) {
-      .strip_options_block__description:after {
-        content: none; } }
 
 .strip_options_block__pricing {
-  width: 16.5%; }
+  width: 15%; }
   .strip_options_block__pricing .pricesContainer .price {
     display: inline-block;
     color: #009BBE;
@@ -6568,14 +6555,9 @@ a.button--search {
     font-family: "Trade Gothic Light"; }
     .strip_options_block__pricing .pricesContainer .newPrice small {
       font-size: 40px; }
-  .strip_options_block__pricing .recurrency {
-    font-size: 13px;
-    float: none;
-    clear: both;
-    width: 100%;
-    position: relative;
-    bottom: 10px; }
-  .strip_options_block__pricing:after {
+    .strip_options_block__pricing .pricesContainer .newPrice.three_digits {
+      font-size: 40px; }
+  .strip_options_block__pricing .pricesContainer:before {
     background-color: #D3D3D2;
     width: 1px;
     content: "";
@@ -6583,23 +6565,40 @@ a.button--search {
     position: absolute;
     top: 15%;
     bottom: 10%;
-    right: 17.5%;
+    right: 33%;
     min-height: 1px; }
     @media (max-width: 768px) {
-      .strip_options_block__pricing:after {
+      .strip_options_block__pricing .pricesContainer:before {
         content: none; } }
+  .strip_options_block__pricing .recurrency {
+    font-size: 13px;
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    bottom: 10px; }
 
 .strip_options_block__button {
-  width: 16.5%;
+  width: 16%;
   text-align: center; }
   .strip_options_block__button .button--slim {
-    padding: 7px 30px 3px 30px;
+    padding: 0.5em;
     display: inline-block;
     width: 75%;
     font-size: 1em; }
+  .strip_options_block__button:before {
+    background-color: #D3D3D2;
+    width: 1px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 15%;
+    bottom: 10%;
+    right: 17%;
+    min-height: 1px; }
     @media (max-width: 768px) {
-      .strip_options_block__button .button--slim {
-        padding: 12px 60px 8px 60px; } }
+      .strip_options_block__button:before {
+        content: none; } }
 
 /* ========================================================= */
 .device_filter_block {
@@ -8623,13 +8622,13 @@ a.button--search {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-moz-placeholder {
+  :-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area::-moz-placeholder {
+  ::-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
