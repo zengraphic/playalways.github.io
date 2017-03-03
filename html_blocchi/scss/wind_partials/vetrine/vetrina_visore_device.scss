@@ -68,11 +68,13 @@
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}', GradientType=1); // 00ffffff ?
                 left: 0;
                 position: absolute;
-                top: 70px;
+                top: 0;
+                bottom: 0;
                 width: 5.25em;
-                padding: 0;
+                padding: 70px 0 0;
                 z-index: 250;
                 @include breakpoint('super-tiny') {
+                    padding-top: 0;
                     top: auto;
                     bottom: 0;
                     width: 100%;
@@ -98,6 +100,9 @@
                 }
                 li {
                     outline: 0;
+                    img {
+                        max-width: 100%;
+                    }
                     @include breakpoint('super-tiny') {
                         width: 100%;
                         height: auto;

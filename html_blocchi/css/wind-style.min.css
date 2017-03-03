@@ -5875,12 +5875,14 @@ a.button--search {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='transparent', GradientType=1);
       left: 0;
       position: absolute;
-      top: 70px;
+      top: 0;
+      bottom: 0;
       width: 5.25em;
-      padding: 0;
+      padding: 70px 0 0;
       z-index: 250; }
       @media (max-width: 480px) {
         .dashboard_block__product--imagep .phone_thumbs {
+          padding-top: 0;
           top: auto;
           bottom: 0;
           width: 100%; } }
@@ -5902,6 +5904,8 @@ a.button--search {
           padding-bottom: 100px; } }
       .dashboard_block__product--imagep .phone_gallery li {
         outline: 0; }
+        .dashboard_block__product--imagep .phone_gallery li img {
+          max-width: 100%; }
         @media (max-width: 480px) {
           .dashboard_block__product--imagep .phone_gallery li {
             width: 100%;
