@@ -32,10 +32,7 @@
             min-width: 73px;
         }
         .base__select.bootstrap-select .dropdown-toggle {
-            padding-left: 10px;
-            padding-right: 30px;
-            padding-top: 1.6rem;
-            padding-bottom: 1.3rem;
+            padding: 15px 30px 15px 10px;
             min-width: 51px;
             width: 70px;
             .bs-caret .caret {
@@ -102,6 +99,7 @@
                     color: $color_white;
                     font-family: $weight-normal;
                     text-transform: uppercase;
+                    display: block;
                     @include breakpoint(small) {
                         margin: 5px 0 10px;
                         line-height: 1em;
@@ -120,6 +118,11 @@
                         &_email {
                             clear: both;
                         }
+                        &_testoprivacy{
+                            color: $color_white;
+                            font-size: .85rem;
+                            padding: .5rem;
+                        }
                     }
                     &_label {
                         display: none;
@@ -127,15 +130,16 @@
                     &_input {
                         padding-top: 15px;
                         padding-bottom: 15px;
+                        margin-bottom: 10px;
                     }
                     &_submit,
                     &_reset {
-                        margin-top: 46px;
+                        margin-bottom: 15px;
                         padding-top: 12px;
                         padding-bottom: 12px;
                         @include breakpoint(small) {
                             margin-top: 10px;
-                            margin-bottom: 30px;
+                            margin-bottom: 15px;
                         }
                     }
                 }
