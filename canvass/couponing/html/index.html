@@ -1,0 +1,143 @@
+<body>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/canvas_style.css">
+    <script src="../js/scripts.min.js" type="text/javascript"></script>
+    <script src="../js/landing.min.js" type="text/javascript"></script>
+    <!-- HEADER -->
+    <div class="header" id="header">
+        <div class="header_second">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="logo logo--wind">
+                            <a href="http://www.wind.it/"><img src="fileadmin/Materiale/20170109/landing-magnum/wind_logo.png" class="wind"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END HEADER -->
+    <!-- Visore Wind allinclusive -->
+    <div class="landing landing_allinclusive center_block padding_left_10 padding_right_10">
+        <!-- Immagine Visore -->
+        <div class="landing_allinclusive__hero padding_top_25 padding_bottom_25 padding_left_20 padding_right_20">
+            <img class="img_responsive" data-src="fileadmin/Materiale/20170220/landing-ai-raddoppia/visore.png" alt="">
+        </div>
+        <!-- /Immagine Visore -->
+    </div>
+    <!-- /Visore Wind allinclusive -->
+    <div class="blocco_import">
+        <div class="blocco_mgm">
+            <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+            <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+            <div class="mgm_block">
+                <div class="mgm_block__container">
+                    <div class="mgm_block__left col-sm-7 col-md-7 col-lg-7 base__colfill">
+                        <div class="mgm_block__title--main">
+                            All Inclusive 1000
+                            <!-- titolo grande -->
+                        </div>
+                        <div class="mgm_block__description ak-service-message">
+                            La promozione è disponibile in esclusiva richiedendo il codice promozionale su questa pagina.
+                            <!-- seconda riga descrizione e info link -->
+                        </div>
+                    </div>
+                    <div class="mgm_block__right col-sm-5 col-md-5 col-lg-5 base__colfill">
+                        <input id="phoneNumber" class="base__input" type="text" name="phoneNumber" placeholder="">
+                        <!-- input numero di tel -->
+                        <a id="ak-active-pin" href="javascript:void(0)" class="button button--noMargin">
+                        Attiva <!-- bottone -->
+                    </a>
+                        <input type="hidden" id="nome_campagna" name="nome_campagna" value="All Inclusive 1000" />
+                        <input type="hidden" id="id_campagna" name="id_campagna" value="42318" />
+                        <input type="hidden" id="multi" name="multi" value="Y" />
+                        <input type="hidden" id="desc_ok" value="Promozione attivata correttamente" />
+                        <input type="hidden" id="desc_ko" value="Non è stato possibile attivare la promozione, riprova più tardi." />
+                        <input type="hidden" id="testo_bottone_campagna" value="Attiva" />
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    jQuery(document).ready(function() {     
+        jQuery(".ricarica").removeClass('full_height');     
+        jQuery("#ak-active-pin").click(firePIN);   
+    });   
+    function firePIN() {     
+        var msisdn = jQuery("#phoneNumber").val();     
+        var nome_campagna = jQuery("#nome_campagna").val();     
+        var id_campagna = jQuery("#id_campagna").val();     
+        var multi = jQuery("#multi").val();     
+        var serviceurl = "/nuovaAreaClienti/wind/ehc/sendWebLightCouponingNew.action ? name = " + nome_campagna + " & msisdn = " + msisdn + " & idCoupon = " + id_campagna + " & flagMulti = " + multi;     
+        if (msisdn == "" || msisdn == undefined) {       
+            alert("inserisci il numero di telefono");       
+            return;     
+        }     
+        jQuery("#ak-active-pin").unbind();     
+        jQuery("#ak-active-pin").html('<span class="fa fa-spinner spinanimate"></span>');     
+        jQuery.get(serviceurl, function(response) {       
+            try {         
+                if (response.esito == "ok") {           
+                    setDescription('ok');         
+                }         
+                else {           
+                    var error = response.codice.trim();           
+                    if (error == "ERROR" && response.descrizione.indexOf("Inserire un altro numero ") > 0) {             
+                        jQuery(".ak-service-message").html(response.descrizione);           
+                    }           
+                    else {             
+                        setDescription('ko');           
+                    }         
+                }       
+            }       
+            catch (e) {         
+                setDescription('ko');       
+            }       
+            console.log(response);       
+            var testo_bottone_campagna =
+                jQuery("#testo_bottone_campagna").val();       
+            jQuery("#ak-active-pin").html(testo_bottone_campagna);       
+            jQuery("#ak-active-pin").click(firePIN);     
+        });   
+    }   
+    function setDescription(type, message) {     
+        var message = jQuery("#desc_" + type).val();     
+        jQuery(".ak-service-message").html(message);   
+    }
+    </script>
+    <!-- Footer Landing -->
+    <div class="landing_footer">
+        <div class="landing_footer__container container padding_top_30 padding_bottom_30  center_block">
+            <div class="landing_footer__container__copy padding_top_5 padding_left_5 font_size_14"> © Wind Tre S.p.A.
+                <br class="wrap">Partita IVA: 13378520152</div>
+            <div class="landing_footer__container__logos padding_right_15">
+                <ul class="landing_footer__container__logos--list text_align_right">
+                    <li>
+                        <a href="http://www.wind.it/it/business/"><img src="fileadmin/Materiale/20170220/landing-ai-raddoppia/wind_logo_business.png"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.infostrada.it/it/privati?_ga=1.191742249.2024675691.1475597973"><img src="fileadmin/Materiale/20170220/landing-ai-raddoppia/infostrada_logo.png"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.wind.it/it/privati"><img src="fileadmin/Materiale/20170220/landing-ai-raddoppia/wind_logo_customer.png"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- /Footer Landing -->
+    <!-- popup -->
+    <div id="layer-ricorda" class="landing-popup mfp-hide">
+        <div class="scrollable">
+            <h2>WIND RICORDA</h2>
+            <p>OFFERTA ATTIVABILE FINO AL 26/03/2017 La promozione che raddoppia, minuti, SMS e GIGA scade improrogabilmente il 07/01/2018. Costo di attivazione 9 euro (per MNP su nuova SIM e nuova SIM) o 15 euro (per clienti Wind non All Inclusive) invece di 30 con SIM attiva per 24 mesi. 15 euro per i già clienti All Inclusive. Allo scadere del periodo promozionale lʼofferta All Inclusive tornerà con 500 Minuti, 500 SMS e 2 GIGA (3 GIGA Under 30) a 12 euro; i minuti, gli SMS ed i GIGA del bonus promozionale andranno persi anche se appena rinnovati e/o non consumati.  PROMOZIONE 1 GIGA UNDER 30 Valida per i clienti tra i 14 e 30 anni che attivano unʼofferta All Inclusive. In caso di cambio opzione con una delle offerte non propedeutiche o in caso di cambio intestatario dellʼanagrafica, la promozione si disattiverà automaticamente. Superati i giga disponibili, velocità ridotta max 32 kbps.             </p>
+        </div>
+    </div>
+    <!-- /popup -->
+</body>
