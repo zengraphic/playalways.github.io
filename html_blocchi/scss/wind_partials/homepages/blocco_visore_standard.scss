@@ -90,6 +90,38 @@
             margin-bottom: 20px;
             font-family: $weight-light;
             height:80px;
+            &.textCurrency {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                font-family: $weight-light;
+                height: 90px;
+                font-size: 1.250em;
+                line-height: 1.3em;
+                b {
+                    font-size: 1.5em;
+                    font-family:$weight-normal;
+                    font-weight:400;
+                }
+                &.business {
+                    b {
+                        color: $color_wind;
+                    }
+                }
+                &.mobile {
+                    b {
+                        color: $color_mobile;
+                    }
+                }
+                &.infostrada {
+                    b {
+                        color: $color_infostrada;
+                    }
+                }
+                .price {
+                    font-size: 1.875;
+                    color: $color_robin;
+                }
+            }
             @at-root #{&}__price {
                 color: $color_mobile;
                 font-size: $title-big;
