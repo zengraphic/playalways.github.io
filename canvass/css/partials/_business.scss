@@ -1,0 +1,145 @@
+.landing_business {
+    max-width: 950px;
+    padding: 0 30px;
+    @include breakpoint('display_small') {
+        padding: 0 15px;
+    }
+    &__hero {
+        &__visore {
+            position: relative;
+            width: 100%;
+            height: auto;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            overflow: hidden;
+            &__bg {
+                width: 150%;
+                height: 100%;
+                position: absolute;
+                -moz-transform: skew(-20deg);
+                -o-transform: skew(-20deg);
+                -ms-transform: skew(-20deg);
+                -webkit-transform: skew(-20deg);
+                transform: skew(-20deg);
+                background: #212121;
+                right: 45%;
+                @include breakpoint('display_small') {
+                    display: none;
+                }
+            }
+            &__claim {
+                padding: 3% 4%;
+                width: 42%;
+                bottom: 0;
+                top: 10%;
+                font-family: 'Trebuchet MS';
+                font-size: 2.1rem;
+                line-height: 1em;
+                font-weight: 400;
+                color: #ffffff;
+                position: absolute;
+                z-index: 5;
+                @include breakpoint('display_small') {
+                    position: static;
+                    width: 100%;
+                    background-color: #212121;
+                    box-sizing: border-box;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &__showcase {
+        width: 100%;
+        .showcase__item {
+            &__title {
+                display: inline-block;
+                width: 70%;
+                box-sizing: border-box;
+            }
+            &__price {
+                display: inline-block;
+                width: 30%;
+                box-sizing: border-box;
+                &--recurrencyBegin {
+                    display: inline-block;
+                }
+                &--mainPrice {
+                    display: inline-block;
+                }
+                &--recurrency {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &__advantages {
+        &--single {
+            &__icon {
+                display: inline-block;
+                width: 15%;
+                border-right: 1px solid #d3d3d2;
+                box-sizing: border-box;
+                img {
+                    display: inline-block;
+                    vertical-align: middle;
+                    max-width: 100%;
+                }
+            }
+            &__text {
+                display: inline-block;
+                vertical-align: middle;
+                width: 84%;
+                box-sizing: border-box;
+            }
+        }
+    }
+    &__options {
+        color: #ffffff;
+        &--half_block {
+            display: inline-block;
+            width: 50%;
+            img {
+                display: inline-block;
+                max-width: 100%;
+                @include breakpoint('display_small') {
+                    margin-top: 30px;
+                }
+            }
+            @include breakpoint('display_small') {
+                display: block;
+                width: 100%;
+            }
+            .claim {
+                @include breakpoint('display_small') {
+                    text-align: center;
+                }
+            }
+            .option {
+                @include breakpoint('display_small') {
+                    text-align: center;
+                }
+            }
+        }
+        &__price {
+            box-sizing: border-box;
+            &--recurrencyBegin {
+                display: inline-block;
+            }
+            &--mainPrice {
+                display: inline-block;
+            }
+            &--recurrency {
+                display: inline-block;
+            }
+            @include breakpoint('display_small') {
+                    text-align: center !important;
+                }
+        }
+    }
+    &__ricorda {
+        margin-top: 0;
+    }
+}

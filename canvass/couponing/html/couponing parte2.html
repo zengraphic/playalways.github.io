@@ -1,0 +1,116 @@
+<!--
+
+SECONDA PARTE
+
+-->
+<div class="blocco_import">
+    <div class="blocco_mgm">
+        <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+        <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+        <div class="mgm_block">
+            <div class="mgm_block__container">
+                <div class="mgm_block__left col-sm-7 col-md-7 col-lg-7 base__colfill">
+                    <div class="mgm_block__title--main">
+                        All Inclusive 1000
+                        <!-- titolo grande -->
+                    </div>
+                    <div class="mgm_block__description ak-service-message">
+                        La promozione è disponibile in esclusiva richiedendo il codice promozionale su questa pagina.
+                        <!-- seconda riga descrizione e info link -->
+                    </div>
+                </div>
+                <div class="mgm_block__right col-sm-5 col-md-5 col-lg-5 base__colfill">
+                    <input id="phoneNumber" class="base__input" type="text" name="phoneNumber" placeholder="">
+                    <!-- input numero di tel -->
+                    <a id="ak-active-pin" href="javascript:void(0)" class="button button--noMargin">
+                        Attiva <!-- bottone -->
+                    </a>
+                    <input type="hidden" id="nome_campagna" name="nome_campagna" value="All Inclusive 1000" />
+                    <input type="hidden" id="id_campagna" name="id_campagna" value="42318" />
+                    <input type="hidden" id="multi" name="multi" value="Y" />
+                    <input type="hidden" id="desc_ok" value="Promozione attivata correttamente" />
+                    <input type="hidden" id="desc_ko" value="Non è stato possibile attivare la promozione, riprova più tardi." />
+                    <input type="hidden" id="testo_bottone_campagna" value="Attiva" />
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+    </div>
+</div>
+<div class="fondo-pagina">
+<!-- Wind Ricorda -->
+<div class="wind_ricorda center_block">
+    <div class="wind_ricorda__reminder text_size_14 text_color_orange padding_left_15">
+        <div class="wind_ricorda__reminder__container margin_bottom_15">
+            <a href="#layer-ricorda" class="info_link popup-link bt-cta bt-info oot-popup-note padding_left_30 text_size_14 text_color_orange margin_bottom_5">Wind Ricorda</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- /Wind Ricorda -->
+<!-- Wind Notes -->
+<div class="landing_magnum__notes center_block text_align_right">
+    <div class="landing_magnum__notes__container ">
+        <p class="font_size_16 font_size_m_10">Offerte attivabili fino all’8/01/2017, rinnovo ogni 4 settimane.</p>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<!-- /Wind Notes -->
+</div>
+<script src="../js/scripts.min.js" type="text/javascript"></script>
+<script src="../js/landing.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {     
+    jQuery(".ricarica").removeClass('full_height');     
+    jQuery("#ak-active-pin").click(firePIN);   
+});   
+function firePIN() {     
+    var msisdn = jQuery("#phoneNumber").val();     
+    var nome_campagna = jQuery("#nome_campagna").val();     
+    var id_campagna = jQuery("#id_campagna").val();     
+    var multi = jQuery("#multi").val();     
+    var serviceurl = "/nuovaAreaClienti/wind/ehc/sendWebLightCouponingNew.action ? name = " + nome_campagna + " & msisdn = " + msisdn + " & idCoupon = " + id_campagna + " & flagMulti = " + multi;     
+    if (msisdn == "" || msisdn == undefined) {       
+        alert("inserisci il numero di telefono");       
+        return;     
+    }     
+    jQuery("#ak-active-pin").unbind();     
+    jQuery("#ak-active-pin").html('<span class="fa fa-spinner spinanimate"></span>');     
+    jQuery.get(serviceurl, function(response) {       
+        try {         
+            if (response.esito == "ok") {           
+                setDescription('ok');         
+            }         
+            else {           
+                var error = response.codice.trim();           
+                if (error == "ERROR" && response.descrizione.indexOf("Inserire un altro numero ") > 0) {             
+                    jQuery(".ak-service-message").html(response.descrizione);           
+                }           
+                else {             
+                    setDescription('ko');           
+                }         
+            }       
+        }       
+        catch (e) {         
+            setDescription('ko');       
+        }       
+        console.log(response);       
+        var testo_bottone_campagna =
+            jQuery("#testo_bottone_campagna").val();       
+        jQuery("#ak-active-pin").html(testo_bottone_campagna);       
+        jQuery("#ak-active-pin").click(firePIN);     
+    });   
+}   
+function setDescription(type, message) {     
+    var message = jQuery("#desc_" + type).val();     
+    jQuery(".ak-service-message").html(message);   
+}
+</script>
+<!--
+
+FINE SECONDA PARTE
+
+-->

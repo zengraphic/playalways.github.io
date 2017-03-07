@@ -1,3 +1,22 @@
+.fondo-pagina {
+    margin: 0 auto;
+    max-width: 950px;
+    width: 100%;
+    div[class*="__notes"] {
+        &.center_block {
+            width: 74%;
+            position: relative;
+            display: inline-block;
+            @include breakpoint(display_small) {
+                width: 100%;
+                text-align: center;
+                position: relative;
+                top: -80px;
+            }
+        }
+    }
+}
+
 .landing_footer {
     width: 100%;
     border-top: 1px solid #d3d3d2;

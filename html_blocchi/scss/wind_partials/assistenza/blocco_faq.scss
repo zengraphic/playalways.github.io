@@ -19,22 +19,43 @@
         cursor: pointer;
         @at-root .faq_block__mainBlock #{&} {
             //@include transition(transform .2s ease-in); 
-            &.faq_active {
-                background-color: $color_wind;
-                color: $color_white;
-                .faq_block__single__icon {
-                    .icon_mobile_fisso--color{
-                        background-position: 50% 6.59077%;
-                    }
-                }
-            }
+            &.faq_active,
             &:hover {
                 background-color: $color_wind;
                 color: $color_white;
-                // @include translate(0, 2px);           
                 .faq_block__single__icon {
+                    img{
+                        opacity: .5;
+                    }
                     .icon_mobile_fisso--color{
                         background-position: 50% 6.59077%;
+                    }
+                    .icon_passa_wind--color{
+                        background-position: 50% 63.71077%;
+                    }
+                    .icon_servizi_tel_digitali--color{
+                        background-position: 50% 84.58154%;
+                    }
+                    .icon_ricarica--color{
+                        background-position: 50% 49.43077%;
+                    }
+                    .icon_acquisti_online--color{
+                        background-position: 50% 53.82462%;
+                    }
+                    .icon_configurazione--color{
+                        background-position: 50% 17.57538%;
+                    }
+                    .icon_estero--color{
+                        background-position: 50% 59.31692%;
+                    }
+                    .icon_app_strumenti--color{
+                        background-position: 50% 83.48308%;
+                    }
+                    .icon_gestione_anagrafica--color{
+                        background-position: 50% 80.18769%;
+                    }
+                    .icon_pagamenti_conto--color{
+                        background-position: 50% 76.89231%;
                     }
                 }
             }
@@ -45,8 +66,14 @@
             }
             &__icon {
                 line-height: 0px;
-                font-size: 2.8em;
+                //font-size: 2.8em;
                 color: $color_wind;
+                img{
+                    margin:0.5em auto;
+                    width:44px;
+                    height:44px;
+                    
+                }
             }
             &__title {
                 font-size: 1.250em;

@@ -407,10 +407,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto; }
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
   body h1 {
     font-family: "Trade Gothic Bold", sans-serif;
     font-size: 3.571rem; }
@@ -482,18 +481,24 @@ body {
         -ms-transition: all 0.35s ease-in-out;
         -webkit-transition: all 0.35s ease-in-out;
         transition: all 0.35s ease-in-out; }
+      .base__accordion .panel-heading .panel-title .indicator:after,
+      .base__accordion .panel-heading .panel-title .indicator:before {
+        position: absolute;
+        width: 2px;
+        height: 9px;
+        transition: all .45s ease-in-out;
+        background-color: #F48135;
+        content: ""; }
+      .base__accordion .panel-heading .panel-title .indicator:before {
+        transform: translate(10px, 4px) rotate(45deg); }
       .base__accordion .panel-heading .panel-title .indicator:after {
-        font-family: "FontAwesome";
-        font-style: normal;
-        font-size: 1rem;
-        content: "\F078"; }
+        transform: translate(5px, 4px) rotate(-45deg); }
     .base__accordion .panel-heading.active .panel-title {
       color: #F48135; }
       .base__accordion .panel-heading.active .panel-title .indicator:after {
-        font-family: "FontAwesome";
-        font-style: normal;
-        font-size: 1rem;
-        content: "\F077"; }
+        transform: translate(10px, 4px) rotate(-45deg); }
+      .base__accordion .panel-heading.active .panel-title .indicator:before {
+        transform: translate(5px, 4px) rotate(45deg); }
 
 @media (max-width: 767px) {
   .base__accordion {
@@ -1796,7 +1801,15 @@ select:-webkit-autofill {
   border-color: #D3D3D2; }
 
 .base__checkbox.checkbox input[type="checkbox"]:checked + label::after {
-  color: #FFF; }
+  color: #FFF;
+  background-image: url(../img/icons/icons_sprite.svg);
+  background-position: 50% 87.91209%;
+  background-size: 500%;
+  width: 14px;
+  height: 14px;
+  top: 4px;
+  left: 3px;
+  content: ""; }
 
 .base__checkbox.checkbox input[type="checkbox"].styled:checked + label:after {
   color: #FFF; }
@@ -2423,20 +2436,23 @@ input[type=number]::-webkit-outer-spin-button {
       position: absolute;
       right: 1rem;
       top: 50%;
-      margin: -0.8rem 1rem 0 0;
+      margin: -0.6rem 1rem 0 0;
       border: 0; }
+      .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret:before, .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret:after {
+        position: absolute;
+        width: 2px;
+        height: 9px;
+        transition: all .45s ease-in-out;
+        background-color: #F48135;
+        content: ""; }
       .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret:before {
-        font-family: FontAwesome;
-        top: 0;
-        left: -5px;
-        padding-right: 0.5rem;
-        content: "\F078"; }
+        transform: translate(10px, 4px) rotate(45deg); }
+      .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret:after {
+        transform: translate(5px, 4px) rotate(-45deg); }
   .base__select.bootstrap-select.open .dropdown-toggle .bs-caret .caret:before {
-    font-family: "FontAwesome";
-    top: 0;
-    left: -5px;
-    padding-right: 0.5rem;
-    content: "\F077"; }
+    transform: translate(5px, 4px) rotate(45deg); }
+  .base__select.bootstrap-select.open .dropdown-toggle .bs-caret .caret:after {
+    transform: translate(10px, 4px) rotate(-45deg); }
   .base__select.bootstrap-select .dropdown-toggle:focus {
     outline: none; }
   .base__select.bootstrap-select.open .dropdown-toggle {
@@ -6046,7 +6062,7 @@ h3.title {
       .hpshop .slider_products .box_item .bootstrap-select .dropdown-toggle {
         padding: 0.2rem 0.4rem; }
       .hpshop .slider_products .box_item .bootstrap-select.select_g {
-        width: 55%; }
+        width: 54%; }
       .hpshop .slider_products .box_item .bootstrap-select.select_gs {
         float: right;
         width: 40%; }
@@ -6071,8 +6087,6 @@ h3.title {
       .hpshop .slider_products .box_item span.bs-caret, .hpshop .slider_products .box_item span.caret {
         float: none;
         width: auto; }
-      .hpshop .slider_products .box_item span.bs-caret .caret {
-        margin: -0.7rem 0 0 0; }
       .hpshop .slider_products .box_item span.name_p {
         text-align: center;
         line-height: normal;
@@ -6431,6 +6445,8 @@ h3.title {
   -webkit-overflow-scrolling: touch;
   padding: 0;
   max-width: 420px; }
+  .base__popup.refill_block .container .base__input.error + span.error {
+    margin-top: -0.5em; }
 
 .base__popup.refill_block .row {
   margin: 0px; }
@@ -6534,9 +6550,13 @@ h3.title {
     line-height: normal;
     margin-top: 0.6rem;
     text-align: left; }
-    .base__popup.refill_block .title a.safe-link .base__icon {
+    .base__popup.refill_block .title a.safe-link img {
       float: left;
-      display: inline-block; }
+      margin-right: 0.3rem; }
+    .base__popup.refill_block .title a.safe-link .base__icon {
+      float: left; }
+    .base__popup.refill_block .title a.safe-link .right {
+      margin: 4px 0 0 4px; }
 
 .base__popup.refill_block .image {
   float: left;
@@ -7272,17 +7292,8 @@ h3.title {
     .content_acordeon_cookies .panel-body.second_acookies .panel-heading.active {
       border-bottom: none;
       border-bottom: none !important; }
-      .content_acordeon_cookies .panel-body.second_acookies .panel-heading.active .panel-title .indicator:after {
-        content: "\f078";
-        font-size: 1rem;
-        font-family: "FontAwesome";
-        font-style: normal; }
   .content_acordeon_cookies .panel-body.second_acookies .panel-title a.accordion-toggle {
     font-size: 0.9rem; }
-  .content_acordeon_cookies .panel-body.second_acookies .panel-title .indicator:after {
-    content: "\f054";
-    font-size: 1rem;
-    line-height: 0.8rem; }
   .content_acordeon_cookies .panel-body.second_acookies .panel-title span.privacity {
     margin-top: -0.4rem;
     color: #F48135;

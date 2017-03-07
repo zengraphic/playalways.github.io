@@ -174,7 +174,6 @@
             font-size: 0.813em;
             margin-bottom: 10px;
         }
-
     }
     // ====================== BLOCCO CON COMPONENTE ABBINA ======================
     // ====================== BLOCCO CON COMPONENTE ABBINA ======================
@@ -277,22 +276,22 @@
             }
         }
         &--totalPrice {
+            margin: 27px 0;
             &--barred {
                 position: relative;
-                width: 100px;
                 margin: 0 auto;
                 font-family: $weight-light;
-                height: 18px;
+                font-size: 2em;
+                display: inline-block;
                 .currency {
-                    font-size: 0.731em;
+                    font-size: 0.75em;
                     &:after {
                         border-bottom: 2px solid $color_text; //$color_stroke
                         content: "";
-                        left: 15%;
-                        margin-top: calc(0.125em / 2 * -1);
+                        left: 0;
+                        right: 0;
                         position: absolute;
-                        top: 40%;
-                        width: 70%;
+                        top: 50%;
                         @include breakpoint(small) {
                             content: none;
                         }
@@ -301,18 +300,17 @@
             }
             &--price {
                 font-family: $weight-light;
-                font-size: 2.889em;
+                font-size: 2em;
                 color: $color_mobile;
+                display: inline-block;
                 .currency {
-                    font-size: 0.731em;
-                    margin-left: 0;
+                    font-size: 0.75em;
                 }
             }
             &--description {
                 font-family: $weight-light;
                 font-size: 0.722em;
                 text-transform: uppercase;
-                margin-bottom: 15px;
             }
         }
         &--mainTitle {

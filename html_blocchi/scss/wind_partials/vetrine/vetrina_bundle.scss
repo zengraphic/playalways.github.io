@@ -2,6 +2,7 @@
 .showcase_bundle_block {
     line-height: 1.08;
     padding-bottom: 30px;
+    hyphens: initial;
     .container_secondColumn {
         padding-top: 5px;
     }
@@ -135,10 +136,11 @@
             margin-bottom: 10px;
         }
         &--bigAmount {
-            font-size: 1.625em;
+            font-size: 1.525em;
             font-family: $weight-light;
             margin-bottom: 15px;
             height: 84px;
+            line-height:1.15em;
             overflow: hidden;
         }
         &--smallAmount {
@@ -164,36 +166,39 @@
             overflow: hidden;
         }
         &--price_discounted {
-            font-size: 1.500em;
+            font-size: 2.5em;
             color: $color_text;
             font-family: $weight-light;
             position: relative;
-            height: 25px;
-            padding-top: 2px;
+            height: 45px;
+            line-height: 45px;
             overflow: hidden;
+            margin-bottom: 5px;
+            display: inline-block;
+            vertical-align: top;
             .currency {
-                font-size: 0.875em;
+                font-size: 0.75em;
                 &::after {
                     border-bottom: 1px solid $color_text;
                     content: "";
-                    left: 0;
-                    // margin-top: calc(0.125em / 2 * -1);
                     position: absolute;
-                    left: calc(50% - 45px);
-                    right: calc(50% - 45px);
+                    left: 0;
+                    right: 0;
                     top: 50%;
                 }
             }
         }
         &--mainPrice {
-            font-size: 3.250em;
+            font-size: 2.5em;
             color: $color_mobile;
             font-family: $weight-light;
             height: 45px;
             margin-bottom: 5px;
             line-height: 45px;
+            display: inline-block;
+            vertical-align: top;
             .currency {
-                font-size: 30px;
+                font-size: 0.75em;
                 margin-left: -10px;
             }
         }

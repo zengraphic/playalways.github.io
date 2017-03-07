@@ -1,5 +1,3 @@
-
-
 .business_block_viewer {
     width: 100%;
     max-width: 1024px;
@@ -32,15 +30,12 @@
             min-width: 73px;
         }
         .base__select.bootstrap-select .dropdown-toggle {
-            padding-left: 10px;
-            padding-right: 30px;
-            padding-top: 1.6rem;
-            padding-bottom: 1.3rem;
+            padding: 15px 30px 15px 10px;
             min-width: 51px;
             width: 70px;
             .bs-caret .caret {
                 right: 9px;
-                top: 40%;
+                top: 50%;
             }
             .filter-option {
                 font-size: 1em;
@@ -102,6 +97,7 @@
                     color: $color_white;
                     font-family: $weight-normal;
                     text-transform: uppercase;
+                    display: block;
                     @include breakpoint(small) {
                         margin: 5px 0 10px;
                         line-height: 1em;
@@ -118,7 +114,14 @@
                             width: 30%;
                         }
                         &_email {
+                            float: left;
                             clear: both;
+                            width: calc(70% - 1rem);
+                        }
+                        &_testoprivacy {
+                            color: $color_white;
+                            font-size: .85rem;
+                            padding: .5rem;
                         }
                     }
                     &_label {
@@ -127,15 +130,16 @@
                     &_input {
                         padding-top: 15px;
                         padding-bottom: 15px;
+                        margin-bottom: 10px;
                     }
                     &_submit,
                     &_reset {
-                        margin-top: 46px;
+                        margin-bottom: 15px;
                         padding-top: 12px;
                         padding-bottom: 12px;
                         @include breakpoint(small) {
                             margin-top: 10px;
-                            margin-bottom: 30px;
+                            margin-bottom: 15px;
                         }
                     }
                 }
@@ -215,7 +219,7 @@
                 line-height: 1em;
                 height: 1em;
                 overflow: hidden;
-                text-transform: uppercase;
+                //text-transform: uppercase;
             }
         }
         &.bundle_small {
@@ -229,6 +233,12 @@
                 }
             }
         }
+        &.splittedTitle {
+            .business_block_viewer__title,
+            .business_block_viewer__subtitle {
+                font-size: 2.5rem;
+            }
+        }
     }
     @at-root #{&}__coloredBg {
         width: 150%;
@@ -237,8 +247,8 @@
         @include transform(skew(-20deg));
         left: 50%;
         @include breakpoint(small) {
-            left: -100%;
-            top: 53%;
+            left: -50%;
+            top: 43%;
         }
     }
     @at-root #{&}__title {
@@ -307,10 +317,6 @@
                 width: 100%;
                 text-align: center;
             }
-        }
-        &__coloredBg {
-            left: -50%;
-            top: 56%;
         }
     }
     .bundle_orange {

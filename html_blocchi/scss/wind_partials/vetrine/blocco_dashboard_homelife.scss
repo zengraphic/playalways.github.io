@@ -1,6 +1,6 @@
 //BLOCCO DASHBOARD
 .dashboard_watch_block {
-    background-color: $color_home_life; 
+    background-color: $color_home_life;
     transition: all 0.45s ease-in-out 0s;
     &__container {
         margin: 0 auto;
@@ -55,31 +55,56 @@
     }
     &__product {
         float: left;
-        margin-top: 0.625em;
+        margin-top: 30px;
         width: 100%;
         &--imagep {
-            .bx-pager {
+            .phone_thumbs {
+                /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, $color_black 50%, $color_transparent 100%);
+                background: -o-linear-gradient(left, $color_black 50%, $color_transparent 100%);
+                /* Chrome10-25,Safari5.1-6 */
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                background: linear-gradient(to right, $color_black 50%, $color_transparent 100%);
+                /* IE6-9 */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_black}',
+                endColorstr='#{$color_transparent}',
+                GradientType=1); // 00ffffff ?
                 left: 0;
                 position: absolute;
-                top: 50px;
+                top: 70px;
                 width: 5.25em;
-                z-index: 999;
-                a {
+                padding: 0;
+                z-index: 250;
+                @include breakpoint('super-tiny') {
+                    top: auto;
+                    bottom: 0;
+                    width: 100%;
+                }
+                li {
+                    outline: 0;
                     float: left;
                     height: auto;
                     margin-bottom: 2rem;
                     text-align: center;
                     width: 100%;
+                    cursor: pointer;
                     img {
-                        max-width: 100%;
+                        width: auto;
+                        height: 54px;
                     }
                 }
             }
-            ul li {
-                text-align: center;
-                img {
-                    display: inline;
-                    max-width: 100%;
+            .phone_gallery {
+                padding: 0;
+                @include breakpoint('super-tiny') {
+                    padding-bottom: 100px;
+                }
+                li {
+                    outline: 0;
+                    @include breakpoint('super-tiny') {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
             }
         }
@@ -93,25 +118,6 @@
     }
     &__left {
         margin-top: 46px;
-        &#bx-pager {
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 6rem;
-            z-index: 999;
-            a {
-                float: left;
-                height: auto;
-                margin-bottom: 2rem;
-                text-align: center;
-                width: 100%;
-            }
-        }
-        .bx-wrapper {
-            .bx-controls {
-                display: none;
-            }
-        }
     }
     &__right {
         p {
@@ -156,7 +162,66 @@
             }
         }
     }
+    &__paymentRateRow {
+        width: 100%;
+        margin-bottom: 25px;
+        margin-top: 20px;
+        display: table;
+        &__item {
+            width: 33.333%;
+            display: table-cell;
+            text-align: center;
+            border-right: 1px solid $color_stroke;
+            vertical-align: bottom;
+            color: $color_white;
+            &:nth-of-type(3) {
+                border-right: none;
+            }
+            &--price {
+                font-family: $weight-normal;
+                font-size: 3.438em;
+                color: $color_mobile;
+                & .currency {
+                    font-size: 40px;
+                }
+                @include breakpoint(super-tiny) {
+                    font-size: 2.8em;
+                    & .currency {
+                        font-size: 25px;
+                    }
+                }
+            }
+            &--period {
+                font-family: $weight-normal;
+                font-size: 0.813em;
+            }
+            &--advance,
+            &--discount {
+                font-size: 1em;
+                padding-bottom: 15px;
+            }
+            &--pricePromotion {
+                font-size: 24px;
+                & .currency {
+                    font-size: 18px;
+                }
+                @include breakpoint(super-tiny) {
+                    font-size: 18px;
+                    & .currency {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
     &__button {
+        &--container {
+            &.doubleButton {
+                .dashboard_watch_block__button {
+                    width: 100%;
+                }
+            }
+        }
         float: left;
         width: calc(50% - 15px);
         &.left {

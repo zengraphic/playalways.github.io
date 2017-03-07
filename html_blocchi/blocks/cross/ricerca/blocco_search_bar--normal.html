@@ -16,10 +16,10 @@
     <!--- JS -->
     <script type="text/javascript" src="../../../js/base-libs.min.js"></script>
     <script type="text/javascript" src="../../../js/base.js"></script>
-    <script type="text/javascript" src="../../../js/script.js"></script>
     <!-- components script -->
     <script type="text/javascript" src="../../../js/header.js"></script>
     <script type="text/javascript" src="../../../js/custom.js"></script>
+    <script type="text/javascript" src="../../../js/search-bar.js"></script>
     <!--- /JS -->
 </head>
 
@@ -240,146 +240,17 @@
     <!-- ========== FINE BLOCCO RICERCA A COMPARSA ========== -->
 </body>
 <script>
-var $wind = jQuery.noConflict();
+var r$ = jQuery.noConflict();
 
-$wind(window).load(function() {
-    HEADER
-        .setSlider();
+
+jQuery(function(r$) {
+
+    r$(window).load(function() {
+        HEADER
+            .setSlider();
+    });
+
 });
-
-var obj_nicescroll = {
-    cursorcolor: "#f48135",
-    cursorwidth: "10px",
-    cursorborder: "0",
-    background: "#e6e9ed",
-    spacebarenabled: false,
-    horizrailenabled: true,
-    autohidemode: false,
-    zindex: 1100
-};
-
-var obj_slickslider = {
-    centerMode: false,
-    centerPadding: '0px',
-    slidesToShow: 5,
-    infinite: false,
-    dots: false,
-    arrows: false,
-    variableWidth: true,
-    responsive: [{
-        breakpoint: 768,
-        settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 3
-        }
-    }, {
-        breakpoint: 480,
-        settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '80px',
-            slidesToShow: 1
-        }
-    }]
-};
-
-var obj_searchPopup = {
-    type: 'inline',
-    mainClass: 'mfp-fade',
-    // closeOnContentClick: true,
-    midClick: true,
-    alignTop: true,
-    showCloseBtn: false,
-    removalDelay: 350,
-    callbacks: {
-        open: function() {
-
-            if (window.outerWidth <= 768) {
-
-                $wind('.mfp-bg,.mfp-wrap')
-                    .css('height', 'calc(100% - 275px)')
-                    .niceScroll(obj_nicescroll);
-
-            } else {
-                $wind('.mfp-bg,.mfp-wrap')
-                    .css('height', 'calc(100% - 123px)');
-            }
-
-
-            $wind('.mfp-container')
-                .css('height', '100%');
-            $wind('.mfp-content')
-                .css({
-                    'width': '100%',
-                    'height': '100%'
-                });
-            $wind('.base')
-                .css({
-                    'overflow':'hidden'
-                });
-            var $blockSearch = $wind('.block-search');
-            $blockSearch
-                .on({
-                    'keyup': function(e) {
-                        var $self = $wind(this);
-                        if ($self.val() != "") {
-                            $wind('.block-search__results__container')
-                                .removeClass('hidden');
-                            if (e.which == 13) {
-                                console.log('submit search enter');
-
-                            }
-                        } else if ($self.val() == "") {
-                            $wind('.block-search__results__container')
-                                .addClass('hidden');
-                        }
-                    }
-                }, '.block-search__search_bar__input')
-                .on({
-                    'click': function() {
-                        var $self = $wind(this);
-                        var $input = $self.prevAll('.block-search__search_bar__input');
-                        var inputVal = $input.val();
-
-                        if (inputVal != "") {
-                            console.log('submit search click');
-                        }
-                    }
-                }, '.block-search__search_bar__hint')
-                .on({
-                    'click': function() {
-                        var $self = $wind(this);
-                        var $input = $self.prevAll('.block-search__search_bar__input');
-                        $input
-                            .val("")
-                            .focus()
-                            .keyup();
-                    }
-                }, '.block-search__search_bar__resetter');
-        },
-        beforeClose: function() {
-            $wind('.block-search__search_bar__input')
-                .val('')
-                .change();
-            $wind('.block-search__results__container')
-                .addClass('hidden');
-        },
-        close: function() {
-            $wind('.mfp-bg,.mfp-wrap,.mfp-container')
-                .css('height', '');
-            $wind('.base.base__scrollable')
-                .niceScroll(obj_nicescroll);
-        }
-    }
-};
-
-$wind('.slider_menu_tabs')
-    .slick(obj_slickslider);
-
-$wind('.base__popup-link--search')
-    .magnificPopup(obj_searchPopup);
 </script>
 
 </html>

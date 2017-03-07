@@ -158,3 +158,28 @@ body {
 .bg_color_orange {
     background-color: $color_orange;
 }
+
+.base__input {
+    display: inline;
+    width: 280px;
+    padding: 0.8rem;
+    @include border-radius(4px);
+    transition: all, 0.25s, ease-in-out;
+    outline: 0;
+    border: 1px solid $color_grey_medium;
+    background-color: $color_white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    // textarea
+    // error
+    &:focus {
+        border: 1px solid $color_orange;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    &:hover,
+    &:active {
+        border: 1px solid $color_orange;
+    }
+}
