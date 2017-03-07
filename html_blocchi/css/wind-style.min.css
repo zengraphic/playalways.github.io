@@ -1173,7 +1173,8 @@ a.button--search {
   .standard_block .container_mid_row .column_left {
     float: left;
     width: calc(100% - 55px);
-    min-height: 200px; }
+    min-height: 200px;
+    margin-top: 3%; }
   .standard_block .container_mid_row .column_right {
     width: 55px;
     float: right;
@@ -1242,25 +1243,41 @@ a.button--search {
       margin-bottom: 20px;
       font-family: "Trade Gothic Light";
       height: 80px; }
+      .standard_block__mainContainer .recurrent_priceRow.textCurrency {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-family: "Trade Gothic Light";
+        height: 70px;
+        font-size: 1.250em;
+        line-height: 1.5em; }
+        .standard_block__mainContainer .recurrent_priceRow.textCurrency b {
+          font-size: 1.5em;
+          font-family: "Trade Gothic";
+          font-weight: 400; }
+        .standard_block__mainContainer .recurrent_priceRow.textCurrency.business b {
+          color: #F48135; }
+        .standard_block__mainContainer .recurrent_priceRow.textCurrency.mobile b {
+          color: #009BBE; }
+        .standard_block__mainContainer .recurrent_priceRow.textCurrency.infostrada b {
+          color: #0069B3; }
+        .standard_block__mainContainer .recurrent_priceRow.textCurrency .recurrent_priceRow__recurrency {
+          display: none; }
       .standard_block__mainContainer .recurrent_priceRow__price {
         color: #009BBE;
         font-size: 3.75em;
         line-height: 1em; }
         .standard_block__mainContainer .recurrent_priceRow__price.price_discounted {
-          position: relative;
-          font-size: 25px; }
+          position: relative; }
           .standard_block__mainContainer .recurrent_priceRow__price.price_discounted::after {
-            border-bottom: 2px solid #D3D3D2;
+            border-bottom: 2px solid;
             content: "";
             left: 0;
             margin-top: calc(0.125em / 2 * -1);
             position: absolute;
             right: 0;
             top: 50%; }
-          .standard_block__mainContainer .recurrent_priceRow__price.price_discounted .currency {
-            font-size: 20px; }
         .standard_block__mainContainer .recurrent_priceRow__price .currency {
-          font-size: 40px; }
+          font-size: 0.7em; }
       .standard_block__mainContainer .recurrent_priceRow__recurrency {
         color: #292F36;
         display: block;
@@ -6132,7 +6149,7 @@ a.button--search {
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       background: linear-gradient(to right, #212121 50%, transparent 100%);
       /* IE6-9 */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='transparent', GradientType=1);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='transparent', GradientType=1);
       left: 0;
       position: absolute;
       top: 70px;
@@ -8438,6 +8455,8 @@ a.button--search {
     .faq_block__mainBlock .faq_block__single.faq_active, .faq_block__mainBlock .faq_block__single:hover {
       background-color: #F48135;
       color: #FFF; }
+      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon img, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon img {
+        opacity: .5; }
       .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_mobile_fisso--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_mobile_fisso--color {
         background-position: 50% 6.59077%; }
       .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_passa_wind--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_passa_wind--color {
@@ -8463,8 +8482,11 @@ a.button--search {
       height: 44px; }
     .faq_block__mainBlock .faq_block__single__icon {
       line-height: 0px;
-      font-size: 2.8em;
       color: #F48135; }
+      .faq_block__mainBlock .faq_block__single__icon img {
+        margin: 0.5em auto;
+        width: 44px;
+        height: 44px; }
     .faq_block__mainBlock .faq_block__single__title {
       font-size: 1.250em;
       margin-top: 5px;
@@ -8632,13 +8654,13 @@ a.button--search {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  ::-webkit-input-placeholder {
+  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
     color: #AAB2BD; }
-  :-moz-placeholder {
+  .storeDetail_block__contactUs__area:-moz-placeholder {
     color: #AAB2BD; }
-  ::-moz-placeholder {
+  .storeDetail_block__contactUs__area::-moz-placeholder {
     color: #AAB2BD; }
-  :-ms-input-placeholder {
+  .storeDetail_block__contactUs__area:-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {

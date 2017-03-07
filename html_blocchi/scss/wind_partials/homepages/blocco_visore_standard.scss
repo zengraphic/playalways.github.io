@@ -11,6 +11,7 @@
             float: left;
             width: calc(100% - 55px);
             min-height: 200px;
+            margin-top:3%;
         }
         .column_right {
             width: 55px;
@@ -90,6 +91,37 @@
             margin-bottom: 20px;
             font-family: $weight-light;
             height:80px;
+            &.textCurrency {
+                margin-top: 10px;
+                margin-bottom: 40px;
+                font-family: $weight-light;
+                height: 70px;
+                font-size: 1.250em;
+                line-height: 1.5em;
+                b {
+                    font-size: 1.5em;
+                    font-family:$weight-normal;
+                    font-weight:400;
+                }
+                &.business {
+                    b {
+                        color: $color_wind;
+                    }
+                }
+                &.mobile {
+                    b {
+                        color: $color_mobile;
+                    }
+                }
+                &.infostrada {
+                    b {
+                        color: $color_infostrada;
+                    }
+                }
+                .recurrent_priceRow__recurrency{
+                    display:none;
+                }
+            }
             @at-root #{&}__price {
                 color: $color_mobile;
                 font-size: $title-big;
@@ -97,7 +129,7 @@
                 &.price_discounted {
                     position: relative;
                     &::after {
-                        border-bottom: 2px solid $color_stroke;
+                        border-bottom: 2px solid ;
                         content: "";
                         left: 0;
                         margin-top: calc(0.125em / 2 * -1);
@@ -105,13 +137,13 @@
                         right: 0;
                         top: 50%;
                     }
-                    font-size: 25px;
+                    
                     .currency {
-                        font-size: 20px;
+                    
                     }
                 }
                 .currency {
-                    font-size: 40px;
+                    font-size: 0.7em;
                 }
 
             }
