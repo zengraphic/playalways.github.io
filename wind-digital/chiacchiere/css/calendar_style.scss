@@ -1,0 +1,136 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+body {
+    background: #ccc;
+    font: 87.5%/1.5em 'Lato', sans-serif;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+.container {
+    height: 600px;
+    left: 50%;
+    margin: -300px 0 0 -300px;
+    position: absolute;
+    top: 50%;
+}
+
+.calendar {
+    background: #fff;
+    border-radius: 0 0 1em 1em;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    color: #555;
+    display: inline-block;
+    padding: 2em;
+    td {
+        padding: .5em 1em;
+        text-align: center;
+    }
+    thead {
+        color: #e66b6b;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &-container {
+        position: relative;
+        header {
+            border-radius: 1em 1em 0 0;
+            background: #e66b6b;
+            color: #fff;
+            padding: 3em 2em;
+            min-height: 170px;
+        }
+    }
+}
+
+.day {
+    font-size: 6em;
+    font-weight: 900;
+    line-height: 1em;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.month {
+    font-size: 3em;
+    line-height: 1em;
+    text-transform: lowercase;
+    display: inline-block;
+}
+
+.target-day {
+    background: #cc0000;
+    color: #fff;
+}
+
+.speaker {
+    position: absolute;
+    right: -30px;
+    top: 35px;
+    border: 2px solid #fff;
+    width: 175px;
+    height: auto;
+    @include border-radius(20px);
+}
+
+.current-day {
+    color: #e66b6b;
+}
+
+.subtitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    &_2{
+    	font-size: 20px;
+    	margin-top: 25px;
+    	margin-bottom: 0;
+    }
+}
+
+.prev-month,
+.next-month {
+    color: #cacaca;
+}
+
+.ring-left,
+.ring-right {
+    position: absolute;
+    top: 230px;
+}
+
+.ring-left {
+    left: 2em;
+}
+
+.ring-right {
+    right: 2em;
+}
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+    background: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    content: "";
+    display: inline-block;
+    margin: 8px;
+    height: 32px;
+    width: 8px;
+}
