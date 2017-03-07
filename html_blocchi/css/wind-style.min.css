@@ -4530,32 +4530,36 @@ a.button--search {
       height: 33px;
       overflow: hidden; }
     .showcase_bundle_block__single--price_discounted {
-      font-size: 1.500em;
+      font-size: 2.5em;
       color: #292F36;
       font-family: "Trade Gothic Light";
       position: relative;
-      height: 25px;
-      padding-top: 2px;
-      overflow: hidden; }
+      height: 45px;
+      line-height: 45px;
+      overflow: hidden;
+      margin-bottom: 5px;
+      display: inline-block;
+      vertical-align: top; }
       .showcase_bundle_block__single--price_discounted .currency {
-        font-size: 0.875em; }
+        font-size: 0.75em; }
         .showcase_bundle_block__single--price_discounted .currency::after {
           border-bottom: 1px solid #292F36;
           content: "";
-          left: 0;
           position: absolute;
-          left: calc(50% - 45px);
-          right: calc(50% - 45px);
+          left: 0;
+          right: 0;
           top: 50%; }
     .showcase_bundle_block__single--mainPrice {
-      font-size: 3.250em;
+      font-size: 2.5em;
       color: #009BBE;
       font-family: "Trade Gothic Light";
       height: 45px;
       margin-bottom: 5px;
-      line-height: 45px; }
+      line-height: 45px;
+      display: inline-block;
+      vertical-align: top; }
       .showcase_bundle_block__single--mainPrice .currency {
-        font-size: 30px;
+        font-size: 0.75em;
         margin-left: -10px; }
     .showcase_bundle_block__single--recurrency {
       font-family: "Trade Gothic Light";
@@ -4800,37 +4804,37 @@ a.button--search {
       line-height: 26px; }
       .showcase_bundle_device__single--vPack--description--price {
         font-size: 1.667em; }
-    .showcase_bundle_device__single--vPack--totalPrice--barred {
-      position: relative;
-      width: 100px;
-      margin: 0 auto;
-      font-family: "Trade Gothic Light";
-      height: 18px; }
-      .showcase_bundle_device__single--vPack--totalPrice--barred .currency {
-        font-size: 0.731em; }
-        .showcase_bundle_device__single--vPack--totalPrice--barred .currency:after {
-          border-bottom: 2px solid #292F36;
-          content: "";
-          left: 15%;
-          margin-top: calc(0.125em / 2 * -1);
-          position: absolute;
-          top: 40%;
-          width: 70%; }
-          @media (max-width: 768px) {
-            .showcase_bundle_device__single--vPack--totalPrice--barred .currency:after {
-              content: none; } }
-    .showcase_bundle_device__single--vPack--totalPrice--price {
-      font-family: "Trade Gothic Light";
-      font-size: 2.889em;
-      color: #009BBE; }
-      .showcase_bundle_device__single--vPack--totalPrice--price .currency {
-        font-size: 0.731em;
-        margin-left: 0; }
-    .showcase_bundle_device__single--vPack--totalPrice--description {
-      font-family: "Trade Gothic Light";
-      font-size: 0.722em;
-      text-transform: uppercase;
-      margin-bottom: 15px; }
+    .showcase_bundle_device__single--vPack--totalPrice {
+      margin: 27px 0; }
+      .showcase_bundle_device__single--vPack--totalPrice--barred {
+        position: relative;
+        margin: 0 auto;
+        font-family: "Trade Gothic Light";
+        font-size: 2em;
+        display: inline-block; }
+        .showcase_bundle_device__single--vPack--totalPrice--barred .currency {
+          font-size: 0.75em; }
+          .showcase_bundle_device__single--vPack--totalPrice--barred .currency:after {
+            border-bottom: 2px solid #292F36;
+            content: "";
+            left: 0;
+            right: 0;
+            position: absolute;
+            top: 50%; }
+            @media (max-width: 768px) {
+              .showcase_bundle_device__single--vPack--totalPrice--barred .currency:after {
+                content: none; } }
+      .showcase_bundle_device__single--vPack--totalPrice--price {
+        font-family: "Trade Gothic Light";
+        font-size: 2em;
+        color: #009BBE;
+        display: inline-block; }
+        .showcase_bundle_device__single--vPack--totalPrice--price .currency {
+          font-size: 0.75em; }
+      .showcase_bundle_device__single--vPack--totalPrice--description {
+        font-family: "Trade Gothic Light";
+        font-size: 0.722em;
+        text-transform: uppercase; }
     .showcase_bundle_device__single--vPack--mainTitle {
       font-size: 1.875em;
       text-align: center;
@@ -7389,6 +7393,8 @@ a.button--search {
 .advantages_block {
   margin: 0 auto;
   max-width: 1024px; }
+  .advantages_block.no_cta .advantages_block__header--label .button, .advantages_block.no_cta .advantages_block__header--label a.button--slim, .advantages_block.no_cta .advantages_block__header--label a.button--ghost, .advantages_block.no_cta .advantages_block__header--label a.button--ghost--transparent, .advantages_block.no_cta .advantages_block__header--label a.button--search {
+    display: none; }
   .advantages_block__header {
     margin-bottom: 1.5625em;
     height: auto; }
@@ -7406,15 +7412,30 @@ a.button--search {
         .advantages_block__header--title {
           font-size: 1.6em; } }
     .advantages_block__header--label {
-      font-family: "Trade Gothic Light";
-      color: #0069B3;
-      font-size: 1.125em;
-      text-transform: uppercase;
-      text-align: right;
-      padding-top: 20px; }
+      padding-top: 10px;
+      text-align: right; }
+      .advantages_block__header--label .advantages_label {
+        padding-top: 10px;
+        font-family: "Trade Gothic Light";
+        color: #0069B3;
+        font-size: 1.125em;
+        display: inline-block;
+        text-transform: uppercase;
+        text-align: right; }
+        @media (max-width: 768px) {
+          .advantages_block__header--label .advantages_label {
+            margin-bottom: 10px; } }
+      .advantages_block__header--label .button, .advantages_block__header--label a.button--slim, .advantages_block__header--label a.button--ghost, .advantages_block__header--label a.button--ghost--transparent, .advantages_block__header--label a.button--search {
+        display: inline-block;
+        margin-left: 15px;
+        padding-right: 30px;
+        padding-left: 30px; }
+        @media (max-width: 768px) {
+          .advantages_block__header--label .button, .advantages_block__header--label a.button--slim, .advantages_block__header--label a.button--ghost, .advantages_block__header--label a.button--ghost--transparent, .advantages_block__header--label a.button--search {
+            margin-left: 0; } }
       @media (max-width: 768px) {
         .advantages_block__header--label {
-          margin-bottom: 10px; } }
+          text-align: center; } }
   .advantages_block__listItem {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -7458,10 +7479,6 @@ a.button--search {
     .advantages_block__listItem:nth-of-type(odd) {
       background-color: #E6E9ED; }
 
-@media (max-width: 992px) {
-  .advantages_block__header--label {
-    text-align: left; } }
-
 @media (max-width: 400px) {
   .advantages_block__header--title {
     font-size: 1.46em; }
@@ -7482,6 +7499,41 @@ a.button--search {
     .fiber_block__container__item {
       padding: 25px 0;
       display: block; }
+      @media (max-width: 768px) {
+        .fiber_block__container__item {
+          padding: 15px 0; } }
+      .fiber_block__container__item .base__icon {
+        display: none; }
+      .fiber_block__container__item.icon .fiber_block__container__button {
+        padding-top: 10px;
+        padding-bottom: 10px; }
+        @media (max-width: 768px) {
+          .fiber_block__container__item.icon .fiber_block__container__button {
+            padding-top: 30px; } }
+        .fiber_block__container__item.icon .fiber_block__container__button a {
+          display: none; }
+        .fiber_block__container__item.icon .fiber_block__container__button .base__icon {
+          display: block;
+          width: 64px;
+          height: 64px; }
+          .fiber_block__container__item.icon .fiber_block__container__button .base__icon::before {
+            border-left: 1px solid #D3D3D2;
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            left: 0; }
+            @media (max-width: 768px) {
+              .fiber_block__container__item.icon .fiber_block__container__button .base__icon::before {
+                border-top: 1px solid #D3D3D2;
+                height: 1px;
+                margin-top: 10px;
+                left: 15px;
+                right: 15px; } }
+      .fiber_block__container__item.full .fiber_block__container__description {
+        width: 100%; }
+      .fiber_block__container__item.full .fiber_block__container__button {
+        display: none; }
     .fiber_block__container__description {
       display: block; }
       .fiber_block__container__description--title {
@@ -7517,8 +7569,8 @@ a.button--search {
               right: 15px; } }
       @media (max-width: 768px) {
         .fiber_block__container__button {
-          padding-top: 20px;
-          padding-bottom: 10px; } }
+          padding-top: 30px;
+          padding-bottom: 0; } }
     .fiber_block__container:nth-of-type(even) {
       background-color: #E6E9ED; }
   .fiber_block__note {
@@ -8654,13 +8706,13 @@ a.button--search {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-moz-placeholder {
+  :-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area::-moz-placeholder {
+  ::-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {

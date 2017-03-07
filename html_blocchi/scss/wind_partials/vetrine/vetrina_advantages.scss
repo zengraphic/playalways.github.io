@@ -2,6 +2,14 @@
 .advantages_block {
     margin: 0 auto;
     max-width: 1024px;
+    &.no_cta {
+        .advantages_block__header--label {
+            .advantages_label {}
+            .button {
+                display: none;
+            }
+        }
+    }
     &__header {
         margin-bottom: 1.5625em; //25px
         height: auto; //62px
@@ -21,17 +29,33 @@
             }
         }
         &--label {
-            font-family: $weight-light;
-            color: $color_infostrada;
-            font-size: 1.125em;
-            text-transform: uppercase;
+            padding-top: 10px;
             text-align: right;
-            padding-top: 20px;
+            .advantages_label {
+                padding-top: 10px;
+                font-family: $weight-light;
+                color: $color_infostrada;
+                font-size: 1.125em;
+                display: inline-block;
+                text-transform: uppercase;
+                text-align: right;
+                @include breakpoint(small) {
+                    margin-bottom: 10px;
+                }
+            }
+            .button {
+                display: inline-block;
+                margin-left: 15px;
+                padding-right: 30px;
+                padding-left: 30px;
+                @include breakpoint(small) {
+                    margin-left: 0;
+                }
+            }
             @include breakpoint(small) {
-                margin-bottom: 10px;
+                text-align: center;
             }
         }
-        &--button {}
     }
     &__listItem {
         padding-top: 20px;
@@ -50,9 +74,9 @@
         }
         &__icon {
             //padding-top: 15px;
-            .base__icon{
-                width:64px;
-                height:64px;
+            .base__icon {
+                width: 64px;
+                height: 64px;
             }
             // &--fiber {
             //     background: rgba(0, 0, 0, 0) url("../img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 0;
@@ -78,7 +102,7 @@
             //     height: 48px;
             //     margin: 0 auto;
             // }
-             //&--calls {
+            //&--calls {
             //     background: rgba(0, 0, 0, 0) url("../img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 -192px;
             //     width: 65px;
             //     height: 48px;
@@ -94,7 +118,7 @@
         }
         &__description {
             &--title {
-                font-family: $weight-normal ;
+                font-family: $weight-normal;
                 color: $color_infostrada;
                 text-transform: uppercase;
                 font-size: 1.125em;
@@ -122,15 +146,7 @@
 // ============================== MEDIA QUEfont-size: 1.125em;RIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-@media (max-width: 992px) {
-    .advantages_block {
-        &__header {
-            &--label {
-                text-align: left;
-            }
-        }
-    }
-}
+
 
 @media (max-width: 400px) {
     .advantages_block {
@@ -149,7 +165,6 @@
                 &--xbox,
                 &--webcam,
                 &--calls {
-                    
                     background-image: url("../img/icons-vantaggi/advantages_sprite_small.png");
                 }
             }
