@@ -5,6 +5,18 @@
     /* stops bg color from leaking outside the border: */
 }
 
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 650px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
 body {
     background: #ccc;
     font: 87.5%/1.5em 'Lato', sans-serif;
@@ -21,11 +33,12 @@ td {
 }
 
 .container {
-    height: 600px;
-    left: 50%;
-    margin: -300px 0 0 -300px;
-    position: absolute;
-    top: 50%;
+    width: 500px;
+    margin: 30px auto;
+    padding: 10px;
+    @include breakpoint(super-tiny) {
+        width: 300px;
+    }
 }
 
 .calendar {
@@ -36,9 +49,18 @@ td {
     color: #555;
     display: inline-block;
     padding: 2em;
+    width: calc(500px - 4em);
+    @include breakpoint(super-tiny) {
+        width: 270px;
+        padding: 15px;
+        margin: 0 auto;
+    }
     td {
         padding: .5em 1em;
         text-align: center;
+        @include breakpoint(super-tiny) {
+            padding: .5em 4px;
+        }
     }
     thead {
         color: #e66b6b;
@@ -53,6 +75,10 @@ td {
             color: #fff;
             padding: 3em 2em;
             min-height: 170px;
+            @include breakpoint(super-tiny) {
+                padding-top: 10px;
+                padding-bottom: 15px;
+            }
         }
     }
 }
@@ -63,6 +89,10 @@ td {
     line-height: 1em;
     display: inline-block;
     margin-right: 15px;
+    @include breakpoint(super-tiny) {
+        font-size: 4em;
+        display: block;
+    }
 }
 
 .month {
@@ -70,6 +100,9 @@ td {
     line-height: 1em;
     text-transform: lowercase;
     display: inline-block;
+       @include breakpoint(super-tiny) {
+        font-size: 2em;
+    } 
 }
 
 .target-day {
@@ -85,6 +118,9 @@ td {
     width: 175px;
     height: auto;
     @include border-radius(20px);
+    @include breakpoint(super-tiny) {
+        right: 5px;
+    }    
 }
 
 .current-day {
@@ -94,10 +130,18 @@ td {
 .subtitle {
     font-size: 30px;
     margin-bottom: 20px;
-    &_2{
-    	font-size: 20px;
-    	margin-top: 25px;
-    	margin-bottom: 0;
+    &_2 {
+        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 0;
+            @include breakpoint(super-tiny) {
+                padding-top: 22px;
+                font-size: 16px;
+            }        
+    }
+    @include breakpoint(super-tiny) {
+        font-size: 18px;
+        margin-bottom: 50px;
     }
 }
 
