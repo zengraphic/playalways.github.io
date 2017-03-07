@@ -1071,7 +1071,7 @@ r$(document).ready(function() {
 
     // Position Footer Bottom
     var window_height = r$(window).height();
-    var page_height = r$('html').height() + 53;
+    var page_height = r$('html').height();
     // If the content is small, the footer stays at the bottom
     if (page_height < window_height) {
         r$('#footer').css('position', 'absolute');

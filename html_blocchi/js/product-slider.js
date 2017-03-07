@@ -14,12 +14,15 @@
 
     var PRODUCTSLIDER = {
         container: false,
+        plansContainer: false,
         models: false,
         prices: false,
         colorsList: false,
         colorsListItems: false,
         memoriesList: false,
         memoriesListItems: false,
+        plans: false,
+        activePlans: false,
         activeModel: false,
         activePrice: false,
         activeColor: false,
@@ -108,6 +111,8 @@
             var $SLIDER = this;
 
             $SLIDER.container = $sliderDomObject;
+            $SLIDER.plansContainer = $SLIDER.container.nextAll('.blocco_strip_plans');
+            $SLIDER.plans = $SLIDER.plansContainer.find('.strip_plans');
             $SLIDER.models = $SLIDER.container.find('.phone_model');
             $SLIDER.prices = $SLIDER.container.find('.data-sap-price');
             $SLIDER.colorsList = $SLIDER.container.find('.item_color');
@@ -301,6 +306,7 @@
             } else {
                 $SLIDER.activeModel = candidateModel;
             }
+
             $SLIDER
                 .hideAndShowRelated('models');
 
@@ -318,6 +324,7 @@
                 .hide();
             $SLIDER['active' + singularizedCategory]
                 .show();
+            return $SLIDER;
         },
         /**
          * [setActiveModelGalleries description]
@@ -356,8 +363,14 @@
                 return currentModelSap == activeSap;
             });
 
+            $SLIDER.activePlans = $SLIDER.plans.filter(function() {
+                var currentModelSap = r$(this).data().sap;
+                return currentModelSap == activeSap;
+            });
+
             $SLIDER
-                .hideAndShowRelated('prices');
+                .hideAndShowRelated('prices')
+                .hideAndShowRelated('plans');
 
             $SLIDER
                 .acquireButton

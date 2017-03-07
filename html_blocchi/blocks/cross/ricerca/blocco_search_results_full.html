@@ -16,10 +16,10 @@
     <!--- JS -->
     <script type="text/javascript" src="../../../js/base-libs.min.js"></script>
     <script type="text/javascript" src="../../../js/base.js"></script>
-    <script type="text/javascript" src="../../../js/script.js"></script>
     <!-- components script -->
     <script type="text/javascript" src="../../../js/header.js"></script>
     <script type="text/javascript" src="../../../js/custom.js"></script>
+    <script type="text/javascript" src="../../../js/search-bar.js"></script>
     <script type="text/javascript" src="../../../js/pagination.js"></script>
     <!--- /JS -->
 </head>
@@ -101,9 +101,18 @@
                         <!-- MENU RIGHT -->
                         <div class="menu-right">
                             <ul>
-                                <li><a class="btn_menu" id="menuaction" href="#"> <div class="base__icon icon_menu--color"></div>MENU</a></li>
-                                <li><a class="btn_carrello" href="#"> <div class="base__icon icon_carrello--color"></div>CARRELLO</a></li>
-                                <li><a class="btn_entra base__popup-link" href="#register"> <div class="base__icon icon_login--color"></div>ENTRA</a></li>
+                                <li>
+                                    <a class="btn_menu" id="menuaction" href="#">
+                                        <div class="base__icon icon_menu--color"></div>MENU</a>
+                                </li>
+                                <li>
+                                    <a class="btn_carrello" href="#">
+                                        <div class="base__icon icon_carrello--color"></div>CARRELLO</a>
+                                </li>
+                                <li>
+                                    <a class="btn_entra base__popup-link" href="#register">
+                                        <div class="base__icon icon_login--color"></div>ENTRA</a>
+                                </li>
                             </ul>
                         </div>
                         <!-- END MENU RIGHT -->
@@ -427,42 +436,10 @@
     <!-- ========== FINE BLOCCO LISTATO RICERCA ========== -->
 </body>
 <script>
-jQuery(window).load(function($) {
+r$ = jQuery.noConflict();
+
+r$(window).load(function() {
     HEADER.setSlider();
-});
-
-jQuery(document).ready(function($) {
-    $('.slider_menu_tabs')
-        .slick({
-            centerMode: false,
-            centerPadding: '0px',
-            slidesToShow: 5,
-            infinite: false,
-            dots: false,
-            arrows: false,
-            variableWidth: true,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '60px',
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '80px',
-                    slidesToShow: 1
-                }
-            }]
-        });
-
-    $(".block-full_search__search_bar__resetter .resetter").click(function() {
-        $(".block-full_search__search__input").val("").blur();
-    });
 });
 </script>
 
