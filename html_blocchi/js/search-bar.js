@@ -41,39 +41,36 @@
         },
         obj_searchPopup: {
             type: 'inline',
-            mainClass: 'mfp-fade',
+            mainClass: 'mfp-fade mfp-search',
             // closeOnContentClick: true,
             midClick: true,
             alignTop: true,
             showCloseBtn: false,
+            focus: '.block-search__search_bar__input',
             removalDelay: 350,
             callbacks: {
+
                 open: function() {
 
                     if (window.outerWidth <= 768) {
-
+                        r$(document).scrollTop(150);
                         r$('.mfp-bg,.mfp-wrap')
-                            .css('height', 'calc(100% - 275px)')
+                            .css('height', 'calc(100% - 123px)')
                             .niceScroll(SEARCHBAR.obj_nicescroll);
 
                     } else {
-                        r$('.mfp-bg,.mfp-wrap')
-                            .css('height', 'calc(100% - 123px)');
+                        r$(document).scrollTop(0);
+                        console.log('ok');
                     }
 
 
-                    r$('.mfp-container')
-                        .css('height', '100%');
-                    r$('.mfp-content')
-                        .css({
-                            'width': '100%',
-                            'height': '100%'
-                        });
+
                     r$('.base')
                         .css({
                             'overflow': 'hidden'
                         });
                     var $blockSearch = r$('.block-search');
+
                     $blockSearch
                         .on({
                             'keyup': function(e) {
