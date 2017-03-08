@@ -52,7 +52,8 @@ jQuery(document).ready(function($) {
             responsive: [{
                     breakpoint: 560,
                     settings: {
-                        centerMode: false,
+                        centerMode: true,
+                        centerPadding: "50px",
                         initialSlide: 0,
                         slidesToShow: 3,
                         slidesToScroll: 1

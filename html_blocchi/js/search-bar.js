@@ -116,12 +116,16 @@
                         .change();
                     r$('.block-search__results__container')
                         .addClass('hidden');
+                        
                 },
                 close: function() {
                     r$('.mfp-bg,.mfp-wrap,.mfp-container')
                         .css('height', '');
                     r$('.base.base__scrollable')
                         .niceScroll(SEARCHBAR.obj_nicescroll);
+                        r$(document).scrollTop(0);
+                        
+
                 }
             }
         },
