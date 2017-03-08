@@ -4,33 +4,120 @@
 
     var DOUBLEFILTER = {
         container: false,
-        tabsContainer: false,
+        showMore: false,
         tabs: false,
-        cardContainer: false,
         cards: false,
+        isLocked: false,
         filters: [],
-        initFilter: function($filterDOMObject) {
+        initFilter: function($filterDOMObject, filters, isLocked) {
             var $FILTER = this;
 
             $FILTER
-                .setFilterItems($filterDOMObject)
+                .setFilterItems($filterDOMObject, isLocked)
                 .bindFilters();
+
+            if (!filters) {
+                var $firstTabs = $FILTER.tabs.filter(':first-child');
+                $firstTabs
+                    .each(function() {
+                        var $currentTab = r$(this);
+                        $currentTab
+                            .click();
+                    });
+            }
 
             return $FILTER;
         },
-        setFilterItems: function($filterDOMObject) {
+        setFilterItems: function($filterDOMObject, isLocked) {
+            var $FILTER = this;
 
+            $FILTER.container = $filterDOMObject;
+            $FILTER.showMore = $FILTER.container.find('div[class*="__showMore"]');
+            $FILTER.tabs = $FILTER.container.find('.tab_button');
+            $FILTER.cards = $FILTER.container.find('.card_item');
+            $FILTER.isLocked = (isLocked == undefined) ? false : isLocked;
+
+            return $FILTER;
+        },
+        bindFilters: function() {
+            var $FILTER = this;
+
+            $FILTER
+                .showMore
+                .on({
+                    'click': function() {
+
+                    }
+                });
+            $FILTER
+                .tabs
+                .on({
+                    'click': function(event) {
+                        event
+                            .preventDefault();
+                        var $clickedTab = r$(this);
+                        $FILTER
+                            .handleClickedTab($clickedTab);
+                    }
+                });
+
+            return $FILTER;
+        },
+        handleClickedTab: function($clickedTab) {
+            var $FILTER = this;
+
+            var dataObj = $clickedTab.data();
+            if (dataObj.card) {
+                $FILTER
+                    .handleCards($clickedTab);
+            } else {
+                $FILTER
+                    .handlePlans($clickedTab);
+            }
+
+            return $FILTER;
+        },
+        handleCards: function($cardFilterTab) {
+            var $FILTER = this;
+
+            if (!$cardFilterTab.hasClass('active')) {
+                var $activeSibling = $cardFilterTab.siblings().filter('.active');
+                if ($activeSibling.length > 0) {
+                    $activeSibling
+                        .removeClass('active');
+                    var filterToClean = $activeSibling.data().card;
+                    $FILTER.filters = $.grep($FILTER.filters, function(currentFilter) {
+                        return filterToClean != currentFilter;
+                    });
+                }
+                $cardFilterTab
+                    .addClass('active');
+                var cardFilter = $cardFilterTab.data().card;
+                $FILTER
+                    .filters
+                    .push(cardFilter);
+                $FILTER
+                    .applyFilter();
+            }
+            return $FILTER;
+        },
+        applyFilter: function() {
+          var $FILTER = this;
+          console.log($FILTER.filters);
+          return $FILTER;
+        },
+        handlePlans: function($planFilterTab, operation) {
+            var $FILTER = this;
+            return $FILTER;
         }
-
-
     };
 
     r$(document)
         .ready(function() {
-            var $filterBlock = r$('div[class$=_block]');
+            var $filterDOMObject = r$('#filter-showcase');
 
             DOUBLEFILTER
-                .intiFilter($filterDOMObject);
+                .initFilter($filterDOMObject, false, true);
         });
 
 })(jQuery);
@@ -40,7 +127,7 @@
 
 
 
-jQuery(document).ready(function($) {
+/*jQuery(document).ready(function($) {
 
     var $cards = $('div[class*="tab_link_"]');
     $('div[class*="__showMore"]').click(function() {
@@ -153,4 +240,4 @@ jQuery(document).ready(function($) {
         }
     }, '.tab_button');
 
-});
+});*/

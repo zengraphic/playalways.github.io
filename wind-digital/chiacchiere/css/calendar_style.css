@@ -11,11 +11,12 @@ td {
   padding: 0; }
 
 .container {
-  height: 600px;
-  left: 50%;
-  margin: -300px 0 0 -300px;
-  position: absolute;
-  top: 50%; }
+  width: 500px;
+  margin: 30px auto;
+  padding: 10px; }
+  @media (max-width: 480px) {
+    .container {
+      width: 300px; } }
 
 .calendar {
   background: #fff;
@@ -24,10 +25,19 @@ td {
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 3px 1px #fff;
   color: #555;
   display: inline-block;
-  padding: 2em; }
+  padding: 2em;
+  width: calc(500px - 4em); }
+  @media (max-width: 480px) {
+    .calendar {
+      width: 270px;
+      padding: 15px;
+      margin: 0 auto; } }
   .calendar td {
     padding: .5em 1em;
     text-align: center; }
+    @media (max-width: 480px) {
+      .calendar td {
+        padding: .5em 4px; } }
   .calendar thead {
     color: #e66b6b;
     font-weight: 700;
@@ -40,6 +50,10 @@ td {
       color: #fff;
       padding: 3em 2em;
       min-height: 170px; }
+      @media (max-width: 480px) {
+        .calendar-container header {
+          padding-top: 10px;
+          padding-bottom: 15px; } }
 
 .day {
   font-size: 6em;
@@ -47,12 +61,19 @@ td {
   line-height: 1em;
   display: inline-block;
   margin-right: 15px; }
+  @media (max-width: 480px) {
+    .day {
+      font-size: 4em;
+      display: block; } }
 
 .month {
   font-size: 3em;
   line-height: 1em;
   text-transform: lowercase;
   display: inline-block; }
+  @media (max-width: 480px) {
+    .month {
+      font-size: 2em; } }
 
 .target-day {
   background: #cc0000;
@@ -69,6 +90,9 @@ td {
   border-radius: 20px;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */ }
+  @media (max-width: 480px) {
+    .speaker {
+      right: 5px; } }
 
 .current-day {
   color: #e66b6b; }
@@ -80,6 +104,14 @@ td {
     font-size: 20px;
     margin-top: 25px;
     margin-bottom: 0; }
+    @media (max-width: 480px) {
+      .subtitle_2 {
+        padding-top: 22px;
+        font-size: 16px; } }
+  @media (max-width: 480px) {
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 50px; } }
 
 .prev-month,
 .next-month {
