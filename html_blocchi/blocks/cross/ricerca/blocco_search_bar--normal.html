@@ -75,7 +75,7 @@
                         <div class="menu">
                             <ul>
                                 <li>
-                                    <a class="btn " href="#">
+                                    <a class="btn base__popup-link--ricarica" href="#refill_block">
                                         Ricarica
                                     </a>
                                 </li>
@@ -238,6 +238,301 @@
         <!-- ========== FINE BLOCCO CONTAINER RICERCA A COMPARSA ========== -->
     </div>
     <!-- ========== FINE BLOCCO RICERCA A COMPARSA ========== -->
+    <div class="ricarica">
+        <div id="refill_block" class="base__popup base__popup--loguin mfp-hide refill_block">
+            <div class="container base__scrollable touch_scroll">
+                <div class="row">
+                    <div class="top">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="logo logo--wind">
+                                    <img src="../../img/logos/wind_logo.png" class="wind">
+                                </div>
+                                <a class="btn_sa" href="#">
+                                    <img src="../../img/icons-interface/icon_1.png">
+                                    <span>Serve aiuto?</span>
+                                </a>
+                                <div class="menu-right">
+                                    <ul>
+                                        <li>
+                                            <a class="mfp-close btn_close" href="#"> CHIUDI</a>
+                                        </li>
+                                        <li>
+                                            <!-- <a class="btn_carrello" href="#">
+                                            CARRELLO
+                                        </a> -->
+                                        </li>
+                                        <li>
+                                            <!-- <a class="btn_entra mfp-close" title="" href="#">
+                                            ENTRA
+                                        </a> -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title">
+                    <span class="text">Ricarica Online</span>
+                    <a class="safe-link pull-right" href="#">
+                        <span class="right">
+                       <div class="base__icon icon_security--color"></div>
+                        GARANTITA <br>E SICURA</span></a>
+                </div>
+                <div class="image">
+                    <img src="../../img/ricarica/image_ricarica2.jpg">
+                </div>
+                <div class="box">
+                    <h3>Che numero vuoi ricaricare?</h3>
+                    <select id="select_numbert" class="base__select selectpicker select_numbert">
+                        <option value="option1">328 6612334</option>
+                        <option value="option2">329 9012309</option>
+                        <option value="option3">327 9012354</option>
+                        <option value="newNumber">Altro numero</option>
+                    </select>
+                    <div class="action_numbert">
+                        <input type="tel" placeholder="Inserisci numero da ricaricare" name="" class="base__input number_top_up" maxlength="10" onkeypress='return validate(event)'>
+                        <span class="error error_message">Controlla il campo</span>
+                        <input type="tel" placeholder="Conferma numero da ricaricare" name="" maxlength="10" class="base__input number_top_up_confirm" onkeypress='return validate(event)'>
+                        <span class="error error_message">Controlla il campo</span>
+                    </div>
+                    <h3 class="text2">Di quanto vuoi ricaricare? </h3>
+                    <select class="base__select selectpicker select_value light" title="" data-size="6">
+                        <option data-content="2<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">2€ (+1,5€ in omaggio)</option>
+                        <option data-content="5<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">5€ (+1,5€ in omaggio)</option>
+                        <option data-content="10<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">10€ (+1,5€ in omaggio)</option>
+                        <option data-content="15<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">15€ (+1,5€ in omaggio)</option>
+                        <option data-content="25<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">25€ (+1,5€ in omaggio)</option>
+                        <option data-content="50<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">50€ (+1,5€ in omaggio)</option>
+                        <option data-content="100<span class='euro'>€</span> <span class='textl'>(+1,5€ in omaggio)</span>">100€ (+1,5€ in omaggio)</option>
+                    </select>
+                    <h3 class="text3">Come vuoi pagare?</h3>
+                </div>
+                <div class="item-box credit_card_main_radio">
+                    <div class="cont__item_cc">
+                        <div class="base__radio radio radio-inline">
+                            <input type="radio" id="option_cc1" value="option_cc1" name="radioInline">
+                            <label class="label_for_creditCard" for="option_cc1">
+                                <div class="detail-cc">
+                                    <div class="pull-left">
+                                        <span class="card-image"> <div class="base__icon icon_visa"></div></span>
+                                        <span class="card-number-crypted"> &#149; &#149; &#149; &#149; </span>
+                                        <span class="card-number-clear paypal-email">6368</span>
+                                    </div>
+                                    <div class="pull-left expiration">
+                                        <span class="expiration-label">Scad.</span>
+                                        <span class="expiration-date">11/17</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </label>
+                            <a class="btn top_up_remove_btn btn_removeModal">RIMUOVI</a>
+                        </div>
+                        <div class="clear"></div>
+                        <!--  <h4>predefinito</h4>
+                                <a class="btn">MODIFICA</a>
+                                <a class="btn top_up_remove_btn">RIMUOVI</a> -->
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="showMore">
+                    altri metodi di pagamento
+                </div>
+                <div class="showMore_content">
+                    <div class="item-box">
+                        <div class="cont__item_cc">
+                            <div class="base__radio radio radio-inline optional_card">
+                                <input type="radio" id="option_cc2" value="option_cc2" name="radioInline">
+                                <label class="label_for_creditCard" for="option_cc2">
+                                    <div class="detail-cc">
+                                        <div class="pull-left">
+                                            <span class="card-image"><div class="base__icon icon_visa"></div></span>
+                                            <span class="card-number-crypted"> &#149; &#149; &#149; &#149; </span>
+                                            <span class="card-number-clear paypal-email">6368</span>
+                                        </div>
+                                        <div class="pull-left expiration">
+                                            <span class="expiration-label">Scad.</span>
+                                            <span class="expiration-date">11/17</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </label>
+                                <a class="btn top_up_remove_btn btn_removeModal">RIMUOVI</a>
+                            </div>
+                            <!--  -->
+                            <!--  <h4>predefinito</h4>
+                                <a class="btn">MODIFICA</a>
+                                <a class="btn top_up_remove_btn">RIMUOVI</a> -->
+                        </div>
+                    </div>
+                    <div class="item-box" id="action_c1">
+                        <div class="base__radio radio radio-inline newCard_main_radio">
+                            <input type="radio" id="option1" value="option1" name="radioInline">
+                            <label for="option1"> Nuova carta </label>
+                        </div>
+                        <!-- CREDIC CARD -->
+                        <div class="cont_item1 base__toggle">
+                            <input type="tel" placeholder="Numero della Carta di Credito" id="input_cc" name="" class="base__input number_cc" onkeypress='return validate(event)' maxlength="16">
+                            <span class="error_message">Controlla il campo</span>
+                            <div class="clear"></div>
+                            <div class="container_select_cc">
+                                <div class="select_mese">
+                                    <select class="base__select selectpicker select_cc" title="Mese" data-size="6">
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                    <span class="error_message">Controlla il campo</span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="select_anno">
+                                    <select class="base__select selectpicker select_cc" title="Anno" data-size="6">
+                                        <option>2017</option>
+                                        <option>2018</option>
+                                        <option>2019</option>
+                                        <option>2020</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                    </select>
+                                    <span class="error_message">Controlla il campo</span>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="cvv_container">
+                                    <input type="password" placeholder="CVV" name="" class="base__input security_cc " id="security_cc" onkeypress='return validate(event)' maxlength="4" autocomplete="off" />
+                                    <span class="error_message">Controlla il campo</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="base__checkbox checkbox checkbox-inline remember_check">
+                                <input type="checkbox" class="styled" id="salvadati-checkbox" value="option1">
+                                <label for="salvadati-checkbox">Ricorda la mia carta per i pagamenti successivi</label>
+                                <div class="base__icon icon_help--color modalCc"></div>
+                            </div>
+                            <!-- insert help comment in [data-original-title] -->
+                        </div>
+                    </div>
+                    <div class=" item-box" id="action_c2">
+                        <div class="base__radio radio radio-inline paypal_main_radio">
+                            <input type="radio" id="option2" value="option2" name="radioInline">
+                            <label for="option2"> PayPal </label>
+                        </div>
+                        <div class="cont_item1">
+                            <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> per completare il pagamento</h4>
+                            <div class="clear"></div>
+                            <div class="base__checkbox checkbox checkbox-inline remember_check">
+                                <input type="checkbox" class="styled" id="paypal-checkbox" value="option1">
+                                <label for="paypal-checkbox">Ricorda i miei dati</label>
+                                <div class="base__icon icon_help--color modalPaypal"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class=" item-box last-i" id="action_c3">
+                        <div class="base__radio radio radio-inline charge_main_radio">
+                            <input type="radio" id="option3" value="option3" name="radioInline">
+                            <label for="option3"> Addebito su conto </label>
+                        </div>
+                        <div class="cont_item1 item_da item_charge">
+                            <div class="base__radio base__radio--small radio radio-inline">
+                                <input type="radio" id="option_dc1" value="option1" name="radiooption2">
+                                <label for="option_dc1"> PagOnline by Unicredit</label>
+                            </div>
+                            <div class="base__radio base__radio--small radio radio-inline">
+                                <input type="radio" id="option_dc2" value="option2" name="radiooption2">
+                                <label for="option_dc2"> BancoPostaonline </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" item-box last-i" id="action_c4">
+                        <div class="base__radio radio radio-inline bill_main_radio">
+                            <input type="radio" id="option4" value="option4" name="radioInline">
+                            <label for="option4"> Addebito su conto telefonico</label>
+                        </div>
+                        <div class="cont_item1 item_da item_bill">
+                            <div class="base__radio base__radio--small radio radio-inline">
+                                <input type="radio" id="option_dct1" value="option1" name="radiooption3">
+                                <label for="option_dct1"><span class="contract__popup">Conto Telefonico</span><span> con addebito su carta</span></label>
+                            </div>
+                            <div class="base__radio base__radio--small radio radio-inline">
+                                <input type="radio" id="option_dct2" value="option2" name="radiooption3">
+                                <label for="option_dct2"><span class="contract__popup">Conto Telefonico</span><span> con addebito su conto n° 1149408593053</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box refill_notification">
+                    <h3>Vuoi ricevere la notifica?</h3>
+                    <input type="email" placeholder="Inserisci mail valida" name="" class="base__input notificationMail">
+                    <span class="error_message">Controlla il campo</span>
+                </div>
+                <div class="box box_2">
+                    <div class="paypal_option">
+                        <h4 class="text_p">Verrai reindirizzato sul sito di <a href="#">PayPal</a> dove potrai effettuare il pagamento</h4>
+                    </div>
+                    <h4>Accetto <a class="base__popup-link--ricarica" href="#privacy_block">le condizioni del servizio e l’informativa sulla privacy </a></h4>
+                    <button class="btn btn_refil base__bt top_up_button_final" disabled="true">RICARICA</button>
+                </div>
+                <div class="popup">
+                    <div class="popup-dialog">
+                        <div class="popup-header">
+                            Stai per eliminare la carta che finisce per 6368
+                        </div>
+                        <div class="popup-body">
+                            Vuoi eliminare la carta predefinita?
+                        </div>
+                        <div class="popup-footer ">
+                            <button class="btn popup-btn_1 btn_refil  base__bt rbtn_icc popup-btn top_up_newCard closeModal waves-effect waves-button waves-float waves-light">rimuovi</button>
+                            <button class="popup-btn_2 btn_refil base__bt popup-btn closeModal waves-effect waves-button waves-float waves-light">annulla</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup--contract">
+                    <div class="popup--contract-dialog">
+                        <div class="popup--contract-header">
+                        </div>
+                        <div class="popup--contract-body">
+                            <div class="popup-body--description">
+                            </div>
+                            <div class="popup_row first_row">
+                                <div class="first-label popup-body--label pull-left"></div>
+                                <div class="first-value popup-body--value pull-right"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="popup_row second_row">
+                                <div class="second-label popup-body--label pull-left"></div>
+                                <div class="second-value popup-body--value pull-right"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="popup_row third_row">
+                                <div class="third-label popup-body--label pull-left"></div>
+                                <div class="third-value popup-body--value pull-right"></div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="popup-footer ">
+                            <button class="btn popup-btn_2 btn_refil  base__bt popup-btn  closeModal waves-effect waves-button waves-float waves-light">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
 var r$ = jQuery.noConflict();

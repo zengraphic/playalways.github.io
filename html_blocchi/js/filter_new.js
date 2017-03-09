@@ -10,8 +10,7 @@
         isLocked: false,
         filters: [],
         initFilter: function($filterDOMObject, filters, isLocked) {
-            var $FILTER = this;
-
+            var $FILTER = this; 
             $FILTER
                 .setFilterItems($filterDOMObject, isLocked)
                 .bindFilters();
@@ -100,11 +99,30 @@
                     .applyFilter();
             }
             return $FILTER;
+
         },
+
+
         applyFilter: function() {
-          var $FILTER = this;
-          console.log($FILTER.filters);
-          return $FILTER;
+            var $FILTER = this;
+            
+            r$.each($FILTER.cards, function() {
+                var candidateCardsData = $(this).data().card.split(' ');
+                
+                r$.each($FILTER.filters, function(i,selectedFilters) {
+                    if ($.inArray(selectedFilters, candidateCardsData) != -1) {
+                            console.log(selectedFilters + ' è uguale a ' + candidateCardsData);
+                                
+                                //o creo un nuovo array con i valori uguali e poi provo a mostrare
+                                
+
+                    } else {
+
+                    }
+                })
+
+            });
+            return $FILTER;
         },
         handlePlans: function($planFilterTab, operation) {
             var $FILTER = this;

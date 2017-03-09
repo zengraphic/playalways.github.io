@@ -410,7 +410,7 @@ body {
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  min-height: 100vh; }
+  min-height: 100vh !important; }
   body h1 {
     font-family: "Trade Gothic Bold", sans-serif;
     font-size: 3.571rem; }
@@ -2302,19 +2302,29 @@ input[type=number]::-webkit-outer-spin-button {
     .base__nav__steps li:after {
       width: 91%; } }
 
-.mfp-bg,
-.mfp-container,
-.mfp-wrap {
-  height: calc(100% - 43px);
-  bottom: 0;
-  top: auto; }
-
 .mfp-close-btn-in .mfp-close {
   position: fixed;
   color: #FFF;
   right: 0;
   top: 0;
   padding: 0; }
+
+.mfp-ricarica {
+  height: 100%;
+  bottom: 0;
+  top: auto; }
+
+.mfp-standard {
+  height: calc(100% - 43px);
+  bottom: 0;
+  top: auto; }
+
+.mfp-search {
+  height: calc(100% - 43px);
+  bottom: 0;
+  top: auto; }
+  .mfp-search .mfp-content {
+    width: 100% !important; }
 
 .base__popup {
   font-size: 1rem;
