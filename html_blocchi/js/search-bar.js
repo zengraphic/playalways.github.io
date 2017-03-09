@@ -55,8 +55,7 @@
                     if (window.outerWidth <= 768) {
                         r$(document).scrollTop(150);
                         r$('.mfp-bg,.mfp-wrap')
-                            .css('height', 'calc(100% - 123px)')
-                            .niceScroll(SEARCHBAR.obj_nicescroll);
+                            .css('height', 'calc(100% - 123px)');
 
                     } else {
                         r$(document).scrollTop(0);
@@ -116,13 +115,12 @@
                         .change();
                     r$('.block-search__results__container')
                         .addClass('hidden');
-                        
+
                 },
                 close: function() {
                     r$('.mfp-bg,.mfp-wrap,.mfp-container')
                         .css('height', '');
                     r$('.base.base__scrollable')
-                        .niceScroll(SEARCHBAR.obj_nicescroll);
                         r$(document).scrollTop(0);
                         
 
