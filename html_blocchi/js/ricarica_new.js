@@ -42,7 +42,7 @@ r$(document)
     r$('.base__popup-link--ricarica, .base__popup-link-carrello')
       .magnificPopup({
         type: 'inline',
-        mainClass: 'mfp-fade',
+        mainClass: 'mfp-fade mfp-ricarica',
         // closeOnContentClick: true,
         midClick: true,
         alignTop: false,

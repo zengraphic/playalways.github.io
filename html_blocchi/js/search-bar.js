@@ -53,18 +53,25 @@
                 open: function() {
 
                     if (window.outerWidth <= 768) {
-                        r$(document).scrollTop(150);
+
                         r$('.mfp-bg,.mfp-wrap')
-                            .css('height', 'calc(100% - 123px)');
+                            .css({
+                                'height': 'calc(100% - 123px)',
+                                'top': '123px',
+                                'bottom': 0,
+                                'position':'fixed'
+                            });
+                        r$(document)
+                            .scrollTop(150);
 
                     } else {
-                        r$(document).scrollTop(0);
-                        console.log('ok');
+                        r$(document)
+                            .scrollTop(0);
                     }
 
 
 
-                    r$('.base')
+                    r$('html')
                         .css({
                             'overflow': 'hidden'
                         });
@@ -119,10 +126,18 @@
                 },
                 close: function() {
                     r$('.mfp-bg,.mfp-wrap,.mfp-container')
-                        .css('height', '');
-                    r$('.base.base__scrollable')
-                        r$(document).scrollTop(0);
-                        
+                        .css({
+                            'height': '',
+                            'bottom': '',
+                            'position':''
+                        });
+
+                    r$(document)
+                        .scrollTop(0);
+                    r$('html').css({
+                        'overflow': ''
+                    });
+
 
                 }
             }
