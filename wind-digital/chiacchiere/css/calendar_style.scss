@@ -1,3 +1,8 @@
+$color_white: #fff;
+$color_green: #85af4b;
+$color_pink: #f7cacc;
+$color_purple: #8ea5ce;
+$color_grey: #eee;
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
@@ -5,7 +10,7 @@
     /* stops bg color from leaking outside the border: */
 }
 
-$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 650px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -17,164 +22,171 @@ $breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 
     }
 }
 
+// OPACITY 
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
 body {
-    background: #ccc;
-    font: 87.5%/1.5em 'Lato', sans-serif;
-    margin: 0;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-td {
-    padding: 0;
-}
-
-.container {
-    width: 500px;
-    margin: 30px auto;
-    padding: 10px;
-    @include breakpoint(super-tiny) {
-        width: 300px;
-    }
+    font-family: 'Play', sans-serif;
+    background: $color_grey;
 }
 
 .calendar {
-    background: #fff;
-    border-radius: 0 0 1em 1em;
-    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
-    box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
-    color: #555;
-    display: inline-block;
-    padding: 2em;
-    width: calc(500px - 4em);
-    @include breakpoint(super-tiny) {
-        width: 270px;
-        padding: 15px;
-        margin: 0 auto;
+    font-size: 16px;
+    &__row {
+        background: $color_white;
+        margin: 10px 0;
+        position: relative;
+        @include border-radius(5px);
     }
-    td {
-        padding: .5em 1em;
-        text-align: center;
-        @include breakpoint(super-tiny) {
-            padding: .5em 4px;
+    &__scrollTop {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        cusor: pointer;
+        display: none;
+        &:hover {
+            @include opacity(0.7);
+        }
+        img {
+            width: 50px;
+            height: auto;
+        }
+        @include breakpoint(small_650) {
+            display: block;
         }
     }
-    thead {
-        color: #e66b6b;
-        font-weight: 700;
+    &__container {
+        display: table;
+        padding: 0 30px;
+        margin: 10px auto;
+        text-align: center;
         text-transform: uppercase;
+        @include breakpoint(small_650) {
+            padding: 0 10px;
+        }
     }
-    &-container {
-        position: relative;
-        header {
-            border-radius: 1em 1em 0 0;
-            background: #e66b6b;
-            color: #fff;
-            padding: 3em 2em;
-            min-height: 170px;
-            @include breakpoint(super-tiny) {
-                padding-top: 10px;
-                padding-bottom: 15px;
+    &__shortcut {
+        display: inline-block;
+        margin: 0 auto;
+        @include breakpoint(small_650) {
+            display: table;
+        }
+        &.more_links {
+            display: inline-block;
+            @include breakpoint(small_650) {
+                display: none;
+                .calendar__shortcut--link{
+                    width: 75px;
+                    margin: 0 auto;
+                }
+            }
+        }
+        &--showMore,
+        &--showLess {
+            color: $color_green;
+            display: none;
+            &:hover {
+                background-color: $color_pink;
+                color: $color_white;
+                @include border-radius(5px);
+            }
+        }
+        &--showMore {
+            @include breakpoint(small_650) {
+                display: block;
+            }
+        }
+        &--link {
+            color: $color_green;
+            display: table-cell;
+            padding: 10px;
+            line-height: 1.2em;
+            cursor: pointer;
+            &:hover {
+                background-color: $color_pink;
+                color: $color_white;
+                @include border-radius(5px);
+            }
+            @include breakpoint(small_650) {
+                max-width: 75px;
             }
         }
     }
-}
-
-.day {
-    font-size: 6em;
-    font-weight: 900;
-    line-height: 1em;
-    display: inline-block;
-    margin-right: 15px;
-    @include breakpoint(super-tiny) {
-        font-size: 4em;
-        display: block;
+    &__speaker {
+        color: $color_green;
+        margin-top: 10px;
     }
-}
-
-.month {
-    font-size: 3em;
-    line-height: 1em;
-    text-transform: lowercase;
-    display: inline-block;
-       @include breakpoint(super-tiny) {
+    &__date {
         font-size: 2em;
-    } 
-}
-
-.target-day {
-    background: #cc0000;
-    color: #fff;
-}
-
-.speaker {
-    position: absolute;
-    right: -30px;
-    top: 35px;
-    border: 2px solid #fff;
-    width: 175px;
-    height: auto;
-    @include border-radius(20px);
-    @include breakpoint(super-tiny) {
-        right: 5px;
-    }    
-}
-
-.current-day {
-    color: #e66b6b;
-}
-
-.subtitle {
-    font-size: 30px;
-    margin-bottom: 20px;
-    &_2 {
-        font-size: 20px;
-        margin-top: 25px;
-        margin-bottom: 0;
-            @include breakpoint(super-tiny) {
-                padding-top: 22px;
-                font-size: 16px;
-            }        
+        display: table-cell;
+        vertical-align: middle;
+        color: $color_purple;
+        padding: 10px 30px;
+        width: 25%;
+        min-width: 250px;
+        @include breakpoint(small_650) {
+            display: block;
+            width: 100%;
+            padding-bottom: 0;
+            min-width: auto;
+        }
+        &--number {
+            font-size: 2em;
+            line-height: 2.2em;
+            @include breakpoint(small_650) {
+                display: block;
+                width: 100%;
+                line-height: 1em;
+            }
+        }
     }
-    @include breakpoint(super-tiny) {
-        font-size: 18px;
-        margin-bottom: 50px;
+    &__image {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 10px 30px;
+        width: 25%;
+        min-width: 250px;
+        @include breakpoint(small_650) {
+            display: block;
+            width: 100%;
+        }
+        img {
+            @include border-radius(15px);
+            border: 3px solid $color_purple;
+            width: 70%;
+            @include breakpoint(small_650) {
+                width: 50%;
+            }
+        }
+    }
+    &__event {
+        display: table-cell;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        vertical-align: middle;
+        padding: 10px 30px;
+        color: $color_green;
+        width: 80vh;
+        @include breakpoint(small_650) {
+            display: block;
+            width: 100%;
+            padding-top: 0;
+        }
     }
 }
 
-.prev-month,
-.next-month {
-    color: #cacaca;
-}
+//=============== BOX SIADOV =========
 
-.ring-left,
-.ring-right {
-    position: absolute;
-    top: 230px;
-}
+/*==================================================
+ * Effect 6
+ * ===============================================*/
 
-.ring-left {
-    left: 2em;
-}
-
-.ring-right {
-    right: 2em;
-}
-
-.ring-left:before,
-.ring-left:after,
-.ring-right:before,
-.ring-right:after {
-    background: #fff;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
-    box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
-    content: "";
-    display: inline-block;
-    margin: 8px;
-    height: 32px;
-    width: 8px;
+.with_shadow {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
 }
