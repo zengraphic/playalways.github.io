@@ -49,40 +49,47 @@ jQuery(document).ready(function($) {
 
 
     function populateLinks(data) {
-        var linksDim = Object.keys(data.links).length;
-        console.log(data);
-        console.log(linksDim);
-        //ciclo nel json
-        $.each(data, function(index, jsonObject) {
-            $.each(jsonObject, function(key, val) {
-                //assegno le variabili all'oggetto attuale -> key
-                var newObject = jsonObject[key][0];
-                var name = newObject.name;
-                var link = newObject.link;
-                var color = newObject.color;
-                attachTo.append(
-                    '<div class="container_single">' +
-                    '<div class="box_wd ' + color + '">' +
-                    '<a href=" ' + link + '" target="_blank">' +
-                    '<div class="content_wd">' +
-                    '<p class="title">' + name + '</p>' +
-                    '</div>' +
-                    '</a>' +
-                    '</div>' +
-                    '<div class="wd_edit">Edit</div>' +
-                    '</div>'
-                );
-            });
-        });
+        parsedData = $.parseJSON(data);
+        console.log(parsedData);
+        console.log(parsedData[0].id);
+        for (i = 0; i < parsedData.length; i++) {
+            var name = parsedData[i].link_title;
+            var link = parsedData[i].link_url;
+            var color = parsedData[i].link_color;
+            var id = parsedData[i].id;
+            console.log(color + " " + link + " " + name);
+            attachTo.append(
+                '<div class="container_single" data-index="' + id + '">' +
+                '<div class="box_wd ' + color + '">' +
+                '<a href=" ' + link + '" target="_blank">' +
+                '<div class="content_wd">' +
+                '<p class="title">' + name + '</p>' +
+                '</div>' +
+                '</a>' +
+                '</div>' +
+                '<div class="wd_edit">Remove</div>' +
+                '</div>'
+            );
+        }
     }
-
-
-    var url = "../js/links.json";
 
     function getDataFromJson() {
         console.log('getDataFromJson');
-        $.getJSON(url).done(function(data) {
-            populateLinks(data);
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://95.85.60.126:8080/WDlinks",
+            "method": "GET",
+            "headers": {
+                "content-type": "application/json",
+                "cache-control": "no-cache",
+            },
+            "processData": false,
+        }
+
+        $.ajax(settings).done(function(response) {
+            console.log("CAZZO " + response);
+            populateLinks(response);
         });
     }
 
@@ -92,26 +99,53 @@ jQuery(document).ready(function($) {
     initPage();
 
 
-    $('.diocelamandibuona').click(function(e){
-                    e.preventDefault();
-                    console.log('select_link clicked');
-                    
+        $('.container_boxes').on('click', '.wd_edit', function() {
+        console.log('CAOASDAS');
+        var idToDelete = $(this).parents(".container_single").data('index');
+        console.log(idToDelete);
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://95.85.60.126:8080/WDlinks",
+            "method": "DELETE",
+            "headers": {
+                "content-type": "application/json",
+                "cache-control": "no-cache",
+                "postman-token": "f9fcecbd-b322-7190-150f-5539839369f9"
+            },
+            "processData": false,
+            "data": "{\"id\":" + idToDelete + "}"
+        }
 
-                    var data = {};
-                    data.title = "prova";
-                    data.link = "provalink";
-                    data.color = "color";                    
-                    $.ajax({
-                        type: 'POST',
-                        crossDomain: true,
-                        data: JSON.stringify(data),
-                        contentType: 'application/json',
-                        url: 'http://95.85.60.126:8080/WDlinks',                      
-                        success: function(data) {
-                            console.log('success');
-                            console.log(JSON.stringify(data));
-                        }
-                    });
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+        });
+    });
 
-                });             
+    $('.save_wd').click(function(e) {
+
+        var title = $('.input_title').val();
+        var link = $('.input_link').val();
+        var color = $('.color_picker.active').data('color');
+
+        var data = {};
+        data.link_title = title;
+        data.link_url = link;
+        data.link_color = color;
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://95.85.60.126:8080/WDlinks",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "cache-control": "no-cache"
+            },
+            "data": JSON.stringify(data)
+        }
+
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+        });
+    });
 });

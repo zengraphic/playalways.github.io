@@ -1,18 +1,73 @@
-CREATE SCHEMA windDigitalLinks;
+    var http = require("http");
+    var express = require('express');
+    var app = express();
+    var mysql = require('mysql');
+    var bodyParser = require('body-parser');
 
-USE node_mysql;
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'Tanis1982',
+        database: 'WDLinks_db'
+    });
 
-CREATE TABLE `windDigitalLinks`.`links` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `link_title` VARCHAR(245) NULL,
-  `link_url` VARCHAR(745) NULL,
-  `link_color` VARCHAR(245) NULL,
-  PRIMARY KEY (`id`));
+    connection.connect(function(err) {
+        if (err) throw err
+        console.log('You are now connected...')
+    })
 
+    app.use(bodyParser.json()); // to support JSON-encoded bodies
+    app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+        extended: true
+    }));
+    var server = app.listen(8080, "95.85.60.126", function() {
 
-INSERT INTO windDigitalLinks (link_title,link_url,link_color)
-VALUES ('Ferie','https://docs.google.com/spreadsheets/d/1UDNGxeO9Cgbzs_jQONeFHCLEHeZ_-shfFJANh9APJS4/edit?pref=2&pli=1#gid=1784562006','red')
-,('Allocazioni','https://docs.google.com/spreadsheets/d/1V4no6t1VydCDNSMZHIWkONBks0GiPZo3fr2M0pgagE4/edit?ts=582ef897%23gid%3D600449670#gid=804002849','green')
-,('Restyle','https://playalways.github.io','orange');
+        var host = server.address().address
+        var port = server.address().port
 
-SELECT * FROM artists;
+        console.log("Example app listening at http://%s:%s", host, port)
+
+    });
+
+    //rest api to get all results
+    app.get('/WDlinks', function(req, res) {
+        console.log(req);
+        connection.query('select * from WDlinks', function(error, results, fields) {
+            if (error) throw error;
+            res.end(JSON.stringify(results));
+        });
+    });
+
+    //rest api to get a single employee data
+    app.get('/WDlinks/:id', function(req, res) {
+        connection.query('select * from WDlinks where id=?', [req.params.id], function(error, results, fields) {
+            if (error) throw error;
+            res.end(JSON.stringify(results));
+        });
+    });
+
+    //rest api to create a new record into mysql database
+    app.post('/WDlinks', function(req, res) {
+        var postData = req.body;
+        connection.query('INSERT INTO WDlinks SET ?', postData, function(error, results, fields) {
+            if (error) throw error;
+            res.end(JSON.stringify(results));
+        });
+    });
+
+    //rest api to update record into mysql database
+    app.put('/WDlinks', function(req, res) {
+        connection.query('UPDATE `WDlinks` SET `link_title`=?,`link_url`=?,`link_color`=? where `id`=?', [req.body.link_title, req.body.link_url, req.body.link_color, req.body.id], function(error, results, fields$){
+            if (error) throw error; 
+            res.end(JSON.stringify(results));
+        });
+    });
+
+    //rest api to delete record from mysql database
+    app.delete('/WDlinks', function(req, res) {
+        console.log(req.body);
+        connection.query('DELETE FROM `WDlinks` WHERE `id`=?', [req.body.id], function(error, results, fields) {
+            if (error) throw error;
+            res.end('Record has been deleted!');
+        });
+    });
