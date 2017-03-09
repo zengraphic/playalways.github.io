@@ -16,12 +16,12 @@ jQuery(document).ready(function($) {
     $('.calendar__shortcut--showMore').click(function(e) {
         $(this).hide();
         $('.calendar__shortcut--showLess').show();
-        $('.calendar__shortcut.more_links').show();        
+        $('.calendar__shortcut.more_links').show();
     });
     $('.calendar__shortcut--showLess').click(function(e) {
         $(this).slideUp();
         $('.calendar__shortcut--showMore').slideDown();
-        $('.calendar__shortcut.more_links').slideUp();        
-    });    
-
+        $('.calendar__shortcut.more_links').slideUp();
+    });
+    /*https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1yhZTKp_VeR0EaaitSXnax2JMdBusqe3lZf8OQ9YuKmY&sheet=Form Responses 1*/
 });

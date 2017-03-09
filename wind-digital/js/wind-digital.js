@@ -99,27 +99,32 @@ jQuery(document).ready(function($) {
     initPage();
 
 
-        $('.container_boxes').on('click', '.wd_edit', function() {
-        console.log('CAOASDAS');
-        var idToDelete = $(this).parents(".container_single").data('index');
-        console.log(idToDelete);
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://95.85.60.126:8080/WDlinks",
-            "method": "DELETE",
-            "headers": {
-                "content-type": "application/json",
-                "cache-control": "no-cache",
-                "postman-token": "f9fcecbd-b322-7190-150f-5539839369f9"
-            },
-            "processData": false,
-            "data": "{\"id\":" + idToDelete + "}"
-        }
+    $('.container_boxes').on('click', '.wd_edit', function() {
+        var confirmDelete = confirm("Sei sicuro di voler cancellare il link?");
+        if (confirmDelete == true) {
 
-        $.ajax(settings).done(function(response) {
-            console.log(response);
-        });
+            console.log('CAOASDAS');
+            var idToDelete = $(this).parents(".container_single").data('index');
+            console.log(idToDelete);
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://95.85.60.126:8080/WDlinks",
+                "method": "DELETE",
+                "headers": {
+                    "content-type": "application/json",
+                    "cache-control": "no-cache",
+                    "postman-token": "f9fcecbd-b322-7190-150f-5539839369f9"
+                },
+                "processData": false,
+                "data": "{\"id\":" + idToDelete + "}"
+            }
+
+            $.ajax(settings).done(function(response) {
+                console.log(response);
+                location.reload();
+            });
+        }
     });
 
     $('.save_wd').click(function(e) {
@@ -146,6 +151,7 @@ jQuery(document).ready(function($) {
 
         $.ajax(settings).done(function(response) {
             console.log(response);
+            location.reload();
         });
     });
 });
