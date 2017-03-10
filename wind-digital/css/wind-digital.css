@@ -220,7 +220,11 @@ a {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */ }
+  /* stops bg color from leaking outside the border: */
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .wind_digital .box_wd:hover {
     opacity: 0.8;
     filter: alpha(opacity=80); }
@@ -228,8 +232,8 @@ a {
     flex-direction: column;
     display: flex;
     padding: 10px;
-    padding-bottom: 40%;
-    padding-top: 40%; }
+    align-items: center;
+    justify-content: center; }
   .wind_digital .box_wd .title {
     font-size: 40px;
     text-align: center;
