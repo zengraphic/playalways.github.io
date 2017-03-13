@@ -16,7 +16,7 @@ $color_blue: #2214EE;
 $color_green: #54DB1A;
 $margin_mobile: 10px !important;
 // Breakpoint Vars
-$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 650px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 650px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-tablet':( min-width: 768px));
 // ================= RESET  ================== //
 // ================= RESET  ================== //
 // ================= RESET  ================== //
@@ -350,6 +350,10 @@ a {
         &_wd {
             border: 1px solid #eee;
             @include border-radius(5px);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &:hover {
                 @include opacity(0.8);
             }
@@ -357,8 +361,8 @@ a {
                 flex-direction: column;
                 display: flex;
                 padding: 10px;
-                padding-bottom: 40%;
-                padding-top: 40%;
+                align-items: center;
+                justify-content: center;
             }
             .title {
                 font-size: 40px;
