@@ -2,8 +2,22 @@ body {
   font-family: 'Play', sans-serif;
   background: #eee; }
 
+a {
+  color: inherit; }
+  a:visited, a:focus, a:hover {
+    text-decoration: none; }
+
 .calendar {
   font-size: 16px; }
+  .calendar__mats {
+    font-size: 30px;
+    color: #8ea5ce;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer; }
+    .calendar__mats:hover {
+      background-color: #f7cacc;
+      color: #fff; }
   .calendar__row {
     background: #fff;
     margin: 10px 0;
@@ -141,9 +155,72 @@ body {
 /*==================================================
  * Effect 6
  * ===============================================*/
+.wd_row .wd_line {
+  color: #000;
+  font-size: 14px; }
+  .wd_row .wd_line:first-of-type {
+    font-size: 16px;
+    font-weight: 700;
+    color: #8ea5ce; }
+  .wd_row .wd_line.link_line {
+    cursor: pointer;
+    text-decoration: underline; }
+    .wd_row .wd_line.link_line:hover {
+      color: #8ea5ce; }
+.wd_row:first-of-type {
+  color: #85af4b;
+  font-size: 24px;
+  font-weight: 700; }
+  .wd_row:first-of-type .wd_line {
+    color: #85af4b;
+    font-size: 24px;
+    font-weight: 700; }
+
+.doc_riferimento {
+  margin-bottom: 15px;
+  text-align: center; }
+
 .with_shadow {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777; }
+
+table {
+  border-collapse: collapse;
+  width: 100%; }
+
+h1 {
+  font-size: 45px; }
+
+th,
+td {
+  border: thin solid black;
+  padding: 3px;
+  padding: 10px; }
+
+tr.head th,
+tr.head td {
+  background-color: #EDEDED;
+  border-bottom: 4px double black; }
+
+span.linetitle {
+  font-weight: bold; }
+
+div.lineclass {
+  font-style: italic; }
+
+.title,
+.result {
+  width: 80%; }
+
+.notes {
+  width: 15%; }
+
+h1 {
+  text-align: center; }
+
+body {
+  margin: 12px;
+  font-size: 12px; }
 
 /*# sourceMappingURL=calendar_style.css.map */

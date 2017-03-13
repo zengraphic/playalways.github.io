@@ -34,8 +34,26 @@ body {
     background: $color_grey;
 }
 
+a{
+    color: inherit;
+    &:visited, &:focus, &:hover{
+        text-decoration: none;
+    }
+}
+
 .calendar {
     font-size: 16px;
+    &__mats{
+        font-size: 30px;
+        color: $color_purple;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+            background-color: $color_pink;
+            color: $color_white;
+        }
+    }
     &__row {
         background: $color_white;
         margin: 10px 0;
@@ -79,7 +97,7 @@ body {
             display: inline-block;
             @include breakpoint(small_650) {
                 display: none;
-                .calendar__shortcut--link{
+                .calendar__shortcut--link {
                     width: 75px;
                     margin: 0 auto;
                 }
@@ -185,8 +203,90 @@ body {
  * Effect 6
  * ===============================================*/
 
+.wd_row {
+    .wd_line {
+        color: #000;
+        font-size: 14px;
+        &:first-of-type {
+            font-size: 16px;
+            font-weight: 700;
+            color: $color_purple;
+        }
+    &.link_line{
+        cursor: pointer;
+        text-decoration: underline;
+        &:hover{
+            color: $color_purple;
+        }
+    }
+    }
+    &:first-of-type {
+        color: $color_green;
+        font-size: 24px;
+        font-weight: 700;        
+        .wd_line{
+            color: $color_green;
+        font-size: 24px;
+        font-weight: 700;             
+        }
+    }
+}
+
+.doc_riferimento{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+//=========================================
 .with_shadow {
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+h1{
+    font-size: 45px;
+}
+th,
+td {
+    border: thin solid black;
+    padding: 3px;
+    padding: 10px;
+}
+
+tr.head th,
+tr.head td {
+    background-color: #EDEDED;
+    border-bottom: 4px double black;
+}
+
+span.linetitle {
+    font-weight: bold;
+}
+
+div.lineclass {
+    font-style: italic;
+}
+
+.title,
+.result {
+    width: 80%;
+}
+
+.notes {
+    width: 15%;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    margin: 12px;
+    font-size: 12px;
 }
