@@ -1,0 +1,87 @@
+//BLOCCO 4
+.newsletter_block {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    @at-root #{&}__container {
+        margin-top: 30px;
+    }
+    @at-root #{&}__title {
+        font-size: 1em;
+        font-family: $weight-bold;
+        margin-bottom: 25px;
+    }
+    @at-root #{&}__left {
+        .button {
+            margin-top: 25px;
+        }
+    }
+    @at-root #{&}__right {}
+    @at-root #{&}__icon {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        &.centered {
+            .newsletter_block__icon {
+                &--firstRow {
+                    width: 50%;
+                    .base__icon {
+                        float: right;
+                    }
+                }
+                &--secondRow {
+                    width: 50%;
+                }
+            }
+        }
+        .col-xs-12 {
+            padding: 0;
+        }
+        &--firstRow {
+            float: left;
+        }
+        &--secondRow {
+            float: left;
+        }
+        .base__icon {
+            float: left;
+            width: 88px;
+            height: 88px;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 767px) {
+    .newsletter_block {
+        text-align: center;
+    }
+    .newsletter_block__icon {
+        margin: 0 auto;
+        &--firstRow {
+            float: left;
+            margin: 0 auto;
+            width: 50%;
+            .base__icon {
+                float: right;
+            }
+        }
+        &--secondRow {
+            float: left;
+            width: 50%;
+        }
+    }
+    .newsletter_block__left {
+        input {
+            width: 100%;
+            max-width: 280px;
+        }
+        .button {
+            width: 100%;
+            max-width: 280px;
+            margin: 25px auto;
+        }
+    }
+}

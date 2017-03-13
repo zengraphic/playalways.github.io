@@ -1,0 +1,104 @@
+.tx-powermail {
+  h3 {
+    display: none;
+  }
+
+  .powermail {
+    &_legend {
+      display: none;
+    }
+
+    &_label {
+      display: none;
+    }
+
+    &_fieldwrap {
+      &_half {
+        display: inline-block;
+        width: 49.5%;
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+      }
+
+      &_type {
+        &_check {
+          margin-bottom: 1rem;
+        }
+
+        &_textarea {
+          .base__input {
+            height: 103px;
+
+            padding: 1.4rem .9rem;
+            resize: none;
+
+            @media (max-width: 767px) {
+              height: 148px;
+            }
+          }
+        }
+
+        &_input {
+          .base__input {
+            padding: 1.4rem .9rem;
+            font-size: 1.2rem;
+            line-height: 1em;
+          }
+        }
+
+        &_select {
+          .base__select.bootstrap-select {
+            width: 100% !important;
+
+            &::-webkit-input-placeholder {
+              color: $color_text_light;
+            }
+
+            &:-moz-placeholder,
+            &::-moz-placeholder {
+              color: $color_text_light;
+              opacity: 1;
+            }
+
+            .dropdown-toggle {
+              padding: 1.4rem .9rem;
+
+              .filter-option {
+                font-size: 1.2rem;
+                line-height: 1em;
+              }
+            }
+          }
+        }
+
+        &_reset {
+          width: auto;
+
+          .powermail_reset {
+            padding: 0;
+            background-color: transparent;
+            color: $color_wind;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+          }
+        }
+
+        &_submit {
+          width: 100%;
+
+          .base__bt {
+            padding: 1.4rem .9rem;
+            font-size: 1.2rem;
+            line-height: normal;
+            @media (max-width: 767px) {
+              width: 100%;
+              margin: 2.8rem 0 2.2rem;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

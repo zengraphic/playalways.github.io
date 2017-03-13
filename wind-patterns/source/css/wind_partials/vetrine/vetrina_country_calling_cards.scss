@@ -1,0 +1,221 @@
+// BLOCCO COUNTRY CALLING CARDS
+.country_calling_cards_block {
+    margin: 0 auto;
+    max-width: 1024px;
+    @include breakpoint(small) {
+        padding-bottom: 2em;
+    }
+    &__container {
+        &-title {
+            font-family: $weight-light;
+            color: $color_robin;
+            font-size: 1.6em;
+            @include breakpoint(med-large) {
+                font-size: 0.93em;
+            }
+            @include breakpoint(small) {
+                font-size: 1.4em;
+            }
+        }
+        &-image {
+            margin-top: 0.625em;
+            @include breakpoint(small) {
+                margin-top: 1.6em;
+            }
+            img {
+                max-width: 100%;
+                border: 1px solid $color_stroke;
+            }
+        }
+        &-text {
+            padding-top: 10px;
+            @include breakpoint(small) {
+                font-size: 0.89em;
+            }
+            @include breakpoint(super-tiny) {
+                padding-top: 0;
+            }
+        }
+        &__country {
+            .center_flag {
+                @include breakpoint(small) {
+                    text-align: center;
+                }
+            }
+            .padding_10 {
+                padding-bottom: 10px;
+                padding-top: 10px;
+                @include breakpoint(super-tiny) {
+                    padding-bottom: 15px;
+                }
+                &:nth-child(even) {
+                    background-color: $color_grey_light_light;
+                }
+            }
+            display: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            clear: left;
+            height: auto;
+            //height: 200px;
+            @include breakpoint(small) {
+                padding-bottom: 0px;
+            }
+            &.placeholder_block {
+                height: 10px;
+                display: block;
+                margin: 0;
+            }
+            &--flag {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-right: 10px;
+                border-right: 1px solid $color_stroke;
+                height: 150px;
+                @include breakpoint(small) {
+                    margin: 0 auto;
+                    border-right: none;
+                }
+            }
+            &--rates {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-top: 15px;
+                @include breakpoint(small) {
+                    border-left: none;
+                    border-right: none;
+                }
+                @include breakpoint(super-tiny) {
+                    padding-bottom: 0;
+                    padding-right: 5px;
+                    padding-left: 5px;
+                    padding-top: 10px;
+                    margin-top: 0;
+                }
+            }
+            &--text {
+                font-size: 0.80em;
+                padding-top: 22px;
+                border-left: 1px solid $color_stroke;
+                height: 100%; // 9.375em 150px
+                @include breakpoint(small) {
+                    border-left: none;
+                    margin-top: 10px;
+                    height: auto;
+                    font-size: 0.85em;
+                }
+            }
+            &--List {
+                border-bottom: 1px solid $color_stroke;
+                padding: 25px 0 15px;
+                &--label {
+                    font-family: $weight-light;
+                    color: $color_text;
+                    font-size: 1.5em;
+                    padding-top: 0.5em;
+                    padding-bottom: 0.5em;
+                    @include breakpoint (tiny) {
+                        font-size: 1.2em;
+                    }
+                }
+                &--select {
+                    .base__select.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+                        width: 320px;
+                        @include breakpoint (small) {
+                            width: 100%;
+                        }
+                    }
+                    .base__select.bootstrap-select .dropdown-toggle .filter-option {
+                        font-size: 1em;
+                        @include breakpoint (small) {
+                            /*text-align: center;*/
+                        }
+                    }
+                    .base__select.bootstrap-select .dropdown-toggle .bs-caret .caret {
+                        margin-right: 2em;
+                        @include breakpoint (super-tiny) {
+                            margin-right: 10px;
+                        }
+                    }
+                    .base__select.bootstrap-select .dropdown-toggle {
+                        padding-top: 1.1em;
+                        padding-bottom: 1.1em;
+                    }
+                }
+            }
+        }
+    }
+    &__rates {
+        &_divider--left {
+            border-right: 1px solid $color_stroke;
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding: 0 0.625em;
+        }
+        &_divider--right {
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding: 0 0.625em;
+        }
+        &--title {
+            font-family: $weight-light;
+            color: $color_text;
+            font-size: 1.2em;
+            text-transform: uppercase;
+        }
+        &--price {
+            font-family: $weight-bold;
+            color: $color_robin;
+            font-size: 2.3em;
+            padding-top: 5px;
+        }
+        &--cent {
+            font-family: $weight-light;
+            color: $color_text;
+            font-size: 0.7em;
+            padding-top: 5px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media (max-width: 943px) {
+    .country_calling_cards_block {
+        &__container {
+            &__countryList {
+                &--label {
+                    font-size: 1.1em;
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .country_calling_cards_block {
+        &__rates {
+            &--title {
+                font-size: 1em;
+                height: 25px;
+            }
+            &--cent {
+                font-size: 0.8em;
+            }
+            &--price {
+                font-size: 2em;
+            }
+            &_divider--left {
+                padding: 0 8px;
+            }
+            &_divider--right {
+                padding: 0 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+//BLOCCO 4
+.contactWind_block {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    .button {
+        width: 100%;
+        max-width: 280px;
+    }
+    &.contactWind_business {
+        .contactWind_block__details__container {
+            margin-top: 50px;
+        }
+        .button {
+            display: none;
+        }
+    }
+    @at-root #{&}__container {
+        margin-top: 30px;
+    }
+    @at-root #{&}__title {
+        font-size: 1em;
+        font-family: $weight-bold;
+        margin-bottom: 25px;
+    }
+    @at-root #{&}__details {
+        font-size: 1em;
+        font-family: $weight-normal;
+    }
+    @at-root #{&}__left {
+        .button {
+            margin-top: 25px;
+        }
+    }
+    @at-root #{&}__right {}
+    @at-root #{&}__icon {
+        margin-bottom: 30px;
+        &>div {
+            padding: 0;
+        }
+        &--firstRow {
+            float: left;
+        }
+        &--secondRow {
+            float: left;
+        }
+        .base__icon {
+            float: left;
+            width: 88px;
+            height: 88px;
+            margin-right: 0.5em;
+        }
+        &.centered {
+            .contactWind_block__icon {
+                &--firstRow {
+                    width: 50%;
+                    .base__icon {
+                        float: right;
+                    }
+                }
+                &--secondRow {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 767px) {
+    .contactWind_block {
+        text-align: center;
+    }
+    .info_link {
+        margin-bottom: 30px;
+    }
+    .contactWind_block__icon {
+        margin: 0 auto;
+        &--firstRow {
+            float: left;
+            margin: 0 auto;
+            width: 50%;
+            .base__icon {
+                float: right;
+            }
+        }
+        &--secondRow {
+            float: left;
+            width: 50%;
+        }
+    }
+    
+}

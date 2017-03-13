@@ -1,0 +1,338 @@
+.standard_block {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    @include transition(all 0.45s ease-in-out);
+    &__overflowing {
+        overflow: hidden;
+    }
+    .container_mid_row {
+        .column_left {
+            float: left;
+            width: calc(100% - 55px);
+            min-height: 200px;
+        }
+        .column_right {
+            width: 55px;
+            float: right;
+            position: relative;
+            top: 150px;
+            right: 30px;
+        }
+    }
+    &__sticker {
+        &__wrapper {
+            position: absolute;
+            bottom: 30px;
+            width: 40px;
+            left: 0;
+        }
+        &__container {
+            .sticker_single {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+    @at-root #{&}__container {}
+    @at-root #{&}__singleButton {}
+    @at-root #{&}__image {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 160%;
+        @include transition(all .45s ease-in-out);
+    }
+    @at-root #{&}__half_block {
+        position: relative;
+        @include transition(all .45s ease-in-out);
+        width: calc(60% - 50px);
+        max-height: 450px;
+        .button {
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+            right: 22px;
+        }
+        .standard_block__doubleButton {
+            margin: 0 auto;
+            position: static;
+            text-align: center;
+            .button {
+                display: inline-block;
+                width: 30%;
+                &--ghost {
+                    margin-right: 30px;
+                }
+            }
+        }
+        &.image_block {
+            height: 450px;
+            position: relative;
+            width: calc(40% - 50px);
+        }
+    }
+    @at-root #{&}__mainContainer {
+        position: relative;
+        max-width: 1024px;
+        margin: 0 auto;
+        .share_block__reviews {
+            /*review  destra*/
+            position: relative;
+            visibility: hidden;
+            float: right;
+            right: 30px;
+            margin: 0px;
+        }
+        .recurrent_priceRow {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: $weight-light;
+            height:80px;
+            @at-root #{&}__price {
+                color: $color_mobile;
+                font-size: $title-big;
+                line-height: 1em;
+                &.price_discounted {
+                    position: relative;
+                    &::after {
+                        border-bottom: 2px solid $color_stroke;
+                        content: "";
+                        left: 0;
+                        margin-top: calc(0.125em / 2 * -1);
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                    }
+                    font-size: 25px;
+                    .currency {
+                        font-size: 20px;
+                    }
+                }
+                .currency {
+                    font-size: 40px;
+                }
+
+            }
+            @at-root #{&}__recurrency {
+                color: $color_text;
+                display: block;
+                font-size: 0.750em;
+                line-height: 1.2em;
+                height: 1.2em;
+                //text-transform: uppercase;
+                overflow: hidden;
+            }
+        }
+        &.splittedTitle{
+            .standard_block__title,
+            .standard_block__subtitle{
+                font-size:2.5rem;
+            }
+        }
+        &.bundle_small {
+            .bundle_orange {
+                padding: 0 10px;
+                &__number {
+                    //display: none;
+                    font-size:2.2em
+                }
+                &__title {
+                    font-size: 0.875em;
+                }
+            }
+        }
+        &.invertedDisplay {
+            .standard_block__sticker__wrapper {
+                right: 0;
+                left: auto;
+            }
+            .column_right {
+                right: 0;
+            }
+            .standard_block__image {
+                left: auto;
+                right:0;
+            }
+            .standard_block__half_block {
+                .button {
+                    left: 22px;
+                    right: 0;
+                }
+            }
+            .float_left {
+                float: right;
+            }
+            .float_right {
+                float: left;
+            }
+            .standard_block__coloredBg {
+                left: 55%;
+                @include transform(skew(-20deg));
+            }
+        }
+    }
+    @at-root #{&}__coloredBg {
+        width: 150%;
+        height: 100%;
+        position: absolute;
+        @include transform(skew(-20deg));
+        background: $color_mobile;
+        right: 55%;
+    }
+    @at-root #{&}__title {
+        text-align: center;
+        max-width: 350px;
+        margin: 0 auto;
+        line-height: 1.2em;
+        font-size: 2.813em;
+        color: $color_mobile;
+        font-family: $weight-light;
+        height: 1.2em;
+        overflow: hidden;
+    }
+    @at-root #{&}__subtitle {
+        text-align: center;
+        font-size: 1.563em;
+        line-height: 1.2em;
+        height: 1.2em;
+        overflow: hidden;
+        max-width: 380px;
+        width: 100%;
+        margin: 0 auto 5px;
+        color: $color_mobile;
+        font-family: $weight-light;
+    }
+    @at-root #{&}__text {
+        text-align: center;
+        width: 100%;
+        max-width: 350px;
+        margin: 0px auto 25px auto;
+        font-size: $text-standard;
+        color: $color_text;
+        font-family: $weight-normal;
+        line-height: 1.2em;
+        height: 2.3em;
+        overflow: hidden;
+    }
+}
+
+.bundle_orange {
+    color: $color_wind;
+    font-family: $weight-light;
+    text-align: center;
+    display: inline-block;
+    padding: 0 20px;
+    vertical-align: middle;
+    &__container {
+        text-align: center;
+    }
+    @at-root #{&}__divider--right {
+        border-right: 1px solid $color_stroke;
+        &:last-of-type {
+            border-right: 0px;
+        }
+    }
+    @at-root #{&}__title {
+        .description {
+            font-size: 1em;
+            line-height: 1.2em;
+            height: 2.4em;
+            overflow: hidden;
+        }
+    }
+    @at-root #{&}__number {
+        font-size: 2.813em; //45px
+        line-height: 1em!important;
+    }
+}
+
+.bundle_with_text {
+    .bundle_orange__number {
+        font-size: 1.250em; //20px
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 1024px) {}
+
+@media all and (max-width: 860px) {
+    .standard_block {
+        &__sticker {
+            &__wrapper {
+                position: static;
+                width: 100%;
+                .sticker_single {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .container_reviews {
+            width: 330px;
+            margin: 0 auto;
+            .share_block__reviews {
+                right: 0;
+            }
+        }
+        .container_mid_row {
+            .column_left {
+                width: 100%;
+            }
+            .column_right {
+                float: none;
+                top: 0;
+                right: 0;
+                width: 300px;
+                margin: 0 auto;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        }
+        &__title {
+            font-size: 2.50em;
+        }
+        &__text {
+            max-width: 300px;
+        }
+        &__image {
+            width: 50%;
+            position: static;
+        }
+        &__half_block {
+            width: 100%;
+            .button {
+                margin: 0 auto 30px auto;
+                position: static;
+            }
+            &.image_block {
+                height: auto;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        &__coloredBg {
+            display: none;
+        }
+    }
+    .bundle_orange {
+        font-size: 12px;
+    }
+    .recurrent_priceRow__price {
+        font-size: 2.75em;
+        display: inline-block;
+        margin-top: 15px;
+        font-family: $weight-light;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .standard_block {
+        .container_reviews {
+            font-size: 14px;
+            width: 290px;
+        }
+    }
+}

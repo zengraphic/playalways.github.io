@@ -1,0 +1,67 @@
+//BLOCCO 4
+.infographic_block {
+    -o-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    -webkit-transition: all 0.45s ease-in-out;
+    @at-root #{&}__container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+    @at-root #{&}__title {
+        margin-bottom: 15px;
+        font-size: $text-medium;
+        color: $color_text; //$color-standardText;
+        font-family: $weight-light;
+        text-align: left;
+        margin-left: 30px;
+    }
+    @at-root #{&}__description {
+        font-size: 0.625em;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        color: $color_text; //$color-standardText;
+        font-family: $weight-normal;
+        text-align: center;
+    }
+    @at-root #{&}__left {
+        text-align: right;
+        padding-right: 40px;
+        border-right: 1px solid $color_stroke;
+    }
+    @at-root #{&}__right {
+        text-align: left;
+        padding-left: 40px;
+    }
+    @at-root #{&}__image {
+        width: inherit;
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 991px) {}
+
+@media all and (max-width: 767px) {
+    .infographic_block {
+        &__image {
+            width: 100%;
+        }
+        &__left,
+        &__right {
+            text-align: center;
+            padding: 0;
+        }
+    }
+}
+
+@media all and (max-width: 450px) {
+    .infographic_block {
+        &__left,
+        &__right {
+            width: 100%;
+        }
+    }
+}

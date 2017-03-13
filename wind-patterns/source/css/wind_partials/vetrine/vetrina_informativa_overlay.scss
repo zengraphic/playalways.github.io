@@ -1,0 +1,100 @@
+.overlay_info {
+    .button {
+        width: 40%;
+        margin: 0 auto;
+        &.mfp-close {
+            position: static;
+            line-height: normal;
+            color: $color_white;
+        }
+    }
+    .base__icon {
+        top: -30px;
+        position: absolute;
+        right: 0;
+    }
+    &.base__popup {
+        font-size: 1em;
+    }
+    &.offerta_lightb {
+        text-align: center;
+        .container {
+            position: relative;
+            .mfp-close {
+                width: 20px;
+                height: 40px;
+                padding: 0;
+                color: $color_white;
+                font-family: $weight-light;
+                font-size: 1.8em;
+                position: absolute;
+                right: calc(50% - 10px);
+                top: -60px;
+                font-weight: 200;
+                @include opacity(1);
+                &:hover {
+                    @include opacity(0.7);
+                }
+            }
+        }
+        .text_cont {
+            width: 100%;
+            float: left;
+            max-height: 20em;
+            margin: 0 0 2em 0;
+            p {
+                text-align: left;
+                font-family: $weight-normal;
+                float: left;
+                font-size: 0.875em;
+                color: $color_white;
+                margin: 0 0 1em 0;
+            }
+        }
+        .container {
+            width: 100%;
+            max-width: 830px;
+        }
+    }
+}
+
+// ============================== ADATTAMENTI OVERLAY =========================
+// ============================== ADATTAMENTI OVERLAY =========================
+// ============================== ADATTAMENTI OVERLAY =========================
+.nicescroll-rails-vr {
+    //scrollbar
+    border-radius: 5px;
+}
+
+.mfp-fade {
+    //overlay
+    &.mfp-bg {
+        background-color: $color_grey_dark;
+        &.mfp-ready {
+            opacity: 0.9;
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media (max-width: 767px) {
+    .offerta_lightb .text_cont {
+        max-height: 16rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .offerta_lightb a.btn.btn_back {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .offerta_lightb a.btn.btn_back {
+        width: 100%;
+        float: left;
+    }
+}

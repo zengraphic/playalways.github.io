@@ -1,0 +1,397 @@
+//BLOCCO DASHBOARD
+.dashboard-block {
+  @include transition (all 045s ease-in-out 0s);
+  background-color: $color_white;
+  &__container {
+    max-width: 1024px;
+    margin: 30px auto;
+  }
+  &__product {
+    width: 100%;
+    margin-top: 30px;
+    &-gallery {
+      margin-top: 70px;
+      @include breakpoint('super-tiny') {
+        margin-top: 0;
+      }
+    }
+    &-specs {
+      @include breakpoint('small') {
+        max-width: 450px;
+      }
+    }
+  }
+  &__model {}
+  &__thumbs {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 84px;
+    padding: 140px 0 0;
+    background: -webkit-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+    background: -moz-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+    background: -o-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+    background: linear-gradient(to right, $color_white 50%, $color_transparent 100%);
+    z-index: 250;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}', GradientType=1); // 00ffffff ?
+    @include breakpoint('super-tiny') {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      padding-top: 0;
+    }
+    &__thumb {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      outline: 0;
+      text-align: center;
+      cursor: pointer;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      img {
+        width: auto;
+        height: 54px;
+      }
+    }
+  }
+  &__gallery {
+    padding: 0;
+    @include breakpoint('super-tiny') {
+      padding-bottom: 100px;
+    }
+    &__slide {
+      outline: 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__specs {
+    color: $color_text;
+    &--title {
+      margin-bottom: 10px;
+      h2 {
+        height: 2.2em;
+        font-family: "Trade Gothic Light";
+        line-height: 1.1em;
+        @include breakpoint('med-large') {
+          font-size: 34px;
+        }
+        @include breakpoint('medium') {
+          font-size: 28px;
+        }
+        @include breakpoint('small') {
+          font-size: 34px;
+        }
+        @include breakpoint('super-tiny') {
+          font-size: 28px;
+        }
+      }
+    }
+    &--features {
+      margin-bottom: 10px;
+      p {}
+    }
+    &--attributes {
+      margin-bottom: 50px;
+    }
+  }
+  .attributes {
+    &__list {
+      display: table;
+      width: 100%;
+      margin-bottom: .5rem;
+      padding: 0 0 .5rem;
+      border-spacing: .5rem 0;
+      @include breakpoint('med-large') {
+        display: block;
+        margin-bottom: .5rem;
+        padding-bottom: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+    &__item {
+      display: table-cell;
+      width: 16.666666%;
+      padding: .5rem 0 0;
+      border: 1px solid $color_stroke;
+      border-radius: 4px;
+      cursor: pointer;
+      vertical-align: middle;
+      margin: 0 .5rem .5rem 0;
+      &:hover {
+        border-color: $color_wind;
+      }
+      @include breakpoint('med-large') {
+        display: inline-block;
+        width: calc(33% - .5rem);
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+    &__sample {
+      display: inline-block;
+      position: relative;
+      font-family: "Trade Gothic";
+      font-size: 1.5rem;
+      &.round {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid $color_stroke;
+        border-radius: 50%;
+      }
+      &.item1 {
+        &.active {
+          border-color: $color_orange;
+        }
+        &.inactive {
+          border-color: $color_grey_light;
+          color: $color_grey_light;
+          cursor: not-allowed;
+        }
+      }
+      &.item {
+        &.active {
+          border-color: $color_orange;
+        }
+        &.inactive {
+          border-color: $color_grey_light;
+          color: $color_grey_light;
+          cursor: not-allowed;
+        }
+        span {
+          border-radius: 50%;
+          border: 1px solid $color_stroke;
+          display: block;
+          width: 1.25em;
+          height: 1.25em;
+          margin: 0 auto 5px;
+        }
+        h6 {
+          display: block;
+          width: 100%;
+          line-height: 1em;
+          font-size: 0.875em;
+        }
+      }
+    }
+    &__label {
+      width: 100%;
+      font-family: "Trade Gothic Light";
+      cursor: pointer;
+    }
+  }
+  &__payment-rates {
+    &__row {
+      position: relative;
+      margin: 1rem 0;
+      &:after {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background-color: $color_stroke;
+        content: '';
+      }
+    }
+  }
+  &__payment-amount {
+    &__row {
+      
+    }
+  }
+}
+
+
+/*
+
+&--detailsp {
+  &.doubleButton {
+    .dashboard_block {
+      &__button {
+        &--containerDouble {
+          display: block;
+        }
+        &--containerSingle {
+          display: none;
+        }
+      }
+    }
+  }
+  &.triplePrice {
+    .dashboard_block {
+      &__paymentRateRow {
+        display: table;
+      }
+      &__priceRow {
+        display: none;
+      }
+    }
+  }
+}
+
+
+}
+&__subTitle {
+  float: left;
+  width: 100%;
+}
+&__left {}
+&__right {
+  p {
+    text-align: center;
+    
+  }
+  
+  
+  
+  li {
+    float: left;
+    width: 4.375em;
+    margin-right: 1em;
+    height: 4em;
+    margin-bottom: 10px;
+  }
+  
+  .items a {
+    
+  }
+}
+&__title {
+  
+}
+&__priceRow {
+  display: block;
+  font-family: "Trade Gothic LTS Light";
+  margin-bottom: 25px;
+  margin-top: 20px;
+  text-align: center;
+  float: left;
+  width: 100%;
+  &__price {
+    font-family: $weight-normal;
+    color: $color_wind;
+    font-size: 3.438em;
+    & .currency {
+      color: $color_wind;
+      font-size: 40px;
+    }
+    @include breakpoint(super-tiny) {
+      font-size: 2.8em;
+      & .currency {
+        font-size: 25px;
+      }
+    }
+  }
+}
+&__paymentRateRow {
+  display: none;
+  width: 100%;
+  margin-bottom: 25px;
+  &__item {
+    width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    border-right: 1px solid $color_stroke;
+    vertical-align: bottom;
+    &:nth-of-type(3) {
+      border-right: none;
+    }
+    &--price {
+      font-family: $weight-normal;
+      font-size: 3.438em;
+      color: $color_wind;
+      & .currency {
+        font-size: 40px;
+      }
+      @include breakpoint(super-tiny) {
+        font-size: 2.8em;
+        & .currency {
+          font-size: 25px;
+        }
+      }
+    }
+    &--period {
+      font-family: $weight-normal;
+      font-size: 0.813em;
+    }
+    &--advance,
+    &--discount {
+      font-size: 1em;
+      padding-bottom: 15px;
+    }
+    &--pricePromotion {
+      font-size: 24px;
+      & .currency {
+        font-size: 18px;
+      }
+      @include breakpoint(super-tiny) {
+        font-size: 18px;
+        & .currency {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+&__button {
+  &--containerDouble {
+    display: none;
+  }
+  
+  &--containerSingle {
+    display: block;
+  }
+  
+  float: left;
+  width: calc(50% - 15px);
+  &.left {
+    margin-right: 30px;
+  }
+  
+  @include breakpoint(small) {
+    width: 50%;
+    &.left {
+      margin-right: 0;
+    }
+  }
+}
+&__button--single {
+  float: left;
+  width: 100%;
+}
+*/
+
+
+/*@media all and (max-width: 400px) {
+  .dashboard_block {
+    &__right {
+      li {
+        margin-right: 0.4em;
+        width: 4.2em;
+      }
+    }
+    &__left {
+      margin-top: 0;
+    }
+    &__button {
+      width: 100%;
+      & .left {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+*/
