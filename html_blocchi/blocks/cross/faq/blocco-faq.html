@@ -382,6 +382,7 @@
                                         <div class="showcase_accordions_block__container__body pull-left">
                                             <div class="showcase_accordions_block__container__text ">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida erat vitae ipsum iaculis aliquet at ac felis. Mauris at eleifend turpis, et dignissim augue. Donec quis ultricies velit, et blandit ante. Fusce nec vehicula eros. Suspendisse potenti. Vestibulum feugiat tempus nisl id bibendum. Phasellus risus purus, euismod in arcu sed, luctus tincidunt est.
+                                                <a class="popup-videoFaq" href="https://www.youtube.com/watch?v=TVKGGyoUlRo">Guarda il video</a><br>
                                             </div>
                                             <div class="showcase_accordions_block__container__buttons pull-right">
                                                 <a href="#" class="btn__share"></a>
@@ -1503,6 +1504,11 @@
 </body>
 <script>
 jQuery(document).ready(function($) {
+
+    $('.popup-videoFaq').magnificPopup({
+        type: 'iframe'
+    });
+
     var allCatFirst = $(".faq_block__single.main_faq_block");
     var allCatFirstOnlyFaq = $(".faq_block__single.main_faq_block--only_faq");
     var allCatBlocks = $(".faq_block__firstLevelBlock");
