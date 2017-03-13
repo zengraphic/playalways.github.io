@@ -1,0 +1,134 @@
+//customizing page: Assitenza
+//
+//.cont__answer = Multi-accordions
+
+.title__default--assistenza {
+  //border: none;
+
+  h3 {
+    padding-bottom: 1.8rem;
+
+    @media (max-width: 767px) {
+      margin-top: 2rem;
+    }
+  }
+
+  p {
+    @include boxWF(left, 100%);
+
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-top: 1.2rem;
+  }
+
+  h4 {
+    @include boxWF(left, 100%);
+
+    font-size: 1.2rem;
+    color: $color_text;
+    margin: 3.5rem 0 1.8rem;
+    font-family: $font_family_bold;
+  }
+}
+
+.cont__answer {
+  @include boxWF(left, 100%);
+
+  margin-bottom: 2rem;
+
+  .cont_text {
+    @include boxWF(left, 100%);
+
+    padding: 1.3rem 0;
+
+    p {
+      float: left;
+      padding: 0 1.3rem 1.5rem;
+      font-size: 1.1rem;
+      color: $color_text;
+      font-family: $font_family_regular;
+      border-bottom: 1px solid $color_stroke;
+    }
+
+    h5 {
+      @include boxWF(left, 100%);
+
+      font-size: 1.2rem;
+      font-family: $font_family_bold;
+      font-weith: 500;
+      margin: 1.5rem 0 1.3rem;
+    }
+  }
+
+  ul {
+    @include boxWF(left, 100%);
+
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid $color_stroke;
+    list-style: none;
+
+    li {
+      @include boxWF(left, 100%);
+
+      list-style: none;
+      border-bottom: 1px solid $color_stroke;
+
+      &.title {
+        background-color: $color_grey_light_light;
+        padding: 1.8rem 1.3rem 1.7rem;
+        .base__icon{
+          width:25px;
+          height:25px;
+        }
+        a {
+          color: $color_wind;
+          padding: 0;
+
+          &.left {
+            float: left;
+            width: auto;
+          }
+
+          &.back {
+            float: right;
+            width: auto;
+          }
+
+          i {
+            font-size: 1.5rem;
+            -webkit-text-stroke: 1px $color_white;
+          }
+        }
+      }
+
+      a {
+        @include boxWF(left, 100%);
+
+        padding: 1.8rem 1.3rem 1.7rem;
+        color: $color_text;
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-family: $font_family_regular;
+        letter-spacing: -0.4px;
+
+        @media (max-width: 767px) {
+          padding: 1rem 1.3rem;
+        }
+
+        i {
+          color: $color_wind;
+          float: right;
+          position: relative;
+          margin-right: 6px;
+
+          &.no_left {
+            float: none;
+            font-size: 0.9rem;
+            margin: 0 0.4rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+/* ============================== ICONE BASE ===========================*/
+
+$icon_names: ( 
+ 'ID',
+ 'email',
+ 'calendar',
+ 'sim',
+ 'promo',
+ 'mobile',
+ 'mobile_fisso',
+ 'fisso',
+ 'device',
+ 'login',
+ 'logout',
+ 'profile',
+ 'carrello',
+ 'close',
+ 'serve_aiuto',
+ 'lente',
+ 'configurazione',
+ 'configurazione_manuale',
+ 'configurazione_sms',
+ 'configurazione_generale',
+ 'help',
+ 'account',
+ 'password',
+ 'security',
+ 'print',
+ 'share',
+ 'download',
+ 'pin',
+ 'mappa',
+ 'dettaglio',
+ 'negozio',
+ '360',
+ 'trova_negozio',
+ 'controllo_copertura',
+ 'gplus',
+ 'youtube',
+ 'facebook',
+ 'twitter',
+ 'modem',
+ 'fibra',
+ 'xbox',
+ 'dlink',
+ 'servizi_applicazioni',
+ 'utility',
+ 'servizi_innovativi',
+ 'ricarica',
+ 'email_cellulare',
+ 'commenti',
+ 'mms',
+ 'acquisti_online',
+ 'wind_borsa_studio',
+ 'centralino',
+ 'offerta_mobile_fisso',
+ 'info',
+ 'estero',
+ 'menu',
+ 'preferiti',
+ 'esporta',
+ 'passa_wind',
+ 'pdf',
+ 'xls',
+ 'wind_music_award',
+ 'windforfund',
+ 'mastercard',
+ 'visa',
+ 'paypal',
+ 'diners_club',
+ 'visa_electron',
+ 'american_express',
+ 'cartasi',
+ 'pagamenti_conto',
+ 'wap',
+ 'fibra_adsl',
+ 'gestione_anagrafica',
+ 'top_mondo',
+ 'naviga_ovunque',
+ 'app_strumenti',
+ 'servizi_tel_digitali',
+ 'offerta',
+ 'offerta_sim',
+ 'confirm',
+ 'spinner',
+ 'fail', 
+ 'inserisci_numero',
+ 'inserisci_codice',
+ 'attivazione',
+ 'parametro',
+ 'internet',
+ 'arrow_right',
+ 'arrow_left',
+ 'caret',
+ 'caret_outline');
+$variations: ( 
+ 'color',
+ 'grey',
+ 'white',
+ 'blue',
+ 'grey_light');
+@mixin icons($icon_names) {
+    @each $icon_name in $icon_names {
+        $i: index($icon_names, $icon_name);
+        $total_icons: length($icon_names);
+        @each $variation in $variations {
+            $i2: index($variations, $variation);
+            $total_variations: length($variations);
+            @if $icon_name==pin {
+                &.icon_#{$icon_name}--#{$variation} {
+                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.96 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                }
+            }
+            @else if ($icon_name==wind_music_award or $icon_name==windforfund or $icon_name==visa or $icon_name==mastercard or $icon_name==paypal or $icon_name==visa_electron or $icon_name==diners_club or $icon_name==american_express or $icon_name==cartasi) and ($i2 > 0 and $i2 < 2) {
+                &.icon_#{$icon_name} {
+                    background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.96 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                }
+            }
+            @else {
+                @if ($i2 > 0 and $i2 < 4) {
+                    &.icon_#{$icon_name}--#{$variation} {
+                        background-position: #{((100 / ($total_variations - 1)) * ($i2 - 1)) + '%'} #{((99.96 / ($total_icons - 1)) * ($i - 1)) + '%'};
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.base__icon {
+    display: block;
+    background: url(../img/icons/icons_sprite.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: #{length($variations) *100  + '%'};
+    width: 32px;
+    height: 32px;
+    margin:0 auto;
+    &--md {
+        width: 48px;
+        height: 48px;
+    }
+    &--lg {
+        width: 128px;
+        height: 128px;
+    }
+    @include icons($icon_names);
+    
+}
+

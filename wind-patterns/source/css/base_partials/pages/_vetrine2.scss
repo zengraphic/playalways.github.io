@@ -1,0 +1,437 @@
+//customizing page: Vetrine shopping
+
+.base__select--vetrine.bootstrap-select .dropdown-toggle .bs-caret .caret {
+  right: 0;
+
+  &::before {
+    padding-right: 0 !important;
+  }
+}
+
+.ver_desktop {
+  display: block;
+}
+
+.black_cont {
+  @include boxWF(left, 100%);
+
+  background-color: $color_black; //#212121;
+  padding: 20px;
+}
+
+.hpshop {
+  &.black {
+    background-color: $color_black; //#212121;
+
+    .title_slider .left li a {
+      color: $color_white;
+    }
+
+    .slider_products .box_item {
+      border-right-color: $color_white;
+
+      span {
+        &.name_p, &.detail_p1, &.detail_p2, &.detail_p3, &.prices_1, &.prices_2 {
+          color: $color_white;
+        }
+      }
+    }
+  }
+
+  .title_image {
+    @include boxWF(left, 100%);
+
+    margin: 2rem 0 4rem;
+    text-align: center;
+
+    img {
+      display: inline;
+
+      /* @media (max-width: 380px) {
+        width: 80%;
+      } */
+    }
+  }
+
+  .slider_products {
+    @include boxWF(left, 100%);
+
+    &.third span.detail_p4 {
+      height: 5rem;
+    }
+
+    &.fourth span.detail_p4 {
+      height: 3rem;
+    }
+
+    &.sixth .box_item {
+      &:nth-child(3n) {
+        border-right: 1px solid $color_stroke;
+      }
+
+      span {
+        &.name_p {
+          font-size: 1.1rem;
+        }
+
+        &.detail_p1 {
+          font-size: 1rem;
+        }
+
+        &.prices_1 {
+          font-size: 2.1rem;
+          margin-top: 2.3rem;
+        }
+
+        &.prices_2 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+        }
+
+        &.prices_3 {
+          font-size: 2.1rem;
+          margin: 3.2rem 0 1.2rem;
+        }
+      }
+    }
+
+    &.seventh .box_item {
+      border-right: none;
+
+      span.name_p {
+        font-size: 1.4rem;
+        height: 2rem;
+        margin: 3rem 0;
+      }
+    }
+
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
+
+    .slick-prev {
+      @include slickDirection(20%, "", 0, url(../img/icons-interface/icon_prev.png), 11px, 19px, -8px 0 0 13px);
+
+      @media (max-width: 768px) {
+        margin: (-8px) 0 0 13px;
+      }
+    }
+
+    .slick-next {
+      @include slickDirection(20%, 0, "", url(../img/icons-interface/icon_next.png), 11px, 19px, -8px 13px 0 0);
+
+      @media (max-width: 768px) {
+        margin: (-8px) 13px 0 0;
+      }
+    }
+
+    .slick-dots {
+      @include boxWF(left, 100%);
+
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+      display: table-row;
+      text-align: center;
+
+      li {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+
+        &.slick-active button {
+          background-color: $color_wind;
+        }
+
+        button {
+          width: 30px;
+          height: 5px;
+
+          @include radius(3px);
+
+          background-color: $color_grey_light; //#cdcdcd;
+          border: none;
+          padding: 0;
+          margin: 0 0.5rem;
+          text-indent: -9999px;
+        }
+      }
+    }
+
+    .box_item {
+      @include boxWF(left, 23.57rem);
+
+      position: relative;
+      padding: 0 1rem 0.5rem 0.9rem;
+      border-right: 1px solid $color_stroke;
+
+      &:nth-child(3n) {
+        border-right: none;
+      }
+
+      .selects_cont {
+        @include boxWF(left, 100%);
+
+        height: 3rem;
+        margin: 0.8rem 0 0;
+      }
+
+      .bootstrap-select {
+        float: left;
+        padding: 0.2rem 0;
+
+        .dropdown-toggle {
+          padding: 0.2rem 0.4rem;
+        }
+
+        &.select_g {
+          width: 54%;
+        }
+
+        &.select_gs {
+          @include boxWF(right, 40%);
+        }
+      }
+
+      a.like {
+        color: $color_wind;
+        font-size: 1.3rem;
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        right: 0;
+        margin: 1rem 1.5rem;
+        width: auto;
+      }
+
+      /* i {
+        font-size: 2rem;
+      } */
+
+      .image {
+        @include boxWF(left, 100%);
+
+        text-align: center;
+
+        img {
+          display: inline;
+        }
+      }
+
+      span {
+        @include boxWF(left, 100%);
+
+        &.bs-caret, &.caret {
+          @include boxWF(none, auto);
+        }
+
+        &.bs-caret .caret {
+        	//margin: -0.7rem 0 0 0;
+        }
+
+        &.name_p {
+          text-align: center;
+          line-height: normal;
+          font-size: 2rem;
+          color: $color_text_light;
+          margin: 0.8rem 0 0;
+
+          span {
+            font-size: 0.8rem;
+            float: none;
+          }
+        }
+
+        &.detail_p1 {
+          text-align: left;
+          font-size: 1.14rem;
+          line-height: 1.3rem;
+          color: $color_text_light;
+          margin: 0.8rem 0 0 0;
+          height: 4.5rem;
+          letter-spacing: -0.4px;
+        }
+
+        &.detail_p2 {
+          text-align: left;
+          font-size: 1.42rem;
+          color: $color_text_light;
+          margin: 0 0 0 0;
+          height: 5.4rem;
+          letter-spacing: -0.4px;
+          line-height: normal;
+
+          span.dp2_e {
+            float: none;
+            font-size: 2.5rem;
+          }
+
+          a.btn {
+            @include boxWF(none, auto);
+
+            color: $color_wind;
+            font-size: 1.42rem;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        &.detail_p3 {
+          text-align: left;
+          font-size: 1.42rem;
+          color: $color_text_light;
+          margin: 0.8rem 0 0 0;
+        }
+
+        &.detail_p4 {
+          text-align: left;
+
+          @include defaultTxt($font_family_regular, 1.1rem);
+
+          color: $color_text_light;
+          margin: 0.8rem 0 0;
+        }
+
+        &.detail_p5 {
+          text-align: left;
+
+          @include defaultTxt($font_family_regular, 1.4rem);
+
+          color: $color_text_light;
+          margin: 1.5rem 0 0.8rem;
+
+          span {
+            float: none;
+            font-size: 2.1rem;
+          }
+        }
+
+        &.prices_1 {
+          text-align: center;
+          text-decoration: none;
+          color: $color_text_light;
+          font-size: 2.5rem;
+          line-height: normal;
+          margin-top: 4.1rem;
+
+          span {
+            font-size: 1.7rem;
+            color: $color_wind;
+            float: none;
+            text-decoration: line-through;
+          }
+        }
+
+        &.prices_2 {
+          text-align: center;
+          font-size: 1.2rem;
+          margin-bottom: 3.1rem;
+        }
+
+        &.prices_3 {
+          text-align: center;
+          font-size: 2.5rem;
+          margin: 3rem 0 0.8rem;
+        }
+      }
+
+      a {
+        @include boxWF(left, 100%);
+
+        &.btn_plan {
+          color: $color_white;
+          background-color: $color_wind;
+          font-size: 1.2rem;
+          letter-spacing: 0.4px;
+          line-height: normal;
+
+          &:hover {
+            background-color: $color_orange_light;
+          }
+        }
+
+        &.btn_purchase {
+          color: $color_wind;
+          border: 1px solid $color_wind;
+          background-color: $color_white;
+          font-size: 1.2rem;
+          letter-spacing: 0.4px;
+          line-height: normal;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+  .box_content {
+    @include boxWF(left, 100%);
+
+    text-align: center;
+    margin: 1rem 0;
+
+    .btn {
+      text-align: center;
+    }
+  }
+
+  .title_slider {
+    @include boxWF(left, 100%);
+
+    .title_c {
+      @include boxWF(left, auto);
+
+      @include defaultTxt($font_family_bold, 2rem);
+
+      color: $color_text_light;
+      font-weight: 500;
+    }
+
+    .left {
+      @include menuFilterP(left, 0, 0.8rem 0 0 1.5rem, 0 1rem 0 0, 1.1rem, $color_grey_dark_light, $font_family_light, relative);
+    }
+
+    .right {
+      @include menuFilterP(right, 0, 1.2rem 0 0 0, 0 1rem 0 0, 1.1rem, $color_grey_dark_light, $font_family_light, relative);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .ver_desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hpshop .banner.first .image {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hpshop .slider_products .box_item {
+    border-right: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hpshop .slider_products .box_item span.prices_3 {
+    margin: 1rem 0 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hpshop .title_slider .left {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hpshop .title_slider .right {
+    display: none;
+  }
+}
