@@ -1,0 +1,187 @@
+.base__datepicker {
+  position: relative;
+  width: 100%;
+
+  &:after {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    font-family: "FontAwesome";
+    font-size: 1.4rem;
+    content: "\F073";
+  }
+
+  .base__input {
+    width: 100%;
+  }
+}
+
+.base__datepicker--input {
+  width: 100%;
+  background: $color_red;
+}
+
+.datetimepicker {
+  padding: 0.5rem 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-size: 1rem;
+  min-width: 320px;
+
+  > div {
+    width: 100%;
+  }
+
+  table tr {
+    td {
+      border: 1px solid $color_white;
+
+      &.day:hover, &.hour:hover, &.minute:hover {
+        background: $color_wind;
+        color: $color_white;
+      }
+
+      span {
+        background: $color_white;
+        color: $color_text_lighter;
+        border: 1px solid $color_white;
+        font-size: 1rem;
+        height: 2rem;
+        line-height: 2rem;
+        vertical-align: middle;
+
+        &:hover {
+          background: $color_white;
+          border: 1px solid $color_wind;
+
+          @include transition-basic(all, 0.35s, ease-in-out);
+        }
+
+        &.active {
+          background: $color_wind;
+          border-color: $color_wind;
+          color: $color_white;
+
+          &.disabled {
+            background: $color_wind;
+            border-color: $color_wind;
+            color: $color_white;
+
+            &:hover {
+              background: $color_wind;
+              border-color: $color_wind;
+              color: $color_white;
+            }
+          }
+
+          &:hover {
+            background: $color_wind;
+            border-color: $color_wind;
+            color: $color_white;
+          }
+        }
+
+        &.hour, &.minute {
+          color: $color_text_light;
+        }
+
+        &.hour.active, &.minute.active {
+          color: $color_white !important;
+        }
+      }
+
+      &.day {
+        color: $color_text_light;
+
+        &.old, &.new {
+          color: $color_text_lighter;
+        }
+
+        &.old:hover, &.new:hover {
+          color: $color_white;
+        }
+      }
+    }
+
+    th {
+      &[class="prev"] {
+        padding-left: 0.5rem;
+
+        i:after {
+          font-family: "FontAwesome";
+          font-size: 2rem;
+          content: "\F0D9";
+          line-height: 2rem;
+          color: $color_wind;
+        }
+      }
+
+      &[class="next"] {
+        padding-rigth: 0.5rem;
+
+        i:after {
+          font-family: "FontAwesome";
+          font-size: 2rem;
+          line-height: 2rem;
+          content: "\F0DA";
+          color: $color_wind;
+        }
+      }
+    }
+  }
+
+  .table-condensed {
+    width: 100%;
+
+    > {}
+
+    tbody > tr > {
+      td, th {
+        padding: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+
+        @include radius(0px);
+
+        background: $color_white;
+        border: 1px solid $color_transparent;
+      }
+
+      tfoot > tr > {}
+
+      td, th {
+        padding: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+
+        @include radius(0px);
+
+        background: $color_white;
+        border: 1px solid $color_transparent;
+      }
+
+      thead > tr > {}
+
+      td, th {
+        padding: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+
+        @include radius(0px);
+
+        background: $color_white;
+        border: 1px solid $color_transparent;
+      }
+
+      tfoot > tr > th.today:hover {
+        background: $color_wind;
+        color: $color_white;
+      }
+    }
+  }
+
+  .glyphicon {
+    font-family: sans-serif;
+  }
+}

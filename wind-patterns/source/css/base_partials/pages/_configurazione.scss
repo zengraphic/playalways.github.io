@@ -1,0 +1,300 @@
+//customizing page: Configurazione
+
+// content selector
+.configurazione {
+  margin-bottom: 2rem;
+
+  .title_page {
+    margin: 30px 0 13px 0;
+  }
+
+  &__content {
+    &__intro {
+      @media (max-width: 767px) {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 1rem;
+      }
+
+      p {
+        @include defaultTxt($font_family_regular, 1.143rem);
+
+        margin-bottom: 78px;
+
+        @media (max-width: 767px) {
+          margin: 1.5rem 0;
+        }
+      }
+    }
+
+    // block items (three)
+    &__items {
+      @include equidistant;
+
+      @media (max-width: 767px) {
+        display: block;
+      }
+      .base__icon{
+        height:40px;
+        width:40px;
+        margin-bottom:1.250em;
+      }
+
+      article {
+        width: 28%;
+        text-align: center;
+        margin-bottom: 34px;
+
+        @media (max-width: 767px) {
+          @include boxWF(left, 100%);
+
+          border-bottom: 1px solid $color_stroke;
+        }
+
+        figure {
+          @media (max-width: 767px) {
+            float: left;
+          }
+
+          img {
+            margin: 0 auto 21px auto;
+          }
+        }
+
+        span {
+          @include defaultTxt($font_family_bold2, 1.143rem);
+
+          margin-bottom: 12px;
+
+          @media (max-width: 767px) {
+            float: left;
+            margin: 0.4rem 0 0 0.6rem;
+          }
+        }
+
+        p {
+          @include boxWF(left, 100%);
+
+          @include defaultTxt($font_family_light, 1rem);
+
+          @media (max-width: 767px) {
+            text-align: left;
+            margin: 0.6rem 0;
+          }
+        }
+      }
+    }
+
+    // multi form (accordion active in button orange)
+    &__form {
+      text-align: center;
+      margin-bottom: 47px;
+
+      @media (max-width: 767px) {
+        margin: 4rem auto 1rem auto;
+      }
+
+      .base__select.bootstrap-select {
+        width: 29% !important;
+        margin-right: 2%;
+
+        @media (max-width: 767px) {
+          width: 100% !important;
+          margin-bottom: 1rem;
+          margin-right: 0;
+        }
+      }
+
+      .base__select.bootstrap-select .dropdown-toggle {
+        padding: 1rem 1.429rem;
+      }
+
+      .base__bt--lg {
+        @include defaultTxt($font_family_regular !important, 1.429rem);
+
+        padding: 1.2rem 0;
+        width: 26%;
+        margin-left: 1%;
+
+        @media (max-width: 767px) {
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__txt {
+      p {
+        @include boxWF(left, 100%);
+
+        @include defaultTxt($font_family_regular, 0.9286rem);
+      }
+    }
+  }
+
+  .action_c1 {
+    display: none;
+  }
+
+  .title-c {
+    @include boxWF(left, 100%);
+
+    text-align: center;
+    margin: 1rem 0 2rem;
+    font-size: 2.1rem;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+    .base__icon{
+      width:50px;
+      height:50px;
+      display:inline-block;
+      vertical-align: middle;
+    }
+
+    img {
+      display: inline;
+    }
+  }
+
+  .table-config {
+    @include boxWF(left, 70%);
+
+    margin-left: 15%;
+    overflow-x: hidden;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin-left: 0;
+    }
+    .base__icon{
+      display:inline-block;
+      vertical-align:middle;
+    }
+
+    table {
+      @include boxWF(left, 100 &);
+
+      overflow-x: hidden;
+      max-width: 100%;
+
+      thead {
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+    }
+
+    th {
+      text-align: center;
+    }
+
+    tr.action {
+      display: none;
+      width: 100%;
+    }
+
+    img {
+      display: inline;
+    }
+
+    table tr td {
+      padding: 0.5rem 1rem;
+
+      @media (max-width: 767px) {
+        padding: 0.5rem 0 0.5rem 0.3rem;
+      }
+    }
+
+    h3 {
+      @include boxWF(left, 100%);
+
+      @include defaultTxt($font_family_regular, 1.1rem);
+
+      margin: 2rem 0;
+      text-align: left;
+
+      @media (max-width: 767px) {
+        float: left;
+      }
+
+      &.first {
+        margin: 0 0 2rem 0;
+      }
+    }
+
+    .btn_action {
+      font-size: 0.8rem !important;
+      cursor: pointer;
+    }
+
+    .base__bt {
+      border: 1px solid $color_wind;
+      width: 48%;
+      margin: 0 1% 0 0;
+      font-size: 1.4rem;
+      line-height: 1rem;
+
+      @media (max-width: 767px) {
+        width: 98%;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .base__input {
+      width: 48%;
+      margin: 0 1% 0 0;
+      font-size: 1.1rem;
+
+      @media (max-width: 767px) {
+        width: 98%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  // mobile version (accordion)
+  .panel-group {
+    .panel {
+      border-top: 1px solid $color_stroke;
+      padding: 3px 0;
+
+      &:last-child {
+        border-bottom: 1px solid $color_stroke;
+      }
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+      border-top-color: $color_transparent;
+    }
+
+    .panel-title {
+      position: relative;
+
+      .accordion-toggle {
+
+        .base__icon{
+          display:inline-block;
+          float:left;
+          margin-right:12px;
+        }
+
+        h3 {
+          @include defaultTxt($font_family_regular, 1.2rem);
+
+          color: $color_text;
+          margin-top: 0.8rem;
+        }
+      }
+
+      .indicator {
+        position: absolute;
+        right: 0;
+        bottom: 0.5rem;
+        color: $color_wind;
+      }
+    }
+  }
+}

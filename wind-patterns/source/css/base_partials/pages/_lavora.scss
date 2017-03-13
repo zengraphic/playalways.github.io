@@ -1,0 +1,319 @@
+//customizing page: Windgroup/Lavora Con Noi
+
+.base__input--lavora {
+  padding: 1rem;
+}
+
+.base__bt--lavora, .base__bt--lavora:hover {
+  @include defaultTxt($font_family_regular, 1.286rem);
+
+  padding: 1.3rem 0;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    padding: 1.5rem 0;
+  }
+}
+
+.title_dovesiamo {
+  margin-top: 18px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid $color_stroke; //#ccd1d9;
+}
+
+.content__loguin-ch {
+  @include boxWF(left, 100%);
+
+  margin-bottom: 54px;
+
+  @media (max-width: 767px) {
+    padding: 1rem 0;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    @include boxWF(left, 100%);
+
+    @include defaultTxt($font_family_bold2, 1.429rem);
+
+    color: $color_text; //#444444;
+    margin: 0 0 17px 0;
+  }
+
+  .cont_3 {
+    @include boxWF(left, 39%);
+
+    padding-right: 1rem;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    .base__input {
+      width: 100%;
+      margin: 0 0 1rem;
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+
+      @include defaultTxt($font_family_light, 0.8571rem);
+    }
+  }
+
+  .cont_3-3 {
+    @include boxWF(left, 22%);
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    a.base__bt {
+      width: 100%;
+      background-color: $color_orange;
+      color: $color_white;// #fffFFF;
+
+      &:hover {
+        background-color: $color_orange_light;
+      }
+    }
+  }
+}
+
+.banner_ch {
+  width: 100%;
+  height: auto;
+  background-color: $color_grey_light_light;// #f4f4f4;
+  position: relative;
+
+  @media (max-width: 767px) {
+    background-color: $color_transparent;
+  }
+
+  // banner with text and button RIGHT
+  &.right {
+    .cont_text {
+      position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+      @media (max-width: 991px) {
+        @include boxWF(left, 100%);
+        position: relative;
+        height: auto;
+        display: block;
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      h3 {
+        @include defaultTxt($font_family_regular, 1.786rem);
+
+        color: $color_text; //$color_dark_grey;
+        margin: 0 0 2rem 0;
+        text-transform: uppercase;
+
+        @media (max-width: 991px) {
+          @include boxWF(left, 100%);
+
+          position: relative;
+          margin: 1rem 0;
+          text-align: left;
+        }
+      }
+
+      h4 {
+        @include defaultTxt($font_family_regular, 1.283rem);
+
+        color: $color_text; //$color_dark_grey;
+        margin: 0 0 1.8rem;
+
+        @media (max-width: 991px) {
+          @include boxWF(left, 100%);
+
+          position: relative;
+        }
+      }
+
+      a {
+        background-color: $color_wind;
+        color: $color_white;
+
+        @include defaultTxt($font_family_regular, 1.286rem);
+
+        margin: 0;
+        padding: 1rem 7.5rem;
+        width: auto;
+        font-weight: 200;
+        line-height: normal;
+
+        @media (max-width: 991px) {
+          @include boxWF(left, 100%);
+
+          position: relative;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .image {
+      @include boxWF(left, 62%);
+
+      position: relative;
+
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+
+      @media (max-width: 600px) {
+        img.row {
+          width: 108%;
+          margin-left: -1.05rem;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  // banner with text and button LEFT
+  &.left {
+    .cont_text {
+      position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+      @media (max-width: 991px) {
+        @include boxWF(left, 100%);
+
+        position: relative;
+        height: auto;
+        display: block;
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        @include defaultTxt($font_family_regular, 1.786rem);                            
+
+        color: $color_text; //$color_dark_grey;
+        margin: 0 0 2rem 0;
+        text-transform: uppercase;
+
+        @media (max-width: 991px) {
+          @include boxWF(left, 100%);
+
+          position: relative;
+          margin: 1rem 0;
+        }
+      }
+
+      h4 {
+        @include defaultTxt($font_family_regular, 1.283rem);
+
+        color: $color_text; // $color_dark_grey;
+        margin: 0 0 1.8rem;
+
+        @media (max-width: 991px) {
+          @include boxWF(left, 100%);
+
+          position: relative;
+        }
+      }
+
+      a {
+        background-color: $color_wind;
+        color: $color_white; 
+
+        @include defaultTxt($font_family_regular, 1.283rem);
+
+        margin: 0;
+        padding: 1rem 7.5rem;
+        width: auto;
+        font-weight: 200;
+        line-height: normal;
+
+        @media (max-width: 991px) {
+          @include boxWF(left, 100%);
+
+          position: relative;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .image {
+      @include boxWF(right, 62%);
+
+      position: relative;
+
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+
+      @media (max-width: 600px) {
+        img.row {
+          width: 108%;
+          margin-left: -1.05rem;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  div[class^='col-'] {
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

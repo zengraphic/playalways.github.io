@@ -1,0 +1,967 @@
+//customizing Modal: Ricarica
+//if OS is Mac (bug browsers in mac)
+.mac {
+    .base__popup.refill_block .base__select.base__select.select_value .dropdown-toggle .filter-option {
+        position: relative;
+        top: 0.5rem;
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+
+//end OS Mac
+.ricarica {
+    &__overlay {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        z-index: 3000;
+        width: 100%;
+        height: 100%;
+        background-color: $color_grey_dark;//$color_grey; ?
+        @include opacity(0.8);
+        display: none;
+    }
+    .base__input {
+        transition: none;
+        -o-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -webkit-transition: none;
+    }
+    .bootstrap-select.btn-group .dropdown-menu {
+        min-width: 95%;
+    }
+    .box .bootstrap-select.btn-group .dropdown-menu {
+        min-width: 100%;
+    }
+}
+
+.base__popup {
+    .header {
+        /* min-height: 122px; */
+    }
+    &#refill_block {
+        .container {
+            height: 100%;
+        }
+    }
+    &#privacy_block {
+        .container {
+            height: 100%;
+        }
+    }
+    &#ecommerce-shoulder-wind {
+        .container {
+            height: 100%;
+        }
+    }
+    &.refill_block {
+        .container {
+            height: calc(100% - 43px);
+            position: fixed;
+            z-index: 2;
+            background-color: $color_white; 
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 0;
+            max-width: 420px;
+            .base__input.error + span.error{
+                margin-top:-0.5em;
+            }
+        }
+        .row {
+            margin: 0px;
+        }
+        .col-lg-12 {
+            padding: 0 !important;
+        }
+        .top {
+            @include boxWF(left, 100%);
+            height: 80px;
+            position: relative;
+            .logo--wind {
+                margin: 0.8rem 0 0 0;
+            }
+            a.btn_sa {
+                //display: none;
+                float: left;
+                margin: 0;
+                padding: 1.5rem 0 0 2rem;
+                img {
+                    float: left;
+                }
+                .base__icon {
+            float: left;
+            display: inline-block;
+        }
+                span {
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    color: $color_wind;
+                    float: left;
+                    margin: 0.9rem 0 0 0.5rem;
+                    @media (min-width: 320px) and (max-width: 399px) {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            .menu-right {
+                float: right;
+                margin-right: 2rem;
+                margin-top: 1.1rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                ul {
+                    padding: 0;
+                    margin-bottom: 0;
+                    float: right;
+                }
+                li {
+                    float: right;
+                    list-style: none;
+                    margin-right: 1.3rem;
+                    @media (min-width: 320px) and (max-width: 399px) {
+                        margin-right: 1rem;
+                    }
+                    .base__icon {
+                margin-bottom: 0.5rem;
+            }
+                    a {
+                        @include boxWF(right, auto);
+                        background-repeat: no-repeat;
+                        color: $color_text_light; //$color_grey_seven;
+                        font-size: 0.7857rem;
+                        position: relative;
+                        margin: 0;
+                        line-height: normal;
+                        opacity: 1;
+                        font-family: $font_family_regular;
+                        height: auto;
+                        &:hover {
+                            text-decoration: none;
+                            opacity: 0.7;
+                        }
+                        &.btn_entra {
+                            .logued {
+                                width: 32px;
+                                height: 32px;
+                                position: absolute;
+                                top: -2px;
+                                left: 50%;
+                                margin-left: -16px;
+                                border: 2px solid $color_wind;
+                                @include radius(16px);
+                                overflow: hidden;
+                                text-align: center;
+                                background-color: $color_white;
+                            }
+                        }
+                        &.btn_carrello {
+                        }
+                        &.btn_menu {
+                        }
+                        &.btn_logout {
+                        }
+                        &.btn_close {
+                        }
+                    }
+                }
+            }
+        }
+        
+        .title {
+            @include boxWF(left, 100%);
+            background-color: $color_grey_light_light;
+            color: $color_text; //#51565a;
+            padding: 0 2.3rem 0 2.3rem;
+            height: 50px;
+            border-bottom: 4px solid $color_wind; //#f48217;
+            span {
+                &.text {
+                    float: left;
+                    font-size: 1.4rem;
+                    margin-top: 0.8rem;
+                }
+            }
+            a {
+                &.safe-link {
+                    float: right;
+                    color: $color_wind;
+                    font-size: 0.8rem;
+                    letter-spacing: -0.4px;
+                    line-height: normal;
+                    margin-top: 0.6rem;
+                    text-align: left;
+                    img {
+                        float: left;
+                        margin-right: 0.3rem;
+                    }
+                    .base__icon{
+                        float:left;
+                    }
+                    .right{
+                        margin:4px 0 0 4px;
+                    }
+                }
+            }
+        }
+        .image {
+            @include boxWF(left, 100%);
+            img {
+                @include boxWF(left, 100%);
+            }
+        }
+        .box {
+            @include boxWF(left, 100%);
+            padding: 1.5rem 2.3rem 0 2.3rem;
+            position: relative;
+            &.box_2 {
+                padding-top: 0;
+                text-align: center;
+                &.flag {
+                    padding-bottom: 2rem;
+                }
+            }
+           
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            width: 100%;
+            max-width: 420px;
+            height: 100vh;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 3000;
+            @include transition-basic(all, .4s, ease-in-out);
+            /* Fade in the background */
+            &-dialog {
+                position: fixed;
+                bottom: 0;
+                max-width: 420px;
+                margin: 0;
+                height: auto;
+                color: $color_text_light; //$color_grey_seven;
+                max-height: 450px;
+                position: fixed;
+                background-color: $color_white;
+                -webkit-animation-name: slideIn 0.7s;
+                ;
+                animation-name: slideIn 0.7s;
+                ;
+            }
+            &-header {
+                background-color: $color_grey_light_light;
+                font-size: 1.6rem;
+                font-family: $font_family_regular;
+                padding: 1rem 2.1rem;
+                line-height: normal;
+                margin: 0;
+                text-align: left;
+            }
+            &-body,
+            &-footer {
+                padding: 1rem 2.1rem;
+            }
+            &-btn {
+                margin-bottom: 30px;
+            }
+            .popup-btn_1,
+            .popup-btn_2 {
+                display: none;
+            }
+        }
+        .contract__popup{
+                color: $color_wind;
+        }
+        .popup--contract {
+            display: none;
+            position: fixed;
+            width: 100%;
+            max-width: 420px;
+            height: 100vh;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 3000;
+            @include transition-basic(all, .4s, ease-in-out);
+            &-dialog {
+                position: fixed;
+                bottom: 0;
+                max-width: 420px;
+                margin: 0;
+                height: auto;
+                color: $color_text_light;
+                max-height: 450px;
+                position: fixed;
+                background-color: $color_white;
+                -webkit-animation-name: slideIn 0.7s;
+                ;
+                animation-name: slideIn 0.7s;
+                ;
+                .popup--contract {
+                    &-header {
+                        background-color: $color_wind;
+                        color: $color_white;
+                        font-size: 1.6rem;
+                        font-family: $font_family_regular;
+                        text-align: center;
+                        position: relative;
+                        text-transform: uppercase;
+                        margin-bottom: 1.5em;
+                        padding: 1rem 2.1rem;
+                        &:after {
+                            width: 2em;
+                            color: $color_wind;// #f48135;
+                            content: "\f0d7";
+                            font-family: "Fontawesome";
+                            font-size: 4em;
+                            line-height: 0.45em;
+                            position: absolute;
+                            left: calc(50% - 1em);
+                            top: calc(100% - 0.15em);
+                        }
+                    }
+                    &-body,
+                    &-footer{
+                        padding: 1rem 2.1rem;
+                    }
+                }
+            }
+            .popup {
+                &_row {
+                    padding: 1rem;
+                    font-size: 1.2em;
+                }
+                &-body {
+                    &--label {
+                        width: 33%;
+                        color: $color_robin;
+                    }
+                    &--value {
+                        width: 66%;
+                        text-align: right;
+                        color: $color_text; //$color_grey_dark;
+                    }
+                    .divider {
+                        width: 100%;
+                        min-height: 1px;
+                        background-color: $color_grey_medium_light;
+                    }
+                }
+            }
+            .popup-btn_2 {
+                display: block;
+            }
+        }
+        .showMore {
+            color: $color-wind;
+            font-size: 1.250em;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: $font_family_light;
+            margin: 1.4rem 0 1rem 0;
+            cursor: pointer;
+            &_content {
+                display: none;
+            }
+        }
+        .borderb {
+            @include boxWF(left, 100%);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: $color_grey_medium_light;
+        }
+        .paypal_option {
+            @include boxWF(left, 100%);
+            display: none;
+            h3 {
+                @include boxWF(left, 100%);
+                @include defaultTxt($font_family_regular, 0.9rem);
+                letter-spacing: -0.4px;
+                color: $color_text; //#51565a;
+                margin: 1rem 0 1.4rem;
+            }
+        }
+        .item-box {
+            @include boxWF(left, 100%);
+            padding: 0.5rem 2.3rem;
+            &.padding-t {
+                padding-top: 0;
+            }
+            &.active {
+                background-color: $color_grey_light_light;
+                margin: 0 0 0.5rem 0;
+                padding-top: 0.5rem;
+                &.last-i {
+                    margin-bottom: 0;
+                }
+            }
+            input[type="text"],
+            input[type="password"],
+            .base__select.base__select {
+                margin: 0.5rem 0 0 0;
+            }
+            .cont__item_cc {
+                @include boxWF(left, 100%);
+                // border-bottom: 1px solid $color_grey_medium_light;
+                // padding-bottom: 0.5rem;
+                // margin-bottom: 0.5rem;
+                .radio.base__radio label {
+                    &.label_for_creditCard {
+                        float: none;
+                        width: 100%;
+                    }
+                    .detail-cc {
+                        @include boxWF(left, 100%);
+                        @include defaultTxt($font_family_regular, 1.1rem);
+                        color: $color_text; //$color_grey;
+                        line-height: normal;
+                        letter-spacing: -0.4px;
+                        .card-image {
+                            float: left;
+                            margin-top: -8px;
+                            margin-right: 10px;
+                            .base__icon{
+                                width:38px;
+                                height:38px;
+                            }
+                        }
+                        .card-number-crypted {
+                            font-size: 12px;
+                        }
+                        .expiration {
+                            margin-left: 15px;
+                        }
+                        .card-image,
+                        .card-number-crypted,
+                        .card-number-clear,
+                        .expiration-label,
+                        .expiration-date {
+                            font-family: $font_family_light;
+                        }
+                        .card-number-clear {
+                            margin-left: 3px;
+                        }
+                    }
+                }
+                a.btn {
+                    @include boxWF(right, auto);
+                    // margin: 0.8rem 0 0 0.5rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    padding: 0;
+                }
+                h4 {
+                    @include boxWF(left, auto);
+                    margin: 0.8rem 0 0 2.1rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    text-transform: uppercase;
+                }
+            }
+            .top_up_remove_btn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                &:active {
+                    box-shadow: none;
+                }
+            }
+            .cont__item_cc2 {
+                @include boxWF(left, 100%);
+                // border-bottom: 1px solid $color_grey_medium_light;
+                padding: 0 0 0.5rem 1.2rem;
+                margin-top: 0.5rem;
+                .radio.base__radio label {
+                    &.label_for_creditCard {
+                        float: none;
+                        width: 100%;
+                    }
+                    .detail-cc {
+                        @include boxWF(left, 100%);
+                        @include defaultTxt($font_family_regular, 1.1rem);
+                        color: $color_text; //$color_grey;
+                        line-height: normal;
+                        letter-spacing: -0.4px;
+                        .card-image {
+                            float: left;
+                            margin-top: -3px;
+                            margin-right: 10px;
+                        }
+                        .card-number-crypted {
+                            font-size: 12px;
+                        }
+                        .expiration {
+                            margin-left: 15px;
+                        }
+                        .card-image,
+                        .card-number-crypted,
+                        .card-number-clear,
+                        .expiration-label,
+                        .expiration-date {
+                            font-family: $font_family_light;
+                        }
+                    }
+                }
+                a.btn {
+                    @include boxWF(right, auto);
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    padding: 0;
+                }
+                h4 {
+                    @include boxWF(left, auto);
+                    margin: 0.8rem 0 0 2.1rem;
+                    @include defaultTxt($font_family_regular, 0.9rem);
+                    text-transform: uppercase;
+                }
+            }
+            .cont_item1 {
+                @include boxWF(left, 100%);
+                display: none;
+                .select_anno,
+                .select_mese {
+                    float: left;
+                    width: 33%;
+                }
+                .cont__action-cc1 {
+                    display: none;
+                    margin-left: 15px;
+                }
+                .cvv_container {
+                    position: relative;
+                    float: right;
+                    width: 33%;
+                    .icon_tooltip {
+                        position: absolute;
+                        bottom: 12px;
+                        right: 10px;
+                    }
+                }
+                &.item_da {
+                    padding: 0 1.5rem 1rem 1.5rem;
+                    .radio {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+        h3 {
+            @include boxWF(left, 100%);
+            color: $color_text; //$color_grey_dark;
+            @include defaultTxt($font_family_regular, 1.2rem);
+            line-height: normal;
+            letter-spacing: 0.4px;
+            margin-bottom: 1.2rem;
+            &.text2 {
+                margin-top: 1.26rem;
+            }
+            &.text3 {
+                margin-bottom: 1.4rem;
+            }
+        }
+        h4 {
+            @include boxWF(left, 100%);
+            @include defaultTxt($font_family_regular, 0.9rem);
+            letter-spacing: -0.4px;
+            color: $color_text; //#51565a;
+            margin: 1rem 0;
+            a {
+                text-decoration: none;
+            }
+            &.text_p {
+                float: left;
+                font-size: 1.1rem;
+                a {
+                    font-family: $font_family_bold2;
+                    color: $color_text; //#51565a;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        h5 {
+            @include boxWF(left, 100%);
+            font-size: 0.8rem;
+            color: $color_text;
+            margin: 0.7rem 0 1.4rem;
+            a {
+                text-decoration: none;
+            }
+            &.new_cc {
+                @include boxWF(left, 100%);
+                margin: 1rem 0 0;
+                @include defaultTxt($font_family_bold2, 1.1rem);
+                font-weight: 500;
+                color: $color_text; //$color_grey_dark;
+            }
+        }
+        button.btn_refil {
+            @include boxWF(left, 100%);
+            background-color: $color_wind;
+            color: $color_white;
+            font-size: 1.2rem;
+            height: auto;
+            letter-spacing: 0.04px;
+            line-height: normal;
+            padding: 18px 0 12px;
+            // margin-bottom: 1.5rem;
+            &:hover {
+                opacity: 0.7;
+            }
+            &:disabled {
+                background-color: $color_grey_medium_light; //////////
+            }
+            &.flag,
+            &.btn_icc {
+                margin-bottom: 0;
+            }
+            &.btn_save {
+                margin: 1rem 0 0;
+            }
+            &.top_up_newCard {
+                background-color: $color_white !important;
+                border: 1px solid $color_wind !important;
+                text-transform: uppercase !important;
+                color: $color_wind !important;
+                padding-top: 18px !important;
+                padding-bottom: 12px !important;
+            }
+        }
+        .action_numbert {
+            display: none;
+        }
+        .top_up_button_final {
+            margin-bottom: 30px;
+        }
+        input {
+            float: left;
+            &[type="text"],
+            &[type="email"],
+            &[type="password"],
+            &[type="number"],
+            &[type="tel"] {
+                margin-bottom: 0.5rem;
+                @include defaultTxt($font_family_light, 1.1rem);
+                border: 1px solid $color_stroke;
+                width: 100%;
+                font-weight: 100;
+                background: $color_white;
+                color: $color_text_light !important;// #4a4a4a
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }
+            //END CREDIC CARD
+            &[type="text"][type="number"],
+            &[type="email"][type="number"],
+            &[type="password"][type="number"],
+            &[type="number"][type="number"],
+            &[type="tel"][type="number"] {
+                -webkit-appearance: none;
+            }
+            &[type="text"]:active,
+            &[type="email"]:active,
+            &[type="password"]:active,
+            &[type="number"]:active,
+            &[type="tel"]:active,
+            &[type="text"]:focus,
+            &[type="email"]:focus,
+            &[type="password"]:focus,
+            &[type="number"]:focus,
+            &[type="tel"]:focus,
+            &[type="text"]:hover,
+            &[type="email"]:hover,
+            &[type="password"]:hover,
+            &[type="number"]:hover,
+            &[type="tel"]:hover {
+                border: 1px solid $color_wind;
+            }
+            &[type="text"].visa_cc,
+            &[type="email"].visa_cc,
+            &[type="password"].visa_cc,
+            &[type="number"].visa_cc,
+            &[type="tel"].visa_cc {
+                @include creditSimbol(url(../img/credit-cards/visa.jpg));
+            }
+            &[type="text"].americane_cc,
+            &[type="email"].americane_cc,
+            &[type="password"].americane_cc,
+            &[type="number"].americane_cc,
+            &[type="tel"].americane_cc {
+                @include creditSimbol(url(../img/credit-cards/americanexpress.jpg));
+            }
+            &[type="text"].aura_cc,
+            &[type="email"].aura_cc,
+            &[type="password"].aura_cc,
+            &[type="number"].aura_cc,
+            &[type="tel"].aura_cc {
+                @include creditSimbol(url(../img/credit-cards/aura.jpg));
+            }
+            &[type="text"].diners_cc,
+            &[type="email"].diners_cc,
+            &[type="password"].diners_cc,
+            &[type="number"].diners_cc,
+            &[type="tel"].diners_cc {
+                @include creditSimbol(url(../img/credit-cards/diners.jpg));
+            }
+            &[type="text"].general_cc,
+            &[type="email"].general_cc,
+            &[type="password"].general_cc,
+            &[type="number"].general_cc,
+            &[type="tel"].general_cc {
+                @include creditSimbol(url(../img/credit-cards/generico.jpg));
+            }
+            &[type="text"].maestro_cc,
+            &[type="email"].maestro_cc,
+            &[type="password"].maestro_cc,
+            &[type="number"].maestro_cc,
+            &[type="tel"].maestro_cc {
+                @include creditSimbol(url(../img/credit-cards/maestro.jpg));
+            }
+            &[type="text"].masterc_cc,
+            &[type="email"].masterc_cc,
+            &[type="password"].masterc_cc,
+            &[type="number"].masterc_cc,
+            &[type="tel"].masterc_cc {
+                @include creditSimbol(url(../img/credit-cards/mastercard.jpg));
+            }
+            &[type="text"].paypal_cc,
+            &[type="email"].paypal_cc,
+            &[type="password"].paypal_cc,
+            &[type="number"].paypal_cc,
+            &[type="tel"].paypal_cc {
+                @include creditSimbol(url(../img/credit-cards/paypal.jpg));
+            }
+            &[type="text"].security_cc,
+            &[type="email"].security_cc,
+            &[type="password"].security_cc,
+            &[type="number"].security_cc {
+                /* float: left;
+                width: 33%;
+                background-image: url(../img/icons-interface/icon_answer.png);
+                background-repeat: no-repeat;
+                background-position: 87% center; */
+                padding-top: 0.8em;
+                padding-bottom: 0.9em;
+                &.cvv_carta {
+                    @include creditSimbol(url(../img/credit-cards/cvv_carta.png));
+                }
+                &.cvv_amex {
+                    @include creditSimbol(url(../img/credit-cards/cvv_amex.png));
+                }
+            }
+            &[type="text"].email_c,
+            &[type="email"].email_c,
+            &[type="password"].email_c,
+            &[type="number"].email_c {
+                margin: 1rem 0 0 0;
+            }
+            &[type="text"].email_confirmation,
+            &[type="email"].email_confirmation,
+            &[type="password"].email_confirmation,
+            &[type="number"].email_confirmation {
+                display: none;
+                margin: 1rem 0 0;
+            }
+            &::-webkit-input-placeholder {
+                color: $color_text_light;//#4a4a4a;
+            }
+            &:-moz-placeholder,
+            &::-moz-placeholder {
+                color: $color_text_light; //#4a4a4a;
+                opacity: 1;
+            }
+        }
+        .action2 {
+            @include boxWF(left, 100%);
+            display: none;
+        }
+        .base__select.base__select {
+            &.select_cc {
+                @include boxWF(left, 100%);
+                padding-right: 0.4rem;
+            }
+            &.select_numbert {
+                @include boxWF(left, 100%);
+                margin-bottom: 0.5rem;
+            }
+            &.select_value {
+                @include boxWF(left, 100%);
+                margin-bottom: 1.5rem;
+                span {
+                    .euro {
+                        font-size: 1.8rem;
+                    }
+                    .textl {
+                        font-size: 1.4rem;
+                    }
+                }
+                .dropdown-toggle {
+                    color: $color_robin;
+                    padding: 0.8rem 1.429rem;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    &:focus {
+                        border: 1px solid $color_wind;
+                    }
+                    .filter-option {
+                        font-size: 2.8rem;
+                        text-align: center;
+                    }
+                }
+            }
+            &.select_option {
+                @include boxWF(left, 100%);
+                margin-bottom: 1rem;
+            }
+        }
+        .checkbox {
+            float: left;
+            &.base__checkbox label {
+                float: left;
+                color: $color_text;
+                font-size: 1rem;
+                padding-left: 0.7rem;
+            }
+            &.remember_check {
+                @include boxWF(left, 100%);
+                margin-top: 1rem;
+                .base__icon{
+                    width:20px;
+                    height:20px;
+                    display:inline-block;
+                    margin-left:5px;
+                }
+                .remember_me {
+                    position: relative;
+                    top: 2px;
+                }
+            }
+            &.remember_s {
+                @include boxWF(left, 100%);
+                margin: 1rem 0;
+                label {
+                    font-size: 1.1rem;
+                    letter-spacing: -0.4px;
+                }
+            }
+            &.emailnotification {
+                @include boxWF(left, 100%);
+                margin: 0 0;
+                label {
+                    font-size: 1.1rem;
+                    letter-spacing: -0.4px;
+                }
+            }
+        }
+        .radio {
+            @include boxWF(left, 100%);
+            margin: 0.5rem 0;
+            &.base__radio label {
+                float: left;
+                color: $color_text;
+                @include defaultTxt($font_family_bold2, 1.1em);
+                letter-spacing: 0.4px;
+                font-weight: 500;
+                padding-left: 0.8rem;
+                line-height: 1.4rem;
+            }
+        }
+        span {
+            &.line {
+                @include boxWF(left, 100%);
+                height: 1px;
+                background-color: $color_grey_medium_light;
+                margin: 1.4rem 0 1.5rem;
+            }
+            &.line2 {
+                @include boxWF(left, 100%);
+                height: 1px;
+                background-color: $color_grey_medium_light;
+                margin: 1.4rem 0 0;
+            }
+        }
+    }
+    .back-privacy {
+        border-bottom: 4px solid $color_wind;
+    }
+    .box-privacy {
+        h3 {
+            @include defaultTxt($font_family_bold2, 1.2em);
+            font-weight: bold;
+            color: $color_text;
+            margin: 1.2em 0;
+            &:first-child {
+                margin: 2em 0 1.9em 0;
+            }
+        }
+        p {
+            @include defaultTxt($font_family_regular, 1.07em);
+            color: $color_text;
+            margin-bottom: 0.5em;
+            &:last-child {
+                margin-bottom: 2em;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .base__popup {
+        &.refill_block {
+            .container {
+                width: 100%;
+                max-width: none;
+            }
+            a.btn_sa {
+                margin-top: 1.9rem;
+            }
+            .base__select {
+                &.base__select {
+                    &.select_value {
+                        span {
+                            .euro {
+                                font-size: 1.4rem;
+                            }
+                            .textl {
+                                font-size: 1.3rem;
+                            }
+                        }
+                        .dropdown-toggle {
+                            .filter-option {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .popup {
+                max-width: 100%;
+                &-dialog {
+                    max-width: 100%;
+                    width: 100%;
+                }
+                &--contract {
+                    max-width: 100%;
+                    
+                        &-dialog {
+                            max-width: 100%;
+                            width:100%;
+                        }
+                    
+                }
+            }
+        }
+    }
+}
