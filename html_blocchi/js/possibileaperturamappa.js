@@ -3,8 +3,8 @@ function myCreateMarker() {
     google.maps.event.addListener(marker, 'click', function() {
         if (document.body.clientWidth < 640) {
             google.maps.event.addListener(marker, 'click', function() {
-                marker.infoWindow.close();
-                var text = marker.infoWindow.getContent();
+                infowindow.close();
+                var text = infowindow.getContent(InfoBox.content_);
                 showInDiv(text);
             });
         }else{
