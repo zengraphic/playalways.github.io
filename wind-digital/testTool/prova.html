@@ -17,17 +17,43 @@
     <script type="text/javascript" src="js/testTool.js"></script>
 </head>
 
-<body style="background-color: #f5f6f7;">
-<!-- <div style="border: 1px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; max-width: 880px;">
+<body style="background: #fff;">
+    <!-- <div style="border: 1px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; max-width: 880px;">
 <base onclick='window.open();'><iframe scrolling="no" src="https://www.infostrada.it/it/fibra/offerte-internet-mi-to" style="border: 0px none; margin-left: -30px; height: 900px; margin-top: -460px; width: 936px;"><
 </iframe>
 </div> -->
-<div style="text-align: center; font-size: 40px; margin-top: 30px;">PROVA PROVA PROVA TESTO TESTO TESTO SITO MIO</div>
-<div style="border: 0px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; max-width: 876px;">
-<object style="border: 0px none; margin-left: -30px; height: 245px; margin-top: -30px; width: 936px;" data="https://www.infostrada.it/it/fibra/landing-solo-check" width="936" height="900">
-    <embed src="https://www.infostrada.it/it/fibra/landing-solo-check" width="936" height="900"> </embed>
-    Error: Embedded data could not be displayed.
-</object>
-</div>
-<div style="text-align: center; font-size: 40px;">PROVA PROVA PROVA TESTO TESTO TESTO SITO MIO</div>
+    <div style="text-align: center; font-size: 40px; margin-top: 30px;">PROVA PROVA PROVA TESTO TESTO TESTO SITO MIO</div>
+    <div class="intrinsic-container">
+        <iframe src="https://www.infostrada.it/it/fibra/landing-solo-check" allowfullscreen></iframe>
+    </div>
+    <div style="text-align: center; font-size: 40px;">PROVA PROVA PROVA TESTO TESTO TESTO SITO MIO</div>
+    <style>
+    .intrinsic-container {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 265px;
+    }
+    
+    .intrinsic-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    @media (max-width: 768px) {
+        .intrinsic-container {
+            padding-bottom: 455px;
+        }
+    }
+    @media (max-width: 480px) {
+        .intrinsic-container {
+            padding-bottom: 490px;
+        }
+    }    
+    </style>
+
 </html>
