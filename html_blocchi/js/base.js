@@ -26,9 +26,10 @@ function prefixedEventListener(element, type, callback) {
             cursorcolor: "#f48135",
             cursorwidth: "10px",
             cursorborder: "0",
+            mousescrollstep: 80,
             background: "#e6e9ed",
             spacebarenabled: false,
-            horizrailenabled: true,
+            horizrailenabled: false,
             autohidemode: false,
             zindex: 998
         };
