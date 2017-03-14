@@ -6325,45 +6325,15 @@ a.button--search {
         font-size: 40px; }
   .dashboard_block__paymentRateRow {
     width: 100%;
-    margin-bottom: 25px; }
-    .dashboard_block__paymentRateRow:first-of-type {
-      border-bottom: 1px solid #D3D3D2; }
-    .dashboard_block__paymentRateRow .strip_plans__container {
-      padding: 0; }
-    .dashboard_block__paymentRateRow__item {
-      display: table-cell;
-      width: 33.333%;
-      border-right: 1px solid #D3D3D2;
-      text-align: center;
-      vertical-align: bottom; }
-      .dashboard_block__paymentRateRow__item:nth-of-type(3) {
-        border-right: 0; }
-      .dashboard_block__paymentRateRow__item--price {
-        color: #F48135;
-        font-family: "Trade Gothic";
-        font-size: 3.438em; }
-        @media (max-width: 480px) {
-          .dashboard_block__paymentRateRow__item--price {
-            font-size: 2.8em; }
-            .dashboard_block__paymentRateRow__item--price .currency {
-              font-size: 25px; } }
-        .dashboard_block__paymentRateRow__item--price .currency {
-          font-size: 40px; }
-      .dashboard_block__paymentRateRow__item--period {
-        font-family: "Trade Gothic";
-        font-size: .813em; }
-      .dashboard_block__paymentRateRow__item--advance, .dashboard_block__paymentRateRow__item--discount {
-        padding-bottom: 15px;
-        font-size: 1em; }
-      .dashboard_block__paymentRateRow__item--pricePromotion {
-        font-size: 24px; }
-        @media (max-width: 480px) {
-          .dashboard_block__paymentRateRow__item--pricePromotion {
-            font-size: 18px; }
-            .dashboard_block__paymentRateRow__item--pricePromotion .currency {
-              font-size: 14px; } }
-        .dashboard_block__paymentRateRow__item--pricePromotion .currency {
-          font-size: 18px; }
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #D3D3D2; }
+  .dashboard_block__paymentAmountRow {
+    width: auto;
+    margin-bottom: 1rem; }
+    .dashboard_block__paymentAmountRow .strip_plans__container {
+      width: auto; }
+  .dashboard_block .strip_plans__container {
+    padding: 0; }
   .dashboard_block__button {
     width: calc(50% - 15px);
     float: left; }
@@ -7647,6 +7617,28 @@ a.button--search {
   .country_calling_cards_block__rates_divider--right {
     padding: 0 8px; } }
 
+.strip_plans .vertical-middle {
+  display: table;
+  height: 6rem; }
+  @media (max-width: 767px) {
+    .strip_plans .vertical-middle {
+      display: block; } }
+
+.strip_plans .component {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+  border-left: 1px solid #D3D3D2;
+  float: none; }
+  .strip_plans .component:first-child {
+    border-left: none; }
+  @media (max-width: 767px) {
+    .strip_plans .component {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 20px;
+      border-left: none; } }
+
 .strip_plans__container {
   max-width: 1024px;
   width: 100%;
@@ -7661,26 +7653,6 @@ a.button--search {
     width: 100%; }
     .strip_plans__container.phone_cash .strip_plans__payment_block__amount .item--total .price {
       font-size: 2.5em; }
-  .strip_plans__container .vertical-middle {
-    display: table;
-    height: 6rem; }
-    @media (max-width: 767px) {
-      .strip_plans__container .vertical-middle {
-        display: block; } }
-  .strip_plans__container .component {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0;
-    border-left: 1px solid #D3D3D2;
-    float: none; }
-    .strip_plans__container .component:first-child {
-      border-left: none; }
-    @media (max-width: 767px) {
-      .strip_plans__container .component {
-        display: inline-block;
-        width: 100%;
-        padding-bottom: 20px;
-        border-left: none; } }
 
 .strip_plans__title {
   text-align: left;

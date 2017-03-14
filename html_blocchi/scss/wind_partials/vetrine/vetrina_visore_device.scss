@@ -205,58 +205,18 @@
   }
   &__paymentRateRow {
     width: 100%;
-    margin-bottom: 25px;
-    &:first-of-type {
-      border-bottom: 1px solid $color_stroke;
-    }
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $color_stroke;
+  }
+  &__paymentAmountRow {
+    width: auto;
+    margin-bottom: 1rem;
     .strip_plans__container {
-      padding: 0;
+      width: auto;
     }
-    &__item {
-      display: table-cell;
-      width: 33.333%;
-      border-right: 1px solid $color_stroke;
-      text-align: center;
-      vertical-align: bottom;
-      &:nth-of-type(3) {
-        border-right: 0;
-      }
-      &--price {
-        color: $color_wind;
-        font-family: $weight-normal;
-        font-size: 3.438em;
-        @include breakpoint('super-tiny') {
-          font-size: 2.8em;
-          .currency {
-            font-size: 25px;
-          }
-        }
-        .currency {
-          font-size: 40px;
-        }
-      }
-      &--period {
-        font-family: $weight-normal;
-        font-size: .813em;
-      }
-      &--advance,
-      &--discount {
-        padding-bottom: 15px;
-        font-size: 1em;
-      }
-      &--pricePromotion {
-        font-size: 24px;
-        @include breakpoint(super-tiny) {
-          font-size: 18px;
-          .currency {
-            font-size: 14px;
-          }
-        }
-        .currency {
-          font-size: 18px;
-        }
-      }
-    }
+  }
+  .strip_plans__container {
+    padding: 0;
   }
   &__button {
     width: calc(50% - 15px);
