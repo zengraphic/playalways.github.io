@@ -199,6 +199,9 @@
       width: 100%;
       //margin-top: 20px;
       font-family: $weight-light;
+      .currency {
+        font-size: .75em;
+      }
       .item {
         display: table-cell;
         vertical-align: middle;
@@ -207,25 +210,21 @@
         }
         &--add {
           width: auto;
+          color: $color_text;
           .price {
             font-family: $weight-normal;
             font-size: 1.5em;
-            .currency {
-              font-size: 0.75em;
-            }
           }
         }
         &--total {
           width: 40%;
           .price {
             font-size: 3em;
-            color: $color_robin;
+            color: inherit;
             &~.sub {
               font-size: 13px;
             }
-            .currency {
-              font-size: 0.75em;
-            }
+
           }
         }
       }
