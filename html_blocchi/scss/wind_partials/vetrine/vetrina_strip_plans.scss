@@ -38,7 +38,10 @@
         .item--total {
           width: 100%;
           .price {
-            font-size: $text-medium;
+            font-size: 2.5rem;
+          }
+          .sub {
+            color: $color_text;
           }
         }
       }
@@ -46,21 +49,19 @@
   }
   @at-root #{&}__title {
     text-align: left;
-    font-size: 1em;
-    font-family: $weight-bold;
     @include breakpoint(small) {
       text-align: center;
       padding: 10px 0;
     }
     &--main {
-      font-size: 20px;
+     
       font-family: $weight-normal;
       color: inherit;
     }
   }
   @at-root #{&}__offer_block {
     &__container {
-      display: inline-block;
+      display: block;
       width: 100%;
       font-family: $weight-light;
       .row {
@@ -75,12 +76,19 @@
       padding: 7px;
       color: $color_text;
       vertical-align: middle;
-      text-transform: uppercase;
+      //text-transform: uppercase;
+      h4 {
+        font-family: $weight-normal;
+        font-size: 1.75rem;
+        line-height: 1.1em;
+        margin-bottom: .5rem;
+      }
       label {
+        font-family: $weight-normal;
         margin-bottom: 0;
         font-weight: normal;
         line-height: 1.1em;
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
       &:first-child {
         border-left: none;
@@ -101,7 +109,8 @@
     }
     &__recurrency {
       .recurrency {
-        padding: .5rem 0;
+        padding: 0;
+        margin: .5rem auto;
         color: $color_text;
       }
     }
@@ -205,26 +214,30 @@
       .item {
         display: table-cell;
         vertical-align: middle;
+        width: 33%;
         &:not(.item--total) {
           border-right: 1px solid $color_stroke;
         }
         &--add {
-          width: auto;
           color: $color_text;
           .price {
             font-family: $weight-normal;
-            font-size: 1.5em;
+            font-size: 1.75rem;
+          }
+          .over {
           }
         }
         &--total {
-          width: 40%;
           .price {
-            font-size: 3em;
+            font-size: 2.5rem;
+            line-height: 1.2em;
+            height: 1.2em;
             color: inherit;
-            &~.sub {
-              font-size: 13px;
-            }
 
+          }
+          .sub {
+            color: $color_text;
+            font-size: .75rem;
           }
         }
       }
@@ -244,6 +257,7 @@
       text-transform: uppercase;
       font-family: $weight-light;
       font-size: 0.75em;
+      color: $color_text;
       padding-top: 5px;
     }
   }
