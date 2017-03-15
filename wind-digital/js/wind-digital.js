@@ -9,10 +9,14 @@ jQuery(document).ready(function($) {
     $('.add_box_wd').click(function() {
         $('.ghost_box').slideDown();
         var attachTo = $('.container_toAttach');
-        var color = "red";
-        var link = "ciao";
-        var name = "prova";
+        var color = "Titolo";
+        var link = "link";
+        $('.container_single__overlay').slideDown();
     });
+    $('.container_single__overlay').click(function() {
+        $('.ghost_box').slideUp();
+        $('.container_single__overlay').slideUp();
+    });    
 
     $('.color_picker').click(function() {
         var parentColor = $(this).parents('.content_wd');
@@ -34,17 +38,18 @@ jQuery(document).ready(function($) {
         console.log(color);
         attachTo.append(
             '<div class="container_single">' +
-            '<div class="box_wd ' + color + '">' +
+            '<div class="box_wd small_box ' + color + '">' +
             '<a href=" ' + link + '" target="_blank">' +
-            '<div class="content_wd">' +
-            '<p class="title">' + title + '</p>' +
+            '<div class="content_wd small_box">' +
+            '<p class="title small_box">' + title + '</p>' +
             '</div>' +
             '</a>' +
             '</div>' +
-            '<div class="wd_edit">Edit</div>' +
+            '<div class="wd_edit">Remove</div>' +
             '</div>'
         );
         $('.ghost_box').hide();
+        $('.container_single__overlay').hide();
     });
 
 
@@ -60,10 +65,10 @@ jQuery(document).ready(function($) {
             console.log(color + " " + link + " " + name);
             attachTo.append(
                 '<div class="container_single" data-index="' + id + '">' +
-                '<div class="box_wd ' + color + '">' +
+                '<div class="box_wd small_box ' + color + '">' +
                 '<a href=" ' + link + '" target="_blank">' +
-                '<div class="content_wd">' +
-                '<p class="title">' + name + '</p>' +
+                '<div class="content_wd small_box">' +
+                '<p class="title small_box">' + name + '</p>' +
                 '</div>' +
                 '</a>' +
                 '</div>' +

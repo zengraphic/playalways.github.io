@@ -1,0 +1,249 @@
+       @font-face {
+           font-family: 'Trade Gothic LTS Light';
+           src: url('../fonts/TradeGothicLTStd-Light.woff') format('opentype');
+           font-weight: light;
+       }
+       
+       @font-face {
+           font-family: 'Trade Gothic LTS';
+           src: url('../fonts/TradeGothicLTStd.woff') format('opentype');
+           font-weight: normal;
+       }
+       
+       @font-face {
+           font-family: 'Trade Gothic LTS Bold Cond';
+           src: url('../fonts/TradeGothicLTStd-BdCn20.woff') format('opentype');
+           font-weight: 600;
+       }
+       
+       @font-face {
+           font-family: 'Trade Gothic LTS Bold';
+           src: url('../fonts/TradeGothicLTStd-Bd2.woff') format('opentype');
+           font-weight: 700;
+       }
+       
+       // $weight-light: 'Trade Gothic LTS Light';
+       // $weight-normal: 'Trade Gothic LTS';
+       // $weight-boldCond: 'Trade Gothic LTS Bold Cond';
+       // $weight-bold: 'Trade Gothic LTS Bold';
+       $weight-light: 300;
+       $weight-normal: 500;
+       $weight-boldCond: 700;
+       $color-standard: #2c2c2c;
+       $color-orange: #f48135;
+       $color-gray: #999999;
+       $color-light-gray: #d2d2d2;
+       $color-white: #ffffff;
+       $color-placeholder: #4a4a4a;
+       $color-HomeLife-Background: #212121;
+       $color-gray-mediumBg: #e6e9ed;
+       $color-blue: #0eafc6;
+       $color-border: #e3e7ec;
+       $color-veon: #ffcb24;
+       // MIXIN FOR BORDER RADIOUS 
+       @mixin border-radius($radius) {
+           -webkit-border-radius: $radius;
+           border-radius: $radius;
+           background-clip: padding-box;
+           /* stops bg color from leaking outside the border: */
+       }
+       
+       // SINGOLI ANGOLI BORDER RADIOUS
+       @mixin border-top-radius($radius) {
+           -webkit-border-top-right-radius: $radius;
+           border-top-right-radius: $radius;
+           -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-right-radius($radius) {
+           -webkit-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+           -webkit-border-top-right-radius: $radius;
+           border-top-right-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-bottom-radius($radius) {
+           -webkit-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+           -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-left-radius($radius) {
+           -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+           -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       body {
+           background: white;
+           color: $color_standard !important;
+           font-size: 1em;
+           letter-spacing: 0.25px;
+           text-rendering: optimizeLegibility;
+           -webkit-font-smoothing: subpixel-antialiased;
+           -moz-osx-font-smoothing: grayscale;
+           -webkit-hyphens: inherit;
+           -ms-hyphens: inherit;
+           hyphens: none;
+           line-height: 1;
+           font-family: 'Helvetica';
+           margin: 0;
+       }
+       
+       input {
+           &:focus {
+               outline: none;
+           }
+       }
+       
+       //================= MIXINS ================ //
+       //MIXIN BREAKPOINTS
+       @mixin breakpoint($name) {
+           @if map-has-key($breakpoints,
+           $name) {
+               @media #{inspect(map-get($breakpoints, $name))} {
+                   @content;
+               }
+           }
+           @else {
+               @warn "Couldn't find a your breakpoint named `#{$name}`.";
+           }
+       }
+       
+       //mixin
+       @mixin placeholder {
+           &::-webkit-input-placeholder {
+               @content
+           }
+           &:-moz-placeholder {
+               @content
+           }
+           &::-moz-placeholder {
+               @content
+           }
+           &:-ms-input-placeholder {
+               @content
+           }
+       }
+       
+       // OPACITY
+       @mixin opacity($opacity) {
+           opacity: $opacity;
+           $opacity-ie: $opacity * 100;
+           filter: alpha(opacity=$opacity-ie); //IE8
+       }
+       
+       .veon_container {
+           font-family: Arial, Helvetica, sans-serif;
+           .view_container {
+               padding: 0px 10px;
+           }
+           .header {
+               &__container {
+                   background-color: $color-veon;
+                   text-align: center;
+               }
+               &__title {
+                   font-size: 15px;
+                   display: inline-block;
+                   position: relative;
+                   text-decoration: none;
+                   font-weight: 500;
+                   width: 100%;
+                   cursor: pointer;
+                   &:before,
+                   &:after {
+                       border-right: 1px solid;
+                       content: '';
+                       display: block;
+                       height: 8px;
+                       margin-top: -7px;
+                       position: absolute;
+                       -moz-transform: rotate(35deg);
+                       -o-transform: rotate(35deg);
+                       -webkit-transform: rotate(35deg);
+                       transform: rotate(35deg);
+                       left: 30px;
+                       top: 45%;
+                       width: 0;
+                   }
+                   &:after {
+                       margin-top: -1px;
+                       -moz-transform: rotate(150deg);
+                       -o-transform: rotate(150deg);
+                       -webkit-transform: rotate(150deg);
+                       transform: rotate(150deg);
+                   }
+                   &:hover {
+                       @include opacity(0.5);
+                   }
+               }
+           }
+           .main_title {
+               font-size: 12px;
+               font-weight: 500;
+               color: $color-standard;
+               text-align: center;
+               margin-top: 50px;
+           }
+           .label_field {
+               font-size: 10px;
+               color: $color-gray;
+               width: 100%;
+               margin-bottom: 10px;
+           }
+           .input_field {
+               margin-bottom: 10px;
+               input {
+                   font-size: 12px;
+                   width: 100%;
+                   border: 0px;
+                   border-bottom: 1px solid $color-light-gray;
+                   padding: 5px 0;
+                   @include placeholder {
+                       font-size: 14px;
+                       color: $color-light-gray;
+                   }
+               }
+           }
+           .password_recovery {
+               color: $color-blue;
+               font-size: 10px;
+               margin-top: 15px;
+               text-align: center;
+               cursor: pointer;
+               &:hover {
+                   @include opacity(0.7);
+               }
+           }
+           .button_standard {
+               input {
+                   width: 100%;
+                   font-size: 15px;
+                   text-align: center;
+                   background-color: $color-veon;
+                   border-color: $color-veon;
+                   @include border-radius(1px);
+                   border: 1px solid $color-veon;
+                   margin-top: 5px;
+                   padding: 10px;
+                   cursor: pointer;
+                   &:hover {
+                       @include opacity(0.7);
+                   }
+               }
+               &.button_ghost {
+                   input {
+                       background-color: $color-white;
+                       border-color: $color-veon;
+                   }
+               }
+           }
+       }
