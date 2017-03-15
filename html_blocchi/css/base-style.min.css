@@ -402,7 +402,7 @@ body {
   background: #FFF;
   color: #292F36;
   font-family: "Trade Gothic", sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   letter-spacing: 0.25px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -412,27 +412,27 @@ body {
   hyphens: none;
   min-height: 100vh !important; }
   body h1 {
-    font-family: "Trade Gothic Bold", sans-serif;
+    font-family: "Trade Gothic", sans-serif;
     font-size: 3.571rem; }
   body h2 {
-    font-family: "Trade Gothic Bold", sans-serif;
+    font-family: "Trade Gothic", sans-serif;
     font-size: 2.857rem; }
   body h3 {
-    font-family: "Trade Gothic Bold", sans-serif;
+    font-family: "Trade Gothic", sans-serif;
     font-size: 2.143rem; }
   body h4 {
-    font-family: "Trade Gothic Bold", sans-serif;
+    font-family: "Trade Gothic", sans-serif;
     font-size: 1.428rem; }
   body h5 {
-    font-family: "Trade Gothic Bold", sans-serif;
+    font-family: "Trade Gothic", sans-serif;
     font-size: 1.285rem; }
   body h6 {
-    font-family: "Trade Gothic Bold", sans-serif;
+    font-family: "Trade Gothic", sans-serif;
     font-size: 1.142rem;
     font-weight: 400; }
   body p {
     font-family: "Trade Gothic", sans-serif;
-    /* font-size: 1rem; Commented avoid too small text */
+    font-size: 1rem;
     letter-spacing: 0.25px;
     font-weight: 400; }
   body h1,
@@ -443,6 +443,14 @@ body {
   body h6,
   body p {
     margin: 0; }
+    body h1 .small,
+    body h2 .small,
+    body h3 .small,
+    body h4 .small,
+    body h5 .small,
+    body h6 .small,
+    body p .small {
+      color: inherit; }
 
 @media (max-width: 360px) {
   html {
@@ -1695,7 +1703,7 @@ select:-webkit-autofill {
 .base__bt {
   color: #FFF;
   font-size: 1rem;
-  line-height: normal;
+  line-height: 1em;
   border: 1px solid transparent;
   text-transform: uppercase;
   text-decoration: none;
@@ -1716,14 +1724,14 @@ select:-webkit-autofill {
     outline: none; }
 
 .base__bt--sm {
-  padding: .75rem 0;
-  font-size: .75rem;
-  line-height: .75rem;
+  padding: .5rem 0;
+  font-size: 1rem;
+  line-height: 1em;
   width: 140px; }
   .base__bt--sm:hover, .base__bt--sm:visited {
-    padding: .75rem 0;
-    font-size: .75rem;
-    line-height: .75rem;
+    padding: .5rem 0;
+    font-size: 1rem;
+    line-height: 1em;
     width: 140px; }
 
 .base__bt--lg {
