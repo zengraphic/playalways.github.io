@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
     $('.container_single__overlay').click(function() {
         $('.ghost_box').slideUp();
         $('.container_single__overlay').slideUp();
-    });    
+    });
 
     $('.color_picker').click(function() {
         var parentColor = $(this).parents('.content_wd');
@@ -142,21 +142,24 @@ jQuery(document).ready(function($) {
         data.link_title = title;
         data.link_url = link;
         data.link_color = color;
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://95.85.60.126:8080/WDlinks",
-            "method": "POST",
-            "headers": {
-                "content-type": "application/json",
-                "cache-control": "no-cache"
-            },
-            "data": JSON.stringify(data)
-        }
+        console.log(title);
+        if (title != '') {
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://95.85.60.126:8080/WDlinks",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                    "cache-control": "no-cache"
+                },
+                "data": JSON.stringify(data)
+            }
 
-        $.ajax(settings).done(function(response) {
-            console.log(response);
-            location.reload();
-        });
+            $.ajax(settings).done(function(response) {
+                console.log(response);
+                location.reload();
+            });
+        }
     });
 });
