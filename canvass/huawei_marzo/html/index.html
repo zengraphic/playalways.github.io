@@ -1,0 +1,144 @@
+<body>
+    <link rel="stylesheet" href="../css/canvas_style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+    <script src="../js/pdf.js"></script>
+    <script src="../js/landing.min.js" type="text/javascript"></script>
+    <script src="../js/scripts.min.js" type="text/javascript"></script>
+    <div class="header" id="header">
+        <div class="header_second">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="logo logo--wind">
+                            <a href="http://www.wind.it/"><img src="../img/logos/wind_logo.png" class="wind"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="landing_huawei container">
+        <!-- Visore Huawei P10 / P10 Plus-->
+        <div class="huawei_img margin_top_20 margin_top_m_10 margin_bottom_20">
+            <img data-src="../img/visori/visore-huawei.jpg" alt="p9" class="img_responsive">
+        </div>
+        <!-- /Visore Huawei -->
+        <!-- Slogan Huawei P10 / P10 Plus -->
+        <div class="landing_huawei__slogan padding_top_25 padding_left_35 padding_right_35 padding_left_m_20 padding_right_m_20">
+            <h1 class="font_size_40 line_height_40 font_size_m_26 line_height_m_26 text_align_center text_bold text_color_grey_darker">Pre-ordina un nuovo Huawei P10 o P10 Plus e registralo sul sito di Huawei.</h1>
+        </div>
+        <!-- /Slogan Huawei P10 / P10 Plus -->
+        <!-- Sub Slogan Huawei P10 / P10 Plus -->
+        <div class="landing_huawei__sub_slogan padding_top_25 padding_top_m_15 padding_bottom_20 padding_left_30 padding_right_30 padding_left_m_20 padding_right_m_20" ">
+            <h2 class="font_size_30 line_height_34 font_size_m_18 line_height_m_18 text_align_center text_color_grey_six ">Per te in omaggio un Gift voucher TicketOne del valore di 100&euro; per accedere all'evento dei tuoi sogni!</h2>
+        </div>
+        <!-- /Sub Slogan Huawei P10 / P10 Plus -->
+       
+        <!-- Form pre-order -->
+        <div class="landing_huawei__form_pre-order padding_top_25 padding_bottom_20 padding_left_50 padding_right_50 ">
+            <div class="col-sm-12 padding_bottom_10 ">
+                <div class="text_color_orange font_size_20 font_size_m_15 text_uppercase text_bold ">Modello*</div>
+            </div>
+            <div class="col-sm-12 padding_bottom_10 ">
+                <div class="modelContainer padding_right_20 padding_right_m_15 ">
+                    <div class="r">
+                        <div class="base__radio radio radio-inline">
+                            <input type="radio" id="inlineRadio1" value="P10" name="radioInline">
+                            <label for="inlineRadio1" class="text_color_grey_darker font_size_18 font_size_m_14 text_regular text_bold ">Huawei P10</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modelContainer padding_right_20 padding_right_m_5 ">
+                    <div class="r">
+                        <div class="base__radio radio radio-inline ">
+                            <input type="radio" id="inlineRadio2" value="P10 Plus" name="radioInline">
+                            <label for="inlineRadio2" class="text_color_grey_darker font_size_18 font_size_m_14 text_regular text_bold ">Huawei P10 Plus</label>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="block__left padding_bottom_20 col-sm-12 col-md-6 col-lg-6 ">
+                <input id=" " class="base__input " type="text " name="name" placeholder="Nome* " required>
+            </div>
+            <div class="block__right padding_bottom_20 col-sm-12 col-md-6 col-lg-6 ">
+                <input id=" " class="base__input " type="text " name="surname" placeholder="Cognome* " required>
+            </div>
+            <div class="block__left padding_bottom_20 col-sm-12 col-md-6 col-lg-6 ">
+                <input id=" " class="base__input " type="text " name="email" placeholder="Email* " required>
+            </div>
+            <div class="block__right padding_bottom_20 col-sm-12 col-md-6 col-lg-6 ">
+                <input id=" " class="base__input " type="text " name="fiscalcode " placeholder="Codice Fiscale* " required>
+            </div>
+            <div class="block__left padding_bottom_20 col-sm-12 col-md-6 col-lg-6 ">
+                <input id=" " class="base__input " type="text " name="mobile" placeholder="Cellulare* " required>
+            </div>
+            <div class="col-sm-12 padding_bottom_20">
+                <div class="base__checkbox checkbox checkbox-inline">
+                    <input type="checkbox" class="styled " id="inlineCheckbox1" value="option1"><label for="inlineCheckbox1">Dichiaro di aver preso visione e di accettare: <a href="../pdf/privacy.pdf " class="text_color_orange">Informativa ai sensi dell'art. 13 del "Codice in materia di protezione dei dati personali " (D.Lgs.n. 196/03)</a>.*</label>            
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="base__checkbox checkbox checkbox-inline"><input type="checkbox" class="styled " id="inlineCheckbox2" value="option2"><label for="inlineCheckbox2">Dichiaro di aver preso visione e di accettare il <a href="../pdf/Regolamento Preorder P10-P10Plus_def.pdf" class="text_color_orange">Regolamento</a>.*</label>
+                </div>
+            </div>
+             <div class="clear "></div>
+        </div>
+        <!-- /Form pre-order -->
+        <div class="call_to_action ">
+            <button id="cmd" class="call_to_action__container button padding_top_15 padding_bottom_15 padding_left_50 padding_right_50 font_size_22 font_size_m_16 button ">Stampa pre ordine</button>
+        </div>
+        <!-- Validity -->
+        <div class="landing_huawei__validity padding_top_25 padding_bottom_20 ">
+            <div class="landing_huawei__validity__container text_align_center padding_top_30 padding_bottom_30 ">
+                <div class="landing_huawei__validity__container__description text_color_grey_medium_dark padding_right_30 font_size_20 line_height_20 font_size_m_12 line_height_m_12 ">
+                    Promozione gestita interamente da Huawei.
+                    <br /> Operazione a premi valida dal 15/03/2017 al 29/03/2017.
+                </div>
+            </div>
+        </div>
+         <div class="clear "></div>
+        <!-- /Validity -->
+        <!-- Wind Ricorda -->
+        <div class="wind_ricorda center_block margin_top_5 margin_bottom_50 ">
+            <div class="wind_ricorda__reminder text_size_14 text_color_orange ">
+                <div class="wind_ricorda__reminder__container margin_bottom_15 ">
+                    <a href="#layer-ricorda" class="info_link popup-link bt-cta bt-info text_size_14 text_color_orange margin_top_5 margin_bottom_5 ">Wind Ricorda</a>
+                    <div class="clear "></div>
+                </div>
+            </div>
+            <div class="clear "></div>
+        </div>
+        <!-- /Wind Ricorda -->
+    </div>
+    <div class="landing_footer ">
+        <div class="landing_footer__container container padding_top_30 padding_bottom_30 center_block ">
+            <div class="landing_footer__container__copy padding_top_5 padding_left_5 font_size_14 "> &copy; WIND TRE S.p.A.
+                <br class="wrap " />Partita IVA: 13378520152</div>
+            <div class="landing_footer__container__logos padding_right_15 ">
+                <ul class="landing_footer__container__logos--list text_align_right ">
+                    <li>
+                        <a href="http://www.wind.it/it/business/ "><img src="../img/logos/wind_logo_business.png "></a>
+                    </li>
+                    <li>
+                        <a href="http://www.infostrada.it/it/privati?_ga=1.191742249.2024675691.1475597973 "><img src="../img/logos/infostrada_logo.png "></a>
+                    </li>
+                    <li>
+                        <a href="http://www.wind.it/it/privati "><img src="../img/logos/wind_logo_customer.png "></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear "></div>
+        </div>
+    </div>
+    <!-- popup -->
+    <div id="layer-ricorda" class="landing-popup mfp-hide ">
+        <div class="scrollable ">
+            <h2>OFFERTA VALIDA FINO AL 29 MARZO 2017.</h2>
+            <p>
+                Austria, Belgio, Bulgaria, Cyprus, Croatia, Denmark, Estonia, Finland, Francia (inclusi Principato di Monaco, Guadalupe, Guyana Francese, Martinica, La Reunion, Mayotte), Germania, Gibilterra, Grecia, Guernsey, Irlanda, Islanda, Isola di Man, Jersey, Lettonia, Liechtenstein, Lituania, Lussemburgo, Malta, Norvegia, Olanda, Portogallo, Polonia, Repubblica Ceca, Regno Unito, Romania, Slovacchia, Slovenia, Spagna, Svezia, Svizzera, Ungheria, USA, San Marino, Albania, Argentina, Armenia, Australia, Arabia Saudita, Bielorussia, Brasile, Cina, Colombia, Egitto, Giappone , Israele, Kazakhstan, Kyrgystan, Kosovo, Macedonia, Malaysia, Marocco, Messico, Moldavia, Montenegro, Pakistan, Perù, Qatar, Repubblica di Corea, Russia, Serbia, Thailandia, Taiwan, Tajikistan, Turchia, Ucraina, Uzbekistan, Italy.
+            </p>
+        </div>
+    </div>
+    <!-- /popup -->
+</body>
