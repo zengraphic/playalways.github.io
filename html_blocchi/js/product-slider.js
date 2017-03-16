@@ -7,9 +7,11 @@
         .ready(function() {
 
             var $sliderBlock = r$('.dashboard_block');
+            var $plansBlock = r$('.blocco_strip_plans');
+            
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock, '000000000000008452');
+                .initSlider($sliderBlock,$plansBlock, '000000000000008452');
         });
 
     var PRODUCTSLIDER = {
@@ -22,7 +24,8 @@
         memoriesList: false,
         memoriesListItems: false,
         plans: false,
-        activePlans: false,
+        activePlan: false,
+        activePaymentRate: false,
         activeModel: false,
         activePrice: false,
         activeColor: false,
@@ -37,11 +40,11 @@
          * @param  {[string]} defaultSelectedSap    [optional sap code to set default active product]
          * @return {[obj]}                          [jQuery slider object for chaining]
          */
-        initSlider: function($sliderDomObject, defaultSelectedSap) {
+        initSlider: function($sliderDomObject,$plansDomObject, defaultSelectedSap) {
             var $SLIDER = this;
 
             $SLIDER
-                .setSliderItems($sliderDomObject);
+                .setSliderItems($sliderDomObject,$plansDomObject);
 
             if (!defaultSelectedSap) {
                 defaultSelectedSap = $SLIDER.setDefaultSelectedSap();
@@ -107,18 +110,19 @@
          *
          * @return {[obj]}                  [Slider obj for chaining]
          */
-        setSliderItems: function($sliderDomObject) {
+        setSliderItems: function($sliderDomObject,$plansDomObject) {
             var $SLIDER = this;
 
             $SLIDER.container = $sliderDomObject;
-            $SLIDER.plansContainer = $SLIDER.container.nextAll('.blocco_strip_plans');
+            $SLIDER.plansContainer = $plansDomObject;
             $SLIDER.plans = $SLIDER.plansContainer.find('.strip_plans');
             $SLIDER.models = $SLIDER.container.find('.phone_model');
             $SLIDER.prices = $SLIDER.container.find('.data-sap-price');
+            $SLIDER.paymentRates = $SLIDER.container.find('.data-sap-payment');
             $SLIDER.colorsList = $SLIDER.container.find('.item_color');
-            $SLIDER.colorsListItems = $SLIDER.colorsList.find('.item');
+            $SLIDER.colorsListItems = $SLIDER.colorsList.find('.dashboard_block__item');
             $SLIDER.memoriesList = $SLIDER.container.find('.item_memory');
-            $SLIDER.memoriesListItems = $SLIDER.memoriesList.find('.item1');
+            $SLIDER.memoriesListItems = $SLIDER.memoriesList.find('.dashboard_block__item');
             $SLIDER.acquireButton = $SLIDER.container.find('.action-acquista,.action-abbina');
 
             return $SLIDER;
@@ -363,13 +367,19 @@
                 return currentModelSap == activeSap;
             });
 
-            $SLIDER.activePlans = $SLIDER.plans.filter(function() {
+            $SLIDER.activePaymentRate = $SLIDER.paymentRates.filter(function() {
+                var currentModelSap = r$(this).data().sap;
+                return currentModelSap == activeSap;
+            });
+
+            $SLIDER.activePlan = $SLIDER.plans.filter(function() {
                 var currentModelSap = r$(this).data().sap;
                 return currentModelSap == activeSap;
             });
 
             $SLIDER
                 .hideAndShowRelated('prices')
+                .hideAndShowRelated('paymentRates')
                 .hideAndShowRelated('plans');
 
             $SLIDER

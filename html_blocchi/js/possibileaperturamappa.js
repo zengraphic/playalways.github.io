@@ -1,19 +1,17 @@
 function myCreateMarker() {
     
     google.maps.event.addListener(marker, 'click', function() {
-        if (document.body.clientWidth < 640) {
-            google.maps.event.addListener(marker, 'click', function() {
+        if (document.body.clientWidth < 768) {
+            console.log(document.body.clientWidth);
                 infowindow.close();
-                var text = infowindow.getContent(InfoBox.content_);
-                showInDiv(text);
-            });
+                jQuery('#external_infoBox').html(infowindow.content_).hide().show('slow');
+
         }else{
         	/// funzione normale
         }
     });
 };
 
-function showInDiv(text) {
-    var sidediv = document.getElementById('contentWindow');
-    sidediv.innerHTML = text;
-};
+
+
+myCreateMarker();

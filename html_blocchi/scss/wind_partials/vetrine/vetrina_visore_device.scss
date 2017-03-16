@@ -1,65 +1,170 @@
 //BLOCCO DASHBOARD
 .dashboard_block {
-  @include transition(all .45s ease-in-out);
   background-color: $color_white;
   &__container {
     max-width: 1024px;
-    margin: 0 auto 30px;
-    padding-top: 0;
+    margin: 30px auto;
   }
-  &__product {
-    width: 100%;
-    margin-top: 30px;
-    &--imagep {
-      .phone_thumbs {
-        position: absolute;
-        top: 0;
+  .phone {
+    &_model {
+      margin-top: 46px;
+    }
+    &_thumbs {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5.25em;
+      padding: 70px 0 0;
+      background: -webkit-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+      background: -o-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+      background: linear-gradient(to right, $color_white 50%, $color_transparent 100%);
+      z-index: 250;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}', GradientType=1);
+      @include breakpoint('super-tiny') {
+        top: auto;
         bottom: 0;
-        left: 0;
-        width: 5.25em;
-        padding: 70px 0 0;
-        background: -webkit-linear-gradient(left, $color_white 50%, $color_transparent 100%);
-        background: -o-linear-gradient(left, $color_white 50%, $color_transparent 100%);
-        background: linear-gradient(to right, $color_white 50%, $color_transparent 100%);
-        z-index: 250;
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}', GradientType=1);
-        @include breakpoint('super-tiny') {
-          top: auto;
-          bottom: 0;
-          width: 100%;
-          padding-top: 0;
-        }
-        li {
-          width: 100%;
-          height: auto;
-          margin-bottom: 2rem;
-          float: left;
-          outline: 0;
-          text-align: center;
-          cursor: pointer;
-        }
-        img {
-          width: auto;
-          height: 54px;
-        }
-      }
-      .phone_gallery {
-        padding: 0;
-        @include breakpoint('super-tiny') {
-          padding-bottom: 100px;
-        }
-        li {
-          outline: 0;
-          @include breakpoint('super-tiny') {
-            width: 100%;
-            height: auto;
-          }
-        }
-        img {
-          max-width: 100%;
-        }
+        width: 100%;
+        padding-top: 0;
       }
     }
+    &_thumb {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      float: left;
+      outline: 0;
+      text-align: center;
+      cursor: pointer;
+      img {
+        width: auto;
+        height: 54px;
+      }
+    }
+    &_gallery {
+      padding: 0;
+      @include breakpoint('super-tiny') {
+        padding-bottom: 100px;
+      }
+    }
+    &_slide {
+      outline: 0;
+      @include breakpoint('super-tiny') {
+        width: 100%;
+        height: auto;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__title {
+    height: 2.2em;
+    margin-bottom: .25rem;
+    color: $color_text;
+    font-family: $weight-light;
+    font-size: 2.5rem;
+    line-height: 1.1em;
+    text-align: center;
+    overflow: hidden;
+  }
+  &__features {
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.2em;
+  }
+  &__items {
+    display: table;
+    width: 100%;
+    margin-bottom: .75rem;
+    border-spacing: .5rem 0;
+    padding-left: 0;
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
+  }
+  &__item {
+    display: table-cell;
+    width: 16.666666%;
+    padding: .5rem 0 0;
+    border: 1px solid $color_stroke;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+    @include breakpoint(medium) {
+      display: inline-block;
+      width: calc(33% - .5rem);
+    }
+    &:hover {
+      border-color: $color_wind;
+    }
+    &.active {
+      border-color: $color_wind;
+    }
+    &.inactive {
+      border-color: $color_grey_light;
+      color: $color_grey_light;
+      cursor: not-allowed;
+    }
+    label {
+      width: 100%;
+      font-family: $weight-normal;
+      font-size: 0.875rem;
+      line-height: 1.1em;
+      cursor: pointer;
+      font-weight: normal;
+    }
+    span {
+      display: block;
+      &.round {
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 1px solid $color_stroke;
+        border-radius: 50%;
+        margin: 0 auto .25rem;
+      }
+      &.amount {
+        font-family: $weight_normal;
+        font-size: 1.25rem;
+        line-height: 1.25em;
+      }
+    }
+  }
+  &__paymentRateRow {
+    width: 100%;
+    margin-bottom: .75rem;
+    border-bottom: 1px solid $color_stroke;
+    .strip_plans__container {
+      padding: 0;
+    }
+  }
+  &__paymentAmountRow {
+    width: auto;
+    max-width: 350px;
+    margin: 0 auto 1rem;
+    .strip_plans__container {
+      width: auto;
+      padding: 0;
+    }
+  }
+  &__paymentRow {
+    margin-bottom: 1.5rem;
+  }
+  &__priceRow {
+    margin-bottom: 1.5rem;
+    font-family: $weight-light;
+    text-align: center;
+    &__price {
+      display: block;
+      color: $color_wind;
+      font-family: $weight-normal;
+      font-size: 4rem;
+      @include breakpoint('super-tiny') {
+        font-size: 2.8rem;
+      }
+    }
+  }
+  /*&__product {
     &--detailsp {
       &.doubleButton {
         .dashboard_block {
@@ -84,162 +189,33 @@
         }
       }
     }
-  }
-  &__subTitle {
-    width: 100%;
-    float: left;
-  }
-  &__left {
-    margin-top: 46px;
-  }
-  &__right {
-    p {
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .items {
-      display: table;
-      width: 100%;
-      margin-bottom: .5rem;
-      padding: 0 0 .5rem;
-      border-spacing: .5rem 0;
-      .item {
-        @include breakpoint(medium) {
-          display: inline-block;
-          width: calc(33% - .5rem);
-        }
-        display: table-cell;
-        width: 16.666666%;
-        padding: .5rem 0 0;
-        border: 1px solid $color_stroke;
-        border-radius: 4px;
-        cursor: pointer;
-        vertical-align: middle;
-        margin: 0 .5rem .5rem 0;
-        label {
-          width: 100%;
-          font-family: $weight-normal;
-          cursor: pointer;
-          font-weight: normal;
-        }
-        span {
-          display: inline-block;
-          position: relative;
-          font-family: $weight_normal;
-          font-size: 1.5rem;
-          &.round {
-            width: 1.5rem;
-            height: 1.5rem;
-            border: 1px solid $color_stroke;
-            border-radius: 50%;
-            display: inline-block;
-            position: relative;
-            font-family: $weight_normal;
-            font-size: 1.5rem;
-          }
-        }
-        &.item1 {
-          &.active {
-            border-color: $color_orange;
-          }
-          &.inactive {
-            border-color: $color_grey_light;
-            color: $color_grey_light;
-            cursor: not-allowed;
-          }
-        }
-        &.item {
-          &.active {
-            border-color: $color_orange;
-          }
-          &.inactive {
-            border-color: $color_grey_light;
-            color: $color_grey_light;
-            cursor: not-allowed;
-          }
-          span {}
-          h6 {
-            display: block;
-            width: 100%;
-            font-size: .875em;
-            line-height: 1em;
-          }
-        }
-        &:hover {
-          border-color: $color_wind;
-        }
-      }
-    }
-  }
-  &__title {
-    color: $color_text;
-    font-family: $weight-light;
-    text-align: center;
-    line-height: 1.1em;
-    height: 2.2em;
-    margin-bottom: 1rem;
-  }
-  &__priceRow {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 25px;
-    float: left;
-    font-family: "Trade Gothic LTS Light";
-    text-align: center;
-    &__price {
-      color: $color_wind;
-      font-family: $weight-normal;
-      font-size: 3.438em;
-      @include breakpoint('super-tiny') {
-        font-size: 2.8em;
-        .currency {
-          font-size: 25px;
-        }
-      }
-      .currency {
-        color: $color_wind;
-        font-size: 40px;
-      }
-    }
-  }
-  &__paymentRateRow {
-    width: 100%;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid $color_stroke;
-  }
-  &__paymentAmountRow {
-    width: auto;
-    margin-bottom: 1rem;
-    .strip_plans__container {
-      width: auto;
-    }
-  }
-  .strip_plans__container {
-    padding: 0;
-  }
+  }*/
   &__button {
-    width: calc(50% - 15px);
-    float: left;
-    @include breakpoint(small) {
-      width: 50%;
-      &.left {
-        margin-right: 0;
+    &--container{
+      &Double{
+        display: block;
+      }
+      &Single{
+        display: block;
+        text-align: center;
       }
     }
-    &--containerDouble {
-      display: none;
-    }
-    &--containerSingle {
-      display: block;
+    width: calc(50% - 15px);
+    @include breakpoint(small) {
+      width: 50%;      
     }
     &.left {
       margin-right: 30px;
+        @include breakpoint(small) {
+          margin-right: 0;
+        }
     }
   }
-  &__button--single {
-    width: 100%;
-    float: left;
+  &__button {
+    display: inline-block;
+    button{
+      width: 100%;
+    }
   }
 }
 
