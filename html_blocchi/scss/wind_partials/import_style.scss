@@ -50,8 +50,8 @@ $color_orange_light: #F69A5D;
 $color_orange: #F48135;
 $color_red_light: #D76767;
 $color_red: #CE4242;
-$color_blue_light: #287BBD;
-$color_blue: #0069B3;
+$color_blue_light: #3253A3;
+$color_blue: #183989;
 $color_robin_light: #24A5C6;
 $color_robin: #009BBE;
 $color_white: #FFF;
@@ -111,15 +111,15 @@ $color-blue: $color-mediumBlue;*/
 /* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
 
-$breakpoints: ( 'super-tiny': ( max-width: 480px),
-'tiny': ( max-width: 600px),
-'small': ( max-width: 767px),
-'medium': ( max-width: 910px),
-'large': ( min-width: 1200px),
-'custom': ( min-height: 40em),
-'min-small':( min-width: 767px),
-'min-desktop':( max-width: 1024px),
-'med-large':( max-width: 992px));
+$breakpoints: ('super-tiny': (max-width: 480px),
+  'tiny': (max-width: 600px),
+  'small': (max-width: 767px),
+  'medium': (max-width: 910px),
+  'large': (min-width: 1200px),
+  'custom': (min-height: 40em),
+  'min-small': (min-width: 767px),
+  'min-desktop': (max-width: 1024px),
+  'med-large': (max-width: 992px));
 // Creating the mixin
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints,
