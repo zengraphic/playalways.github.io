@@ -4,13 +4,16 @@
 
     var DOUBLEFILTER = {
         container: false,
+        cardContainers: false,
+        activeCardContainer: false,
         showMore: false,
         tabs: false,
         cards: false,
+        
         isLocked: false,
         filters: [],
         initFilter: function($filterDOMObject, filters, isLocked) {
-            var $FILTER = this; 
+            var $FILTER = this;
             $FILTER
                 .setFilterItems($filterDOMObject, isLocked)
                 .bindFilters();
@@ -34,6 +37,7 @@
             $FILTER.showMore = $FILTER.container.find('div[class*="__showMore"]');
             $FILTER.tabs = $FILTER.container.find('.tab_button');
             $FILTER.cards = $FILTER.container.find('.card_item');
+            $FILTER.cardContainers = $FILTER.container.find('.tab_cards__container');
             $FILTER.isLocked = (isLocked == undefined) ? false : isLocked;
 
             return $FILTER;
@@ -45,7 +49,22 @@
                 .showMore
                 .on({
                     'click': function() {
+                        var $clickedShowMore = r$(this);
 
+                        
+                        var $relatedCards = $clickedShowMore.parents('.tab_cards__container').find('.card_item');
+                        $relatedCards
+                            .filter(':hidden')
+                            .show();
+                        $clickedShowMore
+                            .hide();
+
+                        /*  .each(function(index) {
+            if ($(this).hasClass('card_visible')) {
+                $(this).show();
+            }
+            thisItem.hide();
+        });*/
                     }
                 });
             $FILTER
@@ -55,8 +74,11 @@
                         event
                             .preventDefault();
                         var $clickedTab = r$(this);
-                        $FILTER
-                            .handleClickedTab($clickedTab);
+                        if (!$clickedTab.is('.disabled')) {
+                            $FILTER
+                                .handleClickedTab($clickedTab);
+                        }
+
                     }
                 });
 
@@ -65,14 +87,50 @@
         handleClickedTab: function($clickedTab) {
             var $FILTER = this;
 
-            var dataObj = $clickedTab.data();
+            var cardFilter = $clickedTab.data().filter;
+            if (cardFilter == 'abbonamento') {
+                console.log('abb');
+                $FILTER
+                    .tabs
+                    .each(function(i) {
+                        var $currentTab = r$(this);
+                        var currentTabData = $currentTab.data().filter;
+                        if (currentTabData == 'unica') {
+                            if ($currentTab.is('.active')) {
+
+                                $currentTab
+                                    .next()
+                                    .trigger('click');
+                            }
+                            $currentTab
+                                .addClass('disabled');
+                        }
+                    });
+
+            } else {
+                $FILTER
+                    .tabs
+                    .each(function(i) {
+                        var $currentTab = r$(this);
+                        var currentTabData = $currentTab.data().filter;
+                        if (currentTabData == 'unica') {
+                            $currentTab
+                                .removeClass('disabled');
+                        }
+                    });
+            }
+            $FILTER
+                .handleCards($clickedTab);
+
+
+            /*var dataObj = $clickedTab.data();
             if (dataObj.card) {
                 $FILTER
                     .handleCards($clickedTab);
             } else {
                 $FILTER
                     .handlePlans($clickedTab);
-            }
+            }*/
 
             return $FILTER;
         },
@@ -81,20 +139,30 @@
 
             if (!$cardFilterTab.hasClass('active')) {
                 var $activeSibling = $cardFilterTab.siblings().filter('.active');
+                var cardFilter = $cardFilterTab.data().filter;
                 if ($activeSibling.length > 0) {
                     $activeSibling
                         .removeClass('active');
-                    var filterToClean = $activeSibling.data().card;
-                    $FILTER.filters = $.grep($FILTER.filters, function(currentFilter) {
+                    var filterToClean = $activeSibling.data().filter;
+                    /*$FILTER.filters = $.grep($FILTER.filters, function(currentFilter) {
                         return filterToClean != currentFilter;
+                    });*/
+                    r$.each($FILTER.filters, function(i, filter) {
+                        if (filter == filterToClean) {
+                            $FILTER.filters[i] = cardFilter;
+                        }
                     });
+
+                } else {
+                    $FILTER
+                        .filters
+                        .push(cardFilter);
+
                 }
                 $cardFilterTab
                     .addClass('active');
-                var cardFilter = $cardFilterTab.data().card;
-                $FILTER
-                    .filters
-                    .push(cardFilter);
+
+
                 $FILTER
                     .applyFilter();
             }
@@ -105,21 +173,44 @@
 
         applyFilter: function() {
             var $FILTER = this;
-            
-            r$.each($FILTER.cards, function() {
-                var candidateCardsData = $(this).data().card.split(' ');
-                
-                r$.each($FILTER.filters, function(i,selectedFilters) {
-                    if ($.inArray(selectedFilters, candidateCardsData) != -1) {
-                            console.log(selectedFilters + ' è uguale a ' + candidateCardsData);
-                                
-                                //o creo un nuovo array con i valori uguali e poi provo a mostrare
-                                
+
+            r$.each($FILTER.cardContainers, function() {
+                var $cardsContainer = $(this);
+                var cardsContainerData = $cardsContainer.data().combo;
+                var filtersData = $FILTER.filters.join(' ');
+                if (cardsContainerData == filtersData) {
+                    $cardsContainer
+                        .show();
+                } else {
+                    if ($cardsContainer.is(':visible')) {
+                        var $relatedCards = $cardsContainer.find('.card_item');
+                        var $relatedShowMore = $cardsContainer.find('div[class*="__showMore"]');
+                        $relatedCards
+                            .each(function(i) {
+                                var $relatedCard = r$(this);
+                                if (i >= 3) {
+                                    $relatedCard
+                                        .hide();
+                                }
+                            });
+                        $relatedShowMore
+                            .show();
+
+                    }
+                    $cardsContainer
+                        .hide();
+                }
+                /*r$.each($FILTER.filters, function(i, selectedFilters) {
+                    if ($.inArray(selectedFilters, cardsContainerData) != -1) {
+                        console.log(selectedFilters + ' è uguale a ' + cardsContainerData);
+
+                        //o creo un nuovo array con i valori uguali e poi provo a mostrare
+
 
                     } else {
 
                     }
-                })
+                });*/
 
             });
             return $FILTER;

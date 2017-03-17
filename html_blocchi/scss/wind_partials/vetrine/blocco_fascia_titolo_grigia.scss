@@ -37,6 +37,7 @@
             cursor: pointer;
             font-size: 1em;
             padding-bottom: 5px;
+            color: $color_text;
             &:hover {
                 border-bottom: 1px solid $color_orange;
                 color: $color_wind;
@@ -46,6 +47,13 @@
                 border-bottom: 1px solid $color_orange;
                 color: $color_wind;
                 padding-bottom: 5px;
+            }
+            &.disabled {
+                color: $color_grey_medium;
+                cursor: not-allowed;
+                &:hover{
+                    border-bottom: 0;
+                }
             }
         }
     }
