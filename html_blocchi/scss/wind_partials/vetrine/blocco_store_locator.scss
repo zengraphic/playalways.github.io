@@ -84,7 +84,7 @@
         max-height: auto;
         &__expand {
             position: absolute;
-            top: 69px;
+            top: 60px;
             left: 20px;
             .button__expand {
                 cursor: pointer;
@@ -166,7 +166,7 @@
     .cont_detail {
         position: absolute;
         border: 1px solid $color_stroke;
-        top: 85px;
+        top: 70px;
         width: 300px;
         left: 50%;
         z-index: 3;
@@ -239,7 +239,31 @@
                     margin-top: 0.5rem;
                 }
             }
-        } //close cont_text  
+        } //close cont_text
+        &__footer{
+            &--icon{
+                width:33%;
+                float:left;
+                padding:0.5rem;
+                box-sizing: border-box;
+                a{
+                    text-align:center;
+                    color:$color_text_light;
+                    text-decoration:none;
+                    text-transform:uppercase;
+                    font-size:0.6rem;
+                    display:block;
+                    opacity:1;
+                    &:hover{
+                        opacity:0.7;
+                    }
+                    .base__icon{
+                        margin-bottom:0.3rem;
+                    }
+
+                }
+            }
+        }
     } //close cont_detail   
 }
 
