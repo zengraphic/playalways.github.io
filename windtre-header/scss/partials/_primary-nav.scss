@@ -1,0 +1,90 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.windtre {
+    &__primary-nav {
+        font-family: "Fira Sans Light";
+        font-size: 16px;
+        line-height: 1.2em;
+        &__logo {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 10px;
+            .logo {
+                margin: 10px 0;
+            }
+        }
+        &__links {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(100% - 190px);
+            padding: 0;
+            position: relative;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 25px;
+                opacity: 0.8;
+                background-size: contain;
+                background-repeat: repeat-y;
+            }
+            &:before {
+                left: 0;
+                background-image: url('../img/bg-ltr.png');
+            }
+            &:after {
+                right: 0;
+                background-image: url('../img/bg-rtl.png');
+            }
+        }
+        &__link {
+            display: inline-block;
+            margin: 0;
+        }
+        ul:not(.nav_link--label):not(.windtre__primary-nav__links) {
+            display: none;
+        }
+        .nav_link {
+            text-decoration: none;
+            padding: 25px 20px;
+            display: inline-block;
+        }
+        &__language {
+            display: inline-block;
+            vertical-align: top;
+            .language {
+                display: inline-block;
+                color: white;
+                background-color: $color_grey_dark;
+                padding: 25px 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    .windtre {
+        &__primary-nav {
+            &__logo {
+            	margin: 0 15px;
+                .logo {
+                    margin: 10px 19px;
+                }
+            }
+            &__links {
+                width: calc(100% - 286px);
+            }
+            &__language {
+                .language {
+                    padding: 25px 44px;
+                }
+            }
+        }
+    }
+}
