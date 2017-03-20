@@ -1,11 +1,12 @@
 //default config Footer
 
 .footer {
-  @include boxWF(left, 100%);
-
+  @include boxWF(none, 100%);
+  position: absolute;
+  bottom: 0;
   height: auto;
+  padding: 1.214rem 0 0;
   background-color: $color_grey_dark_light;
-  padding: 1.214rem 0 0 0;
 
   &.light {
     padding: 0;
@@ -168,8 +169,8 @@
     background-color: $color_grey_dark;
     font-family: $font_family_light;
     letter-spacing: 0.36px;
-    position: absolute;
-    left: 0;
+    //position: absolute;
+    //left: 0;
   }
 
   .container-logos {

@@ -12,7 +12,7 @@ $color_grey_darker: #333;
 $color_error: #ce4242;
 $color_red: #BF0D3E;
 $color_orange: #f48135;
-$color_blue: #2214EE;
+$color_blue: #0069b2;
 $color_green: #54DB1A;
 $margin_mobile: 10px !important;
 // Breakpoint Vars
@@ -268,7 +268,11 @@ a {
     }
     // ================= MAIN  ================== //
     // ================= MAIN  ================== //
-    // ================= MAIN  ================== //      
+    // ================= MAIN  ================== //  
+    .useful_link {
+        border-top: 1px solid $color_blue;
+        padding-top: 30px;
+    }
     .main_title {
         font-size: 55px;
         color: $color_orange;
@@ -318,7 +322,7 @@ a {
         left: calc(50% - 150px);
         top: calc(50% - 150px);
         @include border-radius(15px);
-        .content_wd{
+        .content_wd {
             padding: 30px !important;
         }
         .title {
@@ -371,13 +375,23 @@ a {
             &:hover {
                 @include opacity(0.8);
             }
+            &.static_box {
+                border: 1px solid $color_blue;
+                .title {
+                    color: $color_blue;
+                }
+            }
             .content_wd {
                 flex-direction: column;
                 display: flex;
                 padding: 10px;
-                padding-bottom: 40%;
-                padding-top: 40%;
-                &.small_box{
+                padding-bottom: 0%;
+                padding-top: 10%;
+                .wd_icon {
+                    width: 150px;
+                    margin: 0 auto;
+                }
+                &.small_box {
                     padding-bottom: 5%;
                     padding-top: 5%;
                 }
@@ -386,7 +400,7 @@ a {
                 font-size: 40px;
                 text-align: center;
                 color: white;
-                &.small_box{
+                &.small_box {
                     font-size: 24px;
                 }
             }

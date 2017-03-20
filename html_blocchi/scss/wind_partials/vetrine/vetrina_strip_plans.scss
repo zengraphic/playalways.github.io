@@ -1,4 +1,7 @@
 .strip_plans {
+  &:not([style*="display:none"]):not([style*="display: none"]):nth-child(even) {
+    background-color: $color_grey_light_light;
+  }
   .vertical-middle {
     display: table;
     height: 6rem;
@@ -54,7 +57,6 @@
       padding: 10px 0;
     }
     &--main {
-     
       font-family: $weight-normal;
       color: inherit;
     }
@@ -224,8 +226,7 @@
             font-family: $weight-normal;
             font-size: 1.75rem;
           }
-          .over {
-          }
+          .over {}
         }
         &--total {
           .price {
@@ -233,7 +234,6 @@
             line-height: 1.2em;
             height: 1.2em;
             color: inherit;
-
           }
           .sub {
             color: $color_text;

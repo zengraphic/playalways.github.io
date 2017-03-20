@@ -8,13 +8,14 @@
 
             var $sliderBlock = r$('.dashboard_block');
             var $plansBlock = r$('.blocco_strip_plans');
-            
+
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock,$plansBlock, '000000000000008452');
+                .initSlider($sliderBlock, $plansBlock, 'payment', '000000000000008452');
         });
 
     var PRODUCTSLIDER = {
+        deviceMode: 'payment',
         container: false,
         plansContainer: false,
         models: false,
@@ -40,11 +41,11 @@
          * @param  {[string]} defaultSelectedSap    [optional sap code to set default active product]
          * @return {[obj]}                          [jQuery slider object for chaining]
          */
-        initSlider: function($sliderDomObject,$plansDomObject, defaultSelectedSap) {
+        initSlider: function($sliderDomObject, $plansDomObject, deviceMode, defaultSelectedSap) {
             var $SLIDER = this;
 
             $SLIDER
-                .setSliderItems($sliderDomObject,$plansDomObject);
+                .setSliderItems($sliderDomObject, $plansDomObject, deviceMode);
 
             if (!defaultSelectedSap) {
                 defaultSelectedSap = $SLIDER.setDefaultSelectedSap();
@@ -110,9 +111,10 @@
          *
          * @return {[obj]}                  [Slider obj for chaining]
          */
-        setSliderItems: function($sliderDomObject,$plansDomObject) {
+        setSliderItems: function($sliderDomObject, $plansDomObject, deviceMode) {
             var $SLIDER = this;
 
+            $SLIDER.deviceMode = deviceMode;
             $SLIDER.container = $sliderDomObject;
             $SLIDER.plansContainer = $plansDomObject;
             $SLIDER.plans = $SLIDER.plansContainer.find('.strip_plans');
@@ -140,12 +142,12 @@
             var $SLIDER = this;
 
             if (!$thisTab.hasClass('inactive')) {
-
+                var otherAttribute = '';
                 var $attributeObjects = $SLIDER[attribute + 'ListItems'];
                 if (attribute == 'colors') {
-                    var otherAttribute = 'memories';
+                    otherAttribute = 'memories';
                 } else {
-                    var otherAttribute = 'colors';
+                    otherAttribute = 'colors';
                 }
                 var $otherAttributeObjects = $SLIDER[otherAttribute + 'ListItems'];
 
@@ -241,7 +243,7 @@
                 .setActiveModel()
                 .setActiveModelGalleries()
                 .initializeSlickGalleries()
-                .setActivePrice();
+                .setActivePrice($SLIDER.deviceMode);
 
             return $SLIDER;
         },
@@ -346,7 +348,7 @@
          *
          * @return {[obj]}           [Slider obj for chaining]
          */
-        setActivePrice: function() {
+        setActivePrice: function(deviceMode) {
             var $SLIDER = this;
             var colorSap = $SLIDER.activeColor.data().sap.split(' ');
             var memorySap = $SLIDER.activeMemory.data().sap.split(' ');
@@ -362,15 +364,21 @@
                 }
             });
 
-            $SLIDER.activePrice = $SLIDER.prices.filter(function() {
-                var currentModelSap = r$(this).data().sap;
-                return currentModelSap == activeSap;
-            });
-
-            $SLIDER.activePaymentRate = $SLIDER.paymentRates.filter(function() {
-                var currentModelSap = r$(this).data().sap;
-                return currentModelSap == activeSap;
-            });
+            if (deviceMode == 'payment') {
+                $SLIDER.activePaymentRate = $SLIDER.paymentRates.filter(function() {
+                    var currentModelSap = r$(this).data().sap;
+                    return currentModelSap == activeSap;
+                });
+                 $SLIDER
+                    .hideAndShowRelated('paymentRates');
+            } else {
+                $SLIDER.activePrice = $SLIDER.prices.filter(function() {
+                    var currentModelSap = r$(this).data().sap;
+                    return currentModelSap == activeSap;
+                });
+                $SLIDER
+                    .hideAndShowRelated('prices');
+            }
 
             $SLIDER.activePlan = $SLIDER.plans.filter(function() {
                 var currentModelSap = r$(this).data().sap;
@@ -378,8 +386,6 @@
             });
 
             $SLIDER
-                .hideAndShowRelated('prices')
-                .hideAndShowRelated('paymentRates')
                 .hideAndShowRelated('plans');
 
             $SLIDER

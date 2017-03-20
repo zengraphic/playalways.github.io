@@ -1,0 +1,240 @@
+// @font-face {
+//     font-family: 'Trade Gothic LTS Light';
+//     src: url('../fonts/TradeGothicLTStd-Light.woff') format('opentype');
+//     font-weight: light;
+// }
+// @font-face {
+//     font-family: 'Trade Gothic LTS';
+//     src: url('../fonts/TradeGothicLTStd.woff') format('opentype');
+//     font-weight: normal;
+// }
+// @font-face {
+//     font-family: 'Trade Gothic LTS Bold Cond';
+//     src: url('../fonts/TradeGothicLTStd-BdCn20.woff') format('opentype');
+//     font-weight: 600;
+// }
+// @font-face {
+//     font-family: 'Trade Gothic LTS Bold';
+//     src: url('../fonts/TradeGothicLTStd-Bd2.woff') format('opentype');
+//     font-weight: 700;
+// }
+// $weight-light: 'Trade Gothic LTS Light';
+// $weight-normal: 'Trade Gothic LTS';
+// $weight-boldCond: 'Trade Gothic LTS Bold Cond';
+// $weight-bold: 'Trade Gothic LTS Bold';
+$weight-light: 300;
+$weight-normal: 500;
+$weight-boldCond: 700;
+$color-link-veon: #34BCCF;
+$color-standard: #2c2c2c;
+$color-orange: #f48135;
+$color-gray: #999999;
+$color-light-gray: #d2d2d2;
+$color-white: #ffffff;
+$color-placeholder: #4a4a4a;
+$color-HomeLife-Background: #212121;
+$color-gray-mediumBg: #e6e9ed;
+$color-blue: #0eafc6;
+$color-border: #e3e7ec;
+$color-veon: #ffcb24;
+// MIXIN FOR BORDER RADIOUS 
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// SINGOLI ANGOLI BORDER RADIOUS
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+body {
+    background: white;
+    color: $color_standard !important;
+    font-size: 1em;
+    letter-spacing: 0.25px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-hyphens: inherit;
+    -ms-hyphens: inherit;
+    hyphens: none;
+    font-family: 'Helvetica';
+    margin: 0;
+}
+
+input {
+    &:focus {
+        outline: none;
+    }
+}
+
+//================= MIXINS ================ //
+//MIXIN BREAKPOINTS
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+//mixin
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+input {
+    border: 0px !important;
+    border-bottom: 1px solid $color-light-gray !important;
+    border-radius: 0 !important;
+}
+
+.base__bt {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    background-color: $color-veon !important;
+    border-color: $color-veon !important;
+    color: $color-standard !important;
+    @include border-radius(1px);
+    border: 1px solid $color-veon !important;
+    padding: 10px;
+    cursor: pointer;
+    &:disabled {
+        background-color: #eee !important;
+        border-color: #eee !important;
+        color: $color-white !important;
+    }
+    &:hover {
+        @include opacity(0.7);
+    }
+    &.btn_register {
+        background-color: $color-white !important;
+        border-color: $color-veon !important;
+        color: $color_standard !important;
+    }
+}
+
+.txt2,
+.txt3 {
+    a {
+        color: $color-link-veon !important;
+    }
+}
+
+.base__radio.radio input[type="radio"]:checked + label::before{
+  border-color: $color-blue !important;
+}
+
+.base__radio.radio label::after{
+  background: $color-blue !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: $color-blue !important;
+}
+
+a.base__bt{
+  color: $color-standard !important;
+}
+.base__popup .box--register article .modalfooter{
+  margin-top: auto !important;
+}
+.tag spacep block_full_wide {
+    span {
+        a {
+            color: $color-blue !important;
+        }
+    }
+}
+
+.base__icon.icon_help--color {
+    // background-position: 0% 22.96923% !important;
+}
+
+.btn_acces,
+.btn_acces2 {
+    color: $color-link-veon !important;
+}
+
+.base__popup .box--register article .box__alert {
+    bottom: 0 !important;
+    top: 0;
+}
+
+.base__popup {
+    &-progressbar {
+        .progressactive {
+            background-color: $color-link-veon !important;
+        }
+        .progressnotactive {
+            background-color: $color-link-veon !important;
+            @include opacity(0.2);
+        }
+    }
+    .container {
+        height: 100% !important;
+    }
+    .back {
+        background-color: $color-veon !important;
+        color: $color_standard !important;
+        span {
+            color: $color_standard !important;
+        }
+    }
+}

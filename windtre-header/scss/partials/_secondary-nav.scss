@@ -1,0 +1,78 @@
+.windtre {
+    &__secondary-nav {
+        background-color: $color_grey_light_light;
+        &__links {
+            margin: 0 auto;
+            width: 100%;
+            padding: 0;
+            text-align: right;
+            position: relative;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 40px;
+                opacity: 0.8;
+                background-size: contain;
+                background-repeat: repeat-y;
+            }
+            &:before {
+                left: 0;
+                background-image: url('../img/bg-ltr.png');
+            }
+            &:after {
+                right: 0;
+                background-image: url('../img/bg-rtl.png');
+            }
+            .slick-arrow {
+                position: absolute;
+                display: block;
+                top: 12px;
+                z-index: 50;
+                &.prev {
+                    left: 4px;
+                }
+                &.next {
+                    right: 4px;
+                }
+            }
+        }
+        &__link {
+            display: inline-block;
+            margin: 6px 20px;
+        }
+        .nav_link {
+            font-family: $font_family_light;
+            font-size: 12px;
+            line-height: 1.2em;
+            padding: 8px 0;
+            display: inline-block;
+            color: $color_grey_dark_light;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            text-transform: uppercase;
+            &:hover {
+                color: $color_grey_dark;
+                font-weight: bold;
+                border-bottom-color: $color_grey_dark;
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    .windtre {
+        &__secondary-nav {
+            &__links {
+                margin: 0 15px 0 auto;
+                max-width: 389px;
+                &:before,
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
