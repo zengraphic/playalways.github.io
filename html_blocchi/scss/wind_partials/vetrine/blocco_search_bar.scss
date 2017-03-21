@@ -7,6 +7,7 @@ $standard-border: 1px solid $color_stroke;
 
 /* FINE VARIABILI */
 
+
 /* FINE CLASSI DI SUPPORTO, MIXIN E VARIABILI */
 
 
@@ -341,6 +342,16 @@ $standard-border: 1px solid $color_stroke;
                     }
                 }
             }
+        }
+    }
+    .results--normal {
+        position: absolute;
+        width: calc(100% - 60px);
+        z-index: 1;
+        @include breakpoint(small) {
+            position:relative;
+            width:100%;
+            padding-top:5px !important;
         }
     }
     /* FINE STYLING BARRA RICERCA BLOCCO RISULTATI RICERCA COMPLETO */
