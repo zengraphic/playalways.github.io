@@ -4,7 +4,6 @@
   }
   .vertical-middle {
     display: table;
-    height: 6rem;
     @include breakpoint(small) {
       display: block;
     }
@@ -62,6 +61,9 @@
     }
   }
   @at-root #{&}__offer_block {
+    @include breakpoint(small) {
+      border-bottom: 1px solid $color_stroke;
+    }
     &__container {
       display: block;
       width: 100%;
@@ -125,6 +127,57 @@
     border-right: 1px solid $color_stroke;
   }
   @at-root #{&}__payment_block {
+    @at-root {
+      .extra_offer {
+        position: relative;
+        z-index: 5;
+        width: calc(100% - 1rem);
+        @include breakpoint(small) {
+          max-width: 350px;
+        }
+        margin: .5rem auto;
+        padding-top: .5rem;
+        &:before {
+          display: block;
+          position: absolute;
+          content: "";
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 1px;
+          background-color: $color_stroke;
+          @include breakpoint(small) {
+            left: calc(50% - 100vw);
+            right: calc(50% - 100vw);
+          }
+        }
+        .offer {
+          &__logo {
+            float: left;
+            margin-right: .5rem;
+            width: 15%;
+            max-width: 50px;
+            @include breakpoint(small) {
+              display: inline-block;
+              width: 50px;
+            }
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          &__text {
+            color: $color_text;
+            float: left;
+            width: calc(85% - .5rem);
+            font-size: .875rem;
+            @include breakpoint(small) {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
     &__heading {
       padding-bottom: 10px;
       font-size: $text-standard;
@@ -194,10 +247,10 @@
             text-align: center;
             .image {
               position: absolute;
-              left: 0;
-              right: 0;
               top: 0;
+              right: 0;
               bottom: 0;
+              left: 0;
               background: url("../img/logos/icon_agos.png") no-repeat center center;
               background-size: contain;
             }
@@ -215,8 +268,8 @@
       }
       .item {
         display: table-cell;
-        vertical-align: middle;
         width: 33%;
+        vertical-align: middle;
         &:not(.item--total) {
           border-right: 1px solid $color_stroke;
         }
@@ -225,19 +278,38 @@
           .price {
             font-family: $weight-normal;
             font-size: 1.75rem;
+            line-height: 1.2em;
           }
-          .over {}
+          .over {
+            font-size: .75rem;
+          }
         }
         &--total {
           .price {
-            font-size: 2.5rem;
-            line-height: 1.2em;
             height: 1.2em;
             color: inherit;
+            font-family: $weight-normal;
+            font-size: 1.75rem;
+            line-height: 1.2em;
           }
           .sub {
             color: $color_text;
             font-size: .75rem;
+          }
+        }
+      }
+      .price {
+        &.barred {
+          position: relative;
+          &:before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: .5rem;
+            left: .5rem;
+            height: 1px;
+            background-color: $color_text;
+            content: "";
           }
         }
       }
@@ -246,19 +318,19 @@
   @at-root #{&}__button {
     text-align: center;
     .button--slim {
-      min-width: 90%;
       display: inline-block;
+      min-width: 90%;
       font-size: 1em;
       @include breakpoint(small) {
         min-width: 50%;
       }
     }
     .sub {
-      text-transform: uppercase;
-      font-family: $weight-light;
-      font-size: 0.75em;
-      color: $color_text;
       padding-top: 5px;
+      color: $color_text;
+      font-family: $weight-light;
+      font-size: .75em;
+      text-transform: uppercase;
     }
   }
 }
