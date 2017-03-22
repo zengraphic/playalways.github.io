@@ -1,0 +1,85 @@
+.landing_nest {
+    max-width: 950px;
+    hyphens: initial;
+    &__hero {
+        @include breakpoint(display_smaller) {
+            padding: 3px !important;
+        }
+        img {
+            &.hero_wide {
+                display: block;
+                @include breakpoint(display_smaller) {
+                    display: none;
+                }
+            }
+            &.hero_mobile {
+                display: none;
+                @include breakpoint(display_smaller) {
+                    display: block;
+                }
+            }
+        }
+    }
+    &__notes {
+        width: 74%;
+        position: relative;
+        display: inline-block;
+        @include breakpoint(display_small) {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            top: -80px;
+        }
+    }
+    &__container {
+        border-bottom: 1px solid $color_orange;
+        margin-bottom: 30px;
+        &:last-of-type {
+            border-bottom: 0px;
+        }
+        .image_fluid {
+            img {
+                width: 100%;
+                height: auto;
+            }
+            @include breakpoint(display_smaller) {
+                width: 100%;
+            }
+        }
+        .image_single {
+            width: 85%;
+            height: auto;
+            min-width: 120px;
+        }
+        .button {
+            margin: 0;
+            margin-top: 30px;
+        }
+    }
+    &__block {
+        &--left {
+            @include breakpoint(display_small) {
+                padding-right: 0px;
+            }
+            &.float_right {
+                @include breakpoint(display_small) {
+                    padding-right: 15px;
+                    padding-left: 0px;
+                }
+            }
+        }
+        &--right {
+            .subtitle {
+                min-height: 90px;
+                @include breakpoint(display_medium) {
+                    min-height: 100px;
+                }
+            }
+        }
+    }
+}
+
+.footer_nest {
+    max-width: 950px;
+    margin: 0 auto;
+}

@@ -1,0 +1,169 @@
+.landing_magnum__hero {
+    &__visoreEtnico {
+        position: relative;
+        width: 100%;
+        height: auto;
+        @include border-radius (4px);
+        /*  */
+        box-sizing: border-box;
+        &__claim {
+            padding: 3% 2%;
+            width: 40%;
+            bottom: 0;
+            top: 0;
+            font-family: 'Trebuchet MS';
+            font-size: 2.4rem;
+            line-height: 1em;
+            font-weight: bold;
+            color: $color-orange;
+            text-transform: uppercase;
+            position: absolute;
+            z-index: 5;
+            /*@include breakpoint('display_medium') {
+                font-size: 1.9rem;
+            }*/
+            @media (max-width: 935px) {
+                font-size: 2rem;
+                //width: 100%;
+            }
+            @media (max-width: 810px) {
+                position: static;
+            }
+            /*@include breakpoint('display_medium_smaller') {
+                width: auto;
+                //font-size: 3rem;
+                padding: 3%;
+            }*/
+            @media (max-width: 810px) {
+                width: 100%;
+            }
+            @include breakpoint('display_small') {
+                font-size: 2.5rem;
+                padding: 3% 3%;
+            }
+            @include breakpoint('display_smaller') {
+                font-size: 1.6rem;
+                padding: 3% 5%;
+                line-height: 2rem;
+                width: auto;
+            }
+        }
+        &__subclaim {
+            font-size: 0.5em;
+            line-height: 1em;
+            width: 60%;
+            display: block;
+            margin-top: 1.3em;
+            @include breakpoint('display_small') {
+                margin-top: 1em;
+            }
+            @include breakpoint('display_smaller') {
+                width: 72%;
+                margin-top: 1em;
+            }
+            // font-family: 'Trebuchet MS';
+            // font-size: 1.9em;
+            // font-weight: bold;
+            // color: white;
+            // text-transform: uppercase;
+        }
+        img {
+            /* position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0; */
+            width: 100%;
+        }
+    }
+}
+
+.landing_magnum__showcase--ethnic {
+    max-width: 100%;
+    width: auto !important;
+    .landing_magnum__showcase__item {
+        &.half {
+            &.new {
+                width: calc(50% - 8px);
+            }
+        }
+        &--ethnic {
+            vertical-align: middle;
+            @include breakpoint('display_small') {
+                width: 100% !important;
+            }
+            &.padding_left_5 {
+                @media (max-width: 640px) {
+                    padding-left: 0;
+                }
+            }
+            .showcase__item {
+                &--ethnic {
+                    @include border-radius(4px);
+                    border: 2px solid $color_grey_medium_light;
+                    height: 310px;
+                    position: relative;
+                    /*@include breakpoint('display_small') {
+                        height: 245px;//330
+                    }*/
+                    @media (max-width: 389px) {
+                        height: 260px;
+                    }
+                    @media (min-width: 641px) and (max-width: 765px) {
+                        height: 260px;
+                    }
+                    @media (min-width: 390px) and (max-width: 640px) {
+                        height: 210px;
+                    }
+                }
+                &__title {
+                    //max-width: 82%;
+                    //height: 2em;
+                    @include breakpoint('display_medium') {
+                        max-width: none;
+                    }
+                    &.font_size_m_32 {
+                        @media (max-width: 786px) {
+                            font-size: 32px;
+                        }
+                    }
+                }
+                &__detail {
+                    max-width: 100%;
+                    @include breakpoint('display_medium') {
+                        max-width: none;
+                    }
+                }
+                &__price_block {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    &__import {
+                        .currency {
+                            font-size: 0.75em;
+                        }
+                    }
+                    &__recurrency {}
+                }
+                &__footer {
+                    .showcase__item__detail {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint('display_smaller') {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+    }
+}
+
+.landing_magnum__notes {
+    &.new {
+        width: 73%;
+        @include breakpoint('display_small') {
+        width: 100%;
+    }
+    }
+}

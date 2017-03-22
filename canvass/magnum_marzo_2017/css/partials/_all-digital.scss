@@ -1,0 +1,305 @@
+.width_half {
+    width: 50% !important;
+}
+
+.width_full {
+    max-width: 100% !important;
+    &_view {
+        width: 100% !important;
+    }
+}
+
+.strikethrough {
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        top: calc(50% - 2px);
+        height: 4px;
+        display: block;
+        background-color: $color_grey_darker;
+    }
+}
+
+.expanded {
+    position: relative;
+    width: 100vw!important;
+    left: calc(-50vw + 50%);
+    margin: 0!important;
+}
+
+.contained {
+    max-width: 950px;
+}
+
+.all_digital_block {
+    &__landing {
+        .container_text {
+            text-align: left;
+            display: block;
+            float: left;
+            &--hero {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 55%;
+                margin: 20px;
+                @include breakpoint (display_medium) {
+                    font-size: 0.75rem;
+                }
+                @include breakpoint (display_small) {
+                    width: calc(100% - 40px);
+                    font-size: 1.1rem;
+                }
+                @include breakpoint (display_smaller) {
+                    margin: 1rem;
+                    width: calc(100% - 2rem);
+                    font-size: 0.75rem;
+                }
+                @include breakpoint (display_smallest) {
+                    font-size: 0.7rem;
+                    
+                }  
+            }
+        }
+        .container_img {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            width: 63%;
+            @include breakpoint (display_small) {
+                width: 100%;
+            }
+            img {
+                @include breakpoint (display_small) {
+                    width: 80%;
+                }
+            }
+            &--main {
+                position: absolute;
+                bottom: 0;
+                height: 100%;
+                right: 0;
+                width: 55%;
+                @include breakpoint (display_small) {
+                        width: calc(100% - 3rem);
+                         margin:0 1.5rem;
+                         text-align: center;
+
+                    }
+                .bollo {
+                    position: absolute;
+                    max-width: 4rem;
+                    max-height: 4rem;
+                    width: auto;
+                    height: auto;
+                    top:1.5rem;
+                    right:1.5rem;
+                }
+            }
+            @include breakpoint (display_small) {
+                bottom: auto;
+                margin-bottom: 20px;
+                text-align: center;
+                position: relative;
+                right: 0;
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+        }
+        .only_mobile {
+            display: none;
+            @include breakpoint(display_small) {
+                display: block;
+            }
+        }
+        .only_desktop {
+            display: block;
+            @include breakpoint(display_small) {
+                display: none;
+            }
+        }
+        .call_to_action {
+            padding-bottom: 60px;
+        }
+    }
+    &__top {
+        
+        width: 100%;
+        @include border-radius(4px);
+        height: auto;
+        position: relative;
+        z-index: 2;
+        @include breakpoint (display_small) {
+            margin-bottom: 0!important;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .bollo_news {
+            margin-bottom: 1.8rem;
+            max-width: 120px;
+            width: 30%;
+            @include breakpoint (display_smaller) {
+            width: 40%;
+
+        }
+
+        }
+        &--title {
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 4em;
+            margin-bottom: 1rem;
+        }
+        
+        &--giga {
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+
+            font-size: 3em;
+            .smaller {
+                font-weight: normal;
+                font-size: 0.75em;
+            }
+        }
+        &--euro {
+            float: left;
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+            font-size: 5em;
+            .smaller {
+                font-size: 0.75em;
+            }
+            @include breakpoint (display_medium_large) {
+            }
+        }
+        &--delete {
+            font-family: "Trebuchet MS";
+            color: #fff;
+            font-weight: normal;
+            text-transform: uppercase;
+            @include breakpoint (display_medium_large) {
+            }
+        }
+        &--minute {
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+            font-size: 2em;
+            @include breakpoint (display_medium_large) {
+            }
+        }
+    }
+    &__container {
+        margin: 20px;
+        position: relative;
+        margin-bottom: 0;
+        @include breakpoint (display_medium) {
+            margin: 5px;
+        }
+    }
+    &__mobile {
+        float: left;
+        width: calc(100% - 40px);
+    }
+    &__viewer {
+        &_image {
+            width: 100%;
+            height: 100%;
+        }
+        &_mobile {
+            display: block;
+            @include breakpoint(display_small) {
+                display: block;
+            }
+            &--img {
+                display: table-cell;
+                vertical-align: middle;
+                //width: 26%;
+                @include breakpoint(display_small) {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 30px;
+                    img {
+                        width: 200px;
+                    }
+                }
+            }
+            &--list {
+                list-style-type: disc;
+                margin-left: 1.5rem;
+                width: auto;
+                li {
+                    max-width: 75%;
+                    padding-bottom: 0.5rem;
+                    @include breakpoint(display_small) {
+                        max-width: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+            &--order {
+                position: relative;
+                @include breakpoint(display_small) {
+                    text-align: center;
+                }
+                .call_to_action__container {
+                    position: absolute;
+                    bottom: calc(100% + 2rem);
+                    right: 0;
+                    @include breakpoint(display_small) {
+                        position: relative;
+                        margin-right: 0;
+                        margin-top: 1rem;
+                        max-width: 100%;
+
+                    }
+                }
+            }
+            &--text {
+                font-family: "Trebuchet MS";
+                color: $color_grey_darkest;
+                font-size: 1.4rem;
+                @include breakpoint(display_small) {
+                    display: block;
+                    padding-left: 0;
+                }
+                .highlight {
+                    color: $color_orange;
+                }
+                &_title {
+                    font-size: 50px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    @include breakpoint(display_medium_large) {
+                        font-size: 30px;
+                    }
+                }
+                &_subTitle {
+                    font-size: 30px;
+                    text-transform: uppercase;
+                    font-weight: normal;
+                    line-height: 1.2em;
+                    @include breakpoint(display_medium_large) {
+                        font-size: 22px;
+                    }
+                    @include breakpoint(display_small) {
+                        text-align: center;
+                    }
+                }
+                &_note {
+                    @include breakpoint(display_small) {
+                    }
+                    @include breakpoint(display_smaller) {
+                        width: calc(100% - 40px);
+                    }
+                }
+            }
+        }
+    }
+}

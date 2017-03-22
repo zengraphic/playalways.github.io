@@ -1,0 +1,157 @@
+.p9_halfTab {
+    @include breakpoint ('display_small') {
+        float: none;
+        width: 100%;
+        border: none;
+        text-align: center;
+        margin-bottom: 25px;
+        &:first-child {
+            padding-bottom: 20px;
+            border-bottom: 2px solid $color_orange;
+        }
+    }
+}
+
+.fix_position_tabs {
+    @include breakpoint('display_small') {
+        position: relative;
+        bottom: 50px;
+    }
+}
+
+.landing_p9 {
+    .hero {
+        width: 100%;
+        display: block;
+        position: relative;
+        &_img {
+            @include breakpoint ('display_small') {
+                padding: 3px;
+            }
+            .img_swipe1 {
+                display: block;
+                @include breakpoint ('display_small') {
+                    display: none;
+                }
+            }
+            .img_swipe2 {
+                display: none;
+                @include breakpoint ('display_small') {
+                    display: block;
+                }
+            }
+        }
+    }
+    .offer_promotion {
+        @include breakpoint ('display_small') {
+            padding: 0 15px!important;
+        }
+        &_price {
+            display: inline;
+            @include breakpoint ('display_small') {
+                display: block;
+            }
+        }
+        &--item {
+            &.halfL,
+            &.halfR {
+                width: 50%;
+                padding: 0 30px;
+                box-sizing: border-box;
+                float: left;
+                @include breakpoint ('display_small') {
+                    width: 100%;
+                }
+            }
+            &.halfL {
+                text-align: left;
+                position: relative;
+                /*&:after {
+                    background-color: #666666;
+                    width: 2px;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 14%;
+                    bottom: 4%;
+                    right: 0%;
+                    min-height: 1px;
+                    @include breakpoint ('display_small'){
+                    left: 38%;
+                    top: 100%;
+                    bottom: 0%;
+                    right: 26%;
+                    height:2px;
+                    width:100px;                }
+                }*/
+                @include breakpoint ('display_small') {
+                    margin-top: 20px;
+                    padding-bottom: 30px;
+                    text-align: center;
+                }
+            }
+            &.halfR {
+                @include breakpoint ('display_small') {
+                    margin-top: 20px;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    .subscription_block {
+        @include breakpoint ('display_small') {
+            padding: 0 15px;
+        }
+        &--left {
+            width: 49%;
+            margin-right: 1%;
+            float: left;
+            display: inline-block;
+            border-radius: 4px;
+            border: 2px solid $color_orange;
+            box-sizing: border-box;
+            background-color: $color_white;
+            @include breakpoint ('display_small') {
+                width: 100%;
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+            .price {
+                font-weight: bold;
+                color: $color_orange;
+            }
+            .detail {
+                font-weight: normal;
+                color: $color_grey_six;
+            }
+        }
+        &--right {
+            width: 49%;
+            margin-left: 1%;
+            float: left;
+            display: inline-block;
+            border-radius: 4px;
+            border: 2px solid $color_orange;
+            box-sizing: border-box;
+            background-color: $color_white;
+            @include breakpoint ('display_small') {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+        .logo {
+            height: 30px;
+        }
+    }
+    .subscriptionTarget {
+        @include breakpoint ('display_small') {
+            padding: 0 15px;
+        }
+        color:$color_grey_six;
+    }
+}
