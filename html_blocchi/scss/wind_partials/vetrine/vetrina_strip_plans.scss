@@ -74,6 +74,7 @@
       }
     }
     &__item {
+
       border-right: 1px solid $color_stroke;
       display: table-cell;
       width: 25%;
@@ -96,6 +97,10 @@
       }
       &:first-child {
         border-left: none;
+      }
+      &.item--long {
+        width: 75%;
+        text-align: left;
       }
       &--price {
         display: table-cell;
@@ -169,7 +174,7 @@
           &__text {
             color: $color_text;
             float: left;
-            width: calc(85% - .5rem);
+            width: calc(100% - 50px - .5rem);
             font-size: .875rem;
             @include breakpoint(small) {
               display: inline-block;
