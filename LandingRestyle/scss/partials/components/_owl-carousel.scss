@@ -1,0 +1,60 @@
+.base__gallery--carousel {
+  .owl-wrapper-outer .owl-wrapper .owl-item .item {
+    width: 100%;
+    display: inline-block;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .owl-controls {
+    .owl-pagination .owl-page span {
+      background-color: $color_orange;
+      border-radius: 1rem;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+    }
+
+    .owl-buttons {
+      display: inline-block;
+      width: 100%;
+
+      div {
+        padding: 1rem;
+        font-size: 1rem;
+        margin: 0.5rem;
+        line-height: 1;
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+      }
+
+      .owl-prev {
+        position: fixed;
+        top: 45%;
+        left: 0px;
+
+        &:before {
+          font-family: "FontAwesome";
+          content: "";
+          font-size: 1rem;
+          color: $color_orange;
+        }
+      }
+
+      .owl-next {
+        &:before {
+          font-family: "FontAwesome";
+          content: "";
+          font-size: 1rem;
+          color: $color_orange;
+        }
+
+        position: fixed;
+        top: 45%;
+        right: 0px;
+      }
+    }
+  }
+}

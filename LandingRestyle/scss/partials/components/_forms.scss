@@ -1,0 +1,49 @@
+/* forms */
+
+.base__form {
+  display: block;
+  width: 280px;
+
+  .r {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: .5rem 0;
+
+    &.dx {
+      text-align: right;
+    }
+
+    .col--2 {
+      margin-left: 20px;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--contact {
+    width: 580px;
+  }
+}
+
+@media (max-width: 767px) {
+  .base__form .r .col--2 {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .base__form {
+    width: 100%;
+
+    .base__bt {
+      width: 100%;
+    }
+
+    .r {
+      padding: .5rem 0;
+    }
+  }
+}

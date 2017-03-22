@@ -1,0 +1,158 @@
+.base__datepicker {
+    position: relative;
+    width: 320px;
+    &:after {}
+    .base__input {
+        width: 100%;
+    }
+}
+
+.base__datepicker--input {
+    width: 100%;
+}
+
+.base .bootstrap-datetimepicker-widget {
+    width: 100% !important;
+    .datepicker,
+    .timepicker {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .datepicker {
+        table {
+            border-collapse: separate;
+            thead {
+                background-color: $color_grey_light;
+                tr:first-child {
+                    th:first-child {
+                        border-top-left-radius: 4px;
+                    }
+                    th:last-child {
+                        border-top-right-radius: 4px;
+                    }
+                }
+                tr:last-child {
+                    th:first-child {
+                        border-bottom-left-radius: 4px;
+                    }
+                    th:last-child {
+                        border-bottom-right-radius: 4px;
+                    }
+                }
+                th {
+                    border-radius: 0;
+                }
+                .picker-switch {
+                    text-transform: capitalize;
+                }
+                .prev,
+                .next {
+                    &.disabled {
+                        &:hover {
+                            background-color: $color_grey_light;
+                        }
+                        .base__icon {
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        padding-bottom: 5px;
+        .datepicker-days {
+            .day {
+                &:hover {
+                    background-color: $color_orange_light;
+                    color: $color_white;
+                }
+                &.today {
+                    border: 1px solid $color_orange;
+                    background-color: $color_transparent;
+                    box-sizing: border-box;
+                    color: $color_orange;
+                    &.active {
+                        color: $color_white;
+                    }
+                    &:before {
+                        content: none;
+                    }
+                }
+                &.disabled {
+                    color: $color_grey_medium_light;
+                    &:hover {
+                        background-color: $color_transparent;
+                    }
+                }
+                &.active {
+                    background-color: $color_orange;
+                    &.disabled {
+                        background-color: $color_transparent;
+                        &:hover {
+                            color: $color_grey_medium_light;
+                        }
+                    }
+                }
+            }
+        }
+        .datepicker-decades,
+        .datepicker-years,
+        .datepicker-months {
+            .decade,
+            .year,
+            .month {
+                text-transform: capitalize;
+                &:hover {
+                    background-color: $color_orange_light;
+                    color: $color_white;
+                }
+                &.disabled {
+                    color: $color_grey_medium_light;
+                    &:hover {
+                        background-color: $color_transparent;
+                    }
+                }
+                &.active {
+                    background-color: $color_transparent;
+                    border: 1px solid $color_orange;
+                    color: $color_orange;
+                    &:hover {
+                        background-color: $color_orange_light;
+                        color: $color_white;
+                    }
+                    &.disabled {
+                        background-color: $color_transparent;
+                        &:hover {
+                            color: $color_grey_medium_light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .timepicker {
+        border-top: 1px solid $color_stroke;
+        padding-top: 5px;
+        .timepicker-hours {
+            tbody {
+                tr {
+                    display: table-cell;
+                }
+                .hour {
+                    width: 216px;
+                    height: 54px;
+                    span {
+                        width: 100%;
+                    }
+                    &.disabled {
+                        display: none;
+                    }
+                    &:hover {
+                        background-color: $color_orange;
+                        color: $color_white;
+                    }
+                }
+            }
+        }
+    }
+}
