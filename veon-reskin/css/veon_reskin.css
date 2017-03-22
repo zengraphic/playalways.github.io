@@ -16,6 +16,13 @@ body {
 input:focus {
   outline: none; }
 
+a {
+  text-decoration: inherit;
+  color: inherit; }
+  a:active, a:visited, a:focus {
+    text-decoration: inherit;
+    color: inherit; }
+
 .veon_container {
   font-family: Arial, Helvetica, sans-serif; }
   .veon_container .view_container {
@@ -98,7 +105,8 @@ input:focus {
     .veon_container .password_recovery:hover {
       opacity: 0.7;
       filter: alpha(opacity=70); }
-  .veon_container .button_standard input {
+  .veon_container .button_standard input,
+  .veon_container .button_standard a {
     width: 100%;
     font-size: 15px;
     text-align: center;
@@ -111,11 +119,16 @@ input:focus {
     border: 1px solid #ffcb24;
     margin-top: 5px;
     padding: 10px;
-    cursor: pointer; }
-    .veon_container .button_standard input:hover {
+    cursor: pointer;
+    display: block; }
+    .veon_container .button_standard input:hover,
+    .veon_container .button_standard a:hover {
       opacity: 0.7;
       filter: alpha(opacity=70); }
-  .veon_container .button_standard.button_ghost input {
+  .veon_container .button_standard a {
+    width: auto; }
+  .veon_container .button_standard.button_ghost input,
+  .veon_container .button_standard.button_ghost a {
     background-color: #ffffff;
     border-color: #ffcb24; }
   .veon_container .error_title {

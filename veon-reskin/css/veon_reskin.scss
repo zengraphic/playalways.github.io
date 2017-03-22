@@ -99,6 +99,17 @@
            }
        }
        
+       a {
+           text-decoration: inherit;
+           color: inherit;
+           &:active,
+           &:visited,
+           &:focus {
+               text-decoration: inherit;
+               color: inherit;
+           }
+       }
+       
        //================= MIXINS ================ //
        //MIXIN BREAKPOINTS
        @mixin breakpoint($name) {
@@ -223,7 +234,8 @@
                }
            }
            .button_standard {
-               input {
+               input,
+               a {
                    width: 100%;
                    font-size: 15px;
                    text-align: center;
@@ -234,12 +246,17 @@
                    margin-top: 5px;
                    padding: 10px;
                    cursor: pointer;
+                   display: block;
                    &:hover {
                        @include opacity(0.7);
                    }
                }
+               a{
+                width: auto;
+               }
                &.button_ghost {
-                   input {
+                   input,
+                   a {
                        background-color: $color-white;
                        border-color: $color-veon;
                    }
