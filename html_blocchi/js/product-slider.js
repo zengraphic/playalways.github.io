@@ -11,7 +11,7 @@
 
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock, $plansBlock, 'payment', '000000000000008452');
+                .initSlider($sliderBlock, $plansBlock, true, '000000000000008451');
         });
 
     var PRODUCTSLIDER = {
@@ -364,7 +364,7 @@
                 }
             });
 
-            if (deviceMode == 'payment') {
+            if (deviceMode) {
                 $SLIDER.activePaymentRate = $SLIDER.paymentRates.filter(function() {
                     var currentModelSap = r$(this).data().sap;
                     return currentModelSap == activeSap;

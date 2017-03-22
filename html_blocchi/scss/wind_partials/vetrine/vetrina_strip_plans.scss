@@ -1,341 +1,250 @@
 .strip_plans {
-  &:not([style*="display:none"]):not([style*="display: none"]):nth-child(even) {
-    background-color: $color_grey_light_light;
-  }
-  .vertical-middle {
-    display: table;
-    @include breakpoint(small) {
-      display: block;
+    &:not([style*="display:none"]):not([style*="display: none"]):nth-child(even) {
+        background-color: $color_grey_light_light;
     }
-  }
-  .component {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0;
-    border-left: 1px solid $color_stroke;
-    float: none;
-    &:first-child {
-      border-left: none;
-    }
-    @include breakpoint(small) {
-      display: inline-block;
-      width: 100%;
-      padding-bottom: 20px;
-      border-left: none;
-    }
-  }
-  @at-root #{&}__container {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 15px;
-    @include breakpoint(small) {
-      padding: 15px 0;
-    }
-    &.phone_cash {
-      .strip_plans__payment_block__amount {
-        .item--add {
-          display: none;
-        }
-        .item--total {
-          width: 100%;
-          .price {
-            font-size: 2.5rem;
-          }
-          .sub {
-            color: $color_text;
-          }
-        }
-      }
-    }
-  }
-  @at-root #{&}__title {
-    text-align: left;
-    @include breakpoint(small) {
-      text-align: center;
-      padding: 10px 0;
-    }
-    &--main {
-      font-family: $weight-normal;
-      color: inherit;
-    }
-  }
-  @at-root #{&}__offer_block {
-    @include breakpoint(small) {
-      border-bottom: 1px solid $color_stroke;
-    }
-    &__container {
-      display: block;
-      width: 100%;
-      font-family: $weight-light;
-      .row {
+    .vertical-middle {
         display: table;
-        width: 100%;
-      }
+        @include breakpoint(small) {
+            display: block;
+        }
     }
-    &__item {
-
-      border-right: 1px solid $color_stroke;
-      display: table-cell;
-      width: 25%;
-      padding: 7px;
-      color: $color_text;
-      vertical-align: middle;
-      //text-transform: uppercase;
-      h4 {
-        font-family: $weight-normal;
-        font-size: 1.75rem;
-        line-height: 1.1em;
-        margin-bottom: .5rem;
-      }
-      label {
-        font-family: $weight-normal;
-        margin-bottom: 0;
-        font-weight: normal;
-        line-height: 1.1em;
-        font-size: 1rem;
-      }
-      &:first-child {
-        border-left: none;
-      }
-      &.item--long {
-        width: 75%;
-        text-align: left;
-      }
-      &--price {
+    .component {
         display: table-cell;
         vertical-align: middle;
-        width: 25%;
-        padding: 7px 0;
-        .price {
-          color: inherit;
-          font-size: $text-medium;
-          .currency {
-            font-size: 0.75em;
-          }
-        }
-      }
-    }
-    &__recurrency {
-      .recurrency {
         padding: 0;
-        margin: .5rem auto;
-        color: $color_text;
-      }
+        border-left: 1px solid $color_stroke;
+        float: none;
+        &:first-child {
+            border-left: none;
+        }
+        @include breakpoint(small) {
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 20px;
+            border-left: none;
+        }
     }
-  }
-  @at-root #{&}__payments {
-    padding: 0;
-  }
-  @at-root #{&}__description {
-    padding: 0;
-    border-right: 1px solid $color_stroke;
-  }
-  @at-root #{&}__payment_block {
-    @at-root {
-      .extra_offer {
+    .price {
+        &.barred {
+            position: relative;
+            &:before {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: .5rem;
+                left: .5rem;
+                height: 1px;
+                background-color: $color_text;
+                content: "";
+            }
+        }
+    }
+    .extra_offer {
         position: relative;
         z-index: 5;
         width: calc(100% - 1rem);
         @include breakpoint(small) {
-          max-width: 350px;
+            max-width: 350px;
         }
         margin: .5rem auto;
         padding-top: .5rem;
         &:before {
-          display: block;
-          position: absolute;
-          content: "";
-          left: 0;
-          right: 0;
-          top: 0;
-          height: 1px;
-          background-color: $color_stroke;
-          @include breakpoint(small) {
-            left: calc(50% - 100vw);
-            right: calc(50% - 100vw);
-          }
-        }
-        .offer {
-          &__logo {
-            float: left;
-            margin-right: .5rem;
-            width: 15%;
-            max-width: 50px;
-            @include breakpoint(small) {
-              display: inline-block;
-              width: 50px;
-            }
-            img {
-              width: 100%;
-              height: auto;
-            }
-          }
-          &__text {
-            color: $color_text;
-            float: left;
-            width: calc(100% - 50px - .5rem);
-            font-size: .875rem;
-            @include breakpoint(small) {
-              display: inline-block;
-            }
-          }
-        }
-      }
-    }
-    &__heading {
-      padding-bottom: 10px;
-      font-size: $text-standard;
-    }
-    &__tabs {
-      position: relative;
-      font-size: 12px;
-      &__container {
-        padding-left: 0;
-        display: table;
-        width: 100%;
-        margin: 0 auto;
-        border-bottom: 1px solid $color_stroke;
-      }
-      .tab {
-        display: table-cell;
-        width: auto;
-        min-width: 70px;
-        cursor: pointer;
-        position: relative;
-        .text {
-          display: inline-block;
-        }
-        &:hover,
-        &.active {
-          .text {
-            position: relative;
-            font-family: $weight-bold;
-          }
-          .text,
-          .logo .image {
-            &:after {
-              content: "";
-              display: inline-block;
-              position: absolute;
-              height: 2px;
-              bottom: 0;
-              background-color: $color_orange;
-              left: 0;
-              right: 0;
-              z-index: 2;
-            }
-          }
-        }
-        &:before {
-          position: absolute;
-          content: "";
-          top: 50%;
-          left: -1.8%;
-          width: 4px;
-          height: 4px;
-          background-color: $color_text;
-          @include border-radius(2px);
-        }
-        &:first-child:before {
-          content: none;
-        }
-      }
-      &__title {
-        &--logo {
-          .logo {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 5%;
-            right: 5%;
-            text-align: center;
-            .image {
-              position: absolute;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background: url("../img/logos/icon_agos.png") no-repeat center center;
-              background-size: contain;
-            }
-          }
-        }
-      }
-    }
-    &__amount {
-      display: table;
-      width: 100%;
-      //margin-top: 20px;
-      font-family: $weight-light;
-      .currency {
-        font-size: .75em;
-      }
-      .item {
-        display: table-cell;
-        width: 33%;
-        vertical-align: middle;
-        &:not(.item--total) {
-          border-right: 1px solid $color_stroke;
-        }
-        &--add {
-          color: $color_text;
-          .price {
-            font-family: $weight-normal;
-            font-size: 1.75rem;
-            line-height: 1.2em;
-          }
-          .over {
-            font-size: .75rem;
-          }
-        }
-        &--total {
-          .price {
-            height: 1.2em;
-            color: inherit;
-            font-family: $weight-normal;
-            font-size: 1.75rem;
-            line-height: 1.2em;
-          }
-          .sub {
-            color: $color_text;
-            font-size: .75rem;
-          }
-        }
-      }
-      .price {
-        &.barred {
-          position: relative;
-          &:before {
             display: block;
             position: absolute;
-            top: 50%;
-            right: .5rem;
-            left: .5rem;
-            height: 1px;
-            background-color: $color_text;
             content: "";
-          }
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 1px;
+            background-color: $color_stroke;
+            @include breakpoint(small) {
+                left: calc(50% - 100vw);
+                right: calc(50% - 100vw);
+            }
         }
-      }
+        .offer {
+            &__logo {
+                float: left;
+                margin-right: .5rem;
+                width: 15%;
+                max-width: 50px;
+                @include breakpoint(small) {
+                    display: inline-block;
+                    width: 50px;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            &__text {
+                color: $color_text;
+                float: left;
+                width: calc(100% - 50px - .5rem);
+                font-size: .875rem;
+                @include breakpoint(small) {
+                    display: inline-block;
+                }
+            }
+        }
     }
-  }
-  @at-root #{&}__button {
-    text-align: center;
-    .button--slim {
-      display: inline-block;
-      min-width: 90%;
-      font-size: 1em;
-      @include breakpoint(small) {
-        min-width: 50%;
-      }
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        @include breakpoint(small) {
+            padding: 15px 0;
+        }
     }
-    .sub {
-      padding-top: 5px;
-      color: $color_text;
-      font-family: $weight-light;
-      font-size: .75em;
-      text-transform: uppercase;
+    &__title {
+        text-align: left;
+        @include breakpoint(small) {
+            text-align: center;
+            padding: 10px 0;
+        }
+        &--main {
+            font-family: $weight-normal;
+            color: inherit;
+        }
     }
-  }
+    &__offer_block {
+        @include breakpoint(small) {
+            border-bottom: 1px solid $color_stroke;
+        }
+        &__container {
+            display: block;
+            width: 100%;
+            font-family: $weight-light;
+            .row {
+                display: table;
+                width: 100%;
+            }
+        }
+        &__item {
+            border-right: 1px solid $color_stroke;
+            display: table-cell;
+            width: 25%;
+            padding: 7px;
+            color: $color_text;
+            vertical-align: middle;
+            //text-transform: uppercase;
+            h4 {
+                font-family: $weight-normal;
+                font-size: 1.75rem;
+                line-height: 1.1em;
+                margin-bottom: .5rem;
+            }
+            label {
+                font-family: $weight-normal;
+                margin-bottom: 0;
+                font-weight: normal;
+                line-height: 1.1em;
+                font-size: 1rem;
+            }
+            &:first-child {
+                border-left: none;
+            }
+            &.item--long {
+                width: 75%;
+                text-align: left;
+                height: 5.2rem;
+            }
+            &--price {
+                display: table-cell;
+                vertical-align: middle;
+                width: 25%;
+                padding: 7px 0;
+                .price {
+                    color: inherit;
+                    font-size: $text-medium;
+                    .currency {
+                        font-size: 0.75em;
+                    }
+                }
+            }
+        }
+        &__recurrency {
+            .recurrency {
+                padding: 0;
+                margin: .5rem auto;
+                color: $color_text;
+            }
+        }
+    }    
+    &__description {
+        padding: 0;
+        border-right: 1px solid $color_stroke;
+    }
+    &__payments {
+        padding: 0;
+    }
+    &__payment_block {
+        &__heading {
+            padding-bottom: 10px;
+            font-size: $text-standard;
+        }
+        &__amount {
+            display: table;
+            width: 100%;
+            //margin-top: 20px;
+            font-family: $weight-light;
+            .currency {
+                font-size: .75em;
+            }
+            .item {
+                display: table-cell;
+                width: 33%;
+                vertical-align: middle;
+                &:not(.item--total) {
+                    border-right: 1px solid $color_stroke;
+                }
+                &--add {
+                    color: $color_text;
+                    .price {
+                        font-family: $weight-normal;
+                        font-size: 1.75rem;
+                        line-height: 1.2em;
+                    }
+                    .over {
+                        font-size: .75rem;
+                    }
+                }
+                &--total {
+                    .price {
+                        height: 1.2em;
+                        color: inherit;
+                        font-family: $weight-normal;
+                        font-size: 1.75rem;
+                        line-height: 1.2em;
+                        &.full {
+                            font-size: 2.5rem;
+                        }
+                    }
+                    .sub {
+                        color: $color_text;
+                        font-size: .75rem;
+                    }
+                }
+            }
+        }
+    }
+    &__button {
+        text-align: center;
+        .button--slim {
+            display: inline-block;
+            min-width: 90%;
+            font-size: 1em;
+            @include breakpoint(small) {
+                min-width: 50%;
+            }
+        }
+        .sub {
+            padding-top: 5px;
+            color: $color_text;
+            font-family: $weight-light;
+            font-size: .75em;
+            text-transform: uppercase;
+        }
+    }
 }
