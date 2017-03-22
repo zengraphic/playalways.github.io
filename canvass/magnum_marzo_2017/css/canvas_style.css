@@ -1134,23 +1134,30 @@ body {
     .mgm_block__title--main {
       font-size: 2.75em; } }
 
+.prova {
+  background-color: red !important; }
+
 .landing_magnum {
   max-width: 950px;
   padding-left: 15px;
   padding-right: 15px; }
-  @media (max-width: 480px) {
-    .landing_magnum__hero {
-      padding: 3px !important; } }
-  .landing_magnum__hero img.hero_wide {
-    display: block; }
-    @media (max-width: 480px) {
-      .landing_magnum__hero img.hero_wide {
-        display: none; } }
-  .landing_magnum__hero img.hero_mobile {
+  .landing_magnum__hero {
     display: none; }
+    .landing_magnum__hero.active {
+      display: block; }
     @media (max-width: 480px) {
-      .landing_magnum__hero img.hero_mobile {
-        display: block; } }
+      .landing_magnum__hero {
+        padding: 3px !important; } }
+    .landing_magnum__hero img.hero_wide {
+      display: block; }
+      @media (max-width: 480px) {
+        .landing_magnum__hero img.hero_wide {
+          display: none; } }
+    .landing_magnum__hero img.hero_mobile {
+      display: none; }
+      @media (max-width: 480px) {
+        .landing_magnum__hero img.hero_mobile {
+          display: block; } }
   .landing_magnum__slogan h1 {
     letter-spacing: -0.001em; }
   .landing_magnum__sub_slogan {
@@ -1332,23 +1339,41 @@ body {
         text-align: center;
         position: relative;
         top: -80px; } }
-  .landing_magnum .offer_tab_nav {
+  .landing_magnum .magnum_nav {
     position: relative; }
-    .landing_magnum .offer_tab_nav_link {
+    .landing_magnum .magnum_nav_link {
       float: left;
       width: 31%;
       margin: 0 10px; }
-    .landing_magnum .offer_tab_nav a {
-      display: block;
-      background-color: #f48135;
-      position: relative;
-      padding: 15px;
-      border-radius: 4px;
-      box-sizing: border-box;
-      text-align: center;
-      z-index: 1;
-      color: white;
-      text-decoration: none; }
+      @media (max-width: 640px) {
+        .landing_magnum .magnum_nav_link {
+          width: 100%; } }
+      .landing_magnum .magnum_nav_link.active a {
+        display: block;
+        background-color: #f48135;
+        position: relative;
+        padding: 20px 15px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        text-align: center;
+        z-index: 1;
+        color: white;
+        text-decoration: none; }
+      .landing_magnum .magnum_nav_link a {
+        display: block;
+        background-color: #e6e9ee;
+        position: relative;
+        padding: 20px 15px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        text-align: center;
+        z-index: 1;
+        color: #282f37;
+        text-decoration: none; }
+  .landing_magnum .magnum_content .offer {
+    display: none; }
+    .landing_magnum .magnum_content .offer.active {
+      display: block; }
   .landing_magnum .call_to_action {
     padding-bottom: 25px; }
   .landing_magnum .wind_ricorda {
