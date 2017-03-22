@@ -6450,16 +6450,22 @@ h3.title {
 .base__popup#refill_block .container {
   height: 100%; }
 
+.base__popup#refill_end_block .container {
+  height: 100%; }
+
 .base__popup#privacy_block .container {
   height: 100%; }
 
 .base__popup#ecommerce-shoulder-wind .container {
   height: 100%; }
 
-.base__popup.refill_block #esitoRicarica {
+.base__popup.refill_block#refill_end_block {
   color: #292F36; }
-  .base__popup.refill_block #esitoRicarica .item-box {
-    padding: 0.5rem 0; }
+  .base__popup.refill_block#refill_end_block i {
+    margin-right: .5rem; }
+  .base__popup.refill_block#refill_end_block h3 {
+    width: auto;
+    margin-bottom: 0; }
 
 .base__popup.refill_block .container {
   height: calc(100% - 43px);
@@ -7127,8 +7133,7 @@ h3.title {
 
 @media (max-width: 767px) {
   .base__popup.refill_block .container {
-    width: 100%;
-    max-width: none; }
+    width: 100%; }
   .base__popup.refill_block a.btn_sa {
     margin-top: 1.9rem; }
   .base__popup.refill_block .base__select.base__select.select_value span .euro {
@@ -7147,6 +7152,10 @@ h3.title {
       .base__popup.refill_block .popup--contract-dialog {
         max-width: 100%;
         width: 100%; } }
+
+@media (max-width: 640px) {
+  .base__popup.refill_block .container {
+    max-width: none; } }
 
 .cookies {
   position: fixed;

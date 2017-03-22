@@ -21,6 +21,14 @@
             @include breakpoint(small) {
                 float: none;
             }
+            .grey_strip__block__tabs--title {
+                &:hover {
+                    font-weight: bold;
+                }
+                &.active {
+                    font-weight: bold;
+                }
+            }
         }
         &--right {
             float: right;
@@ -31,6 +39,14 @@
                 margin-top: 10px;
                 padding-bottom: 30px;
             }
+            .grey_strip__block__tabs--title {
+                &:hover {
+                    border-bottom: 1px solid $color_orange;
+                }
+                &.active {
+                    border-bottom: 1px solid $color_orange;
+                }
+            }
         }
         &--title {
             margin-right: 15px;
@@ -38,20 +54,18 @@
             font-size: 1em;
             padding-bottom: 5px;
             color: $color_text;
-            &:hover {
-                border-bottom: 1px solid $color_orange;
+            &:hover {                
                 color: $color_wind;
                 padding-bottom: 5px;
             }
             &.active {
-                border-bottom: 1px solid $color_orange;
                 color: $color_wind;
                 padding-bottom: 5px;
             }
             &.disabled {
                 color: $color_grey_medium;
                 cursor: not-allowed;
-                &:hover{
+                &:hover {
                     border-bottom: 0;
                 }
             }
@@ -60,10 +74,14 @@
     &__title {
         font-size: 1.563em;
         font-family: $weight-normal;
-        padding: 23px 0px 15px 15px;
+        padding: 13px 15px 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         float: left;
+        border-right: 1px solid $color_stroke;
         @include breakpoint(small) {
             float: none;
+            border-right: none;
         }
     }
     &__container {
