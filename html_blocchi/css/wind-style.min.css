@@ -7741,6 +7741,61 @@ a.button--search {
       padding-bottom: 20px;
       border-left: none; } }
 
+.strip_plans .price.barred {
+  position: relative; }
+  .strip_plans .price.barred:before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+    left: .5rem;
+    height: 1px;
+    background-color: #292F36;
+    content: ""; }
+
+.strip_plans .extra_offer {
+  position: relative;
+  z-index: 5;
+  width: calc(100% - 1rem);
+  margin: .5rem auto;
+  padding-top: .5rem; }
+  @media (max-width: 767px) {
+    .strip_plans .extra_offer {
+      max-width: 350px; } }
+  .strip_plans .extra_offer:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background-color: #D3D3D2; }
+    @media (max-width: 767px) {
+      .strip_plans .extra_offer:before {
+        left: calc(50% - 100vw);
+        right: calc(50% - 100vw); } }
+  .strip_plans .extra_offer .offer__logo {
+    float: left;
+    margin-right: .5rem;
+    width: 15%;
+    max-width: 50px; }
+    @media (max-width: 767px) {
+      .strip_plans .extra_offer .offer__logo {
+        display: inline-block;
+        width: 50px; } }
+    .strip_plans .extra_offer .offer__logo img {
+      width: 100%;
+      height: auto; }
+  .strip_plans .extra_offer .offer__text {
+    color: #292F36;
+    float: left;
+    width: calc(100% - 50px - .5rem);
+    font-size: .875rem; }
+    @media (max-width: 767px) {
+      .strip_plans .extra_offer .offer__text {
+        display: inline-block; } }
+
 .strip_plans__container {
   max-width: 1024px;
   width: 100%;
@@ -7749,14 +7804,6 @@ a.button--search {
   @media (max-width: 767px) {
     .strip_plans__container {
       padding: 15px 0; } }
-  .strip_plans__container.phone_cash .strip_plans__payment_block__amount .item--add {
-    display: none; }
-  .strip_plans__container.phone_cash .strip_plans__payment_block__amount .item--total {
-    width: 100%; }
-    .strip_plans__container.phone_cash .strip_plans__payment_block__amount .item--total .price {
-      font-size: 2.5rem; }
-    .strip_plans__container.phone_cash .strip_plans__payment_block__amount .item--total .sub {
-      color: #292F36; }
 
 .strip_plans__title {
   text-align: left; }
@@ -7802,7 +7849,8 @@ a.button--search {
     border-left: none; }
   .strip_plans__offer_block__item.item--long {
     width: 75%;
-    text-align: left; }
+    text-align: left;
+    height: 5.2rem; }
   .strip_plans__offer_block__item--price {
     display: table-cell;
     vertical-align: middle;
@@ -7819,121 +7867,16 @@ a.button--search {
   margin: .5rem auto;
   color: #292F36; }
 
-.strip_plans__payments {
-  padding: 0; }
-
 .strip_plans__description {
   padding: 0;
   border-right: 1px solid #D3D3D2; }
 
-.extra_offer {
-  position: relative;
-  z-index: 5;
-  width: calc(100% - 1rem);
-  margin: .5rem auto;
-  padding-top: .5rem; }
-  @media (max-width: 767px) {
-    .extra_offer {
-      max-width: 350px; } }
-  .extra_offer:before {
-    display: block;
-    position: absolute;
-    content: "";
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 1px;
-    background-color: #D3D3D2; }
-    @media (max-width: 767px) {
-      .extra_offer:before {
-        left: calc(50% - 100vw);
-        right: calc(50% - 100vw); } }
-  .extra_offer .offer__logo {
-    float: left;
-    margin-right: .5rem;
-    width: 15%;
-    max-width: 50px; }
-    @media (max-width: 767px) {
-      .extra_offer .offer__logo {
-        display: inline-block;
-        width: 50px; } }
-    .extra_offer .offer__logo img {
-      width: 100%;
-      height: auto; }
-  .extra_offer .offer__text {
-    color: #292F36;
-    float: left;
-    width: calc(100% - 50px - .5rem);
-    font-size: .875rem; }
-    @media (max-width: 767px) {
-      .extra_offer .offer__text {
-        display: inline-block; } }
+.strip_plans__payments {
+  padding: 0; }
 
 .strip_plans__payment_block__heading {
   padding-bottom: 10px;
   font-size: 0.875em; }
-
-.strip_plans__payment_block__tabs {
-  position: relative;
-  font-size: 12px; }
-  .strip_plans__payment_block__tabs__container {
-    padding-left: 0;
-    display: table;
-    width: 100%;
-    margin: 0 auto;
-    border-bottom: 1px solid #D3D3D2; }
-  .strip_plans__payment_block__tabs .tab {
-    display: table-cell;
-    width: auto;
-    min-width: 70px;
-    cursor: pointer;
-    position: relative; }
-    .strip_plans__payment_block__tabs .tab .text {
-      display: inline-block; }
-    .strip_plans__payment_block__tabs .tab:hover .text, .strip_plans__payment_block__tabs .tab.active .text {
-      position: relative;
-      font-family: "Trade Gothic Bold"; }
-    .strip_plans__payment_block__tabs .tab:hover .text:after,
-    .strip_plans__payment_block__tabs .tab:hover .logo .image:after, .strip_plans__payment_block__tabs .tab.active .text:after,
-    .strip_plans__payment_block__tabs .tab.active .logo .image:after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      height: 2px;
-      bottom: 0;
-      background-color: #F48135;
-      left: 0;
-      right: 0;
-      z-index: 2; }
-    .strip_plans__payment_block__tabs .tab:before {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: -1.8%;
-      width: 4px;
-      height: 4px;
-      background-color: #292F36;
-      -webkit-border-radius: 2px;
-      border-radius: 2px;
-      background-clip: padding-box;
-      /* stops bg color from leaking outside the border: */ }
-    .strip_plans__payment_block__tabs .tab:first-child:before {
-      content: none; }
-  .strip_plans__payment_block__tabs__title--logo .logo {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 5%;
-    right: 5%;
-    text-align: center; }
-    .strip_plans__payment_block__tabs__title--logo .logo .image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url("../img/logos/icon_agos.png") no-repeat center center;
-      background-size: contain; }
 
 .strip_plans__payment_block__amount {
   display: table;
@@ -7961,20 +7904,11 @@ a.button--search {
       font-family: "Trade Gothic";
       font-size: 1.75rem;
       line-height: 1.2em; }
+      .strip_plans__payment_block__amount .item--total .price.full {
+        font-size: 2.5rem; }
     .strip_plans__payment_block__amount .item--total .sub {
       color: #292F36;
       font-size: .75rem; }
-  .strip_plans__payment_block__amount .price.barred {
-    position: relative; }
-    .strip_plans__payment_block__amount .price.barred:before {
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: .5rem;
-      left: .5rem;
-      height: 1px;
-      background-color: #292F36;
-      content: ""; }
 
 .strip_plans__button {
   text-align: center; }
