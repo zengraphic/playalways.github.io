@@ -1137,7 +1137,9 @@ body {
 .landing_galaxy {
   max-width: 950px; }
   .landing_galaxy__sub_slogan {
-    position: relative; }
+    position: relative;
+    padding-left: 130px;
+    padding-right: 130px; }
     .landing_galaxy__sub_slogan h2 {
       letter-spacing: -0.001em; }
       .landing_galaxy__sub_slogan h2:after {
@@ -1149,9 +1151,9 @@ body {
         right: calc(50% - 50px);
         height: 1px;
         margin: 0 auto;
-        background-color: #aab2bd; }
+        background-color: #e2e3e4; }
   .landing_galaxy__a5_container {
-    border-bottom: 1px solid #aab2bd; }
+    border-bottom: 1px solid #e2e3e4; }
   .landing_galaxy__a5_product {
     float: right;
     width: 60%;
@@ -1192,7 +1194,7 @@ body {
         left: 0;
         right: 70%;
         height: 1px;
-        background-color: #aab2bd; }
+        background-color: #e2e3e4; }
         @media (max-width: 640px) {
           .landing_galaxy__a5_details .firstRate:after {
             right: 90%; } }
@@ -1239,7 +1241,7 @@ body {
         left: 70%;
         right: 0;
         height: 1px;
-        background-color: #aab2bd; }
+        background-color: #e2e3e4; }
         @media (max-width: 640px) {
           .landing_galaxy__a3_details .firstRate:after {
             left: 90%; } }
@@ -1250,6 +1252,12 @@ body {
   .landing_galaxy .call_to_action {
     padding-bottom: 25px;
     padding-top: 0; }
+    .landing_galaxy .call_to_action a:hover {
+      text-decoration: none; }
+    @media (max-width: 480px) {
+      .landing_galaxy .call_to_action a {
+        padding-right: 0;
+        padding-left: 0; } }
     @media (max-width: 480px) {
       .landing_galaxy .call_to_action__container {
         width: 85%; } }
@@ -1284,6 +1292,11 @@ body {
         position: absolute;
         top: 5px;
         right: 0; }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .landing_galaxy__sub_slogan {
+    padding-left: 60px;
+    padding-right: 60px; } }
 
 .padding_top_5 {
   padding-top: 5px; }
