@@ -1,0 +1,28 @@
+//breadcrumbs
+.base__breadcrumbs {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-left: 0;
+  float: left;
+  list-style: none;
+
+  li {
+    display: inline;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &:after {
+      color: $color_orange;
+      content: " / ";
+    }
+
+    &:last-child {
+      cursor: default;
+
+      &:after {
+        content: "";
+      }
+    }
+  }
+}

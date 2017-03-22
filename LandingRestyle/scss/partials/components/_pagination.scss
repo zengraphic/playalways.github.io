@@ -1,0 +1,114 @@
+//pagination
+
+/*.base__pag.pagination {
+  padding-left: 0;
+  margin: 1rem auto;
+
+  li > a {
+    > span {
+      font-size: 0;
+    }
+
+    &[aria-label="Previous"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      span:before {
+        font-size: 0.9rem;
+        font-family: "FontAwesome";
+        content: "";
+      }
+    }
+
+    &[aria-label="Next"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      span:before {
+        font-size: 0.9rem;
+        font-family: "FontAwesome";
+        content: "";
+      }
+    }
+  }
+}*/
+
+.pagination_block__content.pagination {
+    margin: 1rem auto;
+    .pagination {
+        &_item {
+            &.active {
+                .pagination_link {
+                    border-color: $color_grey_stroke;
+                    background-color: $color_grey_medium_light !important;
+                    color: $color_orange;
+                }
+            }
+        }
+        &_link {
+            border-right: 0;
+            border-left: 0;
+            border-color: $color_grey_stroke;
+            color: $color_grey_dark;
+            &:hover {
+                color: $color_orange;
+            }
+            &:visited,
+            &:active {
+                background-color: $color_white;
+            }
+        }
+        &_previous,
+        &_next {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            border-color: $color_grey_stroke;
+            background-color: $color_grey_medium_light;
+            span {
+                &:before,
+                &:after {
+                    position: absolute;
+                    width: 2px;
+                    height: 9px;
+                    transition: all .45s ease-in-out;
+                    background-color: $color_orange;
+                    content: "";
+                }
+            }
+            &.disabled {
+                pointer-events: none;
+                span {
+                    &:before,
+                    &:after {
+                        background-color: $color_grey_medium_light!important;
+                    }
+                }
+            }
+            &_icon {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+            }
+        }
+        &_previous {
+            &_icon {
+                &:before {
+                    transform: translate(0, 3px) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(0, 8px) rotate(-45deg);
+                }
+            }
+        }
+        &_next {
+            &_icon {
+                &:before {
+                    transform: translate(0, 8px) rotate(45deg);
+                }
+                &:after {
+                    transform: translate(0, 3px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
