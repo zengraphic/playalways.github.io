@@ -174,12 +174,12 @@ input {
     }
 }
 
-.base__radio.radio input[type="radio"]:checked + label::before{
-  border-color: $color-blue !important;
+.base__radio.radio input[type="radio"]:checked + label::before {
+    border-color: $color-blue !important;
 }
 
-.base__radio.radio label::after{
-  background: $color-blue !important;
+.base__radio.radio label::after {
+    background: $color-blue !important;
 }
 
 a:link,
@@ -189,12 +189,14 @@ a:active {
     color: $color-blue !important;
 }
 
-a.base__bt{
-  color: $color-standard !important;
+a.base__bt {
+    color: $color-standard !important;
 }
-.base__popup .box--register article .modalfooter{
-  margin-top: auto !important;
+
+.base__popup .box--register article .modalfooter {
+    margin-top: auto !important;
 }
+
 .tag spacep block_full_wide {
     span {
         a {
@@ -217,6 +219,25 @@ a.base__bt{
     top: 0;
 }
 
+//=========== FIX TORNA INDIETRO ============
+.mfp-content {
+    .base__popup {
+        .back {
+            background-color: #fff !important;
+            border-bottom: 1px solid #ffcb24 !important;
+            text-align: center !important;
+            font-size: 12px !important;
+            text-transform: uppercase !important;
+            padding: 10px 15px !important;
+            &:before {
+                content: "Torna indietro";
+                font-family: "Trade Gothic", sans-serif;
+                color: #34BCCF !important;
+            }
+        }
+    }
+}
+
 .base__popup {
     &-progressbar {
         .progressactive {
@@ -233,8 +254,14 @@ a.base__bt{
     .back {
         background-color: $color-veon !important;
         color: $color_standard !important;
+        i {
+            &.fa-angle-left {
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
         span {
-            color: $color_standard !important;
+            display: none;
         }
     }
 }

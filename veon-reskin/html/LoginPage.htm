@@ -91,7 +91,7 @@
                 <a href="http://www.google.it">Registrati</a>
             </div>
             <div class="button_standard button_ghost">
-                <a id="facebook_login" href="http://www.google.it">Entra con Facebook</a>
+                <a id="facebook_login" href="#" onclick="goToFacebook()">Entra con Facebook</a>
             </div>
             <input type="hidden" size="1024" name="originalUrl" />
             <!-- radius-status is optional, it is to support RADIUS challenge response.
@@ -111,8 +111,9 @@
  var baseUrl = 'http://www.facebook.com/?state=';
  var newUrl = baseUrl + getParam;
 
-  document.getElementById("facebook_login").href= newUrl ; 
-
+function goToFacebook(){
+  window.open (newUrl,'_self',false);
+}
 
 </script>
 
