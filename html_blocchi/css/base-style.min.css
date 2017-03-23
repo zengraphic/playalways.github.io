@@ -6450,20 +6450,17 @@ h3.title {
 .base__popup#refill_block .container {
   height: 100%; }
 
-.base__popup#refill_end_block .container {
-  height: 100%; }
-
 .base__popup#privacy_block .container {
   height: 100%; }
 
 .base__popup#ecommerce-shoulder-wind .container {
   height: 100%; }
 
-.base__popup.refill_block#refill_end_block {
+.base__popup.refill_block .esito_ricarica_wrapper {
   color: #292F36; }
-  .base__popup.refill_block#refill_end_block i {
+  .base__popup.refill_block .esito_ricarica_wrapper i {
     margin-right: .5rem; }
-  .base__popup.refill_block#refill_end_block h3 {
+  .base__popup.refill_block .esito_ricarica_wrapper h3 {
     width: auto;
     margin-bottom: 0; }
 
@@ -6976,6 +6973,11 @@ h3.title {
     background-repeat: no-repeat;
     background-position: 99% center;
     background-size: 3rem auto; }
+  .base__popup.refill_block input[type="email"].postepay_cc, .base__popup.refill_block input[type="password"].postepay_cc, .base__popup.refill_block input[type="number"].postepay_cc, .base__popup.refill_block input[type="tel"].postepay_cc {
+    background-image: url(../img/credit-cards/postepay.jpg);
+    background-repeat: no-repeat;
+    background-position: 99% center;
+    background-size: 3rem auto; }
   .base__popup.refill_block input[type="text"].paypal_cc, .base__popup.refill_block input[type="email"].paypal_cc, .base__popup.refill_block input[type="password"].paypal_cc, .base__popup.refill_block input[type="number"].paypal_cc, .base__popup.refill_block input[type="tel"].paypal_cc {
     background-image: url(../img/credit-cards/paypal.jpg);
     background-repeat: no-repeat;
@@ -7121,7 +7123,7 @@ h3.title {
   color: #292F36;
   margin: 1.2em 0; }
   .base__popup .box-privacy h3:first-child {
-    margin: 2em 0 1.9em 0; }
+    margin: 2em 0 1.9em; }
 
 .base__popup .box-privacy p {
   font-family: "Trade Gothic", sans-serif;
@@ -7154,7 +7156,7 @@ h3.title {
         width: 100%; } }
 
 @media (max-width: 640px) {
-  .base__popup#refill_block .container, .base__popup#refill_end_block .container {
+  .base__popup#refill_block .container {
     max-width: none; } }
 
 .cookies {
