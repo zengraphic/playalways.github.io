@@ -37,7 +37,7 @@
         display: block;
         max-width: 950px;
         margin: 0 auto;
-        transition: (all,1s,linear,1s);
+        transition: (all, 1s, linear, 1s);
         min-height: 79px;
     }
     .logo {
@@ -47,6 +47,16 @@
     }
     .logo--wind {
         margin: 0.8rem 0 0 0;
+    }
+    .logo--wind_business {
+        margin: 0.2rem 0 0 0;
+        img {
+            @include breakpoint('display_smaller') {
+                width: 110px;
+                height: auto;
+                margin-top: 10px;
+            }
+        }
     }
     .logo img {
         &.wind {
