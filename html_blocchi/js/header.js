@@ -66,17 +66,16 @@ jQuery(document).ready(function($) {
         });
         HEADER.checkHeader();
         $('.slider_topMenu')
-          .animate({
-            'opacity': 1
-          },500);
+            .animate({
+                'opacity': 1
+            }, 500);
     };
-
 
 
     $(window).resize(function() {
         //alert('ciao');
         HEADER.checkHeader();
-        HEADER.resizeHeader();
+        //HEADER.resizeHeader(); function deleted cause on mobile the browsers fires resize on scroll
         $('.slider_topMenu').slick('resize');
     });
 
