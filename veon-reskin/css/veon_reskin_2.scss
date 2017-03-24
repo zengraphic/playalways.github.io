@@ -205,9 +205,6 @@ a.base__bt {
     }
 }
 
-.base__icon.icon_help--color {
-    // background-position: 0% 22.96923% !important;
-}
 
 .btn_acces,
 .btn_acces2 {
@@ -224,11 +221,13 @@ a.base__bt {
     .base__popup {
         .back {
             background-color: #fff !important;
-            border-bottom: 1px solid #ffcb24 !important;
             text-align: center !important;
             font-size: 12px !important;
             text-transform: uppercase !important;
             padding: 10px 15px !important;
+            &:hover{
+                @include opacity(0.7);
+            }
             &:before {
                 content: "Torna indietro";
                 font-family: "Trade Gothic", sans-serif;
