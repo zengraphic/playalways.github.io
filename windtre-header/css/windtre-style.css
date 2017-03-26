@@ -18,9 +18,10 @@
   box-sizing: border-box; }
 
 .windtre__scrollable {
-  position: relative;
-  top: 113px;
-  height: calc(100vh - 113px); }
+  position: relative; }
+
+.affix {
+  position: fixed; }
 
 /* Slider */
 .slick-slider {
@@ -95,26 +96,77 @@
 .slick-arrow.slick-hidden {
   display: none; }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0; }
-
 .windtre__primary-nav {
   font-family: "Fira Sans Light";
   font-size: 16px;
-  line-height: 1.2em; }
-  .windtre__primary-nav__logo {
+  line-height: 1.2em;
+  min-width: 100%;
+  max-width: 100%;
+  background-color: #FFF;
+  border-bottom: 1px solid #ccd1d9; }
+  .windtre__primary-nav.stuck {
+    position: fixed;
+    top: 0; }
+  .windtre__primary-nav ul {
+    list-style-type: none;
     display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: 0; }
+  .windtre__primary-nav li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0; }
+    .windtre__primary-nav li.active {
+      z-index: 5;
+      position: relative; }
+      .windtre__primary-nav li.active > .nav_link--label {
+        background-color: #666;
+        float: left; }
+        .windtre__primary-nav li.active > .nav_link--label > li > a {
+          color: transparent;
+          text-indent: -9999px;
+          overflow: hidden;
+          width: 40px;
+          position: relative;
+          z-index: 20; }
+          .windtre__primary-nav li.active > .nav_link--label > li > a:after, .windtre__primary-nav li.active > .nav_link--label > li > a:before {
+            left: 10px;
+            width: 2px;
+            height: 12px;
+            display: block;
+            position: absolute;
+            background-color: white;
+            content: ""; }
+          .windtre__primary-nav li.active > .nav_link--label > li > a:after {
+            -webkit-transform: translate(0, -12px) rotate(-45deg);
+            -moz-transform: translate(0, -12px) rotate(-45deg);
+            -ms-transform: translate(0, -12px) rotate(-45deg);
+            -o-transform: translate(0, -12px) rotate(-45deg);
+            transform: translate(0, -12px) rotate(-45deg); }
+          .windtre__primary-nav li.active > .nav_link--label > li > a:before {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .windtre__primary-nav a {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: #292f34; }
+    .windtre__primary-nav a:hover {
+      color: #ccd1d9; }
+  .windtre__primary-nav__logo {
+    display: none;
     vertical-align: top;
     margin: 0 10px; }
     .windtre__primary-nav__logo .logo {
-      margin: 10px 0; }
+      margin: 5px 0; }
   .windtre__primary-nav__links {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(100% - 190px);
+    width: calc(100% - 50px);
     padding: 0;
+    margin: 0;
     position: relative; }
     .windtre__primary-nav__links:before, .windtre__primary-nav__links:after {
       content: "";
@@ -131,27 +183,37 @@ ul {
     .windtre__primary-nav__links:after {
       right: 0;
       background-image: url("../img/bg-rtl.png"); }
-  .windtre__primary-nav__link {
-    display: inline-block;
-    margin: 0; }
   .windtre__primary-nav ul:not(.nav_link--label):not(.windtre__primary-nav__links) {
     display: none; }
   .windtre__primary-nav .nav_link {
-    text-decoration: none;
-    padding: 25px 20px;
-    display: inline-block; }
+    padding: 25px 20px; }
   .windtre__primary-nav__language {
     display: inline-block;
     vertical-align: top; }
     .windtre__primary-nav__language .language {
+      position: relative;
+      z-index: 10;
       display: inline-block;
       color: white;
       background-color: #292F36;
-      padding: 25px 20px; }
+      padding: 25px 15px; }
 
 @media (min-width: 480px) {
+  .windtre__primary-nav li.active {
+    z-index: 5;
+    position: relative; }
+    .windtre__primary-nav li.active > .nav_link--label {
+      border-right: 1px solid white; }
+      .windtre__primary-nav li.active > .nav_link--label > li > a {
+        color: white;
+        text-indent: 0;
+        overflow: visible;
+        width: auto; }
+        .windtre__primary-nav li.active > .nav_link--label > li > a:after, .windtre__primary-nav li.active > .nav_link--label > li > a:before {
+          content: none; }
   .windtre__primary-nav__logo {
-    margin: 0 15px; }
+    margin: 0 15px;
+    display: inline-block; }
     .windtre__primary-nav__logo .logo {
       margin: 10px 19px; }
   .windtre__primary-nav__links {
@@ -217,12 +279,7 @@ ul {
       content: none; } }
 
 .windtre__header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 5px;
-  z-index: 999;
   background-color: white;
-  border-bottom: 1px solid #ccd1d9; }
+  overflow: hidden; }
 
 /*# sourceMappingURL=windtre-style.css.map */

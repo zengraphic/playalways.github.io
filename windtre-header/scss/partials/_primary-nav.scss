@@ -1,90 +1,173 @@
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
 .windtre {
-    &__primary-nav {
-        font-family: "Fira Sans Light";
-        font-size: 16px;
-        line-height: 1.2em;
-        &__logo {
-            display: inline-block;
-            vertical-align: top;
-            margin: 0 10px;
-            .logo {
-                margin: 10px 0;
-            }
-        }
-        &__links {
-            display: inline-block;
-            vertical-align: top;
-            width: calc(100% - 190px);
-            padding: 0;
-            position: relative;
-            &:before,
-            &:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width: 25px;
-                opacity: 0.8;
-                background-size: contain;
-                background-repeat: repeat-y;
-            }
-            &:before {
-                left: 0;
-                background-image: url('../img/bg-ltr.png');
-            }
-            &:after {
-                right: 0;
-                background-image: url('../img/bg-rtl.png');
-            }
-        }
-        &__link {
-            display: inline-block;
-            margin: 0;
-        }
-        ul:not(.nav_link--label):not(.windtre__primary-nav__links) {
-            display: none;
-        }
-        .nav_link {
-            text-decoration: none;
-            padding: 25px 20px;
-            display: inline-block;
-        }
-        &__language {
-            display: inline-block;
-            vertical-align: top;
-            .language {
-                display: inline-block;
-                color: white;
-                background-color: $color_grey_dark;
-                padding: 25px 20px;
-            }
-        }
+  &__primary-nav {
+    font-family: "Fira Sans Light";
+    font-size: 16px;
+    line-height: 1.2em;
+    min-width: 100%;
+    max-width: 100%;
+    background-color: #FFF;
+    border-bottom: 1px solid $color_grey_medium_light;
+    &.stuck {
+      position: fixed;
+      top: 0;
     }
+    ul {
+      list-style-type: none;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      &.active {
+        > .nav_link--label {
+          background-color: #666;
+          float: left;
+          > li {
+            > a {
+              color: transparent;
+              text-indent: -9999px;
+              overflow: hidden;
+              width: 40px;
+              position: relative;
+              z-index: 20;
+              &:after,
+              &:before {
+                left: 10px;
+                width: 2px;
+                height: 12px;
+                display: block;
+                position: absolute;
+                background-color: white;
+                content: "";
+              }
+              &:after {
+                -webkit-transform: translate(0, -12px) rotate(-45deg);
+                -moz-transform: translate(0, -12px) rotate(-45deg);
+                -ms-transform: translate(0, -12px) rotate(-45deg);
+                -o-transform: translate(0, -12px) rotate(-45deg);
+                transform: translate(0, -12px) rotate(-45deg);
+              }
+              &:before {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+        z-index: 5;
+        position: relative;
+      }
+    }
+    a {
+      display: inline-block;
+      vertical-align: top;
+      text-decoration: none;
+      color: #292f34;
+      &:hover {
+        color: #ccd1d9;
+      }
+    }
+    &__logo {
+      display: none;
+      vertical-align: top;
+      margin: 0 10px;
+      .logo {
+        margin: 5px 0;
+      }
+    }
+    &__links {
+      width: calc(100% - 50px);
+      padding: 0;
+      margin: 0;
+      position: relative;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 25px;
+        opacity: 0.8;
+        background-size: contain;
+        background-repeat: repeat-y;
+      }
+      &:before {
+        left: 0;
+        background-image: url('../img/bg-ltr.png');
+      }
+      &:after {
+        right: 0;
+        background-image: url('../img/bg-rtl.png');
+      }
+    }
+    ul:not(.nav_link--label):not(.windtre__primary-nav__links) {
+      display: none;
+    }
+    .nav_link {
+      padding: 25px 20px;
+    }
+    &__language {
+      display: inline-block;
+      vertical-align: top;
+      .language {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        color: white;
+        background-color: $color_grey_dark;
+        padding: 25px 15px;
+      }
+    }
+  }
 }
 
 @media (min-width: 480px) {
-    .windtre {
-        &__primary-nav {
-            &__logo {
-            	margin: 0 15px;
-                .logo {
-                    margin: 10px 19px;
+  .windtre {
+    &__primary-nav {
+      li {
+        &.active {
+          > .nav_link--label {
+            border-right: 1px solid white;
+            > li {
+              > a {
+                color: white;
+                text-indent: 0;
+                overflow: visible;
+                width: auto;
+                &:after,
+                &:before {
+                  content: none;
                 }
+              }
             }
-            &__links {
-                width: calc(100% - 286px);
-            }
-            &__language {
-                .language {
-                    padding: 25px 44px;
-                }
-            }
+          }
+          z-index: 5;
+          position: relative;
         }
+      }
+      &__logo {
+        margin: 0 15px;
+        display: inline-block;
+        .logo {
+          margin: 10px 19px;
+        }
+      }
+      &__links {
+        width: calc(100% - 286px);
+      }
+      &__link {}
+      &__language {
+        .language {
+          padding: 25px 44px;
+        }
+      }
     }
+  }
 }
