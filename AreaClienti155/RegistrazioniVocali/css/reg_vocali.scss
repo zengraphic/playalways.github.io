@@ -1,0 +1,139 @@
+@import 'vars';
+.bodyNoScroll{
+    overflow: hidden;
+}
+.reg_call {
+    &__container {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        position: relative;
+        border: 1px solid #eae8e3;
+        border-top: 0px;
+        padding-bottom: 50px;
+        @include border-radii(0px, 0px, 10px, 10px);
+        .show_button {
+            cursor: pointer;
+            background-color: $color_orange;
+            @include border-radius(5px);
+            color: #fff;
+            padding: 10px 30px;
+            width: 100px;
+            text-align: center;
+            position: absolute;
+            bottom: -18px;
+            right: 30px;
+            &.closed {
+                display: none;
+            }
+            &:hover {
+                @include opacity(0.8);
+            }
+        }
+    }
+    &__container * {
+        float: none;
+        div,
+        h1,
+        h2,
+        p {
+            display: block;
+            width: auto;
+            float: none;
+        }
+    }
+    &__header {
+        font-family: Trebuchet MS, Trebuchet MS, sans-serif;
+        height: 200px;
+        background: #999999;
+        /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(white, #eae8e3);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(white, #eae8e3);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(white, #eae8e3);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(white, #eae8e3);
+        /* Standard syntax (must be last) */
+        @include border-radii(10px, 10px, 0px, 0px);
+        .title {
+            text-transform: uppercase;
+            color: $color_orange;
+            font-weight: 600;
+            padding: 20px;
+        }
+    }
+    &__body {
+        padding: 30px;
+        padding-bottom: 40px;
+        box-sizing: border-box;
+        &.main {
+            padding-bottom: 0px;
+            padding-top: 0px;
+            position: relative;
+        }
+        font-family: Trebuchet MS,
+        Trebuchet MS,
+        sans-serif;
+        transition: all 0.15s ease-out;
+        &.extended {
+            height: 290px !important;
+            overflow-y: auto;
+        }
+        .container_calls {
+            display: none;
+            .f_left {
+                float: left !important;
+            }
+            .f_right {
+                float: right !important;
+            }
+            .internal {
+                &_header {
+                    color: #5ba5ca;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    border-bottom: 2px solid #5ba5ca;
+                    padding: 25px 10px;
+                }
+                &_body {}
+                &_row {
+                    padding: 10px;
+                    border-bottom: 1px solid #eae8e3;
+                    color: #999999;
+                    font-weight: 700;
+                    .title {
+                        line-height: 25px;
+                    }
+                    .download {
+                        width: auto;
+                        margin-top: 0;
+                        padding-right: 20px;
+                        cursor: pointer;
+                        &:hover {
+                            @include opacity(0.8);
+                        }
+                        img {
+                            width: 25px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .container_claim {
+            border-bottom: 1px solid #eae8e3;
+            padding-bottom: 15px;
+        }
+        .claim {}
+        .status {
+            &_normal {}
+            &_opened {
+                display: none;
+            }
+            &_error {
+                font-weight: 600;
+                display: none;
+            }
+        }
+    }
+}
