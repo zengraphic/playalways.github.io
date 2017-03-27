@@ -6,6 +6,10 @@
             padding-right: 130px;
             h2 {
                 letter-spacing: -0.001em;
+                font-size: 26px;
+                @include breakpoint(display_small) {
+                    font-size: 16px;
+                }
                 &:after {
                     content: "";
                     display: block;
@@ -199,6 +203,14 @@
                     top: 5px;
                     right: 0;
                 }
+            }
+        }
+    }
+    
+    .landing-popup {
+        .scrollable {
+            .fontSize {
+                font-size: 12px;
             }
         }
     }

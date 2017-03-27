@@ -55,6 +55,10 @@
         position: relative;
         h2 {
             letter-spacing: -0.001em;
+            font-size: 24px;
+            @include breakpoint(display_small) {
+                font-size: 16px;
+            }
             &:before {
                 content: "";
                 display: block;
@@ -348,6 +352,9 @@
                     color: white;
                     text-decoration: none;
                     font-weight: bold;
+                    @include breakpoint(display_smaller) {
+                        font-size: 17px;
+                    }
                 }
                 a {
                     display: block;
@@ -360,6 +367,9 @@
                     z-index: 1;
                     color: #282f37;
                     text-decoration: none;
+                    @include breakpoint(display_smaller) {
+                        font-size: 17px;
+                    }
                 }
             }
         }
