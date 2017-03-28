@@ -49,6 +49,7 @@
         > .nav_link--label {
           background-color: #666;
           float: left;
+
           > .nav_link {
             color: transparent;
             text-indent: -9999px;
@@ -91,21 +92,38 @@
       vertical-align: top;
       text-decoration: none;
       color: #292f34;
+      height: 69px;
       &:hover {
         color: #ccd1d9;
       }
     }
     &__logo {
-      display: none;
+      //display: none;
+      margin: 0;
+      display: inline-block;
       vertical-align: top;
-      margin: 0 10px;
       float: left;
       .logo {
         margin: 5px 0;
+        display: none;
+        &-link{
+          float: left;
+          display: inline-block;
+        }
+      }
+      .home-icon {
+        display: inline-block;
+        width: 2.5rem;
+        height: 69px;
+        background-color: black;
+        background-image: url('../img/home-512.png');
+        background-repeat: no-repeat;
+        background-size: 1.4rem;
+        background-position: center center;
       }
     }
     &__links {
-      width: calc(100% - 50px);
+      width: calc(100% - 85px);
       padding: 0;
       margin: 0;
       position: relative;
@@ -154,14 +172,16 @@
         }
       }
       &__logo {
-        margin: 0 15px;
-        display: inline-block;
         .logo {
+          display: inline-block;
           margin: 10px 19px;
         }
+        .home-icon {
+        display: none;
+      }
       }
       &__links {
-        width: calc(100% - 270px);
+        width: calc(100% - 240px);
       }
       &__link {}
       &__language {
