@@ -61,6 +61,7 @@
         padding-top: 20px;
         padding-bottom: 20px;
         position: relative;
+        display:table;
         &::before {
             border-left: 1px solid $color_stroke;
             content: '';
@@ -74,6 +75,9 @@
         }
         &__icon {
             //padding-top: 15px;
+            float: none;
+            display:table-cell;
+            vertical-align: middle;
             .base__icon {
                 width: 64px;
                 height: 64px;
@@ -109,7 +113,6 @@
             //     margin: 0 auto;
             // }
             @include breakpoint(small) {
-                padding-top: 25px;
                 ::after {
                     height: 5.625em; //90px
                     right: 0.5em;
@@ -117,6 +120,9 @@
             }
         }
         &__description {
+             float: none;
+            display:table-cell;
+            vertical-align: middle;
             &--title {
                 font-family: $weight-normal;
                 color: $color_infostrada;
