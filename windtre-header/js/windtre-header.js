@@ -17,13 +17,14 @@ jQuery(function($) {
             arrows: false,
             infinite: false,
             slidesToShow: 1,
+            centerPadding: 0,
             prevArrow: '<a class="prev">&lt;</a>',
             nextArrow: '<a class="next">&gt;</a>',
             variableWidth: true,
             responsive: [{
                 breakpoint: 480,
                 settings: {
-                    centerMode: true,
+                    centerMode: false,
                     slidesToShow: 2,
                     slidesToScroll: 1
                 }
@@ -131,7 +132,7 @@ jQuery(function($) {
                     .activeElements
                     .each(function() {
                         var $currentActive = $(this);
-                        
+
                         theHeader
                             .handleLevel($currentActive);
 
@@ -159,7 +160,7 @@ jQuery(function($) {
                     .handleActiveWidths();
 
                 $clickedLinkListItem
-                    .parent('.slick-initialized')
+                    .closest('.slick-initialized')
                     .slick('unslick');
                 $clickedLinkListItem
                     .siblings()
@@ -168,11 +169,17 @@ jQuery(function($) {
                 $clickedLinkListItem
                     .find('.windtre__primary-nav__links')
                     .eq(0)
-                    .show()
-                    .css({
-                        'width': 'calc(100% - ' + logoElementWidth + 'px - ' + langElementWidth + 'px - ' + theHeader.activeElementsWidth + ')'
+                    .show(function() {
+
+                        $(this)
+                            .css({
+                                'width': 'calc(100% - ' + logoElementWidth + 'px - ' + langElementWidth + 'px - ' + theHeader.activeElementsWidth + ')'
+                            })
+                            .children()
+                            .show();
                     })
-                    .slick(theHeader.primaryNavConfig);
+
+                .slick(theHeader.primaryNavConfig);
             }
 
             return theHeader;
@@ -192,6 +199,13 @@ jQuery(function($) {
             $currentActive
                 .siblings()
                 .hide();
+
+            if (!$currentActive.hasClass('base-level')) {
+                $currentActive
+                    .hide();
+            }
+
+
 
             return theHeader;
 
