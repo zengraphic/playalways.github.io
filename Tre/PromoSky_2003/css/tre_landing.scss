@@ -1,0 +1,206 @@
+       $weight-light: 300;
+       $weight-normal: 500;
+       $weight-boldCond: 700;
+       $color-standard: #2c2c2c;
+       $color-orange: #f48135;
+       $color-gray: #999999;
+       $color-light-gray: #d2d2d2;
+       $color-placeholder: #4a4a4a;
+       $color-HomeLife-Background: #212121;
+       $color-gray-mediumBg: #e6e9ed;
+       $color-blue: #0eafc6;
+       $color-border: #e3e7ec;
+       $color-white: #ffffff;
+       $color-samsung: #007cc2;
+       // MIXIN FOR BORDER RADIOUS 
+       @mixin border-radius($radius) {
+           -webkit-border-radius: $radius;
+           border-radius: $radius;
+           background-clip: padding-box;
+           /* stops bg color from leaking outside the border: */
+       }
+       
+       // SINGOLI ANGOLI BORDER RADIOUS
+       @mixin border-top-radius($radius) {
+           -webkit-border-top-right-radius: $radius;
+           border-top-right-radius: $radius;
+           -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-right-radius($radius) {
+           -webkit-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+           -webkit-border-top-right-radius: $radius;
+           border-top-right-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-bottom-radius($radius) {
+           -webkit-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+           -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-left-radius($radius) {
+           -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+           -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       body {
+           background: white;
+           color: $color_standard !important;
+           font-size: 14px; //1em
+           letter-spacing: 0.25px;
+           text-rendering: optimizeLegibility;
+           -webkit-font-smoothing: subpixel-antialiased;
+           -moz-osx-font-smoothing: grayscale;
+           -webkit-hyphens: inherit;
+           -ms-hyphens: inherit;
+           hyphens: none;
+           line-height: 1;
+           font-family: 'Helvetica Neue LT Com', Helvetica, Arial, sans-serif;
+           margin: 0;
+       }
+       
+       input {
+           &:focus {
+               outline: none;
+           }
+       }
+       
+       a {
+           text-decoration: inherit;
+           color: inherit;
+           &:active,
+           &:visited,
+           &:focus {
+               text-decoration: inherit;
+               color: inherit;
+           }
+       }
+       
+       //================= MIXINS ================ //
+       //MIXIN BREAKPOINTS
+       @mixin breakpoint($name) {
+           @if map-has-key($breakpoints, $name) {
+               @media #{inspect(map-get($breakpoints, $name))} {
+                   @content;
+               }
+           }
+           @else {
+               @warn "Couldn't find a your breakpoint named `#{$name}`.";
+           }
+       }
+       
+       // Breakpoint Vars
+       $breakpoints:( 'display_largest':(min-width: 1600px), 'display_larger':(max-width: 1599px), 'display_large':(max-width: 1200px), 'display_medium_large':(max-width: 940px), 'display_medium':(max-width: 880px), 'display_medium_small':(max-width: 768px), 'display_medium_smaller':(max-width: 697px), 'display_small':(max-width: 640px), 'display_smaller':(max-width: 480px), 'display_smallest':(max-width: 320px), 'min_display_medium':(min-width: 768px));
+       //mixin
+       @mixin placeholder {
+           &::-webkit-input-placeholder {
+               @content
+           }
+           &:-moz-placeholder {
+               @content
+           }
+           &::-moz-placeholder {
+               @content
+           }
+           &:-ms-input-placeholder {
+               @content
+           }
+       }
+       
+       // OPACITY
+       @mixin opacity($opacity) {
+           opacity: $opacity;
+           $opacity-ie: $opacity * 100;
+           filter: alpha(opacity=$opacity-ie); //IE8
+       }
+       
+       // INIZIO CSS
+       .container {
+           &_landing {
+               width: 100%;
+               max-width: 1024px;
+               margin: 0 auto;
+               text-align: center;
+               padding-left: 15px;
+               padding-right: 15px;
+               box-sizing: border-box;
+           }
+           &_main_title {
+               color: $color-samsung;
+               h1 {
+                   font-size: 40px;
+                   margin-bottom: 0.3571rem;
+                   @include breakpoint('display_small') {
+                       font-size: 30px;
+                   }
+               }
+               h3 {
+                   font-size: 30px;
+                   margin-top: 0.3571rem;
+                   margin-bottom: 0.3571rem;
+                   @include breakpoint('display_small') {
+                       font-size: 20px;
+                   }
+               }
+           }
+           &_hero {
+               img {
+                   width: 100%;
+                   max-width: 757px;
+                   margin: 0 auto;
+               }
+           }
+           &_cta {
+               margin: 10px;
+               .button_cta {
+                   background-color: $color-samsung;
+                   padding: 20px;
+                   color: $color-white;
+                   width: 27%;
+                   display: inline-block;
+                   margin: 0 20px;
+                   @include border-radius(4px);
+               }
+           }
+           .small_notes {}
+           &_box {}
+           &_subtitle {}
+           .disclaimer {}
+           &_offer {
+               &_sub {
+                   .single_image {
+                       img {}
+                   }
+               }
+               .divider {}
+           }
+           &_footer {
+               &_block {
+                   .round_image {
+                       img {}
+                   }
+                   .text {}
+               }
+           }
+           .terms_and_condition {}
+           .button_download {}
+       }
+       
+       .clear {
+           content: "";
+           display: block;
+           clear: both;
+           visibility: hidden;
+           line-height: 0;
+           height: 0;
+       }
