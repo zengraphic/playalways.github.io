@@ -107,6 +107,21 @@
   .windtre__primary-nav.stuck {
     position: fixed;
     top: 0; }
+  .windtre__primary-nav > .windtre__primary-nav__links:before, .windtre__primary-nav > .windtre__primary-nav__links:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    opacity: 0.8;
+    background-size: contain;
+    background-repeat: repeat-y; }
+  .windtre__primary-nav > .windtre__primary-nav__links:before {
+    left: 0;
+    background-image: url("../img/bg-ltr.png"); }
+  .windtre__primary-nav > .windtre__primary-nav__links:after {
+    right: 0;
+    background-image: url("../img/bg-rtl.png"); }
   .windtre__primary-nav ul {
     list-style-type: none;
     display: inline-block;
@@ -116,35 +131,37 @@
   .windtre__primary-nav li {
     display: inline-block;
     vertical-align: top;
-    margin: 0; }
+    margin: 0;
+    float: left;
+    height: 69px; }
     .windtre__primary-nav li.active {
       z-index: 5;
       position: relative; }
       .windtre__primary-nav li.active > .nav_link--label {
         background-color: #666;
         float: left; }
-        .windtre__primary-nav li.active > .nav_link--label > li > a {
+        .windtre__primary-nav li.active > .nav_link--label > .nav_link {
           color: transparent;
           text-indent: -9999px;
           overflow: hidden;
           width: 40px;
           position: relative;
           z-index: 20; }
-          .windtre__primary-nav li.active > .nav_link--label > li > a:after, .windtre__primary-nav li.active > .nav_link--label > li > a:before {
-            left: 10px;
+          .windtre__primary-nav li.active > .nav_link--label > .nav_link:after, .windtre__primary-nav li.active > .nav_link--label > .nav_link:before {
+            left: 15px;
             width: 2px;
             height: 12px;
             display: block;
             position: absolute;
             background-color: white;
             content: ""; }
-          .windtre__primary-nav li.active > .nav_link--label > li > a:after {
+          .windtre__primary-nav li.active > .nav_link--label > .nav_link:after {
             -webkit-transform: translate(0, -12px) rotate(-45deg);
             -moz-transform: translate(0, -12px) rotate(-45deg);
             -ms-transform: translate(0, -12px) rotate(-45deg);
             -o-transform: translate(0, -12px) rotate(-45deg);
             transform: translate(0, -12px) rotate(-45deg); }
-          .windtre__primary-nav li.active > .nav_link--label > li > a:before {
+          .windtre__primary-nav li.active > .nav_link--label > .nav_link:before {
             -webkit-transform: rotate(45deg);
             -moz-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
@@ -154,39 +171,40 @@
     display: inline-block;
     vertical-align: top;
     text-decoration: none;
-    color: #292f34; }
+    color: #292f34;
+    height: 69px; }
     .windtre__primary-nav a:hover {
       color: #ccd1d9; }
   .windtre__primary-nav__logo {
-    display: none;
+    margin: 0;
+    display: inline-block;
     vertical-align: top;
-    margin: 0 10px; }
+    float: left; }
     .windtre__primary-nav__logo .logo {
-      margin: 5px 0; }
+      margin: 5px 0;
+      display: none; }
+      .windtre__primary-nav__logo .logo-link {
+        float: left;
+        display: inline-block; }
+    .windtre__primary-nav__logo .home-icon {
+      display: inline-block;
+      width: 2.5rem;
+      height: 69px;
+      background-color: black;
+      background-image: url("../img/home-512.png");
+      background-repeat: no-repeat;
+      background-size: 1.4rem;
+      background-position: center center; }
   .windtre__primary-nav__links {
-    width: calc(100% - 50px);
+    width: calc(100% - 85px);
     padding: 0;
     margin: 0;
-    position: relative; }
-    .windtre__primary-nav__links:before, .windtre__primary-nav__links:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 25px;
-      opacity: 0.8;
-      background-size: contain;
-      background-repeat: repeat-y; }
-    .windtre__primary-nav__links:before {
-      left: 0;
-      background-image: url("../img/bg-ltr.png"); }
-    .windtre__primary-nav__links:after {
-      right: 0;
-      background-image: url("../img/bg-rtl.png"); }
-  .windtre__primary-nav ul:not(.nav_link--label):not(.windtre__primary-nav__links) {
-    display: none; }
+    position: relative;
+    float: left; }
   .windtre__primary-nav .nav_link {
-    padding: 25px 20px; }
+    padding: 25px 20px;
+    display: inline-block;
+    white-space: nowrap; }
   .windtre__primary-nav__language {
     display: inline-block;
     vertical-align: top; }
@@ -199,25 +217,24 @@
       padding: 25px 15px; }
 
 @media (min-width: 480px) {
-  .windtre__primary-nav li.active {
+  .windtre__primary-nav li.active > .nav_link--label {
     z-index: 5;
     position: relative; }
-    .windtre__primary-nav li.active > .nav_link--label {
-      border-right: 1px solid white; }
-      .windtre__primary-nav li.active > .nav_link--label > li > a {
-        color: white;
-        text-indent: 0;
-        overflow: visible;
-        width: auto; }
-        .windtre__primary-nav li.active > .nav_link--label > li > a:after, .windtre__primary-nav li.active > .nav_link--label > li > a:before {
-          content: none; }
-  .windtre__primary-nav__logo {
-    margin: 0 15px;
-    display: inline-block; }
-    .windtre__primary-nav__logo .logo {
-      margin: 10px 19px; }
+    .windtre__primary-nav li.active > .nav_link--label > .nav_link {
+      border-right: 1px solid white;
+      color: white;
+      text-indent: 0;
+      overflow: visible;
+      width: auto; }
+      .windtre__primary-nav li.active > .nav_link--label > .nav_link:after, .windtre__primary-nav li.active > .nav_link--label > .nav_link:before {
+        content: none; }
+  .windtre__primary-nav__logo .logo {
+    display: inline-block;
+    margin: 10px 19px; }
+  .windtre__primary-nav__logo .home-icon {
+    display: none; }
   .windtre__primary-nav__links {
-    width: calc(100% - 286px); }
+    width: calc(100% - 240px); }
   .windtre__primary-nav__language .language {
     padding: 25px 44px; } }
 

@@ -1,338 +1,346 @@
 //BLOCCO DASHBOARD
 .dashboard_block {
-    background-color: $color_white;
-    &__container {
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 30px 0;
-    }
-    &__product {
-        .extra_offer {
-            margin-bottom: 1rem;
-            &:before {
-                content: none;
-            }
-            .offer__text {
-                a {
-                    display: none;
-                }
-            }
-        }
-    }
-   
-    .phone {
-        &_model {
-            margin-top: 46px;
-            position: relative;
-        }
-        &_thumbs {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 5.25em;
-            padding: 1rem 0 0;
-            background: -webkit-linear-gradient(left, $color_white 50%, $color_transparent 100%);
-            background: -o-linear-gradient(left, $color_white 50%, $color_transparent 100%);
-            background: linear-gradient(to right, $color_white 50%, $color_transparent 100%);
-            z-index: 2;
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}', GradientType=1);
-            @include breakpoint('super-tiny') {
-                top: auto;
-                bottom: 0;
-                width: 100%;
-                padding-top: 0;
-            }
-        }
-        &_thumb {
-            width: 100%;
-            height: auto;
-            margin-bottom: 2rem;
-            float: left;
-            outline: 0;
-            text-align: center;
-            cursor: pointer;
-            @include breakpoint('super-tiny') {
-                margin-bottom: 0;
-            }
-            img {
-                width: auto;
-                height: 54px;
-            }
-        }
-        &_gallery {
-            padding: 0 0 2rem;
-            min-height: 390px;
-            @include breakpoint('super-tiny') {
-                padding-bottom: 100px;
-            }
-        }
-        &_slide {
-            outline: 0;
-            @include breakpoint('super-tiny') {
-                width: 100%;
-                height: auto;
-            }
-            img {
-                width: 100%;
-                @include breakpoint('small') {
-                    width: auto;
-                    max-width: 100%;
-                    max-height: 480px;
-                }
-            }
-        }
-    }
-    &__title {
-        height: 2.2em;
-        margin-bottom: .25rem;
-        color: $color_text;
-        font-family: $weight-light;
-        font-size: 2.5rem;
-        line-height: 1.1em;
-        text-align: center;
-        overflow: hidden;
-    }
-    &__features {
-        margin-bottom: 1rem;
-        color: $color_text;
-        line-height: 1.2em;
-        text-align: center;
-    }
-    .sim__included {
-        color: $color_text;
-        margin-bottom: 1rem;
-    }
-    &__attributes {
-      &__container {
-        min-height: 280px;
+  background-color: $color_white;
+  &__container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  &__product {
+    .extra_offer {
+      margin-bottom: 1rem;
+      &:before {
+        content: none;
       }
-        &.affix {
-            right: 0;
-            bottom: 1rem;
-            max-width: 11rem;
-            padding: .5rem;
-            border: 1px solid $color_stroke;
-            border-radius: 8px 0 0 8px;
-            background-color: $color_white;
-            z-index: 900;
-            @include breakpoint(medium) {
-                top: 123px;
-                left: 0;
-                right: 0;
-                bottom: auto;
-                max-width: none;
-                border-width: 0 0 1px 0;
-                border-radius: 0;
-            }
-            .dashboard_block__features,
-            label {
-                display: none;
-            }
-            .dashboard_block__title {
-                font-size: 1.2rem;
-            }
-            .dashboard_block__item {
-                display: inline-block;
-                width: 3.2rem;
-                height: 2.5rem;
-                margin: .25rem;
-                padding: calc(.5rem - 1px);
-                &s.item {
-                    &_color {
-                        width: 10rem;
-                        min-width: auto;
-                        margin-bottom: .5rem;
-                        padding-bottom: .5rem;
-                        border-bottom: 1px solid $color_stroke;
-                        @include breakpoint(medium) {
-                            min-width: auto;
-                            width: auto;
-                        }
-                    }
-                    &_memory {
-                        width: 10rem;
-                        min-width: auto;
-                        margin-bottom: 0;
-                        @include breakpoint(medium) {
-                            min-width: none;
-                            width: auto;
-                        }
-                    }
-                }
-            }
+      .offer {
+        &__logo {
+          width: 15%;
+          float: left;
+          margin-right: .5rem;
+          max-width: 50px;
         }
+        &__text {
+          a {
+            display: none;
+          }
+        }
+      }
     }
-    &__items {
-        display: table;
-        width: auto;
-        min-width: 225px;
-        margin: 0 auto 1rem;
-        padding-left: 0;
-        border-spacing: .5rem 0;
-        @include breakpoint(medium) {
-            display: block;
-            text-align: center;
-        }
+  }
+  .phone {
+    &_model {
+      margin-top: 46px;
+      position: relative;
     }
-    &__item {
-        display: table-cell;
-        width: 4.75rem;
-        height: 4.75rem;
-        padding: .5rem 0 0;
-        border: 1px solid $color_stroke;
-        border-radius: 4px;
-        cursor: pointer;
-        vertical-align: middle;
-        @include breakpoint(medium) {
-            display: inline-block;
-            width: calc(25% - 1rem);
-            margin: 0 .25rem .5rem;
-        }
-        @include breakpoint(small) {
-            width: calc(12% - 1rem);
-        }
-        @include breakpoint(tiny) {
-            width: calc(20% - 1rem);
-        }
-        &:hover {
-            border-color: $color_wind;
-        }
-        &.active {
-            border-color: $color_wind;
-        }
-        &.inactive {
-            border-color: $color_grey_light;
-            cursor: not-allowed;
-            span.amount,
-            label {
-                color: $color_grey_light;
-            }
-        }
-        label {
-            width: 100%;
-            color: $color_text;
-            font-family: $weight-normal;
-            font-size: .875rem;
-            font-weight: normal;
-            line-height: 1.1em;
-            cursor: pointer;
-        }
-        span {
-            display: block;
-            &.round {
-                width: 1.25rem;
-                height: 1.25rem;
-                margin: 0 auto .25rem;
-                border: 1px solid $color_stroke;
-                border-radius: 50%;
-            }
-            &.amount {
-                color: $color_text;
-                font-family: $weight_normal;
-                font-size: 1.25rem;
-                line-height: 1.25em;
-            }
-        }
-    }
-    &__paymentRateRow {
+    &_thumbs {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5.25em;
+      padding: 1rem 0 0;
+      background: -webkit-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+      background: -o-linear-gradient(left, $color_white 50%, $color_transparent 100%);
+      background: linear-gradient(to right, $color_white 50%, $color_transparent 100%);
+      z-index: 2;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_white}', endColorstr='#{$color_transparent}', GradientType=1);
+      @include breakpoint('super-tiny') {
+        top: auto;
+        bottom: 0;
         width: 100%;
-        margin-bottom: .75rem;
-        border-bottom: 1px solid $color_stroke;
+        padding-top: 0;
+      }
     }
-    &__paymentAmountRow {
+    &_thumb {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      float: left;
+      outline: 0;
+      text-align: center;
+      cursor: pointer;
+      @include breakpoint('super-tiny') {
+        margin-bottom: 0;
+      }
+      img {
         width: auto;
-        max-width: 350px;
-        margin: 0 auto 1rem;
+        height: 54px;
+      }
     }
-    &__paymentRow {
+    &_gallery {
+      padding: 0 0 2rem;
+      min-height: 390px;
+      @include breakpoint('super-tiny') {
+        padding-bottom: 100px;
+      }
+    }
+    &_slide {
+      outline: 0;
+      @include breakpoint('super-tiny') {
+        width: 100%;
+        height: auto;
+      }
+      img {
+        width: 100%;
+        @include breakpoint('small') {
+          width: auto;
+          max-width: 100%;
+          max-height: 480px;
+        }
+      }
+    }
+  }
+  &__title {
+    height: 2.2em;
+    margin-bottom: .25rem;
+    color: $color_text;
+    font-family: $weight-light;
+    font-size: 2.5rem;
+    line-height: 1.1em;
+    text-align: center;
+    overflow: hidden;
+  }
+  &__features {
+    margin-bottom: 1rem;
+    color: $color_text;
+    line-height: 1.2em;
+    text-align: center;
+  }
+  .sim__included {
+    color: $color_text;
+    margin-bottom: 1rem;
+  }
+  &__attributes {
+    &__container {
+      min-height: 280px;
+    }
+    &.affix {
+      right: 0;
+      bottom: 1rem;
+      max-width: 11rem;
+      padding: .5rem;
+      border: 1px solid $color_stroke;
+      border-radius: 8px 0 0 8px;
+      background-color: $color_white;
+      z-index: 900;
+      @include breakpoint(medium) {
+        top: 123px;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        max-width: none;
+        border-width: 0 0 1px 0;
+        border-radius: 0;
+      }
+      .dashboard_block__features,
+      label {
         display: none;
-        margin-bottom: 1.5rem;
-        &.strip_plans {
-            background-color: white !important;
-            .strip_plans__title {
-                @include breakpoint('small') {
-                    width: 100%;
-                }
-                &--main {
-                    @include breakpoint('small') {
-                        text-align: center;
-                    }
-                }
-            }
-        }
-    }
-    &__priceRow {
-        display: none;
-        margin-bottom: 1.5rem;
-        font-family: $weight-light;
-        text-align: center;
-        &__price {
-            display: block;
-            margin-bottom: 1rem;
-            color: inherit;
-            font-family: $weight-normal;
-            font-size: 3.5em;
-            @include breakpoint('super-tiny') {
-                font-size: 2.8rem;
-            }
-        }
-        p {
-            color: $color_text;
-            line-height: 1.2em;
-        }
-    }
-    &__button {
-        &--container {
-            &Double {
-                display: none;
-            }
-            &Single {
-                display: block;
-                text-align: center;
-                .dashboard_block__button {
-                    width: 280px;
-                }
-            }
-        }
-        width: calc(50% - 15px);
-        @include breakpoint(small) {
-            width: 50%;
-        }
-        &.left {
-            margin-right: 30px;
-            @include breakpoint(small) {
-                margin-right: 0;
-            }
-        }
-    }
-    &__button {
+      }
+      .dashboard_block__title {
+        font-size: 1.2rem;
+      }
+      .dashboard_block__item {
         display: inline-block;
-        button {
-            width: 100%;
+        width: 3.2rem;
+        height: 2.5rem;
+        margin: .25rem;
+        padding: calc(.5rem - 1px);
+        &s.item {
+          &_color {
+            width: 10rem;
+            min-width: auto;
+            margin-bottom: .5rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid $color_stroke;
+            @include breakpoint(medium) {
+              min-width: auto;
+              width: auto;
+            }
+          }
+          &_memory {
+            width: 10rem;
+            min-width: auto;
+            margin-bottom: 0;
+            @include breakpoint(medium) {
+              min-width: none;
+              width: auto;
+            }
+          }
         }
+      }
     }
+  }
+  &__items {
+    display: table;
+    width: auto;
+    min-width: 225px;
+    margin: 0 auto 1rem;
+    padding-left: 0;
+    border-spacing: .5rem 0;
+    @include breakpoint(medium) {
+      display: block;
+      text-align: center;
+    }
+  }
+  &__item {
+    display: table-cell;
+    width: 4.75rem;
+    height: 4.75rem;
+    padding: .5rem 0 0;
+    border: 1px solid $color_stroke;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+    @include breakpoint(medium) {
+      display: inline-block;
+      width: calc(25% - 1rem);
+      margin: 0 .25rem .5rem;
+    }
+    @include breakpoint(small) {
+      width: calc(12% - 1rem);
+    }
+    @include breakpoint(tiny) {
+      width: calc(20% - 1rem);
+    }
+    &:hover {
+      border-color: $color_wind;
+    }
+    &.active {
+      border-color: $color_wind;
+    }
+    &.inactive {
+      border-color: $color_grey_light;
+      cursor: not-allowed;
+      span.amount,
+      label {
+        color: $color_grey_light;
+      }
+    }
+    label {
+      width: 100%;
+      padding: 0 .2rem;
+      color: $color_text;
+      font-family: $weight-normal;
+      font-size: .875rem;
+      font-weight: normal;
+      line-height: 1.1em;
+      cursor: pointer;
+    }
+    span {
+      display: block;
+      &.round {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0 auto .25rem;
+        border: 1px solid $color_stroke;
+        border-radius: 50%;
+      }
+      &.amount {
+        color: $color_text;
+        font-family: $weight_normal;
+        font-size: 1.25rem;
+        line-height: 1.25em;
+      }
+    }
+  }
+  &__paymentRateRow {
+    width: 100%;
+    margin-bottom: .75rem;
+    border-bottom: 1px solid $color_stroke;
+  }
+  &__paymentAmountRow {
+    width: auto;
+    max-width: 350px;
+    margin: 0 auto 1rem;
+  }
+  &__paymentRow {
+    display: none;
+    margin-bottom: 1.5rem;
+    &.strip_plans {
+      background-color: white !important;
+      .strip_plans__title {
+        @include breakpoint('small') {
+          width: 100%;
+        }
+        &--main {
+          @include breakpoint('small') {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  &__priceRow {
+    display: none;
+    margin-bottom: 1.5rem;
+    font-family: $weight-light;
+    text-align: center;
+    &__price {
+      display: block;
+      margin-bottom: 1rem;
+      color: inherit;
+      font-family: $weight-normal;
+      font-size: 3.5em;
+      @include breakpoint('super-tiny') {
+        font-size: 2.8rem;
+      }
+    }
+    p {
+      color: $color_text;
+      line-height: 1.2em;
+    }
+  }
+  &__button {
+    &--container {
+      &Double {
+        display: none;
+      }
+      &Single {
+        display: block;
+        text-align: center;
+        .dashboard_block__button {
+          width: 280px;
+        }
+      }
+    }
+    width: calc(50% - 15px);
+    @include breakpoint(small) {
+      width: 50%;
+    }
+    &.left {
+      margin-right: 30px;
+      @include breakpoint(small) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__button {
+    display: inline-block;
+    button {
+      width: 100%;
+    }
+  }
 }
 
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 @media all and (max-width: 480px) {
-    .dashboard_block {
-        &__right {
-            li {
-                width: 4.2em;
-                margin-right: .4em;
-            }
-        }
-        &__left {
-            margin-top: 0;
-        }
-        &__button {
-            width: 100%;
-            .left {
-                margin-right: 0;
-            }
-        }
+  .dashboard_block {
+    &__right {
+      li {
+        width: 4.2em;
+        margin-right: .4em;
+      }
     }
+    &__left {
+      margin-top: 0;
+    }
+    &__button {
+      width: 100%;
+      .left {
+        margin-right: 0;
+      }
+    }
+  }
 }
