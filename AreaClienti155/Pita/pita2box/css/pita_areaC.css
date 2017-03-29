@@ -134,6 +134,41 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.grey_box {
+  background-color: #f4f4f4;
+  color: #000000; }
+  .grey_box .button_pita {
+    position: relative;
+    bottom: 15px; }
+    .grey_box .button_pita a {
+      border: 1px solid #f48135;
+      background-color: #f48135;
+      padding: 10px 30px;
+      color: #ffffff !important;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */ }
+
+.orange_box {
+  background-color: #f48135;
+  color: #ffffff; }
+  .orange_box .offer_gold,
+  .orange_box .offer_price {
+    color: #ffffff !important; }
+  .orange_box .button_pita {
+    position: relative;
+    bottom: 15px; }
+    .orange_box .button_pita a {
+      border: 1px solid #f48135;
+      background-color: #ffffff;
+      padding: 10px 30px;
+      color: #f48135 !important;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */ }
+
 .pita_container {
   margin-top: 50px;
   font-family: "Trebuchet MS";
@@ -155,30 +190,15 @@ table {
   .pita_container .pita_container_left {
     margin-left: 0px;
     height: 180px;
-    background-color: #f4f4f4;
-    color: #000000;
     float: left;
     width: 340px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
-    .pita_container .pita_container_left .button_pita {
-      position: relative;
-      bottom: 15px; }
-      .pita_container .pita_container_left .button_pita a {
-        background-color: #f48135;
-        padding: 10px 30px;
-        color: #ffffff;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-clip: padding-box;
-        /* stops bg color from leaking outside the border: */ }
   .pita_container .pita_container_right {
     margin-right: 0px;
     height: 180px;
-    background-color: #f48135;
-    color: #ffffff;
     float: right;
     margin-left: 15px;
     width: 340px;
@@ -186,27 +206,6 @@ table {
     border-radius: 8px;
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
-    .pita_container .pita_container_right .button_pita {
-      position: relative;
-      bottom: 15px; }
-      .pita_container .pita_container_right .button_pita a {
-        border: 1px solid #f48135;
-        background-color: #f48135;
-        padding: 10px 30px;
-        color: #ffffff;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-clip: padding-box;
-        /* stops bg color from leaking outside the border: */ }
-      .pita_container .pita_container_right .button_pita.ghost a {
-        border: 1px solid #f48135;
-        background-color: #ffffff;
-        padding: 10px 30px;
-        color: #f48135;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-clip: padding-box;
-        /* stops bg color from leaking outside the border: */ }
     .pita_container .pita_container_right_price {
       float: right;
       color: #f48135; }
@@ -214,7 +213,7 @@ table {
     float: left;
     width: 100%; }
     .pita_container .pita_container_text .offer_gold {
-      color: #FFD700;
+      color: #f48135;
       font-weight: 700; }
     .pita_container .pita_container_text .offer_price {
       color: #f48135;
@@ -232,7 +231,8 @@ table {
       width: 30%; }
   .pita_container .pita_img {
     position: relative;
-    bottom: 7px; }
+    bottom: 6px;
+    right: 3px; }
     .pita_container .pita_img.right {
       float: right; }
   .pita_container .pita_cta:hover {
