@@ -11,82 +11,7 @@
       position: fixed;
       top: 0;
     }
-    ul {
-      list-style-type: none;
-      display: inline-block;
-      vertical-align: top;
-      padding: 0;
-      margin: 0;
-    }
-    li {
-      display: inline-block;
-      vertical-align: top;
-      margin: 0;
-      &.active {
-        > .nav_link--label {
-          background-color: #666;
-          float: left;
-          > li {
-            > a {
-              color: transparent;
-              text-indent: -9999px;
-              overflow: hidden;
-              width: 40px;
-              position: relative;
-              z-index: 20;
-              &:after,
-              &:before {
-                left: 10px;
-                width: 2px;
-                height: 12px;
-                display: block;
-                position: absolute;
-                background-color: white;
-                content: "";
-              }
-              &:after {
-                -webkit-transform: translate(0, -12px) rotate(-45deg);
-                -moz-transform: translate(0, -12px) rotate(-45deg);
-                -ms-transform: translate(0, -12px) rotate(-45deg);
-                -o-transform: translate(0, -12px) rotate(-45deg);
-                transform: translate(0, -12px) rotate(-45deg);
-              }
-              &:before {
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                transform: rotate(45deg);
-              }
-            }
-          }
-        }
-        z-index: 5;
-        position: relative;
-      }
-    }
-    a {
-      display: inline-block;
-      vertical-align: top;
-      text-decoration: none;
-      color: #292f34;
-      &:hover {
-        color: #ccd1d9;
-      }
-    }
-    &__logo {
-      display: none;
-      vertical-align: top;
-      margin: 0 10px;
-      .logo {
-        margin: 5px 0;
-      }
-    }
-    &__links {
-      width: calc(100% - 50px);
-      padding: 0;
-      margin: 0;
-      position: relative;
+    > .windtre__primary-nav__links {
       &:before,
       &:after {
         content: "";
@@ -107,11 +32,107 @@
         background-image: url('../img/bg-rtl.png');
       }
     }
-    ul:not(.nav_link--label):not(.windtre__primary-nav__links) {
-      display: none;
+    ul {
+      list-style-type: none;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      float: left;
+      height: 69px;
+      &.active {
+        > .nav_link--label {
+          background-color: #666;
+          float: left;
+
+          > .nav_link {
+            color: transparent;
+            text-indent: -9999px;
+            overflow: hidden;
+            width: 40px;
+            position: relative;
+            z-index: 20;
+            &:after,
+            &:before {
+              left: 15px;
+              width: 2px;
+              height: 12px;
+              display: block;
+              position: absolute;
+              background-color: white;
+              content: "";
+            }
+            &:after {
+              -webkit-transform: translate(0, -12px) rotate(-45deg);
+              -moz-transform: translate(0, -12px) rotate(-45deg);
+              -ms-transform: translate(0, -12px) rotate(-45deg);
+              -o-transform: translate(0, -12px) rotate(-45deg);
+              transform: translate(0, -12px) rotate(-45deg);
+            }
+            &:before {
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+        z-index: 5;
+        position: relative;
+      }
+    }
+    a {
+      display: inline-block;
+      vertical-align: top;
+      text-decoration: none;
+      color: #292f34;
+      height: 69px;
+      &:hover {
+        color: #ccd1d9;
+      }
+    }
+    &__logo {
+      //display: none;
+      margin: 0;
+      display: inline-block;
+      vertical-align: top;
+      float: left;
+      .logo {
+        margin: 5px 0;
+        display: none;
+        &-link{
+          float: left;
+          display: inline-block;
+        }
+      }
+      .home-icon {
+        display: inline-block;
+        width: 2.5rem;
+        height: 69px;
+        background-color: black;
+        background-image: url('../img/home-512.png');
+        background-repeat: no-repeat;
+        background-size: 1.4rem;
+        background-position: center center;
+      }
+    }
+    &__links {
+      width: calc(100% - 85px);
+      padding: 0;
+      margin: 0;
+      position: relative;
+      float: left;
     }
     .nav_link {
       padding: 25px 20px;
+      display: inline-block;
+      white-space: nowrap;
     }
     &__language {
       display: inline-block;
@@ -134,33 +155,33 @@
       li {
         &.active {
           > .nav_link--label {
-            border-right: 1px solid white;
-            > li {
-              > a {
-                color: white;
-                text-indent: 0;
-                overflow: visible;
-                width: auto;
-                &:after,
-                &:before {
-                  content: none;
-                }
+            > .nav_link {
+              border-right: 1px solid white;
+              color: white;
+              text-indent: 0;
+              overflow: visible;
+              width: auto;
+              &:after,
+              &:before {
+                content: none;
               }
             }
+            z-index: 5;
+            position: relative;
           }
-          z-index: 5;
-          position: relative;
         }
       }
       &__logo {
-        margin: 0 15px;
-        display: inline-block;
         .logo {
+          display: inline-block;
           margin: 10px 19px;
         }
+        .home-icon {
+        display: none;
+      }
       }
       &__links {
-        width: calc(100% - 286px);
+        width: calc(100% - 240px);
       }
       &__link {}
       &__language {

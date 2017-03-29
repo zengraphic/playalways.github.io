@@ -4380,7 +4380,8 @@ a.button--search {
     width: 100%;
     float: left;
     max-height: 20em;
-    margin: 0 0 2em 0; }
+    margin: 0 0 2em 0;
+    padding: 15px; }
     .overlay_info.offerta_lightb .text_cont p {
       text-align: left;
       font-family: "Trade Gothic";
@@ -4393,7 +4394,8 @@ a.button--search {
     max-width: 830px; }
 
 .nicescroll-rails-vr {
-  border-radius: 5px; }
+  border-radius: 5px;
+  z-index: 1043 !important; }
 
 .mfp-fade.mfp-bg {
   background-color: #292F36; }
@@ -6220,6 +6222,11 @@ a.button--search {
     margin-bottom: 1rem; }
     .dashboard_block__product .extra_offer:before {
       content: none; }
+    .dashboard_block__product .extra_offer .offer__logo {
+      width: 15%;
+      float: left;
+      margin-right: .5rem;
+      max-width: 50px; }
     .dashboard_block__product .extra_offer .offer__text a {
       display: none; }
   .dashboard_block .phone_model {
@@ -6385,6 +6392,7 @@ a.button--search {
         color: #E6E9ED; }
     .dashboard_block__item label {
       width: 100%;
+      padding: 0 .2rem;
       color: #292F36;
       font-family: "Trade Gothic";
       font-size: .875rem;
@@ -8488,7 +8496,8 @@ a.button--search {
   .advantages_block__listItem {
     padding-top: 20px;
     padding-bottom: 20px;
-    position: relative; }
+    position: relative;
+    display: table; }
     .advantages_block__listItem::before {
       border-left: 1px solid #D3D3D2;
       content: '';
@@ -8499,32 +8508,38 @@ a.button--search {
       @media (max-width: 767px) {
         .advantages_block__listItem::before {
           left: 24%; } }
-    .advantages_block__listItem__icon .base__icon {
-      width: 64px;
-      height: 64px; }
-    @media (max-width: 767px) {
-      .advantages_block__listItem__icon {
-        padding-top: 25px; }
+    .advantages_block__listItem__icon {
+      float: none;
+      display: table-cell;
+      vertical-align: middle; }
+      .advantages_block__listItem__icon .base__icon {
+        width: 64px;
+        height: 64px; }
+      @media (max-width: 767px) {
         .advantages_block__listItem__icon ::after {
           height: 5.625em;
           right: 0.5em; } }
-    .advantages_block__listItem__description--title {
-      font-family: "Trade Gothic";
-      color: #183989;
-      text-transform: uppercase;
-      font-size: 1.125em;
-      padding-bottom: 10px; }
-      @media (max-width: 767px) {
-        .advantages_block__listItem__description--title {
-          font-size: 1em; } }
-    .advantages_block__listItem__description p {
-      font-family: "Trade Gothic Light";
-      color: #292F36;
-      font-size: 1em;
-      line-height: 1.125em; }
-      @media (max-width: 767px) {
-        .advantages_block__listItem__description p {
-          font-size: 0.95em; } }
+    .advantages_block__listItem__description {
+      float: none;
+      display: table-cell;
+      vertical-align: middle; }
+      .advantages_block__listItem__description--title {
+        font-family: "Trade Gothic";
+        color: #183989;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        padding-bottom: 10px; }
+        @media (max-width: 767px) {
+          .advantages_block__listItem__description--title {
+            font-size: 1em; } }
+      .advantages_block__listItem__description p {
+        font-family: "Trade Gothic Light";
+        color: #292F36;
+        font-size: 1em;
+        line-height: 1.125em; }
+        @media (max-width: 767px) {
+          .advantages_block__listItem__description p {
+            font-size: 0.95em; } }
     .advantages_block__listItem:nth-of-type(odd) {
       background-color: #E6E9ED; }
 
@@ -8547,7 +8562,7 @@ a.button--search {
     display: block; }
     .fiber_block__container__item {
       padding: 25px 0;
-      display: block; }
+      display: table; }
       @media (max-width: 767px) {
         .fiber_block__container__item {
           padding: 15px 0; } }
@@ -8584,7 +8599,9 @@ a.button--search {
       .fiber_block__container__item.full .fiber_block__container__button {
         display: none; }
     .fiber_block__container__description {
-      display: block; }
+      display: table-cell;
+      float: none;
+      vertical-align: middle; }
       .fiber_block__container__description--title {
         font-family: "Trade Gothic Light";
         color: #009BBE;
@@ -8593,15 +8610,22 @@ a.button--search {
       .fiber_block__container__description--subTitle {
         margin-bottom: 10px; }
       @media (max-width: 767px) {
-        .fiber_block__container__description p {
-          font-size: 0.96em; } }
+        .fiber_block__container__description {
+          display: block; }
+          .fiber_block__container__description p {
+            font-size: 0.96em; } }
     .fiber_block__container__button {
+      display: table-cell;
+      float: none;
+      vertical-align: middle;
       padding-top: 29px;
       padding-bottom: 29px; }
       .fiber_block__container__button .button--slim {
-        display: inline-block;
+        display: block;
         width: 100%;
-        font-size: 1em; }
+        margin: 0 auto;
+        font-size: 1em;
+        max-width: 280px; }
         .fiber_block__container__button .button--slim::before {
           border-left: 1px solid #D3D3D2;
           content: '';
@@ -8619,7 +8643,8 @@ a.button--search {
       @media (max-width: 767px) {
         .fiber_block__container__button {
           padding-top: 30px;
-          padding-bottom: 0; } }
+          padding-bottom: 0;
+          display: block; } }
     .fiber_block__container:nth-of-type(even) {
       background-color: #E6E9ED; }
   .fiber_block__note {

@@ -8,7 +8,7 @@
             display: block;
             &__item {
                 padding: 25px 0;
-                display: block;
+                display: table;
                 @include breakpoint(small) {
                     padding: 15px 0;
                 }
@@ -58,7 +58,9 @@
                 }
             }
             &__description {
-                display: block;
+                display: table-cell;
+                float:none;
+                vertical-align: middle;
                 &--title {
                     font-family: $weight-light;
                     color: $color_robin;
@@ -69,18 +71,24 @@
                     margin-bottom: 10px;
                 }
                 @include breakpoint(small) {
+                    display:block;
                     & p {
                         font-size: 0.96em;
                     }
                 }
             }
             &__button {
+                display: table-cell;
+                float:none;
+                vertical-align: middle;
                 padding-top: 29px;
                 padding-bottom: 29px;
                 .button--slim {
-                    display: inline-block;
+                    display: block;
                     width: 100%;
+                    margin:0 auto;
                     font-size: 1em;
+                    max-width:280px;
                     &::before {
                         border-left: 1px solid $color_stroke;
                         content: '';
@@ -100,6 +108,7 @@
                 @include breakpoint(small) {
                     padding-top: 30px;
                     padding-bottom: 0;
+                    display:block;
                 }
             }
             &:nth-of-type(even) {
