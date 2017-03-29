@@ -1,23 +1,24 @@
 ;
-(function(r$,DOUBLEFILTER) {
+(function(r$) {
 
     'use strict';
 
     r$(document)
         .ready(function() {
-            console.log(DOUBLEFILTER);
+
             var $sliderBlock = r$('.dashboard_block');
             var $tabsBlock = r$('.grey_strip__block__mainWrapper');
             var $plansBlock = r$('.blocco_strip_plans');
 
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock, $tabsBlock,$plansBlock, false, '000000000000008451');
+                .initSlider($sliderBlock, $tabsBlock, $plansBlock, true, '000000000000008451');
         });
 
     var PRODUCTSLIDER = {
-        deviceMode: 'payment',
+        deviceMode: true,
         container: false,
+        tabsContainer: false,
         plansContainer: false,
         models: false,
         prices: false,
@@ -26,6 +27,8 @@
         memoriesList: false,
         memoriesListItems: false,
         plans: false,
+        paymentRates: false,
+        paymentRatesCombo: false,
         activePlan: false,
         activePaymentRate: false,
         activeModel: false,
@@ -42,11 +45,11 @@
          * @param  {[string]} defaultSelectedSap    [optional sap code to set default active product]
          * @return {[obj]}                          [jQuery slider object for chaining]
          */
-        initSlider: function($sliderDomObject,$tabsDomObject, $plansDomObject, deviceMode, defaultSelectedSap) {
+        initSlider: function($sliderDomObject, $tabsDomObject, $plansDomObject, deviceMode, defaultSelectedSap) {
             var $SLIDER = this;
 
             $SLIDER
-                .setSliderItems($sliderDomObject, $tabsDomObject,$plansDomObject, deviceMode);
+                .setSliderItems($sliderDomObject, $tabsDomObject, $plansDomObject, deviceMode);
 
             if (!defaultSelectedSap) {
                 defaultSelectedSap = $SLIDER.setDefaultSelectedSap();
@@ -112,7 +115,7 @@
          *
          * @return {[obj]}                  [Slider obj for chaining]
          */
-        setSliderItems: function($sliderDomObject, $tabsDomObject,$plansDomObject, deviceMode) {
+        setSliderItems: function($sliderDomObject, $tabsDomObject, $plansDomObject, deviceMode) {
             var $SLIDER = this;
 
             $SLIDER.deviceMode = deviceMode;
@@ -120,9 +123,10 @@
             $SLIDER.plansContainer = $plansDomObject;
             $SLIDER.tabsContainer = $tabsDomObject;
             $SLIDER.tabs = $tabsDomObject.find('.tab_button');
-            $SLIDER.plans = $SLIDER.plansContainer.find('.blocco_strip_plans');
+            $SLIDER.plans = $SLIDER.plansContainer.find('.strip_plans');
             $SLIDER.models = $SLIDER.container.find('.phone_model');
             $SLIDER.prices = $SLIDER.container.find('.data-sap-price');
+            $SLIDER.paymentRatesCombo = $SLIDER.container.find('.dashboard_block__paymentRow__container');
             $SLIDER.paymentRates = $SLIDER.container.find('.data-sap-payment');
             $SLIDER.colorsList = $SLIDER.container.find('.item_color');
             $SLIDER.colorsListItems = $SLIDER.colorsList.find('.dashboard_block__item');
@@ -372,7 +376,7 @@
                     var currentModelSap = r$(this).data().sap;
                     return currentModelSap == activeSap;
                 });
-                 $SLIDER
+                $SLIDER
                     .hideAndShowRelated('paymentRates');
             } else {
                 $SLIDER.activePrice = $SLIDER.prices.filter(function() {
@@ -439,6 +443,35 @@
          * 
          * @return {[obj]}           [Slider obj for chaining]
          */
+        handleCombo: function(dataCombo) {
+            var $SLIDER = this;
+            if ($SLIDER.deviceMode) {
+                $SLIDER
+                    .paymentRatesCombo
+                    .each(function() {
+                        var currentRate = r$(this);
+                        var currentRateData = currentRate.data().combo;
+                        console.log(currentRateData);
+                        console.log(dataCombo);
+                        if (currentRateData == dataCombo) {
+                            currentRate
+                                .show();
+                        } else {
+                            currentRate
+                                .hide();
+                        }
+                    });
+            } else {
+                
+            }
+
+            return $SLIDER;
+        },
+        /**
+         * [bindTabs description]
+         * 
+         * @return {[obj]}           [Slider obj for chaining]
+         */
         bindTabs: function() {
             var $SLIDER = this;
             $SLIDER
@@ -464,12 +497,12 @@
                 });
 
             $SLIDER
-                .tabs
-                .click(function(e){
-                    e.preventDefault();
-                    console.log(e.target);
-
-
+                .tabsContainer
+                .parent()
+                .on("combo-change", function(e,dataCombo) {
+                    
+                    $SLIDER
+                        .handleCombo(dataCombo);
 
                 });
 
@@ -486,4 +519,4 @@
         }
     };
 
-})(jQuery,DOUBLEFILTER);
+})(jQuery);
