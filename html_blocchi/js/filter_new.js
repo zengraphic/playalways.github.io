@@ -38,12 +38,14 @@
             var $FILTER = this;
 
             $.each(filtersArray, function(i, filterVal) {
-                console.log(filterVal);
                 $FILTER
                     .tabs
                     .each(function() {
-                        if(){
-                            
+                        var cycledTab = r$(this);
+                        var cycledTabFilter = cycledTab.data().filter;
+                        if (cycledTabFilter == filterVal) {
+                            cycledTab
+                                .trigger('click');
                         }
                     });
             });
