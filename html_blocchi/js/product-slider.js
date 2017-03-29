@@ -1,17 +1,18 @@
 ;
-(function(r$) {
+(function(r$,DOUBLEFILTER) {
 
     'use strict';
 
     r$(document)
         .ready(function() {
-
+            console.log(DOUBLEFILTER);
             var $sliderBlock = r$('.dashboard_block');
+            var $tabsBlock = r$('.grey_strip__block__mainWrapper');
             var $plansBlock = r$('.blocco_strip_plans');
 
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock, $plansBlock, true, '000000000000008451');
+                .initSlider($sliderBlock, $tabsBlock,$plansBlock, false, '000000000000008451');
         });
 
     var PRODUCTSLIDER = {
@@ -41,11 +42,11 @@
          * @param  {[string]} defaultSelectedSap    [optional sap code to set default active product]
          * @return {[obj]}                          [jQuery slider object for chaining]
          */
-        initSlider: function($sliderDomObject, $plansDomObject, deviceMode, defaultSelectedSap) {
+        initSlider: function($sliderDomObject,$tabsDomObject, $plansDomObject, deviceMode, defaultSelectedSap) {
             var $SLIDER = this;
 
             $SLIDER
-                .setSliderItems($sliderDomObject, $plansDomObject, deviceMode);
+                .setSliderItems($sliderDomObject, $tabsDomObject,$plansDomObject, deviceMode);
 
             if (!defaultSelectedSap) {
                 defaultSelectedSap = $SLIDER.setDefaultSelectedSap();
@@ -111,13 +112,15 @@
          *
          * @return {[obj]}                  [Slider obj for chaining]
          */
-        setSliderItems: function($sliderDomObject, $plansDomObject, deviceMode) {
+        setSliderItems: function($sliderDomObject, $tabsDomObject,$plansDomObject, deviceMode) {
             var $SLIDER = this;
 
             $SLIDER.deviceMode = deviceMode;
             $SLIDER.container = $sliderDomObject;
             $SLIDER.plansContainer = $plansDomObject;
-            $SLIDER.plans = $SLIDER.plansContainer.find('.strip_plans');
+            $SLIDER.tabsContainer = $tabsDomObject;
+            $SLIDER.tabs = $tabsDomObject.find('.tab_button');
+            $SLIDER.plans = $SLIDER.plansContainer.find('.blocco_strip_plans');
             $SLIDER.models = $SLIDER.container.find('.phone_model');
             $SLIDER.prices = $SLIDER.container.find('.data-sap-price');
             $SLIDER.paymentRates = $SLIDER.container.find('.data-sap-payment');
@@ -461,6 +464,16 @@
                 });
 
             $SLIDER
+                .tabs
+                .click(function(e){
+                    e.preventDefault();
+                    console.log(e.target);
+
+
+
+                });
+
+            $SLIDER
                 .acquireButton
                 .click(function(e) {
                     e.preventDefault();
@@ -473,4 +486,4 @@
         }
     };
 
-})(jQuery);
+})(jQuery,DOUBLEFILTER);

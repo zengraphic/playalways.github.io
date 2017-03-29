@@ -9,13 +9,13 @@
         showMore: false,
         tabs: false,
         cards: false,
-        
+        showMoreOn: false,
         isLocked: false,
         filters: [],
-        initFilter: function($filterDOMObject, filters, isLocked) {
+        initFilter: function($filterDOMObject, filters, isLocked, showMore) {
             var $FILTER = this;
             $FILTER
-                .setFilterItems($filterDOMObject, isLocked)
+                .setFilterItems($filterDOMObject, isLocked, showMore)
                 .bindFilters();
 
             if (!filters) {
@@ -30,13 +30,17 @@
 
             return $FILTER;
         },
-        setFilterItems: function($filterDOMObject, isLocked) {
+        setFilterItems: function($filterDOMObject, isLocked, showMore) {
             var $FILTER = this;
 
             $FILTER.container = $filterDOMObject;
-            $FILTER.showMore = $FILTER.container.find('div[class*="__showMore"]');
+            if (showMore) {
+                $FILTER.showMoreOn = showMore;
+                $FILTER.showMore = $FILTER.container.find('div[class*="__showMore"]');
+                $FILTER.cards = $FILTER.container.find('.card_item');
+            }
             $FILTER.tabs = $FILTER.container.find('.tab_button');
-            $FILTER.cards = $FILTER.container.find('.card_item');
+
             $FILTER.cardContainers = $FILTER.container.find('.tab_cards__container');
             $FILTER.isLocked = (isLocked == undefined) ? false : isLocked;
 
@@ -45,28 +49,23 @@
         bindFilters: function() {
             var $FILTER = this;
 
-            $FILTER
-                .showMore
-                .on({
-                    'click': function() {
-                        var $clickedShowMore = r$(this);
+            if ($FILTER.showMoreOn) {
+                $FILTER
+                    .showMore
+                    .on({
+                        'click': function() {
+                            var $clickedShowMore = r$(this);
 
-                        
-                        var $relatedCards = $clickedShowMore.parents('.tab_cards__container').find('.card_item');
-                        $relatedCards
-                            .filter(':hidden')
-                            .show();
-                        $clickedShowMore
-                            .hide();
 
-                        /*  .each(function(index) {
-            if ($(this).hasClass('card_visible')) {
-                $(this).show();
+                            var $relatedCards = $clickedShowMore.parents('.tab_cards__container').find('.card_item');
+                            $relatedCards
+                                .filter(':hidden')
+                                .show();
+                            $clickedShowMore
+                                .hide();
+                        }
+                    });
             }
-            thisItem.hide();
-        });*/
-                    }
-                });
             $FILTER
                 .tabs
                 .on({
@@ -87,7 +86,7 @@
         handleClickedTab: function($clickedTab) {
             var $FILTER = this;
 
-            var cardFilter = $clickedTab.data().filter;
+            /*var cardFilter = $clickedTab.data().filter;
             if (cardFilter == 'abbonamento') {
                 console.log('abb');
                 $FILTER
@@ -118,7 +117,8 @@
                                 .removeClass('disabled');
                         }
                     });
-            }
+            }*/
+
             $FILTER
                 .handleCards($clickedTab);
 
@@ -183,18 +183,20 @@
                         .show();
                 } else {
                     if ($cardsContainer.is(':visible')) {
-                        var $relatedCards = $cardsContainer.find('.card_item');
-                        var $relatedShowMore = $cardsContainer.find('div[class*="__showMore"]');
-                        $relatedCards
-                            .each(function(i) {
-                                var $relatedCard = r$(this);
-                                if (i >= 3) {
-                                    $relatedCard
-                                        .hide();
-                                }
-                            });
-                        $relatedShowMore
-                            .show();
+                        if ($FILTER.showMoreOn) {
+                            var $relatedCards = $cardsContainer.find('.card_item');
+                            var $relatedShowMore = $cardsContainer.find('div[class*="__showMore"]');
+                            $relatedCards
+                                .each(function(i) {
+                                    var $relatedCard = r$(this);
+                                    if (i >= 3) {
+                                        $relatedCard
+                                            .hide();
+                                    }
+                                });
+                            $relatedShowMore
+                                .show();
+                        }
 
                     }
                     $cardsContainer
@@ -226,7 +228,7 @@
             var $filterDOMObject = r$('#filter-showcase');
 
             DOUBLEFILTER
-                .initFilter($filterDOMObject, false, true);
+                .initFilter($filterDOMObject, false, true, false);
         });
 
 })(jQuery);
