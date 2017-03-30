@@ -97,146 +97,144 @@
   display: none; }
 
 .windtre__primary-nav {
-  font-family: "Fira Sans Light";
-  font-size: 16px;
-  line-height: 1.2em;
   min-width: 100%;
   max-width: 100%;
+  border-bottom: 1px solid #ccd1d9;
   background-color: #FFF;
-  border-bottom: 1px solid #ccd1d9; }
+  font-family: 'Fira Sans Light';
+  font-size: 16px;
+  line-height: 1.2em; }
   .windtre__primary-nav.stuck {
     position: fixed;
     top: 0; }
-  .windtre__primary-nav > .windtre__primary-nav__links:before, .windtre__primary-nav > .windtre__primary-nav__links:after {
-    content: "";
+  .windtre__primary-nav > .windtre__primary-nav__links::before, .windtre__primary-nav > .windtre__primary-nav__links::after {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 25px;
-    opacity: 0.8;
-    background-size: contain;
-    background-repeat: repeat-y; }
+    background-repeat: repeat-y;
+    background-size: 100% 100%;
+    content: '';
+    opacity: .8;
+    filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)'; }
   .windtre__primary-nav > .windtre__primary-nav__links:before {
     left: 0;
+    width: 25px;
     background-image: url("../img/bg-ltr.png"); }
   .windtre__primary-nav > .windtre__primary-nav__links:after {
     right: 0;
+    z-index: 5;
+    width: 50px;
     background-image: url("../img/bg-rtl.png"); }
   .windtre__primary-nav ul {
-    list-style-type: none;
     display: inline-block;
-    vertical-align: top;
+    margin: 0;
     padding: 0;
-    margin: 0; }
+    vertical-align: top;
+    list-style-type: none; }
   .windtre__primary-nav li {
     display: inline-block;
-    vertical-align: top;
+    height: 69px;
     margin: 0;
     float: left;
-    height: 69px; }
+    vertical-align: top; }
     .windtre__primary-nav li.active {
-      z-index: 5;
-      position: relative; }
-      .windtre__primary-nav li.active > .nav_link--label {
-        background-color: #666;
-        float: left; }
-        .windtre__primary-nav li.active > .nav_link--label > .nav_link {
+      position: relative;
+      z-index: 5; }
+      .windtre__primary-nav li.active > .nav_link {
+        float: left;
+        background-color: #666; }
+        .windtre__primary-nav li.active > .nav_link > .nav_link--label {
+          position: relative;
+          width: 40px;
+          background-image: url("../img/Back-100.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
           color: transparent;
           text-indent: -9999px;
           overflow: hidden;
-          width: 40px;
-          position: relative;
-          z-index: 20; }
-          .windtre__primary-nav li.active > .nav_link--label > .nav_link:after, .windtre__primary-nav li.active > .nav_link--label > .nav_link:before {
-            left: 15px;
-            width: 2px;
-            height: 12px;
-            display: block;
-            position: absolute;
-            background-color: white;
-            content: ""; }
-          .windtre__primary-nav li.active > .nav_link--label > .nav_link:after {
-            -webkit-transform: translate(0, -12px) rotate(-45deg);
-            -moz-transform: translate(0, -12px) rotate(-45deg);
-            -ms-transform: translate(0, -12px) rotate(-45deg);
-            -o-transform: translate(0, -12px) rotate(-45deg);
-            transform: translate(0, -12px) rotate(-45deg); }
-          .windtre__primary-nav li.active > .nav_link--label > .nav_link:before {
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg); }
+          z-index: 20;
+          filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Back-100.png', sizingMethod='scale');
+          -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Back-100.png', sizingMethod='scale')"; }
   .windtre__primary-nav a {
     display: inline-block;
-    vertical-align: top;
-    text-decoration: none;
+    height: 69px;
     color: #292f34;
-    height: 69px; }
+    text-decoration: none;
+    vertical-align: top; }
     .windtre__primary-nav a:hover {
       color: #ccd1d9; }
   .windtre__primary-nav__logo {
-    margin: 0;
     display: inline-block;
-    vertical-align: top;
-    float: left; }
+    margin: 5px 14px;
+    float: left;
+    vertical-align: top; }
     .windtre__primary-nav__logo .logo {
-      margin: 5px 0;
-      display: none; }
-      .windtre__primary-nav__logo .logo-link {
-        float: left;
-        display: inline-block; }
-    .windtre__primary-nav__logo .home-icon {
       display: inline-block;
+      max-width: 70px;
+      margin: 10px 0; }
+      .windtre__primary-nav__logo .logo-link {
+        display: inline-block;
+        height: auto;
+        float: left; }
+    .windtre__primary-nav__logo .home-icon {
+      display: none;
       width: 2.5rem;
       height: 69px;
       background-color: black;
       background-image: url("../img/home-512.png");
       background-repeat: no-repeat;
-      background-size: 1.4rem;
-      background-position: center center; }
+      background-position: center center;
+      background-size: 1.4rem; }
   .windtre__primary-nav__links {
-    width: calc(100% - 85px);
-    padding: 0;
-    margin: 0;
     position: relative;
+    width: auto;
+    margin: 0;
+    padding: 0;
     float: left; }
-  .windtre__primary-nav .nav_link {
-    padding: 25px 20px;
+  .windtre__primary-nav .nav_link--label {
     display: inline-block;
+    padding: 25px 20px;
     white-space: nowrap; }
   .windtre__primary-nav__language {
     display: inline-block;
     vertical-align: top; }
     .windtre__primary-nav__language .language {
-      position: relative;
-      z-index: 10;
       display: inline-block;
-      color: white;
+      position: relative;
+      padding: 25px 15px;
       background-color: #292F36;
-      padding: 25px 15px; }
-
-@media (min-width: 480px) {
-  .windtre__primary-nav li.active > .nav_link--label {
-    z-index: 5;
-    position: relative; }
-    .windtre__primary-nav li.active > .nav_link--label > .nav_link {
-      border-right: 1px solid white;
       color: white;
-      text-indent: 0;
-      overflow: visible;
-      width: auto; }
-      .windtre__primary-nav li.active > .nav_link--label > .nav_link:after, .windtre__primary-nav li.active > .nav_link--label > .nav_link:before {
-        content: none; }
-  .windtre__primary-nav__logo .logo {
+      z-index: 10; }
+
+.gt-480 .windtre__primary-nav li.active > .nav_link {
+  position: relative;
+  z-index: 5; }
+  .gt-480 .windtre__primary-nav li.active > .nav_link > .nav_link--label {
+    width: auto;
+    background-image: none;
+    color: white;
+    text-indent: 0;
+    overflow: visible;
+    filter: none;
+    -ms-filter: "none"; }
+    .gt-480 .windtre__primary-nav li.active > .nav_link > .nav_link--label:before {
+      content: "<< "; }
+
+.gt-480 .windtre__primary-nav__logo {
+  margin: 0 19px; }
+  .gt-480 .windtre__primary-nav__logo .logo {
     display: inline-block;
-    margin: 10px 19px; }
-  .windtre__primary-nav__logo .home-icon {
+    width: 100px;
+    max-width: none; }
+  .gt-480 .windtre__primary-nav__logo .home-icon {
     display: none; }
-  .windtre__primary-nav__links {
-    width: calc(100% - 240px); }
-  .windtre__primary-nav__language .language {
-    padding: 25px 44px; } }
+
+.gt-480 .windtre__primary-nav__links {
+  width: auto; }
+
+.gt-480 .windtre__primary-nav__language .language {
+  padding: 25px 44px; }
 
 .windtre__secondary-nav {
   background-color: #F4F4F4; }
@@ -288,12 +286,11 @@
       font-weight: bold;
       border-bottom-color: #292F36; }
 
-@media (min-width: 480px) {
-  .windtre__secondary-nav__links {
-    margin: 0 15px 0 auto;
-    max-width: 389px; }
-    .windtre__secondary-nav__links:before, .windtre__secondary-nav__links:after {
-      content: none; } }
+.gt-480 .windtre__secondary-nav__links {
+  margin: 0 15px 0 auto;
+  max-width: 389px; }
+  .gt-480 .windtre__secondary-nav__links:before, .gt-480 .windtre__secondary-nav__links:after {
+    content: none; }
 
 .windtre__header {
   background-color: white;
