@@ -32,7 +32,7 @@
     
     .wnd h4.second-claim {
         margin-top: 1.2rem!important;
-        margin-bottom: 0!important;
+        /*margin-bottom: 0!important;*/
     }
     
     .wnd p,
@@ -82,6 +82,10 @@
     
     .landing .container > .row > .col.col-feat .txt.double {
         padding: 0;
+        padding-top: 0;
+    }
+    
+    .landing .container > .row > .col.col-feat .txt.double.vPadd {
         padding-top: 30px;
     }
     
@@ -113,6 +117,10 @@
         .landing .container > .row .col.col-lg--60 img {
             padding-top: 0;
         }
+    }
+    
+    .landing .container > .row > .col.col-feat .txt {
+        width: 100%;
     }
     /* >=768 */
     
@@ -290,6 +298,7 @@
         .landing .container > .row .col.col-lg--60 {
             width: 60%;
             top: -60px;
+            left: 30px;
         }
     }
     
@@ -308,5 +317,8 @@
     @media (max-width: 960px) {
         .landing .container > .row .col.col-lg--60 img {
             padding-bottom: 75px;
+        }
+        .landing .container > .row > .col.col-feat .txt.double.vPadd {
+            padding-top: 0;
         }
     }
