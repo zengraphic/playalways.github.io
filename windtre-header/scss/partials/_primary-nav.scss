@@ -1,187 +1,177 @@
 .windtre {
   &__primary-nav {
-    font-family: "Fira Sans Light";
-    font-size: 16px;
-    line-height: 1.2em;
     min-width: 100%;
     max-width: 100%;
-    background-color: #FFF;
     border-bottom: 1px solid $color_grey_medium_light;
+    background-color: #FFF;
+    font-family: 'Fira Sans Light';
+    font-size: 16px;
+    line-height: 1.2em;
     &.stuck {
       position: fixed;
       top: 0;
     }
     > .windtre__primary-nav__links {
-      &:before,
-      &:after {
-        content: "";
+      &::before,
+      &::after {
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 25px;
-        opacity: 0.8;
-        background-size: contain;
+        
         background-repeat: repeat-y;
+        background-size: 100% 100%;
+        content: '';
+        opacity: .8;
+        filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
       }
       &:before {
         left: 0;
+        width: 25px;
         background-image: url('../img/bg-ltr.png');
       }
       &:after {
         right: 0;
+        z-index: 5;
+        width: 50px;
         background-image: url('../img/bg-rtl.png');
       }
     }
     ul {
-      list-style-type: none;
       display: inline-block;
-      vertical-align: top;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      vertical-align: top;
+      list-style-type: none;
     }
     li {
       display: inline-block;
-      vertical-align: top;
+      height: 69px;
       margin: 0;
       float: left;
-      height: 69px;
+      vertical-align: top;
+     
       &.active {
-        > .nav_link--label {
-          background-color: #666;
+        > .nav_link {
           float: left;
-
-          > .nav_link {
+          background-color: #666;
+          > .nav_link--label {
+            position: relative;
+            width: 40px;
+            background-image: url('../img/Back-100.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
             color: transparent;
             text-indent: -9999px;
             overflow: hidden;
-            width: 40px;
-            position: relative;
             z-index: 20;
-            &:after,
-            &:before {
-              left: 15px;
-              width: 2px;
-              height: 12px;
-              display: block;
-              position: absolute;
-              background-color: white;
-              content: "";
-            }
-            &:after {
-              -webkit-transform: translate(0, -12px) rotate(-45deg);
-              -moz-transform: translate(0, -12px) rotate(-45deg);
-              -ms-transform: translate(0, -12px) rotate(-45deg);
-              -o-transform: translate(0, -12px) rotate(-45deg);
-              transform: translate(0, -12px) rotate(-45deg);
-            }
-            &:before {
-              -webkit-transform: rotate(45deg);
-              -moz-transform: rotate(45deg);
-              -ms-transform: rotate(45deg);
-              -o-transform: rotate(45deg);
-              transform: rotate(45deg);
-            }
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Back-100.png', sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Back-100.png', sizingMethod='scale')";
           }
         }
-        z-index: 5;
         position: relative;
+        z-index: 5;
       }
     }
     a {
       display: inline-block;
-      vertical-align: top;
-      text-decoration: none;
-      color: #292f34;
       height: 69px;
+      color: #292f34;
+      text-decoration: none;
+      vertical-align: top;
       &:hover {
         color: #ccd1d9;
       }
     }
     &__logo {
-      //display: none;
-      margin: 0;
       display: inline-block;
-      vertical-align: top;
+      margin: 5px 14px;
       float: left;
+      vertical-align: top;
       .logo {
-        margin: 5px 0;
-        display: none;
-        &-link{
-          float: left;
+        display: inline-block;
+        max-width: 70px;
+        margin: 10px 0;
+        &-link {
           display: inline-block;
+          height: auto;
+          float: left;
         }
       }
       .home-icon {
-        display: inline-block;
+        display: none;
         width: 2.5rem;
         height: 69px;
         background-color: black;
         background-image: url('../img/home-512.png');
         background-repeat: no-repeat;
-        background-size: 1.4rem;
         background-position: center center;
+        background-size: 1.4rem;
       }
     }
     &__links {
-      width: calc(100% - 85px);
-      padding: 0;
-      margin: 0;
       position: relative;
+      width: auto;
+      margin: 0;
+      padding: 0;
       float: left;
     }
-    .nav_link {
-      padding: 25px 20px;
+    .nav_link--label {
       display: inline-block;
+      padding: 25px 20px;
       white-space: nowrap;
     }
     &__language {
       display: inline-block;
       vertical-align: top;
       .language {
-        position: relative;
-        z-index: 10;
         display: inline-block;
-        color: white;
-        background-color: $color_grey_dark;
+        position: relative;
         padding: 25px 15px;
+        background-color: $color_grey_dark;
+        color: white;
+        z-index: 10;
       }
     }
   }
 }
 
-@media (min-width: 480px) {
+.gt-480 {
   .windtre {
     &__primary-nav {
       li {
         &.active {
-          > .nav_link--label {
-            > .nav_link {
-              border-right: 1px solid white;
+          > .nav_link {
+            position: relative;
+            z-index: 5;
+            > .nav_link--label {
+              width: auto;
+              background-image: none;
               color: white;
               text-indent: 0;
               overflow: visible;
-              width: auto;
-              &:after,
-              &:before {
-                content: none;
+              filter: none;
+              -ms-filter: "none";
+              &:before{
+                content:"<< "
               }
             }
-            z-index: 5;
-            position: relative;
           }
         }
       }
       &__logo {
+        margin: 0 19px;
         .logo {
           display: inline-block;
-          margin: 10px 19px;
+          width: 100px;
+          max-width: none;
         }
         .home-icon {
-        display: none;
-      }
+          display: none;
+        }
       }
       &__links {
-        width: calc(100% - 240px);
+        width: auto;
       }
       &__link {}
       &__language {

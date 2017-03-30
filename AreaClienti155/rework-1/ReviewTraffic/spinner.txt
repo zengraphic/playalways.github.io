@@ -1,0 +1,73 @@
+
+<!-- ================ FUNZIONI DELLO SPINNER ============== -->
+<!-- ================ FUNZIONI DELLO SPINNER ============== -->
+<!-- ================ FUNZIONI DELLO SPINNER ============== -->
+
+jQuery(document).ready(function($) {
+    //FUNZIONE DA FAR PARTIRE QUANDO SERVE LO SPINNER
+    function showSpinner() {
+        $('.my_traffic__contracts_details__tabs').append('<div class="overlay_spinner"></div><div class="wind_spinner"></div>');
+        $('.overlay_spinner').fadeIn();
+        $('.wind_spinner').fadeIn();
+    }
+    //FUNZIONE DA FAR PARTIRE QUANDO SERVE VA RIMOSSO LO SPINNER
+    function hideSpinner() {
+        $('.wind_spinner').fadeOut("slow", function() {
+            $(this).remove();
+        });
+        $(".overlay_spinner").fadeOut("slow", function() {
+            $(this).remove();
+        });
+    }
+});
+
+<!-- ================ CSS DELLO SPINNER ============== -->
+<!-- ================ CSS DELLO SPINNER ============== -->
+<!-- ================ CSS DELLO SPINNER ============== -->
+<style>
+.wind_spinner {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #F48135;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    z-index: 9999;
+    display: none;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.overlay_spinner {
+    background-color: #444;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 7000;
+    display: none;
+}
+</style>

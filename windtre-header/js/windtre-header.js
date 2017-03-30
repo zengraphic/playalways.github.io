@@ -1,7 +1,15 @@
 jQuery(function($) {
 
+    $(document)
+        .ready(function() {
 
-    var HEADER = {
+            var $headerElement = $('#header');
+            HEADER
+                .initHeader($headerElement, '/joint-company/people-and-careers/live-chat/');
+
+        });
+
+    HEADER = {
         scrollConfig: {
             cursorcolor: "#F4F4F4",
             cursorwidth: "5px",
@@ -25,7 +33,7 @@ jQuery(function($) {
                 breakpoint: 480,
                 settings: {
                     centerMode: false,
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1
                 }
             }]
@@ -46,140 +54,222 @@ jQuery(function($) {
                 }
             }]
         },
+        headerElement: undefined,
         scrollableElement: undefined,
         primaryNavElement: undefined,
         secondaryNavElement: undefined,
         activeElements: undefined,
         activeElementsWidth: 0,
-        initHeader: function($headerElement) {
+        logoElementWidth: 0,
+        languageElementWidth: 0,
+        route: undefined,
+        initHeader: function($headerElement, pathname) {
             var theHeader = this;
-
             theHeader
-                .setHeaderItems($headerElement);
+                .setHeaderItems($headerElement)
+                .initScroll()
+                .initStickyHeader()
+                .initSecondaryNav()
+                .initPrimaryNav()
+                .handleRoute($headerElement, pathname);
+            return theHeader;
+        },
+        handleRoute: function($headerElement, pathname) {
+            var theHeader = this;
+            if (typeof pathname === "undefined") {
+                pathname = window.location.pathname;
+            }
+
+            var pathArr = pathname.split('/');
+            pathArr = $.grep(pathArr, function(el, i) {
+                return el !== "";
+            });
+
+            theHeader.route = pathArr;
+            var $leafLinks = $headerElement.find('a.leaf-link');
+
+            $leafLinks
+                .each(function() {
+                    if ($(this).attr('href') == pathname) {
+
+                        var $pathLinks = $($(this).parents('.windtre__primary-nav__links').get().reverse());
+
+                        $pathLinks
+                            .each(function(i) {
+                                var theLink = $(this).siblings('.nav_link');
+                                /*var timedTrigger = setInterval(function() {
+                                    if (i > 0) {
+                                        theLink
+                                            .trigger('click');
+
+                                    } else if (i == $pathLinks.length - 1) {
+                                        clearTimeout(timedTrigger);
+                                    }
+
+                                }, 200);*/
+
+
+                            });
+
+                    }
+
+                });
 
             return theHeader;
-
         },
         setHeaderItems: function($headerElement) {
             var theHeader = this;
 
-            theHeader.scrollableElement = $headerElement.parents('.windtre__scrollable');
+            theHeader.headerElement = $headerElement;
+            theHeader.scrollableElement = $headerElement.parents('body.windtre__scrollable');
             theHeader.containerElement = $headerElement.find('.windtre__primary-nav');
             theHeader.primaryNavElement = $headerElement.find('.windtre__primary-nav__links');
             theHeader.secondaryNavElement = $headerElement.find('.windtre__secondary-nav__links');
-
-            theHeader
-                .initScroll(theHeader.scrollableElement)
-                .initStickyHeader(theHeader.containerElement)
-                .initPrimaryNav(theHeader.primaryNavElement)
-                .initSecondaryNav(theHeader.secondaryNavElement);
+            theHeader.logoElementWidth = $headerElement.find('.windtre__primary-nav__logo').outerWidth(true);
+            theHeader.languageElementWidth = $headerElement.find('.windtre__primary-nav__language').outerWidth(true);
 
             return theHeader;
         },
-        initScroll: function($scrollableElement) {
+        initScroll: function() {
             var theHeader = this;
-            $scrollableElement
+            theHeader.scrollableElement
                 .niceScroll(theHeader.scrollConfig);
             return theHeader;
         },
-        initStickyHeader: function($containerElement) {
+        initStickyHeader: function() {
             var theHeader = this;
             var sticky = new Waypoint.Sticky({
-                element: $containerElement
+                element: theHeader.containerElement
             });
             return theHeader;
         },
-        initPrimaryNav: function($primaryNavElement) {
+        initSecondaryNav: function() {
             var theHeader = this;
-            $primaryNavElement
-                .not($primaryNavElement[0])
-                .hide();
-            $primaryNavElement
-                .not(':hidden')
-                .slick(theHeader.primaryNavConfig);
-
-            $('.nav_link--label', '#header')
-                .on('click', function(event) {
-                    event
-                        .preventDefault();
-                    $clickedLink = $(this);
-                    theHeader
-                        .handleClick($clickedLink);
-
-                });
+            theHeader.secondaryNavElement
+                .slick(theHeader.secondaryNavConfig);
             return theHeader;
         },
-        initSecondaryNav: function($secondaryNavElement) {
+        initPrimaryNav: function() {
             var theHeader = this;
-            $secondaryNavElement
-                .slick(theHeader.secondaryNavConfig);
+
+            theHeader
+                .primaryNavElement
+                .each(function(i) {
+                    var $currentNav = $(this);
+                    if (i == 0) {
+                        var remainingWidth = theHeader.headerElement.outerWidth() - theHeader.logoElementWidth - theHeader.languageElementWidth - 4;
+                        $currentNav
+                            .show()
+                            .css({
+                                'width': remainingWidth,
+                            })
+                            .slick(theHeader.primaryNavConfig);
+                    } else {
+                        $currentNav
+                            .hide();
+                    }
+                });
+
+            theHeader
+                .bindClick();
+            return theHeader;
+        },
+
+        bindClick: function() {
+            var theHeader = this;
+            $('.nav_link', '#header')
+                .on('click', function(event) {
+                    $clickedLink = $(this);
+                    if (!$clickedLink.hasClass('leaf-link')) {
+                        event
+                            .preventDefault();
+
+                        theHeader
+                            .handleClick($clickedLink);
+                    }
+
+                });
             return theHeader;
         },
         handleClick: function($clickedLink) {
             var theHeader = this;
 
             var $clickedLinkListItem = $clickedLink.parent('.windtre__primary-nav__link');
-
-            var logoElementWidth = $('.windtre__primary-nav__logo').outerWidth();
-            var langElementWidth = $('.windtre__primary-nav__language').outerWidth();
-
-
+            var remainingWidth = 0;
 
             if ($clickedLinkListItem.hasClass('active')) {
 
-                theHeader.activeElements = $($clickedLinkListItem.find('.active').addBack().get().reverse());
-                theHeader
-                    .activeElements
-                    .each(function() {
-                        var $currentActive = $(this);
-
-                        theHeader
-                            .handleLevel($currentActive);
-
-                    });
-
-                theHeader
-                    .handleActiveWidths();
-
                 $clickedLinkListItem
-                    .siblings('.windtre__primary-nav__link')
+                    .removeClass('active')
+                    .siblings()
                     .show();
 
+                if ($clickedLinkListItem.hasClass('base-level')) {
+                    theHeader.activeElements = undefined;
+                    theHeader.activeElementsWidth = 0;
+                } else {
+                    $clickedLinkListItem
+                        .parent()
+                        .prev()
+                        .show()
+                        .parent()
+                        .addClass('active');
+                    theHeader.activeElements = $clickedLinkListItem.parent().prev();
+                    theHeader
+                        .handleActiveWidths();
+                }
+                remainingWidth = $('#header').outerWidth() - theHeader.logoElementWidth - theHeader.languageElementWidth - theHeader.activeElementsWidth - 4;
                 $clickedLinkListItem
-                    .closest('.windtre__primary-nav__links')
+                    .parent()
                     .css({
-                        'width': 'calc(100% - ' + logoElementWidth + 'px - ' + langElementWidth + 'px - ' + theHeader.activeElementsWidth + ')'
+                        'width': remainingWidth
                     })
                     .slick(theHeader.primaryNavConfig);
+
+                $clickedLink
+                    .next()
+                    .hide()
+                    .slick('unslick');
             } else {
 
-                $clickedLinkListItem
-                    .addClass('active');
+                if (typeof theHeader.activeElements !== 'undefined') {
+                    theHeader
+                        .activeElements
+                        .hide()
+                        .parent('.windtre__primary-nav__link')
+                        .removeClass('active');
+                    remainingWidth = $('#header').outerWidth() - theHeader.logoElementWidth - theHeader.languageElementWidth - 6;
+                    theHeader
+                        .activeElements
+                        .next('.windtre__primary-nav__links')
+                        .css({
+                            'width': remainingWidth
+                        });
+                }
+                theHeader.activeElements = $clickedLink;
 
-                theHeader
-                    .handleActiveWidths();
 
                 $clickedLinkListItem
+                    .addClass('active')
                     .closest('.slick-initialized')
                     .slick('unslick');
                 $clickedLinkListItem
                     .siblings()
                     .hide();
-
-                $clickedLinkListItem
-                    .find('.windtre__primary-nav__links')
-                    .eq(0)
+                $clickedLink
+                    .next()
                     .show(function() {
-
+                        theHeader
+                            .handleActiveWidths();
+                        var remainingWidth = $('#header').outerWidth() - theHeader.logoElementWidth - theHeader.languageElementWidth - theHeader.activeElementsWidth - 6;
                         $(this)
                             .css({
-                                'width': 'calc(100% - ' + logoElementWidth + 'px - ' + langElementWidth + 'px - ' + theHeader.activeElementsWidth + ')'
+                                'width': remainingWidth
                             })
                             .children()
                             .show();
                     })
-
-                .slick(theHeader.primaryNavConfig);
+                    .slick(theHeader.primaryNavConfig);
             }
 
             return theHeader;
@@ -205,32 +295,18 @@ jQuery(function($) {
                     .hide();
             }
 
-
-
             return theHeader;
 
         },
         handleActiveWidths: function() {
             var theHeader = this;
             theHeader.activeElementsWidth = 0;
-            $('#header')
-                .find('active')
+            theHeader
+                .activeElements
                 .each(function() {
-                    theHeader.activeElementsWidth += $(this).outerWidth();
+                    theHeader.activeElementsWidth += ($(this).outerWidth(true) + 2);
                 });
             return theHeader;
         }
     };
-
-    $(document)
-        .ready(function() {
-
-            var $headerElement = $('#header');
-            HEADER
-                .initHeader($headerElement);
-
-        });
-
-
-
 });
