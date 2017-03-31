@@ -116,27 +116,43 @@ jQuery(function($) {
             theHeader.containerElement = $headerElement.find('.windtre__primary-nav');
             theHeader.primaryNavElement = $headerElement.find('.windtre__primary-nav__links');
             theHeader.secondaryNavElement = $headerElement.find('.windtre__secondary-nav__links');
-            if ((window.location.pathname != "/") && (window.outerWidth < 480)) {
+            if ((window.location.pathname != "/windtre-header/root/") && (window.outerWidth < 480)) {
                 theHeader
-                    .reduceHomeButton();
+                    .handleHomeButton('small');
+            } else {
+                theHeader
+                    .handleHomeButton('big');
             }
             theHeader.logoElementWidth = $headerElement.find('.windtre__primary-nav__logo').outerWidth(true);
             theHeader.languageElementWidth = $headerElement.find('.windtre__primary-nav__language').outerWidth(true);
 
             return theHeader;
         },
-        reduceHomeButton: function() {
+        reduceHomeButton: function(size) {
             var theHeader = this;
-            theHeader
-                .headerElement
-                .find('.windtre__primary-nav__logo')
-                .find('.logo')
-                .hide();
-            theHeader
-                .headerElement
-                .find('.windtre__primary-nav__logo')
-                .find('.home-icon')
-                .show();
+            if (size == 'small') {
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.logo')
+                    .hide();
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.home-icon')
+                    .show();
+            } else {
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.logo')
+                    .show();
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.home-icon')
+                    .hide();
+            }
             return theHeader;
         },
         initScroll: function() {
