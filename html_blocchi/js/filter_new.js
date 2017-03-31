@@ -37,7 +37,7 @@
         setInitialTabs: function(filtersArray) {
             var $FILTER = this;
 
-            $.each(filtersArray, function(i, filterVal) {
+            r$.each(filtersArray, function(i, filterVal) {
                 $FILTER
                     .tabs
                     .each(function() {
@@ -196,7 +196,7 @@
             var $FILTER = this;
 
             r$.each($FILTER.cardContainers, function() {
-                var $cardsContainer = $(this);
+                var $cardsContainer = r$(this);
                 var cardsContainerData = $cardsContainer.data().combo;
                 var filtersData = $FILTER.filters.join(' ');
                 if (cardsContainerData == filtersData) {

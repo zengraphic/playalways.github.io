@@ -1,0 +1,283 @@
+// BUNDLE BLOCCO 2
+.showcase_bundle_block {
+    hyphens: none;
+    &__showMore {
+        color: $color_wind;
+        font-size: 1.250em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__container {
+        -o-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -webkit-transition: all 0.45s ease-in-out;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding-top: 70px;
+        .cardsOffer {
+            &__single {
+                position: relative;
+                font-size: 16px;
+                height: 435px;
+                text-align: center;
+                margin-bottom: 30px;
+                display: none;
+                padding-left: 30px;
+                padding-right: 30px;
+                &:nth-child(-n+3) {
+                    display: block;
+                }
+                &:not(:nth-child(3n)):not(:last-child) {
+                    position: relative;
+                    &:after {
+                        background-color: $color_stroke;
+                        width: 1px;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 15%;
+                        bottom: 7%;
+                        right: 0%;
+                        min-height: 1px;
+                        @include breakpoint(small) {
+                            content: none;
+                        }
+                    }
+                }
+                &--bgContainer {
+                    position: absolute;
+                    z-index: 50;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                }
+                h2 {
+                    margin-bottom: 10px;
+                }
+                &--title {
+                    position: relative;
+                    z-index: 51;
+                    margin-bottom: 10px;
+                    height: 100px;
+                    overflow: hidden;
+                    color: inherit;
+                    h3 {
+                        font-size: 1.875em;
+                        font-family: $weight-bold;
+                    }
+                }
+                &--text {
+                    position: relative;
+                    height: 170px;
+                    margin-bottom: 10px;
+                    z-index: 51;
+                    &--bundle {
+                        height: 97px;
+                        overflow: hidden;
+                        font-size: 1.375em;
+                        color: $color_text;
+                        margin-bottom: 10px;
+                    }
+                    &--smallDescription {
+                        height: 58px;
+                        overflow: hidden;
+                        font-size: 1.125em;
+                        margin-bottom: 15px;
+                        color: $color_text;
+                    }
+                    &--bigDescription {
+                        font-size: 1.375em;
+                        color: $color_text;
+                    }
+                }
+                &--price__container {
+                    height: 85px;
+                    margin-bottom: 10px;
+                    &--priceDiscounted {
+                        font-size: 2em;
+                        color: $color_text;
+                        font-family: $weight-light;
+                        position: relative;
+                        height: 35px;
+                        z-index: 51;
+                        .price {
+                            position: relative;
+                            &::before {
+                                border-bottom: 1px solid $color_text;
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                top: 50%;
+                            }
+                        }
+                    }
+                    &--price {
+                        font-size: 2em;
+                        color: inherit;
+                        font-family: $weight-light;
+                        position: relative;
+                        height: 35px;
+                        z-index: 51;
+                    }
+                    &--recurrency {
+                        font-size: 0.875em;
+                        position: relative;
+                        color: $color_text;
+                        z-index: 51;
+                    }
+                }
+                .button {
+                    width: 100%;
+                    max-width: 300px;
+                    margin: 0 auto;
+                }
+                &.business {
+                    color: $color_wind;
+                    .cardsOffer__single--title {
+                        color: $color_text;
+                    }
+                }
+                &.singleBundle {
+                    .cardsOffer__single--text--bundle {
+                        height: 50px;
+                        margin-bottom: 25px;
+                    }
+                    .cardsOffer__single--text--smallDescription {
+                        height: 96px;
+                        margin-bottom: 10px;
+                    }
+                }
+                &.no_bundle {
+                    .cardsOffer__single--text--bundle {
+                        display: none;
+                    }
+                    .cardsOffer__single--text--bigDescription {
+                        height: 116px;
+                        margin-bottom: 15px;
+                    }
+                    .cardsOffer__single--text--smallDescription {
+                        height: 40px;
+                        margin-bottom: 10px;
+                    }
+                }
+                &.bgAndPrice {
+                    .bundle_single,
+                    .cardsOffer__single--text--smallDescription,
+                    .cardsOffer__single--text--bigDescription {
+                        display: none;
+                    }
+                }
+                &.bgBundleAndPrice {
+                    .cardsOffer__single--text {
+                        height: 200px;
+                        margin-bottom: 0;
+                        padding-top: 155px;
+                        &--bundle {
+                            margin-bottom: 0;
+                            height: 38px;
+                            font-size: 1em;
+                            color: $color_white;
+                        }
+                        &--smallDescription,
+                        &--bigDescription {
+                            display: none;
+                        }
+                    }
+                    .cardsOffer__single--price__container {
+                        height: 65px;
+                        &--priceDiscounted {
+                            display: inline-block;
+                            margin-right: 4%;
+                            margin-bottom: 5px;
+                            color: $color_white;
+                            .price {
+                                &::before {
+                                    border-bottom: 1px solid;
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    top: 50%;
+                                }
+                            }
+                        }
+                        &--price {
+                            display: inline-block;
+                            margin-left: 4%;
+                            margin-bottom: 5px;
+                            color: $color_white;
+                            .price {
+                                &:before {
+                                    background-color: $color_white;
+                                    width: 2px;
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    top: 15%;
+                                    bottom: 7%;
+                                    right: 120%;
+                                    min-height: 1px;
+                                }
+                            }
+                        }
+                        &--recurrency {
+                            color: $color_white;
+                        }
+                    }
+                }
+                &.fullBg {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    .cardsOffer__single {
+                        &--title,
+                        &--text,
+                        &--price__container {
+                            display: none;
+                        }
+                        &--bgContainer {
+                            position: relative;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        // .bundle_block__showMore {
+        //     color: $color_wind;
+        //     font-size: 1.250em;
+        //     text-align: center;
+        //     text-transform: uppercase;
+        //     font-family: $weight-light;
+        //     margin-top: 30px;
+        //     cursor: pointer;
+        //     &:hover {
+        //         text-decoration: underline;
+        //     }
+        // }
+    }
+    h2 {
+        font-family: $weight-boldCond;
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 767px) {
+    .showcase_bundle_block {
+        .container_secondColumn {
+            text-align: center;
+            margin-top: 10px;
+            padding-left: 0;
+        }
+        //  
+    }
+}
