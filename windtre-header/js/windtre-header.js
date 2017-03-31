@@ -128,7 +128,7 @@ jQuery(function($) {
 
             return theHeader;
         },
-        reduceHomeButton: function(size) {
+        handleHomeButton: function(size) {
             var theHeader = this;
             if (size == 'small') {
                 theHeader
