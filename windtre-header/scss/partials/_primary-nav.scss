@@ -17,7 +17,6 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        
         background-repeat: repeat-y;
         background-size: 100% 100%;
         content: '';
@@ -49,7 +48,6 @@
       margin: 0;
       float: left;
       vertical-align: top;
-     
       &.active {
         > .nav_link {
           float: left;
@@ -82,10 +80,16 @@
       &:hover {
         color: #ccd1d9;
       }
+      &.current {
+        span {
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      }
     }
     &__logo {
       display: inline-block;
-      margin: 5px 14px;
+      margin: 0;
       float: left;
       vertical-align: top;
       .logo {
@@ -99,9 +103,10 @@
         }
       }
       .home-icon {
-        display: none;
+        display: inline-block;
         width: 2.5rem;
         height: 69px;
+        float: left;
         background-color: black;
         background-image: url('../img/home-512.png');
         background-repeat: no-repeat;
@@ -152,8 +157,8 @@
               overflow: visible;
               filter: none;
               -ms-filter: "none";
-              &:before{
-                content:"<< "
+              &:before {
+                content: "<< "
               }
             }
           }

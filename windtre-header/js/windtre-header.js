@@ -5,7 +5,7 @@ jQuery(function($) {
 
             var $headerElement = $('#header');
             HEADER
-                .initHeader($headerElement, '/joint-company/people-and-careers/live-chat/');
+                .initHeader($headerElement);
 
         });
 
@@ -80,39 +80,30 @@ jQuery(function($) {
                 pathname = window.location.pathname;
             }
 
-            var pathArr = pathname.split('/');
-            pathArr = $.grep(pathArr, function(el, i) {
-                return el !== "";
-            });
 
-            theHeader.route = pathArr;
             var $leafLinks = $headerElement.find('a.leaf-link');
 
             $leafLinks
                 .each(function() {
                     if ($(this).attr('href') == pathname) {
+                        var $currentLink = $(this);
+                        $currentLink
+                            .addClass('current');
+                        var $pathLinks = $($currentLink.parents('.windtre__primary-nav__links').get().reverse());
 
-                        var $pathLinks = $($(this).parents('.windtre__primary-nav__links').get().reverse());
-
+                        var time = 100;
                         $pathLinks
                             .each(function(i) {
                                 var theLink = $(this).siblings('.nav_link');
-                                /*var timedTrigger = setInterval(function() {
-                                    if (i > 0) {
+                                if (i > 0) {
+                                    window.setTimeout(function() {
                                         theLink
                                             .trigger('click');
-
-                                    } else if (i == $pathLinks.length - 1) {
-                                        clearTimeout(timedTrigger);
-                                    }
-
-                                }, 200);*/
-
-
+                                    }, time);
+                                    time += 100;
+                                }
                             });
-
                     }
-
                 });
 
             return theHeader;
@@ -125,9 +116,43 @@ jQuery(function($) {
             theHeader.containerElement = $headerElement.find('.windtre__primary-nav');
             theHeader.primaryNavElement = $headerElement.find('.windtre__primary-nav__links');
             theHeader.secondaryNavElement = $headerElement.find('.windtre__secondary-nav__links');
+            if ((window.location.pathname != "/windtre-header/root/") && (window.outerWidth < 480)) {
+                theHeader
+                    .handleHomeButton('small');
+            } else {
+                theHeader
+                    .handleHomeButton('big');
+            }
             theHeader.logoElementWidth = $headerElement.find('.windtre__primary-nav__logo').outerWidth(true);
             theHeader.languageElementWidth = $headerElement.find('.windtre__primary-nav__language').outerWidth(true);
 
+            return theHeader;
+        },
+        handleHomeButton: function(size) {
+            var theHeader = this;
+            if (size == 'small') {
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.logo')
+                    .hide();
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.home-icon')
+                    .show();
+            } else {
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.logo')
+                    .show();
+                theHeader
+                    .headerElement
+                    .find('.windtre__primary-nav__logo')
+                    .find('.home-icon')
+                    .hide();
+            }
             return theHeader;
         },
         initScroll: function() {
@@ -171,7 +196,8 @@ jQuery(function($) {
                 });
 
             theHeader
-                .bindClick();
+                .bindClick()
+                .bindResize();
             return theHeader;
         },
 
@@ -189,6 +215,11 @@ jQuery(function($) {
                     }
 
                 });
+            return theHeader;
+        },
+        bindResize: function() {
+            var theHeader = this;
+            /* empty space for debounced resize event */
             return theHeader;
         },
         handleClick: function($clickedLink) {
