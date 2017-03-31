@@ -136,31 +136,89 @@ a.bt-link {
     text-align: center;
 }
 
+.call_to_action__container {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    margin: 0;
+    letter-spacing: -0.025em;
+    border-bottom: 1px solid #e6e9ed;
+    border-top: 1px solid #e6e9ed;
+}
+
+.button {
+    font-family: 'Trebuchet MS';
+    background-color: #f48135;
+    color: white !important;
+    padding: 10px 0;
+    font-size: 22px !important;
+    text-align: center;
+    height: auto;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: #f48135;
+    border-radius: 4px;
+    text-decoration: none;
+    width: 80%;
+    max-width: 300px;
+}
+
+.button:hover {
+    background-color: #f78f4c;
+}
+
+.call_to_action__container i {
+    position: absolute;
+    bottom: 9px;
+    right: 12px;
+    background-size: 25px 25px;
+    height: 30px;
+    width: 30px;
+}
+
+.button--search {
+    background-image: url(../images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+}
+
 .wnd__notes {
     width: 72%;
     position: relative;
     display: inline-block;
-    text-align: right;
+}
+
+.wnd__notes img {
+    float: right;
 }
 
 .landing .wind_ricorda {
-    margin: 70px 0 30px;
+    margin: 70px 0 30px 5px;
     width: 26%;
     position: relative;
     display: inline-block;
     text-align: left;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 780px) {
     .landing .wind_ricorda {
         width: 100%;
         text-align: center;
+        margin-left: 0;
+    }
+    .button {
+        font-size: 20px !important;
     }
     .wnd__notes {
         width: 100%;
         position: relative;
         text-align: center;
         top: -100px;
+    }
+    .wnd__notes img {
+        float: none;
+        margin: 0 auto;
     }
 }
 
@@ -380,5 +438,11 @@ a.bt-link {
     }
     .landing .container > .row > .col.col-feat .detail_claim > p {
         font-size: 1em;
+    }
+    .wnd__notes img,
+    .landing .wind_ricorda img {
+        width: 70%;
+        height: auto;
+        max-width: 279px;
     }
 }
