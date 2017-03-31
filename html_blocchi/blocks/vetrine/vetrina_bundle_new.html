@@ -44,8 +44,8 @@
                             <div class="clear"></div>
                         </div>
                         <div class="showcase_bundle_block__container">
-                            <!-- 1 di 6 -->
-                            <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4 colored_text--orange">
+                            <!-- 1 di 6  layout base il colore per titolo e prezzo lo prende dalla classe che si aggiunge al cardsOffer__single per non visualizzare il bg basta non stampare l'immagine come anche per gli altri campi-->
+                            <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4">
                                 <div class="cardsOffer__single--bgContainer">
                                 </div>
                                 <div class="cardsOffer__single--title">
@@ -73,13 +73,14 @@
                                     </div>
                                 </div>
                                 <div class="cardsOffer__single--price__container">
+                                    <!-- 2 di 6  al prezzo per aggiungere simbolo €  aggiungere classe with_currency mentre per cent/min text_currency-->
                                     <div class="cardsOffer__single--price__container--priceDiscounted "><span class="price with_currency">14,90</span></div>
                                     <div class="cardsOffer__single--price__container--price"><span class="price with_currency">10</span></div>
                                     <div class="cardsOffer__single--price__container--recurrency">Asdasdasdasdasdasdasd</div>
                                 </div>
                                 <a href="#" class="button button--noMargin">scopri</a>
                             </div>
-                            <!-- 2 di 6 -->
+                            <!-- 2 di 6  Layout con bundle singolo singleBundle qui è stata data la classe business per dare il colore del titolo nero e prezzo arancione-->
                             <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4 singleBundle business">
                                 <div class="cardsOffer__single--bgContainer">
                                 </div>
@@ -110,7 +111,7 @@
                                 </div>
                                 <a href="#" class="button button--noMargin">scopri</a>
                             </div>
-                            <!-- 3 di 6 -->
+                            <!-- 3 di 6 layout senza bundle ma solo con descrizioni no_bundle-->
                             <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4 no_bundle colored_text--mobile">
                                 <div class="cardsOffer__single--bgContainer">
                                 </div>
@@ -147,7 +148,7 @@
                                 </div>
                                 <a href="#" class="button button--noMargin">scopri</a>
                             </div>
-                            <!-- 4 di 6 -->
+                            <!-- 4 di 6 layout con background e senza bundle bgAndPrice-->
                             <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4 colored_text--orange bgAndPrice">
                                 <div class="cardsOffer__single--bgContainer">
                                     <img src="../../img/backgrounds/cardsOffer__bg.jpg" alt="immagine di background">
@@ -183,7 +184,7 @@
                                 </div>
                                 <a href="#" class="button button--noMargin">scopri</a>
                             </div>
-                            <!-- 5 di 6 -->
+                            <!-- 5 di 6 con background e bundle bgBundleAndPrice-->
                             <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4 colored_text--orange bgBundleAndPrice">
                                 <div class="cardsOffer__single--bgContainer">
                                     <img src="../../img/backgrounds/cardsOffer__bg2.jpg" alt="immagine di background">
@@ -211,7 +212,7 @@
                                 </div>
                                 <a href="#" class="button button--noMargin">scopri</a>
                             </div>
-                            <!-- 6 di 6 -->
+                            <!-- 6 di 6 versione con fullBg-->
                             <div class="cardsOffer__single col-xs-12 col-sm-6 col-md-4 col-lg-4 colored_text--orange fullBg">
                                 <div class="cardsOffer__single--bgContainer">
                                     <img src="../../img/backgrounds/cardsOffer__bg2.jpg" alt="immagine di background">
@@ -250,7 +251,7 @@
                             <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
-                        <div class="bundle_block__showMore">
+                        <div class="showcase_bundle_block__showMore">
                             mostra altre tariffe
                         </div>
                     </div>
@@ -260,7 +261,7 @@
 </body>
 <script>
 jQuery(document).ready(function($) {
-    $('.bundle_block__showMore').click(function() {
+    $('.showcase_bundle_block__showMore').click(function() {
         var thisItem = $(this);
         thisItem.parents('.showcase_bundle_block').find('.cardsOffer__single').each(function(index) {
             if ($(this).css('display', 'none')) {
