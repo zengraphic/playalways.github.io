@@ -112,14 +112,14 @@ $color-blue: $color-mediumBlue;*/
  -------->        BREAKPOINT MIXIN */
 
 $breakpoints: ('super-tiny': (max-width: 480px),
-  'tiny': (max-width: 600px),
-  'small': (max-width: 767px),
-  'medium': (max-width: 910px),
-  'large': (min-width: 1200px),
-  'custom': (min-height: 40em),
-  'min-small': (min-width: 767px),
-  'min-desktop': (max-width: 1024px),
-  'med-large': (max-width: 992px));
+'tiny': (max-width: 600px),
+'small': (max-width: 767px),
+'medium': (max-width: 910px),
+'large': (min-width: 1200px),
+'custom': (min-height: 40em),
+'min-small': (min-width: 767px),
+'min-desktop': (max-width: 1024px),
+'med-large': (max-width: 992px));
 // Creating the mixin
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints,
@@ -344,7 +344,7 @@ img {
     background: -moz-linear-gradient(left, #f4f4f4 0, rgba(244, 244, 244, 0) 100%);
     background: -webkit-linear-gradient(left, #f4f4f4 0, rgba(244, 244, 244, 0) 100%);
     background: linear-gradient(to right, #f4f4f4 0, rgba(244, 244, 244, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#00f4f4f4', GradientType=1)
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#00f4f4f4', GradientType=1)
 }
 
 //SLICK STYLING
@@ -431,7 +431,6 @@ a {
     line-height: normal;
     width: 100%;
     margin: 0 auto;
-   
 }
 
 h2 {
@@ -683,7 +682,6 @@ a.button--search {
     &--home_life {
         color: $color_black !important;
     }
-    
     &--blue_light {
         color: $color_blue_light !important;
     }
@@ -741,29 +739,37 @@ a.button--search {
     }
     line-height: 1.2em;
 }
+
+
 /* ==================== With Currency =====================  */
-.with_currency{
-    &:after{
-        content:"€";
-    font-size:0.8em;
-    color:inherit;
+
+.with_currency {
+    &:after {
+        content: "\20AC";
+        font-size: 0.8em;
+        color: inherit;
     }
 }
-.text_currency{
-    &:after{
-        content:"cent/min";
-    font-size:0.6em;
-    color:inherit;
+
+.text_currency {
+    &:after {
+        content: "cent/min";
+        font-size: 0.6em;
+        color: inherit;
     }
 }
+
+
 /* ==================== iframe configurazione =====================  */
-.configurazione_terminali{
-    height:100vh;
-    iframe{
-        width:100%!important;
-        height:100%!important;
+
+.configurazione_terminali {
+    height: 100vh;
+    iframe {
+        width: 100%!important;
+        height: 100%!important;
     }
 }
+
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
