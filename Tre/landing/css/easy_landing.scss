@@ -198,6 +198,11 @@
                    width: 1665px;
                    left: calc(50vw - 832px);
                    top: 0;
+                   &.fix_yellow {
+                       @include breakpoint(display_small) {
+                           left: calc(50vw - 320px);
+                       }
+                   }
                    @include breakpoint(display_largest) {
                        top: 0;
                        left: 0;
@@ -209,10 +214,10 @@
                        top: 0;
                    }
                    @include breakpoint(display_smaller) {
-                       width: 640px;
-                       left: calc(50vw - 320px);
+                       width: 600px;
+                       left: calc(50vw - 305px);
                        top: 0;
-                   }                   
+                   }
                }
                .main_text {}
                .main_cta {
