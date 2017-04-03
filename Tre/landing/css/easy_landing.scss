@@ -1,0 +1,237 @@
+       $weight-light: 300;
+       $weight-normal: 500;
+       $weight-boldCond: 700;
+       $color-standard: #2c2c2c;
+       $color-orange: #f48135;
+       $color-gray: #999999;
+       $color-light-gray: #d2d2d2;
+       $color-placeholder: #4a4a4a;
+       $color-HomeLife-Background: #212121;
+       $color-gray-mediumBg: #e6e9ed;
+       $color-blue: #0eafc6;
+       $color-border: #e3e7ec;
+       $color-white: #ffffff;
+       $color-samsung: #007cc2;
+       // MIXIN FOR BORDER RADIOUS 
+       @mixin border-radius($radius) {
+           -webkit-border-radius: $radius;
+           border-radius: $radius;
+           background-clip: padding-box;
+           /* stops bg color from leaking outside the border: */
+       }
+       
+       // SINGOLI ANGOLI BORDER RADIOUS
+       @mixin border-top-radius($radius) {
+           -webkit-border-top-right-radius: $radius;
+           border-top-right-radius: $radius;
+           -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-right-radius($radius) {
+           -webkit-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+           -webkit-border-top-right-radius: $radius;
+           border-top-right-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-bottom-radius($radius) {
+           -webkit-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+           -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       @mixin border-left-radius($radius) {
+           -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+           -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+           background-clip: padding-box;
+       }
+       
+       body {
+           background: white;
+           color: $color_standard !important;
+           font-size: 14px; //1em
+           letter-spacing: 0.25px;
+           text-rendering: optimizeLegibility;
+           -webkit-font-smoothing: subpixel-antialiased;
+           -moz-osx-font-smoothing: grayscale;
+           -webkit-hyphens: inherit;
+           -ms-hyphens: inherit;
+           hyphens: none;
+           line-height: 1;
+           font-family: 'Helvetica Neue LT Com', Helvetica, Arial, sans-serif;
+           margin: 0;
+       }
+       
+       input {
+           &:focus {
+               outline: none;
+           }
+       }
+       
+       a {
+           text-decoration: inherit;
+           color: inherit;
+           &:active,
+           &:visited,
+           &:focus {
+               text-decoration: inherit;
+               color: inherit;
+           }
+       }
+       
+       //================= MIXINS ================ //
+       //MIXIN BREAKPOINTS
+       @mixin breakpoint($name) {
+           @if map-has-key($breakpoints, $name) {
+               @media #{inspect(map-get($breakpoints, $name))} {
+                   @content;
+               }
+           }
+           @else {
+               @warn "Couldn't find a your breakpoint named `#{$name}`.";
+           }
+       }
+       
+       // Breakpoint Vars
+       $breakpoints:( 'display_largest':(min-width: 1665px), 'display_larger':(max-width: 1599px), 'display_large':(max-width: 1200px), 'display_medium_large':(max-width: 940px), 'display_medium':(max-width: 880px), 'display_medium_small':(max-width: 768px), 'display_medium_smaller':(max-width: 697px), 'display_small':(max-width: 640px), 'display_smaller':(max-width: 480px), 'display_smallest':(max-width: 320px), 'min_display_medium':(min-width: 768px));
+       //mixin
+       @mixin placeholder {
+           &::-webkit-input-placeholder {
+               @content
+           }
+           &:-moz-placeholder {
+               @content
+           }
+           &::-moz-placeholder {
+               @content
+           }
+           &:-ms-input-placeholder {
+               @content
+           }
+       }
+       
+       // OPACITY
+       @mixin opacity($opacity) {
+           opacity: $opacity;
+           $opacity-ie: $opacity * 100;
+           filter: alpha(opacity=$opacity-ie); //IE8
+       }
+       
+       // ============================= MAIN CSS ========================= //
+       // ============================= MAIN CSS ========================= //
+       // ============================= MAIN CSS ========================= //
+       // ============================= MAIN CSS ========================= //
+       // ============================= MAIN CSS ========================= //
+       // ============================= MAIN CSS ========================= //                                   
+       .container {
+           font-family: 'Helvetica';
+           &_box {
+               overflow: hidden;
+           }
+           &__landing {
+               .box_purple {
+                   @include breakpoint(display_medium_small) {
+                       background-color: #e7278a;
+                   }
+               }
+               .box_blue {
+                   @include breakpoint(display_medium_small) {
+                       background-color: #0088cc;
+                   }
+               }
+               .box_yellow {
+                   @include breakpoint(display_medium_small) {
+                       background-color: #f2b63d;
+                   }
+               }
+               .only_desktop {
+                   display: block;
+                   @include breakpoint(display_medium_small) {
+                       display: none;
+                   }
+               }
+               .only_mobile {
+                   display: none;
+                   @include breakpoint(display_medium_small) {
+                       display: block;
+                   }
+               }
+               .container_box {
+                   position: relative;
+                   width: 100%;
+               }
+               .container_mask {
+                   width: 950px;
+                   margin: 0 auto;
+                   position: relative;
+               }
+               .container_text {
+                   z-index: 900;
+                   position: absolute;
+                   max-width: calc(100vw - 60px);
+                   margin: 0 auto;
+                   color: $color-white;
+                   font-size: 14px;
+                   line-height: 16px;
+                   font-weight: 300;
+                   text-align: center;
+                   bottom: 30px;
+                   padding: 0 30px;
+                   @include breakpoint(display_medium_small) {
+                       padding: 30px 10px;
+                       max-width: calc(100vw - 20px);
+                       margin: 0;
+                       position: relative;
+                       bottom: 0;
+                   }
+               }
+               .image_stricken {
+                   position: relative;
+                   z-index: 500;
+                   width: 1665px;
+                   left: calc(50vw - 832px);
+                   top: 0;
+                   @include breakpoint(display_largest) {
+                       top: 0;
+                       left: 0;
+                       width: 100%;
+                   }
+                   @include breakpoint(display_medium_small) {
+                       width: 768px;
+                       left: calc(50vw - 384px);
+                       top: 0;
+                   }
+                   @include breakpoint(display_smaller) {
+                       width: 640px;
+                       left: calc(50vw - 320px);
+                       top: 0;
+                   }                   
+               }
+               .main_text {}
+               .main_cta {
+                   margin-top: 30px;
+                   a {
+                       text-decoration: underline;
+                       &:hover {
+                           @include opacity(0.5);
+                       }
+                   }
+               }
+           }
+       }
+       
+       .clear {
+           content: "";
+           display: block;
+           clear: both;
+           visibility: hidden;
+           line-height: 0;
+           height: 0;
+       }
