@@ -91,7 +91,7 @@ jQuery(function($) {
                             .addClass('current');
                         var $pathLinks = $($currentLink.parents('.windtre__primary-nav__links').get().reverse());
 
-                        var time = 100;
+                        var time = 200;
                         $pathLinks
                             .each(function(i) {
                                 var theLink = $(this).siblings('.nav_link');
@@ -100,7 +100,7 @@ jQuery(function($) {
                                         theLink
                                             .trigger('click');
                                     }, time);
-                                    time += 100;
+                                    time += 200;
                                 }
                             });
                     }
