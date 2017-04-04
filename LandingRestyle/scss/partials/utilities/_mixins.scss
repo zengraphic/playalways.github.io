@@ -252,50 +252,25 @@
  */
 
 
-/* ====================COLORI BACKGROUND=====================  */
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
 
-/*.colored_bg {
-    &--white {
-        background-color: $color-white !important;
-    }
-    &--lighter-grey {
-        background-color: $color-lighterGrey !important;
-    }
-    &--light-grey {
-        background-color: $color-lightGrey !important;
-    }
-    &--medium-grey {
-        background-color: $color-mediumGrey !important;
-    }
-    &--dark-grey,
-    &--placeholder {
-        background-color: $color-darkGrey !important;
-    }
-    &--darker-grey,
-    &--standard-text,
-    &--business {
-        background-color: $color-darkerGrey !important;
-    }
-    &--darkest-grey,
-    &--home-life {
-        background-color: $color-darkestGrey !important;
-    }
-    &--black {
-        background-color: $color-black !important;
-    }
-    &--mobile,
-    &--light-blue {
-        background-color: $color-lightBlue !important;
-    }
-    &--infostrada,
-    &--medium-blue {
-        background-color: $color-mediumBlue !important;
-    }
-    &--orange {
-        background-color: $color-orange !important;
-    }
+// scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
 
-}*/
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
 
 
 
