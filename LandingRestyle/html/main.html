@@ -14,6 +14,9 @@
     <!--- /CSS -->
     <!--- JS -->
     <script src="../js/jquery-1.12.3.min.js"></script>
+    <script src="../js/base-libs.min.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/custom.js"></script>
     <!-- components script -->
 </head>
 
@@ -28,6 +31,7 @@ $(function() {
     var mainContainer = '.landing__mainContainer';
     console.log(divContainer);
     $(mainContainer).append($(divContainer).load("partials/header.html"));
+    $(mainContainer).append($(divContainer).load("partials/hero.html"));
     $(mainContainer).append($(divContainer).load("partials/footer.html"));
 });
 </script>

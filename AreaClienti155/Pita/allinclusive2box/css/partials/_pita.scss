@@ -3,6 +3,19 @@
     //======================= PORTA I TUOI AMICI =====================
     //================================================================
     //================================================================
+    .clear {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+    
+    .margin_top_neg15 {
+        margin-top: -15px !important;
+    }
+    
     .grey_box {
         background-color: #f4f4f4;
         color: $color_black;
@@ -62,6 +75,7 @@
         .pita {
             &_main_title {
                 padding-left: 15px;
+                height: 52px;
             }
             &_container {
                 &_left {
@@ -77,6 +91,17 @@
                     float: right;
                     margin-left: 15px;
                     width: 340px;
+                    .pita_container_text {
+                        &_right {
+                            .pita_img {
+                                position: absolute;
+                                top: 0;
+                                right: 0px;
+                                border-top-right-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                            }
+                        }
+                    }
                     @include border-radius(8px);
                     &_price {
                         float: right;
@@ -86,15 +111,16 @@
                 &_text {
                     float: left;
                     width: 100%;
+                    height: 170px;
                     .offer {
                         &_gold {
                             // color: #FFD700;
                             color: $color_orange;
-                            font-weight: 700;
+                            font-weight: 400;
                         }
                         &_price {
                             color: $color-orange;
-                            font-weight: 700;
+                            font-weight: 400;
                         }
                         &_big {
                             color: $color_white;
@@ -110,15 +136,14 @@
                     &_right {
                         float: right;
                         width: 30%;
+                        .pita_img {
+                            position: relative;
+                            bottom: 1px;
+                            &.right {
+                                float: right;
+                            }
+                        }
                     }
-                }
-            }
-            &_img {
-                position: relative;
-                bottom: 6px;
-                right: 3px;
-                &.right {
-                    float: right;
                 }
             }
             &_cta {
