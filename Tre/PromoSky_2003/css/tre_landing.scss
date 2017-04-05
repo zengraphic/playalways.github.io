@@ -134,6 +134,14 @@
                padding-left: 15px;
                padding-right: 15px;
                box-sizing: border-box;
+               .row_border {
+                   display: block;
+                   height: 1px;
+                   border: 0;
+                   border-top: 1px solid $color-gray;
+                   margin: 2em 0;
+                   padding: 0;
+               }
            }
            &_main_title {
                color: $color-samsung;
@@ -166,15 +174,39 @@
                    background-color: $color-samsung;
                    padding: 20px;
                    color: $color-white;
-                   width: 27%;
+                   width: 300px;
                    display: inline-block;
-                   margin: 0 20px;
-                   @include border-radius(4px);
+                   margin: 10px 10px 10px 0;
+                   @include border-radius(10px);
+                   font-size: 22px;
+                   font-weight: bold;
+                   cursor: pointer;
+                   white-space: nowrap;
+                   border: none;
+                   &:hover {
+                       background-color: #286090;
+                   }
+                   @include breakpoint('display_smaller') {
+                       width: 80%;
+                       padding: 20px 0;
+                       margin: 10px 0;
+                       font-size: 16px;
+                   }
                }
            }
            .small_notes {}
            &_box {}
-           &_subtitle {}
+           &_subtitle {
+               h3 {
+                   color: $color-samsung;
+                   font-size: 30px;
+                   margin-top: 0.3571rem;
+                   margin-bottom: 0.3571rem;
+                   @include breakpoint('display_small') {
+                       font-size: 20px;
+                   }
+               }
+           }
            .disclaimer {}
            &_offer {
                &_sub {
