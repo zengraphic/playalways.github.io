@@ -20,7 +20,7 @@
        $color-blue-soft: #00a0d9;
        $color-purple-hard-bg: #a61d5e;
        $color-purple-hard: #e52e8a;
-       $color-purple-soft: #ec399a;       
+       $color-purple-soft: #ec399a;
        // MIXIN FOR BORDER RADIOUS 
        @mixin border-radius($radius) {
            -webkit-border-radius: $radius;
@@ -174,19 +174,38 @@
                    @include breakpoint(display_medium_small) {
                        padding-top: 15px;
                    }
+                   .container_image {
+                      margin-bottom: 30px;
+                       .left_box {
+                           display: inline-block;
+                           width: 49%;
+                           img {
+                               width: 100%;
+                               height: auto;
+                           }
+                       }
+                       .right_box {
+                           display: inline-block;
+                           width: 50%;
+                           img {
+                               width: 100%;
+                               height: auto;
+                           }
+                       }
+                   }
                    .notes {
                        font-size: 16px;
                        color: $color-white;
                        padding: 0px 30px;
-                       @include breakpoint(display_medium_small){
-                        padding: 0px 20px;
-                        text-align: center;
+                       @include breakpoint(display_medium_small) {
+                           padding: 0px 20px;
+                           text-align: center;
                        }
-                       a{
-                        text-decoration: underline;
-                        &:hover{
-                          @include opacity(0.5);
-                        }
+                       a {
+                           text-decoration: underline;
+                           &:hover {
+                               @include opacity(0.5);
+                           }
                        }
                    }
                    .table {
@@ -470,17 +489,18 @@
        .spacing {
            display: block;
            height: 50px;
-       } 
+       }
+       
        .container_accordion {
            &.yellow_table {
                background-color: $color-yellow-hard-bg;
            }
            &.blue_table {
                background-color: $color-blue-hard-bg;
-           }    
+           }
            &.purple_table {
                background-color: $color-purple-hard-bg;
-           }                   
+           }
            .subcontainer_accordion {
                width: 100%;
                max-width: 1000px;
@@ -578,15 +598,15 @@
            ul li i.yellow_table:before,
            ul li i.yellow_table:after {
                background-color: $color-yellow-soft;
-           }   
+           }
            ul li i.blue_table:before,
            ul li i.blue_table:after {
                background-color: $color-blue-soft;
-           }   
+           }
            ul li i.purple_table:before,
            ul li i.purple_table:after {
                background-color: $color-purple-soft;
-           }                             
+           }
            ul li i:before {
                transform: translate(-5px, 0) rotate(45deg);
            }
