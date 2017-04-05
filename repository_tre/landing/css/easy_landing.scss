@@ -12,10 +12,15 @@
        $color-border: #e3e7ec;
        $color-white: #ffffff;
        $color-samsung: #007cc2;
-       $color-purple-hard-bg: #fd56c4;
        $color-yellow-hard: #f3b03a;
        $color-yellow-soft: #ffe566;
        $color-yellow-hard-bg: #af7f27;
+       $color-blue-hard-bg: #005a8f;
+       $color-blue-hard: #0088cc;
+       $color-blue-soft: #00a0d9;
+       $color-purple-hard-bg: #a61d5e;
+       $color-purple-hard: #e52e8a;
+       $color-purple-soft: #ec399a;       
        // MIXIN FOR BORDER RADIOUS 
        @mixin border-radius($radius) {
            -webkit-border-radius: $radius;
@@ -71,7 +76,7 @@
        }
        
        // Breakpoint Vars
-       $breakpoints:( 'display_largest':(min-width: 1665px), 'display_larger':(max-width: 1599px), 'display_large':(max-width: 1200px), 'display_medium_large':(max-width: 940px), 'display_medium':(max-width: 880px), 'display_medium_small':(max-width: 768px), 'display_medium_smaller':(max-width: 697px), 'display_small':(max-width: 640px), 'display_smaller':(max-width: 480px), 'display_smallest':(max-width: 320px), 'min_display_medium':(min-width: 768px));
+       $breakpoints:( 'display_largest':(min-width: 1665px), 'display_larger':(max-width: 1599px), 'display_large':(max-width: 1200px), 'display_medium_large':(max-width: 940px), 'display_medium':(max-width: 830px), 'display_medium_small':(max-width: 768px), 'display_medium_smaller':(max-width: 697px), 'display_small':(max-width: 640px), 'display_smaller':(max-width: 480px), 'display_smallest':(max-width: 320px), 'min_display_medium':(min-width: 768px));
        //mixin
        @mixin placeholder {
            &::-webkit-input-placeholder {
@@ -162,19 +167,31 @@
                    color: $color-white;
                    font-weight: 300;
                    width: 100%;
-                   max-width: 950px;
+                   max-width: 1000px;
                    margin: 0 auto;
                    padding-top: 100px;
+                   padding-bottom: 100px;
                    @include breakpoint(display_medium_small) {
                        padding-top: 15px;
                    }
                    .notes {
                        font-size: 16px;
                        color: $color-white;
+                       padding: 0px 30px;
+                       @include breakpoint(display_medium_small){
+                        padding: 0px 20px;
+                        text-align: center;
+                       }
+                       a{
+                        text-decoration: underline;
+                        &:hover{
+                          @include opacity(0.5);
+                        }
+                       }
                    }
                    .table {
                        &_container {
-                           padding-bottom: 100px;
+                           padding-bottom: 30px;
                        }
                        &_title {
                            font-size: 40px;
@@ -250,7 +267,10 @@
                                    border-width: 51px 0 51px 20px;
                                    &.yellow_table {
                                        border-color: $color-yellow-hard $color-yellow-hard $color-yellow-hard $color-yellow-hard-bg;
-                                       border-width: 53px 0 53px 20px;
+                                       border-width: 87px 0 87px 20px;
+                                       @include breakpoint(display_medium) {
+                                           border-width: 97px 0 97px 20px;
+                                       }
                                        @include breakpoint(display_medium_small) {
                                            border-style: solid;
                                            border-width: 15px 50px 0px 50px;
@@ -263,13 +283,20 @@
                                }
                            }
                            .normal_text {
+                               height: 150px;
+                               display: table-cell;
+                               vertical-align: middle;
                                &.yellow_table {
                                    color: $color-white;
                                    text-align: left;
                                    padding: 10px 30px 10px 50px;
+                                   line-height: 19px;
+                                   font-size: 14px;
                                    @include breakpoint(display_medium_small) {
                                        padding: 10px;
                                        padding-top: 30px;
+                                       font-size: 14px;
+                                       line-height: 18px;
                                    }
                                }
                            }
@@ -361,7 +388,7 @@
                    width: 100%;
                }
                .container_mask {
-                   width: 950px;
+                   width: 1000px;
                    margin: 0 auto;
                    position: relative;
                }
@@ -435,4 +462,179 @@
            visibility: hidden;
            line-height: 0;
            height: 0;
+       }
+       
+       // ===========================  ACCORDIONS
+       // ===========================  ACCORDIONS
+       // ===========================  ACCORDIONS
+       .spacing {
+           display: block;
+           height: 50px;
+       } 
+       .container_accordion {
+           &.yellow_table {
+               background-color: $color-yellow-hard-bg;
+           }
+           &.blue_table {
+               background-color: $color-blue-hard-bg;
+           }    
+           &.purple_table {
+               background-color: $color-purple-hard-bg;
+           }                   
+           .subcontainer_accordion {
+               width: 100%;
+               max-width: 1000px;
+               margin: 0 auto;
+           }
+           .transition,
+           p,
+           ul li i:before,
+           ul li i:after {
+               transition: all 0.25s ease-in-out;
+           }
+           .flipIn,
+           h1,
+           ul li {
+               animation: flipdown 0.5s ease both;
+           }
+           .no-select,
+           h2 {
+               -webkit-tap-highlight-color: transparent;
+               -webkit-touch-callout: none;
+               -webkit-user-select: none;
+               -khtml-user-select: none;
+               -moz-user-select: none;
+               -ms-user-select: none;
+               user-select: none;
+           }
+           h2 {
+               color: $color-white;
+           }
+           h2 {
+               font-size: 26px;
+               line-height: 34px;
+               font-weight: 300;
+               letter-spacing: 1px;
+               display: block;
+               margin: 0;
+               cursor: pointer;
+               padding-bottom: 20px;
+               padding-left: 30px;
+               padding-right: 30px;
+           }
+           p {
+               color: $color-white;
+               font-size: 14px;
+               line-height: 16px;
+               letter-spacing: 1px;
+               position: relative;
+               overflow: hidden;
+               max-height: 1000px;
+               opacity: 1;
+               transform: translate(0, 0);
+               margin-top: 14px;
+               z-index: 2;
+               font-weight: 300;
+               padding: 0px 30px;
+           }
+           ul {
+               list-style: none;
+               perspective: 900;
+               padding: 0;
+               margin: 0;
+           }
+           ul li {
+               position: relative;
+               padding: 0;
+               margin: 0;
+               padding-bottom: 4px;
+               padding-top: 18px;
+           }
+           ul li:nth-of-type(1) {
+               animation-delay: 0.5s;
+           }
+           ul li:nth-of-type(2) {
+               animation-delay: 0.75s;
+           }
+           ul li:nth-of-type(3) {
+               animation-delay: 1s;
+           }
+           ul li:last-of-type {
+               padding-bottom: 0;
+           }
+           ul li i {
+               position: absolute;
+               transform: translate(-26px, 0);
+               margin-top: 16px;
+               right: 0;
+           }
+           ul li i:before,
+           ul li i:after {
+               content: "";
+               position: absolute;
+               width: 3px;
+               height: 12px;
+           }
+           ul li i.yellow_table:before,
+           ul li i.yellow_table:after {
+               background-color: $color-yellow-soft;
+           }   
+           ul li i.blue_table:before,
+           ul li i.blue_table:after {
+               background-color: $color-blue-soft;
+           }   
+           ul li i.purple_table:before,
+           ul li i.purple_table:after {
+               background-color: $color-purple-soft;
+           }                             
+           ul li i:before {
+               transform: translate(-5px, 0) rotate(45deg);
+           }
+           ul li i:after {
+               transform: translate(2px, 0) rotate(-45deg);
+           }
+           ul li input[type=checkbox] {
+               position: absolute;
+               cursor: pointer;
+               width: 100%;
+               height: 100%;
+               z-index: 1;
+               opacity: 0;
+               margin: 0;
+           }
+           ul li input[type=checkbox]:checked ~ p {
+               margin-top: 0;
+               max-height: 0;
+               opacity: 0;
+               transform: translate(0, 50%);
+           }
+           ul li input[type=checkbox]:checked ~ i:before {
+               transform: translate(2px, 0) rotate(45deg);
+           }
+           ul li input[type=checkbox]:checked ~ i:after {
+               transform: translate(-5px, 0) rotate(-45deg);
+           }
+           @keyframes flipdown {
+               0% {
+                   opacity: 0;
+                   transform-origin: top center;
+                   transform: rotateX(-90deg);
+               }
+               5% {
+                   opacity: 1;
+               }
+               80% {
+                   transform: rotateX(8deg);
+               }
+               83% {
+                   transform: rotateX(6deg);
+               }
+               92% {
+                   transform: rotateX(-3deg);
+               }
+               100% {
+                   transform-origin: top center;
+                   transform: rotateX(0deg);
+               }
+           }
        }
