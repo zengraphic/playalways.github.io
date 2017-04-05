@@ -12,6 +12,10 @@
        $color-border: #e3e7ec;
        $color-white: #ffffff;
        $color-samsung: #007cc2;
+       $color-purple-hard-bg: #fd56c4;
+       $color-yellow-hard: #f2b63d;
+       $color-yellow-soft: #ffe566;
+       $color-yellow-hard-bg: #af7f27;
        // MIXIN FOR BORDER RADIOUS 
        @mixin border-radius($radius) {
            -webkit-border-radius: $radius;
@@ -53,39 +57,6 @@
            background-clip: padding-box;
        }
        
-       body {
-           background: white;
-           color: $color_standard !important;
-           font-size: 14px; //1em
-           letter-spacing: 0.25px;
-           text-rendering: optimizeLegibility;
-           -webkit-font-smoothing: subpixel-antialiased;
-           -moz-osx-font-smoothing: grayscale;
-           -webkit-hyphens: inherit;
-           -ms-hyphens: inherit;
-           hyphens: none;
-           line-height: 1;
-           font-family: 'Helvetica Neue LT Com', Helvetica, Arial, sans-serif;
-           margin: 0;
-       }
-       
-       input {
-           &:focus {
-               outline: none;
-           }
-       }
-       
-       a {
-           text-decoration: inherit;
-           color: inherit;
-           &:active,
-           &:visited,
-           &:focus {
-               text-decoration: inherit;
-               color: inherit;
-           }
-       }
-       
        //================= MIXINS ================ //
        //MIXIN BREAKPOINTS
        @mixin breakpoint($name) {
@@ -124,6 +95,44 @@
            filter: alpha(opacity=$opacity-ie); //IE8
        }
        
+       body {
+           background: white;
+           color: $color_standard !important;
+           font-size: 16px; //1em
+           line-height: 18px;
+           letter-spacing: 0.25px;
+           text-rendering: optimizeLegibility;
+           -webkit-font-smoothing: subpixel-antialiased;
+           -moz-osx-font-smoothing: grayscale;
+           -webkit-hyphens: inherit;
+           -ms-hyphens: inherit;
+           hyphens: none;
+           line-height: 1;
+           font-family: 'Helvetica-Bd', Helvetica, Arial, sans-serif;
+           margin: 0;
+           @include breakpoint(display_small) {
+               font-size: 14px;
+               line-height: 16px;
+           }
+       }
+       
+       input {
+           &:focus {
+               outline: none;
+           }
+       }
+       
+       a {
+           text-decoration: inherit;
+           color: inherit;
+           &:active,
+           &:visited,
+           &:focus {
+               text-decoration: inherit;
+               color: inherit;
+           }
+       }
+       
        // ============================= MAIN CSS ========================= //
        // ============================= MAIN CSS ========================= //
        // ============================= MAIN CSS ========================= //
@@ -136,19 +145,200 @@
                overflow: hidden;
            }
            &__landing {
+               box-sizing: border-box;
+               // ============ LANDING ========== //
+               .button_cta {
+                   padding: 15px 30px;
+                   border: 1px solid $color-white;
+                   text-transform: uppercase;
+                   @include border-radius(5px);
+                   display: block;
+                   width: 100%;
+                   max-width: 150px;
+                   margin: 0 auto;
+                   margin-top: 15px;
+               }
+               .detail_box {
+                   color: $color-white;
+                   font-weight: 300;
+                   width: 100%;
+                   max-width: 950px;
+                   margin: 0 auto;
+                   padding-top: 100px;
+                   @include breakpoint(display_medium_small) {
+                       padding-top: 15px;
+                   }
+                   .notes {
+                       font-size: 16px;
+                       color: $color-white;
+                   }
+                   .table {
+                       &_container {
+                           padding-bottom: 100px;
+                       }
+                       &_title {
+                           font-size: 40px;
+                           font-weight: 700;
+                           text-align: center;
+                           padding-top: 60px;
+                           padding-bottom: 20px;
+                           &.yellow_table {
+                               color: $color-yellow-hard;
+                           }
+                       }
+                       &_subtitle {
+                           font-size: 26px;
+                           font-weight: 500;
+                           padding-bottom: 15px;
+                       }
+                       &_row {
+                           display: table;
+                           width: 100%;
+                           margin-top: 15px;
+                       }
+                       &_column {
+                           display: table-cell;
+                           text-align: center;
+                           padding: 10px 0px;
+                           border-right: 0px;
+                           box-sizing: border-box;
+                           &.yellow_table {
+                               border: 1px solid $color-yellow-soft;
+                               vertical-align: middle;
+                               @include breakpoint(display_medium_small) {
+                                   width: 100%;
+                                   display: block;
+                               }
+                           }
+                           &.first_column {
+                               border-right: 0px;
+                               width: 30%;
+                               text-align: right;
+                               padding-right: 20px;
+                           }
+                           &.last_column {
+                               &.yellow_table {
+                                   border-right: 1px solid $color-yellow-soft;
+                                   border-left: 1px solid $color-yellow-soft;
+                               }
+                           }
+                           &.header_column {
+                               font-size: 28px;
+                               font-weight: 500;
+                               vertical-align: middle;
+                               position: relative;
+                               border: 0;
+                               padding-left: 10px;
+                               &.yellow_table {
+                                   background-color: $color-yellow-hard-bg;
+                                   width: 25%;
+                                   padding: 23px 10px;
+                                   @include breakpoint(display_medium_small) {
+                                       width: 100%;
+                                       display: block;
+                                       padding: 23px 0;
+                                   }
+                               }
+                               .arrow_column {
+                                   position: absolute;
+                                   width: 0;
+                                   height: 0;
+                                   top: 0;
+                                   right: -20px;
+                                   border-style: solid;
+                                   border-width: 51px 0 51px 20px;
+                                   &.yellow_table {
+                                       border-color: $color-yellow-hard $color-yellow-hard $color-yellow-hard $color-yellow-hard-bg;
+                                       @include breakpoint(display_medium_small) {
+                                           border-style: solid;
+                                           border-width: 15px 50px 0px 50px;
+                                           border-color: $color-yellow-hard-bg $color-yellow-hard $color-yellow-hard $color-yellow-hard;
+                                           left: calc(50% - 50px);
+                                           top: auto;
+                                           bottom: -15px;
+                                       }
+                                   }
+                               }
+                           }
+                           .normal_text {
+                               &.yellow_table {
+                                   color: $color-white;
+                                   text-align: left;
+                                   padding: 10px 30px 10px 50px;
+                                   @include breakpoint(display_medium_small) {
+                                       padding: 10px;
+                                   }
+                               }
+                           }
+                           .heading {
+                               font-size: 12px;
+                               text-transform: uppercase;
+                               padding-bottom: 10px;
+                               font-weight: 700;
+                               &.yellow_table {
+                                   color: $color-yellow-hard-bg;
+                               }
+                           }
+                           .text {
+                               font-size: 28px;
+                           }
+                           .price {
+                               font-size: 38px;
+                               font-weight: 500;
+                           }
+                       }
+                   }
+                   &_container {
+                       -webkit-box-shadow: 0px 60px 53px 48px rgba(0, 0, 0, 0.8);
+                       -moz-box-shadow: 0px 60px 53px 48px rgba(0, 0, 0, 0.8);
+                       box-shadow: 0px 60px 53px 48px rgba(0, 0, 0, 0.8);
+                       position: relative;
+                       z-index: 500;
+                       &.purple_bg {
+                           background-color: #e7278a;
+                           border-top: 2px solid #fd56c4;
+                       }
+                       &.blue_bg {
+                           background-color: #0088cc;
+                           border-top: 2px solid #00a0d9;
+                       }
+                       &.yellow_bg {
+                           background-color: #f2b63d;
+                           border-top: 2px solid #f9ce52;
+                       }
+                   }
+               }
+               // ============ LANDING ========== //
+               .container_image {
+                   @include breakpoint(display_smaller) {
+                       overflow: hidden;
+                       height: 100%;
+                       max-height: 200px;
+                   }
+               }
+               .box_shadow {
+                   @include breakpoint(display_medium_small) {
+                       -webkit-box-shadow: 0px 60px 53px 48px rgba(0, 0, 0, 0.5);
+                       -moz-box-shadow: 0px 60px 53px 48px rgba(0, 0, 0, 0.5);
+                       box-shadow: 0px 60px 53px 48px rgba(0, 0, 0, 0.5);
+                   }
+               }
                .box_purple {
                    @include breakpoint(display_medium_small) {
                        background-color: #e7278a;
+                       border-top: 2px solid #fd56c4;
                    }
                }
                .box_blue {
                    @include breakpoint(display_medium_small) {
                        background-color: #0088cc;
+                       border-top: 2px solid #00a0d9;
                    }
                }
                .box_yellow {
                    @include breakpoint(display_medium_small) {
                        background-color: #f2b63d;
+                       border-top: 2px solid #f9ce52;
                    }
                }
                .only_desktop {
@@ -178,18 +368,22 @@
                    max-width: calc(100vw - 60px);
                    margin: 0 auto;
                    color: $color-white;
-                   font-size: 14px;
-                   line-height: 16px;
+                   font-size: 16px;
+                   line-height: 18px;
                    font-weight: 300;
                    text-align: center;
                    bottom: 30px;
                    padding: 0 30px;
                    @include breakpoint(display_medium_small) {
-                       padding: 30px 10px;
-                       max-width: calc(100vw - 20px);
+                       padding: 30px 20px;
+                       max-width: calc(100vw - 40px);
                        margin: 0;
                        position: relative;
                        bottom: 0;
+                   }
+                   @include breakpoint(display_small) {
+                       font-size: 14px;
+                       line-height: 16px;
                    }
                }
                .image_stricken {
@@ -223,7 +417,6 @@
                .main_cta {
                    margin-top: 30px;
                    a {
-                       text-decoration: underline;
                        &:hover {
                            @include opacity(0.5);
                        }
