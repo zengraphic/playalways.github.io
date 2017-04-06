@@ -58,18 +58,26 @@ a {
       @media (max-width: 768px) {
         .container__landing .detail_box {
           padding-top: 15px; } }
-      .container__landing .detail_box .container_image {
+      .container__landing .detail_box .container_image_phones {
         margin-bottom: 30px; }
-        .container__landing .detail_box .container_image .left_box {
+        .container__landing .detail_box .container_image_phones .left_box {
           display: inline-block;
           width: 49%; }
-          .container__landing .detail_box .container_image .left_box img {
+          @media (max-width: 480px) {
+            .container__landing .detail_box .container_image_phones .left_box {
+              width: 100%;
+              display: block; } }
+          .container__landing .detail_box .container_image_phones .left_box img {
             width: 100%;
             height: auto; }
-        .container__landing .detail_box .container_image .right_box {
+        .container__landing .detail_box .container_image_phones .right_box {
           display: inline-block;
           width: 50%; }
-          .container__landing .detail_box .container_image .right_box img {
+          @media (max-width: 480px) {
+            .container__landing .detail_box .container_image_phones .right_box {
+              width: 100%;
+              display: block; } }
+          .container__landing .detail_box .container_image_phones .right_box img {
             width: 100%;
             height: auto; }
       .container__landing .detail_box .notes {
@@ -358,7 +366,7 @@ a {
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
-  max-height: 1300px;
+  max-height: 1600px;
   opacity: 1;
   transform: translate(0, 0);
   margin-top: 14px;
