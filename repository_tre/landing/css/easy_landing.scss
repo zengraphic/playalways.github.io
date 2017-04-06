@@ -173,7 +173,24 @@
        // ============================= MAIN CSS ========================= //
        // ============================= MAIN CSS ========================= //
        // ============================= MAIN CSS ========================= //
-       // ============================= MAIN CSS ========================= //       
+       // ============================= MAIN CSS ========================= //  
+       @include keyframes(fadein) {
+           0% {
+               opacity: 0;
+           }
+           100% {
+               opacity: 1;
+           }
+       }
+       @include keyframes(fadein) {
+           0% {
+               opacity: 0;
+           }
+           100% {
+               opacity: 1;
+           }
+       }       
+       
        .container {
            font-family: 'Helvetica';
            &_box {
@@ -182,6 +199,17 @@
            &__landing {
                box-sizing: border-box;
                // ============ LANDING ========== //
+               .button_cta {
+                   padding: 15px 30px;
+                   border: 1px solid $color-white;
+                   text-transform: uppercase;
+                   @include border-radius(5px);
+                   display: block;
+                   width: 100%;
+                   max-width: 150px;
+                   margin: 0 auto;
+                   margin-top: 15px;
+               }
                .detail_box {
                    color: $color-white;
                    font-weight: 300;
@@ -494,40 +522,12 @@
                        top: 0;
                    }
                }
-               .main_text {}
-               @include keyframes(fadein) {
-                   0% {
-                       opacity: 0;
-                   }
-                   100% {
-                       opacity: 1;
-                   }
-               }
-               @include keyframes(border-in) {
-                   0% {
-                       border: 0px solid rgba(255, 255, 255, 0);
-                   }
-                   100% {
-                       border: 1px solid rgba(255, 255, 255, 1);
-                   }
+               .main_text {
                }
                .main_cta {
-                   padding: 15px 30px;
-                   border: 1px solid $color-white;
-                   text-transform: uppercase;
-                   @include border-radius(5px);
-                   display: block;
-                   width: 100%;
-                   max-width: 150px;
-                   margin: 0 auto;
                    margin-top: 30px;
-                   -webkit-background-clip: padding-box;
-                   /* for Safari */
-                   background-clip: padding-box;
-                   /* for IE9+, Firefox 4+, Opera, Chrome */
-                   @include animation('border-in 1s 1');
                    a {
-                       @include animation('fadein 2s 1');
+                       @include animation('fadein 1s 1');
                        &:hover {
                            @include opacity(0.5);
                        }
