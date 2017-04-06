@@ -182,6 +182,7 @@
                opacity: 1;
            }
        }
+       
        @include keyframes(fadein) {
            0% {
                opacity: 0;
@@ -189,7 +190,7 @@
            100% {
                opacity: 1;
            }
-       }       
+       }
        
        .container {
            font-family: 'Helvetica';
@@ -221,8 +222,71 @@
                    @include breakpoint(display_medium_small) {
                        padding-top: 15px;
                    }
-                   .container_image_phones {
+                   .big_title {
+                       text-align: center;
+                       font-size: 40px;
+                       line-height: 42px;
+                       font-weight: 700;
+                       padding: 0 30px;
+                       @include breakpoint(display_small) {
+                           font-size: 24px;
+                           line-height: 26px;
+                       }
+                   }
+                   .purple_title {
+                       color: $color-purple-hard-bg;
+                       margin-top: 50px;
+                   }
+                   .container_image_double {
                        margin-bottom: 30px;
+                       .left_table {
+                           display: inline-block;
+                           width: calc(65% - 20px);
+                           padding-left: 20px;
+                           @include breakpoint(display_small) {
+                               width: calc(100% - 40px);
+                               display: block;
+                               padding: 0 20px;
+                           }
+                           img {
+                               width: 95.4%;
+                               height: auto;
+                               @include breakpoint(display_small) {
+                                   width: 100%;
+                                   display: block;
+                                   margin: 0 auto;
+                               }
+                           }
+                       }
+                       .right_table {
+                           display: inline-block;
+                           width: calc(34% - 20px);
+                           padding-right: 20px;
+                           &.second_table {
+                               width: calc(33.1% - 20px);
+                               @include breakpoint(display_small) {
+                                   width: calc(100% - 40px);
+                                   display: block;
+                                   margin: 0 auto;
+                                   margin-top: 30px;
+                               }
+                           }
+                           @include breakpoint(display_small) {
+                               margin-top: 30px;
+                               width: calc(100% - 40px);
+                               display: block;
+                               padding: 0 20px;
+                           }
+                           img {
+                               width: 100%;
+                               height: auto;
+                               @include breakpoint(display_small) {
+                                   width: 100%;
+                                   display: block;
+                                   margin: 0 auto;
+                               }
+                           }
+                       }
                        .left_box {
                            display: inline-block;
                            width: 49%;
@@ -255,6 +319,7 @@
                    }
                    .notes {
                        font-size: 16px;
+                       line-height: 18px;
                        color: $color-white;
                        padding: 0px 30px;
                        @include breakpoint(display_medium_small) {
@@ -274,6 +339,7 @@
                        }
                        &_title {
                            font-size: 40px;
+                           line-height: 42px;
                            font-weight: 700;
                            text-align: center;
                            padding-top: 60px;
@@ -522,8 +588,7 @@
                        top: 0;
                    }
                }
-               .main_text {
-               }
+               .main_text {}
                .main_cta {
                    margin-top: 30px;
                    a {
@@ -534,6 +599,14 @@
                    }
                }
            }
+       }
+       
+       .align_center {
+           text-align: center;
+       }
+       
+       .margin_bottom_30 {
+           margin-bottom: 30px;
        }
        
        .clear {
@@ -593,8 +666,8 @@
                color: $color-white;
            }
            h2 {
-               font-size: 28px;
-               line-height: 34px;
+               font-size: 18px;
+               line-height: 20px;
                font-weight: 500;
                letter-spacing: 1px;
                display: block;
@@ -647,7 +720,7 @@
            ul li i {
                position: absolute;
                transform: translate(-26px, 0);
-               margin-top: 16px;
+               margin-top: 7px;
                right: 0;
            }
            ul li i:before,
