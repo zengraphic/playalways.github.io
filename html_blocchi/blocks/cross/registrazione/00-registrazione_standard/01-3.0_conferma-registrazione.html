@@ -9,19 +9,19 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="msapplication-tap-highlight" content="no" />
-    <title>Pecupero credenziali</title>
+    <title>Mobile Reg.Std Email</title>
     <!--- CSS -->
-    <link rel="stylesheet" type="text/css" href="../../../css/base-libs.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../css/base-style.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../css/wind-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../css/base-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../css/wind-style.min.css" />
     <!--- /CSS -->
     <!--- JS -->
-    <script type="text/javascript" src="../../../js/base-libs.min.js"></script>
-    <script type="text/javascript" src="../../../js/base.js"></script>
-    <script type="text/javascript" src="../../../js/script.js"></script>
+    <script type="text/javascript" src="../../../../js/base-libs.min.js"></script>
+    <script type="text/javascript" src="../../../../js/base.js"></script>
+    <script type="text/javascript" src="../../../../js/script.js"></script>
     <!-- components script -->
-    <script type="text/javascript" src="../../../js/header.js"></script>
-    <script type="text/javascript" src="../../../js/custom.js"></script>
+    <script type="text/javascript" src="../../../../js/header.js"></script>
+    <script type="text/javascript" src="../../../../js/custom.js"></script>
     <!--- /JS -->
 </head>
 
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="logo logo--wind">
-                            <a href="http://www.wind.it"><img src="../../../img/logos/wind_logo.png" class="wind"></a>
+                            <a href="http://www.wind.it"><img src="../../../../img/logos/wind_logo.png" class="wind"></a>
                         </div>
                         <!-- MAIN MENU  -->
                         <div class="menu">
@@ -64,12 +64,9 @@
                         <!-- MENU RIGHT -->
                         <div class="menu-right">
                             <ul>
-                               <li><a class="btn_menu" id="menuaction" href="#">
-                                <div class="base__icon icon_menu--color"></div>MENU</a></li>
-                                <li><a class="btn_carrello" href="#">
-                                <div class="base__icon icon_carrello--color"></div>CARRELLO</a></li>
-                                <li><a class="btn_entra base__popup-link" href="#CodiceDiSicurezza">
-                                <div class="base__icon icon_login--color"></div>ENTRA</a></li>
+                                <li><a class="btn_menu" id="menuaction" href="#"><div class="base__icon icon_menu--color"></div>MENU</a></li>
+                                <li><a class="btn_carrello" href="#"><div class="base__icon icon_carrello--color"></div>CARRELLO</a></li>
+                                <li><a class="btn_entra base__popup-link" href="#register"><div class="base__icon icon_login--color"></div>ENTRA</a></li>
                             </ul>
                         </div>
                         <!-- END MENU RIGHT -->
@@ -81,17 +78,17 @@
     <!-- END HEADER -->
     <div class="clearfix"></div>
     <!-- MODAL REGISTER -->
-    <div id="CodiceDiSicurezza" class="base__popup  mfp-hide loguin_block">
+    <div id="register" class="base__popup mfp-hide loguin_block">
         <div class="container base__scrollable touch_scroll">
             <div class="row">
                 <div class="top">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="logo logo--wind">
-                                <a href="http://www.wind.it"><img src="../../../img/logos/wind_logo.png" class="wind"></a>
+                                <a href="http://www.wind.it"><img src="../../../../img/logos/wind_logo.png" class="wind"></a>
                             </div>
                             <a class="btn_sa" href="#">
-                                <div class="base__icon icon_serve_aiuto--color"></div>
+                               <div class="base__icon icon_serve_aiuto--color"></div>
                                 <span>Serve aiuto?</span>
                             </a>
                             <div class="menu-right">
@@ -101,7 +98,7 @@
                                         <div class="base__icon icon_close--color mfp-close"></div>
                         CHIUDI</a>
                                     </li>
-                                   <li>
+                                    <li>
                                          <a class="btn_carrello" href="#">
                                          <div class="base__icon icon_carrello--color"></div>
                                             CARRELLO
@@ -111,7 +108,7 @@
                                          <a class="btn_entra mfp-close" title="" href="#">
                                          <div class="base__icon icon_login--color"></div>
                                             ENTRA
-                                        </a>
+                                        </a> 
                                     </li>
                                 </ul>
                             </div>
@@ -121,30 +118,64 @@
                 <div class="row">
                     <div class="block_full_wide">
                         <a class="back back--register base__popup-link" href="#">
-                            <span><i class="fa fa-angle-left"  aria-hidden="true"></i> Codice di sicurezza</span>
+                            <span><i class="fa fa-angle-left"  aria-hidden="true"></i> Conferma Registrazione</span>
                         </a>
                         <div class="base__popup-progressbar row">
                             <span id="progress1" class="progressactive col-lg-4 col-md-4 col-sm-4 col-xs-4"></span>
                             <span id="progress2" class="progressactive col-lg-4 col-md-4 col-sm-4 col-xs-4"></span>
-                            <span id="progress3" class="progressnotactive col-lg-4 col-md-4 col-sm-4 col-xs-4"></span>
+                            <span id="progress3" class="progressactive col-lg-4 col-md-4 col-sm-4 col-xs-4"></span>
                         </div>
                         <div class="box box--register">
                             <article>
                                 <div class="block_full_wide spacep">
                                     <p class="txt1">
-                                        A breve riceverai un email con un codice di sicurezza. Inseriscilo qui:
+                                        Grazie per la registrazione. Di seguito trovi le tue credenziali.
                                     </p>
+                                    <p class="spacei"><div class="base__icon icon_account--color"></div> 32755123070</p>
+                                    <p class="spacei"><div class="base__icon icon_password--color"></div> m70v17</p>
+                                </div>
+                                <div class="tag spacep block_full_wide">
+                                    <span><a href="">MODIFICA</a></span>
                                 </div>
                                 <div class="block_full_wide spacep">
+                                    <p class="txt1">
+                                        <br> Per completare la registrazione inserisci un indirizzo e-mail valido, verifica il consenso alle comunicazioni commerciali (necessario per poter ricevere offerte personalizzate da Wind) e clicca sul tasto <strong>Conferma</strong>.
+                                    </p>
+                                </div>
+                                <div class="block_full_wide">
                                     <form action="">
                                         <div class="form-group">
-                                            <input type="text" class="base__input" placeholder="Codice" autocomplete="off">
+                                            <input type="email" class="base__input" placeholder="Email utente" autocomplete="off">
+                                            <span class="error error_message">Controlla il campo</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="base__input" placeholder="Conferma Email utente" autocomplete="off">
                                             <span class="error error_message">Controlla il campo</span>
                                         </div>
                                     </form>
                                 </div>
+                                <h4>Consenso alle comunicazioni commerciali</h4>
+                                <div class="block_full_wide spacef">
+                                    <p class="txt3 spacef">
+                                        Preso atto dell’<a href="#">Informativa sulla tutela dei dati personali</a>, do il consenso al trattamento dei miei dati, relativamente a tutte le linee a me intestate, per la comunicazione di informazioni commerciali da parte di Wind Telecomunicazioni S.p.A., secondo quanto descritto nel punto 4 dell’informativa ai sensi dell’art. 13 del Decreto Legislativo n. 196 del 30 giugno 2003 sulla tutela dei dati personali.
+                                    </p>
+                                </div>
+                                <div class="block_full_wide">
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <div class="base__radio base__radio--regist radio radio-inline">
+                                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline">
+                                                <label for="inlineRadio1"> Acconsento </label>
+                                            </div>
+                                            <div class="base__radio base__radio--regist radio radio-inline">
+                                                <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                                <label for="inlineRadio2"> Non acconsento </label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
                                 <div class="block_full_wide modalfooter">
-                                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light" disabled="">AVANTI</button>
+                                    <button class="btn base__bt base__bt--lg base__bt--or waves-effect waves-button waves-float waves-light">CONFERMA</button>
                                 </div>
                             </article>
                             <div class="clear"></div>
