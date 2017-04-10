@@ -23,7 +23,7 @@
     <!-- ===================== PAGINA ================= -->
     <!-- ===================== PAGINA ================= -->
     <!-- ===================== PAGINA ================= -->
-    <div class="landing_autoricarica">
+    <div class="landing landing_autoricarica">
         <!-- visore -->
         <div class="landing_autoricarica__hero container">
             <img class="autoricarica_hero only_desktop" src="../img/img1.jpg">
@@ -51,6 +51,7 @@
                     </div>
                     <div class="landing_autoricarica__imagebox__subtitle font_size_22 font_size_m_16 line_height_m_18 text_color_grey_six">
                         Per ricevere una ricarica di importo pari al costo periodico della tua offerta e delle opzioni attive il giorno prima della scadenza.
+                        <a href="#layer-rinnovo-offerta" class="information_dot info_link popup-link bt-cta bt-info oot-popup-note"><img src="../img/bt_i.png"></a>
                     </div>
                 </div>
             </div>
@@ -63,7 +64,7 @@
                         QUANDO IL CREDITO SCENDE SOTTO 1€ 3€ 5€
                     </div>
                     <div class="landing_autoricarica__imagebox__subtitle font_size_22 font_size_m_16 line_height_m_18 text_color_grey_six">
-                        Per essere sicuro di non rimanere mai senza credito.
+                        Per essere sicuro di non rimanere mai senza credito.<a href="#layer-credito" class="information_dot info_link popup-link bt-cta bt-info oot-popup-note"><img src="../img/bt_i.png"></a>
                     </div>
                 </div>
                 <div class="landing_autoricarica__imagebox__right small_column">
@@ -79,7 +80,7 @@
                         QUANDO IL CREDITO SCENDE SOTTO 1€ 3€ 5€
                     </div>
                     <div class="landing_autoricarica__imagebox__subtitle font_size_22 font_size_m_16 line_height_m_18 text_color_grey_six">
-                        Per essere sicuro di non rimanere mai senza credito.
+                        Per essere sicuro di non rimanere mai senza credito.<a href="#layer-credito" class="information_dot info_link popup-link bt-cta bt-info oot-popup-note"><img src="../img/bt_i.png"></a>
                     </div>
                 </div>
             </div>
@@ -95,7 +96,7 @@
                         UNA VOLTA AL MESE O UNA VOLTA ALL’ANNO
                     </div>
                     <div class="landing_autoricarica__imagebox__subtitle font_size_22 font_size_m_16 line_height_m_18 text_color_grey_six">
-                        Per controllare le tue spese o per essere sicuro che le tue SIM non scadano mai.
+                        Per controllare le tue spese o per essere sicuro che le tue SIM non scadano mai.<a href="#layer-anno" class="information_dot info_link popup-link bt-cta bt-info oot-popup-note"><img src="../img/bt_i.png"></a>
                     </div>
                 </div>
             </div>
@@ -176,6 +177,24 @@
         </div>
     </div>
     <!-- /Footer Landing -->
+    <div id="layer-rinnovo-offerta" class="landing-popup mfp-hide">
+        <div class="">
+            <h2>AL RINNOVO DELL'OFFERTA</h2>
+            <p>Con questo servizio, riceverai una Ricarica Automatica di importo pari al costo periodico della tua offerta e delle opzioni attive, il giorno prima della scadenza del rinnovo: ad esempio, se il costo della tua offerta &egrave; di 10 euro, riceverai una Ricarica Automatica di 10 euro il giorno prima dell&apos;addebito. A seguito della Ricarica automatica riceverai un SMS di conferma e anche una e-mail, se hai inserito l&apos;indirizzo email nel tuo profilo nell&apos;Area Clienti. L'attivazione del servizio &egrave; gratuita.</p>
+        </div>
+    </div>    
+    <div id="layer-credito" class="landing-popup mfp-hide">
+        <div class="">
+            <h2>A SOGLIA</h2>
+            <p>Con questa opzione viene eseguita una Ricarica Automatica quando il tuo credito scende sotto una certa soglia. Scegli la soglia minima per ricaricare il tuo smartphone e l&rsquo;importo di ricarica fra quelli disponibili. A seguito della Ricarica riceverai un SMS di conferma e anche una e-mail, se hai inserito l&rsquo;indirizzo email nel tuo profilo nell&rsquo;Area Clienti. L&rsquo;attivazione del servizio &egrave; gratuita.</p>
+        </div>
+    </div>
+    <div id="layer-anno" class="landing-popup mfp-hide">
+        <div class="">
+            <h2>A TEMPO</h2>
+            <p>&Egrave; la scelta pi&ugrave; adatta se hai consumi regolari nel tempo o vuoi ricevere una Ricarica in un determinato momento. Scegli quando vuoi essere ricaricato e l&apos;importo fra quelli disponibili. A seguito della Ricarica Automatica riceverai un SMS di conferma e una email, se hai inserito l&epos;indirizzo email nel tuo profilo nell&apos;Area Clienti. L’attivazione del servizio è gratuita.</p>
+        </div>
+    </div>    
     <!-- popup -->
     <div id="layer-ricorda" class="landing-popup mfp-hide">
         <div class="scrollable">
@@ -186,30 +205,25 @@
     </div>
     <!-- /popup -->
 </body>
-<style>
-.giga_stamp,
-.giga_text {
-    display: table-cell;
-    vertical-align: middle;
-}
+<script type="text/javascript">
+jQuery("a[rel^='fancy']").fancybox({
+    'autoScale': true,
+    'type': 'iframe',
+    'centerOnScroll': true,
+    'scrolling': 'no',
+    'width': '75%',
+    'height': '75%'
+}); //conversione testo in immagini dentro rte
+jQuery('p.toimg').textToNrImg(20);
+jQuery('.showHiddenContent').click(function() {
+    var href, n, target;
+    href = $(this).attr('href');
+    n = href.lastIndexOf('#');
+    target = href.substring(n + 1);
+    $('.' + target).css('display', 'block');
+    //nascondo il tasto come nel sito originale
+    $(this).css('display', 'none');
 
-.giga_stamp {
-    margin: 0 auto;
-    width: 80%;
-}
-
-.giga_text {
-    text-align: left;
-    padding-left: 30px;
-}
-
-.giga_container {
-    display: table;
-}
-
-@media (max-width: 420px) {
-    .giga_stamp {
-        width: 135%;
-    }
-}
-</style>
+    return false;
+});
+</script>
