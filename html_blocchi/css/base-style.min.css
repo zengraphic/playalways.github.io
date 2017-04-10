@@ -4669,12 +4669,65 @@ h4.trade_l {
   #login .popup-dialog {
     width: 100%; }
 
+#shoulderBox .popup {
+  height: calc(100% - 43px); }
+  #shoulderBox .popup-dialog {
+    width: 100%; }
+
 .base__popup .box--register {
   padding: 1.6em 2.3em 0; }
+  .base__popup .box--register .popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-width: 420px;
+    height: calc(100% - 43px);
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 3000;
+    -o-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    /* Fade in the background */ }
+    .base__popup .box--register .popup-dialog {
+      position: fixed;
+      bottom: 0;
+      max-width: 420px;
+      margin: 0;
+      height: auto;
+      width: 100%;
+      color: #656D78;
+      max-height: 450px;
+      position: fixed;
+      background-color: #FFF;
+      -webkit-animation-name: slideIn 0.7s;
+      animation-name: slideIn 0.7s; }
+    .base__popup .box--register .popup-header {
+      background-color: #F4F4F4;
+      font-size: 1.6rem;
+      font-family: "Trade Gothic", sans-serif;
+      padding: 1rem 2.1rem;
+      line-height: normal;
+      margin: 0;
+      text-align: left; }
+    .base__popup .box--register .popup-body, .base__popup .box--register .popup-footer {
+      padding: 1rem 2.1rem; }
+    .base__popup .box--register .popup-btn {
+      margin-bottom: 30px; }
+    .base__popup .box--register .popup .popup-btn_1,
+    .base__popup .box--register .popup .popup-btn_2 {
+      display: none; }
   .base__popup .box--register .block_full_wide {
     margin-bottom: 1.4rem; }
   .base__popup .box--register #regQuiLink {
     text-transform: uppercase; }
+  .base__popup .box--register #ak-password input,
+  .base__popup .box--register #ak-username input {
+    width: 84%; }
 
 .base__popup .form-group {
   margin-bottom: 0; }
@@ -4750,7 +4803,8 @@ h4.trade_l {
       display: inline-block;
       margin-right: 1em;
       width: 24px;
-      height: 24px; }
+      height: 24px;
+      vertical-align: middle; }
   .base__popup .box--register article .spacei {
     color: #292F36;
     margin-top: 1em; }
