@@ -23,64 +23,23 @@
     }
 }
 
+#login {
+    .popup {
+        height: calc(100% - 43px);
+        &-dialog{
+            width:100%;
+        }
+    }
+}
+
 .base__popup {
     .box--register {
         padding: 1.6em 2.3em 0;
         .block_full_wide {
             margin-bottom: 1.4rem;
         }
-        .popup {
-            display: none;
-            position: fixed;
-            width: 100%;
-            max-width: 420px;
-            height: calc(100% - 43px);
-            right: 0;
-            bottom: 0;
-            padding: 0;
-            background-color: rgba(255, 255, 255, 0.8);
-            z-index: 3000;
-            @include transition-basic(all, .4s, ease-in-out);
-            /* Fade in the background */
-            &-dialog {
-                position: fixed;
-                bottom: 0;
-                width:100%;
-                max-width: 420px;
-                margin: 0;
-                height: auto;
-                color: $color_text_light; //$color_grey_seven;
-                max-height: 450px;
-                position: fixed;
-                background-color: $color_white;
-                -webkit-animation-name: slideIn 0.7s;
-                ;
-                animation-name: slideIn 0.7s;
-                ;
-            }
-            &-header {
-                background-color: $color_grey_light_light;
-                font-size: 1.6rem;
-                font-family: $font_family_regular;
-                padding: 1rem 2.1rem;
-                line-height: normal;
-                margin: 0;
-                text-align: left;
-            }
-            &-body,
-            &-footer {
-                padding: 1rem 2.1rem;
-            }
-            &-btn {
-                margin-bottom: 30px;
-                width: 100%;
-                padding: 1rem 0;
-                font-size:1rem;
-            }
-            .popup-btn_1,
-            .popup-btn_2 {
-                display: none;
-            }
+        #regQuiLink {
+            text-transform: uppercase;
         }
     }
     .form-group {
