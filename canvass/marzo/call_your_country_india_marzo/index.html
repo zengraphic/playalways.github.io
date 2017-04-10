@@ -92,9 +92,26 @@
     <div id="layer-ricorda" class="landing-popup mfp-hide">
         <div class="scrollable ">
             <div class="col col-md--full col-lg--full col-vis">
-                <img class="img-full img-visore" data-src="images/call_your_country_informa.jpg" alt="CALL YOUR COUNTRY GOLD - MERCATO INDIANO" />
+                <img class="desktop_informa" src="images/call_your_country_informa-india.jpg" alt="CALL YOUR COUNTRY GOLD - MERCATO INDIANO" />
+                <img class="mobile_informa" src="images/call_your_country_informa-india_mobile.jpg" alt="CALL YOUR COUNTRY GOLD - MERCATO INDIANO" />               
             </div>
         </div>
     </div>
     <!-- /popup -->
 </div>
+<style>
+.desktop_informa{
+    display: block !important;
+}
+.mobile_informa{
+    display: none !important;
+}
+@media all and (max-width: 767px) {
+    .desktop_informa{
+        display: none !important;
+    }
+    .mobile_informa{
+        display: block !important;
+    }   
+}
+</style>
