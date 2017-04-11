@@ -1,0 +1,472 @@
+/* ========================================================= */
+
+// ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
+// ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
+// ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
+.card_filter__block {
+    background-color: $color_grey_light;
+    width: 100%;
+    @at-root #{&}__tabs {
+        text-transform: uppercase;
+        color: $color_text;
+        &__container {
+            margin-bottom: 30px;
+            padding-top: 25px;
+            @include breakpoint(tiny) {
+                padding-top: 0px;
+            }
+        }
+        &--left {
+            float: right;
+            margin-left: 30px;
+            @include breakpoint(tiny) {
+                float: none;
+                margin-left: 15px;
+            }
+        }
+        &--remove_filter {
+            margin-right: 40px;
+            cursor: pointer;
+            @include breakpoint(tiny) {
+                padding-left: 0px;
+                margin-right: 0px;
+            }
+            &:hover {
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
+            }
+            &.active {
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
+            }
+        }
+        &--title {
+            margin-right: 40px;
+            cursor: pointer;
+            letter-spacing: 10px;
+            padding-left: 10px;
+            &.filter_all {
+                letter-spacing: 0px;
+                padding-left: 0px;
+            }
+            @include breakpoint(tiny) {
+                margin-right: 5px;
+                letter-spacing: 5px;
+                padding-left: 5px;
+            }
+            &:hover {
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
+            }
+            &.active {
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
+            }
+        }
+    }
+    &__title {
+        font-size: 1.500em;
+        font-family: $weight-normal;
+        padding: 20px 0px 10px 30px;
+        float: left;
+        @include breakpoint(tiny) {
+            float: none;
+            padding-left: 15px;
+        }
+    }
+    &__container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        &.noTabs {
+            .card_filter__block__tabs {
+                display: none;
+            }
+        }
+    }
+}
+
+// ===============
+// SLIDER BLOCK
+.myTicket_block {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+    min-height: 580px;
+    .ticket_action_mobile {
+        display: none;
+    }
+    @include breakpoint(super-tiny) {
+        font-size: 12px;
+        .ticket_action_desktop {
+            display: none;
+        }
+        .ticket_action_mobile {
+            display: block;
+        }
+    }
+    .grey_strip__block__tabs--left {
+        display: none;
+    }
+    .button {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-size: 0.875em;
+        width: 60%;
+        margin: 0 auto;
+        min-width: 80px;
+    }
+    .slick-slider {
+        .left__arrow {
+            top: calc(20% - 41px);
+        }
+        .right__arrow {
+            bottom: 80%;
+        }
+    }
+    &__mainTitle {
+        font-size: $text-medium;
+        font-family: $weight-light;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    &__container {
+        max-width: 1024px;
+        margin: 0 auto;
+        -o-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -webkit-transition: all 0.45s ease-in-out;
+    }
+    h2 {
+        font-family: $weight-boldCond;
+    }
+    &__showMore {
+        color: $color_wind;
+        font-size: 1.250em;
+        text-align: center;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__showOffers {
+        color: $color_wind;
+        margin-left: 15px;
+        width: 100%;
+        display: none;
+        font-size: 1.250em;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $weight-light;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @at-root #{&}__tabs {
+        text-transform: uppercase;
+        color: $color_text;
+        &__container {
+            margin-bottom: 30px;
+            padding-top: 25px;
+        }
+        &--left {
+            float: left;
+            margin-left: 30px;
+        }
+        &--right {
+            float: right;
+            margin-right: 30px;
+        }
+        &--title {
+            margin-right: 40px;
+            cursor: pointer;
+            &:hover {
+                border-bottom: 1px solid $color_orange;
+            }
+            &.active {
+                border-bottom: 1px solid $color_orange;
+                color: $color_wind;
+            }
+        }
+    }
+    &__select {
+        float: left;
+        width: calc(50% - 10px);
+        &--second {
+            margin-left: 20px;
+        }
+        .base__select {
+            &.bootstrap-select {
+                width: 100% !important;
+                .dropdown-toggle {
+                    padding: 12px 20px 8px 20px;
+                    .caret {
+                        margin-top: -11px;
+                    }
+                    .filter-option {
+                        font-size: 1em;
+                        font-family: $weight-normal;
+                    }
+                }
+            }
+        }
+    }
+    &--title {
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    @at-root #{&}__single {
+        position: relative;
+        margin-top: 35px;
+        height: 135px;
+        display: block;
+        cursor: pointer;
+        &:hover {
+            @include opacity(0.7);
+        }
+        &:nth-child(6n) {
+            &:after {
+                display: none;
+                @include breakpoint(small) {
+                    display: block;
+                }
+            }
+        }
+        @include breakpoint(tiny) {
+            margin-top: 15px;
+            &:nth-child(even) {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        @include transition(all 0.5 ease-in-out);
+        &.invisible_block {
+            display: none;
+        }
+        &:after {
+            background-color: $color_stroke;
+            width: 1px;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 15%;
+            bottom: 10%;
+            right: 0%;
+            min-height: 1px;
+        }
+    }
+    // ====================== CARD UNO  ======================
+    // ====================== CARD UNO ======================
+    // ====================== CARD UNO ======================
+    .overlay_myTicket {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color_grey_dark; //#444;
+        z-index: 100;
+        box-sizing: border-box;
+        @include opacity(0.9);
+        &__container {
+            top: -100vh;
+            position: absolute;
+            width: 100%;
+            height: 580px;
+            display: none;
+            .myTicket_block__single--vCard--info {
+                overflow: scroll;
+                max-height: 420px;
+            }
+            .overlay_button {
+                cursor: pointer;
+                width: 280px;
+                ;
+                padding: 13px 10px 8px 10px;
+                border-style: solid;
+                position: absolute;
+                left: calc(50% - 140px);
+                bottom: 15px;
+                z-index: 200;
+                &:hover {
+                    @include opacity(0.7);
+                }
+            }
+        }
+    }
+    @at-root #{&}__single--vCard {
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        float: left;
+        position: relative;
+        font-family: $weight-normal;
+        &--info {
+            position: absolute;
+            width: calc(100% - 30px);
+            left: 15px;
+            top: 15px;
+            z-index: 150;
+            display: none;
+            @include border-radius(5px);
+            &--title {
+                text-align: center;
+                margin-top: 15px;
+            }
+            &__container {
+                text-align: center;
+                display: table;
+                width: 100%;
+                background-color: $color_white;
+                border-bottom: 1px solid $color_stroke;
+                &:nth-of-type(even) {
+                    background-color: $color_grey_light_light;
+                }
+                &__image {
+                    width: 100px;
+                    padding: 10px;
+                    height: auto;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &--label {
+                    font-family: $weight-light;
+                    font-size: 1.500em;
+                    padding: 10px 10px;
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: left;
+                    color: $color_text;
+                    &--cityName {
+                        font-family: $weight-light;
+                        font-size: 1.275em;
+                        color: $color_mobile;
+                    }
+                    .number_sms {
+                        color: $color_mobile;
+                    }
+                }
+                &--mainTitle {
+                    display: table;
+                    width: 100%;
+                    text-align: center;
+                    background-color: $color_grey_light;
+                    margin-bottom: 20px;
+                }
+                &--title {
+                    font-family: $weight-normal;
+                    font-size: 1em;
+                    padding: 10px 5px 10px 0;
+                    display: table-cell;
+                    vertical-align: middle;
+                    background-color: $color_grey_light;
+                    width: 33%;
+                }
+                &--timing {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 33%;
+                    position: relative;
+                    .timing_number {
+                        font-family: $weight-light;
+                        color: $color_mobile;
+                        font-size: 1.125em;
+                        &_label {
+                            color: $color_text;
+                            font-size: 0.875em;
+                        }
+                        &_small {
+                            color: $color_mobile;
+                            font-size: 0.500em;
+                        }
+                    }
+                    &:after {
+                        background-color: $color_stroke;
+                        width: 1px;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 15%;
+                        bottom: 10%;
+                        right: 0%;
+                        min-height: 1px;
+                    }
+                }
+                &--detail {
+                    font-family: $weight-light;
+                    font-size: 1em;
+                    padding: 10px;
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 33%;
+                    position: relative;
+                    &--main {
+                        font-family: $weight-light;
+                        color: $color_mobile;
+                        padding-bottom: 5px;
+                        font-size: 1.125em;
+                    }
+                    &--price {
+                        font-family: $weight-light;
+                        font-size: 0.875em;
+                    }
+                    &:after {
+                        background-color: $color_stroke;
+                        width: 1px;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 15%;
+                        bottom: 10%;
+                        right: 0%;
+                        min-height: 1px;
+                    }
+                }
+                &--sms {
+                    font-family: $weight-normal;
+                    font-size: 1em;
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 33%;
+                }
+            }
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        &__image {
+            height: 100%;
+            max-height: 84px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        &--description {
+            font-size: 0.875em;
+            font-family: $weight-normal;
+            line-height: 16px;
+            margin-top: 10px;
+            height: 63px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        &--mainTitle {
+            font-size: 1.300em;
+            text-align: center;
+            line-height: 20px;
+            height: 35px;
+            font-family: $weight-normal;
+            color: $color_wind;
+        }
+    }
+}

@@ -1,0 +1,235 @@
+//customizing Modal: Registrazione
+.base__popup .back--register i.fa-angle-left {
+    margin: 0 2.071rem 0 0;
+}
+
+.base__popup-progressbar {
+    span {
+        height: 4px;
+        width: 32.82%;
+        margin-right: 3px;
+        @media (max-width: 380px) {
+            width: 31.82%;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .progressactive {
+        background-color: $color_orange_light;
+    }
+    .progressnotactive {
+        background-color: rgba(244, 129, 53, 0.2); //#f4d2b2; https://playalways.github.io/html_blocchi/blocks/cross/rec-credenziali/4-3-1_inserimento-dati.html
+    }
+}
+
+.base__popup {
+    .box--register {
+        padding: 1.6em 2.3em 0;
+        .block_full_wide {
+            margin-bottom: 1.4rem;
+        }
+    }
+    .form-group {
+        margin-bottom: 0;
+    }
+    .box--register__content {
+        margin-bottom: 4rem;
+    }
+    .box--register article {
+        height: 100%;
+        .fa::before {
+            margin-right: 1rem;
+        }
+        .box--register__user-pic {
+            float: left;
+            img {
+                width: 2.571rem !important;
+                max-width: 2.571rem !important;
+                height: 2.571rem;
+                @include radius(50%);
+            }
+        }
+        .box--register__user-data {
+            @include boxWF(left, 80%);
+            margin-left: 10px;
+            h3 {
+                @include defaultTxt($font_family_regular, 1.143rem);
+                margin: 0;
+            }
+            .only {
+                line-height: 2.286rem;
+            }
+            a {
+                font-size: 0.9rem;
+                margin-top: 5px;
+            }
+        }
+        form {
+            //height: 3.571rem;
+            .base__icon {
+                position: absolute;
+                right: 16px;
+                top: 26px;
+                width: 24px;
+                height: 24px;
+            }
+            input {
+                margin-top: 1em;
+                &.error {
+                    margin-bottom: 0;
+                }
+                &.error + span.error {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                &.tooltip100 {
+                    float: left;
+                }
+                &.base__tip--orange {
+                    margin-left: 0;
+                }
+            }
+            label {
+                font-size: 0.9rem;
+            }
+        }
+        .form-group .radio.base__radio label {
+            cursor: auto;
+            color: #292f36;
+        }
+        p {
+            @include defaultTxt($font_family_regular, 1.143rem);
+            color: $color_text; // #444;
+            i {
+                color: $color_wind;
+                font-size: 1.5rem;
+            }
+            strong {
+                font-family: $font_family_bold;
+            }
+        }
+        .space {
+            margin-bottom: 1.429rem;
+        }
+        .spacep {
+            margin-bottom: 1.4em;
+            position: relative;
+            color: $color_text;
+            .base__icon {
+                display: inline-block;
+                margin-right: 1em;
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .spacei {
+            color: $color_text;
+            margin-top: 1em;
+        }
+        .spacef {
+            margin-bottom: 10px;
+        }
+        .txt1 {
+            letter-spacing: (-0.12px) !important;
+            line-height: 1.429rem;
+        }
+        .txt2,
+        .txt3 {
+            font-size: 0.9286rem !important;
+        }
+        .txt2 {
+            letter-spacing: -0.1px;
+        }
+        .txt3 {
+            letter-spacing: (-0.1px) !important;
+        }
+        .txt1,
+        .txt2,
+        .txt3 {
+            a {
+                display: inline;
+                float: none;
+                margin: 0;
+            }
+        }
+        .base__bt--lg {
+            width: 100%;
+            padding: 1.2rem 0 1.1rem 0;
+            margin: 1rem 0 1.714rem 0;
+            font-size: 1.2rem;
+        }
+        h4 {
+            @include defaultTxt($font_family_regular, 1.143rem);
+            letter-spacing: -0.18px;
+            margin: 1.2rem 0 0.85rem 0;
+        }
+        .tag {
+            color: $color_wind;
+            border-bottom: 1px solid $color_stroke; //$color_grey_medium;
+            text-align: right;
+            width: 100%;
+            span {
+                font-size: 0.8rem;
+            }
+        }
+        .base__radio--regist {
+            width: auto;
+            margin-right: 1rem;
+            @media (max-width: 340px) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            label {
+                font-family: $font_family_regular !important;
+                font-size: 1.1em;
+                letter-spacing: 0.4px;
+                font-weight: 500;
+                padding-left: 0.8rem;
+                line-height: 1.4rem;
+                color: $color_text; //#292f36;
+            }
+        }
+        .modalfooter {
+            margin: 0;
+        }
+        .box__alert {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8); //
+            z-index: 3;
+            bottom: 10px;
+            left: 0;
+            display: none;
+            @include transition-basic(opacity, 0.2s, ease);
+            &-content {
+                background-color: $color_white;
+                &-1 {
+                    background: $color_grey_light_light; // #f4f4f4;
+                    color: $color_text; //#444;
+                    border-top: 1px solid $color_stroke; //#d7d7d7;
+                    p {
+                        @include defaultTxt($font_family_regular, 1.429rem);
+                        color: $color_text_light; //#595959;
+                        padding: 14px 0 14px 18px;
+                        letter-spacing: 0.1px;
+                    }
+                }
+                &-2 {
+                    height: 9.5rem;
+                    p {
+                        @include defaultTxt($font_family_regular, 1.2rem);
+                        color: $color_text; //$color_grey;
+                        padding: 20px 0 0 18px;
+                        letter-spacing: 0.1px;
+                    }
+                }
+                &-3 {
+                    width: 92%;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}

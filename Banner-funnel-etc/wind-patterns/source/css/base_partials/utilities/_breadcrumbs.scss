@@ -1,0 +1,205 @@
+// default breadcrumbs all pages
+
+.content__breadcrumbs {
+  width: 100%;
+  margin: 0 auto 2rem 2.8rem;
+
+  @media (max-width: 580px) {
+    background-color: $color_grey_light_light; //#f4f4f4;
+    position: relative;
+    margin: 0;
+    float: left;
+  }
+
+  .breadcrumbs {
+    @include boxWF(left, 100%);
+
+    overflow: hidden;
+
+    @media (max-width: 580px) {
+      /* gradient left and right of breadcrumbs mobile */
+      &:before, &:after {
+        content: "";
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 8;
+      }
+
+      &:before {
+        left: 0;
+
+        @include gradient-generic(to right, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+      }
+
+      &:after {
+        right: 0;
+
+        @include gradient-generic(to left, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+      }
+    }
+
+    .btn_prev {
+      display: none;
+    }
+
+    .btn_next {
+      display: none;
+    }
+
+    @media (max-width: 580px) {
+      padding: 0.8rem 1.7rem 0 1.7rem;
+
+      .btn_prev {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.7rem;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $color_grey_light_light; //#f4f4f4;
+        z-index: 9;
+
+        &:before {
+          font-family: "FontAwesome";
+          font-style: normal;
+          content: "\f053";
+          color: $color_text_light; //#777a7e;
+        }
+      }
+
+      .btn_next {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.7rem;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $color_grey_light_light; //#f4f4f4;
+        z-index: 9;
+
+        &:before {
+          font-family: "FontAwesome";
+          font-style: normal;
+          content: "\f054";
+          color: $color_text_light; //#777a7e;
+        }
+      }
+    }
+  }
+}
+
+.base__breadcrumbs {
+  float: left;
+  padding-left: 0;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  font-size: 0.875em;
+
+  /*cambio en margin top */
+  @media (max-width: 580px) {
+    margin-top: 0;
+    z-index: 1;
+    left: 5px;
+    width: 400px;
+    float: left;
+  }
+
+  li {
+    @include genericCenterContent($display: inline, $tAlign: 0);
+
+    cursor: pointer;
+
+    @media (max-width: 580px) {
+      float: left;
+    }
+
+    a.link {
+
+      @media (max-width: 580px) {
+        font-size: 1.5rem;
+        color: $color_text_lighter; //#c3c4c5;
+        text-decoration: none;
+        float: left;
+      }
+    }
+
+    span {
+      @media (max-width: 580px) {
+        font-size: 1.5rem;
+        color: $color_text_light; //#777a7e;
+      }
+    }
+
+    &:after {
+      content: " / ";
+      color: $color_wind;
+
+      @media (max-width: 580px) {
+        color: $color_text_light; //#777a7e;
+        float: left;
+        font-size: 1.5rem;
+        margin: 0 0.8rem 0 1rem;
+      }
+    }
+
+    &:last-child {
+      cursor: default;
+
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+
+.back__breadcrumbs {
+  padding: 0.8rem 1.7rem 0 0 !important;
+
+  &--modal {
+    position: absolute;
+    list-style: none;
+    display: inline-block;
+    float: left;
+    margin-left: -1.2rem;
+    width: 800px;
+    top: 0;
+    left: 0;
+  }
+}
+
+.breadGradient {
+  &::before, &::after {
+    content: "";
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 8;
+  }
+
+  &::before {
+    left: 0;
+
+    @include gradient-generic(to right, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+  }
+
+  &::after {
+    right: 0;
+
+    @include gradient-generic(to left, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0) 100%);
+  }
+}

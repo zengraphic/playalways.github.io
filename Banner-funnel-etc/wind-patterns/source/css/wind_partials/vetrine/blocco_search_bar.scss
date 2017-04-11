@@ -1,0 +1,602 @@
+/* INIZIO CLASSI DI SUPPORTO, MIXIN E VARIABILI */
+
+
+/* INIZIO VARIABILI */
+
+$standard-border: 1px solid $color_stroke;
+
+/* FINE VARIABILI */
+
+/* FINE CLASSI DI SUPPORTO, MIXIN E VARIABILI */
+
+
+/* INIZIO STYLING BLOCCO RICERCA A COMPARSA */
+
+.block-search {
+    max-width: 1024px;
+    @include breakpoint(small) {
+        padding: 0;
+        margin: 1px -6px 0;
+        background-color: white;
+    }
+    /* INIZIO STYLING OVERLAY */
+    /* FINE STYLING OVERLAY */
+    /* INIZIO STYLING CONTAINER RICERCA */
+    &__container {
+        max-width: 1024px;
+        margin: 0 auto;
+        @include breakpoint(small) {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    /* FINE STYLING CONTAINER RICERCA */
+    /* INIZIO STYLING BARRA RICERCA */
+    &__search_bar {
+        /* INIZIO STYLING BARRA RICERCA CONTAINER */
+        &__container {
+            position: relative;
+            padding-top: 0;
+            @include breakpoint(small) {
+                padding: 0;
+            }
+        }
+        /* FINE STYLING BARRA RICERCA CONTAINER */
+        /* INIZIO STYLING BARRA RICERCA INPUT */
+        &__input {
+            padding: 10px 21px 12px;
+            font-size: 24px;
+            line-height: 18px;
+            @include breakpoint(small) {
+                @include border-radius(0);
+                border-left: 0 !important;
+                border-right: 0 !important;
+                border-top: 0 !important;
+                padding: 23px 21px 16px;
+                font-size: 16px;
+                line-height: normal;
+            }
+        }
+        /* FINE STYLING BARRA RICERCA INPUT */
+        /* INIZIO STYLING SUGGERIMENTO HEADER */
+        &__hint {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            cursor: pointer;
+            padding-right: 10px;
+            right: 0;
+            color: $color_wind;
+            .hint {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                display: inline-block;
+                float: left;
+                &__text {
+                    padding-right: 9px;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                &__icon {
+                    .base__icon {
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
+            }
+        }
+        /* FINE STYLING SUGGERIMENTO HEADER */
+        /* INIZIO STYLING RESETTER HEADER */
+        &__resetter {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            padding: 16px 10px 15px;
+            right: 0;
+            color: $color_wind;
+            @include breakpoint(small) {
+                padding: 23px 0 15px;
+            }
+            .resetter {
+                display: inline-block;
+                cursor: pointer;
+                &__icon {
+                    padding-right: 15px;
+                    .base__icon {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+        /* FINE STYLING RESETTER HEADER */
+    }
+    /* FINE STYLING BARRA RICERCA */
+    /* INIZIO STYLING BARRA RICERCA RISULTATI */
+    &__results {
+        /* INIZIO STYLING BARRA RICERCA CONTAINER RISULTATI */
+        &__container {
+            padding-top: 9px !important;
+            /* INIZIO STYLING BARRA RICERCA CONTAINER RISULTATI NORMALI/VIRTUAL AGENT */
+            &.results {
+                /* INIZIO STYLING BARRA RICERCA CONTAINER RISULTATI NORMALI */
+                &--normal {
+                    padding-top: 5px !important;
+                    @include breakpoint(small) {
+                        padding: 0 !important;
+                    }
+                    /* INIZIO STYLING BARRA RICERCA SINGOLO RISULTATO NORMALE */
+                    .result_item {
+                        background-color: $color_white;
+                        border-left: $standard-border;
+                        border-right: $standard-border;
+                        font-family: $weight-light;
+                        @include breakpoint(small) {
+                            border: none;
+                        }
+                        &:first-child {
+                            border-top: $standard-border;
+                            @include border-top-radius(4px);
+                            @include breakpoint(small) {
+                                border: none;
+                                @include border-top-radius(0);
+                            }
+                        }
+                        /* INIZIO STYLING BARRA RICERCA CONTAINER SINGOLO RISULTATO NORMALE */
+                        &__content {
+                            margin: 0 9px;
+                            border-bottom: $standard-border;
+                            letter-spacing: 0.025em;
+                            @include breakpoint(small) {
+                                margin: 0 15px;
+                            }
+                        }
+                        /* FINE STYLING BARRA RICERCA CONTAINER SINGOLO RISULTATO NORMALE */
+                        /* INIZIO STYLING BARRA RICERCA TITOLO SINGOLO RISULTATO NORMALE */
+                        &__title {
+                            margin: 0 9px;
+                            padding-top: 14px;
+                            @include breakpoint(small) {
+                                padding-top: 10px;
+                                padding-bottom: 12px;
+                                margin: 0;
+                            }
+                            &__link {
+                                font-family: $weight-bold;
+                                font-size: 18px;
+                                line-height: 19.5px;
+                                color: $color_robin !important;
+                                &:hover {}
+                            }
+                        }
+                        /* FINE STYLING BARRA RICERCA TITOLO SINGOLO RISULTATO NORMALE */
+                        /* INIZIO STYLING BARRA RICERCA CORPO SINGOLO RISULTATO NORMALE */
+                        &__body {
+                            margin: 0 9px;
+                            padding-bottom: 13px;
+                            font-size: 14px;
+                            line-height: 18px;
+                            min-height: 50px;
+                            @include breakpoint(small) {
+                                display: none;
+                            }
+                        }
+                        /* FINE STYLING BARRA RICERCA CORPO SINGOLO RISULTATO NORMALE */
+                        /* INIZIO STYLING BARRA RICERCA CATEGORIA SINGOLO RISULTATO NORMALE */
+                        &__category {
+                            display: inline;
+                            &:after {
+                                content: "-";
+                                display: inline;
+                            }
+                            &__link {
+                                color: $color_wind;
+                                &:hover {}
+                            }
+                        }
+                        /* FINE STYLING BARRA RICERCA CATEGORIA SINGOLO RISULTATO NORMALE */
+                        /* INIZIO STYLING BARRA RICERCA DESCRIZIONE SINGOLO RISULTATO NORMALE */
+                        &__text {
+                            display: inline;
+                            color: $color_text;
+                        }
+                        /* FINE STYLING BARRA RICERCA DESCRIZIONE SINGOLO RISULTATO NORMALE */
+                    }
+                    /* FINE STYLING BARRA RICERCA SINGOLO RISULTATO NORMALE */
+                    /* INIZIO STYLING BARRA RICERCA SHOW MORE */
+                    .show_more {
+                        background-color: $color_white;
+                        @include border-bottom-radius(4px);
+                        border: $standard-border;
+                        border-top: none;
+                        @include breakpoint(small) {
+                            border: none;
+                        }
+                        /* INIZIO STYLING BARRA RICERCA CONTAINER SHOW MORE */
+                        &__content {
+                            color: $color_wind;
+                            text-transform: uppercase;
+                            padding: 14px 0 13px;
+                            font-size: 14px;
+                            text-align: center;
+                            @include breakpoint(small) {
+                                padding: 17px 0 16px;
+                            }
+                        }
+                        /* FINE STYLING BARRA RICERCA CONTAINER SHOW MORE */
+                        /* INIZIO STYLING BARRA RICERCA LINK SHOW MORE */
+                        &__link:hover {
+                            color: $color_orange_light;
+                        }
+                        /* FINE STYLING BARRA RICERCA LINK SHOW MORE */
+                    }
+                    /* FINE STYLING BARRA RICERCA SHOW MORE */
+                }
+                /* FINE STYLING BARRA RICERCA CONTAINER RISULTATI NORMALI */
+                /* INIZIO STYLING BARRA RICERCA CONTAINER RISULTATI VIRTUAL AGENT */
+                &--virtual_agent {
+                    padding-top: 5px !important;
+                    @include breakpoint(small) {
+                        padding: 0 !important;
+                    }
+                    /* INIZIO STYLING BARRA RICERCA SINGOLO RISULTATO VIRTUAL AGENT */
+                    .result_item {
+                        @include border-radius(4px);
+                        background-color: $color_orange;
+                        font-family: $weight-light;
+                        margin-bottom: 5px;
+                        padding: 10px 21px 12px;
+                        @include breakpoint(small) {
+                            @include border-radius(0);
+                            font-family: $weight-normal;
+                            margin-bottom: 3px;
+                            padding: 16px 21px 16px;
+                        }
+                        /* INIZIO STYLING BARRA RICERCA CONTAINER SINGOLO RISULTATO VIRTUAL AGENT */
+                        &__content {}
+                        /* FINE STYLING BARRA RICERCA CONTAINER RISULTATO VIRTUAL AGENT */
+                        /* INIZIO STYLING BARRA RICERCA TITOLO SINGOLO RISULTATO VIRTUAL AGENT */
+                        &__title {
+                            /* INIZIO STYLING BARRA RICERCA LINK SINGOLO RISULTATO VIRTUAL AGENT */
+                            &__link {
+                                color: $color_white;
+                                font-size: 20px;
+                                letter-spacing: 0.025em;
+                                @include breakpoint(small) {
+                                    font-size: 14px;
+                                    letter-spacing: normal;
+                                }
+                            }
+                            /* FINE STYLING BARRA RICERCA LINK SINGOLO RISULTATO VIRTUAL AGENT */
+                            .evidence {
+                                font-family: $weight-bold;
+                            }
+                        }
+                        /* FINE STYLING BARRA RICERCA TITOLO SINGOLO RISULTATO VIRTUAL AGENT */
+                    }
+                    /* FINE STYLING BARRA RICERCA SINGOLO RISULTATO VIRTUAL AGENT */
+                }
+                /* FINE STYLING BARRA RICERCA CONTAINER RISULTATI VIRTUAL AGENT */
+            }
+            /* FINE STYLING BARRA RICERCA CONTAINER RISULTATI NORMALI/VIRTUAL AGENT */
+        }
+        /* FINE STYLING BARRA RICERCA CONTAINER RISULTATI */
+    }
+    /* FINE STYLING BARRA RICERCA RISULTATI */
+}
+
+
+/* FINE STYLING BLOCCO RICERCA A COMPARSA */
+
+
+/* INIZIO STYLING BLOCCO RISULTATI RICERCA COMPLETO */
+
+.block-full_search {
+    /* INIZIO STYLING CONTAINER BLOCCO RISULTATI RICERCA COMPLETO */
+    &__container {}
+    /* FINE STYLING CONTAINER BLOCCO RISULTATI RICERCA COMPLETO */
+    /* INIZIO STYLING BARRA RICERCA BLOCCO RISULTATI RICERCA COMPLETO */
+    &__search {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 28px 30px 20px;
+        @include breakpoint(small) {
+            padding: 11px 16px 15px;
+            font-size: 16px;
+            line-height: normal;
+        }
+        font-size: 24px;
+        line-height: 18px;
+        position: relative;
+        .base__input {
+            padding-top: 10px;
+            padding-bottom: 12px;
+            @include breakpoint(small) {
+                padding-top: 13px;
+                padding-bottom: 16px;
+            }
+        }
+        &_bar {
+            &__resetter {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                padding: 22px 15px 20px;
+                margin: 24px 30px 18px;
+                right: 0;
+                color: $color_wind;
+                @include breakpoint(small) {
+                    padding: 15px 10px 12px;
+                    margin: 11px 16px 16px;
+                }
+                .resetter {
+                    display: inline-block;
+                    cursor: pointer;
+                    &__text {
+                        font-size: 14px;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+    /* FINE STYLING BARRA RICERCA BLOCCO RISULTATI RICERCA COMPLETO */
+    /* INIZIO STYLING TABS BLOCCO RISULTATI RICERCA COMPLETO */
+    &__tabs {
+        .slider_menu_tabs {
+            padding: 0 30px !important;
+            @include breakpoint(small) {
+                padding: 0 15px !important;
+            }
+            /* INIZIO STYLING TABS CUSTOMIZATION BLOCCO RISULTATI RICERCA COMPLETO */
+            .item {
+                margin: 0 16px;
+                font-size: 16px;
+                line-height: 20px;
+                padding: 31px 6px 5px;
+                @include breakpoint(small) {
+                    padding: 16px 6px 12px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    color: $color_stroke;
+                    &:hover {
+                        color: $color_wind;
+                    }
+                }
+                &.tab_active {
+                    a {
+                        color: $color_wind;
+                    }
+                }
+            }
+            /* FINE STYLING TABS CUSTOMIZATION BLOCCO RISULTATI RICERCA COMPLETO */
+        }
+    }
+    /* FINE STYLING TABS BLOCCO RISULTATI RICERCA COMPLETO */
+    /* INIZIO STYLING RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+    &__results {
+        padding: 0 30px !important;
+        max-width: 1024px;
+        margin: 0 auto;
+        @include breakpoint(small) {
+            padding: 0 15px !important;
+        }
+        /* INIZIO STYLING COUNTER BLOCCO RISULTATI RICERCA COMPLETO */
+        &__counter {
+            padding: 17px 0;
+            color: $color_stroke;
+            font-size: 15px;
+            line-height: 18px;
+            border-bottom: $standard-border;
+            @include breakpoint(small) {
+                padding: 12px 0 16px;
+            }
+        }
+        /* FINE STYLING COUNTER BLOCCO RISULTATI RICERCA COMPLETO */
+        /* INIZIO STYLING CONTAINER RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+        &__container {
+            display: inline-block;
+            float: left;
+            width: calc(100% - 307px);
+            @include breakpoint(small) {
+                width: 100%;
+            }
+            /* INIZIO STYLING SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+            .search_result {
+                margin-top: 24px;
+                margin-bottom: 30px;
+                max-height: 78px;
+                overflow: hidden;
+                padding-top: 3px;
+                @include breakpoint(small) {
+                    margin-top: 14px;
+                    margin-bottom: 23px;
+                    max-height: 82px;
+                }
+                /* INIZIO STYLING CONTAINER SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                .result {
+                    /* INIZIO STYLING CORPO SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    &__body {
+                        display: inline-block;
+                        padding-right: 20px;
+                        line-height: 18px;
+                        @include breakpoint(small) {
+                            padding-right: 0;
+                            line-height: 20px;
+                        }
+                    }
+                    /* FINE STYLING CORPO SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    /* INIZIO STYLING TITOLO SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    &__title {
+                        margin-bottom: 3px;
+                        line-height: 16px;
+                        @include breakpoint(small) {
+                            line-height: 22px;
+                            max-height: 40px;
+                            overflow: hidden;
+                        }
+                        &__link {
+                            font-family: $weight-bold;
+                            font-size: 18px;
+                            line-height: 18px;
+                            color: $color_robin !important;
+                            letter-spacing: 0.025em;
+                            &:hover {}
+                        }
+                    }
+                    /* FINE STYLING TITOLO SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    /* INIZIO STYLING CATEGORIA SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    &__category {
+                        display: inline;
+                        color: $color_wind;
+                        letter-spacing: -0.05em;
+                        &:after {
+                            content: "-";
+                            display: inline;
+                        }
+                        &__link {
+                            &:hover {}
+                        }
+                        @include breakpoint(small) {
+                            font-size: 14px;
+                        }
+                    }
+                    /* FINE STYLING CATEGORIA SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    /* INIZIO STYLING DESCRIZIONE SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                    &__text {
+                        display: inline;
+                        letter-spacing: -0.036em;
+                        @include breakpoint(small) {
+                            font-size: 14px;
+                        }
+                    }
+                    /* FINE STYLING DESCRIZIONE SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                }
+                /* FINE STYLING CONTAINER SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+                /* INIZIO STYLING VARIANTE SINGOLO RISULTATO TESTUALE BLOCCO RISULTATI RICERCA COMPLETO */
+                &--text {}
+                /* FINE STYLING VARIANTE SINGOLO RISULTATO TESTUALE BLOCCO RISULTATI RICERCA COMPLETO */
+                /* INIZIO STYLING VARIANTE SINGOLO RISULTATO CON IMMAGINE BLOCCO RISULTATI RICERCA COMPLETO */
+                &--thumb {
+                    .result {
+                        &__thumbnail {
+                            display: inline-block;
+                            float: left;
+                            width: 80px;
+                            text-align: center;
+                            @include breakpoint(small) {
+                                width: 76px;
+                            }
+                            img {
+                                max-height: 65px;
+                                width: auto;
+                                margin: 0 auto;
+                                display: block;
+                                @include breakpoint(small) {
+                                    max-height: 73px;
+                                }
+                            }
+                        }
+                        &__body {
+                            width: calc(100% - 80px);
+                            float: right;
+                            @include breakpoint(small) {
+                                width: calc(100% - 76px);
+                            }
+                        }
+                    }
+                }
+                /* INIZIO STYLING VARIANTE SINGOLO RISULTATO CON IMMAGINE BLOCCO RISULTATI RICERCA COMPLETO */
+            }
+            /* FINE STYLING SINGOLO RISULTATO BLOCCO RISULTATI RICERCA COMPLETO */
+        }
+        /* FINE STYLING CONTAINER RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+        /* INIZIO STYLING SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+        &__sidebar {
+            width: 307px;
+            float: left;
+            display: inline-block;
+            @include breakpoint(small) {
+                display: none;
+            }
+            /* INIZIO STYLING SINGOLA OFFERTA SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+            .sidebar_offer {
+                padding: 16px 0 12px;
+                color: $color_text;
+                border-bottom: $standard-border;
+                /* INIZIO STYLING CONTAINER SINGOLA OFFERTA SIDEBAR */
+                .offer {
+                    /* INIZIO STYLING THUMBNAIL SINGOLA OFFERTA SIDEBAR */
+                    &__thumbnail {
+                        display: inline-block;
+                        float: left;
+                        width: 110px;
+                        img {
+                            display: block;
+                            max-height: 85px;
+                            width: auto;
+                            margin: 0 auto;
+                        }
+                    }
+                    /* FINE STYLING THUMBNAIL SINGOLA OFFERTA SIDEBAR */
+                    /* INIZIO STYLING CORPO SINGOLA OFFERTA SIDEBAR */
+                    &__body {
+                        width: calc(100% - 110px);
+                        display: inline-block;
+                        float: right;
+                        font-size: 16px;
+                        line-height: 19px;
+                        letter-spacing: -0.02em;
+                    }
+                    /* FINE STYLING CORPO SINGOLA OFFERTA SIDEBAR */
+                    /* INIZIO STYLING TITOLO SINGOLA OFFERTA SIDEBAR */
+                    &__title {
+                        font-size: 18px;
+                        font-family: $weight-bold;
+                        padding-bottom: 6px;
+                        line-height: 18px;
+                    }
+                    /* FINE STYLING TITOLO SINGOLA OFFERTA SIDEBAR */
+                    /* INIZIO STYLING IMPORTO SINGOLA OFFERTA SIDEBAR */
+                    &__amount {}
+                    /* FINE STYLING IMPORTO SINGOLA OFFERTA SIDEBAR */
+                    /* INIZIO STYLING SCONTO SINGOLA OFFERTA SIDEBAR */
+                    &__discount {
+                        .barred_price {
+                            text-decoration-line: line-through;
+                            text-decoration: line-through;
+                        }
+                        .promo {
+                            color: $color_robin;
+                        }
+                    }
+                    /* FINE STYLING SCONTO SINGOLA OFFERTA SIDEBAR */
+                    /* INIZIO STYLING LINK SINGOLA OFFERTA SIDEBAR */
+                    &__link {
+                        letter-spacing: 0.025em;
+                        padding-top: 9px;
+                        font-size: 18px;
+                        line-height: 18px;
+                        color: $color_wind;
+                    }
+                    /* FINE STYLING LINK SINGOLA OFFERTA SIDEBAR */
+                }
+                /* FINE STYLING CONTAINER SINGOLA OFFERTA SIDEBAR */
+            }
+            /* FINE STYLING SINGOLA OFFERTA SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+        }
+        /* FINE STYLING SIDEBAR RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+    }
+    /* FINE STYLING RISULTATI BLOCCO RISULTATI RICERCA COMPLETO */
+}
+
+
+/* FINE STYLING BLOCCO RISULTATI RICERCA COMPLETO */
