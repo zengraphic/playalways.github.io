@@ -102,7 +102,7 @@ gulp.task('pl-assets', gulp.series(
     'pl-copy:img',
     'pl-copy:favicon',
     'pl-copy:font',
-    gulp.series(gulp.parallel('pl-sass-base','pl-sass-wind'), 'pl-copy:css', function(done){done();}),
+    gulp.series(gulp.parallel('pl-sass-wind'), 'pl-copy:css', function(done){done();}),
     'pl-copy:styleguide',
     'pl-copy:styleguide-css'
   ),
@@ -167,7 +167,7 @@ function reloadCSS() {
 }
 
 function watch() {
-  gulp.watch(resolvePath(paths().source.css) + '/**/*.scss').on('change', gulp.parallel('pl-sass-base','pl-sass-wind'));
+  gulp.watch(resolvePath(paths().source.css) + '/**/*.scss').on('change', gulp.parallel('pl-sass-wind'));
   gulp.watch(resolvePath(paths().source.css) + '/**/*.css', { awaitWriteFinish: true }).on('change', gulp.series('pl-copy:css', reloadCSS));
   gulp.watch(resolvePath(paths().source.styleguide) + '/**/*.*', { awaitWriteFinish: true }).on('change', gulp.series('pl-copy:styleguide', 'pl-copy:styleguide-css', reloadCSS));
 
