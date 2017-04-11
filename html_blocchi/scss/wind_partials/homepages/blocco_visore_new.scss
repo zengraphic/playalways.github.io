@@ -1,0 +1,550 @@
+.hero-block {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  z-index: 0;
+  &.mobile {
+    color: $color_mobile;
+  }
+  &.business {
+    color: $color_business;
+  }
+  &.fisso {
+    color: $color_infostrada;
+  }
+  .hero-block {
+    &__wrapper {
+      display: table;
+      position: relative;
+      width: 100%;
+      vertical-align: middle;
+      z-index: 3;
+      &.tall {
+        &.inverted {
+          .hero-block {
+            &__column {
+              &.column {
+                &--left {
+                  left: 0;
+                }
+                &--right {
+                  right: 0;
+                }
+              }
+              &__content {
+                &--title {
+                  margin: 0 auto 8px;
+                }
+                &--claim {
+                  margin: 0 auto 16px;
+                }
+              }
+            }
+            &__background {
+              &-elements {
+                right: 0;
+                left: 45%;
+                text-align: right;
+                .background {
+                  &__ribbon {
+                    right: -60px;
+                    left: auto;
+                  }
+                  &__icons {
+                    &--big {
+                      margin: 0 0 0 auto;
+                    }
+                    &--small {
+                      right: 25px;
+                      left: auto;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .hero-block {
+          &__column {
+            height: 426px;
+            &__content {
+              text-align: center;
+              &--title {
+                margin: 0 auto 8px;
+                font-size: 39px;
+              }
+              &--claim {
+                margin: 0 auto 16px;
+                color: $color_text;
+              }
+              button {
+                &.base__bt {
+                  width: 280px;
+                  height: 3.25rem;
+                  padding: 1rem 0;
+                  font-size: 1.125rem;
+                  letter-spacing: 0;
+                  &:hover,
+                  &:active,
+                  &:visited,
+                  &:focus {
+                    padding: 1rem 0;
+                    font-size: 1.125rem;
+                  }
+                }
+              }
+            }
+            &.column {
+              &--left {
+                left: 50%;
+                @include breakpoint(tiny) {
+                  top: 426px;
+                  width: 100%;
+                }
+              }
+              &--right {
+                right: 50%;
+                @include breakpoint(tiny) {
+                  top: -426px;
+                  width: 100%;
+                }
+              }
+            }
+          }
+          &__background {
+            &-img {
+              display: none;
+            }
+            &-elements {}
+          }
+        }
+      }
+      &.medium {
+        .hero-block__column {
+          height: 350px;
+          &.column {
+            &--left {
+              @include breakpoint(tiny) {
+                top: 350px;
+                width: 100%;
+              }
+            }
+            &--right {
+              @include breakpoint(tiny) {
+                top: -350px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      &.short {
+        .hero-block {
+          &__column {
+            height: 250px;
+            &.column {
+              &--left {
+                @include breakpoint(tiny) {
+                  top: 250px;
+                  width: 100%;
+                }
+              }
+              &--right {
+                @include breakpoint(tiny) {
+                  top: -250px;
+                  width: 100%;
+                }
+              }
+            }
+            &__content {
+                color: $color_white;
+            }
+          }
+        }
+      }
+      &.inverted {
+        .hero-block {
+          &__background {
+            &-img {
+              text-align: left;
+            }
+            &-band {
+              right: 0;
+              left: 50%;
+              @include breakpoint(tiny) {
+                left: 0;
+              }
+              &__shape {
+                &.shape {
+                  &--left {
+                    transform: skew(20deg);
+                    transform-origin: 0 0;
+                    @include breakpoint(tiny) {
+                      transform: none;
+                    }
+                  }
+                  &--right {
+                    transform: none;
+                  }
+                }
+              }
+            }
+          }
+          &__column {
+            text-align: right;
+            @include breakpoint(tiny) {
+              width: 100%;
+              text-align: center;
+            }
+            &__content {
+              &--title {
+                margin: 0 0 8px auto;
+                @include breakpoint(tiny) {
+                  margin: 0 auto 8px;
+                }
+              }
+              &--claim {
+                margin: 0 0 16px auto;
+                @include breakpoint(tiny) {
+                  margin: 0 auto 16px;
+                }
+              }
+            }
+          }
+        }
+        .column {
+          &--left {
+            left: 50%;
+            @include breakpoint(tiny) {
+              left: 0;
+            }
+          }
+          &--right {
+            right: 50%;
+            @include breakpoint(tiny) {
+              right: 0;
+            }
+          }
+        }
+      }
+      &.full {
+        .hero-block {
+          &__background-band {
+            right: 0;
+            left: 0;
+            &__shape {
+              &.shape {
+                &--left {
+                  left: 0;
+                  transform: none;
+                }
+                &--right {
+                  right: 0;
+                  transform: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__background {
+      &-band {
+        position: absolute;
+        top: 0;
+        right: 50%;
+        left: 0;
+        height: 100%;
+        z-index: 2;
+        @include breakpoint(tiny) {
+          top: 50%;
+          right: 0;
+          height: 50%;
+        }
+        &__shape {
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          @include breakpoint(tiny) {
+            bottom: 0;
+          }
+          @at-root {
+            .mobile#{&} {
+              background-color: $color_mobile;
+            }
+            .business#{&} {
+              background-color: $color_business;
+            }
+            .fisso#{&} {
+              background-color: $color_infostrada;
+            }
+          }
+          &.shape {
+            &--left {
+              left: 0;
+            }
+            &--right {
+              right: 0;
+              transform: skew(-20deg);
+              transform-origin: 100% 0;
+              @include breakpoint(tiny) {
+                transform: none;
+              }
+            }
+          }
+        }
+      }
+      &-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: right;
+        overflow: hidden;
+        z-index: 1;
+        @include breakpoint(tiny) {
+          bottom: 50%;
+        }
+        .background__image {
+          height: 100%;
+        }
+      }
+      &-elements {
+        position: absolute;
+        top: 0;
+        right: 45%;
+        bottom: 0;
+        left: 0;
+        padding: 25px;
+        text-align: left;
+        z-index: 6;
+        @include breakpoint(tiny) {
+          right: 0;
+          bottom: 50%;
+        }
+        .background {
+          &__characters {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            @include breakpoint(tiny) {
+              right: 15%;
+              left: 15%;
+              width: 70%;
+              height: auto;
+            }
+          }
+          &__ribbon {
+            display: inline-block;
+            position: relative;
+            left: -60px;
+            width: 150px;
+            height: 50px;
+            margin: 15px;
+            background-color: red;
+            z-index: 10;
+            &:before {}
+          }
+          &__icons {
+            &--big {
+              margin: 0 auto 0 0;
+              width: 72px;
+            }
+            &--small {
+              position: absolute;
+              bottom: 25px;
+              left: 25px;
+            }
+          }
+        }
+        .icon {
+          &--big,
+          &--small {
+            img {
+              width: 100%;
+              height: auto;
+            }
+            &:not(:last-of-type) {
+              margin-bottom: 8px;
+            }
+          }
+          &--big {
+            width: 72px;
+          }
+          &--small {
+            width: 48px;
+          }
+        }
+      }
+    }
+    &__column {
+      display: table-cell;
+      position: relative;
+      width: 50%;
+      vertical-align: middle;
+      @include breakpoint(tiny) {
+        display: table;
+        width: 100%;
+        text-align: center;
+      }
+      &__content {
+        position: relative;
+        padding: 0 30px;
+        z-index: 10;
+        //color: $color_white;
+        @include breakpoint(tiny) {
+          display: table-cell;
+          padding: 0;
+          vertical-align: middle;
+        }
+        &--title {
+          width: 90%;
+          margin: 0 auto 8px 0;
+          color: inherit;
+          font-family: $weight-bold;
+          font-size: 52px;
+          letter-spacing: -0.025em;
+          line-height: 1em;
+          text-transform: uppercase;
+          @include breakpoint(medium) {
+            font-size: 46px;
+          }
+          @include breakpoint(small) {
+            font-size: 36px;
+          }
+          @include breakpoint(tiny) {
+            margin: 0 auto 8px;
+          }
+        }
+        &--claim {
+          width: 90%;
+          margin: 0 auto 16px 0;
+          font-family: $weight-cond;
+          font-size: 30px;
+          line-height: 1em;
+          @include breakpoint(medium) {
+            font-size: 28px;
+          }
+          @include breakpoint(small) {
+            font-size: 22px;
+          }
+          @include breakpoint(tiny) {
+            margin: 0 auto 16px;
+          }
+        }
+        &--bundle {
+          display: table;
+          min-width: 75%;
+          margin: 0 auto 16px;
+          border-collapse: collapse;
+          &_item {
+            display: table-cell;
+            width: 33%;
+            color: $color_orange;
+            &:not(:last-of-type) {
+              border-right: 1px solid $color_stroke;
+            }
+            .item {
+              &--amount {
+                font-size: 40px;
+                line-height: 1em;
+              }
+              &--label {
+                font-size: 18px;
+                line-height: 1em;
+                .what {
+                  display: inline-block;
+                  width: 100%;
+                }
+                .to {}
+              }
+            }
+          }
+        }
+        &--feature {
+          &:last-of-type {
+            margin-bottom: 16px;
+          }
+          &_text {
+            color: $color_text;
+            font-size: 18px;
+            line-height: 28px;
+            b {
+              font-family: $weight-normal;
+              font-size: 26px;
+              font-weight: normal;
+              @at-root {
+                  .mobile#{&} {
+                    color: $color_mobile;
+                  }
+                  .business#{&} {
+                    color: $color_orange;
+                  }
+                  .fisso#{&} {
+                    color: $color_infostrada;
+                  }
+                }
+            }
+          }
+        }
+        &--prices {
+          text-align: center;
+          .price {
+            &--discounted,
+            &--full {
+              display: inline-block;
+              font-size: 56px;
+              line-height: 1.2em;
+            }
+            &--discounted {
+              position: relative;
+              &:after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                left: 0;
+                height: 1px;
+                border-bottom: 2px solid transparent;
+                content: "";
+                @at-root {
+                  .mobile#{&} {
+                    border-color: $color_mobile;
+                  }
+                  .business#{&} {
+                    border-color: $color_orange;
+                  }
+                  .fisso#{&} {
+                    border-color: $color_infostrada;
+                  }
+                }
+              }
+            }
+          }
+        }
+        button {
+          &.base__bt {
+            width: 200px;
+            height: 2.625rem;
+            padding: .781rem 0;
+            font-size: 1.063rem;
+            letter-spacing: 0;
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus {
+              padding: .781rem 0;
+              font-size: 1.063rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

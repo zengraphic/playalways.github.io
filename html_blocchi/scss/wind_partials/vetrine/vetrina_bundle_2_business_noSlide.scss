@@ -132,7 +132,7 @@
             &:nth-child(-n+3) {
                 display: block;
             }
-            &:not(:nth-child(3n)):not(:last-child) {
+            &:not([style*="display:none"]):not([style*="display: none"]):not(:nth-child(3n)):not(:last-child) {
                 &:after {
                     background-color: $color_stroke;
                     width: 1px;
