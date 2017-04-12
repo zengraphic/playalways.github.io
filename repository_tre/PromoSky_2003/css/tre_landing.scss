@@ -64,7 +64,7 @@
            -webkit-hyphens: inherit;
            -ms-hyphens: inherit;
            hyphens: none;
-           line-height: 1;
+           line-height: 1rem;
            font-family: 'Helvetica Roman LT', Helvetica, Arial, sans-serif;
            margin: 0;
        }
@@ -170,6 +170,9 @@
            }
            &_cta {
                margin: 10px;
+               @include breakpoint('display_medium_small') {
+                   margin: 0;
+               }
                .button_cta {
                    background-color: $color-samsung;
                    padding: 20px;
@@ -230,7 +233,7 @@
            }
            &_offer {
                &_sub {
-                   @include breakpoint('display_smaller') {
+                   @include breakpoint('display_medium_small') {
                        border: 2px solid $color-samsung;
                        padding: 2em 0;
                    }
@@ -245,6 +248,9 @@
                        @include breakpoint('display_smaller') {
                            margin-bottom: 0;
                            margin-top: 0;
+                       }
+                       @include breakpoint('display_medium_small') {
+                           display: block;
                        }
                        img {
                            margin: 10px;
@@ -262,7 +268,7 @@
                .divider {
                    font-weight: bold;
                    font-size: 20px;
-                   @include breakpoint('display_smaller') {
+                   @include breakpoint('display_medium_small') {
                        margin: 0.5em 0;
                    }
                }
