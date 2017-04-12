@@ -1,5 +1,113 @@
-.block_steps{
-
+.steps_module {
+    width: 100%;
+    max-width: 1024px;
+    margin: 30px auto;
+    &__block {
+        &__container {
+            height: auto;
+            position: relative;
+        }
+        &__dottedbox {
+            border-bottom: 4px dotted $color_orange;
+            position: absolute;
+            top: calc(50% - 8px);
+            z-index: 300;
+            left: 6.25%;
+            right: 8.25%;
+            @include breakpoint(tiny) {
+                top: 30px;
+                bottom: 30px;
+                right: calc(50% - 2px);
+                left: calc(50% - 2px);
+                border-bottom: 0;
+                border-left: 4px dotted $color_orange;
+            }
+        }
+    }
+    &__image {
+        &__container {
+            display: table;
+            width: 100%;
+            position: relative;
+            z-index: 500;
+            padding: 0 30px;
+        }
+        &__single {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            width: 25%;
+            @include breakpoint(tiny) {
+                display: block;
+                width: 100%;
+            }
+            &.low_title {
+                @at-root #{&} {
+                    .steps_module__image__single__title {
+                        @include breakpoint(tiny) {
+                            position: relative;
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+            &__title {
+                text-transform: uppercase;
+                color: $color_grey_dark_light;
+                font-size: 20px;
+                font-family: $weight-bold;
+                background-color: $color_white;
+                @include breakpoint(small) {
+                    font-size: 14px;
+                }
+                @include breakpoint(tiny) {
+                    font-size: 20px;
+                    position: relative;
+                    bottom: 30px;
+                }
+            }
+            &#{&}--aligned-left {
+                text-align: left;
+                @include breakpoint(tiny) {
+                    text-align: center;
+                    position: relative;
+                    right: 9px;
+                }
+            }
+            &--aligned-right {
+                text-align: right;
+                .steps_module__image__single__title {
+                    position: relative;
+                    left: 6.25%;
+                    @include breakpoint(tiny) {
+                        left: 0;
+                    }
+                }
+                @include breakpoint(tiny) {
+                    text-align: center;
+                }
+            }
+            &--left {
+                position: relative;
+                left: 2%;
+                @include breakpoint(tiny) {
+                    left: 0;
+                }
+            }
+            &--right {
+                position: relative;
+                right: 2%;
+                @include breakpoint(tiny) {
+                    right: 0;
+                }
+            }
+            img {
+                width: 50%;
+                height: auto;
+                min-width: 120px;
+            }
+        }
+    }
 }
 
 // OLD CSS FOR REFERENCE //
