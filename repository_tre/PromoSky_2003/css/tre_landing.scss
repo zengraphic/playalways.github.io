@@ -65,7 +65,7 @@
            -ms-hyphens: inherit;
            hyphens: none;
            line-height: 1;
-           font-family: 'Helvetica Neue LT Com', Helvetica, Arial, sans-serif;
+           font-family: 'Helvetica Roman LT', Helvetica, Arial, sans-serif;
            margin: 0;
        }
        
@@ -128,7 +128,7 @@
        .container {
            &_landing {
                width: 100%;
-               max-width: 1024px;
+               max-width: 1000px;
                margin: 0 auto;
                text-align: center;
                padding-left: 15px;
@@ -206,8 +206,17 @@
                        line-height: 14px;
                    }
                }
+               .disclaimer {
+                   padding: 10px 0;
+                   .br_mob {
+                       @include breakpoint('display_smaller') {
+                           display: none;
+                       }
+                   }
+               }
            }
            &_subtitle {
+               margin: 2em 0;
                h3 {
                    color: $color-samsung;
                    font-size: 30px;
@@ -219,9 +228,16 @@
                    }
                }
            }
-           .disclaimer {}
            &_offer {
                &_sub {
+                   @include breakpoint('display_smaller') {
+                       border: 2px solid $color-samsung;
+                       padding: 2em 0;
+                   }
+                   &.image {
+                       border: none;
+                       padding: 10px 0;
+                   }
                    .single_image {
                        display: inline-block;
                        margin-bottom: 10px;
@@ -246,21 +262,70 @@
                .divider {
                    font-weight: bold;
                    font-size: 20px;
+                   @include breakpoint('display_smaller') {
+                       margin: 0.5em 0;
+                   }
+               }
+               .disclaimer {
+                   padding: 10px 0;
+                   @include breakpoint('display_smaller') {
+                       margin: 0.5em 0;
+                   }
                }
            }
            &_footer {
                &_block {
+                   margin: 30px 0;
                    .round_image {
-                       img {}
+                       width: 8%;
+                       display: inline-block;
+                       text-align: left;
+                       float: left;
+                       padding-right: 10px;
+                       @include breakpoint('display_medium') {
+                           float: none;
+                           display: block;
+                           width: 100%;
+                           text-align: center;
+                       }
+                       img {
+                           width: 100%;
+                           max-width: 74px;
+                           height: auto;
+                       }
                    }
-                   .text {}
+                   .text {
+                       width: 90%;
+                       display: inline-block;
+                       text-align: left;
+                       float: left;
+                       @include breakpoint('display_medium') {
+                           float: none;
+                           margin: 0 auto;
+                           width: 100%;
+                       }
+                       &.first {
+                           padding-top: 30px;
+                       }
+                       &.second {
+                           padding-top: 20px;
+                       }
+                       &.third {
+                           @include breakpoint('display_medium') {
+                               padding-top: 20px;
+                           }
+                       }
+                       p {
+                           margin-top: 0;
+                       }
+                   }
                }
                .button_download {
                    background-color: $color-white;
                    padding: 10px 20px;
                    color: $color-samsung;
                    display: inline-block;
-                   margin: 10px 10px 40px 10px;
+                   margin: 25px 10px 40px 10px;
                    @include border-radius(10px);
                    font-size: 22px;
                    font-weight: bold;
@@ -279,9 +344,16 @@
                        font-size: 16px;
                    }
                }
+               .terms_and_condition {
+                   font-size: 12px;
+                   text-align: justify;
+               }
            }
-           .terms_and_condition {}
-           .button_download {}
+       }
+       
+       .highlight {
+           color: $color-samsung;
+           font-weight: bold;
        }
        
        .clear {
