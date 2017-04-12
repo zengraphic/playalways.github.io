@@ -73,9 +73,9 @@
                 &--image {
                     display: block;
                 }
-                .base__icon{
-                    width:88px;
-                    height:88px;
+                .base__icon {
+                    width: 88px;
+                    height: 88px;
                 }
             }
         }
@@ -85,17 +85,33 @@
         //BLOCCO CON IMMAGINE 
         .slidingNews_block {
             &__single {
+                &.item{
+                    &:after{
+                        display: none;
+                    }
+                }
+                &--image{
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
                 &--subTitle {
                     display: block;
                     font-size: 16px;
                     color: $color_grey_dark;
+                    text-align: left;
+                    height: auto;
                 }
                 &--disclaimer {
                     height: 55px;
                     font-size: 24px;
                     text-transform: uppercase;
-                    color: $color_robin;  
-                    font-family: $bold-cond;                  
+                    color: $color_robin;
+                    font-family: $weight-bold-cond;
+                    text-align: left;
+                    margin-bottom: 0px;
+                    margin-top: 20px;
                 }
                 &--title {
                     display: none;
@@ -103,9 +119,12 @@
                 &--image {
                     display: block;
                 }
-                .base__icon{
-                    width:88px;
-                    height:88px;
+                .base__icon {
+                    width: 88px;
+                    height: 88px;
+                }
+                .button{
+                    display: none;
                 }
             }
         }
