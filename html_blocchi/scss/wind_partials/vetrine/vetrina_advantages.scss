@@ -97,7 +97,10 @@
             text-align: center;
             img {
                 width: 64px;
-                height: 64px;
+                height: auto;
+                @include breakpoint(small){
+                    width: 80px;
+                }
             }
             // &--fiber {
             //     background: rgba(0, 0, 0, 0) url("../img/icons-vantaggi/advantages_sprite.png") no-repeat scroll 0 0;
@@ -156,6 +159,7 @@
                     font-size: 1em;
                     text-align: center;
                     width: 100%;
+                    margin-top: 15px;
                 }
             }
             & p {
