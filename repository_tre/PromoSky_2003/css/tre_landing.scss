@@ -64,8 +64,8 @@
            -webkit-hyphens: inherit;
            -ms-hyphens: inherit;
            hyphens: none;
-           line-height: 1rem;
-           font-family: 'Helvetica Roman LT', Helvetica, Arial, sans-serif;
+           line-height: 18px;
+           font-family: 'Helvetica Roman', Helvetica, Arial, sans-serif;
            margin: 0;
        }
        
@@ -142,18 +142,27 @@
                    margin: 2em 0;
                    padding: 0;
                }
+               .small_notes {
+                   font-size: 1.071rem;
+                   margin-top: 1rem;
+                   @include breakpoint('display_smaller') {
+                       font-size: 1rem;
+                   }
+               }
            }
            &_main_title {
                color: $color-samsung;
+               height: 90px;
                h1 {
-                   font-size: 40px;
+                   font-size: 2.5rem; //40px
+                   line-height: 3rem;
                    margin-bottom: 0.3571rem;
                    @include breakpoint('display_small') {
-                       font-size: 23px;
+                       font-size: 1.785em;
                    }
                }
                h3 {
-                   font-size: 30px;
+                   font-size: 2.1428rem; //30px
                    margin-top: 0.3571rem;
                    margin-bottom: 0.3571rem;
                    @include breakpoint('display_small') {
@@ -181,7 +190,7 @@
                    display: inline-block;
                    margin: 10px 10px 10px 0;
                    @include border-radius(10px);
-                   font-size: 22px;
+                   font-size: 1.571em;
                    font-weight: bold;
                    cursor: pointer;
                    white-space: nowrap;
@@ -193,7 +202,7 @@
                        width: 80%;
                        padding: 20px 0;
                        margin: 10px 0;
-                       font-size: 16px;
+                       font-size: 1.142em;
                    }
                }
            }
@@ -204,6 +213,8 @@
                    }
                }
                .small_notes {
+                   font-size: 1.071rem;
+                   line-height: 1em;
                    @include breakpoint('display_smaller') {
                        font-size: 12px;
                        line-height: 14px;
@@ -222,11 +233,12 @@
                margin: 2em 0;
                h3 {
                    color: $color-samsung;
-                   font-size: 30px;
+                   font-size: 2.142rem;
+                   line-height: 2.285rem;
                    margin-top: 0.3571rem;
                    margin-bottom: 0.3571rem;
                    @include breakpoint('display_small') {
-                       font-size: 17px;
+                       font-size: 1.214rem;
                        line-height: 19px;
                    }
                }
@@ -273,6 +285,7 @@
                    }
                }
                .disclaimer {
+                   line-height: 1.142rem;
                    padding: 10px 0;
                    @include breakpoint('display_smaller') {
                        margin: 0.5em 0;
@@ -333,7 +346,7 @@
                    display: inline-block;
                    margin: 25px 10px 40px 10px;
                    @include border-radius(10px);
-                   font-size: 22px;
+                   font-size: 1.5714em;
                    font-weight: bold;
                    cursor: pointer;
                    white-space: nowrap;
@@ -353,6 +366,7 @@
                .terms_and_condition {
                    font-size: 12px;
                    text-align: justify;
+                   line-height: 1.2em;
                }
            }
        }
