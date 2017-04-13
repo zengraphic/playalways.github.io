@@ -1,241 +1,262 @@
 .image_block_display {
-  @include transition(all .45s ease-in-out);
-  overflow: hidden;
-  .button:empty {
-    display: none;
-  }
   &__mainContainer {
+    @include transition(all .45s ease-in-out);
+    display: table;
     position: relative;
+    width: 100%;
     max-width: 1024px;
-    height: 100%;
-    max-height: 426px;
+    height: 250px;
     margin: 0 auto;
+    vertical-align: middle;
     hyphens: initial;
-    /*&.withPartner {
-      .image_block_display {
-        &__half_block {
-          width: calc(45% - 50px);
-          @include breakpoint(small) {
-            width: 100%;
-          }
-          &.text_block {
-            bottom: 5%;
-          }
-        }
-        &__partnerImage {
-          display: block;
-        }
-        &__title {
-          height: 3.6em;
-          margin-bottom: .5em;
-        }
-        &__text {
-          height: 2.3em;
-        }
-        &__recurrency--bottom {
-          display: block;
-          margin-top: 30px;
-          color: $color_white;
-          font-family: $weight-light;
-          font-size: .75em;
-          text-align: left;
-          z-index: 50;
-        }
-        &__title {
-          margin-top: 20px;
-        }
-      }
+    @include breakpoint(small) {
+      height: 500px;
     }
-    &.priceVariant {
-      .image_block_display {
-        &__half_block {
-          width: calc(45% - 50px);
-          @include breakpoint(small) {
-            width: 100%;
-          }
-          &.text_block {
-            bottom: 10%;
-          }
-        }
-        &__title {
-          margin-top: 0;
-          margin-bottom: 0;
-          text-align: center;
-        }
-        &__text {
-          font-size: 1.25em;
-          text-align: center;
-        }
-        &__price {
-          display: block;
-        }
-        &__recurrency {
-          display: block;
-        }
-        &__recurrency--bottom {
-          display: block;
-          height: 1em;
-          margin-top: 30px;
-          color: $color_white;
-          font-family: $weight-light;
-          font-size: .75em;
-          line-height: 1em;
-          text-align: center;
-          overflow: hidden;
-          z-index: 50;
-        }
+    @at-root {
+      .invertedDisplay #{&} {
+        text-align: right;
       }
-    }
-    &.invertedDisplay {
-      &.priceVariant {
-        .image_block_display {
-          &__title,
-          &__text {
-            text-align: center;
-          }
-          &__recurrency {
-            display: block;
-          }
-        }
-      }
-      &.withPartner {
-        .image_block_display__partnerImage {
-          text-align: right;
-        }
-      }
-      .image_block_display {
-        &__title,
-        &__text {
-          text-align: right;
-        }
-        &__coloredBg {
-          left: 50%;
-        }
-        &__half_block {
-          &.text_block {
-            right: 30px;
-            left: auto;
-          }
-          &.image_block {
-            //right: 50%;
-          }
-        }
-      }
-    }*/
-  }
-  &__title {
-    height: 2.2em;
-    color: $color_white;
-    font-family: $weight-bold-cond;
-    font-size: 3em;
-    line-height: 1.1em;
-    text-align: left;
-    overflow: hidden;
-  }
-  &__partnerImage {
-    display: none;
-  }
-  &__price {
-    display: none;
-    height: 1.2em;
-    color: $color_white;
-    font-family: $weight-light;
-    font-size: 3.438em;
-    text-align: center;
-    overflow: hidden;
-    z-index: 50;
-    .currency {
-      font-size: .875em;
-    }
-  }
-  &__recurrency {
-    display: none;
-    margin-bottom: 1em;
-    color: $color_white;
-    font-family: $weight-light;
-    font-size: .75em;
-    text-align: center;
-    z-index: 50;
-    &--bottom {
-      display: none;
-    }
-  }
-  &__text {
-    height: 3.6em;
-    margin: 0 0 1em;
-    color: $color_white;
-    font-family: $weight-light;
-    font-size: 1.875em;
-    line-height: 1.2em;
-    text-align: left;
-    overflow: hidden;
-    z-index: 50;
-  }
-  &__half_block {
-    position: absolute;
-    width: calc(40% - 50px);
-    z-index: 50;
-    &.text_block {
-      bottom: 20%;
-      left: 30px;
-    }
-    &.image_block {
-      position: relative;
-      right: 0;
-      z-index: 10;
     }
   }
   &__coloredBg {
-    @include transform(skew(-15deg));
     position: absolute;
+    top: 0;
     right: 50%;
-    width: 150%;
+    left: 0;
     height: 100%;
-    background: $color_robin;
-    z-index: 40;
-  }
-}
-
-// ============================== MEDIA QUERIES =========================
-// ============================== MEDIA QUERIES =========================
-// ============================== MEDIA QUERIES =========================
-@media all and (max-width: 767px) {
-  .image_block_display {
-    font-size: 14px;
-    &__title,
-    &__text {
-      margin-top: px;
-      text-align: left !important;
+    z-index: 20;
+    @include breakpoint(small) {
+      right: 0;
+      top: 50%;
+      height: 50%;
     }
-    &__mainContainer {
-      max-height: 100%;
-      &.invertedDisplay {
-        .text_block {
-          left: 0 !important;
+    @at-root {
+      .invertedDisplay #{&} {
+        right: 0;
+        left: 50%;
+        @include breakpoint(small) {
+          left: 0;
         }
       }
     }
-    &__coloredBg {
-      background: none;
-    }
-    &__half_block {
-      width: 100%;
-      &.text_block {
-        position: relative;
+    .shape {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      @at-root {
+        .mobile #{&} {
+          background-color: $color_mobile;
+        }
+        .fisso #{&} {
+          background-color: $color_infostrada;
+        }
+        .business #{&} {
+          background-color: $color_business;
+        }
+        .device #{&} {
+          background-color: $color_home_life;
+        }
+      }
+      &--one {
+        left: 0;
+        width: 50%;
+        @at-root {
+          .invertedDisplay #{&} {
+            width: 70%;
+            transform: skew(20deg);
+            transform-origin: 100% 50%;
+            @include breakpoint(small) {
+              width: 50%;
+              transform: none;
+              transform-origin: none;
+            }
+          }
+        }
+      }
+      &--two {
         right: 0;
+        width: 70%;
+        transform: skew(-20deg);
+        transform-origin: 100% 50%;
+        @include breakpoint(small) {
+          width: 50%;
+          transform: none;
+          transform-origin: none;
+        }
+        @at-root {
+          .invertedDisplay #{&} {
+            width: 50%;
+            transform: none;
+            transform-origin: none;
+          }
+        }
+      }
+    }
+  }
+  &__half_block {
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    vertical-align: middle;
+    z-index: 20;
+    &.text_block {
+      position: relative;
+      z-index: 30;
+      padding: 30px;
+      left: -25%;
+      @include breakpoint(small) {
+        top: 25%;
         left: 0;
         width: 100%;
-        padding: 30px;
-        &.multiple__background {
-          background-color: $color_robin;
+        padding: 10px;
+        text-align: center;
+      }
+      @at-root {
+        .invertedDisplay #{&} {
+          position: relative;
+          left: 25%;
+          text-align: right;
+          @include breakpoint(small) {
+            left: 0;
+            text-align: center;
+          }
         }
       }
-      &.image_block {
-        right: 50%;
-        .image {
-          width: 200%;
+    }
+    &.image_block {
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: auto;
+      text-align: right;
+      z-index: 10;
+      img {
+        display: inline-block;
+        height: 100%;
+        width: auto;
+        margin: 0;
+        @include breakpoint(small) {
+          min-width: 100%;
+          min-height: 50%;
+          width: auto;
+          height: auto;
+        }
+      }
+      @at-root {
+        .invertedDisplay #{&} {
+          text-align: left;
         }
       }
     }
   }
+  &__title {
+    width: 90%;
+    margin: 0 auto 8px 0;
+    color: $color_white;
+    font-family: $weight-cond;
+    font-size: 52px;
+    letter-spacing: -.025rem;
+    font-weight: bold;
+    line-height: 1.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+    @include breakpoint(small) {
+      margin: 0 auto 8px;
+      width: 100%;
+      font-size: 40px;
+    }
+    @at-root {
+      .invertedDisplay #{&} {
+        margin: 0 0 8px auto;
+        @include breakpoint(small) {
+          margin: 0 auto 8px;
+        }
+      }
+    }
+  }
+  &__partnerImage {
+    img {
+      display: inline-block;
+      max-width: 110px;
+      height: auto;
+    }
+    margin-bottom: 8px;
+    &:empty {
+      display: none;
+    }
+  }
+  &__price {
+    margin-bottom: 8px;
+    color: $color_white;
+    font-family: $weight-cond;
+    font-weight: bold;
+    font-size: 3rem;
+    display: inline-block;
+    width: auto;
+    &:empty {
+      display: none;
+    }
+  }
+  &__recurrency {
+    margin-bottom: 8px;
+    color: $color_white;
+    font-family: $weight-light;
+    font-size: 1rem;
+    display: inline-block;
+    width: auto;
+    &:empty {
+      display: none;
+    }
+    &--bottom {
+      color: $color_white;
+      &:empty {
+        display: none;
+      }
+    }
+  }
+  &__text {
+    width: 90%;
+    margin: 0 auto 8px 0;
+    color: $color_white;
+    font-family: $weight-cond;
+    font-size: 30px;
+    line-height: 1.1em;
+    overflow: hidden;
+    z-index: 50;
+    @include breakpoint(small) {
+      width: 100%;
+      margin: 0 auto 8px;
+      font-size: 22px;
+    }
+    @at-root {
+      .invertedDisplay #{&} {
+        margin: 0 0 8px auto;
+        @include breakpoint(small) {
+          margin: 0 auto 8px;
+        }
+      }
+    }
+  }
+  .base__bt {
+    display: block;
+    width: 200px;
+    margin: 0 auto 8px 0;
+    font-size: 1rem;
+    @include breakpoint(small) {
+      margin: 0 auto 8px;
+    }
+    @at-root {
+      .invertedDisplay #{&} {
+
+        margin: 0 0 8px auto;
+        @include breakpoint(small) {
+          margin: 0 auto 8px;
+        }
+      }
+    }
+    &:empty {
+      display: none;
+    }
+  }
+  .slider__dots {}
 }
