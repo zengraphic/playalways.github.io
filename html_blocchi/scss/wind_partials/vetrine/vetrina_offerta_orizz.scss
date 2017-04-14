@@ -1,9 +1,13 @@
 .strip_offers {
     @include transition(all 0.45s ease-in-out);
     display: none;
+    .item--add {
+        padding-right: 5px;
+    }
     .info_link {
         display: block;
         font-size: 1em;
+        text-decoration: underline;
         //margin-left: 5px;
     }
     &:nth-child(-n+3) {
@@ -65,7 +69,6 @@
                 .item--total {
                     width: 100%;
                     .price {
-
                         font-size: $text-medium;
                     }
                 }
@@ -89,11 +92,13 @@
             font-size: 1.25em;
             color: $color_robin;
             margin-bottom: 15px;
-            font-family: $weight-bold;
+            font-family: $weight-cond;
+            font-weight: bold;
         }
         &_text {
             margin: 0 auto;
             padding-bottom: 5px;
+            color: $color_grey_dark;
         }
         &_list {
             margin-top: 15px;
@@ -117,6 +122,7 @@
             .sub {
                 position: relative;
                 bottom: 2px;
+                color: $color_grey_dark;
             }
             .item {
                 display: table-cell;
@@ -158,6 +164,7 @@
             font-family: $weight-light;
             font-size: 0.85em;
             padding-top: 10px;
+            color: $color_grey_dark;
         }
     }
 }
