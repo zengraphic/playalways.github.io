@@ -75,15 +75,18 @@
                 }
                 &--text {
                     position: relative;
-                    height: 170px;
+                    height: 169px;
                     margin-bottom: 10px;
                     z-index: 51;
+                    overflow:hidden;
+                    color: $color_text;
                     &--bundle {
                         height: 97px;
                         overflow: hidden;
                         font-size: 1.375em;
                         color: $color_text;
                         margin-bottom: 10px;
+                        line-height: 1.1em;
                     }
                     &--smallDescription {
                         height: 58px;
@@ -91,10 +94,12 @@
                         font-size: 1.125em;
                         margin-bottom: 15px;
                         color: $color_text;
+                        line-height: 1.1em;
                     }
                     &--bigDescription {
                         font-size: 1.375em;
                         color: $color_text;
+                        line-height: 1.1em;
                     }
                 }
                 &--price__container {
@@ -149,6 +154,9 @@
                     .cardsOffer__single--text--bundle {
                         height: 50px;
                         margin-bottom: 25px;
+                        .bundle_single:nth-child(n+2){
+                            display:none;
+                        }
                     }
                     .cardsOffer__single--text--smallDescription {
                         height: 96px;
@@ -246,6 +254,14 @@
                             position: relative;
                             margin-bottom: 10px;
                         }
+                    }
+                }
+                &.onlyText {
+                    .cardsOffer__single--bgContainer,
+                    .bundle_single,
+                    .cardsOffer__single--text--smallDescription,
+                    .cardsOffer__single--text--bigDescription {
+                        display: none;
                     }
                 }
             }
