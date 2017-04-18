@@ -3,8 +3,50 @@
     -moz-transition: all 0.45s ease-in-out;
     -ms-transition: all 0.45s ease-in-out;
     -webkit-transition: all 0.45s ease-in-out;
+    .bundle_orange {
+        color: $color_white;
+        padding: 0 10px;
+        width: 100%;
+        min-width: 90px;
+        &__container {
+            display: table;
+            width: 57%;
+            vertical-align: middle;
+            @include breakpoint(small) {
+                width: 240px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        &__number {
+            font-size: 34px;
+        }
+        &__title {
+            font-size: 12px;
+        }
+    }
+    .recurrent_priceRow {
+        color: $color_white;
+        display: table-cell;
+        width: 39%;
+        vertical-align: middle;
+        @include breakpoint(small) {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        &__recurrency {
+            &:empty {
+                display: none;
+            }
+        }
+        &__price {
+            font-size: 42px;
+        }
+    }
     .strip_plans__payment_block {
         width: 100%;
+        display: table;
         .item--add,
         .item--total {
             color: $color_white;
@@ -15,27 +57,54 @@
     }
     &__container {
         display: table;
+        padding: 0px 30px;
+        width: 100%;
+        @include breakpoint(small) {
+            width: 100%;
+            display: block;
+            padding: 10px 15px;
+        }
     }
     &__col {
         display: table-cell;
-        padding: 10px 30px;
+        padding: 20px 0;
         vertical-align: middle;
         @include breakpoint(small) {
             display: block;
             padding: 10px 15px;
         }
+        &:first-of-type {
+            padding-left: 0px;
+            @include breakpoint(small) {
+                padding: 0px;
+            }
+        }
+        &:last-of-type {
+            padding-right: 0px;
+            @include breakpoint(small) {
+                padding: 0px;
+            }
+        }
         &--title {
-            width: 33%;
+            width: 32%;
             .contact_operatore_block__claim_content {
                 &--title {
                     font-family: $weight-bold;
-                    font-size: 2.275em;
+                    font-size: 2.5em;
                     text-align: left;
+                    @include breakpoint(small) {
+                        width: 100%;
+                        text-align: center;
+                    }
                 }
                 &--text {
                     font-weight: $weight-light;
                     font-size: 1.275em;
                     text-align: left;
+                    @include breakpoint(small) {
+                        width: 100%;
+                        text-align: center;
+                    }
                 }
             }
             @include breakpoint(small) {
@@ -46,12 +115,23 @@
             width: 16%;
             @include breakpoint(small) {
                 width: 100%;
+                display: block;
             }
         }
         &--text {
-            width: 50%;
+            width: 60%;
+            padding: 0 30px;
             @include breakpoint(small) {
                 width: 100%;
+                display: block;
+                padding: 0;
+            }
+        }
+        &--bundle {
+            width: 47%;
+            @include breakpoint(small) {
+                width: 100%;
+                display: block;
             }
         }
         &--telcta {
@@ -64,6 +144,7 @@
             width: 20%;
             @include breakpoint(small) {
                 width: 100%;
+                margin: 0 auto;
             }
         }
     }
@@ -98,12 +179,15 @@
                 @include breakpoint(medium) {
                     font-size: 2.0em;
                 }
+                @include breakpoint(small) {
+                    font-size: 1.750em;
+                }
             }
             &--text {
                 font-size: 1.2em;
                 font-family: $weight-normal;
-                @include breakpoint(medium) {
-                    font-size: 1.1em;
+                @include breakpoint(small) {
+                    font-size: 1.0em;
                 }
             }
         }
@@ -116,14 +200,20 @@
             font-family: $weight-light;
         }
         .button--normal {
-            margin: 15px 0 0;
+            margin: 15px auto 0 auto;
             padding: 15px 30px;
             font-family: $weight-normal;
+            @include breakpoint(small) {
+                max-width: 280px;
+            }
         }
         .button--slim {
-            margin: 15px 0 0;
-            padding: 5px 15px;
-            font-family: $weight-normal;
+            margin: 0 auto;
+            font-size: 18px;
+            padding: 10px 15px;
+            font-family: $weight-cond;
+            font-weight: 700;
+            max-width: 280px;
         }
     }
 }
