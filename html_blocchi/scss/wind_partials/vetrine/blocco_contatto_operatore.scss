@@ -3,21 +3,78 @@
     -moz-transition: all 0.45s ease-in-out;
     -ms-transition: all 0.45s ease-in-out;
     -webkit-transition: all 0.45s ease-in-out;
-    @at-root #{&}__container {
-        margin: 0 auto;
-        max-width: 1024px;
-        position: relative;
-        padding: 22px 0 22px;
-
+    .strip_plans__payment_block {
+        width: 100%;
+        .item--add,
+        .item--total {
+            color: $color_white;
+            .sub {
+                color: $color_white;
+            }
+        }
     }
-    @at-root #{&}__image {
+    &__container {
+        display: table;
+    }
+    &__col {
+        display: table-cell;
+        padding: 10px 30px;
+        vertical-align: middle;
+        @include breakpoint(small) {
+            display: block;
+            padding: 10px 15px;
+        }
+        &--title {
+            width: 33%;
+            .contact_operatore_block__claim_content {
+                &--title {
+                    font-family: $weight-bold;
+                    font-size: 2.275em;
+                    text-align: left;
+                }
+                &--text {
+                    font-weight: $weight-light;
+                    font-size: 1.275em;
+                    text-align: left;
+                }
+            }
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+        &--image {
+            width: 16%;
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+        &--text {
+            width: 50%;
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+        &--telcta {
+            width: 33%;
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+        &--onlycta {
+            width: 20%;
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+    }
+    &__image {
         text-align: center;
-        .base__icon{
-            width:140px;
-            height:140px;
-             @include breakpoint(small) {
-                 width:120px;
-            height:120px;
+        .base__icon {
+            width: 140px;
+            height: 140px;
+            @include breakpoint(small) {
+                width: 120px;
+                height: 120px;
             }
         }
         &--image {
@@ -28,7 +85,7 @@
             }
         }
     }
-    @at-root #{&}__claim {
+    &__claim {
         &_content {
             color: $color_white;
             @include breakpoint(small) {
@@ -38,23 +95,35 @@
                 font-size: 2.2em;
                 margin-bottom: 10px;
                 font-family: $weight-light;
+                @include breakpoint(medium) {
+                    font-size: 2.0em;
+                }
             }
             &--text {
                 font-size: 1.2em;
                 font-family: $weight-normal;
+                @include breakpoint(medium) {
+                    font-size: 1.1em;
+                }
             }
         }
     }
-    @at-root #{&}__action {
+    &__action {
         padding-top: 15px;
         .base__input {
             padding-top: 1.125em;
             padding-bottom: 0.875em;
             font-family: $weight-light;
         }
+        .button--normal {
+            margin: 15px 0 0;
+            padding: 15px 30px;
+            font-family: $weight-normal;
+        }
         .button--slim {
             margin: 15px 0 0;
-            padding: 15px 0;
+            padding: 5px 15px;
+            font-family: $weight-normal;
         }
     }
 }
