@@ -35,20 +35,60 @@ $color_border: $color_grey_medium_light;
 $color_border_focus: $color_orange;
 $color_bt_disabled: $color_grey_medium_light; */
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
-@-webkit-keyframes slideIn {
+@-webkit-keyframes slidein-left-webkit {
   from {
-    bottom: -300px;
+    left: -300px;
     opacity: 0; }
   to {
-    bottom: 0;
     opacity: 1; } }
 
-@keyframes slideIn {
+@keyframes slidein-left {
   from {
-    bottom: -400px;
+    left: -300px;
     opacity: 0; }
   to {
-    bottom: 0;
+    opacity: 1; } }
+
+@-moz-keyframes slidein-left-moz {
+  from {
+    left: -300px;
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-ms-keyframes slidein-left-ms {
+  from {
+    left: -300px;
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes slidein-right-webkit {
+  from {
+    left: 1000px;
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes slidein-left {
+  from {
+    left: 1000px;
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-moz-keyframes slidein-left-moz {
+  from {
+    left: 1000px;
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-ms-keyframes slidein-left-ms {
+  from {
+    left: 1000px;
+    opacity: 0; }
+  to {
     opacity: 1; } }
 
 @-webkit-keyframes spin-webkit {
@@ -1725,7 +1765,11 @@ select:-webkit-autofill {
   color: #FFF;
   background-color: #F48135;
   border: 1px solid #F48135; }
-  .base__bt--or:active, .base__bt--or:hover, .base__bt--or:visited {
+  .base__bt--or:active, .base__bt--or:visited {
+    background-color: #F48135;
+    border: 1px solid #F48135;
+    color: #FFF; }
+  .base__bt--or:hover {
     background-color: #F69A5D;
     border: 1px solid #F48135;
     color: #FFF; }
@@ -1737,6 +1781,9 @@ select:-webkit-autofill {
   color: #F48135;
   background-color: transparent;
   border: 1px solid #F48135; }
+  .base__bt--or2:active, .base__bt--or2:hover, .base__bt--or2:visited {
+    background-color: #F69A5D;
+    border: 1px solid #F48135; }
   .base__bt--or2:active, .base__bt--or2:hover, .base__bt--or2:visited {
     background-color: #F69A5D;
     border: 1px solid #F48135; }

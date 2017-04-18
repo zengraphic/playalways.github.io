@@ -438,12 +438,14 @@ a.button--search {
 .with_currency:after {
   content: "\20AC";
   font-size: 0.8em;
-  color: inherit; }
+  color: inherit;
+  padding-left: 5px; }
 
 .text_currency:after {
   content: "cent/min";
   font-size: 0.6em;
-  color: inherit; }
+  color: inherit;
+  padding-left: 5px; }
 
 /* ==================== iframe configurazione =====================  */
 .configurazione_terminali {
@@ -1192,180 +1194,21 @@ a.button--search {
     display: table;
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 425px;
     vertical-align: middle; }
-  .standard_block__half_block {
-    display: table-cell;
-    position: relative;
-    width: 50%;
-    height: 100%; }
-    .standard_block__half_block.image_block {
-      position: absolute;
-      right: 50%;
-      bottom: 0;
-      left: 0;
-      width: auto;
-      padding: 30px;
-      z-index: 20; }
-      .standard_block__half_block.image_block .testimonial {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: auto;
-        height: 100%; }
-    .standard_block__half_block.form_block:empty {
-      display: none; }
-    .standard_block__half_block.offer_block {
-      text-align: center;
-      padding: 0 30px; }
-  .standard_block__ribbon {
-    position: relative;
-    left: -50px;
-    width: 200px;
-    margin-bottom: 16px;
-    padding: 16px;
-    background-color: #AAB2BD; }
-    .standard_block__ribbon:empty {
-      display: none; }
-  .standard_block__sticker__wrapper.small {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    width: 36px; }
-  .standard_block__sticker__wrapper.big {
-    width: 64px; }
-  .standard_block__sticker__wrapper .sticker_single {
-    display: block;
-    width: 100%;
-    height: auto; }
-    .standard_block__sticker__wrapper .sticker_single:not(:last-of-type) {
-      margin-bottom: 8px; }
-  .standard_block__title {
-    color: #009BBE;
-    font-family: "Trade Gothic Condensed";
-    font-size: 52px;
-    font-weight: bold;
-    line-height: 1.2em; }
-    .mobile .standard_block__title {
-      color: #009BBE; }
-    .fisso .standard_block__title {
-      color: #183989; }
-    .business .standard_block__title {
-      color: #292F36; }
-    .device .standard_block__title {
-      color: #212121; }
-  .standard_block__subtitle {
-    font-family: "Trade Gothic Condensed";
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.2em; }
-    .mobile .standard_block__subtitle {
-      color: #009BBE; }
-    .fisso .standard_block__subtitle {
-      color: #183989; }
-    .business .standard_block__subtitle {
-      color: #292F36; }
-    .device .standard_block__subtitle {
-      color: #212121; }
-    .standard_block__subtitle:empty {
-      display: none; }
-  .standard_block__text {
-    color: #292F36;
-    font-family: "Trade Gothic Condensed";
-    font-size: 28px;
-    line-height: 1.2em; }
-    .standard_block__text:empty {
-      display: none; }
-  .standard_block__mainContainer .recurrent_priceRow {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-family: "Trade Gothic Light";
-    height: 80px; }
-    .standard_block__mainContainer .recurrent_priceRow.textCurrency {
-      margin-top: 10px;
-      margin-bottom: 40px;
-      font-family: "Trade Gothic Light";
-      height: 70px;
-      font-size: 1.250em;
-      line-height: 1.5em; }
-      .standard_block__mainContainer .recurrent_priceRow.textCurrency b {
-        font-size: 1.5em;
-        font-family: "Trade Gothic";
-        font-weight: 400; }
-      .standard_block__mainContainer .recurrent_priceRow.textCurrency.business b {
-        color: #F48135; }
-      .standard_block__mainContainer .recurrent_priceRow.textCurrency.mobile b {
-        color: #009BBE; }
-      .standard_block__mainContainer .recurrent_priceRow.textCurrency.infostrada b {
-        color: #183989; }
-      .standard_block__mainContainer .recurrent_priceRow.textCurrency .recurrent_priceRow__recurrency {
-        display: none; }
-    .standard_block__mainContainer .recurrent_priceRow__price {
-      color: #009BBE;
-      font-size: 3.75em;
-      line-height: 1em; }
-      .standard_block__mainContainer .recurrent_priceRow__price.price_discounted {
-        position: relative; }
-        .standard_block__mainContainer .recurrent_priceRow__price.price_discounted::after {
-          border-bottom: 2px solid;
-          content: "";
-          left: 0;
-          margin-top: calc(0.125em / 2 * -1);
-          position: absolute;
-          right: 0;
-          top: 50%; }
-      .standard_block__mainContainer .recurrent_priceRow__price .currency {
-        font-size: 0.7em; }
-    .standard_block__mainContainer .recurrent_priceRow__recurrency {
-      color: #292F36;
-      display: block;
-      font-size: 0.750em;
-      line-height: 1.2em;
-      height: 1.2em;
-      overflow: hidden; }
-  .standard_block__mainContainer.splittedTitle .standard_block__title,
-  .standard_block__mainContainer.splittedTitle .standard_block__subtitle {
-    font-size: 2.5rem; }
-  .standard_block__mainContainer.bundle_small .bundle_orange {
-    padding: 0 10px; }
-    .standard_block__mainContainer.bundle_small .bundle_orange__number {
-      font-size: 2.2em; }
-    .standard_block__mainContainer.bundle_small .bundle_orange__title {
-      font-size: 0.875em; }
-  .standard_block__mainContainer.invertedDisplay .standard_block__sticker__wrapper {
-    right: 0;
-    left: auto; }
-  .standard_block__mainContainer.invertedDisplay .column_right {
-    right: 0; }
-  .standard_block__mainContainer.invertedDisplay .standard_block__image {
-    left: auto;
-    right: 0; }
-  .standard_block__mainContainer.invertedDisplay .standard_block__half_block .button, .standard_block__mainContainer.invertedDisplay .standard_block__half_block a.button--slim, .standard_block__mainContainer.invertedDisplay .standard_block__half_block a.button--ghost, .standard_block__mainContainer.invertedDisplay .standard_block__half_block a.button--ghost--transparent, .standard_block__mainContainer.invertedDisplay .standard_block__half_block a.button--search {
-    left: 22px;
-    right: 0; }
-  .standard_block__mainContainer.invertedDisplay .float_left {
-    float: right; }
-  .standard_block__mainContainer.invertedDisplay .float_right {
-    float: left; }
-  .standard_block__mainContainer.invertedDisplay .standard_block__coloredBg {
-    left: 55%;
-    -moz-transform: skew(-20deg);
-    -o-transform: skew(-20deg);
-    -ms-transform: skew(-20deg);
-    -webkit-transform: skew(-20deg);
-    transform: skew(-20deg); }
+    @media (max-width: 767px) {
+      .standard_block__mainContainer {
+        height: 760px; } }
   .standard_block__coloredBg {
     position: absolute;
     top: 0;
     right: 50%;
     left: 0;
     height: 100%;
-    z-index: 20; }
+    z-index: 10; }
     @media (max-width: 767px) {
       .standard_block__coloredBg {
-        right: 0;
-        top: 50%;
-        height: 50%; } }
+        display: none; } }
     .invertedDisplay .standard_block__coloredBg {
       right: 0;
       left: 50%; }
@@ -1408,84 +1251,481 @@ a.button--search {
           width: 50%;
           transform: none;
           transform-origin: none; }
+  .standard_block__half_block {
+    display: table-cell;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    vertical-align: middle; }
+    .standard_block__half_block.image_block {
+      position: absolute;
+      right: 40%;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      padding: 30px; }
+      @media (max-width: 767px) {
+        .standard_block__half_block.image_block {
+          top: 0;
+          right: 0;
+          bottom: 400px;
+          height: auto;
+          padding: 30px; } }
+      .invertedDisplay .standard_block__half_block.image_block {
+        right: 0;
+        left: 40%; }
+        @media (max-width: 767px) {
+          .invertedDisplay .standard_block__half_block.image_block {
+            left: 0; } }
+      .withForm .standard_block__half_block.image_block {
+        left: 30%;
+        right: 0; }
+      .withForm.invertedDisplay .standard_block__half_block.image_block {
+        right: 30%;
+        left: 0; }
+      .standard_block__half_block.image_block .testimonial {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        z-index: 15; }
+        @media (max-width: 767px) {
+          .standard_block__half_block.image_block .testimonial {
+            bottom: 75px;
+            left: calc(50% - 100px);
+            width: 320px; }
+            .invertedDisplay .standard_block__half_block.image_block .testimonial {
+              left: calc(50% - 205px); } }
+        .withForm .standard_block__half_block.image_block .testimonial {
+          left: 0;
+          right: 60%;
+          width: 100%;
+          max-width: 40%;
+          height: auto;
+          max-height: 100%; }
+        .withForm.invertedDisplay .standard_block__half_block.image_block .testimonial {
+          right: 0;
+          left: 60%;
+          width: 100%;
+          max-width: 40%;
+          height: auto;
+          max-height: 100%; }
+    .standard_block__half_block.form_block {
+      left: -21%;
+      width: 33.33333%;
+      text-align: center;
+      z-index: 50; }
+      .invertedDisplay .standard_block__half_block.form_block {
+        left: 45%; }
+    .standard_block__half_block.offer_block {
+      padding: 0 30px;
+      text-align: center;
+      z-index: 50; }
+      .invertedDisplay .standard_block__half_block.offer_block {
+        left: -50%; }
+        @media (max-width: 767px) {
+          .invertedDisplay .standard_block__half_block.offer_block {
+            left: 0; } }
+      .withForm .standard_block__half_block.offer_block {
+        width: 45%;
+        left: -5%; }
+      .withForm.invertedDisplay .standard_block__half_block.offer_block {
+        width: 45%;
+        left: -50%; }
+      @media (max-width: 767px) {
+        .standard_block__half_block.offer_block {
+          top: 180px;
+          width: 100%;
+          padding: 0 15px; } }
+      .standard_block__half_block.offer_block:empty {
+        display: none; }
+  .standard_block__ribbon {
+    position: relative;
+    left: -50px;
+    width: 150px;
+    margin-bottom: 8px;
+    padding: 4px 8px 4px 50px;
+    background-color: #F48135;
+    color: #FFF;
+    font-family: "Trade Gothic Condensed";
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1em;
+    text-transform: uppercase;
+    z-index: 25;
+    -animation: slidein-left .7s 0s 1 linear;
+    -webkit-animation: slidein-left-webkit .7s 0s 1 linear;
+    -ms-animation: slidein-left-ms .7s 0s 1 linear;
+    -moz-animation: slidein-left-moz .7s 0s 1 linear; }
+    .standard_block__ribbon:before {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #d55c0b #d55c0b transparent transparent;
+      content: "";
+      z-index: -1; }
+      .invertedDisplay .standard_block__ribbon:before {
+        right: 0;
+        left: auto;
+        border-color: #d55c0b transparent transparent #d55c0b; }
+    .standard_block__ribbon:after {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+      transform: skew(-20deg);
+      transform-origin: 100% 100%;
+      background-color: #F48135;
+      content: "";
+      z-index: -1; }
+      .invertedDisplay .standard_block__ribbon:after {
+        left: 0;
+        transform: skew(20deg);
+        transform-origin: 0 100%; }
+    .standard_block__ribbon:empty {
+      display: none; }
+    .invertedDisplay .standard_block__ribbon {
+      padding: 8px 50px 8px 8px;
+      left: calc(100% - 100px);
+      text-align: right;
+      -animation: slidein-right .7s 0s 1 linear;
+      -webkit-animation: slidein-right-webkit .7s 0s 1 linear;
+      -ms-animation: slidein-right-ms .7s 0s 1 linear;
+      -moz-animation: slidein-right-moz .7s 0s 1 linear; }
+  .standard_block__sticker__wrapper {
+    position: relative;
+    z-index: 25; }
+    .standard_block__sticker__wrapper.small {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      width: 38px; }
+      @media (max-width: 767px) {
+        .standard_block__sticker__wrapper.small {
+          right: 30px;
+          width: auto;
+          margin: 0 auto;
+          text-align: center; }
+          .standard_block__sticker__wrapper.small .standard_block__sticker {
+            width: 38px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle; } }
+      .invertedDisplay .standard_block__sticker__wrapper.small {
+        right: 30px;
+        left: auto; }
+        @media (max-width: 767px) {
+          .invertedDisplay .standard_block__sticker__wrapper.small {
+            left: 30px; } }
+      .withForm .standard_block__sticker__wrapper.small {
+        right: 30px;
+        left: auto; }
+        @media (max-width: 767px) {
+          .withForm .standard_block__sticker__wrapper.small {
+            right: 30px; } }
+      .withForm.invertedDisplay .standard_block__sticker__wrapper.small {
+        left: 30px;
+        right: auto; }
+        @media (max-width: 767px) {
+          .withForm.invertedDisplay .standard_block__sticker__wrapper.small {
+            left: 30px; } }
+    .standard_block__sticker__wrapper.big {
+      width: 57px;
+      margin: 0 auto 0 0; }
+      @media (max-width: 767px) {
+        .standard_block__sticker__wrapper.big {
+          width: 48px; } }
+      .standard_block__sticker__wrapper.big .standard_block__sticker:not(:last-of-type) {
+        margin-bottom: 8px; }
+      .invertedDisplay .standard_block__sticker__wrapper.big {
+        margin: 0 0 0 auto; }
+      .withForm .standard_block__sticker__wrapper.big {
+        margin: 0 0 0 auto; }
+      .withForm.invertedDisplay .standard_block__sticker__wrapper.big {
+        margin: 0 auto 0 0; }
+    .standard_block__sticker__wrapper .standard_block__sticker {
+      display: block;
+      width: 100%;
+      height: auto; }
+      .standard_block__sticker__wrapper .standard_block__sticker:not(:last-of-type) {
+        margin-bottom: 8px; }
+        @media (max-width: 767px) {
+          .standard_block__sticker__wrapper .standard_block__sticker:not(:last-of-type) {
+            margin-bottom: 0; } }
+  .standard_block__title {
+    color: #009BBE;
+    font-family: "Trade Gothic Condensed";
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 1em;
+    text-transform: uppercase; }
+    .mobile .standard_block__title {
+      color: #009BBE; }
+    .fisso .standard_block__title {
+      color: #183989; }
+    .business .standard_block__title {
+      color: #292F36; }
+    .device .standard_block__title {
+      color: #212121; }
+    .splittedTitle .standard_block__title {
+      font-size: 35px; }
+  .standard_block__subtitle {
+    margin-bottom: 8px;
+    font-family: "Trade Gothic Condensed";
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1em;
+    text-transform: uppercase; }
+    .mobile .standard_block__subtitle {
+      color: #009BBE; }
+    .fisso .standard_block__subtitle {
+      color: #183989; }
+    .business .standard_block__subtitle {
+      color: #292F36; }
+    .device .standard_block__subtitle {
+      color: #212121; }
+    .splittedTitle .standard_block__subtitle {
+      font-size: 35px; }
+    .standard_block__subtitle:empty {
+      display: none; }
+  .standard_block__text {
+    color: #292F36;
+    font-family: "Trade Gothic Condensed";
+    font-size: 30px;
+    line-height: 1.1em; }
+    .standard_block__text:empty {
+      display: none; }
+  .standard_block .base__bt {
+    color: #FFF;
+    font-family: "Trade Gothic Bold";
+    font-size: 16px; }
+    @media (max-width: 767px) {
+      .standard_block .base__bt {
+        width: 260px; } }
+    .standard_block .base__bt:empty {
+      display: none; }
 
 .bundle_orange {
+  display: table-cell;
+  padding: 0 8px;
   color: #F48135;
   font-family: "Trade Gothic Light";
   text-align: center;
-  display: inline-block;
-  padding: 0 20px;
   vertical-align: middle; }
-  .bundle_orange__container {
-    text-align: center; }
-  .bundle_orange__divider--right {
+  .bundle_orange:not(:last-of-type) {
     border-right: 1px solid #D3D3D2; }
-    .bundle_orange__divider--right:last-of-type {
-      border-right: 0px; }
-  .bundle_orange__title .description {
-    font-size: 1em;
-    line-height: 1.2em;
-    height: 2.4em;
-    overflow: hidden; }
-  .bundle_orange__number {
-    font-size: 2.813em;
-    line-height: 1em !important; }
-
-.bundle_with_text .bundle_orange__number {
-  font-size: 1.250em; }
-
-@media all and (max-width: 860px) {
-  .standard_block__sticker__wrapper {
-    position: static;
-    width: 100%; }
-    .standard_block__sticker__wrapper .sticker_single {
-      margin-right: 5px; }
-  .standard_block .container_reviews {
-    width: 330px;
-    margin: 0 auto; }
-    .standard_block .container_reviews .share_block__reviews {
-      right: 0; }
-  .standard_block .container_mid_row .column_left {
-    width: 100%; }
-  .standard_block .container_mid_row .column_right {
-    float: none;
-    top: 0;
-    right: 0;
-    width: 300px;
+  .bundle_orange__container {
+    display: table;
+    width: 100%;
+    margin: 8px auto;
+    text-align: center; }
+  .bundle_orange__title {
+    max-width: 70px;
     margin: 0 auto;
-    text-align: center;
-    margin-bottom: 15px; }
-  .standard_block__title {
-    font-size: 2.50em; }
-  .standard_block__text {
-    max-width: 300px; }
-  .standard_block__image {
-    width: 50%;
-    position: static; }
-  .standard_block__half_block {
-    width: 100%; }
-    .standard_block__half_block .button, .standard_block__half_block a.button--slim, .standard_block__half_block a.button--ghost, .standard_block__half_block a.button--ghost--transparent, .standard_block__half_block a.button--search {
-      margin: 0 auto 30px auto;
-      position: static; }
-    .standard_block__half_block.image_block {
-      height: auto;
-      width: 100%;
-      text-align: center; }
-  .standard_block__coloredBg {
-    display: none; }
-  .bundle_orange {
-    font-size: 12px; }
+    font-size: 16px;
+    line-height: 1.2em; }
+  .bundle_orange__number {
+    font-size: 45px;
+    line-height: 1.2em; }
+    .bundle_small.bundle_orange__number {
+      font-size: 38px; }
+    .bundle_orange__number:empty {
+      display: none; }
+      .bundle_orange__number:empty + .bundle_orange__title .description {
+        font-size: 20px;
+        max-width: none; }
+
+.recurrent_priceRow {
+  margin: 0 auto 16px; }
+  .mobile.recurrent_priceRow {
+    color: #009BBE; }
+  .fisso.recurrent_priceRow {
+    color: #183989; }
+  .business.recurrent_priceRow {
+    color: #292F36; }
+  .device.recurrent_priceRow {
+    color: #212121; }
   .recurrent_priceRow__price {
-    font-size: 2.75em;
+    margin: 0 8px;
+    font-size: 55px;
+    letter-spacing: -.25rem;
+    line-height: 1.2em; }
+    .recurrent_priceRow__price.with_currency:after {
+      font-size: 0.7em; }
+    .recurrent_priceRow__price.price_discounted {
+      position: relative; }
+      .recurrent_priceRow__price.price_discounted::before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        border-bottom: 2px solid;
+        content: ""; }
+    .recurrent_priceRow__price:empty {
+      display: none; }
+  .recurrent_priceRow__recurrency {
+    display: block;
+    color: #292F36;
+    font-size: 13px;
+    line-height: 1.2em; }
+    .recurrent_priceRow__recurrency:empty {
+      display: none; }
+
+.coverage_form {
+  width: calc(100% - 60px);
+  margin: 0 auto; }
+  .coverage_form__white_title {
+    height: 1em;
+    margin-bottom: 10px;
+    color: #FFF;
+    font-family: "Trade Gothic";
+    font-size: 32px;
+    line-height: 1.2em; }
+  .coverage_form .base__select {
+    left: 0;
+    width: 100%;
+    margin-bottom: 10px; }
+    .coverage_form .base__select.bootstrap-select .dropdown-toggle {
+      width: 100%;
+      font-family: "Trade Gothic Light";
+      font-size: 1em; }
+    .coverage_form .base__select.bootstrap-select .bs-caret .caret {
+      top: 50%;
+      right: 15px; }
+    .coverage_form .base__select.bootstrap-select .filter-option {
+      font-size: 1em;
+      text-align: left; }
+  .coverage_form .base__input {
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: "Trade Gothic Light"; }
+  .coverage_form .base__bt {
+    margin-bottom: 10px; }
+  .coverage_form__input--address {
     display: inline-block;
-    margin-top: 15px;
-    font-family: "Trade Gothic Light"; } }
+    width: calc(90% - 35px);
+    float: left; }
+  .coverage_form__input--civic_number {
+    display: inline-block;
+    width: 60px;
+    float: right; }
+  .coverage_form__input--number {
+    display: inline-block;
+    width: calc(90% - 35px);
+    float: right; }
+  .coverage_form__input--prefix {
+    display: inline-block;
+    width: 60px;
+    float: left; }
+  .coverage_form__additional_form {
+    position: absolute;
+    width: 100%; }
+    .coverage_form__additional_form.covered {
+      bottom: -100%;
+      visibility: hidden; }
+    .coverage_form__additional_form.uncovered {
+      bottom: 2px;
+      visibility: visible; }
+  .invertedDisplay .coverage_form {
+    left: 0; }
+    @media (max-width: 767px) {
+      .invertedDisplay .coverage_form {
+        left: 0; } }
+  @media (max-width: 767px) {
+    .coverage_form {
+      top: 180px;
+      width: 100%;
+      padding: 0 15px; } }
+  .coverage_form:empty {
+    display: none; }
+
+/*
+@media all and (max-width: 767px) {
+.standard_block {
+&__sticker {
+&__wrapper {
+position: static;
+width: 100%;
+.sticker_single {
+margin-right: 5px;
+}
+}
+}
+.container_reviews {
+width: 330px;
+margin: 0 auto;
+.share_block__reviews {
+right: 0;
+}
+}
+.container_mid_row {
+.column_left {
+width: 100%;
+}
+.column_right {
+float: none;
+top: 0;
+right: 0;
+width: 300px;
+margin: 0 auto;
+text-align: center;
+margin-bottom: 15px;
+}
+}
+&__title {
+font-size: 2.50em;
+}
+&__text {
+max-width: 300px;
+}
+&__image {
+width: 50%;
+position: static;
+}
+&__half_block {
+width: 100%;
+.button {
+margin: 0 auto 30px auto;
+position: static;
+}
+&.image_block {
+height: auto;
+width: 100%;
+text-align: center;
+}
+}
+&__coloredBg {
+display: none;
+}
+}
+.bundle_orange {
+font-size: 12px;
+}
+.recurrent_priceRow__price {
+font-size: 2.75em;
+display: inline-block;
+margin-top: 15px;
+font-family: $weight-light;
+}
+}
 
 @media all and (max-width: 767px) {
-  .standard_block .container_reviews {
-    font-size: 14px;
-    width: 290px; } }
-
+.standard_block {
+.container_reviews {
+font-size: 14px;
+width: 290px;
+}
+}
+}
+*/
 .hero-block {
   position: relative;
   width: 100%;
@@ -5835,9 +6075,12 @@ sw.showcase_bundle_device {
   -o-transition: all 0.45s ease-in-out;
   transition: all 0.45s ease-in-out;
   display: none; }
+  .strip_offers .item--add {
+    padding-right: 5px; }
   .strip_offers .info_link {
     display: block;
-    font-size: 1em; }
+    font-size: 1em;
+    text-decoration: underline; }
   .strip_offers:nth-child(-n+3) {
     display: block; }
   .strip_offers__showMore {
@@ -5898,10 +6141,12 @@ sw.showcase_bundle_device {
       font-size: 1.25em;
       color: #009BBE;
       margin-bottom: 15px;
-      font-family: "Trade Gothic Bold"; }
+      font-family: "Trade Gothic Condensed";
+      font-weight: bold; }
     .strip_offers__description_text {
       margin: 0 auto;
-      padding-bottom: 5px; }
+      padding-bottom: 5px;
+      color: #292F36; }
     .strip_offers__description_list {
       margin-top: 15px;
       padding-left: 18px; }
@@ -5917,7 +6162,8 @@ sw.showcase_bundle_device {
       margin-bottom: 5px; }
     .strip_offers__payment_block__amount .sub {
       position: relative;
-      bottom: 2px; }
+      bottom: 2px;
+      color: #292F36; }
     .strip_offers__payment_block__amount .item {
       display: table-cell;
       vertical-align: bottom; }
@@ -5947,7 +6193,8 @@ sw.showcase_bundle_device {
     .strip_offers__button .sub {
       font-family: "Trade Gothic Light";
       font-size: 0.85em;
-      padding-top: 10px; }
+      padding-top: 10px;
+      color: #292F36; }
 
 .showcase__mainTitle {
   font-size: 1.875em;
@@ -6761,7 +7008,8 @@ sw.showcase_bundle_device {
     height: 2.2em;
     margin-bottom: .25rem;
     color: #292F36;
-    font-family: "Trade Gothic Light";
+    font-family: "Trade Gothic Condensed";
+    font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.1em;
     text-align: center;
@@ -8305,7 +8553,8 @@ sw.showcase_bundle_device {
       text-align: center;
       padding: 10px 0; } }
   .strip_plans__title--main {
-    font-family: "Trade Gothic";
+    font-family: "Trade Gothic Condensed";
+    font-weight: 700;
     color: inherit; }
 
 @media (max-width: 767px) {
@@ -8328,7 +8577,8 @@ sw.showcase_bundle_device {
   color: #292F36;
   vertical-align: middle; }
   .strip_plans__offer_block__item h4 {
-    font-family: "Trade Gothic";
+    font-family: "Trade Gothic Condensed";
+    font-weight: 700;
     font-size: 1.75rem;
     line-height: 1.1em;
     margin-bottom: .5rem; }
@@ -8878,11 +9128,57 @@ sw.showcase_bundle_device {
   -moz-transition: all 0.45s ease-in-out;
   -ms-transition: all 0.45s ease-in-out;
   -webkit-transition: all 0.45s ease-in-out; }
+  .contact_operatore_block .strip_plans__payment_block {
+    width: 100%; }
+    .contact_operatore_block .strip_plans__payment_block .item--add,
+    .contact_operatore_block .strip_plans__payment_block .item--total {
+      color: #FFF; }
+      .contact_operatore_block .strip_plans__payment_block .item--add .sub,
+      .contact_operatore_block .strip_plans__payment_block .item--total .sub {
+        color: #FFF; }
   .contact_operatore_block__container {
-    margin: 0 auto;
-    max-width: 1024px;
-    position: relative;
-    padding: 22px 0 22px; }
+    display: table; }
+  .contact_operatore_block__col {
+    display: table-cell;
+    padding: 10px 30px;
+    vertical-align: middle; }
+    @media (max-width: 767px) {
+      .contact_operatore_block__col {
+        display: block;
+        padding: 10px 15px; } }
+    .contact_operatore_block__col--title {
+      width: 33%; }
+      .contact_operatore_block__col--title .contact_operatore_block__claim_content--title {
+        font-family: "Trade Gothic Bold";
+        font-size: 2.275em;
+        text-align: left; }
+      .contact_operatore_block__col--title .contact_operatore_block__claim_content--text {
+        font-weight: "Trade Gothic Light";
+        font-size: 1.275em;
+        text-align: left; }
+      @media (max-width: 767px) {
+        .contact_operatore_block__col--title {
+          width: 100%; } }
+    .contact_operatore_block__col--image {
+      width: 16%; }
+      @media (max-width: 767px) {
+        .contact_operatore_block__col--image {
+          width: 100%; } }
+    .contact_operatore_block__col--text {
+      width: 50%; }
+      @media (max-width: 767px) {
+        .contact_operatore_block__col--text {
+          width: 100%; } }
+    .contact_operatore_block__col--telcta {
+      width: 33%; }
+      @media (max-width: 767px) {
+        .contact_operatore_block__col--telcta {
+          width: 100%; } }
+    .contact_operatore_block__col--onlycta {
+      width: 20%; }
+      @media (max-width: 767px) {
+        .contact_operatore_block__col--onlycta {
+          width: 100%; } }
   .contact_operatore_block__image {
     text-align: center; }
     .contact_operatore_block__image .base__icon {
@@ -8907,18 +9203,29 @@ sw.showcase_bundle_device {
       font-size: 2.2em;
       margin-bottom: 10px;
       font-family: "Trade Gothic Light"; }
+      @media (max-width: 910px) {
+        .contact_operatore_block__claim_content--title {
+          font-size: 2.0em; } }
     .contact_operatore_block__claim_content--text {
       font-size: 1.2em;
       font-family: "Trade Gothic"; }
+      @media (max-width: 910px) {
+        .contact_operatore_block__claim_content--text {
+          font-size: 1.1em; } }
   .contact_operatore_block__action {
     padding-top: 15px; }
     .contact_operatore_block__action .base__input {
       padding-top: 1.125em;
       padding-bottom: 0.875em;
       font-family: "Trade Gothic Light"; }
+    .contact_operatore_block__action .button--normal {
+      margin: 15px 0 0;
+      padding: 15px 30px;
+      font-family: "Trade Gothic"; }
     .contact_operatore_block__action .button--slim {
       margin: 15px 0 0;
-      padding: 15px 0; }
+      padding: 5px 15px;
+      font-family: "Trade Gothic"; }
 
 .advantages_block {
   margin: 0 auto;
@@ -10133,27 +10440,33 @@ sw.showcase_bundle_device {
         color: inherit; }
         .showcase_bundle_block__container .cardsOffer__single--title h3 {
           font-size: 1.875em;
-          font-family: "Trade Gothic Bold"; }
+          font-family: "Trade Gothic Condensed";
+          font-weight: 700; }
       .showcase_bundle_block__container .cardsOffer__single--text {
         position: relative;
-        height: 170px;
+        height: 169px;
         margin-bottom: 10px;
-        z-index: 51; }
+        z-index: 51;
+        overflow: hidden;
+        color: #292F36; }
         .showcase_bundle_block__container .cardsOffer__single--text--bundle {
           height: 97px;
           overflow: hidden;
           font-size: 1.375em;
           color: #292F36;
-          margin-bottom: 10px; }
+          margin-bottom: 10px;
+          line-height: 1.1em; }
         .showcase_bundle_block__container .cardsOffer__single--text--smallDescription {
           height: 58px;
           overflow: hidden;
           font-size: 1.125em;
           margin-bottom: 15px;
-          color: #292F36; }
+          color: #292F36;
+          line-height: 1.1em; }
         .showcase_bundle_block__container .cardsOffer__single--text--bigDescription {
           font-size: 1.375em;
-          color: #292F36; }
+          color: #292F36;
+          line-height: 1.1em; }
       .showcase_bundle_block__container .cardsOffer__single--price__container {
         height: 85px;
         margin-bottom: 10px; }
@@ -10196,6 +10509,8 @@ sw.showcase_bundle_device {
       .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--bundle {
         height: 50px;
         margin-bottom: 25px; }
+        .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--bundle .bundle_single:nth-child(n+2) {
+          display: none; }
       .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--smallDescription {
         height: 96px;
         margin-bottom: 10px; }
@@ -10261,6 +10576,11 @@ sw.showcase_bundle_device {
         .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--bgContainer {
           position: relative;
           margin-bottom: 10px; }
+      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--bgContainer,
+      .showcase_bundle_block__container .cardsOffer__single.onlyText .bundle_single,
+      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text--smallDescription,
+      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text--bigDescription {
+        display: none; }
   .showcase_bundle_block h2 {
     font-family: "Trade Gothic Bold Condensed"; }
 
