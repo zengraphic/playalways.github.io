@@ -59,8 +59,12 @@
 .base__bt--or {
   @include base-btn($color_white, $color_wind, 1px, $color_wind);
   &:active,
-  &:hover,
   &:visited {
+    background-color: $color_wind;
+    border: 1px solid $color_wind;
+    color: $color_white;
+  }
+  &:hover {
     background-color: $color_orange_light;
     border: 1px solid $color_wind;
     color: $color_white;
@@ -74,6 +78,12 @@
 
 .base__bt--or2 {
   @include base-btn($color_wind, $color_transparent, 1px, $color_wind);
+  &:active,
+  &:hover,
+  &:visited {
+    background-color: $color_orange_light;
+    border: 1px solid $color_wind;
+  }
   &:active,
   &:hover,
   &:visited {
