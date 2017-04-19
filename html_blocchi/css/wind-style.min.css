@@ -7733,20 +7733,22 @@ sw.showcase_bundle_device {
     max-width: 1024px;
     margin: 0 auto; }
   .dashboard_watch_block__product {
-    display: table;
     position: relative;
     height: 350px;
     vertical-align: middle; }
     .dashboard_watch_block__product--imagep {
-      display: table-cell;
+      display: inline-block;
       width: 50%;
       vertical-align: middle; }
+      @media (max-width: 767px) {
+        .dashboard_watch_block__product--imagep {
+          width: 100%; } }
       .dashboard_watch_block__product--imagep .phone_thumbs {
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
-        width: 115px;
+        width: 116px;
         margin: 0;
         padding: 0;
         background: -webkit-linear-gradient(left, #212121 50%, transparent 100%);
@@ -7772,19 +7774,25 @@ sw.showcase_bundle_device {
             height: 75px;
             margin: 20px auto; }
       .dashboard_watch_block__product--imagep .phone_gallery {
+        position: relative;
+        width: 100%;
+        margin: 0;
         padding: 0; }
-        @media (max-width: 480px) {
-          .dashboard_watch_block__product--imagep .phone_gallery {
-            padding-bottom: 100px; } }
         .dashboard_watch_block__product--imagep .phone_gallery li {
+          height: 350px;
+          margin: 0;
+          padding: 0;
           outline: 0; }
-          @media (max-width: 480px) {
-            .dashboard_watch_block__product--imagep .phone_gallery li {
-              width: 100%;
-              height: auto; } }
+          .dashboard_watch_block__product--imagep .phone_gallery li img {
+            width: auto;
+            height: 100%;
+            margin: 0 0 0 auto; }
+            @media (max-width: 767px) {
+              .dashboard_watch_block__product--imagep .phone_gallery li img {
+                margin: 10% auto; } }
     .dashboard_watch_block__product--detailsp {
-      display: table-cell;
-      width: 50%;
+      display: inline-block;
+      width: 49%;
       vertical-align: middle; }
   .dashboard_watch_block__subTitle {
     width: 100%; }
@@ -9393,10 +9401,8 @@ sw.showcase_bundle_device {
     .contact_operatore_block__action .button--normal {
       margin: 15px auto 0 auto;
       padding: 15px 30px;
-      font-family: "Trade Gothic"; }
-      @media (max-width: 767px) {
-        .contact_operatore_block__action .button--normal {
-          max-width: 280px; } }
+      font-family: "Trade Gothic";
+      max-width: 280px; }
     .contact_operatore_block__action .button--slim {
       margin: 0 auto;
       font-size: 18px;
