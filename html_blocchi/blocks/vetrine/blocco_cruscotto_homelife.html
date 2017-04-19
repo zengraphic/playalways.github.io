@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/base-style.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/wind-style.min.css" />
+    <title>Dashboard Home and Life</title>
     <!--- /CSS -->
     <!--- JS -->
     <script type="text/javascript" src="../../js/base-libs.min.js"></script>
@@ -24,13 +26,10 @@
         <div class="row">
             <div class="blocco_import">
                 <div class="blocco_cruscotto_watch">
-                    <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
-                    <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
                     <div class="dashboard_watch_block">
                         <div class="dashboard_watch_block__container">
                             <div class="dashboard_watch_block__product">
-                                <div class="dashboard_watch_block__product--imagep col-xs-12 col-sm-12 col-md-7 col-lg-7">
-                                    <!-- PRODUCT SLIDER IMAGE -->
+                                <div class="dashboard_watch_block__product--imagep">
                                     <div class="dashboard_watch_block__left ">
                                         <div id="phone_000000000000008451">
                                             <ul class="phone_gallery">
@@ -50,66 +49,55 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="dashboard_watch_block__product--detailsp col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                                    <!-- PRODUCT DETAILS -->
-                                    <div class="dashboard_watch_block__right ">
+                                <div class="dashboard_watch_block__product--detailsp">
+                                    <!--<div class="dashboard_watch_block__right ">
                                         <div class="dashboard_watch_block__title">Fitbit Charge</div>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
-                                        <!-- PRICE -->
                                         <div class="dashboard_watch_block__paymentRateRow">
                                             <div class="dashboard_watch_block__paymentRateRow__item">
                                                 <div class="dashboard_watch_block__paymentRateRow__item--advance">Anticipo</div>
                                                 <div class="dashboard_watch_block__paymentRateRow__item--pricePromotion">9
                                                     <span class="currency">€</span></div>
-                                                <div class="clear"></div>
+                                                
                                             </div>
                                             <div class="dashboard_watch_block__paymentRateRow__item">
                                                 <div class="dashboard_watch_block__paymentRateRow__item--discount">Sconto</div>
                                                 <div class="dashboard_watch_block__paymentRateRow__item--pricePromotion">160<span class="currency">€</span></div>
-                                                <div class="clear"></div>
+                                                
                                             </div>
                                             <div class="dashboard_watch_block__paymentRateRow__item">
                                                 <div class="dashboard_watch_block__paymentRateRow__item--price">16<span class="currency">€</span></div>
                                                 <div class="dashboard_watch_block__paymentRateRow__item--period">a settimana</div>
-                                                <div class="clear"></div>
+                                                
                                             </div>
-                                            <div class="clear"></div>
+                                            
                                         </div>
                                         <div class="dashboard_watch_block__priceRow">
                                             <span class="dashboard_watch_block__priceRow__price">
                                             149,90<span class="currency">€</span>
                                             </span>
-
-                                        </div>
-                                        <div class="clear"></div>
-                                        <!-- CALL to ACTION -->
-                                        <div class="dashboard_watch_block__button--container doubleButton">
-                                            <div class="dashboard_watch_block__button"><a class="button--ghost--transparent button--noMargin" href="#">acquista</a></div>
-                                            <div class="clear"></div>
                                         </div>
                                         
+                                        <div class="dashboard_watch_block__button--container doubleButton">
+                                            <div class="dashboard_watch_block__button"><a class="button--ghost--transparent button--noMargin" href="#">acquista</a></div>
+                                            
+                                        </div>
                                         <div class="dashboard_watch_block__button--container">
                                             <div class="dashboard_watch_block__button left"><a class="button--ghost--transparent button--noMargin" href="#">acquista</a></div>
                                             <div class="dashboard_watch_block__button"><a class="button button--noMargin" href="#">abbina</a></div>
-                                            <div class="clear"></div>
                                             
                                         </div>
-                                        
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
-                            <div class="clear"></div>
                         </div>
                     </div>
                 </div>
-                <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
             </div>
         </div>
     </div>
 </body>
 <script>
-//var r$ = jQuery.noConflict();
-
 jQuery(document).ready(function($) {
 
 
@@ -125,7 +113,8 @@ jQuery(document).ready(function($) {
 
     $('.phone_thumbs')
         .slick({
-            slidesToShow: 4,
+            slidesToShow: 3,
+            variableHeight: false,
             vertical: true,
             slidesToScroll: 1,
             asNavFor: '.phone_gallery',
@@ -140,19 +129,6 @@ jQuery(document).ready(function($) {
                 }
             }]
         });
-
-    
-
-    // ICON SHARE
-    $('.dashboard_watch_block__reviews--share').click(function() {
-        console.log("click");
-        $('#div_share-icons').toggle();
-    });
-
-    $('.share-icons').click(function() {
-        $('#div_share-icons').hide();
-    });
-
 });
 </script>
 

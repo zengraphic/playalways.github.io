@@ -113,7 +113,8 @@ function prefixedEventListener(element, type, callback) {
                 })
                 .on('loaded.bs.select', function(e) {
                     $(this).selectpicker({
-                        'size': 6
+                        'size': 6,
+                        'dropupAuto': false
                     });
                 });
 

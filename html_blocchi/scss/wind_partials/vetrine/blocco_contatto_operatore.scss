@@ -6,7 +6,7 @@
   .bundle_orange {
     color: $color_white;
     padding: 0 10px;
-    width: 100%;
+    width: 33%;
     min-width: 90px;
     &__container {
       display: table;
@@ -15,8 +15,8 @@
       @include breakpoint(small) {
         width: 240px;
         margin: 0 auto;
-        display: block;
       }
+
     }
     &__number {
       font-size: 34px;
@@ -48,6 +48,9 @@
   .strip_plans__payment_block {
     width: 100%;
     display: table;
+    @include breakpoint(small) {
+      padding: 0;
+    }
     .item--add,
     .item--total {
       color: $color_white;
@@ -195,10 +198,12 @@
   }
   &__action {
     padding-top: 15px;
+    text-align: center;
     .base__input {
       padding-top: 1.125em;
       padding-bottom: 0.875em;
       font-family: $weight-light;
+      max-width: 280px;
     }
     .button--normal {
       margin: 15px auto 0 auto;
