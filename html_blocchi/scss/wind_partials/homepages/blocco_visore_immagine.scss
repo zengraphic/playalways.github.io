@@ -10,7 +10,7 @@
     vertical-align: middle;
     hyphens: initial;
     @include breakpoint(small) {
-      height: 500px;
+      height: 550px;
     }
     @at-root {
       .invertedDisplay #{&} {
@@ -241,9 +241,13 @@
     display: block;
     width: 200px;
     margin: 0 auto 8px 0;
+    color: $color_white;
     font-size: 1rem;
     @include breakpoint(small) {
       margin: 0 auto 8px;
+    }
+    &:hover{
+      opacity: .7;
     }
     @at-root {
       .invertedDisplay #{&} {
