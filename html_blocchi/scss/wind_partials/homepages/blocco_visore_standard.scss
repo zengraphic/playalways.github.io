@@ -107,6 +107,13 @@ hr.example_divider {
               transform: none;
             }
           }
+          .withForm #{&} {
+            transform: none;
+          }
+          .withForm.invertedDisplay #{&} {
+            transform: skew(-20deg);
+            transform-origin: 100% 100%;
+          }
           .fullBand #{&} {
             transform: none;
           }
@@ -126,6 +133,13 @@ hr.example_divider {
             width: 50%;
             transform: none;
             transform-origin: none;
+          }
+          .withForm #{&} {
+            transform: skew(20deg);
+            transform-origin: 100% 100%;
+          }
+          .withForm.invertedDisplay #{&} {
+            transform: none;
           }
           .fullBand #{&} {
             transform: none;
@@ -391,9 +405,7 @@ hr.example_divider {
       border-color: #d55c0b #d55c0b transparent transparent;
       content: "";
       z-index: -1;
-      @include breakpoint(small) {
-        content: none;
-      }
+      @include breakpoint(small) {}
       @at-root {
         .invertedDisplay #{&} {
           right: 0;
@@ -404,7 +416,6 @@ hr.example_divider {
           right: 0;
           left: auto;
           border-color: #d55c0b transparent transparent #d55c0b;
-          content: none;
         }
         .withForm.invertedDisplay #{&} {
           right: auto;
@@ -445,12 +456,12 @@ hr.example_divider {
         }
         .withForm #{&} {
           left: 0;
-          transform: skew(-20deg);
-          transform-origin: 100% 0;
+          transform: skew(20deg);
+          transform-origin: 100% 100%;
         }
         .withForm.invertedDisplay #{&} {
-          transform: skew(20deg);
-          transform-origin: 100% 0;
+          transform: skew(-20deg);
+          transform-origin: 100% 100%;
         }
       }
     }
@@ -640,24 +651,23 @@ hr.example_divider {
     }
   }
   &__singleButton,
-  &__doubleButton{
+  &__doubleButton {
     .base__bt {
       max-width: 40%;
     }
   }
   .base__bt {
-    
     color: $color_white;
     font-family: $weight_bold;
     font-size: 16px;
     @include breakpoint(small) {
       width: 260px;
     }
-    &--or2{
+    &--or2 {
       color: $color_wind;
       background-color: $color_white;
       border-color: $color_orange;
-      &:hover{
+      &:hover {
         opacity: .7;
       }
     }
