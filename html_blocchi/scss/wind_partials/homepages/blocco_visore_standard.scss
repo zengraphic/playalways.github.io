@@ -392,7 +392,7 @@ hr.example_divider {
       content: "";
       z-index: -1;
       @include breakpoint(small) {
-        content: none;      
+        content: none;
       }
       @at-root {
         .invertedDisplay #{&} {
@@ -404,7 +404,7 @@ hr.example_divider {
           right: 0;
           left: auto;
           border-color: #d55c0b transparent transparent #d55c0b;
-          content: none; 
+          content: none;
         }
         .withForm.invertedDisplay #{&} {
           right: auto;
@@ -632,8 +632,8 @@ hr.example_divider {
     }
     @include breakpoint(small) {
       font-size: 16px;
-    max-width: 60%;
-    margin: 0 auto 16px;
+      max-width: 60%;
+      margin: 0 auto 16px;
     }
     &:empty {
       display: none;
@@ -687,7 +687,6 @@ hr.example_divider {
   font-family: $weight-light;
   text-align: center;
   vertical-align: middle;
-  
   &:not(:last-of-type) {
     border-right: 1px solid $color_stroke;
   }
@@ -696,23 +695,33 @@ hr.example_divider {
     width: 100%;
     margin: 0 auto 8px;
     text-align: center;
-    @include breakpoint(small){
-    max-width: 90%; 
-  }
+    @include breakpoint(small) {
+      max-width: 90%;
+    }
   }
   &__title {
     max-width: 70px;
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.2em;
+    @include breakpoint(medium) {
+      font-size: 14px;
+    }
+    @include breakpoint(small) {
+      font-size: 16px;
+    }
+    @include breakpoint('super-tiny') {
+      font-size: 12px;
+    }
   }
   &__number {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 1em;
-    @at-root {
-      .bundle_small#{&} {
-        font-size: 38px;
-      }
+    @include breakpoint(tiny) {
+      font-size: 36px;
+    }
+    @include breakpoint('super-tiny') {
+      font-size: 22px;
     }
     &:empty {
       display: none;
@@ -771,6 +780,7 @@ hr.example_divider {
   }
   &__recurrency {
     display: block;
+    margin-bottom: 16px;
     color: $color_text;
     font-size: 13px;
     line-height: 1.2em;
