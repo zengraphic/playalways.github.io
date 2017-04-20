@@ -242,6 +242,50 @@
             }
         }
     }
+    &__easyeurope {
+        box-sizing: border-box;
+        margin-top: 20px;
+        //border-radius: 8px;
+        .firstBlock {
+            width: 21%;
+            height: 133px;
+            float: left;
+            box-sizing: border-box;
+            @include breakpoint(display_medium_small) {
+                width: 100%;
+                height: auto;
+            }
+            .logo {
+                @include breakpoint(display_medium_small) {
+                    text-align: center;
+                }
+                img {
+                    width: 100%;
+                    max-width: 143px;
+                    @include breakpoint(display_medium_small) {
+                        margin: 0 auto;
+                        width: 55%;
+                    }
+                }
+            }
+        }
+        .secondBlock {
+            box-sizing: border-box;
+            width: 77%;
+            float: left;
+            @include breakpoint(display_medium_small) {
+                width: 100%;
+            }
+        }
+        .thirdBlock {
+            box-sizing: border-box;
+            width: 77%;
+            float: left;
+            @include breakpoint(display_medium_small) {
+                width: 100%;
+            }
+        }
+    }
     &__discover {
         &__container {
             border-bottom: 1px solid $color_grey_light;
