@@ -1,219 +1,224 @@
 .contact_operatore_block {
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out;
-    .bundle_orange {
-        color: $color_white;
-        padding: 0 10px;
-        width: 100%;
-        min-width: 90px;
-        &__container {
-            display: table;
-            width: 57%;
-            vertical-align: middle;
-            @include breakpoint(small) {
-                width: 240px;
-                margin: 0 auto;
-                display: block;
-            }
-        }
-        &__number {
-            font-size: 34px;
-        }
-        &__title {
-            font-size: 12px;
-        }
-    }
-    .recurrent_priceRow {
-        color: $color_white;
-        display: table-cell;
-        width: 39%;
-        vertical-align: middle;
-        @include breakpoint(small) {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
-        &__recurrency {
-            &:empty {
-                display: none;
-            }
-        }
-        &__price {
-            font-size: 42px;
-        }
-    }
-    .strip_plans__payment_block {
-        width: 100%;
-        display: table;
-        .item--add,
-        .item--total {
-            color: $color_white;
-            .sub {
-                color: $color_white;
-            }
-        }
-    }
+  -o-transition: all 0.45s ease-in-out;
+  -moz-transition: all 0.45s ease-in-out;
+  -ms-transition: all 0.45s ease-in-out;
+  -webkit-transition: all 0.45s ease-in-out;
+  .bundle_orange {
+    color: $color_white;
+    padding: 0 10px;
+    width: 33%;
+    min-width: 90px;
     &__container {
-        display: table;
-        padding: 0px 30px;
-        width: 100%;
-        @include breakpoint(small) {
-            width: 100%;
-            display: block;
-            padding: 10px 15px;
-        }
+      display: table;
+      width: 57%;
+      vertical-align: middle;
+      @include breakpoint(small) {
+        width: 240px;
+        margin: 0 auto;
+      }
+
     }
-    &__col {
-        display: table-cell;
-        padding: 20px 0;
-        vertical-align: middle;
-        @include breakpoint(small) {
-            display: block;
-            padding: 10px 15px;
-        }
-        &:first-of-type {
-            padding-left: 0px;
-            @include breakpoint(small) {
-                padding: 0px;
-            }
-        }
-        &:last-of-type {
-            padding-right: 0px;
-            @include breakpoint(small) {
-                padding: 0px;
-            }
-        }
+    &__number {
+      font-size: 34px;
+    }
+    &__title {
+      font-size: 12px;
+    }
+  }
+  .recurrent_priceRow {
+    color: $color_white;
+    display: table-cell;
+    width: 39%;
+    vertical-align: middle;
+    @include breakpoint(small) {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    &__recurrency {
+      &:empty {
+        display: none;
+      }
+    }
+    &__price {
+      color: $color_white;
+      font-size: 42px;
+    }
+  }
+  .strip_plans__payment_block {
+    width: 100%;
+    display: table;
+    @include breakpoint(small) {
+      padding: 0;
+    }
+    .item--add,
+    .item--total {
+      color: $color_white;
+      .sub {
+        color: $color_white;
+      }
+    }
+  }
+  &__container {
+    display: table;
+    padding: 0px 30px;
+    width: 100%;
+    @include breakpoint(small) {
+      width: 100%;
+      display: block;
+      padding: 10px 15px;
+    }
+  }
+  &__col {
+    display: table-cell;
+    padding: 20px 0;
+    vertical-align: middle;
+    @include breakpoint(small) {
+      display: block;
+      padding: 10px 15px;
+    }
+    &:first-of-type {
+      padding-left: 0px;
+      @include breakpoint(small) {
+        padding: 0px;
+      }
+    }
+    &:last-of-type {
+      padding-right: 0px;
+      @include breakpoint(small) {
+        padding: 0px;
+      }
+    }
+    &--title {
+      width: 32%;
+      .contact_operatore_block__claim_content {
         &--title {
-            width: 32%;
-            .contact_operatore_block__claim_content {
-                &--title {
-                    font-family: $weight-bold;
-                    font-size: 2.5em;
-                    text-align: left;
-                    @include breakpoint(small) {
-                        width: 100%;
-                        text-align: center;
-                    }
-                }
-                &--text {
-                    font-weight: $weight-light;
-                    font-size: 1.275em;
-                    text-align: left;
-                    @include breakpoint(small) {
-                        width: 100%;
-                        text-align: center;
-                    }
-                }
-            }
-            @include breakpoint(small) {
-                width: 100%;
-            }
-        }
-        &--image {
-            width: 16%;
-            @include breakpoint(small) {
-                width: 100%;
-                display: block;
-            }
+          font-family: $weight-bold;
+          font-size: 2.5em;
+          text-align: left;
+          @include breakpoint(small) {
+            width: 100%;
+            text-align: center;
+          }
         }
         &--text {
-            width: 60%;
-            padding: 0 30px;
-            @include breakpoint(small) {
-                width: 100%;
-                display: block;
-                padding: 0;
-            }
+          font-weight: $weight-light;
+          font-size: 1.275em;
+          text-align: left;
+          @include breakpoint(small) {
+            width: 100%;
+            text-align: center;
+          }
         }
-        &--bundle {
-            width: 47%;
-            @include breakpoint(small) {
-                width: 100%;
-                display: block;
-            }
-        }
-        &--telcta {
-            width: 33%;
-            @include breakpoint(small) {
-                width: 100%;
-            }
-        }
-        &--onlycta {
-            width: 20%;
-            @include breakpoint(small) {
-                width: 100%;
-                margin: 0 auto;
-            }
-        }
+      }
+      @include breakpoint(small) {
+        width: 100%;
+      }
     }
-    &__image {
+    &--image {
+      width: 16%;
+      @include breakpoint(small) {
+        width: 100%;
+        display: block;
+      }
+    }
+    &--text {
+      width: 60%;
+      padding: 0 30px;
+      @include breakpoint(small) {
+        width: 100%;
+        display: block;
+        padding: 0;
+      }
+    }
+    &--bundle {
+      width: 47%;
+      @include breakpoint(small) {
+        width: 100%;
+        display: block;
+      }
+    }
+    &--telcta {
+      width: 33%;
+      @include breakpoint(small) {
+        width: 100%;
+      }
+    }
+    &--onlycta {
+      width: 20%;
+      @include breakpoint(small) {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__image {
+    text-align: center;
+    .base__icon {
+      width: 140px;
+      height: 140px;
+      @include breakpoint(small) {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    &--image {
+      width: 140px;
+      @include breakpoint(small) {
+        margin: 0 auto;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  &__claim {
+    &_content {
+      color: $color_white;
+      @include breakpoint(small) {
         text-align: center;
-        .base__icon {
-            width: 140px;
-            height: 140px;
-            @include breakpoint(small) {
-                width: 120px;
-                height: 120px;
-            }
+      }
+      &--title {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        font-family: $weight-light;
+        @include breakpoint(medium) {
+          font-size: 2em;
         }
-        &--image {
-            width: 140px;
-            @include breakpoint(small) {
-                margin: 0 auto;
-                padding-bottom: 15px;
-            }
+        @include breakpoint(small) {
+          font-size: 1.75em;
         }
+      }
+      &--text {
+        font-size: 1.2em;
+        font-family: $weight-normal;
+        @include breakpoint(small) {
+          font-size: 1em;
+        }
+      }
     }
-    &__claim {
-        &_content {
-            color: $color_white;
-            @include breakpoint(small) {
-                text-align: center;
-            }
-            &--title {
-                font-size: 2.2em;
-                margin-bottom: 10px;
-                font-family: $weight-light;
-                @include breakpoint(medium) {
-                    font-size: 2.0em;
-                }
-                @include breakpoint(small) {
-                    font-size: 1.750em;
-                }
-            }
-            &--text {
-                font-size: 1.2em;
-                font-family: $weight-normal;
-                @include breakpoint(small) {
-                    font-size: 1.0em;
-                }
-            }
-        }
+  }
+  &__action {
+    padding-top: 15px;
+    text-align: center;
+    .base__input {
+      padding-top: 1.125em;
+      padding-bottom: 1.125em;
+      font-family: $weight-light;
+      max-width: 280px;
     }
-    &__action {
-        padding-top: 15px;
-        .base__input {
-            padding-top: 1.125em;
-            padding-bottom: 0.875em;
-            font-family: $weight-light;
-        }
-        .button--normal {
-            margin: 15px auto 0 auto;
-            padding: 15px 30px;
-            font-family: $weight-normal;
-            @include breakpoint(small) {
-                max-width: 280px;
-            }
-        }
-        .button--slim {
-            margin: 0 auto;
-            font-size: 18px;
-            padding: 10px 15px;
-            font-family: $weight-cond;
-            font-weight: 700;
-            max-width: 280px;
-        }
+    .button--normal {
+      margin: 15px auto 0;
+      padding: 15px 30px;
+      font-family: $weight-cond;
+      font-weight: 700;
+      max-width: 280px;
     }
+    .button--slim {
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 10px 15px;
+      font-family: $weight-cond;
+      font-weight: 700;
+      max-width: 280px;
+    }
+  }
 }

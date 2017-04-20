@@ -37,6 +37,9 @@ hr.example_divider {
     z-index: 10;
     @include breakpoint(small) {
       display: none;
+      right: 0;
+      height: 50%;
+      margin: 0 auto;
     }
     @at-root {
       .invertedDisplay #{&} {
@@ -69,6 +72,7 @@ hr.example_divider {
         @include breakpoint(small) {
           display: block;
           top: 0;
+          height: 100%;
         }
       }
     }
@@ -103,6 +107,13 @@ hr.example_divider {
               transform: none;
             }
           }
+          .withForm #{&} {
+            transform: none;
+          }
+          .withForm.invertedDisplay #{&} {
+            transform: skew(-20deg);
+            transform-origin: 100% 100%;
+          }
           .fullBand #{&} {
             transform: none;
           }
@@ -123,6 +134,13 @@ hr.example_divider {
             transform: none;
             transform-origin: none;
           }
+          .withForm #{&} {
+            transform: skew(20deg);
+            transform-origin: 100% 100%;
+          }
+          .withForm.invertedDisplay #{&} {
+            transform: none;
+          }
           .fullBand #{&} {
             transform: none;
           }
@@ -142,12 +160,14 @@ hr.example_divider {
       bottom: 0;
       left: 0;
       width: auto;
-      padding: 30px;
+      padding: 15px;
       @include breakpoint(small) {
         top: 0;
         right: 0;
         bottom: 400px;
+        max-width: 380px;
         height: auto;
+        margin: 0 auto;
         padding: 15px;
       }
       @at-root {
@@ -162,6 +182,7 @@ hr.example_divider {
           right: 0;
           left: 30%;
           @include breakpoint(small) {
+            max-width: none;
             left: 0;
           }
         }
@@ -223,13 +244,13 @@ hr.example_divider {
     }
     &.form_block {
       display: none;
-      left: -21%;
+      left: -24%;
       width: 33.33333%;
       text-align: center;
       z-index: 50;
       @at-root {
         .invertedDisplay #{&} {
-          left: 45%;
+          left: 43%;
         }
         .withForm #{&} {
           display: table-cell;
@@ -259,8 +280,8 @@ hr.example_divider {
           }
         }
         .withForm #{&} {
-          left: -5%;
-          width: 45%;
+          left: -7%;
+          width: 43%;
           @include breakpoint(small) {
             display: inline-block;
             top: -380px;
@@ -273,7 +294,7 @@ hr.example_divider {
         }
         .withForm.invertedDisplay #{&} {
           left: -50%;
-          width: 45%;
+          width: 43%;
           @include breakpoint(small) {
             left: 0;
             width: 100%;
@@ -292,14 +313,14 @@ hr.example_divider {
   }
   &__ribbon {
     position: relative;
-    left: -50px;
-    width: 150px;
+    left: -35px;
+    width: 135px;
     margin-bottom: 8px;
-    padding: 4px 8px 4px 50px;
+    padding: 4px 8px 4px 35px;
     background-color: $color_wind;
     color: $color_white;
     font-family: $weight-cond;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
     line-height: 1em;
     text-transform: uppercase;
@@ -309,9 +330,13 @@ hr.example_divider {
     -webkit-animation: slidein-left-webkit .7s 0s 1 linear;
     -ms-animation: slidein-left-ms .7s 0s 1 linear;
     -moz-animation: slidein-left-moz .7s 0s 1 linear;
+    @include breakpoint(medium) {
+      width: 118px;
+    }
     @include breakpoint(small) {
-      left: -50px;
-      width: 100px;
+      left: -8px;
+      width: 88px;
+      padding: 8px;
       font-size: 14px;
     }
     @at-root {
@@ -329,31 +354,37 @@ hr.example_divider {
       }
       .invertedDisplay #{&} {
         left: calc(100% - 100px);
-        padding: 8px 50px 8px 8px;
+        padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
         -webkit-animation: slidein-right-webkit .7s 0s 1 linear;
         -ms-animation: slidein-right-ms .7s 0s 1 linear;
         -moz-animation: slidein-right-moz .7s 0s 1 linear;
+        @include breakpoint(medium) {
+          left: calc(100% - 80px);
+        }
         @include breakpoint(small) {
-          left: calc(100% - 50px);
+          padding: 8px;
         }
       }
       .withForm #{&} {
-        left: calc(100% - 100px);
-        padding: 8px 50px 8px 8px;
+        left: calc(100% - 110px);
+        padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
         -webkit-animation: slidein-right-webkit .7s 0s 1 linear;
         -ms-animation: slidein-right-ms .7s 0s 1 linear;
         -moz-animation: slidein-right-moz .7s 0s 1 linear;
+        @include breakpoint(medium) {
+          left: calc(100% - 80px);
+        }
         @include breakpoint(small) {
           left: calc(100% - 50px);
         }
       }
       .withForm.invertedDisplay #{&} {
-        padding: 8px 8px 8px 50px;
-        left: -50px;
+        padding: 8px 8px 8px 35px;
+        left: -35px;
         text-align: left;
         -animation: slidein-left .7s 0s 1 linear;
         -webkit-animation: slidein-left-webkit .7s 0s 1 linear;
@@ -374,6 +405,7 @@ hr.example_divider {
       border-color: #d55c0b #d55c0b transparent transparent;
       content: "";
       z-index: -1;
+      @include breakpoint(small) {}
       @at-root {
         .invertedDisplay #{&} {
           right: 0;
@@ -384,13 +416,11 @@ hr.example_divider {
           right: 0;
           left: auto;
           border-color: #d55c0b transparent transparent #d55c0b;
-          content: none;
         }
         .withForm.invertedDisplay #{&} {
           right: auto;
           left: 0;
           border-color: #d55c0b #d55c0b transparent transparent;
-          content: none;
         }
       }
     }
@@ -426,12 +456,12 @@ hr.example_divider {
         }
         .withForm #{&} {
           left: 0;
-          transform: skew(-20deg);
-          transform-origin: 100% 0;
+          transform: skew(20deg);
+          transform-origin: 100% 100%;
         }
         .withForm.invertedDisplay #{&} {
-          transform: skew(20deg);
-          transform-origin: 100% 0;
+          transform: skew(-20deg);
+          transform-origin: 100% 100%;
         }
       }
     }
@@ -442,11 +472,11 @@ hr.example_divider {
       z-index: 25;
       &.small {
         position: absolute;
-        bottom: 30px;
-        left: 30px;
+        bottom: 15px;
+        left: 15px;
         width: 38px;
         @include breakpoint(small) {
-          right: 30px;
+          right: 15px;
           width: auto;
           margin: 0 auto;
           text-align: center;
@@ -459,25 +489,25 @@ hr.example_divider {
         }
         @at-root {
           .invertedDisplay #{&} {
-            right: 30px;
+            right: 15px;
             left: auto;
             @include breakpoint(small) {
-              left: 30px;
+              left: 15px;
             }
           }
           .withForm #{&} {
-            right: 30px;
+            right: 15px;
             left: auto;
             @include breakpoint(small) {
               bottom: -15px;
-              left: 30px;
+              left: 15px;
             }
           }
           .withForm.invertedDisplay #{&} {
             right: auto;
-            left: 30px;
+            left: 15px;
             @include breakpoint(small) {
-              right: 30px;
+              right: 15px;
             }
           }
         }
@@ -522,7 +552,7 @@ hr.example_divider {
     margin-bottom: 8px;
     color: $color_mobile;
     font-family: $weight-cond;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: bold;
     line-height: 1em;
     text-transform: uppercase;
@@ -552,7 +582,7 @@ hr.example_divider {
           font-size: 32px;
         }
         @include breakpoint(small) {
-          font-size: 28px;
+          font-size: 24px;
         }
       }
     }
@@ -589,7 +619,7 @@ hr.example_divider {
           font-size: 32px;
         }
         @include breakpoint(small) {
-          font-size: 28px;
+          font-size: 24px;
         }
       }
     }
@@ -612,10 +642,18 @@ hr.example_divider {
       font-size: 26px;
     }
     @include breakpoint(small) {
-      font-size: 24px;
+      font-size: 16px;
+      max-width: 60%;
+      margin: 0 auto 16px;
     }
     &:empty {
       display: none;
+    }
+  }
+  &__singleButton,
+  &__doubleButton {
+    .base__bt {
+      max-width: 40%;
     }
   }
   .base__bt {
@@ -624,6 +662,14 @@ hr.example_divider {
     font-size: 16px;
     @include breakpoint(small) {
       width: 260px;
+    }
+    &--or2 {
+      color: $color_wind;
+      background-color: $color_white;
+      border-color: $color_orange;
+      &:hover {
+        opacity: .7;
+      }
     }
     &:empty {
       display: none;
@@ -674,20 +720,33 @@ hr.example_divider {
     width: 100%;
     margin: 0 auto 8px;
     text-align: center;
+    @include breakpoint(small) {
+      max-width: 90%;
+    }
   }
   &__title {
     max-width: 70px;
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.2em;
+    @include breakpoint(medium) {
+      font-size: 14px;
+    }
+    @include breakpoint(small) {
+      font-size: 16px;
+    }
+    @include breakpoint('super-tiny') {
+      font-size: 12px;
+    }
   }
   &__number {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 1em;
-    @at-root {
-      .bundle_small#{&} {
-        font-size: 38px;
-      }
+    @include breakpoint(tiny) {
+      font-size: 36px;
+    }
+    @include breakpoint('super-tiny') {
+      font-size: 22px;
     }
     &:empty {
       display: none;
@@ -720,7 +779,7 @@ hr.example_divider {
       .device #{&} {
         color: $color_home_life;
       }
-      .fullBand #{&}{
+      .fullBand #{&} {
         color: $color_white;
       }
     }
@@ -745,7 +804,8 @@ hr.example_divider {
     }
   }
   &__recurrency {
-    display: inline-block;
+    display: block;
+    margin-bottom: 16px;
     color: $color_text;
     font-size: 13px;
     line-height: 1.2em;
@@ -799,7 +859,7 @@ hr.example_divider {
     left: 0;
     width: 100% !important;
     margin-bottom: 10px;
-    z-index: 65;
+    z-index: 80;
     &.bootstrap-select {
       .dropdown-toggle {
         width: 100%;
@@ -863,7 +923,7 @@ hr.example_divider {
       opacity: 0;
     }
     &.uncovered {
-      bottom: -20px;
+      bottom: -17px;
       opacity: 1;
       z-index: 60;
       @at-root {
