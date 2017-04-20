@@ -1683,6 +1683,8 @@ hr.example_divider {
         margin: 0 auto 16px; } }
     .standard_block__text:empty {
       display: none; }
+  .standard_block__singleButton .base__bt, .standard_block__doubleButton .base__bt {
+    max-width: 40%; }
   .standard_block .base__bt {
     color: #FFF;
     font-family: "Trade Gothic Bold";
@@ -1690,6 +1692,12 @@ hr.example_divider {
     @media (max-width: 767px) {
       .standard_block .base__bt {
         width: 260px; } }
+    .standard_block .base__bt--or2 {
+      color: #F48135;
+      background-color: #FFF;
+      border-color: #F48135; }
+      .standard_block .base__bt--or2:hover {
+        opacity: .7; }
     .standard_block .base__bt:empty {
       display: none; }
 
@@ -1889,7 +1897,7 @@ hr.example_divider {
       bottom: -100%;
       opacity: 0; }
     .coverage_form__additional_form.uncovered {
-      bottom: -20px;
+      bottom: -17px;
       opacity: 1;
       z-index: 60; }
       .mobile .coverage_form__additional_form.uncovered {
@@ -8055,7 +8063,8 @@ sw.showcase_bundle_device {
   padding: 0; }
   .strip_options_block__title--main {
     font-size: 20px;
-    font-family: "Trade Gothic Light";
+    font-family: "Trade Gothic Condensed";
+    font-weight: bold;
     color: #009BBE; }
     @media (max-width: 767px) {
       .strip_options_block__title--main {
@@ -8093,7 +8102,7 @@ sw.showcase_bundle_device {
     margin: 0 3px; }
   .strip_options_block__pricing .pricesContainer .oldPrice {
     position: relative;
-    font-size: 25px; }
+    font-size: 35px; }
     .strip_options_block__pricing .pricesContainer .oldPrice small {
       font-size: 20px; }
     .strip_options_block__pricing .pricesContainer .oldPrice:after {
@@ -8105,12 +8114,12 @@ sw.showcase_bundle_device {
       top: 50%;
       position: absolute; }
   .strip_options_block__pricing .pricesContainer .newPrice {
-    font-size: 55px;
+    font-size: 35px;
     font-family: "Trade Gothic Light"; }
     .strip_options_block__pricing .pricesContainer .newPrice small {
-      font-size: 40px; }
+      font-size: 20px; }
     .strip_options_block__pricing .pricesContainer .newPrice.three_digits {
-      font-size: 40px; }
+      font-size: 35px; }
   .strip_options_block__pricing .pricesContainer:before {
     background-color: #D3D3D2;
     width: 1px;
@@ -9359,13 +9368,14 @@ sw.showcase_bundle_device {
     text-align: center; }
     .contact_operatore_block__action .base__input {
       padding-top: 1.125em;
-      padding-bottom: 0.875em;
+      padding-bottom: 1.125em;
       font-family: "Trade Gothic Light";
       max-width: 280px; }
     .contact_operatore_block__action .button--normal {
-      margin: 15px auto 0 auto;
+      margin: 15px auto 0;
       padding: 15px 30px;
-      font-family: "Trade Gothic";
+      font-family: "Trade Gothic Condensed";
+      font-weight: 700;
       max-width: 280px; }
     .contact_operatore_block__action .button--slim {
       margin: 0 auto;
