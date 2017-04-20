@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!--- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/base-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/wind-style.min.css" />
+    <!--- /CSS -->
+    <!--- JS -->
+    <script type="text/javascript" src="../../js/base-libs.min.js"></script>
+    <script type="text/javascript" src="../../js/base.js"></script>
+    <script type="text/javascript" src="../../js/script.js"></script>
+    <!-- components script -->
+    <script type="text/javascript" src="../../js/header.js"></script>
+    <script type="text/javascript" src="../../js/custom.js"></script>
+    <!--- /JS -->
+</head>
+
+<body>
+    <div class="header" id="header">
+        <div class="header_sup">
+            <div class="container">
+                <div class="row">
+                    <div class="menu_sup_container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="menu_sup slider_topMenu">
+                            <li>
+                                <a href="#">
+                                    PRIVATI
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    PROFESSIONISTI
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    AZIENDE
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    GRANDI AZIENDE
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn_active">
+                                    WINDGROUP
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="gradient_overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_second">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="logo logo--wind">
+                            <a href="http://www.wind.it"><img src="../../img/logos/wind_logo.png" class="wind"></a>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li>
+                                    <a class="btn" href="#">
+                                            Ricarica
+                                        </a>
+                                </li>
+                                <li>
+                                    <a class="btn" href="#">
+                                            Cerca
+                                        </a>
+                                </li>
+                                <li>
+                                    <a class="btn" href="#">
+                                            Assistenza
+                                        </a>
+                                </li>
+                                <li>
+                                    <a class="btn" href="#">
+                                            Passa a Wind
+                                        </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-right">
+                            <ul>
+                                <li>
+                                    <a class="btn_menu" id="menuaction" href="#">
+                                        <div class="base__icon icon_menu--color"></div>
+                                        MENU
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="btn_carrello" href="#">
+                                        <div class="base__icon icon_carrello--color"></div>
+                                        CARRELLO
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="btn_entra" href="#">
+                                        <div class="base__icon icon_login--color"></div>
+                                        ENTRA
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- ========== MARGINE PER L'HEADER STICKY E UN DIV ALTO PER TESTARE LO SCROLL ========== -->
+    <div class="first_container margin_top_header"></div>
+    <!-- ========== MARGINE PER L'HEADER STICKY E UN DIV ALTO PER TESTARE LO SCROLL ========== -->
+    <!-- visore -->
+    <div class="row">
+        <div class="standard_block fisso withForm invertedDisplay">
+            <div class="standard_block__mainContainer splittedTitle">
+                <div class="standard_block__coloredBg">
+                    <div class="shape shape--one"></div>
+                    <div class="shape shape--two"></div>
+                </div>
+                <div class="standard_block__half_block image_block">
+                    <img class="testimonial" src="../../img/backgrounds/img_esempio_3.png" />
+                    <div class="standard_block__ribbon">Prova
+                        <br>Prova</div>
+                    <div class="standard_block__sticker__wrapper big">
+                        <div class="standard_block__sticker">
+                            <img class="sticker_single " src="../../img/bolli/bolli_robin_outline_4G_Free.svg" />
+                        </div>
+                        <div class="standard_block__sticker">
+                            <img class="sticker_single " src="../../img/bolli/bolli_robin_outline_+5_Giga_per_un_mese.svg" />
+                        </div>
+                    </div>
+                    <div class="standard_block__sticker__wrapper small">
+                        <div class="standard_block__sticker">
+                            <img class="sticker_single " src="../../img/bolli/bolli_robin_outline_4G_Free.svg" />
+                        </div>
+                        <div class="standard_block__sticker">
+                            <img class="sticker_single " src="../../img/bolli/bolli_robin_outline_+5_Giga_per_un_mese.svg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="standard_block__half_block form_block">
+                    <form action="/attivazioni/checkResult.php" method="POST" id="verificacopertura" class="coverage_form">
+                        <div class="coverage_form__white_title">Verifica la copertura</div>
+                        <div class="coverage_form__select">
+                            <div id="AUTOSUGGEST_ACTIVE">
+                                <select class="base__select selectpicker" title="Provincia" name="provincia" id="provincia">
+                                    <option>Provincia</option>
+                                    <option value="AG">Agrigento - AG</option>
+                                    <option value="AL">Alessandria - AL</option>
+                                    <option value="AN">Ancona - AN</option>
+                                    <option value="AO">Aosta - AO</option>
+                                    <option value="AQ">Aquila - AQ</option>
+                                    <option value="AR">Arezzo - AR</option>
+                                    <option value="AP">Ascoli Piceno - AP</option>
+                                    <option value="AT">Asti - AT</option>
+                                    <option value="AV">Avellino - AV</option>
+                                    <option value="BA">Bari - BA</option>
+                                    <option value="BT">Barletta-Andria-Trani - BT</option>
+                                    <option value="BL">Belluno - BL</option>
+                                    <option value="BN">Benevento - BN</option>
+                                    <option value="BG">Bergamo - BG</option>
+                                    <option value="BI">Biella - BI</option>
+                                    <option value="BO">Bologna - BO</option>
+                                    <option value="BZ">Bolzano - BZ</option>
+                                    <option value="BS">Brescia - BS</option>
+                                    <option value="BR">Brindisi - BR</option>
+                                    <option value="CA">Cagliari - CA</option>
+                                    <option value="CL">Caltanissetta - CL</option>
+                                    <option value="CB">Campobasso - CB</option>
+                                    <option value="CI">Carbonia-Iglesias - CI</option>
+                                    <option value="CE">Caserta - CE</option>
+                                    <option value="CT">Catania - CT</option>
+                                    <option value="CZ">Catanzaro - CZ</option>
+                                    <option value="CH">Chieti - CH</option>
+                                    <option value="CO">Como - CO</option>
+                                    <option value="CS">Cosenza - CS</option>
+                                    <option value="CR">Cremona - CR</option>
+                                    <option value="KR">Crotone - KR</option>
+                                    <option value="CN">Cuneo - CN</option>
+                                    <option value="EN">Enna - EN</option>
+                                    <option value="FM">Fermo - FM</option>
+                                    <option value="FE">Ferrara - FE</option>
+                                    <option value="FI">Firenze - FI</option>
+                                    <option value="FG">Foggia - FG</option>
+                                    <option value="FC">Forli-Cesena - FC</option>
+                                    <option value="FR">Frosinone - FR</option>
+                                    <option value="GE">Genova - GE</option>
+                                    <option value="GO">Gorizia - GO</option>
+                                    <option value="GR">Grosseto - GR</option>
+                                    <option value="IM">Imperia - IM</option>
+                                    <option value="IS">Isernia - IS</option>
+                                    <option value="SP">La Spezia - SP</option>
+                                    <option value="LT">Latina - LT</option>
+                                    <option value="LE">Lecce - LE</option>
+                                    <option value="LC">Lecco - LC</option>
+                                    <option value="LI">Livorno - LI</option>
+                                    <option value="LO">Lodi - LO</option>
+                                    <option value="LU">Lucca - LU</option>
+                                    <option value="MC">Macerata - MC</option>
+                                    <option value="MN">Mantova - MN</option>
+                                    <option value="MS">Massa Carrara - MS</option>
+                                    <option value="MT">Matera - MT</option>
+                                    <option value="VS">Medio Campidano - VS</option>
+                                    <option value="ME">Messina - ME</option>
+                                    <option value="MI">Milano - MI</option>
+                                    <option value="MO">Modena - MO</option>
+                                    <option value="MB">Monza e della Brianza - MB</option>
+                                    <option value="NA">Napoli - NA</option>
+                                    <option value="NO">Novara - NO</option>
+                                    <option value="NU">Nuoro - NU</option>
+                                    <option value="OG">Ogliastra - OG</option>
+                                    <option value="OT">Olbia-Tempio - OT</option>
+                                    <option value="OR">Oristano - OR</option>
+                                    <option value="PD">Padova - PD</option>
+                                    <option value="PA">Palermo - PA</option>
+                                    <option value="PR">Parma - PR</option>
+                                    <option value="PV">Pavia - PV</option>
+                                    <option value="PG">Perugia - PG</option>
+                                    <option value="PU">Pesaro-Urbino - PU</option>
+                                    <option value="PE">Pescara - PE</option>
+                                    <option value="PC">Piacenza - PC</option>
+                                    <option value="PI">Pisa - PI</option>
+                                    <option value="PT">Pistoia - PT</option>
+                                    <option value="PN">Pordenone - PN</option>
+                                    <option value="PZ">Potenza - PZ</option>
+                                    <option value="PO">Prato - PO</option>
+                                    <option value="RG">Ragusa - RG</option>
+                                    <option value="RA">Ravenna - RA</option>
+                                    <option value="RC">Reggio Calabria - RC</option>
+                                    <option value="RE">Reggio Emilia - RE</option>
+                                    <option value="RI">Rieti - RI</option>
+                                    <option value="RN">Rimini - RN</option>
+                                    <option value="RM">Roma - RM</option>
+                                    <option value="RO">Rovigo - RO</option>
+                                    <option value="SA">Salerno - SA</option>
+                                    <option value="SS">Sassari - SS</option>
+                                    <option value="SV">Savona - SV</option>
+                                    <option value="SI">Siena - SI</option>
+                                    <option value="SR">Siracusa - SR</option>
+                                    <option value="SO">Sondrio - SO</option>
+                                    <option value="TA">Taranto - TA</option>
+                                    <option value="TE">Teramo - TE</option>
+                                    <option value="TR">Terni - TR</option>
+                                    <option value="TO">Torino - TO</option>
+                                    <option value="TP">Trapani - TP</option>
+                                    <option value="TN">Trento - TN</option>
+                                    <option value="TV">Treviso - TV</option>
+                                    <option value="TS">Trieste - TS</option>
+                                    <option value="UD">Udine - UD</option>
+                                    <option value="VA">Varese - VA</option>
+                                    <option value="VE">Venezia - VE</option>
+                                    <option value="VB">Verbania - VB</option>
+                                    <option value="VC">Vercelli - VC</option>
+                                    <option value="VR">Verona - VR</option>
+                                    <option value="VV">Vibo Valentia - VV</option>
+                                    <option value="VI">Vicenza - VI</option>
+                                    <option value="VT">Viterbo - VT</option>
+                                </select>
+                            </div>
+                            <div id="AUTOSUGGEST_INACTIVE" name="AUTOSUGGEST_INACTIVE" style="display:none"></div>
+                        </div>
+                        <div class="coverage_form__input--city">
+                            <input class="base__input form_auto" type="text" id="comune" name="comune" value="" title="Comune" placeholder="Comune">
+                        </div>
+                        <div class="coverage_form__input--address">
+                            <input class="base__input form_auto" type="text" id="indirizzoEsteso" name="indirizzoEsteso" title="Indirizzo" value="" placeholder="Indirizzo">
+                        </div>
+                        <div class="coverage_form__input--civic_number">
+                            <input class="base__input form_auto" type="text" id="civico" name="civico" title="N." value="" placeholder="N°">
+                        </div>
+                        <div class="clear"></div>
+                        <button id="verificacoperturabutton" class="btn base__bt base__bt--or">Verifica disponibilità</button>
+                        <button href="#with_number" class="btn base__bt base__bt--or2 with_number switch-form">Ho già un numero</button>
+                        <div class="clear"></div>
+                        <div class="coverage_form__additional_form covered">
+                            <div class="coverage_form__input--prefix grouptel">
+                                <input class="base__input form_auto" type="text" id="prefisso" name="prefisso" value="" placeholder="Pref" maxlength="4" disabled="disabled">
+                                <!-- INPUT PER NUMERO CIVICO -->
+                            </div>
+                            <div class="coverage_form__input--number grouptel">
+                                <input class="base__input form_auto" type="text" id="numero" name="numero" value="" placeholder="Numero" disabled="disabled">
+                                <!-- INPUT PER INDIRIZZO -->
+                            </div>
+                            <div class="clear"></div>
+                            <button id="verificacoperturabutton_tel" class="btn base__bt base__bt--or bt_verifica">Verifica disponibilità</button>
+                            <a href="#without_number" class="without_number switch-form">Non ho un numero</a>
+                        </div>
+                        <div class="hidden-fields">
+                            <!-- aggiunto per raggruppare elementi di formVerificaCopertura -->
+                            <input id="indirizzo" type="hidden" value="" name="indirizzo">
+                            <input id="tipoindirizzo" type="hidden" value="" name="tipoindirizzo">
+                            <input type="hidden" name="u1" value="ALL">
+                            <input type="hidden" name="u2" value="ALL">
+                            <input type="hidden" name="mkt" value="RES">
+                            <input type="hidden" name="offer" value="ALL">
+                            <input type="hidden" name="master" value="ALL">
+                            <input type="hidden" name="url_sorgente" value="">
+                            <input type="hidden" name="urlback" value="###SORGENTE###">
+                            <input type="hidden" name="revamping" value="1">
+                            <input id="tipolinea" type="hidden" name="tipo_linea" value="LA">
+                            <input type="hidden" name="source" value="">
+                            <input type="hidden" name="show_new" value="0">
+                            <input type="hidden" name="system" value="wide">
+                            <input type="hidden" name="fibre_type" value="rame">
+                            <input type="hidden" name="business_simulation" value="spenta">
+                        </div>
+                    </form>
+                </div>
+                <div class="standard_block__half_block offer_block">
+                    <div class="standard_block__title">All Digital</div>
+                    <div class="standard_block__subtitle">Limited Edition</div>
+                    <div class="standard_block__text">All Digital è l'offerta perfetta
+                        <br>per fare tutto online.</div>
+                    <div class="bundle_orange__container">
+                        <div class="bundle_orange">
+                            <div class="bundle_orange__number"></div>
+                            <div class="bundle_orange__title">Minuti ILLIMITATI verso tutti</div>
+                        </div>
+                        <div class="bundle_orange">
+                            <div class="bundle_orange__number"></div>
+                            <div class="bundle_orange__title">SMS ILLIMITATI verso tutti</div>
+                        </div>
+                        <div class="bundle_orange">
+                            <div class="bundle_orange__number"></div>
+                            <div class="bundle_orange__title">GIGA ILLIMITATI verso tutti</div>
+                        </div>
+                    </div>
+                    <div class="recurrent_priceRow">
+                        <span class="recurrent_priceRow__price with_currency price_discounted"></span>
+                        <span class="recurrent_priceRow__price main_price text_currency">10</span>
+                        <span class="recurrent_priceRow__recurrency">ogni 4 settimane.</span>
+                    </div>
+                    <div class="standard_block__singleButton">
+                        <a href="#" class="btn base__bt base__bt--or waves-effect waves-button waves-float waves-light">scopri</a>
+                    </div>
+                    <div class="standard_block__doubleButton">
+                        <a href="#" class="btn base__bt base__bt--or2 waves-effect waves-button waves-float waves-light"></a>
+                        <a href="#" class="btn base__bt base__bt--or waves-effect waves-button waves-float waves-light"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- counter -->
+    <div class="row">
+        <div class="blocco_import">
+            <div class="blocco_counter">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+                <div class="counter_block">
+                    <div class="counter_block_container">
+                        <div class="counter_block_items--title">
+                            Affrettati!! L’offerta sarà disponibile ancora per
+                        </div>
+                        <div class="counter_block_items--data" data-event="2016/10/13">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- advantages -->
+    <div class="row">
+        <div class="blocco_import">
+            <div class="blocco_vantaggi">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+                <div class="advantages_block titles_bold">
+                    <!--  HEADER -->
+                    <div class="advantages_block__header">
+                        <div class="advantages_block__header__container">
+                            <div class="advantages_block__header--title"></div>
+                        </div>
+                        <!--                             <div class="advantages_block__header--label col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <span class="advantages_label">VUOI TUTTO ILLIMITATO?</span>
+                                <a href="#" class="button button--noMargin">scopri l'offerta</a>
+                            </div> -->
+                        <div class="clear"></div>
+                    </div>
+                    <!--  / HEADER -->
+                    <!-- LIST ADVANTAGES -->
+                    <!-- FIBER-->
+                    <div class="slider__advantages">
+                        <!-- BROWSER-->
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-carta.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">Il dettaglio che fa la differenza: a Milano, Torino, Bologna e Perugia navighi fino a 500 Mega!
+                                </div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- / BROWSER-->
+                        <!-- XBOX -->
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-conto.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">I GIGA non ti bastano mai? Usa Veon con la tua ALL DIGITAL!</div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di <b>prova Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova <b>Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- / XBOX-->
+                        <!-- / WEBCAMERA D-LINK -->
+                    </div>
+                    <!-- / CALLS -->
+                </div>
+                <!-- / LIST ADVANTAGES -->
+            </div>
+            <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+        </div>
+    </div>
+    <!-- contatto operatore -->
+    <div class="blocco_import">
+        <div class="blocco_contatto_operatore">
+            <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+            <!--_________________________________INIZIO BLOCCO UNO_________________________________ -->
+            <div class="contact_operatore_block colored_bg--infostrada">
+                <div class="contact_operatore_block__container">
+                    <div class="contact_operatore_block__image contact_operatore_block__col contact_operatore_block__col--title">
+                        <div class="contact_operatore_block__claim_content">
+                            <div class="contact_operatore_block__claim_content--title">
+                                SCEGLI ANCHE WIND
+                            </div>
+                            <div class="contact_operatore_block__claim_content--text">
+                                All Inclusive costa la met&agrave;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_operatore_block__claim contact_operatore_block__col contact_operatore_block__col--bundle">
+                        <div class="strip_plans__payment_block component col-sm-4 col-md-4 col-lg-4">
+                            <div class="bundle_orange__container">
+                                <div class="bundle_orange">
+                                    <div class="bundle_orange__number">500</div>
+                                    <div class="bundle_orange__title">Minuti
+                                        <br> verso tutti</div>
+                                </div>
+                                <div class="bundle_orange">
+                                    <div class="bundle_orange__number">500</div>
+                                    <div class="bundle_orange__title">SMS
+                                        <br> verso tutti</div>
+                                </div>
+                                <div class="bundle_orange">
+                                    <div class="bundle_orange__number">2</div>
+                                    <div class="bundle_orange__title">GIGA
+                                        <br> di internet</div>
+                                </div>
+                            </div>
+                            <div class="recurrent_priceRow">
+                                <span class="recurrent_priceRow__price with_currency price_discounted">14</span>
+                                <span class="recurrent_priceRow__price main_price with_currency">10</span>
+                                <span class="recurrent_priceRow__recurrency"></span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="contact_operatore_block__action contact_operatore_block__col contact_operatore_block__col--onlycta">
+                        <a href="#" class="button button--slim">scopri l&apos;offerta<!-- BOTTONE ARANCIONE --></a>
+                    </div>
+                </div>
+            </div>
+            <!--_________________________________FINE BLOCCO UNO_________________________________ -->
+        </div>
+    </div>
+    <!-- advantages -->
+    <div class="row">
+        <div class="blocco_import">
+            <div class="blocco_vantaggi">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+                <div class="advantages_block">
+                    <!--  HEADER -->
+                    <div class="advantages_block__header">
+                        <div class="advantages_block__header__container">
+                            <div class="advantages_block__header--title">I Vantaggi della nostra offerta per il fisso</div>
+                        </div>
+                        <!--                             <div class="advantages_block__header--label col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <span class="advantages_label">VUOI TUTTO ILLIMITATO?</span>
+                                <a href="#" class="button button--noMargin">scopri l'offerta</a>
+                            </div> -->
+                        <div class="clear"></div>
+                    </div>
+                    <!--  / HEADER -->
+                    <!-- LIST ADVANTAGES -->
+                    <!-- FIBER-->
+                    <div class="slider__advantages">
+                        <!-- BROWSER-->
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-carta.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">Il dettaglio che fa la differenza: a Milano, Torino, Bologna e Perugia navighi fino a 500 Mega!
+                                </div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- / BROWSER-->
+                        <!-- XBOX -->
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-conto.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">I GIGA non ti bastano mai? Usa Veon con la tua ALL DIGITAL!</div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di <b>prova Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova <b>Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-carta.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">Il dettaglio che fa la differenza: a Milano, Torino, Bologna e Perugia navighi fino a 500 Mega!
+                                </div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- / BROWSER-->
+                        <!-- XBOX -->
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-conto.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">I GIGA non ti bastano mai? Usa Veon con la tua ALL DIGITAL!</div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di <b>prova Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova <b>Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="advantages_block__listItem item">
+                            <div class="advantages_block__listItem__icon col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                                <img src="../../img/icons-autoricarica/infografica-autoricarica-conto.svg" />
+                            </div>
+                            <div class="advantages_block__listItem__description col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                                <div class="advantages_block__listItem__description--title colored_text--mobile">I GIGA non ti bastano mai? Usa Veon con la tua ALL DIGITAL!</div>
+                                <p>Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di prova Testo di <b>prova Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova <b>Testo di prova Testo</b> di prova Testo di prova Testo di prova Testo di prova Testo di prova</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- / XBOX-->
+                        <!-- / WEBCAMERA D-LINK -->
+                    </div>
+                    <!-- / CALLS -->
+                </div>
+                <!-- / LIST ADVANTAGES -->
+            </div>
+            <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+        </div>
+    </div>
+    <!-- visore home and life -->
+    <div class="row">
+        <div class="blocco_import">
+            <div class="blocco_cruscotto_watch">
+                <div class="dashboard_watch_block">
+                    <div class="dashboard_watch_block__container">
+                        <div class="dashboard_watch_block__product">
+                            <div class="dashboard_watch_block__product--imagep">
+                                <div id="phone_000000000000008451">
+                                    <ul class="phone_thumbs">
+                                        <li><img src="../../img/products/D-Link_Smart_Home_Pack/DCH-107KT.png" /></li>
+                                        <li><img src="../../img/products/D-Link_Smart_Home_Pack/DCH-G020.png" /></li>
+                                        <li><img src="../../img/products/D-Link_Smart_Home_Pack/DCH-Z110.png" /></li>
+                                    </ul>
+                                    <ul class="phone_gallery">
+                                        <li><img src="../../img/products/D-Link_Smart_Home_Pack/DCH-107KT.png" /></li>
+                                        <li><img src="../../img/products/D-Link_Smart_Home_Pack/DCH-G020.png" /></li>
+                                        <li><img src="../../img/products/D-Link_Smart_Home_Pack/DCH-Z110.png" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dashboard_watch_block__product--detailsp">
+                                <div class="dashboard_watch_block__title">Fitbit Charge</div>
+                                <p class="dashboard_watch_block__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
+                                <div class="dashboard_watch_block__paymentRateRow strip_plans">
+                                    <div class="strip_plans__payment_block component col-sm-4 col-md-4 col-lg-4">
+                                        <div class="strip_plans__payment_block__container text-center">
+                                            <div class="strip_plans__payment_block__amount">
+                                                <div class="item item--add">
+                                                    <div class="over">Anticipo</div>
+                                                    <div class="price fadein-animate">189,95<span class="currency">€</span></div>
+                                                </div>
+                                                <div class="item item--add">
+                                                    <div class="over">Sconto</div>
+                                                    <div class="price fadein-animate">160<span class="currency">€</span></div>
+                                                </div>
+                                                <div class="item item--total">
+                                                    <div class="price fadein-animate">16<span class="currency">€</span></div>
+                                                    <div class="sub">30 rate mensili</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_watch_block__priceRow">
+                                    <span class="dashboard_watch_block__priceRow__price">
+                                            149,90<span class="currency">€</span>
+                                    </span>
+                                </div>
+                                <div class="dashboard_watch_block__button--container doubleButton">
+                                    <div class="dashboard_watch_block__button">
+                                        <button class="btn base__bt base__bt--or2" href="#">scopri</button>
+                                    </div>
+                                </div>
+                                <div class="dashboard_watch_block__button--container">
+                                    <div class="dashboard_watch_block__button">
+                                        <button class="btn base__bt base__bt--or2" href="#"></button>
+                                    </div>
+                                    <div class="dashboard_watch_block__button">
+                                        <button class="btn base__bt base__bt--or" href="#"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- accordions -->
+    <div class="row">
+        <div class="blocco_import">
+            <!-- _________________________________ -->
+            <div class="vetrina_accordions">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <div class="showcase_accordions_block">
+                    <div class="showcase__mainTitle">Informazioni utili</div>
+                    <div class="showcase__subTitle"></div>
+                    <!-- tirato fuori dal blocco per poter usare gli accordions da soli -->
+                    <ul>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <!-- checkbox nascosto che fa partire l'apri/chiudi -->
+                            <i></i>
+                            <h2>Descrizione</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Pagamento</h2>
+                            <div class="showcase_accordions_block__container">
+                                s
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Consegna</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Recesso e garanzia legale</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Trova negozio</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Commenta</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- _________________________________ -->
+            </div>
+        </div>
+    </div>
+    <!-- assistenza -->
+    <div class="row">
+        <div class="blocco_import">
+            <div class="blocco_assistenza">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
+                <div class="customer_block">
+                    <div class="customer_block__container">
+                        <div class="customer_block__title">
+                            Assistenza clienti
+                            <!-- titolo grande centrale -->
+                        </div>
+                        <div class="customer_block__searchContainer">
+                            <div class="customer_block__search">
+                                <input class="base__input" type="text" name="search_input" placeholder="Descrivi qui il tuo problema">
+                                <!-- input cerca -->
+                            </div>
+                            <div class="customer_block__searchButton">
+                                <a href="#" class="button button--noMargin button--searchButton">
+                                    <div class="base__icon icon_lente--white"></div>
+                                </a>
+                                <!-- bottone cerca con immagine di background lente -->
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+            </div>
+        </div>
+    </div>
+    <!-- bundle device -->
+    <div class="blocco_import">
+        <div class="nome_qualsiasi">
+            <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+            <div class="blocco_fascia_grigia_titolo tab_links__container">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <div class="grey_strip__block">
+                    <div class="grey_strip__block__container">
+                        <div class="grey_strip__block__title">
+                            <span>Modem</span>
+                        </div>
+                        <div class="grey_strip__block__tabs__container">
+                            <!-- BLOCCO TABS PRESENTE SOLO PARZIALMENTE IN MOBILE -->
+                            <div class="grey_strip__block__tabs grey_strip__block__tabs--left link">
+                                <span class="grey_strip__block__tabs--title  tab_button tab_leftFilter active" data-filter="tab_link_a">ricaricabile</span>
+                                <!-- prima tab a sinistra -->
+                                <span class="grey_strip__block__tabs--title tab_button tab_leftFilter" data-filter="tab_link_b">abbonamento</span>
+                                <span class="grey_strip__block__tabs--title tab_button tab_leftFilter" data-filter="tab_link_c">abbonamento</span>
+                                <span class="grey_strip__block__tabs--title tab_button tab_leftFilter" data-filter="tab_link_d">abbonamento</span>
+                                <!-- seconda tab a sinistra -->
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===============  BLOCCO FILTRI  =============== -->
+            <div class="device_filter_block">
+                <div class="device_filter_block__title">
+                    Tablet e Internet Key
+                </div>
+                <div class="device_filter_block__container">
+                    <div class="device_filter_block__select">
+                        <select class="base__select selectpicker" title="Ordina per" data-size="4">
+                            <option>Nome</option>
+                            <option>Prezzo</option>
+                            <option>Sconto</option>
+                        </select>
+                    </div>
+                    <div class="device_filter_block__select">
+                        <select class="base__select selectpicker" title="Marca" data-size="4">
+                            <option>Samsung</option>
+                            <option>iPhone</option>
+                            <option>Nokia</option>
+                            <option>Lumia</option>
+                        </select>
+                    </div>
+                    <div class="device_filter_block__select">
+                        <select class="base__select selectpicker" title="Prezzo" data-size="4">
+                            <option>99&euro;</option>
+                            <option>50&euro;</option>
+                            <option>10000&euro;</option>
+                            <option>1&euro;</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="showcase_bundle_device tab_cards__container">
+                <div class="showcase_bundle_device__container row">
+                    <!--  1 di 5  -->
+                    <div class="all_device_bundle_container">
+                        <div class="showcase_bundle_device__single showcase_bundle_device__single--generic col-xs-12 col-sm-6 col-md-4 col-lg-4 tab_link_a card_visible">
+                            <div class="showcase_bundle_device__single--generic__bgImage__container">
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--customer_offer">
+                                <img src="../../img/bolli/1_giga.png" class="stamp">
+                                <!-- <p >
+                                            Se cliente Wind da almeno un anno.
+                                        </p> -->
+                                <div class="text">
+                                    Se cliente Wind da almeno un anno.
+                                </div>
+                            </div>
+                            <img src="../../img/products/ipad-pro-white.png" class="showcase_bundle_device__single--generic__image" data-pin-nopin="true">
+                            <div class="showcase_bundle_device__single--generic--title">
+                                Samsung Galaxy s6
+                                <br> asdasdasdasdasd
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--description">
+                                A partire da
+                                <span class="showcase_bundle_device__single--generic--description--price">99,95<span class="currency">€</span></span>
+                                <br> con offerta telefono incluso
+                                <div class="showcase_bundle_device__single--generic--description--promo">ricaricabile offerta</div>
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--filter">
+                                <div class="showcase_bundle_device__select">
+                                    <select class="base__select selectpicker" title="Grigio" data-size="6">
+                                        <option>Grigio</option>
+                                        <option>Bianco</option>
+                                        <option>Nero</option>
+                                        <option>Giallo</option>
+                                    </select>
+                                </div>
+                                <div class="showcase_bundle_device__select showcase_bundle_device__select--second">
+                                    <select class="base__select selectpicker" title="32 GB" data-size="6">
+                                        <option>32 GB</option>
+                                        <option>64 GB</option>
+                                        <option>100 GB</option>
+                                        <option>999 GB</option>
+                                    </select>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="block_mixed">
+                                <a href="#" class="button button--noMargin">
+                                           abbina a un piano 
+                                        </a>
+                                <div class="showcase_bundle_device__single--generic--totalPrice">
+                                    <span class="showcase_bundle_device__single--generic--totalPrice--description">
+                                        Unica soluzione <span class="showcase_bundle_device__single--generic--totalPrice--description--price">899,90<span class="currency">€</span></span>
+                                    </span>
+                                </div>
+                                <a href="#" class="button--ghost">
+                                           compra subito
+                                        </a>
+                            </div>
+                            <div class="block_discount">
+                                <div class="showcase_bundle_device__single--generic--totalPrice">
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--barred">
+                                        <span class="price">159,90€</span>
+                                    </div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--price">
+                                        <span class="price">139,39</span><span class="currency">&euro;</span></div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--discount">sconto 20%</div>
+                                </div>
+                                <a href="#" class="button button--noMargin">
+                                           scopri
+                                        </a>
+                            </div>
+                            <div class="block_singlePrice">
+                                <div class="showcase_bundle_device__single--generic--totalPrice">
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--description">Unica soluzione</div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--price">
+                                        <span class="price">139,39</span><span class="currency">&euro;</span></div>
+                                </div>
+                                <a href="#" class="button button--noMargin">
+                                           scopri
+                                        </a>
+                            </div>
+                        </div>
+                        <!-- ============== VERSIONE CON ABBINA ============== -->
+                        <div class="showcase_bundle_device__single showcase_bundle_device__single--generic col-xs-12 col-sm-6 col-md-4 col-lg-4 tab_link_a discounted card_visible">
+                            <div class="showcase_bundle_device__single--generic__bgImage__container">
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--customer_offer hidden">
+                                <img src="../../img/bolli/1_giga.png" class="stamp">
+                                <div class="text">
+                                    Se cliente Wind da almeno un anno.
+                                </div>
+                            </div>
+                            <img src="../../img/products/ipad-pro-white.png" class="showcase_bundle_device__single--generic__image" data-pin-nopin="true">
+                            <div class="showcase_bundle_device__single--generic--title">
+                                Samsung Galaxy s6
+                                <br> asdasdasdasdasd
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--description">
+                                <span>Subito in offerta per te se
+                                        <br> attivi la promozione</span>
+                                <div class="showcase_bundle_device__single--generic--description--promo">ricaricabile offerta</div>
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--filter">
+                                <div class="showcase_bundle_device__select">
+                                    <select class="base__select selectpicker" title="Grigio" data-size="6">
+                                        <option>Grigio</option>
+                                        <option>Bianco</option>
+                                        <option>Nero</option>
+                                        <option>Giallo</option>
+                                    </select>
+                                </div>
+                                <div class="showcase_bundle_device__select showcase_bundle_device__select--second">
+                                    <select class="base__select selectpicker" title="32 GB" data-size="6">
+                                        <option>32 GB</option>
+                                        <option>64 GB</option>
+                                        <option>100 GB</option>
+                                        <option>999 GB</option>
+                                    </select>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="block_discount">
+                                <div class="showcase_bundle_device__single--generic--totalPrice">
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--barred">
+                                        <span class="price">159,90€</span>
+                                    </div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--price">
+                                        <span class="price">139,39</span><span class="currency">&euro;</span></div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--discount">sconto 20%</div>
+                                </div>
+                                <a href="#" class="button button--noMargin">
+                                           scopri
+                                        </a>
+                            </div>
+                        </div>
+                        <!-- ============== VERSIONE CON pack ============== -->
+                        <div class="showcase_bundle_device__single showcase_bundle_device__single--generic col-xs-12 col-sm-6 col-md-4 col-lg-4 tab_link_a cash card_visible">
+                            <div class="showcase_bundle_device__single--generic__bgImage__container">
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--customer_offer hidden">
+                                <img src="../../img/bolli/1_giga.png" class="stamp">
+                                <div class="text">
+                                    Se cliente Wind da almeno un anno.
+                                </div>
+                            </div>
+                            <img src="../../img/products/smartphone_sample.png" class="showcase_bundle_device__single--generic__image" data-pin-nopin="true">
+                            <div class="showcase_bundle_device__single--generic--title">
+                                Samsung Galaxy s6
+                                <br> asdasdasdasdasd
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--description">
+                                Subito in offerta per te se
+                                <br> attivi la promozione
+                                <div class="showcase_bundle_device__single--generic--description--promo">ricaricabile offerta</div>
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--filter">
+                                <div class="showcase_bundle_device__select">
+                                    <select class="base__select selectpicker" title="Grigio" data-size="6">
+                                        <option>Grigio</option>
+                                        <option>Bianco</option>
+                                        <option>Nero</option>
+                                        <option>Giallo</option>
+                                    </select>
+                                </div>
+                                <div class="showcase_bundle_device__select showcase_bundle_device__select--second">
+                                    <select class="base__select selectpicker" title="32 GB" data-size="6">
+                                        <option>32 GB</option>
+                                        <option>64 GB</option>
+                                        <option>100 GB</option>
+                                        <option>999 GB</option>
+                                    </select>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="block_singlePrice">
+                                <div class="showcase_bundle_device__single--generic--totalPrice">
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--description">Unica soluzione</div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--price">
+                                        <span class="price">139,39</span><span class="currency">&euro;</span></div>
+                                </div>
+                                <a href="#" class="button button--noMargin">
+                                           scopri
+                                        </a>
+                            </div>
+                        </div>
+                        <div class="showcase_bundle_device__single showcase_bundle_device__single--generic col-xs-12 col-sm-6 col-md-4 col-lg-4 tab_link_a discounted card_visible">
+                            <div class="showcase_bundle_device__single--generic__bgImage__container">
+                                <img src="../../img/cards/background_card.jpg" class="showcase_bundle_device__single--generic__bgImage">
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--customer_offer hidden">
+                                <img src="../../img/bolli/1_giga.png" class="stamp">
+                                <div class="text">
+                                    Se cliente Wind da almeno un anno.
+                                </div>
+                            </div>
+                            <img src="../../img/products/ipad-pro-white.png" class="showcase_bundle_device__single--generic__image" data-pin-nopin="true">
+                            <div class="showcase_bundle_device__single--generic--title">
+                                Samsung Galaxy s6
+                                <br> asdasdasdasdasd
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--description">
+                                <span>Subito in offerta per te se
+                                        <br> attivi la promozione</span>
+                                <div class="showcase_bundle_device__single--generic--description--promo">ricaricabile offerta</div>
+                            </div>
+                            <div class="showcase_bundle_device__single--generic--filter">
+                                <div class="showcase_bundle_device__select">
+                                    <select class="base__select selectpicker" title="Grigio" data-size="6">
+                                        <option>Grigio</option>
+                                        <option>Bianco</option>
+                                        <option>Nero</option>
+                                        <option>Giallo</option>
+                                    </select>
+                                </div>
+                                <div class="showcase_bundle_device__select showcase_bundle_device__select--second">
+                                    <select class="base__select selectpicker" title="32 GB" data-size="6">
+                                        <option>32 GB</option>
+                                        <option>64 GB</option>
+                                        <option>100 GB</option>
+                                        <option>999 GB</option>
+                                    </select>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="block_discount">
+                                <div class="showcase_bundle_device__single--generic--totalPrice">
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--barred">
+                                        <span class="price">159,90€</span>
+                                    </div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--price">
+                                        <span class="price">139,39</span><span class="currency">&euro;</span></div>
+                                    <div class="showcase_bundle_device__single--generic--totalPrice--discount">sconto 20%</div>
+                                </div>
+                                <a href="#" class="button button--noMargin">
+                                           scopri
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- parte mostra altri se necessaria -->
+                <div class="showcase_bundle_device__showMore">
+                    mostra tutto
+                </div>
+                <!--___________ ______________________FINE BLOCCO UNO_________________________________ -->
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="row">
+        <div class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <div class="logo">
+                            <img src="../../img/logos/logo-wind-footer.png">
+                        </div>
+                    </div>
+                    <div id="mobile" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <ul class="line1" data-role="acordeon">
+                            <li class="title">Lorem</li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                            <li><a href="#">Lorem Ipsum</a></li>
+                        </ul>
+                        <ul class="line2" data-role="acordeon">
+                            <li class="title">
+                                Lorem
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                        </ul>
+                        <ul class="line3" data-role="acordeon">
+                            <li class="title">
+                                Lorem
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                        </ul>
+                        <ul class="line4" data-role="acordeon">
+                            <li class="title">
+                                Lorem
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                        </ul>
+                        <ul class="line5" data-role="acordeon">
+                            <li class="title">
+                                Lorem
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem Ipsum</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    ©WIND TELECOMUNICAZIONI S.p.A. - Partita IVA: 05410741002
+                </div>
+            </div>
+            <!-- fin foter -->
+        </div>
+    </div>
+</body>
+<script>
+jQuery(window).load(function($) {
+    HEADER.setSlider();
+});
+
+jQuery(document).ready(function($) {
+
+
+    $('.phone_gallery')
+        .slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+            fade: false,
+            vertical: true,
+            verticalSwiping: true,
+            asNavFor: '.phone_thumbs'
+        });
+
+    $('.phone_thumbs')
+        .slick({
+            slidesToShow: 3,
+            variableHeight: false,
+            vertical: true,
+            slidesToScroll: 1,
+            asNavFor: '.phone_gallery',
+            dots: false,
+            arrows: false,
+            centerMode: false,
+            focusOnSelect: true,
+            responsive: [{
+                breakpoint: 480,
+                settings: {
+                    vertical: false
+                }
+            }]
+        });
+
+
+    var counter = $(".counter_block_items--data"),
+        data_event = counter[0].getAttribute("data-event") || "";
+    counter.countdown(data_event, function(event) {
+            $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
+        })
+        .on('update.countdown', function() {})
+        .on('finish.countdown', function() {})
+
+});
+</script>
+
+</html>
