@@ -639,12 +639,27 @@ hr.example_divider {
       display: none;
     }
   }
+  &__singleButton,
+  &__doubleButton{
+    .base__bt {
+      max-width: 40%;
+    }
+  }
   .base__bt {
+    
     color: $color_white;
     font-family: $weight_bold;
     font-size: 16px;
     @include breakpoint(small) {
       width: 260px;
+    }
+    &--or2{
+      color: $color_wind;
+      background-color: $color_white;
+      border-color: $color_orange;
+      &:hover{
+        opacity: .7;
+      }
     }
     &:empty {
       display: none;
@@ -898,7 +913,7 @@ hr.example_divider {
       opacity: 0;
     }
     &.uncovered {
-      bottom: -20px;
+      bottom: -17px;
       opacity: 1;
       z-index: 60;
       @at-root {

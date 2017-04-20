@@ -1,5 +1,5 @@
 .strip_options_block {
-    &:nth-of-type(odd) {
+    &:nth-of-type(even) {
         background-color: $color_grey_light;
     }
     @at-root #{&}__container {
@@ -33,7 +33,8 @@
         padding: 0;
         &--main {
             font-size: 20px;
-            font-family: $weight-light;
+            font-family: $weight-cond;
+            font-weight: bold;
             color: $color_robin;
             @include breakpoint(small) {
                 text-align: center;
@@ -90,7 +91,7 @@
             }
             .oldPrice {
                 position: relative;
-                font-size: 25px;
+                font-size: 35px;
                 small {
                     font-size: 20px;
                 }
@@ -105,13 +106,13 @@
                 }
             }
             .newPrice {
-                font-size: 55px;
+                font-size: 35px;
                 font-family: $weight-light;
                 small {
-                    font-size: 40px;
+                    font-size: 20px;
                 }
                 &.three_digits {
-                    font-size: 40px
+                    font-size: 35px
                 }
             }
             &:before {
