@@ -800,7 +800,34 @@ jQuery(window).load(function($) {
 });
 
 jQuery(document).ready(function($) {
-
+    $('.slider__advantages').slick({
+        responsive: [{
+                breakpoint: 9999,
+                settings: 'unslick'
+            }, {
+                breakpoint: 768,
+                settings: {
+                    dots: true,
+                    arrows: true,
+                    infinite: false,
+                    speed: 300,
+                    adaptiveHeight: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    nextArrow: "<img class='slider__navigation right__arrow' src='../../img/icons-interface/slider_arrow_right.png'>",
+                    prevArrow: "<img class='slider__navigation left__arrow' src='../../img/icons-interface/slider_arrow_left.png'>",
+                    dotsClass: 'slider__dots',
+                    customPaging: function(slider, i) {
+                        var thumb = $(slider.$slides[i]).data('thumb');
+                        return '<div class="slider__single"></div>';
+                    }
+                }
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
 
     $('.phone_gallery')
         .slick({
