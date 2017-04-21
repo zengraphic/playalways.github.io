@@ -137,7 +137,7 @@ img {
 .slider__dots {
   text-align: center;
   margin-top: 15px;
-  padding-left: 0px; }
+  padding-left: 0; }
   .slider__dots li {
     list-style-type: none;
     display: inline-block;
@@ -156,7 +156,8 @@ img {
 
 .container_testo_generico {
   max-width: 1024px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 20px; }
 
 .block_hidden {
   width: 0px !important;
@@ -2847,11 +2848,12 @@ hr.example_divider {
     margin-left: 0; } }
 
 @media all and (max-width: 767px) {
-  .button, a.button--slim, a.button--ghost, a.button--ghost--transparent, a.button--search {
+  a.button, a.button--slim, a.button--ghost, a.button--ghost--transparent, a.button--search {
     margin-left: 0px;
     margin-right: 0px; }
   .customer_block__searchButton .button--searchButton {
-    background-position: calc(4vw + 20%) -191px; }
+    background-position: calc(4vw + 20%) -191px;
+    margin: 0; }
   .customer_block__divider {
     margin-top: 30px; }
     .customer_block__divider--text:before {
@@ -6981,15 +6983,12 @@ sw.showcase_bundle_device {
         border-bottom: 1px solid #F48135; }
     .grey_strip__block__tabs--title {
       margin-right: 15px;
-      padding-bottom: 0px;
       color: #292F36;
       font-size: 1em;
       cursor: pointer; }
       .grey_strip__block__tabs--title:hover {
-        padding-bottom: 5px;
         color: #F48135; }
       .grey_strip__block__tabs--title.active {
-        padding-bottom: 0px;
         color: #F48135; }
       .grey_strip__block__tabs--title.disabled {
         color: #AAB2BD;
@@ -7769,13 +7768,12 @@ sw.showcase_bundle_device {
 
 */
 .dashboard_watch_block {
-  transition: all .45s ease-in-out 0s;
-  background-color: #212121; }
+  transition: all .45s ease-in-out 0s; }
   .dashboard_watch_block__container {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 20px 0; }
+    background-color: #212121; }
   .dashboard_watch_block__product {
     display: table;
     position: relative;
@@ -7785,7 +7783,8 @@ sw.showcase_bundle_device {
     @media (max-width: 767px) {
       .dashboard_watch_block__product {
         display: inline-block;
-        height: auto; } }
+        height: auto;
+        padding: 0 15px; } }
     .dashboard_watch_block__product--imagep {
       display: table-cell;
       width: 50%;
@@ -7854,6 +7853,9 @@ sw.showcase_bundle_device {
     line-height: 1.1em;
     text-align: center;
     text-transform: uppercase; }
+    @media (max-width: 767px) {
+      .dashboard_watch_block__title {
+        font-size: 50px; } }
   .dashboard_watch_block__description {
     margin-bottom: 16px;
     color: #FFF;
@@ -7861,7 +7863,7 @@ sw.showcase_bundle_device {
     text-align: center; }
     @media (max-width: 767px) {
       .dashboard_watch_block__description {
-        margin: 0 30px 16px; } }
+        margin: 0 15px 16px; } }
   .dashboard_watch_block__priceRow {
     margin-bottom: 16px;
     font-family: "Trade Gothic Condensed";
@@ -8556,216 +8558,204 @@ sw.showcase_bundle_device {
   .country_calling_cards_block__rates_divider--right {
     padding: 0 8px; } }
 
-.strip_plans:not([style*="display:none"]):not([style*="display: none"]):nth-child(even) {
-  background-color: #F4F4F4; }
-
-.strip_plans .vertical-middle {
-  display: table; }
-  @media (max-width: 767px) {
-    .strip_plans .vertical-middle {
-      display: block; } }
-
-.strip_plans .component {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0;
-  border-left: 1px solid #D3D3D2;
-  float: none; }
-  .strip_plans .component:first-child {
-    border-left: none; }
-  @media (max-width: 767px) {
-    .strip_plans .component {
-      display: inline-block;
-      width: 100%;
-      padding-bottom: 20px;
-      border-left: none; } }
-
-.strip_plans .price.barred {
-  position: relative; }
-  .strip_plans .price.barred:before {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: .5rem;
-    left: .5rem;
-    height: 1px;
-    background-color: #292F36;
-    content: ""; }
-
-.strip_plans .extra_offer {
-  position: relative;
-  z-index: 5;
-  width: calc(100% - 1rem);
-  margin: .5rem auto;
-  padding-top: .5rem; }
-  @media (max-width: 767px) {
-    .strip_plans .extra_offer {
-      max-width: 350px; } }
-  .strip_plans .extra_offer:before {
-    display: block;
-    position: absolute;
-    content: "";
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 1px;
-    background-color: #D3D3D2; }
-    @media (max-width: 767px) {
-      .strip_plans .extra_offer:before {
-        left: calc(50% - 100vw);
-        right: calc(50% - 100vw); } }
-  .strip_plans .extra_offer .offer__logo {
-    float: left;
-    margin-right: .5rem;
-    width: 15%;
-    max-width: 50px; }
-    @media (max-width: 767px) {
-      .strip_plans .extra_offer .offer__logo {
-        display: inline-block;
-        width: 50px; } }
-    .strip_plans .extra_offer .offer__logo img {
-      width: 100%;
-      height: auto; }
-  .strip_plans .extra_offer .offer__text {
-    color: #292F36;
-    float: left;
-    width: calc(100% - 50px - .5rem);
-    font-size: .875rem; }
-    @media (max-width: 767px) {
-      .strip_plans .extra_offer .offer__text {
-        display: inline-block; } }
-
-.strip_plans__container {
+.strip_plans {
   max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 15px; }
-  @media (max-width: 767px) {
-    .strip_plans__container {
-      padding: 15px 0; } }
-
-.strip_plans__title {
-  text-align: left; }
-  @media (max-width: 767px) {
-    .strip_plans__title {
-      text-align: center;
-      padding: 10px 0; } }
-  .strip_plans__title--main {
-    font-family: "Trade Gothic Condensed";
-    font-weight: 700;
-    color: inherit; }
-
-@media (max-width: 767px) {
-  .strip_plans__offer_block {
-    border-bottom: 1px solid #D3D3D2; } }
-
-.strip_plans__offer_block__container {
-  display: block;
-  width: 100%;
-  font-family: "Trade Gothic Light"; }
-  .strip_plans__offer_block__container .row {
-    display: table;
-    width: 100%; }
-
-.strip_plans__offer_block__item {
-  border-right: 1px solid #D3D3D2;
-  display: table-cell;
-  width: 25%;
-  padding: 7px;
-  color: #292F36;
-  vertical-align: middle; }
-  .strip_plans__offer_block__item h4 {
-    font-family: "Trade Gothic Condensed";
-    font-weight: 700;
-    font-size: 1.75rem;
-    line-height: 1.1em;
-    margin-bottom: .5rem; }
-  .strip_plans__offer_block__item label {
-    font-family: "Trade Gothic";
-    margin-bottom: 0;
-    font-weight: normal;
-    line-height: 1.1em;
-    font-size: 1rem; }
-  .strip_plans__offer_block__item:first-child {
-    border-left: none; }
-  .strip_plans__offer_block__item.item--long {
-    width: 75%;
-    text-align: left;
-    height: 5.2rem; }
-  .strip_plans__offer_block__item--price {
+  margin: 0 auto; }
+  .strip_plans:not([style*="display:none"]):not([style*="display: none"]):nth-child(even) {
+    background-color: #F4F4F4; }
+  .strip_plans .vertical-middle {
+    display: table; }
+    @media (max-width: 767px) {
+      .strip_plans .vertical-middle {
+        display: block; } }
+  .strip_plans .component {
     display: table-cell;
     vertical-align: middle;
-    width: 25%;
-    padding: 7px 0; }
-    .strip_plans__offer_block__item--price .price {
-      color: inherit;
-      font-size: 2.5em; }
-      .strip_plans__offer_block__item--price .price .currency {
-        font-size: 0.75em; }
-
-.strip_plans__offer_block__recurrency .recurrency {
-  padding: 0;
-  margin: .5rem auto;
-  color: #292F36; }
-
-.strip_plans__description {
-  padding: 0;
-  border-right: 1px solid #D3D3D2; }
-
-.strip_plans__payments {
-  padding: 0; }
-
-.strip_plans__payment_block__heading {
-  padding-bottom: 10px;
-  font-size: 0.875em; }
-
-.strip_plans__payment_block__amount {
-  display: table;
-  width: 100%;
-  font-family: "Trade Gothic Light"; }
-  .strip_plans__payment_block__amount .currency {
-    font-size: .75em; }
-  .strip_plans__payment_block__amount .item {
+    padding: 0;
+    border-left: 1px solid #D3D3D2;
+    float: none; }
+    .strip_plans .component:first-child {
+      border-left: none; }
+    @media (max-width: 767px) {
+      .strip_plans .component {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 20px;
+        border-left: none; } }
+  .strip_plans .price.barred {
+    position: relative; }
+    .strip_plans .price.barred:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: .5rem;
+      left: .5rem;
+      height: 1px;
+      background-color: #292F36;
+      content: ""; }
+  .strip_plans .extra_offer {
+    position: relative;
+    z-index: 5;
+    width: calc(100% - 1rem);
+    margin: .5rem auto;
+    padding-top: .5rem; }
+    @media (max-width: 767px) {
+      .strip_plans .extra_offer {
+        max-width: 350px; } }
+    .strip_plans .extra_offer:before {
+      display: block;
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background-color: #D3D3D2; }
+      @media (max-width: 767px) {
+        .strip_plans .extra_offer:before {
+          left: calc(50% - 100vw);
+          right: calc(50% - 100vw); } }
+    .strip_plans .extra_offer .offer__logo {
+      float: left;
+      margin-right: .5rem;
+      width: 15%;
+      max-width: 50px; }
+      @media (max-width: 767px) {
+        .strip_plans .extra_offer .offer__logo {
+          display: inline-block;
+          width: 50px; } }
+      .strip_plans .extra_offer .offer__logo img {
+        width: 100%;
+        height: auto; }
+    .strip_plans .extra_offer .offer__text {
+      color: #292F36;
+      float: left;
+      width: calc(100% - 50px - .5rem);
+      font-size: .875rem; }
+      @media (max-width: 767px) {
+        .strip_plans .extra_offer .offer__text {
+          display: inline-block; } }
+  .strip_plans__container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px; }
+    @media (max-width: 767px) {
+      .strip_plans__container {
+        padding: 15px 0; } }
+  .strip_plans__title {
+    text-align: left; }
+    @media (max-width: 767px) {
+      .strip_plans__title {
+        text-align: center;
+        padding: 10px 0; } }
+    .strip_plans__title--main {
+      font-family: "Trade Gothic Condensed";
+      font-weight: 700;
+      color: inherit; }
+  @media (max-width: 767px) {
+    .strip_plans__offer_block {
+      border-bottom: 1px solid #D3D3D2; } }
+  .strip_plans__offer_block__container {
+    display: block;
+    width: 100%;
+    font-family: "Trade Gothic Light"; }
+    .strip_plans__offer_block__container .row {
+      display: table;
+      width: 100%; }
+  .strip_plans__offer_block__item {
+    border-right: 1px solid #D3D3D2;
     display: table-cell;
-    width: 33%;
+    width: 25%;
+    padding: 7px;
+    color: #292F36;
     vertical-align: middle; }
-    .strip_plans__payment_block__amount .item:not(.item--total) {
-      border-right: 1px solid #D3D3D2; }
-    .strip_plans__payment_block__amount .item--add {
-      color: #292F36; }
-      .strip_plans__payment_block__amount .item--add .price {
+    .strip_plans__offer_block__item h4 {
+      font-family: "Trade Gothic Condensed";
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 1.1em;
+      margin-bottom: .5rem; }
+    .strip_plans__offer_block__item label {
+      font-family: "Trade Gothic";
+      margin-bottom: 0;
+      font-weight: normal;
+      line-height: 1.1em;
+      font-size: 1rem; }
+    .strip_plans__offer_block__item:first-child {
+      border-left: none; }
+    .strip_plans__offer_block__item.item--long {
+      width: 75%;
+      text-align: left;
+      height: 5.2rem; }
+    .strip_plans__offer_block__item--price {
+      display: table-cell;
+      vertical-align: middle;
+      width: 25%;
+      padding: 7px 0; }
+      .strip_plans__offer_block__item--price .price {
+        color: inherit;
+        font-size: 2.5em; }
+        .strip_plans__offer_block__item--price .price .currency {
+          font-size: 0.75em; }
+  .strip_plans__offer_block__recurrency .recurrency {
+    padding: 0;
+    margin: .5rem auto;
+    color: #292F36; }
+  .strip_plans__description {
+    padding: 0;
+    border-right: 1px solid #D3D3D2; }
+  .strip_plans__payments {
+    padding: 0; }
+  .strip_plans__payment_block__heading {
+    padding-bottom: 10px;
+    font-size: 0.875em; }
+  .strip_plans__payment_block__amount {
+    display: table;
+    width: 100%;
+    font-family: "Trade Gothic Light"; }
+    .strip_plans__payment_block__amount .currency {
+      font-size: .75em; }
+    .strip_plans__payment_block__amount .item {
+      display: table-cell;
+      width: 33%;
+      vertical-align: middle; }
+      .strip_plans__payment_block__amount .item:not(.item--total) {
+        border-right: 1px solid #D3D3D2; }
+      .strip_plans__payment_block__amount .item--add {
+        color: #292F36; }
+        .strip_plans__payment_block__amount .item--add .price {
+          font-family: "Trade Gothic";
+          font-size: 1.75rem;
+          line-height: 1.2em; }
+        .strip_plans__payment_block__amount .item--add .over {
+          font-size: .75rem; }
+      .strip_plans__payment_block__amount .item--total .price {
+        height: 1.2em;
+        color: inherit;
         font-family: "Trade Gothic";
         font-size: 1.75rem;
         line-height: 1.2em; }
-      .strip_plans__payment_block__amount .item--add .over {
+        .strip_plans__payment_block__amount .item--total .price.full {
+          font-size: 2.5rem; }
+      .strip_plans__payment_block__amount .item--total .sub {
+        color: #292F36;
         font-size: .75rem; }
-    .strip_plans__payment_block__amount .item--total .price {
-      height: 1.2em;
-      color: inherit;
-      font-family: "Trade Gothic";
-      font-size: 1.75rem;
-      line-height: 1.2em; }
-      .strip_plans__payment_block__amount .item--total .price.full {
-        font-size: 2.5rem; }
-    .strip_plans__payment_block__amount .item--total .sub {
+  .strip_plans__button {
+    text-align: center; }
+    .strip_plans__button .button--slim {
+      display: inline-block;
+      min-width: 90%;
+      font-size: 1em; }
+      @media (max-width: 767px) {
+        .strip_plans__button .button--slim {
+          min-width: 50%; } }
+    .strip_plans__button .sub {
+      padding-top: 5px;
       color: #292F36;
-      font-size: .75rem; }
-
-.strip_plans__button {
-  text-align: center; }
-  .strip_plans__button .button--slim {
-    display: inline-block;
-    min-width: 90%;
-    font-size: 1em; }
-    @media (max-width: 767px) {
-      .strip_plans__button .button--slim {
-        min-width: 50%; } }
-  .strip_plans__button .sub {
-    padding-top: 5px;
-    color: #292F36;
-    font-family: "Trade Gothic Light";
-    font-size: .75em;
-    text-transform: uppercase; }
+      font-family: "Trade Gothic Light";
+      font-size: .75em;
+      text-transform: uppercase; }
 
 .strip-plans {
   /*&.phone_cash {
