@@ -1,0 +1,26 @@
+.cta_block {
+    &__container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 40px auto;
+    }
+    &__buttons{
+    	display:table;
+    	width:100%;
+    	text-align: center;
+    	vertical-align: middle;
+    	.button{
+    		font-family: $weight-normal;
+    		padding:0.750rem;
+    		display:inline-block;
+    		width:200px;
+    		max-width:40%;
+			@include breakpoint (small) {
+				max-width: none;
+			};
+    		&:empty{
+    			display:none;
+    		}
+    	}
+    }
+}
