@@ -7,4 +7,25 @@
 @include position_classes;
 @include text_classes;
 @include text_classes_m;
+// TEMPORANEO DA SPOSTARE
+.mac {
+    margin: 0;
+}
 
+.button {
+    //bottone cta in overlay fondo pagina.
+    &--standard {
+        color: $color_white;
+        background-color: $color_orange;
+        border: 1px solid $color_orange;
+        padding: 15px 30px;
+        &:hover {
+                  background-color: $color_orange_light;
+        }
+    }
+    &__hovering {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+}

@@ -3,6 +3,9 @@
   -moz-transition: all 0.45s ease-in-out;
   -ms-transition: all 0.45s ease-in-out;
   -webkit-transition: all 0.45s ease-in-out;
+  width: 100%;
+  max-width: 1024px;
+  margin: 30px auto;
   .bundle_orange {
     color: $color_white;
     padding: 0 10px;
@@ -43,6 +46,7 @@
     &__price {
       color: $color_white;
       font-size: 42px;
+      line-height: 30px;
     }
   }
   .strip_plans__payment_block {
@@ -178,8 +182,8 @@
       }
       &--title {
         font-size: 2.2em;
-        margin-bottom: 10px;
         font-family: $weight-light;
+        line-height: 1em;
         @include breakpoint(medium) {
           font-size: 2em;
         }

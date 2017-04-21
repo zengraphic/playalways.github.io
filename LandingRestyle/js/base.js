@@ -26,11 +26,12 @@ function prefixedEventListener(element, type, callback) {
             cursorcolor: "#f48135",
             cursorwidth: "10px",
             cursorborder: "0",
+            mousescrollstep: 80,
             background: "#e6e9ed",
             spacebarenabled: false,
-            horizrailenabled: true,
+            horizrailenabled: false,
             autohidemode: false,
-            zindex: 1100
+            zindex: 998
         };
         var obj_nicescroll2 = {
             cursorcolor: "#f48135",
@@ -41,7 +42,7 @@ function prefixedEventListener(element, type, callback) {
             horizrailenabled: true,
             autohidemode: false,
             opacity: 0,
-            zindex: 1100
+            zindex: 998
         };
         var obj_datepicker = {
             language: "it",
@@ -109,6 +110,12 @@ function prefixedEventListener(element, type, callback) {
                 })
                 .on('show.bs.select', function(e) {
                     // do something...
+                })
+                .on('loaded.bs.select', function(e) {
+                    $(this).selectpicker({
+                        'size': 6,
+                        'dropupAuto': false
+                    });
                 });
 
             //tooltip
@@ -150,7 +157,7 @@ function prefixedEventListener(element, type, callback) {
             $('.base__popup-link')
                 .magnificPopup({
                     type: 'inline',
-                    mainClass: 'mfp-fade',
+                    mainClass: 'mfp-fade mfp-standard',
                     // closeOnContentClick: true,
                     midClick: true,
                     alignTop: false,
@@ -160,7 +167,7 @@ function prefixedEventListener(element, type, callback) {
                         close: function() {
                             // reset position btn (conferma/avanti) of footer
                             $(".modalfooter").css("margin-top", 0);
-                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
+                            //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
                         },
                         open: function() {
                             // position btn conferma/avanti in bottom
@@ -176,7 +183,8 @@ function prefixedEventListener(element, type, callback) {
                                 });
                             }
                             $("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
-                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', 'calc(100% - 43px)');
+
+                            //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', 'calc(100% - 43px)');
                         }
                     }
                 });
@@ -188,20 +196,22 @@ function prefixedEventListener(element, type, callback) {
             $('.base__popup-link--ricarica')
                 .magnificPopup({
                     type: 'inline',
-                    mainClass: 'mfp-fade',
+                    mainClass: 'mfp-fade mfp-ricarica',
                     // closeOnContentClick: true,
                     midClick: true,
                     alignTop: false,
                     removalDelay: 350,
                     callbacks: {
                         close: function() {
-                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
+                            //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
                         },
                         open: function() {
-                            $('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
+                            //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
                         }
                     }
                 });
+
+
 
             $('.base__popup-link--contract')
                 .magnificPopup({
