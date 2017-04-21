@@ -351,7 +351,7 @@ r$(document).ready(function() {
     r$('.bxslider').bxSlider({
         pagerCustom: '#bx-pager'
     });
-    r$('.base__scrollable').css('overflow', 'overlay');
+    //r$('.base__scrollable').css('overflow', 'overlay');
     r$('.detail li').click(function() {
         r$('.detail li').removeClass("active_action");
         r$(this).addClass("active_action");
@@ -681,7 +681,7 @@ r$(document).ready(function() {
     }
     // If the content is large, the footer follows the end and separated 2rem
     else {
-        r$('#footer').css('margin-top', 28);
+        //r$('#footer').css('margin-top', 28);
     }
 
 });
