@@ -34,7 +34,40 @@
         }
     }
     &__description {
-        @include breakpoint(display_small) {
+        .textDescription {
+            width: 90%;
+            display: inline-block;
+            box-sizing: border-box;
+            @include breakpoint(display_medium_small) {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 10px 15px 0;
+            }
+        }
+        .logo_lg {
+            width: 9%;
+            display: inline-block;
+            box-sizing: border-box;
+            @include breakpoint(display_medium_small) {
+                width: 100%;
+                //display: block;
+            }
+            img {
+                float: right;
+                position: relative;
+                top: -20px;
+                @include breakpoint(display_medium_small) {
+                    float: none;
+                    display: block;
+                    margin: 0 auto;
+                    top: 25px;
+                }
+            }
+        }
+    }
+    &__details {
+        @include breakpoint(display_medium_small) {
             text-align: center;
         }
     }
