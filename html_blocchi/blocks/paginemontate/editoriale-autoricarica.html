@@ -287,79 +287,94 @@
             <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
         </div>
     </div>
-    <!-- accordion -->
-        <div class="row">
-            <div class="blocco_import">
-                <!-- _________________________________ -->
-                <div class="vetrina_accordions">
-                    <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
-                    <div class="showcase_accordions_block">
-                        <div class="showcase__mainTitle">Informazioni Utili</div>
-                        <div class="showcase__subTitle"></div>                        
-                        <!-- tirato fuori dal blocco per poter usare gli accordions da soli -->
-                        <ul>
-                            <li class="showcase_accordions_block__single">
-                                <input type="checkbox" checked class="accordionBox">
-                                <!-- checkbox nascosto che fa partire l'apri/chiudi -->
-                                <i></i>
-                                <h2>Descrizione</h2>
-                                <div class="showcase_accordions_block__container">
-                                    <div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="showcase_accordions_block__single">
-                                <input type="checkbox" checked class="accordionBox">
-                                <i></i>
-                                <h2>Pagamento</h2>
-                                <div class="showcase_accordions_block__container">
-                                    s
-                                    <div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="showcase_accordions_block__single">
-                                <input type="checkbox" checked class="accordionBox">
-                                <i></i>
-                                <h2>Consegna</h2>
-                                <div class="showcase_accordions_block__container">
-                                    <div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="showcase_accordions_block__single">
-                                <input type="checkbox" checked class="accordionBox">
-                                <i></i>
-                                <h2>Recesso e garanzia legale</h2>
-                                <div class="showcase_accordions_block__container">
-                                    <div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="showcase_accordions_block__single">
-                                <input type="checkbox" checked class="accordionBox">
-                                <i></i>
-                                <h2>Trova negozio</h2>
-                                <div class="showcase_accordions_block__container">
-                                    <div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="showcase_accordions_block__single">
-                                <input type="checkbox" checked class="accordionBox">
-                                <i></i>
-                                <h2>Commenta</h2>
-                                <div class="showcase_accordions_block__container">
-                                    <div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+    <!-- bottoni -->
+    <div class="row">
+        <div class="blocco_import">
+            <div class="blocco_bottoni">
+                <div class="cta_block">
+                    <div class="cta_block__container">
+                        <div class="cta_block__buttons">
+                            <a href="https://www.youtube.com/watch?v=8Qy6cQstTdk" class="button--ghost button--noMargin btn--ghost popup-video">guarda il tutorial</a>
+                            <a href="#" class="button btn--cta">ATTIVA</a>
+                        </div>
                     </div>
-                    <!-- _________________________________ -->
                 </div>
             </div>
         </div>
+    </div>
+    <!-- accordion -->
+    <div class="row">
+        <div class="blocco_import">
+            <!-- _________________________________ -->
+            <div class="vetrina_accordions">
+                <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
+                <div class="showcase_accordions_block">
+                    <div class="showcase__mainTitle">Informazioni Utili</div>
+                    <div class="showcase__subTitle"></div>
+                    <!-- tirato fuori dal blocco per poter usare gli accordions da soli -->
+                    <ul>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <!-- checkbox nascosto che fa partire l'apri/chiudi -->
+                            <i></i>
+                            <h2>Descrizione</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Pagamento</h2>
+                            <div class="showcase_accordions_block__container">
+                                s
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Consegna</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Recesso e garanzia legale</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Trova negozio</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="showcase_accordions_block__single">
+                            <input type="checkbox" checked class="accordionBox">
+                            <i></i>
+                            <h2>Commenta</h2>
+                            <div class="showcase_accordions_block__container">
+                                <div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- _________________________________ -->
+            </div>
+        </div>
+    </div>
     <!-- footer -->
     <div class="row">
         <div class="footer" id="footer">
@@ -585,6 +600,14 @@ jQuery(document).ready(function($) {
         })
         .on('update.countdown', function() {})
         .on('finish.countdown', function() {})
+
+    $('.popup-video').magnificPopup({
+        type: 'iframe',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false,
+        closeMarkup: '<div class="mfp-close videoFaq__close"><div class="mfp-close base__icon icon_close--white"></div></div>'
+    });
 
 });
 </script>
