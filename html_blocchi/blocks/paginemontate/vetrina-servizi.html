@@ -217,6 +217,9 @@
                     </div>
                     <div class="grey_strip__block__tabs__container col-xs-12 col-sm-10">
                         <div class="grey_strip__block__tabs grey_strip__block__tabs--left link">
+                            <span class="grey_strip__block__tabs--title tab_button" data-filter="unica">mypay</span>
+                            <span class="grey_strip__block__tabs--title tab_button" data-filter="rate">cbi</span>
+                            <span class="grey_strip__block__tabs--title tab_button active" data-filter="rate">myticket</span> <span class="grey_strip__block__tabs--title tab_button" data-filter="rate">intrattenimento</span>                        
                         </div>
                         <div class="grey_strip__block__tabs grey_strip__block__tabs--right link">
                             <span class="grey_strip__block__tabs--title tab_button" data-filter="unica">mypay</span>
@@ -1582,6 +1585,7 @@ jQuery(document).ready(function($) {
         dots: false,
         arrows: false,
         speed: 300,
+        variableWidth: true,
         swipeToSlide: true,
         infinite: false,
         slidesToShow: 6,
@@ -1597,8 +1601,9 @@ jQuery(document).ready(function($) {
                 breakpoint: 840,
                 settings: {
                     centerMode: true,
-                    centerPadding: '75px',
+                    centerPadding: '25px',
                     slidesToShow: 4,
+                    variableWidth: true,
                     initialSlide: 3,
                     slidesToScroll: 4,
                 }
@@ -1606,7 +1611,8 @@ jQuery(document).ready(function($) {
                 breakpoint: 585,
                 settings: {
                     centerMode: true,
-                    centerPadding: '55px',
+                    variableWidth: true,
+                    centerPadding: '25px',
                     initialSlide: 1,
                     slidesToShow: 3,
                 }
