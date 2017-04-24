@@ -1,0 +1,119 @@
+$color_white: #fff;
+$color_green: #85af4b;
+$color_pink: #f7cacc;
+$color_purple: #8ea5ce;
+$color_grey: #eee;
+$color_text: #000;
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+// OPACITY 
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/*body {
+    font-family: 'Play', sans-serif;
+    background: $color_grey;
+}*/
+
+td {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: $color_white;
+    font-family: "Trade Gothic";
+    color: $color_text;
+    font-size: 14px;
+}
+
+.clear {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+// PARTIAL
+.landing_infostrada {
+    &__container {
+        max-width: 878px;
+        margin: 0 auto;
+        position: relative;
+    }
+    &__logo {
+        margin: 0 auto;
+        padding: 20px 0;
+        text-align: center;
+        img {
+            width: 100%;
+            max-width: 218px;
+            @include breakpoint(tiny) {
+                width: 50%;
+            }
+        }
+    }
+    &__hero {}
+    &__checkCopertura {
+        position: absolute;
+        z-index: 999;
+        height: 320px !important;
+        top: -150px;
+        /*.container {
+            padding-left: 0;
+            padding-right: 0;
+        }*/
+    }
+    &__content {
+        &--treeParagraph {}
+        &--singleParagraph {}
+    }
+    &__footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 1px solid $color_grey;
+        margin-left: 32px;
+        margin-right: 32px;
+        &--copy {
+            @include breakpoint(small) {
+                margin: 0 auto;
+                text-align: center;
+                padding-top: 20px;
+                font-size: 10px;
+            }
+        }
+        &--logoWind {
+            float: right;
+            @include breakpoint(small) {
+                float: none;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+    }
+}
