@@ -106,7 +106,14 @@ jQuery(document).ready(function($) {
             fade: false,
             vertical: true,
             verticalSwiping: true,
-            asNavFor: '.phone_thumbs'
+            asNavFor: '.phone_thumbs',
+            responsive: [{
+                breakpoint: 640,
+                settings: {
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+            }]
         });
 
     $('.phone_thumbs')

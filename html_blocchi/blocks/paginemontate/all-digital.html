@@ -641,7 +641,7 @@
                             </div>
                             <div class="newsletter_block__icon">
                                 <div class="col-xs-12">
-                                    <div class="">
+                                    <div class="newsletter_block__icon--firstRow">
                                         <!-- icona gplus-->
                                         <div class="base__icon icon_facebook--color"></div>
                                         <!-- icona youtube-->
@@ -829,7 +829,7 @@ jQuery(document).ready(function($) {
         ]
     });
 
-    $('.phone_gallery')
+   $('.phone_gallery')
         .slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -838,7 +838,14 @@ jQuery(document).ready(function($) {
             fade: false,
             vertical: true,
             verticalSwiping: true,
-            asNavFor: '.phone_thumbs'
+            asNavFor: '.phone_thumbs',
+            responsive: [{
+                breakpoint: 640,
+                settings: {
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+            }]
         });
 
     $('.phone_thumbs')

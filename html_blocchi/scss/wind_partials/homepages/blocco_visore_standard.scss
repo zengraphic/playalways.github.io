@@ -342,7 +342,7 @@ hr.example_divider {
     @include breakpoint(small) {
       left: -30px;
       width: 88px;
-      padding: 8px;
+      padding: 8px 8px 8px 30px;
       font-size: 14px;
     }
     @at-root {
@@ -370,7 +370,7 @@ hr.example_divider {
           left: calc(100% - 60px);
         }
         @include breakpoint(small) {
-          padding: 8px;
+          padding: 8px 30px 8px 8px;
         }
       }
       .withForm #{&} {
