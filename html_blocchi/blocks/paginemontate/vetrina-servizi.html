@@ -1328,7 +1328,7 @@
                             </div>
                             <div class="newsletter_block__icon">
                                 <div class="col-xs-12">
-                                    <div class="">
+                                    <div class="newsletter_block__icon--firstRow">
                                         <!-- icona gplus-->
                                         <div class="base__icon icon_facebook--color"></div>
                                         <!-- icona youtube-->
@@ -1489,7 +1489,7 @@ jQuery(window).load(function($) {
 jQuery(document).ready(function($) {
 
 
-    $('.phone_gallery')
+    /*$('.phone_gallery')
         .slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -1498,7 +1498,14 @@ jQuery(document).ready(function($) {
             fade: false,
             vertical: true,
             verticalSwiping: true,
-            asNavFor: '.phone_thumbs'
+            asNavFor: '.phone_thumbs',
+            responsive: [{
+                breakpoint: 640,
+                settings: {
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+            }]
         });
 
     $('.phone_thumbs')
@@ -1518,7 +1525,7 @@ jQuery(document).ready(function($) {
                     vertical: false
                 }
             }]
-        });
+        });*/
     var visoreConSlider = $('.blocco_visore').filter('.with_slider');
     visoreConSlider
         .slick({
@@ -1619,13 +1626,13 @@ jQuery(document).ready(function($) {
             // instead of a settings object
         ]
     });
-    var counter = $(".counter_block_items--data"),
+    /*var counter = $(".counter_block_items--data"),
         data_event = counter[0].getAttribute("data-event") || "";
     counter.countdown(data_event, function(event) {
             $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
         })
         .on('update.countdown', function() {})
-        .on('finish.countdown', function() {})
+        .on('finish.countdown', function() {})*/
 
 });
 </script>

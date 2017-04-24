@@ -1,12 +1,11 @@
 //BLOCCO DASHBOARD
 .dashboard_watch_block {
   transition: all .45s ease-in-out 0s;
-  background-color: $color_home_life;
   &__container {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 20px 0;
+    background-color: $color_home_life;
   }
   &__product {
     display: table;
@@ -17,6 +16,7 @@
     @include breakpoint(small) {
       display: inline-block;
       height: auto;
+      padding: 0 15px;
     }
     &--imagep {
       display: table-cell;
@@ -97,6 +97,9 @@
     line-height: 1.1em;
     text-align: center;
     text-transform: uppercase;
+    @include breakpoint(small) {
+      font-size: 50px;
+    }
   }
   &__description {
     margin-bottom: 16px;
@@ -104,7 +107,7 @@
     font-size: 14px;
     text-align: center;
     @include breakpoint('small') {
-      margin: 0 30px 16px;
+      margin: 0 15px 16px;
     }
   }
   &__priceRow {
