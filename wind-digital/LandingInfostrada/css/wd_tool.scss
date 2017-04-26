@@ -4,6 +4,14 @@ $color_pink: #f7cacc;
 $color_purple: #8ea5ce;
 $color_grey: #eee;
 $color_text: #000;
+$color_infostrada: #153080;
+$color_light_grey: #d6d6d6;
+$color_border: #d9dfec;
+$weight-light: 'Trade Gothic Light';
+$weight-normal: 'Trade Gothic';
+$weight-bold: 'Trade Gothic Bold';
+$weight-cond: 'Trade Gothic Condensed';
+$weight-bold-cond: 'Trade Gothic Bold Condensed';
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
@@ -45,7 +53,7 @@ body {
     max-width: 1024px;
     margin: 0 auto;
     background-color: $color_white;
-    font-family: "Trade Gothic";
+    font-family: $weight-normal;
     color: $color_text;
     font-size: 14px;
 }
@@ -61,10 +69,26 @@ body {
 
 // PARTIAL
 .landing_infostrada {
-    &__container {
-        max-width: 878px;
+    &__containerMain {
+        width: 100%;
         margin: 0 auto;
         position: relative;
+    }
+    &__container {
+        width: 878px;
+        margin: 0 auto;
+    }
+    &__containerHero {
+        //width: 100%;
+        //width: 100vw;
+        width: 1024px;
+        position: relative;
+        padding: 45px 0;
+        //left: calc(-50vw + 50%);
+        height: 530px;
+        margin: 0 auto;
+        left: -65px;
+        background-color: $color_light_grey;
     }
     &__logo {
         margin: 0 auto;
@@ -78,20 +102,158 @@ body {
             }
         }
     }
-    &__hero {}
+    &__hero {
+        width: 878px;
+        margin: 0 auto;
+        .left_block {
+            float: left;
+            width: 55%;
+            .title {
+                font-family: $weight-bold-cond;
+                color: $color_infostrada;
+                font-size: 59px;
+                text-transform: uppercase;
+            }
+            .price {
+                font-family: $weight-bold-cond;
+                color: $color_infostrada;
+                font-size: 65px;
+                text-transform: uppercase;
+            }
+            .counter {
+                padding: 10px 20px;
+                color: $color_infostrada;
+                border: 2px solid $color_infostrada;
+                border-radius: 4px;
+                width: 80%;
+                text-transform: uppercase;
+                .time {
+                    font-weight: bold;
+                    font-size: 25px;
+                }
+            }
+        }
+        .right_block {
+            float: right;
+            width: 45%;
+            .image_block {
+                float: left;
+                top: -35px;
+                position: relative;
+                left: -30px;
+            }
+            .sticker_block {
+                float: right;
+                position: relative;
+                .single_sticker {
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
     &__checkCopertura {
         position: absolute;
         z-index: 999;
         height: 320px !important;
-        top: -150px;
+        //top: -150px;
         /*.container {
             padding-left: 0;
             padding-right: 0;
         }*/
     }
     &__content {
-        &--treeParagraph {}
-        &--singleParagraph {}
+        &--treeParagraph {
+            width: 878px;
+            border: 2px solid $color_border;
+            padding: 40px 0;
+            margin: 0 auto;
+            @include breakpoint(small) {
+                width: 100%;
+            }
+            .listItem {
+                position: relative;
+                width: 33.33%;
+                text-transform: uppercase;
+                text-align: center;
+                float: left;
+                color: $color_infostrada;
+                font-size: 16px;
+                @include breakpoint(small) {
+                    width: 100%;
+                    float: none;
+                    padding: 20px 0;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: #eee;
+                    &:nth-of-type(2)::after {
+                        display: none;
+                    }
+                    @include breakpoint(small) {
+                        left: calc(50% - 50px);
+                        right: calc(50% - 50px);
+                        height: 2px;
+                        bottom: 0;
+                        width: 100px;
+                    }
+                }
+                .text_highlight {
+                    //font-style: $weight-bold;
+                    font-weight: bold;
+                }
+            }
+        }
+        &--singleParagraph {
+            width: 100%;
+            margin: 0 auto;
+            padding: 32px;
+            line-height: 16px;
+            font-size: 1em;
+        }
+        &--informa {
+            padding: 0 32px;
+            position: relative;
+            .popup {
+                position: relative;
+                padding: 10px 0;
+                width: 115px;
+                @include breakpoint(tiny) {
+                    text-align: center;
+                    margin: 0 auto;
+                }
+                a {
+                    padding-left: 25px;
+                    &:before {
+                        color: $color_infostrada;
+                        content: "i";
+                        border-radius: 50%;
+                        border: 1px solid $color_infostrada;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 20px;
+                        text-align: center;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                    }
+                }
+            }
+            .offert_details {
+                padding: 20px 0;
+                .left_block {
+                    float: left;
+                }
+                .right_block {
+                    float: right;
+                }
+            }
+        }
     }
     &__footer {
         padding-top: 30px;
