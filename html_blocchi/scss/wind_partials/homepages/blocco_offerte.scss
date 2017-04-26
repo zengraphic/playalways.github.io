@@ -1,158 +1,152 @@
 // SLIDER BLOCK
 .offerBlock_slider {
-    max-width: 1024px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  .slick-slider {
+    .left__arrow {
+      top: calc(20% - 41px);
+    }
+    .right__arrow {
+      bottom: 80%;
+    }
+  }
+  &__mainTitle {
+    margin: 30px auto 40px;
+    font-family: $weight-light;
+    font-size: $text-medium;
+  }
+  &__image {
     margin: 0 auto;
-    padding-bottom: 30px;
-    .slick-slider {
-        .left__arrow {
-            top: calc(20% - 41px);
-        }
-        .right__arrow {
-            bottom: 80%;
-        }
+    margin-bottom: 10px;
+  }
+  &__container {
+    margin-top: 30px;
+    transition: all .45s ease-in-out;
+  }
+  h2 {
+    font-family: $weight-bold-cond;
+  }
+  &__showMore {
+    margin-top: 30px;
+    color: $color_wind;
+    font-family: $weight-light;
+    font-size: 1.25em;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
     }
-    &__mainTitle {
-        font-size: $text-medium;
-        font-family: $weight-light;
-        margin-top: 30px;
-        margin-bottom: 40px;
+  }
+  &__showOffers {
+    display: none;
+    width: 100%;
+    margin-left: 15px;
+    color: $color_wind;
+    font-family: $weight-light;
+    font-size: 1.25em;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
     }
-    &__image {
-        margin: 0 auto;
-        margin-bottom: 10px;
-    }
+  }
+  @at-root #{&}__tabs {
+    color: $color_text;
+    text-transform: uppercase;
     &__container {
-        margin-top: 30px;
-        -o-transition: all 0.45s ease-in-out;
-        -moz-transition: all 0.45s ease-in-out;
-        -ms-transition: all 0.45s ease-in-out;
-        -webkit-transition: all 0.45s ease-in-out;
+      margin-bottom: 30px;
     }
-    h2 {
-        font-family: $weight-bold-cond;
+    &--left {
+      margin-left: 30px;
+      float: left;
     }
-    &__showMore {
-        color: $color_wind;
-        font-size: 1.250em;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $weight-light;
-        margin-top: 30px;
-        cursor: pointer;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    &__showOffers {
-        color: $color_wind;
-        margin-left: 15px;
-        width: 100%;
-        display: none;
-        font-size: 1.250em;
-        text-align: left;
-        text-transform: uppercase;
-        font-family: $weight-light;
-        cursor: pointer;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    @at-root #{&}__tabs {
-        text-transform: uppercase;
-        color: $color_text;
-        &__container {
-            margin-bottom: 30px;
-        }
-        &--left {
-            float: left;
-            margin-left: 30px;
-        }
-        &--right {
-            float: right;
-            margin-right: 30px;
-        }
-        &--title {
-            margin-right: 40px;
-            cursor: pointer;
-            &:hover {
-                border-bottom: 1px solid $color_wind;
-            }
-            &.active {
-                border-bottom: 1px solid $color_wind;
-            }
-        }
-    }
-    &__select {
-        float: left;
-        width: calc(50% - 10px);
-        &--second {
-            margin-left: 20px;
-        }
-        .base__select {
-            &.bootstrap-select {
-                width: 100% !important;
-                .dropdown-toggle {
-                    padding: 12px 20px 8px 20px;
-                    .caret {
-                        margin-top: -11px;
-                    }
-                    .filter-option {
-                        font-size: 1em;
-                        font-family: $weight-normal;
-                    }
-                }
-            }
-        }
+    &--right {
+      margin-right: 30px;
+      float: right;
     }
     &--title {
-        font-size: 1em;
-        text-transform: uppercase;
+      margin-right: 40px;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid $color_wind;
+      }
+      &.active {
+        border-bottom: 1px solid $color_wind;
+      }
     }
-    @at-root #{&}__single {
-        padding-left: 30px;
-        padding-right: 30px;
-        text-align: center;
-        float: left;
-        font-family: $weight-normal;
-        &.item {
-            position: relative;
-            &:after {
-                background-color: $color_grey_medium_light;
-                width: 1px;
-                content: "";
-                display: block;
-                position: absolute;
-                top: 15%;
-                bottom: 7%;
-                right: 0%;
-                min-height: 1px;
-            }
-        }
-        h2 {
-            margin-bottom: 10px;
-        }
-        &--title {
-            font-size: 1.750em;
-            margin-bottom: 10px;
-        }
-        &--description {
-            margin-bottom: 10px;
-        }
-        &--mainPrice {
-            margin-top: 20px;
-            margin-bottom: 30px;
-            font-size: 1.875em;
-            line-height: 1;
-            .recurrency {
-                font-size: 20px;
-            }
-        }
-        &--recurrency {
-            font-family: $weight-light;
-            font-size: 0.813em;
-            margin-bottom: 10px;
-        }
+  }
+  &__select {
+    width: calc(50% - 10px);
+    float: left;
+    &--second {
+      margin-left: 20px;
     }
+    .base__select {
+      &.bootstrap-select {
+        width: 100% !important;
+        .dropdown-toggle {
+          padding: 12px 20px 8px;
+          .caret {
+            margin-top: -11px;
+          }
+          .filter-option {
+            font-family: $weight-normal;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+  &--title {
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  @at-root #{&}__single {
+    padding: 0 30px;
+    float: left;
+    font-family: $weight-normal;
+    text-align: center;
+    &.item {
+      position: relative;
+      &:after {
+        display: block;
+        position: absolute;
+        top: 15%;
+        right: 0%;
+        bottom: 7%;
+        width: 1px;
+        background-color: $color_grey_medium_light;
+        content: "";
+      }
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    &--title {
+      font-size: 1.750em;
+      margin-bottom: 10px;
+    }
+    &--description {
+      margin-bottom: 10px;
+    }
+    &--mainPrice {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-size: 1.875em;
+      line-height: 1;
+      .recurrency {
+        font-size: 20px;
+      }
+    }
+    &--recurrency {
+      font-family: $weight-light;
+      font-size: 0.813em;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 // ============================== MEDIA QUERIES =========================
@@ -161,20 +155,20 @@
 @media all and (max-width: 991px) {}
 
 @media all and (max-width: 767px) {
-    .offerBlock_slider {
-        &__tabs--left {
-            margin-left: 0px;
-            text-align: center;
-            float: none;
-            font-size: 0.8em;
-        }
-        &__tabs--right {
-            display: none;
-        }
-        &__single {
-            &:after {
-                display: none !important;
-            }
-        }
+  .offerBlock_slider {
+    &__tabs--left {
+      margin-left: 0px;
+      text-align: center;
+      float: none;
+      font-size: 0.8em;
     }
+    &__tabs--right {
+      display: none;
+    }
+    &__single {
+      &:after {
+        display: none !important;
+      }
+    }
+  }
 }
