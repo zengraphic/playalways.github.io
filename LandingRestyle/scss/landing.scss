@@ -7,6 +7,18 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTARE
+.only_desktop{
+    @include breakpoint(tiny){
+        display: none;
+    }
+}
+
+.only_mobile{
+    display: none;
+    @include breakpoint(tiny){
+        display: block;
+    }
+}
 .mac {
     margin: 0;
 }
