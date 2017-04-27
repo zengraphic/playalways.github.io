@@ -1,3 +1,12 @@
+.clear {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
 .landing {
     //============= HEADER ============ //
     //============= HEADER ============ //  
@@ -7,21 +16,90 @@
         position: fixed;
         top: 0;
         min-height: 80px;
-        background-color: $color_white;
         z-index: 999;
-        border-bottom: 1px solid $color_grey_stroke;
+        border-bottom: 1px solid $color_grey_dark_light;
         @include animation(fadein 2s);
+        &__bg {
+            // background-color: $color_white;
+            background-color: rgba(255,255,255,0.8);
+        }
         // === Margine per spaziatura header === //
         &--margin {
-            margin-top: 80px;
+            margin-top: 100px;
+        }
+        &__container {
+            &--left {
+                float: left;
+            }
+            &--right {
+                float: right;
+            }
+            &--logos {
+                text-align: center;
+                display: inline-block;
+                position: relative;
+                padding-left: 61px;
+                @include breakpoint(tiny) {
+                    padding-left: 30px;
+                }
+                &:before {
+                    content: '';
+                    width: 0;
+                    height: 40px;
+                    position: absolute;
+                    border: 1px solid $color_grey_dark_light;
+                    top: 8px;
+                    left: 30px;
+                    @include breakpoint(tiny) {
+                        height: 30px;
+                        top: 5px;
+                        left: 15px;
+                    }
+                }
+            }
+        }
+        &__icon__text {
+            text-transform: uppercase;
+            font-size: 12px;
+            color: $color_grey_dark;
+        }
+        img#{&}__va {
+            margin: 0 auto;
+            width: 40px;
+            height: auto;
+            @include breakpoint(tiny) {
+                width: 25px;
+                height: auto;
+            }
+        }
+        img#{&}__offer {
+            display: inline-block;
+            position: relative;
+            width: 65px;
+            height: auto;
+            position: relative;
+            top: 6px;
+            @include breakpoint(tiny) {
+                width: 50px;
+                height: auto;
+            }
         }
         .container {
             width: 100%;
             max-width: 1024px;
             margin: 0 auto;
+            padding: 10px 30px;
+            @include breakpoint(tiny) {
+                padding: 10px 15px;
+            }
         }
-        .logo {
-            margin: 0.8rem
+        .logo img {
+            @include breakpoint(tiny) {
+                width: 70px;
+                height: auto;
+                position: relative;
+                top: 5px;
+            }
         }
     }
 }
