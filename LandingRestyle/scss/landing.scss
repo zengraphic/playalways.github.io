@@ -46,8 +46,9 @@ a {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding:0 30px;
-    box-sizing:border-box;
+    padding: 0 30px;
+    position:relative;
+    box-sizing: border-box;
 }
 
 .landing {
@@ -68,11 +69,18 @@ a {
                 padding: 15px 30px;
                 font-size: 1.429rem;
                 font-family: $font_family_bold;
-                margin-bottom:40px;
+                margin-bottom: 40px;
                 @include border-radius(4px);
                 &:hover {
                     background-color: $color_orange_light;
                 }
+                @include breakpoint(small) {
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    opacity: 0.8;
+                }
+                ;
             }
         }
     }
@@ -102,6 +110,13 @@ a {
                 color: $color_robin;
                 line-height: 1em;
                 font-family: $font_family_cond;
+                font-weight:bold;
+                @include breakpoint(med-large) {
+                    font-size: 4.5rem;
+                }
+                @include breakpoint('medium') {
+                    font-size: 3.6rem;
+                }
                 @include breakpoint(small) {
                     font-size: 2.125rem;
                 }
@@ -115,17 +130,30 @@ a {
             text-align: center;
             vertical-align: middle;
             width: 32%;
+              @include breakpoint('medium') {
+                    display:inline-block;
+                    width:auto;
+                }
             &:first-child {
                 padding: 0 30px 0 0;
             }
             &:not(:last-of-type) {
                 border-right: 1px solid $color_stroke;
+                @include breakpoint('medium') {
+                    border-right:none;
+                }
             }
             &__container {
                 display: table;
                 width: 50%;
                 margin: 0 0 40px;
                 text-align: left;
+                @include breakpoint('medium') {
+                    display:block;
+                }
+                @include breakpoint(med-large) {
+                    width:40%;
+                }
                 // @include breakpoint(small) {
                 //     max-width: 90%;
                 // }
@@ -133,8 +161,14 @@ a {
             &__title {
                 //max-width: 70px;
                 //margin: 0 auto;
-                font-size: 2.143em;
+                font-size: 2.143rem;
                 line-height: 1.2em;
+                @include breakpoint('medium') {
+                    display:inline-block;
+                }
+                @include breakpoint(med-large) {
+                    font-size: 2.143em;
+                }
                 // @include breakpoint(medium) {
                 //     font-size: 14px;
                 // }
@@ -148,6 +182,9 @@ a {
             &__number {
                 font-size: 4.643em;
                 line-height: 1em;
+                @include breakpoint(med-large) {
+                    font-size: 3em;
+                }
                 @include breakpoint(tiny) {
                     font-size: 36px;
                 }
@@ -164,11 +201,11 @@ a {
             }
         }
         &--details {
-            margin-bottom:40px;
+            margin-bottom: 40px;
             .single {
                 font-family: $font_family_cond;
-                .image{
-                    display:inline-block;
+                .image {
+                    display: inline-block;
                     margin-right: 1em;
                 }
                 .text {
@@ -178,17 +215,17 @@ a {
                 }
             }
         }
-        &--stamp{
-            margin-bottom:45px;
-            &--single{
-                display:inline-block;
+        &--stamp {
+            margin-bottom: 45px;
+            &--single {
+                display: inline-block;
                 margin-right: 1rem;
             }
         }
-        &--claim{
-            margin-bottom:35px;
-            h2{
-                font-size:4.643rem;
+        &--claim {
+            margin-bottom: 35px;
+            h2 {
+                font-size: 4.643rem;
                 text-transform: uppercase;
                 color: $color_robin;
                 line-height: 1em;
@@ -196,20 +233,5 @@ a {
             }
         }
     }
-    &__footer {
-        //position: absolute;
-        bottom: 0;
-    }
 }
 
-@media all and (max-width: 650px) {
-    .button {
-        &__hovering {
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            z-index: 999;
-            opacity: 0.8;
-        }
-    }
-}
