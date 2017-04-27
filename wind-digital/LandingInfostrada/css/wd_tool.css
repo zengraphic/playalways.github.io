@@ -2,10 +2,6 @@
     font-family: 'Play', sans-serif;
     background: $color_grey;
 }*/
-td {
-  border: 1px solid #000;
-  padding: 5px; }
-
 body {
   max-width: 1024px;
   margin: 0 auto;
@@ -22,6 +18,9 @@ body {
   line-height: 0;
   height: 0; }
 
+.text_highlight {
+  font-weight: bold; }
+
 .landing_infostrada__containerMain {
   width: 100%;
   margin: 0 auto;
@@ -29,6 +28,9 @@ body {
 .landing_infostrada__container {
   width: 878px;
   margin: 0 auto; }
+  @media (max-width: 910px) {
+    .landing_infostrada__container {
+      width: 100%; } }
 .landing_infostrada__containerHero {
   width: 1024px;
   position: relative;
@@ -36,7 +38,16 @@ body {
   height: 530px;
   margin: 0 auto;
   left: -65px;
-  background-color: #d6d6d6; }
+  background-color: #d6d6d6;
+  /*background-image: url(../img/visore/visore_testimonial_wide.png);
+  background-repeat: no-repeat;
+  background-position: top left;*/ }
+  @media (max-width: 910px) {
+    .landing_infostrada__containerHero {
+      width: 100%;
+      height: auto;
+      left: 0;
+      padding: 20px 10px 45px; } }
 .landing_infostrada__logo {
   margin: 0 auto;
   padding: 20px 0;
@@ -50,42 +61,96 @@ body {
 .landing_infostrada__hero {
   width: 878px;
   margin: 0 auto; }
+  @media (max-width: 910px) {
+    .landing_infostrada__hero {
+      width: 100%; } }
   .landing_infostrada__hero .left_block {
     float: left;
     width: 55%; }
+    @media (max-width: 910px) {
+      .landing_infostrada__hero .left_block {
+        width: 100%;
+        float: none; } }
     .landing_infostrada__hero .left_block .title {
       font-family: "Trade Gothic Bold Condensed";
       color: #153080;
       font-size: 59px;
       text-transform: uppercase; }
+      @media (max-width: 910px) {
+        .landing_infostrada__hero .left_block .title {
+          font-size: 45px;
+          text-align: center; } }
+      @media (max-width: 480px) {
+        .landing_infostrada__hero .left_block .title {
+          font-size: 30px; } }
     .landing_infostrada__hero .left_block .price {
       font-family: "Trade Gothic Bold Condensed";
       color: #153080;
       font-size: 65px;
       text-transform: uppercase; }
+      @media (max-width: 910px) {
+        .landing_infostrada__hero .left_block .price {
+          font-size: 55px;
+          text-align: center; } }
+      @media (max-width: 480px) {
+        .landing_infostrada__hero .left_block .price {
+          font-size: 35px; } }
     .landing_infostrada__hero .left_block .counter {
-      padding: 10px 20px;
+      padding: 5px 30px;
       color: #153080;
       border: 2px solid #153080;
+      -webkit-border-radius: 4px;
       border-radius: 4px;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */
       width: 80%;
       text-transform: uppercase; }
+      @media (max-width: 910px) {
+        .landing_infostrada__hero .left_block .counter {
+          font-size: 12px;
+          text-align: center;
+          width: 70%;
+          margin: 0 auto;
+          padding: 5px; } }
+      @media (max-width: 480px) {
+        .landing_infostrada__hero .left_block .counter {
+          width: 100%; } }
       .landing_infostrada__hero .left_block .counter .time {
         font-weight: bold;
         font-size: 25px; }
+        @media (max-width: 480px) {
+          .landing_infostrada__hero .left_block .counter .time {
+            font-size: 15px; } }
   .landing_infostrada__hero .right_block {
     float: right;
     width: 45%; }
+    @media (max-width: 910px) {
+      .landing_infostrada__hero .right_block {
+        width: 100%;
+        float: none; } }
     .landing_infostrada__hero .right_block .image_block {
       float: left;
       top: -35px;
       position: relative;
       left: -30px; }
+      @media (max-width: 910px) {
+        .landing_infostrada__hero .right_block .image_block {
+          left: 0;
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+          top: 30px; } }
+      @media (max-width: 910px) {
+        .landing_infostrada__hero .right_block .image_block img {
+          width: 50%; } }
     .landing_infostrada__hero .right_block .sticker_block {
       float: right;
       position: relative; }
       .landing_infostrada__hero .right_block .sticker_block .single_sticker {
         padding: 5px 0; }
+        @media (max-width: 910px) {
+          .landing_infostrada__hero .right_block .sticker_block .single_sticker img {
+            width: 80%; } }
 .landing_infostrada__checkCopertura {
   position: absolute;
   z-index: 999;
@@ -94,8 +159,11 @@ body {
       padding-left: 0;
       padding-right: 0;
   }*/ }
+@media (max-width: 910px) {
+  .landing_infostrada__content {
+    margin: 0 16px; } }
 .landing_infostrada__content--treeParagraph {
-  width: 878px;
+  width: 100%;
   border: 2px solid #d9dfec;
   padding: 40px 0;
   margin: 0 auto; }
@@ -124,8 +192,6 @@ body {
       height: 100%;
       width: 2px;
       background-color: #eee; }
-      .landing_infostrada__content--treeParagraph .listItem::after:nth-of-type(2)::after {
-        display: none; }
       @media (max-width: 768px) {
         .landing_infostrada__content--treeParagraph .listItem::after {
           left: calc(50% - 50px);
@@ -133,31 +199,51 @@ body {
           height: 2px;
           bottom: 0;
           width: 100px; } }
-    .landing_infostrada__content--treeParagraph .listItem .text_highlight {
-      font-weight: bold; }
-.landing_infostrada__content--singleParagraph {
+    @media (max-width: 768px) {
+      .landing_infostrada__content--treeParagraph .listItem:nth-of-type(1)::after {
+        display: none; } }
+    .landing_infostrada__content--treeParagraph .listItem:nth-of-type(3)::after {
+      display: none; }
+      @media (max-width: 768px) {
+        .landing_infostrada__content--treeParagraph .listItem:nth-of-type(3)::after {
+          display: block; } }
+.landing_infostrada__content--description {
   width: 100%;
   margin: 0 auto;
   padding: 32px;
   line-height: 16px;
   font-size: 1em; }
+  @media (max-width: 910px) {
+    .landing_infostrada__content--description {
+      padding: 32px 0; } }
+.landing_infostrada__content--singleParagraph {
+  width: 100%;
+  color: #153080;
+  border: 2px solid #d9dfec;
+  padding: 40px 32px;
+  margin: 0 auto;
+  font-size: 18px; }
 .landing_infostrada__content--informa {
   padding: 0 32px;
   position: relative; }
   .landing_infostrada__content--informa .popup {
     position: relative;
     padding: 10px 0;
-    width: 115px; }
-    @media (max-width: 400px) {
+    width: 131px; }
+    @media (max-width: 910px) {
       .landing_infostrada__content--informa .popup {
         text-align: center;
         margin: 0 auto; } }
-    .landing_infostrada__content--informa .popup a {
-      padding-left: 25px; }
-      .landing_infostrada__content--informa .popup a:before {
+    .landing_infostrada__content--informa .popup a.link_popup {
+      padding-left: 25px;
+      cursor: pointer; }
+      .landing_infostrada__content--informa .popup a.link_popup:before {
         color: #153080;
         content: "i";
+        -webkit-border-radius: 50%;
         border-radius: 50%;
+        background-clip: padding-box;
+        /* stops bg color from leaking outside the border: */
         border: 1px solid #153080;
         width: 20px;
         height: 20px;
@@ -166,28 +252,89 @@ body {
         position: absolute;
         top: 10px;
         left: 0; }
+      .landing_infostrada__content--informa .popup a.link_popup:hover {
+        opacity: 0.5;
+        text-decoration: none; }
   .landing_infostrada__content--informa .offert_details {
     padding: 20px 0; }
+    @media (max-width: 910px) {
+      .landing_infostrada__content--informa .offert_details {
+        padding: 5px 0 10px; } }
     .landing_infostrada__content--informa .offert_details .left_block {
       float: left; }
+      @media (max-width: 910px) {
+        .landing_infostrada__content--informa .offert_details .left_block {
+          text-align: center;
+          float: none; } }
     .landing_infostrada__content--informa .offert_details .right_block {
       float: right; }
+      @media (max-width: 910px) {
+        .landing_infostrada__content--informa .offert_details .right_block {
+          float: none;
+          margin: 0 auto;
+          text-align: center; } }
+      .landing_infostrada__content--informa .offert_details .right_block .question {
+        float: left; }
+        @media (max-width: 910px) {
+          .landing_infostrada__content--informa .offert_details .right_block .question {
+            float: none;
+            margin-top: 50px; } }
+      .landing_infostrada__content--informa .offert_details .right_block .link {
+        float: left; }
+        @media (max-width: 910px) {
+          .landing_infostrada__content--informa .offert_details .right_block .link {
+            float: none;
+            margin-top: 10px;
+            margin-bottom: 30px; } }
+        .landing_infostrada__content--informa .offert_details .right_block .link a.call_to_costumer {
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          background-clip: padding-box;
+          /* stops bg color from leaking outside the border: */
+          border: 2px solid #153080;
+          padding: 7px 10px;
+          margin-left: 10px;
+          cursor: pointer;
+          text-transform: uppercase; }
+          @media (max-width: 910px) {
+            .landing_infostrada__content--informa .offert_details .right_block .link a.call_to_costumer {
+              margin-left: 0; } }
+          .landing_infostrada__content--informa .offert_details .right_block .link a.call_to_costumer:hover {
+            opacity: 0.5;
+            text-decoration: none; }
 .landing_infostrada__footer {
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: 1px solid #eee;
   margin-left: 32px;
   margin-right: 32px; }
-  @media (max-width: 768px) {
-    .landing_infostrada__footer--copy {
-      margin: 0 auto;
-      text-align: center;
-      padding-top: 20px;
-      font-size: 10px; } }
+  .landing_infostrada__footer--copyWind {
+    padding-top: 5px; }
+    @media (max-width: 768px) {
+      .landing_infostrada__footer--copyWind {
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 10px; } }
   .landing_infostrada__footer--logoWind {
     float: right; }
     @media (max-width: 768px) {
       .landing_infostrada__footer--logoWind {
+        float: none;
+        margin: 0 auto;
+        text-align: center; } }
+  .landing_infostrada__footer--copyTre {
+    padding-top: 10px; }
+    @media (max-width: 768px) {
+      .landing_infostrada__footer--copyTre {
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 10px; } }
+  .landing_infostrada__footer--logoTre {
+    float: right; }
+    @media (max-width: 768px) {
+      .landing_infostrada__footer--logoTre {
         float: none;
         margin: 0 auto;
         text-align: center; } }
