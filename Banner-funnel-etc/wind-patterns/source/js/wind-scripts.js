@@ -17,8 +17,9 @@ w$(document)
                 delay: 10
             });
 
-        w$('.selectpicker').selectpicker({
-            'size': 6,
-            'dropupAuto': false
-        });
+        w$('.selectpicker')
+            .selectpicker({
+                'size': 6,
+                'dropupAuto': false
+            });
     });

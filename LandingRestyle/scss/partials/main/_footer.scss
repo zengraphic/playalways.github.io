@@ -2,12 +2,42 @@
     //============= FOOTER ============ //
     //============= FOOTER ============ //  
     &__footer {
-        margin-top: 40px;
         width: 100%;
         background-color: $color_grey_dark;
-        padding: 1.429rem 0 1.071rem 0;
-        color: $color_white;
-        text-align: center;
-        font-size: 0.85rem;
+        margin-top: 40px;
+        &__container {
+            display: table;
+            width: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 10px 30px;
+            @include breakpoint(tiny) {
+                padding: 10px 15px;
+            }
+        }
+        &__box {
+            &--left {
+                display: table-cell;
+                vertical-align: middle;
+                color: $color_white;
+                font-size: 14px;
+                text-align: left;
+                @include breakpoint(tiny) {
+                    font-size: 12px;
+                }
+            }
+            &--right {
+                display: table-cell;
+                vertical-align: middle;
+                img {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+        .cta_box_fixed{
+            height: 60px;
+            width: 100%;
+        }
     }
 }
