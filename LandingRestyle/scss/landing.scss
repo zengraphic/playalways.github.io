@@ -2,7 +2,6 @@
 @import "uikit";
 @import "partials/main/header";
 @import "partials/main/footer";
-@import "partials/main/hero";
 @include attributes_classes;
 @include position_classes;
 @include text_classes;
@@ -12,20 +11,196 @@
     margin: 0;
 }
 
-.button {
-    //bottone cta in overlay fondo pagina.
-    &--standard {
-        color: $color_white;
-        background-color: $color_orange;
-        border: 1px solid $color_orange;
-        padding: 15px 30px;
-        &:hover {
-                  background-color: $color_orange_light;
+div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding:0 30px;
+    box-sizing:border-box;
+}
+
+.landing {
+    &__mainContainer {
+        position: relative;
+        min-height: 100%;
+        a.button {
+            //bottone cta in overlay fondo pagina.
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+            &--standard {
+                position: relative;
+                z-index: 16;
+                color: $color_white;
+                background-color: $color_orange;
+                border: 1px solid $color_orange;
+                padding: 15px 30px;
+                font-size: 1.429rem;
+                font-family: $font_family_bold;
+                margin-bottom:40px;
+                @include border-radius(4px);
+                &:hover {
+                    background-color: $color_orange_light;
+                }
+            }
         }
     }
-    &__hovering {
-        position: fixed;
-        width: 100%;
+    &__header {
+        opacity: 0.8;
+    }
+    &__hero {
+        height: 790px;
+        box-sizing: border-box;
+        position: relative;
+        &__imageContainer {
+            position: absolute;
+            right: 0;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            z-index: 15;
+            @include breakpoint(small) {
+                right: -24%;
+                top: 11%;
+            }
+        }
+        &--title {
+            padding: 30px 0;
+            margin-bottom: 20px;
+            h1 {
+                font-size: 5.5rem;
+                text-transform: uppercase;
+                color: $color_robin;
+                line-height: 1em;
+                font-family: $font_family_cond;
+                @include breakpoint(small) {
+                    font-size: 2.125rem;
+                }
+            }
+        }
+        .bundle_orange {
+            display: table-cell;
+            padding: 0 8px;
+            color: $color_wind;
+            font-family: $font_family_light;
+            text-align: center;
+            vertical-align: middle;
+            width: 32%;
+            &:first-child {
+                padding: 0 30px 0 0;
+            }
+            &:not(:last-of-type) {
+                border-right: 1px solid $color_stroke;
+            }
+            &__container {
+                display: table;
+                width: 50%;
+                margin: 0 0 40px;
+                text-align: left;
+                // @include breakpoint(small) {
+                //     max-width: 90%;
+                // }
+            }
+            &__title {
+                //max-width: 70px;
+                //margin: 0 auto;
+                font-size: 2.143em;
+                line-height: 1.2em;
+                // @include breakpoint(medium) {
+                //     font-size: 14px;
+                // }
+                // @include breakpoint(small) {
+                //     font-size: 16px;
+                // }
+                // @include breakpoint('super-tiny') {
+                //     font-size: 12px;
+                // }
+            }
+            &__number {
+                font-size: 4.643em;
+                line-height: 1em;
+                @include breakpoint(tiny) {
+                    font-size: 36px;
+                }
+                @include breakpoint('super-tiny') {
+                    font-size: 22px;
+                }
+                &:empty {
+                    display: none;
+                    & + .bundle_orange__title {
+                        max-width: none;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        &--details {
+            margin-bottom:40px;
+            .single {
+                font-family: $font_family_cond;
+                .image{
+                    display:inline-block;
+                    margin-right: 1em;
+                }
+                .text {
+                    display: inline-block;
+                    font-size: 1.857em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        &--stamp{
+            margin-bottom:45px;
+            &--single{
+                display:inline-block;
+                margin-right: 1rem;
+            }
+        }
+        &--claim{
+            margin-bottom:35px;
+            h2{
+                font-size:4.643rem;
+                text-transform: uppercase;
+                color: $color_robin;
+                line-height: 1em;
+                font-family: $font_family_cond;
+            }
+        }
+    }
+    &__footer {
+        //position: absolute;
         bottom: 0;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .button {
+        &__hovering {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 999;
+            opacity: 0.8;
+        }
     }
 }

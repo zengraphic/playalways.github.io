@@ -21,17 +21,18 @@
 </head>
 
 <body>
-    <div class="landing__mainContainer"></div>
+    <div class="landing__mainContainer base">
+        
+    </div>
 </body>
-
-</html>
 <script>
 $(function() {
     var divContainer = '<div class="landing__subContainer"/>'
     var mainContainer = '.landing__mainContainer';
     console.log(divContainer);
     $(mainContainer).append($(divContainer).load("partials/header.html"));
-    $(mainContainer).append($(divContainer).load("partials/mainpage.html"));
+    $(mainContainer).append($(divContainer).load("partials/hero.html"));
     $(mainContainer).append($(divContainer).load("partials/footer.html"));
 });
 </script>
+</html>
