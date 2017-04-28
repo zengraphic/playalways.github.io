@@ -95,16 +95,27 @@ a {
         height: 790px;
         box-sizing: border-box;
         position: relative;
+        @include breakpoint(small) {
+            height:674px;
+        }
+        .container{
+            @include breakpoint(small) {
+                overflow:hidden;
+            }
+        }
         &__imageContainer {
             position: absolute;
             right: 0;
             z-index: 15;
-            width: auto;
-                max-width: 100%;
-                height: auto;
-                max-height: 100%;
-            img {
-                
+            top:0;
+            @include breakpoint(small) {
+                width:50%;
+                top:13%;
+                right:-5%
+            }
+            img{
+                width:100%;
+                max-width:100%;
             }
         }
         &--title {
@@ -157,7 +168,7 @@ a {
             &__container {
                 display: table;
                 width: 50%;
-                margin: 0 0 40px;
+                margin: 0 0 50px;
                 text-align: left;
                 @include breakpoint('medium') {
                     display: block;
@@ -213,7 +224,10 @@ a {
             }
         }
         &--details {
-            margin-bottom: 30px;
+            margin-bottom: 110px;
+            @include breakpoint(small) {
+            margin-bottom: 180px;
+            }
             .single {
                 font-family: $font_family_cond;
                 @include breakpoint(small) {
@@ -247,6 +261,7 @@ a {
             }
         }
         &--stamp {
+            display:none;
             margin-bottom: 45px;
             &--single {
                 display: inline-block;
@@ -254,6 +269,8 @@ a {
                 @include breakpoint(small) {
                     display:block;
                     margin-top:5px;
+                    width:44px;
+                    height:44px;
                 }
             }
         }
@@ -264,14 +281,14 @@ a {
             position: absolute;
             background-color: $color_robin;
             right: 0;
-            top: 51%;
+            top: 52%;
             text-align: center;
             color: $color_white;
             z-index: 16;
             @include breakpoint(small) {
-                height:110px;
-                width:220px;
-                top:54%;
+                height:91px;
+                width:158px;
+                top:64%;
             }
             &:before {
                 display: block;
@@ -285,14 +302,17 @@ a {
                 background-color: $color_robin;
                 content: "";
                 z-index: -1;
+                @include breakpoint(small) {
+                    left:-21%;
+                }
             }
             .price {
                 font-size: 6.429rem;
                 line-height: 1em;
                 margin-top: 13px;
                 @include breakpoint(small) {
-                    font-size:3.929rem;
-                    margin-top:6px;
+                    font-size:3.2rem;
+                    margin-top:11px;
                 };
                 .currency {
                     font-size: 0.8em;
@@ -307,12 +327,18 @@ a {
         }
         &--claim {
             margin-bottom: 35px;
+            @include breakpoint(small) {
+                    margin-bottom: 0;
+                }
             h2 {
                 font-size: 4.643rem;
                 text-transform: uppercase;
                 color: $color_robin;
                 line-height: 1em;
                 font-family: $font_family_cond;
+                @include breakpoint(small) {
+                    font-size:3.214rem;
+                }
             }
         }
     }
@@ -323,6 +349,7 @@ a {
         color: $color_white;
         padding:30px 0;
         margin-bottom:60px;
+        display:none;
         h3 {
             font-size: 2.714rem;
             font-family: $font_family_bold;
@@ -348,6 +375,11 @@ a {
                  line-height:0;
             }
             }
+        }
+    }
+    .vetrina_accordions{
+        a{
+            display:inline-block;
         }
     }
 }

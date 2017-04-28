@@ -2223,7 +2223,7 @@ select:-webkit-autofill {
     float: right; }
   .landing__header__container--logos {
     text-align: center;
-    display: inline-block;
+    display: none;
     position: relative;
     padding-left: 61px; }
     @media (max-width: 600px) {
@@ -2259,8 +2259,7 @@ select:-webkit-autofill {
     position: relative;
     width: 65px;
     height: auto;
-    position: relative;
-    top: 6px; }
+    position: relative; }
     @media (max-width: 600px) {
       .landing__header img.landing__header__offer {
         width: 50px;
@@ -2379,6 +2378,8 @@ select:-webkit-autofill {
     .showcase_accordions_block__container img {
       float: left;
       margin-right: 15px; }
+    .showcase_accordions_block__container a {
+      display: inline-block; }
     .showcase_accordions_block__container p {
       margin-top: 30px;
       font-size: 1em; }
@@ -3852,14 +3853,25 @@ a {
   height: 790px;
   box-sizing: border-box;
   position: relative; }
+  @media (max-width: 768px) {
+    .landing__hero {
+      height: 674px; } }
+  @media (max-width: 768px) {
+    .landing__hero .container {
+      overflow: hidden; } }
   .landing__hero__imageContainer {
     position: absolute;
     right: 0;
     z-index: 15;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 100%; }
+    top: 0; }
+    @media (max-width: 768px) {
+      .landing__hero__imageContainer {
+        width: 50%;
+        top: 13%;
+        right: -5%; } }
+    .landing__hero__imageContainer img {
+      width: 100%;
+      max-width: 100%; }
   .landing__hero--title {
     padding: 30px 0;
     margin-bottom: 20px; }
@@ -3906,7 +3918,7 @@ a {
     .landing__hero .bundle_orange__container {
       display: table;
       width: 50%;
-      margin: 0 0 40px;
+      margin: 0 0 50px;
       text-align: left; }
       @media (max-width: 910px) {
         .landing__hero .bundle_orange__container {
@@ -3948,7 +3960,10 @@ a {
           max-width: none;
           font-size: 18px; }
   .landing__hero--details {
-    margin-bottom: 30px; }
+    margin-bottom: 110px; }
+    @media (max-width: 768px) {
+      .landing__hero--details {
+        margin-bottom: 180px; } }
     .landing__hero--details .single {
       font-family: "Trade Gothic Condensed", sans-serif; }
       @media (max-width: 768px) {
@@ -3977,6 +3992,7 @@ a {
             width: 50%;
             font-size: 1.286rem; } }
   .landing__hero--stamp {
+    display: none;
     margin-bottom: 45px; }
     .landing__hero--stamp--single {
       display: inline-block;
@@ -3984,7 +4000,9 @@ a {
       @media (max-width: 768px) {
         .landing__hero--stamp--single {
           display: block;
-          margin-top: 5px; } }
+          margin-top: 5px;
+          width: 44px;
+          height: 44px; } }
   .landing__hero--ribbon {
     width: 350px;
     height: 150px;
@@ -3992,15 +4010,15 @@ a {
     position: absolute;
     background-color: #009BBE;
     right: 0;
-    top: 51%;
+    top: 52%;
     text-align: center;
     color: #FFF;
     z-index: 16; }
     @media (max-width: 768px) {
       .landing__hero--ribbon {
-        height: 110px;
-        width: 220px;
-        top: 54%; } }
+        height: 91px;
+        width: 158px;
+        top: 64%; } }
     .landing__hero--ribbon:before {
       display: block;
       position: absolute;
@@ -4013,14 +4031,17 @@ a {
       background-color: #009BBE;
       content: "";
       z-index: -1; }
+      @media (max-width: 768px) {
+        .landing__hero--ribbon:before {
+          left: -21%; } }
     .landing__hero--ribbon .price {
       font-size: 6.429rem;
       line-height: 1em;
       margin-top: 13px; }
       @media (max-width: 768px) {
         .landing__hero--ribbon .price {
-          font-size: 3.929rem;
-          margin-top: 6px; } }
+          font-size: 3.2rem;
+          margin-top: 11px; } }
       .landing__hero--ribbon .price .currency {
         font-size: 0.8em; }
     .landing__hero--ribbon .recurrency {
@@ -4030,19 +4051,26 @@ a {
           font-size: 0.9rem; } }
   .landing__hero--claim {
     margin-bottom: 35px; }
+    @media (max-width: 768px) {
+      .landing__hero--claim {
+        margin-bottom: 0; } }
     .landing__hero--claim h2 {
       font-size: 4.643rem;
       text-transform: uppercase;
       color: #009BBE;
       line-height: 1em;
       font-family: "Trade Gothic Condensed", sans-serif; }
+      @media (max-width: 768px) {
+        .landing__hero--claim h2 {
+          font-size: 3.214rem; } }
 .landing--offer_details {
   width: 100%;
   height: auto;
   background-color: #009BBE;
   color: #FFF;
   padding: 30px 0;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  display: none; }
   .landing--offer_details h3 {
     font-size: 2.714rem;
     font-family: "Trade Gothic Bold", sans-serif;
@@ -4065,5 +4093,7 @@ a {
         left: -60px;
         font-size: 6em;
         line-height: 0; }
+.landing .vetrina_accordions a {
+  display: inline-block; }
 
 /*# sourceMappingURL=landing.css.map */
