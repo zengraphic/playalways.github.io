@@ -7,18 +7,19 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTARE
-.only_desktop{
-    @include breakpoint(tiny){
+.only_desktop {
+    @include breakpoint(tiny) {
         display: none;
     }
 }
 
-.only_mobile{
+.only_mobile {
     display: none;
-    @include breakpoint(tiny){
+    @include breakpoint(tiny) {
         display: block;
     }
 }
+
 .mac {
     margin: 0;
 }
@@ -47,8 +48,12 @@ a {
     max-width: 1024px;
     margin: 0 auto;
     padding: 0 30px;
-    position:relative;
+    position: relative;
     box-sizing: border-box;
+    @include breakpoint(small) {
+        overflow: hidden;
+        padding: 0 15px;
+    }
 }
 
 .landing {
@@ -77,10 +82,12 @@ a {
                 @include breakpoint(small) {
                     position: fixed;
                     bottom: 0;
+                    left: 0;
+                    margin-bottom: 0;
+                    width: 100%;
                     z-index: 999;
                     opacity: 0.8;
                 }
-                ;
             }
         }
     }
@@ -91,26 +98,27 @@ a {
         &__imageContainer {
             position: absolute;
             right: 0;
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 100%;
             z-index: 15;
-            @include breakpoint(small) {
-                right: -24%;
-                top: 11%;
+            img {
+                width: auto;
+                max-width: 100%;
+                height: auto;
+                max-height: 100%;
             }
         }
         &--title {
             padding: 30px 0;
             margin-bottom: 20px;
+            @include breakpoint(small) {
+                padding: 0;
+            }
             h1 {
                 font-size: 5.5rem;
                 text-transform: uppercase;
                 color: $color_robin;
                 line-height: 1em;
                 font-family: $font_family_cond;
-                font-weight:bold;
+                font-weight: bold;
                 @include breakpoint(med-large) {
                     font-size: 4.5rem;
                 }
@@ -118,7 +126,7 @@ a {
                     font-size: 3.6rem;
                 }
                 @include breakpoint(small) {
-                    font-size: 2.125rem;
+                    font-size: 2.8rem;
                 }
             }
         }
@@ -130,17 +138,19 @@ a {
             text-align: center;
             vertical-align: middle;
             width: 32%;
-              @include breakpoint('medium') {
-                    display:inline-block;
-                    width:auto;
-                }
+            @include breakpoint('medium') {
+                display: block;
+                width: auto;
+                padding: 0;
+                text-align: left;
+            }
             &:first-child {
                 padding: 0 30px 0 0;
             }
             &:not(:last-of-type) {
                 border-right: 1px solid $color_stroke;
                 @include breakpoint('medium') {
-                    border-right:none;
+                    border-right: none;
                 }
             }
             &__container {
@@ -149,14 +159,15 @@ a {
                 margin: 0 0 40px;
                 text-align: left;
                 @include breakpoint('medium') {
-                    display:block;
+                    display: block;
+                    padding: 0;
                 }
                 @include breakpoint(med-large) {
-                    width:40%;
+                    width: 40%;
                 }
-                // @include breakpoint(small) {
-                //     max-width: 90%;
-                // }
+                @include breakpoint(small) {
+                    width: 90%;
+                }
             }
             &__title {
                 //max-width: 70px;
@@ -164,7 +175,7 @@ a {
                 font-size: 2.143rem;
                 line-height: 1.2em;
                 @include breakpoint('medium') {
-                    display:inline-block;
+                    display: inline-block;
                 }
                 @include breakpoint(med-large) {
                     font-size: 2.143em;
@@ -172,9 +183,9 @@ a {
                 // @include breakpoint(medium) {
                 //     font-size: 14px;
                 // }
-                // @include breakpoint(small) {
-                //     font-size: 16px;
-                // }
+                @include breakpoint(small) {
+                    font-size: 1.571rem;
+                }
                 // @include breakpoint('super-tiny') {
                 //     font-size: 12px;
                 // }
@@ -182,14 +193,14 @@ a {
             &__number {
                 font-size: 4.643em;
                 line-height: 1em;
+                @include breakpoint('medium') {
+                    display: inline-block;
+                }
                 @include breakpoint(med-large) {
                     font-size: 3em;
                 }
                 @include breakpoint(tiny) {
-                    font-size: 36px;
-                }
-                @include breakpoint('super-tiny') {
-                    font-size: 22px;
+                    font-size: 45px;
                 }
                 &:empty {
                     display: none;
@@ -201,7 +212,7 @@ a {
             }
         }
         &--details {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             .single {
                 font-family: $font_family_cond;
                 .image {
@@ -222,6 +233,42 @@ a {
                 margin-right: 1rem;
             }
         }
+        &--ribbon {
+            width: 350px;
+            height: 150px;
+            display: block;
+            position: absolute;
+            background-color: $color_robin;
+            right: 0;
+            top: 51%;
+            text-align: center;
+            color: $color_white;
+            z-index: 16;
+            &:before {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 50%;
+                bottom: 0;
+                left: -15%;
+                transform: skew(-20deg);
+                transform-origin: 100% 100%;
+                background-color: $color_robin;
+                content: "";
+                z-index: -1;
+            }
+            .price {
+                font-size: 6.429rem;
+                line-height: 1em;
+                margin-top: 13px;
+                .currency {
+                    font-size: 0.8em;
+                }
+            }
+            .recurrency {
+                font-size: 1.429rem;
+            }
+        }
         &--claim {
             margin-bottom: 35px;
             h2 {
@@ -233,5 +280,31 @@ a {
             }
         }
     }
+    &--offer_details {
+        width: 100%;
+        height: auto;
+        background-color: $color_robin;
+        color: $color_white;
+        padding:30px 0;
+        h3 {
+            font-size: 2.714rem;
+            font-family: $font_family_bold;
+            line-height:1.2em;
+        }
+        .details{
+            list-style: none;
+            li{
+                position:relative;
+                font-size:1.857rem;
+                line-height: 1.2em;
+                &:before{
+                content:"\b7\a0";
+                position:absolute;
+                 right:95%;
+                 font-size:6em;
+                 line-height:0;
+            }
+            }
+        }
+    }
 }
-
