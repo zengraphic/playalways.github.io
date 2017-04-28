@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/wd_tool.css">
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/testTool.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="js/landing.min.js"></script>
 </head>
 
 <body>
@@ -23,41 +25,66 @@
 </iframe>
 </div> -->
     <!-- CONTAINER -->
-    <div class="landing_infostrada__containerMain">
+    <div class="landing_infostrada__containerMain landing">
         <div class="landing_infostrada__container">
             <!-- HEADER Logo Infostrada -->
             <div class="landing_infostrada__logo"><img src="img/logos/logo_infostrada.png"></div>
             <!-- /HEADER Infostrada -->
-            <!-- VISORE -->
-            <div class="landing_infostrada__containerHero">
+            <!-- VISORE WIND -->
+            <!-- <div class="landing_infostrada__containerHero">
                 <div class="landing_infostrada__hero">
                     <div class="left_block">
                         <div class="title">Absolute ADSL</div>
-                        <div class="price">19,95 &euro;</div>
+                        <div class="price">19,95&euro;</div>
                         <div class="counter">
-                            <div class="counter_block_items--data" data-event="2017/10/13"><span class="time gg">00</span> giorni <span class="time hh">00</span> ore <span class="time mm">00</span> minuti <span class="time sec">00</span> secondi</div>
-                            <!-- <div class="counter_block_items--data" data-event="2017/10/13">
+                            <div class="counter_block_items--data" data-event="2017/10/13"><span class="time gg">02</span> giorni <span class="time hh">06</span> ore <span class="time mm">26</span> minuti <span class="time sec">17</span> secondi</div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="right_block">
+                        <div class="image_block">
+                            <div class="sticker_block">
+                                <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-per-oggi.png"></div>
+                                <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_adsl-vera.png"></div>
+                                <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-per-oggi.png"></div>
+                                <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_adsl-vera.png"></div>
+                                <div class="clear "></div>
+                            </div>
+                            <img src="img/visore/testimonial.png"></div>
+                        <div class="clear "></div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- counter -->
+                                 <!-- <div class="counter_block_items--data" data-event="2017/10/13">
                                 <div class="items"><span class="time gg">00</span> giorni</div>
                                 <div class="items"><span class="time hh">00</span> ore</div>
                                 <div class="items"><span class="time mm">00</span> minuti</div>
                                 <div class="items"><span class="time sec">00</span> secondi</div>
                             </div> -->
+            <!-- /VISORE WIND -->
+            <!-- VISORE TRE -->
+            <div class="landing_infostrada__containerHero--tre">
+                <div class="landing_infostrada__hero">
+                    <div class="left_block">
+                        <div class="titleShadow">Absolute Fibra</div>
+                        <div class="listDetails">
+                            <ul>
+                                <li>Fibra a 100 Mega</li>
+                                <li>Telefonate a 0 cent/minuto verso tutti</li>
+                                <li>Attivazione e modem GRATIS</li>
+                            </ul>
                         </div>
+                        <div class="clear"></div>
                     </div>
                     <div class="right_block">
-                        <div class="image_block"><img src="img/visore/testimonial.png"></div>
-                        <div class="sticker_block">
-                            <div class="single_sticker"><img src="img/bolli/bollo_solo-per-oggi.png"></div>
-                            <div class="single_sticker"><img src="img/bolli/bollo_adsl-vera.png"></div>
-                            <div class="single_sticker"><img src="img/bolli/bollo_solo-per-oggi.png"></div>
-                            <div class="single_sticker"><img src="img/bolli/bollo_adsl-vera.png"></div>
-                            <div class="clear "></div>
-                        </div>
+                        <div class="image_block">
+                            <img src="img/visore/visore_price.png"></div>
                         <div class="clear "></div>
                     </div>
                 </div>
             </div>
-            <!-- /VISORE -->
+            <!-- /VISORE TRE -->
             <!-- VISORE -->
             <!-- <div class="landing_infostrada__containerHero">
                 <div class="landing_infostrada__hero">
@@ -71,8 +98,13 @@
                 </div>
             </div> -->
             <!-- /VISORE -->
+            <!-- BUTTON ANCHOR -->
+            <div class="landing_infostrada__buttonAnchor">
+                <a href="#checkCopertura">Verifica subito la disponibilit&agrave;</a>
+            </div>
+            <!-- /BUTTON ANCHOR -->
             <!-- CHECK COMPERTURA iframe -->
-            <div class="landing_infostrada__checkCopertura intrinsic-container">
+            <div id="checkCopertura" class="landing_infostrada__checkCopertura intrinsic-container">
                 <iframe src="https://www.infostrada.it/it/fibra/landing-solo-check" allowfullscreen></iframe>
             </div>
             <!-- /CHECK COMPERTURA iframe -->
@@ -101,7 +133,7 @@
                 <!-- /CONTENT -->
                 <!-- INFOSTRADA INFORMA -->
                 <div class="landing_infostrada__content--informa">
-                    <div class="popup"><a href="#layer-informa" class="link_popup" id="layer-informa">Infostrada informa</a></div>
+                    <div class="popup"><a href="#layer-informa" class="link_popup popup-link" id="layer-informa">Infostrada informa</a></div>
                     <div class="offert_details">
                         <div class="left_block">L'offerta si rinnova ogni 4 settimane.</div>
                         <div class="right_block">
@@ -145,7 +177,7 @@
     .intrinsic-container {
         /*height: 0;
         padding-bottom: 0;*/
-        top: -165px;
+        top: -150px;
         position: relative;
         height: 0;
         overflow: hidden;
@@ -164,7 +196,7 @@
     @media (max-width: 768px) {
         .intrinsic-container {
             padding-bottom: 455px;
-            top: -215px;
+            top: 0;
         }
     }
     

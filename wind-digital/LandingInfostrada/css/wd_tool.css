@@ -53,7 +53,7 @@ body {
 .landing_infostrada__container {
   width: 878px;
   margin: 0 auto; }
-  @media (max-width: 910px) {
+  @media (max-width: 768px) {
     .landing_infostrada__container {
       width: 100%; } }
 .landing_infostrada__containerHero {
@@ -67,12 +67,34 @@ body {
   /*background-image: url(../img/visore/visore_testimonial_wide.png);
   background-repeat: no-repeat;
   background-position: top left;*/ }
-  @media (max-width: 910px) {
+  @media (max-width: 768px) {
     .landing_infostrada__containerHero {
       width: 100%;
       height: auto;
       left: 0;
-      padding: 20px 10px 45px; } }
+      padding: 20px 10px 30px; } }
+.landing_infostrada__containerHero--tre {
+  width: 1024px;
+  position: relative;
+  padding: 19px 0;
+  height: 530px;
+  margin: 0 auto;
+  left: -72px;
+  background-color: #153080;
+  background-image: url(../img/visore/visore_bg_tre.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: auto 100%; }
+  @media (max-width: 480px) {
+    .landing_infostrada__containerHero--tre {
+      background-image: url(../img/visore/visore_bg_tre_mobile.jpg);
+      background-size: 100% 100%; } }
+  @media (max-width: 768px) {
+    .landing_infostrada__containerHero--tre {
+      width: 100%;
+      height: auto;
+      left: 0;
+      padding: 20px 10px 30px; } }
 .landing_infostrada__logo {
   margin: 0 auto;
   padding: 20px 0;
@@ -86,13 +108,13 @@ body {
 .landing_infostrada__hero {
   width: 878px;
   margin: 0 auto; }
-  @media (max-width: 910px) {
+  @media (max-width: 768px) {
     .landing_infostrada__hero {
       width: 100%; } }
   .landing_infostrada__hero .left_block {
     float: left;
     width: 55%; }
-    @media (max-width: 910px) {
+    @media (max-width: 768px) {
       .landing_infostrada__hero .left_block {
         width: 100%;
         float: none; } }
@@ -107,20 +129,32 @@ body {
           text-align: center; } }
       @media (max-width: 480px) {
         .landing_infostrada__hero .left_block .title {
-          font-size: 50px; } }
+          font-size: 46px; } }
     .landing_infostrada__hero .left_block .titleShadow {
-      font-family: "Trade Gothic Bold Condensed";
+      font-family: "Trade Gothic Bold";
       color: #fff;
-      font-size: 59px;
+      font-size: 69px;
       text-transform: uppercase;
       text-shadow: 0px 1px 8px black; }
       @media (max-width: 910px) {
         .landing_infostrada__hero .left_block .titleShadow {
-          font-size: 45px;
-          text-align: center; } }
+          font-size: 52px; } }
       @media (max-width: 480px) {
         .landing_infostrada__hero .left_block .titleShadow {
-          font-size: 30px; } }
+          font-size: 30px;
+          padding-left: 20px; } }
+    .landing_infostrada__hero .left_block .listDetails {
+      font-family: "Trade Gothic Bold Condensed";
+      color: #fff;
+      font-size: 28px;
+      text-transform: uppercase;
+      text-shadow: 0px 1px 8px black; }
+      @media (max-width: 910px) {
+        .landing_infostrada__hero .left_block .listDetails {
+          font-size: 25px; } }
+      @media (max-width: 480px) {
+        .landing_infostrada__hero .left_block .listDetails {
+          font-size: 16px; } }
     .landing_infostrada__hero .left_block .price {
       font-family: "Trade Gothic Bold";
       color: #153080;
@@ -149,7 +183,6 @@ body {
         .landing_infostrada__hero .left_block .counter {
           font-size: 12px;
           text-align: center;
-          width: 70%;
           margin: 0 auto;
           padding: 5px;
           margin-top: 20px; } }
@@ -166,33 +199,56 @@ body {
   .landing_infostrada__hero .right_block {
     float: right;
     width: 45%; }
-    @media (max-width: 910px) {
+    @media (max-width: 768px) {
       .landing_infostrada__hero .right_block {
         width: 100%;
         float: none; } }
     .landing_infostrada__hero .right_block .image_block {
-      float: left;
-      top: -11px;
+      float: right;
+      top: 5px;
       position: relative;
-      left: -30px; }
-      @media (max-width: 910px) {
+      right: 30px; }
+      @media (max-width: 768px) {
         .landing_infostrada__hero .right_block .image_block {
           left: 0;
-          width: 100%;
           text-align: center;
           margin: 0 auto;
-          top: 30px; } }
-      @media (max-width: 910px) {
+          top: 30px;
+          float: none; } }
+      @media (max-width: 480px) {
         .landing_infostrada__hero .right_block .image_block img {
-          width: 50%; } }
+          width: 75%; } }
     .landing_infostrada__hero .right_block .sticker_block {
       float: right;
-      position: relative; }
+      position: relative;
+      top: 14px;
+      right: 16px; }
       .landing_infostrada__hero .right_block .sticker_block .single_sticker {
         padding: 5px 0; }
-        @media (max-width: 910px) {
-          .landing_infostrada__hero .right_block .sticker_block .single_sticker img {
-            width: 80%; } }
+.landing_infostrada__buttonAnchor {
+  padding: 15px 30px;
+  width: auto;
+  margin: 10px 20px;
+  background-color: #153080;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  text-align: center;
+  display: none;
+  cursor: pointer; }
+  @media (max-width: 480px) {
+    .landing_infostrada__buttonAnchor {
+      display: block; } }
+  .landing_infostrada__buttonAnchor a {
+    font-family: "Trade Gothic";
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none; }
+  .landing_infostrada__buttonAnchor:hover {
+    opacity: 0.8; }
 .landing_infostrada__checkCopertura {
   position: absolute;
   z-index: 999;
@@ -204,6 +260,9 @@ body {
 .landing_infostrada__contentSubFrame {
   position: relative;
   top: -150px; }
+  @media (max-width: 768px) {
+    .landing_infostrada__contentSubFrame {
+      top: 20px; } }
 @media (max-width: 910px) {
   .landing_infostrada__content {
     margin: 0 16px; } }
@@ -270,6 +329,9 @@ body {
   padding: 40px 32px;
   margin: 0 auto;
   font-size: 18px; }
+  @media (max-width: 480px) {
+    .landing_infostrada__content--singleParagraph {
+      font-size: 15px; } }
 .landing_infostrada__content--informa {
   padding: 0 32px;
   position: relative; }
