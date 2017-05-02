@@ -285,7 +285,7 @@ a {
             text-align: center;
             color: $color_white;
             z-index: 16;
-            @include breakpoint(medium) {
+            @include breakpoint(min-desktop-plusborder) {
                     right:0;                }
             @include breakpoint(small) {
                 height: 91px;
@@ -322,6 +322,8 @@ a {
                 @include breakpoint(medium) {
                     content:none;
                 }
+            @include breakpoint(min-desktop-plusborder) {
+                    content:none;                }                
             }
             .price {
                 font-size: 6.429rem;
