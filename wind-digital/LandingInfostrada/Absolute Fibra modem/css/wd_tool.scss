@@ -105,12 +105,12 @@ body {
         margin: 0 auto;
         left: -72px;
         background-color: $color_infostrada;
-        background-image: url(../img/visore/visore_bg_tre.jpg);
+        background-image: url(../img/visore/visore_bg.jpg);
         background-repeat: no-repeat;
         background-position: top left;
         background-size: auto 100%;
         @include breakpoint(super-tiny) {
-            background-image: url(../img/visore/visore_bg_tre_mobile.jpg);
+            background-image: url(../img/visore/visore_bg_mobile.jpg);
             background-size: 100% 100%;
         }
         @include breakpoint(small) {
@@ -164,13 +164,67 @@ body {
                 color: $color_white;
                 font-size: 69px;
                 text-transform: uppercase;
-                text-shadow: 0px 1px 8px black;
+                text-shadow: 0px 1px 8px $color_infostrada;
                 @include breakpoint(medium) {
-                    font-size: 52px;
+                    font-size: 55px;
+                    //padding-left: 20px;
+                    text-align: center;
+                }
+                @include breakpoint(super-tiny) {
+                    font-size: 35px;
+                }
+            }
+            .titleShadowLight {
+                font-family: $weight-bold-cond;
+                color: $color_white;
+                font-size: 50px;
+                text-transform: uppercase;
+                text-shadow: 0px 1px 8px $color_infostrada;
+                @include breakpoint(medium) {
+                    font-size: 40px;
+                    padding-left: 20px;
+                    text-align: center;
+                }
+                @include breakpoint(super-tiny) {
+                    font-size: 28px;
+                    padding-left: 5px;
+                }
+             }
+            .subTitle {
+                text-align: center;
+            }
+            .subTitleShadow {
+                font-family: $weight-bold;
+                color: $color_white;
+                font-size: 45px;
+                text-transform: uppercase;
+                text-shadow: 0px 1px 8px $color_infostrada;
+                display: inline;
+                float: left;
+                @include breakpoint(medium) {
+                    font-size: 40px;
+                    text-align: center;
+                    float: none;
                 }
                 @include breakpoint(super-tiny) {
                     font-size: 30px;
-                    padding-left: 20px;
+                    padding-left: 5px;
+                    float: none;
+                }
+            }
+            .subTitlePriceShadow {
+                font-family: $weight-bold;
+                color: $color_white;
+                font-size: 55px;
+                text-transform: uppercase;
+                text-shadow: 0px 1px 8px $color_infostrada;
+                @include breakpoint(medium) {
+                    padding-left: 0;
+                    text-align: center;
+                }
+                @include breakpoint(super-tiny) {
+                    font-size: 35px;
+                    padding-left: 0;
                 }
             }
             .listDetails {
@@ -191,7 +245,7 @@ body {
                         line-height: 1.35em;
                         margin: 0 0 .5em 0;
                         @include breakpoint(super-tiny) {
-                            padding-left: 30px;
+                            padding-left: 15px;
                         }
                         &:before {
                             background: $color_white;
@@ -207,7 +261,7 @@ body {
                             box-shadow: 0px 1px 8px black;
                             @include breakpoint(super-tiny) {
                                 top: 8px;
-                                left: 15px;
+                                //left: 15px;
                                 width: 5px;
                                 height: 5px;
                             }
@@ -216,11 +270,11 @@ body {
                 }
                 @include breakpoint(medium) {
                     font-size: 25px;
-                    //padding-left: 25px;
+                    padding-left: 20px;
                 }
                 @include breakpoint(super-tiny) {
                     font-size: 16px;
-                    //text-align: center;
+                    padding-left: 5px;
                 }
             }
             .price {
@@ -282,7 +336,7 @@ body {
                     //width: 100%;
                     text-align: center;
                     margin: 0 auto;
-                    top: 30px;
+                    top: 0;
                     float: none;
                 }
                 img {

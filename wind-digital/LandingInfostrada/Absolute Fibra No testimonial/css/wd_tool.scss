@@ -167,10 +167,11 @@ body {
                 text-shadow: 0px 1px 8px black;
                 @include breakpoint(medium) {
                     font-size: 52px;
+                    padding-left: 20px;
                 }
                 @include breakpoint(super-tiny) {
                     font-size: 30px;
-                    padding-left: 20px;
+                    padding-left: 5px;
                 }
             }
             .listDetails {
@@ -191,7 +192,7 @@ body {
                         line-height: 1.35em;
                         margin: 0 0 .5em 0;
                         @include breakpoint(super-tiny) {
-                            padding-left: 30px;
+                            padding-left: 15px;
                         }
                         &:before {
                             background: $color_white;
@@ -207,7 +208,7 @@ body {
                             box-shadow: 0px 1px 8px black;
                             @include breakpoint(super-tiny) {
                                 top: 8px;
-                                left: 15px;
+                                //left: 15px;
                                 width: 5px;
                                 height: 5px;
                             }
@@ -216,11 +217,11 @@ body {
                 }
                 @include breakpoint(medium) {
                     font-size: 25px;
-                    //padding-left: 25px;
+                    padding-left: 20px;
                 }
                 @include breakpoint(super-tiny) {
                     font-size: 16px;
-                    //text-align: center;
+                    padding-left: 5px;
                 }
             }
             .price {
@@ -282,7 +283,7 @@ body {
                     //width: 100%;
                     text-align: center;
                     margin: 0 auto;
-                    top: 30px;
+                    top: 0;
                     float: none;
                 }
                 img {
@@ -310,7 +311,7 @@ body {
     &__buttonAnchor {
         padding: 15px 30px;
         width: auto;
-        margin: 10px 20px;
+        margin: 10px 18px;
         background-color: $color_infostrada;
         @include border-radius(6px);
         text-align: center;
@@ -369,10 +370,11 @@ body {
                 float: left;
                 color: $color_infostrada;
                 font-size: 20px;
+                padding: 0 20px;
                 @include breakpoint(small) {
                     width: 100%;
                     float: none;
-                    padding: 20px 0;
+                    padding: 20px;
                     font-size: 16px;
                 }
                 &::after {
