@@ -25,10 +25,8 @@
 
 <body class="body">
 
-  <button class="btn btn-lg btn-primary">Button</button>
-  <button class="btn btn-primary ">Button</button>
-  <button class="btn btn-sm btn-primary">Button</button>
-  <button class="btn btn-xs btn-primary">Button</button>
+  <li>Item 1</li>
+  <li>Item 2</li>
 
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
@@ -37,18 +35,30 @@
       "patternLineageExists": false,
       "patternLineages": [],
       "lineage": [],
-      "patternLineageRExists": false,
-      "patternLineagesR": [],
-      "lineageR": [],
-      "patternLineageEExists": false,
+      "patternLineageRExists": true,
+      "patternLineagesR": [{
+        "lineagePattern": "atoms-unordered-list",
+        "lineagePath": "../../patterns/00-atoms-lists-00-unordered-list\\00-atoms-lists-00-unordered-list.rendered.html"
+      }, {
+        "lineagePattern": "atoms-ordered-list",
+        "lineagePath": "../../patterns/00-atoms-lists-01-ordered-list\\00-atoms-lists-01-ordered-list.rendered.html"
+      }],
+      "lineageR": [{
+        "lineagePattern": "atoms-unordered-list",
+        "lineagePath": "../../patterns/00-atoms-lists-00-unordered-list\\00-atoms-lists-00-unordered-list.rendered.html"
+      }, {
+        "lineagePattern": "atoms-ordered-list",
+        "lineagePath": "../../patterns/00-atoms-lists-01-ordered-list\\00-atoms-lists-01-ordered-list.rendered.html"
+      }],
+      "patternLineageEExists": true,
       "patternDesc": "",
       "patternBreadcrumb": {
         "patternType": "atoms",
-        "patternSubtype": "global"
+        "patternSubtype": "lists"
       },
       "patternExtension": "mustache",
-      "patternName": "Button Sizes",
-      "patternPartial": "atoms-button-sizes",
+      "patternName": "List",
+      "patternPartial": "atoms-list",
       "patternState": "",
       "patternEngineName": "mustache",
       "extraOutput": {}
