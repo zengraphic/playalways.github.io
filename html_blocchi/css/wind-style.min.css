@@ -199,7 +199,7 @@ h4 {
   font-size: 1.250em; }
 
 b {
-  font-family: "Trade Gothic Bold"; }
+  font-family: "Trade Gothic"; }
 
 .clear-fix:after,
 .clear {
@@ -1316,7 +1316,7 @@ hr.example_divider {
     vertical-align: middle; }
     .standard_block__half_block.image_block {
       position: absolute;
-      right: 40%;
+      right: 50%;
       bottom: 0;
       left: 0;
       width: auto;
@@ -1332,7 +1332,7 @@ hr.example_divider {
           padding: 30px; } }
       .invertedDisplay .standard_block__half_block.image_block {
         right: 0;
-        left: 40%; }
+        left: 50%; }
         @media (max-width: 767px) {
           .invertedDisplay .standard_block__half_block.image_block {
             left: 0; } }
@@ -1367,6 +1367,7 @@ hr.example_divider {
             left: calc(50% - 160px);
             width: 320px; } }
         .invertedDisplay .standard_block__half_block.image_block .testimonial {
+          right: 0;
           left: auto; }
           @media (max-width: 767px) {
             .invertedDisplay .standard_block__half_block.image_block .testimonial {
@@ -1447,7 +1448,7 @@ hr.example_divider {
     position: relative;
     left: -35px;
     width: 135px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     padding: 4px 8px 4px 35px;
     background-color: #F48135;
     color: #FFF;
@@ -1489,7 +1490,7 @@ hr.example_divider {
         .invertedDisplay .standard_block__ribbon {
           padding: 8px 30px 8px 8px; } }
     .withForm .standard_block__ribbon {
-      left: calc(100% - 110px);
+      left: calc(100% - 100px);
       padding: 8px 35px 8px 8px;
       text-align: right;
       -animation: slidein-right .7s 0s 1 linear;
@@ -1601,6 +1602,9 @@ hr.example_divider {
       @media (max-width: 767px) {
         .standard_block__sticker__wrapper.big {
           width: 48px; } }
+      .standard_block__sticker__wrapper.big .standard_block__sticker img {
+        width: 100%;
+        height: auto; }
       .standard_block__sticker__wrapper.big .standard_block__sticker:not(:last-of-type) {
         margin-bottom: 8px; }
       .invertedDisplay .standard_block__sticker__wrapper.big {
@@ -1745,7 +1749,8 @@ hr.example_divider {
   color: #F48135;
   font-family: "Trade Gothic Light";
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 20%; }
   .bundle_orange:not(:last-of-type) {
     border-right: 1px solid #D3D3D2; }
   .bundle_orange__container {
@@ -6047,10 +6052,11 @@ sw.showcase_bundle_device {
         border-bottom: 1px solid #F48135;
         color: #F48135; }
   .showcase_bundle_device__select {
-    float: left;
+    display: inline-block;
+    margin-right: 5px;
     width: calc(50% - 10px); }
-    .showcase_bundle_device__select--second {
-      margin-left: 20px; }
+    .showcase_bundle_device__select:only-of-type {
+      width: 100%; }
     .showcase_bundle_device__select .base__select.bootstrap-select {
       width: 100% !important; }
       .showcase_bundle_device__select .base__select.bootstrap-select .dropdown-toggle {
@@ -10579,7 +10585,7 @@ sw.showcase_bundle_device {
     .showcase_bundle_block__container .cardsOffer__single {
       position: relative;
       font-size: 16px;
-      height: 435px;
+      height: 27.19em;
       text-align: center;
       margin-bottom: 30px;
       display: none;
@@ -10607,14 +10613,15 @@ sw.showcase_bundle_device {
         z-index: 50;
         top: 0;
         left: 0;
-        width: 100%; }
+        width: 100%;
+        height: 24.05em; }
       .showcase_bundle_block__container .cardsOffer__single h2 {
         margin-bottom: 10px; }
       .showcase_bundle_block__container .cardsOffer__single--title {
         position: relative;
         z-index: 51;
         margin-bottom: 10px;
-        height: 100px;
+        height: 6.5em;
         overflow: hidden;
         color: inherit; }
         .showcase_bundle_block__container .cardsOffer__single--title h3 {
@@ -10623,31 +10630,32 @@ sw.showcase_bundle_device {
           font-weight: 700; }
       .showcase_bundle_block__container .cardsOffer__single--text {
         position: relative;
-        height: 169px;
-        margin-bottom: 10px;
+        height: 10.85em;
+        margin-bottom: 11px;
         z-index: 51;
         overflow: hidden;
         color: #292F36; }
         .showcase_bundle_block__container .cardsOffer__single--text--bundle {
-          height: 97px;
+          height: 4.4em;
           overflow: hidden;
           font-size: 1.375em;
           color: #292F36;
           margin-bottom: 10px;
           line-height: 1.1em; }
         .showcase_bundle_block__container .cardsOffer__single--text--smallDescription {
-          height: 58px;
+          height: 3.3em;
           overflow: hidden;
           font-size: 1.125em;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           color: #292F36;
           line-height: 1.1em; }
         .showcase_bundle_block__container .cardsOffer__single--text--bigDescription {
           font-size: 1.375em;
+          overflow: hidden;
           color: #292F36;
           line-height: 1.1em; }
       .showcase_bundle_block__container .cardsOffer__single--price__container {
-        height: 85px;
+        height: 5.375em;
         margin-bottom: 10px; }
         .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted {
           font-size: 2em;
@@ -10691,33 +10699,34 @@ sw.showcase_bundle_device {
         .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--bundle .bundle_single:nth-child(n+2) {
           display: none; }
       .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--smallDescription {
-        height: 96px;
+        height: 5.5em;
         margin-bottom: 10px; }
       .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bundle {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bigDescription {
-        height: 116px;
-        margin-bottom: 15px; }
-      .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--smallDescription {
-        height: 40px;
+        height: 5.5em;
         margin-bottom: 10px; }
+      .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--smallDescription {
+        height: 2.22em; }
       .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .bundle_single,
       .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .cardsOffer__single--text--smallDescription,
       .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .cardsOffer__single--text--bigDescription {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text {
-        height: 200px;
+        height: 12.55em;
         margin-bottom: 0;
-        padding-top: 155px; }
+        padding-top: 9.7em; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle {
           margin-bottom: 0;
           height: 38px;
           font-size: 1em;
           color: #FFF; }
+          .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle .bundle_single:nth-child(n+2) {
+            display: none; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--smallDescription, .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bigDescription {
           display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container {
-        height: 65px; }
+        height: 4.375em; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted {
           display: inline-block;
           margin-right: 4%;
@@ -10763,8 +10772,9 @@ sw.showcase_bundle_device {
       .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text--bigDescription {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text {
-        height: 265px;
-        line-height: 1.1em; }
+        height: 16.8em;
+        line-height: 1.2em;
+        margin-bottom: 12px; }
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--bgContainer,
       .showcase_bundle_block__container .cardsOffer__single.fullText .bundle_single,
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text--smallDescription,
@@ -10805,7 +10815,17 @@ sw.showcase_bundle_device {
   .faq_block__single {
     text-align: center;
     padding: 1.250em 1.250em;
-    cursor: pointer; }
+    cursor: pointer;
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 33%; }
+    @media (max-width: 910px) {
+      .faq_block__single {
+        width: 49%; } }
+    @media (max-width: 767px) {
+      .faq_block__single {
+        width: 100%; } }
     .faq_block__mainBlock .faq_block__single.faq_active, .faq_block__mainBlock .faq_block__single:hover {
       background-color: #F48135;
       color: #FFF; }
@@ -11036,13 +11056,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-moz-placeholder {
+  :-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area::-moz-placeholder {
+  ::-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
