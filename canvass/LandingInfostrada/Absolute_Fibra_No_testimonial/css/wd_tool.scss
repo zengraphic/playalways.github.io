@@ -339,9 +339,10 @@ body {
     &__checkCopertura {
         position: absolute;
         z-index: 999;
-//checkCopertura
-
-        height: 320px !important;
+        @include breakpoint(custom-check) {
+            height: 330px !important;
+        }
+        //height: 320px !important;
         //top: -150px;
         /*.container {
             padding-left: 0;
@@ -418,7 +419,9 @@ body {
             margin: 0 auto;
             padding: 32px;
             line-height: 16px;
-            font-size: 1em;
+            font-size: 1.1em;
+            line-height: 1.3;
+            font-family: $weight-cond;
             @include breakpoint(medium) {
                 padding: 32px 0;
             }

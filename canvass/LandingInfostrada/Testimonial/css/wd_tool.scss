@@ -18,7 +18,7 @@ $weight-bold-cond: 'Trade Gothic Bold Condensed';
     /* stops bg color from leaking outside the border: */
 }
 
-$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px), 'custom-check':(max-width: 860px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -308,7 +308,10 @@ body {
                 float: right;
                 position: relative;
                 top: 14px;
-                right: 10%;
+                right: 10px;
+                @include breakpoint(small) {
+                    right: 10%;
+                }
                 .single_sticker {
                     padding: 5px 0;
                 }
@@ -342,6 +345,9 @@ body {
     &__checkCopertura {
         position: absolute;
         z-index: 999;
+        @include breakpoint(custom-check) {
+            height: 330px !important;
+        }
         //height: 320px !important;
         //top: -150px;
         /*.container {
