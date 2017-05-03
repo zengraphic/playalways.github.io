@@ -162,7 +162,7 @@ hr.example_divider {
     vertical-align: middle;
     &.image_block {
       position: absolute;
-      right: 40%;
+      right: 50%;
       bottom: 0;
       left: 0;
       width: auto;
@@ -179,7 +179,7 @@ hr.example_divider {
       @at-root {
         .invertedDisplay #{&} {
           right: 0;
-          left: 40%;
+          left: 50%;
           @include breakpoint(small) {
             left: 0;
           }
@@ -221,6 +221,7 @@ hr.example_divider {
         }
         @at-root {
           .invertedDisplay #{&} {
+            right: 0;
             left: auto;
             @include breakpoint(small) {
               left: calc(50% - 160px);
@@ -321,7 +322,7 @@ hr.example_divider {
     position: relative;
     left: -35px;
     width: 135px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     padding: 4px 8px 4px 35px;
     background-color: $color_wind;
     color: $color_white;
@@ -374,7 +375,7 @@ hr.example_divider {
         }
       }
       .withForm #{&} {
-        left: calc(100% - 110px);
+        left: calc(100% - 100px);
         padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
@@ -722,6 +723,7 @@ hr.example_divider {
   font-family: $weight-light;
   text-align: center;
   vertical-align: middle;
+  width: 20%;
   &:not(:last-of-type) {
     border-right: 1px solid $color_stroke;
   }

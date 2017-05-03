@@ -421,6 +421,7 @@ body {
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  height: auto !important;
   min-height: 100vh !important;
   overflow-x: hidden; }
   body h1 {
@@ -1095,7 +1096,7 @@ body {
 
 .title__default {
   width: 100%;
-  padding: 1.2rem 0;
+  padding: 1.2rem 0 !important;
   border-bottom: 1px solid #D3D3D2; }
   .title__default h3 {
     font-family: "Trade Gothic Light", sans-serif;
@@ -1730,7 +1731,6 @@ select:-webkit-autofill {
   text-align: center;
   background: transparent;
   width: 100%;
-  max-width: 280px;
   -moz-border-radius: 4px;
   -wekit-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -3303,6 +3303,7 @@ input[type=number]::-webkit-outer-spin-button {
   float: none;
   width: 100%;
   position: absolute;
+  top: 100%;
   height: auto;
   padding: 1.214rem 0 0;
   background-color: #656D78; }
@@ -4735,6 +4736,8 @@ h4.trade_l {
       text-align: left; }
     .base__popup .box--register .popup-body, .base__popup .box--register .popup-footer {
       padding: 1rem 2.1rem; }
+    .base__popup .box--register .popup-footer {
+      text-align: center; }
     .base__popup .box--register .popup-btn {
       margin-bottom: 30px; }
     .base__popup .box--register .popup .popup-btn_1,
