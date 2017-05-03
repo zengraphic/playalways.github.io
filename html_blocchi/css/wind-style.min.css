@@ -1601,6 +1601,9 @@ hr.example_divider {
       @media (max-width: 767px) {
         .standard_block__sticker__wrapper.big {
           width: 48px; } }
+      .standard_block__sticker__wrapper.big .standard_block__sticker img {
+        width: 100%;
+        height: auto; }
       .standard_block__sticker__wrapper.big .standard_block__sticker:not(:last-of-type) {
         margin-bottom: 8px; }
       .invertedDisplay .standard_block__sticker__wrapper.big {
@@ -6047,10 +6050,11 @@ sw.showcase_bundle_device {
         border-bottom: 1px solid #F48135;
         color: #F48135; }
   .showcase_bundle_device__select {
-    float: left;
+    display: inline-block;
+    margin-right: 5px;
     width: calc(50% - 10px); }
-    .showcase_bundle_device__select--second {
-      margin-left: 20px; }
+    .showcase_bundle_device__select:only-of-type {
+      width: 100%; }
     .showcase_bundle_device__select .base__select.bootstrap-select {
       width: 100% !important; }
       .showcase_bundle_device__select .base__select.bootstrap-select .dropdown-toggle {
@@ -10607,14 +10611,15 @@ sw.showcase_bundle_device {
         z-index: 50;
         top: 0;
         left: 0;
-        width: 100%; }
+        width: 100%;
+        height: 24em; }
       .showcase_bundle_block__container .cardsOffer__single h2 {
         margin-bottom: 10px; }
       .showcase_bundle_block__container .cardsOffer__single--title {
         position: relative;
         z-index: 51;
         margin-bottom: 10px;
-        height: 100px;
+        height: 6.5em;
         overflow: hidden;
         color: inherit; }
         .showcase_bundle_block__container .cardsOffer__single--title h3 {
@@ -10623,8 +10628,8 @@ sw.showcase_bundle_device {
           font-weight: 700; }
       .showcase_bundle_block__container .cardsOffer__single--text {
         position: relative;
-        height: 169px;
-        margin-bottom: 10px;
+        height: 10.8em;
+        margin-bottom: 11px;
         z-index: 51;
         overflow: hidden;
         color: #292F36; }
@@ -10647,7 +10652,7 @@ sw.showcase_bundle_device {
           color: #292F36;
           line-height: 1.1em; }
       .showcase_bundle_block__container .cardsOffer__single--price__container {
-        height: 85px;
+        height: 5.375em;
         margin-bottom: 10px; }
         .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted {
           font-size: 2em;
@@ -10696,11 +10701,10 @@ sw.showcase_bundle_device {
       .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bundle {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bigDescription {
-        height: 116px;
-        margin-bottom: 15px; }
-      .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--smallDescription {
-        height: 40px;
+        height: 5.5em;
         margin-bottom: 10px; }
+      .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--smallDescription {
+        height: 2.2em; }
       .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .bundle_single,
       .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .cardsOffer__single--text--smallDescription,
       .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .cardsOffer__single--text--bigDescription {
@@ -10714,10 +10718,12 @@ sw.showcase_bundle_device {
           height: 38px;
           font-size: 1em;
           color: #FFF; }
+          .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle .bundle_single:nth-child(n+2) {
+            display: none; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--smallDescription, .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bigDescription {
           display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container {
-        height: 65px; }
+        height: 4.375em; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted {
           display: inline-block;
           margin-right: 4%;
@@ -10763,8 +10769,8 @@ sw.showcase_bundle_device {
       .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text--bigDescription {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text {
-        height: 265px;
-        line-height: 1.1em; }
+        height: 16.8em;
+        line-height: 1.2em; }
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--bgContainer,
       .showcase_bundle_block__container .cardsOffer__single.fullText .bundle_single,
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text--smallDescription,
@@ -10805,7 +10811,17 @@ sw.showcase_bundle_device {
   .faq_block__single {
     text-align: center;
     padding: 1.250em 1.250em;
-    cursor: pointer; }
+    cursor: pointer;
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 33%; }
+    @media (max-width: 910px) {
+      .faq_block__single {
+        width: 49%; } }
+    @media (max-width: 767px) {
+      .faq_block__single {
+        width: 100%; } }
     .faq_block__mainBlock .faq_block__single.faq_active, .faq_block__mainBlock .faq_block__single:hover {
       background-color: #F48135;
       color: #FFF; }
@@ -11036,13 +11052,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-moz-placeholder {
+  :-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area::-moz-placeholder {
+  ::-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
