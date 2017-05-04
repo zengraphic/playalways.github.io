@@ -8,6 +8,13 @@
         margin-bottom: 0!important;
     }
     
+    .wnd .txt p {
+        margin-bottom: 20px !important;
+        text-align: center;
+        font-size: 1.2rem !important;
+        padding: 0 8%;
+    }
+    
     .wnd h2 {
         font-size: 2.250rem !important;
         line-height: 1.750em;
@@ -16,7 +23,7 @@
     }
     
     .wnd h3 {
-        font-size: 2.225rem !important;
+        font-size: 2.250rem !important;
         line-height: 1.750em;
     }
     
@@ -59,6 +66,7 @@
         font-size: 1.125rem;
         margin-top: 1.8rem;
         margin-bottom: 0;
+        color: #ff6a00;
     }
     
     .landing .container > .row > .col.col-ricarica a.bt-cta {
@@ -77,7 +85,12 @@
     }
     
     .landing .container > .row > .col.col-feat .col.col-feat {
-        margin-top: 1.75rem;
+        /*margin-top: 1.75rem;*/
+    }
+    
+    .landing .container > .row > .col.col-feat .img {
+        margin-right: 1px;
+        margin-left: 1px;
     }
     
     .landing .container > .row > .col.col-feat .txt.double {
@@ -122,15 +135,21 @@
     .landing .container > .row > .col.col-feat .txt {
         width: 100%;
     }
+    
+    .landing .container > .row > .col.col-feat .txt h3 {
+        color: #ff6a00;
+        text-align: center;
+    }
     /* >=768 */
     
     @media (min-width: 768px) {
         .landing .container > .row.bor.hPadd {
-            padding-left: 2rem;
-            padding-right: 2rem;
+            /*padding-left: 2rem;
+            padding-right: 2rem;*/
         }
         #img-nova-1 {
             padding-bottom: 2rem;
+            width: 96%;
         }
         #img-nova-2 {
             max-width: 100%;
@@ -164,6 +183,9 @@
         .landing .container > .row .col.col-cta .fb-link {
             margin-right: 1rem;
         }
+        .landing .container > .row > .col.col-ph h2 {
+            line-height: normal;
+        }
     }
     
     @media (min-width: 60em) {
@@ -179,7 +201,7 @@
             width: 100% !important;
         }
         .wnd h2 {
-            font-size: 1.3rem !important;
+            font-size: 1.6rem !important;
             line-height: normal !important;
         }
         .wnd h3 {
@@ -287,6 +309,15 @@
         .landing .container > .row .col.col-lg--60 img {
             padding-bottom: 70px;
         }
+        .wnd .txt p {
+            margin-bottom: 80px !important;
+            font-size: 1.1rem !important;
+            padding: 0 10px;
+        }
+        .landing .container > .row .col.col-feat .txt h3 {
+            /*width: 90%;*/
+            font-size: 1.6rem !important;
+        }
     }
     /*  >= 960 */
     
@@ -305,12 +336,6 @@
     @media (min-width: 720px) and (max-width: 960px) {
         .wnd .container .row .col.col-lg--40 {
             margin: 0 1% !important;
-        }
-    }
-    
-    @media (max-width: 422px) {
-        .landing .container > .row .col.col-feat .txt h3 {
-            width: 90%;
         }
     }
     
