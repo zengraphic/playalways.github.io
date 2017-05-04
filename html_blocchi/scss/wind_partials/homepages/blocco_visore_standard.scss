@@ -17,7 +17,7 @@ hr.example_divider {
     margin: 0 auto;
     vertical-align: middle;
     @include breakpoint(small) {
-      height: 760px;
+      height: auto;
     }
     @at-root {
       .fullBand #{&} {
@@ -171,8 +171,11 @@ hr.example_divider {
         top: 0;
         right: 0;
         bottom: 400px;
-        max-width: 380px;
-        height: auto;
+        max-width: none;
+        height: 320px;
+        position: relative;
+        width: 100%;
+        display: block;
         margin: 0 auto;
         padding: 30px;
       }
@@ -186,14 +189,16 @@ hr.example_divider {
         }
         .withForm #{&} {
           right: 0;
-          left: 30%;
+          left: 0;
           @include breakpoint(small) {
             max-width: none;
             left: 0;
+            position: relative;
+    display: block;
           }
         }
         .withForm.invertedDisplay #{&} {
-          right: 30%;
+          right: 0;
           left: 0;
           @include breakpoint(small) {
             right: 0;
@@ -215,7 +220,7 @@ hr.example_divider {
         max-height: 100%;
         z-index: 15;
         @include breakpoint(small) {
-          bottom: 75px;
+          bottom: 45px;
           left: calc(50% - 160px);
           width: 320px;
         }
@@ -224,27 +229,33 @@ hr.example_divider {
             right: 0;
             left: auto;
             @include breakpoint(small) {
-              left: calc(50% - 160px);
+              left: 9%;
             }
           }
           .withForm #{&} {
-            right: 60%;
-            left: 0;
+            right: 45%;
+            left: 0%;
             width: 100%;
-            max-width: 40%;
+            max-width: 55%;
             height: auto;
             max-height: 100%;
             @include breakpoint(small) {
-              display: none;
-              left: calc(50% - 160px);
+              max-width: none;
+              width: auto;
+              bottom: 30px;
+              height: calc(100% - 30px);
+              left: 0;
             }
           }
           .withForm.invertedDisplay #{&} {
-            left: 60%;
+            left: 45%;
             width: 100%;
-            max-width: 40%;
+            max-width: 55%;
             height: auto;
             max-height: 100%;
+            @include breakpoint(small) {
+              left: 38%;
+            }
           }
         }
       }
@@ -309,9 +320,10 @@ hr.example_divider {
         }
       }
       @include breakpoint(small) {
-        top: 180px;
+        top: 0;
         width: 100%;
         padding: 0 15px;
+        display: block;
       }
       &:empty {
         display: none;
@@ -485,6 +497,7 @@ hr.example_divider {
         @include breakpoint(small) {
           right: 15px;
           width: auto;
+          bottom: 0;
           margin: 0 auto;
           text-align: center;
           .standard_block__sticker {
