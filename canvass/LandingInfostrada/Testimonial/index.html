@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/wd_tool.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/testTool.js"></script>
     <script src="js/scripts.min.js"></script>
     <script src="js/landing.min.js"></script>
 </head>
@@ -27,9 +25,9 @@
 </div> -->
     <!-- CONTAINER -->
     <div class="landing_infostrada__containerMain landing">
-        <!-- HEADER Logo Infostrada -->
+        <!-- HEADER Logo Infostrada / Wind -->
         <div class="landing_infostrada__logo"><img src="img/logos/logo_infostrada.png"></div>
-        <!-- /HEADER Infostrada -->
+        <!-- /HEADER Infostrada / Wind -->
         <!-- VISORE WIND -->
         <div class="landing_infostrada__containerHero">
             <div class="landing_infostrada__hero">
@@ -37,12 +35,18 @@
                     <div class="title">Absolute ADSL</div>
                     <div class="price">19,95&euro;</div>
                     <div class="counter">
-                        <div class="counter_block_items--data" data-event="2017/10/13"><span class="time gg">02</span> giorni <span class="time hh">06</span> ore <span class="time mm">26</span> minuti <span class="time sec">17</span> secondi</div>
+                        <div class="counter_block_items--data" data-event="2017/10/13">
+                            <div class="items"><span class="time gg">02</span> giorni</div>
+                            <div class="items"><span class="time hh">06</span> ore</div>
+                            <div class="items"><span class="time mm">26</span> minuti</div>
+                            <div class="items"><span class="time sec">17</span> secondi</div>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
                 </div>
                 <div class="right_block">
                     <div class="image_block">
+                        <img  class="img_testimonial" src="img/visore/testimonial.png">
                         <div class="sticker_block">
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-per-oggi.png"></div>
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_adsl-vera.png"></div>
@@ -50,18 +54,11 @@
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_prezzo-fisso.png"></div>
                             <div class="clear "></div>
                         </div>
-                        <img src="img/visore/testimonial.png"></div>
+                    </div>
                     <div class="clear "></div>
                 </div>
             </div>
         </div>
-        <!-- counter -->
-        <!-- <div class="counter_block_items--data" data-event="2017/10/13">
-                                <div class="items"><span class="time gg">00</span> giorni</div>
-                                <div class="items"><span class="time hh">00</span> ore</div>
-                                <div class="items"><span class="time mm">00</span> minuti</div>
-                                <div class="items"><span class="time sec">00</span> secondi</div>
-                            </div> -->
         <!-- /VISORE WIND -->
         <!-- BUTTON ANCHOR -->
         <div class="landing_infostrada__container">
@@ -172,9 +169,9 @@
     }
     </style>
     </div>
-    <!-- COUNTER JS -->
     <script>
     jQuery(document).ready(function($) {
+        // COUNTER JS 
         var counter = $(".counter_block_items--data"),
             data_event = counter[0].getAttribute("data-event") || "";
         counter.countdown(data_event, function(event) {
@@ -182,6 +179,15 @@
             })
             .on('update.countdown', function() {})
             .on('finish.countdown', function() {})
+
+        // CALL 159
+        $('.call_to_costumer').click(function() {
+            if ($(window).width() > 600) {
+                window.open('#layer-assistenza');
+            } else {
+                console.log('mobile');
+            }
+        });
     })
     </script>
 </body>

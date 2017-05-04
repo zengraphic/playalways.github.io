@@ -214,6 +214,7 @@ body {
       margin-top: 36px;
       color: #153080;
       border: 2px solid #153080;
+      font-family: "Trade Gothic Condensed";
       -webkit-border-radius: 4px;
       border-radius: 4px;
       background-clip: padding-box;
@@ -226,17 +227,23 @@ body {
           text-align: center;
           margin: 0 auto;
           padding: 5px;
-          margin-top: 20px; } }
+          margin-top: 20px;
+          width: 70%; } }
       @media (max-width: 480px) {
         .landing_infostrada__hero .left_block .counter {
-          width: 100%;
+          width: 90%;
           margin-top: 15px; } }
-      .landing_infostrada__hero .left_block .counter .time {
-        font-weight: bold;
-        font-size: 25px; }
-        @media (max-width: 480px) {
-          .landing_infostrada__hero .left_block .counter .time {
-            font-size: 15px; } }
+      .landing_infostrada__hero .left_block .counter .items {
+        float: left;
+        width: 25%;
+        text-align: center; }
+        .landing_infostrada__hero .left_block .counter .items .time {
+          font-weight: bold;
+          font-size: 25px;
+          font-family: "Trade Gothic Bold Condensed"; }
+          @media (max-width: 480px) {
+            .landing_infostrada__hero .left_block .counter .items .time {
+              font-size: 15px; } }
   .landing_infostrada__hero .right_block {
     float: right;
     width: 45%; }
@@ -256,15 +263,25 @@ body {
           margin: 0 auto;
           top: 30px;
           float: none; } }
-      @media (max-width: 480px) {
-        .landing_infostrada__hero .right_block .image_block img {
-          width: 75%;
-          max-width: 309px; } }
+      .landing_infostrada__hero .right_block .image_block .img_testimonial {
+        position: absolute;
+        right: 38px; }
+        @media (max-width: 768px) {
+          .landing_infostrada__hero .right_block .image_block .img_testimonial {
+            position: relative;
+            right: 0; } }
+        @media (max-width: 480px) {
+          .landing_infostrada__hero .right_block .image_block .img_testimonial {
+            width: 75%;
+            max-width: 309px; } }
     .landing_infostrada__hero .right_block .sticker_block {
       float: right;
       position: relative;
       top: 14px;
-      right: 10%; }
+      right: 10px; }
+      @media (max-width: 768px) {
+        .landing_infostrada__hero .right_block .sticker_block {
+          right: 10%; } }
       .landing_infostrada__hero .right_block .sticker_block .single_sticker {
         padding: 5px 0; }
 .landing_infostrada__buttonAnchor {
@@ -298,6 +315,9 @@ body {
       padding-left: 0;
       padding-right: 0;
   }*/ }
+  @media (max-width: 860px) {
+    .landing_infostrada__checkCopertura {
+      height: 330px !important; } }
 .landing_infostrada__contentSubFrame {
   position: relative;
   top: -150px; }
@@ -382,7 +402,7 @@ body {
   .landing_infostrada__content--informa .popup {
     position: relative;
     padding: 10px 0;
-    width: 170px; }
+    width: 180px; }
     @media (max-width: 910px) {
       .landing_infostrada__content--informa .popup {
         text-align: center;
