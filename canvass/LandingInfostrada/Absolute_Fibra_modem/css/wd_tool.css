@@ -47,13 +47,15 @@ body {
   margin: 0 auto;
   position: relative; }
 .landing_infostrada__container {
-  width: 878px;
+  width: 100%;
+  max-width: 878px;
   margin: 0 auto; }
   @media (max-width: 768px) {
     .landing_infostrada__container {
       width: 100%; } }
 .landing_infostrada__containerHero {
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   position: relative;
   padding: 19px 0;
   height: 530px;
@@ -70,12 +72,12 @@ body {
       left: 0;
       padding: 20px 10px 30px; } }
 .landing_infostrada__containerHero--tre {
-  width: 1024px;
+  max-width: 1024px;
+  width: 100%;
   position: relative;
   padding: 19px 0;
   height: 530px;
   margin: 0 auto;
-  left: -72px;
   background-color: #153080;
   background-image: url(../img/visore/visore_bg.jpg);
   background-repeat: no-repeat;
@@ -102,7 +104,8 @@ body {
       .landing_infostrada__logo img {
         width: 50%; } }
 .landing_infostrada__hero {
-  width: 878px;
+  max-width: 878px;
+  width: 100%;
   margin: 0 auto; }
   @media (max-width: 768px) {
     .landing_infostrada__hero {
@@ -333,11 +336,13 @@ body {
 .landing_infostrada__checkCopertura {
   position: absolute;
   z-index: 999;
-  height: 320px !important;
   /*.container {
       padding-left: 0;
       padding-right: 0;
   }*/ }
+  @media (max-width: 860px) {
+    .landing_infostrada__checkCopertura {
+      height: 330px !important; } }
 .landing_infostrada__contentSubFrame {
   position: relative;
   top: -150px; }
@@ -400,7 +405,9 @@ body {
   margin: 0 auto;
   padding: 32px;
   line-height: 16px;
-  font-size: 1em; }
+  font-size: 1.1em;
+  line-height: 1.3;
+  font-family: "Trade Gothic Condensed"; }
   @media (max-width: 910px) {
     .landing_infostrada__content--description {
       padding: 32px 0; } }
@@ -420,14 +427,20 @@ body {
   .landing_infostrada__content--informa .popup {
     position: relative;
     padding: 10px 0;
-    width: 140px; }
+    width: 170px; }
     @media (max-width: 910px) {
       .landing_infostrada__content--informa .popup {
         text-align: center;
         margin: 0 auto; } }
     .landing_infostrada__content--informa .popup a.link_popup {
-      padding-left: 25px;
-      cursor: pointer; }
+      padding-left: 30px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #153080; }
+      @media (max-width: 480px) {
+        .landing_infostrada__content--informa .popup a.link_popup {
+          font-size: 16px;
+          padding-left: 20px; } }
       .landing_infostrada__content--informa .popup a.link_popup:before {
         color: #153080;
         content: "i";
@@ -436,27 +449,35 @@ body {
         background-clip: padding-box;
         /* stops bg color from leaking outside the border: */
         border: 1px solid #153080;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         line-height: 20px;
         text-align: center;
         position: absolute;
         top: 10px;
         left: 0; }
+        @media (max-width: 480px) {
+          .landing_infostrada__content--informa .popup a.link_popup:before {
+            width: 20px;
+            height: 20px; } }
       .landing_infostrada__content--informa .popup a.link_popup:hover {
         opacity: 0.5;
         text-decoration: none; }
   .landing_infostrada__content--informa .offert_details {
-    padding: 20px 0; }
+    padding: 10px 0 30px; }
     @media (max-width: 910px) {
       .landing_infostrada__content--informa .offert_details {
         padding: 5px 0 10px; } }
     .landing_infostrada__content--informa .offert_details .left_block {
-      float: left; }
+      float: left;
+      font-size: 18px; }
       @media (max-width: 910px) {
         .landing_infostrada__content--informa .offert_details .left_block {
           text-align: center;
           float: none; } }
+      @media (max-width: 480px) {
+        .landing_infostrada__content--informa .offert_details .left_block {
+          font-size: 14px; } }
     .landing_infostrada__content--informa .offert_details .right_block {
       float: right; }
       @media (max-width: 910px) {
@@ -465,13 +486,20 @@ body {
           margin: 0 auto;
           text-align: center; } }
       .landing_infostrada__content--informa .offert_details .right_block .question {
-        float: left; }
+        float: left;
+        font-size: 18px;
+        color: #153080; }
         @media (max-width: 910px) {
           .landing_infostrada__content--informa .offert_details .right_block .question {
             float: none;
             margin-top: 50px; } }
+        @media (max-width: 480px) {
+          .landing_infostrada__content--informa .offert_details .right_block .question {
+            font-size: 16px; } }
       .landing_infostrada__content--informa .offert_details .right_block .link {
-        float: left; }
+        float: left;
+        position: relative;
+        top: 3px; }
         @media (max-width: 910px) {
           .landing_infostrada__content--informa .offert_details .right_block .link {
             float: none;
@@ -486,7 +514,8 @@ body {
           padding: 7px 10px;
           margin-left: 10px;
           cursor: pointer;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          color: #153080; }
           @media (max-width: 910px) {
             .landing_infostrada__content--informa .offert_details .right_block .link a.call_to_costumer {
               margin-left: 0; } }

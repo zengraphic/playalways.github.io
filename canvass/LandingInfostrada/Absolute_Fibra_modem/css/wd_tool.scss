@@ -18,7 +18,7 @@ $weight-bold-cond: 'Trade Gothic Bold Condensed';
     /* stops bg color from leaking outside the border: */
 }
 
-$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px));
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px), 'custom-check':(max-width: 860px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -67,7 +67,8 @@ body {
         position: relative;
     }
     &__container {
-        width: 878px;
+        width: 100%;
+        max-width: 878px;
         margin: 0 auto;
         @include breakpoint(small) {
             width: 100%;
@@ -76,7 +77,8 @@ body {
     &__containerHero {
         //width: 100%;
         //width: 100vw;
-        width: 1024px;
+        width: 100%;
+        max-width: 1024px;
         position: relative;
         padding: 19px 0;
         //left: calc(-50vw + 50%);
@@ -97,13 +99,14 @@ body {
     &__containerHero--tre {
         //width: 100%;
         //width: 100vw;
-        width: 1024px;
+        max-width: 1024px;
+        width: 100%;
         position: relative;
         padding: 19px 0;
         //left: calc(-50vw + 50%);
         height: 530px;
         margin: 0 auto;
-        left: -72px;
+        //left: -72px;
         background-color: $color_infostrada;
         background-image: url(../img/visore/visore_bg.jpg);
         background-repeat: no-repeat;
@@ -133,7 +136,8 @@ body {
         }
     }
     &__hero {
-        width: 878px;
+        max-width: 878px;
+        width: 100%;
         margin: 0 auto;
         @include breakpoint(small) {
             width: 100%;
@@ -189,7 +193,7 @@ body {
                     font-size: 28px;
                     padding-left: 5px;
                 }
-             }
+            }
             .subTitle {
                 text-align: center;
             }
@@ -388,7 +392,9 @@ body {
     &__checkCopertura {
         position: absolute;
         z-index: 999;
-        height: 320px !important;
+        @include breakpoint(custom-check) {
+            height: 330px !important;
+        }
         //top: -150px;
         /*.container {
             padding-left: 0;
@@ -465,7 +471,9 @@ body {
             margin: 0 auto;
             padding: 32px;
             line-height: 16px;
-            font-size: 1em;
+            font-size: 1.1em;
+            line-height: 1.3;
+            font-family: $weight-cond;
             @include breakpoint(medium) {
                 padding: 32px 0;
             }
@@ -487,26 +495,36 @@ body {
             .popup {
                 position: relative;
                 padding: 10px 0;
-                width: 140px;
+                width: 170px;
                 @include breakpoint(medium) {
                     text-align: center;
                     margin: 0 auto;
                 }
                 a.link_popup {
-                    padding-left: 25px;
+                    padding-left: 30px;
                     cursor: pointer;
+                    font-size: 18px;
+                    color: $color_infostrada;
+                    @include breakpoint(super-tiny) {
+                        font-size: 16px;
+                        padding-left: 20px;
+                    }
                     &:before {
                         color: $color_infostrada;
                         content: "i";
                         @include border-radius(50%);
                         border: 1px solid $color_infostrada;
-                        width: 20px;
-                        height: 20px;
+                        width: 25px;
+                        height: 25px;
                         line-height: 20px;
                         text-align: center;
                         position: absolute;
                         top: 10px;
                         left: 0;
+                        @include breakpoint(super-tiny) {
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                     &:hover {
                         opacity: 0.5;
@@ -515,15 +533,19 @@ body {
                 }
             }
             .offert_details {
-                padding: 20px 0;
+                padding: 10px 0 30px;
                 @include breakpoint(medium) {
                     padding: 5px 0 10px;
                 }
                 .left_block {
                     float: left;
+                    font-size: 18px;
                     @include breakpoint(medium) {
                         text-align: center;
                         float: none;
+                    }
+                    @include breakpoint(super-tiny) {
+                        font-size: 14px;
                     }
                 }
                 .right_block {
@@ -535,13 +557,20 @@ body {
                     }
                     .question {
                         float: left;
+                        font-size: 18px;
+                        color: $color_infostrada;
                         @include breakpoint(medium) {
                             float: none;
                             margin-top: 50px;
                         }
+                        @include breakpoint(super-tiny) {
+                            font-size: 16px;
+                        }
                     }
                     .link {
                         float: left;
+                        position: relative;
+                        top: 3px;
                         @include breakpoint(medium) {
                             float: none;
                             margin-top: 10px;
@@ -554,6 +583,7 @@ body {
                             margin-left: 10px;
                             cursor: pointer;
                             text-transform: uppercase;
+                            color: $color_infostrada;
                             @include breakpoint(medium) {
                                 margin-left: 0;
                             }
