@@ -3312,11 +3312,14 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 0; }
   .footer .col-xs-1.fright {
     float: right; }
+  .footer .container {
+    max-width: 1024px;
+    margin: 0 auto; }
   .footer .logo {
-    float: left;
+    float: none;
     width: 100%;
-    text-align: left;
-    margin: 0 0 0 2.8rem; }
+    text-align: center;
+    margin: 0; }
     .footer .logo img {
       max-width: 100px;
       display: inline; }
@@ -3412,9 +3415,10 @@ input[type=number]::-webkit-outer-spin-button {
       float: left;
       width: 20%; }
   .footer .copyright {
-    float: none;
-    width: 100%;
-    padding: 1.429rem 0 1.071rem 0;
+    position: relative;
+    left: calc(50% - 50vw);
+    width: 100vw;
+    padding: 1.429rem 0 1.071rem;
     color: #FFF;
     text-align: center;
     font-size: 0.9286rem;

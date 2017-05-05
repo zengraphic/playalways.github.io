@@ -15,12 +15,15 @@
   .col-xs-1.fright {
     float: right;
   }
-
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
   .logo {
-    @include boxWF(left, 100%);
+    @include boxWF(none, 100%);
 
-    text-align: left;
-    margin: 0 0 0 2.8rem;
+    text-align: center;
+    margin: 0;
 
     img {
       max-width: 100px;
@@ -160,9 +163,10 @@
   }
 
   .copyright {
-    @include boxWF(none, 100%);
-
-    padding: 1.429rem 0 1.071rem 0;
+        position: relative;
+    left: calc(50% - 50vw);
+    width: 100vw;
+    padding: 1.429rem 0 1.071rem;
     color: $color_white;
     text-align: center;
     font-size: 0.9286rem;
