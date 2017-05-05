@@ -138,21 +138,23 @@
 $(document)
     .ready(function() {
         var visoreConSlider = $('.blocco_visore').filter('.with_slider');
-        visoreConSlider
-            .slick({
-                dots: true,
-                arrows: false,
-                infinite: false,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dotsClass: 'slider__dots',
-                adaptiveHeight: true,
-                customPaging: function(slider, i) {
-                    var thumb = $(slider.$slides[i]).data('thumb');
-                    return '<div class="slider__single"></div>';
-                }
-            });
+        if (visoreConSlider.length > 0) {
+            visoreConSlider
+                .slick({
+                    dots: true,
+                    arrows: false,
+                    infinite: false,
+                    speed: 300,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dotsClass: 'slider__dots',
+                    adaptiveHeight: true,
+                    customPaging: function(slider, i) {
+                        var thumb = $(slider.$slides[i]).data('thumb');
+                        return '<div class="slider__single"></div>';
+                    }
+                });
+        }
 
     });
 </script>

@@ -9,7 +9,7 @@
         position: relative;
         padding-top: 16px;
         padding-bottom: 12px;
-        padding-left: 1.5%;
+        //padding-left: 1.5%;
         @include breakpoint(small) {
             padding-left: 0;
         }
@@ -30,19 +30,22 @@
         font-size: 1em;
         font-family: $weight-bold;
         margin-bottom: 18px;
-        padding: 0;
+        padding: 0 5px 0 15px;
         &--main {
             font-size: 20px;
             font-family: $weight-cond;
             font-weight: bold;
             color: $color_robin;
+            a {
+                color: inherit;
+            }
             @include breakpoint(small) {
                 text-align: center;
             }
         }
     }
     @at-root #{&}__description {
-        width: 50%;
+        width: 50.5%;
         font-size: 1em;
         font-family: $weight-light;
         .descriptionContainer {
@@ -60,7 +63,7 @@
             position: absolute;
             top: 15%;
             bottom: 10%;
-            left: 18%;
+            left: 16.666666%;
             min-height: 1px;
             @include breakpoint(small) {
                 content: none;
@@ -154,7 +157,7 @@
         // }
     }
     @at-root #{&}__button {
-        width: 16%;
+        width: 16.66666%;
         text-align: center;
         .button--slim {
             //padding: 7px 30px 3px 30px;

@@ -37,7 +37,7 @@
         position: relative;
         padding-top: 16px;
         padding-bottom: 12px;
-        padding-left: 5px;
+        //padding-left: 5px;
         @include breakpoint(small) {
             padding-left: 0;
         }
@@ -82,6 +82,9 @@
             margin: 0 auto;
         }
     }
+    &__button {
+        padding: 0;
+    }
     @at-root #{&}__description {
         font-size: 1em;
         font-family: $weight-light;
@@ -95,6 +98,9 @@
             margin-bottom: 15px;
             font-family: $weight-cond;
             font-weight: bold;
+            a {
+                color: inherit;
+            }
         }
         &_text {
             margin: 0 auto;
@@ -154,7 +160,7 @@
     &__button {
         text-align: center;
         .button--slim {
-            min-width: 90%;
+            width: 75%;
             display: inline-block;
             font-size: 1em;
             @include breakpoint(small) {
