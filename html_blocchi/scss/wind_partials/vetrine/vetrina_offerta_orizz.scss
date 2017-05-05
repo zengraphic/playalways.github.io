@@ -37,7 +37,7 @@
         position: relative;
         padding-top: 16px;
         padding-bottom: 12px;
-        padding-left: 5px;
+        //padding-left: 5px;
         @include breakpoint(small) {
             padding-left: 0;
         }
@@ -81,6 +81,9 @@
             display: block !important;
             margin: 0 auto;
         }
+    }
+    &__button {
+        padding: 0;
     }
     @at-root #{&}__description {
         font-size: 1em;
@@ -154,7 +157,7 @@
     &__button {
         text-align: center;
         .button--slim {
-            min-width: 90%;
+            width: 75%;
             display: inline-block;
             font-size: 1em;
             @include breakpoint(small) {
