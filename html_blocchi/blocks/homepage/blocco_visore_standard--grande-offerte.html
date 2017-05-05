@@ -35,10 +35,8 @@
                             <img class="testimonial" src="../../img/backgrounds/visore-grande-samsung-galaxy-s8.png" />
                             <div class="standard_block__ribbon"></div>
                             <div class="standard_block__sticker__wrapper big">
-                             
                             </div>
                             <div class="standard_block__sticker__wrapper small">
-                           
                             </div>
                         </div>
                         <div class="standard_block__half_block form_block"></div>
@@ -170,7 +168,6 @@
                             <div class="standard_block__subtitle"></div>
                             <div class="standard_block__text">Arrivano le nuove offerte internet</div>
                             <div class="bundle_orange__container">
-                                
                             </div>
                             <div class="recurrent_priceRow">
                                 <span class="recurrent_priceRow__price with_currency price_discounted"></span>
@@ -445,10 +442,10 @@
                             <div class="standard_block__text">All Digital è l'offerta perfetta
                                 <br>per fare tutto online.</div>
                             <div class="bundle_partner">
-                                    <img class="bundle_partner__logo img-responsive" src="../../img/logos/logo_esempio_3.png">
-                                    <div class="bundle_partner__text">incluso per <b>6 mesi</b></div>
-                                    <div class="bundle_partner__claim">ATTIVAZIONE GRATIS</div>
-                                </div>
+                                <img class="bundle_partner__logo img-responsive" src="../../img/logos/logo_esempio_3.png">
+                                <div class="bundle_partner__text">incluso per <b>6 mesi</b></div>
+                                <div class="bundle_partner__claim">ATTIVAZIONE GRATIS</div>
+                            </div>
                             <div class="bundle_orange__container">
                                 <div class="bundle_orange">
                                     <div class="bundle_orange__number"></div>
@@ -1008,21 +1005,23 @@ jQuery(function($) {
     $(document)
         .ready(function() {
             var visoreConSlider = $('.blocco_visore').filter('.with_slider');
-            visoreConSlider
-                .slick({
-                    dots: true,
-                    arrows: false,
-                    infinite: false,
-                    speed: 300,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dotsClass: 'slider__dots',
-                    adaptiveHeight: true,
-                    customPaging: function(slider, i) {
-                        var thumb = $(slider.$slides[i]).data('thumb');
-                        return '<div class="slider__single"></div>';
-                    }
-                });
+            if (visoreConSlider.length > 0) {
+                visoreConSlider
+                    .slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: false,
+                        speed: 300,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dotsClass: 'slider__dots',
+                        adaptiveHeight: true,
+                        customPaging: function(slider, i) {
+                            var thumb = $(slider.$slides[i]).data('thumb');
+                            return '<div class="slider__single"></div>';
+                        }
+                    });
+            }
             $(".with_number")
                 .click(function(event) {
                     event

@@ -35,7 +35,6 @@
                             <img class="testimonial" src="../../img/backgrounds/visore-medio-samsung-galaxy-s8.png" />
                             <div class="standard_block__ribbon"></div>
                             <div class="standard_block__sticker__wrapper big">
-                                
                             </div>
                             <div class="standard_block__sticker__wrapper small">
                                 <div class="standard_block__sticker">
@@ -48,7 +47,8 @@
                         </div>
                         <div class="standard_block__half_block form_block"></div>
                         <div class="standard_block__half_block offer_block">
-                            <div class="standard_block__title">All Inclusive<br>Unlimited Fibra</div>
+                            <div class="standard_block__title">All Inclusive
+                                <br>Unlimited Fibra</div>
                             <div class="standard_block__subtitle"></div>
                             <div class="standard_block__text">Fibra fino a <strong>100 mega</strong>
                                 <br>e telefonate <strong>ILLIMITATE</strong> verso <strong>TUTTI</strong>.</div>
@@ -213,21 +213,23 @@ jQuery(function($) {
     $(document)
         .ready(function() {
             var visoreConSlider = $('.blocco_visore').filter('.with_slider');
-            visoreConSlider
-                .slick({
-                    dots: true,
-                    arrows: false,
-                    infinite: false,
-                    speed: 300,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dotsClass: 'slider__dots',
-                    adaptiveHeight: true,
-                    customPaging: function(slider, i) {
-                        var thumb = $(slider.$slides[i]).data('thumb');
-                        return '<div class="slider__single"></div>';
-                    }
-                });
+            if (visoreConSlider.length > 0) {
+                visoreConSlider
+                    .slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: false,
+                        speed: 300,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dotsClass: 'slider__dots',
+                        adaptiveHeight: true,
+                        customPaging: function(slider, i) {
+                            var thumb = $(slider.$slides[i]).data('thumb');
+                            return '<div class="slider__single"></div>';
+                        }
+                    });
+            }
             $(".with_number")
                 .click(function(event) {
                     event
