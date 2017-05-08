@@ -16,6 +16,15 @@
       .invertedDisplay #{&} {
         text-align: right;
       }
+      .specialVersion #{&} {
+        
+        overflow: hidden;
+        @include breakpoint(small) {
+          height: auto;
+          min-height: auto;
+              display: block;
+        }
+      }
     }
   }
   &__coloredBg {
@@ -55,6 +64,11 @@
         }
         .device #{&} {
           background-color: $color_home_life;
+        }
+        .specialVersion #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
         }
       }
       &--one {
@@ -110,8 +124,23 @@
         width: 100%;
         padding: 10px;
         text-align: center;
+        @at-root {
+          .mobile #{&} {
+          background-color: $color_mobile;
+        }
+        .fisso #{&} {
+          background-color: $color_infostrada;
+        }
+        .business #{&} {
+          background-color: $color_business;
+        }
+        .device #{&} {
+          background-color: $color_home_life;
+        }
+        }
       }
       @at-root {
+        
         .invertedDisplay #{&} {
           position: relative;
           left: 25%;
@@ -119,6 +148,11 @@
           @include breakpoint(small) {
             left: 0;
             text-align: center;
+          }
+        }
+        .specialVersion #{&} {
+          @include breakpoint(small) {
+            display: block;
           }
         }
       }
@@ -145,6 +179,38 @@
       @at-root {
         .invertedDisplay #{&} {
           text-align: left;
+        }
+        .specialVersion #{&} {
+          
+          @include breakpoint(small) {
+              display: block;
+              height: 250px;
+              position: relative;
+            }
+          img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -360px;
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+              margin: 0 auto;
+              max-height: 100%;
+            }
+          }
+        }
+        .invertedDisplay.specialVersion #{&} {
+          img {
+            right: auto;
+            left: -360px;
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+              margin: 0 auto;
+              max-height: 100%;
+            }
+          }
         }
       }
     }
@@ -246,12 +312,11 @@
     @include breakpoint(small) {
       margin: 0 auto 8px;
     }
-    &:hover{
+    &:hover {
       opacity: .7;
     }
     @at-root {
       .invertedDisplay #{&} {
-
         margin: 0 0 8px auto;
         @include breakpoint(small) {
           margin: 0 auto 8px;
