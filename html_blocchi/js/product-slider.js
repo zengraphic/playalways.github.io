@@ -25,6 +25,8 @@
         prices: false,
         attributesContainer: false,
         plans: false,
+        promo:false,
+        promoActive:false,
         paymentRates: false,
         paymentRatesCombo: false,
         plansActive: false,
@@ -133,6 +135,7 @@
             $SLIDER.plans = $SLIDER.plansContainer.find('.strip_plans');
             $SLIDER.models = $SLIDER.container.find('.phone_model');
             $SLIDER.prices = $SLIDER.container.find('.data-sap-price');
+            $SLIDER.promo = $SLIDER.container.find('.extra_offer');
             $SLIDER.paymentRatesCombo = $SLIDER.container.find('.dashboard_block__paymentRow__container');
             $SLIDER.paymentRates = $SLIDER.container.find('.data-sap-payment');
             $SLIDER.acquireButton = $SLIDER.container.find('.action-acquista,.action-abbina');
@@ -443,16 +446,21 @@
                 return currentModelSap == activeSap;
             });
 
+            $SLIDER.promoActive = $SLIDER.promo.filter(function() {
+                var currentModelSap = r$(this).data().sap;
+                return currentModelSap == activeSap;
+            });
+
             $SLIDER
                 .hideAndShowRelated('plans');
+
+            $SLIDER
+                .hideAndShowRelated('promo');
 
             $SLIDER
                 .acquireButton
                 .attr('data-sap', activeSap);
 
-            //mistre
-            r$(".text-left .offer__text").hide();
-            r$(".text-left .offer__text[data-sap='" + activeSap + "']").show()
 
             return $SLIDER;
         },
@@ -546,12 +554,6 @@
 
                     $SLIDER
                         .handleCombo(dataCombo);
-
-
-                    //fix alkemy
-                    //handle smartphonbox
-                    r$(".text-left .offer__text").filter(':visible').hide();
-                    r$(".text-left[data-combo='" + dataCombo + "'] .offer__text").show()
 
                 });
 
