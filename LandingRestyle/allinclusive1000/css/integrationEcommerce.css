@@ -1,0 +1,54 @@
+.overlay {
+    content: "";
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.shoulder {
+    background: #fff;
+    position: fixed;
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -420px;
+    transition: right 0.3s linear;
+    z-index: 1001;
+}
+
+.shoulder.open {
+    right: 0;
+}
+
+.shoulder.area_clienti {
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+#ecommerce-container a {
+    display: inline;
+    text-decoration: underline;
+}
+
+#ecommerce-container input[type=checkbox]~label.checkbox {
+    width: 25px;
+}
+
+#ecommerce-container .form-container.mnp-form-container .checkbox-content {
+    padding-left: 28px;
+}
+
+.continueShopping {
+    display: none !important;
+}
+
+#ecommerce-container .form-textinput-container.italianCell md-input-container.md-input-focused:before, #ecommerce-container .form-textinput-container.italianCell md-input-container.md-input-has-value:before {
+    line-height: 44px;
+}
