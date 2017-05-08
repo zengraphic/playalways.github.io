@@ -1157,46 +1157,90 @@ body {
         display: block;
         position: absolute;
         top: 0;
-        left: calc(50% - 200px);
-        right: calc(50% - 200px);
+        left: calc(30% - 50px);
+        right: calc(30% - 50px);
         height: 1px;
         margin: 0 auto;
-        background-color: #eee; }
-  .landing_cyc_filippine__easyeurope {
+        background-color: #656d78; }
+  .landing_cyc_filippine__boxDetails {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    border: 1px solid #D3D3d2;
+    padding: 25px; }
+    @media (max-width: 480px) {
+      .landing_cyc_filippine__boxDetails {
+        padding: 20px; } }
+    .landing_cyc_filippine__boxDetails--firstCell {
+      display: block;
+      float: left;
+      padding-right: 20px;
+      width: 30%;
+      box-sizing: border-box; }
+      @media (max-width: 480px) {
+        .landing_cyc_filippine__boxDetails--firstCell {
+          float: none;
+          width: 100%;
+          text-align: center;
+          padding-bottom: 20px;
+          padding-right: 0;
+          padding-top: 0;
+          padding-right: 0; } }
+    .landing_cyc_filippine__boxDetails--secondCell {
+      display: block;
+      float: left;
+      padding-left: 20px;
+      border-left: 1px solid #333;
+      border-right: 1px solid #333;
+      width: 50%;
+      box-sizing: border-box; }
+      @media (max-width: 480px) {
+        .landing_cyc_filippine__boxDetails--secondCell {
+          float: none;
+          width: 100%;
+          border-right: none;
+          border-left: none;
+          text-align: center;
+          padding-left: 0; } }
+    .landing_cyc_filippine__boxDetails--lastCell {
+      display: block;
+      float: left;
+      padding-left: 20px;
+      width: 20%;
+      box-sizing: border-box; }
+      .landing_cyc_filippine__boxDetails--lastCell .currency {
+        position: relative;
+        left: -5px; }
+      @media (max-width: 480px) {
+        .landing_cyc_filippine__boxDetails--lastCell {
+          float: none;
+          width: 100%;
+          padding-left: 0;
+          padding-top: 15px !important; } }
+  .landing_cyc_filippine__bringFriends {
     box-sizing: border-box;
     margin-top: 20px; }
-    .landing_cyc_filippine__easyeurope .firstBlock {
-      width: 21%;
-      height: 133px;
+    .landing_cyc_filippine__bringFriends .firstBlock {
+      width: 314px;
+      height: 123px;
       float: left;
       box-sizing: border-box; }
       @media (max-width: 768px) {
-        .landing_cyc_filippine__easyeurope .firstBlock {
+        .landing_cyc_filippine__bringFriends .firstBlock {
           width: 100%;
           height: auto; } }
-      @media (max-width: 768px) {
-        .landing_cyc_filippine__easyeurope .firstBlock .logo {
-          text-align: center; } }
-      .landing_cyc_filippine__easyeurope .firstBlock .logo img {
-        width: 100%;
-        max-width: 143px; }
-        @media (max-width: 768px) {
-          .landing_cyc_filippine__easyeurope .firstBlock .logo img {
-            margin: 0 auto;
-            width: 55%; } }
-    .landing_cyc_filippine__easyeurope .secondBlock {
+    .landing_cyc_filippine__bringFriends .secondBlock {
       box-sizing: border-box;
       width: 77%;
       float: left; }
       @media (max-width: 768px) {
-        .landing_cyc_filippine__easyeurope .secondBlock {
+        .landing_cyc_filippine__bringFriends .secondBlock {
           width: 100%; } }
-    .landing_cyc_filippine__easyeurope .thirdBlock {
+    .landing_cyc_filippine__bringFriends .thirdBlock {
       box-sizing: border-box;
       width: 77%;
       float: left; }
       @media (max-width: 768px) {
-        .landing_cyc_filippine__easyeurope .thirdBlock {
+        .landing_cyc_filippine__bringFriends .thirdBlock {
           width: 100%; } }
   .landing_cyc_filippine__notes {
     width: 74%;
@@ -1210,6 +1254,12 @@ body {
         top: -80px; } }
   .landing_cyc_filippine .call_to_action {
     padding-bottom: 25px; }
+  .landing_cyc_filippine .hr_dark {
+    height: 1px;
+    margin: 40px 0 60px;
+    border: 0;
+    height: 0;
+    border-bottom: 1px solid #333; }
   .landing_cyc_filippine .wind_ricorda {
     margin-top: 50px; }
     .landing_cyc_filippine .wind_ricorda__reminder__container {
@@ -1221,7 +1271,7 @@ body {
           margin: 0 auto; } }
       .landing_cyc_filippine .wind_ricorda__reminder__container::before {
         display: none; }
-      .landing_cyc_filippine .wind_ricorda__reminder__container::after {
+      .landing_cyc_filippine .wind_ricorda__reminder__container a::after {
         color: #fff;
         content: "i";
         border-radius: 50%;
