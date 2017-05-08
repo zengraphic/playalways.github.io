@@ -92,12 +92,8 @@ a {
         }
     }
     &__hero {
-        height: 790px;
         box-sizing: border-box;
         position: relative;
-        @include breakpoint(small) {
-            height: 674px;
-        }
         .container {
             @include breakpoint(small) {
                 overflow: hidden;
@@ -110,7 +106,7 @@ a {
             top: 0;
             @include breakpoint(small) {
                 width: 50%;
-                top: 13%;
+                top: 22%;
                 right: -5%
             }
             img {
@@ -226,7 +222,7 @@ a {
         &--details {
             margin-bottom: 120px;
             @include breakpoint(small) {
-                margin-bottom: 180px;
+                margin-bottom: 70px;
             }
             .single {
                 font-family: $font_family_cond;
@@ -286,16 +282,17 @@ a {
             color: $color_white;
             z-index: 16;
             @include breakpoint(min-desktop-plusborder) {
-                    right:0;                }
+                right: 0;
+            }
             @include breakpoint(small) {
                 height: 91px;
                 width: 158px;
-                right:0;
-                top: 60%;
+                right: 0;
+                top: 70%;
             }
             @include breakpoint(super-tiny) {
-                top: 50%;
-            }            
+                top: 70%;
+            }
             &:before {
                 display: block;
                 position: absolute;
@@ -323,10 +320,11 @@ a {
                 content: "";
                 z-index: -1;
                 @include breakpoint(medium) {
-                    content:none;
+                    content: none;
                 }
-            @include breakpoint(min-desktop-plusborder) {
-                    content:none;                }                
+                @include breakpoint(min-desktop-plusborder) {
+                    content: none;
+                }
             }
             .price {
                 font-size: 6.429rem;
@@ -350,9 +348,13 @@ a {
             }
         }
         &--claim {
+            width: 100%;
+            max-width: 1024px;
+            margin: 30px auto;
             margin-bottom: 35px;
+            padding: 0 30px;
             @include breakpoint(small) {
-                margin-bottom: 0;
+                padding: 0 15px;
             }
             h2 {
                 font-size: 4.643rem;
@@ -361,25 +363,26 @@ a {
                 line-height: 1em;
                 font-family: $font_family_cond;
                 @include breakpoint(small) {
-                    font-size: 3.214rem;
+                    font-size: 2.225rem;
                 }
             }
         }
     }
     &--offer_details {
         width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
         height: auto;
         background-color: $color_robin;
         color: $color_white;
         padding: 30px 0;
         margin-bottom: 60px;
-        display: none;
         h3 {
             font-size: 2.714rem;
             font-family: $font_family_bold;
             line-height: 1.2em;
             @include breakpoint(small) {
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
         }
         .details {
@@ -391,11 +394,15 @@ a {
                 font-size: 1.857rem;
                 line-height: 1.2em;
                 margin-bottom: 20px;
+                @include breakpoint(small) {
+                    font-size: 1.250rem;
+                }
                 &:before {
                     content: "\b7\a0";
                     position: absolute;
                     left: -60px;
-                    font-size: 6em;
+                    top: 5px;
+                    font-size: 4em;
                     line-height: 0;
                 }
             }
