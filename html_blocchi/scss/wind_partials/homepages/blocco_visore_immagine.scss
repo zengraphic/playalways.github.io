@@ -17,12 +17,11 @@
         text-align: right;
       }
       .specialVersion #{&} {
-        
         overflow: hidden;
         @include breakpoint(small) {
           height: auto;
           min-height: auto;
-              display: block;
+          display: block;
         }
       }
     }
@@ -47,6 +46,14 @@
           left: 0;
         }
       }
+      .specialVersion #{&} {
+        right: 41%;
+        left: 0;
+      }
+      .specialVersion.invertedDisplay #{&} {
+        left: 41%;
+        right: 0;
+      }
     }
     .shape {
       position: absolute;
@@ -64,6 +71,9 @@
         }
         .device #{&} {
           background-color: $color_home_life;
+        }
+        .transparent #{&} {
+          background-color: transparent;
         }
         .specialVersion #{&} {
           @include breakpoint(small) {
@@ -126,21 +136,23 @@
         text-align: center;
         @at-root {
           .mobile #{&} {
-          background-color: $color_mobile;
-        }
-        .fisso #{&} {
-          background-color: $color_infostrada;
-        }
-        .business #{&} {
-          background-color: $color_business;
-        }
-        .device #{&} {
-          background-color: $color_home_life;
-        }
+            background-color: $color_mobile;
+          }
+          .fisso #{&} {
+            background-color: $color_infostrada;
+          }
+          .business #{&} {
+            background-color: $color_business;
+          }
+          .device #{&} {
+            background-color: $color_home_life;
+          }
+          .transparent #{&} {
+            background-color: transparent;
+          }
         }
       }
       @at-root {
-        
         .invertedDisplay #{&} {
           position: relative;
           left: 25%;
@@ -151,8 +163,18 @@
           }
         }
         .specialVersion #{&} {
+          width: 60%;
+    left: -20%;
           @include breakpoint(small) {
             display: block;
+            width: 100%;
+            left: 0;
+          }
+        }
+        .specialVersion.invertedDisplay #{&} {
+          left: 20%;
+          @include breakpoint(small) {
+            left: 0;
           }
         }
       }
@@ -175,43 +197,61 @@
           width: auto;
           height: auto;
         }
+        @at-root {
+          .specialVersion #{&} {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: auto;
+            left: calc(83% - 560px);
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+              margin: 0 auto;
+              max-height: 100%;
+            }
+          }
+          .invertedDisplay.specialVersion #{&} {
+            left: auto;
+            right: calc(83% - 560px);
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+              margin: 0 auto;
+              max-height: 100%;
+              min-width: auto;
+            }
+          }
+          .specialVersion.transparent #{&} {
+            left: auto;
+            right: 0;
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+            }
+          }
+          .invertedDisplay.specialVersion.transparent #{&} {
+            right: auto;
+            left: 0;
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+            }
+          }
+        }
       }
       @at-root {
         .invertedDisplay #{&} {
           text-align: left;
         }
         .specialVersion #{&} {
-          
           @include breakpoint(small) {
-              display: block;
-              height: 250px;
-              position: relative;
-            }
-          img {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: -360px;
-            @include breakpoint(small) {
-              left: -9999px;
-              right: -9999px;
-              margin: 0 auto;
-              max-height: 100%;
-            }
+            display: block;
+            height: 250px;
+            position: relative;
           }
         }
-        .invertedDisplay.specialVersion #{&} {
-          img {
-            right: auto;
-            left: -360px;
-            @include breakpoint(small) {
-              left: -9999px;
-              right: -9999px;
-              margin: 0 auto;
-              max-height: 100%;
-            }
-          }
-        }
+        .invertedDisplay.specialVersion #{&} {}
       }
     }
   }
@@ -238,6 +278,19 @@
           margin: 0 auto 8px;
         }
       }
+      
+      .transparent.business #{&} {
+        color: $color_wind;
+      }
+      .transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .transparent.device #{&} {
+        color: $color_home_life;
+      }
     }
   }
   &__partnerImage {
@@ -262,6 +315,11 @@
     &:empty {
       display: none;
     }
+    @at-root {
+      .transparent #{&} {
+        color: inherit;
+      }
+    }
   }
   &__recurrency {
     margin-bottom: 8px;
@@ -277,6 +335,16 @@
       color: $color_white;
       &:empty {
         display: none;
+      }
+      @at-root {
+        .transparent #{&} {
+          color: inherit;
+        }
+      }
+    }
+    @at-root {
+      .transparent #{&} {
+        color: inherit;
       }
     }
   }
@@ -300,6 +368,9 @@
         @include breakpoint(small) {
           margin: 0 auto 8px;
         }
+      }
+      .transparent #{&} {
+        color: inherit;
       }
     }
   }

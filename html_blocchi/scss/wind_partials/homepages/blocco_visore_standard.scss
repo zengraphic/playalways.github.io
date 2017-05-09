@@ -84,14 +84,21 @@ hr.example_divider {
         }
       }
       .specialVersion #{&} {
-        display: none;
-
+        z-index: 20;
         @include breakpoint(small) {
           display: block;
-              bottom: 0;
-    top: 0;
-    height: 100%;
+          bottom: 0;
+          top: 0;
+          height: 100%;
         }
+      }
+      .fullBand.specialVersion #{&} {
+        left: 40%;
+        right: 0;
+      }
+      .fullBand.specialVersion.invertedDisplay #{&} {
+        right: 40%;
+        left: 0;
       }
     }
     .shape {
@@ -110,6 +117,9 @@ hr.example_divider {
         }
         .device #{&} {
           background-color: $color_home_life;
+        }
+        .transparent #{&} {
+          background-color: transparent;
         }
       }
       &--one {
@@ -136,6 +146,13 @@ hr.example_divider {
             }
           }
           .fullBand #{&} {
+            transform: none;
+          }
+          .fullBand.specialVersion #{&} {
+            transform: skew(20deg);
+            transform-origin: 100% 0;
+          }
+          .fullBand.specialVersion.invertedDisplay #{&} {
             transform: none;
           }
         }
@@ -167,6 +184,14 @@ hr.example_divider {
           }
           .fullBand #{&} {
             transform: none;
+          }
+          .fullBand.specialVersion #{&} {
+            transform: none;
+            transform-origin: none;
+          }
+          .fullBand.specialVersion.invertedDisplay #{&} {
+            transform: skew(20deg);
+            transform-origin: 100% 100%;
           }
         }
       }
@@ -316,7 +341,8 @@ hr.example_divider {
             }
           }
           .fullBand.specialVersion #{&} {
-            left: -516px;
+            left: auto;
+            right: calc(70% - 690px);
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
@@ -326,7 +352,8 @@ hr.example_divider {
             }
           }
           .fullBand.specialVersion.invertedDisplay #{&} {
-            right: -516px;
+            right: auto;
+            left: calc(30% - 660px);
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
@@ -426,7 +453,8 @@ hr.example_divider {
   &__ribbon {
     position: relative;
     left: -35px;
-    width: 135px;
+    width: auto;
+    display: inline-block;
     margin-bottom: 15px;
     padding: 4px 8px 4px 35px;
     background-color: $color_wind;
@@ -465,7 +493,7 @@ hr.example_divider {
         //background-color: $color_home_life;
       }
       .invertedDisplay #{&} {
-        left: calc(100% - 100px);
+        left: calc(100% - 133px);
         padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
@@ -480,7 +508,7 @@ hr.example_divider {
         }
       }
       .withForm #{&} {
-        left: calc(100% - 100px);
+        left: calc(100% - 133px);
         padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
@@ -623,7 +651,7 @@ hr.example_divider {
               right: 15px;
             }
           }
-          .specialVersion #{&} { 
+          .specialVersion #{&} {
             @include breakpoint(small) {
               bottom: -45px;
             }
@@ -672,7 +700,7 @@ hr.example_divider {
   }
   &__title {
     margin-bottom: 8px;
-    color: $color_mobile;
+    color: $color_white;
     font-family: $weight-cond;
     font-size: 48px;
     font-weight: bold;
@@ -682,21 +710,6 @@ hr.example_divider {
       font-size: 40px;
     }
     @at-root {
-      .mobile #{&} {
-        color: $color_mobile;
-      }
-      .fisso #{&} {
-        color: $color_infostrada;
-      }
-      .business #{&} {
-        color: $color_business;
-      }
-      .device #{&} {
-        color: $color_home_life;
-      }
-      .fullBand #{&} {
-        color: $color_white;
-      }
       .splittedTitle #{&} {
         margin-bottom: 0;
         font-size: 36px;
@@ -707,9 +720,32 @@ hr.example_divider {
           font-size: 24px;
         }
       }
-      .specialVersion #{&} {
+      .mobile #{&} {
+        color: $color_mobile;
+      }
+      .fisso #{&} {
+        color: $color_infostrada;
+      }
+      .business #{&} {
+        color: $color_wind;
+      }
+      .device #{&} {
+        color: $color_home_life;
+      }
+      .fullBand #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .fullBand.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .fullBand.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .fullBand.transparent.device #{&} {
+        color: $color_home_life;
       }
     }
   }
@@ -750,7 +786,6 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
       }
     }
     &:empty {
@@ -769,7 +804,9 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent #{&} {
+        color: $color_text;
       }
     }
     @include breakpoint(medium) {
@@ -825,6 +862,9 @@ hr.example_divider {
       bottom: 0;
     }
   }
+  &:empty {
+    display: none;
+  }
   &__logo {
     margin: 0 auto;
   }
@@ -853,7 +893,6 @@ hr.example_divider {
   @at-root {
     .specialVersion #{&} {
       color: $color_white;
-      
     }
   }
   &__container {
@@ -925,7 +964,18 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .fullBand.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .fullBand.transparent.business #{&} {
+        color: $color_business;
+      }
+      .fullBand.transparent.device #{&} {
+        color: $color_home_life;
       }
     }
     &.with_currency {
@@ -960,8 +1010,11 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
       }
+      .fullBand.transparent #{&} {
+        color: $color_text;
+      }
+      
     }
     &:empty {
       display: none;
