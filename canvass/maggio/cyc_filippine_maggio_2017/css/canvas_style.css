@@ -1125,23 +1125,19 @@ body {
   @media (max-width: 640px) {
     .landing_cyc_filippine {
       padding: 0 10px; } }
-  .landing_cyc_filippine__hero {
-    display: none; }
-    .landing_cyc_filippine__hero.active {
-      display: block; }
+  @media (max-width: 640px) {
+    .landing_cyc_filippine__hero {
+      padding: 3px !important; } }
+  .landing_cyc_filippine__hero img.hero_wide {
+    display: block; }
     @media (max-width: 640px) {
-      .landing_cyc_filippine__hero {
-        padding: 3px !important; } }
-    .landing_cyc_filippine__hero img.hero_wide {
-      display: block; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__hero img.hero_wide {
-          display: none; } }
-    .landing_cyc_filippine__hero img.hero_mobile {
-      display: none; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__hero img.hero_mobile {
-          display: block; } }
+      .landing_cyc_filippine__hero img.hero_wide {
+        display: none; } }
+  .landing_cyc_filippine__hero img.hero_mobile {
+    display: none; }
+    @media (max-width: 640px) {
+      .landing_cyc_filippine__hero img.hero_mobile {
+        display: block; } }
   .landing_cyc_filippine__slogan h1 {
     letter-spacing: -0.001em; }
   .landing_cyc_filippine__sub_slogan {
@@ -1218,30 +1214,79 @@ body {
           padding-top: 15px !important; } }
   .landing_cyc_filippine__bringFriends {
     box-sizing: border-box;
-    margin-top: 20px; }
-    .landing_cyc_filippine__bringFriends .firstBlock {
-      width: 314px;
+    margin-top: 20px;
+    border-radius: 4px; }
+    .landing_cyc_filippine__bringFriends .imageBlock {
+      width: auto;
       height: 123px;
       float: left;
       box-sizing: border-box; }
-      @media (max-width: 768px) {
-        .landing_cyc_filippine__bringFriends .firstBlock {
+      @media (max-width: 640px) {
+        .landing_cyc_filippine__bringFriends .imageBlock {
           width: 100%;
+          height: auto;
+          float: none; } }
+      .landing_cyc_filippine__bringFriends .imageBlock .wide {
+        display: block;
+        width: 100%; }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__bringFriends .imageBlock .wide {
+            display: none; } }
+      .landing_cyc_filippine__bringFriends .imageBlock .mobile {
+        display: none; }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__bringFriends .imageBlock .mobile {
+            display: block; } }
+    .landing_cyc_filippine__bringFriends .testBlock {
+      float: left;
+      display: block;
+      width: auto;
+      margin-top: 5px; }
+      @media (max-width: 640px) {
+        .landing_cyc_filippine__bringFriends .testBlock {
+          float: none;
+          width: auto; } }
+      .landing_cyc_filippine__bringFriends .testBlock .secondBlock {
+        box-sizing: border-box;
+        display: block; }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__bringFriends .testBlock .secondBlock {
+            width: 100%; } }
+      .landing_cyc_filippine__bringFriends .testBlock .thirdBlock {
+        box-sizing: border-box;
+        display: block; }
+        .landing_cyc_filippine__bringFriends .testBlock .thirdBlock .mobile {
+          display: none; }
+          @media (max-width: 480px) {
+            .landing_cyc_filippine__bringFriends .testBlock .thirdBlock .mobile {
+              display: block; } }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__bringFriends .testBlock .thirdBlock {
+            width: 100%; } }
+    .landing_cyc_filippine__bringFriends .iconBlock {
+      float: right;
+      display: block;
+      height: 113px;
+      width: auto;
+      padding-left: 10px;
+      border-left: 1px solid #333; }
+      @media (max-width: 640px) {
+        .landing_cyc_filippine__bringFriends .iconBlock {
+          float: none;
+          width: auto;
+          border: none;
           height: auto; } }
-    .landing_cyc_filippine__bringFriends .secondBlock {
-      box-sizing: border-box;
-      width: 77%;
-      float: left; }
-      @media (max-width: 768px) {
-        .landing_cyc_filippine__bringFriends .secondBlock {
-          width: 100%; } }
-    .landing_cyc_filippine__bringFriends .thirdBlock {
-      box-sizing: border-box;
-      width: 77%;
-      float: left; }
-      @media (max-width: 768px) {
-        .landing_cyc_filippine__bringFriends .thirdBlock {
-          width: 100%; } }
+      .landing_cyc_filippine__bringFriends .iconBlock .iconSingle {
+        display: block;
+        margin: 5px 5px 5px 0; }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__bringFriends .iconBlock .iconSingle {
+            float: left;
+            display: inline-block;
+            margin: 5px 5px 10px 0; } }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__bringFriends .iconBlock .iconSingle img {
+            width: 80%; } }
   .landing_cyc_filippine__notes {
     width: 74%;
     position: relative;
@@ -1251,7 +1296,7 @@ body {
         width: 100%;
         text-align: center;
         position: relative;
-        top: -80px; } }
+        top: -50px; } }
   .landing_cyc_filippine .call_to_action {
     padding-bottom: 25px; }
   .landing_cyc_filippine .hr_dark {
@@ -1260,8 +1305,14 @@ body {
     border: 0;
     height: 0;
     border-bottom: 1px solid #333; }
+    @media (max-width: 640px) {
+      .landing_cyc_filippine .hr_dark {
+        margin: 0; } }
   .landing_cyc_filippine .wind_ricorda {
     margin-top: 50px; }
+    @media (max-width: 640px) {
+      .landing_cyc_filippine .wind_ricorda {
+        margin-top: 100px !important; } }
     .landing_cyc_filippine .wind_ricorda__reminder__container {
       position: relative;
       width: 130px;
@@ -1284,6 +1335,13 @@ body {
         position: absolute;
         top: 2px;
         right: 0; }
+
+@media (min-width: 640px) and (max-width: 867px) {
+  .landing_cyc_filippine__bringFriends .imageBlock {
+    float: none;
+    height: auto; }
+  .landing_cyc_filippine__bringFriends .testBlock {
+    float: left; } }
 
 .padding_top_5 {
   padding-top: 5px; }
