@@ -64,39 +64,85 @@
                 display: block;
                 position: absolute;
                 top: 0;
-                left: calc(50% - 200px);
-                right: calc(50% - 200px);
+                left: calc(30% - 50px);
+                right: calc(30% - 50px);
                 height: 1px;
                 margin: 0 auto;
-                background-color: #eee;
+                background-color: #656d78;
             }
         }
     }
-    &__easyeurope {
+    &__boxDetails {
+        background-color: $color_grey_lighter;
+        border-radius: 4px;
+        border: 1px solid $color-stroke;
+        padding: 25px;
+        @include breakpoint(display_smaller) {
+            padding: 20px;
+        }
+        &--firstCell {
+            display: block;
+            float: left;
+            padding-right: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            @include breakpoint(display_smaller) {
+                float: none;
+                width: 100%;
+                text-align: center;
+                padding-bottom: 20px;
+                padding-right: 0;
+                padding-top: 0;
+                padding-right: 0;
+            }
+        }
+        &--secondCell {
+            display: block;
+            float: left;
+            padding-left: 20px;
+            border-left: 1px solid $color_grey_darker;
+            border-right: 1px solid $color_grey_darker;
+            width: 50%;
+            box-sizing: border-box;
+            @include breakpoint(display_smaller) {
+                float: none;
+                width: 100%;
+                border-right: none;
+                border-left: none;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+        &--lastCell {
+            display: block;
+            float: left;
+            padding-left: 20px;
+            width: 20%;
+            box-sizing: border-box;
+            .currency {
+                position: relative;
+                left: -5px;
+            }
+            @include breakpoint(display_smaller) {
+                float: none;
+                width: 100%;
+                padding-left: 0;
+                padding-top: 15px !important;
+            }
+        }
+    }
+    &__bringFriends {
         box-sizing: border-box;
         margin-top: 20px;
         //border-radius: 8px;
         .firstBlock {
-            width: 21%;
-            height: 133px;
+            width: 314px;
+            height: 123px;
             float: left;
             box-sizing: border-box;
             @include breakpoint(display_medium_small) {
                 width: 100%;
                 height: auto;
-            }
-            .logo {
-                @include breakpoint(display_medium_small) {
-                    text-align: center;
-                }
-                img {
-                    width: 100%;
-                    max-width: 143px;
-                    @include breakpoint(display_medium_small) {
-                        margin: 0 auto;
-                        width: 55%;
-                    }
-                }
             }
         }
         .secondBlock {
@@ -127,9 +173,15 @@
             top: -80px;
         }
     }
-
     .call_to_action {
         padding-bottom: 25px;
+    }
+    .hr_dark {
+        height: 1px;
+        margin: 40px 0 60px;
+        border: 0;
+        height: 0;
+        border-bottom: 1px solid $color_grey_darker;
     }
     .wind_ricorda {
         margin-top: 50px;
@@ -143,7 +195,7 @@
             &::before {
                 display: none;
             }
-            &::after {
+            a::after {
                 color: #fff;
                 content: "i";
                 border-radius: 50%;
