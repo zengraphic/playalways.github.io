@@ -225,28 +225,59 @@
             border-radius: 4px;
             //border: 2px solid #f0f1f3;
             .imageBlock {
-                width: auto;
                 //height: 123px;
                 float: left;
                 box-sizing: border-box;
-                padding: 14px 20px;
+                padding: 14px 10px 14px 20px;
                 margin-left: 5px;
-                width: 110px;
-                img {
-                    width: 66%;
-                }
+                width: 10%;
                 @include breakpoint(display_small) {
-                    width: 100%;
+                    width: 30%;
                     height: auto;
-                    float: none;
+                    margin-left: 0;
+                }
+                img {
+                    //width: 66%;
+                    @include breakpoint(display_small) {
+                        max-width: 91px;
+                    }
                 }
                 .wide {
                     display: block;
                     width: 100%;
-                    //max-width: 314px;
+                    max-width: 50px;
                     @include breakpoint(display_small) {
                         display: none;
                     }
+                }
+                .mobile {
+                    display: none;
+                    @include breakpoint(display_small) {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+            .thirdBlockMobile {
+                box-sizing: border-box;
+                display: none;
+                letter-spacing: 0;
+                @include breakpoint(display_small) {
+                    display: block;
+                    float: left;
+                    width: 70%;
+                }
+                .iconSingle {
+                    float: right;
+                    position: relative;
+                    top: 13px;
+                    img {
+                        width: 80%;
+                    }
+                }
+                .textBlock {
+                    float: left;
+                    width: 100%;
                 }
                 .mobile {
                     display: none;
@@ -258,23 +289,33 @@
             .testBlock {
                 float: left;
                 display: block;
-                width: auto;
+                width: 74%;
                 margin-top: 5px;
                 @include breakpoint(display_small) {
-                    float: none;
+                    /*float: none;*/
                     width: auto;
                 }
                 .secondBlock {
                     box-sizing: border-box;
                     display: block;
+                    width: 100%;
                     @include breakpoint(display_small) {
                         width: 100%;
+                    }
+                    .desktop {
+                        display: block;
+                        @include breakpoint(display_small) {
+                            display: none;
+                        }
                     }
                 }
                 .thirdBlock {
                     box-sizing: border-box;
                     display: block;
                     letter-spacing: 0;
+                    @include breakpoint(display_small) {
+                        display: none;
+                    }
                     .mobile {
                         display: none;
                         @include breakpoint(display_smaller) {
@@ -293,7 +334,7 @@
                 width: auto;
                 padding-left: 10px;
                 border-left: 1px solid $color_grey_darker;
-                width: 122px;
+                width: 13%;
                 box-sizing: border-box;
                 @include breakpoint(display_small) {
                     float: none;
@@ -303,11 +344,12 @@
                 }
                 .iconSingle {
                     display: block;
-                    margin: 5px 5px 5px 0;
+                    margin: 20px 5px 20px 0;
                     @include breakpoint(display_small) {
-                        float: left;
+                        /*float: left;
                         display: inline-block;
-                        margin: 5px 5px 10px 0;
+                        margin: 5px 5px 10px 0;*/
+                        display: none;
                     }
                     img {
                         @include breakpoint(display_small) {
@@ -343,9 +385,9 @@
         }
         .wind_ricorda {
             margin-top: 50px;
-            @include breakpoint(display_small) {
+            /*@include breakpoint(display_small) {
                 margin-top: 100px !important;
-            }
+            }*/
             &__reminder__container {
                 position: relative;
                 width: 170px;

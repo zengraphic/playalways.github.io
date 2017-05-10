@@ -1294,22 +1294,23 @@ body {
     margin-top: 20px;
     border-radius: 4px; }
     .landing_cyc_filippine__samsungS7 .imageBlock {
-      width: auto;
       float: left;
       box-sizing: border-box;
-      padding: 14px 20px;
+      padding: 14px 10px 14px 20px;
       margin-left: 5px;
-      width: 110px; }
-      .landing_cyc_filippine__samsungS7 .imageBlock img {
-        width: 66%; }
+      width: 10%; }
       @media (max-width: 640px) {
         .landing_cyc_filippine__samsungS7 .imageBlock {
-          width: 100%;
+          width: 30%;
           height: auto;
-          float: none; } }
+          margin-left: 0; } }
+      @media (max-width: 640px) {
+        .landing_cyc_filippine__samsungS7 .imageBlock img {
+          max-width: 91px; } }
       .landing_cyc_filippine__samsungS7 .imageBlock .wide {
         display: block;
-        width: 100%; }
+        width: 100%;
+        max-width: 50px; }
         @media (max-width: 640px) {
           .landing_cyc_filippine__samsungS7 .imageBlock .wide {
             display: none; } }
@@ -1317,26 +1318,59 @@ body {
         display: none; }
         @media (max-width: 640px) {
           .landing_cyc_filippine__samsungS7 .imageBlock .mobile {
+            display: block;
+            width: 100%; } }
+    .landing_cyc_filippine__samsungS7 .thirdBlockMobile {
+      box-sizing: border-box;
+      display: none;
+      letter-spacing: 0; }
+      @media (max-width: 640px) {
+        .landing_cyc_filippine__samsungS7 .thirdBlockMobile {
+          display: block;
+          float: left;
+          width: 70%; } }
+      .landing_cyc_filippine__samsungS7 .thirdBlockMobile .iconSingle {
+        float: right;
+        position: relative;
+        top: 13px; }
+        .landing_cyc_filippine__samsungS7 .thirdBlockMobile .iconSingle img {
+          width: 80%; }
+      .landing_cyc_filippine__samsungS7 .thirdBlockMobile .textBlock {
+        float: left;
+        width: 100%; }
+      .landing_cyc_filippine__samsungS7 .thirdBlockMobile .mobile {
+        display: none; }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__samsungS7 .thirdBlockMobile .mobile {
             display: block; } }
     .landing_cyc_filippine__samsungS7 .testBlock {
       float: left;
       display: block;
-      width: auto;
+      width: 74%;
       margin-top: 5px; }
       @media (max-width: 640px) {
         .landing_cyc_filippine__samsungS7 .testBlock {
-          float: none;
+          /*float: none;*/
           width: auto; } }
       .landing_cyc_filippine__samsungS7 .testBlock .secondBlock {
         box-sizing: border-box;
-        display: block; }
+        display: block;
+        width: 100%; }
         @media (max-width: 640px) {
           .landing_cyc_filippine__samsungS7 .testBlock .secondBlock {
             width: 100%; } }
+        .landing_cyc_filippine__samsungS7 .testBlock .secondBlock .desktop {
+          display: block; }
+          @media (max-width: 640px) {
+            .landing_cyc_filippine__samsungS7 .testBlock .secondBlock .desktop {
+              display: none; } }
       .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock {
         box-sizing: border-box;
         display: block;
         letter-spacing: 0; }
+        @media (max-width: 640px) {
+          .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock {
+            display: none; } }
         .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock .mobile {
           display: none; }
           @media (max-width: 480px) {
@@ -1352,7 +1386,7 @@ body {
       width: auto;
       padding-left: 10px;
       border-left: 1px solid #333;
-      width: 122px;
+      width: 13%;
       box-sizing: border-box; }
       @media (max-width: 640px) {
         .landing_cyc_filippine__samsungS7 .iconBlock {
@@ -1362,12 +1396,13 @@ body {
           height: auto; } }
       .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle {
         display: block;
-        margin: 5px 5px 5px 0; }
+        margin: 20px 5px 20px 0; }
         @media (max-width: 640px) {
           .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle {
-            float: left;
-            display: inline-block;
-            margin: 5px 5px 10px 0; } }
+            /*float: left;
+                        display: inline-block;
+                        margin: 5px 5px 10px 0;*/
+            display: none; } }
         @media (max-width: 640px) {
           .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle img {
             width: 80%; } }
@@ -1393,10 +1428,10 @@ body {
       .landing_cyc_filippine .hr_dark {
         margin: 0; } }
   .landing_cyc_filippine .wind_ricorda {
-    margin-top: 50px; }
-    @media (max-width: 640px) {
-      .landing_cyc_filippine .wind_ricorda {
-        margin-top: 100px !important; } }
+    margin-top: 50px;
+    /*@include breakpoint(display_small) {
+                margin-top: 100px !important;
+            }*/ }
     .landing_cyc_filippine .wind_ricorda__reminder__container {
       position: relative;
       width: 170px;
