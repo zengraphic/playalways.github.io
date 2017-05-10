@@ -2,6 +2,16 @@
 (function(r$) {
     'use strict';
 
+
+
+    r$(document)
+        .ready(function() {
+            var $filterDOMObject = r$('#filter-showcase');
+
+            DOUBLEFILTER
+                .initFilter($filterDOMObject, "ricaricabile rate", true, false);
+        });
+
     var DOUBLEFILTER = {
         container: false,
         cardContainers: false,
@@ -107,51 +117,9 @@
         handleClickedTab: function($clickedTab) {
             var $FILTER = this;
 
-            /*var cardFilter = $clickedTab.data().filter;
-            if (cardFilter == 'abbonamento') {
-                console.log('abb');
-                $FILTER
-                    .tabs
-                    .each(function(i) {
-                        var $currentTab = r$(this);
-                        var currentTabData = $currentTab.data().filter;
-                        if (currentTabData == 'unica') {
-                            if ($currentTab.is('.active')) {
-
-                                $currentTab
-                                    .next()
-                                    .trigger('click');
-                            }
-                            $currentTab
-                                .addClass('disabled');
-                        }
-                    });
-
-            } else {
-                $FILTER
-                    .tabs
-                    .each(function(i) {
-                        var $currentTab = r$(this);
-                        var currentTabData = $currentTab.data().filter;
-                        if (currentTabData == 'unica') {
-                            $currentTab
-                                .removeClass('disabled');
-                        }
-                    });
-            }*/
-
             $FILTER
                 .handleCards($clickedTab);
 
-
-            /*var dataObj = $clickedTab.data();
-            if (dataObj.card) {
-                $FILTER
-                    .handleCards($clickedTab);
-            } else {
-                $FILTER
-                    .handlePlans($clickedTab);
-            }*/
 
             return $FILTER;
         },
@@ -236,13 +204,5 @@
             return $FILTER;
         }
     };
-
-    r$(document)
-        .ready(function() {
-            var $filterDOMObject = r$('#filter-showcase');
-
-            DOUBLEFILTER
-                .initFilter($filterDOMObject, "ricaricabile rate", true, false);
-        });
 
 })(jQuery);

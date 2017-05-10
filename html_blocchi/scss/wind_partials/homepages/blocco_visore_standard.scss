@@ -8,6 +8,7 @@ hr.example_divider {
   @include transition(all .45s ease-in-out);
   width: 100%;
   overflow: hidden;
+  position: relative;
   &__mainContainer {
     display: table;
     position: relative;
@@ -139,7 +140,40 @@ hr.example_divider {
             background-color: transparent;
           }
         }
-        .transparent #{&} {
+        .fullBand.mobile #{&} {
+          
+          @include breakpoint(small) {
+            background-color: $color_mobile;
+          }
+        }
+        .fullBand.fisso #{&} {
+          
+          @include breakpoint(small) {
+            background-color: $color_infostrada;
+          }
+        }
+        .fullBand.business #{&} {
+          
+          @include breakpoint(small) {
+            background-color: $color_business;
+          }
+        }
+        .fullBand.device #{&} {
+          
+          @include breakpoint(small) {
+            background-color: $color_home_life;
+          }
+        }
+        .fullBand.specialVersion #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+
+        .fullBand.transparent #{&} {
+          background-color: transparent;
+        }
+        .specialVersion.transparent #{&} {
           background-color: transparent;
         }
       }
@@ -245,7 +279,25 @@ hr.example_divider {
       bottom: 0;
       left: 0;
       width: auto;
-      padding: 15px;
+      
+      .image_block--container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        @at-root {
+          .specialVersion #{&} {
+            overflow: hidden;
+          }
+        }
+      }
+      .elements_block--container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 15px;
+      }
       @include breakpoint(small) {
         top: 0;
         right: 0;
@@ -257,6 +309,9 @@ hr.example_divider {
         display: block;
         margin: 0 auto;
         padding: 30px;
+      }
+      @include breakpoint(tiny) {
+        height: 260px;
       }
       @at-root {
         .invertedDisplay #{&} {
@@ -292,6 +347,7 @@ hr.example_divider {
         }
         .specialVersion #{&} {
           right: 0;
+          left: 0;
           padding: 0;
           @include breakpoint(small) {
             height: 350px;
@@ -323,7 +379,7 @@ hr.example_divider {
         max-height: 100%;
         z-index: 15;
         @include breakpoint(small) {
-          bottom: 45px;
+          bottom: 15px;
           left: -9999px;
           right: -9999px;
           width: 320px;
@@ -349,7 +405,9 @@ hr.example_divider {
               width: auto;
               bottom: 30px;
               height: calc(100% - 50px);
-              transform: translateX(25%);
+              transform: translateX(-25%);
+              left: -9999px;
+              right: -9999px;
             }
           }
           .withForm.invertedDisplay #{&} {
@@ -363,7 +421,7 @@ hr.example_divider {
               right: -9999px;
               height: calc(100% - 30px);
               width: auto;
-              transform: translateX(-25%);
+              transform: translateX(25%);
               max-width: none;
             }
           }
@@ -393,8 +451,8 @@ hr.example_divider {
             }
           }
           .fullBand.specialVersion #{&} {
-            left: auto;
-            right: calc(70% - 690px);
+            right: auto;
+            left: -610px;
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
@@ -405,7 +463,7 @@ hr.example_divider {
           }
           .fullBand.specialVersion.invertedDisplay #{&} {
             right: auto;
-            left: calc(30% - 660px);
+            left: calc(100% - 980px);
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
@@ -778,7 +836,7 @@ hr.example_divider {
             right: 15px;
             left: auto;
             @include breakpoint(small) {
-              bottom: -15px;
+              bottom: 0;
               left: 15px;
             }
           }
@@ -996,7 +1054,7 @@ hr.example_divider {
     }
     @include breakpoint(small) {
       font-size: 16px;
-      max-width: 60%;
+      max-width: 85%;
       margin: 0 auto 16px;
     }
     &:empty {
@@ -1013,6 +1071,7 @@ hr.example_divider {
     color: $color_white;
     font-family: $weight_bold;
     font-size: 16px;
+    max-height: 46px;
     @include breakpoint(small) {
       width: 260px;
     }
@@ -1069,9 +1128,14 @@ hr.example_divider {
   text-align: center;
   vertical-align: top;
   min-width: 95px;
+  max-width: 115px;
   height: 100%;
   &:not(:last-of-type) {
     border-right: 1px solid $color_stroke;
+  }
+  @include breakpoint(small) {
+    min-width: auto;
+    max-width: 80px;
   }
   @at-root {
     .specialVersion #{&} {
@@ -1086,11 +1150,14 @@ hr.example_divider {
   }
   &__container {
     display: inline-block;
-    font-size: 0px;
+    font-size: 0;
     width: 100%;
     margin: 0 auto 8px;
     text-align: center;
     height: 80px;
+    @include breakpoint(small) {
+      height: 60px;
+    }
     &:empty {
       display: none;
     }
@@ -1100,11 +1167,8 @@ hr.example_divider {
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.2em;
-    @include breakpoint(medium) {
-      font-size: 14px;
-    }
     @include breakpoint(small) {
-      font-size: 16px;
+      font-size: 14px;
     }
     @include breakpoint('super-tiny') {
       font-size: 12px;
@@ -1124,6 +1188,9 @@ hr.example_divider {
       & + .bundle_orange__title {
         max-width: none;
         font-size: 18px;
+        @include breakpoint(small) {
+          font-size: 14px;
+        }
       }
     }
   }
