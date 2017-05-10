@@ -4,114 +4,121 @@
 // ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
 // ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
 .grey_strip__block {
-  width: 100%;
-  background-color: $color_grey_light;
-  max-width: 1024px;
-  margin: 0 auto;
-  @at-root {
-    .whiteStrip #{&} {
-      background-color: $color_white;
-    }
-  }
-  @at-root #{&}__tabs {
-    color: $color_text;
-    text-transform: uppercase;
-    &__container {
-      padding-top: 30px;
-      @at-root {
-        .whiteStrip #{&} {
-          width: 100%;
-        }
-      }
-      @include breakpoint(small) {
-        padding-top: 0;
-      }
-    }
-    &--left {
-      float: left;
-      @include breakpoint(small) {
-        float: none;
-      }
-      .grey_strip__block__tabs--title {
-        &:hover {
-          font-weight: bold;
-        }
-        &.active {
-          font-weight: bold;
-        }
-      }
-    }
-    &--right {
-      float: right;
-      @include breakpoint(small) {
-        margin-top: 10px;
-        padding-bottom: 30px;
-        float: none;
-      }
-      .grey_strip__block__tabs--title {
-        &:hover {
-          border-bottom: 1px solid $color_orange;
-        }
-        &.active {
-          border-bottom: 1px solid $color_orange;
-        }
-      }
-    }
-    &--title {
-      margin-right: 15px;
-      color: $color_text;
-      font-size: 1em;
-      cursor: pointer;
-      &:hover {
-        color: $color_wind;
-      }
-      &.active {
-        color: $color_wind;
-      }
-      &.disabled {
-        color: $color_grey_medium;
-        cursor: not-allowed;
-        &:hover {
-          border-bottom: 0;
-        }
-      }
-    }
-  }
-  &__title {
-    .h3 {
-      font-family: $weight-normal;
-      font-size: 1.563em;
-      @at-root {
-        .whiteStrip #{&} {
-          font-size: 2.5em;
-        }
-      }
-    }
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 13px 15px 5px;
-    float: left;
-    border-right: 1px solid $color_stroke;
-    @at-root {
-      .whiteStrip #{&} {
-        width: 100%;
-        border-right: 0;
-        text-align: center;
-      }
-    }
-    @include breakpoint(small) {
-      float: none;
-      border-right: 0;
-    }
-  }
-  &__container {
     width: 100%;
+    background-color: $color_grey_light;
     max-width: 1024px;
     margin: 0 auto;
-    &.noTabs {
-      .grey_strip__block__tabs {
-        display: none;
-      }
+    @at-root {
+        .whiteStrip #{&} {
+            background-color: $color_white;
+        }
+        .onlyTitle #{&} {
+            .grey_strip__block__title {
+                width: 100%;
+                border: none;
+                padding: 20px 30px;
+                margin: 0;
+                .h3{
+                  font-size:2em;
+                }
+            }
+        }
     }
-  }
+    @at-root #{&}__tabs {
+        color: $color_text;
+        text-transform: uppercase;
+        &__container {
+            padding-top: 30px;
+            @at-root {
+                .whiteStrip #{&} {
+                    width: 100%;
+                }
+            }
+            @include breakpoint(small) {
+                padding-top: 0;
+            }
+        }
+        &--left {
+            float: left;
+            @include breakpoint(small) {
+                float: none;
+            }
+            .grey_strip__block__tabs--title {
+                &:hover {}
+                &.active {}
+            }
+        }
+        &--right {
+            float: right;
+            @include breakpoint(small) {
+                margin-top: 10px;
+                padding-bottom: 30px;
+                float: none;
+            }
+            .grey_strip__block__tabs--title {
+                &:hover {
+                    border-bottom: 1px solid $color_orange;
+                }
+                &.active {
+                    border-bottom: 1px solid $color_orange;
+                }
+            }
+        }
+        &--title {
+            margin-right: 15px;
+            color: $color_text;
+            font-size: 1em;
+            cursor: pointer;
+            &:hover {
+                color: $color_wind;
+            }
+            &.active {
+                color: $color_wind;
+            }
+            &.disabled {
+                color: $color_grey_medium;
+                cursor: not-allowed;
+                &:hover {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    &__title {
+        .h3 {
+            font-family: $weight-normal;
+            font-size: 1.563em;
+            @at-root {
+                .whiteStrip #{&} {
+                    font-size: 2.5em;
+                }
+            }
+        }
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 13px 15px 5px;
+        float: left;
+        border-right: 1px solid $color_stroke;
+        @at-root {
+            .whiteStrip #{&} {
+                width: 100%;
+                border-right: 0;
+                text-align: center;
+            }
+        }
+        @include breakpoint(small) {
+            float: none;
+            border-right: 0;
+        }
+    }
+    &__container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        &.noTabs {
+            .grey_strip__block__tabs {
+                display: none;
+            }
+        }
+    }
 }

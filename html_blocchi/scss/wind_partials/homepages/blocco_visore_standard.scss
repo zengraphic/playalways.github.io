@@ -24,7 +24,7 @@ hr.example_divider {
       .fullBand #{&} {
         height: 350px;
         @include breakpoint(small) {
-          height: 700px;
+          height: auto;
         }
       }
       .specialVersion #{&} {
@@ -32,6 +32,9 @@ hr.example_divider {
         @include breakpoint(small) {
           height: auto;
         }
+      }
+      .specialVersion.transparent #{&} {
+        overflow: visible;
       }
     }
   }
@@ -84,14 +87,27 @@ hr.example_divider {
         }
       }
       .specialVersion #{&} {
-        display: none;
-
+        z-index: 20;
+        left: 40%;
+        right: 0;
         @include breakpoint(small) {
           display: block;
-              bottom: 0;
-    top: 0;
-    height: 100%;
+          bottom: 0;
+          top: 0;
+          height: 100%;
         }
+      }
+      .specialVersion.invertedDisplay #{&} {
+        right: 40%;
+        left: 0;
+      }
+      .fullBand.specialVersion #{&} {
+        left: 40%;
+        right: 0;
+      }
+      .fullBand.specialVersion.invertedDisplay #{&} {
+        right: 40%;
+        left: 0;
       }
     }
     .shape {
@@ -101,15 +117,30 @@ hr.example_divider {
       @at-root {
         .mobile #{&} {
           background-color: $color_mobile;
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
         }
         .fisso #{&} {
           background-color: $color_infostrada;
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
         }
         .business #{&} {
           background-color: $color_business;
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
         }
         .device #{&} {
           background-color: $color_home_life;
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+        .transparent #{&} {
+          background-color: transparent;
         }
       }
       &--one {
@@ -118,24 +149,38 @@ hr.example_divider {
         @at-root {
           .invertedDisplay #{&} {
             width: 50%;
-            transform: skew(20deg);
+            @include transform(skew(20deg));
             transform-origin: 100% 0;
             @include breakpoint(small) {
               width: 50%;
-              transform: none;
+              @include transform(none);
             }
           }
           .withForm #{&} {
-            transform: none;
+            @include transform(none);
           }
           .withForm.invertedDisplay #{&} {
-            transform: skew(-20deg);
+            @include transform(skew(-20deg));
             transform-origin: 100% 100%;
             @include breakpoint(small) {
-              transform: none;
+              @include transform(none);
             }
           }
           .fullBand #{&} {
+            @include transform(none);
+          }
+          .fullBand.specialVersion #{&} {
+            @include transform(skew(20deg));
+            transform-origin: 100% 0;
+          }
+          .fullBand.specialVersion.invertedDisplay #{&} {
+            transform: none;
+          }
+          .specialVersion #{&} {
+            @include transform(skew(-20deg));
+            transform-origin: 100% 100%;
+          }
+          .specialVersion.invertedDisplay #{&} {
             transform: none;
           }
         }
@@ -168,6 +213,22 @@ hr.example_divider {
           .fullBand #{&} {
             transform: none;
           }
+          .fullBand.specialVersion #{&} {
+            transform: none;
+            transform-origin: none;
+          }
+          .fullBand.specialVersion.invertedDisplay #{&} {
+            transform: skew(20deg);
+            transform-origin: 100% 100%;
+          }
+          .specialVersion #{&} {
+            transform: none;
+            transform-origin: none;
+          }
+          .specialVersion.invertedDisplay #{&} {
+            transform: skew(20deg);
+            transform-origin: 100% 100%;
+          }
         }
       }
     }
@@ -190,7 +251,7 @@ hr.example_divider {
         right: 0;
         bottom: 400px;
         max-width: none;
-        height: 280px;
+        height: 350px;
         position: relative;
         width: 100%;
         display: block;
@@ -226,6 +287,7 @@ hr.example_divider {
         .fullBand #{&} {
           @include breakpoint(small) {
             bottom: 350px;
+            height: 300px;
           }
         }
         .specialVersion #{&} {
@@ -233,6 +295,21 @@ hr.example_divider {
           padding: 0;
           @include breakpoint(small) {
             height: 350px;
+          }
+        }
+        .specialVersion.transparent #{&} {
+          padding: 15px;
+          left: 0;
+          right: 50%;
+          @include breakpoint(small) {
+            right: 0;
+          }
+        }
+        .specialVersion.transparent.invertedDisplay #{&} {
+          right: 0;
+          left: 50%;
+          @include breakpoint(small) {
+            left: 0;
           }
         }
       }
@@ -247,7 +324,8 @@ hr.example_divider {
         z-index: 15;
         @include breakpoint(small) {
           bottom: 45px;
-          left: calc(50% - 160px);
+          left: -9999px;
+          right: -9999px;
           width: 320px;
         }
         @at-root {
@@ -255,7 +333,8 @@ hr.example_divider {
             right: 0;
             left: auto;
             @include breakpoint(small) {
-              left: 0;
+              left: -9999px;
+              right: -9999px;
             }
           }
           .withForm #{&} {
@@ -269,10 +348,8 @@ hr.example_divider {
               max-width: none;
               width: auto;
               bottom: 30px;
-              height: calc(100% - 30px);
+              height: calc(100% - 50px);
               transform: translateX(25%);
-              left: 0;
-              right: 0;
             }
           }
           .withForm.invertedDisplay #{&} {
@@ -282,11 +359,11 @@ hr.example_divider {
             height: auto;
             max-height: 100%;
             @include breakpoint(small) {
-              left: 0;
+              left: -9999px;
+              right: -9999px;
               height: calc(100% - 30px);
               width: auto;
               transform: translateX(-25%);
-              right: 0;
               max-width: none;
             }
           }
@@ -294,7 +371,7 @@ hr.example_divider {
             top: 0;
             bottom: 0;
             min-height: 100%;
-            left: -700px;
+            left: -740px;
             max-width: none;
             @include breakpoint(small) {
               top: 0;
@@ -306,7 +383,7 @@ hr.example_divider {
           }
           .invertedDisplay.specialVersion #{&} {
             left: auto;
-            right: -700px;
+            right: -740px;
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
@@ -316,7 +393,8 @@ hr.example_divider {
             }
           }
           .fullBand.specialVersion #{&} {
-            left: -516px;
+            left: auto;
+            right: calc(70% - 690px);
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
@@ -326,13 +404,34 @@ hr.example_divider {
             }
           }
           .fullBand.specialVersion.invertedDisplay #{&} {
-            right: -516px;
+            right: auto;
+            left: calc(30% - 660px);
             @include breakpoint(small) {
               top: 0;
               left: -9999px;
               right: -9999px;
               margin: 0 auto;
               width: auto;
+            }
+          }
+          .specialVersion.transparent #{&} {
+            right: auto;
+            left: 0;
+            min-height: auto;
+            bottom: 0;
+            top: auto;
+            max-width: 100%;
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
+            }
+          }
+          .specialVersion.transparent.invertedDisplay #{&} {
+            left: auto;
+            right: 0;
+            @include breakpoint(small) {
+              left: -9999px;
+              right: -9999px;
             }
           }
         }
@@ -345,6 +444,29 @@ hr.example_divider {
       text-align: center;
       z-index: 50;
       @at-root {
+        .mobile #{&} {
+          @include breakpoint(small) {
+            background-color: $color_mobile;
+          }
+        }
+        .fisso #{&} {
+          @include breakpoint(small) {
+            background-color: $color_infostrada;
+          }
+        }
+        .business #{&} {
+          @include breakpoint(small) {
+            background-color: $color_business;
+          }
+        }
+        .device #{&} {
+          @include breakpoint(small) {
+            background-color: $color_home_life;
+          }
+        }
+        .transparent #{&} {
+          background-color: transparent;
+        }
         .invertedDisplay #{&} {
           left: 43%;
         }
@@ -354,7 +476,7 @@ hr.example_divider {
             display: inline-block;
             //top: 380px;
             left: 0;
-            transform: translateY(calc(100% + 20px));
+            transform: translateY(calc(100% + 40px));
             width: 100%;
             //height: 380px;
             padding: 20px 0;
@@ -362,7 +484,7 @@ hr.example_divider {
         }
         .withForm.invertedDisplay #{&} {
           @include breakpoint(small) {
-            transform: translateY(calc(100% + 10px));
+            transform: translateY(100%);
           }
         }
       }
@@ -389,7 +511,7 @@ hr.example_divider {
             top: auto;
             right: 0;
             left: 0;
-            transform: translateY(calc(-100% + 25px));
+            transform: translateY(calc(-100% + 30px));
             width: 100%;
             height: auto;
             padding: 20px 0;
@@ -401,21 +523,61 @@ hr.example_divider {
           @include breakpoint(small) {
             //top: -320px;
             left: 0;
-            transform: translateY(calc(-100% - 10px));
+            transform: translateY(calc(-100% + 20px));
             width: 100%;
+            padding-top: 50px;
+          }
+        }
+        .specialVersion.mobile #{&} {
+          @include breakpoint(small) {
+            background-color: $color_mobile;
+          }
+        }
+        .specialVersion.fisso #{&} {
+          @include breakpoint(small) {
+            background-color: $color_infostrada;
+          }
+        }
+        .specialVersion.business #{&} {
+          @include breakpoint(small) {
+            background-color: $color_business;
+          }
+        }
+        .specialVersion.device #{&} {
+          @include breakpoint(small) {
+            background-color: $color_home_life;
+          }
+        }
+        .specialVersion.transparent.mobile #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+        .specialVersion.transparent.fisso #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+        .specialVersion.transparent.business #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+        .specialVersion.transparent.device #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
           }
         }
         .specialVersion #{&} {
           @include breakpoint(small) {
             padding-top: 50px;
-            padding-bottom: 15px;
           }
         }
       }
       @include breakpoint(small) {
         top: 0;
         width: 100%;
-        padding: 0 15px;
+        padding: 15px;
         display: block;
       }
       &:empty {
@@ -426,7 +588,8 @@ hr.example_divider {
   &__ribbon {
     position: relative;
     left: -35px;
-    width: 135px;
+    width: auto;
+    display: inline-block;
     margin-bottom: 15px;
     padding: 4px 8px 4px 35px;
     background-color: $color_wind;
@@ -443,11 +606,11 @@ hr.example_divider {
     -ms-animation: slidein-left-ms .7s 0s 1 linear;
     -moz-animation: slidein-left-moz .7s 0s 1 linear;
     @include breakpoint(medium) {
-      width: 118px;
+      //width: 118px;
     }
     @include breakpoint(small) {
       left: -38px;
-      width: 88px;
+      //width: 88px;
       padding: 8px 8px 8px 30px;
       font-size: 14px;
     }
@@ -465,7 +628,8 @@ hr.example_divider {
         //background-color: $color_home_life;
       }
       .invertedDisplay #{&} {
-        left: calc(100% - 100px);
+        left: calc(100% + 35px);
+        @include transform(translateX(-100%));
         padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
@@ -473,14 +637,15 @@ hr.example_divider {
         -ms-animation: slidein-right-ms .7s 0s 1 linear;
         -moz-animation: slidein-right-moz .7s 0s 1 linear;
         @include breakpoint(medium) {
-          left: calc(100% - 60px);
+          //left: calc(100% - 60px);
         }
         @include breakpoint(small) {
           padding: 8px 30px 8px 8px;
         }
       }
       .withForm #{&} {
-        left: calc(100% - 100px);
+        left: calc(100% + 35px);
+        @include transform(translateX(-100%));
         padding: 8px 35px 8px 8px;
         text-align: right;
         -animation: slidein-right .7s 0s 1 linear;
@@ -488,15 +653,16 @@ hr.example_divider {
         -ms-animation: slidein-right-ms .7s 0s 1 linear;
         -moz-animation: slidein-right-moz .7s 0s 1 linear;
         @include breakpoint(medium) {
-          left: calc(100% - 80px);
+          //left: calc(100% - 80px);
         }
         @include breakpoint(small) {
-          left: calc(100% - 50px);
+          //left: calc(100% - 50px);
         }
       }
       .withForm.invertedDisplay #{&} {
         padding: 8px 8px 8px 35px;
         left: -35px;
+        @include transform(none);
         text-align: left;
         -animation: slidein-left .7s 0s 1 linear;
         -webkit-animation: slidein-left-webkit .7s 0s 1 linear;
@@ -543,7 +709,7 @@ hr.example_divider {
       right: 0;
       bottom: 0;
       left: 50%;
-      transform: skew(-20deg);
+      @include transform(skew(-20deg));
       transform-origin: 100% 100%;
       background-color: $color_wind;
       content: "";
@@ -563,16 +729,16 @@ hr.example_divider {
         }
         .invertedDisplay #{&} {
           left: 0;
-          transform: skew(20deg);
+          @include transform(skew(20deg));
           transform-origin: 0 100%;
         }
         .withForm #{&} {
           left: 0;
-          transform: skew(20deg);
+          @include transform(skew(20deg));
           transform-origin: 100% 100%;
         }
         .withForm.invertedDisplay #{&} {
-          transform: skew(-20deg);
+          @include transform(skew(-20deg));
           transform-origin: 100% 100%;
         }
       }
@@ -581,7 +747,7 @@ hr.example_divider {
   &__sticker {
     &__wrapper {
       position: relative;
-      z-index: 25;
+      z-index: 35;
       &.small {
         position: absolute;
         bottom: 15px;
@@ -623,7 +789,7 @@ hr.example_divider {
               right: 15px;
             }
           }
-          .specialVersion #{&} { 
+          .specialVersion #{&} {
             @include breakpoint(small) {
               bottom: -45px;
             }
@@ -672,7 +838,7 @@ hr.example_divider {
   }
   &__title {
     margin-bottom: 8px;
-    color: $color_mobile;
+    color: $color_white;
     font-family: $weight-cond;
     font-size: 48px;
     font-weight: bold;
@@ -682,21 +848,6 @@ hr.example_divider {
       font-size: 40px;
     }
     @at-root {
-      .mobile #{&} {
-        color: $color_mobile;
-      }
-      .fisso #{&} {
-        color: $color_infostrada;
-      }
-      .business #{&} {
-        color: $color_business;
-      }
-      .device #{&} {
-        color: $color_home_life;
-      }
-      .fullBand #{&} {
-        color: $color_white;
-      }
       .splittedTitle #{&} {
         margin-bottom: 0;
         font-size: 36px;
@@ -707,9 +858,47 @@ hr.example_divider {
           font-size: 24px;
         }
       }
+      .mobile #{&} {
+        color: $color_mobile;
+      }
+      .fisso #{&} {
+        color: $color_infostrada;
+      }
+      .business #{&} {
+        color: $color_wind;
+      }
+      .device #{&} {
+        color: $color_home_life;
+      }
+      .fullBand #{&} {
+        color: $color_white;
+      }
+      .fullBand.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .fullBand.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .fullBand.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .fullBand.transparent.device #{&} {
+        color: $color_home_life;
+      }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .specialVersion.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .specialVersion.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .specialVersion.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .specialVersion.transparent.device #{&} {
+        color: $color_home_life;
       }
     }
   }
@@ -731,7 +920,7 @@ hr.example_divider {
         color: $color_infostrada;
       }
       .business #{&} {
-        color: $color_business;
+        color: $color_wind;
       }
       .device #{&} {
         color: $color_home_life;
@@ -750,7 +939,30 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .fullBand.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .fullBand.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .fullBand.transparent.device #{&} {
+        color: $color_home_life;
+      }
+      .specialVersion.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .specialVersion.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .specialVersion.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .specialVersion.transparent.device #{&} {
+        color: $color_home_life;
       }
     }
     &:empty {
@@ -758,18 +970,25 @@ hr.example_divider {
     }
   }
   &__text {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: $color_text;
-    font-family: $weight-cond;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.1em;
     @at-root {
       .fullBand #{&} {
         color: $color_white;
       }
+      .withForm #{&} {
+        font-size: 20px;
+      }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent #{&} {
+        color: $color_text;
+      }
+      .specialVersion.transparent #{&} {
+        color: $color_text;
       }
     }
     @include breakpoint(medium) {
@@ -825,6 +1044,9 @@ hr.example_divider {
       bottom: 0;
     }
   }
+  &:empty {
+    display: none;
+  }
   &__logo {
     margin: 0 auto;
   }
@@ -840,29 +1062,37 @@ hr.example_divider {
 }
 
 .bundle_orange {
-  display: table-cell;
+  display: inline-block;
   padding: 0 8px;
   color: $color_wind;
   font-family: $weight-light;
   text-align: center;
-  vertical-align: middle;
-  width: 20%;
+  vertical-align: top;
+  min-width: 95px;
+  height: 100%;
   &:not(:last-of-type) {
     border-right: 1px solid $color_stroke;
   }
   @at-root {
     .specialVersion #{&} {
       color: $color_white;
-      
+    }
+    .fullBand.transparent #{&} {
+      color: $color_wind;
+    }
+    .specialVersion.transparent #{&} {
+      color: $color_wind;
     }
   }
   &__container {
-    display: table;
+    display: inline-block;
+    font-size: 0px;
     width: 100%;
     margin: 0 auto 8px;
     text-align: center;
-    @include breakpoint(small) {
-      max-width: 90%;
+    height: 80px;
+    &:empty {
+      display: none;
     }
   }
   &__title {
@@ -915,7 +1145,7 @@ hr.example_divider {
         color: $color_infostrada;
       }
       .business #{&} {
-        color: $color_business;
+        color: $color_wind;
       }
       .device #{&} {
         color: $color_home_life;
@@ -925,7 +1155,30 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .fullBand.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .fullBand.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .fullBand.transparent.device #{&} {
+        color: $color_home_life;
+      }
+      .specialVersion.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .specialVersion.transparent.fisso #{&} {
+        color: $color_infostrada;
+      }
+      .specialVersion.transparent.business #{&} {
+        color: $color_wind;
+      }
+      .specialVersion.transparent.device #{&} {
+        color: $color_home_life;
       }
     }
     &.with_currency {
@@ -960,7 +1213,9 @@ hr.example_divider {
       }
       .specialVersion #{&} {
         color: $color_white;
-        
+      }
+      .fullBand.transparent #{&} {
+        color: $color_text;
       }
     }
     &:empty {
