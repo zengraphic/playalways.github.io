@@ -970,9 +970,9 @@ hr.example_divider {
     }
   }
   &__text {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: $color_text;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.1em;
     @at-root {
       .fullBand #{&} {
@@ -1067,8 +1067,9 @@ hr.example_divider {
   color: $color_wind;
   font-family: $weight-light;
   text-align: center;
-  vertical-align: middle;
-  //width: 20%;
+  vertical-align: top;
+  min-width: 95px;
+  height: 100%;
   &:not(:last-of-type) {
     border-right: 1px solid $color_stroke;
   }
@@ -1089,9 +1090,7 @@ hr.example_divider {
     width: 100%;
     margin: 0 auto 8px;
     text-align: center;
-    @include breakpoint(small) {
-      max-width: 90%;
-    }
+    height: 80px;
     &:empty {
       display: none;
     }

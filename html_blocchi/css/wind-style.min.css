@@ -1423,7 +1423,7 @@ hr.example_divider {
           right: 0;
           bottom: 400px;
           max-width: none;
-          height: auto;
+          height: 350px;
           position: relative;
           width: 100%;
           display: block;
@@ -1486,14 +1486,16 @@ hr.example_divider {
         @media (max-width: 767px) {
           .standard_block__half_block.image_block .testimonial {
             bottom: 45px;
-            left: calc(50% - 160px);
+            left: -9999px;
+            right: -9999px;
             width: 320px; } }
         .invertedDisplay .standard_block__half_block.image_block .testimonial {
           right: 0;
           left: auto; }
           @media (max-width: 767px) {
             .invertedDisplay .standard_block__half_block.image_block .testimonial {
-              left: 0; } }
+              left: -9999px;
+              right: -9999px; } }
         .withForm .standard_block__half_block.image_block .testimonial {
           right: 45%;
           left: 0%;
@@ -1506,10 +1508,8 @@ hr.example_divider {
               max-width: none;
               width: auto;
               bottom: 30px;
-              height: calc(100% - 30px);
-              transform: translateX(25%);
-              left: 0;
-              right: 0; } }
+              height: calc(100% - 50px);
+              transform: translateX(25%); } }
         .withForm.invertedDisplay .standard_block__half_block.image_block .testimonial {
           left: 45%;
           width: 100%;
@@ -1518,11 +1518,11 @@ hr.example_divider {
           max-height: 100%; }
           @media (max-width: 767px) {
             .withForm.invertedDisplay .standard_block__half_block.image_block .testimonial {
-              left: 0;
+              left: -9999px;
+              right: -9999px;
               height: calc(100% - 30px);
               width: auto;
               transform: translateX(-25%);
-              right: 0;
               max-width: none; } }
         .specialVersion .standard_block__half_block.image_block .testimonial {
           top: 0;
@@ -1618,7 +1618,7 @@ hr.example_divider {
             padding: 20px 0; } }
       @media (max-width: 767px) {
         .withForm.invertedDisplay .standard_block__half_block.form_block {
-          transform: translateY(calc(100% + 10px)); } }
+          transform: translateY(100%); } }
     .standard_block__half_block.offer_block {
       padding: 0 15px;
       text-align: center;
@@ -1649,8 +1649,9 @@ hr.example_divider {
         @media (max-width: 767px) {
           .withForm.invertedDisplay .standard_block__half_block.offer_block {
             left: 0;
-            transform: translateY(calc(-100% - 10px));
-            width: 100%; } }
+            transform: translateY(calc(-100% + 20px));
+            width: 100%;
+            padding-top: 50px; } }
       @media (max-width: 767px) {
         .specialVersion.mobile .standard_block__half_block.offer_block {
           background-color: #009BBE; } }
@@ -1984,9 +1985,9 @@ hr.example_divider {
     .standard_block__subtitle:empty {
       display: none; }
   .standard_block__text {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: #292F36;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.1em; }
     .fullBand .standard_block__text {
       color: #FFF; }
@@ -2060,7 +2061,9 @@ hr.example_divider {
   color: #F48135;
   font-family: "Trade Gothic Light";
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: top;
+  min-width: 95px;
+  height: 100%; }
   .bundle_orange:not(:last-of-type) {
     border-right: 1px solid #D3D3D2; }
   .specialVersion .bundle_orange {
@@ -2074,10 +2077,8 @@ hr.example_divider {
     font-size: 0px;
     width: 100%;
     margin: 0 auto 8px;
-    text-align: center; }
-    @media (max-width: 767px) {
-      .bundle_orange__container {
-        max-width: 90%; } }
+    text-align: center;
+    height: 80px; }
     .bundle_orange__container:empty {
       display: none; }
   .bundle_orange__title {
@@ -3482,8 +3483,7 @@ hr.example_divider {
 
 .stripMenu {
   margin: 0 auto;
-  line-height: 1.08;
-  background-color: #F4F4F4; }
+  line-height: 1.08; }
   @media (max-width: 767px) {
     .stripMenu {
       font-size: 14px; } }
@@ -3495,6 +3495,7 @@ hr.example_divider {
   .stripMenu__container {
     text-align: center;
     display: block;
+    background-color: #F4F4F4;
     /*changed from inline-block*/
     max-width: 1024px;
     margin: 0 auto;
