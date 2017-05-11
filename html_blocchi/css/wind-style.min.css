@@ -454,7 +454,10 @@ a.button--search {
   height: 100vh; }
   .configurazione_terminali iframe {
     width: 100% !important;
-    height: 100% !important; }
+    height: 100% !important;
+    display: block;
+    max-width: 1024px;
+    margin: 0 auto; }
 
 ::selection {
   background: #F69A5D;
@@ -6849,7 +6852,9 @@ sw.showcase_bundle_device {
         font-size: 2.5em; }
   .strip_offers__image--main {
     display: block !important;
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: auto;
+    height: 100%; }
   .strip_offers__button {
     padding: 0; }
   .strip_offers__description {
@@ -7524,6 +7529,13 @@ sw.showcase_bundle_device {
       font-size: 1.563em; }
       .whiteStrip .grey_strip__block__title .h3 {
         font-size: 2.5em; }
+    .grey_strip__block__title:only-child {
+      width: 100%;
+      border: none;
+      margin: 0;
+      padding: 20px 30px; }
+      .grey_strip__block__title:only-child .h3 {
+        font-size: 1.8em; }
     .whiteStrip .grey_strip__block__title {
       width: 100%;
       border-right: 0;
@@ -11090,7 +11102,8 @@ sw.showcase_bundle_device {
     text-transform: uppercase;
     font-family: "Trade Gothic Light";
     margin-bottom: 30px;
-    cursor: pointer; }
+    cursor: pointer;
+    clear: both; }
     .showcase_bundle_block__showMore:hover {
       text-decoration: underline; }
   .showcase_bundle_block__container {
@@ -11586,13 +11599,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  ::-webkit-input-placeholder {
+  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
     color: #AAB2BD; }
-  :-moz-placeholder {
+  .storeDetail_block__contactUs__area:-moz-placeholder {
     color: #AAB2BD; }
-  ::-moz-placeholder {
+  .storeDetail_block__contactUs__area::-moz-placeholder {
     color: #AAB2BD; }
-  :-ms-input-placeholder {
+  .storeDetail_block__contactUs__area:-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
