@@ -138,7 +138,7 @@
                 //height: 123px;
                 float: left;
                 box-sizing: border-box;
-                @include breakpoint(display_small) {
+                @include breakpoint(display_medium_large) {
                     width: 100%;
                     height: auto;
                     float: none;
@@ -147,13 +147,13 @@
                     display: block;
                     width: 100%;
                     //max-width: 314px;
-                    @include breakpoint(display_small) {
+                    @include breakpoint(display_medium_large) {
                         display: none;
                     }
                 }
                 .mobile {
                     display: none;
-                    @include breakpoint(display_small) {
+                    @include breakpoint(display_medium_large) {
                         display: block;
                     }
                 }
@@ -193,7 +193,7 @@
                 float: right;
                 display: block;
                 height: 113px;
-                width: auto;
+                width: 12%;
                 padding-left: 10px;
                 border-left: 1px solid $color_grey_darker;
                 @include breakpoint(display_small) {
@@ -211,6 +211,8 @@
                         margin: 5px 5px 10px 0;
                     }
                     img {
+                        width: 100%;
+                        max-width: 101px;
                         @include breakpoint(display_small) {
                             width: 80%;
                         }
@@ -226,7 +228,7 @@
                 //height: 123px;
                 float: left;
                 box-sizing: border-box;
-                padding: 14px 10px 14px 20px;
+                padding: 10px 10px 10px 20px;
                 margin-left: 5px;
                 width: 10%;
                 @include breakpoint(display_small) {
