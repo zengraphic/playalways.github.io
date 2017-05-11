@@ -143,6 +143,7 @@ jQuery(document).ready(function($) {
         "height": "350px",
         "width": "100%",
         "stretching": "uniform",
+        "autostart": false,
         "controls": false,
         "aspectratio": "",
     }
@@ -150,6 +151,7 @@ jQuery(document).ready(function($) {
         "file": "https://www.youtube.com/watch?v=40sY1QhErNs",
         "height": 350,
         "width": 400,
+        "autostart": false,
         "stretching": "fill",
         "controls": false,
         "aspectratio": "",
@@ -159,9 +161,7 @@ jQuery(document).ready(function($) {
         jwplayer($(this).attr("id")).setup(fullConf);
     });
 
-    setTimeout(function() {
-        jwplayer($(this).attr("id")).play();
-    }, 5000);
+   
 
 
     $(".video_block_display .button_play").click(function(event) {
