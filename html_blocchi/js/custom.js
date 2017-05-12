@@ -1442,9 +1442,11 @@ jQuery(function($) {
                     dots: true,
                     arrows: false,
                     infinite: false,
-                    speed: 300,
+                    speed: 500,
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    fade:false,
+                    cssEase:'ease',
                     dotsClass: 'slider__dots',
                     adaptiveHeight: true,
                     customPaging: function(slider, i) {
@@ -1452,6 +1454,20 @@ jQuery(function($) {
                         return '<div class="slider__single"></div>';
                     }
                 });
+
+            var menuPerVisore = visoreConSlider.next();
+            var cardsContainerSlider = visoreConSlider.nextAll('.showcase_bundle_device').children();
+            if (menuPerVisore.hasClass('stripMenu')) {
+                var emettitoreEvento = menuPerVisore.parent('.filter-showcase');
+                emettitoreEvento
+                    .on("combo-change", function(e,dataCombo) {
+                        var activeTab = menuPerVisore.find('.tab_button.active');
+                        var activeTabIndex = activeTab.index();
+                        visoreConSlider.slick('slickGoTo',activeTabIndex);
+                    });
+            }
+
+
             $(".with_number")
                 .click(function(event) {
                     event
