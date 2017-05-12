@@ -1539,7 +1539,7 @@ function initDoubleFilter(className, filterDefault) {
 
         var filterActive = extractFilterActive(value);
 
-        var dbfilter = new DOUBLEFILTER()
+        var dbfilter = new DOUBLEFILTER();
 
         if (filterActive == "") {
             dbfilter.initFilter(r$(value), filterDefault, true, true);
