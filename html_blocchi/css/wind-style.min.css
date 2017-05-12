@@ -1323,6 +1323,8 @@ hr.example_divider {
       @media (max-width: 767px) {
         .fullBand.specialVersion .standard_block__coloredBg .shape {
           background-color: transparent; } }
+      .transparent .standard_block__coloredBg .shape {
+        background-color: transparent; }
       .fullBand.transparent .standard_block__coloredBg .shape {
         background-color: transparent; }
       .specialVersion.transparent .standard_block__coloredBg .shape {
@@ -2826,7 +2828,7 @@ hr.example_divider {
   .bundle_block h2 {
     font-family: "Trade Gothic Bold Condensed"; }
   .bundle_block__showMore {
-    margin-top: 50px;
+    padding: 20px 0;
     color: #F48135;
     font-size: 1.250em;
     text-align: center;
@@ -7482,7 +7484,10 @@ sw.showcase_bundle_device {
     color: #292F36;
     text-transform: uppercase; }
     .grey_strip__block__tabs__container {
-      padding-top: 30px; }
+      padding-top: 21px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      margin-top: 10px; }
       .whiteStrip .grey_strip__block__tabs__container {
         width: 100%; }
       @media (max-width: 767px) {
@@ -11107,14 +11112,15 @@ sw.showcase_bundle_device {
     .showcase_bundle_block__showMore:hover {
       text-decoration: underline; }
   .showcase_bundle_block__container {
-    -o-transition: all 0.45s ease-in-out;
+    -webkit-transition: all 0.45s ease-in-out;
     -moz-transition: all 0.45s ease-in-out;
     -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
     max-width: 1024px;
     margin: 0 auto;
-    padding-top: 70px;
-    padding-bottom: 50px; }
+    padding-top: 40px;
+    padding-bottom: 20px; }
     .showcase_bundle_block__container .cardsOffer__single {
       position: relative;
       font-size: 16px;
@@ -11173,7 +11179,7 @@ sw.showcase_bundle_device {
           font-weight: 700; }
       .showcase_bundle_block__container .cardsOffer__single--text {
         position: relative;
-        height: 11.25em;
+        height: 10.9em;
         margin-bottom: 11px;
         z-index: 51;
         overflow: hidden;
@@ -11324,6 +11330,16 @@ sw.showcase_bundle_device {
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text--bigDescription,
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--price__container {
         display: none; }
+    .showcase_bundle_block__container .bundle_block__showMore {
+      padding: 20px 0;
+      color: #F48135;
+      font-size: 1.250em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Trade Gothic Light";
+      cursor: pointer; }
+      .showcase_bundle_block__container .bundle_block__showMore:hover {
+        text-decoration: underline; }
   .showcase_bundle_block h2 {
     font-family: "Trade Gothic Bold Condensed"; }
 
@@ -11599,13 +11615,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-moz-placeholder {
+  :-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area::-moz-placeholder {
+  ::-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
