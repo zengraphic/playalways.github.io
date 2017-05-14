@@ -703,7 +703,6 @@ html {
     hyphens: none;
 }
 
-
 .base h1,
 .base h2,
 .base h3,
@@ -6013,6 +6012,30 @@ a {
     }
 }
 
+
+/* BUTTON SECONDARY */
+
+.landing__mainContainer a.button--ghost {
+    position: relative;
+    z-index: 16;
+    color: #F48135;
+    background-color: transparent;
+    border: 1px solid #F48135;
+    padding: 10px 30px;
+    font-size: 1.429rem;
+    font-family: "Trade Gothic Bold", sans-serif;
+    margin-bottom: 40px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    margin-top: 100px;
+    /* stops bg color from leaking outside the border: */
+}
+
+.landing__mainContainer a.button--ghost:hover {
+    opacity: 0.8;
+}
+
 .landing__hero {
     /*height: 775px;*/
     box-sizing: border-box;
@@ -6021,13 +6044,25 @@ a {
 
 @media (max-width: 768px) {
     .landing__hero {
-        height: 490px;
+        height: 665px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing__hero {
+        height: 600px;
+    }
+}
+
+@media (max-width: 380px) {
+    .landing__hero {
+        height: 500px;
     }
 }
 
 @media (max-width: 768px) {
     .landing__hero .container {
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
 }
 
@@ -6040,9 +6075,10 @@ a {
 
 @media (max-width: 768px) {
     .landing__hero__imageContainer {
-        width: 50%;
-        top: 20%;
-        right: -5%;
+        /*width: 50%;*/
+        top: 100%;
+        /*20%*/
+        /*right: -5%;*/
     }
 }
 
@@ -6052,9 +6088,7 @@ a {
 }
 
 @media (max-width: 480px) {
-    .landing__hero__imageContainer {
-
-    }
+    .landing__hero__imageContainer {}
 }
 
 .landing__hero--title {
@@ -6123,7 +6157,7 @@ a {
 }
 
 @media (max-width: 910px) {
-    .landing__hero .bundle_orange:not(:last-of-type) {
+    .landing__hero .bundle_orange:not(: last-of-type) {
         border-right: none;
     }
 }
@@ -6367,12 +6401,6 @@ a {
     margin-top: 13px;
 }
 
-@media (max-width: 768px) {
-    .landing__hero--ribbon .price {
-        font-size: 3.2rem;
-        margin-top: 11px;
-    }
-}
 
 .landing__hero--ribbon .price .currency {
     font-size: 0.8em;
@@ -6380,12 +6408,6 @@ a {
 
 .landing__hero--ribbon .recurrency {
     font-size: 1.429rem;
-}
-
-@media (max-width: 768px) {
-    .landing__hero--ribbon .recurrency {
-        font-size: 0.9rem;
-    }
 }
 
 .landing__hero--claim {
@@ -6398,6 +6420,16 @@ a {
         position: relative;
         bottom: 60px;
     }
+    .landing__hero--claim h2 {
+        font-size: 1.715rem;
+    }
+    .landing__hero--ribbon .recurrency {
+        font-size: 0.9rem;
+    }
+    .landing__hero--ribbon .price {
+        font-size: 3.2rem;
+        margin-top: 11px;
+    }
 }
 
 .landing__hero--claim h2 {
@@ -6409,28 +6441,7 @@ a {
     font-family: "Trade Gothic Condensed", sans-serif;
 }
 
-@media (max-width: 768px) {
-    .landing__hero--claim h2 {
-        font-size: 1.715rem;
-    }
-}
-
 .landing--product_description {
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-    height: auto;
-    /*background-color: #009BBE;
-    color: #FFF;*/
-    padding: 30px 0;
-    margin-bottom: 60px;
-    position: relative;
-    z-index: 300;
-    hyphens: none;
-}
-
-
-.landing--product_details {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
@@ -6442,13 +6453,84 @@ a {
     position: relative;
     z-index: 300;
     hyphens: none;
+    text-align: center;
+    font-size: 1.12rem;
+}
+
+.landing--product_details {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    height: auto;
+    /*background-color: #009BBE;
+    color: #FFF;*/
+    padding: 30px 0;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 300;
+    hyphens: none;
     border-bottom: 1px solid #656d78;
+}
+
+.landing--product_details:nth-of-type(even) {
+    border-bottom: none;
+}
+
+.landing--product_image {
+    float: left;
+    display: block;
+    width: 30%;
+}
+
+.landing--product_image-rx {
+    float: right;
+    display: block;
+    width: 30%;
+}
+
+.landing--product_model p {
+    font-size: 1.6em;
+    padding-top: 1em;
+}
+
+.landing--product_imageSmall {
+    float: left;
+    display: block;
+    width: 40%;
+    position: relative;
+    bottom: -60px;
+    left: 19px;
+}
+
+.landing--product_cta {
+    float: left;
+    display: block;
+    width: 60%;
+}
+
+.container_details {
+    float: left;
+    display: block;
+    padding: 24px 0 0 20px;
+    width: 70%;
+}
+
+.landing--product_model {
+    height: 85px;
 }
 
 .landing--product_details h3 {
     font-size: 2.714rem;
     font-family: "Trade Gothic Bold", sans-serif;
     line-height: 1.2em;
+}
+
+.fRight {
+    float: right;
+}
+
+.desktop {
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -6494,10 +6576,79 @@ a {
     .landing--offer_details .details li:before {
         left: -35px;
     }
+    .landing__hero--title {
+        width: 100%;
+        text-align: center;
+    }
+    .landing__hero__imageContainer {
+        width: 100%;
+        display: block;
+    }
+    .landing__hero__imageContainer img {
+        width: 100%;
+        max-width: 471px;
+        margin: 0 auto;
+    }
+    .desktop {
+        display: none;
+    }
 }
 
 .landing .vetrina_accordions a {
     display: inline-block;
+}
+
+@media (max-width: 640px) {
+    /*.landing__hero--title {
+        width: 100%;
+        text-align: center;
+    }*/
+    .landing__hero--title h1 {
+        font-size: 2.6rem;
+    }
+    .landing__hero .container {
+        overflow: visible;
+    }
+    .landing--product_description {
+        font-size: 1rem;
+    }
+    .landing--product_image {
+        width: 100%;
+    }
+    .landing--product_image-rx {
+        width: 100%;
+        float: none;
+    }
+    .landing--product_image img,
+    .landing--product_image-rx img {
+        margin: 0 auto;
+    }
+    .landing--product_imageSmall img {
+        display: none;
+    }
+    .landing--product_details h3 {
+        font-size: 1.4rem;
+    }
+    .landing--product_model p {
+        font-size: 1rem;
+    }
+    .container_details {
+        width: 100%;
+        padding: 20px 0 0;
+    }
+    .landing--product_cta {
+        float: none;
+        width: 100%;
+    }
+    .landing__mainContainer a.button--ghost {
+        margin-bottom: 0;
+        width: 100%;
+        z-index: 999;
+        margin-top: 40px;
+    }
+    .fRight {
+        float: none;
+    }
 }
 
 
