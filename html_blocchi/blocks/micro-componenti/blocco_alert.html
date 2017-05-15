@@ -24,12 +24,12 @@
 
 <body class="base">
     <div class="container-fluid ">
-        <div class="">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <span>Alert boxes</span>
             </div>
         </div>
-        <div class="">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <button type="button" class="btn base__bt base__bt--or base__bt--lg" data-toggle="modal" data-target="#modal-prova-1">Attiva modal</button>
                 <div id="modal-prova-1" class="modal base__modal fade" tabindex="-1" role="dialog">
@@ -54,7 +54,25 @@
                 <!-- /.modal -->
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <a href="mobile-friendly-page.html" class="base__popup-link--alert">Show inline popup</a>
+        </div>
     </div>
+    <script type="text/javascript">
+    r$('.base__popup-link--alert')
+        .magnificPopup({
+            items: {
+                type: 'inline',
+                src: '<div class="base_popup"><h4 class="popup-title">popup</h4><div class="popup-content">Testo errore</div></div>'
+            },
+            showCloseBtn: true,
+            closeBtnInside: true,
+            closeMarkup: '<button title="%title%" type="button" onclick="r$.magnificPopup.close()" class="right base__bt btn base__bt--sm base__bt--or">Chiudi</button>',
+            mainClass: 'mfp-fade mfp-alert',
+            midClick: true
+        });
+    </script>
 </body>
 
 </html>
