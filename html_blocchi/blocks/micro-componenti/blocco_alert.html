@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>Alerts</title>
+    <!--- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/base-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/wind-style.min.css" />
+    <!--- /CSS -->
+    <!--- JS -->
+    <script type="text/javascript" src="../../js/base-libs.min.js"></script>
+    <script type="text/javascript" src="../../js/base.js"></script>
+    <script type="text/javascript" src="../../js/header.js"></script>
+    <script type="text/javascript" src="../../js/custom.js"></script>
+</head>
+
+<body class="base">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <span>Alert boxes</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button type="button" class="btn base__bt base__bt--or base__bt--lg" data-toggle="modal" data-target="#modal-prova-1">Attiva modal</button>
+                <div id="modal-prova-1" class="modal base__modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Eventuale titolo</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Messaggio di errore</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn base__bt base__bt--sm base__bt--or" data-dismiss="modal">Chiudi</button>
+                                <button type="button" class="btn base__bt base__bt--sm base__bt--or2"></button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <a href="mobile-friendly-page.html" class="base__popup-link--alert">Show inline popup</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+    r$('.base__popup-link--alert')
+        .magnificPopup({
+            items: {
+                type: 'inline',
+                src: '<div class="base_popup"><h4 class="popup-title">popup</h4><div class="popup-content">Testo errore</div></div>'
+            },
+            showCloseBtn: true,
+            closeBtnInside: true,
+            closeMarkup: '<button title="%title%" type="button" onclick="r$.magnificPopup.close()" class="right base__bt btn base__bt--sm base__bt--or">Chiudi</button>',
+            mainClass: 'mfp-fade mfp-alert',
+            midClick: true
+        });
+    </script>
+</body>
+
+</html>
