@@ -117,7 +117,13 @@ hr.example_divider {
       height: 100%;
       @at-root {
         .mobile #{&} {
-          background-color: $color_mobile;
+          background-color: $color_wind;
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+        .robin #{&} {
+          background-color: $color_robin;
           @include breakpoint(small) {
             background-color: transparent;
           }
@@ -143,7 +149,13 @@ hr.example_divider {
         .fullBand.mobile #{&} {
           
           @include breakpoint(small) {
-            background-color: $color_mobile;
+            background-color: $color_orange;
+          }
+        }
+        .fullBand.robin #{&} {
+          
+          @include breakpoint(small) {
+            background-color: $color_robin;
           }
         }
         .fullBand.fisso #{&} {
@@ -507,7 +519,12 @@ hr.example_divider {
       @at-root {
         .mobile #{&} {
           @include breakpoint(small) {
-            background-color: $color_mobile;
+            background-color: $color_wind;
+          }
+        }
+        .robin #{&} {
+          @include breakpoint(small) {
+            background-color: $color_robin;
           }
         }
         .fisso #{&} {
@@ -591,7 +608,12 @@ hr.example_divider {
         }
         .specialVersion.mobile #{&} {
           @include breakpoint(small) {
-            background-color: $color_mobile;
+            background-color: $color_wind;
+          }
+        }
+        .specialVersion.robin #{&} {
+          @include breakpoint(small) {
+            background-color: $color_robin;
           }
         }
         .specialVersion.fisso #{&} {
@@ -610,6 +632,11 @@ hr.example_divider {
           }
         }
         .specialVersion.transparent.mobile #{&} {
+          @include breakpoint(small) {
+            background-color: transparent;
+          }
+        }
+        .specialVersion.transparent.robin #{&} {
           @include breakpoint(small) {
             background-color: transparent;
           }
@@ -672,12 +699,15 @@ hr.example_divider {
     @include breakpoint(small) {
       left: -38px;
       //width: 88px;
-      padding: 8px 8px 8px 30px;
+      padding: 8px 8px 8px 35px;
       font-size: 14px;
     }
     @at-root {
       .mobile #{&} {
-        //background-color: $color_mobile;
+        background-color: $color_robin;
+      }
+      .robin #{&} {
+        //background-color: $color_wind;
       }
       .fisso #{&} {
         //background-color: $color_infostrada;
@@ -701,7 +731,7 @@ hr.example_divider {
           //left: calc(100% - 60px);
         }
         @include breakpoint(small) {
-          padding: 8px 30px 8px 8px;
+          padding: 8px 35px 8px 8px;
         }
       }
       .withForm #{&} {
@@ -741,25 +771,37 @@ hr.example_divider {
       left: 0;
       border-width: 10px;
       border-style: solid;
-      border-color: #d55c0b #d55c0b transparent transparent;
+      border-color: #d5501b #d5501b transparent transparent;
       content: "";
       z-index: -1;
       @include breakpoint(small) {}
       @at-root {
+        .mobile #{&} {
+          border-color: #007d99 #007d99 transparent transparent;
+        }
         .invertedDisplay #{&} {
           right: 0;
           left: auto;
-          border-color: #d55c0b transparent transparent #d55c0b;
+          border-color: #d5501b transparent transparent #d5501b;
+        }
+        .mobile.invertedDisplay #{&} {
+          border-color: #007d99 transparent transparent #007d99;
         }
         .withForm #{&} {
           right: 0;
           left: auto;
-          border-color: #d55c0b transparent transparent #d55c0b;
+          border-color: #d5501b transparent transparent #d5501b;
+        }
+        .mobile.withForm #{&} {
+          border-color: #007d99 transparent transparent #007d99;
         }
         .withForm.invertedDisplay #{&} {
           right: auto;
           left: 0;
-          border-color: #d55c0b #d55c0b transparent transparent;
+          border-color: #d5501b #d5501b transparent transparent;
+        }
+        .mobile.withForm.invertedDisplay #{&} {
+          border-color: #007d99 #007d99 transparent transparent ;
         }
       }
     }
@@ -777,7 +819,10 @@ hr.example_divider {
       z-index: -1;
       @at-root {
         .mobile #{&} {
-          //background-color: $color_mobile;
+          background-color: $color_robin;
+        }
+        .robin #{&} {
+          //background-color: $color_infostrada;
         }
         .fisso #{&} {
           //background-color: $color_infostrada;
@@ -922,6 +967,9 @@ hr.example_divider {
       .mobile #{&} {
         color: $color_mobile;
       }
+      .robin #{&} {
+        color: $color_mobile;
+      }
       .fisso #{&} {
         color: $color_infostrada;
       }
@@ -937,6 +985,9 @@ hr.example_divider {
       .fullBand.transparent.mobile #{&} {
         color: $color_mobile;
       }
+      .fullBand.transparent.robin #{&} {
+        color: $color_mobile;
+      }
       .fullBand.transparent.fisso #{&} {
         color: $color_infostrada;
       }
@@ -950,6 +1001,9 @@ hr.example_divider {
         color: $color_white;
       }
       .specialVersion.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .specialVersion.transparent.robin #{&} {
         color: $color_mobile;
       }
       .specialVersion.transparent.fisso #{&} {
@@ -975,6 +1029,9 @@ hr.example_divider {
     }
     @at-root {
       .mobile #{&} {
+        color: $color_mobile;
+      }
+      .robin #{&} {
         color: $color_mobile;
       }
       .fisso #{&} {
@@ -1004,6 +1061,9 @@ hr.example_divider {
       .fullBand.transparent.mobile #{&} {
         color: $color_mobile;
       }
+      .fullBand.transparent.robin #{&} {
+        color: $color_mobile;
+      }
       .fullBand.transparent.fisso #{&} {
         color: $color_infostrada;
       }
@@ -1014,6 +1074,9 @@ hr.example_divider {
         color: $color_home_life;
       }
       .specialVersion.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .specialVersion.transparent.robin #{&} {
         color: $color_mobile;
       }
       .specialVersion.transparent.fisso #{&} {
@@ -1211,6 +1274,9 @@ hr.example_divider {
       .mobile #{&} {
         color: $color_mobile;
       }
+      .robin #{&} {
+        color: $color_mobile;
+      }
       .fisso #{&} {
         color: $color_infostrada;
       }
@@ -1229,6 +1295,9 @@ hr.example_divider {
       .fullBand.transparent.mobile #{&} {
         color: $color_mobile;
       }
+      .fullBand.transparent.robin #{&} {
+        color: $color_mobile;
+      }
       .fullBand.transparent.fisso #{&} {
         color: $color_infostrada;
       }
@@ -1239,6 +1308,9 @@ hr.example_divider {
         color: $color_home_life;
       }
       .specialVersion.transparent.mobile #{&} {
+        color: $color_mobile;
+      }
+      .specialVersion.transparent.robin #{&} {
         color: $color_mobile;
       }
       .specialVersion.transparent.fisso #{&} {
@@ -1402,7 +1474,10 @@ hr.example_divider {
       z-index: 60;
       @at-root {
         .mobile #{&} {
-          background-color: $color_mobile;
+          background-color: $color_wind;
+        }
+        .robin #{&} {
+          background-color: $color_robin;
         }
         .fisso #{&} {
           background-color: $color_infostrada;
