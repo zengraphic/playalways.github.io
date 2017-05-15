@@ -18,6 +18,7 @@
                 font-size: 1.7rem;
             }
         }
+        .container--offer_details {}
         .details {
             list-style: none;
             padding-left: 60px;
@@ -43,6 +44,47 @@
                     top: 5px;
                     font-size: 4em;
                     line-height: 0;
+                }
+            }
+        }
+        &--title {}
+        &--box_offer {
+            display: table-cell;
+            vertical-align: middle;
+            &.device {
+                padding-left: 15px;
+            }
+            &--single {
+                display: table-cell;
+                vertical-align: middle;
+                width: 33%;
+                @include breakpoint(small){
+                    display: inline-block !important;
+                }
+            }
+            &__container {
+                display: table;
+            }
+        }
+        &--options {
+            display: table-cell;
+            vertical-align: middle;
+            &__container {
+                display: table;
+            }
+            &--title {}
+            &--button {
+                @include border-radius(4px);
+                border: 1px solid $color_orange;
+                color: $color_orange;
+                padding: 5px 25px;
+                text-transform: uppercase;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                width: 140px;
+                &:hover{
+                   @include opacity(0.8); 
                 }
             }
         }

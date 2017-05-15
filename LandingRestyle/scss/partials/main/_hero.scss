@@ -1,5 +1,11 @@
 .landing {
     &__hero {
+        .hero_tab {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
         box-sizing: border-box;
         position: relative;
         .container {
@@ -147,6 +153,16 @@
                 }
             }
         }
+        .magnum_background {
+            background-image: url("../img/magnum/hero_background.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding-bottom: 25px;
+            background-size: cover;
+            @include breakpoint(small) {
+                background-image: url("../img/magnum/hero_background_small.jpg");
+            }
+        }
         &--details {
             margin-bottom: 120px;
             @include breakpoint(small) {
@@ -209,6 +225,12 @@
             text-align: center;
             color: $color_white;
             z-index: 16;
+            &.low_ribbon {
+                top: 60%;
+                @include breakpoint(small) {
+                    top: 70%;
+                }
+            }
             @include breakpoint(min-desktop-plusborder) {
                 right: 0;
             }
@@ -228,13 +250,13 @@
                 right: 50%;
                 bottom: 0;
                 left: -19%;
-                transform: skew(-20deg);
+                transform: skew(20deg);
                 transform-origin: 100% 100%;
                 background-color: $color_robin;
                 content: "";
                 z-index: -1;
                 @include breakpoint(small) {
-                    left: -21%;
+                    left: 0%;
                 }
             }
             &:after {
@@ -294,6 +316,50 @@
                 z-index: 150;
                 @include breakpoint(small) {
                     font-size: 2.225rem;
+                }
+            }
+        }
+        &__sponsor_container {
+            display: table;
+        }
+        &--sponsor {
+            display: table-cell;
+            vertical-align: middle;
+            @include breakpoint(small) {
+                display: block;
+            }
+            img {
+                @include breakpoint(small) {
+                    width: 50%;
+                }
+            }
+        }
+        &__tabs {
+            padding-top: 20px;
+            &--button {
+                @include border-radius(4px);
+                font-size: 1.429rem;
+                border: 1px solid $color_orange;
+                color: $color_orange;
+                padding: 15px 25px;
+                margin: 0 5px;
+                text-transform: uppercase;
+                display: inline-block;
+                text-align: center;
+                width: 155px;
+                cursor: pointer;
+                @include breakpoint(small) {
+                    margin: 0;
+                    padding: 5px 10px;
+                    width: 32%;
+                    font-size: 1.029rem;
+                }
+                &.active {
+                    background-color: $color-white;
+                }
+                &:hover {
+                    @include opacity(0.8);
+                    background-color: $color-white;
                 }
             }
         }
