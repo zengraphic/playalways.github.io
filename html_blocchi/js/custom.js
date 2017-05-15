@@ -1439,26 +1439,26 @@ jQuery(function($) {
             var visoreConSlider = $('.blocco_visore').filter('.with_slider');
             visoreConSlider
                 .slick({
-                    dots: true,
+                    dots: false,
                     arrows: false,
                     infinite: false,
-                    speed: 500,
+                    speed: 100,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    fade:false,
+                    fade:true,
                     cssEase:'ease',
-                    dotsClass: 'slider__dots',
-                    adaptiveHeight: true,
+                    /*dotsClass: 'slider__dots',*/
+                    adaptiveHeight: true/*,
                     customPaging: function(slider, i) {
                         var thumb = $(slider.$slides[i]).data('thumb');
                         return '<div class="slider__single"></div>';
-                    }
+                    }*/
                 });
 
-            var menuPerVisore = visoreConSlider.next();
-            var cardsContainerSlider = visoreConSlider.nextAll('.showcase_bundle_device').children();
-            if (menuPerVisore.hasClass('stripMenu')) {
-                var emettitoreEvento = menuPerVisore.parent('.filter-showcase');
+            var menuPerVisore = visoreConSlider.next().find('.stripMenu');
+            var cardsContainerSlider = visoreConSlider.next().find('.showcase_bundle_device').children();
+            if (menuPerVisore.length == 1) {
+                var emettitoreEvento = menuPerVisore.closest('.filter-showcase');
                 emettitoreEvento
                     .on("combo-change", function(e,dataCombo) {
                         var activeTab = menuPerVisore.find('.tab_button.active');
