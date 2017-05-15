@@ -34,25 +34,19 @@
 
 @mixin text_classes {
     @for $i from 4 through $steps*5 {
-        .font_size_#{$i * $delta*2} {
-            font-size: $delta*2 * $i +px;
-        }
-        .line_height_#{$i * $delta*2} {
-            line-height: $delta*2 * $i +2 +px;
+        .font_size_#{$i * $delta*02} {
+            font-size: ($delta*0.2)/1.4 * $i +rem;
+            line-height: 1em;
         }
     }
 }
 
 @mixin text_classes_m {
     @for $i from 4 through $steps*5 {
-        .font_size_m_#{$i * $delta*2} {
+        .font_size_m_#{$i * $delta*02} {
             @include breakpoint (small) {
-                font-size: $delta*2 * $i +px;
-            }
-        }
-        .line_height_m_#{$i * $delta*2} {
-            @include breakpoint (small) {
-                line-height: $delta*2 * $i +2 +px;
+                font-size: ($delta*0.2)/1.4 * $i +rem;
+                line-height: 1em;
             }
         }
     }

@@ -2,16 +2,88 @@
 @import "uikit";
 @import "partials/main/header";
 @import "partials/main/footer";
+@import "partials/main/hero";
+@import "partials/main/offer_details";
 @import "partials/components/vetrina_accordions";
 @include attributes_classes;
 @include position_classes;
 @include text_classes;
 @include text_classes_m;
-// TEMPORANEO DA SPOSTARE
+// TEMPORANEO DA SPOSTAR
+.margin_bottom_0 {
+    margin-bottom: 0px !important;
+}
+
+.margin_bottom_m_0 {
+    @include breakpoint(small) {
+        margin-bottom: 0px !important;
+    }
+}
+
+.text_color_blue_99 {
+    color: #009bbe !important;
+}
+
+.text_color_white {
+    color: #ffffff !important;
+}
+
+.text_color_orange {
+    color: #f48135 !important;
+}
+
+.text_color_grey_six {
+    color: #666 !important;
+}
+
+.text_color_grey_medium_dark {
+    color: #777a7e !important;
+}
+
+.text_color_grey_darker {
+    color: #333 !important;
+}
+
+.text_uppercase {
+    text-transform: uppercase;
+}
+
+.font_light {
+    font-family: $font_family_light;
+}
+
+.font_regular {
+    font-family: $font_family_regular;
+}
+
+.font_bold_condensed {
+    font-family: $font_family_cond;
+    font-weight: 700;
+}
+
+.font_condensed {
+    font-family: $font_family_cond;
+    font-weight: 400;
+}
+
+.font_bold {
+    font-family: $font_family_bold;
+}
+
 .only_desktop {
     @include breakpoint(tiny) {
         display: none;
     }
+}
+
+.only_mobile_medium {
+    display: none;
+    @include breakpoint(medium) {
+        display: block;
+    }
+    @include breakpoint(tiny) {
+        display: none;
+    }    
 }
 
 .only_mobile {
@@ -37,6 +109,15 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
+}
+
+html{
+    @include breakpoint(medium){
+        font-size: 10px;
+    }
+    @include breakpoint(small){
+        font-size: 14px;
+    }    
 }
 
 a {
@@ -87,323 +168,6 @@ a {
                     width: 100%;
                     z-index: 999;
                     opacity: 0.95;
-                }
-            }
-        }
-    }
-    &__hero {
-        box-sizing: border-box;
-        position: relative;
-        .container {
-            @include breakpoint(small) {
-                overflow: hidden;
-            }
-        }
-        &__imageContainer {
-            position: absolute;
-            right: 0;
-            z-index: 15;
-            top: 0;
-            @include breakpoint(small) {
-                width: 50%;
-                top: 22%;
-                right: -5%
-            }
-            img {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-        &--title {
-            padding: 30px 0;
-            margin-bottom: 20px;
-            @include breakpoint(small) {
-                padding: 0;
-            }
-            h1 {
-                font-size: 5.5rem;
-                text-transform: uppercase;
-                color: $color_robin;
-                line-height: 1em;
-                font-family: $font_family_cond;
-                font-weight: bold;
-                @include breakpoint(med-large) {
-                    font-size: 4.5rem;
-                }
-                @include breakpoint('medium') {
-                    font-size: 3.6rem;
-                }
-                @include breakpoint(small) {
-                    font-size: 2.8rem;
-                }
-            }
-        }
-        .bundle_orange {
-            display: table-cell;
-            padding: 0 20px;
-            color: $color_wind;
-            font-family: $font_family_light;
-            text-align: center;
-            vertical-align: middle;
-            width: 32%;
-            @include breakpoint('medium') {
-                display: block;
-                width: auto;
-                padding: 0;
-                text-align: left;
-            }
-            &:first-child {
-                padding: 0 30px 0 0;
-            }
-            &:not(:last-of-type) {
-                border-right: 1px solid $color_stroke;
-                @include breakpoint('medium') {
-                    border-right: none;
-                }
-            }
-            &__container {
-                display: table;
-                width: 50%;
-                margin: 0 0 50px;
-                text-align: left;
-                @include breakpoint('medium') {
-                    display: block;
-                    padding: 0;
-                }
-                @include breakpoint(med-large) {
-                    width: 40%;
-                }
-                @include breakpoint(small) {
-                    width: 90%;
-                }
-            }
-            &__title {
-                //max-width: 70px;
-                //margin: 0 auto;
-                font-size: 2.143rem;
-                line-height: 1.2em;
-                @include breakpoint('medium') {
-                    display: inline-block;
-                }
-                @include breakpoint(med-large) {
-                    font-size: 2.143em;
-                }
-                // @include breakpoint(medium) {
-                //     font-size: 14px;
-                // }
-                @include breakpoint(small) {
-                    font-size: 1.571rem;
-                }
-                // @include breakpoint('super-tiny') {
-                //     font-size: 12px;
-                // }
-            }
-            &__number {
-                font-size: 4.643em;
-                line-height: 1em;
-                @include breakpoint('medium') {
-                    display: inline-block;
-                }
-                @include breakpoint(med-large) {
-                    font-size: 3em;
-                }
-                @include breakpoint(tiny) {
-                    font-size: 45px;
-                }
-                &:empty {
-                    display: none;
-                    & + .bundle_orange__title {
-                        max-width: none;
-                        font-size: 18px;
-                    }
-                }
-            }
-        }
-        &--details {
-            margin-bottom: 120px;
-            @include breakpoint(small) {
-                margin-bottom: 80px;
-            }
-            .single {
-                font-family: $font_family_cond;
-                @include breakpoint(small) {
-                    margin-bottom: 10px;
-                }
-                .image {
-                    display: inline-block;
-                    margin-right: 1em;
-                    vertical-align: middle;
-                    @include breakpoint(small) {
-                        width: 15px;
-                        height: 15px;
-                        margin-right: 0.5rem;
-                    }
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-                .text {
-                    display: inline-block;
-                    font-size: 1.857em;
-                    text-transform: uppercase;
-                    vertical-align: middle;
-                    line-height: 1.1em;
-                    @include breakpoint(small) {
-                        width: 50%;
-                        font-size: 1.286rem;
-                    }
-                }
-            }
-        }
-        &--stamp {
-            display: none;
-            margin-bottom: 45px;
-            &--single {
-                display: inline-block;
-                margin-right: 1rem;
-                @include breakpoint(small) {
-                    display: block;
-                    margin-top: 5px;
-                    width: 44px;
-                    height: 44px;
-                }
-            }
-        }
-        &--ribbon {
-            width: 350px;
-            height: 150px;
-            display: block;
-            position: absolute;
-            background-color: $color_robin;
-            right: -40px;
-            top: 52%;
-            text-align: center;
-            color: $color_white;
-            z-index: 16;
-            @include breakpoint(min-desktop-plusborder) {
-                right: 0;
-            }
-            @include breakpoint(small) {
-                height: 91px;
-                width: 158px;
-                right: 0;
-                top: 73.3%;
-            }
-            @include breakpoint(super-tiny) {
-                top: 73.3%;
-            }
-            &:before {
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 50%;
-                bottom: 0;
-                left: -19%;
-                transform: skew(-20deg);
-                transform-origin: 100% 100%;
-                background-color: $color_robin;
-                content: "";
-                z-index: -1;
-                @include breakpoint(small) {
-                    left: -21%;
-                }
-            }
-            &:after {
-                display: block;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                border-width: 20px;
-                border-style: solid;
-                border-color: #02677e transparent transparent #02677e;
-                content: "";
-                z-index: -1;
-                @include breakpoint(medium) {
-                    content: none;
-                }
-                @include breakpoint(min-desktop-plusborder) {
-                    content: none;
-                }
-            }
-            .price {
-                font-size: 6.429rem;
-                line-height: 1em;
-                margin-top: 13px;
-                @include breakpoint(small) {
-                    font-size: 3.2rem;
-                    margin-top: 11px;
-                }
-                ;
-                .currency {
-                    font-size: 0.8em;
-                }
-            }
-            .recurrency {
-                font-size: 1.429rem;
-                @include breakpoint(small) {
-                    font-size: 0.9rem;
-                }
-                ;
-            }
-        }
-        &--claim {
-            width: 100%;
-            max-width: 1024px;
-            margin: 30px auto;
-            margin-bottom: 35px;
-            padding: 0 30px;
-            @include breakpoint(small) {
-                padding: 0 15px;
-            }
-            h2 {
-                font-size: 4.643rem;
-                text-transform: uppercase;
-                color: $color_robin;
-                line-height: 1em;
-                font-family: $font_family_cond;
-                @include breakpoint(small) {
-                    font-size: 2.225rem;
-                }
-            }
-        }
-    }
-    &--offer_details {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        height: auto;
-        background-color: $color_robin;
-        color: $color_white;
-        padding: 30px 0;
-        margin-bottom: 60px;
-        h3 {
-            font-size: 2.714rem;
-            font-family: $font_family_bold;
-            line-height: 1.2em;
-            @include breakpoint(small) {
-                font-size: 1.7rem;
-            }
-        }
-        .details {
-            list-style: none;
-            padding-left: 60px;
-            margin: 30px 0;
-            li {
-                position: relative;
-                font-size: 1.857rem;
-                line-height: 1.2em;
-                margin-bottom: 20px;
-                @include breakpoint(small) {
-                    font-size: 1.250rem;
-                }
-                &:before {
-                    content: "\b7\a0";
-                    position: absolute;
-                    left: -60px;
-                    top: 5px;
-                    font-size: 4em;
-                    line-height: 0;
                 }
             }
         }
