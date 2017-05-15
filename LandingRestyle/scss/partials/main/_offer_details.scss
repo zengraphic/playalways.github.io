@@ -1,0 +1,50 @@
+.landing {
+    &--offer_details {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        height: auto;
+        background-color: $color_robin;
+        color: $color_white;
+        padding: 30px 0;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 100;
+        h3 {
+            font-size: 2.714rem;
+            font-family: $font_family_bold;
+            line-height: 1.2em;
+            @include breakpoint(small) {
+                font-size: 1.7rem;
+            }
+        }
+        .details {
+            list-style: none;
+            padding-left: 60px;
+            margin: 30px 0;
+            &.no_list {
+                padding-left: 0;
+                &:before {
+                    content: "";
+                }
+            }
+            li {
+                position: relative;
+                font-size: 1.857rem;
+                line-height: 1.2em;
+                margin-bottom: 20px;
+                @include breakpoint(small) {
+                    font-size: 1.250rem;
+                }
+                &:before {
+                    content: "\b7\a0";
+                    position: absolute;
+                    left: -60px;
+                    top: 5px;
+                    font-size: 4em;
+                    line-height: 0;
+                }
+            }
+        }
+    }
+}
