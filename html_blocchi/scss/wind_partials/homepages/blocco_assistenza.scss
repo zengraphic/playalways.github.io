@@ -1,221 +1,260 @@
 //BLOCCO 4
 .customer_block {
-  background-color: $color_grey_light_light;
-  max-width: 1024px;
-  margin: 0 auto;
-  @at-root #{&}__container {
+    background-color: $color_grey_light_light;
     max-width: 1024px;
     margin: 0 auto;
-  }
-  @at-root #{&}__title {
-    text-align: center;
-    font-size: $text-medium;
-    padding-top: 50px;
-    margin-bottom: 30px;
-    font-family: $weight-light;
-  }
-  @at-root #{&}__search {
-    float: left;
-    width: calc(85% - 15px);
-    .base__input {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      height: 50px;
-    }
-  }
-  @at-root #{&}__tripleContainer {
-    background-color: $color_grey_light_light;
-    padding-bottom: 85px;
-    .base__icon {
-      width: 65px;
-      height: 65px;
-      margin: 45px auto 0 auto;
-    }
-    .onlyOne {
-      width: 100%;
-      margin-top: 30px;
-      .base__icon {
-        float: left;
-        margin: 20px auto;
-      }
-      div[class*="--title"] {
-        position: absolute;
-        left: 120px;
-        margin-top: 20px;
-      }
-      div[class*="--Subtitle"] {
-        position: absolute;
-        left: 120px;
-        top: 50px;
-        width: 45%;
-        text-align: left;
-      }
-      div[class*="__sameHeight_container"] {
-        position: absolute;
-        left: 120px;
-        top: 50px;
-        width: 45%;
-        text-align: left;
-      }
-      .button {
-        float: right;
-        padding: 1em;
-        margin-top: 25px;
-      }
-      @include breakpoint ('small') {
-        .base__icon {
-          float: none;
-        }
-        div[class*="--title"] {
-          position: static;
-        }
-        div[class*="--Subtitle"] {
-          position: static;
-          width: 100%;
-          text-align: center;
-        }
-        div[class*="__sameHeight_container"] {
-          position: static;
-          width: 100%;
-        }
-        .button {
-          float: none;
-          font-size: 0.9em;
-          padding: 1em 0.5em;
-          margin: 0 auto;
-          max-width: 280px;
-        }
-      }
-    }
-    .twoBlocks {
-      margin-left: calc(50% - 34%);
-    }
-  }
-  @at-root #{&}__searchContainer {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  @at-root #{&}__searchButton {
-    width: 15%;
-    float: left;
-    height: 50px;
-    margin-left: 15px;
-    .button--searchButton {
-      max-width: 120px;
-      height: 100%;
-      padding: 0.5em;
-      .base__icon {}
-    }
-  }
-  @at-root #{&}__sameHeight_container {
-    height: 60px;
-    margin-bottom: 20px;
-  }
-  @at-root #{&}__divider {
-    margin-top: 60px;
-    &--text {
-      position: relative;
-      z-index: 1;
-      &:before {
-        border-top: 1px solid $color_stroke;
-        content: "";
+    @at-root #{&}__container {
+        max-width: 1024px;
         margin: 0 auto;
-        /* this centers the line to the full width specified */
-        position: absolute;
-        /* positioning must be absolute here, and relative positioning must be applied to the parent */
-        top: 50%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: calc(100% - 60px);
-        z-index: -1;
-      }
-      span {
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */
-        background: $color_grey_light_light;
-        padding: 0 15px;
-      }
     }
-  }
-  @at-root #{&}__icon {
-    background: url('../img/icons-customer-care/customerCare_sprite.png') no-repeat 0 0;
-    margin: 45px auto 0 auto;
-    &--findStore {
-      width: 65px;
-      height: 65px;
-      background-position: 0 5px;
+    @at-root #{&}__title {
+        text-align: center;
+        font-size: $text-medium;
+        padding-top: 50px;
+        margin-bottom: 30px;
+        font-family: $weight-light;
     }
-    &--findDevice {
-      width: 65px;
-      height: 65px;
-      background-position: 15px -60px;
+    @at-root #{&}__search {
+        float: left;
+        width: calc(85% - 15px);
+        .base__input {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            height: 50px;
+        }
     }
-    &--findCoverage {
-      width: 65px;
-      height: 65px;
-      background-position: 13px -125px;
-      
+    @at-root #{&}__tripleContainer {
+        padding-bottom: 85px;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: table;
+        width: 100%;
+        position: relative;
+        @include breakpoint(small) {
+            display: block;
+        }
+        .base__icon {
+            width: 65px;
+            height: 65px;
+            margin: 45px auto 0 auto;
+        }
+        .block {
+            display: table-cell;
+            width: 33%;
+            padding: 0 15px;
+            @include breakpoint(small) {
+                display: block;
+                width: 100%;
+                .base__input {
+                        display: block;
+                        max-width: 280px;
+                        margin: 0 auto;
+                    }
+                    .button {
+                        float: none;
+                        font-size: 0.9em;
+                        padding: 1em 0.5em;
+                        margin: 0 auto;
+                        max-width: 280px;
+                    }
+            }
+        }
+        &.twoBlocks {
+            width: 70%;
+            margin: 0 auto;
+            @include breakpoint(small) {
+                display: block;
+                width: 100%;
+                .base__input {
+                        display: block;
+                        max-width: 280px;
+                        margin: 0 auto;
+                    }
+                    .button {
+                        float: none;
+                        font-size: 0.9em;
+                        padding: 1em 0.5em;
+                        margin: 0 auto;
+                        max-width: 280px;
+                    }
+            }
+        }
+        &.onlyOne {
+            .block {
+                width: 100%;      
+                margin-top: 30px;
+                .base__icon {
+                    float: left;
+                    margin: 20px auto;
+                }
+                div[class*="--title"] {
+                    position: absolute;
+                    left: 120px;
+                    margin-top: 20px;
+                }
+                div[class*="--Subtitle"] {
+                    position: absolute;
+                    left: 120px;
+                    top: 50px;
+                    width: 45%;
+                    text-align: left;
+                }
+                div[class*="__sameHeight_container"] {
+                    position: absolute;
+                    left: 120px;
+                    top: 50px;
+                    width: 45%;
+                    text-align: left;
+                }
+                .button {
+                    float: right;
+                    padding: 1em;
+                    margin-top: 25px;
+                }
+                @include breakpoint ('small') {
+                    .base__icon {
+                        float: none;
+                    }
+                    div[class*="--title"] {
+                        position: static;
+                    }
+                    div[class*="--Subtitle"] {
+                        position: static;
+                        width: 100%;
+                        text-align: center;
+                    }
+                    div[class*="__sameHeight_container"] {
+                        position: static;
+                        width: 100%;
+                    }
+                    .base__input {
+                        display: block;
+                        max-width: 280px;
+                        margin: 0 auto;
+                    }
+                    .button {
+                        float: none;
+                        font-size: 0.9em;
+                        padding: 1em 0.5em;
+                        margin: 0 auto;
+                        max-width: 280px;
+                    }
+                }
+            }
+        }
     }
-  }
-  @at-root #{&}__find {
-    &--Store {}
-    &--title {
-      font-family: $weight-bold;
-      font-size: 1em;
-      margin-bottom: 20px;
-      margin-top: 30px;
+    @at-root #{&}__searchContainer {
+        margin-left: 30px;
+        margin-right: 30px;
     }
-    &--Subtitle {
-      font-family: $weight-light;
-      font-size: 1em;
-      margin-bottom: 20px;
-      height: 60px;
+    @at-root #{&}__searchButton {
+        width: 15%;
+        float: left;
+        height: 50px;
+        margin-left: 15px;
+        .button--searchButton {
+            max-width: 120px;
+            height: 100%;
+            padding: 0.5em;
+            .base__icon {}
+        }
     }
-  }
+    @at-root #{&}__sameHeight_container {
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    @at-root #{&}__divider {
+        margin-top: 60px;
+        &--text {
+            position: relative;
+            z-index: 1;
+            &:before {
+                border-top: 1px solid $color_stroke;
+                content: "";
+                margin: 0 auto;
+                /* this centers the line to the full width specified */
+                position: absolute;
+                /* positioning must be absolute here, and relative positioning must be applied to the parent */
+                top: 50%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: calc(100% - 60px);
+                z-index: -1;
+            }
+            span {
+                /* to hide the lines from behind the text, you have to set the background color the same as the container */
+                background: $color_grey_light_light;
+                padding: 0 15px;
+            }
+        }
+    }
+    @at-root #{&}__icon {
+        background: url('../img/icons-customer-care/customerCare_sprite.png') no-repeat 0 0;
+        margin: 45px auto 0 auto;
+        &--findStore {
+            width: 65px;
+            height: 65px;
+            background-position: 0 5px;
+        }
+        &--findDevice {
+            width: 65px;
+            height: 65px;
+            background-position: 15px -60px;
+        }
+        &--findCoverage {
+            width: 65px;
+            height: 65px;
+            background-position: 13px -125px;
+        }
+    }
+    @at-root #{&}__find {
+        &--Store {}
+        &--title {
+            font-family: $weight-bold;
+            font-size: 1em;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        &--Subtitle {
+            font-family: $weight-light;
+            font-size: 1em;
+            margin-bottom: 20px;
+            height: 60px;
+        }
+    }
 }
 
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-@media all and (max-width: 991px) {
-  .customer_block {
-    &__searchContainer {
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-    .twoBlocks {
-      margin-left: 0;
-    }
-  }
-}
-
 @media all and (max-width: 767px) {
-  a.button {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  .customer_block {
-    &__searchButton {
-      .button--searchButton {
-        background-position: calc(4vw + 20%) -191px;
-        margin: 0;
-      }
+    a.button {
+        margin-left: 0px;
+        margin-right: 0px;
     }
-    &__divider {
-      margin-top: 30px;
-      &--text:before {
-        width: calc(100% - 30px);
-      }
+    .customer_block {
+        &__searchButton {
+            .button--searchButton {
+                background-position: calc(4vw + 20%) -191px;
+                margin: 0;
+            }
+        }
+        &__divider {
+            margin-top: 30px;
+            &--text:before {
+                width: calc(100% - 30px);
+            }
+        }
+        &__tripleContainer {
+            font-size: 14px;
+        }
+        &__icon {
+            margin-top: 20px;
+        }
+        &__find--title {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
     }
-    &__tripleContainer {
-      font-size: 14px;
-    }
-    &__icon {
-      margin-top: 20px;
-    }
-    &__find--title {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-  }
 }
