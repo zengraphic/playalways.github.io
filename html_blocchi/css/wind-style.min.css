@@ -201,6 +201,9 @@ h4 {
 b {
   font-family: "Trade Gothic"; }
 
+hr {
+  max-width: 1024px; }
+
 .clear-fix:after,
 .clear {
   content: ".";
@@ -10973,18 +10976,6 @@ sw.showcase_bundle_device {
 .blocco_faq .faq_block__firstLevelBlock {
   display: none; }
 
-.mfp-iframe-scaler .videoFaq__close {
-  position: absolute;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  top: -50px; }
-  .mfp-iframe-scaler .videoFaq__close .mfp-close {
-    position: static;
-    width: 40px;
-    height: 40px;
-    cursor: pointer; }
-
 .faq_block {
   max-width: 1024px;
   margin: 0 auto;
@@ -10992,52 +10983,32 @@ sw.showcase_bundle_device {
   .faq_block__single {
     text-align: center;
     padding: 1.250em 1.250em;
-    cursor: pointer;
-    float: none;
-    display: inline-block;
-    vertical-align: top;
-    width: 33%; }
-    @media (max-width: 910px) {
-      .faq_block__single {
-        width: 49%; } }
-    @media (max-width: 767px) {
-      .faq_block__single {
-        width: 100%; } }
-    .faq_block__mainBlock .faq_block__single.faq_active, .faq_block__mainBlock .faq_block__single:hover {
+    cursor: pointer; }
+    .faq_block__mainBlock .faq_block__single.faq_active {
       background-color: #F48135;
       color: #FFF; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon img, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon img {
-        opacity: .5; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_mobile_fisso--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_mobile_fisso--color {
-        background-position: 50% 6.59077%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_passa_wind--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_passa_wind--color {
-        background-position: 50% 63.71077%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_servizi_tel_digitali--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_servizi_tel_digitali--color {
-        background-position: 50% 84.58154%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_ricarica--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_ricarica--color {
-        background-position: 50% 49.43077%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_acquisti_online--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_acquisti_online--color {
-        background-position: 50% 53.82462%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_configurazione--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_configurazione--color {
-        background-position: 50% 17.57538%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_estero--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_estero--color {
-        background-position: 50% 59.31692%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_app_strumenti--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_app_strumenti--color {
-        background-position: 50% 83.48308%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_gestione_anagrafica--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_gestione_anagrafica--color {
-        background-position: 50% 80.18769%; }
-      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_pagamenti_conto--color, .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_pagamenti_conto--color {
-        background-position: 50% 76.89231%; }
-    .faq_block__mainBlock .faq_block__single .base__icon {
-      width: 44px;
-      height: 44px; }
+      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon .icon_mobile_fisso--color {
+        opacity: 0.5; }
+      .faq_block__mainBlock .faq_block__single.faq_active .faq_block__single__icon img {
+        left: -88px; }
+    .faq_block__mainBlock .faq_block__single:hover {
+      background-color: #F48135;
+      color: #FFF; }
+      .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon .icon_mobile_fisso--color {
+        background-position: 50% 6.88966%; }
+      .faq_block__mainBlock .faq_block__single:hover .faq_block__single__icon img {
+        left: -88px; }
     .faq_block__mainBlock .faq_block__single__icon {
-      line-height: 0px;
-      color: #F48135; }
+      position: relative;
+      width: 44px;
+      height: 44px;
+      margin: 0.5rem auto;
+      overflow: hidden; }
       .faq_block__mainBlock .faq_block__single__icon img {
-        margin: 0.5em auto;
-        width: 44px;
-        height: 44px; }
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300%; }
     .faq_block__mainBlock .faq_block__single__title {
       font-size: 1.250em;
       margin-top: 5px;
@@ -11233,13 +11204,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  ::-webkit-input-placeholder {
+  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
     color: #AAB2BD; }
-  :-moz-placeholder {
+  .storeDetail_block__contactUs__area:-moz-placeholder {
     color: #AAB2BD; }
-  ::-moz-placeholder {
+  .storeDetail_block__contactUs__area::-moz-placeholder {
     color: #AAB2BD; }
-  :-ms-input-placeholder {
+  .storeDetail_block__contactUs__area:-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
