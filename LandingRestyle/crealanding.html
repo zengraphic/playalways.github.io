@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
             page = page + my_var;
         }, 'html').promise().done(function() {
             if ((path1 != "") && (path2 != "")) {
-                var mergePath = 'fileadmin/Materiale/' + path1 + "/" + path2 + "/";
+                var mergePath = 'fileadmin/' + path1 + "/" + path2 + "/";
                 mergePath = mergePath.replace(/ /g, "");
                 page = page.replace(/([.][.][/])/g, mergePath);
             }
