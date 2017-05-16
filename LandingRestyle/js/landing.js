@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
         $('.slider__device').slick({
             dots: true,
             arrows: true,
-            infinite: true,
+            infinite: false,
             speed: 300,
             slidesToShow: 3,
             slidesToScroll: 3,
@@ -34,18 +34,17 @@ jQuery(document).ready(function($) {
                 return '<div class="slider__single"></div>';
             },
             responsive: [{
-                    breakpoint: 840,
+                    breakpoint: 980,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2,
-                        infinite: true,
                         dots: true
                     }
                 }, {
-                    breakpoint: 585,
+                    breakpoint: 670,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
                     }
                 },
                 // You can unslick at a given breakpoint now by adding:

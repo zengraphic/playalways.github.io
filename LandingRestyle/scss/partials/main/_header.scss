@@ -21,11 +21,14 @@
         @include animation(fadein 2s);
         &__bg {
             // background-color: $color_white;
-            background-color: rgba(255,255,255,0.95);
+            background-color: rgba(255, 255, 255, 0.95);
         }
         // === Margine per spaziatura header === //
         &--margin {
             margin-top: 85px;
+              @include breakpoint(small) {
+                    margin-top: 80px;;
+                }            
         }
         &__container {
             &--left {
@@ -33,6 +36,9 @@
             }
             &--right {
                 float: right;
+                @include breakpoint(small) {
+                    padding-top: 10px;
+                }
             }
             &--logos {
                 text-align: center;
@@ -59,7 +65,6 @@
             }
         }
         &__icon__text {
-
             text-transform: uppercase;
             font-size: 12px;
             color: $color_grey_dark;
