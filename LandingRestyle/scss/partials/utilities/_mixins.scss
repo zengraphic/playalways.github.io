@@ -5,7 +5,7 @@
         @each $direction in $directions {
             @for $i from 1 through $steps {
                 .#{$attribute}_#{$direction}_#{$i * $delta*5} {
-                    #{$attribute}-#{$direction}: $delta*5 * $i +px;
+                    #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
                 }
                 .#{$attribute}_#{$direction}_m_#{$i * $delta*5} {
                     @include breakpoint (small) {
@@ -87,6 +87,16 @@
     -webkit-transform: $transforms;
     transform: $transforms;
 }
+
+//  FINE MIXIN BORDER RADIOUS
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
 
 @mixin translate ($x, $y) {
     @include transform(translate($x, $y));

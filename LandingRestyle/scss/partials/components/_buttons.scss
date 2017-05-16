@@ -8,6 +8,7 @@
 
 .btn {
     font-family: $font_family_light;
+    @include border-radius(4px);
     &:focus,
     &:active:focus,
     &.active:focus {
@@ -133,6 +134,28 @@
             }
         }
     }
+    &--tr{
+        border: 1px solid $color_white;
+        background-color: transparent;
+        text-align: center;
+        color: $color_white !important;
+        font-size: 1.571rem;
+        &:hover,
+        &:active,
+        &:visited,
+        &:focus {
+            @include opacity(0.8);
+        }
+        &:disabled,
+        &.waves-button:disabled {
+            border-color: none;
+            background-color: $color_white;
+            color: $color_grey_stroke;
+            &:hover {
+                border-color: $color_grey_stroke;
+            }
+        }
+    }    
     &--icon {
         .base__icon {
             height: 14px;

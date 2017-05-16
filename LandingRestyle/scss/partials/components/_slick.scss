@@ -1,6 +1,4 @@
-/* */
-/* Original previous LESS format, converted to SASS */
-/* */
+//config plugin slide products of vetrine
 
 .slick-slider {
   position: relative;
@@ -14,7 +12,7 @@
   user-select: none;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: $color_transparent;
 }
 
 .slick-list {
@@ -25,6 +23,7 @@
   padding: 0;
 
   &:focus {
+    -webkit-focus-ring-color: none;
     outline: none;
   }
 
@@ -49,6 +48,7 @@
   left: 0;
   top: 0;
   display: block;
+  margin:0 auto;
 
   &:before {
     content: "";
@@ -102,7 +102,7 @@
 .slick-vertical .slick-slide {
   display: block;
   height: auto;
-  border: 1px solid transparent;
+  border: 1px solid $color_transparent;
 }
 
 .slick-arrow.slick-hidden {

@@ -10,10 +10,14 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTAR
+.extended_line_height {
+    line-height: 1.2em;
+}
 
-.display_block{
+.display_block {
     display: block;
 }
+
 .margin_bottom_0 {
     margin-bottom: 0px !important;
 }
@@ -22,6 +26,10 @@
     @include breakpoint(small) {
         margin-bottom: 0px !important;
     }
+}
+
+.text_centered {
+    text-align: center;
 }
 
 .text_color_blue_99 {
@@ -61,17 +69,24 @@
 }
 
 .font_bold_condensed {
-    font-family: $font_family_cond;
+    font-family: $font_family_cond !important;
     font-weight: 700;
 }
 
 .font_condensed {
-    font-family: $font_family_cond;
+    font-family: $font_family_cond !important;
     font-weight: 400;
 }
 
 .font_bold {
-    font-family: $font_family_bold;
+    font-family: $font_family_bold !important;
+}
+
+.border_right_solid {
+    border-right: 1px solid $color_grey_dark;
+    @include breakpoint(tiny){
+        border: none;
+    }
 }
 
 .only_desktop {
@@ -87,7 +102,7 @@
     }
     @include breakpoint(tiny) {
         display: none;
-    }    
+    }
 }
 
 .only_mobile {
@@ -115,18 +130,32 @@ html {
     width: 100%;
 }
 
-html{
-    @include breakpoint(medium){
+html {
+    @include breakpoint(medium) {
         font-size: 10px;
     }
-    @include breakpoint(small){
+    @include breakpoint(small) {
         font-size: 14px;
-    }    
+    }
 }
 
 a {
     display: block;
     text-decoration: none;
+}
+
+.btn_white {
+    border: 1px solid $color_white;
+    text-transform: uppercase;
+    padding: 10px 0;
+    background-color: transparent;
+    text-align: center;
+    color: $color_white !important;
+    font-size: 1.571rem;
+    font-family: $font_family_light;
+    width: 100%;
+    max-width: 280px;
+    @include border-radius(4px);
 }
 
 .container {
@@ -180,5 +209,49 @@ a {
         a {
             display: inline-block;
         }
+    }
+}
+
+//SLICK STYLING
+.slick-slider {
+    .slider__navigation {
+        position: absolute;
+        cursor: pointer;
+        z-index: 50;
+    }
+    .left__arrow {
+        top: calc(50% - 41px);
+        left: 10px;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    .right__arrow {
+        bottom: 50%;
+        right: 10px;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+.slider__dots {
+    text-align: center;
+    margin-top: 15px;
+    padding-left: 0;
+    li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .slider__single {
+        width: 30px;
+        height: 5px;
+        background: #ccd1d9;
+        @include border-radius(4px);
+    }
+    .slick-active .slider__single {
+        background: $color-orange;
     }
 }
