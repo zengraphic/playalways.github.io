@@ -147,31 +147,26 @@ hr.example_divider {
           }
         }
         .fullBand.mobile #{&} {
-          
           @include breakpoint(small) {
             background-color: $color_orange;
           }
         }
         .fullBand.robin #{&} {
-          
           @include breakpoint(small) {
             background-color: $color_robin;
           }
         }
         .fullBand.fisso #{&} {
-          
           @include breakpoint(small) {
             background-color: $color_infostrada;
           }
         }
         .fullBand.business #{&} {
-          
           @include breakpoint(small) {
             background-color: $color_business;
           }
         }
         .fullBand.device #{&} {
-          
           @include breakpoint(small) {
             background-color: $color_home_life;
           }
@@ -184,7 +179,6 @@ hr.example_divider {
         .transparent #{&} {
           background-color: transparent;
         }
-
         .fullBand.transparent #{&} {
           background-color: transparent;
         }
@@ -294,7 +288,6 @@ hr.example_divider {
       bottom: 0;
       left: 0;
       width: auto;
-      
       .image_block--container {
         position: relative;
         width: 100%;
@@ -718,6 +711,9 @@ hr.example_divider {
       .device #{&} {
         //background-color: $color_home_life;
       }
+      .transparent #{&} {
+        background-color: $color_orange;
+      }
       .invertedDisplay #{&} {
         left: calc(100% + 35px);
         @include transform(translateX(-100%));
@@ -779,6 +775,9 @@ hr.example_divider {
         .mobile #{&} {
           border-color: #007d99 #007d99 transparent transparent;
         }
+        .transparent #{&} {
+          border-color: #d5501b #d5501b transparent transparent;
+        }
         .invertedDisplay #{&} {
           right: 0;
           left: auto;
@@ -786,6 +785,9 @@ hr.example_divider {
         }
         .mobile.invertedDisplay #{&} {
           border-color: #007d99 transparent transparent #007d99;
+        }
+        .inverteDisplay.transparent #{&} {
+          border-color: #d5501b transparent transparent #d5501b;
         }
         .withForm #{&} {
           right: 0;
@@ -795,13 +797,19 @@ hr.example_divider {
         .mobile.withForm #{&} {
           border-color: #007d99 transparent transparent #007d99;
         }
+        .transparent.withForm #{&} {
+          border-color: #d5501b transparent transparent #d5501b;
+        }
         .withForm.invertedDisplay #{&} {
           right: auto;
           left: 0;
           border-color: #d5501b #d5501b transparent transparent;
         }
         .mobile.withForm.invertedDisplay #{&} {
-          border-color: #007d99 #007d99 transparent transparent ;
+          border-color: #007d99 #007d99 transparent transparent;
+        }
+        .transparent.withForm.invertedDisplay #{&} {
+          border-color: #d5501b #d5501b transparent transparent;
         }
       }
     }
@@ -832,6 +840,9 @@ hr.example_divider {
         }
         .device #{&} {
           //background-color: $color_home_life;
+        }
+        .transparent #{&} {
+          background-color: $color_orange;
         }
         .invertedDisplay #{&} {
           left: 0;
@@ -1144,9 +1155,27 @@ hr.example_divider {
     &--or2 {
       color: $color_wind;
       background-color: $color_white;
-      border-color: $color_orange;
+      border-color: $color_wind;
       &:hover {
         opacity: .7;
+      }
+      @at-root {
+        .specialVersion#{&} {
+          border-color: $color_orange;
+        }
+        .fullBand#{&} {
+          border-color: transparent;
+        }
+      }
+    }
+    &--or {
+      @at-root {
+        .mobile.fullBand#{&} {
+          border-color: #fff;
+        }
+        .mobile.specialVersion#{&} {
+          border-color: #fff;
+        }
       }
     }
     &:empty {
@@ -1194,7 +1223,7 @@ hr.example_divider {
   text-align: center;
   vertical-align: top;
   min-width: 95px;
-  max-width: 115px;
+  max-width: 125px;
   height: 100%;
   &:not(:last-of-type) {
     border-right: 1px solid $color_stroke;
@@ -1435,6 +1464,13 @@ hr.example_divider {
       color: $color_orange;
       &:hover {
         opacity: .7;
+      }
+    }
+    &--or {
+      @at-root {
+        .mobile #{&} {
+          border-color: #fff;
+        }
       }
     }
   }
