@@ -181,13 +181,13 @@
     <script>
     jQuery(document).ready(function($) {
         // COUNTER JS 
-        var counter = $(".counter_block_items--data"),
-            data_event = counter[0].getAttribute("data-event") || "";
-        counter.countdown(data_event, function(event) {
-                $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
-            })
-            .on('update.countdown', function() {})
-            .on('finish.countdown', function() {})
+        // var counter = $(".counter_block_items--data"),
+        //     data_event = counter[0].getAttribute("data-event") || "";
+        // counter.countdown(data_event, function(event) {
+        //         $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
+        //     })
+        //     .on('update.countdown', function() {});
+        //     .on('finish.countdown', function() {});
 
         // CALL 159
         $('.call_to_costumer').click(function() {
