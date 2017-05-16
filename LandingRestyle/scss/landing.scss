@@ -10,6 +10,37 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTAR
+.button__hovering {
+    position: relative;
+    z-index: 16;
+    color: #FFF;
+    background-color: #F48135;
+    border: 1px solid #F48135;
+    padding: 15px 30px;
+    font-size: 1.429rem;
+    font-family: "Trade Gothic Bold", sans-serif;
+    margin-bottom: 40px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+.container.container_device_magnum {
+    @include breakpoint(small) {
+        padding: 0;
+    }
+}
+
+.mobile_centered {
+    @include breakpoint(small) {
+        text-align: center !important;
+        margin: 0 auto;
+    }
+}
+
 .extended_line_height {
     line-height: 1.2em;
 }
@@ -84,7 +115,7 @@
 
 .border_right_solid {
     border-right: 1px solid $color_grey_dark;
-    @include breakpoint(tiny){
+    @include breakpoint(tiny) {
         border: none;
     }
 }
@@ -114,6 +145,13 @@
 
 .mac {
     margin: 0;
+}
+
+.hero_tab {
+    display: none;
+    &.active {
+        display: block;
+    }
 }
 
 div {

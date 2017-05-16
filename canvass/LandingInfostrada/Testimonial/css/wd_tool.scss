@@ -254,7 +254,7 @@ body {
                 margin-top: 36px;
                 color: $color_infostrada;
                 border: 2px solid $color_infostrada;
-                font-family: $weight-cond;
+                font-family: $weight-cond !important;
                 @include border-radius(4px);
                 width: 80%;
                 text-transform: uppercase;
@@ -274,10 +274,16 @@ body {
                     float: left;
                     width: 25%;
                     text-align: center;
+                    font-size: 13px;
+                    font-family: "Trade Gothic Condensed" ;
                     .time {
                         font-weight: bold;
                         font-size: 25px;
-                        font-family: $weight-bold-cond;
+                        font-family: $weight-bold-cond !important;
+                        margin-left: 0;
+                        left: 0;
+                        padding-right: 0;
+                        padding-left: 0;
                         @include breakpoint(super-tiny) {
                             font-size: 15px;
                         }
@@ -328,6 +334,11 @@ body {
                 }
                 .single_sticker {
                     padding: 5px 0;
+                    .image_sticker {
+                        @include breakpoint(super-tiny) {
+                            width: 90%;
+                        }
+                    }
                 }
             }
         }

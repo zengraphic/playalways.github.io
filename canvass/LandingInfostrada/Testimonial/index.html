@@ -46,7 +46,7 @@
                 </div>
                 <div class="right_block">
                     <div class="image_block">
-                        <img  class="img_testimonial" src="img/visore/testimonial.png">
+                        <img class="img_testimonial" src="img/visore/testimonial.png">
                         <div class="sticker_block">
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-per-oggi.png"></div>
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_adsl-vera.png"></div>
@@ -97,9 +97,9 @@
                         <div class="left_block">L'offerta si rinnova ogni 4 settimane.</div>
                         <div class="right_block">
                             <div class="question">Hai bisogno di aiuto?</div>
-                            <div class="link"><a href="#layer-assistenza" class="call_to_costumer href link_popup popup-link" data-msite-url="tel:159" data-desk-url="#layer-assistenza">Chiama il 159</a></div>
+                            <div class="link"><a href="javascript:void(0);" class="href call_to_costumer" data-msite-url="tel:159">Chiama il 159</a></div><!-- data-desk-url="#layer-assistenza" link_popup popup-link -->
                         </div>
-                        <div class="clear"></div>
+                        <div class="clear"></div> 
                     </div>
                 </div>
                 <!-- /INFOSTRADA INFORMA -->
@@ -118,7 +118,17 @@
             <div class="scrollable">
                 <h2>Infostrada informa</h2>
                 <p>
-                    testo testo testo
+                    <p>
+                        LE OFFERTE SI RINNOVANO OGNI 4 SETTIMANE. Il conto telefonico sarà emesso ogni 8 settimane. Prezzi IVA inclusa per la Casa. Promozioni valide solo per nuovi clienti entro il 15/05/2017 e soggette a limitazioni specifiche territoriali.
+                        <br>
+                        <br> DETTAGLIO:
+                        <br>Sono inclusi 60 min. al mese di chiamate verso Fissi e Mobili Nazionali. Superati i minuti inclusi e verso i numeri Fissi di Europa Occidentale, Usa e Canada 0 cent/min, 18,15 cent. di addebito alla risposta (18 cent. in caso di P.IVA).<a href="https://www.infostrada.it/it/adsl/absolute_adsl.phtml">Per tutti i dettagli.</a>
+                        <br>È previsto un contributo di attivazione scontato del 50%, dilazionato in 30 rinnovi di 2,5 euro/4 settimane (2 euro per 30 rinnovi per chi sceglie le modalità di pagamento automatiche) oppure scontato a 45 euro in un'unica soluzione. Per chi disdice prima dell'effettivo pagamento di tutti e 30 i rinnovi, è previsto il pagamento delle restanti rate a scadere. Il modem è fornito in vendita abbinata, che prevede 30 rate a 0 euro, un anticipo di 0 euro e una eventuale rata finale di 75 euro (120 euro in caso di FTTH). In copertura Fibra FTTH (Fiber to the Home) è disponibile anche la versione con velocità fino 1 Gigabit al secondo a 5€ in più.. Le offerte Fibra vengono attivate sfruttando la tecnologia VOIP: per l'utilizzo del servizio Voce è necessario collegare il telefono di casa al Modem Voce Wi-Fi fornito da Infostrada in comodato d'uso, incluso nel costo dell'offerta. L'offerta può essere utilizzata solo con il modem fornito da Infostrada.
+                        <br>
+                        <br> DIRITTO DI RECESSO:
+                        <br> Ai sensi dell'art.52 del Codice del consumo e delle Condizioni generali di Contratto potrà recedere entro 14 gg. dall'attivazione del servizio utilizzando, se lo desidera, la modulistica presente sul sito <a href="https://www.infostrada.it/nuovaAreaClienti/infostrada/pages/care/usefulModule.action?param=5&amp;menuId=208&amp;r5948907632734585=5948907632734585">www.infostrada.it</a> oppure tramite comunicazione nella quale viene chiaramente manifestata la volontà di recedere. Non le sarà addebitato nessun costo di cessazione del servizio e le sarà rimborsato il canone dell'offerta da lei sottoscritta escluse le ipotesi di portabilità verso altro operatore tramite codice di migrazione. Le sarà addebitato l'eventuale traffico effettuato e non incluso nel canone dell'offerta. Il recesso comporta il ripristino automatico del rapporto con il suo precedente operatore.
+                        <br> In caso di passaggio a Infostrada di una linea attiva, il recesso non comporterà il ripristino automatico del rapporto con il tuo precedente operatore.
+                    </p>
                 </p>
             </div>
         </div>
@@ -171,18 +181,18 @@
     <script>
     jQuery(document).ready(function($) {
         // COUNTER JS 
-        var counter = $(".counter_block_items--data"),
-            data_event = counter[0].getAttribute("data-event") || "";
-        counter.countdown(data_event, function(event) {
-                $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
-            })
-            .on('update.countdown', function() {})
-            .on('finish.countdown', function() {})
+        // var counter = $(".counter_block_items--data"),
+        //     data_event = counter[0].getAttribute("data-event") || "";
+        // counter.countdown(data_event, function(event) {
+        //         $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
+        //     })
+        //     .on('update.countdown', function() {});
+        //     .on('finish.countdown', function() {});
 
         // CALL 159
         $('.call_to_costumer').click(function() {
-            if ($(window).width() > 600) {
-                window.open('#layer-assistenza');
+            if($(window).width() > 600) {
+                window.open('https://www.infostrada.it/nuovaAreaClienti/infostrada/pages/clicktocall/ctc.action?idSito=IN002', '_blank');
             } else {
                 console.log('mobile');
             }

@@ -1,11 +1,5 @@
 .landing {
     &__hero {
-        .hero_tab {
-            display: none;
-            &.active {
-                display: block;
-            }
-        }
         box-sizing: border-box;
         position: relative;
         .container {
@@ -225,6 +219,7 @@
             text-align: center;
             color: $color_white;
             z-index: 16;
+            font-family: $font_family_regular;
             &.low_ribbon {
                 top: 60%;
                 @include breakpoint(small) {
@@ -234,6 +229,12 @@
             @include breakpoint(min-desktop-plusborder) {
                 right: 0;
             }
+            @include breakpoint(medium) {
+                height: 120px;
+                width: 250px;
+                right: 0;
+                top: 73.3%;
+            }            
             @include breakpoint(small) {
                 height: 91px;
                 width: 158px;
@@ -336,6 +337,7 @@
         }
         &__tabs {
             padding-top: 20px;
+            font-family: $font_family_light;
             &--button {
                 @include border-radius(4px);
                 font-size: 1.429rem;
