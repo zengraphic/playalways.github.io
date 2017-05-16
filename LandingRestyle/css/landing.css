@@ -2465,14 +2465,14 @@ select:-webkit-autofill {
           max-width: none;
           font-size: 18px; }
   .landing__hero .magnum_background {
-    background-image: url("../img/magnum/hero_background.jpg");
+    background-image: url("../img/magnum_hero_background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     padding-bottom: 25px;
     background-size: cover; }
     @media (max-width: 768px) {
       .landing__hero .magnum_background {
-        background-image: url("../img/magnum/hero_background_small.jpg"); } }
+        background-image: url("../img/magnum_hero_background_small.jpg"); } }
   .landing__hero--details {
     margin-bottom: 120px; }
     @media (max-width: 768px) {
@@ -4055,23 +4055,6 @@ select:-webkit-autofill {
     font-size: 7.14286rem;
     line-height: 1em; } }
 
-.button__hovering {
-  position: relative;
-  z-index: 16;
-  color: #FFF;
-  background-color: #F48135;
-  border: 1px solid #F48135;
-  padding: 15px 30px;
-  font-size: 1.429rem;
-  font-family: "Trade Gothic Bold", sans-serif;
-  margin-bottom: 40px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  background-clip: padding-box;
-  width: 90%;
-  margin: 0 auto;
-  display: block; }
-
 @media (max-width: 768px) {
   .container.container_device_magnum {
     padding: 0; } }
@@ -4218,39 +4201,37 @@ a {
     .container {
       padding: 0 15px; } }
 
-.landing__mainContainer {
-  position: relative;
-  min-height: 100%; }
-  .landing__mainContainer a.button {
-    width: 90%;
-    margin: 0 auto;
-    display: block; }
-    .landing__mainContainer a.button--standard {
-      position: relative;
-      z-index: 16;
-      color: #FFF;
-      background-color: #F48135;
-      border: 1px solid #F48135;
-      padding: 15px 30px;
-      font-size: 1.429rem;
-      font-family: "Trade Gothic Bold", sans-serif;
-      margin-bottom: 40px;
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      background-clip: padding-box;
-      /* stops bg color from leaking outside the border: */ }
-      .landing__mainContainer a.button--standard:hover {
-        background-color: #F69A5D; }
-      @media (max-width: 768px) {
-        .landing__mainContainer a.button--standard {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          margin-bottom: 0;
-          width: 100%;
-          z-index: 999;
-          opacity: 0.95; } }
-.landing .vetrina_accordions a {
+a.button {
+  width: 90%;
+  margin: 0 auto;
+  display: block; }
+  a.button--standard {
+    position: relative;
+    z-index: 16;
+    color: #FFF !important;
+    background-color: #F48135;
+    border: 1px solid #F48135;
+    padding: 15px 30px;
+    font-size: 1.429rem;
+    font-family: "Trade Gothic Bold", sans-serif;
+    margin-bottom: 40px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */ }
+    a.button--standard:hover {
+      background-color: #F69A5D; }
+    @media (max-width: 768px) {
+      a.button--standard {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 0;
+        width: 100%;
+        z-index: 999;
+        opacity: 0.95; } }
+
+.vetrina_accordions a {
   display: inline-block; }
 
 .slick-slider .slider__navigation {
