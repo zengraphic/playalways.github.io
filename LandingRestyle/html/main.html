@@ -10,12 +10,12 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
     <!--- CSS -->   
-    <link rel="stylesheet" type="text/css" href="../scss/landing.css" />
+    <link rel="stylesheet" type="text/css" href="../css/landing.css" />
     <!--- /CSS -->
     <!--- JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/slick.min.js"></script>
-    <script type="text/javascript" src="../js/landing.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/slick.min.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/landing.js"></script>
     <!-- components script -->
 </head>
 
@@ -43,19 +43,19 @@ jQuery(document).ready(function($) {
     // =============================== //
     // ============= PITA ============ //
     // =============================== //     
-     $(mainContainer).append($(divContainer).load("partials/hero/hero_pita.html"));
-     $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_pita.html"));
-     $(mainContainer).append($(divContainer).load("partials/accordions/accordion_pita.html"));
+     // $(mainContainer).append($(divContainer).load("partials/hero/hero_pita.html"));
+     // $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_pita.html"));
+     // $(mainContainer).append($(divContainer).load("partials/accordions/accordion_pita.html"));
 
 
     // ================================= //
     // ============= MAGNUM ============ //
     // ================================= //     
-    // $(mainContainer).append($(divContainer).load("partials/hero/hero_magnum.html"));
-    // $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_magnum.html", function() {
-    //     loadSlick();
-    // }));    
-    // $(mainContainer).append($(divContainer).load("partials/accordions/accordion_magnum.html"));
+    $(mainContainer).append($(divContainer).load("partials/hero/hero_magnum.html"));
+    $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_magnum.html", function() {
+        loadSlick();
+    }));    
+    $(mainContainer).append($(divContainer).load("partials/accordions/accordion_magnum.html"));
 
 
     // ============================== //
