@@ -10,7 +10,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
     <!--- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/landing.css" />
+    <link rel="stylesheet" type="text/css" href="/fileadmin/css-landing/landing.css" />
+    <link rel="stylesheet" type="text/css" href="scss/typographyLocal.css" />
     <!--- /CSS -->
     <!--- JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -20,18 +21,19 @@
     <!-- components script -->
 </head>
 
-<body>
+<body class="landing">
     <div class="container">
         <h4>Inserisci le cartelle (Es. <b>1°</b> 20170522 | <b>2°</b> porta-i-tuoi-amici)</h4>
         <input type="text" placeholder="prima cartella" class="firstPath input_cms">
         <input type="text" placeholder="seconda cartella" class="secondPath input_cms">
     </div>
     <div class="container">
+        <h4 class="smallText margin_top_15">Cliccando sul bottone relativo alla landing genererà il codice sotto.</h4>
         <div class="container_page_cms">
             <h1 class="mainTitle" data-pagetarget="magnum">MAGNUM</h1>
             <h5 class="link_page"><a href="html/prova_magnum.html" target="_blank">--> pagina d'esempio <--</a></h5>
             <div class="container_hidden">
-                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia html</button>
             </div>
         </div>
         <div class="container_page_cms">
@@ -41,25 +43,76 @@
                 <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
             </div>
         </div>
+        <div class="container_page_cms">
+            <h1 class="mainTitle" data-pagetarget="easy-europe">EASY EUROPE</h1>
+            <h5 class="link_page"><a href="html/prova_easy-europe.html" target="_blank">--> pagina d'esempio <--</a></h5>
+            <div class="container_hidden">
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+            </div>
+        </div>
     </div>
-    <pre id="textareaHTML">Qui ci sarà il codice da copiare e incollare</pre>
+    <div class="container_pre">
+        <pre id="textareaHTML">Inserire prima il nome delle cartelle e sottocartelle <br>della landing e poi clicca sul pulsante della landing relativa. Il codice verrà copiato qui. <br>Per copiarlo velocemente cliccare sul bottone copia che apparirà.</pre>
+        <img src="copy1.png" class="hokkaido" />
+    </div>
     <div class="container">
         <h4 class="smallText">Js sono sotto /fileadmin/js-landing/</h4>
         <h4 class="smallText">Immagini fisse (loghi,etc.) sono sotto /fileadmin/img-landing/</h4>
         <h4 class="smallText">Le immagini della creatività sottocartella img</h4>
     </div>
+    <div class="container">
+        <h4 class="buttonCss">Scarica il CSS</h4>
+    </div>
+    <iframe id="iframeDownload" style="display:none;"></iframe>
 </body>
 <style>
-.clip_btn{
-    border-radius: 5px;
+.container_pre {
+    position: relative;
 }
 
-.smallText{
+.hokkaido {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: -300px;
+    z-index: 9999;
+}
+
+.buttonCss {
+    margin-top: 30px;
+    font-size: 26px;
+    font-family: 'Arial';
+    margin: 0;
+    margin-top: 15px;
+    text-transform: uppercase;
+    text-align: right;
+    cursor: pointer;
+}
+
+.buttonCss:hover {
+    color: orange;
+}
+
+.clip_btn {
+    border-radius: 5px;
+    background-color: orange;
+    border-color: orange;
+    color: white;
+    width: auto;
+    cursor: pointer;
+}
+
+.clip_btn:hover {
+    background-color: white;
+    border: 1px solid orange;
+    color: orange;
+}
+
+.smallText {
     font-size: 14px;
     font-family: 'Arial';
     margin: 0;
     margin-top: 2px;
-
 }
 
 #textareaHTML {
@@ -80,6 +133,8 @@
     text-align: center;
     margin: 0;
     margin-top: 10px;
+    border: 1px solid;
+    border-radius: 4px;
 }
 
 .link_page:hover {
@@ -108,7 +163,7 @@ button {
 .container_hidden {
     display: none;
     text-align: center;
-    margin-top: 10px;    
+    margin-top: 10px;
 }
 
 .container_cms {
@@ -152,7 +207,14 @@ jQuery(document).ready(function($) {
     // ============================== //
     // ============ HEADER ========== //
     // ============================== //
-
+    $('.clip_btn').click(function() {
+            $('.hokkaido').show();        
+        $(".hokkaido").animate({
+            right: "+=1350",
+        }, 3000, function() {
+            $('.hokkaido').hide();
+        });
+    });
     $('.mainTitle').click(function() {
         $(this).parents('.container_page_cms').find('.container_hidden').slideToggle();
     });
@@ -226,6 +288,11 @@ jQuery(document).ready(function($) {
         path2 = $('.secondPath').val();
         console.log(path1 + " " + path2);
         loadHead(targetpage);
+    });
+
+    $('.buttonCss').click(function(e) {
+        e.preventDefault(); //stop the browser from following
+        window.location.href = '/fileadmin/css-landing/landing.css';
     });
 });
 </script>
