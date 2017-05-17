@@ -4,10 +4,10 @@
     @each $attribute in $attributes {
         @each $direction in $directions {
             @for $i from 1 through $steps {
-                .#{$attribute}_#{$direction}_#{$i * $delta*5} {
+                .landing .#{$attribute}_#{$direction}_#{$i * $delta*5} {
                     #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
                 }
-                .#{$attribute}_#{$direction}_m_#{$i * $delta*5} {
+                .landing .#{$attribute}_#{$direction}_m_#{$i * $delta*5} {
                     @include breakpoint (small) {
                         #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
                     }
@@ -21,20 +21,20 @@
     $pos-list: null;
     @each $direction in $directions {
         @for $i from 1 through $steps {
-            .#{$direction}_#{$i * $delta*2} {
+            .landing .#{$direction}_#{$i * $delta*2} {
                 #{$direction}: $delta*2 * $i +'%';
-            } 
+            }
             $pos-list: append($pos-list, unquote(".#{$direction}_#{$i*$delta*2}"), comma);
         }
     }
     #{$pos-list} {
-        position: relative; 
+        position: relative;
     }
 }
 
 @mixin text_classes {
     @for $i from 4 through $steps*5 {
-        .font_size_#{$i * $delta*02} {
+        .landing .font_size_#{$i * $delta*02} {
             font-size: ($delta*0.2)/1.4 * $i +rem;
             line-height: 1em;
         }
@@ -43,7 +43,7 @@
 
 @mixin text_classes_m {
     @for $i from 4 through $steps*5 {
-        .font_size_m_#{$i * $delta*02} {
+        .landing .font_size_m_#{$i * $delta*02} {
             @include breakpoint (small) {
                 font-size: ($delta*0.2)/1.4 * $i +rem;
                 line-height: 1em;
@@ -97,7 +97,6 @@
     transition: $args;
 }
 
-
 @mixin translate ($x, $y) {
     @include transform(translate($x, $y));
 }
@@ -109,57 +108,55 @@
     /* stops bg color from leaking outside the border: */
 }
 
-.touch_scroll {
-  -webkit-overflow-scrolling: touch;
+.landing .touch_scroll {
+    -webkit-overflow-scrolling: touch;
 }
 
 @mixin vertical-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 @mixin center-cont-block($width) {
-  width: $width;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    width: $width;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.center {
-  position: relative;
-
-  @include center-cont-block(400px);
+.landing .center {
+    position: relative;
+    @include center-cont-block(400px);
 }
 
 @mixin equidistant {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -o-flex;
-  display: flex;
-  justify-content: space-between;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
 }
-
 
 ////generic transition
 @mixin transition-basic($property, $duration, $effect) {
-  -o-transition: $property $duration $effect;
-  -moz-transition: $property $duration $effect;
-  -ms-transition: $property $duration $effect;
-  -webkit-transition: $property $duration $effect;
-  transition: $property $duration $effect;
+    -o-transition: $property $duration $effect;
+    -moz-transition: $property $duration $effect;
+    -ms-transition: $property $duration $effect;
+    -webkit-transition: $property $duration $effect;
+    transition: $property $duration $effect;
 }
 
 //generic transition with -delay
 @mixin transition-with-delay($property, $duration, $effect, $delay) {
-  -o-transition: $property $duration $effect $delay;
-  -moz-transition: $property $duration $effect $delay;
-  -ms-transition: $property $duration $effect $delay;
-  -webkit-transition: $property $duration $effect $delay;
-  transition: $property $duration $effect $delay;
+    -o-transition: $property $duration $effect $delay;
+    -moz-transition: $property $duration $effect $delay;
+    -ms-transition: $property $duration $effect $delay;
+    -webkit-transition: $property $duration $effect $delay;
+    transition: $property $duration $effect $delay;
 }
 
 @mixin opacity($opacity) {
@@ -198,7 +195,6 @@
 //   @include animation('move-the-object .5s 1', 'move-the-object-again .5s 1 .5s');
 // }
 // ============== ANIMATIONS =========
- 
 @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
         @content;
@@ -237,11 +233,9 @@
 /* ___________________ MIXIN __________________
  -------->        BREAKPOINT MIXIN */
 
-
 // Creating the mixin
 @mixin breakpoint($name) {
-    @if map-has-key($breakpoints,
-    $name) {
+    @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
             @content;
         }
@@ -251,10 +245,10 @@
     }
 }
 
+
 /**
  * HELPER CLASSES
  */
-
 
 // rotate
 @mixin rotate ($deg) {
@@ -275,8 +269,6 @@
 @mixin skew ($x, $y) {
     @include transform(skew(#{$x}deg, #{$y}deg));
 }
-
-
 
 
 /* ====================COLORI TESTI=====================  */
@@ -326,202 +318,193 @@
 
 /* ====================DIMENSIONE TESTI=====================  */
 
-.text_size {
-    &--big {
-        font-size: 45px;
-        @include breakpoint(small) {
-            font-size: 40px;
+.landing {
+    .text_size {
+        &--big {
+            font-size: 45px;
+            @include breakpoint(small) {
+                font-size: 40px;
+            }
         }
-    }
-    &--medium {
-        font-size: 25px !important;
-    }
-    &--normal {
-        font-size: 16px !important;
-        @include breakpoint(small) {
-            font-size: 14px !important;
+        &--medium {
+            font-size: 25px !important;
         }
+        &--normal {
+            font-size: 16px !important;
+            @include breakpoint(small) {
+                font-size: 14px !important;
+            }
+        }
+        &--small {
+            font-size: 12px;
+        }
+        line-height: 1.2em;
     }
-    &--small {
-        font-size: 12px;
-    }
-    line-height: 1.2em;
-}
-
-/**
+    /**
  * END HELPER CLASSES
  */
-
-.base {
-
-  /*outline: thin dotted \9; /* IE6-9 */
-  input {
-    &[type="text"]:focus, &[type="password"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="date"]:focus, &[type="month"]:focus, &[type="time"]:focus, &[type="week"]:focus, &[type="number"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="color"]:focus, &[type=file]:focus, &[type=checkbox]:focus, &[type=radio]:focus {
-      border-color: #f48135;
-      outline-color: transparent;
-      outline-style: none;
-      outline-offset: 0;
-    }
-  }
-
-  /*outline: thin dotted \9; /* IE6-9 */
-  .uneditable-input:focus {
-    border-color: #f48135;
-    outline-color: transparent;
-    outline-style: none;
-    outline-offset: 0;
-  }
-
-  /*outline: thin dotted \9; /* IE6-9 */
-  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: rgba(244, 129, 53, 0.2);
-    background-image: none;
-    color: #000000;
-  }
-}
-
-.base__scrollable {
-  width: 100%;
-  min-height: 50px;
-  padding: 0 2rem 0 0;
-  overflow-y: hidden;
-}
-
-.base__breadcrumbs {
-  float: left;
-  padding-left: 0;
-  display: inline-block;
-  list-style: none;
-  margin-bottom: 0;
-  margin-top: 2rem;
-
-  /*cambio en margin top */
-  li {
-    display: inline;
-    cursor: pointer;
-    vertical-align: middle;
-
-    &:after {
-      content: " / ";
-      color: #f48135;
-    }
-
-    &:last-child {
-      cursor: default;
-
-      &:after {
-        content: "";
-      }
-    }
-  }
-}
-
-.base__bullet-list {
-  list-style-type: none;
-  margin-bottom: 0;
-  display: inline-block;
-  padding-left: 0rem;
-
-  .fa-li {
-    font-size: 1.25rem;
-    padding-right: 1.25rem;
-    color: #f48135;
-  }
-
-  li {
-    padding-bottom: 1rem;
-  }
-}
-
-.base__pag.pagination {
-  margin: 1rem auto;
-
-  li > a {
-    > span {
-      font-size: 0;
-    }
-
-    &[aria-label="Previous"] {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-
-      span:before {
-        font-size: 0.9rem;
-        font-family: "FontAwesome";
-        content: "";
-      }
-    }
-
-    &[aria-label="Next"] {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-
-      span:before {
-        font-size: 0.9rem;
-        font-family: "FontAwesome";
-        content: "";
-      }
-    }
-  }
-}
-
-.base__gallery--carousel {
-  .owl-wrapper-outer .owl-wrapper .owl-item .item {
-    width: 100%;
-    display: inline-block;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  .owl-controls {
-    .owl-pagination .owl-page span {
-      background-color: #f48135;
-      border-radius: 1rem;
-      -webkit-border-radius: 1rem;
-      -moz-border-radius: 1rem;
-    }
-
-    .owl-buttons {
-      display: inline-block;
-      width: 100%;
-
-      div {
-        padding: 1rem;
-        font-size: 1rem;
-        margin: 0.5rem;
-        line-height: 1;
-        border-radius: 2rem;
-        -webkit-border-radius: 2rem;
-        -moz-border-radius: 2rem;
-      }
-
-      .owl-prev {
-        position: fixed;
-        top: 45%;
-        left: 0px;
-
-        &:before {
-          font-family: "FontAwesome";
-          content: "";
-          font-size: 1rem;
-          color: #f48135;
+    .base {
+        /*outline: thin dotted \9; /* IE6-9 */
+        input {
+            &[type="text"]:focus,
+            &[type="password"]:focus,
+            &[type="datetime"]:focus,
+            &[type="datetime-local"]:focus,
+            &[type="date"]:focus,
+            &[type="month"]:focus,
+            &[type="time"]:focus,
+            &[type="week"]:focus,
+            &[type="number"]:focus,
+            &[type="email"]:focus,
+            &[type="url"]:focus,
+            &[type="search"]:focus,
+            &[type="tel"]:focus,
+            &[type="color"]:focus,
+            &[type=file]:focus,
+            &[type=checkbox]:focus,
+            &[type=radio]:focus {
+                border-color: #f48135;
+                outline-color: transparent;
+                outline-style: none;
+                outline-offset: 0;
+            }
         }
-      }
-
-      .owl-next {
-        &:before {
-          font-family: "FontAwesome";
-          content: "";
-          font-size: 1rem;
-          color: #f48135;
+        /*outline: thin dotted \9; /* IE6-9 */
+        .uneditable-input:focus {
+            border-color: #f48135;
+            outline-color: transparent;
+            outline-style: none;
+            outline-offset: 0;
         }
-
-        position: fixed;
-        top: 45%;
-        right: 0px;
-      }
+        /*outline: thin dotted \9; /* IE6-9 */
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            background-color: rgba(244, 129, 53, 0.2);
+            background-image: none;
+            color: #000000;
+        }
     }
-  }
+    .base__scrollable {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 2rem 0 0;
+        overflow-y: hidden;
+    }
+    .base__breadcrumbs {
+        float: left;
+        padding-left: 0;
+        display: inline-block;
+        list-style: none;
+        margin-bottom: 0;
+        margin-top: 2rem;
+        /*cambio en margin top */
+        li {
+            display: inline;
+            cursor: pointer;
+            vertical-align: middle;
+            &:after {
+                content: " / ";
+                color: #f48135;
+            }
+            &:last-child {
+                cursor: default;
+                &:after {
+                    content: "";
+                }
+            }
+        }
+    }
+    .base__bullet-list {
+        list-style-type: none;
+        margin-bottom: 0;
+        display: inline-block;
+        padding-left: 0rem;
+        .fa-li {
+            font-size: 1.25rem;
+            padding-right: 1.25rem;
+            color: #f48135;
+        }
+        li {
+            padding-bottom: 1rem;
+        }
+    }
+    .base__pag.pagination {
+        margin: 1rem auto;
+        li > a {
+            > span {
+                font-size: 0;
+            }
+            &[aria-label="Previous"] {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                span:before {
+                    font-size: 0.9rem;
+                    font-family: "FontAwesome";
+                    content: "";
+                }
+            }
+            &[aria-label="Next"] {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                span:before {
+                    font-size: 0.9rem;
+                    font-family: "FontAwesome";
+                    content: "";
+                }
+            }
+        }
+    }
+    .base__gallery--carousel {
+        .owl-wrapper-outer .owl-wrapper .owl-item .item {
+            width: 100%;
+            display: inline-block;
+            img {
+                max-width: 100%;
+            }
+        }
+        .owl-controls {
+            .owl-pagination .owl-page span {
+                background-color: #f48135;
+                border-radius: 1rem;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+            }
+            .owl-buttons {
+                display: inline-block;
+                width: 100%;
+                div {
+                    padding: 1rem;
+                    font-size: 1rem;
+                    margin: 0.5rem;
+                    line-height: 1;
+                    border-radius: 2rem;
+                    -webkit-border-radius: 2rem;
+                    -moz-border-radius: 2rem; 
+                }
+                .owl-prev {
+                    position: fixed;
+                    top: 45%;
+                    left: 0px;
+                    &:before {
+                        font-family: "FontAwesome";
+                        content: "";
+                        font-size: 1rem;
+                        color: #f48135;
+                    }
+                }
+                .owl-next {
+                    &:before {
+                        font-family: "FontAwesome";
+                        content: "";
+                        font-size: 1rem;
+                        color: #f48135;
+                    }
+                    position: fixed;
+                    top: 45%;
+                    right: 0px;
+                }
+            }
+        }
+    }
 }
