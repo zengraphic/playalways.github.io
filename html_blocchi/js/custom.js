@@ -2,7 +2,7 @@ var r$ = jQuery.noConflict();
 
 // end validate insert email
 r$(document).ready(function() {
-    HEADER.setSlider();
+    
 
     r$('.logo--wind a').attr('href', window.location.origin + '/' + window.location.pathname.split('/')[1] + '/');
 
