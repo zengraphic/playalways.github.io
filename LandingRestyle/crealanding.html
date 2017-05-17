@@ -14,34 +14,85 @@
     <!--- /CSS -->
     <!--- JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
-    <script type="text/javascript" src="js/landing.js"></script>
-    <script type="text/javascript" src="js/clipboard.min.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/slick.min.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/landing.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/clipboard.min.js"></script>
     <!-- components script -->
 </head>
 
 <body>
     <div class="container">
-        <input type="text" value="prima cartella" class="firstPath input_cms">
-        <input type="text" value="seconda cartella" class="secondPath input_cms">
+        <h4>Inserisci le cartelle (Es. <b>1°</b> 20170522 | <b>2°</b> porta-i-tuoi-amici)</h4>
+        <input type="text" placeholder="prima cartella" class="firstPath input_cms">
+        <input type="text" placeholder="seconda cartella" class="secondPath input_cms">
     </div>
     <div class="container">
-        <h1 class="mainTitle" data-pagetarget="magnum">MAGNUM</h1>
-        <div class="container_hidden">
-            <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+        <div class="container_page_cms">
+            <h1 class="mainTitle" data-pagetarget="magnum">MAGNUM</h1>
+            <h5 class="link_page"><a href="html/prova_magnum.html" target="_blank">--> pagina d'esempio <--</a></h5>
+            <div class="container_hidden">
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+            </div>
+        </div>
+        <div class="container_page_cms">
+            <h1 class="mainTitle" data-pagetarget="pita">PITA</h1>
+            <h5 class="link_page"><a href="html/prova_pita.html" target="_blank">--> pagina d'esempio <--</a></h5>
+            <div class="container_hidden">
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+            </div>
         </div>
     </div>
+    <pre id="textareaHTML">Qui ci sarà il codice da copiare e incollare</pre>
     <div class="container">
-        <h1 class="mainTitle" data-pagetarget="pita">PITA</h1>
-        <div class="container_hidden">
-            <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
-        </div>
+        <h4 class="smallText">Js sono sotto /fileadmin/js-landing/</h4>
+        <h4 class="smallText">Immagini fisse (loghi,etc.) sono sotto /fileadmin/img-landing/</h4>
+        <h4 class="smallText">Le immagini della creatività sottocartella img</h4>
     </div>
-    <pre id="textareaHTML"></pre>
 </body>
 <style>
-.input_cms {
+.clip_btn{
+    border-radius: 5px;
+}
+
+.smallText{
+    font-size: 14px;
+    font-family: 'Arial';
+    margin: 0;
+    margin-top: 2px;
+
+}
+
+#textareaHTML {
     margin-top: 30px;
+}
+
+.container_page_cms {
+    margin-top: 30px;
+    display: inline-block;
+    vertical-align: top
+}
+
+.link_page {
+    font-family: 'Arial';
+    font-weight: 400;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.link_page:hover {
+    background-color: orange;
+}
+
+h4 {
+    font-family: 'Arial';
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.input_cms {
     height: 50px;
     width: 300px;
     font-size: 20px;
@@ -56,6 +107,8 @@ button {
 
 .container_hidden {
     display: none;
+    text-align: center;
+    margin-top: 10px;    
 }
 
 .container_cms {
@@ -63,13 +116,19 @@ button {
 }
 
 .mainTitle {
-    margin-top: 15px;
+    margin: 0;
     border: 1px solid orange;
     border-radius: 4px;
     width: 300px;
     text-align: center;
     font-family: 'Arial';
     color: orange;
+    cursor: pointer;
+}
+
+.mainTitle:hover {
+    background-color: orange;
+    color: white;
 }
 
 pre {
@@ -95,7 +154,7 @@ jQuery(document).ready(function($) {
     // ============================== //
 
     $('.mainTitle').click(function() {
-        $(this).parents('.container').find('.container_hidden').slideToggle();
+        $(this).parents('.container_page_cms').find('.container_hidden').slideToggle();
     });
 
     function download_to_textbox(url, el) {
