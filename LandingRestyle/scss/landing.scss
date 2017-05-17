@@ -10,263 +10,242 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTAR
-.container.container_device_magnum {
-    @include breakpoint(small) { 
-        padding: 0;
+.landing {
+    .container.container_device_magnum {
+        @include breakpoint(small) {
+            padding: 0;
+        }
     }
-}
-
-.mobile_centered {
-    @include breakpoint(small) {
-        text-align: center !important;
-        margin: 0 auto;
+    .mobile_centered {
+        @include breakpoint(small) {
+            text-align: center !important;
+            margin: 0 auto;
+        }
     }
-}
-
-.extended_line_height {
-    line-height: 1.2em;
-}
-
-.display_block {
-    display: block;
-}
-
-.margin_bottom_0 {
-    margin-bottom: 0px !important;
-}
-
-.margin_bottom_m_0 {
-    @include breakpoint(small) {
+    .extended_line_height {
+        line-height: 1.2em;
+    }
+    .display_block {
+        display: block;
+    }
+    .margin_bottom_0 {
         margin-bottom: 0px !important;
     }
-}
-
-.text_centered {
-    text-align: center;
-}
-
-.text_color_blue_99 {
-    color: #009bbe !important;
-}
-
-.text_color_white {
-    color: #ffffff !important;
-}
-
-.text_color_orange {
-    color: #f48135 !important;
-}
-
-.text_color_grey_six {
-    color: #666 !important;
-}
-
-.text_color_grey_medium_dark {
-    color: #777a7e !important;
-}
-
-.text_color_grey_darker {
-    color: #333 !important;
-}
-
-.text_uppercase {
-    text-transform: uppercase;
-}
-
-.font_light {
-    font-family: $font_family_light;
-}
-
-.font_regular {
-    font-family: $font_family_regular;
-}
-
-.font_bold_condensed {
-    font-family: $font_family_cond !important;
-    font-weight: 700;
-}
-
-.font_condensed {
-    font-family: $font_family_cond !important;
-    font-weight: 400;
-}
-
-.font_bold {
-    font-family: $font_family_bold !important;
-}
-
-.border_right_solid {
-    border-right: 1px solid $color_grey_dark;
-    @include breakpoint(tiny) {
-        border: none;
+    .margin_bottom_m_0 {
+        @include breakpoint(small) {
+            margin-bottom: 0px !important;
+        }
     }
-}
-
-.only_desktop {
-    @include breakpoint(tiny) {
+    .text_centered {
+        text-align: center;
+    }
+    .text_color_blue_99 {
+        color: #009bbe !important;
+    }
+    .text_color_white {
+        color: #ffffff !important;
+    }
+    .text_color_orange {
+        color: #f48135 !important;
+    }
+    .text_color_grey_six {
+        color: #666 !important;
+    }
+    .text_color_grey_medium_dark {
+        color: #777a7e !important;
+    }
+    .text_color_grey_darker {
+        color: #333 !important;
+    }
+    .text_uppercase {
+        text-transform: uppercase;
+    }
+    .font_light {
+        font-family: $font_family_light;
+    }
+    .font_regular {
+        font-family: $font_family_regular;
+    }
+    .font_bold_condensed {
+        font-family: $font_family_cond !important;
+        font-weight: 700;
+    }
+    .font_condensed {
+        font-family: $font_family_cond !important;
+        font-weight: 400;
+    }
+    .font_bold {
+        font-family: $font_family_bold !important;
+    }
+    .border_right_solid {
+        border-right: 1px solid $color_grey_dark;
+        @include breakpoint(tiny) {
+            border: none;
+        }
+    }
+    .only_desktop {
+        @include breakpoint(tiny) {
+            display: none;
+        }
+    }
+    .only_mobile_medium {
         display: none;
+        @include breakpoint(medium) {
+            display: block;
+        }
+        @include breakpoint(tiny) {
+            display: none;
+        }
     }
-}
-
-.only_mobile_medium {
-    display: none;
-    @include breakpoint(medium) {
-        display: block;
-    }
-    @include breakpoint(tiny) {
+    .only_mobile {
         display: none;
+        @include breakpoint(tiny) {
+            display: block;
+        }
     }
-}
-
-.only_mobile {
-    display: none;
-    @include breakpoint(tiny) {
-        display: block;
+    .mac {
+        margin: 0;
     }
-}
-
-.mac {
-    margin: 0;
-}
-
-.hero_tab {
-    display: none;
-    &.active {
-        display: block;
+    .hero_tab {
+        display: none;
+        &.active {
+            display: block;
+        }
     }
-}
-
-div {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
-
-html {
-    @include breakpoint(medium) {
-        font-size: 10px;
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
     }
-    @include breakpoint(small) {
-        font-size: 14px;
-    }
-}
-
-a {
-    display: block;
-    text-decoration: none;
-}
-
-.btn_white {
-    border: 1px solid $color_white;
-    text-transform: uppercase;
-    padding: 10px 0;
-    background-color: transparent;
-    text-align: center;
-    color: $color_white !important;
-    font-size: 1.571rem;
-    font-family: $font_family_light;
-    width: 100%;
-    max-width: 280px;
-    @include border-radius(4px);
-}
-
-.container {
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 30px;
-    position: relative;
-    box-sizing: border-box;
-    @include breakpoint(small) {
-        padding: 0 15px;
-    }
-}
-
-a.button {
-    //bottone cta in overlay fondo pagina.
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    &--standard {
-        position: relative;
-        z-index: 16;
-        color: $color_white !important;
-        background-color: $color_orange;
-        border: 1px solid $color_orange;
-        padding: 15px 30px;
-        font-size: 1.429rem;
-        font-family: $font_family_bold;
-        margin-bottom: 40px;
-        @include border-radius(4px);
-        &:hover {
-            background-color: $color_orange_light;
+    html {
+        @include breakpoint(medium) {
+            font-size: 10px;
         }
         @include breakpoint(small) {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            margin-bottom: 0;
-            width: 100%;
-            z-index: 999;
-            opacity: 0.95;
+            font-size: 14px;
         }
     }
-}
-
-.vetrina_accordions {
     a {
-        display: inline-block;
+        display: block;
+        text-decoration: none;
     }
-}
-
-//SLICK STYLING
-.slick-slider {
-    .slider__navigation {
-        position: absolute;
-        cursor: pointer;
-        z-index: 50;
-    }
-    .left__arrow {
-        top: calc(50% - 41px);
-        left: 10px;
-        &:hover {
-            opacity: 0.5;
-        }
-    }
-    .right__arrow {
-        bottom: 50%;
-        right: 10px;
-        &:hover {
-            opacity: 0.5;
-        }
-    }
-}
-
-.slider__dots {
-    text-align: center;
-    margin-top: 15px;
-    padding-left: 0;
-    li {
-        list-style-type: none;
-        display: inline-block;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-    .slider__single {
-        width: 30px;
-        height: 5px;
-        background: #ccd1d9;
+    .btn_white {
+        border: 1px solid $color_white;
+        text-transform: uppercase;
+        padding: 10px 0;
+        background-color: transparent;
+        text-align: center;
+        color: $color_white !important;
+        font-size: 1.571rem;
+        font-family: $font_family_light;
+        width: 100%;
+        max-width: 280px;
         @include border-radius(4px);
     }
-    .slick-active .slider__single {
-        background: $color-orange;
+    .container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 0 30px;
+        position: relative;
+        box-sizing: border-box;
+        @include breakpoint(small) {
+            padding: 0 15px;
+        }
+    }
+    a.button {
+        //bottone cta in overlay fondo pagina.
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        &--standard {
+            position: relative;
+            z-index: 16;
+            color: $color_white !important;
+            background-color: $color_orange;
+            border: 1px solid $color_orange;
+            padding: 15px 30px;
+            font-size: 1.429rem;
+            font-family: $font_family_bold;
+            margin-bottom: 40px;
+            @include border-radius(4px);
+            &:hover {
+                background-color: $color_orange_light;
+            }
+            @include breakpoint(small) {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                margin-bottom: 0;
+                width: 100%;
+                z-index: 999;
+                opacity: 0.95;
+            }
+        }
+    }
+    .vetrina_accordions {
+        a {
+            display: inline-block;
+        }
+    }
+    //SLICK STYLING
+    .slick-slider {
+        .slider__navigation {
+            position: absolute;
+            cursor: pointer;
+            z-index: 50;
+        }
+        .left__arrow {
+            top: calc(50% - 41px);
+            left: 10px;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+        .right__arrow {
+            bottom: 50%;
+            right: 10px;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+    .slider__dots {
+        text-align: center;
+        margin-top: 15px;
+        padding-left: 0;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .slider__single {
+            width: 30px;
+            height: 5px;
+            background: #ccd1d9;
+            @include border-radius(4px);
+        }
+        .slick-active .slider__single {
+            background: $color-orange;
+        }
+    }
+    .faq_inpage {
+        &__title {
+            font-family: $font_family_bold;
+            font-size: 16px;
+            display: block;
+            margin-top: 10px;
+        }
+        &__description {
+            padding-left: 5px;
+            font-family: $font_family_light;
+        }
+    }
+    // fix spalla
+    .base__popup.loguin_block .container {
+        height: 100% !important;
     }
 }

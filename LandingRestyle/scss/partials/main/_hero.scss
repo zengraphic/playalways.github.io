@@ -1,369 +1,371 @@
-.landing {
-    &__hero {
-        box-sizing: border-box;
-        position: relative;
-        .container {
-            @include breakpoint(small) {
-                overflow: hidden;
-            }
-        }
-        &__imageContainer {
-            position: absolute;
-            right: 0;
-            z-index: 15;
-            top: 0;
-            @include breakpoint(small) {
-                width: 50%;
-                top: 22%;
-                right: -5%
-            }
-            &.full_image {
-                max-width: 400px;
-                @include breakpoint(small) {
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    margin: 0 auto;
-                }
-            }
-            img {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-        &--title {
-            padding: 30px 0;
-            @include breakpoint(small) {
-                padding: 0;
-            }
-            &--light {
-                font-size: 6rem;
-                font-family: $font_family_cond;
-                font-weight: 400;
-                line-height: 1em;
-            }
-            &--mainTitle {
-                font-size: 8.929rem;
-                font-family: $font_family_cond;
-                font-weight: 700;
-                line-height: 1em;
-            }
-            h1 {
-                font-size: 5.5rem;
-                text-transform: uppercase;
-                color: $color_robin;
-                font-family: $font_family_cond;
-                font-weight: bold;
-                @include breakpoint(med-large) {
-                    font-size: 4.5rem;
-                }
-                @include breakpoint('medium') {
-                    font-size: 3.6rem;
-                }
-                @include breakpoint(small) {
-                    font-size: 2.8rem;
-                }
-            }
-        }
-        .bundle_orange {
-            display: table-cell;
-            padding: 0 20px;
-            color: $color_wind;
-            font-family: $font_family_light;
-            text-align: center;
-            vertical-align: middle;
-            width: 32%;
-            @include breakpoint('medium') {
-                display: block;
-                width: auto;
-                padding: 0;
-                text-align: left;
-            }
-            &:first-child {
-                padding: 0 30px 0 0;
-            }
-            &:not(:last-of-type) {
-                border-right: 1px solid $color_stroke;
-                @include breakpoint('medium') {
-                    border-right: none;
-                }
-            }
-            &__container {
-                display: table;
-                width: 50%;
-                margin: 0 0 50px;
-                text-align: left;
-                @include breakpoint('medium') {
-                    display: block;
-                    padding: 0;
-                }
-                @include breakpoint(med-large) {
-                    width: 40%;
-                }
-                @include breakpoint(small) {
-                    width: 90%;
-                }
-            }
-            &__title {
-                //max-width: 70px;
-                //margin: 0 auto;
-                font-size: 2.143rem;
-                line-height: 1em;
-                @include breakpoint('medium') {
-                    display: inline-block;
-                }
-                @include breakpoint(med-large) {
-                    font-size: 2.143em;
-                }
-                // @include breakpoint(medium) {
-                //     font-size: 14px;
-                // }
-                @include breakpoint(small) {
-                    font-size: 1.571rem;
-                }
-                // @include breakpoint('super-tiny') {
-                //     font-size: 12px;
-                // }
-            }
-            &__number {
-                font-size: 4.643em;
-                line-height: 1em;
-                @include breakpoint('medium') {
-                    display: inline-block;
-                }
-                @include breakpoint(med-large) {
-                    font-size: 3em;
-                }
-                @include breakpoint(tiny) {
-                    font-size: 45px;
-                }
-                &:empty {
-                    display: none;
-                    & + .bundle_orange__title {
-                        max-width: none;
-                        font-size: 18px;
+    .landing {
+        .landing {
+            &__hero {
+                box-sizing: border-box;
+                position: relative;
+                .container {
+                    @include breakpoint(small) {
+                        overflow: hidden;
                     }
                 }
-            }
-        }
-        .magnum_background {
-            background-image: url("../img/magnum_hero_background.jpg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            padding-bottom: 25px;
-            background-size: cover;
-            @include breakpoint(small) {
-                background-image: url("../img/magnum_hero_background_small.jpg");
-            }
-        }
-        &--details {
-            margin-bottom: 120px;
-            @include breakpoint(small) {
-                margin-bottom: 80px;
-            }
-            .single {
-                font-family: $font_family_cond;
-                @include breakpoint(small) {
-                    margin-bottom: 10px;
-                }
-                .image {
-                    display: inline-block;
-                    margin-right: 1em;
-                    vertical-align: middle;
+                &__imageContainer {
+                    position: absolute;
+                    right: 0;
+                    z-index: 15;
+                    top: 0;
                     @include breakpoint(small) {
-                        width: 15px;
-                        height: 15px;
-                        margin-right: 0.5rem;
+                        width: 50%;
+                        top: 22%;
+                        right: -5%
+                    }
+                    &.full_image {
+                        max-width: 400px;
+                        @include breakpoint(small) {
+                            position: relative;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            margin: 0 auto;
+                        }
                     }
                     img {
                         width: 100%;
-                        height: auto;
+                        max-width: 100%;
                     }
                 }
-                .text {
-                    display: inline-block;
-                    font-size: 1.857em;
-                    text-transform: uppercase;
-                    vertical-align: middle;
-                    line-height: 1.1em;
+                &--title {
+                    padding: 30px 0;
                     @include breakpoint(small) {
-                        width: 50%;
-                        font-size: 1.286rem;
+                        padding: 0;
+                    }
+                    &--light {
+                        font-size: 6rem;
+                        font-family: $font_family_cond;
+                        font-weight: 400;
+                        line-height: 1em;
+                    }
+                    &--mainTitle {
+                        font-size: 8.929rem;
+                        font-family: $font_family_cond;
+                        font-weight: 700;
+                        line-height: 1em;
+                    }
+                    h1 {
+                        font-size: 5.5rem;
+                        text-transform: uppercase;
+                        color: $color_robin;
+                        font-family: $font_family_cond;
+                        font-weight: bold;
+                        @include breakpoint(med-large) {
+                            font-size: 4.5rem;
+                        }
+                        @include breakpoint('medium') {
+                            font-size: 3.6rem;
+                        }
+                        @include breakpoint(small) {
+                            font-size: 2.8rem;
+                        }
                     }
                 }
-            }
-        }
-        &--stamp {
-            display: none;
-            margin-bottom: 45px;
-            &--single {
-                display: inline-block;
-                margin-right: 1rem;
-                @include breakpoint(small) {
-                    display: block;
-                    margin-top: 5px;
-                    width: 44px;
-                    height: 44px;
-                }
-            }
-        }
-        &--ribbon {
-            width: 350px;
-            height: 150px;
-            display: block;
-            position: absolute;
-            background-color: $color_robin;
-            right: -40px;
-            top: 52%;
-            text-align: center;
-            color: $color_white;
-            z-index: 16;
-            font-family: $font_family_regular;
-            &.low_ribbon {
-                top: 60%;
-                @include breakpoint(small) {
-                    top: 70%;
-                }
-            }
-            @include breakpoint(min-desktop-plusborder) {
-                right: 0;
-            }
-            @include breakpoint(medium) {
-                height: 120px;
-                width: 250px;
-                right: 0;
-                top: 73.3%;
-            }            
-            @include breakpoint(small) {
-                height: 91px;
-                width: 158px;
-                right: 0;
-                top: 73.3%;
-            }
-            @include breakpoint(super-tiny) {
-                top: 73.3%;
-            }
-            &:before {
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 50%;
-                bottom: 0;
-                left: -19%;
-                transform: skew(20deg);
-                transform-origin: 100% 100%;
-                background-color: $color_robin;
-                content: "";
-                z-index: -1;
-                @include breakpoint(small) {
-                    left: 0%;
-                }
-            }
-            &:after {
-                display: block;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                border-width: 20px;
-                border-style: solid;
-                border-color: #02677e transparent transparent #02677e;
-                content: "";
-                z-index: -1;
-                @include breakpoint(medium) {
-                    content: none;
-                }
-                @include breakpoint(min-desktop-plusborder) {
-                    content: none;
-                }
-            }
-            .price {
-                font-size: 6.429rem;
-                line-height: 1em;
-                margin-top: 13px;
-                @include breakpoint(small) {
-                    font-size: 3.2rem;
-                    margin-top: 11px;
-                }
-                ;
-                .currency {
-                    font-size: 0.8em;
-                }
-            }
-            .recurrency {
-                font-size: 1.429rem;
-                @include breakpoint(small) {
-                    font-size: 0.9rem;
-                }
-                ;
-            }
-        }
-        &--claim {
-            width: 100%;
-            max-width: 1024px;
-            margin: 30px auto;
-            margin-bottom: 35px;
-            padding: 0 30px;
-            @include breakpoint(small) {
-                padding: 0 15px;
-            }
-            h2 {
-                font-size: 4rem;
-                text-transform: uppercase;
-                color: $color_robin;
-                line-height: 1em;
-                font-family: $font_family_cond;
-                position: relative;
-                z-index: 150;
-                @include breakpoint(small) {
-                    font-size: 2.225rem;
-                }
-            }
-        }
-        &__sponsor_container {
-            display: table;
-        }
-        &--sponsor {
-            display: table-cell;
-            vertical-align: middle;
-            @include breakpoint(small) {
-                display: block;
-            }
-            img {
-                @include breakpoint(small) {
-                    width: 50%;
-                }
-            }
-        }
-        &__tabs {
-            padding-top: 20px;
-            font-family: $font_family_light;
-            &--button {
-                @include border-radius(4px);
-                font-size: 1.429rem;
-                border: 1px solid $color_orange;
-                color: $color_orange;
-                padding: 15px 25px;
-                margin: 0 5px;
-                text-transform: uppercase;
-                display: inline-block;
-                text-align: center;
-                width: 155px;
-                cursor: pointer;
-                @include breakpoint(small) {
-                    margin: 0;
-                    padding: 5px 10px;
+                .bundle_orange {
+                    display: table-cell;
+                    padding: 0 20px;
+                    color: $color_wind;
+                    font-family: $font_family_light;
+                    text-align: center;
+                    vertical-align: middle;
                     width: 32%;
-                    font-size: 1.029rem;
+                    @include breakpoint('medium') {
+                        display: block;
+                        width: auto;
+                        padding: 0;
+                        text-align: left;
+                    }
+                    &:first-child {
+                        padding: 0 30px 0 0;
+                    }
+                    &:not(:last-of-type) {
+                        border-right: 1px solid $color_stroke;
+                        @include breakpoint('medium') {
+                            border-right: none;
+                        }
+                    }
+                    &__container {
+                        display: table;
+                        width: 50%;
+                        margin: 0 0 50px;
+                        text-align: left;
+                        @include breakpoint('medium') {
+                            display: block;
+                            padding: 0;
+                        }
+                        @include breakpoint(med-large) {
+                            width: 40%;
+                        }
+                        @include breakpoint(small) {
+                            width: 90%;
+                        }
+                    }
+                    &__title {
+                        //max-width: 70px;
+                        //margin: 0 auto;
+                        font-size: 2.143rem;
+                        line-height: 1em;
+                        @include breakpoint('medium') {
+                            display: inline-block;
+                        }
+                        @include breakpoint(med-large) {
+                            font-size: 2.143em;
+                        }
+                        // @include breakpoint(medium) {
+                        //     font-size: 14px;
+                        // }
+                        @include breakpoint(small) {
+                            font-size: 1.571rem;
+                        }
+                        // @include breakpoint('super-tiny') {
+                        //     font-size: 12px;
+                        // }
+                    }
+                    &__number {
+                        font-size: 4.643em;
+                        line-height: 1em;
+                        @include breakpoint('medium') {
+                            display: inline-block;
+                        }
+                        @include breakpoint(med-large) {
+                            font-size: 3em;
+                        }
+                        @include breakpoint(tiny) {
+                            font-size: 45px;
+                        }
+                        &:empty {
+                            display: none;
+                            & + .bundle_orange__title {
+                                max-width: none;
+                                font-size: 18px;
+                            }
+                        }
+                    }
                 }
-                &.active {
-                    background-color: $color-white;
+                .magnum_background {
+                    background-image: url("../img/magnum_hero_background.jpg");
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    padding-bottom: 25px;
+                    background-size: cover;
+                    @include breakpoint(small) {
+                        background-image: url("../img/magnum_hero_background_small.jpg");
+                    }
                 }
-                &:hover {
-                    @include opacity(0.8);
-                    background-color: $color-white;
+                &--details {
+                    margin-bottom: 120px;
+                    @include breakpoint(small) {
+                        margin-bottom: 80px;
+                    }
+                    .single {
+                        font-family: $font_family_cond;
+                        @include breakpoint(small) {
+                            margin-bottom: 10px;
+                        }
+                        .image {
+                            display: inline-block;
+                            margin-right: 1em;
+                            vertical-align: middle;
+                            @include breakpoint(small) {
+                                width: 15px;
+                                height: 15px;
+                                margin-right: 0.5rem;
+                            }
+                            img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        .text {
+                            display: inline-block;
+                            font-size: 1.857em;
+                            text-transform: uppercase;
+                            vertical-align: middle;
+                            line-height: 1.1em;
+                            @include breakpoint(small) {
+                                width: 50%;
+                                font-size: 1.286rem;
+                            }
+                        }
+                    }
+                }
+                &--stamp {
+                    display: none;
+                    margin-bottom: 45px;
+                    &--single {
+                        display: inline-block;
+                        margin-right: 1rem;
+                        @include breakpoint(small) {
+                            display: block;
+                            margin-top: 5px;
+                            width: 44px;
+                            height: 44px;
+                        }
+                    }
+                }
+                &--ribbon {
+                    width: 350px;
+                    height: 150px;
+                    display: block;
+                    position: absolute;
+                    background-color: $color_robin;
+                    right: -40px;
+                    top: 52%;
+                    text-align: center;
+                    color: $color_white;
+                    z-index: 16;
+                    font-family: $font_family_regular;
+                    &.low_ribbon {
+                        top: 60%;
+                        @include breakpoint(small) {
+                            top: 70%;
+                        }
+                    }
+                    @include breakpoint(min-desktop-plusborder) {
+                        right: 0;
+                    }
+                    @include breakpoint(medium) {
+                        height: 120px;
+                        width: 250px;
+                        right: 0;
+                        top: 73.3%;
+                    }
+                    @include breakpoint(small) {
+                        height: 91px;
+                        width: 158px;
+                        right: 0;
+                        top: 73.3%;
+                    }
+                    @include breakpoint(super-tiny) {
+                        top: 73.3%;
+                    }
+                    &:before {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 50%;
+                        bottom: 0;
+                        left: -19%;
+                        transform: skew(20deg);
+                        transform-origin: 100% 100%;
+                        background-color: $color_robin;
+                        content: "";
+                        z-index: -1;
+                        @include breakpoint(small) {
+                            left: 0%;
+                        }
+                    }
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        border-width: 20px;
+                        border-style: solid;
+                        border-color: #02677e transparent transparent #02677e;
+                        content: "";
+                        z-index: -1;
+                        @include breakpoint(medium) {
+                            content: none;
+                        }
+                        @include breakpoint(min-desktop-plusborder) {
+                            content: none;
+                        }
+                    }
+                    .price {
+                        font-size: 6.429rem;
+                        line-height: 1em;
+                        margin-top: 13px;
+                        @include breakpoint(small) {
+                            font-size: 3.2rem;
+                            margin-top: 11px;
+                        }
+                        ;
+                        .currency {
+                            font-size: 0.8em;
+                        }
+                    }
+                    .recurrency {
+                        font-size: 1.429rem;
+                        @include breakpoint(small) {
+                            font-size: 0.9rem;
+                        }
+                        ;
+                    }
+                }
+                &--claim {
+                    width: 100%;
+                    max-width: 1024px;
+                    margin: 30px auto;
+                    margin-bottom: 35px;
+                    padding: 0 30px;
+                    @include breakpoint(small) {
+                        padding: 0 15px;
+                    }
+                    h2 {
+                        font-size: 4rem;
+                        text-transform: uppercase;
+                        color: $color_robin;
+                        line-height: 1em;
+                        font-family: $font_family_cond;
+                        position: relative;
+                        z-index: 150;
+                        @include breakpoint(small) {
+                            font-size: 2.225rem;
+                        }
+                    }
+                }
+                &__sponsor_container {
+                    display: table;
+                }
+                &--sponsor {
+                    display: table-cell;
+                    vertical-align: middle;
+                    @include breakpoint(small) {
+                        display: block;
+                    }
+                    img {
+                        @include breakpoint(small) {
+                            width: 50%;
+                        }
+                    }
+                }
+                &__tabs {
+                    padding-top: 20px;
+                    font-family: $font_family_light;
+                    &--button {
+                        @include border-radius(4px);
+                        font-size: 1.429rem;
+                        border: 1px solid $color_orange;
+                        color: $color_orange;
+                        padding: 15px 25px;
+                        margin: 0 5px;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        text-align: center;
+                        width: 155px;
+                        cursor: pointer;
+                        @include breakpoint(small) {
+                            margin: 0;
+                            padding: 5px 10px;
+                            width: 32%;
+                            font-size: 1.029rem;
+                        }
+                        &.active {
+                            background-color: $color-white;
+                        }
+                        &:hover {
+                            @include opacity(0.8);
+                            background-color: $color-white;
+                        }
+                    }
                 }
             }
         }
     }
-}
