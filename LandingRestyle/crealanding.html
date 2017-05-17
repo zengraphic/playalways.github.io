@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!--- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/landing.css" />
+    <!--- /CSS -->
+    <!--- JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/slick.min.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/landing.js"></script>
+    <script type="text/javascript" src="/fileadmin/js-landing/clipboard.min.js"></script>
+    <!-- components script -->
+</head>
+
+<body>
+    <div class="container">
+        <h4>Inserisci le cartelle (Es. <b>1°</b> 20170522 | <b>2°</b> porta-i-tuoi-amici)</h4>
+        <input type="text" placeholder="prima cartella" class="firstPath input_cms">
+        <input type="text" placeholder="seconda cartella" class="secondPath input_cms">
+    </div>
+    <div class="container">
+        <div class="container_page_cms">
+            <h1 class="mainTitle" data-pagetarget="magnum">MAGNUM</h1>
+            <h5 class="link_page"><a href="html/prova_magnum.html" target="_blank">--> pagina d'esempio <--</a></h5>
+            <div class="container_hidden">
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+            </div>
+        </div>
+        <div class="container_page_cms">
+            <h1 class="mainTitle" data-pagetarget="pita">PITA</h1>
+            <h5 class="link_page"><a href="html/prova_pita.html" target="_blank">--> pagina d'esempio <--</a></h5>
+            <div class="container_hidden">
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+            </div>
+        </div>
+    </div>
+    <pre id="textareaHTML">Qui ci sarà il codice da copiare e incollare</pre>
+    <div class="container">
+        <h4 class="smallText">Js sono sotto /fileadmin/js-landing/</h4>
+        <h4 class="smallText">Immagini fisse (loghi,etc.) sono sotto /fileadmin/img-landing/</h4>
+        <h4 class="smallText">Le immagini della creatività sottocartella img</h4>
+    </div>
+</body>
+<style>
+.clip_btn{
+    border-radius: 5px;
+}
+
+.smallText{
+    font-size: 14px;
+    font-family: 'Arial';
+    margin: 0;
+    margin-top: 2px;
+
+}
+
+#textareaHTML {
+    margin-top: 30px;
+}
+
+.container_page_cms {
+    margin-top: 30px;
+    display: inline-block;
+    vertical-align: top
+}
+
+.link_page {
+    font-family: 'Arial';
+    font-weight: 400;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.link_page:hover {
+    background-color: orange;
+}
+
+h4 {
+    font-family: 'Arial';
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.input_cms {
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.container_hidden {
+    display: none;
+    text-align: center;
+    margin-top: 10px;    
+}
+
+.container_cms {
+    margin-bottom: 15px;
+}
+
+.mainTitle {
+    margin: 0;
+    border: 1px solid orange;
+    border-radius: 4px;
+    width: 300px;
+    text-align: center;
+    font-family: 'Arial';
+    color: orange;
+    cursor: pointer;
+}
+
+.mainTitle:hover {
+    background-color: orange;
+    color: white;
+}
+
+pre {
+    border: 1px solid black;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: scroll;
+}
+</style>
+<script>
+var magnum, headTag, header, path1, path2;
+
+
+jQuery(document).ready(function($) {
+    console.log(path1);
+    new Clipboard('.clip_btn');
+    var divContainer = '<div class="landing__subContainer"/>'
+    var mainContainer = '.landing__mainContainer';
+    // ============================== //
+    // ============ HEADER ========== //
+    // ============================== //
+
+    $('.mainTitle').click(function() {
+        $(this).parents('.container_page_cms').find('.container_hidden').slideToggle();
+    });
+
+    function download_to_textbox(url, el) {
+        $.get(url, null, function(data) {
+            el.val(data);
+        }, "text");
+    }
+
+    function loadFooter() {
+        var pageToLoad = 'html/partials/footer.html';
+        $.get(pageToLoad, function(my_var) {
+            page = page + my_var;
+        }, 'html').promise().done(function() {
+            if ((path1 != "") && (path2 != "")) {
+                var mergePath = 'fileadmin/' + path1 + "/" + path2 + "/";
+                mergePath = mergePath.replace(/ /g, "");
+                page = page.replace(/([.][.][/])/g, mergePath);
+            }
+            $('#textareaHTML').text(page);
+        });
+    }
+
+    function loadAccordion(currentPage) {
+        var pageToLoad = 'html/partials/accordions/accordion_' + currentPage + '.html';
+        $.get(pageToLoad, function(my_var) {
+            page = page + my_var;
+        }, 'html').promise().done(function() {
+            loadFooter();
+        });
+    }
+
+    function loadOfferDetail(currentPage) {
+        var pageToLoad = 'html/partials/offer_details/offer_details_' + currentPage + '.html';
+        $.get(pageToLoad, function(my_var) {
+            page = page + my_var;
+        }, 'html').promise().done(function() {
+            loadAccordion(currentPage);
+        });
+    }
+
+    function loadHero(currentPage) {
+        var pageToLoad = 'html/partials/hero/hero_' + currentPage + '.html';
+        $.get(pageToLoad, function(my_var) {
+            page = page + my_var;
+        }, 'html').promise().done(function() {
+            loadOfferDetail(currentPage);
+        });
+    }
+
+    function loadHeader(currentPage) {
+        $.get("html/partials/header.html", function(my_var) {
+            page = page + my_var;
+        }, 'html').promise().done(function() {
+            loadHero(currentPage);
+        });
+    }
+
+    function loadHead(currentPage) {
+        $.get("html/partials/headTag.html", function(my_var) {
+            page = my_var;
+        }, 'html').promise().done(function() {
+            loadHeader(currentPage);
+        });
+    }
+
+    $('.mainTitle').click(function() {
+        var targetpage = $(this).data('pagetarget')
+        path1 = $('.firstPath').val();
+        path2 = $('.secondPath').val();
+        console.log(path1 + " " + path2);
+        loadHead(targetpage);
+    });
+});
+</script>
+
+</html>

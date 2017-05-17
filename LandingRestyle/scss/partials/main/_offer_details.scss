@@ -1,90 +1,189 @@
 .landing {
-    &--offer_details {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        height: auto;
-        background-color: $color_robin;
-        color: $color_white;
-        padding: 30px 0;
-        margin-bottom: 60px;
-        position: relative;
-        z-index: 100;
-        h3 {
-            font-size: 2.714rem;
-            font-family: $font_family_bold;
-            line-height: 1.2em;
-            @include breakpoint(small) {
-                font-size: 1.7rem;
-            }
-        }
-        .container--offer_details {}
-        .details {
-            list-style: none;
-            padding-left: 60px;
-            margin: 30px 0;
-            &.no_list {
-                padding-left: 0;
-                &:before {
-                    content: "";
-                }
-            }
-            li {
-                position: relative;
-                font-size: 1.857rem;
+    .landing {
+        &--offer_details {
+            width: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+            height: auto;
+            background-color: $color_robin;
+            color: $color_white;
+            padding: 30px 0;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 100;
+            h3 {
+                font-size: 2.714rem;
+                font-family: $font_family_bold;
                 line-height: 1.2em;
-                margin-bottom: 20px;
                 @include breakpoint(small) {
-                    font-size: 1.250rem;
-                }
-                &:before {
-                    content: "\b7\a0";
-                    position: absolute;
-                    left: -60px;
-                    top: 5px;
-                    font-size: 4em;
-                    line-height: 0;
+                    font-size: 1.7rem;
                 }
             }
-        }
-        &--title {}
-        &--box_offer {
-            display: table-cell;
-            vertical-align: middle;
-            &.device {
-                padding-left: 15px;
-            }
-            &--single {
-                display: table-cell;
-                vertical-align: middle;
-                width: 33%;
-                @include breakpoint(small){
-                    display: inline-block !important;
+            .container--offer_details {}
+            .details {
+                list-style: none;
+                padding-left: 60px;
+                margin: 30px 0;
+                &.no_list {
+                    padding-left: 0;
+                    &:before {
+                        content: "";
+                    }
                 }
-            }
-            &__container {
-                display: table;
-            }
-        }
-        &--options {
-            display: table-cell;
-            vertical-align: middle;
-            &__container {
-                display: table;
+                li {
+                    position: relative;
+                    font-size: 1.857rem;
+                    line-height: 1.2em;
+                    margin-bottom: 20px;
+                    @include breakpoint(small) {
+                        font-size: 1.250rem;
+                    }
+                    &:before {
+                        content: "\b7\a0";
+                        position: absolute;
+                        left: -60px;
+                        top: 5px;
+                        font-size: 4em;
+                        line-height: 0;
+                    }
+                }
             }
             &--title {}
-            &--button {
-                @include border-radius(4px);
-                border: 1px solid $color_orange;
-                color: $color_orange;
-                padding: 5px 25px;
-                text-transform: uppercase;
+            &--box_offer {
+                display: inline-block;
+                padding-left: 15px;
+                vertical-align: middle;
+                text-align: left;
+                img {
+                    @include breakpoint(small) {
+                        width: 85%;
+                    }
+                }
+                &.device {
+                    padding-left: 15px;
+                    img {
+                        width: 90%;
+                        height: auto;
+                        @include breakpoint(medium) {
+                            max-width: 100px;
+                        }
+                    }
+                    @include breakpoint(small) {
+                        padding-left: 0;
+                    }
+                }
+                &--single {
+                    display: inline-block;
+                    width: 33%;
+                    height: 255px;
+                    vertical-align: middle;
+                    font-size: 0;
+                    text-align: center;
+                    @include breakpoint(small) {
+                        display: inline-block !important;
+                        padding: 0 10px;
+                    }
+                }
+                &__container {
+                    // display: table;
+                    width: 100%;
+                }
+            }
+            &--options {
                 display: table-cell;
                 vertical-align: middle;
-                text-align: center;
-                width: 140px;
-                &:hover{
-                   @include opacity(0.8); 
+                font-family: $font_family_regular;
+                @include breakpoint(small) {
+                    display: inline-block;
+                    margin: 5px 10px;
+                }
+                &__container {
+                    display: table;
+                }
+                &--title {
+                    @include breakpoint(small) {
+                        text-align: center;
+                        margin-bottom: 15px;
+                    }
+                }
+                &--button {
+                    @include border-radius(4px);
+                    border: 1px solid $color_orange;
+                    color: $color_orange;
+                    padding: 5px 25px;
+                    text-transform: uppercase;
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: center;
+                    width: 140px;
+                    @include breakpoint(small) {
+                        width: 120px;
+                    }
+                    &:hover {
+                        @include opacity(0.8);
+                    }
+                }
+            }
+        }
+        &_hero_small {
+            &__mainContainer {
+                max-width: 1024px;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+            &__half_block {
+                height: 250px;
+                @include breakpoint(small) {
+                    height: auto;
+                }
+                &.image_block {
+                    float: right;
+                    width: 50%;
+                    position: relative;
+                    left: -15%;
+                    img {
+                        @include breakpoint(small) {
+                            width: 110%;
+                        }
+                    }
+                    @include breakpoint(small) {
+                        left: 0%;
+                    }
+                    @include breakpoint(small) {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        float: none;
+                    }
+                }
+                &.text_block {
+                    color: $color_white;
+                    float: left;
+                    padding: 30px;
+                    width: 50%;
+                    position: relative;
+                    z-index: 100;
+                    @include breakpoint(small) {
+                        display: block;
+                        position: static;
+                        width: 100%;
+                        float: none;
+                        background-color: $color_robin;
+                        text-align: center;
+                    }
+                }
+            }
+            &__coloredBg {
+                position: absolute;
+                top: 0;
+                left: -20%;
+                width: 70%;
+                height: 250px;
+                background-color: $color_robin;
+                @include transform(skew(-20deg));
+                @include breakpoint(small) {
+                    display: none;
                 }
             }
         }

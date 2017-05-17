@@ -1522,6 +1522,8 @@ hr.example_divider {
         font-size: 14px; } }
     .mobile .standard_block__ribbon {
       background-color: #009BBE; }
+    .transparent .standard_block__ribbon {
+      background-color: #F48135; }
     .invertedDisplay .standard_block__ribbon {
       left: calc(100% + 35px);
       -moz-transform: translateX(-100%);
@@ -1578,24 +1580,32 @@ hr.example_divider {
       z-index: -1; }
       .mobile .standard_block__ribbon:before {
         border-color: #007d99 #007d99 transparent transparent; }
+      .transparent .standard_block__ribbon:before {
+        border-color: #d5501b #d5501b transparent transparent; }
       .invertedDisplay .standard_block__ribbon:before {
         right: 0;
         left: auto;
         border-color: #d5501b transparent transparent #d5501b; }
       .mobile.invertedDisplay .standard_block__ribbon:before {
         border-color: #007d99 transparent transparent #007d99; }
+      .inverteDisplay.transparent .standard_block__ribbon:before {
+        border-color: #d5501b transparent transparent #d5501b; }
       .withForm .standard_block__ribbon:before {
         right: 0;
         left: auto;
         border-color: #d5501b transparent transparent #d5501b; }
       .mobile.withForm .standard_block__ribbon:before {
         border-color: #007d99 transparent transparent #007d99; }
+      .transparent.withForm .standard_block__ribbon:before {
+        border-color: #d5501b transparent transparent #d5501b; }
       .withForm.invertedDisplay .standard_block__ribbon:before {
         right: auto;
         left: 0;
         border-color: #d5501b #d5501b transparent transparent; }
       .mobile.withForm.invertedDisplay .standard_block__ribbon:before {
         border-color: #007d99 #007d99 transparent transparent; }
+      .transparent.withForm.invertedDisplay .standard_block__ribbon:before {
+        border-color: #d5501b #d5501b transparent transparent; }
     .standard_block__ribbon:after {
       display: block;
       position: absolute;
@@ -1614,6 +1624,8 @@ hr.example_divider {
       z-index: -1; }
       .mobile .standard_block__ribbon:after {
         background-color: #009BBE; }
+      .transparent .standard_block__ribbon:after {
+        background-color: #F48135; }
       .invertedDisplay .standard_block__ribbon:after {
         left: 0;
         -moz-transform: skew(20deg);
@@ -1854,6 +1866,14 @@ hr.example_divider {
       border-color: #F48135; }
       .standard_block .base__bt--or2:hover {
         opacity: .7; }
+      .specialVersion.standard_block .base__bt--or2 {
+        border-color: #F48135; }
+      .fullBand.standard_block .base__bt--or2 {
+        border-color: transparent; }
+    .mobile.fullBand.standard_block .base__bt--or {
+      border-color: #fff; }
+    .mobile.specialVersion.standard_block .base__bt--or {
+      border-color: #fff; }
     .standard_block .base__bt:empty {
       display: none; }
 
@@ -1893,7 +1913,7 @@ hr.example_divider {
   text-align: center;
   vertical-align: top;
   min-width: 95px;
-  max-width: 115px;
+  max-width: 125px;
   height: 100%; }
   .bundle_orange:not(:last-of-type) {
     border-right: 1px solid #D3D3D2; }
@@ -2073,6 +2093,8 @@ hr.example_divider {
       color: #F48135; }
       .coverage_form .base__bt--or2:hover {
         opacity: .7; }
+    .mobile .coverage_form .base__bt--or {
+      border-color: #fff; }
   .coverage_form__input--address {
     display: inline-block;
     width: calc(100% - 75px);
@@ -10971,8 +10993,8 @@ sw.showcase_bundle_device {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text {
         height: 12.55em;
-        margin-bottom: 0;
-        padding-top: 9.7em; }
+        margin-bottom: 10px;
+        padding-top: 10.4em; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle {
           margin-bottom: 0;
           height: 38px;
@@ -10983,7 +11005,7 @@ sw.showcase_bundle_device {
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--smallDescription, .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bigDescription {
           display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container {
-        height: 4.375em; }
+        height: 3.8em; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted {
           display: inline-block;
           margin-right: 4%;
@@ -11021,6 +11043,8 @@ sw.showcase_bundle_device {
         .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--bgContainer {
           position: relative;
           margin-bottom: 10px; }
+          .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--bgContainer img {
+            max-width: 100%; }
       .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text {
         line-height: 1.2em; }
       .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--bgContainer,
@@ -11125,12 +11149,11 @@ sw.showcase_bundle_device {
           border-right: 0px; } }
       .faq_block__secondaryBlock .faq_block__single:nth-of-type(3n) {
         border-right: 0px; }
-      .faq_block__secondaryBlock {
-        background-color: #F4F4F4; }
-        .faq_block__secondaryBlock__container {
-          width: 100%;
-          max-width: 1024px;
-          margin: 0 auto; }
+      .faq_block__secondaryBlock__container {
+        background-color: #F4F4F4;
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto; }
       .faq_block__secondaryBlock .faq_block__single:hover .faq_block__single__title {
         text-decoration: underline; }
       .faq_block__secondaryBlock .faq_block__single__title {
@@ -11291,13 +11314,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-moz-placeholder {
+  :-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area::-moz-placeholder {
+  ::-moz-placeholder {
     color: #AAB2BD; }
-  .storeDetail_block__contactUs__area:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
