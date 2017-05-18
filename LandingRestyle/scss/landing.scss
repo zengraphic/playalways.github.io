@@ -10,6 +10,10 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTAR
+body{
+    margin: 0;
+}
+
 .landing {
     .container.container_device_magnum {
         @include breakpoint(small) {
@@ -152,7 +156,7 @@
         position: relative;
         box-sizing: border-box;
         @include breakpoint(small) {
-            padding: 0 15px;
+            padding: 0 15px !important; 
         }
     }
     a.button {
