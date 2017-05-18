@@ -101,7 +101,7 @@ jQuery(function($) {
             infinite: false,
             slidesToShow: 6,
             dots: false,
-            variableWidth: true,
+            variableWidth: false,
             focusOnSelect: true,
             arrows: false,
             responsive: [{
