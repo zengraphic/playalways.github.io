@@ -282,7 +282,8 @@ jQuery(document).ready(function($) {
     }
 
     function loadHeader(currentPage) {
-        $.get("html/partials/header.html", function(my_var) {
+        var headerToLoad = 'html/partials/header/header_' + currentPage + '.html';
+        $.get(headerToLoad, function(my_var) {
             page = page + my_var;
         }, 'html').promise().done(function() {
             loadHero(currentPage);
