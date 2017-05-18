@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
     // ============================== //
     // ============ HEADER ========== //
     // ============================== //
-    $(mainContainer).append($(divContainer).load("partials/header.html"));
+
 
 
     // ========================================= //
@@ -51,7 +51,8 @@ jQuery(document).ready(function($) {
 
     // ================================= //
     // ============= MAGNUM ============ //
-    // ================================= //     
+    // ================================= //  
+    $(mainContainer).append($(divContainer).load("partials/header/header_magnum.html"));
     $(mainContainer).append($(divContainer).load("partials/hero/hero_magnum.html"));
     $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_magnum.html", function() {
         loadSlick();

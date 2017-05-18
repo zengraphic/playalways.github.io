@@ -40,14 +40,14 @@
             <h1 class="mainTitle" data-pagetarget="pita">PITA</h1>
             <h5 class="link_page"><a href="html/prova_pita.html" target="_blank">--> pagina d'esempio <--</a></h5>
             <div class="container_hidden">
-                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia html</button>
             </div>
         </div>
         <div class="container_page_cms">
             <h1 class="mainTitle" data-pagetarget="easy-europe">EASY EUROPE</h1>
             <h5 class="link_page"><a href="html/prova_easy-europe.html" target="_blank">--> pagina d'esempio <--</a></h5>
             <div class="container_hidden">
-                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia</button>
+                <button class="clip_btn" data-clipboard-target="#textareaHTML">copia html</button>
             </div>
         </div>
     </div>
@@ -61,11 +61,17 @@
         <h4 class="smallText">Le immagini della creatività sottocartella img</h4>
     </div>
     <div class="container">
-        <h4 class="buttonCss">Scarica il CSS</h4>
+        <h4 class="buttonCss"><a href="/fileadmin/css-landing/landing.css" download>Scarica il CSS</a></h4>
     </div>
     <iframe id="iframeDownload" style="display:none;"></iframe>
 </body>
 <style>
+a:visited,
+a:link,
+a:focus{
+    color: inherit !important;
+}
+
 .container_pre {
     position: relative;
 }
@@ -208,11 +214,20 @@ jQuery(document).ready(function($) {
     // ============ HEADER ========== //
     // ============================== //
     $('.clip_btn').click(function() {
-            $('.hokkaido').show();        
+        $('.hokkaido').show();
         $(".hokkaido").animate({
-            right: "+=1350",
-        }, 3000, function() {
-            $('.hokkaido').hide();
+            right: "+=50%",
+        }, 1000, function() {
+            $(".hokkaido").animate({
+                right: "+=0%",
+            }, 1000, function() {
+                $(".hokkaido").animate({
+                    right: "+=100%",
+                }, 1000, function() {
+                    $('.hokkaido').css('right','-300px');
+                    $('.hokkaido').hide();
+                });
+            });
         });
     });
     $('.mainTitle').click(function() {
@@ -267,7 +282,8 @@ jQuery(document).ready(function($) {
     }
 
     function loadHeader(currentPage) {
-        $.get("html/partials/header.html", function(my_var) {
+        var headerToLoad = 'html/partials/header/header_' + currentPage + '.html';
+        $.get(headerToLoad, function(my_var) {
             page = page + my_var;
         }, 'html').promise().done(function() {
             loadHero(currentPage);
@@ -290,10 +306,10 @@ jQuery(document).ready(function($) {
         loadHead(targetpage);
     });
 
-    $('.buttonCss').click(function(e) {
-        e.preventDefault(); //stop the browser from following
-        window.location.href = '/fileadmin/css-landing/landing.css';
-    });
+    // $('.buttonCss').click(function(e) {
+    //     e.preventDefault(); //stop the browser from following
+    //     window.location.href = '/fileadmin/css-landing/landing.css';
+    // });
 });
 </script>
 

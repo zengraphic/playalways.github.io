@@ -51,6 +51,7 @@
                         line-height: 1em;
                     }
                     h1 {
+                        margin: 0;
                         font-size: 5.5rem;
                         text-transform: uppercase;
                         color: $color_robin;
@@ -151,10 +152,11 @@
                 .magnum_background {
                     background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background.jpg");
                     background-repeat: no-repeat;
-                    background-position: center center;
+                    background-position: top right;
                     padding-bottom: 25px;
                     background-size: cover;
                     @include breakpoint(small) {
+                        background-position: center center;                        
                         background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background_small.jpg");
                     }
                 }

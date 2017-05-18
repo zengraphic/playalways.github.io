@@ -45,13 +45,13 @@ h4.trade_l {
 }
 
 .header {
-    @include boxWF(left, 100%);
-    height: auto;
-    position: fixed;
-    top: 0;
+    //@include boxWF(left, 100%);
+    //height: auto;
+    //position: fixed;
+    //top: 0;
     background-color: $color_white;
     z-index: 999;
-    border-bottom: 1px solid $color_stroke;
+    
     // ANIMATION
     -webkit-animation: fadein 2s;
     // Safari, Chrome and Opera > 12.1
@@ -83,8 +83,9 @@ h4.trade_l {
     }
     .header_second {
         @include boxWF(none, 100%);
-        @include transition-with-delay(all, 1s, linear, 1s);
+        //@include transition-with-delay(all, 1s, linear, 1s);
         min-height: 79px;
+        border-bottom: 1px solid $color_stroke;
         .container {
             max-width: 1024px;
             margin: 0 auto;
@@ -92,6 +93,12 @@ h4.trade_l {
                 padding-left: 2.8rem;
             }
         }
+        &.affix{
+            top: 0;
+        }
+    }
+    .quick_links {
+        display: none;
     }
     .header_sup {
         @include boxWF(none, 100%);
@@ -183,7 +190,7 @@ h4.trade_l {
     }
      @media screen and(max-width:640px) {
         .logo--wind {
-        margin: 0.8rem 2rem 0 1rem;}
+        margin: 0.8rem 1rem 0 1rem;}
             .logo--info {margin:1.5rem 2rem 0 1rem !important;}
         }
     .logo img {
@@ -566,7 +573,7 @@ h4.trade_l {
 
 @media (max-width: 767px) {
     .header .logo {
-        display: none;
+        //display: none;
     }
 }
 
@@ -580,6 +587,21 @@ h4.trade_l {
 @media (max-width: 767px) {
     .header .menu {
         margin-top: 1rem;
+        display: none;
+        max-width: 108px;
+    }
+    .header .quick_links {
+        margin-top: calc(1.1rem - 2px);
+            font-size: 0.7857rem;
+            line-height: normal;
+        padding:0;
+        color: $color_text_light;
+        //display: inline-block;
+        display: none;
+        height: auto;
+        .base__icon {
+            margin-bottom: 0.5rem;
+        }
     }
 }
 
