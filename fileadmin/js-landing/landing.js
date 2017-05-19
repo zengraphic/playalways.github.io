@@ -1,15 +1,4 @@
 jQuery(document).ready(function($) {
-
-    $('.popup-youtube, .popup-video-new').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-
-        fixedContentPos: false
-    });
-
     function loadSlickMagnum() {
         $('.slider__device').slick({
             dots: true,

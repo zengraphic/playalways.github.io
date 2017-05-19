@@ -13,7 +13,7 @@
                     right: 0;
                     z-index: 15;
                     top: 0;
-                    &.no_absolute{
+                    &.no_absolute {
                         position: static;
                     }
                     @include breakpoint(small) {
@@ -22,13 +22,19 @@
                         right: -5%
                     }
                     &.full_image {
+                        width: 33%;
                         max-width: 400px;
+                        img {
+                            @include breakpoint(small) {
+                                max-width: 250px;
+                            }
+                        }
                         @include breakpoint(small) {
                             position: relative;
                             top: 0;
                             left: 0;
                             width: 100%;
-                            margin: 0 auto;
+                            margin: 0 auto !important;
                         }
                     }
                     img {
@@ -38,6 +44,28 @@
                 }
                 &--title {
                     padding: 30px 0;
+                    .logo_sponsor {
+                        width: 30%;
+                        display: inline;
+                    }
+                    .vw_font_90 {
+                        font-size: 8.7vw;
+                        @include breakpoint(larger-1024) {
+                            font-size: 6.42857rem;
+                        }
+                        @include breakpoint(tiny) {
+                            font-size: 3.57143rem;
+                        }
+                    }
+                    .vw_font_80 {
+                        font-size: 7.5vw;
+                        @include breakpoint(larger-1024) {
+                            font-size: 5.71429rem;
+                        }
+                        @include breakpoint(tiny) {
+                            font-size: 2.85714rem;
+                        }
+                    }
                     @include breakpoint(small) {
                         padding: 0;
                     }
@@ -160,7 +188,7 @@
                     padding-bottom: 25px;
                     background-size: cover;
                     @include breakpoint(small) {
-                        background-position: center center;                        
+                        background-position: center center;
                         background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background_small.png");
                     }
                 }
@@ -177,8 +205,8 @@
                     }
                     @include breakpoint(tiny) {
                         background-position: center center;
-                    }                    
-                }                
+                    }
+                }
                 &--details {
                     margin-bottom: 120px;
                     @include breakpoint(small) {

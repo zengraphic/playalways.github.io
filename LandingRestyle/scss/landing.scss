@@ -10,22 +10,23 @@
 @include text_classes;
 @include text_classes_m;
 // TEMPORANEO DA SPOSTAR
-body{
+body {
     margin: 0;
 }
 
 .landing .base img,
-.landing.base img{
+.landing.base img {
     display: initial;
 }
 
 .landing {
+    position: relative;
     .container.container_device_magnum {
         @include breakpoint(small) {
             padding: 0;
         }
     }
-    .margin_auto{
+    .margin_auto {
         margin: 0 auto;
     }
     .mobile_centered {
@@ -34,9 +35,9 @@ body{
             margin: 0 auto;
         }
     }
-    .link_click{
+    .link_click {
         color: $color_orange !important;
-        &:hover{
+        &:hover {
             @include opacity(0.8);
         }
     }
@@ -48,16 +49,16 @@ body{
     }
     .display_inline {
         display: inline-block;
-    } 
-    .vertical_top{
+    }
+    .vertical_top {
         vertical-align: top;
-    }        
-    .vertical_middle{
+    }
+    .vertical_middle {
         vertical-align: middle;
-    }  
-    .vertical_bottom{
+    }
+    .vertical_bottom {
         vertical-align: bottom;
-    }     
+    }
     .margin_bottom_0 {
         margin-bottom: 0px !important;
     }
@@ -89,7 +90,7 @@ body{
     }
     .text_normal {
         text-transform: none;
-    }    
+    }
     .text_uppercase {
         text-transform: uppercase;
     }
@@ -118,7 +119,7 @@ body{
     }
     .border_bottom_solid {
         border-bottom: 1px solid $color_grey_dark;
-    }    
+    }
     .only_desktop {
         @include breakpoint(tiny) {
             display: none;
@@ -148,56 +149,61 @@ body{
             display: block;
         }
     }
-    .box_width_100{
+    .box_width_100 {
         width: 100%;
-    }    
-    .box_width_70{
+    }
+    .box_width_70 {
         width: 70%;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
         }
     }
-    .box_width_65{
+    .box_width_65 {
         width: 64.5%;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
-        }        
-    }    
-    .box_width_60{
+        }
+    }
+    .box_width_60 {
         width: 59.5%;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
-        }        
+        }
     }
-    .box_width_50{
+    .box_width_50 {
         width: 49.5%;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
-        }        
-    }      
-    .box_width_40{
-        width: 40%;
-        @include breakpoint(small){
-            width: 100%;
-        }        
-    }   
-    .box_width_35{
-        width: 35%;
-        @include breakpoint(small){
-            width: 100%;
-        }        
-    }         
-    .box_width_30{
-        width: 30%;
-        @include breakpoint(small){
-            width: 100%;
-        }        
+        }
     }
-    .fix_inline{
+    .box_width_40 {
+        width: 40%;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
+    .box_width_35 {
+        width: 35%;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
+    .box_width_30 {
+        width: 30%;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
+    .fix_inline {
         font-size: 0px;
     }
-    .padding_bottom_150{
-        padding-bottom: 150px;
+    .ricarica_online {
+        .padding_bottom_150 {
+            padding-bottom: 150px;
+            @include breakpoint(small){
+                padding-bottom: 30px;
+            }
+        }
     }
     body,
     html {
@@ -231,7 +237,10 @@ body{
         max-width: 280px;
         cursor: pointer;
         @include border-radius(4px);
-        &:hover{
+        @include breakpoint(small){
+            max-width: 200px;
+        }
+        &:hover {
             @include opacity(0.8);
         }
     }
@@ -243,7 +252,7 @@ body{
         position: relative;
         box-sizing: border-box;
         @include breakpoint(small) {
-            padding: 0 15px !important; 
+            padding: 0 15px !important;
         }
     }
     a.button {
@@ -274,8 +283,8 @@ body{
                 z-index: 999;
                 opacity: 0.95;
             }
-            &.small_mobile_font{
-                @include breakpoint(small){
+            &.small_mobile_font {
+                @include breakpoint(small) {
                     font-size: 1rem;
                 }
             }
@@ -344,8 +353,11 @@ body{
     .base__popup.loguin_block .container {
         height: 100% !important;
     }
-
-    .btn_register{
+    .btn_register {
         color: $color_orange;
     }
+}
+
+.mfp-wrap {
+    height: 100vh !important;
 }
