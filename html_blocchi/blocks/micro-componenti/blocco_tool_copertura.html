@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
@@ -10,8 +10,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
     <!--- jVectorMap Styles-->
-    <link rel="stylesheet" type="text/css" href="../../css/jquery-jvectormap-2.0.3.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../css/jquery-jvectormap-2.0.3.css" media="screen" />
     <!--- /jVectorMap Styles -->
+    <title>Tool copertura</title>
     <!--- CSS -->
     <link rel="stylesheet" type="text/css" href="../../css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/base-style.min.css" />
@@ -45,46 +46,97 @@
                         <div class="row">
                             <div class="menu_sup_container col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <ul class="menu_sup slider_topMenu">
-                                    <li> <a href="#"> PRIVATI </a> </li>
-                                    <li> <a href="#"> PROFESSIONISTI </a> </li>
-                                    <li> <a href="#"> AZIENDE </a> </li>
-                                    <li> <a href="#"> GRANDI AZIENDE </a> </li>
-                                    <li> <a href="#" class="btn_active"> WINDGROUP </a> </li>
+                                    <li>
+                                        <a href="#">
+                                    PRIVATI
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                    PROFESSIONISTI
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                    AZIENDE
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                    GRANDI AZIENDE
+                                </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn_active">
+                                    WINDGROUP
+                                </a>
+                                    </li>
                                 </ul>
                                 <div class="gradient_overlay"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="header_second">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="logo logo--wind">
-                                    <img src="../../img/logos/wind_logo.png" class="wind">
-                                </div>
-                                <div class="menu">
-                                    <ul>
-                                        <li> <a class="btn" href="#"> Ricarica </a> </li>
-                                        <li> <a class="btn" href="#"> Cerca </a> </li>
-                                        <li> <a class="btn" href="#"> Assistenza </a> </li>
-                                        <li> <a class="btn" href="#"> Passa a Wind </a> </li>
-                                    </ul>
-                                </div>
-                                <div class="menu-right">
-                                    <ul>
-                                        <li> <a class="btn_menu" id="menuaction" href="#"> MENU </a> </li>
-                                        <li> <a class="btn_carrello" href="#"> CARRELLO </a> </li>
-                                        <li> <a class="btn_entra" href="#"> ENTRA </a> </li>
-                                    </ul>
+                <div class="header_second--container">
+                    <div class="header_second">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="logo logo--wind">
+                                        <a href="http://www.wind.it"><img src="../../../img/logos/logowind.svg" class="wind"></a>
+                                    </div>
+                                    <div class="menu">
+                                        <ul>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Ricarica
+                                        </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Cerca
+                                        </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Assistenza
+                                        </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Passa a Wind
+                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-right">
+                                        <ul>
+                                            <li>
+                                                <a class="btn_menu" id="menuaction" href="#">
+                                                    <div class="base__icon icon_menu--color"></div>
+                                                    MENU
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn_carrello" href="#">
+                                                    <div class="base__icon icon_carrello--color"></div>
+                                                    CARRELLO
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn_entra" href="#">
+                                                    <div class="base__icon icon_login--color"></div>
+                                                    ENTRA
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="first_container margin_top_header"></div>
             <!--
             ///////////////////////////////// 
             HEADER END
@@ -144,6 +196,7 @@
                 ///////////////////////////////// 
                 -->
                 <div class="block_coverage_tool__tabs__container">
+
                     <div class="blocco_tabs_menu">
                         <div class="strip_menu_tab">
                             <div class="strip_menu_tab__container slider_menu_tabs">
@@ -2659,9 +2712,6 @@
         </div>
 </body>
 <script>
-jQuery(window).load(function($) {
-    HEADER.setSlider();
-});
 jQuery(window).resize(function($) {
     COVERAGETOOL.updateMapSize();
 });
