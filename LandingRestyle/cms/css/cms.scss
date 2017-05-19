@@ -1,3 +1,7 @@
+@import 'vars';
+@import 'mixins';
+
+
 $color_orange_dark: #ffa000;
 $color_orange_soft: #ffca28;
 html,
@@ -5,11 +9,20 @@ body {
     font-family: 'Arial';
 }
 
+.simple_text{
+    font-size: 28px;
+    padding-left: 15px;
+}
+
 .cms {
     &_container_table {}
     &_container_row {
         display: table;
         border-bottom: 2px solid $color_orange_dark;
+        @include breakpoint(small){
+            width: 100%;
+            display: block;
+        }        
         &--copy{
             width: 100%;
             text-align: center;
@@ -55,6 +68,11 @@ body {
         width: 15%;
         padding: 15px 15px;
         cursor: pointer;
+        @include breakpoint(small){
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
         &.active{
             background-color: $color_orange_soft;
         }
@@ -92,6 +110,12 @@ body {
         height: 82px;
         position: relative;
         display: inline-block;
+        .cms_label{
+            font-size: 16px;
+            position: absolute;
+            top: 15px;
+            left: 32px;
+        }
         input {
             font-size: 20px;
             height: 28px;
@@ -101,12 +125,15 @@ body {
             padding: 0 10px;
             width: 80%;
             position: absolute;
-            bottom: 25%;
+            bottom: 15%;
             left: 10%;
         }
     }
     &_icon_connect {
         display: inline-block;
+        @include breakpoint(small){
+            display: none;
+        }
         &.extended_border {
             margin-left: 220px;
         }
