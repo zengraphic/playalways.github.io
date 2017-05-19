@@ -3,7 +3,7 @@
  * !!!IMPORTANT!!!!!
  *
  * Required to add "expandable" class to elements that have the expanding box
- *provaprova4
+ *provaprova4de
  ***************************************************************************/
 
 
@@ -283,8 +283,8 @@ function submitRicarica() {
     var numero = r$("#select_numbert").val();
     var taglio = r$("#select_taglio").val();
     var altro_numero = r$("#altro_numero").val();
-    var mdp = (r$("input[name=mdp]:checked").val().length > 5) ? 'CCX' : r$("input[name=mdp]:checked").val();
-    var alias = r$("input[name=mdp]:checked").val();
+    var mdp = (r$("input[name=mdp]:checked").val().length > 8) ? 'CCX' : r$("input[name=mdp]:checked").val();
+    var alias = r$("#creditCard-logged input[name=mdp]:checked").val();
     var numeroCCX = r$("#input_cc").val().replace(/\s/g, '');
     var mese = r$("#mese_carta").val();
     var anno = r$("#anno_carta").val();
@@ -384,15 +384,16 @@ function showEsitoRicarica(id) {
         .done(function(res) {
             if (res.error_code == "-99") {
                 var funzClose = function() {
-                    r$('#refill_block .top .mfp-close').trigger("click")
-                }
+                    r$('#refill_block .top .mfp-close')
+                        .trigger("click");
+                };
                 callPopUp("errore", "Gentile cliente, si è verificato un errrore, ti preghiamo di riprovare tra qualche ora", false, true, '', 'chiudi', false, funzClose);
             } else {
 
 
                 var emailRes = (res.EMAIL != "") ? '<span class="left"> Indirizzo e-mail: </span> <span class="right" id="EMAIL">' + res.EMAIL + '</span>' : '';
 
-                var content = '<div class="box"><i class="left rotatey-animate base__icon icon_confirm--color"></i>' + '<h3 id="TITLE" class="colored_text--orange">' + res.TITLE + '<br><small id="SUB_TITLE">' + res.SUB_TITLE + '</small>' + '</h3>' + '<div class="clear"></div>' + '<hr>' + '<h3 class="text strong">Riepilogo</h3>' + '</div>' + '<div class="item-box">' + '<span class="left"> Codice ricarica: </span>' + '<span class="right" id="ID">' + res.ID + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Numero indicato: </span>' + '<span class="right" id="CLI">' + res.CLI + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Data operazione: </span>' + '<span class="right" id="DATA">' + res.DATA + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Modalità di pagamento: </span>' + '<span class="right" id="MODALITA">' + res.MODALITA + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Taglio di ricarica richiesto: </span>' + '<span class="right" id="TAGLIO">' + res.TAGLIO + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Importo pagato: </span>' + '<span class="right" id="IMPORTO">' + res.IMPORTO + '</span>' + '</div>' + '<div class="item-box">' + emailRes + '</div>'
+                var content = '<div class="box"><i class="left rotatey-animate base__icon icon_confirm--color"></i>' + '<h3 id="TITLE" class="colored_text--orange">' + res.TITLE + '<br><small id="SUB_TITLE">' + res.SUB_TITLE + '</small>' + '</h3>' + '<div class="clear"></div>' + '<hr>' + '<h3 class="text strong">Riepilogo</h3>' + '</div>' + '<div class="item-box">' + '<span class="left"> Codice ricarica: </span>' + '<span class="right" id="ID">' + res.ID + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Numero indicato: </span>' + '<span class="right" id="CLI">' + res.CLI + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Data operazione: </span>' + '<span class="right" id="DATA">' + res.DATA + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Modalità di pagamento: </span>' + '<span class="right" id="MODALITA">' + res.MODALITA + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Taglio di ricarica richiesto: </span>' + '<span class="right" id="TAGLIO">' + res.TAGLIO + '</span>' + '</div>' + '<div class="item-box">' + '<span class="left"> Importo pagato: </span>' + '<span class="right" id="IMPORTO">' + res.IMPORTO + '</span>' + '</div>' + '<div class="item-box">' + emailRes + '</div>';
 
                 loadEsito(content);
                 if (res.success == false) {
@@ -444,7 +445,7 @@ Taglio
         }
 
         topUpImportRow += 'data-bonus="' + this.bonus + '" data-taglio="' + this.importo + '" ' +
-            'data-content="' + b + '<span class=\'euro\'></span>"' +
+            'data-content="' + b + '<span class=\'euro\'>&euro;</span>"' +
             'data-p3x2="' + this.p3x2 + '">' +
             b + '</option>';
 
@@ -498,8 +499,9 @@ function retrieveCustomer() {
 function popolaCliente() {
 
     var funzClose = function() {
-        r$('#refill_block .top .mfp-close').trigger("click")
-    }
+        r$('#refill_block .top .mfp-close')
+            .trigger("click");
+    };
 
     r$.ajax({
             type: "POST",
@@ -663,12 +665,12 @@ function filterTagliByMdp(mdp, dft) {
 
         if (dft) {
             elTaglio
-                .selectpicker('refresh').val(dft)
+                .selectpicker('refresh').val(dft);
         } else {
             elTaglio
-                .selectpicker('refresh')
+                .selectpicker('refresh');
         }
-        elTaglio.selectpicker('refresh')
+        elTaglio.selectpicker('refresh');
     }
     checkSubmitForm();
 }
@@ -726,7 +728,7 @@ function retrieveTagli() {
                     var tg = res.tagli[i];
                     addTaglio(new Taglio(tg.id, tg.importo, tg.bonusDaVisualizzare, tg.type, null, tg.testoBonus, tg.dft));
                     if (r$("input[name=mdp]:checked").val() == tg.type && tg.dft == 'Y') {
-                        dft = tg.id
+                        dft = tg.id;
                     }
                 }
             }
@@ -762,8 +764,9 @@ function getSmeNumberCdf() {
     if (r$(sel).val() == "new")
         return null;
     var cdf = r$(sel).attr("smecdf");
-    if (cdf == null || cdf == "")
+    if (cdf == null || cdf == "") {
         return null;
+    }
     return cdf;
 }
 
@@ -944,10 +947,10 @@ function addCard(c, defaultVal, k) {
 
     switch (k) {
         case 0:
-            row = '<div class="item-box credit_card_main_radio ak-item-credit-card-logged">' +
+            row = '<div class="item-box credit_card_main_radio ak-item-credit-card-logged" id="creditCard-logged" >' +
                 '<div class="cont__item_cc">' +
                 '<div class="base__radio radio radio-inline">' +
-                '<input type="radio" id="option_cc' + c.alias + '" value="' + c.alias + '"  name="mdp" data-type="aliascc" class="savedCard">' +
+                '<input type="radio" id="option_cc' + c.alias + '" value="' + c.alias + '"  name="mdp" data-type="aliascc" class="savedCard" checked>' +
                 '<label class="label_for_creditCard" for="option_cc' + c.alias + '" >' +
                 '<div class="detail-cc">' +
                 '<div class="pull-left">' +
@@ -1048,6 +1051,21 @@ function listCarte(onFinish, paypal) {
                     if (data.cards == 0) {
                         r$('#refill_block .showMore')
                             .trigger("click");
+                        if (paypal == true) {
+                            r$('#refill_block #option2')
+                                .trigger("click");
+                            /*r$("#ricaricaForm")
+                                .attr("disabled", false);*/
+                            r$("#action_c2 .text_p").html("clicca su RICARICA per effettuare subito il pagamento");
+                            //todo implementare la parte legata a paylpal
+                        } else {
+                            r$('#refill_block #option1')
+                                .trigger("click");
+                            r$("#listaCarteTable .base__radio.radio.base__radio--small.radio-inline")
+                                .remove();
+                            r$("#ricaricaForm")
+                                .attr("disabled", true);
+                        }
                     } else {
                         r$(".ak-item-credit-card-logged")
                             .remove();
@@ -1060,26 +1078,12 @@ function listCarte(onFinish, paypal) {
                             onFinish();
                     }
 
-                    if (paypal == true) {
-                        /*r$('#refill_block #option2')
-                            .trigger("click");*/
-                        /*r$("#ricaricaForm")
-                            .attr("disabled", false);*/
-                        r$("#action_c2 .text_p").html("clicca su RICARICA per effettuare subito il pagamento")
-                            //todo implementare la parte legata a paylpal
-                    } else {
-                        r$('#refill_block #option1')
-                            .trigger("click");
-                        r$("#listaCarteTable .base__radio.radio.base__radio--small.radio-inline")
-                            .remove();
-                        r$("#ricaricaForm")
-                            .attr("disabled", true);
-                    }
+
 
                 } else {
                     var submitLogout = function() {
                         r$("#LogoutForm").submit();
-                    }
+                    };
                     callPopUp("errore", data.msg, false, true, '', 'chiudi', false, submitLogout);
                     console.warn(data.msg);
                 }
@@ -1188,12 +1192,15 @@ function bindInputFields() {
             'blur': function() {
                 var primaryNumberInput = r$('.number_top_up');
                 var confirmNumberInput = r$(this);
-                var checkNumberResult = checkNumber(primaryNumberInput, confirmNumberInput);
-                if (!checkNumberResult) {
-                    addError(confirmNumberInput, 'Il numero non è corretto');
-                } else {
-                    checkNextStep();
+                if (confirmNumberInput.val() != "") {
+                    var checkNumberResult = checkNumber(primaryNumberInput, confirmNumberInput);
+                    if (!checkNumberResult) {
+                        addError(confirmNumberInput, 'Il numero non è corretto');
+                    } else {
+                        checkNextStep();
+                    }
                 }
+
             }
         }, '.number_top_up_confirm')
         .on({
@@ -1310,8 +1317,8 @@ function bindInputFields() {
                 var alias = clickedButton.attr("data-alias");
 
                 var removeCardFunc = function() {
-                    removeCard(cardToDelete, radioToDisable, alias)
-                }
+                    removeCard(cardToDelete, radioToDisable, alias);
+                };
                 callPopUp(title, description, true, true, 'rimuovi', 'annulla', removeCardFunc);
 
             }
@@ -1442,7 +1449,7 @@ function handleOriginPath() {
                             initRic();
                         }
                         r$("#refill_block").css("opacity", 100);
-                    }, 500)
+                    }, 500);
                 }
             }
         }, 0);
@@ -1455,24 +1462,20 @@ function handleOriginPath() {
 
 function handleTypoLogging() {
 
-    r$('#refill_block .showMore')
-        .hide();
-    r$('#refill_block .showMore_content')
-        .show();
-    r$("#refill_block_box").show();
+    /*
 
     r$(".box.refill_notification").show();
 
     r$(".box.box_2").show();
 
-    r$('#refill_block #option1')
-        .trigger("click");
-    r$(".esito_ricarica_wrapper").hide();
+    */
+    r$(".esito_ricarica_wrapper")
+        .hide();
 
     //r$("#refill_block .box.refill_notification").hide();
     //r$("#refill_block .box.box_2").hide();
 
-    if (IsTypoLogged()) {
+    if (IsLogged()) {
 
         var payPalCheckbox = r$('#checkPaypal');
         var remembercardCheckbox = r$('#checkCreditcard');
@@ -1486,13 +1489,29 @@ function handleTypoLogging() {
         }
         if (remembercardCheckbox.length == 0) {
             var ccxContent = '<div id="checkCreditcard" class="base__checkbox checkbox checkbox-inline remember_check">' +
-                '<input type="checkbox" class="styled" id="salvadati-checkbox" value="option1">' +
+                '<input type="checkbox" class="styled" id="salvadati-checkbox" value="option1" checked="checked">' +
                 '<label for="salvadati-checkbox">Ricorda la mia carta per i pagamenti successivi</label>' +
                 '<div class="base__icon icon_help--color modalCc"></div>' +
                 '</div>';
 
-            r$("#refill_block .container_select_cc").append(ccxContent);
+            r$("#refill_block .container_select_cc")
+                .append(ccxContent);
         }
+    } else {
+        r$('#refill_block .showMore')
+            .hide();
+        r$('#refill_block .showMore_content')
+            .show();
+        r$("#refill_block_box")
+            .show();
+        r$('#refill_block #option1')
+            .trigger("click");
+        r$(".box.refill_notification")
+            .show();
+        r$(".box.box_2")
+            .show();
+        r$(".action_numbert")
+            .show();
     }
 }
 
@@ -1651,17 +1670,21 @@ function callPopUp(title, description, button1, button2, labelBtn1, labelBtn2, f
         .show();
 
     if (function1) {
-        r$("#confirmButton").unbind()
-        r$("#confirmButton").on('click', function() {
-            function1()
-        });
+        r$("#confirmButton")
+            .unbind();
+        r$("#confirmButton")
+            .on('click', function() {
+                function1();
+            });
     }
 
     if (function2) {
-        r$("#confirmButton2").unbind()
-        r$("#confirmButton2").on('click', function() {
-            function2()
-        });
+        r$("#confirmButton2")
+            .unbind();
+        r$("#confirmButton2")
+            .on('click', function() {
+                function2();
+            });
     }
 }
 
@@ -1769,36 +1792,51 @@ function controlMail() {
     var input = r$(".refill_notification input");
     if (input.val() != '') {
         if (!ValidateEmail(input.val())) {
-            r$('.notificationMail').addClass('error');
-            r$('.refill_notification .notificationMail + span').addClass('error');
-            r$('.refill_notification .notificationMail + span').text('Email non valida');
+            r$('.notificationMail')
+                .addClass('error');
+            r$('.refill_notification .notificationMail + span')
+                .addClass('error');
+            r$('.refill_notification .notificationMail + span')
+                .text('Email non valida');
             return false;
         } else {
-            r$('.notificationMail').removeClass('error');
-            r$('.refill_notification .notificationMail + span').removeClass('error');
+            r$('.notificationMail')
+                .removeClass('error');
+            r$('.refill_notification .notificationMail + span')
+                .removeClass('error');
             return true;
         }
     } else {
-        r$('.notificationMail').removeClass('error');
-        r$('.refill_notification .notificationMail + span').removeClass('error');
+        r$('.notificationMail')
+            .removeClass('error');
+        r$('.refill_notification .notificationMail + span')
+            .removeClass('error');
         return true;
     }
 }
 
 function initCreditCardInput() {
-    r$("#input_cc:hidden").val("");
+    r$("#input_cc:hidden")
+        .val("");
     removeError(r$('#input_cc:hidden'));
-    r$('#mese_carta:hidden').val($("#mese_carta:hidden option:first").val());
-    r$('#mese_carta:hidden').selectpicker('refresh');
+    r$('#mese_carta:hidden')
+        .val($("#mese_carta:hidden option:first").val());
+    r$('#mese_carta:hidden')
+        .selectpicker('refresh');
     removeError(r$('#mese_carta:hidden'));
-    r$('#anno_carta:hidden').val($("#anno_carta:hidden option:first").val());
-    r$('#anno_carta:hidden').selectpicker('refresh');
+    r$('#anno_carta:hidden')
+        .val($("#anno_carta:hidden option:first").val());
+    r$('#anno_carta:hidden')
+        .selectpicker('refresh');
     removeError(r$('#anno_carta:hidden'));
-    r$('#security_cc:hidden').val("");
+    r$('#security_cc:hidden')
+        .val("");
     removeError(r$('#security_cc:hidden'));
-    r$("#altro_numero:hidden").val("");
+    r$("#altro_numero:hidden")
+        .val("");
     removeError(r$('#altro_numero'));
-    r$("#ricarica_numero:hidden").val("");
+    r$("#ricarica_numero:hidden")
+        .val("");
     removeError(r$('#ricarica_numero'));
 }
 
@@ -1808,22 +1846,30 @@ function loadFromBlockRecharge() {
         r$('.base__popup-link--ricarica').click();
         var numBloccoRicarica = r$(".topUp_block__input--number input[name=insert_number]").val();
         if (numBloccoRicarica != '') {
-            r$("#altro_numero").val(numBloccoRicarica);
-            r$("#ricarica_numero").val(numBloccoRicarica);
+            r$("#altro_numero")
+                .val(numBloccoRicarica);
+            r$("#ricarica_numero")
+                .val(numBloccoRicarica);
             setTimeout(function() {
+                retrieveTagli();
                 r$("#select_taglio")
                     .selectpicker('val', r$("#pIDTaglio").val());
-            }, 500);
-            isValidPhoneNumber(r$("#altro_numero"))
+
+            }, 1000);
+            isValidPhoneNumber(r$("#altro_numero"));
         } else {
             return false;
         }
     }
 
     if (IsLogged()) {
-        r$("#select_numbert").val("new").selectpicker('refresh');
-        var selectionValue = r$("#select_numbert").val();
-        handleNumberChange(selectionValue);
+        setTimeout(function() {
+            r$("#select_numbert")
+                .val("new")
+                .selectpicker('refresh');
+            var selectionValue = r$("#select_numbert").val();
+            handleNumberChange(selectionValue);
+        }, 1000);
     }
 
     return false;

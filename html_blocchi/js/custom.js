@@ -705,9 +705,10 @@ jQuery(document).ready(function($) {
 });
 
 
-jQuery(document).ready(function($) {
-    initializeSlide();
-});
+jQuery(document)
+    .ready(function($) {
+        initializeSlide();
+    });
 
 
 function initializeSlide() {
@@ -1445,14 +1446,15 @@ jQuery(function($) {
                     speed: 100,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    fade:true,
-                    cssEase:'ease',
+                    fade: true,
+                    cssEase: 'ease',
                     /*dotsClass: 'slider__dots',*/
-                    adaptiveHeight: true/*,
-                    customPaging: function(slider, i) {
-                        var thumb = $(slider.$slides[i]).data('thumb');
-                        return '<div class="slider__single"></div>';
-                    }*/
+                    adaptiveHeight: true
+                        /*,
+                                            customPaging: function(slider, i) {
+                                                var thumb = $(slider.$slides[i]).data('thumb');
+                                                return '<div class="slider__single"></div>';
+                                            }*/
                 });
 
             var menuPerVisore = visoreConSlider.next().find('.stripMenu');
@@ -1460,10 +1462,10 @@ jQuery(function($) {
             if (menuPerVisore.length == 1) {
                 var emettitoreEvento = menuPerVisore.closest('.filter-showcase');
                 emettitoreEvento
-                    .on("combo-change", function(e,dataCombo) {
+                    .on("combo-change", function(e, dataCombo) {
                         var activeTab = menuPerVisore.find('.tab_button.active');
                         var activeTabIndex = activeTab.index();
-                        visoreConSlider.slick('slickGoTo',activeTabIndex);
+                        visoreConSlider.slick('slickGoTo', activeTabIndex);
                     });
             }
 
