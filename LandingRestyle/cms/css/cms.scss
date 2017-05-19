@@ -1,0 +1,240 @@
+@import 'vars';
+@import 'mixins';
+
+
+$color_orange_dark: #ffa000;
+$color_orange_soft: #ffca28;
+html,
+body {
+    font-family: 'Arial';
+}
+
+.simple_text{
+    font-size: 28px;
+    padding-left: 15px;
+}
+
+.cms {
+    &_container_table {}
+    &_container_row {
+        display: table;
+        border-bottom: 2px solid $color_orange_dark;
+        @include breakpoint(small){
+            width: 100%;
+            display: block;
+        }        
+        &--copy{
+            width: 100%;
+            text-align: center;
+        }
+        &.html_row {
+            position: relative;
+            display: none;
+        }
+        .textareaHTML {
+            border: 1px solid $color_orange_dark;
+            width: 90%;
+            max-width: 1024px;
+            margin: 0 auto;
+            height: 300px;
+            overflow: scroll;
+            padding: 15px;
+        }
+        .clip_btn {
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: $color_orange_dark;
+            border-color: $color_orange_dark;
+            color: white;
+            width: 330px;
+            font-size: 28px;
+            cursor: pointer;
+            background-image: url('../img/icon_white_copy.png');
+            background-repeat: no-repeat;
+            background-position: 30px center;
+            cursor: copy;
+            &:hover {
+                background-color: $color_orange_soft;
+                border: 1px solid $color_orange_dark;
+                color: #fff;
+                opacity: 0.6;
+            }
+        }
+    }
+    &_container_cell {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        width: 15%;
+        padding: 15px 15px;
+        cursor: pointer;
+        @include breakpoint(small){
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        &.active{
+            background-color: $color_orange_soft;
+        }
+        &:hover {
+            background-color: $color_orange_soft;
+        }
+        &.mainCell {
+            width: 30%;
+            text-align: left;
+            padding-left: 30px;
+            cursor: initial;
+            min-width: 350px;
+            &:hover {
+                background-color: #fff;
+            }
+        }
+        &.cell_disabled {
+            opacity: 0.2;
+        }
+        .mainTitle {
+            font-size: 28px;
+        }
+    }
+    &_strip_title {
+        padding: 15px 15px;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: $color_orange_dark;
+        font-size: 28px;
+    }
+    &_container_folder {
+        width: 350px;
+        background: url('../img/folder.png') no-repeat;
+        width: 326px;
+        height: 82px;
+        position: relative;
+        display: inline-block;
+        .cms_label{
+            font-size: 16px;
+            position: absolute;
+            top: 15px;
+            left: 32px;
+        }
+        input {
+            font-size: 20px;
+            height: 28px;
+            line-height: 28px;
+            border: none;
+            background: #fff;
+            padding: 0 10px;
+            width: 80%;
+            position: absolute;
+            bottom: 15%;
+            left: 10%;
+        }
+    }
+    &_icon_connect {
+        display: inline-block;
+        @include breakpoint(small){
+            display: none;
+        }
+        &.extended_border {
+            margin-left: 220px;
+        }
+    }
+    &_download_css {
+        margin-left: 100px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+a:visited,
+a:link,
+a:focus {
+    color: inherit !important;
+}
+
+.hokkaido {
+    position: absolute;
+    bottom: 0;
+    right: -300px;
+    z-index: 9999;
+}
+
+.buttonCss {
+    margin-top: 30px;
+    font-size: 26px;
+    font-family: 'Arial';
+    margin: 0;
+    margin-top: 15px;
+    text-transform: uppercase;
+    text-align: right;
+    cursor: pointer;
+    &:hover {
+        color: orange;
+    }
+}
+
+.smallText {
+    font-size: 14px;
+    font-family: 'Arial';
+    margin: 0;
+    margin-top: 2px;
+}
+
+#textareaHTML {
+    margin-top: 30px;
+}
+
+.link_page {
+    font-family: 'Arial';
+    font-weight: 400;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    margin: 0;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.link_page:hover {
+    background-color: orange;
+}
+
+h4 {
+    font-family: 'Arial';
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.input_cms {
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.container {
+    &_pre {
+        position: relative;
+    }
+    &_page_cms {
+        margin-top: 30px;
+        display: inline-block;
+        vertical-align: top
+    }
+    &_hidden {
+        display: none;
+        text-align: center;
+        margin-top: 10px;
+        &_cms {
+            margin-bottom: 15px;
+        }
+    }
+}
