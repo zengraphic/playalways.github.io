@@ -15,20 +15,26 @@
             height: auto;
             position: fixed;
             top: 0;
-            min-height: 80px;
+            height: 85px;
             z-index: 999;
             border-bottom: 1px solid $color_grey_dark_light;
+            @include breakpoint(tiny) {
+                height: 70px;
+            }
             @include animation(fadein 2s);
             &__bg {
                 // background-color: $color_white;
                 background-color: rgba(255, 255, 255, 0.95);
+                height: 84px;
+                @include breakpoint(tiny) {
+                    height: 69px;
+                }
             }
             // === Margine per spaziatura header === //
             &--margin {
                 margin-top: 85px;
                 @include breakpoint(small) {
-                    margin-top: 80px;
-                    ;
+                    margin-top: 70px;
                 }
             }
             &__container {
@@ -71,23 +77,23 @@
                 color: $color_grey_dark;
             }
             &__va {
-                    margin: 0 auto;
-                    width: 40px;
+                margin: 0 auto;
+                width: 40px;
+                height: auto;
+                @include breakpoint(tiny) {
+                    width: 25px;
                     height: auto;
-                    @include breakpoint(tiny) {
-                        width: 25px;
-                        height: auto;
-                    }
+                }
             }
             &__offer {
-                    display: inline-block;
-                    position: relative;
-                    width: 65px;
+                display: inline-block;
+                position: relative;
+                width: 65px;
+                height: auto;
+                position: relative;
+                @include breakpoint(tiny) {
+                    width: 50px;
                     height: auto;
-                    position: relative;
-                    @include breakpoint(tiny) {
-                        width: 50px;
-                        height: auto;
                 }
             }
             .container {

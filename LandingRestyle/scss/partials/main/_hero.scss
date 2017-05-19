@@ -13,6 +13,9 @@
                     right: 0;
                     z-index: 15;
                     top: 0;
+                    &.no_absolute{
+                        position: static;
+                    }
                     @include breakpoint(small) {
                         width: 50%;
                         top: 22%;
@@ -150,14 +153,14 @@
                     }
                 }
                 .magnum_background {
-                    background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background.jpg");
+                    background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background.png");
                     background-repeat: no-repeat;
                     background-position: top right;
                     padding-bottom: 25px;
                     background-size: cover;
                     @include breakpoint(small) {
                         background-position: center center;                        
-                        background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background_small.jpg");
+                        background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background_small.png");
                     }
                 }
                 .easy-europe_background {

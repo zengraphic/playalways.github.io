@@ -12,6 +12,7 @@
             position: relative;
             z-index: 100;
             h3 {
+                margin: 0;
                 font-size: 2.714rem;
                 font-family: $font_family_bold;
                 line-height: 1.2em;
@@ -54,6 +55,9 @@
                 padding-left: 15px;
                 vertical-align: middle;
                 text-align: left;
+                @include breakpoint(small){
+                    padding-left: 5px;
+                }
                 img {
                     @include breakpoint(small) {
                         width: 85%;
@@ -65,7 +69,7 @@
                         width: 90%;
                         height: auto;
                         @include breakpoint(medium) {
-                            max-width: 100px;
+                            max-width: 90px;
                         }
                     }
                     @include breakpoint(small) {
