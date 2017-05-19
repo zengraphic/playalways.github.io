@@ -1,7 +1,5 @@
 @import 'vars';
 @import 'mixins';
-
-
 $color_orange_dark: #ffa000;
 $color_orange_soft: #ffca28;
 html,
@@ -9,7 +7,7 @@ body {
     font-family: 'Arial';
 }
 
-.simple_text{
+.simple_text {
     font-size: 28px;
     padding-left: 15px;
 }
@@ -19,11 +17,11 @@ body {
     &_container_row {
         display: table;
         border-bottom: 2px solid $color_orange_dark;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
             display: block;
-        }        
-        &--copy{
+        }
+        &--copy {
             width: 100%;
             text-align: center;
         }
@@ -68,12 +66,12 @@ body {
         width: 15%;
         padding: 15px 15px;
         cursor: pointer;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
             display: block;
             text-align: center;
         }
-        &.active{
+        &.active {
             background-color: $color_orange_soft;
         }
         &:hover {
@@ -85,6 +83,11 @@ body {
             padding-left: 30px;
             cursor: initial;
             min-width: 350px;
+            @include breakpoint(small) {
+                min-width: 290px;
+                margin: 0 auto;
+                text-align: center;
+            }
             &:hover {
                 background-color: #fff;
             }
@@ -102,6 +105,9 @@ body {
         text-transform: uppercase;
         background-color: $color_orange_dark;
         font-size: 28px;
+        @include breakpoint(small) {
+            text-align: center;
+        }
     }
     &_container_folder {
         width: 350px;
@@ -110,7 +116,11 @@ body {
         height: 82px;
         position: relative;
         display: inline-block;
-        .cms_label{
+        @include breakpoint(small) {
+            width: 290px;
+            margin: 30px auto 0 auto;
+        }
+        .cms_label {
             font-size: 16px;
             position: absolute;
             top: 15px;
@@ -131,7 +141,7 @@ body {
     }
     &_icon_connect {
         display: inline-block;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             display: none;
         }
         &.extended_border {
@@ -141,6 +151,12 @@ body {
     &_download_css {
         margin-left: 100px;
         cursor: pointer;
+        @include breakpoint(small) {
+            margin: 0 auto;
+            display: block !important;
+            margin-top: 15px;
+            text-align: center;
+        }
         &:hover {
             opacity: 0.6;
         }

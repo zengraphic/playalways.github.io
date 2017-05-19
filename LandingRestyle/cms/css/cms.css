@@ -272,6 +272,11 @@ body {
     padding-left: 30px;
     cursor: initial;
     min-width: 350px; }
+    @media (max-width: 768px) {
+      .cms_container_cell.mainCell {
+        min-width: 290px;
+        margin: 0 auto;
+        text-align: center; } }
     .cms_container_cell.mainCell:hover {
       background-color: #fff; }
   .cms_container_cell.cell_disabled {
@@ -284,6 +289,9 @@ body {
   text-transform: uppercase;
   background-color: #ffa000;
   font-size: 28px; }
+  @media (max-width: 768px) {
+    .cms_strip_title {
+      text-align: center; } }
 .cms_container_folder {
   width: 350px;
   background: url("../img/folder.png") no-repeat;
@@ -291,6 +299,10 @@ body {
   height: 82px;
   position: relative;
   display: inline-block; }
+  @media (max-width: 768px) {
+    .cms_container_folder {
+      width: 290px;
+      margin: 30px auto 0 auto; } }
   .cms_container_folder .cms_label {
     font-size: 16px;
     position: absolute;
@@ -317,6 +329,12 @@ body {
 .cms_download_css {
   margin-left: 100px;
   cursor: pointer; }
+  @media (max-width: 768px) {
+    .cms_download_css {
+      margin: 0 auto;
+      display: block !important;
+      margin-top: 15px;
+      text-align: center; } }
   .cms_download_css:hover {
     opacity: 0.6; }
 
