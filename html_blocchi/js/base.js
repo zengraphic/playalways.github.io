@@ -171,20 +171,30 @@ function prefixedEventListener(element, type, callback) {
                         },
                         open: function() {
                             // position btn conferma/avanti in bottom
-                            resizeTargets();
+                            if (window.outerWidth <= 768) {
 
-                            function resizeTargets() {
-                                $(".modalfooter").each(function() {
-                                    var medscroll = $('.base__scrollable').prop('scrollHeight');
-                                    var medcont = $('.box--register').height();
-                                    var medheader = 100;
-                                    var newheight = medscroll - medcont - medheader - 60;
-                                    $(this).css("margin-top", newheight);
-                                });
+                                $('.mfp-bg,.mfp-wrap')
+                                    .css({
+                                        'height': 'calc(100% - 43px)'
+                                    });
+
+                            } else {
+                                resizeTargets();
+
+                                function resizeTargets() {
+                                    $(".modalfooter").each(function() {
+                                        var medscroll = $('.base__scrollable').prop('scrollHeight');
+                                        var medcont = $('.box--register').height();
+                                        var medheader = 100;
+                                        var newheight = medscroll - medcont - medheader - 60;
+                                        $(this).css("margin-top", newheight);
+                                    });
+                                }
+                                $("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
+
+                                //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', 'calc(100% - 43px)');
                             }
-                            $("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
 
-                            //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', 'calc(100% - 43px)');
                         }
                     }
                 });
