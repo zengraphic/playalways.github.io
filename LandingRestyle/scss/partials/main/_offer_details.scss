@@ -192,4 +192,30 @@
             }
         }
     }
+    .download_pdf{
+        &_container{
+            padding: 15px 0;
+            border-top: 1px solid #D3D3D2;
+            border-bottom: 1px solid #D3D3D2;
+            cursor: pointer;
+            background-image: url('/fileadmin/img-landing/icons-interface/icon_pdf.png');
+            background-repeat: no-repeat;
+            background-size: 35px;
+            background-position: 99% center;
+            width: 100%;
+            @include breakpoint(tiny){
+             background-size: 25px;               
+            }
+            &:hover{
+                background-image: url('/fileadmin/img-landing/icons-interface/icon_pdf_white.png');                
+                background-color: $color_orange;
+                color: $color_white;
+            }
+        }
+        &_text{
+            line-height: 45px;
+            font-size: 18px;
+            padding-left: 15px;
+        }
+    }
 }

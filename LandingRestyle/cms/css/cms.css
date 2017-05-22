@@ -272,6 +272,11 @@ body {
     padding-left: 30px;
     cursor: initial;
     min-width: 350px; }
+    @media (max-width: 768px) {
+      .cms_container_cell.mainCell {
+        min-width: 290px;
+        margin: 0 auto;
+        text-align: center; } }
     .cms_container_cell.mainCell:hover {
       background-color: #fff; }
   .cms_container_cell.cell_disabled {
@@ -284,6 +289,9 @@ body {
   text-transform: uppercase;
   background-color: #ffa000;
   font-size: 28px; }
+  @media (max-width: 768px) {
+    .cms_strip_title {
+      text-align: center; } }
 .cms_container_folder {
   width: 350px;
   background: url("../img/folder.png") no-repeat;
@@ -291,6 +299,10 @@ body {
   height: 82px;
   position: relative;
   display: inline-block; }
+  @media (max-width: 768px) {
+    .cms_container_folder {
+      width: 290px;
+      margin: 30px auto 0 auto; } }
   .cms_container_folder .cms_label {
     font-size: 16px;
     position: absolute;
@@ -317,19 +329,72 @@ body {
 .cms_download_css {
   margin-left: 100px;
   cursor: pointer; }
-  .cms_download_css:hover {
-    opacity: 0.6; }
+  .cms_download_css a {
+    position: relative; }
+    .cms_download_css a .new_file {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 35px;
+      width: 35px;
+      background-image: url("../img/update_file.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px; }
+@keyframes shake {
+  10%,
+                    90% {
+    transform: translate3d(0, -1px, 0); }
+  20%,
+                    80% {
+    transform: translate3d(0, 2px, 0); }
+  30%,
+                    50%,
+                    70% {
+    transform: translate3d(0, -4px, 0); }
+  40%,
+                    60% {
+    transform: translate3d(0, 4px, 0); } }
+      .cms_download_css a .new_file.aleImage {
+        background-image: url("../img/update_ale.png");
+        height: 90px;
+        width: 90px;
+        right: -30px; }
+  .cms_download_css img {
+    width: 70%; }
+    .cms_download_css img:hover {
+      opacity: 0.6; }
+  @media (max-width: 768px) {
+    .cms_download_css {
+      margin: 0 auto;
+      display: block !important;
+      margin-top: 15px;
+      text-align: center; } }
 
 a:visited,
 a:link,
 a:focus {
   color: inherit !important; }
 
+.show_update {
+  position: relative; }
+
 .hokkaido {
   position: absolute;
   bottom: 0;
   right: -300px;
   z-index: 9999; }
+
+.updateAle {
+  position: absolute;
+  top: -150px;
+  right: 0px;
+  z-index: 9999;
+  width: 100%; }
 
 .buttonCss {
   margin-top: 30px;

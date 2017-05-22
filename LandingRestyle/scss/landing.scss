@@ -254,6 +254,12 @@ body {
         @include breakpoint(small) {
             padding: 0 15px !important;
         }
+        &.no_padding_container{
+            padding: 0 !important;
+            @include breakpoint(small){
+                padding: 0 !important;
+            }
+        }
     }
     a.button {
         //bottone cta in overlay fondo pagina.

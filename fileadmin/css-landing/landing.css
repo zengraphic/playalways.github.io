@@ -2339,6 +2339,11 @@ select:-webkit-autofill {
           left: 0;
           width: 100%;
           margin: 0 auto !important; } }
+    .landing .landing__hero__imageContainer.full_mobile {
+      width: 100%; }
+      @media (max-width: 768px) {
+        .landing .landing__hero__imageContainer.full_mobile {
+          width: 100%; } }
     .landing .landing__hero__imageContainer img {
       width: 100%;
       max-width: 100%; }
@@ -2479,7 +2484,7 @@ select:-webkit-autofill {
         height: 370px;
         background-size: contain;
         background-position: right center; } }
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
       .landing .landing__hero .easy-europe_background {
         background-position: center center; } }
   .landing .landing__hero--details {
@@ -2836,6 +2841,27 @@ select:-webkit-autofill {
   @media (max-width: 768px) {
     .landing .landing_hero_small__coloredBg {
       display: none; } }
+.landing .download_pdf_container {
+  padding: 15px 0;
+  border-top: 1px solid #D3D3D2;
+  border-bottom: 1px solid #D3D3D2;
+  cursor: pointer;
+  background-image: url("/fileadmin/img-landing/icons-interface/icon_pdf.png");
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: 99% center;
+  width: 100%; }
+  @media (max-width: 600px) {
+    .landing .download_pdf_container {
+      background-size: 25px; } }
+  .landing .download_pdf_container:hover {
+    background-image: url("/fileadmin/img-landing/icons-interface/icon_pdf_white.png");
+    background-color: #F48135;
+    color: #FFF; }
+.landing .download_pdf_text {
+  line-height: 45px;
+  font-size: 18px;
+  padding-left: 15px; }
 
 .showcase__mainTitle {
   font-size: 1.875em;
@@ -4258,6 +4284,11 @@ body {
     @media (max-width: 768px) {
       .landing .container {
         padding: 0 15px !important; } }
+    .landing .container.no_padding_container {
+      padding: 0 !important; }
+      @media (max-width: 768px) {
+        .landing .container.no_padding_container {
+          padding: 0 !important; } }
   .landing a.button {
     width: 90%;
     margin: 0 auto;

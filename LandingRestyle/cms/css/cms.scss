@@ -1,7 +1,5 @@
 @import 'vars';
 @import 'mixins';
-
-
 $color_orange_dark: #ffa000;
 $color_orange_soft: #ffca28;
 html,
@@ -9,7 +7,7 @@ body {
     font-family: 'Arial';
 }
 
-.simple_text{
+.simple_text {
     font-size: 28px;
     padding-left: 15px;
 }
@@ -19,11 +17,11 @@ body {
     &_container_row {
         display: table;
         border-bottom: 2px solid $color_orange_dark;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
             display: block;
-        }        
-        &--copy{
+        }
+        &--copy {
             width: 100%;
             text-align: center;
         }
@@ -68,12 +66,12 @@ body {
         width: 15%;
         padding: 15px 15px;
         cursor: pointer;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             width: 100%;
             display: block;
             text-align: center;
         }
-        &.active{
+        &.active {
             background-color: $color_orange_soft;
         }
         &:hover {
@@ -85,6 +83,11 @@ body {
             padding-left: 30px;
             cursor: initial;
             min-width: 350px;
+            @include breakpoint(small) {
+                min-width: 290px;
+                margin: 0 auto;
+                text-align: center;
+            }
             &:hover {
                 background-color: #fff;
             }
@@ -102,6 +105,9 @@ body {
         text-transform: uppercase;
         background-color: $color_orange_dark;
         font-size: 28px;
+        @include breakpoint(small) {
+            text-align: center;
+        }
     }
     &_container_folder {
         width: 350px;
@@ -110,7 +116,11 @@ body {
         height: 82px;
         position: relative;
         display: inline-block;
-        .cms_label{
+        @include breakpoint(small) {
+            width: 290px;
+            margin: 30px auto 0 auto;
+        }
+        .cms_label {
             font-size: 16px;
             position: absolute;
             top: 15px;
@@ -131,7 +141,7 @@ body {
     }
     &_icon_connect {
         display: inline-block;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             display: none;
         }
         &.extended_border {
@@ -141,8 +151,60 @@ body {
     &_download_css {
         margin-left: 100px;
         cursor: pointer;
-        &:hover {
-            opacity: 0.6;
+        a {
+            position: relative;
+            .new_file {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                height: 35px;
+                width: 35px;
+                background-image: url('../img/update_file.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite;
+                transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+                @keyframes shake {
+                    10%,
+                    90% {
+                        transform: translate3d(0, -1px, 0);
+                    }
+                    20%,
+                    80% {
+                        transform: translate3d(0, 2px, 0);
+                    }
+                    30%,
+                    50%,
+                    70% {
+                        transform: translate3d(0, -4px, 0);
+                    }
+                    40%,
+                    60% {
+                        transform: translate3d(0, 4px, 0);
+                    }
+                }
+                &.aleImage{
+                    background-image: url('../img/update_ale.png');
+                    height: 90px;
+                    width: 90px;
+                    right: -30px;
+                }
+            }
+        }
+        img {
+            width: 70%;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        @include breakpoint(small) {
+            margin: 0 auto;
+            display: block !important;
+            margin-top: 15px;
+            text-align: center;
         }
     }
 }
@@ -153,11 +215,23 @@ a:focus {
     color: inherit !important;
 }
 
+.show_update {
+    position: relative;
+}
+
 .hokkaido {
     position: absolute;
     bottom: 0;
     right: -300px;
     z-index: 9999;
+}
+
+.updateAle {
+    position: absolute;
+    top: -150px;
+    right: 0px;
+    z-index: 9999;
+    width: 100%;
 }
 
 .buttonCss {

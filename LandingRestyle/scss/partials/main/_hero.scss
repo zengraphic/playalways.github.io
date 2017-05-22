@@ -13,6 +13,7 @@
                     right: 0;
                     z-index: 15;
                     top: 0;
+                    // non in assoluto
                     &.no_absolute {
                         position: static;
                     }
@@ -21,6 +22,7 @@
                         top: 22%;
                         right: -5%
                     }
+                    // immagine grande a destra
                     &.full_image {
                         width: 33%;
                         max-width: 400px;
@@ -35,6 +37,13 @@
                             left: 0;
                             width: 100%;
                             margin: 0 auto !important;
+                        }
+                    }
+                    // allarga l'immagine nel mobile
+                    &.full_mobile {
+                        width: 100%;
+                        @include breakpoint(small) {
+                            width: 100%;
                         }
                     }
                     img {
@@ -203,7 +212,7 @@
                         background-size: contain;
                         background-position: right center;
                     }
-                    @include breakpoint(tiny) {
+                    @include breakpoint(super-tiny) {
                         background-position: center center;
                     }
                 }

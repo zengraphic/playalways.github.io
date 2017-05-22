@@ -66,4 +66,14 @@ jQuery(document).ready(function($) {
         });
     });
 
+    // TRIGGER SPALLA 
+    $('body').on("click", ".open_shoulder_button", function() {        
+        console.log('ricarica');
+        $.magnificPopup.open({
+            items: {
+                src: $('#refill_block')
+            }
+        });
+    });
+
 });
