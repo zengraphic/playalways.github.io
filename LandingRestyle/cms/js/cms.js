@@ -7,9 +7,22 @@ jQuery(document).ready(function($) {
     var divContainer = '<div class="landing__subContainer"/>'
     var mainContainer = '.landing__mainContainer';
     var copyStep = 0;
+    var update = 0;
     // ============================== //
     // ============ HEADER ========== //
     // ============================== //
+
+    $(".show_update").hover(
+        function() {
+            $(this).addClass("hover_active");
+            $('.new_file').addClass('aleImage');
+        },
+        function() {
+            $(this).removeClass("hover_active");
+            $('.new_file').removeClass('aleImage');            
+        }
+    );
+
     $('.clip_btn').click(function() {
         var position = $(this).parents('.html_row');
         if (copyStep == 0) {
@@ -103,7 +116,7 @@ jQuery(document).ready(function($) {
         if (!$(this).hasClass('active')) {
             $('.generateHtml').removeClass('active');
             $(this).addClass('active');
-           $('.html_row').slideUp();            
+            $('.html_row').slideUp();
             $(this).parents('.cms_container_table').find('.html_row').slideDown();
             path1 = $('.firstPath').val();
             path2 = $('.secondPath').val();

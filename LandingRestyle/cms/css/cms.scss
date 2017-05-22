@@ -151,6 +151,49 @@ body {
     &_download_css {
         margin-left: 100px;
         cursor: pointer;
+        a {
+            position: relative;
+            .new_file {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                height: 35px;
+                width: 35px;
+                background-image: url('../img/update_file.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite;
+                transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+                @keyframes shake {
+                    10%,
+                    90% {
+                        transform: translate3d(0, -1px, 0);
+                    }
+                    20%,
+                    80% {
+                        transform: translate3d(0, 2px, 0);
+                    }
+                    30%,
+                    50%,
+                    70% {
+                        transform: translate3d(0, -4px, 0);
+                    }
+                    40%,
+                    60% {
+                        transform: translate3d(0, 4px, 0);
+                    }
+                }
+                &.aleImage{
+                    background-image: url('../img/update_ale.png');
+                    height: 90px;
+                    width: 90px;
+                    right: -30px;
+                }
+            }
+        }
         img {
             width: 70%;
             &:hover {
@@ -172,11 +215,23 @@ a:focus {
     color: inherit !important;
 }
 
+.show_update {
+    position: relative;
+}
+
 .hokkaido {
     position: absolute;
     bottom: 0;
     right: -300px;
     z-index: 9999;
+}
+
+.updateAle {
+    position: absolute;
+    top: -150px;
+    right: 0px;
+    z-index: 9999;
+    width: 100%;
 }
 
 .buttonCss {
