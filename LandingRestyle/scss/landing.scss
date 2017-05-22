@@ -19,6 +19,28 @@ body {
     display: initial;
 }
 
+.float_left {
+    float: left;
+    &.float_m_none {
+        @include breakpoint(small) {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.float_right {
+    float: right;
+    &.float_m_none {
+        @include breakpoint(small) {
+            float: none;
+            width: 100%;
+            text-align: center;            
+        }
+    }
+}
+
 .landing {
     position: relative;
     .container.container_device_magnum {
@@ -67,6 +89,12 @@ body {
             margin-bottom: 0px !important;
         }
     }
+    .margin_left_m_0 {
+        @include breakpoint(small) {
+            margin-left: 0px !important;
+        }
+    }
+
     .text_centered {
         text-align: center;
     }
@@ -176,6 +204,11 @@ body {
             width: 100%;
         }
     }
+    .box_width_m_50 {
+        @include breakpoint(small) {
+            width: 50%;
+        }
+    }    
     .box_width_40 {
         width: 40%;
         @include breakpoint(small) {
@@ -200,7 +233,7 @@ body {
     .ricarica_online {
         .padding_bottom_150 {
             padding-bottom: 150px;
-            @include breakpoint(small){
+            @include breakpoint(small) {
                 padding-bottom: 30px;
             }
         }
@@ -237,7 +270,7 @@ body {
         max-width: 280px;
         cursor: pointer;
         @include border-radius(4px);
-        @include breakpoint(small){
+        @include breakpoint(small) {
             max-width: 200px;
         }
         &:hover {
@@ -254,9 +287,9 @@ body {
         @include breakpoint(small) {
             padding: 0 15px !important;
         }
-        &.no_padding_container{
+        &.no_padding_container {
             padding: 0 !important;
-            @include breakpoint(small){
+            @include breakpoint(small) {
                 padding: 0 !important;
             }
         }
@@ -277,6 +310,21 @@ body {
             font-family: $font_family_bold;
             margin-bottom: 40px;
             @include border-radius(4px);
+            &.ghost_button {
+                background-color: $color_white;
+                color: $color_orange !important;
+                text-align: center;
+                text-transform: uppercase;
+                @include breakpoint(small) {
+                    position: static;
+                    padding: 5px;
+                    font-size: 0.8rem;
+                }
+                &:hover {
+                    background-color: $color_orange_light;
+                    color: $color_white !important;
+                }
+            }
             &:hover {
                 background-color: $color_orange_light;
             }

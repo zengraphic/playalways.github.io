@@ -2352,6 +2352,14 @@ select:-webkit-autofill {
     .landing .landing__hero--title .logo_sponsor {
       width: 30%;
       display: inline; }
+    .landing .landing__hero--title .vw_font_120 {
+      font-size: 10vw; }
+      @media (min-width: 1024px) {
+        .landing .landing__hero--title .vw_font_120 {
+          font-size: 8.5rem; } }
+      @media (max-width: 600px) {
+        .landing .landing__hero--title .vw_font_120 {
+          font-size: 3.57143rem; } }
     .landing .landing__hero--title .vw_font_90 {
       font-size: 8.7vw; }
       @media (min-width: 1024px) {
@@ -2729,6 +2737,9 @@ select:-webkit-autofill {
         width: 85%; } }
     .landing .landing--offer_details--box_offer.device {
       padding-left: 15px; }
+      .landing .landing--offer_details--box_offer.device.full_width_device img {
+        width: 100%;
+        height: auto; }
       .landing .landing--offer_details--box_offer.device img {
         width: 90%;
         height: auto; }
@@ -2745,6 +2756,8 @@ select:-webkit-autofill {
       vertical-align: middle;
       font-size: 0;
       text-align: center; }
+      .landing .landing--offer_details--box_offer--single.extended_height {
+        height: auto; }
       @media (max-width: 768px) {
         .landing .landing--offer_details--box_offer--single {
           display: inline-block !important;
@@ -4101,6 +4114,22 @@ body {
 .landing.base img {
   display: initial; }
 
+.float_left {
+  float: left; }
+  @media (max-width: 768px) {
+    .float_left.float_m_none {
+      float: none;
+      width: 100%;
+      text-align: center; } }
+
+.float_right {
+  float: right; }
+  @media (max-width: 768px) {
+    .float_right.float_m_none {
+      float: none;
+      width: 100%;
+      text-align: center; } }
+
 .landing {
   position: relative; }
   @media (max-width: 768px) {
@@ -4134,6 +4163,9 @@ body {
   @media (max-width: 768px) {
     .landing .margin_bottom_m_0 {
       margin-bottom: 0px !important; } }
+  @media (max-width: 768px) {
+    .landing .margin_left_m_0 {
+      margin-left: 0px !important; } }
   .landing .text_centered {
     text-align: center; }
   .landing .text_color_blue_99 {
@@ -4215,6 +4247,9 @@ body {
     @media (max-width: 768px) {
       .landing .box_width_50 {
         width: 100%; } }
+  @media (max-width: 768px) {
+    .landing .box_width_m_50 {
+      width: 50%; } }
   .landing .box_width_40 {
     width: 40%; }
     @media (max-width: 768px) {
@@ -4307,6 +4342,19 @@ body {
       border-radius: 4px;
       background-clip: padding-box;
       /* stops bg color from leaking outside the border: */ }
+      .landing a.button--standard.ghost_button {
+        background-color: #FFF;
+        color: #F48135 !important;
+        text-align: center;
+        text-transform: uppercase; }
+        @media (max-width: 768px) {
+          .landing a.button--standard.ghost_button {
+            position: static;
+            padding: 5px;
+            font-size: 0.8rem; } }
+        .landing a.button--standard.ghost_button:hover {
+          background-color: #F69A5D;
+          color: #FFF !important; }
       .landing a.button--standard:hover {
         background-color: #F69A5D; }
       @media (max-width: 768px) {
