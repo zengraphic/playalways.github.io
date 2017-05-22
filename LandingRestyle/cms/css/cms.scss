@@ -151,14 +151,17 @@ body {
     &_download_css {
         margin-left: 100px;
         cursor: pointer;
+        img {
+            width: 70%;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
         @include breakpoint(small) {
             margin: 0 auto;
             display: block !important;
             margin-top: 15px;
             text-align: center;
-        }
-        &:hover {
-            opacity: 0.6;
         }
     }
 }
