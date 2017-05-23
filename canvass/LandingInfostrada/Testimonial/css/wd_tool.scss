@@ -3,6 +3,7 @@ $color_white: #fff;
 $color_grey: #eee;
 $color_text: #000;
 $color_infostrada: #153080;
+$color_wind:#f48135;
 $color_light_grey: #d6d6d6;
 $color_border: #d9dfec;
 $weight-light: 'Trade Gothic Light';
@@ -18,7 +19,7 @@ $weight-bold-cond: 'Trade Gothic Bold Condensed';
     /* stops bg color from leaking outside the border: */
 }
 
-$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px), 'custom-check':(max-width: 860px));
+$breakpoints: ( 'super-tiny': ( max-width: 480px), 'tiny': ( max-width: 400px), 'small_650': ( max-width: 700px), 'mobile_land': ( max-width: 736px), 'small': ( max-width: 768px), 'medium': ( max-width: 910px), 'large': ( max-width: 1025px), 'largest': ( max-width: 1440px), 'min-largest':( min-width: 1439px), 'extra-large':( min-width: 1999px), 'min-desktop':( max-width: 1024px), 'custom-check':(max-width: 860px));
 @mixin breakpoint($name) {
     @if map-has-key($breakpoints, $name) {
         @media #{inspect(map-get($breakpoints, $name))} {
@@ -154,7 +155,7 @@ body {
             .title {
                 font-family: $weight-bold-cond;
                 color: $color_infostrada;
-                font-size: 85px;
+                font-size: 82px;
                 text-transform: uppercase;
                 @include breakpoint(medium) {
                     font-size: 75px;
@@ -275,7 +276,7 @@ body {
                     width: 25%;
                     text-align: center;
                     font-size: 13px;
-                    font-family: "Trade Gothic Condensed" ;
+                    font-family: "Trade Gothic Condensed";
                     .time {
                         font-weight: bold;
                         font-size: 25px;
@@ -347,19 +348,43 @@ body {
         padding: 15px 30px;
         width: auto;
         margin: 10px 18px;
-        background-color: $color_infostrada;
+        background-color: $color_wind;
         @include border-radius(6px);
         text-align: center;
         display: none;
         cursor: pointer;
-        @include breakpoint(super-tiny) {
+        @include breakpoint(mobile_land) {
             display: block;
         }
         a {
-            font-family: $weight-normal;
+            font-family: $weight-bold;
             color: $color_white;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__buttonChiamaGratis {
+        padding: 15px 30px;
+        width: auto;
+        margin: 10px 18px;
+        background-color: $color_infostrada; 
+        @include border-radius(6px);
+        text-align: center;
+        display: none;
+        cursor: pointer;
+        @include breakpoint(mobile_land) {
+            display: block;
+        }
+        a {
+            font-family: $weight-bold;
+            color: $color_white;
+            font-weight: bold;
+            font-size: 16px;
             text-transform: uppercase;
             text-decoration: none;
         }
@@ -403,6 +428,7 @@ body {
             .listItem {
                 position: relative;
                 width: 33.33%;
+                height: 84px;
                 text-transform: uppercase;
                 text-align: center;
                 float: left;
@@ -414,6 +440,7 @@ body {
                     float: none;
                     padding: 20px;
                     font-size: 16px;
+                    height: auto;
                 }
                 &::after {
                     content: "";
@@ -448,7 +475,7 @@ body {
         &--description {
             width: 100%;
             margin: 0 auto;
-            padding: 32px;
+            padding: 32px 32px 0 32px;
             line-height: 16px;
             font-size: 1.1em;
             line-height: 1.3;
@@ -469,7 +496,7 @@ body {
             }
         }
         &--informa {
-            padding: 0 32px;
+            padding: 32px;
             position: relative;
             .popup {
                 position: relative;

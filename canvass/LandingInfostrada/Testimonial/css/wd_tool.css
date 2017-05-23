@@ -121,7 +121,7 @@ body {
     .landing_infostrada__hero .left_block .title {
       font-family: "Trade Gothic Bold Condensed";
       color: #153080;
-      font-size: 85px;
+      font-size: 82px;
       text-transform: uppercase; }
       @media (max-width: 910px) {
         .landing_infostrada__hero .left_block .title {
@@ -297,6 +297,30 @@ body {
   padding: 15px 30px;
   width: auto;
   margin: 10px 18px;
+  background-color: #f48135;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  text-align: center;
+  display: none;
+  cursor: pointer; }
+  @media (max-width: 736px) {
+    .landing_infostrada__buttonAnchor {
+      display: block; } }
+  .landing_infostrada__buttonAnchor a {
+    font-family: "Trade Gothic Bold";
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none; }
+  .landing_infostrada__buttonAnchor:hover {
+    opacity: 0.8; }
+.landing_infostrada__buttonChiamaGratis {
+  padding: 15px 30px;
+  width: auto;
+  margin: 10px 18px;
   background-color: #153080;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -305,17 +329,17 @@ body {
   text-align: center;
   display: none;
   cursor: pointer; }
-  @media (max-width: 480px) {
-    .landing_infostrada__buttonAnchor {
+  @media (max-width: 736px) {
+    .landing_infostrada__buttonChiamaGratis {
       display: block; } }
-  .landing_infostrada__buttonAnchor a {
-    font-family: "Trade Gothic";
+  .landing_infostrada__buttonChiamaGratis a {
+    font-family: "Trade Gothic Bold";
     color: #fff;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
     text-decoration: none; }
-  .landing_infostrada__buttonAnchor:hover {
+  .landing_infostrada__buttonChiamaGratis:hover {
     opacity: 0.8; }
 .landing_infostrada__checkCopertura {
   position: absolute;
@@ -348,6 +372,7 @@ body {
   .landing_infostrada__content--treeParagraph .listItem {
     position: relative;
     width: 33.33%;
+    height: 84px;
     text-transform: uppercase;
     text-align: center;
     float: left;
@@ -359,7 +384,8 @@ body {
         width: 100%;
         float: none;
         padding: 20px;
-        font-size: 16px; } }
+        font-size: 16px;
+        height: auto; } }
     .landing_infostrada__content--treeParagraph .listItem::after {
       content: "";
       display: block;
@@ -387,7 +413,7 @@ body {
 .landing_infostrada__content--description {
   width: 100%;
   margin: 0 auto;
-  padding: 32px;
+  padding: 32px 32px 0 32px;
   line-height: 16px;
   font-size: 1.1em;
   line-height: 1.3;
@@ -406,7 +432,7 @@ body {
     .landing_infostrada__content--singleParagraph {
       font-size: 15px; } }
 .landing_infostrada__content--informa {
-  padding: 0 32px;
+  padding: 32px;
   position: relative; }
   .landing_infostrada__content--informa .popup {
     position: relative;
@@ -1011,7 +1037,7 @@ body {
   height: auto; }
 
 .landing-popup .scrollable {
-  width: auto;
+  width: auto !important;
   height: auto;
   max-height: 85vh;
   margin: 1em 1em 1em 0;
