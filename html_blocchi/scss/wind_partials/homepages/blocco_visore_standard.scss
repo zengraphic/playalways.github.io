@@ -261,8 +261,8 @@ hr.example_divider {
             transform-origin: none;
           }
           .fullBand.specialVersion.invertedDisplay #{&} {
-            transform: skew(20deg);
-            transform-origin: 100% 100%;
+            transform: skew(-20deg);
+            transform-origin: 100% 0;
           }
           .specialVersion #{&} {
             transform: none;
@@ -316,7 +316,7 @@ hr.example_divider {
         width: 100%;
         display: block;
         margin: 0 auto;
-        padding: 30px;
+        padding: 0;
       }
       @include breakpoint(tiny) {
         height: 260px;
@@ -362,7 +362,7 @@ hr.example_divider {
           }
         }
         .specialVersion.transparent #{&} {
-          padding: 15px;
+          padding: 0;
           left: 0;
           right: 50%;
           @include breakpoint(small) {
@@ -376,6 +376,14 @@ hr.example_divider {
             left: 0;
           }
         }
+        .fullImage #{&} {
+          left: 0;
+          right: 0;
+          @include breakpoint(small) {
+            padding: 0;
+            height: 320px;
+          }
+        }
       }
       .testimonial {
         position: absolute;
@@ -387,7 +395,7 @@ hr.example_divider {
         max-height: 100%;
         z-index: 15;
         @include breakpoint(small) {
-          bottom: 15px;
+          bottom: 0;
           left: -9999px;
           right: -9999px;
           width: auto;
@@ -411,7 +419,7 @@ hr.example_divider {
             @include breakpoint(small) {
               max-width: none;
               width: auto;
-              bottom: 30px;
+              //bottom: 30px;
               height: calc(100% - 50px);
               transform: translateX(-25%);
               left: -9999px;
@@ -500,6 +508,18 @@ hr.example_divider {
               right: -9999px;
             }
           }
+          .fullImage #{&} {
+            right: auto;
+            max-width: 200%;
+            @include breakpoint(small) {
+              left: 0;
+              max-width: none;
+            }
+          }
+          .fullImage.invertedDisplay #{&} {
+            left: auto;
+            right: 0;
+          }
         }
       }
     }
@@ -555,7 +575,7 @@ hr.example_divider {
         }
         .withForm.invertedDisplay #{&} {
           @include breakpoint(small) {
-            transform: translateY(100%);
+            transform: translateY(calc(100% + 45px));
           }
         }
       }
@@ -582,10 +602,10 @@ hr.example_divider {
             top: auto;
             right: 0;
             left: 0;
-            transform: translateY(calc(-100% + 30px));
+            transform: translateY(calc(-100% + 45px));
             width: 100%;
             height: auto;
-            padding: 20px 0;
+            padding: 45px 15px 15px;
           }
         }
         .withForm.invertedDisplay #{&} {
@@ -594,9 +614,8 @@ hr.example_divider {
           @include breakpoint(small) {
             //top: -320px;
             left: 0;
-            transform: translateY(calc(-100% + 20px));
+            transform: translateY(calc(-100% + 45px));
             width: 100%;
-            padding-top: 50px;
           }
         }
         .specialVersion.mobile #{&} {
@@ -658,8 +677,9 @@ hr.example_divider {
       @include breakpoint(small) {
         top: 0;
         width: 100%;
-        padding: 15px;
+        padding: 50px 15px 15px;
         display: block;
+
       }
       &:empty {
         display: none;
@@ -714,6 +734,9 @@ hr.example_divider {
       .transparent #{&} {
         background-color: $color_orange;
       }
+      .mobile.transparent #{&} {
+        background-color: $color_robin;
+      }
       .invertedDisplay #{&} {
         left: calc(100% + 35px);
         @include transform(translateX(-100%));
@@ -729,6 +752,9 @@ hr.example_divider {
         @include breakpoint(small) {
           padding: 8px 35px 8px 8px;
         }
+      }
+      .mobile.fullBand #{&} {
+        background-color: $color_robin;
       }
       .withForm #{&} {
         left: calc(100% + 35px);
@@ -777,6 +803,9 @@ hr.example_divider {
         }
         .transparent #{&} {
           border-color: #d5501b #d5501b transparent transparent;
+        }
+        .mobile.transparent #{&} {
+          border-color: #007d99 #007d99 transparent transparent;
         }
         .invertedDisplay #{&} {
           right: 0;
@@ -844,10 +873,16 @@ hr.example_divider {
         .transparent #{&} {
           background-color: $color_orange;
         }
+        .mobile.transparent #{&} {
+          background-color: $color_robin;
+        }
         .invertedDisplay #{&} {
           left: 0;
           @include transform(skew(20deg));
           transform-origin: 0 100%;
+        }
+        .mobile.fullBand #{&} {
+          background-color: $color_robin;
         }
         .withForm #{&} {
           left: 0;
@@ -873,7 +908,7 @@ hr.example_divider {
         @include breakpoint(small) {
           right: 15px;
           width: auto;
-          bottom: 0;
+          bottom: -45px;
           margin: 0 auto;
           text-align: center;
           .standard_block__sticker {
@@ -895,7 +930,7 @@ hr.example_divider {
             right: 15px;
             left: auto;
             @include breakpoint(small) {
-              bottom: 5px;
+              //bottom: 5px;
               left: 15px;
             }
           }
@@ -908,7 +943,12 @@ hr.example_divider {
           }
           .specialVersion #{&} {
             @include breakpoint(small) {
-              bottom: -45px;
+              //bottom: -45px;
+            }
+          }
+          .fullImage #{&} {
+            @include breakpoint(small) {
+              //bottom: 23px;
             }
           }
         }
@@ -976,7 +1016,7 @@ hr.example_divider {
         }
       }
       .mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .robin #{&} {
         color: $color_mobile;
@@ -994,7 +1034,7 @@ hr.example_divider {
         color: $color_white;
       }
       .fullBand.transparent.mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .fullBand.transparent.robin #{&} {
         color: $color_mobile;
@@ -1012,7 +1052,7 @@ hr.example_divider {
         color: $color_white;
       }
       .specialVersion.transparent.mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .specialVersion.transparent.robin #{&} {
         color: $color_mobile;
@@ -1025,6 +1065,36 @@ hr.example_divider {
       }
       .specialVersion.transparent.device #{&} {
         color: $color_home_life;
+      }
+      .fullImage.transparent.light.mobile #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_wind;
+        }
+      }
+      .fullImage.transparent.light.robin #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_robin;
+        }
+      }
+      .fullImage.transparent.light.fisso #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_infostrada;
+        }
+      }
+      .fullImage.transparent.light.business #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_business;
+        }
+      }
+      .fullImage.transparent.light.device #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_home_life;
+        }
       }
     }
   }
@@ -1040,7 +1110,7 @@ hr.example_divider {
     }
     @at-root {
       .mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .robin #{&} {
         color: $color_mobile;
@@ -1070,7 +1140,7 @@ hr.example_divider {
         color: $color_white;
       }
       .fullBand.transparent.mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .fullBand.transparent.robin #{&} {
         color: $color_mobile;
@@ -1085,7 +1155,7 @@ hr.example_divider {
         color: $color_home_life;
       }
       .specialVersion.transparent.mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .specialVersion.transparent.robin #{&} {
         color: $color_mobile;
@@ -1098,6 +1168,36 @@ hr.example_divider {
       }
       .specialVersion.transparent.device #{&} {
         color: $color_home_life;
+      }
+      .fullImage.transparent.light.mobile #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_wind;
+        }
+      }
+      .fullImage.transparent.light.robin #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_robin;
+        }
+      }
+      .fullImage.transparent.light.fisso #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_infostrada;
+        }
+      }
+      .fullImage.transparent.light.business #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_business;
+        }
+      }
+      .fullImage.transparent.light.device #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_home_life;
+        }
       }
     }
     &:empty {
@@ -1124,6 +1224,12 @@ hr.example_divider {
       }
       .specialVersion.transparent #{&} {
         color: $color_text;
+      }
+      .fullImage.light #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_text;
+        }
       }
     }
     @include breakpoint(medium) {
@@ -1166,15 +1272,42 @@ hr.example_divider {
         .fullBand#{&} {
           border-color: transparent;
         }
+        .mobile.fullBand#{&} {
+          border-color: $color_white;
+          background-color: transparent;
+          color: $color_white;
+        }
+        .mobile.specialVersion#{&} {
+          border-color: $color_white;
+          background-color: transparent;
+          color: $color_white;
+        }
       }
     }
     &--or {
+      &:hover {
+        @include opacity(.7);
+      }
       @at-root {
         .mobile.fullBand#{&} {
-          border-color: #fff;
+          border-color: transparent;
+          background-color: $color_white;
+          color: $color_wind;
+        }
+        .mobile.fullBand.transparent#{&} {
+          border-color: transparent;
+          background-color: $color_wind;
+          color: $color_white;
         }
         .mobile.specialVersion#{&} {
-          border-color: #fff;
+          border-color: transparent;
+          background-color: $color_white;
+          color: $color_wind;
+        }
+        .mobile.fullImage#{&} {
+          border-color: transparent;
+          background-color: $color_wind;
+          color: $color_white;
         }
       }
     }
@@ -1242,6 +1375,12 @@ hr.example_divider {
     .specialVersion.transparent #{&} {
       color: $color_wind;
     }
+    .fullImage #{&} {
+      color: $color_text;
+    }
+    .fullImage.light #{&} {
+      color: $color_wind;
+    }
   }
   &__container {
     display: inline-block;
@@ -1301,7 +1440,7 @@ hr.example_divider {
     line-height: 1em;
     @at-root {
       .mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .robin #{&} {
         color: $color_mobile;
@@ -1322,7 +1461,7 @@ hr.example_divider {
         color: $color_white;
       }
       .fullBand.transparent.mobile #{&} {
-        color: $color_mobile;
+        color: $color_wind;
       }
       .fullBand.transparent.robin #{&} {
         color: $color_mobile;
@@ -1350,6 +1489,36 @@ hr.example_divider {
       }
       .specialVersion.transparent.device #{&} {
         color: $color_home_life;
+      }
+      .fullImage.transparent.light.mobile #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_wind;
+        }
+      }
+      .fullImage.transparent.light.robin #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_robin;
+        }
+      }
+      .fullImage.transparent.light.fisso #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_infostrada;
+        }
+      }
+      .fullImage.transparent.light.business #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_business;
+        }
+      }
+      .fullImage.transparent.light.device #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_home_life;
+        }
       }
     }
     &.with_currency {
@@ -1387,6 +1556,12 @@ hr.example_divider {
       }
       .fullBand.transparent #{&} {
         color: $color_text;
+      }
+      .fullImage.light #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_text;
+        }
       }
     }
     &:empty {
