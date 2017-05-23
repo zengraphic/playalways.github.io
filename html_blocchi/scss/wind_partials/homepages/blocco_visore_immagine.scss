@@ -6,11 +6,13 @@
     width: 100%;
     max-width: 1024px;
     height: 250px;
+    max-height: 250px;
     margin: 0 auto;
     vertical-align: middle;
     hyphens: initial;
     @include breakpoint(small) {
       height: 550px;
+      max-height: none;
     }
     @at-root {
       .invertedDisplay #{&} {
@@ -61,6 +63,9 @@
       @at-root {
         .mobile #{&} {
           background-color: $color_wind;
+        }
+        .robin #{&} {
+          background-color: $color_robin;
         }
         .fisso #{&} {
           background-color: $color_infostrada;
@@ -137,6 +142,9 @@
           .mobile #{&} {
             background-color: $color_wind;
           }
+          .robin #{&} {
+            background-color: $color_robin;
+          }
           .fisso #{&} {
             background-color: $color_infostrada;
           }
@@ -195,6 +203,7 @@
           }
         }
       }
+
       img {
         display: inline-block;
         height: 100%;
@@ -207,6 +216,11 @@
           height: auto;
         }
         @at-root {
+          .transparent #{&} {
+            @include breakpoint(small) {
+              max-width: 100%;
+            }
+          }
           .specialVersion #{&} {
             position: absolute;
             top: 0;
@@ -232,22 +246,18 @@
             }
           }
           .specialVersion.transparent #{&} {
-            left: auto;
-            right: 0;
-            @include breakpoint(small) {
-              left: -9999px;
-              right: -9999px;
-            }
+            left: 0;
+            right: auto;
+            max-width: none;
           }
           .invertedDisplay.specialVersion.transparent #{&} {
-            right: auto;
-            left: 0;
-            @include breakpoint(small) {
-              left: -9999px;
-              right: -9999px;
-            }
+            right: 0;
+            left: auto;
           }
         }
+      }
+      @include breakpoint(small) {
+        height: 50%;
       }
       @at-root {
         .invertedDisplay #{&} {
@@ -260,7 +270,7 @@
             position: relative;
           }
         }
-        .invertedDisplay.specialVersion #{&} {}
+        
       }
     }
   }
@@ -293,11 +303,44 @@
       .transparent.mobile #{&} {
         color: $color_wind;
       }
+      .transparent.robin #{&} {
+        color: $color_robin;
+      }
       .transparent.fisso #{&} {
         color: $color_infostrada;
       }
       .transparent.device #{&} {
         color: $color_home_life;
+      }
+      .specialVersion.transparent.light.mobile #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_wind;
+        }
+      }
+      .specialVersion.transparent.light.robin #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_robin;
+        }
+      }
+      .specialVersion.transparent.light.fisso #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_infostrada;
+        }
+      }
+      .specialVersion.transparent.light.business #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_wind;
+        }
+      }
+      .specialVersion.transparent.light.device #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_home_life;
+        }
       }
     }
   }
@@ -327,6 +370,12 @@
       .transparent #{&} {
         color: inherit;
       }
+      .specialVersion.transparent.light #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_text;
+        }
+      }
     }
   }
   &__recurrency {
@@ -348,11 +397,23 @@
         .transparent #{&} {
           color: inherit;
         }
+        .specialVersion.transparent.light #{&} {
+          color: $color_white;
+          @include breakpoint(small) {
+            color: $color_text;
+          }
+        }
       }
     }
     @at-root {
       .transparent #{&} {
         color: inherit;
+      }
+      .specialVersion.transparent.light #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_text;
+        }
       }
     }
   }
@@ -380,6 +441,12 @@
       .transparent #{&} {
         color: inherit;
       }
+      .transparent.specialVersion.light #{&} {
+        color: $color_white;
+        @include breakpoint(small) {
+          color: $color_text;
+        }
+      }
     }
   }
   .base__bt {
@@ -395,12 +462,28 @@
       opacity: .7;
     }
     @at-root {
-      .invertedDisplay #{&} {
+      .invertedDisplay#{&} {
         margin: 0 0 8px auto;
         @include breakpoint(small) {
           margin: 0 auto 8px;
         }
       }
+      .mobile#{&} {
+        background-color: $color_white;
+        color: $color_wind;
+        border-color: transparent;
+      }
+      .mobile.transparent#{&} {
+        background-color: $color_wind;
+        color: $color_white;
+        border-color: transparent;
+      }
+      .mobile.specialVersion.transparent#{&} {
+        background-color: $color_wind;
+        color: $color_white;
+        border-color: transparent;
+      }
+      
     }
     &:empty {
       display: none;
