@@ -14,15 +14,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/wd_tool.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="js/jquery.countdown.min.js"></script>
     <script src="js/scripts.min.js"></script>
     <script src="js/landing.min.js"></script>
 </head>
 
 <body>
-    <!-- <div style="border: 1px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; max-width: 880px;">
-<base onclick='window.open();'><iframe scrolling="no" src="https://www.infostrada.it/it/fibra/offerte-internet-mi-to" style="border: 0px none; margin-left: -30px; height: 900px; margin-top: -460px; width: 936px;"><
-</iframe>
-</div> -->
     <!-- CONTAINER -->
     <div class="landing_infostrada__containerMain landing">
         <!-- HEADER Logo Infostrada / Wind -->
@@ -32,14 +29,10 @@
         <div class="landing_infostrada__containerHero">
             <div class="landing_infostrada__hero">
                 <div class="left_block">
-                    <div class="title">Absolute ADSL</div>
+                    <div class="title">Absolute Fibra</div>
                     <div class="price">19,95&euro;</div>
                     <div class="counter">
-                        <div class="counter_block_items--data" data-event="2017/10/13">
-                            <div class="items"><span class="time gg">02</span> giorni</div>
-                            <div class="items"><span class="time hh">06</span> ore</div>
-                            <div class="items"><span class="time mm">26</span> minuti</div>
-                            <div class="items"><span class="time sec">17</span> secondi</div>
+                        <div class="counter_block_items--data" ><!-- data-event="2017/10/13" -->
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -48,10 +41,10 @@
                     <div class="image_block">
                         <img class="img_testimonial" src="img/visore/testimonial.png">
                         <div class="sticker_block">
-                            <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-per-oggi.png"></div>
+                            <!-- <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-per-oggi.png"></div> -->
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_adsl-vera.png"></div>
                             <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_solo-online.png"></div>
-                            <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_prezzo-fisso.png"></div>
+                            <!-- <div class="single_sticker"><img class="image_sticker" src="img/bolli/bollo_prezzo-fisso.png"></div> -->
                             <div class="clear "></div>
                         </div>
                     </div>
@@ -60,12 +53,17 @@
             </div>
         </div>
         <!-- /VISORE WIND -->
-        <!-- BUTTON ANCHOR -->
         <div class="landing_infostrada__container">
-            <div class="landing_infostrada__buttonAnchor">
-                <a href="#checkCopertura">Verifica subito la disponibilit&agrave;</a>
+            <!-- BUTTON Only Mobile "CHIAMA GRATIS" -->
+            <div class="landing_infostrada__buttonChiamaGratis">
+                <a href="#" class="call_to_customer" data-msite-url="tel:800992159">Chiama gratis</a>
             </div>
-            <!-- /BUTTON ANCHOR -->
+            <!-- /BUTTON Only Mobile "CHIAMA GRATIS" -->
+            <!-- BUTTON Only Mobile ANCHOR -->
+            <div class="landing_infostrada__buttonAnchor">
+                <a href="#checkCopertura">Verifica la copertura</a>
+            </div>
+            <!-- /BUTTON Only Mobile ANCHOR -->
             <!-- CHECK COMPERTURA iframe -->
             <div id="checkCopertura" class="landing_infostrada__checkCopertura intrinsic-container">
                 <iframe src="https://www.infostrada.it/it/fibra/landing-solo-check-orange" allowfullscreen></iframe>
@@ -77,16 +75,15 @@
                 <div class="landing_infostrada__content">
                     <!-- BLOCCO TESTO: 3 paragraph -->
                     <div class="landing_infostrada__content--treeParagraph">
-                        <div class="listItem"><span class="text_highlight">ADSL vera</span>
-                            <br />fino a 20 mega prova prova prova</div>
-                        <div class="listItem"><span class="text_highlight">Telefonate</span> a 0 cent
-                            <br />al minuto verso tutti</div>
-                        <div class="listItem"><span class="text_highlight">Attivazione<br />e modem</span> gratis</div>
+                        <div class="listItem"><span class="text_highlight">Fibra</span>
+                            <br />fino a 100 mega</div>
+                        <div class="listItem"><span class="text_highlight">Telefonate</span><br/> a 0 cent al minuto</div>
+                        <div class="listItem"><span class="text_highlight">Attivazione gratis<br/> e modem next generation incluso</div>
                         <div class="clear"></div>
                     </div>
                     <!-- /BLOCCO TESTO: 3 paragraph -->
                     <!-- BLOCCO DESCRIPTION -->
-                    <div class="landing_infostrada__content--description">Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. elit libero, a pharetra augue.</div>
+                    <div class="landing_infostrada__content--description">Con la Fibra, navigare in internet è diventato più semplice e veloce. Il segnale, trasmesso attraverso impulsi luminosi, non risente di variazioni climatiche o eventuali disturbi elettrici, garantisce performance elevate e una trasmissione stabile anche a grandi distanze. Con la Fibra le emozioni non hanno mai fine. Scarica e goditi la magia dei tuoi film in 3D e HD e naviga contemporaneamente su tutti i tuoi dispositivi. Archivia le tue foto e i tuoi file musicali nel cloud rivivendo ogni tuo momento preferito quando vuoi e gioca online divertendoti a sfidare i tuoi amici.</div>
                     <!-- /BLOCCO DESCRIPTION -->
                 </div>
                 <!-- /CONTENT -->
@@ -97,9 +94,9 @@
                         <div class="left_block">L'offerta si rinnova ogni 4 settimane.</div>
                         <div class="right_block">
                             <div class="question">Hai bisogno di aiuto?</div>
-                            <div class="link"><a href="javascript:void(0);" class="href call_to_customer" data-msite-url="tel:159">Chiama il 159</a></div>
+                            <div class="link"><a href="#" class="call_to_customer" data-msite-url="tel:800992159">Chiama gratis</a></div>
                         </div>
-                        <div class="clear"></div> 
+                        <div class="clear"></div>
                     </div>
                 </div>
                 <!-- /INFOSTRADA INFORMA -->
@@ -134,14 +131,14 @@
         </div>
         <!-- /popup INFORMA -->
         <!-- popup CHIAMA IL 159 -->
-        <div id="layer-assistenza" class="landing-popup mfp-hide">
+        <!-- <div id="layer-assistenza" class="landing-popup mfp-hide">
             <div class="scrollable">
                 <h2>Chiama il 159</h2>
                 <p>
                     testo testo testo
                 </p>
             </div>
-        </div>
+        </div> -->
         <!-- /popup CHIAMA IL 159 -->
     </div>
     <!-- /CONTAINER -->
@@ -176,22 +173,26 @@
         .intrinsic-container {
             padding-bottom: 490px;
         }
+        #oTable {
+            display: none !important;
+        }
     }
     </style>
     <script>
     jQuery(document).ready(function($) {
-        // COUNTER JS 
-        // var counter = $(".counter_block_items--data"),
-        //     data_event = counter[0].getAttribute("data-event") || "";
-        // counter.countdown(data_event, function(event) {
-        //         $(this).html(event.strftime('<span class="time gg">%D</span> giorni <span class="time hh">%H</span> ore <span class="time mm">%M</span> minuti <span class="time sec">%S</span> secondi'));
-        //     })
-        //     .on('update.countdown', function() {});
-        //     .on('finish.countdown', function() {});
+        /**** COUNTER ****/
+        $('.counter_block_items--data').countdown('2017/05/30', function(event) {
+            var $this = $(this).html(event.strftime(''
 
-        // CALL 159
+                + '<div class="items"><span class="time gg">%d</span> giorni</div>' 
+                + '<div class="items"><span class="time hh">%H</span> ore</div>' 
+                + '<div class="items"><span class="time mm">%M</span> minuti</div>'
+                + '<div class="items"><span class="time sec">%S</span> secondi</div>'
+            ));
+        });
+        /**** CALL GRATIS ****/
         $('.call_to_customer').click(function() {
-            if($(window).width() > 600) {
+            if ($(window).width() > 737) {
                 window.open('https://www.infostrada.it/nuovaAreaClienti/infostrada/pages/clicktocall/ctc.action?idSito=IN002', '_blank');
             } else {
                 console.log('mobile');
