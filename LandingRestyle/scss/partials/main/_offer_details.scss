@@ -25,6 +25,9 @@
                 list-style: none;
                 padding-left: 60px;
                 margin: 30px 0;
+                @include breakpoint(tiny) {
+                    padding-left: 30px;
+                }
                 &.no_list {
                     padding-left: 0;
                     &:before {
@@ -46,6 +49,9 @@
                         top: 5px;
                         font-size: 4em;
                         line-height: 0;
+                        @include breakpoint(tiny) {
+                            left: -30px;
+                        }
                     }
                 }
             }
@@ -232,6 +238,17 @@
             line-height: 45px;
             font-size: 18px;
             padding-left: 15px;
+        }
+    }
+}
+
+// FIX SINGLE PAGES
+.landing {
+    .fix_device_galaxy_tab {
+        .margin_left_50 {
+            @include breakpoint(medium) {
+                margin-left: 20px !important;
+            }
         }
     }
 }
