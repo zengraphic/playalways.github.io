@@ -231,7 +231,8 @@ body {
     margin: 0 auto;
     height: 300px;
     overflow: scroll;
-    padding: 15px; }
+    padding: 15px;
+    font-size: 10px; }
   .cms_container_row .clip_btn {
     margin: 15px 0;
     border-radius: 5px;
@@ -345,6 +346,9 @@ body {
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       perspective: 1000px; }
+      .cms_download_css a .new_file:hover {
+        opacity: 0.5;
+        filter: alpha(opacity=50); }
 @keyframes shake {
   10%,
                     90% {
@@ -359,11 +363,6 @@ body {
   40%,
                     60% {
     transform: translate3d(0, 4px, 0); } }
-      .cms_download_css a .new_file.aleImage {
-        background-image: url("../img/update_ale.png");
-        height: 90px;
-        width: 90px;
-        right: -30px; }
   .cms_download_css img {
     width: 70%; }
     .cms_download_css img:hover {
@@ -374,6 +373,32 @@ body {
       display: block !important;
       margin-top: 15px;
       text-align: center; } }
+
+.update_ale {
+  position: absolute;
+  width: 400px !important;
+  height: auto;
+  left: 0;
+  top: 0; }
+
+.container_message {
+  position: absolute;
+  top: -300px;
+  left: calc(50% - 187px);
+  display: none; }
+
+.message_generated {
+  font-size: 18px;
+  position: absolute;
+  width: 373px !important;
+  height: 70px;
+  bottom: -288px;
+  left: 14px;
+  padding: 15px;
+  -ms-transform: rotate(3.3deg);
+  -webkit-transform: rotate(3.3deg);
+  transform: rotate(3.3deg);
+  text-align: center; }
 
 a:visited,
 a:link,

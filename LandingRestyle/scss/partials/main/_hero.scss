@@ -3,6 +3,91 @@
             &__hero {
                 box-sizing: border-box;
                 position: relative;
+                &.skewed_background {
+                    .box_width_40 {
+                        @include breakpoint(medium) {
+                            width: 100%;
+                        }
+                    }
+                }
+                .container_hero_landing {
+                    position: relative;
+                    z-index: 100;
+                    .padding_left_30 {
+                        padding-left: 30px !important;
+                        @include breakpoint(tiny) {
+                            padding-left: 15px !important;
+                        }
+                    }
+                    @include breakpoint(medium) {
+                        width: 100%;
+                        position: static;
+                    }
+                    &.hero_skewed {
+                        position: absolute;
+                        top: 0;
+                        right: -20%;
+                        z-index: 5;
+                        @include breakpoint(medium) {
+                            width: 100%;
+                            position: static;
+                            right: 0;
+                        }
+                    }
+                    .skewed_image_hero {
+                        @include breakpoint(medium) {
+                            text-align: center;
+                        }
+                        img {
+                            height: 100%;
+                            width: auto;
+                            @include breakpoint(medium) {
+                                max-width: 100%;
+                                width: auto;
+                                height: auto;
+                            }
+                            @include breakpoint(tiny) {
+                                max-width: 200%;
+                                right: 50%;
+                                position: relative;
+                            }
+                        }
+                    }
+                    &.fixed_height_560 {
+                        height: 560px;
+                        @include breakpoint(medium) {
+                            height: auto;
+                        }
+                    }
+                }
+                .skewed_colored_bg {
+                    position: absolute;
+                    top: 0;
+                    right: 50%;
+                    left: 0;
+                    height: 100%;
+                    z-index: 10;
+                    @include breakpoint(medium) {
+                        display: none;
+                    }
+                    .shape {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        &.colored_bg_white {
+                            background-color: $color-white;
+                        }
+                        &--one {
+                            left: 0;
+                            width: 75%;
+                        }
+                        &--two {
+                            right: 0;
+                            width: 50%;
+                            transform: skew(-20deg);
+                        }
+                    }
+                }
                 .container {
                     @include breakpoint(small) {
                         overflow: hidden;
@@ -56,6 +141,15 @@
                     .logo_sponsor {
                         width: 30%;
                         display: inline;
+                    }
+                    .vw_font_120 {
+                        font-size: 10vw;
+                        @include breakpoint(larger-1024) {
+                            font-size: 8.5rem;
+                        }
+                        @include breakpoint(tiny) {
+                            font-size: 3.57143rem;
+                        }
                     }
                     .vw_font_90 {
                         font-size: 8.7vw;
@@ -279,6 +373,52 @@
                     color: $color_white;
                     z-index: 16;
                     font-family: $font_family_regular;
+                    &.mobile_medium_ribbon {
+                        display: none;
+                        @include breakpoint(medium) {
+                            display: block;
+                            padding-top: 20px;
+                            top: 0;
+                            height: auto;
+                        }
+                        @include breakpoint(tiny) {
+                            padding-right: 15px;
+                            padding-top: 10px;
+                            width: 100px;
+                            height: 70px;
+                        }
+                        .recurrency {
+                            font-size: 1.129rem;
+                            display: inline-block;
+                            @include breakpoint(tiny) {
+                                text-align: right;
+                                display: block;
+                            }
+                        }
+                        .price {
+                            font-size: 5.429rem;
+                            display: inline-block;
+                            @include breakpoint(tiny) {
+                                font-size: 2.429rem;
+                                text-align: right;
+                                display: block;
+                            }
+                        }
+                    }
+                    &.desktop_ribbon {
+                        background-color: transparent;
+                        position: static;
+                        height: auto;
+                        width: auto;
+                        text-align: left;
+                        @include breakpoint(medium) {
+                            display: none;
+                        }
+                        &:before {
+                            content: "";
+                            display: none;
+                        }
+                    }
                     &.low_ribbon {
                         top: 60%;
                         @include breakpoint(small) {

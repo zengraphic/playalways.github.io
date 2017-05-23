@@ -12,14 +12,33 @@ jQuery(document).ready(function($) {
     // ============ HEADER ========== //
     // ============================== //
 
-    $(".show_update").hover(
-        function() {
+    function callMsgError(item, message) {
+        if (update == 0) {
+            update = 1;
+            $('body').append('<div class="container_message"><img src="cms/img/ale_msg.png" class="update_ale" /><div class="message_generated">prova prova prova</div></div>');
+            $('.container_message').fadeIn();
+            $('.message_generated').text(message);
+            $(".container_message").animate({
+                top: "+=30%",
+            }, 1000, function() {
+                $(".container_message").animate({
+                    top: "+=0%",
+                }, 2000, function() {
+                    $('.container_message').fadeOut("slow", function() {
+                        $('.container_message').remove();
+                    });
+                    update = 0;
+                });
+            });
+        }
+    }
+
+    $(".new_file").click(function(e) {
+            e.preventDefault();
+            var message = $(this).data('message');
+            var item = $(this);
             $(this).addClass("hover_active");
-            $('.new_file').addClass('aleImage');
-        },
-        function() {
-            $(this).removeClass("hover_active");
-            $('.new_file').removeClass('aleImage');            
+            callMsgError(item, message);
         }
     );
 
