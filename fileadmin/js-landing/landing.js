@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
     });
 
     //POPUP YOUTUBE
-    r$('.popup-youtube').magnificPopup({
+    $('.popup-youtube').magnificPopup({
         type: 'iframe',
           removalDelay: 160,
           preloader: false,
