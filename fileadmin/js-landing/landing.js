@@ -86,11 +86,6 @@ jQuery(document).ready(function($) {
     });
 
     //POPUP YOUTUBE
-    $('.popup-youtube').magnificPopup({
-        type: 'iframe',
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false
-    });
+
 
 });
