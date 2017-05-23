@@ -47,6 +47,16 @@ jQuery(document).ready(function($) {
         });
     });
 
+    // TRIGGER SPALLA 
+    $('.open_shoulder_button').click(function() {    
+        console.log('ricarica');
+        r$.magnificPopup.open({
+            items: {
+                src: $('#refill_block')
+            }
+        });        
+    });    
+
     $('body').on("click", ".landing__hero__tabs--button", function() {
         var tabNumber = $(this).data('tabn');
         var element = $(this);
@@ -64,15 +74,6 @@ jQuery(document).ready(function($) {
         });
     });
 
-    // TRIGGER SPALLA 
-    $('body').on("click", ".open_shoulder_button", function() {
-        console.log('ricarica');
-        $.magnificPopup.open({
-            items: {
-                src: $('#refill_block')
-            }
-        });
-    });
 
     // TRIGGER ACCORDION NEGOZIO
     $('body').on("click", ".button_open_accordion_store", function() {
@@ -82,6 +83,14 @@ jQuery(document).ready(function($) {
         }, 1000, function() {
             // codice
         });
+    });
+
+    //POPUP YOUTUBE
+    r$('.popup-youtube').magnificPopup({
+        type: 'iframe',
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false
     });
 
 });
