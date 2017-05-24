@@ -4,53 +4,53 @@
 // ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
 // ============================ BLOCCO FASCIA GRIGIA CON TITOLO ==================
 .download_module__block {
-    width: 100%;
+    width:100%;
     @include breakpoint(super-tiny) {
-        font-size: 0.875em;
+        font-size:0.875em;
     }
     .button--slim {
-        font-size: 0.875em;
+        font-size:0.875em;
     }
     &__container {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        display: table;
-        padding: 30px 15px;
+        width:100%;
+        max-width:1024px;
+        margin:0 auto;
+        display:table;
+        padding:30px 15px;
         background-color: $color_grey_light;
     }
     @at-root #{&}__details {
-        color: $color_text;
-        display: table-cell;
-        vertical-align: middle;
-        padding: 0 30px;
+        color:$color_text;
+        display:table-cell;
+        vertical-align:middle;
+        padding:0 15px;
         width:60%;
     }
     &__title {
-        font-size: 1.500em;
-        font-family: $weight-bold;
-        display: table-cell;
-        vertical-align: middle;
-        margin-right: 30px;
+        font-size:1.500em;
+        font-family:$weight-bold;
+        display:table-cell;
+        vertical-align:middle;
+        margin-right:30px;
         width:20%;
     }
     &__buttonContainer {
-        display: table-cell;
-        vertical-align: middle;
+        display:table-cell;
+        vertical-align:middle;
         width:20%;
     }
     &.reversed_colors {
         .download_module__block {
             &__container {
-                background-color: $color_white;
+                background-color:$color_white;
             }
         }
     }
     &.noTitle {
         .download_module__block__title {
-            display: none;
+            display:none;
         }
-        .download_module__block__details{
+        .download_module__block__details {
             width:80%;
         }
     }
