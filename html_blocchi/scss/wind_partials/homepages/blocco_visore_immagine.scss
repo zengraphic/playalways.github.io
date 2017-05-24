@@ -11,7 +11,7 @@
     vertical-align: middle;
     hyphens: initial;
     @include breakpoint(small) {
-      height: 550px;
+      height: 500px;
       max-height: none;
     }
     @at-root {
@@ -20,7 +20,7 @@
       }
       .specialVersion #{&} {
         @include breakpoint(small) {
-          height: auto;
+          //height: auto;
           min-height: auto;
           display: block;
         }
@@ -50,10 +50,16 @@
       .specialVersion #{&} {
         right: 41%;
         left: 0;
+        @include breakpoint(small) {
+          right: 0;
+        }
       }
       .specialVersion.invertedDisplay #{&} {
         left: 41%;
         right: 0;
+        @include breakpoint(small) {
+          left: 0;
+        }
       }
     }
     .shape {
@@ -81,7 +87,7 @@
         }
         .specialVersion #{&} {
           @include breakpoint(small) {
-            background-color: transparent;
+            //background-color: transparent;
           }
         }
       }
@@ -138,24 +144,25 @@
         width: 100%;
         padding: 10px;
         text-align: center;
+        height: auto;
         @at-root {
           .mobile #{&} {
-            background-color: $color_wind;
+            //background-color: $color_wind;
           }
           .robin #{&} {
-            background-color: $color_robin;
+            //background-color: $color_robin;
           }
           .fisso #{&} {
-            background-color: $color_infostrada;
+            //background-color: $color_infostrada;
           }
           .business #{&} {
-            background-color: $color_business;
+            //background-color: $color_business;
           }
           .device #{&} {
-            background-color: $color_home_life;
+            //background-color: $color_home_life;
           }
           .transparent #{&} {
-            background-color: transparent;
+            //background-color: transparent;
           }
         }
       }
@@ -166,6 +173,7 @@
           text-align: right;
           @include breakpoint(small) {
             left: 0;
+
             text-align: center;
           }
         }
@@ -176,6 +184,7 @@
             display: block;
             width: 100%;
             left: 0;
+            top: 0;
           }
         }
         .specialVersion.invertedDisplay #{&} {
@@ -193,6 +202,7 @@
       width: auto;
       text-align: right;
       z-index: 10;
+      overflow: hidden;
       .image_block--container {
         position: relative;
         width: 100%;
@@ -203,26 +213,30 @@
           }
         }
       }
-
       img {
-        display: inline-block;
+        display: block;
         height: 100%;
-        width: auto;
-        margin: 0;
+        margin: 0 0 0 auto;
+        position: absolute;
+        left: -9999px;
+        right: 0;
         @include breakpoint(small) {
-          min-width: 100%;
-          min-height: 50%;
+          //min-width: 100%;
+          min-height: 100%;
           width: auto;
-          height: auto;
         }
         @at-root {
+          .invertedDisplay #{&} {
+            margin: 0 auto 0 0;
+            left: 0;
+            right: -9999px;
+          }
           .transparent #{&} {
             @include breakpoint(small) {
-              max-width: 100%;
+              //max-width: 100%;
             }
           }
           .specialVersion #{&} {
-            position: absolute;
             top: 0;
             bottom: 0;
             right: auto;
@@ -270,7 +284,6 @@
             position: relative;
           }
         }
-        
       }
     }
   }
@@ -483,7 +496,6 @@
         color: $color_white;
         border-color: transparent;
       }
-      
     }
     &:empty {
       display: none;

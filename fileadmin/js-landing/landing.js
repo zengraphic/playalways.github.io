@@ -1,3 +1,6 @@
+
+jQuery('body').addClass('landing');
+
 jQuery(document).ready(function($) {
     function loadSlickMagnum() {
         $('.slider__device').slick({
@@ -48,14 +51,14 @@ jQuery(document).ready(function($) {
     });
 
     // TRIGGER SPALLA 
-    $('.open_shoulder_button').click(function() {    
-        console.log('ricarica');
-        r$.magnificPopup.open({
-            items: {
-                src: $('#refill_block')
-            }
-        });        
-    });    
+    // $('.open_shoulder_button').click(function() {    
+    //     console.log('ricarica');
+    //     r$.magnificPopup.open({
+    //         items: {
+    //             src: $('#refill_block')
+    //         }
+    //     });        
+    // });    
 
     $('body').on("click", ".landing__hero__tabs--button", function() {
         var tabNumber = $(this).data('tabn');

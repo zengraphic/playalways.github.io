@@ -1,6 +1,6 @@
 jQuery.fn.vectorMap(
     'addMap',
-    'america_merc', {
+    'americhe_merc', {
         "width": 899.99999,
         "height": 1200,
         "paths": {

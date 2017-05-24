@@ -1,5 +1,8 @@
 @charset "UTF-8";
-@import "uikit";
+//@import "uikit";
+
+@import "partials/utilities/vars";
+@import "partials/utilities/mixins";
 @import "partials/main/header";
 @import "partials/main/footer";
 @import "partials/main/hero";
@@ -16,6 +19,10 @@ body {
 
 h1,h2,h3,h4,h5,h6{
     line-height: 1em;
+}
+
+.base__icon{
+    background-image: url(/fileadmin/img-landing/sprite/icons_sprite.svg);
 }
 
 .landing .base img,
@@ -40,7 +47,7 @@ h1,h2,h3,h4,h5,h6{
         @include breakpoint(small) {
             float: none;
             width: 100%;
-            text-align: center;
+            text-align: center; 
         }
     }
 }
@@ -58,7 +65,7 @@ h1,h2,h3,h4,h5,h6{
     .mobile_centered {
         @include breakpoint(small) {
             text-align: center !important;
-            margin: 0 auto !important;
+            margin: 0 auto;
         }
     }
     .link_click {
@@ -268,13 +275,14 @@ h1,h2,h3,h4,h5,h6{
         }
     }
     a {
-        display: block;
+        display: initial;
         text-decoration: none;
     }
     .btn_white {
         border: 1px solid $color_white;
         text-transform: uppercase;
         padding: 10px 0;
+        display: block;
         background-color: transparent;
         text-align: center;
         color: $color_white !important;
@@ -328,6 +336,7 @@ h1,h2,h3,h4,h5,h6{
                 background-color: $color_white;
                 color: $color_orange !important;
                 text-align: center;
+                display: block;
                 text-transform: uppercase;
                 @include breakpoint(small) {
                     position: static;
