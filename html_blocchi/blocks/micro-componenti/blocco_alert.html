@@ -29,8 +29,26 @@
         </div>
         <div id="ak-alert-popup" class="mfp-hide">
             <div class="base_popup">
-                <h4 class="popup-title">popup</h4>
-                <div class="popup-content">Testo errore</div>
+                <h4 class="popup-title">Seleziona il numero su cui vuoi attivare l'offerta</h4>
+                <div class="popup-content">
+                    <form action="blocco_alert_submit" method="get" accept-charset="utf-8" class="base__form">
+                        <div class="r">
+                            <div class="base__radio radio radio-inline">
+                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline">
+                                <label for="inlineRadio1">3271938204</label>
+                            </div>
+                        </div>
+                        <div class="r">
+                            <div class="base__radio radio radio-inline">
+                                <input type="radio" id="inlineRadio2" value="option1" name="radioInline">
+                                <label for="inlineRadio2">3271938204</label>
+                            </div>
+                        </div>
+                        <div class="r">
+                            <button type="submit" class="btn base__bt base__bt--sm base__bt--or right">Procedi</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -43,7 +61,6 @@
             },
             showCloseBtn: true,
             closeBtnInside: true,
-            closeMarkup: '<button title="%title%" type="button" onclick="r$.magnificPopup.close()" class="right base__bt btn base__bt--sm base__bt--or">Chiudi</button>',
             mainClass: 'mfp-fade mfp-alert',
             midClick: true
         });
