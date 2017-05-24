@@ -1,3 +1,4 @@
+jQuery(document).ready(function($) {
     function loadSlickMagnum() {
         $('.slider__device').slick({
             dots: true,
@@ -33,57 +34,58 @@
             ]
         });
     }
+    if ($('.slider__device')) {
+        loadSlickMagnum();
+    }
+    $('body').addClass('landing');
 
-    jQuery(document).ready(function($) {
-
-        if ($('.slider__device')) {
-            loadSlickMagnum();
-        }
-        $('body').addClass('landing');
-
-        $('.button_shoulder_login').click(function() {
-            r$.magnificPopup.open({
-                items: {
-                    src: $('#login')
-                }
-            });
+    $('.button_shoulder_login').click(function() {
+        r$.magnificPopup.open({
+            items: {
+                src: $('#login')
+            }
         });
-
-        $('body').on("click", ".landing__hero__tabs--button", function() {
-            var tabNumber = $(this).data('tabn');
-            var element = $(this);
-            $('.landing__hero__tabs--button').removeClass('active');
-            $(this).addClass('active');
-            console.log(tabNumber + " " + this);
-            $('.hero_tab').each(function() {
-                var thisTab = $(this).data('tabtarget');
-                console.log(thisTab);
-                if (thisTab == tabNumber) {
-                    $(this).addClass('active');
-                } else {
-                    $(this).removeClass('active');
-                }
-            });
-        });
-
-        // TRIGGER SPALLA 
-        $('body').on("click", ".open_shoulder_button", function() {
-            console.log('ricarica');
-            $.magnificPopup.open({
-                items: {
-                    src: $('#refill_block')
-                }
-            });
-        });
-
-        // TRIGGER ACCORDION NEGOZIO
-        $('body').on("click", ".button_open_accordion_store", function() {
-             $('.blocco_store_locator').parents('.showcase_accordions_block__single').find('.accordionBox').prop('checked', false);
-            $('html, body').animate({
-                scrollTop: $(".blocco_store_locator").offset().top
-            }, 1000, function() {
-               // codice
-            });
-        });
-
     });
+
+    // TRIGGER SPALLA 
+    $('.open_shoulder_button').click(function() {    
+        console.log('ricarica');
+        r$.magnificPopup.open({
+            items: {
+                src: $('#refill_block')
+            }
+        });        
+    });    
+
+    $('body').on("click", ".landing__hero__tabs--button", function() {
+        var tabNumber = $(this).data('tabn');
+        var element = $(this);
+        $('.landing__hero__tabs--button').removeClass('active');
+        $(this).addClass('active');
+        console.log(tabNumber + " " + this);
+        $('.hero_tab').each(function() {
+            var thisTab = $(this).data('tabtarget');
+            console.log(thisTab);
+            if (thisTab == tabNumber) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    });
+
+
+    // TRIGGER ACCORDION NEGOZIO
+    $('body').on("click", ".button_open_accordion_store", function() {
+        $('.blocco_store_locator').parents('.showcase_accordions_block__single').find('.accordionBox').prop('checked', false);
+        $('html, body').animate({
+            scrollTop: $(".blocco_store_locator").offset().top
+        }, 1000, function() {
+            // codice
+        });
+    });
+
+    //POPUP YOUTUBE
+
+
+});
