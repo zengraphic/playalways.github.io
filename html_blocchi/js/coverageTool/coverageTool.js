@@ -4,7 +4,7 @@
 
     r$(window)
         .resize(function() {
-            clearTimeout($HEADER.resizeTimer);
+            clearTimeout($COVERAGETOOL.resizeTimer);
             $COVERAGETOOL.resizeTimer = setTimeout(function() {
                 $COVERAGETOOL
                     .updateMapSize();
@@ -122,8 +122,11 @@
                 },
                 onRegionSelected: function(e, code, isSelected) {
                     if (code && isSelected) {
-                        r$('#country--List').selectpicker('val', code);
-                        COVERAGETOOL.toggleCountry(code);
+                        $COVERAGETOOL
+                            .countriesList
+                            .selectpicker('val', code);
+                        $COVERAGETOOL
+                            .toggleCountry(code);
                     }
                 },
             },
@@ -156,6 +159,7 @@
             $TOOL.tabs = $TOOL.tabsContainer.find('.strip_menu_tab__item');
             $TOOL.countriesContainer = $TOOL.toolContainer.find('.block_coverage_tool__filter__container');
             $TOOL.countriesList = $TOOL.countriesContainer.find('#country--list');
+            $TOOL.countries = $TOOL.countriesList.find('option');
             $TOOL.accordionOperators = $TOOL.countriesContainer.find('input.accordionBox');
             $TOOL.showcaseContainer = $TOOL.toolContainer.find('.block_coverage_tool__offers__container');
 
@@ -229,12 +233,17 @@
         initData: function() {
             var $TOOL = this;
 
-            $TOOL
-                .extractData("continents")
-                .extractData("countries");
-            $TOOL
-                .toolContainer
-                .trigger("data-ready");
+            r$
+                .when(
+                    $TOOL
+                    .extractData("continents"),
+                    $TOOL
+                    .extractData("countries"))
+                .then(
+                    $TOOL
+                    .toolContainer
+                    .trigger("data-ready"));
+
 
             return $TOOL;
         },
@@ -267,6 +276,7 @@
         },
         interpolateContinents: function(continentsDataObject) {
             var $TOOL = this;
+            var deferred = r$.Deferred();
             r$
                 .each(continentsDataObject.continents, function(i, continent) {
                     $TOOL.continentsData[continent.name.toLowerCase()] = {
@@ -275,12 +285,13 @@
                         continentName: continent.name.toLowerCase(),
                         displayName: continent.name,
                         mapCode: continent.name.toLowerCase(),
-                        mapName: continent.name.toLowerCase() + "_" + $COVERAGETOOL.projection,
+                        mapName: continent.name.toLowerCase() + "_" + $TOOL.projection,
                         countries: []
                     };
-                    console.log($TOOL.continentsData[continent.name.toLowerCase()]);
 
                 });
+            deferred
+                .resolve();
             return $TOOL;
         },
         interpolateCountries: function(countriesDataObject) {
@@ -288,14 +299,15 @@
             r$
                 .each(countriesDataObject.countries, function(i, country) {
                     if (country.continent_id !== null) {
-                        r$.each($TOOL.continentsData, function(i, continent) {
-                            if (continent.id == country.continent_id) {
-                                var countryNameFormatted = country.name.toLowerCase().replace(/\s/g, "_").replace(/&amp;/g, "and").replace(/[\.,]+/g, "");
-                                $TOOL.continentsData[continent.name.toLowerCase().replace(" ", "_")]
-                                    .countries
-                                    .push([countryNameFormatted, country.name]);
-                            }
-                        });
+                        r$
+                            .each($TOOL.continentsData, function(i, continent) {
+                                if (continent.id == country.continent_id) {
+                                    var countryNameFormatted = country.name.toLowerCase().replace(/\s/g, "_").replace(/&amp;/g, "and").replace(/[\.,]+/g, "");
+                                    $TOOL.continentsData[continent.name.toLowerCase().replace(" ", "_")]
+                                        .countries
+                                        .push([countryNameFormatted, country.name]);
+                                }
+                            });
                     }
                 });
             return $TOOL;
@@ -330,54 +342,76 @@
 
 
         updateMapSize: function() {
-            var mapsToResize = this.map.maps;
-            $.each(mapsToResize, function() {
-                this.updateSize();
-            });
+            var $TOOL = this;
+            var mapsToResize = $TOOL.map.maps;
+            r$
+                .each(mapsToResize, function() {
+                    this
+                        .updateSize();
+                });
+            return $TOOL;
         },
         slickToMap: function(code, clickedTab) {
+            var $TOOL = this;
             var regionCode, regionName;
             regionCode = clickedTab.find('a').data().code;
-            regionName = continentsData[regionCode].mapName;
-            !this.isWorldMap && this.map.goBack();
+            regionName = $TOOL.continentsData[regionCode].mapName;
+            !$TOOL.isWorldMap && $TOOL.map.goBack();
 
             setTimeout(function() {
-                COVERAGETOOL.map.drillDown(regionName, regionCode);
+                $TOOL.map.drillDown(regionName, regionCode);
             }, 400);
-            this.isWorldMap = false;
-            this.buildSelect(regionCode);
-            clickedTab.addClass('slick-current');
+            $TOOL.isWorldMap = false;
+            $TOOL
+                .buildSelect(regionCode);
+            clickedTab
+                .addClass('slick-current');
+            return $TOOL;
         },
         mapToSlick: function(code) {
-            var targetSlickLink = this.continentsNav.find('a[data-code="' + code + '"]');
+            var $TOOL = this;
+            var targetSlickLink = $TOOL.tabs.find('a').filter(function() {
+                return r$(this).data().code == code;
+            });
+
             var targetSlickSlide = targetSlickLink.closest('.slick-slide');
-            var currentSlick = r$(this.continentsNav.selector + ' .slick-current');
+            var currentSlick = r$($TOOL.continentsNav.selector + ' .slick-current');
             if (!currentSlick) {
-                targetSlickSlide.addClass('slick-current');
-                this.buildSelect(code);
+                targetSlickSlide
+                    .addClass('slick-current');
+                $TOOL
+                    .buildSelect(code);
             } else if (currentSlick != targetSlickSlide) {
-                r$('.slick-current').removeClass('slick-current');
-                targetSlickSlide.addClass('slick-current');
-                this.buildSelect(code);
+                r$('.slick-current')
+                    .removeClass('slick-current');
+                targetSlickSlide
+                    .addClass('slick-current');
+                $TOOL
+                    .buildSelect(code);
             }
-            this.isWorldMap = false;
+            $TOOL.isWorldMap = false;
+            return $TOOL;
         },
         buildSelect: function(regionCode) {
-            var select = r$('#country--List');
-            var selectOption = select.find('option');
-            selectOption.remove();
-            var optionDefault = '<option value="none">--Seleziona--</option>';
-            select.append(optionDefault);
-            $.each(continentsData[regionCode].countries, function(index, val) {
-                var value = val[0];
-                var text = val[1];
-                var option = '<option value="' + value + '">' + text + '</option>';
-                select.append(option);
+            var $TOOL = this;
+            $TOOL
+                .countries
+                .remove();
+
+            var countriesHtml = '<option value="none">--Seleziona--</option>';
+            r$.each($TOOL.continentsData[regionCode].countries, function(index, val) {
+                countriesHtml += '<option value="' + val[0] + '">' + val[1] + '</option>';
+
             });
-            select.selectpicker('refresh');
+            $TOOL
+                .countriesList
+                .append(countriesHtml)
+                .selectpicker('refresh');
+            return $TOOL;
         },
         toggleCountry: function(clickedCountry) {
-            var tool, chosenCountry, blocksToHide;
+            var $TOOL = this;
+            var chosenCountry, blocksToHide;
             tool = this;
             chosenCountry = r$("#" + clickedCountry);
             r$('.activeCountry').slideUp("slow", function() {
@@ -394,6 +428,7 @@
                     r$(this).addClass('activeCountry');
                 });
             }
+            return $TOOL;
         },
         clearActiveCountry: function() {
             r$('.activeCountry').slideUp("slow", function() {
