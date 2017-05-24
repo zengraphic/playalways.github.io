@@ -17,6 +17,8 @@
     }
 }
 
+
+
 @mixin position_classes {
     $pos-list: null;
     @each $direction in $directions {
@@ -50,6 +52,13 @@
             }
         }
     }
+}
+
+
+@mixin min-max-mq {
+  @media (min-width: #{$preMedium}) and (max-width: #{$preNormal}) {
+    @content;
+  }
 }
 
 @mixin breakpoint($name) {

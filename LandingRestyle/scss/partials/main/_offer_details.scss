@@ -152,6 +152,11 @@
             }
         }
         &_hero_small {
+            &__text {
+               @include min-max-mq {
+                    font-size: 1.7rem !important;
+                }
+            }
             &__mainContainer {
                 max-width: 1024px;
                 margin: 0 auto;
@@ -251,7 +256,7 @@
             }
             @include breakpoint(tiny) {
                 margin-left: 0px !important;
-            }            
+            }
         }
     }
 }
