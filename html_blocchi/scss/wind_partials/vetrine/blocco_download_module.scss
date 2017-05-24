@@ -9,8 +9,6 @@
         font-size: 0.875em;
     }
     .button--slim {
-        display: table-cell;
-        vertical-align: middle;
         font-size: 0.875em;
     }
     &__container {
@@ -26,6 +24,7 @@
         display: table-cell;
         vertical-align: middle;
         padding: 0 30px;
+        width:60%;
     }
     &__title {
         font-size: 1.500em;
@@ -33,6 +32,12 @@
         display: table-cell;
         vertical-align: middle;
         margin-right: 30px;
+        width:20%;
+    }
+    &__buttonContainer {
+        display: table-cell;
+        vertical-align: middle;
+        width:20%;
     }
     &.reversed_colors {
         .download_module__block {
@@ -44,6 +49,9 @@
     &.noTitle {
         .download_module__block__title {
             display: none;
+        }
+        .download_module__block__details{
+            width:80%;
         }
     }
 }
