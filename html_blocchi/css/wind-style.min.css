@@ -1759,7 +1759,7 @@ hr.example_divider {
         .splittedTitle .standard_block__title {
           font-size: 24px; } }
     .mobile .standard_block__title {
-      color: #F48135; }
+      color: #009BBE; }
     .robin .standard_block__title {
       color: #009BBE; }
     .fisso .standard_block__title {
@@ -1768,6 +1768,8 @@ hr.example_divider {
       color: #F48135; }
     .device .standard_block__title {
       color: #212121; }
+    .mobile.transparent .standard_block__title {
+      color: #F48135; }
     .fullBand .standard_block__title {
       color: #FFF; }
     .fullBand.transparent.mobile .standard_block__title {
@@ -1828,7 +1830,7 @@ hr.example_divider {
       .standard_block__subtitle {
         font-size: 28px; } }
     .mobile .standard_block__subtitle {
-      color: #F48135; }
+      color: #009BBE; }
     .robin .standard_block__subtitle {
       color: #009BBE; }
     .fisso .standard_block__subtitle {
@@ -1837,6 +1839,8 @@ hr.example_divider {
       color: #F48135; }
     .device .standard_block__subtitle {
       color: #212121; }
+    .mobile.transparent .standard_block__subtitle {
+      color: #F48135; }
     .fullBand .standard_block__subtitle {
       color: #FFF; }
     .splittedTitle .standard_block__subtitle {
@@ -2079,7 +2083,7 @@ hr.example_divider {
     letter-spacing: -.25rem;
     line-height: 1em; }
     .mobile .recurrent_priceRow__price {
-      color: #F48135; }
+      color: #009BBE; }
     .robin .recurrent_priceRow__price {
       color: #009BBE; }
     .fisso .recurrent_priceRow__price {
@@ -2090,6 +2094,8 @@ hr.example_divider {
       color: #212121; }
     .fullBand .recurrent_priceRow__price {
       color: #FFF; }
+    .mobile.transparent .recurrent_priceRow__price {
+      color: #F48135; }
     .specialVersion .recurrent_priceRow__price {
       color: #FFF; }
     .fullBand.transparent.mobile .recurrent_priceRow__price {
@@ -2116,7 +2122,7 @@ hr.example_divider {
       color: #FFF; }
       @media (max-width: 767px) {
         .fullImage.transparent.light.mobile .recurrent_priceRow__price {
-          color: #F48135; } }
+          color: #009BBE; } }
     .fullImage.transparent.light.robin .recurrent_priceRow__price {
       color: #FFF; }
       @media (max-width: 767px) {
@@ -4499,13 +4505,12 @@ hr.example_divider {
   hyphens: initial; }
   @media (max-width: 767px) {
     .image_block_display__mainContainer {
-      height: 550px;
+      height: 500px;
       max-height: none; } }
   .invertedDisplay .image_block_display__mainContainer {
     text-align: right; }
   @media (max-width: 767px) {
     .specialVersion .image_block_display__mainContainer {
-      height: auto;
       min-height: auto;
       display: block; } }
 
@@ -4530,9 +4535,15 @@ hr.example_divider {
   .specialVersion .image_block_display__coloredBg {
     right: 41%;
     left: 0; }
+    @media (max-width: 767px) {
+      .specialVersion .image_block_display__coloredBg {
+        right: 0; } }
   .specialVersion.invertedDisplay .image_block_display__coloredBg {
     left: 41%;
     right: 0; }
+    @media (max-width: 767px) {
+      .specialVersion.invertedDisplay .image_block_display__coloredBg {
+        left: 0; } }
   .image_block_display__coloredBg .shape {
     position: absolute;
     width: 50%;
@@ -4549,9 +4560,6 @@ hr.example_divider {
       background-color: #212121; }
     .transparent .image_block_display__coloredBg .shape {
       background-color: transparent; }
-    @media (max-width: 767px) {
-      .specialVersion .image_block_display__coloredBg .shape {
-        background-color: transparent; } }
     .image_block_display__coloredBg .shape--one {
       left: 0;
       width: 50%; }
@@ -4596,19 +4604,8 @@ hr.example_divider {
         left: 0;
         width: 100%;
         padding: 10px;
-        text-align: center; }
-        .mobile .image_block_display__half_block.text_block {
-          background-color: #F48135; }
-        .robin .image_block_display__half_block.text_block {
-          background-color: #009BBE; }
-        .fisso .image_block_display__half_block.text_block {
-          background-color: #183989; }
-        .business .image_block_display__half_block.text_block {
-          background-color: #292F36; }
-        .device .image_block_display__half_block.text_block {
-          background-color: #212121; }
-        .transparent .image_block_display__half_block.text_block {
-          background-color: transparent; } }
+        text-align: center;
+        height: auto; } }
     .invertedDisplay .image_block_display__half_block.text_block {
       position: relative;
       left: 25%;
@@ -4624,7 +4621,8 @@ hr.example_divider {
         .specialVersion .image_block_display__half_block.text_block {
           display: block;
           width: 100%;
-          left: 0; } }
+          left: 0;
+          top: 0; } }
     .specialVersion.invertedDisplay .image_block_display__half_block.text_block {
       left: 20%; }
       @media (max-width: 767px) {
@@ -4636,7 +4634,8 @@ hr.example_divider {
     left: 0;
     width: auto;
     text-align: right;
-    z-index: 10; }
+    z-index: 10;
+    overflow: hidden; }
     .image_block_display__half_block.image_block .image_block--container {
       position: relative;
       width: 100%;
@@ -4644,21 +4643,21 @@ hr.example_divider {
       .specialVersion .image_block_display__half_block.image_block .image_block--container {
         overflow: hidden; }
     .image_block_display__half_block.image_block img {
-      display: inline-block;
+      display: block;
       height: 100%;
-      width: auto;
-      margin: 0; }
+      margin: 0 0 0 auto;
+      position: absolute;
+      left: -9999px;
+      right: 0; }
       @media (max-width: 767px) {
         .image_block_display__half_block.image_block img {
-          min-width: 100%;
-          min-height: 50%;
-          width: auto;
-          height: auto; } }
-      @media (max-width: 767px) {
-        .transparent .image_block_display__half_block.image_block img {
-          max-width: 100%; } }
+          min-height: 100%;
+          width: auto; } }
+      .invertedDisplay .image_block_display__half_block.image_block img {
+        margin: 0 auto 0 0;
+        left: 0;
+        right: -9999px; }
       .specialVersion .image_block_display__half_block.image_block img {
-        position: absolute;
         top: 0;
         bottom: 0;
         right: auto;
