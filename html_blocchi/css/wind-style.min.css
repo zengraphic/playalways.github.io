@@ -1979,6 +1979,8 @@ hr.example_divider {
       color: #FFF; }
     .standard_block .base__bt:empty {
       display: none; }
+  .standard_block .bundle_orange__container {
+    display: block; }
 
 .bundle_partner:before {
   display: block;
@@ -8288,6 +8290,8 @@ sw.showcase_bundle_device {
         width: auto;
         height: 75px;
         margin: 20px auto; }
+      .dashboard_watch_block__product .phone_thumbs .slick-list, .dashboard_watch_block__product .phone_thumbs .slick-track {
+        height: 100% !important; }
     .dashboard_watch_block__product .phone_gallery {
       display: inline-block;
       position: relative;
@@ -9627,6 +9631,8 @@ sw.showcase_bundle_device {
       @media (max-width: 767px) {
         .showcase_five_cards__single:nth-child(5n):after {
           display: block; } }
+    .showcase_five_cards__single:last-child:after {
+      display: none; }
     .showcase_five_cards__single:after {
       background-color: #D3D3D2;
       width: 1px;
@@ -10385,36 +10391,42 @@ sw.showcase_bundle_device {
 
 /* ========================================================= */
 .download_module__block {
-  background-color: #E6E9ED;
   width: 100%; }
   @media (max-width: 480px) {
     .download_module__block {
       font-size: 0.875em; } }
   .download_module__block .button--slim {
-    display: table-cell;
-    vertical-align: middle;
     font-size: 0.875em; }
   .download_module__block__container {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     display: table;
-    padding: 15px; }
+    padding: 30px 15px;
+    background-color: #E6E9ED; }
   .download_module__block__details {
     color: #292F36;
     display: table-cell;
     vertical-align: middle;
-    padding: 0 30px; }
+    padding: 0 15px;
+    width: 60%; }
   .download_module__block__title {
     font-size: 1.500em;
     font-family: "Trade Gothic Bold";
     display: table-cell;
     vertical-align: middle;
-    margin-right: 30px; }
-  .download_module__block.reversed_colors {
+    margin-right: 30px;
+    width: 20%; }
+  .download_module__block__buttonContainer {
+    display: table-cell;
+    vertical-align: middle;
+    width: 20%; }
+  .download_module__block.reversed_colors .download_module__block__container {
     background-color: #FFF; }
   .download_module__block.noTitle .download_module__block__title {
     display: none; }
+  .download_module__block.noTitle .download_module__block__details {
+    width: 80%; }
 
 .roadShow_block__container {
   margin-bottom: 20px;
