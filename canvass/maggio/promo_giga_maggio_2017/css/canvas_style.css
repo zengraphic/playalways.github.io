@@ -1108,7 +1108,7 @@ body {
 
 .desktop_only {
   display: block; }
-  @media (max-width: 640px) {
+  @media (max-width: 480px) {
     .desktop_only {
       display: none !important; } }
 
@@ -1118,37 +1118,40 @@ body {
     .for_mobile_only {
       display: block; } }
 
-.landing_cyc_filippine {
+.landing_promogiga {
   max-width: 950px;
   padding-left: 15px;
   padding-right: 15px; }
   @media (max-width: 640px) {
-    .landing_cyc_filippine {
+    .landing_promogiga {
       padding: 0 10px; } }
   @media (max-width: 640px) {
-    .landing_cyc_filippine__hero {
+    .landing_promogiga__hero {
       padding: 3px !important; } }
-  .landing_cyc_filippine__hero img.hero_wide {
+  .landing_promogiga__hero img.hero_wide {
     display: block; }
     @media (max-width: 640px) {
-      .landing_cyc_filippine__hero img.hero_wide {
+      .landing_promogiga__hero img.hero_wide {
         display: none; } }
-  .landing_cyc_filippine__hero img.hero_mobile {
+  .landing_promogiga__hero img.hero_mobile {
     display: none; }
     @media (max-width: 640px) {
-      .landing_cyc_filippine__hero img.hero_mobile {
+      .landing_promogiga__hero img.hero_mobile {
         display: block; } }
-  .landing_cyc_filippine__slogan h1 {
+  .landing_promogiga__slogan h1 {
     letter-spacing: -0.001em; }
-  .landing_cyc_filippine__sub_slogan {
+    @media (max-width: 640px) {
+      .landing_promogiga__slogan h1 {
+        text-align: left; } }
+  .landing_promogiga__sub_slogan {
     position: relative; }
-    .landing_cyc_filippine__sub_slogan h2 {
+    .landing_promogiga__sub_slogan h2 {
       letter-spacing: -0.001em;
       font-size: 24px; }
       @media (max-width: 640px) {
-        .landing_cyc_filippine__sub_slogan h2 {
+        .landing_promogiga__sub_slogan h2 {
           font-size: 16px; } }
-      .landing_cyc_filippine__sub_slogan h2:before {
+      .landing_promogiga__sub_slogan h2:before {
         content: "";
         display: block;
         position: absolute;
@@ -1158,291 +1161,101 @@ body {
         height: 1px;
         margin: 0 auto;
         background-color: #656d78; }
-  .landing_cyc_filippine__boxDetails {
+  .landing_promogiga__boxDetails {
     background-color: #f4f4f4;
     border-radius: 4px;
     border: 1px solid #D3D3d2;
-    padding: 25px;
-    margin-top: 20px; }
-    @media (max-width: 480px) {
-      .landing_cyc_filippine__boxDetails {
-        padding: 20px; } }
-    .landing_cyc_filippine__boxDetails--firstCell {
+    padding: 10px 10px 0 10px;
+    margin-top: 20px;
+    /*@include breakpoint(display_smaller) {
+                padding: 15px;
+            }*/ }
+    .landing_promogiga__boxDetails--firstCell {
       display: block;
       float: left;
-      padding-right: 20px;
-      width: 30%;
+      width: 35%;
       box-sizing: border-box; }
+      @media (max-width: 768px) {
+        .landing_promogiga__boxDetails--firstCell {
+          width: 40%; } }
       @media (max-width: 480px) {
-        .landing_cyc_filippine__boxDetails--firstCell {
+        .landing_promogiga__boxDetails--firstCell {
           float: none;
           width: 100%;
-          text-align: center;
           padding-bottom: 20px;
           padding-right: 0;
           padding-top: 0;
           padding-right: 0; } }
-    .landing_cyc_filippine__boxDetails--secondCell {
+    .landing_promogiga__boxDetails--secondCell {
       display: block;
       float: left;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-left: 1px solid #333;
-      border-right: 1px solid #333;
       width: 50%;
       box-sizing: border-box; }
+      @media (max-width: 768px) {
+        .landing_promogiga__boxDetails--secondCell {
+          width: 60%; } }
       @media (max-width: 480px) {
-        .landing_cyc_filippine__boxDetails--secondCell {
+        .landing_promogiga__boxDetails--secondCell {
           float: none;
           width: 100%;
           border-right: none;
           border-left: none;
-          text-align: center;
           padding-left: 0; } }
-    .landing_cyc_filippine__boxDetails--lastCell {
+    .landing_promogiga__boxDetails--uniqueCell {
       display: block;
       float: left;
-      padding-left: 20px;
-      width: 20%;
+      width: 100%;
       box-sizing: border-box; }
-      .landing_cyc_filippine__boxDetails--lastCell .currency {
-        position: relative;
-        left: 3px; }
-      @media (max-width: 480px) {
-        .landing_cyc_filippine__boxDetails--lastCell {
-          float: none;
-          width: 100%;
-          padding-left: 0;
-          padding-top: 15px !important; } }
-  .landing_cyc_filippine__bringFriends {
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 4px; }
-    .landing_cyc_filippine__bringFriends .imageBlock {
-      width: auto;
-      float: left;
-      box-sizing: border-box; }
-      @media (max-width: 940px) {
-        .landing_cyc_filippine__bringFriends .imageBlock {
-          width: 100%;
-          height: auto;
-          float: none; } }
-      .landing_cyc_filippine__bringFriends .imageBlock .wide {
-        display: block;
-        width: 100%; }
-        @media (max-width: 940px) {
-          .landing_cyc_filippine__bringFriends .imageBlock .wide {
-            display: none; } }
-      .landing_cyc_filippine__bringFriends .imageBlock .mobile {
-        display: none; }
-        @media (max-width: 940px) {
-          .landing_cyc_filippine__bringFriends .imageBlock .mobile {
-            display: block; } }
-    .landing_cyc_filippine__bringFriends .testBlock {
-      float: left;
-      display: block;
-      width: auto;
-      margin-top: 5px; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__bringFriends .testBlock {
-          float: none;
-          width: auto; } }
-      .landing_cyc_filippine__bringFriends .testBlock .secondBlock {
-        box-sizing: border-box;
-        display: block; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__bringFriends .testBlock .secondBlock {
-            width: 100%; } }
-      .landing_cyc_filippine__bringFriends .testBlock .thirdBlock {
-        box-sizing: border-box;
-        display: block;
-        letter-spacing: 0; }
-        .landing_cyc_filippine__bringFriends .testBlock .thirdBlock .mobile {
-          display: none; }
-          @media (max-width: 480px) {
-            .landing_cyc_filippine__bringFriends .testBlock .thirdBlock .mobile {
-              display: block; } }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__bringFriends .testBlock .thirdBlock {
-            width: 100%; } }
-    .landing_cyc_filippine__bringFriends .iconBlock {
-      float: right;
-      display: block;
-      height: 113px;
-      width: 12%;
-      padding-left: 10px;
-      border-left: 1px solid #333; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__bringFriends .iconBlock {
-          float: none;
-          width: auto;
-          border: none;
-          height: auto; } }
-      .landing_cyc_filippine__bringFriends .iconBlock .iconSingle {
-        display: block;
-        margin: 5px 5px 5px 0; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__bringFriends .iconBlock .iconSingle {
-            float: left;
-            display: inline-block;
-            margin: 5px 5px 10px 0; } }
-        .landing_cyc_filippine__bringFriends .iconBlock .iconSingle img {
-          width: 100%;
-          max-width: 101px; }
-          @media (max-width: 640px) {
-            .landing_cyc_filippine__bringFriends .iconBlock .iconSingle img {
-              width: 80%; } }
-  .landing_cyc_filippine__samsungS7 {
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 4px; }
-    .landing_cyc_filippine__samsungS7 .imageBlock {
-      float: left;
-      box-sizing: border-box;
-      padding: 10px 10px 10px 20px;
-      margin-left: 5px;
-      width: 10%; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__samsungS7 .imageBlock {
-          width: 30%;
-          height: auto;
-          margin-left: 0; } }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__samsungS7 .imageBlock img {
-          max-width: 91px; } }
-      .landing_cyc_filippine__samsungS7 .imageBlock .wide {
-        display: block;
-        width: 100%;
-        max-width: 50px; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .imageBlock .wide {
-            display: none; } }
-      .landing_cyc_filippine__samsungS7 .imageBlock .mobile {
-        display: none; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .imageBlock .mobile {
-            display: block;
-            width: 100%; } }
-    .landing_cyc_filippine__samsungS7 .thirdBlockMobile {
-      box-sizing: border-box;
-      display: none;
-      letter-spacing: 0; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__samsungS7 .thirdBlockMobile {
-          display: block;
-          float: left;
-          width: 70%; } }
-      .landing_cyc_filippine__samsungS7 .thirdBlockMobile .iconSingle {
-        float: right;
-        position: relative;
-        top: 13px; }
-        .landing_cyc_filippine__samsungS7 .thirdBlockMobile .iconSingle img {
-          width: 65%;
-          float: right; }
-      .landing_cyc_filippine__samsungS7 .thirdBlockMobile .textBlock {
-        float: left;
-        width: 100%; }
-      .landing_cyc_filippine__samsungS7 .thirdBlockMobile .mobile {
-        display: none; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .thirdBlockMobile .mobile {
-            display: block; } }
-    .landing_cyc_filippine__samsungS7 .testBlock {
-      float: left;
-      display: block;
-      width: 74%;
-      margin-top: 5px; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__samsungS7 .testBlock {
-          /*float: none;*/
-          width: auto; } }
-      .landing_cyc_filippine__samsungS7 .testBlock .secondBlock {
-        box-sizing: border-box;
-        display: block;
-        width: 100%; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .testBlock .secondBlock {
-            width: 100%; } }
-        .landing_cyc_filippine__samsungS7 .testBlock .secondBlock .desktop {
-          display: block; }
-          @media (max-width: 640px) {
-            .landing_cyc_filippine__samsungS7 .testBlock .secondBlock .desktop {
-              display: none; } }
-      .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock {
-        box-sizing: border-box;
-        display: block;
-        letter-spacing: 0; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock {
-            display: none; } }
-        .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock .mobile {
-          display: none; }
-          @media (max-width: 480px) {
-            .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock .mobile {
-              display: block; } }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .testBlock .thirdBlock {
-            width: 100%; } }
-    .landing_cyc_filippine__samsungS7 .iconBlock {
-      float: right;
-      display: block;
-      height: 113px;
-      width: auto;
-      padding-left: 10px;
-      border-left: 1px solid #333;
-      width: 13%;
-      box-sizing: border-box; }
-      @media (max-width: 640px) {
-        .landing_cyc_filippine__samsungS7 .iconBlock {
-          float: none;
-          width: auto;
-          border: none;
-          height: auto; } }
-      .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle {
-        display: block;
-        margin: 20px 5px 20px 0; }
-        @media (max-width: 640px) {
-          .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle {
-            display: none; } }
-        .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle img {
-          width: 100%;
-          max-width: 101px; }
-          @media (max-width: 640px) {
-            .landing_cyc_filippine__samsungS7 .iconBlock .iconSingle img {
-              width: 80%; } }
-  .landing_cyc_filippine__notes {
-    width: 74%;
+      .landing_promogiga__boxDetails--uniqueCell .decimal_list {
+        list-style-type: decimal;
+        margin-left: 25px; }
+        @media (max-width: 480px) {
+          .landing_promogiga__boxDetails--uniqueCell .decimal_list {
+            margin-left: 20px; } }
+        .landing_promogiga__boxDetails--uniqueCell .decimal_list li {
+          padding: 2px 0px; }
+  .landing_promogiga__notes {
+    width: 100%;
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    height: 25px;
+    margin-top: 30px; }
     @media (max-width: 640px) {
-      .landing_cyc_filippine__notes {
+      .landing_promogiga__notes {
         width: 100%;
         text-align: center;
         position: relative;
-        top: -50px; } }
-  .landing_cyc_filippine .call_to_action {
+        top: -30px; } }
+  .landing_promogiga .call_to_action {
     padding-bottom: 25px; }
-  .landing_cyc_filippine .hr_dark {
+  .landing_promogiga .hr_dark {
     height: 1px;
     margin: 20px 0;
     border: 0;
     height: 0;
     border-bottom: 1px solid #333; }
     @media (max-width: 640px) {
-      .landing_cyc_filippine .hr_dark {
+      .landing_promogiga .hr_dark {
         margin: 0; } }
-  .landing_cyc_filippine .wind_ricorda {
-    margin-top: 50px; }
-    .landing_cyc_filippine .wind_ricorda__reminder__container {
+  .landing_promogiga .wind_ricorda {
+    margin-top: 0;
+    width: 100%;
+    position: relative;
+    top: -5px; }
+    @media (max-width: 480px) {
+      .landing_promogiga .wind_ricorda {
+        margin-top: 20px; } }
+    .landing_promogiga .wind_ricorda__reminder__container {
       position: relative;
-      width: 170px;
-      text-align: left; }
+      width: 130px;
+      text-align: left;
+      float: right; }
       @media (max-width: 640px) {
-        .landing_cyc_filippine .wind_ricorda__reminder__container {
+        .landing_promogiga .wind_ricorda__reminder__container {
           margin: 0 auto; } }
-      .landing_cyc_filippine .wind_ricorda__reminder__container::before {
+      .landing_promogiga .wind_ricorda__reminder__container::before {
         display: none; }
-      .landing_cyc_filippine .wind_ricorda__reminder__container a::after {
+      .landing_promogiga .wind_ricorda__reminder__container a::after {
         color: #fff;
         content: "i";
         border-radius: 50%;
@@ -1457,10 +1270,10 @@ body {
         right: 0; }
 
 @media (min-width: 640px) and (max-width: 867px) {
-  .landing_cyc_filippine__bringFriends .imageBlock {
+  .landing_promogiga__bringFriends .imageBlock {
     float: none;
     height: auto; }
-  .landing_cyc_filippine__bringFriends .testBlock {
+  .landing_promogiga__bringFriends .testBlock {
     float: left; } }
 
 .padding_top_5 {
