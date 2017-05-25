@@ -1,6 +1,5 @@
 @charset "UTF-8";
 //@import "uikit";
-
 @import "partials/utilities/vars";
 @import "partials/utilities/mixins";
 @import "partials/main/header";
@@ -17,11 +16,16 @@ body {
     margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1em;
 }
 
-.base__icon{
+.base__icon {
     background-image: url(/fileadmin/img-landing/sprite/icons_sprite.svg);
 }
 
@@ -47,16 +51,33 @@ h1,h2,h3,h4,h5,h6{
         @include breakpoint(small) {
             float: none;
             width: 100%;
-            text-align: center; 
+            text-align: center;
         }
     }
 }
 
 .landing {
     position: relative;
+    .auto_image {
+        width: 100%;
+        height: auto;
+    }
+    img.reduce_image_mobile {
+        max-width: 400px;
+    }
     .container.container_device_magnum {
         @include breakpoint(small) {
             padding: 0;
+        }
+    }
+    .margin_left_auto {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .mobile_left {
+        @include breakpoint(small) {
+            margin-left: 0;
+            margin-right: auto;
         }
     }
     .margin_auto {
@@ -74,6 +95,14 @@ h1,h2,h3,h4,h5,h6{
             @include opacity(0.8);
         }
     }
+    .white_divider {
+        height: 1px;
+        background-color: $color_white;
+    }
+    .robin_divider {
+        height: 1px;
+        background-color: #009bbe;
+    }    
     .overflow_hidden {
         overflow: hidden;
     }
@@ -114,6 +143,11 @@ h1,h2,h3,h4,h5,h6{
     .text_centered {
         text-align: center;
     }
+    .text_left_m {
+        @include breakpoint(small) {
+            text-align: left;
+        }
+    }
     .text_color_blue_99 {
         color: #009bbe !important;
     }
@@ -124,6 +158,9 @@ h1,h2,h3,h4,h5,h6{
         @include breakpoint(medium) {
             color: #ffffff !important;
         }
+    }
+    .text_color_base {
+        color: #292f36 !important;
     }
     .text_color_orange {
         color: #f48135 !important;
@@ -171,7 +208,7 @@ h1,h2,h3,h4,h5,h6{
     }
     .only_desktop {
         @include breakpoint(tiny) {
-            display: none;
+            display: none !important;
         }
     }
     .only_mobile_medium {
@@ -184,9 +221,9 @@ h1,h2,h3,h4,h5,h6{
         }
     }
     .only_mobile {
-        display: none;
+        display: none !important;
         @include breakpoint(tiny) {
-            display: block;
+            display: block !important;
         }
     }
     .mac {
@@ -198,11 +235,17 @@ h1,h2,h3,h4,h5,h6{
             display: block;
         }
     }
+    .box_desktop_width_100 {
+        width: 100% !important;
+        @include breakpoint(small) {
+            width: initial;
+        }        
+    }
     .box_width_100 {
         width: 100%;
     }
     .box_width_70 {
-        width: 70%;
+        width: 69.5%;
         @include breakpoint(small) {
             width: 100%;
         }
@@ -215,6 +258,11 @@ h1,h2,h3,h4,h5,h6{
     }
     .box_width_60 {
         width: 59.5%;
+        &.same_mobile_width {
+            @include breakpoint(small) {
+                width: 59.5%;
+            }
+        }
         @include breakpoint(small) {
             width: 100%;
         }
@@ -231,7 +279,12 @@ h1,h2,h3,h4,h5,h6{
         }
     }
     .box_width_40 {
-        width: 40%;
+        width: 39.5%;
+        &.same_mobile_width {
+            @include breakpoint(small) {
+                width: 39.5%;
+            }
+        }
         @include breakpoint(small) {
             width: 100%;
         }
@@ -243,7 +296,7 @@ h1,h2,h3,h4,h5,h6{
         }
     }
     .box_width_30 {
-        width: 30%;
+        width: 29.5%;
         @include breakpoint(small) {
             width: 100%;
         }
@@ -346,6 +399,22 @@ h1,h2,h3,h4,h5,h6{
                 &:hover {
                     background-color: $color_orange_light;
                     color: $color_white !important;
+                }
+                &.ghost_button--black {
+                    color: #292f36 !important;
+                    border-color: #292f36;
+                    text-transform: none;
+                    font-size: 1.57143rem;
+                    font-family: $font_family_regular;
+                    padding: 10px;
+                    @include breakpoint(small) {
+                        max-width: 280px;
+                        margin: 0 auto;
+                    }
+                    &:hover {
+                        @include opacity(0.6);
+                        background-color: transparent;
+                    }
                 }
             }
             &:hover {
