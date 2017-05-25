@@ -7,6 +7,8 @@
                 .landing .#{$attribute}_#{$direction}_#{$i * $delta*5} {
                     #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
                 }
+            }
+            @for $i from 1 through $steps {
                 .landing .#{$attribute}_#{$direction}_m_#{$i * $delta*5} {
                     @include breakpoint (small) {
                         #{$attribute}-#{$direction}: $delta*5 * $i +px !important;
@@ -16,8 +18,6 @@
         }
     }
 }
-
-
 
 @mixin position_classes {
     $pos-list: null;
@@ -54,11 +54,10 @@
     }
 }
 
-
 @mixin min-max-mq {
-  @media (min-width: #{$preMedium}) and (max-width: #{$preNormal}) {
-    @content;
-  }
+    @media (min-width: #{$preMedium}) and (max-width: #{$preNormal}) {
+        @content;
+    }
 }
 
 @mixin breakpoint($name) {
@@ -489,7 +488,7 @@
                     line-height: 1;
                     border-radius: 2rem;
                     -webkit-border-radius: 2rem;
-                    -moz-border-radius: 2rem; 
+                    -moz-border-radius: 2rem;
                 }
                 .owl-prev {
                     position: fixed;
