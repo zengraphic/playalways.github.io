@@ -9,14 +9,16 @@
     <meta name="MobileOptimized" content="320">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
-    <!--- CSS -->          
-   <link rel="stylesheet" type="text/css" href="../cms/css/base-libs.min.css" />
+    <!--- CSS -->
+    <link rel="stylesheet" type="text/css" href="../cms/css/base-libs.min.css" />
     <link rel="stylesheet" type="text/css" href="../cms/css/base-style.min.css" />
-    <link rel="stylesheet" type="text/css" href="../cms/css/wind-style.min.css" />    
+    <link rel="stylesheet" type="text/css" href="../cms/css/wind-style.min.css" />
     <link rel="stylesheet" type="text/css" href="/fileadmin/css-landing/landing.css" />
     <!--- /CSS -->
     <!--- JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../cms/js/scripts.min.js"></script>
+    <script type="text/javascript" src="../../cms/js/landing.min.js"></script>    
     <script type="text/javascript" src="/fileadmin/js-landing/slick.min.js"></script>
     <script type="text/javascript" src="/fileadmin/js-landing/landing.js"></script>
     <!-- components script -->
@@ -45,32 +47,33 @@ jQuery(document).ready(function($) {
     // =============================== //
     // ============= PITA ============ //
     // =============================== //   
-      // $(mainContainer).append($(divContainer).load("partials/header/header_pita.html"));
-      // $(mainContainer).append($(divContainer).load("partials/hero/hero_pita.html"));
-      // $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_pita.html"));
-      // $(mainContainer).append($(divContainer).load("partials/accordions/accordion_pita.html"));
+    // $(mainContainer).append($(divContainer).load("partials/header/header_pita.html"));
+    // $(mainContainer).append($(divContainer).load("partials/hero/hero_pita.html"));
+    // $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_pita.html"));
+    // $(mainContainer).append($(divContainer).load("partials/accordions/accordion_pita.html"));
 
-    // =============================== //
-    // ============= TUTTO A UN EURO ============ //
-    // =============================== //   
-      $(mainContainer).append($(divContainer).load("partials/header/header_tuttoeuro.html"));
-      $(mainContainer).append($(divContainer).load("partials/hero/hero_tuttoeuro.html"));
-      $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_tuttoeuro.html"));
-      $(mainContainer).append($(divContainer).load("partials/accordions/accordion_tuttoeuro.html"));
+    // =========================================== //
+    // ============= CONCORSO RICARICA ============ //
+    // =========================================== //   
+    $(mainContainer).append($(divContainer).load("../partials/header/header_concorso_ricarica.html"));
+    $(mainContainer).append($(divContainer).load("../partials/hero/hero_concorso_ricarica.html"));
+    $(mainContainer).append($(divContainer).load("../partials/offer_details/offer_details_concorso_ricarica.html"));
+    $(mainContainer).append($(divContainer).load("../partials/accordions/accordion_concorso_ricarica.html"));
+
     // ================================= //
     // ============= MAGNUM ============ //
     // ================================= //     
-   /* $(mainContainer).append($(divContainer).load("partials/hero/hero_magnum.html"));
-    $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_magnum.html", function() {
-        loadSlick();
-    }));    
-    $(mainContainer).append($(divContainer).load("partials/accordions/accordion_magnum.html"));*/
+    /* $(mainContainer).append($(divContainer).load("partials/hero/hero_magnum.html"));
+     $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_magnum.html", function() {
+         loadSlick();
+     }));    
+     $(mainContainer).append($(divContainer).load("partials/accordions/accordion_magnum.html"));*/
 
 
     // ============================== //
     // ============ FOOTER ========== //
     // ============================== //
-    $(mainContainer).append($(divContainer).load("partials/footer.html"));
+    $(mainContainer).append($(divContainer).load("../partials/footer.html"));
 });
 </script>
 
