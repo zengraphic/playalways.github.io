@@ -135,9 +135,6 @@
                     //alert('ciao');
                     clearTimeout($HEADER.resizeTimer);
                     $HEADER.resizeTimer = setTimeout(function() {
-                        r$('#header')
-                            .find('.header_sup')
-                            .slick('setPosition');
 
                         $HEADER
                             .checkHeader();
