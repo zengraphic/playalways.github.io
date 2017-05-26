@@ -372,6 +372,18 @@ r$(document)
         }
         if (r$('.blocco_visore.with_slider').length) {
             var visoreConSlider = r$('.blocco_visore.with_slider');
+            var visori = visoreConSlider.find('.standard_block ');
+
+            visoreConSlider
+                .on({
+                    'init': function() {
+                        visori
+                            .css({
+                                'display': 'block'
+                            });
+                    }
+                });
+
             visoreConSlider
                 .slick({
                     dots: false,
@@ -385,6 +397,8 @@ r$(document)
                     cssEase: 'ease',
                     adaptiveHeight: true
                 });
+
+
 
             var menuPerVisore = visoreConSlider.next().find('.stripMenu');
             if (menuPerVisore.length == 1) {
