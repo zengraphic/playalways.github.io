@@ -9,10 +9,10 @@
     <meta name="MobileOptimized" content="320">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no" />
-    <!--- CSS -->          
-   <link rel="stylesheet" type="text/css" href="../cms/css/base-libs.min.css" />
-    <link rel="stylesheet" type="text/css" href="../cms/css/base-style.min.css" />
-    <link rel="stylesheet" type="text/css" href="../cms/css/wind-style.min.css" />    
+    <!--- CSS -->         
+       <link rel="stylesheet" type="text/css" href="../../cms/css/base-libs.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../cms/css/base-style.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../cms/css/wind-style.min.css" />
     <link rel="stylesheet" type="text/css" href="/fileadmin/css-landing/landing.css" />
     <!--- /CSS -->
     <!--- JS -->
@@ -32,7 +32,8 @@ jQuery(document).ready(function($) {
     console.log(divContainer);
     // ============================== //
     // ============ HEADER ========== //
-    // ============================== //
+    // ============================== /
+
 
 
     // ========================================= //
@@ -44,33 +45,31 @@ jQuery(document).ready(function($) {
 
     // =============================== //
     // ============= PITA ============ //
-    // =============================== //   
-      // $(mainContainer).append($(divContainer).load("partials/header/header_pita.html"));
-      // $(mainContainer).append($(divContainer).load("partials/hero/hero_pita.html"));
-      // $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_pita.html"));
-      // $(mainContainer).append($(divContainer).load("partials/accordions/accordion_pita.html"));
-
-    // =============================== //
-    // ============= TUTTO A UN EURO ============ //
-    // =============================== //   
-      $(mainContainer).append($(divContainer).load("partials/header/header_tuttoeuro.html"));
-      $(mainContainer).append($(divContainer).load("partials/hero/hero_tuttoeuro.html"));
-      $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_tuttoeuro.html"));
-      $(mainContainer).append($(divContainer).load("partials/accordions/accordion_tuttoeuro.html"));
+    // =============================== //     
+     // $(mainContainer).append($(divContainer).load("partials/hero/hero_pita.html"));
+     // $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_pita.html"));
+     // $(mainContainer).append($(divContainer).load("partials/accordions/accordion_pita.html"));
     // ================================= //
     // ============= MAGNUM ============ //
-    // ================================= //     
-   /* $(mainContainer).append($(divContainer).load("partials/hero/hero_magnum.html"));
-    $(mainContainer).append($(divContainer).load("partials/offer_details/offer_details_magnum.html", function() {
-        loadSlick();
+    // ================================= //  
+    $(mainContainer).append($(divContainer).load("../partials/header/header_magnum.html"));
+    $(mainContainer).append($(divContainer).load("../partials/hero/hero_magnum.html"));
+    $(mainContainer).append($(divContainer).load("../partials/offer_details/offer_details_magnum.html", function() {
+        loadSlickMagnum();
     }));    
-    $(mainContainer).append($(divContainer).load("partials/accordions/accordion_magnum.html"));*/
+    $(mainContainer).append($(divContainer).load("../partials/accordions/accordion_magnum.html"));
 
 
     // ============================== //
     // ============ FOOTER ========== //
     // ============================== //
-    $(mainContainer).append($(divContainer).load("partials/footer.html"));
+    $(mainContainer).append($(divContainer).load("../partials/footer.html"));
+        $('.popup-youtube').magnificPopup({
+        type: 'iframe',
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false
+    });
 });
 </script>
 

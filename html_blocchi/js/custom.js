@@ -1876,10 +1876,7 @@ function DOUBLEFILTER() {
                 });
             $FILTER.cards = $FILTER.container.find('.card_item');
         } else {
-            $FILTER
-                .container
-                .children(':first-child')
-                .addClass('whiteStrip');
+
 
         }
         $FILTER.tabs = $FILTER.container.find('.tab_button');
@@ -1897,13 +1894,21 @@ function DOUBLEFILTER() {
                 'resize': function() {
                     clearTimeout($FILTER.resizeTimer);
                     $FILTER.resizeTimer = setTimeout(function() {
-                        if (!$FILTER.showMoreOn) {
+                        if ($FILTER.showMoreOn) {
                             var activeSlick = r$('.tab_cards__container:visible');
-                            if (activeSlick[0].slick.unslicked) {
-                                activeSlick
-                                    .slick($FILTER.slickConfig);
+                            if (window.width < 768) {
+                                if (!activeSlick.hasClass('slick-initialized')) {
+                                    activeSlick
+                                        .slick($FILTER.slickConfig);
+                                }
+                            } else {
+                                if (!activeSlick[0].slick.unslicked) {
+                                    activeSlick
+                                        .slick('unslick');
+                                }
                             }
                         }
+
                     }, 300);
                 }
             });
@@ -1999,8 +2004,8 @@ function DOUBLEFILTER() {
             if (cardsContainerData == filtersData) {
                 $cardsContainer
                     .show(function() {
-                        if (!$FILTER.showMoreOn) {
-                            $cardsContainer
+                        if (window.width < 768) {
+                            r$(this)
                                 .slick($FILTER.slickConfig);
                         }
                     });
@@ -2029,14 +2034,7 @@ function DOUBLEFILTER() {
                         }
 
                     } else {
-                        $relatedCards
-                            .each(function(i) {
-                                var $relatedCard = r$(this);
-                                if (i >= 3) {
-                                    $relatedCard
-                                        .remove();
-                                }
-                            });
+
                     }
 
                 }

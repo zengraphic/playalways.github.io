@@ -3,9 +3,9 @@ function set_bt_process(bt) {
 }
 
 function on_bt_feedback(bt, flag, secs) {
-    bt.innerHTML = (flag === 0) ? "<span class='fa fa-check rotatey-animate'></span>" : "<span class='fa fa-close fadein-animate'></span>";
+    bt.innerHTML = (flag === 0) ? '<span class="fa fa-check rotatey-animate"></span>' : '<span class="fa fa-close fadein-animate"></span>';
     setTimeout(function() {
-        bt.innerHTML = "<span class='fadein-animate'>" + bt.getAttribute("data-label") + "</span>";
+        bt.innerHTML = '<span class="fadein-animate">' + bt.getAttribute('data-label') + '</span>';
     }, secs * 1000);
 }
 
@@ -15,7 +15,8 @@ var pfx = ["webkit", "moz", "MS", "o", ""];
 function prefixedEventListener(element, type, callback) {
     for (var p = 0; p < pfx.length; p++) {
         if (!pfx[p]) type = type.toLowerCase();
-        element.addEventListener(pfx[p] + type, callback, false);
+        element
+            .addEventListener(pfx[p] + type, callback, false);
     }
 }
 
@@ -169,7 +170,7 @@ function prefixedEventListener(element, type, callback) {
                                 // reset position btn (conferma/avanti) of footer
                                 $(".modalfooter").css("margin-top", 0);
                                 //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
-                                r$('html')
+                                r$('html,body')
                                     .css({
                                         'overflow': 'auto'
                                     });
@@ -178,7 +179,7 @@ function prefixedEventListener(element, type, callback) {
                             open: function() {
                                 // position btn conferma/avanti in bottom
 
-                                r$('html')
+                                r$('html,body')
                                     .css({
                                         'overflow': 'hidden'
                                     });
@@ -197,25 +198,11 @@ function prefixedEventListener(element, type, callback) {
 
                                     //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', 'calc(100% - 43px)');
                                 }
-
                             }
                         }
                     });
 
-                function resizeTargets() {
-                    $(".modalfooter")
-                        .each(function() {
-                            var medscroll = $('.base__scrollable').prop('scrollHeight');
-                            var medcont = $('.box--register').height();
-                            var medheader = 100;
-                            var newheight = medscroll - medcont - medheader - 60;
-                            $(this)
-                                .css("margin-top", newheight);
-                        });
-                }
-
                 //full height dialog (modal ricarica)
-
 
                 $('.base__popup-link--ricarica')
                     .magnificPopup({
@@ -236,7 +223,6 @@ function prefixedEventListener(element, type, callback) {
                     });
 
 
-
                 $('.base__popup-link--contract')
                     .magnificPopup({
                         type: 'inline',
@@ -244,8 +230,7 @@ function prefixedEventListener(element, type, callback) {
                         // closeOnContentClick: true,
                         midClick: true,
                         alignTop: false,
-                        removalDelay: 350,
-
+                        removalDelay: 350
                     });
 
                 $('.base__gallery')
@@ -326,8 +311,6 @@ function prefixedEventListener(element, type, callback) {
                     });
             };
 
-
-
             head(document, function() {
                 // Copyright 2014-2015 Twitter, Inc.
                 // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -350,6 +333,61 @@ function prefixedEventListener(element, type, callback) {
             });
         });
 
-
-
 })(jQuery, window);
+
+function eCommerceLogin(action, channel, callback) {
+
+    var v = {
+        action: action,
+        chanel: channel,
+        callback: callback,
+        url: document.location.href
+    };
+
+    this.init = function(obj) {
+        //inizializzo il metodo
+
+        r$(obj).attr("href", action);
+
+        switch (action) {
+            case '#recoveryCredential':
+
+        }
+
+        r$(obj)
+            .magnificPopup({
+                type: 'inline',
+                mainClass: 'mfp-fade mfp-ricarica',
+                // closeOnContentClick: true,
+                midClick: true,
+                alignTop: false,
+                removalDelay: 350,
+                callbacks: {
+                    close: function() {
+                        // reset position btn (conferma/avanti) of footer
+                        r$(".modalfooter").css("margin-top", 0);
+                    },
+                    open: function() {
+                        // position btn conferma/avanti in bottom
+                        resizeTargets();
+
+                        r$("#menu-three .slidemenu .back__breadcrumbs--modal").css("left", "-133px");
+
+                    }
+                }
+            });
+    };
+
+}
+
+function resizeTargets() {
+    $(".modalfooter")
+        .each(function() {
+            var medscroll = $('.base__scrollable').prop('scrollHeight');
+            var medcont = $('.box--register').height();
+            var medheader = 100;
+            var newheight = medscroll - medcont - medheader - 60;
+            $(this)
+                .css("margin-top", newheight);
+        });
+}
