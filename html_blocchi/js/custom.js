@@ -409,10 +409,13 @@ r$(document)
                         var activeTabIndex = activeTab.index();
                         visoreConSlider
                             .slick('slickGoTo', activeTabIndex);
-                        r$('html, body')
-                            .animate({
-                                scrollTop: 0
-                            },300);
+                        if (window.width < 768) {
+                            debugger;
+                            r$('html, body')
+                                .animate({
+                                    scrollTop: 0
+                                }, 300);
+                        }
                     });
             }
         }
