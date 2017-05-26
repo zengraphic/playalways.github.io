@@ -352,6 +352,27 @@ h6 {
             @include opacity(0.8);
         }
     }
+    .btn_orange {
+        border: 1px solid $color_orange;
+        text-transform: uppercase;
+        padding: 10px 0;
+        display: block;
+        background-color: $color_orange;
+        text-align: center;
+        color: $color_white !important;
+        font-size: 1.571rem;
+        font-family: $font_family_light;
+        width: 100%;
+        max-width: 280px;
+        cursor: pointer;
+        @include border-radius(4px);
+        @include breakpoint(small) {
+            max-width: 200px;
+        }
+        &:hover {
+            @include opacity(0.8);
+        }
+    }    
     .container {
         width: 100%;
         max-width: 1024px;
