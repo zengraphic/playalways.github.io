@@ -30,46 +30,7 @@ r$(document)
 
 r$(document)
     .ready(function() {
-        /* Breadcrumbs mobile */
 
-        var breadcums_action = function() {
-            var $breadcrumbs = r$('.base__breadcrumbs');
-            if ($breadcrumbs.length > 0) {
-                $breadcrumbs
-                    .each(function() {
-                        var liItem = r$(this);
-                        var listItems = liItem.children('li');
-                        var Sum = 0;
-
-                        if (listItems.length >= 1) {
-                            listItems
-                                .each(function(i, item) {
-                                    Sum += item.outerWidth(true);
-                                });
-                            liItem
-                                .width(Sum + 20);
-                        }
-                    });
-            }
-        };
-
-        breadcums_action();
-
-        var scrollTimer;
-
-        r$(window)
-            .resize(function() {
-
-                clearTimeout(scrollTimer);
-                scrollTimer = setTimeout(function() {
-                    if (r$(".base__scrollable2").length > 0) {
-                        breadcums_action();
-                        r$(".base__scrollable2")
-                            .getNiceScroll(0)
-                            .doScrollLeft(350, 500);
-                    }
-                }, 300);
-            });
 
         //fixme: pulizia degli spazi bianchi creati da typo3 catalogo, correggere typo e rimuovere questa patch
         cleanWhiteSpaces(r$(".priceRow__price"));
@@ -411,6 +372,18 @@ r$(document)
         }
         if (r$('.blocco_visore.with_slider').length) {
             var visoreConSlider = r$('.blocco_visore.with_slider');
+            var visori = visoreConSlider.find('.standard_block ');
+
+            visoreConSlider
+                .on({
+                    'init': function() {
+                        visori
+                            .css({
+                                'display': 'block'
+                            });
+                    }
+                });
+
             visoreConSlider
                 .slick({
                     dots: false,
@@ -424,6 +397,8 @@ r$(document)
                     cssEase: 'ease',
                     adaptiveHeight: true
                 });
+
+
 
             var menuPerVisore = visoreConSlider.next().find('.stripMenu');
             if (menuPerVisore.length == 1) {
@@ -1140,15 +1115,20 @@ r$(document)
                     }
                 });
         });
-        breadcums_action();
+        var scrollTimer;
+
         r$(window)
             .resize(function() {
-                if (r$(".base__scrollable2").length > 0) {
-                    breadcums_action();
-                    r$(".base__scrollable2")
-                        .getNiceScroll(0)
-                        .doScrollLeft(350, 500);
-                }
+
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function() {
+                    if (r$(".base__scrollable2").length > 0) {
+                        breadcums_action();
+                        r$(".base__scrollable2")
+                            .getNiceScroll(0)
+                            .doScrollLeft(350, 500);
+                    }
+                }, 300);
             });
 
     });
@@ -1917,12 +1897,13 @@ function DOUBLEFILTER() {
                 'resize': function() {
                     clearTimeout($FILTER.resizeTimer);
                     $FILTER.resizeTimer = setTimeout(function() {
-                        var activeSlick = r$('.tab_cards__container:visible');
-                        if (activeSlick[0].slick.unslicked) {
-                            activeSlick.slick($FILTER.slickConfig);
+                        if (!$FILTER.showMoreOn) {
+                            var activeSlick = r$('.tab_cards__container:visible');
+                            if (activeSlick[0].slick.unslicked) {
+                                activeSlick
+                                    .slick($FILTER.slickConfig);
+                            }
                         }
-
-
                     }, 300);
                 }
             });
