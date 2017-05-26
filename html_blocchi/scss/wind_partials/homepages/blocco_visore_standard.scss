@@ -4,6 +4,12 @@ hr.example_divider {
   border-color: $color_business;
 }
 
+.with_slider {
+  .standard_block:not(:first-child) {
+    display: none;
+  }
+}
+
 .standard_block {
   @include transition(all .45s ease-in-out);
   width: 100%;
@@ -1321,6 +1327,12 @@ hr.example_divider {
       display: none;
     }
   }
+  .bundle_orange {
+    &__container {
+    display: block;
+      
+    }
+  }
 }
 
 .bundle_partner {
@@ -1411,7 +1423,7 @@ hr.example_divider {
       font-size: 14px;
     }
     @include breakpoint('super-tiny') {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
   &__number {
@@ -1421,7 +1433,7 @@ hr.example_divider {
       font-size: 36px;
     }
     @include breakpoint('super-tiny') {
-      font-size: 22px;
+      font-size: 26px;
     }
     &:empty {
       display: none;

@@ -938,6 +938,9 @@ hr.example_divider {
   border-style: dotted;
   border-color: #292F36; }
 
+.with_slider .standard_block:not(:first-child) {
+  display: none; }
+
 .standard_block {
   -webkit-transition: all 0.45s ease-in-out;
   -moz-transition: all 0.45s ease-in-out;
@@ -1979,6 +1982,8 @@ hr.example_divider {
       color: #FFF; }
     .standard_block .base__bt:empty {
       display: none; }
+  .standard_block .bundle_orange__container {
+    display: block; }
 
 .bundle_partner:before {
   display: block;
@@ -2055,7 +2060,7 @@ hr.example_divider {
         font-size: 14px; } }
     @media (max-width: 480px) {
       .bundle_orange__title {
-        font-size: 12px; } }
+        font-size: 14px; } }
   .bundle_orange__number {
     font-size: 40px;
     line-height: 1em; }
@@ -2064,7 +2069,7 @@ hr.example_divider {
         font-size: 36px; } }
     @media (max-width: 480px) {
       .bundle_orange__number {
-        font-size: 22px; } }
+        font-size: 26px; } }
     .bundle_orange__number:empty {
       display: none; }
       .bundle_orange__number:empty + .bundle_orange__title {
@@ -4420,7 +4425,7 @@ hr.example_divider {
 .contactWind_block {
   max-width: 1024px;
   margin: 0 auto;
-  margin-bottom: 30px; }
+  padding-bottom: 30px; }
   .contactWind_block .button, .contactWind_block a.button--slim, .contactWind_block a.button--ghost, .contactWind_block a.button--ghost--transparent, .contactWind_block a.button--search {
     width: 100%;
     max-width: 280px; }
@@ -8288,6 +8293,8 @@ sw.showcase_bundle_device {
         width: auto;
         height: 75px;
         margin: 20px auto; }
+      .dashboard_watch_block__product .phone_thumbs .slick-list, .dashboard_watch_block__product .phone_thumbs .slick-track {
+        height: 100% !important; }
     .dashboard_watch_block__product .phone_gallery {
       display: inline-block;
       position: relative;
@@ -9627,6 +9634,8 @@ sw.showcase_bundle_device {
       @media (max-width: 767px) {
         .showcase_five_cards__single:nth-child(5n):after {
           display: block; } }
+    .showcase_five_cards__single:last-child:after {
+      display: none; }
     .showcase_five_cards__single:after {
       background-color: #D3D3D2;
       width: 1px;
@@ -9965,7 +9974,9 @@ sw.showcase_bundle_device {
       @media (max-width: 767px) {
         .advantages_block__listItem__description {
           width: 100%;
-          display: block; } }
+          display: block;
+          padding: 0 40px;
+          text-align: center; } }
       .advantages_block__listItem__description--title {
         color: inherit;
         font-size: 1.275em;
@@ -9973,34 +9984,27 @@ sw.showcase_bundle_device {
         font-family: "Trade Gothic"; }
         @media (max-width: 767px) {
           .advantages_block__listItem__description--title {
-            font-size: 1em;
+            font-size: 1.2em;
             text-align: center;
             width: 100%;
             margin-top: 15px; } }
-      .advantages_block__listItem__description p,
-      .advantages_block__listItem__description ul,
-      .advantages_block__listItem__description li {
+      .advantages_block__listItem__description p {
         font-family: "Trade Gothic Light";
         color: #292F36;
         font-size: 1em;
         line-height: 1.250em; }
+      .advantages_block__listItem__description ul {
+        font-family: "Trade Gothic Light";
+        color: #292F36;
+        font-size: 1em;
+        line-height: 1.250em;
+        margin: 10px 0; }
         @media (max-width: 767px) {
-          .advantages_block__listItem__description p,
-          .advantages_block__listItem__description ul,
-          .advantages_block__listItem__description li {
-            font-size: 0.95em;
-            padding: 0 30px;
-            text-align: center; } }
-
-@media (max-width: 400px) {
-  .advantages_block__header--title {
-    font-size: 1.46em; }
-  .advantages_block__listItem__icon ::after {
-    border-right: none; }
-  .advantages_block__listItem__icon--fiber, .advantages_block__listItem__icon--browse, .advantages_block__listItem__icon--xbox, .advantages_block__listItem__icon--webcam, .advantages_block__listItem__icon--calls {
-    background-image: url("../img/icons-vantaggi/advantages_sprite_small.png"); }
-  .advantages_block__listItem__description p {
-    font-size: 0.8em; } }
+          .advantages_block__listItem__description ul {
+            text-align: left;
+            padding-left: 20px; } }
+        .advantages_block__listItem__description ul li {
+          padding: 5px 0; }
 
 .fiber_block {
   margin: 0 auto;
@@ -10385,36 +10389,42 @@ sw.showcase_bundle_device {
 
 /* ========================================================= */
 .download_module__block {
-  background-color: #E6E9ED;
   width: 100%; }
   @media (max-width: 480px) {
     .download_module__block {
       font-size: 0.875em; } }
   .download_module__block .button--slim {
-    display: table-cell;
-    vertical-align: middle;
     font-size: 0.875em; }
   .download_module__block__container {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     display: table;
-    padding: 15px; }
+    padding: 30px 15px;
+    background-color: #E6E9ED; }
   .download_module__block__details {
     color: #292F36;
     display: table-cell;
     vertical-align: middle;
-    padding: 0 30px; }
+    padding: 0 15px;
+    width: 60%; }
   .download_module__block__title {
     font-size: 1.500em;
     font-family: "Trade Gothic Bold";
     display: table-cell;
     vertical-align: middle;
-    margin-right: 30px; }
-  .download_module__block.reversed_colors {
+    margin-right: 30px;
+    width: 20%; }
+  .download_module__block__buttonContainer {
+    display: table-cell;
+    vertical-align: middle;
+    width: 20%; }
+  .download_module__block.reversed_colors .download_module__block__container {
     background-color: #FFF; }
   .download_module__block.noTitle .download_module__block__title {
     display: none; }
+  .download_module__block.noTitle .download_module__block__details {
+    width: 80%; }
 
 .roadShow_block__container {
   margin-bottom: 20px;

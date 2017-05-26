@@ -31,11 +31,10 @@
                 settings: {
                     centerMode: true,
                     centerPadding: "50px",
-                    initialSlide: 0,
                     slidesToShow: 3,
                     slidesToScroll: 1
                 }
-            }, ]
+            }]
         },
         setSlider: function() {
             var $HEADER = this;
@@ -96,7 +95,7 @@
             r$('.gradient_overlay')
                 .click(function() {
                     $slideshow
-                    .slick('slickGoTo', parseInt($slideshow.slick('slickCurrentSlide')) + 1);
+                        .slick('slickGoTo', parseInt($slideshow.slick('slickCurrentSlide')) + 1);
                 });
             r$('.quick_links')
                 .click(function() {
@@ -107,8 +106,8 @@
                                 r$('.header .logo')
                                     .slideDown(100);
                                 r$('#header')
-                                .find('.quick_links')
-                                .removeClass('active');
+                                    .find('.quick_links')
+                                    .removeClass('active');
                             });
                     } else {
                         r$('.header .logo')
@@ -121,6 +120,16 @@
                             });
                     }
                 });
+
+            if (navigator.platform == "iPhone") {
+                r$("body")
+                    .addClass("iPhone");
+                r$('#header')
+                    .find('.menu_sup')
+                    .css({
+                        'max-width': '100%'
+                    });
+            }
             r$(window)
                 .resize(function() {
                     //alert('ciao');
@@ -128,22 +137,22 @@
                     $HEADER.resizeTimer = setTimeout(function() {
 
                         $HEADER
-                        .checkHeader();
+                            .checkHeader();
                         //HEADER.resizeHeader(); function deleted cause on mobile the browsers fires resize on scroll
-                        r$('.slider_topMenu')
-                            .slick('resize');
 
                         if (r$(window).width() > 768) {
                             r$('#header')
-                            .find('.quick_links')
-                            .removeClass('active');
+                                .find('.quick_links')
+                                .removeClass('active');
                             r$('.header_second .menu')
                                 .slideDown();
                             r$('.header .logo')
                                 .slideDown();
-                        } else {}
+                        } else {
 
-                    }, 150);
+                        }
+
+                    }, 250);
 
                 });
         }

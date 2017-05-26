@@ -32,15 +32,33 @@ jQuery(document).ready(function($) {
             });
         }
     }
+    var keyupTimer;
+
+    $(".search_field_cms").keyup(function(e) {
+        var textToCheck = $(this).val().toLowerCase();
+        clearTimeout(keyupTimer);
+        keyupTimer = setTimeout(function() {
+            $('.mainTitle').each(function() {
+                var cycleText = $(this).text().toLowerCase();
+                var elementToShow = $(this);
+                if (cycleText.indexOf(textToCheck) !== -1) {
+                    $(elementToShow).parents('.cms_container_table').slideDown();
+                } else {
+                    $(elementToShow).parents('.cms_container_table').slideUp();
+                }
+            });
+        }, 300);
+
+
+    });
 
     $(".new_file").click(function(e) {
-            e.preventDefault();
-            var message = $(this).data('message');
-            var item = $(this);
-            $(this).addClass("hover_active");
-            callMsgError(item, message);
-        }
-    );
+        e.preventDefault();
+        var message = $(this).data('message');
+        var item = $(this);
+        $(this).addClass("hover_active");
+        callMsgError(item, message);
+    });
 
     $('.clip_btn').click(function() {
         var position = $(this).parents('.html_row');
