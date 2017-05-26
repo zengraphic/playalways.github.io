@@ -70,7 +70,7 @@ body {
       width: 100%;
       height: auto;
       left: 0;
-      padding: 20px 10px 30px; } }
+      padding: 0 10px 0; } }
 .landing_infostrada__containerHero--tre {
   width: 1024px;
   position: relative;
@@ -258,7 +258,7 @@ body {
         .landing_infostrada__hero .left_block .price {
           font-size: 60px; } }
     .landing_infostrada__hero .left_block .counter {
-      padding: 5px 23px;
+      padding: 5px;
       margin-top: 36px;
       color: #153080;
       border: 2px solid #153080;
@@ -279,7 +279,7 @@ body {
           width: 70%; } }
       @media (max-width: 480px) {
         .landing_infostrada__hero .left_block .counter {
-          width: 90%;
+          width: 100%;
           margin-top: 15px; } }
       .landing_infostrada__hero .left_block .counter .items {
         float: left;
@@ -315,7 +315,7 @@ body {
           left: 0;
           text-align: center;
           margin: 0 auto;
-          top: 30px;
+          top: 5px;
           float: none; } }
       .landing_infostrada__hero .right_block .image_block .img_testimonial {
         position: absolute;
@@ -342,7 +342,7 @@ body {
           .landing_infostrada__hero .right_block .sticker_block .single_sticker .image_sticker {
             width: 90%; } }
 .landing_infostrada__buttonAnchor {
-  padding: 15px 30px;
+  padding: 10px 30px;
   width: auto;
   margin: 10px 18px;
   background-color: #f48135;
@@ -350,23 +350,30 @@ body {
   border-radius: 6px;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */
+  border-color: #f48135;
+  opacity: 0.95;
   text-align: center;
-  display: none;
-  cursor: pointer; }
+  display: none; }
   @media (max-width: 736px) {
     .landing_infostrada__buttonAnchor {
-      display: block; } }
+      display: block;
+      position: fixed;
+      width: 100%;
+      margin: 0;
+      z-index: 9999;
+      bottom: 48px; } }
   .landing_infostrada__buttonAnchor a {
     font-family: "Trebuchet MS";
     color: #fff;
     /*font-weight: bold;*/
     font-size: 15px;
     text-transform: uppercase;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer; }
   .landing_infostrada__buttonAnchor:hover {
-    opacity: 0.8; }
+    background-color: #F69A5D; }
 .landing_infostrada__buttonChiamaGratis {
-  padding: 15px 30px;
+  padding: 10px 30px;
   width: auto;
   margin: 10px 18px;
   background-color: #153080;
@@ -374,21 +381,39 @@ body {
   border-radius: 6px;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */
+  border-color: #f48135;
+  opacity: 0.95;
   text-align: center;
-  display: none;
-  cursor: pointer; }
+  display: none; }
   @media (max-width: 736px) {
     .landing_infostrada__buttonChiamaGratis {
-      display: block; } }
+      display: block;
+      position: fixed;
+      z-index: 9999;
+      bottom: 0;
+      width: 100%;
+      margin: 0; } }
   .landing_infostrada__buttonChiamaGratis a {
     font-family: "Trebuchet MS";
     color: #fff;
     /*font-weight: bold;*/
     font-size: 15px;
     text-transform: uppercase;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer; }
   .landing_infostrada__buttonChiamaGratis:hover {
-    opacity: 0.8; }
+    /*opacity: 0.8;*/ }
+.landing_infostrada__ctaDivider {
+  display: none; }
+  @media (max-width: 736px) {
+    .landing_infostrada__ctaDivider {
+      display: block;
+      height: 7px;
+      background-color: #fff;
+      position: fixed;
+      width: 100%;
+      bottom: 41px;
+      z-index: 9999; } }
 .landing_infostrada__checkCopertura {
   position: absolute;
   z-index: 999;
@@ -582,7 +607,7 @@ body {
             text-decoration: none; }
 .landing_infostrada__footer {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
   border-top: 1px solid #eee;
   margin-left: 32px;
   margin-right: 32px; }

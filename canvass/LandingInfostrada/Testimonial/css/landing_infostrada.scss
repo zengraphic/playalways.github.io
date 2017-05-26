@@ -86,7 +86,8 @@ body {
         height: 530px;
         margin: 0 auto;
         //left: -72px;
-        background-color: $color_white;/*$color_light_grey;*/
+        background-color: $color_white;
+        /*$color_light_grey;*/
         /*background-image: url(../img/visore/visore_testimonial_wide.png);
         background-repeat: no-repeat;
         background-position: top left;*/
@@ -94,7 +95,7 @@ body {
             width: 100%;
             height: auto;
             left: 0;
-            padding: 20px 10px 30px;
+            padding: 0 10px 0;
         }
     }
     &__containerHero--tre {
@@ -301,7 +302,7 @@ body {
                 }
             }
             .counter {
-                padding: 5px 23px;
+                padding: 5px;
                 margin-top: 36px;
                 color: $color_infostrada;
                 border: 2px solid $color_infostrada;
@@ -318,7 +319,7 @@ body {
                     width: 70%;
                 }
                 @include breakpoint(super-tiny) {
-                    width: 90%;
+                    width: 100%;
                     margin-top: 15px;
                 }
                 .items {
@@ -359,7 +360,7 @@ body {
                     //width: 100%;
                     text-align: center;
                     margin: 0 auto;
-                    top: 30px;
+                    top: 5px;
                     float: none;
                 }
                 .img_testimonial {
@@ -395,16 +396,22 @@ body {
         }
     }
     &__buttonAnchor {
-        padding: 15px 30px;
+        padding: 10px 30px;
         width: auto;
         margin: 10px 18px;
         background-color: $color_wind;
         @include border-radius(6px);
+        border-color: $color_wind;
+        opacity: 0.95;
         text-align: center;
         display: none;
-        cursor: pointer;
         @include breakpoint(mobile_land) {
             display: block;
+            position: fixed;
+            width: 100%;
+            margin: 0;
+            z-index: 9999;
+            bottom: 48px;
         }
         a {
             font-family: "Trebuchet MS";
@@ -413,22 +420,29 @@ body {
             font-size: 15px;
             text-transform: uppercase;
             text-decoration: none;
+            cursor: pointer;
         }
         &:hover {
-            opacity: 0.8;
+            background-color: #F69A5D;
         }
     }
     &__buttonChiamaGratis {
-        padding: 15px 30px;
+        padding: 10px 30px;
         width: auto;
         margin: 10px 18px;
         background-color: $color_infostrada;
         @include border-radius(6px);
+        border-color: $color_wind;
+        opacity: 0.95;
         text-align: center;
         display: none;
-        cursor: pointer;
         @include breakpoint(mobile_land) {
             display: block;
+            position: fixed;
+            z-index: 9999;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
         }
         a {
             font-family: "Trebuchet MS";
@@ -437,9 +451,22 @@ body {
             font-size: 15px;
             text-transform: uppercase;
             text-decoration: none;
+            cursor: pointer;
         }
         &:hover {
-            opacity: 0.8;
+            /*opacity: 0.8;*/
+        }
+    }
+    &__ctaDivider {
+        display: none;
+        @include breakpoint(mobile_land) {
+            display: block;
+            height: 7px;
+            background-color: $color_white; 
+            position: fixed;
+            width: 100%;
+            bottom: 41px;
+            z-index: 9999;
         }
     }
     &__checkCopertura {
@@ -655,7 +682,7 @@ body {
     }
     &__footer {
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 100px;
         border-top: 1px solid $color_grey;
         margin-left: 32px;
         margin-right: 32px;
