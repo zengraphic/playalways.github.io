@@ -500,7 +500,7 @@ hr.example_divider {
             min-height: auto;
             bottom: 0;
             top: auto;
-            max-width: 100%;
+            max-width: none;
             @include breakpoint(small) {
               left: -9999px;
               right: -9999px;
@@ -573,7 +573,7 @@ hr.example_divider {
             display: inline-block;
             //top: 380px;
             left: 0;
-            transform: translateY(calc(100% + 40px));
+            transform: translateY(calc(100% + 85px));
             width: 100%;
             //height: 380px;
             padding: 20px 0;
@@ -581,7 +581,7 @@ hr.example_divider {
         }
         .withForm.invertedDisplay #{&} {
           @include breakpoint(small) {
-            transform: translateY(calc(100% + 45px));
+            transform: translateY(calc(100% + 85px));
           }
         }
       }
@@ -608,10 +608,10 @@ hr.example_divider {
             top: auto;
             right: 0;
             left: 0;
-            transform: translateY(calc(-100% + 45px));
+            transform: translateY(calc(-100% + 85px));
             width: 100%;
             height: auto;
-            padding: 45px 15px 15px;
+            padding: 85px 15px 15px;
           }
         }
         .withForm.invertedDisplay #{&} {
@@ -620,7 +620,7 @@ hr.example_divider {
           @include breakpoint(small) {
             //top: -320px;
             left: 0;
-            transform: translateY(calc(-100% + 45px));
+            transform: translateY(calc(-100% + 85px));
             width: 100%;
           }
         }

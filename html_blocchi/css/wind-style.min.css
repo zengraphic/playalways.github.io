@@ -1378,7 +1378,7 @@ hr.example_divider {
           min-height: auto;
           bottom: 0;
           top: auto;
-          max-width: 100%; }
+          max-width: none; }
           @media (max-width: 767px) {
             .specialVersion.transparent .standard_block__half_block.image_block .testimonial {
               left: -9999px;
@@ -1431,12 +1431,12 @@ hr.example_divider {
           .withForm .standard_block__half_block.form_block {
             display: inline-block;
             left: 0;
-            transform: translateY(calc(100% + 40px));
+            transform: translateY(calc(100% + 85px));
             width: 100%;
             padding: 20px 0; } }
       @media (max-width: 767px) {
         .withForm.invertedDisplay .standard_block__half_block.form_block {
-          transform: translateY(calc(100% + 45px)); } }
+          transform: translateY(calc(100% + 85px)); } }
     .standard_block__half_block.offer_block {
       padding: 0 15px;
       text-align: center;
@@ -1457,17 +1457,17 @@ hr.example_divider {
             top: auto;
             right: 0;
             left: 0;
-            transform: translateY(calc(-100% + 45px));
+            transform: translateY(calc(-100% + 85px));
             width: 100%;
             height: auto;
-            padding: 45px 15px 15px; } }
+            padding: 85px 15px 15px; } }
       .withForm.invertedDisplay .standard_block__half_block.offer_block {
         left: -50%;
         width: 43%; }
         @media (max-width: 767px) {
           .withForm.invertedDisplay .standard_block__half_block.offer_block {
             left: 0;
-            transform: translateY(calc(-100% + 45px));
+            transform: translateY(calc(-100% + 85px));
             width: 100%; } }
       @media (max-width: 767px) {
         .specialVersion.mobile .standard_block__half_block.offer_block {
@@ -11064,7 +11064,7 @@ sw.showcase_bundle_device {
     .showcase_bundle_block__container .cardsOffer__single {
       position: relative;
       font-size: 16px;
-      height: 31.7em;
+      height: calc(28.7em - 10px);
       text-align: center;
       margin-bottom: 40px;
       display: none;
@@ -11112,7 +11112,8 @@ sw.showcase_bundle_device {
         z-index: 51;
         height: 3em;
         margin-bottom: 10px;
-        color: inherit; }
+        color: inherit;
+        display: none; }
         .showcase_bundle_block__container .cardsOffer__single--subTitle h4 {
           font-size: 1.375em;
           font-family: "Trade Gothic Condensed";

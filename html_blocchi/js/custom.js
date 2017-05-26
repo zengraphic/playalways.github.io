@@ -409,6 +409,10 @@ r$(document)
                         var activeTabIndex = activeTab.index();
                         visoreConSlider
                             .slick('slickGoTo', activeTabIndex);
+                        r$('html, body')
+                            .animate({
+                                scrollTop: 0
+                            },300);
                     });
             }
         }
@@ -1098,7 +1102,7 @@ r$(document)
 r$(document)
     .ready(function() {
         /* Breadcrumbs mobile */
-        var breadcums_action = (function() {
+        var breadcums_action = function() {
             r$('.base__breadcrumbs')
                 .each(function() {
                     var liItems = r$(this);
@@ -1114,7 +1118,7 @@ r$(document)
                             .width(Sum + 20);
                     }
                 });
-        });
+        };
         var scrollTimer;
 
         r$(window)
@@ -1902,9 +1906,11 @@ function DOUBLEFILTER() {
                                         .slick($FILTER.slickConfig);
                                 }
                             } else {
-                                if (!activeSlick[0].slick.unslicked) {
-                                    activeSlick
-                                        .slick('unslick');
+                                if (activeSlick[0].slick) {
+                                    if (!activeSlick[0].slick.unslicked) {
+                                        activeSlick
+                                            .slick('unslick');
+                                    }
                                 }
                             }
                         }
