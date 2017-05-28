@@ -2013,7 +2013,7 @@ function DOUBLEFILTER() {
             if (cardsContainerData == filtersData) {
                 $cardsContainer
                     .show(function() {
-                        if (window.width < 768) {
+                        if (window.outerWidth < 768) {
                             r$(this)
                                 .slick($FILTER.slickConfig);
                         }
