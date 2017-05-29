@@ -20,6 +20,9 @@
                     font-size: 1.7rem;
                 }
             }
+            &.veon_colored_bg {
+                background-color: $color_veon;
+            }
             .container--offer_details {}
             .details {
                 list-style: none;
@@ -30,8 +33,10 @@
                 }
                 &.no_list {
                     padding-left: 0;
-                    &:before {
-                        content: "";
+                    li {
+                        &:before {
+                            content: "";
+                        }
                     }
                 }
                 li {
@@ -113,7 +118,7 @@
                 &__container {
                     // display: table;
                     width: 100%;
-                    &.single_device{
+                    &.single_device {
                         max-width: 650px;
                         margin: 0 auto;
                     }
@@ -157,7 +162,7 @@
         }
         &_hero_small {
             &__text {
-               @include min-max-mq {
+                @include min-max-mq {
                     font-size: 1.7rem !important;
                 }
             }

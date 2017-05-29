@@ -327,7 +327,8 @@ $color_bt_disabled: $color_grey_medium_light;*/
         font-size: 12px; } }
   .landing .landing__footer__box--right {
     display: table-cell;
-    vertical-align: middle; }
+    vertical-align: middle;
+    text-align: right; }
     .landing .landing__footer__box--right img {
       margin-left: auto;
       margin-right: 0; }
@@ -581,6 +582,17 @@ $color_bt_disabled: $color_grey_medium_light;*/
       .landing .landing__hero .magnum_background {
         background-position: center center;
         background-image: url("/fileadmin/img-landing/backgrounds/magnum_hero_background_small.png"); } }
+  .landing .landing__hero .veon_background {
+    background-image: url("/fileadmin/img-landing/backgrounds/veon_hero_background.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding-bottom: 25px;
+    background-size: cover;
+    height: 595px; }
+    @media (max-width: 768px) {
+      .landing .landing__hero .veon_background {
+        background-position: center center;
+        background-image: url("/fileadmin/img-landing/backgrounds/veon_hero_background_small.png"); } }
   .landing .landing__hero .easy-europe_background {
     background-image: url("/fileadmin/img-landing/backgrounds/easy-europe_hero_background.jpg");
     background-repeat: no-repeat;
@@ -846,6 +858,8 @@ $color_bt_disabled: $color_grey_medium_light;*/
     @media (max-width: 768px) {
       .landing .landing--offer_details h3 {
         font-size: 1.7rem; } }
+  .landing .landing--offer_details.veon_colored_bg {
+    background-color: #ffcb24; }
   .landing .landing--offer_details .details {
     list-style: none;
     padding-left: 60px;
@@ -855,7 +869,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
         padding-left: 30px; } }
     .landing .landing--offer_details .details.no_list {
       padding-left: 0; }
-      .landing .landing--offer_details .details.no_list:before {
+      .landing .landing--offer_details .details.no_list li:before {
         content: ""; }
     .landing .landing--offer_details .details li {
       position: relative;
@@ -2350,12 +2364,19 @@ h6 {
     display: block; }
   .landing .display_inline {
     display: inline-block; }
+  .landing .display_forced_inline {
+    display: inline-block !important; }
   .landing .vertical_top {
     vertical-align: top; }
   .landing .vertical_middle {
     vertical-align: middle; }
   .landing .vertical_bottom {
     vertical-align: bottom; }
+  .landing .margin_top_130 {
+    margin-top: 130px !important; }
+  @media (max-width: 768px) {
+    .landing .margin_top_m_130 {
+      margin-top: 130px !important; } }
   .landing .margin_top_0 {
     margin-top: 0px !important; }
   .landing .margin_bottom_0 {
@@ -2404,6 +2425,10 @@ h6 {
     font-weight: 400; }
   .landing .font_bold {
     font-family: "Trade Gothic Bold", sans-serif !important; }
+  .landing .font_weight_initial {
+    font-weight: initial !important; }
+  .landing .reduced_letter_spacing {
+    letter-spacing: -0.025em; }
   .landing .border_right_solid {
     border-right: 1px solid #292F36; }
     @media (max-width: 600px) {
@@ -2465,7 +2490,7 @@ h6 {
         width: 100%; } }
   @media (max-width: 768px) {
     .landing .box_width_m_50 {
-      width: 50%; } }
+      width: 49%; } }
   .landing .box_width_40 {
     width: 39.5%; }
     @media (max-width: 768px) {
