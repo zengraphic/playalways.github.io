@@ -102,7 +102,7 @@ h6 {
     .robin_divider {
         height: 1px;
         background-color: #009bbe;
-    }    
+    }
     .overflow_hidden {
         overflow: hidden;
     }
@@ -115,6 +115,9 @@ h6 {
     .display_inline {
         display: inline-block;
     }
+    .display_forced_inline {
+        display: inline-block !important;
+    }    
     .vertical_top {
         vertical-align: top;
     }
@@ -123,6 +126,14 @@ h6 {
     }
     .vertical_bottom {
         vertical-align: bottom;
+    }
+    .margin_top_130 {
+        margin-top: 130px !important;
+    }
+    .margin_top_m_130 {
+        @include breakpoint(small) {
+            margin-top: 130px !important;
+        }
     }
     .margin_top_0 {
         margin-top: 0px !important;
@@ -197,6 +208,12 @@ h6 {
     .font_bold {
         font-family: $font_family_bold !important;
     }
+    .font_weight_initial {
+        font-weight: initial !important;
+    }
+    .reduced_letter_spacing {
+        letter-spacing: -0.025em;
+    }
     .border_right_solid {
         border-right: 1px solid $color_grey_dark;
         @include breakpoint(tiny) {
@@ -239,7 +256,7 @@ h6 {
         width: 100% !important;
         @include breakpoint(small) {
             width: initial;
-        }        
+        }
     }
     .box_width_100 {
         width: 100%;
@@ -275,7 +292,7 @@ h6 {
     }
     .box_width_m_50 {
         @include breakpoint(small) {
-            width: 50%;
+            width: 49%;
         }
     }
     .box_width_40 {
@@ -372,7 +389,7 @@ h6 {
         &:hover {
             @include opacity(0.8);
         }
-    }    
+    }
     .container {
         width: 100%;
         max-width: 1024px;

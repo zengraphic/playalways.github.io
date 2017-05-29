@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prova promises</title>
+    <script type="text/javascript" src="js/sources/jquery-1.12.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prova promises</h1>
+    </div>
+</body>
+<script type="text/javascript">
+var r$ = jQuery.noConflict();
+
+r$(function() {
+
+    var getNumber1 = function(number1) {
+        var deferred = r$.Deferred();
+
+        setTimeout(function() {
+            if (!number1) {
+                number1 = 10;
+            }
+            deferred
+                .resolve(number1);
+
+
+        }, 3000);
+
+        return deferred.promise();
+    };
+
+    var getNumber2 = function(number2) {
+        var deferred = r$.Deferred();
+
+        setTimeout(function() {
+            if (!number2) {
+                number2 = 20;
+            }
+            deferred
+                .resolve(number2);
+
+
+        }, 2000);
+
+        return deferred.promise();
+    };
+
+    r$
+        .when(getNumber1(34), getNumber2(12))
+        .then(function(number1, number2) {
+            var htmlString = '<div>' + (number1 * 10) + ' - ' + number2 + ' = ' + ((number1 * 10) - number2) + '</div>';
+            r$('.container')
+                .append(htmlString);
+        });
+});
+</script>
+
+</html>
