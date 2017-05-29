@@ -2012,11 +2012,12 @@ function DOUBLEFILTER() {
             var filtersData = $FILTER.filters.join(' ');
             if (cardsContainerData == filtersData) {
                 $cardsContainer
-                    .show(function() {
+                    .show(0,function() {
                         if (window.outerWidth < 768) {
                             r$(this)
                                 .slick($FILTER.slickConfig);
                         }
+
                     });
 
                 $cardsContainer
@@ -2034,12 +2035,12 @@ function DOUBLEFILTER() {
                                 var $relatedCard = r$(this);
                                 if (i >= 3) {
                                     $relatedCard
-                                        .hide();
+                                        .hide(0);
                                 }
                             });
                         if ($relatedShowMore.siblings().length > 3) {
                             $relatedShowMore
-                                .show();
+                                .show(0);
                         }
 
                     } else {
