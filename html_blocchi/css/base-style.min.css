@@ -4353,7 +4353,8 @@ h4.trade_l {
         padding: 0 0 0.15rem;
         letter-spacing: 0.4px;
         position: relative;
-        text-decoration: none; }
+        text-decoration: none;
+        text-transform: uppercase; }
         .header .menu_sup li a:visited {
           color: #656D78; }
         .header .menu_sup li a:hover {
@@ -4698,8 +4699,12 @@ h4.trade_l {
 @media (max-width: 767px) {
   .header .menu {
     margin-top: 1rem;
-    display: none;
     max-width: 108px; }
+    .header .menu li:not(:nth-child(3)) {
+      display: none; }
+    .header .menu li:nth-child(3) {
+      margin-top: 1.8rem;
+      margin-bottom: 0; }
   .header .quick_links {
     margin-top: calc(1.1rem - 2px);
     font-size: 0.7857rem;

@@ -59,19 +59,17 @@
                                 'height': 'calc(100% - 123px)',
                                 'top': '123px',
                                 'bottom': 0,
-                                'position':'fixed'
+                                'position': 'fixed'
                             });
-                        r$(document)
-                            .scrollTop(150);
 
-                    } else {
-                        r$(document)
-                            .scrollTop(0);
+
                     }
 
+                    r$(document)
+                        .scrollTop(0);
 
 
-                    r$('html')
+                    r$('html, body')
                         .css({
                             'overflow': 'hidden'
                         });
@@ -129,12 +127,12 @@
                         .css({
                             'height': '',
                             'bottom': '',
-                            'position':''
+                            'position': ''
                         });
 
                     r$(document)
                         .scrollTop(0);
-                    r$('html').css({
+                    r$('html,body').css({
                         'overflow': ''
                     });
 
@@ -149,7 +147,7 @@
             r$('.base__popup-link--search')
                 .magnificPopup(SEARCHBAR.obj_searchPopup);
         }
-    }
+    };
 
     r$(document)
         .ready(function() {

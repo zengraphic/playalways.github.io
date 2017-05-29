@@ -66,11 +66,20 @@
           //overflow: hidden;
           color: inherit;
           h3 {
-            font-size: 1.875em;
+            font-size: 1.785em;
             font-family: $weight-cond;
             font-weight: 700;
             height: 3em;
             line-height: 1em;
+            letter-spacing: -.025em;
+            @at-root {
+              .ff #{&} {
+                letter-spacing: -.045em;
+              }
+            }
+            &:empty {
+              display: none;
+            }
           }
         }
         &--subTitle {
@@ -93,6 +102,9 @@
           z-index: 51;
           //overflow: hidden;
           color: $color_text;
+          &:empty {
+            display: none;
+          }
           &--bundle {
             //height: 4.4em;
             //overflow: hidden;
@@ -100,6 +112,9 @@
             color: $color_text;
             margin-bottom: 10px;
             line-height: 1.1em;
+            &:empty {
+              display: none;
+            }
           }
           &--smallDescription {
             //height: 3.3em;
@@ -110,7 +125,10 @@
             line-height: 1.1em;
           }
           &--bigDescription {
-            display: none;
+            //display: none;
+            &:empty {
+              display: none;
+            }
           }
         }
         &--price__container {
@@ -146,19 +164,25 @@
             }
           }
           &--price {
-            font-size:2.7em;
+            font-size: 2.7em;
             color: inherit;
             font-family: $weight-light;
             position: relative;
             //height: 35px;
             line-height: 1;
             z-index: 51;
+            &:empty {
+              display: none;
+            }
           }
           &--recurrency {
             font-size: 0.875em;
             position: relative;
             color: $color_text;
             z-index: 51;
+            &:empty {
+              display: none;
+            }
           }
         }
         .button {
@@ -182,7 +206,7 @@
             //height: 50px;
             margin-bottom: 10px;
             .bundle_single:nth-child(n+2) {
-              display: none;
+              //display: none;
             }
           }
           .cardsOffer__single--text--smallDescription {
@@ -192,10 +216,10 @@
         }
         &.no_bundle {
           .cardsOffer__single--text--bundle {
-            display: none;
+            //display: none;
           }
           .cardsOffer__single--text--bigDescription {
-            display: block;
+            //display: block;
             font-size: 1.375em;
             //overflow: hidden;
             color: $color_text;
@@ -211,7 +235,7 @@
           .bundle_single,
           .cardsOffer__single--text--smallDescription,
           .cardsOffer__single--text--bigDescription {
-            display: none;
+            //display: none;
           }
         }
         &.bgBundleAndPrice {
@@ -225,12 +249,12 @@
               font-size: 1em;
               color: $color_white;
               .bundle_single:nth-child(n+2) {
-                display: none;
+                //display: none;
               }
             }
             &--smallDescription,
             &--bigDescription {
-              display: none;
+              //display: none;
             }
           }
           .cardsOffer__single--price__container {
@@ -258,15 +282,15 @@
               color: $color_white;
               .price {
                 //&:before {
-                  //background-color: $color_white;
-                  //width: 2px;
-                  //content: "";
-                  //display: block;
-                  //position: absolute;
-                  //top: 15%;
-                  //bottom: 7%;
-                  //right: 120%;
-                  //min-height: 1px;
+                //background-color: $color_white;
+                //width: 2px;
+                //content: "";
+                //display: block;
+                //position: absolute;
+                //top: 15%;
+                //bottom: 7%;
+                //right: 120%;
+                //min-height: 1px;
                 //}
               }
             }
@@ -283,7 +307,7 @@
             &--subTitle,
             &--text,
             &--price__container {
-              display: none;
+              //display: none;
             }
             &--bgContainer {
               position: relative;
@@ -302,7 +326,7 @@
           .bundle_single,
           .cardsOffer__single--text--smallDescription,
           .cardsOffer__single--text--bigDescription {
-            display: none;
+            //display: none;
           }
         }
         &.fullText {
@@ -316,7 +340,7 @@
           .cardsOffer__single--text--smallDescription,
           .cardsOffer__single--text--bigDescription,
           .cardsOffer__single--price__container {
-            display: none;
+            //display: none;
           }
         }
       }

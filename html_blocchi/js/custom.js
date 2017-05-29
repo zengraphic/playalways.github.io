@@ -401,6 +401,7 @@ r$(document)
 
 
             var menuPerVisore = visoreConSlider.next().find('.stripMenu');
+
             if (menuPerVisore.length == 1) {
                 var emettitoreEvento = menuPerVisore.closest('.filter-showcase');
                 emettitoreEvento
@@ -409,8 +410,8 @@ r$(document)
                         var activeTabIndex = activeTab.index();
                         visoreConSlider
                             .slick('slickGoTo', activeTabIndex);
-                        if (window.width < 768) {
-                            debugger;
+                        if (window.outerWidth < 768) {
+
                             r$('html, body')
                                 .animate({
                                     scrollTop: 0
@@ -939,7 +940,7 @@ r$(document)
 
         var scrollableTimer;
 
-        r$('html')
+        /*r$('html')
             .mouseover(function() {
                 clearTimeout(scrollableTimer);
                 scrollableTimer = setTimeout(function() {
@@ -947,7 +948,7 @@ r$(document)
                         .getNiceScroll()
                         .resize();
                 }, 300);
-            });
+            });*/
     });
 
 
@@ -1506,16 +1507,14 @@ r$(document)
                                 'bottom': 0,
                                 'position': 'fixed'
                             });
-                        r$(document)
-                            .scrollTop(150);
 
-                    } else {
-                        r$(document)
-                            .scrollTop(0);
                     }
 
+                    r$(document)
+                        .scrollTop(0);
 
-                    r$('html')
+
+                    r$('html, body')
                         .css({
                             'overflow': 'hidden'
                         });
@@ -1578,9 +1577,10 @@ r$(document)
 
                     r$(document)
                         .scrollTop(0);
-                    r$('html').css({
-                        'overflow': ''
-                    });
+                    r$('html, body')
+                        .css({
+                            'overflow': ''
+                        });
 
 
                 }
@@ -1903,7 +1903,7 @@ function DOUBLEFILTER() {
                     $FILTER.resizeTimer = setTimeout(function() {
                         if ($FILTER.showMoreOn) {
                             var activeSlick = r$('.tab_cards__container:visible');
-                            if (window.width < 768) {
+                            if (window.outerWidth < 768) {
                                 if (!activeSlick.hasClass('slick-initialized')) {
                                     activeSlick
                                         .slick($FILTER.slickConfig);
@@ -2012,13 +2012,11 @@ function DOUBLEFILTER() {
             var filtersData = $FILTER.filters.join(' ');
             if (cardsContainerData == filtersData) {
                 $cardsContainer
-                    .show(0,function() {
-                        if (window.outerWidth < 768) {
-                            r$(this)
-                                .slick($FILTER.slickConfig);
-                        }
-
-                    });
+                    .show();
+                if (window.outerWidth < 768) {
+                    r$(this)
+                        .slick($FILTER.slickConfig);
+                }
 
                 $cardsContainer
                     .parent()
@@ -2035,12 +2033,12 @@ function DOUBLEFILTER() {
                                 var $relatedCard = r$(this);
                                 if (i >= 3) {
                                     $relatedCard
-                                        .hide(0);
+                                        .hide();
                                 }
                             });
                         if ($relatedShowMore.siblings().length > 3) {
                             $relatedShowMore
-                                .show(0);
+                                .show();
                         }
 
                     } else {
@@ -2049,12 +2047,11 @@ function DOUBLEFILTER() {
 
                 }
                 $cardsContainer
-                    .hide(function() {
-                        if ($cardsContainer.hasClass('.slick-initialized')) {
-                            $cardsContainer
-                                .slick('unslick');
-                        }
-                    });
+                    .hide();
+                if ($cardsContainer.hasClass('.slick-initialized')) {
+                    $cardsContainer
+                        .slick('unslick');
+                }
             }
         });
         return $FILTER;

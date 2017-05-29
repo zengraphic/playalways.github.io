@@ -143,6 +143,7 @@ h4.trade_l {
         letter-spacing: 0.4px;
         position: relative;
         text-decoration: none;
+        text-transform: uppercase;
         &:visited {
           color: $color_text_light;
         }
@@ -325,32 +326,29 @@ h4.trade_l {
   }
 }
 
-
 // .margin_top_header {
 //     margin-top: 121px;
 // }
-
 // @media all and (max-width: 767px) {
 //     .margin_top_header {
 //         margin-top: 250px;
 //     }
 // }
-
-.area_clienti_wind{
-  #header{
-    float:none;
-    display:block;
-    position:static;
-    .header_sup{
-      float:none;
-      display:block;
+.area_clienti_wind {
+  #header {
+    float: none;
+    display: block;
+    position: static;
+    .header_sup {
+      float: none;
+      display: block;
     }
-    .header_second{
-      float:none;
-      display:block;
-      .base__icon{
-        float:none;
-        display:block;
+    .header_second {
+      float: none;
+      display: block;
+      .base__icon {
+        float: none;
+        display: block;
       }
     }
   }
@@ -611,8 +609,15 @@ h4.trade_l {
 @media (max-width: 767px) {
   .header .menu {
     margin-top: 1rem;
-    display: none;
+    //display: block;
     max-width: 108px;
+    li:not(:nth-child(3)) {
+      display: none;
+    }
+    li:nth-child(3) {
+      margin-top: 1.8rem;
+      margin-bottom: 0;
+    }
   }
   .header .quick_links {
     margin-top: calc(1.1rem - 2px);

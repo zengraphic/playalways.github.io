@@ -5790,10 +5790,6 @@ wss.showcase_bundle_block {
   wss.showcase_bundle_block .container_secondColumn {
     padding-top: 5px; }
   wss.showcase_bundle_block__container {
-    -o-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -webkit-transition: all 0.45s ease-in-out;
     max-width: 1024px;
     margin: 0 auto; }
     wss.showcase_bundle_block__container .bundle_block__showMore {
@@ -5852,8 +5848,8 @@ wss.showcase_bundle_block {
     wss.showcase_bundle_block__showMore:hover {
       text-decoration: underline; }
   wss.showcase_bundle_block__single {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center;
     display: none; }
     wss.showcase_bundle_block__single:nth-child(-n+3) {
@@ -5893,12 +5889,15 @@ wss.showcase_bundle_block {
       margin-bottom: 15px;
       height: 65px;
       color: #009BBE;
-      font-size: 1.875em;
-      font-family: "Trade Gothic Bold"; }
+      font-size: 1.785em;
+      font-family: "Trade Gothic Bold";
+      letter-spacing: -.025em; }
+      .ff wss.showcase_bundle_block__single--title {
+        letter-spacing: -.045em; }
     wss.showcase_bundle_block__single--disclaimer {
       font-size: 0.688em;
       font-family: "Trade Gothic Light";
-      margin: 10px 0px 20px 0px;
+      margin: 10px 0 20px;
       height: 35px;
       overflow: hidden; }
     wss.showcase_bundle_block__single--price_discounted {
@@ -11102,11 +11101,16 @@ sw.showcase_bundle_device {
         margin-bottom: 16px;
         color: inherit; }
         .showcase_bundle_block__container .cardsOffer__single--title h3 {
-          font-size: 1.875em;
+          font-size: 1.785em;
           font-family: "Trade Gothic Condensed";
           font-weight: 700;
           height: 3em;
-          line-height: 1em; }
+          line-height: 1em;
+          letter-spacing: -.025em; }
+          .ff .showcase_bundle_block__container .cardsOffer__single--title h3 {
+            letter-spacing: -.045em; }
+          .showcase_bundle_block__container .cardsOffer__single--title h3:empty {
+            display: none; }
       .showcase_bundle_block__container .cardsOffer__single--subTitle {
         display: none; }
       .showcase_bundle_block__container .cardsOffer__single--text {
@@ -11114,17 +11118,21 @@ sw.showcase_bundle_device {
         margin-bottom: 10px;
         z-index: 51;
         color: #292F36; }
+        .showcase_bundle_block__container .cardsOffer__single--text:empty {
+          display: none; }
         .showcase_bundle_block__container .cardsOffer__single--text--bundle {
           font-size: 1.375em;
           color: #292F36;
           margin-bottom: 10px;
           line-height: 1.1em; }
+          .showcase_bundle_block__container .cardsOffer__single--text--bundle:empty {
+            display: none; }
         .showcase_bundle_block__container .cardsOffer__single--text--smallDescription {
           font-size: 1.125em;
           margin-bottom: 10px;
           color: #292F36;
           line-height: 1.1em; }
-        .showcase_bundle_block__container .cardsOffer__single--text--bigDescription {
+        .showcase_bundle_block__container .cardsOffer__single--text--bigDescription:empty {
           display: none; }
       .showcase_bundle_block__container .cardsOffer__single--price__container {
         position: absolute;
@@ -11159,11 +11167,15 @@ sw.showcase_bundle_device {
           position: relative;
           line-height: 1;
           z-index: 51; }
+          .showcase_bundle_block__container .cardsOffer__single--price__container--price:empty {
+            display: none; }
         .showcase_bundle_block__container .cardsOffer__single--price__container--recurrency {
           font-size: 0.875em;
           position: relative;
           color: #292F36;
           z-index: 51; }
+          .showcase_bundle_block__container .cardsOffer__single--price__container--recurrency:empty {
+            display: none; }
       .showcase_bundle_block__container .cardsOffer__single .button, .showcase_bundle_block__container .cardsOffer__single a.button--slim, .showcase_bundle_block__container .cardsOffer__single a.button--ghost, .showcase_bundle_block__container .cardsOffer__single a.button--ghost--transparent, .showcase_bundle_block__container .cardsOffer__single a.button--search {
         max-width: 300px;
         margin: 0 auto;
@@ -11179,31 +11191,18 @@ sw.showcase_bundle_device {
           color: #F48135; }
       .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--bundle {
         margin-bottom: 10px; }
-        .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--bundle .bundle_single:nth-child(n+2) {
-          display: none; }
       .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--smallDescription {
         margin-bottom: 10px; }
-      .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bundle {
-        display: none; }
       .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bigDescription {
-        display: block;
         font-size: 1.375em;
         color: #292F36;
         line-height: 1.1em;
         margin-bottom: 10px; }
-      .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .bundle_single,
-      .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .cardsOffer__single--text--smallDescription,
-      .showcase_bundle_block__container .cardsOffer__single.bgAndPrice .cardsOffer__single--text--bigDescription {
-        display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text {
         padding-top: 10.7em; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle {
           font-size: 1em;
           color: #FFF; }
-          .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle .bundle_single:nth-child(n+2) {
-            display: none; }
-        .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--smallDescription, .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bigDescription {
-          display: none; }
       .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted {
         color: #FFF; }
         .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted .price::before {
@@ -11220,8 +11219,6 @@ sw.showcase_bundle_device {
       .showcase_bundle_block__container .cardsOffer__single.fullBg {
         padding-left: 15px;
         padding-right: 15px; }
-        .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--title, .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--subTitle, .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--text, .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--price__container {
-          display: none; }
         .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--bgContainer {
           position: relative;
           margin-bottom: 10px; }
@@ -11229,20 +11226,9 @@ sw.showcase_bundle_device {
             max-width: 100%; }
       .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text {
         line-height: 1.2em; }
-      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--bgContainer,
-      .showcase_bundle_block__container .cardsOffer__single.onlyText .bundle_single,
-      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text--smallDescription,
-      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text--bigDescription {
-        display: none; }
       .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text {
         line-height: 1.2em;
         margin-bottom: 10px; }
-      .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--bgContainer,
-      .showcase_bundle_block__container .cardsOffer__single.fullText .bundle_single,
-      .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text--smallDescription,
-      .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text--bigDescription,
-      .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--price__container {
-        display: none; }
     .showcase_bundle_block__container .bundle_block__showMore {
       padding: 0 0 20px;
       color: #F48135;
