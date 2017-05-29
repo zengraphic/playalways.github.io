@@ -99,6 +99,18 @@
                     z-index: 15;
                     top: 0;
                     // non in assoluto
+                    &.big_mobile {
+                        @include breakpoint(small) {
+                            width: 80%;
+                            top: 0;
+                            right: 0px;
+                            max-width: 400px;
+                        }
+                        @include breakpoint(super-tiny) {
+                            width: 70%;
+                            top: 15%;
+                        }
+                    }
                     &.no_absolute {
                         position: static;
                     }
@@ -215,6 +227,7 @@
                         width: auto;
                         padding: 0;
                         text-align: left;
+                        height: auto;
                     }
                     &:first-child {
                         padding: 0 30px 0 0;
@@ -386,6 +399,40 @@
                     color: $color_white;
                     z-index: 16;
                     font-family: $font_family_regular;
+                    &.ribbon_static {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        right: auto;
+                        &:before {
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            right: 0%;
+                            bottom: 0;
+                            left: 0%;
+                            transform: skew(-20deg);
+                            transform-origin: 100% 100%;
+                            background-color: $color_robin;
+                            content: "";
+                            z-index: -1;
+                        }
+                        &:after {
+                            display: none;
+                            content: "";
+                            z-index: -1;
+                        }
+                        .recurrency {
+                            font-size: 1.129rem;
+                            display: inline-block;
+                            @include breakpoint(small) {
+                                font-size: 0.9rem;
+                            }
+                        }
+                        @include breakpoint(small) {
+                            left: -15px;
+                        }
+                    }
                     &.mobile_medium_ribbon {
                         display: none;
                         @include breakpoint(medium) {

@@ -223,13 +223,13 @@ $color_bt_disabled: $color_grey_medium_light;*/
   -o-animation: fadein 2s;
   -ms-animation: fadein 2s;
   animation: fadein 2s; }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .landing .landing__header {
       height: 70px; } }
   .landing .landing__header__bg {
     background-color: rgba(255, 255, 255, 0.95);
     height: 84px; }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .landing .landing__header__bg {
         height: 69px; } }
   .landing .landing__header--margin {
@@ -249,7 +249,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
     display: none;
     position: relative;
     padding-left: 61px; }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .landing .landing__header__container--logos {
         padding-left: 30px; } }
     .landing .landing__header__container--logos:before {
@@ -260,7 +260,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
       border: 1px solid #656D78;
       top: 8px;
       left: 30px; }
-      @media (max-width: 600px) {
+      @media (max-width: 768px) {
         .landing .landing__header__container--logos:before {
           height: 30px;
           top: 5px;
@@ -273,7 +273,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
     margin: 0 auto;
     width: 40px;
     height: auto; }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .landing .landing__header__va {
         width: 25px;
         height: auto; } }
@@ -283,7 +283,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
     width: 65px;
     height: auto;
     position: relative; }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .landing .landing__header__offer {
         width: 50px;
         height: auto; } }
@@ -292,10 +292,10 @@ $color_bt_disabled: $color_grey_medium_light;*/
     max-width: 1024px;
     margin: 0 auto;
     padding: 10px 30px; }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .landing .landing__header .container {
         padding: 10px 15px; } }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .landing .landing__header .logo img {
       width: 70px;
       height: auto;
@@ -420,6 +420,16 @@ $color_bt_disabled: $color_grey_medium_light;*/
     right: 0;
     z-index: 15;
     top: 0; }
+    @media (max-width: 768px) {
+      .landing .landing__hero__imageContainer.big_mobile {
+        width: 80%;
+        top: 0;
+        right: 0px;
+        max-width: 400px; } }
+    @media (max-width: 480px) {
+      .landing .landing__hero__imageContainer.big_mobile {
+        width: 70%;
+        top: 15%; } }
     .landing .landing__hero__imageContainer.no_absolute {
       position: static; }
     @media (max-width: 768px) {
@@ -519,7 +529,8 @@ $color_bt_disabled: $color_grey_medium_light;*/
         display: block;
         width: auto;
         padding: 0;
-        text-align: left; } }
+        text-align: left;
+        height: auto; } }
     .landing .landing__hero .bundle_orange:first-child {
       padding: 0 30px 0 0; }
     .landing .landing__hero .bundle_orange:not(:last-of-type) {
@@ -664,6 +675,36 @@ $color_bt_disabled: $color_grey_medium_light;*/
     color: #FFF;
     z-index: 16;
     font-family: "Trade Gothic", sans-serif; }
+    .landing .landing__hero--ribbon.ribbon_static {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: auto; }
+      .landing .landing__hero--ribbon.ribbon_static:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0%;
+        bottom: 0;
+        left: 0%;
+        transform: skew(-20deg);
+        transform-origin: 100% 100%;
+        background-color: #009BBE;
+        content: "";
+        z-index: -1; }
+      .landing .landing__hero--ribbon.ribbon_static:after {
+        display: none;
+        content: "";
+        z-index: -1; }
+      .landing .landing__hero--ribbon.ribbon_static .recurrency {
+        font-size: 1.129rem;
+        display: inline-block; }
+        @media (max-width: 768px) {
+          .landing .landing__hero--ribbon.ribbon_static .recurrency {
+            font-size: 0.9rem; } }
+      @media (max-width: 768px) {
+        .landing .landing__hero--ribbon.ribbon_static {
+          left: -15px; } }
     .landing .landing__hero--ribbon.mobile_medium_ribbon {
       display: none; }
       @media (max-width: 910px) {
@@ -2400,6 +2441,8 @@ h6 {
   @media (max-width: 768px) {
     .landing .margin_left_m_0 {
       margin-left: 0px !important; } }
+  .landing .text_underline {
+    text-decoration: underline; }
   .landing .text_centered {
     text-align: center; }
   @media (max-width: 768px) {
