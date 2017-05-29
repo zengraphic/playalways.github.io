@@ -215,9 +215,17 @@ function prefixedEventListener(element, type, callback) {
                         callbacks: {
                             close: function() {
                                 //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '');
+                                r$('html,body')
+                                    .css({
+                                        'overflow': 'auto'
+                                    });
                             },
                             open: function() {
                                 //$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
+                                 r$('html,body')
+                                    .css({
+                                        'overflow': 'hidden'
+                                    });
                             }
                         }
                     });

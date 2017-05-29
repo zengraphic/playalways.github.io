@@ -912,19 +912,22 @@ body {
 
 .content__breadcrumbs {
   width: 100%;
-  margin: 0 auto 2rem 2.8rem; }
+  max-width: 1024px;
+  margin: 0 auto 1rem; }
   @media (max-width: 580px) {
     .content__breadcrumbs {
       background-color: #F4F4F4;
       position: relative;
       margin: 0;
-      float: left; } }
+      float: none; } }
   .content__breadcrumbs .breadcrumbs {
     float: left;
     width: 100%;
+    min-height: auto;
     overflow: hidden; }
     @media (max-width: 580px) {
       .content__breadcrumbs .breadcrumbs {
+        min-height: 50px;
         /* gradient left and right of breadcrumbs mobile */ }
         .content__breadcrumbs .breadcrumbs:before, .content__breadcrumbs .breadcrumbs:after {
           content: "";
@@ -943,13 +946,11 @@ body {
           background: #f4f4f4;
           background: -webkit-linear-gradient(legacy-direction(to left), #f4f4f4 0%, rgba(244, 244, 244, 0) 100%);
           background: linear-gradient(to left, #f4f4f4 0%, rgba(244, 244, 244, 0) 100%); } }
-    .content__breadcrumbs .breadcrumbs .btn_prev {
-      display: none; }
-    .content__breadcrumbs .breadcrumbs .btn_next {
+    .content__breadcrumbs .breadcrumbs .btn_prev_prev, .content__breadcrumbs .breadcrumbs .btn_prev_next {
       display: none; }
     @media (max-width: 580px) {
       .content__breadcrumbs .breadcrumbs {
-        padding: 0.8rem 1.7rem 0 1.7rem; }
+        padding: 0.8rem 1.7rem; }
         .content__breadcrumbs .breadcrumbs .btn_prev {
           display: block;
           position: absolute;
@@ -995,7 +996,7 @@ body {
   display: inline-block;
   list-style: none;
   margin-bottom: 0;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.875em;
   /*cambio en margin top */ }
   @media (max-width: 580px) {

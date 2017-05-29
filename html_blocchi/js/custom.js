@@ -409,6 +409,13 @@ r$(document)
                         var activeTabIndex = activeTab.index();
                         visoreConSlider
                             .slick('slickGoTo', activeTabIndex);
+                        if (window.width < 768) {
+                            debugger;
+                            r$('html, body')
+                                .animate({
+                                    scrollTop: 0
+                                }, 300);
+                        }
                     });
             }
         }
@@ -1098,7 +1105,7 @@ r$(document)
 r$(document)
     .ready(function() {
         /* Breadcrumbs mobile */
-        var breadcums_action = (function() {
+        var breadcums_action = function() {
             r$('.base__breadcrumbs')
                 .each(function() {
                     var liItems = r$(this);
@@ -1114,7 +1121,7 @@ r$(document)
                             .width(Sum + 20);
                     }
                 });
-        });
+        };
         var scrollTimer;
 
         r$(window)
@@ -1902,9 +1909,11 @@ function DOUBLEFILTER() {
                                         .slick($FILTER.slickConfig);
                                 }
                             } else {
-                                if (!activeSlick[0].slick.unslicked) {
-                                    activeSlick
-                                        .slick('unslick');
+                                if (activeSlick[0].slick) {
+                                    if (!activeSlick[0].slick.unslicked) {
+                                        activeSlick
+                                            .slick('unslick');
+                                    }
                                 }
                             }
                         }
@@ -2003,11 +2012,12 @@ function DOUBLEFILTER() {
             var filtersData = $FILTER.filters.join(' ');
             if (cardsContainerData == filtersData) {
                 $cardsContainer
-                    .show(function() {
-                        if (window.width < 768) {
+                    .show(0,function() {
+                        if (window.outerWidth < 768) {
                             r$(this)
                                 .slick($FILTER.slickConfig);
                         }
+
                     });
 
                 $cardsContainer
@@ -2025,12 +2035,12 @@ function DOUBLEFILTER() {
                                 var $relatedCard = r$(this);
                                 if (i >= 3) {
                                     $relatedCard
-                                        .hide();
+                                        .hide(0);
                                 }
                             });
                         if ($relatedShowMore.siblings().length > 3) {
                             $relatedShowMore
-                                .show();
+                                .show(0);
                         }
 
                     } else {
