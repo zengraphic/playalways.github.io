@@ -117,7 +117,7 @@ h6 {
     }
     .display_forced_inline {
         display: inline-block !important;
-    }    
+    }
     .vertical_top {
         vertical-align: top;
     }
@@ -127,12 +127,23 @@ h6 {
     .vertical_bottom {
         vertical-align: bottom;
     }
-    .margin_top_130 {
-        margin-top: 130px !important;
+    .margin_top_150 {
+        margin-top: 150px !important;
     }
-    .margin_top_m_130 {
+    .margin_top_m_150 {
         @include breakpoint(small) {
-            margin-top: 130px !important;
+            margin-top: 150px !important;
+        }
+        @include breakpoint(tiny) {
+            margin-top: 150px !important;
+        }
+    }
+    .margin_top_special_veon {
+        @include breakpoint(small) {
+            margin-top: calc(75px + 20vw) !important;
+        }
+        @include breakpoint(tiny) {
+            margin-top: calc(75px + 20vw) !important;
         }
     }
     .margin_top_0 {
@@ -228,6 +239,11 @@ h6 {
             display: none !important;
         }
     }
+    .only_desktop_768 {
+        @include breakpoint(small) {
+            display: none !important;
+        }
+    }
     .only_mobile_medium {
         display: none;
         @include breakpoint(medium) {
@@ -240,6 +256,12 @@ h6 {
     .only_mobile {
         display: none !important;
         @include breakpoint(tiny) {
+            display: block !important;
+        }
+    }
+    .only_mobile_768 {
+        display: none !important;
+        @include breakpoint(small) {
             display: block !important;
         }
     }

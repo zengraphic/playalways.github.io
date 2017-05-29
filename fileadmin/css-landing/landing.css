@@ -585,13 +585,14 @@ $color_bt_disabled: $color_grey_medium_light;*/
   .landing .landing__hero .veon_background {
     background-image: url("/fileadmin/img-landing/backgrounds/veon_hero_background.png");
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top center !important;
     padding-bottom: 25px;
     background-size: cover;
-    height: 595px; }
+    overflow: hidden; }
     @media (max-width: 768px) {
       .landing .landing__hero .veon_background {
-        background-position: center center;
+        height: 675px;
+        background-position: top center;
         background-image: url("/fileadmin/img-landing/backgrounds/veon_hero_background_small.png"); } }
   .landing .landing__hero .easy-europe_background {
     background-image: url("/fileadmin/img-landing/backgrounds/easy-europe_hero_background.jpg");
@@ -1028,6 +1029,9 @@ $color_bt_disabled: $color_grey_medium_light;*/
   @media (max-width: 768px) {
     .landing .landing_hero_small__coloredBg {
       display: none; } }
+.landing .container_text_slider {
+  height: auto;
+  padding: 0px 30px; }
 .landing .download_pdf_container {
   padding: 15px 0;
   border-top: 1px solid #D3D3D2;
@@ -2372,11 +2376,20 @@ h6 {
     vertical-align: middle; }
   .landing .vertical_bottom {
     vertical-align: bottom; }
-  .landing .margin_top_130 {
-    margin-top: 130px !important; }
+  .landing .margin_top_150 {
+    margin-top: 150px !important; }
   @media (max-width: 768px) {
-    .landing .margin_top_m_130 {
-      margin-top: 130px !important; } }
+    .landing .margin_top_m_150 {
+      margin-top: 150px !important; } }
+  @media (max-width: 600px) {
+    .landing .margin_top_m_150 {
+      margin-top: 150px !important; } }
+  @media (max-width: 768px) {
+    .landing .margin_top_special_veon {
+      margin-top: calc(75px + 20vw) !important; } }
+  @media (max-width: 600px) {
+    .landing .margin_top_special_veon {
+      margin-top: calc(75px + 20vw) !important; } }
   .landing .margin_top_0 {
     margin-top: 0px !important; }
   .landing .margin_bottom_0 {
@@ -2439,6 +2452,9 @@ h6 {
   @media (max-width: 600px) {
     .landing .only_desktop {
       display: none !important; } }
+  @media (max-width: 768px) {
+    .landing .only_desktop_768 {
+      display: none !important; } }
   .landing .only_mobile_medium {
     display: none; }
     @media (max-width: 910px) {
@@ -2451,6 +2467,11 @@ h6 {
     display: none !important; }
     @media (max-width: 600px) {
       .landing .only_mobile {
+        display: block !important; } }
+  .landing .only_mobile_768 {
+    display: none !important; }
+    @media (max-width: 768px) {
+      .landing .only_mobile_768 {
         display: block !important; } }
   .landing .mac {
     margin: 0; }

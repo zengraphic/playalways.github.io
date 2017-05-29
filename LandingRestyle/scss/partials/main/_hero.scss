@@ -298,15 +298,16 @@
                 .veon_background {
                     background-image: url("/fileadmin/img-landing/backgrounds/veon_hero_background.png");
                     background-repeat: no-repeat;
-                    background-position: top right;
+                    background-position: top center !important;
                     padding-bottom: 25px;
                     background-size: cover;
-                    height: 595px;
+                    overflow: hidden;
                     @include breakpoint(small) {
-                        background-position: center center;
+                        height: 675px;
+                        background-position: top center;
                         background-image: url("/fileadmin/img-landing/backgrounds/veon_hero_background_small.png");
                     }
-                }                
+                }
                 .easy-europe_background {
                     background-image: url("/fileadmin/img-landing/backgrounds/easy-europe_hero_background.jpg");
                     background-repeat: no-repeat;
