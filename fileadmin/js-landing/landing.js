@@ -1,7 +1,18 @@
-
 jQuery('body').addClass('landing');
 
 jQuery(document).ready(function($) {
+    function checkDevice() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/android/i.test(userAgent)) {
+            //Android
+            return ('android');
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            //iOS
+            return ('ios');
+        }
+    }
+
     function loadSlickMagnum() {
         $('.slider__device').slick({
             dots: true,
@@ -37,11 +48,14 @@ jQuery(document).ready(function($) {
             ]
         });
     }
+    // SE C'E' LO SLIDER
     if ($('.slider__device')) {
         loadSlickMagnum();
     }
+    // AGGIUNGI LANDING (SAFEGUARD)
     $('body').addClass('landing');
 
+    //TRIGGER LOGIN
     $('.button_shoulder_login').click(function() {
         r$.magnificPopup.open({
             items: {
@@ -50,16 +64,8 @@ jQuery(document).ready(function($) {
         });
     });
 
-    // TRIGGER SPALLA 
-    // $('.open_shoulder_button').click(function() {    
-    //     console.log('ricarica');
-    //     r$.magnificPopup.open({
-    //         items: {
-    //             src: $('#refill_block')
-    //         }
-    //     });        
-    // });    
 
+    //TABS MAGNUM
     $('body').on("click", ".landing__hero__tabs--button", function() {
         var tabNumber = $(this).data('tabn');
         var element = $(this);
@@ -88,7 +94,24 @@ jQuery(document).ready(function($) {
         });
     });
 
-    //POPUP YOUTUBE
+    //CHECK SMS DATA
+    $('body').on("click", ".compile_sms_button", function(e) {
+        var smsNumber = $(this).data('smsnumber');
+        var smsText = $(this).data('smstext');
+        var smsDivider;
+        var mergeCode;
+        if (checkDevice() == 'android') {
+            smsDivider = '?';
+        } else {
+            smsDivider = '&';
+        }
+        mergeCode = "sms:" + smsNumber + smsDivider + "body=" + smsText;
+        console.log(mergeCode);
+        e.preventDefault();        
+        location.href = mergeCode;
+    });
+
+
 
 
 });
