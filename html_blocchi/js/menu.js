@@ -121,9 +121,9 @@ jQuery(function($) {
 
 
             $(".menu__modal")
-                .on('click', '.menu__modal--content-items a i', function(event) {
+                .on('click', '.menu__modal--content-items a', function(event) {
 
-                    var menuLink = $(this).parent();
+                    var menuLink = $(this);
 
 
 
