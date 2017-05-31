@@ -1627,8 +1627,16 @@ function DOUBLEFILTER() {
                     .show();
                 if (window.outerWidth < 768) {
                     if (!r$(this).hasClass('slick-initialized')) {
-                        r$(this)
-                            .slick($FILTER.slickConfig);
+                        if (r$(this).find('.filter-showcase').length == 0) {
+                            r$(this)
+                                .slick($FILTER.slickConfig);
+                        } else {
+
+                            r$(this)
+                                .find('.tab_cards__container')
+                                .slick($FILTER.slickConfig);
+                        }
+
                     }
                 }
 
