@@ -1515,10 +1515,14 @@ function DOUBLEFILTER() {
                     $FILTER.resizeTimer = setTimeout(function() {
                         if ($FILTER.showMoreOn) {
                             var activeSlick = r$('.tab_cards__container:visible');
+                            var $relatedCards = activeSlick.find('.card_item');
+                            var $relatedShowMore = activeSlick.find('div[class*="__showMore"]');
                             if (window.outerWidth < 768) {
                                 if (!activeSlick.hasClass('slick-initialized')) {
                                     activeSlick
                                         .slick($FILTER.slickConfig);
+                                    $relatedShowMore
+                                        .hide();
                                 }
                             } else {
                                 if (activeSlick[0].slick) {
@@ -1527,6 +1531,20 @@ function DOUBLEFILTER() {
                                             .slick('unslick');
                                     }
                                 }
+
+                                $relatedCards
+                                    .each(function(i) {
+                                        var $relatedCard = r$(this);
+                                        if (i >= 3) {
+                                            $relatedCard
+                                                .hide();
+                                        }
+                                    });
+                                if ($relatedShowMore.siblings().length > 3) {
+                                    $relatedShowMore
+                                        .show();
+                                }
+
                             }
                         }
 
@@ -1622,14 +1640,25 @@ function DOUBLEFILTER() {
             var $cardsContainer = r$(this);
             var cardsContainerData = $cardsContainer.data().combo;
             var filtersData = $FILTER.filters.join(' ');
+            var $relatedCards;
+            var $relatedShowMore;
             if (cardsContainerData == filtersData) {
                 $cardsContainer
                     .show();
+                $relatedCards = $cardsContainer.find('.card_item');
+                $relatedShowMore = $cardsContainer.find('div[class*="__showMore"]');
                 if (window.outerWidth < 768) {
                     if (!r$(this).hasClass('slick-initialized')) {
                         if (r$(this).find('.filter-showcase').length == 0) {
                             r$(this)
                                 .slick($FILTER.slickConfig);
+                            if ($FILTER.showMoreOn) {
+                                console.log('prova prova');
+                                $relatedCards
+                                    .show();
+                                $relatedShowMore.hide();
+
+                            }
                         } else {
 
                             r$(this)
@@ -1646,10 +1675,10 @@ function DOUBLEFILTER() {
 
             } else {
                 if ($cardsContainer.is(':visible')) {
-                    var $relatedCards = $cardsContainer.find('.card_item');
+                    $relatedCards = $cardsContainer.find('.card_item');
                     if ($FILTER.showMoreOn) {
 
-                        var $relatedShowMore = $cardsContainer.find('div[class*="__showMore"]');
+                        $relatedShowMore = $cardsContainer.find('div[class*="__showMore"]');
                         $relatedCards
                             .each(function(i) {
                                 var $relatedCard = r$(this);
