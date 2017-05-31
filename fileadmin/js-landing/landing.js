@@ -111,7 +111,4 @@ jQuery(document).ready(function($) {
         location.href = mergeCode;
     });
 
-
-
-
 });

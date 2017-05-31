@@ -399,6 +399,27 @@
                     color: $color_white;
                     z-index: 16;
                     font-family: $font_family_regular;
+                    &.ribbon_fluid {
+                        width: auto;
+                        height: auto;
+                        top: 30px;
+                        right: -20px;
+                        .price {
+                            font-size: 4.714rem;
+                            margin-top: 0;
+                            font-family: $font_family_bold;
+                            padding-top: 0px;                            
+                            padding-bottom: 0px;
+                            padding-left: 15px;
+                            padding-right: 65px;
+                        }
+                        .currency {
+                            font-size: 2.4rem;
+                        }
+                        &:after{
+                            border-width: 10px;
+                        }
+                    }
                     &.ribbon_static {
                         position: relative;
                         top: 0;
