@@ -12,7 +12,7 @@
 
 
             PRODUCTSLIDER
-                .initSlider($sliderBlock, $tabsBlock, $plansBlock, true, '000000000000008451');
+                .initSlider($sliderBlock, $tabsBlock, $plansBlock, false, '000000000000008458');
         });
 
     var PRODUCTSLIDER = {
@@ -25,8 +25,8 @@
         prices: false,
         attributesContainer: false,
         plans: false,
-        promo:false,
-        promoActive:false,
+        promo: false,
+        promoActive: false,
         paymentRates: false,
         paymentRatesCombo: false,
         plansActive: false,
@@ -288,9 +288,9 @@
 
             return $SLIDER;
         },
-        cycleSap: function(index, sapLength, sapArray, sapCandidate, activeSap) {
+        cycleSap: function(sapArray) {
             var $SLIDER = this;
-            if (sapLength == 0) {
+            /*if (sapLength == 0) {
                 console.log('Error - No SAP CODE');
             } else {
                 r$.each(sapArray[index], function(i, firstVal) {
@@ -298,7 +298,6 @@
                         if (sapCandidate) {
                             if (firstVal == sapCandidate) {
                                 activeSap = firstVal;
-
                             }
                         } else {
                             activeSap = firstVal;
@@ -313,9 +312,20 @@
                             return false;
                         }
                     }
-                });
-                return activeSap;
-            }
+                });                
+            }*/
+
+            var activeSap = sapArray.shift().filter(function(value) {
+                if (value != '') {
+                    return sapArray.every(function(array) {
+                        return array.indexOf(value) !== -1;
+                    });
+                }
+            });
+
+            activeSap = activeSap[0];
+
+            return activeSap;
         },
         /**
          * [setActiveModel description]
@@ -338,7 +348,7 @@
 
 
             var index = 0;
-            var activeSap = $SLIDER.cycleSap(index, sapLength, sapArray, false, false);
+            var activeSap = $SLIDER.cycleSap(sapArray);
 
             var candidateModel = $SLIDER.models.filter(function() {
                 var currentModelSap = r$(this).data().sap;
@@ -423,7 +433,7 @@
             var sapLength = sapArray.length;
 
             var index = 0;
-            var activeSap = $SLIDER.cycleSap(index, sapLength, sapArray, false, false);
+            var activeSap = $SLIDER.cycleSap(sapArray);
 
             if (deviceMode) {
                 $SLIDER.paymentRatesActive = $SLIDER.paymentRates.filter(function() {
