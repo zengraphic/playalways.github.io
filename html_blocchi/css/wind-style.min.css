@@ -6513,7 +6513,10 @@ sw.showcase_bundle_device {
   .showcase_bundle_device__single {
     position: relative;
     height: 495px;
-    display: none; }
+    display: none;
+    color: #292F36; }
+    .colored_bg--black.filter-showcase .showcase_bundle_device__single {
+      color: #FFF; }
     @media (max-width: 767px) {
       .showcase_bundle_device__single {
         height: auto;
@@ -6608,10 +6611,14 @@ sw.showcase_bundle_device {
         line-height: 1em; }
         .showcase_bundle_device__single--generic--description--price .currency {
           font-size: 0.844em; }
+        .colored_bg--black.filter-showcase .showcase_bundle_device__single--generic--description--price {
+          color: #F48135; }
       .showcase_bundle_device__single--generic--description--promo {
         font-family: "Trade Gothic Bold";
         color: #009BBE;
         text-transform: uppercase; }
+        .colored_bg--black.filter-showcase .showcase_bundle_device__single--generic--description--promo {
+          color: #F48135; }
     .showcase_bundle_device__single--generic--filter {
       max-width: 280px;
       margin: 0 auto 12px;
@@ -6650,6 +6657,8 @@ sw.showcase_bundle_device {
           color: #009BBE; }
           .showcase_bundle_device__single--generic--totalPrice--description--price .currency {
             font-size: 0.844em; }
+          .colored_bg--black.filter-showcase .showcase_bundle_device__single--generic--totalPrice--description--price {
+            color: #F48135; }
       .showcase_bundle_device__single--generic--totalPrice--barred {
         position: relative;
         margin: 0 auto; }
@@ -6673,6 +6682,8 @@ sw.showcase_bundle_device {
         color: #009BBE; }
         .showcase_bundle_device__single--generic--totalPrice--price .currency {
           font-size: 0.731em; }
+        .colored_bg--black.filter-showcase .showcase_bundle_device__single--generic--totalPrice--price {
+          color: #F48135; }
       .showcase_bundle_device__single--generic--totalPrice--discount {
         font-family: "Trade Gothic Light";
         font-size: 0.722em;
@@ -7406,7 +7417,7 @@ sw.showcase_bundle_device {
   max-width: 1024px;
   margin: 0 auto; }
   .whiteStrip .grey_strip__block {
-    background-color: #FFF; }
+    background-color: transparent; }
   .onlyTitle .grey_strip__block .grey_strip__block__title {
     width: 100%;
     border: none;
@@ -7417,6 +7428,8 @@ sw.showcase_bundle_device {
   .grey_strip__block__tabs {
     color: #292F36;
     text-transform: uppercase; }
+    .colored_bg--black.filter-showcase .grey_strip__block__tabs {
+      color: #FFF; }
     .grey_strip__block__tabs__container {
       padding-top: 21px;
       padding-bottom: 5px;
@@ -7446,7 +7459,7 @@ sw.showcase_bundle_device {
         border-bottom: 1px solid #F48135; }
     .grey_strip__block__tabs--title {
       margin-right: 15px;
-      color: #292F36;
+      color: inherit;
       font-size: 1em;
       cursor: pointer; }
       .grey_strip__block__tabs--title:hover {
@@ -8305,7 +8318,7 @@ sw.showcase_bundle_device {
       float: left; }
       @media (max-width: 480px) {
         .dashboard_watch_block__product .phone_gallery {
-          bottom: 115px;
+          bottom: 90px;
           width: 100%; } }
       .dashboard_watch_block__product .phone_gallery img {
         width: auto;
@@ -8674,6 +8687,8 @@ sw.showcase_bundle_device {
         float: none;
         text-align: center;
         margin-bottom: 15px; } }
+    .colored_bg--black.filter-showcase .device_filter_block__title {
+      color: #FFF; }
   .device_filter_block__select {
     float: left; }
     @media (max-width: 767px) {
@@ -9134,6 +9149,10 @@ sw.showcase_bundle_device {
     .strip_plans__offer_block__container .row {
       display: table;
       width: 100%; }
+      .strip_plans__offer_block__container .row p {
+        color: #292F36; }
+    .strip_plans__offer_block__container p {
+      color: #292F36; }
   .strip_plans__offer_block__item {
     border-right: 1px solid #D3D3D2;
     display: table-cell;
@@ -11316,6 +11335,17 @@ sw.showcase_bundle_device {
         width: 100%;
         max-width: 1024px;
         margin: 0 auto; }
+      .faq_block__secondaryBlock .faq_block__single {
+        display: inline-block;
+        width: 33%;
+        float: none;
+        vertical-align: middle; }
+        @media (max-width: 910px) {
+          .faq_block__secondaryBlock .faq_block__single {
+            width: 49%; } }
+        @media (max-width: 767px) {
+          .faq_block__secondaryBlock .faq_block__single {
+            width: 100%; } }
       .faq_block__secondaryBlock .faq_block__single:hover .faq_block__single__title {
         text-decoration: underline; }
       .faq_block__secondaryBlock .faq_block__single__title {
@@ -11340,6 +11370,17 @@ sw.showcase_bundle_device {
         .faq_block__firstLevelBlock .faq_block__single {
           width: 100%;
           text-align: left; } }
+      .faq_block__firstLevelBlock .faq_block__single.faq_block__single {
+        display: inline-block;
+        float: none;
+        width: 33%;
+        vertical-align: top; }
+        @media (max-width: 910px) {
+          .faq_block__firstLevelBlock .faq_block__single.faq_block__single {
+            width: 49%; } }
+        @media (max-width: 767px) {
+          .faq_block__firstLevelBlock .faq_block__single.faq_block__single {
+            width: 100%; } }
       .faq_block__firstLevelBlock__container {
         width: 100%;
         max-width: 1024px;
@@ -11395,6 +11436,8 @@ sw.showcase_bundle_device {
             position: relative; }
     .faq_block__firstLevelBlock--no_second .faq_block__single {
       width: 100%; }
+      .faq_block__firstLevelBlock--no_second .faq_block__single.faq_block__single {
+        width: 100% !important; }
       .faq_block__firstLevelBlock--no_second .faq_block__single__description li {
         float: left;
         width: 33%; }

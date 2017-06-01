@@ -13,7 +13,7 @@
     max-width: 1024px;
     margin: 0 auto;
     padding-bottom: 30px;
-    padding-top:30px;
+    padding-top: 30px;
     &__single {
         text-align: center;
         padding: 1.250em 1.250em;
@@ -102,6 +102,18 @@
                         max-width: 1024px;
                         margin: 0 auto;
                     }
+                    .faq_block__single {
+                        display: inline-block;
+                        width: 33%;
+                        float: none;
+                        vertical-align: middle;
+                        @include breakpoint(medium) {
+                            width: 49%;
+                        }
+                        @include breakpoint(small) {
+                            width: 100%;
+                        }
+                    }
                 }
             }
             &:hover {
@@ -134,6 +146,18 @@
             @include breakpoint(tiny) {
                 width: 100%;
                 text-align: left;
+            }
+            &.faq_block__single {
+                display: inline-block;
+                float: none;
+                width: 33%;
+                vertical-align: top;
+                @include breakpoint(medium) {
+                    width: 49%;
+                }
+                @include breakpoint(small) {
+                    width: 100%;
+                }
             }
             @at-root {
                 .faq_block__firstLevelBlock {
@@ -205,6 +229,9 @@
         }
         @at-root .faq_block__firstLevelBlock--no_second #{&} {
             width: 100%;
+            &.faq_block__single{
+                width:100% !important;
+            }
             &__description {
                 li {
                     float: left;

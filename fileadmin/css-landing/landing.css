@@ -675,6 +675,27 @@ $color_bt_disabled: $color_grey_medium_light;*/
     color: #FFF;
     z-index: 16;
     font-family: "Trade Gothic", sans-serif; }
+    .landing .landing__hero--ribbon.ribbon_fluid {
+      width: auto;
+      height: auto;
+      top: 30px;
+      right: -20px; }
+      .landing .landing__hero--ribbon.ribbon_fluid .price {
+        font-size: 4.714rem;
+        margin-top: 0;
+        font-family: "Trade Gothic Bold", sans-serif;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 15px;
+        padding-right: 65px; }
+        @media (max-width: 768px) {
+          .landing .landing__hero--ribbon.ribbon_fluid .price {
+            font-size: 3.714rem;
+            padding-right: 45px; } }
+      .landing .landing__hero--ribbon.ribbon_fluid .currency {
+        font-size: 2.4rem; }
+      .landing .landing__hero--ribbon.ribbon_fluid:after {
+        border-width: 10px; }
     .landing .landing__hero--ribbon.ribbon_static {
       position: relative;
       top: 0;
@@ -902,6 +923,8 @@ $color_bt_disabled: $color_grey_medium_light;*/
         font-size: 1.7rem; } }
   .landing .landing--offer_details.veon_colored_bg {
     background-color: #ffcb24; }
+  .landing .landing--offer_details.orange_colored_bg {
+    background-color: #F48135; }
   .landing .landing--offer_details .details {
     list-style: none;
     padding-left: 60px;
@@ -2618,6 +2641,29 @@ h6 {
     .landing .btn_white:hover {
       opacity: 0.8;
       filter: alpha(opacity=80); }
+  .landing .btn_ghost_white {
+    border: 1px solid #F48135;
+    text-transform: uppercase;
+    padding: 10px 0;
+    display: block;
+    background-color: #FFF;
+    text-align: center;
+    color: #F48135 !important;
+    font-size: 1.571rem;
+    font-family: "Trade Gothic Light", sans-serif;
+    width: 100%;
+    max-width: 280px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */ }
+    @media (max-width: 768px) {
+      .landing .btn_ghost_white {
+        max-width: 200px; } }
+    .landing .btn_ghost_white:hover {
+      opacity: 0.8;
+      filter: alpha(opacity=80); }
   .landing .btn_orange {
     border: 1px solid #F48135;
     text-transform: uppercase;
@@ -2674,6 +2720,8 @@ h6 {
       border-radius: 4px;
       background-clip: padding-box;
       /* stops bg color from leaking outside the border: */ }
+      .landing a.button--standard.font_light {
+        font-family: "Trade Gothic Light", sans-serif; }
       .landing a.button--standard.ghost_button {
         background-color: #FFF;
         color: #F48135 !important;
@@ -2714,6 +2762,9 @@ h6 {
           width: 100%;
           z-index: 999;
           opacity: 0.95; } }
+      @media (max-width: 768px) {
+        .landing a.button--standard.no_fixed {
+          position: static; } }
       @media (max-width: 768px) {
         .landing a.button--standard.small_mobile_font {
           font-size: 1rem; } }

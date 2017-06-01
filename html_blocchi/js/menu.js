@@ -121,9 +121,9 @@ jQuery(function($) {
 
 
             $(".menu__modal")
-                .on('click', '.menu__modal--content-items a i', function(event) {
+                .on('click', '.menu__modal--content-items a', function(event) {
 
-                    var menuLink = $(this).parent();
+                    var menuLink = $(this);
 
 
 
@@ -433,6 +433,8 @@ FIRE MENU INITIALIZATION
 
 ***************************************************************/
 
-jQuery(document).ready(function($) {
-    MENU.initMenu();
-});
+jQuery(document)
+    .ready(function($) {
+        MENU
+            .initMenu();
+    });

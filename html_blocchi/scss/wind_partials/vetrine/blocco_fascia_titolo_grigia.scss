@@ -10,7 +10,7 @@
   margin: 0 auto;
   @at-root {
     .whiteStrip #{&} {
-      background-color: $color_white;
+      background-color: $color_transparent;
     }
     .onlyTitle #{&} {
       .grey_strip__block__title {
@@ -27,6 +27,11 @@
   @at-root #{&}__tabs {
     color: $color_text;
     text-transform: uppercase;
+    @at-root {
+      .colored_bg--black.filter-showcase #{&} {
+        color: $color_white;
+      }
+    }
     &__container {
       padding-top: 21px;
       padding-bottom: 5px;
@@ -70,7 +75,7 @@
     }
     &--title {
       margin-right: 15px;
-      color: $color_text;
+      color: inherit;
       font-size: 1em;
       cursor: pointer;
       &:hover {

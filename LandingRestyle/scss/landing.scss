@@ -162,7 +162,7 @@ h6 {
             margin-left: 0px !important;
         }
     }
-    .text_underline{
+    .text_underline {
         text-decoration: underline;
     }
     .text_centered {
@@ -394,6 +394,27 @@ h6 {
             @include opacity(0.8);
         }
     }
+    .btn_ghost_white {
+        border: 1px solid $color_orange;
+        text-transform: uppercase;
+        padding: 10px 0;
+        display: block;
+        background-color: $color_white;
+        text-align: center;
+        color: $color_orange !important;
+        font-size: 1.571rem;
+        font-family: $font_family_light;
+        width: 100%;
+        max-width: 280px;
+        cursor: pointer;
+        @include border-radius(4px);
+        @include breakpoint(small) {
+            max-width: 200px;
+        }
+        &:hover {
+            @include opacity(0.8);
+        }
+    }    
     .btn_orange {
         border: 1px solid $color_orange;
         text-transform: uppercase;
@@ -448,6 +469,9 @@ h6 {
             font-family: $font_family_bold;
             margin-bottom: 40px;
             @include border-radius(4px);
+            &.font_light {
+                font-family: $font_family_light;
+            }
             &.ghost_button {
                 background-color: $color_white;
                 color: $color_orange !important;
@@ -491,6 +515,11 @@ h6 {
                 width: 100%;
                 z-index: 999;
                 opacity: 0.95;
+            }
+            &.no_fixed {
+                @include breakpoint(small) {
+                    position: static;
+                }
             }
             &.small_mobile_font {
                 @include breakpoint(small) {
