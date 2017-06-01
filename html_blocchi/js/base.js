@@ -32,9 +32,10 @@ function prefixedEventListener(element, type, callback) {
                 background: "#e6e9ed",
                 spacebarenabled: false,
                 horizrailenabled: false,
-                autohidemode: true,
+                autohidemode: 'leave',
+                opacity: 0,
 
-                zindex: 998
+                zindex: 1060
             };
             var obj_nicescroll2 = {
                 cursorcolor: "#f48135",
@@ -158,6 +159,11 @@ function prefixedEventListener(element, type, callback) {
                         .niceScroll(obj_nicescroll2);
                 }
 
+                r$(window)
+                    .load(function() {
+                        r$('.base__scrollable').niceScroll({ 'opacity': 1 });
+                    });
+
                 //datepicker
 
                 r$.fn.datetimepicker.dates.en = {
@@ -193,6 +199,11 @@ function prefixedEventListener(element, type, callback) {
                                         'overflow': ''
                                     });
 
+
+                                r$('.base__scrollable')
+                                    .getNiceScroll()
+                                    .resize();
+
                             },
                             open: function() {
                                 // position btn conferma/avanti in bottom
@@ -201,6 +212,17 @@ function prefixedEventListener(element, type, callback) {
                                     .css({
                                         'overflow': 'hidden'
                                     });
+
+
+
+                                r$.magnificPopup.instance.wrap[0].addEventListener('focus', function(e) {
+                                    console.log('opened');
+                                    r$
+                                        .nicescroll
+                                        .resize();
+
+                                });
+
 
                                 if (window.outerWidth <= 768) {
                                     r$('.mfp-bg,.mfp-wrap')
@@ -237,8 +259,16 @@ function prefixedEventListener(element, type, callback) {
                                     .css({
                                         'overflow': ''
                                     });
+
+                                r$('.base__scrollable')
+                                    .getNiceScroll()
+                                    .resize();
                             },
                             open: function() {
+
+                                r$('.base__scrollable')
+                                    .getNiceScroll()
+                                    .resize();
                                 //r$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
                                 r$('html,body')
                                     .css({

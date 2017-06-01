@@ -433,6 +433,8 @@ FIRE MENU INITIALIZATION
 
 ***************************************************************/
 
-jQuery(document).ready(function($) {
-    MENU.initMenu();
-});
+jQuery(document)
+    .ready(function($) {
+        MENU
+            .initMenu();
+    });
