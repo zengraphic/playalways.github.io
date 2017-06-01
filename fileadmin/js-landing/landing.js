@@ -83,7 +83,6 @@ jQuery(document).ready(function($) {
         });
     });
 
-
     // TRIGGER ACCORDION NEGOZIO
     $('body').on("click", ".button_open_accordion_store", function() {
         $('.blocco_store_locator').parents('.showcase_accordions_block__single').find('.accordionBox').prop('checked', false);
