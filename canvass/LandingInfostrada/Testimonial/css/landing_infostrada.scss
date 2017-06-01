@@ -6,6 +6,7 @@ $color_infostrada: #183989;
 $color_blue_light: #3253A3;
 $color_wind:#f48135;
 $color_light_grey: #d6d6d6;
+$color_grey: #a5a5a5;
 $color_border: #d9dfec;
 $weight-light: 'Trade Gothic Light';
 $weight-normal: 'Trade Gothic';
@@ -68,12 +69,34 @@ body {
         margin: 0 auto;
         position: relative;
     }
+    &__header {
+        width: 100%;
+        border-bottom: 1px solid $color_grey;
+    }
     &__container {
         width: 100%;
         max-width: 878px;
         margin: 0 auto;
         @include breakpoint(small) {
             width: 100%;
+        }
+        .sticker_block {
+            display: inline-block;
+            float: right;
+            position: relative;
+            top: 6px;
+            @include breakpoint(small) {
+                right: 10px;
+            }
+            .single_sticker {
+                display: inline-block;
+                .image_sticker {
+                    @include breakpoint(mobile_land) {
+                        width: 35px;
+                        height: auto;
+                    }
+                }
+            }
         }
     }
     &__containerHero {
@@ -82,9 +105,9 @@ body {
         width: 100%;
         max-width: 1024px;
         position: relative;
-        padding: 19px 0;
+        padding: 19px 0 0 0;
         //left: calc(-50vw + 50%);
-        height: 530px;
+        height: 510px;
         margin: 0 auto;
         //left: -72px;
         background-color: $color_white;
@@ -92,9 +115,12 @@ body {
         /*background-image: url(../img/visore/visore_testimonial_wide.png);
         background-repeat: no-repeat;
         background-position: top left;*/
+        @include breakpoint(medium) {
+            padding: 19px;
+        }
         @include breakpoint(small) {
             width: 100%;
-            height: auto;
+            //height: 300px;
             left: 0;
             padding: 0 10px 0;
         }
@@ -128,12 +154,20 @@ body {
     &__logo {
         margin: 0 auto;
         padding: 20px 0;
-        text-align: center;
+        display: inline-block;
+        //text-align: center;
+        @include breakpoint(mobile_land) {
+            padding: 15px 0;
+        }
         img {
             width: 100%;
             max-width: 218px;
-            @include breakpoint(tiny) {
-                width: 50%;
+            @include breakpoint(medium) {
+                padding-left: 10px;
+            }
+            @include breakpoint(mobile_land) {
+                width: 140px;
+                height: auto;
             }
         }
     }
@@ -141,31 +175,69 @@ body {
         width: 100%;
         max-width: 878px;
         margin: 0 auto;
+        position: relative;
         @include breakpoint(small) {
-            width: 100%;
+            //width: 100%;
+        }
+        &--ribbon {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: auto;
+            width: 250px;
+            height: 100px;
+            display: block;
+            background-color: $color_infostrada;
+            text-align: center;
+            color: $color_white;
+            z-index: 16;
+            font-family: "Trade Gothic", sans-serif;
+            &:before {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0%;
+                bottom: 0;
+                left: 0%;
+                transform: skew(-20deg);
+                transform-origin: 100% 100%;
+                background-color: $color_infostrada;
+                content: "";
+                z-index: -1;
+            }
+            .price {
+                font-size: 56px;
+                .currency {
+                    font-size: 36px;
+                }
+            }
         }
         .left_block {
             float: left;
             width: 55%;
             position: relative;
             //left: 20px;
-            @include breakpoint(small) {
+            /*@include breakpoint(small) {
                 width: 100%;
                 float: none;
                 left: 0;
-            }
+            }*/
             .title {
-                font-family: $weight-bold-cond;
+                font-family: $weight-bold;
                 color: $color_infostrada;
-                font-size: 82px;
+                font-size: 100px;
                 text-transform: uppercase;
+                letter-spacing: -4px;
+                line-height: 100px;
                 @include breakpoint(medium) {
-                    font-size: 75px;
-                    text-align: center;
+                    font-size: 10vw;
+                    line-height: 10vw;
                 }
                 @include breakpoint(super-tiny) {
                     font-size: 46px;
                     //text-align: center;
+                }
+                @include breakpoint(mobile_land) {
                 }
             }
             .titleShadow {
@@ -235,13 +307,13 @@ body {
                 }
             }
             .listDetails {
-                font-family: $weight-bold-cond;
-                color: $color_white;
-                font-size: 28px;
+                font-family: $weight-cond;
+                color: $color_text;
+                font-size: 25px; 
                 text-transform: uppercase;
-                text-shadow: 0px 1px 8px black;
+                /*text-shadow: 0px 1px 8px black;
                 -webkit-text-shadow: 0px 1px 8px black;
-                -moz-text-shadow: 0px 1px 8px black;
+                -moz-text-shadow: 0px 1px 8px black;*/
                 ul {
                     padding-left: 0px;
                     margin-top: 10px;
@@ -250,26 +322,28 @@ body {
                         position: relative;
                         overflow: hidden;
                         list-style: none;
-                        padding-left: 25px;
+                        padding-left: 30px;
                         line-height: 1.35em;
                         margin: 0 0 .5em 0;
                         @include breakpoint(super-tiny) {
                             padding-left: 30px;
                         }
                         &:before {
-                            background: $color_white;
-                            overflow: hidden;
-                            list-style: none;
-                            content: "";
+                            //background: $color_text;
+                            //overflow: hidden;
+                            //list-style: none;
+                            content: " ";
+                            background-image: url(../img/list_icon.png);
                             position: absolute;
-                            top: 15px;
+                            top: 8px;
                             left: 0;
-                            width: 10px;
-                            height: 10px;
-                            @include border-radius(50%);
-                            box-shadow: 0px 1px 8px black;
+                            width: 19px;
+                            height: 21px;
+                            //background-image: ;
+                            //@include border-radius(50%);
+                            /*box-shadow: 0px 1px 8px black;
                             -webkit-box-shadow: 0px 1px 8px black;
-                            -moz-box-shadow: 0px 1px 8px black;
+                            -moz-box-shadow: 0px 1px 8px black;*/
                             @include breakpoint(super-tiny) {
                                 top: 8px;
                                 left: 15px;
@@ -280,82 +354,45 @@ body {
                     }
                 }
                 @include breakpoint(medium) {
-                    font-size: 25px;
+                    font-size: 2.6vw;
                     //padding-left: 25px;
-                }
-                @include breakpoint(super-tiny) {
-                    font-size: 16px;
+                } 
+                @include breakpoint(small_650) {
+                    font-size: 18px;
                     //text-align: center;
                 }
             }
-            .price {
-                font-family: $weight-bold;
-                color: $color_infostrada;
-                font-size: 93px;
-                line-height: 61px;
-                text-transform: uppercase;
-                @include breakpoint(medium) {
-                    font-size: 80px;
-                    text-align: center;
-                }
-                @include breakpoint(super-tiny) {
-                    font-size: 60px;
-                }
-            }
-            .counter {
-                padding: 5px;
-                margin-top: 36px;
-                color: $color_infostrada;
-                border: 2px solid $color_infostrada;
-                font-family: $weight-cond !important;
-                @include border-radius(4px);
-                width: 80%;
-                text-transform: uppercase;
-                @include breakpoint(medium) {
-                    font-size: 12px;
-                    text-align: center;
-                    margin: 0 auto;
-                    padding: 5px;
-                    margin-top: 20px;
-                    width: 70%;
-                }
-                @include breakpoint(super-tiny) {
-                    width: 100%;
-                    margin-top: 15px;
-                }
-                .items {
-                    float: left;
-                    width: 25%;
-                    text-align: center;
-                    font-size: 13px;
-                    font-family: "Trade Gothic Condensed";
-                    .time {
-                        font-weight: bold;
-                        font-size: 25px;
-                        font-family: $weight-bold-cond !important;
-                        margin-left: 0;
-                        left: 0;
-                        padding-right: 0;
-                        padding-left: 0;
-                        @include breakpoint(super-tiny) {
-                            font-size: 15px;
-                        }
-                    }
-                }
-            }
+            // .price {
+            //     font-family: $weight-bold;
+            //     color: $color_infostrada;
+            //     font-size: 93px;
+            //     line-height: 61px;
+            //     text-transform: uppercase;
+            //     @include breakpoint(medium) {
+            //         font-size: 80px;
+            //         text-align: center;
+            //     }
+            //     @include breakpoint(mobile_land) {
+            //         font-size: 40px;
+            //     }
+            // }
         }
         .right_block {
-            float: right;
+            /*float: right;
             width: 45%;
             @include breakpoint(small) {
                 width: 100%;
                 float: none;
-            }
+            }*/
+            position: absolute;
+            right: 0;
+            @include breakpoint(mobile_land) {}
             .image_block {
-                float: right;
-                top: 5px;
+                //top: 5px;
                 position: relative;
-                right: 30px;
+                right: 10px;
+                bottom: 0;
+                z-index: 999;
                 @include breakpoint(small) {
                     left: 0;
                     //width: 100%;
@@ -365,8 +402,6 @@ body {
                     float: none;
                 }
                 .img_testimonial {
-                    position: absolute;
-                    right: 38px;
                     @include breakpoint(small) {
                         position: relative;
                         right: 0;
@@ -377,27 +412,10 @@ body {
                     }
                 }
             }
-            .sticker_block {
-                float: right;
-                position: relative;
-                top: 14px;
-                right: 10px;
-                @include breakpoint(small) {
-                    right: 10%;
-                }
-                .single_sticker {
-                    padding: 5px 0;
-                    .image_sticker {
-                        @include breakpoint(super-tiny) {
-                            width: 90%;
-                        }
-                    }
-                }
-            }
         }
     }
     &__buttonAnchor {
-        padding: 10px 30px;
+        padding: 15px 10px;
         width: auto;
         margin: 10px 18px;
         background-color: $color_wind;
@@ -406,19 +424,21 @@ body {
         opacity: 0.95;
         text-align: center;
         display: none;
+        position: fixed;
+        width: 100%; //100%
+        margin: 0;
+        z-index: 9999;
+        bottom: 60px; //48px
+        /* stessa riga */
+        left: 0;
         @include breakpoint(mobile_land) {
             display: block;
-            position: fixed;
-            width: 100%;
-            margin: 0;
-            z-index: 9999;
-            bottom: 48px;
         }
         a {
             font-family: "Trebuchet MS";
             color: $color_white;
             /*font-weight: bold;*/
-            font-size: 15px;
+            font-size: 12px;
             text-transform: uppercase;
             text-decoration: none;
             cursor: pointer;
@@ -429,7 +449,7 @@ body {
         }
     }
     &__buttonChiamaGratis {
-        padding: 10px 30px;
+        padding: 15px 10px;
         width: auto;
         margin: 10px 18px;
         background-color: $color_infostrada;
@@ -438,19 +458,21 @@ body {
         opacity: 0.95;
         text-align: center;
         display: none;
+        position: fixed;
+        z-index: 9999;
+        bottom: 0;
+        width: 100%; //100%
+        margin: 0;
+        /* stessa riga */
+        right: 0;
         @include breakpoint(mobile_land) {
             display: block;
-            position: fixed;
-            z-index: 9999;
-            bottom: 0;
-            width: 100%;
-            margin: 0;
         }
         a {
             font-family: "Trebuchet MS";
             color: $color_white;
             /*font-weight: bold;*/
-            font-size: 15px;
+            font-size: 12px;
             text-transform: uppercase;
             text-decoration: none;
             cursor: pointer;
@@ -464,11 +486,11 @@ body {
         display: none;
         @include breakpoint(mobile_land) {
             display: block;
-            height: 7px;
+            height: 10px;
             background-color: $color_white;
             position: fixed;
             width: 100%;
-            bottom: 41px;
+            bottom: 50px;
             z-index: 9999;
         }
     }
@@ -487,42 +509,52 @@ body {
     }
     &__contentSubFrame {
         position: relative;
-        top: -150px;
         @include breakpoint(small) {
             top: 20px;
         }
     }
     &__content {
+        &.onlyDesktop {
+            display: block;
+            @include breakpoint(mobile_land) {
+                display: none;
+            }
+        }
         @include breakpoint(medium) {
             margin: 0 16px;
         }
-        &--treeParagraph {
+        &--blockCounter {
             width: 100%;
-            border: 2px solid $color_border;
-            padding: 40px 0;
-            margin: 0 auto;
+            padding: 20px 10px;
+            margin: 0 auto 10px;
+            background-color: $color_light_grey;
             @include breakpoint(small) {
                 width: 100%;
                 padding: 15px 0;
             }
+            @include breakpoint(mobile_land) {
+                padding: 0;
+            }
             .listItem {
                 position: relative;
-                width: 33.33%;
-                height: 84px;
-                text-transform: uppercase;
+                width: 100%;
                 text-align: center;
-                float: left;
-                color: $color_infostrada;
+                color: $color_text;
                 font-size: 20px;
-                padding: 0 20px;
+                .onlyMobile {
+                    display: none;
+                    @include breakpoint(super-tiny) {
+                        display: block;
+                    }
+                }
                 @include breakpoint(small) {
                     width: 100%;
                     float: none;
-                    padding: 20px;
-                    font-size: 16px;
+                    padding-top: 10px;
+                    font-size: 15px;
                     height: auto;
                 }
-                &::after {
+                /*&::after {
                     content: "";
                     display: block;
                     position: absolute;
@@ -549,19 +581,64 @@ body {
                     @include breakpoint(small) {
                         display: block;
                     }
+                }*/
+            }
+            .counter {
+                padding: 5px;
+                margin: 0 auto;
+                color: $color_text;
+                width: 59%;
+                @include breakpoint(medium) {
+                    font-size: 12px;
+                    text-align: center;
+                    margin: 0 auto;
+                    padding: 5px;
+                    width: 70%;
+                }
+                @include breakpoint(super-tiny) {
+                    width: 100%;
+                }
+                @include breakpoint(mobile_land) {
+                    //margin-bottom: 15px;
+                }
+                .items {
+                    //float: left;
+                    text-align: center;
+                    font-size: 30px;
+                    font-family: "Trade Gothic";
+                    margin-right: 20px;
+                    display: inline-block;
+                    &:nth-of-type(4) {
+                        margin-right: 0;
+                    }
+                    @include breakpoint(super-tiny) {
+                        font-size: 20px;
+                    }
+                    .time {
+                        font-weight: bold;
+                        font-size: 30px;
+                        font-family: $weight-bold;
+                        margin-left: 0;
+                        left: 0;
+                        padding-right: 0;
+                        padding-left: 0;
+                        @include breakpoint(super-tiny) {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
         }
         &--description {
             width: 100%;
             margin: 0 auto;
-            padding: 32px 32px 0 32px;
+            padding: 0 32px;
             line-height: 16px;
             font-size: 1.1em;
             line-height: 1.3;
             font-family: $weight-cond;
             @include breakpoint(medium) {
-                padding: 32px 0;
+                padding: 0;
             }
         }
         &--singleParagraph {

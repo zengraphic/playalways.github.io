@@ -46,6 +46,9 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative; }
+.landing_infostrada__header {
+  width: 100%;
+  border-bottom: 1px solid #a5a5a5; }
 .landing_infostrada__container {
   width: 100%;
   max-width: 878px;
@@ -53,22 +56,38 @@ body {
   @media (max-width: 768px) {
     .landing_infostrada__container {
       width: 100%; } }
+  .landing_infostrada__container .sticker_block {
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 6px; }
+    @media (max-width: 768px) {
+      .landing_infostrada__container .sticker_block {
+        right: 10px; } }
+    .landing_infostrada__container .sticker_block .single_sticker {
+      display: inline-block; }
+      @media (max-width: 736px) {
+        .landing_infostrada__container .sticker_block .single_sticker .image_sticker {
+          width: 35px;
+          height: auto; } }
 .landing_infostrada__containerHero {
   width: 100%;
   max-width: 1024px;
   position: relative;
-  padding: 19px 0;
-  height: 530px;
+  padding: 19px 0 0 0;
+  height: 510px;
   margin: 0 auto;
   background-color: #fff;
   /*$color_light_grey;*/
   /*background-image: url(../img/visore/visore_testimonial_wide.png);
   background-repeat: no-repeat;
   background-position: top left;*/ }
+  @media (max-width: 910px) {
+    .landing_infostrada__containerHero {
+      padding: 19px; } }
   @media (max-width: 768px) {
     .landing_infostrada__containerHero {
       width: 100%;
-      height: auto;
       left: 0;
       padding: 0 10px 0; } }
 .landing_infostrada__containerHero--tre {
@@ -96,38 +115,74 @@ body {
 .landing_infostrada__logo {
   margin: 0 auto;
   padding: 20px 0;
-  text-align: center; }
+  display: inline-block; }
+  @media (max-width: 736px) {
+    .landing_infostrada__logo {
+      padding: 15px 0; } }
   .landing_infostrada__logo img {
     width: 100%;
     max-width: 218px; }
-    @media (max-width: 400px) {
+    @media (max-width: 910px) {
       .landing_infostrada__logo img {
-        width: 50%; } }
+        padding-left: 10px; } }
+    @media (max-width: 736px) {
+      .landing_infostrada__logo img {
+        width: 140px;
+        height: auto; } }
 .landing_infostrada__hero {
   width: 100%;
   max-width: 878px;
-  margin: 0 auto; }
-  @media (max-width: 768px) {
-    .landing_infostrada__hero {
-      width: 100%; } }
+  margin: 0 auto;
+  position: relative; }
+  .landing_infostrada__hero--ribbon {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: auto;
+    width: 250px;
+    height: 100px;
+    display: block;
+    background-color: #183989;
+    text-align: center;
+    color: #fff;
+    z-index: 16;
+    font-family: "Trade Gothic", sans-serif; }
+    .landing_infostrada__hero--ribbon:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0%;
+      bottom: 0;
+      left: 0%;
+      transform: skew(-20deg);
+      transform-origin: 100% 100%;
+      background-color: #183989;
+      content: "";
+      z-index: -1; }
+    .landing_infostrada__hero--ribbon .price {
+      font-size: 56px; }
+      .landing_infostrada__hero--ribbon .price .currency {
+        font-size: 36px; }
   .landing_infostrada__hero .left_block {
     float: left;
     width: 55%;
-    position: relative; }
-    @media (max-width: 768px) {
-      .landing_infostrada__hero .left_block {
+    position: relative;
+    /*@include breakpoint(small) {
         width: 100%;
         float: none;
-        left: 0; } }
+        left: 0;
+    }*/ }
     .landing_infostrada__hero .left_block .title {
-      font-family: "Trade Gothic Bold Condensed";
+      font-family: "Trade Gothic Bold";
       color: #183989;
-      font-size: 82px;
-      text-transform: uppercase; }
+      font-size: 100px;
+      text-transform: uppercase;
+      letter-spacing: -4px;
+      line-height: 100px; }
       @media (max-width: 910px) {
         .landing_infostrada__hero .left_block .title {
-          font-size: 75px;
-          text-align: center; } }
+          font-size: 10vw;
+          line-height: 10vw; } }
       @media (max-width: 480px) {
         .landing_infostrada__hero .left_block .title {
           font-size: 46px; } }
@@ -194,13 +249,13 @@ body {
           font-size: 35px;
           padding-left: 0; } }
     .landing_infostrada__hero .left_block .listDetails {
-      font-family: "Trade Gothic Bold Condensed";
-      color: #fff;
-      font-size: 28px;
+      font-family: "Trade Gothic Condensed";
+      color: #000;
+      font-size: 25px;
       text-transform: uppercase;
-      text-shadow: 0px 1px 8px black;
+      /*text-shadow: 0px 1px 8px black;
       -webkit-text-shadow: 0px 1px 8px black;
-      -moz-text-shadow: 0px 1px 8px black; }
+      -moz-text-shadow: 0px 1px 8px black;*/ }
       .landing_infostrada__hero .left_block .listDetails ul {
         padding-left: 0px;
         margin-top: 10px;
@@ -209,29 +264,23 @@ body {
           position: relative;
           overflow: hidden;
           list-style: none;
-          padding-left: 25px;
+          padding-left: 30px;
           line-height: 1.35em;
           margin: 0 0 .5em 0; }
           @media (max-width: 480px) {
             .landing_infostrada__hero .left_block .listDetails ul li {
               padding-left: 30px; } }
           .landing_infostrada__hero .left_block .listDetails ul li:before {
-            background: #fff;
-            overflow: hidden;
-            list-style: none;
-            content: "";
+            content: " ";
+            background-image: url(../img/list_icon.png);
             position: absolute;
-            top: 15px;
+            top: 8px;
             left: 0;
-            width: 10px;
-            height: 10px;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            background-clip: padding-box;
-            /* stops bg color from leaking outside the border: */
-            box-shadow: 0px 1px 8px black;
+            width: 19px;
+            height: 21px;
+            /*box-shadow: 0px 1px 8px black;
             -webkit-box-shadow: 0px 1px 8px black;
-            -moz-box-shadow: 0px 1px 8px black; }
+            -moz-box-shadow: 0px 1px 8px black;*/ }
             @media (max-width: 480px) {
               .landing_infostrada__hero .left_block .listDetails ul li:before {
                 top: 8px;
@@ -240,76 +289,24 @@ body {
                 height: 5px; } }
       @media (max-width: 910px) {
         .landing_infostrada__hero .left_block .listDetails {
-          font-size: 25px; } }
-      @media (max-width: 480px) {
+          font-size: 2.6vw; } }
+      @media (max-width: 700px) {
         .landing_infostrada__hero .left_block .listDetails {
-          font-size: 16px; } }
-    .landing_infostrada__hero .left_block .price {
-      font-family: "Trade Gothic Bold";
-      color: #183989;
-      font-size: 93px;
-      line-height: 61px;
-      text-transform: uppercase; }
-      @media (max-width: 910px) {
-        .landing_infostrada__hero .left_block .price {
-          font-size: 80px;
-          text-align: center; } }
-      @media (max-width: 480px) {
-        .landing_infostrada__hero .left_block .price {
-          font-size: 60px; } }
-    .landing_infostrada__hero .left_block .counter {
-      padding: 5px;
-      margin-top: 36px;
-      color: #183989;
-      border: 2px solid #183989;
-      font-family: "Trade Gothic Condensed" !important;
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      background-clip: padding-box;
-      /* stops bg color from leaking outside the border: */
-      width: 80%;
-      text-transform: uppercase; }
-      @media (max-width: 910px) {
-        .landing_infostrada__hero .left_block .counter {
-          font-size: 12px;
-          text-align: center;
-          margin: 0 auto;
-          padding: 5px;
-          margin-top: 20px;
-          width: 70%; } }
-      @media (max-width: 480px) {
-        .landing_infostrada__hero .left_block .counter {
-          width: 100%;
-          margin-top: 15px; } }
-      .landing_infostrada__hero .left_block .counter .items {
-        float: left;
-        width: 25%;
-        text-align: center;
-        font-size: 13px;
-        font-family: "Trade Gothic Condensed"; }
-        .landing_infostrada__hero .left_block .counter .items .time {
-          font-weight: bold;
-          font-size: 25px;
-          font-family: "Trade Gothic Bold Condensed" !important;
-          margin-left: 0;
-          left: 0;
-          padding-right: 0;
-          padding-left: 0; }
-          @media (max-width: 480px) {
-            .landing_infostrada__hero .left_block .counter .items .time {
-              font-size: 15px; } }
+          font-size: 18px; } }
   .landing_infostrada__hero .right_block {
-    float: right;
-    width: 45%; }
-    @media (max-width: 768px) {
-      .landing_infostrada__hero .right_block {
+    /*float: right;
+    width: 45%;
+    @include breakpoint(small) {
         width: 100%;
-        float: none; } }
+        float: none;
+    }*/
+    position: absolute;
+    right: 0; }
     .landing_infostrada__hero .right_block .image_block {
-      float: right;
-      top: 5px;
       position: relative;
-      right: 30px; }
+      right: 10px;
+      bottom: 0;
+      z-index: 999; }
       @media (max-width: 768px) {
         .landing_infostrada__hero .right_block .image_block {
           left: 0;
@@ -317,32 +314,16 @@ body {
           margin: 0 auto;
           top: 5px;
           float: none; } }
-      .landing_infostrada__hero .right_block .image_block .img_testimonial {
-        position: absolute;
-        right: 38px; }
-        @media (max-width: 768px) {
-          .landing_infostrada__hero .right_block .image_block .img_testimonial {
-            position: relative;
-            right: 0; } }
-        @media (max-width: 480px) {
-          .landing_infostrada__hero .right_block .image_block .img_testimonial {
-            width: 75%;
-            max-width: 309px; } }
-    .landing_infostrada__hero .right_block .sticker_block {
-      float: right;
-      position: relative;
-      top: 14px;
-      right: 10px; }
       @media (max-width: 768px) {
-        .landing_infostrada__hero .right_block .sticker_block {
-          right: 10%; } }
-      .landing_infostrada__hero .right_block .sticker_block .single_sticker {
-        padding: 5px 0; }
-        @media (max-width: 480px) {
-          .landing_infostrada__hero .right_block .sticker_block .single_sticker .image_sticker {
-            width: 90%; } }
+        .landing_infostrada__hero .right_block .image_block .img_testimonial {
+          position: relative;
+          right: 0; } }
+      @media (max-width: 480px) {
+        .landing_infostrada__hero .right_block .image_block .img_testimonial {
+          width: 75%;
+          max-width: 309px; } }
 .landing_infostrada__buttonAnchor {
-  padding: 10px 30px;
+  padding: 15px 10px;
   width: auto;
   margin: 10px 18px;
   background-color: #f48135;
@@ -353,20 +334,22 @@ body {
   border-color: #f48135;
   opacity: 0.95;
   text-align: center;
-  display: none; }
+  display: none;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  z-index: 9999;
+  bottom: 60px;
+  /* stessa riga */
+  left: 0; }
   @media (max-width: 736px) {
     .landing_infostrada__buttonAnchor {
-      display: block;
-      position: fixed;
-      width: 100%;
-      margin: 0;
-      z-index: 9999;
-      bottom: 48px; } }
+      display: block; } }
   .landing_infostrada__buttonAnchor a {
     font-family: "Trebuchet MS";
     color: #fff;
     /*font-weight: bold;*/
-    font-size: 15px;
+    font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer; }
@@ -374,7 +357,7 @@ body {
     background-color: #F69A5D;
     cursor: pointer; }
 .landing_infostrada__buttonChiamaGratis {
-  padding: 10px 30px;
+  padding: 15px 10px;
   width: auto;
   margin: 10px 18px;
   background-color: #183989;
@@ -385,20 +368,22 @@ body {
   border-color: #f48135;
   opacity: 0.95;
   text-align: center;
-  display: none; }
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  /* stessa riga */
+  right: 0; }
   @media (max-width: 736px) {
     .landing_infostrada__buttonChiamaGratis {
-      display: block;
-      position: fixed;
-      z-index: 9999;
-      bottom: 0;
-      width: 100%;
-      margin: 0; } }
+      display: block; } }
   .landing_infostrada__buttonChiamaGratis a {
     font-family: "Trebuchet MS";
     color: #fff;
     /*font-weight: bold;*/
-    font-size: 15px;
+    font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer; }
@@ -410,11 +395,11 @@ body {
   @media (max-width: 736px) {
     .landing_infostrada__ctaDivider {
       display: block;
-      height: 7px;
+      height: 10px;
       background-color: #fff;
       position: fixed;
       width: 100%;
-      bottom: 41px;
+      bottom: 50px;
       z-index: 9999; } }
 .landing_infostrada__checkCopertura {
   position: absolute;
@@ -427,75 +412,124 @@ body {
     .landing_infostrada__checkCopertura {
       height: 460px !important; } }
 .landing_infostrada__contentSubFrame {
-  position: relative;
-  top: -150px; }
+  position: relative; }
   @media (max-width: 768px) {
     .landing_infostrada__contentSubFrame {
       top: 20px; } }
+.landing_infostrada__content.onlyDesktop {
+  display: block; }
+  @media (max-width: 736px) {
+    .landing_infostrada__content.onlyDesktop {
+      display: none; } }
 @media (max-width: 910px) {
   .landing_infostrada__content {
     margin: 0 16px; } }
-.landing_infostrada__content--treeParagraph {
+.landing_infostrada__content--blockCounter {
   width: 100%;
-  border: 2px solid #d9dfec;
-  padding: 40px 0;
-  margin: 0 auto; }
+  padding: 20px 10px;
+  margin: 0 auto 10px;
+  background-color: #d6d6d6; }
   @media (max-width: 768px) {
-    .landing_infostrada__content--treeParagraph {
+    .landing_infostrada__content--blockCounter {
       width: 100%;
       padding: 15px 0; } }
-  .landing_infostrada__content--treeParagraph .listItem {
+  @media (max-width: 736px) {
+    .landing_infostrada__content--blockCounter {
+      padding: 0; } }
+  .landing_infostrada__content--blockCounter .listItem {
     position: relative;
-    width: 33.33%;
-    height: 84px;
-    text-transform: uppercase;
+    width: 100%;
     text-align: center;
-    float: left;
-    color: #183989;
+    color: #000;
     font-size: 20px;
-    padding: 0 20px; }
+    /*&::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 2px;
+        background-color: #eee;
+        @include breakpoint(small) {
+            left: calc(50% - 50px);
+            right: calc(50% - 50px);
+            height: 2px;
+            bottom: 0;
+            width: 100px;
+        }
+    }
+    &:nth-of-type(1)::after {
+        @include breakpoint(small) {
+            display: none;
+        }
+    }
+    &:nth-of-type(3)::after {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }*/ }
+    .landing_infostrada__content--blockCounter .listItem .onlyMobile {
+      display: none; }
+      @media (max-width: 480px) {
+        .landing_infostrada__content--blockCounter .listItem .onlyMobile {
+          display: block; } }
     @media (max-width: 768px) {
-      .landing_infostrada__content--treeParagraph .listItem {
+      .landing_infostrada__content--blockCounter .listItem {
         width: 100%;
         float: none;
-        padding: 20px;
-        font-size: 16px;
+        padding-top: 10px;
+        font-size: 15px;
         height: auto; } }
-    .landing_infostrada__content--treeParagraph .listItem::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 2px;
-      background-color: #eee; }
-      @media (max-width: 768px) {
-        .landing_infostrada__content--treeParagraph .listItem::after {
-          left: calc(50% - 50px);
-          right: calc(50% - 50px);
-          height: 2px;
-          bottom: 0;
-          width: 100px; } }
-    @media (max-width: 768px) {
-      .landing_infostrada__content--treeParagraph .listItem:nth-of-type(1)::after {
-        display: none; } }
-    .landing_infostrada__content--treeParagraph .listItem:nth-of-type(3)::after {
-      display: none; }
-      @media (max-width: 768px) {
-        .landing_infostrada__content--treeParagraph .listItem:nth-of-type(3)::after {
-          display: block; } }
+  .landing_infostrada__content--blockCounter .counter {
+    padding: 5px;
+    margin: 0 auto;
+    color: #000;
+    width: 59%; }
+    @media (max-width: 910px) {
+      .landing_infostrada__content--blockCounter .counter {
+        font-size: 12px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 5px;
+        width: 70%; } }
+    @media (max-width: 480px) {
+      .landing_infostrada__content--blockCounter .counter {
+        width: 100%; } }
+    .landing_infostrada__content--blockCounter .counter .items {
+      text-align: center;
+      font-size: 30px;
+      font-family: "Trade Gothic";
+      margin-right: 20px;
+      display: inline-block; }
+      .landing_infostrada__content--blockCounter .counter .items:nth-of-type(4) {
+        margin-right: 0; }
+      @media (max-width: 480px) {
+        .landing_infostrada__content--blockCounter .counter .items {
+          font-size: 20px; } }
+      .landing_infostrada__content--blockCounter .counter .items .time {
+        font-weight: bold;
+        font-size: 30px;
+        font-family: "Trade Gothic Bold";
+        margin-left: 0;
+        left: 0;
+        padding-right: 0;
+        padding-left: 0; }
+        @media (max-width: 480px) {
+          .landing_infostrada__content--blockCounter .counter .items .time {
+            font-size: 20px; } }
 .landing_infostrada__content--description {
   width: 100%;
   margin: 0 auto;
-  padding: 32px 32px 0 32px;
+  padding: 0 32px;
   line-height: 16px;
   font-size: 1.1em;
   line-height: 1.3;
   font-family: "Trade Gothic Condensed"; }
   @media (max-width: 910px) {
     .landing_infostrada__content--description {
-      padding: 32px 0; } }
+      padding: 0; } }
 .landing_infostrada__content--singleParagraph {
   width: 100%;
   color: #183989;
@@ -610,7 +644,7 @@ body {
 .landing_infostrada__footer {
   padding-top: 30px;
   padding-bottom: 100px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #a5a5a5;
   margin-left: 32px;
   margin-right: 32px; }
   .landing_infostrada__footer--copyWind {
