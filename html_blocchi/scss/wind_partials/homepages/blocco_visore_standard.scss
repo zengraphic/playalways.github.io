@@ -1228,6 +1228,9 @@ hr.example_divider {
       }
       .withForm #{&} {
         font-size: 20px;
+        @include breakpoint(small) {
+          font-size: 16px;
+        }
       }
       .specialVersion #{&} {
         color: $color_white;
@@ -1702,7 +1705,7 @@ hr.example_divider {
       opacity: 0;
     }
     &.uncovered {
-      bottom: -25px;
+      bottom: -20px;
       opacity: 1;
       z-index: 60;
       @at-root {

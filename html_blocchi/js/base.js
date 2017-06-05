@@ -33,7 +33,7 @@ function prefixedEventListener(element, type, callback) {
                 spacebarenabled: false,
                 horizrailenabled: false,
                 autohidemode: 'leave',
-                opacity: 0,
+                
 
                 zindex: 1060
             };
@@ -200,9 +200,6 @@ function prefixedEventListener(element, type, callback) {
                                     });
 
 
-                                r$('.base__scrollable')
-                                    .getNiceScroll()
-                                    .resize();
 
                             },
                             open: function() {
@@ -260,15 +257,9 @@ function prefixedEventListener(element, type, callback) {
                                         'overflow': ''
                                     });
 
-                                r$('.base__scrollable')
-                                    .getNiceScroll()
-                                    .resize();
                             },
                             open: function() {
 
-                                r$('.base__scrollable')
-                                    .getNiceScroll()
-                                    .resize();
                                 //r$('.mfp-bg,.mfp-wrap,.mfp-container').css('height', '100%');
                                 r$('html,body')
                                     .css({

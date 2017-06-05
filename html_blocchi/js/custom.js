@@ -1277,7 +1277,24 @@ r$(document)
                     }, 300);
                 }
             });
+
+
+        var scrollBarTimer;
+        r$('html')
+            .on({
+                'mouseover': function() {
+                    clearTimeout(scrollBarTimer);
+                    scrollBarTimer = setTimeout(function() {
+                        r$(".base__scrollable")
+                            .getNiceScroll()
+                            .resize();
+                    }, 500);
+                }
+            });
+
+
     });
+
 //############### END INCLUSIONE JS SCHEDA NEGOZIO #######################
 
 
