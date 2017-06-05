@@ -1,0 +1,35 @@
+.block_counter {
+    font-size: 1.8em;
+    font-family: $font_family_cond;
+    color: $color_orange;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 12px;
+    margin-bottom: 15px;
+    @include breakpoint(small) {
+        font-size: 1.2em;
+        margin-top: 22px;
+    }
+    .gg,
+    .hh,
+    .mm,
+    .sec {
+        font-family: $font_family_bold_cond;
+        font-size: 1.6em;
+        @include breakpoint(small) {
+            font-size: 1.5em;
+        }
+    }
+    .time {
+        margin-left: 12px;
+        position: relative;
+        left: 5px;
+        @include breakpoint(small) {
+            margin-left: 9px;
+            left: 2px;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
