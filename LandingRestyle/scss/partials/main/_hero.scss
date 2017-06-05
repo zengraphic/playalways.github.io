@@ -404,6 +404,9 @@
                         height: auto;
                         top: 30px;
                         right: -20px;
+                        &.ribbon_max_250{
+                            max-width: 250px;
+                        }
                         .price {
                             font-size: 4.714rem;
                             margin-top: 0;
@@ -565,6 +568,10 @@
                         font-size: 6.429rem;
                         line-height: 1em;
                         margin-top: 13px;
+                        &.small_price{
+                            font-size: 3.5rem;
+                            font-family: $font_family_regular;
+                        }
                         @include breakpoint(medium) {
                             font-size: 4.2rem;
                             margin-top: 15px;
@@ -583,6 +590,17 @@
                             font-size: 0.9rem;
                         }
                         ;
+                    }
+                    &.colored_bg_ribbon{
+                        &--infostrada{
+                            background-color: $color_infostrada;
+                            &:before{
+                              background-color: $color_infostrada;    
+                            }
+                            &:after{
+                                border-color: $color_infostrada_dark transparent transparent $color_infostrada_dark;
+                            }
+                        }
                     }
                 }
                 &--claim {
