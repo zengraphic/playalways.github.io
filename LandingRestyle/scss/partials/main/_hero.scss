@@ -366,6 +366,11 @@
                             text-transform: uppercase;
                             vertical-align: middle;
                             line-height: 1.1em;
+                            &.full_mobile {
+                                @include breakpoint(small) {
+                                    width: 90%;
+                                }
+                            }
                             @include breakpoint(small) {
                                 width: 50%;
                                 font-size: 1.286rem;
@@ -404,18 +409,18 @@
                         height: auto;
                         top: 30px;
                         right: -20px;
-                        &.ribbon_max_250{
+                        &.ribbon_max_250 {
                             max-width: 250px;
                         }
                         .price {
                             font-size: 4.714rem;
                             margin-top: 0;
                             font-family: $font_family_bold;
-                            padding-top: 0px;                            
+                            padding-top: 0px;
                             padding-bottom: 0px;
                             padding-left: 15px;
                             padding-right: 65px;
-                            @include breakpoint(small){
+                            @include breakpoint(small) {
                                 font-size: 3.714rem;
                                 padding-right: 45px;
                             }
@@ -423,7 +428,7 @@
                         .currency {
                             font-size: 2.4rem;
                         }
-                        &:after{
+                        &:after {
                             border-width: 10px;
                         }
                     }
@@ -568,7 +573,7 @@
                         font-size: 6.429rem;
                         line-height: 1em;
                         margin-top: 13px;
-                        &.small_price{
+                        &.small_price {
                             font-size: 3.5rem;
                             font-family: $font_family_regular;
                         }
@@ -591,13 +596,13 @@
                         }
                         ;
                     }
-                    &.colored_bg_ribbon{
-                        &--infostrada{
+                    &.colored_bg_ribbon {
+                        &--infostrada {
                             background-color: $color_infostrada;
-                            &:before{
-                              background-color: $color_infostrada;    
+                            &:before {
+                                background-color: $color_infostrada;
                             }
-                            &:after{
+                            &:after {
                                 border-color: $color_infostrada_dark transparent transparent $color_infostrada_dark;
                             }
                         }

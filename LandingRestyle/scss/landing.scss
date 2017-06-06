@@ -630,3 +630,35 @@ h6 {
     padding: 7px 10px;
     cursor: pointer;
 }
+
+// FIX CHECK COPERTURA
+.landing {
+    .coverage_form__additional_form .without_number {
+        color: $color_orange;
+    }
+    .standard_block__mainContainer {
+        height: auto;
+        padding-bottom: 25px;
+        background-color: #f5f6f7;
+    }
+    .standard_block__coloredBg {
+        display: none;
+    }
+    .standard_block__half_block.image_block {
+        display: none;
+    }
+    .fisso .coverage_form__additional_form.uncovered {
+        background-color: #f5f6f7;
+    }
+    .standard_block__half_block.form_block {
+        left: 0;
+        width: 100%;
+        background-color: #f5f6f7;
+        @include breakpoint(small){
+            transform: translateY(0);
+        }
+    }
+    .standard_block__half_block.offer_block {
+        display: none;
+    }
+}
