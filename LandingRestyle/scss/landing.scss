@@ -7,7 +7,7 @@
 @import "partials/main/hero";
 @import "partials/main/offer_details";
 @import "partials/components/vetrina_accordions";
-@import "partials/main/check_infostrada";
+@import "partials/main/_counter";
 @include attributes_classes;
 @include position_classes;
 @include text_classes;
@@ -176,7 +176,7 @@ h6 {
     }
     .text_color_infostrada {
         color: $color_infostrada !important;
-    }    
+    }
     .text_color_blue_99 {
         color: #009bbe !important;
     }
@@ -203,10 +203,9 @@ h6 {
     .text_color_grey_darker {
         color: #333 !important;
     }
-    .bg_color_infostrada{
+    .bg_color_infostrada {
         background-color: $color_infostrada !important;
     }
-
     .text_normal {
         text-transform: none;
     }
@@ -235,6 +234,15 @@ h6 {
     }
     .reduced_letter_spacing {
         letter-spacing: -0.025em;
+    }
+    .border_infostrada {
+        border: 1px solid $color_infostrada;
+    }
+    .border_right_solid_infostrada {
+        border-right: 1px solid $color_infostrada;
+        @include breakpoint(tiny) {
+            border: none;
+        }
     }
     .border_right_solid {
         border-right: 1px solid $color_grey_dark;
@@ -422,7 +430,7 @@ h6 {
         &:hover {
             @include opacity(0.8);
         }
-    }    
+    }
     .btn_orange {
         border: 1px solid $color_orange;
         text-transform: uppercase;
@@ -606,4 +614,51 @@ h6 {
 
 .mfp-wrap {
     height: 100vh !important;
+}
+
+.link_infostrada {
+    &:link,
+    &:visited,
+    &:active {
+        color: $color_infostrada;
+    }
+}
+
+.click_to_call {
+    @include border-radius(10px);
+    border-radius: 10px;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+// FIX CHECK COPERTURA
+.landing {
+    .coverage_form__additional_form .without_number {
+        color: $color_orange;
+    }
+    .standard_block__mainContainer {
+        height: auto;
+        padding-bottom: 25px;
+        background-color: #f5f6f7;
+    }
+    .standard_block__coloredBg {
+        display: none;
+    }
+    .standard_block__half_block.image_block {
+        display: none;
+    }
+    .fisso .coverage_form__additional_form.uncovered {
+        background-color: #f5f6f7;
+    }
+    .standard_block__half_block.form_block {
+        left: 0;
+        width: 100%;
+        background-color: #f5f6f7;
+        @include breakpoint(small){
+            transform: translateY(0);
+        }
+    }
+    .standard_block__half_block.offer_block {
+        display: none;
+    }
 }

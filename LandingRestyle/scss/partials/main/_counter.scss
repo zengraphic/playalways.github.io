@@ -1,35 +1,108 @@
-.block_counter {
-    font-size: 1.8em;
-    font-family: $font_family_cond;
-    color: $color_orange;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 12px;
-    margin-bottom: 15px;
+.landing_infostrada__content--blockCounter {
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0 auto;
+    max-width: 1024px;
+    background-color: $color_grey_light;
     @include breakpoint(small) {
-        font-size: 1.2em;
-        margin-top: 22px;
+        width: 100%;
+        padding: 15px 0;
     }
-    .gg,
-    .hh,
-    .mm,
-    .sec {
-        font-family: $font_family_bold_cond;
-        font-size: 1.6em;
-        @include breakpoint(small) {
-            font-size: 1.5em;
-        }
+    @include breakpoint(small) {
+        padding: 0;
     }
-    .time {
-        margin-left: 12px;
+    .listItem {
         position: relative;
-        left: 5px;
-        @include breakpoint(small) {
-            margin-left: 9px;
-            left: 2px;
+        width: 100%;
+        text-align: center;
+        color: $color_text;
+        font-size: 20px;
+        .onlyMobile {
+            display: none;
+            @include breakpoint(super-tiny) {
+                display: block;
+            }
         }
-        &:first-child {
-            margin-left: 0;
+        @include breakpoint(small) {
+            width: 100%;
+            float: none;
+            padding-top: 10px;
+            font-size: 15px;
+            height: auto;
+        }
+        /*&::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: #eee;
+                    @include breakpoint(small) {
+                        left: calc(50% - 50px);
+                        right: calc(50% - 50px);
+                        height: 2px;
+                        bottom: 0;
+                        width: 100px;
+                    }
+                }
+                &:nth-of-type(1)::after {
+                    @include breakpoint(small) {
+                        display: none;
+                    }
+                }
+                &:nth-of-type(3)::after {
+                    display: none;
+                    @include breakpoint(small) {
+                        display: block;
+                    }
+                }*/
+    }
+    .counter {
+        padding: 5px;
+        margin: 0 auto;
+        color: $color_text;
+        width: 59%;
+        @include breakpoint(medium) {
+            font-size: 12px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px;
+            width: 70%;
+        }
+        @include breakpoint(super-tiny) {
+            width: 100%;
+        }
+        @include breakpoint(small) {
+            //margin-bottom: 15px;
+        }
+        .items {
+            //float: left;
+            text-align: center;
+            font-size: 30px;
+            font-family: "Trade Gothic";
+            margin-right: 20px;
+            display: inline-block;
+            &:nth-of-type(4) {
+                margin-right: 0;
+            }
+            @include breakpoint(super-tiny) {
+                font-size: 20px;
+            }
+            .time {
+                font-weight: bold;
+                font-size: 30px;
+                font-family: $font_family_bold;
+                margin-left: 0;
+                left: 0;
+                padding-right: 0;
+                padding-left: 0;
+                @include breakpoint(super-tiny) {
+                    font-size: 20px;
+                }
+            }
         }
     }
 }
+
