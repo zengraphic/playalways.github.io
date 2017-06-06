@@ -131,6 +131,9 @@ h6 {
     .margin_top_150 {
         margin-top: 150px !important;
     }
+    .margin_bottom_120{
+        margin-bottom: 120px !important;
+    }
     .margin_top_m_150 {
         @include breakpoint(small) {
             margin-top: 150px !important;
@@ -633,13 +636,39 @@ h6 {
 
 // FIX CHECK COPERTURA
 .landing {
+    .standard_block.withForm{
+        margin-top: -5px;
+    }
+    .coverage_form{
+        padding-top: 20px;
+        max-width: 800px;
+    }
+    .coverage_form__white_title{
+        margin-bottom: 20px;
+    }
+    .coverage_form__input--city {
+        width: 49.5%;
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
+    .coverage_form__select {
+        width: 49.5%;
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
     .coverage_form__additional_form .without_number {
         color: $color_orange;
     }
     .standard_block__mainContainer {
         height: auto;
         padding-bottom: 25px;
-        background-color: #f5f6f7;
+        background-color: #183989;
     }
     .standard_block__coloredBg {
         display: none;
@@ -648,13 +677,16 @@ h6 {
         display: none;
     }
     .fisso .coverage_form__additional_form.uncovered {
-        background-color: #f5f6f7;
+        background-color: #183989;
+        @include breakpoint(tiny){
+            bottom: -20px;
+        }
     }
     .standard_block__half_block.form_block {
         left: 0;
         width: 100%;
-        background-color: #f5f6f7;
-        @include breakpoint(small){
+        background-color: #183989;
+        @include breakpoint(small) {
             transform: translateY(0);
         }
     }
