@@ -71,6 +71,18 @@ h6 {
             padding: 0;
         }
     }
+    .fixed_container{
+        @include breakpoint(small) {
+            position:fixed;
+            bottom:0;
+            left:0;
+            z-index:999;
+            background-color:rgba(255, 255, 255, 0.6);
+        }
+        .button{
+            width:100%;
+        }
+    }
     .margin_left_auto {
         margin-left: auto;
         margin-right: 0;
@@ -119,6 +131,9 @@ h6 {
     .display_forced_inline {
         display: inline-block !important;
     }
+    .display_forced_block {
+        display: block !important;
+    }
     .vertical_top {
         vertical-align: top;
     }
@@ -127,6 +142,9 @@ h6 {
     }
     .vertical_bottom {
         vertical-align: bottom;
+    }
+    .margin_auto{
+        margin:0 auto;
     }
     .margin_top_150 {
         margin-top: 150px !important;
@@ -159,6 +177,11 @@ h6 {
     .margin_bottom_m_0 {
         @include breakpoint(small) {
             margin-bottom: 0px !important;
+        }
+    }
+    .margin_top_m_0 {
+        @include breakpoint(small) {
+            margin-top: 0px !important;
         }
     }
     .margin_left_m_0 {
@@ -295,6 +318,15 @@ h6 {
         &.active {
             display: block;
         }
+    }
+    .position_relative_mobile{
+        @include breakpoint(small) {
+            position:relative;
+        }
+    }
+    
+    .max_width_100{
+        max-width:100%;
     }
     .box_desktop_width_100 {
         width: 100% !important;
@@ -540,6 +572,7 @@ h6 {
                     position: static;
                 }
             }
+
             &.small_mobile_font {
                 @include breakpoint(small) {
                     font-size: 1rem;
