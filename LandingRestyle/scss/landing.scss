@@ -149,9 +149,6 @@ h6 {
     .margin_top_150 {
         margin-top: 150px !important;
     }
-    .margin_bottom_120{
-        margin-bottom: 120px !important;
-    }
     .margin_top_m_150 {
         @include breakpoint(small) {
             margin-top: 150px !important;
@@ -179,10 +176,18 @@ h6 {
             margin-bottom: 0px !important;
         }
     }
+
     .margin_top_m_0 {
         @include breakpoint(small) {
             margin-top: 0px !important;
-        }
+        }}
+
+    .margin_bottom_120 {
+        margin-bottom: 120px !important;
+    }
+    .margin_bottom_150 {
+        margin-bottom: 150px !important;
+
     }
     .margin_left_m_0 {
         @include breakpoint(small) {
@@ -669,14 +674,14 @@ h6 {
 
 // FIX CHECK COPERTURA
 .landing {
-    .standard_block.withForm{
+    .standard_block.withForm {
         margin-top: -5px;
     }
-    .coverage_form{
+    .coverage_form {
         padding-top: 20px;
         max-width: 800px;
     }
-    .coverage_form__white_title{
+    .coverage_form__white_title {
         margin-bottom: 20px;
     }
     .coverage_form__input--city {
@@ -711,7 +716,7 @@ h6 {
     }
     .fisso .coverage_form__additional_form.uncovered {
         background-color: #183989;
-        @include breakpoint(tiny){
+        @include breakpoint(tiny) {
             bottom: -20px;
         }
     }
