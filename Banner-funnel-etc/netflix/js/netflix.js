@@ -76,6 +76,20 @@
 	        $(this).remove();
 	    });
 
+	    var touchFive=0;
+
+	    $('body').on("click", ".hero_logo", function(e) {
+	    	if(touchFive < 6){
+	    		touchFive = touchFive +1;
+	    	}
+	    	else{
+	            pollen();
+	            overlayFadeInOut();
+	            stopAnim = 0;
+	            touchFive = 0;    		
+	    	}
+	    });	    
+
 	    var kkeys = [],
 	        konami = "38,38,40,40,37,39,37,39,66,65",
 	        strange = "83,84,82,65,78,71,69",
