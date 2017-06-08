@@ -1436,7 +1436,8 @@
                             <!-- primo blocco secondario -->
                             <div class="faq_block__single col-xs-12 col-lg-4 col-sm-4 col-md-4">
                                 <h3 class="faq_block__single__title">
-                                Configurazione APN
+                                Configurazione APN 
+                                <a href="https://wd-chat.wind.it/Wind/GenesysPlugin?windowPopup=1&amp;user_type=P" class="popup-infoChat">prova</a>
                             </h3>
                                 <div class="faq_block__single__description">
                                     Pellentesque orrare sem lacinia quam veneratis vestibulum.
@@ -1505,13 +1506,23 @@
 <script>
 jQuery(document).ready(function($) {
 
-    $('.popup-videoFaq').magnificPopup({
+    r$('.popup-videoFaq').magnificPopup({
         type: 'iframe',
           removalDelay: 160,
           preloader: false,
           fixedContentPos: false,
         closeMarkup: '<div class="mfp-close videoFaq__close"><div class="mfp-close base__icon icon_close--white"></div></div>'
     });
+    r$('.popup-infoChat').magnificPopup({
+    type: 'iframe',
+    iframe: {
+        markup: '<div class="mfp-iframe-scaler chat__container">' +
+            '<div class="mfp-close chat__close"></div>' +
+            '<iframe class="mfp-iframe chat__iframe" frameborder="0" ></iframe>' +
+            '</div>',
+        srcAction: 'iframe_src',
+    }
+});
 
     var allCatFirst = $(".faq_block__single.main_faq_block");
     var allCatFirstOnlyFaq = $(".faq_block__single.main_faq_block--only_faq");
