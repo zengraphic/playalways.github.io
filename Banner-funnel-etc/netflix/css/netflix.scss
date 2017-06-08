@@ -98,13 +98,13 @@
     //========================================================================//
     $font-weight-light: 'Helvetica Light';
     $font-weight-regular: 'Helvetica Light';
-    $font-weight-bold: 'Helvetica Light';
+    $font-weight-bold: 'Helvetica Bold';
     $color-pale-yellow: #ffefbd;
     $color-pale-orange: #ffcb24;
     $color-gray: #eeeeee;
     $color-yellow: #ffcc00;
     $color-white: #fff;
-    $color-red: #00ff00;
+    $color-red: #db1221;
     $color-black: #000;
     //============================================================================//
     //========================== CLASSI DI STYLE GENERICHE =======================//
@@ -121,6 +121,10 @@
         float: right;
     }
     
+    b {
+        font-family: $font-weight-bold;
+    }
+    
     .clear-fix:after,
     .clear {
         content: ".";
@@ -134,14 +138,185 @@
     .text_align_center {
         text-align: center;
     }
-    html{
-    	font-family: $font-weight-regular;
-    }
     
     //============================================================================//
     //================================ LANDING STYLE ============================//
     //============================================================================//
     .landing__netflix {
+        //=========================================================//
+        //========================= HERO ==========================//
+        //========================================================//        
+        .hero {
+            &_full_container {
+                width: 100%;
+                background-color: $color-black;
+                padding: 30px;
+                @include breakpoint(small) {
+                    padding: 30px 15px;
+                }
+            }
+            &_container {
+                width: 100%;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+            &_logo {
+                text-align: center;
+                max-width: 270px;
+                margin: 0 auto;
+                margin-bottom: 50px;
+            }
+            &_title {
+                text-align: center;
+                color: $color-white;
+                font-family: $font-weight-bold;
+                font-size: 52px;
+                line-height: 54px;
+                margin-bottom: 15px;
+            }
+            &_image {
+                text-align: center;
+                width: 100%;
+                max-width: 545px;
+                margin: 0 auto;
+            }
+        }
+        //=========================================================//
+        //======================== OFFER =========================//
+        //========================================================//
+        .offer {
+            &_full_container {
+                margin-bottom: 30px;
+                width: 100%;
+                background-color: $color-white;
+                padding: 30px;
+                @include breakpoint(small) {
+                    padding: 30px 15px;
+                }
+            }
+            &_container {
+                width: 100%;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+            &_maintitle {
+                text-align: center;
+                color: $color-black;
+                font-family: $font-weight-bold;
+                font-size: 74px;
+                line-height: 55px;
+                margin-top: 15px;
+            }
+            &_subtitle {
+                text-align: center;
+                color: $color-black;
+                font-family: $font-weight-light;
+                font-size: 52px;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+            &_pack_container {
+                &_image {
+                    display: inline-block;
+                    width: 45%;
+                    vertical-align: middle;                    
+                    .offer_image {
+                        width: 420px;
+                        height: auto;
+                    }
+                }
+                &_text {
+                    display: inline-block;
+                    width: 54.5%;
+                    vertical-align: middle;
+                    .offer_text {
+                        font-size: 28px;
+                        font-family: $font-weight-regular;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+        //=========================================================//
+        //======================== FOOTER =========================//
+        //========================================================// 
+        footer {
+            margin-top: 40px;
+            .footer {
+                &_full_container {
+                    width: 100%;
+                    background-color: $color-black;
+                    padding: 30px;
+                    @include breakpoint(small) {
+                        padding: 30px 15px;
+                    }
+                }
+                &_container {
+                    width: 100%;
+                    max-width: 1024px;
+                    margin: 0 auto;
+                }
+                &_logo {
+                    max-width: 130px;
+                    margin: 0 auto;
+                }
+            }
+            .copyright {
+                &_container {
+                    text-align: center;
+                    margin: 50px 0;
+                    font-size: 20px;
+                    color: $color-white;
+                    font-family: $font-weight-regular;
+                }
+                &_main {
+                    display: inline-block;
+                }
+                &_link {
+                    color: $color-white;
+                    display: inline-block;
+                    &:hover {
+                        @include opacity(0.8);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        //=========================================================//
+        //======================= GENERIC =========================//
+        //========================================================//
+        a {
+            &.netflix_link {
+                &:visited,
+                &:link,
+                &:focus {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+        .netflix_button {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 500px;
+            background-color: $color-red;
+            border: 1px solid $color-red;
+            @include border-radius(4px);
+            color: $color-white !important;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 24px;
+            font-family: $font-weight-bold;
+            padding: 30px 15px 25px 15px;
+            &:hover {
+                @include opacity(0.8);
+            }
+        }
+        .image_responsive {
+            width: 100%;
+            height: auto;
+        }
         .divider {
             height: 1px;
             width: 100;
@@ -152,8 +327,10 @@
         //============================================================================//
         .container_accordion {
             padding: 0 30px;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1024px;
             .title {
-                position: relative;
                 &:before {
                     content: "i";
                     height: 30px;
@@ -324,5 +501,106 @@
                 transform-origin: top center;
                 transform: rotateX(0deg);
             }
+        }
+    }
+    
+    // ================= POLLEN =================== //
+    .upside_down {
+        transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    
+    .netflix_overlay {
+        background-color: $color-black;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        -webkit-animation: pulsate 3s ease-out;
+        -webkit-animation-iteration-count: infinite;
+        opacity: 0.0
+    }
+    
+    @-webkit-keyframes pulsate {
+        0% {
+            opacity: 0.0;
+        }
+        20%{
+            opacity: 0.3;
+        }
+        80% {
+            opacity: 0.3;
+        }
+        90% {
+            opacity: 0.3;
+        }
+        100% {
+            opacity: 0.0;
+        }
+    }
+    
+    .pollen {
+        background: none;
+        font-family: Androgyne;
+        background-image: url('../img/pol1.png'), url('../img/pol2.png'), url('../img/pol3.png');
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        -webkit-animation: pollen 10s linear infinite;
+        -moz-animation: pollen 10s linear infinite;
+        -ms-animation: pollen 10s linear infinite;
+        animation: pollen 10s linear infinite;
+    }
+    
+    @keyframes pollen {
+        0% {
+            background-position: 0px 0px, 0px 0px, 0px 0px;
+        }
+        50% {
+            background-position: 500px 500px, 100px 200px, -100px 150px;
+        }
+        100% {
+            background-position: 500px 1000px, 200px 400px, -100px 300px;
+        }
+    }
+    
+    @-moz-keyframes pollen {
+        0% {
+            background-position: 0px 0px, 0px 0px, 0px 0px;
+        }
+        50% {
+            background-position: 500px 500px, 100px 200px, -100px 150px;
+        }
+        100% {
+            background-position: 400px 1000px, 200px 400px, 100px 300px;
+        }
+    }
+    
+    @-webkit-keyframes pollen {
+        0% {
+            background-position: 0px 0px, 0px 0px, 0px 0px;
+        }
+        50% {
+            background-position: 500px 500px, 100px 200px, -100px 150px;
+        }
+        100% {
+            background-position: 500px 1000px, 200px 400px, -100px 300px;
+        }
+    }
+    
+    @-ms-keyframes pollen {
+        0% {
+            background-position: 0px 0px, 0px 0px, 0px 0px;
+        }
+        50% {
+            background-position: 500px 500px, 100px 200px, -100px 150px;
+        }
+        100% {
+            background-position: 500px 1000px, 200px 400px, -100px 300px;
         }
     }
