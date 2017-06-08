@@ -68,11 +68,12 @@
 	        setInterval(glitch, 2500);
 	    }
 	    $('body').on("click", ".close_upsidedown", function(e) {
-	    	stopAnim = 1;
-	    	clearInterval(glitch);
-	    	$('.netflix_overlay').remove();
-	    	$('.pollen').remove();
-	    	$(this).remove();
+	        stopAnim = 1;
+	        clearInterval(glitch);
+	        $('.netflix_overlay').remove();
+	        $('.pollen').remove();
+	        $('.hero_full_container, .offer_full_container').removeClass('upside_down');
+	        $(this).remove();
 	    });
 
 	    var kkeys = [],
@@ -82,16 +83,18 @@
 	        sottosopra = "83,79,84,84,79,83,79,80,82,65";
 
 
+
 	    $(document).keydown(function(e) {
 	        kkeys.push(e.keyCode);
 
 	        if (kkeys.toString().indexOf(sottosopra) >= 0) {
 
 	            $(document).unbind('keydown', arguments.callee);
-
+	            console.log('code activated');
 	            // do something awesome
 	            pollen();
 	            overlayFadeInOut();
+	            stopAnim = 0;
 	        }
 
 	    });
