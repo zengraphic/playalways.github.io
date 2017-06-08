@@ -2,201 +2,49 @@
 <!-- ====================================== -->
 <!-- ====================================== -->
 <!-- ====================================== -->
-<!-- ================================ -->
-<!-- ============ CHECK ============== -->
-<!-- ================================ -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<div id="check-copertura" class="csc-default csc-space-after-50">
-    <!-- FORM_VERIFICA_COPERTURA_BANNER -->
-    <script type="text/javascript" src="/js/tooltip/tooltip.js"></script>
-    <script type="text/javascript" src="/js/old/modalbox.js"></script>
-    <script type="text/javascript" src="/js/infostrada/jquery.numeric.js"></script>
-    <script type="text/javascript" src="/js/infostrada/form_vula.js"></script>
-    <script type="text/javascript" src="/js/common.js"></script>
-    <link rel="stylesheet" href="/fileadmin/templates/css/elementi_HTML/absoluteADSL_form.css" />
-    <link rel="stylesheet" href="/typo3conf/ext/wf_contentelements/form_verifica_copertura/res/autosuggest.css" />
-    <div class="block_tabs">
-        <ul class="nav nav-tabs nav-justified">
-            <li class="tabLink active"><a data-toggle="tab" id="LA" href="#old_number">Ho un numero<br class="break"/> di
-            telefono</a></li>
-            <li class="tabLink "><a data-toggle="tab" id="LNA" href="#new_number">Voglio una nuova<br class="break"/> linea
-            telefonica</a></li>
-        </ul>
-        <div class="tab-content">
-            <div id="old_number" class="tab-pane fade in active">
-                <form action="/attivazioni/checkResult.php" method="POST" id="verificacopertura" class="form-inline infoForm">
-                    <input type="text" class=" infoInput input-lg form-control form_auto" id="prefisso" name="pref" title="Prefisso" value="Prefisso" maxlength="4" tabindex="1" onfocus="if (this.value == this.title) this.value = '';" onblur="if(this.value == '') this.value = this.title">
-                    <input type="text" class="infoInput input-lg form-control form_auto" id="numero" name="tel" title="Telefono" value="Telefono" tabindex="2" onfocus="if (this.value == this.title) this.value = '';" onblur="if(this.value == '') this.value = this.title">
-                    <div class="infoInput btn-group ootw__select">
-                        <div id="AUTOSUGGEST_ACTIVE">
-                            <select onchange="document.getElementById('comune').value='Comune';document.getElementById('indirizzoEsteso').value='Indirizzo';document.getElementById('civico').value='N.';activateIndirizzoComune('provincia');" tabindex="3" title="Provincia" name="provincia" id="provincia">
-                                <option selected value="Provincia">Scegli la Provincia</option>
-                                <option value="AG">Agrigento - AG</option>
-                                <option value="AL">Alessandria - AL</option>
-                                <option value="AN">Ancona - AN</option>
-                                <option value="AO">Aosta - AO</option>
-                                <option value="AQ">Aquila - AQ</option>
-                                <option value="AR">Arezzo - AR</option>
-                                <option value="AP">Ascoli Piceno - AP</option>
-                                <option value="AT">Asti - AT</option>
-                                <option value="AV">Avellino - AV</option>
-                                <option value="BA">Bari - BA</option>
-                                <option value="BT">Barletta-Andria-Trani - BT</option>
-                                <option value="BL">Belluno - BL</option>
-                                <option value="BN">Benevento - BN</option>
-                                <option value="BG">Bergamo - BG</option>
-                                <option value="BI">Biella - BI</option>
-                                <option value="BO">Bologna - BO</option>
-                                <option value="BZ">Bolzano - BZ</option>
-                                <option value="BS">Brescia - BS</option>
-                                <option value="BR">Brindisi - BR</option>
-                                <option value="CA">Cagliari - CA</option>
-                                <option value="CL">Caltanissetta - CL</option>
-                                <option value="CB">Campobasso - CB</option>
-                                <option value="CI">Carbonia-Iglesias - CI</option>
-                                <option value="CE">Caserta - CE</option>
-                                <option value="CT">Catania - CT</option>
-                                <option value="CZ">Catanzaro - CZ</option>
-                                <option value="CH">Chieti - CH</option>
-                                <option value="CO">Como - CO</option>
-                                <option value="CS">Cosenza - CS</option>
-                                <option value="CR">Cremona - CR</option>
-                                <option value="KR">Crotone - KR</option>
-                                <option value="CN">Cuneo - CN</option>
-                                <option value="EN">Enna - EN</option>
-                                <option value="FM">Fermo - FM</option>
-                                <option value="FE">Ferrara - FE</option>
-                                <option value="FI">Firenze - FI</option>
-                                <option value="FG">Foggia - FG</option>
-                                <option value="FC">Forli-Cesena - FC</option>
-                                <option value="FR">Frosinone - FR</option>
-                                <option value="GE">Genova - GE</option>
-                                <option value="GO">Gorizia - GO</option>
-                                <option value="GR">Grosseto - GR</option>
-                                <option value="IM">Imperia - IM</option>
-                                <option value="IS">Isernia - IS</option>
-                                <option value="SP">La Spezia - SP</option>
-                                <option value="LT">Latina - LT</option>
-                                <option value="LE">Lecce - LE</option>
-                                <option value="LC">Lecco - LC</option>
-                                <option value="LI">Livorno - LI</option>
-                                <option value="LO">Lodi - LO</option>
-                                <option value="LU">Lucca - LU</option>
-                                <option value="MC">Macerata - MC</option>
-                                <option value="MN">Mantova - MN</option>
-                                <option value="MS">Massa Carrara - MS</option>
-                                <option value="MT">Matera - MT</option>
-                                <option value="VS">Medio Campidano - VS</option>
-                                <option value="ME">Messina - ME</option>
-                                <option value="MI">Milano - MI</option>
-                                <option value="MO">Modena - MO</option>
-                                <option value="MB">Monza e della Brianza - MB</option>
-                                <option value="NA">Napoli - NA</option>
-                                <option value="NO">Novara - NO</option>
-                                <option value="NU">Nuoro - NU</option>
-                                <option value="OG">Ogliastra - OG</option>
-                                <option value="OT">Olbia-Tempio - OT</option>
-                                <option value="OR">Oristano - OR</option>
-                                <option value="PD">Padova - PD</option>
-                                <option value="PA">Palermo - PA</option>
-                                <option value="PR">Parma - PR</option>
-                                <option value="PV">Pavia - PV</option>
-                                <option value="PG">Perugia - PG</option>
-                                <option value="PU">Pesaro-Urbino - PU</option>
-                                <option value="PE">Pescara - PE</option>
-                                <option value="PC">Piacenza - PC</option>
-                                <option value="PI">Pisa - PI</option>
-                                <option value="PT">Pistoia - PT</option>
-                                <option value="PN">Pordenone - PN</option>
-                                <option value="PZ">Potenza - PZ</option>
-                                <option value="PO">Prato - PO</option>
-                                <option value="RG">Ragusa - RG</option>
-                                <option value="RA">Ravenna - RA</option>
-                                <option value="RC">Reggio Calabria - RC</option>
-                                <option value="RE">Reggio Emilia - RE</option>
-                                <option value="RI">Rieti - RI</option>
-                                <option value="RN">Rimini - RN</option>
-                                <option value="RM">Roma - RM</option>
-                                <option value="RO">Rovigo - RO</option>
-                                <option value="SA">Salerno - SA</option>
-                                <option value="SS">Sassari - SS</option>
-                                <option value="SV">Savona - SV</option>
-                                <option value="SI">Siena - SI</option>
-                                <option value="SR">Siracusa - SR</option>
-                                <option value="SO">Sondrio - SO</option>
-                                <option value="TA">Taranto - TA</option>
-                                <option value="TE">Teramo - TE</option>
-                                <option value="TR">Terni - TR</option>
-                                <option value="TO">Torino - TO</option>
-                                <option value="TP">Trapani - TP</option>
-                                <option value="TN">Trento - TN</option>
-                                <option value="TV">Treviso - TV</option>
-                                <option value="TS">Trieste - TS</option>
-                                <option value="UD">Udine - UD</option>
-                                <option value="VA">Varese - VA</option>
-                                <option value="VE">Venezia - VE</option>
-                                <option value="VB">Verbania - VB</option>
-                                <option value="VC">Vercelli - VC</option>
-                                <option value="VR">Verona - VR</option>
-                                <option value="VV">Vibo Valentia - VV</option>
-                                <option value="VI">Vicenza - VI</option>
-                                <option value="VT">Viterbo - VT</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="AUTOSUGGEST_INACTIVE" name="AUTOSUGGEST_INACTIVE" style="display:none"></div>
-                    <input type="text" id="comune" name="comune" value="Comune" title="Comune" class="form_auto infoInput input-lg form-control" tabindex="4" autocomplete="off">
-                    <input type="text" id="indirizzoEsteso" name="indirizzoEsteso" title="Indirizzo" value="Indirizzo" tabindex="5" class="form_auto infoInput input-lg form-control" autocomplete="off">
-                    <input id="indirizzo" type="hidden" value="" name="indirizzo">
-                    <input class="form_auto infoInput input-lg form-control" type="text" id="civico" name="civico" title="N." value="N." tabindex="6">
-                    <div class="clear"></div>
-                    <div id="verificacoperturabutton" title="Verifica" class="bt_verifica gr---cta button btn-lg">VERIFICA LA DISPONIBILIT&Agrave;</div>
-                    <input id="tipoindirizzo" type="hidden" value="" name="tipoindirizzo">
-                    <input type="hidden" name="u1" value="Super Absolute Adsl">
-                    <input type="hidden" name="u2" value="SLA">
-                    <input type="hidden" name="mkt" value="RES">
-                    <input type="hidden" name="offer" value="SLA">
-                    <input type="hidden" name="master" value="SLA">
-                    <input type="hidden" name="url_sorgente" value="">
-                    <input type="hidden" name="urlback" value="www.infostrada.it/it/fibra/offerte-internet-fibra">
-                    <input type="hidden" name="revamping" value="1">
-                    <input id="tipolinea" type="hidden" name="tipo_linea" value="LA">
-                    <input type="hidden" name="source" value="">
-                    <input type="hidden" name="show_new" value="0">
-                    <input type="hidden" name="system" value="wide">
-                    <input type="hidden" name="fibre_type" value="fibra">
-                    <input type="hidden" name="site" value="app">
-                    <input type="hidden" name="apptype" value="">
-                    <input type="hidden" name="business_simulation" value="spenta">
-                </form>
+<div class="block_counter">
+    <div class="landing_infostrada__content--blockCounter">
+        <div class="listItem">Affrettati!!
+            <br class="onlyMobile"> L'offerta sarà disponibile ancora per</div>
+        <div class="counter">
+            <div class="counter_block_items--data">
+                <!-- data-event="2017/10/13" -->
             </div>
-            <div id="new_number" class="tab-pane fade"> </div>
+            <div class="clear"></div>
         </div>
+        <div class="clear"></div>
     </div>
 </div>
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ============ FINE CHECK ============== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
-<!-- ====================================== -->
 <!-- =================================== -->
 <!-- ============ OFFERTA ============== -->
 <!-- =================================== -->
-<div class="landing--offer_details">
-    <div class="container">
-        <h3>Fino a 8 GIGA per il tuo Smartphone </h3>
-        <ul class="details no_list">
-            <li>Invita i tuoi amici a passare a Wind se hai un’offerta All Inclusive, Wind Celebration, All Digital, Noi, Call Your Country Super o Call Your Country Wind.</li>
-        </ul>
-        <div class="text_disclaimer">L'offerta si rinnova ogni 4 settimane. Puoi verificare lo stato dei tuoi inviti e della promozione Porta i Tuoi Amici nella sezione i TUOI INVITI dell'Area Clienti. Puoi invitare i tuoi amici anche chiamando il 4080.</div>
+<div class="landing--offer--infostrada text_color_infostrada text_uppercase font_size_30 text_centered border_infostrada padding_top_40 padding_bottom_40 padding_left_5 padding_right_5 margin_bottom_30 padding_top_m_30 padding_bottom_m_30">
+    <div class="box_width_30 display_inline vertical_middle border_right_solid_infostrada">
+        <div class="font_bold">adsl vera</div>
+        <div class="font_condensed">fino a 20 mega</div>
+    </div>
+    <div class="box_width_30 display_inline vertical_middle border_right_solid_infostrada margin_top_m_30">
+        <div class="font_bold">telefonate <span class="font_condensed">a 0 cent</span></div>
+        <div class="font_condensed">al minuto verso tutti</div>
+    </div>
+    <div class="box_width_30 display_inline vertical_middle margin_top_m_30">
+        <div class="font_bold">attivazione</div>
+        <div class="font_bold">e modem <span class="font_condensed">gratis</span></div>
     </div>
 </div>
+<div class="container text_centered no_padding_container text_color_infostrada margin_bottom_30 mobile_centered">
+    Hai bisogno di aiuto? <a class="only_desktop link_infostrada" href="https://www.infostrada.it/nuovaAreaClienti/infostrada/pages/clicktocall/ctc.action?idSito=IN002" target="_blank"><span class="click_to_call border_infostrada text_uppercase margin_left_10">chiama gratis</span></a>
+    <a class="only_mobile link_infostrada display_inline" href="tel:800992159" target="_blank"><span class="display_inline click_to_call border_infostrada text_uppercase margin_left_10 margin_left_m_0">chiama gratis</span></a>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+    /**** COUNTER ****/
+    $('.counter_block_items--data').countdown('2017/06/07', function(event) {
+        var $this = $(this).html(event.strftime(''
+
+            + '<div class="items"><span class="time gg">%d</span>giorni</div>' + '<div class="items"><span class="time hh">%H</span>ore</div>' + '<br class="only_mobile"><div class="items"><span class="time mm">%M</span>minuti</div>' + '<div class="items"><span class="time sec">%S</span>secondi</div>'
+        ));
+    });
+});
+</script>

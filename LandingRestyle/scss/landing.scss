@@ -7,7 +7,7 @@
 @import "partials/main/hero";
 @import "partials/main/offer_details";
 @import "partials/components/vetrina_accordions";
-@import "partials/main/check_infostrada";
+@import "partials/main/_counter";
 @include attributes_classes;
 @include position_classes;
 @include text_classes;
@@ -71,6 +71,18 @@ h6 {
             padding: 0;
         }
     }
+    .fixed_container{
+        @include breakpoint(small) {
+            position:fixed;
+            bottom:0;
+            left:0;
+            z-index:999;
+            background-color:rgba(255, 255, 255, 0.6);
+        }
+        .button{
+            width:100%;
+        }
+    }
     .margin_left_auto {
         margin-left: auto;
         margin-right: 0;
@@ -119,6 +131,9 @@ h6 {
     .display_forced_inline {
         display: inline-block !important;
     }
+    .display_forced_block {
+        display: block !important;
+    }
     .vertical_top {
         vertical-align: top;
     }
@@ -127,6 +142,9 @@ h6 {
     }
     .vertical_bottom {
         vertical-align: bottom;
+    }
+    .margin_auto{
+        margin:0 auto;
     }
     .margin_top_150 {
         margin-top: 150px !important;
@@ -158,6 +176,19 @@ h6 {
             margin-bottom: 0px !important;
         }
     }
+
+    .margin_top_m_0 {
+        @include breakpoint(small) {
+            margin-top: 0px !important;
+        }}
+
+    .margin_bottom_120 {
+        margin-bottom: 120px !important;
+    }
+    .margin_bottom_150 {
+        margin-bottom: 150px !important;
+
+    }
     .margin_left_m_0 {
         @include breakpoint(small) {
             margin-left: 0px !important;
@@ -176,7 +207,7 @@ h6 {
     }
     .text_color_infostrada {
         color: $color_infostrada !important;
-    }    
+    }
     .text_color_blue_99 {
         color: #009bbe !important;
     }
@@ -203,10 +234,9 @@ h6 {
     .text_color_grey_darker {
         color: #333 !important;
     }
-    .bg_color_infostrada{
+    .bg_color_infostrada {
         background-color: $color_infostrada !important;
     }
-
     .text_normal {
         text-transform: none;
     }
@@ -235,6 +265,15 @@ h6 {
     }
     .reduced_letter_spacing {
         letter-spacing: -0.025em;
+    }
+    .border_infostrada {
+        border: 1px solid $color_infostrada;
+    }
+    .border_right_solid_infostrada {
+        border-right: 1px solid $color_infostrada;
+        @include breakpoint(tiny) {
+            border: none;
+        }
     }
     .border_right_solid {
         border-right: 1px solid $color_grey_dark;
@@ -285,10 +324,24 @@ h6 {
             display: block;
         }
     }
+    .position_relative_mobile{
+        @include breakpoint(small) {
+            position:relative;
+        }
+    }
+    
+    .max_width_100{
+        max-width:100%;
+    }
     .box_desktop_width_100 {
         width: 100% !important;
         @include breakpoint(small) {
             width: initial;
+        }
+    }
+    .img_mobile_width_100{
+        @include breakpoint(small) {
+            width: 100% !important;
         }
     }
     .box_width_100 {
@@ -422,7 +475,7 @@ h6 {
         &:hover {
             @include opacity(0.8);
         }
-    }    
+    }
     .btn_orange {
         border: 1px solid $color_orange;
         text-transform: uppercase;
@@ -529,6 +582,7 @@ h6 {
                     position: static;
                 }
             }
+
             &.small_mobile_font {
                 @include breakpoint(small) {
                     font-size: 1rem;
@@ -606,4 +660,80 @@ h6 {
 
 .mfp-wrap {
     height: 100vh !important;
+}
+
+.link_infostrada {
+    &:link,
+    &:visited,
+    &:active {
+        color: $color_infostrada;
+    }
+}
+
+.click_to_call {
+    @include border-radius(10px);
+    border-radius: 10px;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+// FIX CHECK COPERTURA
+.landing {
+    .standard_block.withForm {
+        margin-top: -5px;
+    }
+    .coverage_form {
+        padding-top: 20px;
+        max-width: 800px;
+    }
+    .coverage_form__white_title {
+        margin-bottom: 20px;
+    }
+    .coverage_form__input--city {
+        width: 49.5%;
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
+    .coverage_form__select {
+        width: 49.5%;
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
+    .coverage_form__additional_form .without_number {
+        color: $color_orange;
+    }
+    .standard_block__mainContainer {
+        height: auto;
+        padding-bottom: 25px;
+        background-color: #183989;
+    }
+    .standard_block__coloredBg {
+        display: none;
+    }
+    .standard_block__half_block.image_block {
+        display: none;
+    }
+    .fisso .coverage_form__additional_form.uncovered {
+        background-color: #183989;
+        @include breakpoint(tiny) {
+            bottom: -20px;
+        }
+    }
+    .standard_block__half_block.form_block {
+        left: 0;
+        width: 100%;
+        background-color: #183989;
+        @include breakpoint(small) {
+            transform: translateY(0);
+        }
+    }
+    .standard_block__half_block.offer_block {
+        display: none;
+    }
 }

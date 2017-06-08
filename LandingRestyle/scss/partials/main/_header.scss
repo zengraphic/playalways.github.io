@@ -31,6 +31,12 @@
                 }
             }
             // === Margine per spaziatura header === //
+            &--fixedHeight {
+                height: 85px;
+                @include breakpoint(small) {
+                    height: 70px;
+                }
+            }            
             &--margin {
                 margin-top: 85px;
                 @include breakpoint(small) {
@@ -113,6 +119,14 @@
                     top: 5px;
                 }
             }
+            .logo--infostrada img {
+                @include breakpoint(small) {
+                    width: 150px;
+                    height: auto;
+                    position: relative;
+                    top: 20px;
+                }
+            }            
         }
     }
 }
