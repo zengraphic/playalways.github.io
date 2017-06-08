@@ -27,7 +27,6 @@
 	            }
 
 	            function reverseUpside() {
-	                function upsideDown() {
 	                    if (stackN < 10) {
 	                        stackN = stackN + 1;
 	                        setTimeout(function() {
