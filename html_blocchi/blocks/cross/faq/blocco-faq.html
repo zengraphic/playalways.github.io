@@ -382,7 +382,8 @@
                                         <div class="showcase_accordions_block__container__body pull-left">
                                             <div class="showcase_accordions_block__container__text ">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida erat vitae ipsum iaculis aliquet at ac felis. Mauris at eleifend turpis, et dignissim augue. Donec quis ultricies velit, et blandit ante. Fusce nec vehicula eros. Suspendisse potenti. Vestibulum feugiat tempus nisl id bibendum. Phasellus risus purus, euismod in arcu sed, luctus tincidunt est.
-                                                <a class="popup-videoFaq " href="https://www.youtube.com/watch?v=8Qy6cQstTdk">Guarda il video</a><br>
+                                                <a class="popup-videoFaq " href="https://www.youtube.com/watch?v=8Qy6cQstTdk">Guarda il video</a>
+                                                <br>
                                             </div>
                                             <div class="showcase_accordions_block__container__buttons pull-right">
                                                 <a href="#" class="btn__share"></a>
@@ -1505,24 +1506,25 @@
 </body>
 <script>
 jQuery(document).ready(function($) {
+    
 
     r$('.popup-videoFaq').magnificPopup({
         type: 'iframe',
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false,
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false,
         closeMarkup: '<div class="mfp-close videoFaq__close"><div class="mfp-close base__icon icon_close--white"></div></div>'
     });
     r$('.popup-infoChat').magnificPopup({
-    type: 'iframe',
-    iframe: {
-        markup: '<div class="mfp-iframe-scaler chat__container">' +
-            '<div class="mfp-close chat__close"></div>' +
-            '<iframe class="mfp-iframe chat__iframe" frameborder="0" ></iframe>' +
-            '</div>',
-        srcAction: 'iframe_src',
-    }
-});
+        type: 'iframe',
+        iframe: {
+            markup: '<div class="mfp-iframe-scaler chat__container">' +
+                '<div class="mfp-close chat__close"><div class="mfp-close base__icon icon_close--white"></div></div>' +
+                '<iframe class="mfp-iframe chat__iframe" frameborder="0" ></iframe>' +
+                '</div>',
+            srcAction: 'iframe_src',
+        }
+    });
 
     var allCatFirst = $(".faq_block__single.main_faq_block");
     var allCatFirstOnlyFaq = $(".faq_block__single.main_faq_block--only_faq");
