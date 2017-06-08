@@ -75,7 +75,7 @@
     $breakpoints: ( 'super-tiny': ( max-width: 480px),
     'tiny': ( max-width: 400px),
     'small': ( max-width: 768px),
-    'medium': ( max-width: 910px),
+    'medium': ( max-width: 850px),
     'large': ( max-width: 1025px),
     'largest': ( max-width: 1440px),
     'min-largest':( min-width: 1439px),
@@ -173,6 +173,10 @@
                 font-size: 52px;
                 line-height: 54px;
                 margin-bottom: 15px;
+                @include breakpoint(small) {
+                    font-size: 28px;
+                    line-height: 30px;
+                }
             }
             &_image {
                 text-align: center;
@@ -190,8 +194,69 @@
                 width: 100%;
                 background-color: $color-white;
                 padding: 30px;
+                &.with_otp {
+                    text-align: center;
+                }
                 @include breakpoint(small) {
                     padding: 30px 15px;
+                }
+                .error_text{
+                    display: none;
+                    color: $color-red;
+                    text-align: left;
+                    font-size: 18px;
+                    max-width: 500px;
+                    width: 100%;
+                    margin: 5px auto;
+                    margin-bottom: 10px;
+                    @include breakpoint(small){
+                        font-size: 14px;
+                    }
+                }
+                .error_client_text{
+                    display: none;
+                    color: $color-black;
+                    text-align: center;
+                    font-size: 18px;
+                    max-width: 600px;
+                    width: 100%;
+                    margin: 30px auto;
+                    @include breakpoint(small){
+                        font-size: 14px;
+                    }
+                }                
+                .netflix_otp {
+                    width: 100%;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                    border: 1px solid $color-black;
+                    padding: 30px 25px 25px 25px;
+                    font-size: 24px;
+                    color: $color-black;
+                    font-family: $font-weight-light;
+                    box-shadow: 3px 3px 5px #ccc;
+                    @include border-radius(4px);
+                    @include breakpoint(small) {
+                        padding: 15px 10px 10px 10px;
+                        font-size: 14px;
+                    }
+                    &.error{
+                        margin-bottom: 0px;
+                        color: $color-red;
+                        border-color: $color-red;
+                        &~.error_text{
+                            display: block;
+                        }
+                    }
+                    &.error_client{
+                        margin-bottom: 0px;
+                        color: $color-red;
+                        border-color: $color-red;
+                        &~.error_client_text{
+                            display: block;
+                        }
+                    }                    
                 }
             }
             &_container {
@@ -206,6 +271,10 @@
                 font-size: 74px;
                 line-height: 55px;
                 margin-top: 15px;
+                @include breakpoint(small) {
+                    font-size: 50px;
+                    line-height: 52px;
+                }
             }
             &_subtitle {
                 text-align: center;
@@ -214,26 +283,111 @@
                 font-size: 52px;
                 text-transform: uppercase;
                 margin-bottom: 15px;
+                &.normal_case {
+                    text-transform: none;
+                    line-height: 1.1em;
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                }
+                @include breakpoint(small) {
+                    font-size: 34px;
+                    line-height: 36px;
+                }
             }
             &_pack_container {
+                &.full_width {
+                    text-align: center;
+                }
                 &_image {
                     display: inline-block;
                     width: 45%;
-                    vertical-align: middle;                    
+                    vertical-align: middle;
+                    @include breakpoint(medium) {
+                        width: 100%;
+                        text-align: center;
+                    }
                     .offer_image {
-                        width: 420px;
+                        width: 100%;
                         height: auto;
+                        @include breakpoint(medium) {
+                            max-width: 400px;
+                            margin: 0 auto;
+                        }
                     }
                 }
                 &_text {
                     display: inline-block;
                     width: 54.5%;
                     vertical-align: middle;
+                    padding-left: 15px;
+                    @include breakpoint(medium) {
+                        width: 100%;
+                        text-align: center;
+                    }
+                    &.full_width {
+                        width: 100%;
+                        text-align: center;
+                        padding: 0 30px;
+                        max-width: 800px;
+                        margin: 0 auto;
+                        margin-top: 30px;
+                    }
                     .offer_text {
                         font-size: 28px;
                         font-family: $font-weight-regular;
                         margin-bottom: 30px;
+                        @include breakpoint(small) {
+                            margin-top: 15px;
+                            font-size: 22px;
+                            line-height: 24px;
+                        }
                     }
+                }
+            }
+        }
+        //=========================================================//
+        //======================== GRAY BOX =========================//
+        //========================================================//
+        .gray_box {
+            &_full_container {
+                width: 100%;
+                background-color: #e6e9ed;
+                padding: 30px;
+                margin-bottom: 30px;
+                @include breakpoint(small) {
+                    padding: 30px 15px;
+                }
+            }
+            &_container {
+                width: 100%;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+            &_text{
+                font-size: 30px;
+                line-height: 32px;
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+                @include breakpoint(small){
+                    font-size: 24px;
+                    line-height: 26px;
+                }
+            }
+            &_claim{
+                font-size: 30px; 
+                line-height: 32px;
+                font-family: $font-weight-bold;
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: underline;
+                margin-top: 40px;
+               @include breakpoint(small){
+                    font-size: 24px;
+                    line-height: 26px;
+                }                
+                &:hover{
+                    @include opacity(0.8);
                 }
             }
         }
@@ -309,6 +463,16 @@
             font-size: 24px;
             font-family: $font-weight-bold;
             padding: 30px 15px 25px 15px;
+            box-shadow: 3px 3px 5px #ccc;
+            &.ghost_button {
+                margin-top: 15px;
+                color: $color-red !important;
+                background-color: $color-white;
+            }
+            @include breakpoint(small) {
+                font-size: 16px;
+                padding: 15px 5px 10px 5px;
+            }
             &:hover {
                 @include opacity(0.8);
             }
@@ -505,7 +669,7 @@
     }
     
     // ================= POLLEN =================== //
-    .close_upsidedown{
+    .close_upsidedown {
         color: $color-white;
         background-color: $color-black;
         border: 1px solid $color-white;
@@ -519,12 +683,13 @@
         z-index: 800;
         position: fixed;
         bottom: 30px;
-        left: calc(50% - 150px);    
-        &:hover{
+        left: calc(50% - 150px);
+        &:hover {
             background-color: $color-white;
             color: $color-black;
-        }    
+        }
     }
+    
     .upside_down {
         transform: rotate(180deg);
         -ms-transform: rotate(180deg);
@@ -547,7 +712,7 @@
         0% {
             opacity: 0.0;
         }
-        20%{
+        20% {
             opacity: 0.3;
         }
         80% {

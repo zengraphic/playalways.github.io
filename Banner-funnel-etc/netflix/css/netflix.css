@@ -59,6 +59,10 @@ b {
   font-size: 52px;
   line-height: 54px;
   margin-bottom: 15px; }
+  @media (max-width: 768px) {
+    .landing__netflix .hero_title {
+      font-size: 28px;
+      line-height: 30px; } }
 .landing__netflix .hero_image {
   text-align: center;
   width: 100%;
@@ -69,9 +73,65 @@ b {
   width: 100%;
   background-color: #fff;
   padding: 30px; }
+  .landing__netflix .offer_full_container.with_otp {
+    text-align: center; }
   @media (max-width: 768px) {
     .landing__netflix .offer_full_container {
       padding: 30px 15px; } }
+  .landing__netflix .offer_full_container .error_text {
+    display: none;
+    color: #db1221;
+    text-align: left;
+    font-size: 18px;
+    max-width: 500px;
+    width: 100%;
+    margin: 5px auto;
+    margin-bottom: 10px; }
+    @media (max-width: 768px) {
+      .landing__netflix .offer_full_container .error_text {
+        font-size: 14px; } }
+  .landing__netflix .offer_full_container .error_client_text {
+    display: none;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto; }
+    @media (max-width: 768px) {
+      .landing__netflix .offer_full_container .error_client_text {
+        font-size: 14px; } }
+  .landing__netflix .offer_full_container .netflix_otp {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    padding: 30px 25px 25px 25px;
+    font-size: 24px;
+    color: #000;
+    font-family: "Helvetica Light";
+    box-shadow: 3px 3px 5px #ccc;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */ }
+    @media (max-width: 768px) {
+      .landing__netflix .offer_full_container .netflix_otp {
+        padding: 15px 10px 10px 10px;
+        font-size: 14px; } }
+    .landing__netflix .offer_full_container .netflix_otp.error {
+      margin-bottom: 0px;
+      color: #db1221;
+      border-color: #db1221; }
+      .landing__netflix .offer_full_container .netflix_otp.error ~ .error_text {
+        display: block; }
+    .landing__netflix .offer_full_container .netflix_otp.error_client {
+      margin-bottom: 0px;
+      color: #db1221;
+      border-color: #db1221; }
+      .landing__netflix .offer_full_container .netflix_otp.error_client ~ .error_client_text {
+        display: block; }
 .landing__netflix .offer_container {
   width: 100%;
   max-width: 1024px;
@@ -83,6 +143,10 @@ b {
   font-size: 74px;
   line-height: 55px;
   margin-top: 15px; }
+  @media (max-width: 768px) {
+    .landing__netflix .offer_maintitle {
+      font-size: 50px;
+      line-height: 52px; } }
 .landing__netflix .offer_subtitle {
   text-align: center;
   color: #000;
@@ -90,21 +154,94 @@ b {
   font-size: 52px;
   text-transform: uppercase;
   margin-bottom: 15px; }
+  .landing__netflix .offer_subtitle.normal_case {
+    text-transform: none;
+    line-height: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 0; }
+  @media (max-width: 768px) {
+    .landing__netflix .offer_subtitle {
+      font-size: 34px;
+      line-height: 36px; } }
+.landing__netflix .offer_pack_container.full_width {
+  text-align: center; }
 .landing__netflix .offer_pack_container_image {
   display: inline-block;
   width: 45%;
   vertical-align: middle; }
+  @media (max-width: 850px) {
+    .landing__netflix .offer_pack_container_image {
+      width: 100%;
+      text-align: center; } }
   .landing__netflix .offer_pack_container_image .offer_image {
-    width: 420px;
+    width: 100%;
     height: auto; }
+    @media (max-width: 850px) {
+      .landing__netflix .offer_pack_container_image .offer_image {
+        max-width: 400px;
+        margin: 0 auto; } }
 .landing__netflix .offer_pack_container_text {
   display: inline-block;
   width: 54.5%;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding-left: 15px; }
+  @media (max-width: 850px) {
+    .landing__netflix .offer_pack_container_text {
+      width: 100%;
+      text-align: center; } }
+  .landing__netflix .offer_pack_container_text.full_width {
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px; }
   .landing__netflix .offer_pack_container_text .offer_text {
     font-size: 28px;
     font-family: "Helvetica Light";
     margin-bottom: 30px; }
+    @media (max-width: 768px) {
+      .landing__netflix .offer_pack_container_text .offer_text {
+        margin-top: 15px;
+        font-size: 22px;
+        line-height: 24px; } }
+.landing__netflix .gray_box_full_container {
+  width: 100%;
+  background-color: #e6e9ed;
+  padding: 30px;
+  margin-bottom: 30px; }
+  @media (max-width: 768px) {
+    .landing__netflix .gray_box_full_container {
+      padding: 30px 15px; } }
+.landing__netflix .gray_box_container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto; }
+.landing__netflix .gray_box_text {
+  font-size: 30px;
+  line-height: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .landing__netflix .gray_box_text {
+      font-size: 24px;
+      line-height: 26px; } }
+.landing__netflix .gray_box_claim {
+  font-size: 30px;
+  line-height: 32px;
+  font-family: "Helvetica Bold";
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 40px; }
+  @media (max-width: 768px) {
+    .landing__netflix .gray_box_claim {
+      font-size: 24px;
+      line-height: 26px; } }
+  .landing__netflix .gray_box_claim:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80); }
 .landing__netflix footer {
   margin-top: 40px; }
   .landing__netflix footer .footer_full_container {
@@ -155,7 +292,16 @@ b {
   text-align: center;
   font-size: 24px;
   font-family: "Helvetica Bold";
-  padding: 30px 15px 25px 15px; }
+  padding: 30px 15px 25px 15px;
+  box-shadow: 3px 3px 5px #ccc; }
+  .landing__netflix .netflix_button.ghost_button {
+    margin-top: 15px;
+    color: #db1221 !important;
+    background-color: #fff; }
+  @media (max-width: 768px) {
+    .landing__netflix .netflix_button {
+      font-size: 16px;
+      padding: 15px 5px 10px 5px; } }
   .landing__netflix .netflix_button:hover {
     opacity: 0.8;
     filter: alpha(opacity=80); }
