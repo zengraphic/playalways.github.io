@@ -684,6 +684,13 @@
         position: fixed;
         bottom: 30px;
         left: calc(50% - 150px);
+        @include breakpoint(tiny){
+            font-size: 18px;
+            width: 150px;
+            height: 40px;
+            line-height: 20px;
+            left: calc(50% - 75px);
+        }
         &:hover {
             background-color: $color-white;
             color: $color-black;
