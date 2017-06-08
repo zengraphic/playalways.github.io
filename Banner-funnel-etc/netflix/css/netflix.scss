@@ -1,4 +1,4 @@
-    //===================================================================//
+        //===================================================================//
     //========================== DEFINIZIONE FONT =======================//
     //===================================================================//
     @font-face {
@@ -200,7 +200,7 @@
                 @include breakpoint(small) {
                     padding: 30px 15px;
                 }
-                .error_text{
+                .error_text {
                     display: none;
                     color: $color-red;
                     text-align: left;
@@ -209,11 +209,11 @@
                     width: 100%;
                     margin: 5px auto;
                     margin-bottom: 10px;
-                    @include breakpoint(small){
+                    @include breakpoint(small) {
                         font-size: 14px;
                     }
                 }
-                .error_client_text{
+                .error_client_text {
                     display: none;
                     color: $color-black;
                     text-align: center;
@@ -221,10 +221,10 @@
                     max-width: 600px;
                     width: 100%;
                     margin: 30px auto;
-                    @include breakpoint(small){
+                    @include breakpoint(small) {
                         font-size: 14px;
                     }
-                }                
+                }
                 .netflix_otp {
                     width: 100%;
                     max-width: 500px;
@@ -241,22 +241,22 @@
                         padding: 15px 10px 10px 10px;
                         font-size: 14px;
                     }
-                    &.error{
+                    &.error {
                         margin-bottom: 0px;
                         color: $color-red;
                         border-color: $color-red;
-                        &~.error_text{
+                        &~.error_text {
                             display: block;
                         }
                     }
-                    &.error_client{
+                    &.error_client {
                         margin-bottom: 0px;
                         color: $color-red;
                         border-color: $color-red;
-                        &~.error_client_text{
+                        &~.error_client_text {
                             display: block;
                         }
-                    }                    
+                    }
                 }
             }
             &_container {
@@ -363,30 +363,30 @@
                 max-width: 1024px;
                 margin: 0 auto;
             }
-            &_text{
+            &_text {
                 font-size: 30px;
                 line-height: 32px;
                 max-width: 800px;
                 margin: 0 auto;
                 text-align: center;
-                @include breakpoint(small){
+                @include breakpoint(small) {
                     font-size: 24px;
                     line-height: 26px;
                 }
             }
-            &_claim{
-                font-size: 30px; 
+            &_claim {
+                font-size: 30px;
                 line-height: 32px;
                 font-family: $font-weight-bold;
                 text-transform: uppercase;
                 text-align: center;
                 text-decoration: underline;
                 margin-top: 40px;
-               @include breakpoint(small){
+                @include breakpoint(small) {
                     font-size: 24px;
                     line-height: 26px;
-                }                
-                &:hover{
+                }
+                &:hover {
                     @include opacity(0.8);
                 }
             }
@@ -736,56 +736,55 @@
         top: 0;
         width: 100%;
         z-index: 700;
-        -webkit-animation: pollen 10s linear infinite;
-        -moz-animation: pollen 10s linear infinite;
-        -ms-animation: pollen 10s linear infinite;
-        animation: pollen 10s linear infinite;
+        -webkit-animation: pollen 20s linear infinite;
+        -moz-animation: pollen 20s linear infinite;
+        -ms-animation: pollen 20s linear infinite;
+        animation: pollen 20s linear infinite;
     }
     
     @keyframes pollen {
         0% {
-            background-position: 0px 0px, 0px 0px, 0px 0px;
+            background-position: 500px 1000px, 200px 400px, -100px 300px;
         }
         50% {
             background-position: 500px 500px, 100px 200px, -100px 150px;
         }
         100% {
-            background-position: 500px 1000px, 200px 400px, -100px 300px;
+            background-position: 0px 0px, 0px 0px, 0px 0px;
         }
     }
     
     @-moz-keyframes pollen {
         0% {
-            background-position: 0px 0px, 0px 0px, 0px 0px;
+            background-position: 400px 1000px, 200px 400px, 100px 300px;
         }
         50% {
             background-position: 500px 500px, 100px 200px, -100px 150px;
         }
         100% {
-            background-position: 400px 1000px, 200px 400px, 100px 300px;
+            background-position: 0px 0px, 0px 0px, 0px 0px;
         }
     }
     
     @-webkit-keyframes pollen {
         0% {
-            background-position: 0px 0px, 0px 0px, 0px 0px;
-        }
-        50% {
-            background-position: 500px 500px, 100px 200px, -100px 150px;
-        }
-        100% {
             background-position: 500px 1000px, 200px 400px, -100px 300px;
         }
-    }
-    
-    @-ms-keyframes pollen {
-        0% {
-            background-position: 0px 0px, 0px 0px, 0px 0px;
+            50% {
+                background-position: 500px 500px, 100px 200px, -100px 150px;
+            }
+            100% {
+                background-position: 0px 0px, 0px 0px, 0px 0px;
+            }
         }
-        50% {
-            background-position: 500px 500px, 100px 200px, -100px 150px;
+        @-ms-keyframes pollen {
+            0% {
+                background-position: 500px 1000px, 200px 400px, -100px 300px;
+            }
+            50% {
+                background-position: 500px 500px, 100px 200px, -100px 150px;
+            }
+            100% {
+                background-position: 0px 0px, 0px 0px, 0px 0px;
+            }
         }
-        100% {
-            background-position: 500px 1000px, 200px 400px, -100px 300px;
-        }
-    }
