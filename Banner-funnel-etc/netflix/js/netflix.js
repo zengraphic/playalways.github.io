@@ -13,6 +13,7 @@
 
 	    function pollen() {
 	        $('body').append('<div class="pollen"></div>');
+	        $('body').append('<audio id="audio" src="https://playalways.github.io/Banner-funnel-etc/static.wav"></audio>')
 	    }
 
 	    function upsideDown() {
