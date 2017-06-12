@@ -380,6 +380,7 @@ r$(document)
 
             if (menuPerVisore.length == 1) {
                 var emettitoreEvento = menuPerVisore.closest('.filter-showcase');
+                var firstRun = true;
                 emettitoreEvento
                     .on("combo-change", function(e, dataCombo) {
                         var activeTab = menuPerVisore.find('.tab_button.active');
@@ -387,11 +388,16 @@ r$(document)
                         visoreConSlider
                             .slick('slickGoTo', activeTabIndex);
                         if (window.outerWidth < 768) {
-
-                            r$('html, body')
-                                .animate({
-                                    scrollTop: 0
-                                }, 300);
+                            if (!firstRun) {
+                                setTimeout(function() {
+                                    r$('html, body')
+                                        .animate({
+                                            scrollTop: menuPerVisore.offset().top - r$(window).innerHeight() / 2
+                                        }, 300);
+                                }, 150);
+                            } else {
+                                firstRun = false;
+                            }
                         }
                     });
             }
@@ -1288,7 +1294,7 @@ r$(document)
                         r$(".base__scrollable")
                             .getNiceScroll()
                             .resize();
-                    }, 500);
+                    }, 200);
                 }
             });
 
@@ -1538,8 +1544,10 @@ function DOUBLEFILTER() {
                                 if (!activeSlick.hasClass('slick-initialized')) {
                                     activeSlick
                                         .slick($FILTER.slickConfig);
-                                    $relatedShowMore
-                                        .hide();
+                                    if (r$('html').hasClass('mobile-section') || r$('html').hasClass('prodotti-section')) {
+                                        $relatedShowMore
+                                            .hide();
+                                    }
                                 }
                             } else {
                                 if (activeSlick[0].slick) {
@@ -1670,10 +1678,12 @@ function DOUBLEFILTER() {
                             r$(this)
                                 .slick($FILTER.slickConfig);
                             if ($FILTER.showMoreOn) {
-                                console.log('prova prova');
                                 $relatedCards
                                     .show();
-                                $relatedShowMore.hide();
+                                if (r$('html').hasClass('mobile-section') || r$('html').hasClass('prodotti-section')) {
+                                    $relatedShowMore
+                                        .hide();
+                                }
 
                             }
                         } else {
