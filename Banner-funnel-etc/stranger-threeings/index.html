@@ -22,7 +22,6 @@
     <div id="particles-js-3"></div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="js/particles.js"></script>
-    <script src="js/jquery.blinker.js"></script>
     <script>
     jQuery(document)
         .ready(function($) {
@@ -44,11 +43,11 @@
             var overlayHeaderHtml =
                 '<div class="overlay-header">' +
                 '<div class="overlay-header-container">' +
-                '<div class="logo-3-container red-blink" style="visibility:hidden">' +
+                '<div class="logo-3-container" style="">' +
                 '<img class="logo-3 " src="img/logo-3-stranger.png" alt="" />' +
                 '</div>' +
-                '<img class="logo-netflix red-blink"  style="visibility:hidden"src="img/Logo-netflix.png" alt="" />' +
-                '<a class="action-switch red-blink" style="visibility:hidden"><img class="logo-netflix" src="img/close.png" alt="" /></a>' +
+                '<img class="logo-netflix" src="img/Logo-netflix.png" alt="" />' +
+                '<a class="action-switch" ><img class="logo-netflix" src="img/close.png" alt="" /></a>' +
                 '</div>' +
 
                 '</div>';
@@ -65,35 +64,9 @@
 
                 $('body')
                     .append(overlayHeaderHtml);
-                /*$('body')
-                    .append(overlayBannerHtml);*/
-
-
-                /*$('.overlay-banner')
-                    .fadeIn(1000);*/
 
                 $('.overlay-header')
-                    .fadeIn(1000);
-
-                $('.red-blink')
-                    .blinker({
-                        timeHidden: 20,
-                        intervalRangeStart: 100,
-                        intervalRangeStop: 800
-                    });
-
-                setTimeout(function() {
-
-                    var redBlinkers = $('.red-blink');
-                    redBlinkers.each(function() {
-                        var blinker = $(this);
-                        blinker
-                            .data("blinker")
-                            .pause();
-                    });
-
-                }, 4000);
-
+                    .addClass('text-flicker-in-glow');
 
             }, 4000);
 
@@ -107,9 +80,6 @@
                         var particlesPromise =
                             $('#particles-js-1,#particles-js-2,#particles-js-3')
                             .fadeOut(1000);
-                        /*var bannerPromise =
-                            $('.overlay-banner')
-                            .fadeOut(1000);*/
                         var overlayHeaderPromise =
                             $('.overlay-header')
                             .fadeOut(1000);
