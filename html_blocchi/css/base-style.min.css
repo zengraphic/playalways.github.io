@@ -3194,11 +3194,11 @@ input[type=number]::-webkit-outer-spin-button {
     background-position: 25% 73.59692%; }
   .base__icon.icon_visa_electron--white {
     background-position: 50% 73.59692%; }
-  .base__icon.icon_american_express {
+  .base__icon.icon_americane {
     background-position: 0% 74.69538%; }
-  .base__icon.icon_american_express--grey {
+  .base__icon.icon_americane--grey {
     background-position: 25% 74.69538%; }
-  .base__icon.icon_american_express--white {
+  .base__icon.icon_americane--white {
     background-position: 50% 74.69538%; }
   .base__icon.icon_cartasi {
     background-position: 0% 75.79385%; }
@@ -6573,29 +6573,30 @@ h3.title {
 .no-scroll {
   overflow: hidden; }
 
-.ricarica {
+.ricarica__overlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  z-index: 3000;
+  width: 100%;
+  height: 100%;
+  background-color: #292F36;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
   display: none; }
-  .ricarica__overlay {
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    z-index: 3000;
-    width: 100%;
-    height: 100%;
-    background-color: #292F36;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    display: none; }
-  .ricarica .base__input {
-    transition: none;
-    -o-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -webkit-transition: none; }
-  .ricarica .bootstrap-select.btn-group .dropdown-menu {
-    min-width: 95%; }
-  .ricarica .box .bootstrap-select.btn-group .dropdown-menu {
-    min-width: 100%; }
+
+.ricarica .base__input {
+  transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -webkit-transition: none; }
+
+.ricarica .bootstrap-select.btn-group .dropdown-menu {
+  min-width: 95%; }
+
+.ricarica .box .bootstrap-select.btn-group .dropdown-menu {
+  min-width: 100%; }
 
 .base__popup .header {
   /* min-height: 122px; */ }
