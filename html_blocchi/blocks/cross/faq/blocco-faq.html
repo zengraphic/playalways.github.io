@@ -27,6 +27,124 @@
     <div class="container-wind">
         <div class="row">
             <div class="blocco_import">
+                <div class="header" id="header">
+                    <div class="header_sup">
+                        <div class="container">
+                            <div class="row">
+                                <div class="menu_sup_container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <ul class="menu_sup slider_topMenu">
+                                        <li>
+                                            <a href="#">
+                                    PRIVATI
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                    PROFESSIONISTI
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                    AZIENDE
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                    GRANDI AZIENDE
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="btn_active">
+                                    WINDGROUP
+                                </a>
+                                        </li>
+                                    </ul>
+                                    <div class="gradient_overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_second">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="logo logo--wind">
+                                        <a href="http://www.wind.it"><img src="../../../img/logos/logowind.svg" class="wind"></a>
+                                    </div>
+                                    <div class="menu">
+                                        <ul>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Ricarica
+                                        </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Cerca
+                                        </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Assistenza
+                                        </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn" href="#">
+                                            Passa a Wind
+                                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-right">
+                                        <ul>
+                                            <li>
+                                                <a class="btn_menu" id="menuaction" href="#">
+                                                    <div class="base__icon icon_menu--color"></div>
+                                                    MENU
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn_carrello" href="#">
+                                                    <div class="base__icon icon_carrello--color"></div>
+                                                    CARRELLO
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn_entra" href="#">
+                                                    <div class="base__icon icon_login--color"></div>
+                                                    ENTRA
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image_block_display mobile">
+                    <div class="image_block_display__mainContainer ">
+                        <div class="image_block_display__coloredBg">
+                            <div class="shape shape--one"></div>
+                            <div class="shape shape--two"></div>
+                        </div>
+                        <div class="image_block_display__half_block image_block">
+                            <div class="image_block--container">
+                                <img src="../../img/backgrounds/visore-editoriale-FIBRA.png" />
+                            </div>
+                        </div>
+                        <div class="image_block_display__half_block text_block">
+                            <div class="image_block_display__partnerImage"></div>
+                            <div class="image_block_display__title">Passa a Infostrada!</div>
+                            <div class="image_block_display__text">Consulta la copertura offerta dagli operatori marittimi e aerei.</div>
+                            <div class="image_block_display__price with_currency"></div>
+                            <div class="image_block_display__recurrency"></div>
+                            <a href="#" class="btn base__bt base__bt--sm base__bt--or"></a>
+                            <div class="image_block_display__recurrency--bottom"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
                 <div class="blocco_faq">
                     <!-- NOME UNIVOCO PER IL BLOCCO (modificabile, non ha classi o dipendenze) -->
                     <!--___________ ______________________INIZIO BLOCCO UNO_________________________________ -->
@@ -1506,7 +1624,7 @@
 </body>
 <script>
 jQuery(document).ready(function($) {
-    
+
 
     r$('.popup-videoFaq').magnificPopup({
         type: 'iframe',
@@ -1547,7 +1665,7 @@ jQuery(document).ready(function($) {
             allAccordions.hide("slow").find('input').prop('checked', true);
             activeCatFirst.addClass('faq_active');
             faqBlockTarget.show("slow", function() {
-                var blockTop = faqBlockTarget.offset().top;
+                var blockTop = faqBlockTarget.offset().top - 152;
                 $("html, body").stop().animate({
                     scrollTop: blockTop
                 }, 'slow');
@@ -1568,7 +1686,7 @@ jQuery(document).ready(function($) {
             allAccordions.hide("slow").find('input').prop('checked', true);
             activeCatFirst.addClass('faq_active');
             faqAccordionTarget.show("slow", function() {
-                var accordionTop = faqAccordionTarget.offset().top;
+                var accordionTop = faqAccordionTarget.offset().top - 152;
                 $("html, body").stop().animate({
                     scrollTop: accordionTop
                 }, 'slow');
@@ -1587,7 +1705,7 @@ jQuery(document).ready(function($) {
             $(allCatSecond).removeClass('faq_second_active');
             activeCatSecond.addClass('faq_second_active');
             $(faqAccordionTarget).show("slow", function() {
-                var accordionTop = $(faqAccordionTarget).offset().top;
+                var accordionTop = $(faqAccordionTarget).offset().top -72;
                 $("html, body").stop().animate({
                     scrollTop: accordionTop
                 }, 'slow');
