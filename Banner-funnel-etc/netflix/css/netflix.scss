@@ -115,7 +115,18 @@
         .slick-slide {
             outline: none;
         }
-        
+        .only_mobile{
+            display: none;
+            @include breakpoint(tiny){
+                display: block;
+            }            
+        }
+        .only_desktop{
+            display: block;
+            @include breakpoint(tiny){
+                display: none;
+            }
+        }
         .float_left {
             float: left;
         }
@@ -208,7 +219,7 @@
                         color: $color-red;
                         text-align: left;
                         font-size: 18px;
-                        max-width: 500px;
+                        max-width: 375px;
                         width: 100%;
                         margin: 5px auto;
                         margin-bottom: 10px;
@@ -230,12 +241,12 @@
                     }
                     .netflix_otp {
                         width: 100%;
-                        max-width: 500px;
+                        max-width: 375px;
                         margin: 0 auto;
                         margin-bottom: 15px;
                         border: 1px solid $color-black;
-                        padding: 30px 25px 25px 25px;
-                        font-size: 24px;
+                        padding: 20px 25px 15px 25px;
+                        font-size: 20px;
                         color: $color-black;
                         font-family: $font-weight-light;
                         box-shadow: 3px 3px 5px #ccc;
@@ -271,19 +282,19 @@
                     text-align: center;
                     color: $color-black;
                     font-family: $font-weight-bold;
-                    font-size: 74px;
-                    line-height: 55px;
+                    font-size: 50px;
+                    line-height: 52px;
                     margin-top: 15px;
                     @include breakpoint(small) {
-                        font-size: 50px;
-                        line-height: 52px;
+                        font-size: 40px;
+                        line-height: 42px;
                     }
                 }
                 &_subtitle {
                     text-align: center;
                     color: $color-black;
                     font-family: $font-weight-light;
-                    font-size: 52px;
+                    font-size: 35px;
                     text-transform: uppercase;
                     margin-bottom: 15px;
                     &.normal_case {
@@ -326,6 +337,7 @@
                         @include breakpoint(medium) {
                             width: 100%;
                             text-align: center;
+                            padding: 0;
                         }
                         &.full_width {
                             width: 100%;
@@ -339,7 +351,8 @@
                             }
                         }
                         .offer_text {
-                            font-size: 28px;
+                            font-size: 22px;
+                            line-height: 28px;
                             font-family: $font-weight-regular;
                             margin-bottom: 30px;
                             @include breakpoint(small) {
@@ -370,11 +383,12 @@
                     margin: 0 auto;
                 }
                 &_text {
-                    font-size: 30px;
-                    line-height: 32px;
+                    font-size: 26px;
+                    line-height: 28px;
                     max-width: 800px;
                     margin: 0 auto;
                     text-align: center;
+                    margin-bottom: 30px;
                     @include breakpoint(small) {
                         font-size: 24px;
                         line-height: 26px;
@@ -425,7 +439,7 @@
                     &_container {
                         text-align: center;
                         margin: 50px 0;
-                        font-size: 20px;
+                        font-size: 16px;
                         color: $color-white;
                         font-family: $font-weight-regular;
                     }
@@ -459,16 +473,16 @@
                 display: block;
                 width: 100%;
                 margin: 0 auto;
-                max-width: 500px;
+                max-width: 375px;
                 background-color: $color-red;
                 border: 1px solid $color-red;
                 @include border-radius(4px);
                 color: $color-white !important;
                 text-transform: uppercase;
                 text-align: center;
-                font-size: 24px;
+                font-size: 18px;
                 font-family: $font-weight-bold;
-                padding: 30px 15px 25px 15px;
+                padding: 20px 15px 15px 15px;
                 box-shadow: 3px 3px 5px #ccc;
                 &.ghost_button {
                     margin-top: 15px;
@@ -489,8 +503,8 @@
             }
             .divider {
                 height: 1px;
-                width: 100;
-                background-color: $color-black;
+                width: 100%;
+                background-color: #ccc;
             }
             //============================================================================//
             //================================ ACCORDIONS=== ============================//
@@ -503,22 +517,23 @@
                 .title {
                     &:before {
                         content: "i";
-                        height: 30px;
-                        bottom: 3px;
+                        height: 24px;
+                        bottom: 4px;
                         position: relative;
                         font-weight: 400;
-                        left: 13px;
+                        left: 10px;
                         width: 30px;
                         color: $color-black;
                         display: inline-block;
                         margin-right: 10px;
-                        font-size: 20px;
+                        font-size: 16px;
                     }
                     &:after {
                         content: "";
-                        height: 30px;
-                        width: 30px;
+                        height: 24px;
+                        width: 24px;
                         position: absolute;
+                        bottom: 5px;
                         left: 0;
                         border: 1px solid $color-black;
                         @include border-radius(50%);

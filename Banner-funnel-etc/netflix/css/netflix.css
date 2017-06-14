@@ -15,6 +15,18 @@
 .slick-slide {
   outline: none; }
 
+.only_mobile {
+  display: none; }
+  @media (max-width: 400px) {
+    .only_mobile {
+      display: block; } }
+
+.only_desktop {
+  display: block; }
+  @media (max-width: 400px) {
+    .only_desktop {
+      display: none; } }
+
 .float_left {
   float: left; }
 
@@ -83,7 +95,7 @@ b {
     color: #db1221;
     text-align: left;
     font-size: 18px;
-    max-width: 500px;
+    max-width: 375px;
     width: 100%;
     margin: 5px auto;
     margin-bottom: 10px; }
@@ -103,12 +115,12 @@ b {
         font-size: 14px; } }
   .landing__netflix .offer_full_container .netflix_otp {
     width: 100%;
-    max-width: 500px;
+    max-width: 375px;
     margin: 0 auto;
     margin-bottom: 15px;
     border: 1px solid #000;
-    padding: 30px 25px 25px 25px;
-    font-size: 24px;
+    padding: 20px 25px 15px 25px;
+    font-size: 20px;
     color: #000;
     font-family: "Helvetica Light";
     box-shadow: 3px 3px 5px #ccc;
@@ -140,18 +152,18 @@ b {
   text-align: center;
   color: #000;
   font-family: "Helvetica Bold";
-  font-size: 74px;
-  line-height: 55px;
+  font-size: 50px;
+  line-height: 52px;
   margin-top: 15px; }
   @media (max-width: 768px) {
     .landing__netflix .offer_maintitle {
-      font-size: 50px;
-      line-height: 52px; } }
+      font-size: 40px;
+      line-height: 42px; } }
 .landing__netflix .offer_subtitle {
   text-align: center;
   color: #000;
   font-family: "Helvetica Light";
-  font-size: 52px;
+  font-size: 35px;
   text-transform: uppercase;
   margin-bottom: 15px; }
   .landing__netflix .offer_subtitle.normal_case {
@@ -188,7 +200,8 @@ b {
   @media (max-width: 850px) {
     .landing__netflix .offer_pack_container_text {
       width: 100%;
-      text-align: center; } }
+      text-align: center;
+      padding: 0; } }
   .landing__netflix .offer_pack_container_text.full_width {
     width: 100%;
     text-align: center;
@@ -200,7 +213,8 @@ b {
       .landing__netflix .offer_pack_container_text.full_width {
         padding: 0; } }
   .landing__netflix .offer_pack_container_text .offer_text {
-    font-size: 28px;
+    font-size: 22px;
+    line-height: 28px;
     font-family: "Helvetica Light";
     margin-bottom: 30px; }
     @media (max-width: 768px) {
@@ -221,11 +235,12 @@ b {
   max-width: 1024px;
   margin: 0 auto; }
 .landing__netflix .gray_box_text {
-  font-size: 30px;
-  line-height: 32px;
+  font-size: 26px;
+  line-height: 28px;
   max-width: 800px;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 30px; }
   @media (max-width: 768px) {
     .landing__netflix .gray_box_text {
       font-size: 24px;
@@ -264,7 +279,7 @@ b {
   .landing__netflix footer .copyright_container {
     text-align: center;
     margin: 50px 0;
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     font-family: "Helvetica Light"; }
   .landing__netflix footer .copyright_main {
@@ -283,7 +298,7 @@ b {
   display: block;
   width: 100%;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 375px;
   background-color: #db1221;
   border: 1px solid #db1221;
   -webkit-border-radius: 4px;
@@ -293,9 +308,9 @@ b {
   color: #fff !important;
   text-transform: uppercase;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   font-family: "Helvetica Bold";
-  padding: 30px 15px 25px 15px;
+  padding: 20px 15px 15px 15px;
   box-shadow: 3px 3px 5px #ccc; }
   .landing__netflix .netflix_button.ghost_button {
     margin-top: 15px;
@@ -313,8 +328,8 @@ b {
   height: auto; }
 .landing__netflix .divider {
   height: 1px;
-  width: 100;
-  background-color: #000; }
+  width: 100%;
+  background-color: #ccc; }
 .landing__netflix .container_accordion {
   padding: 0 30px;
   width: 100%;
@@ -322,21 +337,22 @@ b {
   max-width: 1024px; }
   .landing__netflix .container_accordion .title:before {
     content: "i";
-    height: 30px;
-    bottom: 3px;
+    height: 24px;
+    bottom: 4px;
     position: relative;
     font-weight: 400;
-    left: 13px;
+    left: 10px;
     width: 30px;
     color: #000;
     display: inline-block;
     margin-right: 10px;
-    font-size: 20px; }
+    font-size: 16px; }
   .landing__netflix .container_accordion .title:after {
     content: "";
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     position: absolute;
+    bottom: 5px;
     left: 0;
     border: 1px solid #000;
     -webkit-border-radius: 50%;
