@@ -170,6 +170,11 @@
                     }
                     .vw_font_90 {
                         font-size: 8.7vw;
+                        &.smaller_mobile_vw {
+                            @include breakpoint(tiny) {
+                                font-size: 2rem;
+                            }
+                        }
                         @include breakpoint(larger-1024) {
                             font-size: 6.42857rem;
                         }

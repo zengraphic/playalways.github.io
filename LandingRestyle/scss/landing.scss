@@ -71,16 +71,16 @@ h6 {
             padding: 0;
         }
     }
-    .fixed_container{
+    .fixed_container {
         @include breakpoint(small) {
-            position:fixed;
-            bottom:0;
-            left:0;
-            z-index:999;
-            background-color:rgba(255, 255, 255, 0.6);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.6);
         }
-        .button{
-            width:100%;
+        .button {
+            width: 100%;
         }
     }
     .margin_left_auto {
@@ -93,7 +93,6 @@ h6 {
             margin-right: auto;
         }
     }
-
     .margin_auto {
         margin: 0 auto;
     }
@@ -144,8 +143,8 @@ h6 {
     .vertical_bottom {
         vertical-align: bottom;
     }
-    .margin_auto{
-        margin:0 auto;
+    .margin_auto {
+        margin: 0 auto;
     }
     .margin_top_150 {
         margin-top: 150px !important;
@@ -166,6 +165,11 @@ h6 {
             margin-top: calc(75px + 20vw) !important;
         }
     }
+    .padding_left_m_0 {
+        @include breakpoint(small) {
+            padding-left: 0px !important;
+        }
+    }
     .margin_top_0 {
         margin-top: 0px !important;
     }
@@ -177,18 +181,16 @@ h6 {
             margin-bottom: 0px !important;
         }
     }
-
     .margin_top_m_0 {
         @include breakpoint(small) {
             margin-top: 0px !important;
-        }}
-
+        }
+    }
     .margin_bottom_120 {
         margin-bottom: 120px !important;
     }
     .margin_bottom_150 {
         margin-bottom: 150px !important;
-
     }
     .margin_left_m_0 {
         @include breakpoint(small) {
@@ -206,11 +208,11 @@ h6 {
             text-align: left;
         }
     }
-   .text_right_m {
+    .text_right_m {
         @include breakpoint(small) {
             text-align: right;
         }
-    }    
+    }
     .text_color_infostrada {
         color: $color_infostrada !important;
     }
@@ -242,6 +244,9 @@ h6 {
     }
     .bg_color_infostrada {
         background-color: $color_infostrada !important;
+    }
+    .bg_color_orange {
+        background-color: $color_orange !important;
     }
     .text_normal {
         text-transform: none;
@@ -330,14 +335,13 @@ h6 {
             display: block;
         }
     }
-    .position_relative_mobile{
+    .position_relative_mobile {
         @include breakpoint(small) {
-            position:relative;
+            position: relative;
         }
     }
-    
-    .max_width_100{
-        max-width:100%;
+    .max_width_100 {
+        max-width: 100%;
     }
     .box_desktop_width_100 {
         width: 100% !important;
@@ -345,7 +349,7 @@ h6 {
             width: initial;
         }
     }
-    .img_mobile_width_100{
+    .img_mobile_width_100 {
         @include breakpoint(small) {
             width: 100% !important;
         }
@@ -353,31 +357,42 @@ h6 {
     .box_width_100 {
         width: 100%;
     }
+    .box_width_85 {
+        width: 84.5%;
+        &.same_mobile_width {
+            @include breakpoint(small) {
+                width: 84.5%;
+            }
+        }
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
     .box_width_80 {
         width: 79.5%;
         &.same_mobile_width {
             @include breakpoint(small) {
                 width: 79.5%;
             }
-        }        
+        }
         @include breakpoint(small) {
             width: 100%;
         }
-    }    
+    }
     .box_width_70 {
         width: 69.5%;
         &.same_mobile_width {
             @include breakpoint(small) {
                 width: 69.5%;
             }
-        }           
+        }
         @include breakpoint(small) {
             width: 100%;
         }
     }
-        .box_width_m_70 {
+    .box_width_m_70 {
         @include breakpoint(small) {
-           width: 69.5% !important;
+            width: 69.5% !important;
         }
     }
     .box_width_65 {
@@ -437,11 +452,22 @@ h6 {
             @include breakpoint(small) {
                 width: 19%;
             }
-        }        
+        }
         @include breakpoint(small) {
             width: 100%;
         }
-    }    
+    }
+    .box_width_15 {
+        width: 14.5%;
+        &.same_mobile_width {
+            @include breakpoint(small) {
+                width: 14.5%;
+            }
+        }
+        @include breakpoint(small) {
+            width: 100%;
+        }
+    }
     .fix_inline {
         font-size: 0px;
     }
@@ -620,7 +646,6 @@ h6 {
                     position: static;
                 }
             }
-
             &.small_mobile_font {
                 @include breakpoint(small) {
                     font-size: 1rem;
