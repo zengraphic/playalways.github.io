@@ -499,6 +499,7 @@
                     slidesToScroll: 1,
                     asNavFor: $SLIDER.activePhoneGallery,
                     dots: false,
+                    arrows: false,
                     centerMode: false,
                     focusOnSelect: true,
                     responsive: [{
