@@ -89,6 +89,11 @@
                     }
                 }
                 .container {
+                    &.overflow_visible {
+                        @include breakpoint(small) {
+                            overflow: visible;
+                        }
+                    }
                     @include breakpoint(small) {
                         overflow: hidden;
                     }
@@ -179,6 +184,15 @@
                         }
                         @include breakpoint(tiny) {
                             font-size: 2.85714rem;
+                        }
+                    }
+                    .vw_font_70 {
+                        font-size: 5.3vw;
+                        @include breakpoint(larger-1024) {
+                            font-size: 5rem;
+                        }
+                        @include breakpoint(tiny) {
+                            font-size: 2.3rem;
                         }
                     }
                     @include breakpoint(small) {
@@ -666,6 +680,18 @@
                         text-align: center;
                         width: 155px;
                         cursor: pointer;
+                        &.orange_active_variant {
+                            width: auto;
+                            &.active {
+                                background-color: $color-orange;
+                                color: $color-white;
+                            }
+                        }
+                        &.small_font_mobile {
+                            @include breakpoint(small) {
+                                font-size: 0.8rem;
+                            }
+                        }
                         @include breakpoint(small) {
                             margin: 0;
                             padding: 5px 10px;
