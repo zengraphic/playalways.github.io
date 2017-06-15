@@ -115,18 +115,21 @@
         .slick-slide {
             outline: none;
         }
-        .only_mobile{
+        
+        .only_mobile {
             display: none;
-            @include breakpoint(tiny){
+            @include breakpoint(tiny) {
                 display: block;
-            }            
+            }
         }
-        .only_desktop{
+        
+        .only_desktop {
             display: block;
-            @include breakpoint(tiny){
+            @include breakpoint(tiny) {
                 display: none;
             }
         }
+        
         .float_left {
             float: left;
         }
@@ -190,6 +193,36 @@
                     @include breakpoint(small) {
                         font-size: 28px;
                         line-height: 30px;
+                    }
+                }
+                &_subtitle {
+                    font-size: 19px;
+                    padding-left: 5px;
+                    text-transform: uppercase;
+                    color: $color-white;
+                    text-align: center;
+                    position: relative;
+                    width: 100%;
+                    max-width: 375px;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                    @include breakpoint(small) {
+                        font-size: 14px;
+                        max-width: 320px;
+                    }
+                    &:before {
+                        content: "";
+                        height: 25px;
+                        width: 3px;
+                        background-color: $color-red;
+                        position: absolute;
+                        left: 10px;
+                        top: 1px;
+                        @include breakpoint(small) {
+                            height: 17px;
+                            top: 2px;
+                            left: 15px;
+                        }
                     }
                 }
                 &_image {
