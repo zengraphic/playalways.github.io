@@ -236,7 +236,7 @@
              display: inline-block;
              font-size: 18px;
              line-height: 30px;
-             border-left: 2px solid #d63d38;
+             border-left: 2px solid $color-red;
              padding-left: 10px;
              text-transform: uppercase;
              @include breakpoint(small) {
@@ -266,7 +266,8 @@
          text-transform: uppercase;
          text-align: center;
          font-size: 30px;
-         padding: 22px;
+         padding: 15px;
+         line-height:1.1em;
          font-family: $font-weight-regular;
          box-sizing: border-box;
          &.ghost_button {
@@ -353,6 +354,9 @@
          }
          img {
              margin-right: 40px;
+              @include breakpoint(small) {
+            margin: 0;
+          }
          }
          &--cta {
              text-align: center;
@@ -444,8 +448,12 @@
          background-color: #d3d3d2;
          color: $color-white;
          background-image: url(../img/credito_bg.jpg);
+         background-repeat: no-repeat;
          background-size: cover;
          box-sizing: border-box;
+         @include breakpoint(small) {
+            background-position:39%;
+         }
          &--title {
              text-align: center;
              margin-bottom: 40px;

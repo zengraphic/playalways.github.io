@@ -92,7 +92,7 @@ img {
   display: inline-block;
   font-size: 18px;
   line-height: 30px;
-  border-left: 2px solid #d63d38;
+  border-left: 2px solid #e50914;
   padding-left: 10px;
   text-transform: uppercase; }
   @media (max-width: 768px) {
@@ -122,7 +122,8 @@ img {
   text-transform: uppercase;
   text-align: center;
   font-size: 30px;
-  padding: 22px;
+  padding: 15px;
+  line-height: 1.1em;
   font-family: "Helvetica Regular";
   box-sizing: border-box; }
   .landing__content .netflix_button.ghost_button {
@@ -192,6 +193,9 @@ img {
         margin-top: 30px; } }
   .landing__content--hero img {
     margin-right: 40px; }
+    @media (max-width: 768px) {
+      .landing__content--hero img {
+        margin: 0; } }
   .landing__content--hero--cta {
     text-align: center;
     margin-top: 20px; }
@@ -262,8 +266,12 @@ img {
   background-color: #d3d3d2;
   color: #fff;
   background-image: url(../img/credito_bg.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box; }
+  @media (max-width: 768px) {
+    .landing__content--credit {
+      background-position: 39%; } }
   .landing__content--credit--title {
     text-align: center;
     margin-bottom: 40px; }
