@@ -428,7 +428,7 @@
                 [/_/g, '-']
             ];
             var countryNameFormatted = country.name.toLowerCase();
-            var flagNameFormatted = country.flag_name.toLowerCase();
+            var flagNameFormatted = country.name.toLowerCase();
 
             r$.each(regExes, function(i, regEx) {
                 if (i < 3) {
@@ -607,7 +607,7 @@
                     r$.each(data.geo_zone_rates, function(geoZoneRateIndex, geoZoneRate) {
                         if (country.geo_zone_id == geoZoneRate.from_geo_zone_id) {
                             $TOOL
-                                .setGeoZones(continentId, countryId, geoZoneRate);
+                                .setGeoZonesRates(continentId, countryId, geoZoneRate);
                         }
                     });
                 });
@@ -620,10 +620,12 @@
 
         },
 
-        setGeoZonesRates: function(continentId, countryId, geozone) {
+        setGeoZonesRates: function(continentId, countryId, geoZoneRate) {
             var $TOOL = this;
-
-            $TOOL.apiData[continentId].countries[countryId].geozone = geozone;
+            if (typeof $TOOL.apiData[continentId].countries[countryId].geozone.callRate === typeof undefined) {
+                $TOOL.apiData[continentId].countries[countryId].geozone.callRate = {};
+            }
+            $TOOL.apiData[continentId].countries[countryId].geozone.callRate[geoZoneRate.to_geo_zone_id] = geoZoneRate;
         },
 
         /*
@@ -703,7 +705,17 @@
 
                 });
 
-            var buildOperatorsDomPromise = buildCountryServicesDomPromise
+            var buildCountryRatesDomPromise = buildCountryServicesDomPromise
+                .then(function() {
+                    console.log('buildRatesDom method.....');
+                    return $TOOL.buildRatesDom();
+                })
+                .done(function() {
+                    console.log('buildRatesDom done');
+
+                });
+
+            var buildOperatorsDomPromise = buildCountryRatesDomPromise
                 .then(function() {
                     console.log('buildOperatorsDom method.....');
                     return $TOOL.buildOperatorsDom();
@@ -867,7 +879,14 @@
                 '</div>' +
                 '<div class="country_offers_block__rates_divider--left">' +
                 '<div class="country_offers_block__rates--title"> Copertura <br/>satellitare </div>' +
-                '<div class="country_offers_block__rates--price"> - </div>' +
+                '<div class="country_offers_block__rates--price">';
+
+                r$.each(country.operators,function(operatorIndex,operator){
+                    if(operator.frequency == 'satellitare'){
+                        countryHtmlString+= operator.name+'; ';
+                    }
+                });
+                countryHtmlString += '</div>' +
                 '</div>' +
                 '</div>' +
                 '</div>';
@@ -935,7 +954,7 @@
                             countryServices.lteService = true;
                         }
                     });
-                    $TOOL.setServiceDom(countryId,countryServices);
+                    $TOOL.setServiceDom(countryId, countryServices);
 
                 });
             });
@@ -945,74 +964,74 @@
 
             return starter.promise();
         },
-        setServiceDom: function(countryId,countryServices) {
+        setServiceDom: function(countryId, countryServices) {
             var $TOOL = this;
-            
+
             var servicesHtmlString =
-                '<div class="country_offers_block__container__country--services col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
-                    '<div class="accordion_description_block__container col-xs-12">'+
-                        '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Servizi</div>'+
-                        '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Abbonamento</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                    (countryServices.callSubscriptionService?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                    (countryServices.callDirectService?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile con Roaming *124*</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                    (countryServices.call124Service?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">SMS</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                   (countryServices.smsService?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                        '</div>'+
-                        '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                    (countryServices.gprsService?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                    (countryServices.umtsService?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                            '<div class="accordion_description_block__featureContent">'+
-                                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>'+
-                                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                                    (countryServices.lteService?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                                '</div>'+
-                                '<div class="clear"></div>'+
-                            '</div>'+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                '</div>'+
+                '<div class="country_offers_block__container__country--services col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
+                '<div class="accordion_description_block__container col-xs-12">' +
+                '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Servizi</div>' +
+                '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Abbonamento</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.callSubscriptionService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.callDirectService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile con Roaming *124*</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.call124Service ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">SMS</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.smsService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.gprsService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.umtsService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (countryServices.lteService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
                 '<div class="clear"></div>';
 
             $TOOL
                 .countriesContainer
-                .find('[data-country-id="'+countryId+'"]')
+                .find('[data-country-id="' + countryId + '"]')
                 .append(servicesHtmlString);
         },
 
@@ -1042,7 +1061,8 @@
             var starter = new r$.Deferred();
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
-                    $TOOL.setRateDom(countryId,country.geozone);
+                    $TOOL
+                        .setRateDom(countryId, country.geozone);
                 });
             });
 
@@ -1051,110 +1071,65 @@
 
             return starter.promise();
         },
-        setRateDom: function(countryId,geoZone) {
+        setRateDom: function(countryId, geoZone) {
             var $TOOL = this;
-            
+
             var ratesHtmlString =
-                '<div class="accordion_description_block__container col-xs-12">'+
-                '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-                    '<div class="accordion_description_block__featureContent strong">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate effettuate</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A zona UE</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona SM</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona 2</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona 3</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona 4</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate ricevute</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone.receive_rate+'€/min</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-                    '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Servizi</div>'+
-                    '<div class="clear"></div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Abbonamento</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.roaming_subscription?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.roaming_direct?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile con Roaming *124*</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.roaming_124?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">SMS</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.sms_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.gprs_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.umts_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.lte_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="clear"></div>'+
-            '</div>';
+                '<div class="accordion_description_block__container col-xs-12">' +
+                '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                '<div class="accordion_description_block__featureContent strong">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate effettuate</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>' +
+                '<div class="clear"></div>' +
+                '</div>';
+
+            r$.each(geoZone.callRate, function(callRateIndex, callRate) {
+                ratesHtmlString +=
+                    '<div class="accordion_description_block__featureContent">' +
+                    '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A zona ' + callRate.to_geo_zone_id + '</div>' +
+                    '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + callRate.rate + '€/min</div>' +
+                    '<div class="clear"></div>' +
+                    '</div>';
+            });
+
+            ratesHtmlString +=
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate ricevute</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + geoZone.receive_rate + '€/min</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">&nbsp;</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">SMS</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + geoZone.sms_rate + '€</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">MMS</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + geoZone.mms_rate + '€</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">DATI</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + geoZone.data_rate + 'cent/Kb</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>';
 
 
             $TOOL
                 .countriesContainer
-                .find('[data-country-id="'+countryId+'"]')
+                .find('[data-country-id="' + countryId + '"]')
                 .append(ratesHtmlString);
-        }, 
+        },
 
 
 
@@ -1186,30 +1161,30 @@
                 r$.each(continent.countries, function(countryId, country) {
                     var operatorsHtmlString = '';
 
-                    operatorsHtmlString += 
-                        '<div class="block_coverage_tool__operators__container col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
-                           '<div class="showcase_accordions_block">'+
-                                '<ul>'+
-                                    '<li class="showcase_accordions_block__single">'+
-                                        '<input type="checkbox" checked class="accordionBox"><i></i>'+
-                                        '<h2>Visualizza gli operatori disponibili</h2>'+
-                                        '<div class="showcase_accordions_block__container">';
+                    operatorsHtmlString +=
+                        '<div class="block_coverage_tool__operators__container col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
+                        '<div class="showcase_accordions_block">' +
+                        '<ul>' +
+                        '<li class="showcase_accordions_block__single">' +
+                        '<input type="checkbox" checked class="accordionBox"><i></i>' +
+                        '<h2>Visualizza gli operatori disponibili</h2>' +
+                        '<div class="showcase_accordions_block__container">';
 
                     r$.each(country.operators, function(operatorId, operator) {
                         operatorsHtmlString = $TOOL
-                            .setOperatorDom(operator,operatorsHtmlString);
+                            .setOperatorDom(operator, operatorsHtmlString);
                     });
 
                     operatorsHtmlString +=
-                                 '</div>'+
-                                '</li>'+
-                            '</ul>'+
-                        '</div>'+
-                    '</div>';
-                    
+                        '</div>' +
+                        '</li>' +
+                        '</ul>' +
+                        '</div>' +
+                        '</div>';
+
                     $TOOL
                         .countriesContainer
-                        .find('[data-country-id="'+countryId+'"]')
+                        .find('[data-country-id="' + countryId + '"]')
                         .append(operatorsHtmlString);
                 });
             });
@@ -1219,84 +1194,84 @@
 
             return starter.promise();
         },
-        setOperatorDom: function(operator,operatorsHtmlString) {
+        setOperatorDom: function(operator, operatorsHtmlString) {
             var $TOOL = this;
-            operatorsHtmlString += 
-            '<div class="accordion_description_block__container col-xs-12">'+
-                '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-                    '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Dati Operatore</div>'+
-                    '<div class="clear"></div>'+
-                    '<div class="accordion_description_block__featureContent strong">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Nome Operatore</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+operator.name+'</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Display</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+operator.display.join(';')+'</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Frequenza</div>'+
-                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+operator.frequency+'</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-                    '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Servizi</div>'+
-                    '<div class="clear"></div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Abbonamento</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.roaming_subscription?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.roaming_direct?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile con Roaming *124*</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.roaming_124?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">SMS</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.sms_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.gprs_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.umts_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                    '<div class="accordion_description_block__featureContent">'+
-                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>'+
-                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
-                            (operator.lte_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
-                        '</div>'+
-                        '<div class="clear"></div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="clear"></div>'+
-            '</div>';
+            operatorsHtmlString +=
+                '<div class="accordion_description_block__container col-xs-12">' +
+                '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Dati Operatore</div>' +
+                '<div class="clear"></div>' +
+                '<div class="accordion_description_block__featureContent strong">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Nome Operatore</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + operator.name + '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Display</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + operator.display.join(';') + '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Frequenza</div>' +
+                '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + operator.frequency + '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Servizi</div>' +
+                '<div class="clear"></div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Abbonamento</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.roaming_subscription ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.roaming_direct ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile con Roaming *124*</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.roaming_124 ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">SMS</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.sms_available ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.gprs_available ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.umts_available ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '<div class="accordion_description_block__featureContent">' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>' +
+                '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+                (operator.lte_available ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="clear"></div>' +
+                '</div>';
 
             return operatorsHtmlString;
         },
