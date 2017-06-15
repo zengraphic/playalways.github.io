@@ -262,6 +262,16 @@
 
                 });
 
+            var getDataZonesRatesPromise = getDataZonesPromise
+                .then(function() {
+                    console.log('getData tariffe-zone method.....');
+                    return $TOOL.getData('tariffe-zone');
+                })
+                .done(function() {
+                    console.log('getData tariffe-zone done');
+
+                });
+
             starter
                 .resolve();
 
@@ -332,6 +342,8 @@
                         case 'zone':
                             return $TOOL.interpolateGeoZones(data, dataType);
 
+                        case 'tariffe-zone':
+                            return $TOOL.interpolateGeoZonesRates(data, dataType);
 
                     }
                 })
@@ -586,6 +598,34 @@
             $TOOL.apiData[continentId].countries[countryId].geozone = geozone;
         },
 
+        interpolateGeoZonesRates: function(data, dataType) {
+            var $TOOL = this;
+            var starter = new r$.Deferred();
+
+            r$.each($TOOL.apiData, function(continentId, continent) {
+                r$.each(continent.countries, function(countryId, country) {
+                    r$.each(data.geo_zone_rates, function(geoZoneRateIndex, geoZoneRate) {
+                        if (country.geo_zone_id == geoZoneRate.from_geo_zone_id) {
+                            $TOOL
+                                .setGeoZones(continentId, countryId, geoZoneRate);
+                        }
+                    });
+                });
+            });
+
+            starter
+                .resolve();
+
+            return starter.promise();
+
+        },
+
+        setGeoZonesRates: function(continentId, countryId, geozone) {
+            var $TOOL = this;
+
+            $TOOL.apiData[continentId].countries[countryId].geozone = geozone;
+        },
+
         /*
         END BUILDING API DATA METHODS
          */
@@ -673,7 +713,7 @@
 
                 });
 
-            var buildOffersDomPromise = buildOperatorsDomPromise
+            /*var buildOffersDomPromise = buildOperatorsDomPromise
                 .then(function() {
                     console.log('buildOffersDom method.....');
                     return $TOOL.buildOffersDom();
@@ -681,7 +721,7 @@
                 .done(function() {
                     console.log('buildOffersDom done');
 
-                });
+                });*/
 
             starter
                 .resolve();
@@ -815,7 +855,7 @@
                 '<div class="country_offers_block__container__country--rates col-xs-12 col-sm-10 col-md-10 col-lg-10">' +
                 '<div class="country_offers_block__rates_divider--left">' +
                 '<div class="country_offers_block__rates--title">Zona<br>geografica</div>' +
-                '<div class="country_offers_block__rates--price">' + country.name + '</div>' +
+                '<div class="country_offers_block__rates--price">' + country.geozone.name + '</div>' +
                 '</div>' +
                 '<div class="country_offers_block__rates_divider--left">' +
                 '<div class="country_offers_block__rates--title">Prefisso<br/>internazionale</div>' +
@@ -977,6 +1017,149 @@
         },
 
 
+
+        buildRatesDom: function() {
+            var $TOOL = this;
+            var starter = new r$.Deferred();
+
+            var setRatesDomPromise = starter
+                .then(function() {
+                    console.log('setRatesDom method.....');
+                    return $TOOL.setRatesDom();
+                })
+                .done(function() {
+                    console.log('setRatesDom done');
+
+                });
+
+            starter
+                .resolve();
+
+            return starter.promise();
+        },
+        setRatesDom: function() {
+            var $TOOL = this;
+            var starter = new r$.Deferred();
+            r$.each($TOOL.apiData, function(continentId, continent) {
+                r$.each(continent.countries, function(countryId, country) {
+                    $TOOL.setRateDom(countryId,country.geozone);
+                });
+            });
+
+            starter
+                .resolve();
+
+            return starter.promise();
+        },
+        setRateDom: function(countryId,geoZone) {
+            var $TOOL = this;
+            
+            var ratesHtmlString =
+                '<div class="accordion_description_block__container col-xs-12">'+
+                '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+                    '<div class="accordion_description_block__featureContent strong">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate effettuate</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A zona UE</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona SM</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona 2</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona 3</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A Zona 4</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone+'€/min</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate ricevute</div>'+
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">'+geoZone.receive_rate+'€/min</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+                    '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Servizi</div>'+
+                    '<div class="clear"></div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Abbonamento</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.roaming_subscription?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.roaming_direct?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Chiamate voce per Ricaricabile con Roaming *124*</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.roaming_124?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">SMS</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.sms_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.gprs_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.umts_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                    '<div class="accordion_description_block__featureContent">'+
+                        '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>'+
+                        '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">'+
+                            (operator.lte_available?'<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">':'')+
+                        '</div>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="clear"></div>'+
+            '</div>';
+
+
+            $TOOL
+                .countriesContainer
+                .find('[data-country-id="'+countryId+'"]')
+                .append(ratesHtmlString);
+        }, 
+
+
+
+
+
         buildOperatorsDom: function() {
             var $TOOL = this;
             var starter = new r$.Deferred();
@@ -1119,7 +1302,7 @@
         },
 
 
-        buildOffersDom: function() {
+        /*buildOffersDom: function() {
             var $TOOL = this;
             var starter = new r$.Deferred();
 
@@ -1217,7 +1400,7 @@
             var $TOOL = this;
 
             return htmlStringToAddTo;
-        },
+        },*/
 
 
 
