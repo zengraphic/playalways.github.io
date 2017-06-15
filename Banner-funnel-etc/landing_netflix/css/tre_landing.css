@@ -1,0 +1,282 @@
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url("fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("fonts/HelveticaNeueLTCom-Th.otf") format("opentype");
+  font-weight: 300; }
+@font-face {
+  font-family: 'Helvetica Regular';
+  src: url("fonts/HelveticaNeueLTCom-Roman.woff") format("woff"), url("fonts/HelveticaNeueLTCom-Roman.otf") format("opentype");
+  font-weight: 400; }
+@font-face {
+  font-family: 'Helvetica Bold';
+  src: url("fonts/HelveticaNeueLTCom-Bd.woff") format("woff"), url("fonts/HelveticaNeueLTCom-Bd.otf") format("opentype");
+  font-weight: 700; }
+/* ___________________ MIXIN __________________
+                      BREAKPOINT MIXIN */
+body {
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-hyphens: inherit;
+  -ms-hyphens: inherit;
+  hyphens: none;
+  line-height: 1.1em;
+  font-family: "Helvetica Regular";
+  margin: 0; }
+
+input:focus {
+  outline: none; }
+
+b {
+  font-family: "Helvetica Bold"; }
+
+p,
+h1,
+h2,
+div,
+span,
+body,
+html {
+  margin: 0; }
+
+a {
+  text-decoration: inherit;
+  color: inherit; }
+  a:active, a:visited, a:focus {
+    text-decoration: inherit;
+    color: inherit; }
+
+.text_align--left {
+  text-align: left; }
+.text_align--right {
+  text-align: right; }
+.text_align--center {
+  text-align: center; }
+
+img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  border: 0;
+  outline: 0; }
+
+.clear {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.float_left {
+  float: left; }
+
+.float_right {
+  float: right; }
+
+.landing__content .half_block {
+  position: relative;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top; }
+  @media (max-width: 768px) {
+    .landing__content .half_block {
+      width: 100%;
+      display: block; } }
+.landing__content p.image_caption {
+  margin: 30px 40px 0 0;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 30px;
+  border-left: 2px solid #d63d38;
+  padding-left: 10px;
+  text-transform: uppercase; }
+  @media (max-width: 768px) {
+    .landing__content p.image_caption {
+      text-align: left;
+      margin: 30px 0; } }
+.landing__content .container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 10px;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box; }
+.landing__content .netflix_button {
+  display: inline-block;
+  width: 100%;
+  margin: 20px 25px;
+  max-width: 385px;
+  background-color: #e50914;
+  border: 1px solid #e50914;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  padding: 22px;
+  font-family: "Helvetica Regular";
+  box-sizing: border-box; }
+  .landing__content .netflix_button.ghost_button {
+    margin-top: 15px;
+    background-color: #000;
+    border: 1px solid #fff; }
+  @media (max-width: 768px) {
+    .landing__content .netflix_button {
+      font-size: 16px;
+      margin: 20px 0; } }
+  .landing__content .netflix_button:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80); }
+.landing__content--header {
+  display: block;
+  width: 100%;
+  padding: 40px 0;
+  background-color: #f3f3f3;
+  box-sizing: border-box; }
+  @media (max-width: 768px) {
+    .landing__content--header .logo__casaTre,
+    .landing__content--header .logo__netflix {
+      max-width: 40%; } }
+.landing__content--hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 30px 0;
+  background-color: #000;
+  color: #fff;
+  box-sizing: border-box;
+  background-image: url(../img/hero_bg.jpg);
+  background-size: cover; }
+  .landing__content--hero__title {
+    text-align: center;
+    margin-bottom: 30px; }
+    .landing__content--hero__title h1 {
+      font-family: "Helvetica Bold";
+      font-size: 53px;
+      line-height: 1.1em; }
+  .landing__content--hero--text {
+    font-size: 25px;
+    line-height: 35px;
+    font-family: "Helvetica Light"; }
+    .landing__content--hero--text p {
+      margin-top: 30px; }
+    .landing__content--hero--text .price {
+      font-family: "Helvetica Bold";
+      font-size: 70px; }
+    .landing__content--hero--text .small {
+      font-size: 40px;
+      font-family: "Helvetica Bold"; }
+    .landing__content--hero--text .with_currency:after {
+      content: "\20AC";
+      font-size: 0.8em;
+      color: inherit;
+      padding-left: 3px;
+      font-family: "Helvetica Regular"; }
+  @media (max-width: 768px) {
+    .landing__content--hero .half_block {
+      text-align: center; } }
+  .landing__content--hero .image_block {
+    text-align: right; }
+    @media (max-width: 768px) {
+      .landing__content--hero .image_block {
+        text-align: center;
+        margin-top: 30px; } }
+  .landing__content--hero img {
+    margin-right: 40px; }
+  .landing__content--hero--cta {
+    text-align: center;
+    margin-top: 20px; }
+.landing__content--activation {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+  background-color: #f3f3f3;
+  color: #000;
+  box-sizing: border-box; }
+  .landing__content--activation__title {
+    text-align: center;
+    margin-bottom: 80px; }
+    .landing__content--activation__title h2 {
+      font-family: "Helvetica Bold";
+      font-size: 53px;
+      line-height: 1.1em; }
+  .landing__content--activation--text {
+    font-size: 25px;
+    line-height: 35px;
+    font-family: "Helvetica Light"; }
+    .landing__content--activation--text p {
+      margin-top: 40px; }
+      .landing__content--activation--text p.title {
+        font-family: "Helvetica Bold";
+        margin: 0; }
+    .landing__content--activation--text .price {
+      font-family: "Helvetica Bold";
+      font-size: 70px; }
+    .landing__content--activation--text .small {
+      font-size: 40px;
+      font-family: "Helvetica Bold"; }
+    .landing__content--activation--text .with_currency:after {
+      content: "\20AC";
+      font-size: 0.8em;
+      color: inherit;
+      padding-left: 3px;
+      font-family: "Helvetica Regular"; }
+  .landing__content--activation--cta {
+    margin-top: 80px; }
+  .landing__content--activation--icons {
+    display: table;
+    width: 100%;
+    margin-top: 80px; }
+    .landing__content--activation--icons .icon_container {
+      display: table-cell;
+      width: 25%;
+      box-sizing: border-box; }
+      @media (max-width: 768px) {
+        .landing__content--activation--icons .icon_container {
+          display: block;
+          width: 100%;
+          margin-bottom: 30px; } }
+    .landing__content--activation--icons .icon_caption {
+      display: block;
+      margin-top: 30px;
+      font-size: 24px;
+      line-height: 1.1em;
+      font-family: "Helvetica Light"; }
+  .landing__content--activation .image_cation {
+    margin: 40px 0; }
+.landing__content--credit {
+  display: block;
+  width: 100%;
+  height: 646px;
+  padding: 40px 0;
+  background-color: #d3d3d2;
+  color: #fff;
+  background-image: url(../img/credito_bg.jpg);
+  background-size: cover;
+  box-sizing: border-box; }
+  .landing__content--credit--title {
+    text-align: center;
+    margin-bottom: 40px; }
+    .landing__content--credit--title h2 {
+      font-family: "Helvetica Bold";
+      font-size: 53px;
+      line-height: 1.1em;
+      text-shadow: 3px 4px 5px rgba(7, 4, 6, 0.8); }
+  .landing__content--credit--text {
+    font-size: 25px;
+    line-height: 35px;
+    font-family: "Helvetica Light"; }
+    .landing__content--credit--text p {
+      text-shadow: 3px 4px 5px rgba(7, 4, 6, 0.8); }
+
+/*# sourceMappingURL=tre_landing.css.map */
