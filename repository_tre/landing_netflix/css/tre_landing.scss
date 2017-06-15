@@ -212,6 +212,24 @@
      float: right;
  }
  
+ .box_Container {
+     width: 100%!important;
+     .box_Breadcrumb {
+         display: none!important;
+         & + br {
+             display: none;
+         }
+     }
+     .box_Main {
+         margin: 0;
+     }
+ }
+ .box_Bottom,
+ .box_SmartLinks,
+ .box_Notes{
+    display:none!important;
+ }
+
  // INIZIO CSS
  .landing__content {
      // img{
@@ -222,7 +240,7 @@
      // }
      .half_block {
          position: relative;
-         width: 50%;
+         width: 49.5%;
          display: inline-block;
          vertical-align: top;
          @include breakpoint(small) {
@@ -240,8 +258,8 @@
              padding-left: 10px;
              text-transform: uppercase;
              @include breakpoint(small) {
-              text-align:left;
-              margin: 30px 0;
+                 text-align: left;
+                 margin: 30px 0;
              }
          }
      }
@@ -262,12 +280,12 @@
          background-color: $color-red;
          border: 1px solid $color-red;
          @include border-radius(4px);
-         color: $color-white;
+         color: $color-white !important;
          text-transform: uppercase;
          text-align: center;
          font-size: 30px;
          padding: 15px;
-         line-height:1.1em;
+         line-height: 1.1em;
          font-family: $font-weight-regular;
          box-sizing: border-box;
          &.ghost_button {
@@ -277,9 +295,10 @@
          }
          @include breakpoint(small) {
              font-size: 16px;
-             margin:20px 0;
+             margin: 20px 0;
          }
          &:hover {
+            color: $color-white!important;
              @include opacity(0.8);
          }
      }
@@ -290,11 +309,11 @@
          background-color: $color-grey;
          box-sizing: border-box;
          .logo__casaTre,
-         .logo__netflix{
-           @include breakpoint(small) {
-            max-width:40%;
-          }
-         } 
+         .logo__netflix {
+             @include breakpoint(small) {
+                 max-width: 40%;
+             }
+         }
      }
      &--hero {
          display: block;
@@ -313,6 +332,7 @@
                  font-family: $font-weight-bold;
                  font-size: 53px;
                  line-height: 1.1em;
+                 color: $color-white !important;
              }
          }
          &--text {
@@ -340,23 +360,23 @@
                  }
              }
          }
-         .half_block{
-           @include breakpoint(small) {
-            text-align:center;
-          }
+         .half_block {
+             @include breakpoint(small) {
+                 text-align: center;
+             }
          }
-         .image_block{
-          text-align:right;
-          @include breakpoint(small) {
-            text-align:center;
-            margin-top:30px;
-          }
+         .image_block {
+             text-align: right;
+             @include breakpoint(small) {
+                 text-align: center;
+                 margin-top: 30px;
+             }
          }
          img {
              margin-right: 40px;
-              @include breakpoint(small) {
-            margin: 0;
-          }
+             @include breakpoint(small) {
+                 margin: 0;
+             }
          }
          &--cta {
              text-align: center;
@@ -452,7 +472,7 @@
          background-size: cover;
          box-sizing: border-box;
          @include breakpoint(small) {
-            background-position:39%;
+             background-position: 39%;
          }
          &--title {
              text-align: center;
