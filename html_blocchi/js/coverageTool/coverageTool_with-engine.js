@@ -134,6 +134,23 @@
                     }
                 },
             },
+            geoZonesPopupConfig: {
+                type: 'inline',
+                mainClass: 'mfp-fade mfp-geozones',
+                showCloseBtn: true,
+                closeBtnInside: true,
+                midClick: true,
+                removalDelay: 150,
+                callbacks: {
+                    beforeClose: function() {},
+                    close: function() {
+
+                    },
+                    open: function() {
+
+                    }
+                }
+            }
         },
         /*
         END CONFIGURATIONS
@@ -161,17 +178,46 @@
                     console.log('initDataFromApi done');
 
                 });
-            var setDomElementsPromise = initDataFromApiPromise
+            var initPrimaryDomPromise = initDataFromApiPromise
+                .then(function() {
+                    console.log('initPrimaryDom method.....');
+                    return $TOOL.initPrimaryDom($coverageToolDomElement);
+                })
+                .done(function() {
+                    console.log('initPrimaryDom done');
+
+                });
+            var setDomElementsPromise = initPrimaryDomPromise
                 .then(function() {
                     console.log('setDomElements method.....');
-                    return $TOOL.setDomElements($coverageToolDomElement);
+                    return $TOOL.setDomElements();
                 })
                 .done(function() {
                     console.log('setDomElements done');
 
                 });
 
-            var bindDomElementsPromise = setDomElementsPromise
+            var initNavigationPromise = setDomElementsPromise
+                .then(function() {
+                    console.log('initNavigation method.....');
+                    return $TOOL.initNavigation();
+                })
+                .done(function() {
+                    console.log('initNavigation done');
+
+                });
+
+            var initGeoZonesPopupPromise = initNavigationPromise
+                .then(function() {
+                    console.log('initGeoZonesPopup method.....');
+                    return $TOOL.initGeoZonesPopup();
+                })
+                .done(function() {
+                    console.log('initGeoZonesPopup done');
+
+                });
+
+            var bindDomElementsPromise = initGeoZonesPopupPromise
                 .then(function() {
                     console.log('bindDomElements method.....');
                     return $TOOL.bindDomElements();
@@ -663,20 +709,27 @@
         /*
         DOM ELEMENTS SETTINGS
          */
-        setDomElements: function($coverageToolDomElement) {
+        initPrimaryDom: function($coverageToolDomElement) {
             var $TOOL = this;
             var starter = new r$.Deferred();
 
-            var initPrimaryDomPromise = starter
-                .then(function() {
-                    console.log('initPrimaryDom method.....');
-                    return $TOOL.initPrimaryDom($coverageToolDomElement);
-                })
-                .done(function() {
-                    console.log('initPrimaryDom done');
+            $TOOL.toolContainer = $coverageToolDomElement;
+            $TOOL.mapContainer = $TOOL.toolContainer.find('#world-map');
+            $TOOL.tabsContainer = $TOOL.toolContainer.find('.block_coverage_tool__tabs__container').find('.slider_menu_tabs');
+            $TOOL.countriesContainer = $TOOL.toolContainer.find('.country_offers_block');
+            $TOOL.countriesList = $TOOL.countriesContainer.find('#country--List');
+            $TOOL.accordionOperators = $TOOL.countriesContainer.find('input.accordionBox');
 
-                });
-            var buildContinentsDomPromise = initPrimaryDomPromise
+            starter
+                .resolve();
+
+            return starter.promise();
+        },
+        setDomElements: function() {
+            var $TOOL = this;
+            var starter = new r$.Deferred();
+
+            var buildContinentsDomPromise = starter
                 .then(function() {
                     console.log('buildContinentsDom method.....');
                     return $TOOL.buildContinentsDom();
@@ -725,21 +778,22 @@
 
                 });
 
-            /*var buildOffersDomPromise = buildOperatorsDomPromise
+            var buildGeoZonesPopupDomPromise = buildCountryRatesDomPromise
                 .then(function() {
-                    console.log('buildOffersDom method.....');
-                    return $TOOL.buildOffersDom();
+                    console.log('buildGeoZonesPopupDom method.....');
+                    return $TOOL.buildGeoZonesPopupDom();
                 })
                 .done(function() {
-                    console.log('buildOffersDom done');
+                    console.log('buildGeoZonesPopupDom done');
 
-                });*/
+                });
+
+
 
             starter
                 .resolve();
 
             return starter.promise();
-
         },
         /*
         END DOM ELEMENTS SETTINGS
@@ -747,23 +801,6 @@
         /*
         DOM BUILDING
          */
-        initPrimaryDom: function($coverageToolDomElement) {
-            var $TOOL = this;
-            var starter = new r$.Deferred();
-
-            $TOOL.toolContainer = $coverageToolDomElement;
-            $TOOL.mapContainer = $TOOL.toolContainer.find('#world-map');
-            $TOOL.tabsContainer = $TOOL.toolContainer.find('.block_coverage_tool__tabs__container').find('.slider_menu_tabs');
-            $TOOL.countriesContainer = $TOOL.toolContainer.find('.country_offers_block');
-            $TOOL.countriesList = $TOOL.countriesContainer.find('#country--List');
-            $TOOL.accordionOperators = $TOOL.countriesContainer.find('input.accordionBox');
-
-            starter
-                .resolve();
-
-            return starter.promise();
-        },
-
         buildContinentsDom: function() {
             var $TOOL = this;
             var starter = new r$.Deferred();
@@ -777,16 +814,7 @@
                     console.log('setContinentsDom done');
 
                 });
-            var initNavigationPromise = setContinentsDomPromise
-                .then(function() {
-                    console.log('initNavigation method.....');
-                    return $TOOL.initNavigation();
-                })
-                .done(function() {
-                    console.log('initNavigation done');
-
-                });
-
+            
             starter
                 .resolve();
 
@@ -881,12 +909,12 @@
                 '<div class="country_offers_block__rates--title"> Copertura <br/>satellitare </div>' +
                 '<div class="country_offers_block__rates--price">';
 
-                r$.each(country.operators,function(operatorIndex,operator){
-                    if(operator.frequency == 'satellitare'){
-                        countryHtmlString+= operator.name+'; ';
-                    }
-                });
-                countryHtmlString += '</div>' +
+            r$.each(country.operators, function(operatorIndex, operator) {
+                if (operator.frequency == 'satellitare') {
+                    countryHtmlString += operator.name + '; ';
+                }
+            });
+            countryHtmlString += '</div>' +
                 '</div>' +
                 '</div>' +
                 '</div>';
@@ -1036,7 +1064,6 @@
         },
 
 
-
         buildRatesDom: function() {
             var $TOOL = this;
             var starter = new r$.Deferred();
@@ -1078,7 +1105,7 @@
                 '<div class="accordion_description_block__container col-xs-12">' +
                 '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
                 '<div class="accordion_description_block__featureContent strong">' +
-                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">Chiamate effettuate</div>' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 "><a href="#geo-zones-popup" class="base__popup-link--geo-zones">Chiamate effettuate &gt;</a></div>' +
                 '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>' +
                 '<div class="clear"></div>' +
                 '</div>';
@@ -1130,9 +1157,6 @@
                 .find('[data-country-id="' + countryId + '"]')
                 .append(ratesHtmlString);
         },
-
-
-
 
 
         buildOperatorsDom: function() {
@@ -1277,17 +1301,17 @@
         },
 
 
-        /*buildOffersDom: function() {
+        buildGeoZonesPopupDom: function() {
             var $TOOL = this;
             var starter = new r$.Deferred();
 
-            var setOffersDomPromise = starter
+            var setGeoZonesPopupDomPromise = starter
                 .then(function() {
-                    console.log('setOffersDom method.....');
-                    return $TOOL.setOffersDom();
+                    console.log('setGeoZonesPopupDom method.....');
+                    return $TOOL.setGeoZonesPopupDom();
                 })
                 .done(function() {
-                    console.log('setOffersDom done');
+                    console.log('setGeoZonesPopupDom done');
 
                 });
 
@@ -1296,90 +1320,91 @@
 
             return starter.promise();
         },
-        setOffersDom: function() {
+        setGeoZonesPopupDom: function() {
             var $TOOL = this;
             var starter = new r$.Deferred();
+
+            var geoZonesPopupHtmlString = '';
+            geoZonesPopupHtmlString +=
+                '<div id="geo-zones-popup" class="mfp-hide container_testo_generico colored_text--white">' +
+                '<div class="base_popup">' +
+                '<div class="popup_title">' +
+                '<h3>ZONE TARIFFARIE</h3>' +
+                '</div>' +
+                '<div class="popup_content ">';
+
+            var geoZoneCountries = {};
+
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
-                    var offersHtmlString = '';
-                    var rechargeRatesHtmlString = '';
-                    var subscriptionRatesHtmlString = '';
+                    if (typeof geoZoneCountries[country.geo_zone_id] === typeof undefined) {
+                        geoZoneCountries[country.geo_zone_id] = {};
+                        geoZoneCountries[country.geo_zone_id].callRate= country.geozone.callRate;
+                    }
+                    if (typeof geoZoneCountries[country.geo_zone_id].countries === typeof undefined) {
+                        geoZoneCountries[country.geo_zone_id].countries = [];
+                    }
 
-                    offersHtmlString += 
-                        '<div class="block_coverage_tool__offers__container col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
-                        '<div class="filter-showcase ">'+
-                            '<div class="colored_bg--white">'+
-                                '<div class="blocco_fascia_grigia_titolo">'+
-                                    '<div class="grey_strip__block__mainWrapper">'+
-                                        '<div class="grey_strip__block">'+
-                                            '<div class="grey_strip__block__container row">'+
-                                                '<div class="grey_strip__block__title col-xs-12 col-sm-2">'+
-                                                    '<span class="h3">Offerte</span>'+
-                                                '</div>'+
-                                                '<div class="grey_strip__block__tabs__container col-xs-12 col-sm-10">'+
-                                                    '<div class="grey_strip__block__tabs grey_strip__block__tabs--left link">'+
-                                                        '<span class="grey_strip__block__tabs--title tab_button" data-filter="'+countryId+'"></span>'+
-                                                    '</div>'+
-                                                    '<div class="grey_strip__block__tabs grey_strip__block__tabs--right link">'+
-                                                        '<span class="grey_strip__block__tabs--title tab_button" data-filter="ricaricabile">ricaricabile</span>'+
-                                                        '<span class="grey_strip__block__tabs--title tab_button" data-filter="abbonamento">abbonamento</span>'+
-                                                    '</div>'+
-                                                    '<div class="clear"></div>'+
-                                                '</div>'+
-                                                '<div class="clear"></div>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="showcase_bundle_block">'+
-                                    '<div class="showcase_bundle_block__container row">';
-
-                    rechargeRatesHtmlString += '<div class="showcase_bundle_block__container tab_cards__container colored_text--orange" data-combo="'+countryId+' ricaricabile">';
-                    subscriptionRatesHtmlString += '<div class="showcase_bundle_block__container tab_cards__container colored_text--orange" data-combo="'+countryId+' abbonamento">';
-
-                    r$.each(country.rates, function(offerId, offer) {
-                        if(1){
-                            rechargeRatesHtmlString = $TOOL
-                            .setOfferDom(offer,rechargeRatesHtmlString);
-                        }else{
-                           subscriptionRatesHtmlString = $TOOL
-                            .setOfferDom(offer,subscriptionRatesHtmlString); 
-                        }
-                        
-                    });
-                    rechargeRatesHtmlString += '</div>';
-                    subscriptionRatesHtmlString += '</div>';
-                    offersHtmlString+= rechargeRatesHtmlString;
-                    offersHtmlString+= subscriptionRatesHtmlString;
-
-                    offersHtmlString +=
-                                    '</div>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>';
-                    
-                    $TOOL
-                        .countriesContainer
-                        .find('[data-country-id="'+countryId+'"]')
-                        .append(offersHtmlString);
+                    geoZoneCountries[country.geo_zone_id].countries.push(country.name);
                 });
             });
 
+
+            var geoZonesRatesHtmlTable = 
+                '<table class="table table-bordered">'+
+                '<thead>'+
+                '<th></th>';
+
+            r$.each(geoZoneCountries,function (geoZoneIndex, geoZone) {
+                geoZonesRatesHtmlTable +=
+                '<th>Zona '+ geoZoneIndex +'</th>';
+            });
+            geoZonesRatesHtmlTable +=
+                '</thead>'+
+                '<tbody>';
+            r$.each(geoZoneCountries,function (geoZoneIndex, geoZone) {
+                geoZonesRatesHtmlTable +=
+                '<tr><td>Zona '+ geoZoneIndex +'</td>';
+                r$.each(geoZone.callRate,function (callRateIndex,callRate) {
+                    geoZonesRatesHtmlTable +=
+                    '<td>'+callRate.rate+'&euro;</td>';
+                });
+                geoZonesRatesHtmlTable +=
+                '</tr>';
+            });
+            geoZonesRatesHtmlTable +=
+                '</tbody>'+
+                '</table>';
+
+
+            geoZonesPopupHtmlString += geoZonesRatesHtmlTable;
+
+
+            r$.each(geoZoneCountries, function(geoZoneIndex, geoZone) {
+                geoZonesPopupHtmlString +=
+                    '<hr>'+
+                    '<div class="geo-zone-container ">' +
+                    '<div class="geo-zone-title">' +
+                    '<h4>Zona ' + geoZoneIndex + '</h4>' +
+                    '<div class="container">' + geoZone.countries.join(', ') + '</div>' +
+                    '</div>' +
+                    '</div>';
+            });
+
+            geoZonesPopupHtmlString +=
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+            $TOOL
+                .toolContainer
+                .append(geoZonesPopupHtmlString);
+
             starter
                 .resolve();
 
             return starter.promise();
         },
-        setOfferDom: function(offer,htmlStringToAddTo) {
-            var $TOOL = this;
-
-            return htmlStringToAddTo;
-        },*/
-
-
-
-
 
         /*
         END DOM BUILDING
@@ -1396,6 +1421,21 @@
                 .tabsContainer
                 .find('.slick-current')
                 .removeClass('slick-current');
+
+            starter
+                .resolve();
+
+            return starter.promise();
+        },
+        initGeoZonesPopup: function() {
+            var $TOOL = this;
+            var starter = new r$.Deferred();
+
+            var $popup = $TOOL
+                .toolContainer
+                .find('.base__popup-link--geo-zones');
+            $popup
+                .magnificPopup($TOOL.configs.geoZonesPopupConfig);
 
             starter
                 .resolve();
