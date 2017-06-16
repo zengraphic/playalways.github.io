@@ -1934,5 +1934,28 @@ function attachToMenu() {
 }
 
 /***
- * GESTIONE SCROLL -->
+ * tab scheda negozio -->
  */
+r$(document)
+    .ready(function() {
+        r$('.storeDetail_block .strip_menu_tab__item a').click(function(e) {
+            e.preventDefault();
+            var currentAttrValue = r$(this).attr('href');
+            // mostra/nascondi tabs
+            r$('.storeDetail_block .strip_menu_tab__targetTab')
+                .fadeOut("fast");
+            r$('.storeDetail_block .strip_menu_tab__targetTab' + currentAttrValue)
+                .fadeIn("fast");
+
+            // cambia classe attiva
+            r$(this).parent('li')
+                .addClass('tab_active')
+                .siblings()
+                .removeClass('tab_active');
+
+            r$(window).resize();
+            // r$('.slider__bundle').slick('setPosition');
+            // r$('.slider__offer').slick('setPosition');
+
+        });
+    });

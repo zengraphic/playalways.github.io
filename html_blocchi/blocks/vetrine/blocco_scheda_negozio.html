@@ -281,35 +281,14 @@ jQuery(document).ready(function($) {
     //     ]
     // });
 
-    $('.storeDetail_block .strip_menu_tab__item a').click(function(e) {
-        e.preventDefault();
-        var currentAttrValue = $(this).attr('href');
-        // mostra/nascondi tabs
-        $('.storeDetail_block .strip_menu_tab__targetTab')
-            .fadeOut("fast");
-        $('.storeDetail_block .strip_menu_tab__targetTab' + currentAttrValue)
-            .fadeIn("fast");
-
-        // cambia classe attiva
-        $(this).parent('li')
-            .addClass('tab_active')
-            .siblings()
-            .removeClass('tab_active');
-
-        $(window).resize();
-        // $('.slider__bundle').slick('setPosition');
-        // $('.slider__offer').slick('setPosition');
-        
-    });
-
-    $(window).on('scroll', function() {
-        var scrollTop = $(window).scrollTop();
+    r$(window).on('scroll', function() {
+        var scrollTop = r$(window).scrollTop();
         if (scrollTop > 30) {
-            $('#shop_canvas').stop().animate({
+            r$('#shop_canvas').stop().animate({
                 height: "0px"
             }, 200);
         } else {
-            $('#shop_canvas').stop().animate({
+            r$('#shop_canvas').stop().animate({
                 height: "300px"
             }, 200);
         }
