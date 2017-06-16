@@ -93,6 +93,16 @@ jQuery(document).ready(function($) {
         });
     });
 
+     // TRIGGER SPALLA 
+     $('.open_shoulder_button').click(function() {    
+         console.log('ricarica');
+         r$.magnificPopup.open({
+             items: {
+                 src: $('#refill_block')
+             }
+         });        
+     }); 
+
     //CHECK SMS DATA
     $('body').on("click", ".compile_sms_button", function(e) {
         var smsNumber = $(this).data('smsnumber');
