@@ -160,6 +160,45 @@
         //================================ LANDING STYLE ============================//
         //============================================================================//
         .landing__netflix {
+            // privacy
+            .note--privacy {
+                color: $color-black;
+                font-family: $font-weight-bold;
+                font-size: 14px;
+                text-transform: uppercase;
+                text-align: center;
+                ul {
+                    display: table;
+                    width: 100%;
+                    margin: 0;
+                    padding: 20px 0;
+                    box-sizing: border-box;
+                    li {
+                        display: table-cell;
+                        width: 50%;
+                        &.right {
+                            text-align: right;
+                            @include breakpoint(small) {
+                                width: 100%;
+                                display: block;
+                                text-align: center;
+                                padding: 7px 15px;
+                                font-size: 12px;                                
+                            }
+                        }
+                        &.left {
+                            text-align: left;
+                            @include breakpoint(small) {
+                                width: 100%;
+                                display: block;
+                                text-align: center;
+                                padding: 7px 15px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
             //=========================================================//
             //========================= HERO ==========================//
             //========================================================//        
@@ -448,7 +487,6 @@
             //======================== FOOTER =========================//
             //========================================================// 
             footer {
-                margin-top: 40px;
                 .footer {
                     &_full_container {
                         width: 100%;
