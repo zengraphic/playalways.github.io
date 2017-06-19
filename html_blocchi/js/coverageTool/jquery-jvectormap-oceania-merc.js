@@ -1,4 +1,4 @@
-jQuery.fn.vectorMap('addMap', 'oceania_merc', {
+r$.fn.vectorMap('addMap', 'oceania_merc', {
     "insets": [{
         "height": 600,
         "width": 580,

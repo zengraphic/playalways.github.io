@@ -1,4 +1,4 @@
-jQuery.fn.vectorMap('addMap',
+r$.fn.vectorMap('addMap',
     'north_america_merc', {
         "insets": [{ "width": 900, "top": 0, "height": 807.5907154110703, "bbox": [{ "y": -18403713.973687585, "x": -19602744.043810368 }, { "y": -806278.7078096082, "x": 8293.375346519799 }], "left": 0 }],
         "paths": {

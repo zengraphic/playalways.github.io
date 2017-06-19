@@ -474,7 +474,7 @@
                 [/_/g, '-']
             ];
             var countryNameFormatted = country.name.toLowerCase();
-            var flagNameFormatted = country.name.toLowerCase();
+            var flagNameFormatted = country.flag_name.toLowerCase();
 
             r$.each(regExes, function(i, regEx) {
                 if (i < 3) {

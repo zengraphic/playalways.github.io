@@ -1,4 +1,4 @@
-jQuery.fn.vectorMap('addMap', 'asia_merc', {
+r$.fn.vectorMap('addMap', 'asia_merc', {
     "insets": [
         { "width": 900, "top": 0, "height": 592.5028514095733, "bbox": [{ "y": -7441622.069951164, "x": 2858903.2260101754 }, { "y": 1369150.028068026, "x": 16242290.106516164 }], "left": 0 }
     ],
