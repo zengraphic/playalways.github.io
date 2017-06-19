@@ -262,9 +262,12 @@
  }
  
  .box_Footer {
-     display: none;
+     border-top:2px solid $color-white;
  }
  
+ .landing__content *{
+  box-sizing:border-box;
+ }
  // INIZIO CSS
  .landing__content {
      // img{
@@ -629,7 +632,7 @@
              background-color: $color-red;
          }
          ul li i:before {
-             transform: translate(-10px, 2px) rotate(45deg);
+             transform: translate(-6px, 2px) rotate(45deg);
          }
          ul li i:after {
              transform: translate(-2px, 2px) rotate(-45deg);
@@ -650,7 +653,7 @@
              transform: translate(0, 50%);
          }
          ul li input[type=checkbox]:checked ~ i:before {
-             transform: translate(6px, 0px) rotate(45deg);
+             transform: translate(10px, 0px) rotate(45deg);
          }
          ul li input[type=checkbox]:checked ~ i:after {
              transform: translate(0, 0px) rotate(-45deg);
@@ -694,7 +697,7 @@
              box-sizing: border-box;
              li {
                  display: table-cell;
-                 width: 50%;
+                 width: 33.3%;
                  a {
                      color: $color-white;
                  }
