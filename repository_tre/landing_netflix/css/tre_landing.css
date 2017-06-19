@@ -78,19 +78,37 @@ img {
 .float_right {
   float: right; }
 
-.box_Container {
+@media (max-width: 768px) {
+  .box_BodyContent .box_MainContent {
+    padding: 0; } }
+.box_BodyContent .box_Container {
   width: 100% !important; }
-  .box_Container .box_Breadcrumb {
+  @media (max-width: 768px) {
+    .box_BodyContent .box_Container {
+      padding: 0; } }
+  .box_BodyContent .box_Container .box_Breadcrumb {
     display: none !important; }
-    .box_Container .box_Breadcrumb + br {
+    .box_BodyContent .box_Container .box_Breadcrumb + br {
       display: none; }
-  .box_Container .box_Main {
+  .box_BodyContent .box_Container .box_Main {
     margin: 0; }
+    .box_BodyContent .box_Container .box_Main .tit_Page {
+      display: none; }
+    @media (max-width: 768px) {
+      .box_BodyContent .box_Container .box_Main .box_FreeHtml img {
+        width: auto; } }
+    .box_BodyContent .box_Container .box_Main .box_FreeHtml .landing__content--credit--title h2 {
+      color: white; }
+    .box_BodyContent .box_Container .box_Main .box_FreeHtml .landing__content--privacy a {
+      color: #fff; }
 
 .box_Bottom,
 .box_SmartLinks,
 .box_Notes {
   display: none !important; }
+
+.box_Footer {
+  display: none; }
 
 .landing__content .half_block {
   position: relative;
@@ -293,6 +311,7 @@ img {
     margin-bottom: 40px; }
     .landing__content--credit--title h2 {
       font-family: "Helvetica Bold";
+      color: #fff !important;
       font-size: 53px;
       line-height: 1.1em;
       text-shadow: 3px 4px 5px rgba(7, 4, 6, 0.8); }
@@ -356,7 +375,8 @@ img {
     font-weight: 300;
     padding: 0px 30px; }
   .landing__content .container_accordion a {
-    font-family: "Helvetica Bold"; }
+    font-family: "Helvetica Bold";
+    color: #e50914 !important; }
   .landing__content .container_accordion ul {
     list-style: none;
     perspective: 900;
@@ -439,5 +459,7 @@ img {
     .landing__content--privacy ul li {
       display: table-cell;
       width: 50%; }
+      .landing__content--privacy ul li a {
+        color: #fff; }
 
 /*# sourceMappingURL=tre_landing.css.map */
