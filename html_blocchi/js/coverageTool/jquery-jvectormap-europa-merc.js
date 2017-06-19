@@ -1,4 +1,4 @@
-jQuery.fn.vectorMap('addMap', 'europa_merc', {
+r$.fn.vectorMap('addMap', 'europa_merc', {
     "insets": [{
         "width": 2956,
         "top": 0,

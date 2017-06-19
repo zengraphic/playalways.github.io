@@ -1,4 +1,4 @@
-jQuery.fn.vectorMap('addMap', 'continents_merc', {
+r$.fn.vectorMap('addMap', 'continents_merc', {
     "insets": [{ "width": 900, "top": 0, "height": 583.0802520919394, "bbox": [{ "y": -18449355.69035302, "x": -20004297.151525836 }, { "y": 7485321.539093307, "x": 20026572.394749384 }], "left": 0 }],
     "paths": {
         "3": {

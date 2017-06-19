@@ -1,4 +1,4 @@
-jQuery.fn.vectorMap(
+r$.fn.vectorMap(
     'addMap',
     'americhe_merc', {
         "width": 899.99999,

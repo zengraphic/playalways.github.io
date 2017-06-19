@@ -212,16 +212,46 @@
      float: right;
  }
  
- .box_Container {
-     width: 100%!important;
-     .box_Breadcrumb {
-         display: none!important;
-         & + br {
-             display: none;
+ .box_BodyContent {
+     .box_MainContent {
+         @include breakpoint(small) {
+             padding: 0;
          }
      }
-     .box_Main {
-         margin: 0;
+     .box_Container {
+         width: 100%!important;
+         @include breakpoint(small) {
+             padding: 0;
+         }
+         .box_Breadcrumb {
+             display: none!important;
+             & + br {
+                 display: none;
+             }
+         }
+         .box_Main {
+             margin: 0;
+             .tit_Page {
+                 display: none;
+             }
+             .box_FreeHtml {
+                 img {
+                     @include breakpoint(small) {
+                         width: auto;
+                     }
+                 }
+                 .landing__content--credit--title {
+                     h2 {
+                         color: white;
+                     }
+                 }
+                 .landing__content--privacy {
+                     a {
+                         color: $color-white;
+                     }
+                 }
+             }
+         }
      }
  }
  
@@ -229,6 +259,10 @@
  .box_SmartLinks,
  .box_Notes {
      display: none!important;
+ }
+ 
+ .box_Footer {
+     display: none;
  }
  
  // INIZIO CSS
@@ -480,6 +514,7 @@
              margin-bottom: 40px;
              h2 {
                  font-family: $font-weight-bold;
+                 color: $color-white!important;
                  font-size: 53px;
                  line-height: 1.1em;
                  text-shadow: 3px 4px 5px rgba(7, 4, 6, 0.8);
@@ -555,6 +590,7 @@
          }
          a {
              font-family: $font-weight-bold;
+             color: $color-red!important;
          }
          ul {
              list-style: none;
@@ -647,19 +683,22 @@
          background-color: $color-black;
          color: $color-white;
          font-family: $font-weight-bold;
-         font-size:12px;
+         font-size: 12px;
          text-transform: uppercase;
-         text-align:center;
-         ul{
-          display:table;
-          width:100%;
-          margin: 0;
-          padding:20px 0;
-          box-sizing:border-box;
-          li{
-            display:table-cell;
-            width:50%;
-          }
+         text-align: center;
+         ul {
+             display: table;
+             width: 100%;
+             margin: 0;
+             padding: 20px 0;
+             box-sizing: border-box;
+             li {
+                 display: table-cell;
+                 width: 50%;
+                 a {
+                     color: $color-white;
+                 }
+             }
          }
      }
  }
