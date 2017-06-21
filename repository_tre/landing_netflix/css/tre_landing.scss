@@ -262,12 +262,13 @@
  }
  
  .box_Footer {
-     border-top:2px solid $color-white;
+     border-top: 2px solid $color-white;
  }
  
- .landing__content *{
-  box-sizing:border-box;
+ .landing__content * {
+     box-sizing: border-box;
  }
+ 
  // INIZIO CSS
  .landing__content {
      // img{
@@ -519,8 +520,12 @@
                  font-family: $font-weight-bold;
                  color: $color-white!important;
                  font-size: 53px;
+                 margin: 0;
                  line-height: 1.1em;
                  text-shadow: 3px 4px 5px rgba(7, 4, 6, 0.8);
+                 @include breakpoint(small) {
+                     font-size: 43px;
+                 }
              }
          }
          &--text {
