@@ -1,6 +1,42 @@
 jQuery('body').addClass('landing');
 
+
+function checkHash(hashpage) {
+    if ((hashpage == '#tab1' || hashpage == '#tab2')) {
+        console.log(hashpage);
+        //rimanda 1 o 2?
+        var lastChar = hashpage.substr(hashpage.length - 1); // => "1"
+        $(".landing__hero__tabs--button").each(function() {
+            var testdata = $(this).data('tabn');
+            console.log('testdata: ' + testdata + ' lastChar: ' + lastChar);
+            if (testdata == lastChar) {
+                $(this).addClass('active');
+                console.log('testdata: ' + testdata + ' lastChar: ' + lastChar);
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+        $(".hero_tab").each(function() {
+            var testdata = $(this).data('tabtarget');
+            if (testdata == lastChar) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    }
+}
+
+function initHash() {
+    if (window.location.hash) {
+        checkHash(window.location.hash);
+    }
+}
+
+
+
 jQuery(document).ready(function($) {
+
     function checkDevice() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         // Windows Phone must come first because its UA also contains "Android"
@@ -93,15 +129,15 @@ jQuery(document).ready(function($) {
         });
     });
 
-     // TRIGGER SPALLA 
-     $('.open_shoulder_button').click(function() {    
-         console.log('ricarica');
-         r$.magnificPopup.open({
-             items: {
-                 src: $('#refill_block')
-             }
-         });        
-     }); 
+    // TRIGGER SPALLA 
+    $('.open_shoulder_button').click(function() {
+        console.log('ricarica');
+        r$.magnificPopup.open({
+            items: {
+                src: $('#refill_block')
+            }
+        });
+    });
 
     //CHECK SMS DATA
     $('body').on("click", ".compile_sms_button", function(e) {
@@ -116,7 +152,7 @@ jQuery(document).ready(function($) {
         }
         mergeCode = "sms:" + smsNumber + smsDivider + "body=" + smsText;
         console.log(mergeCode);
-        e.preventDefault();        
+        e.preventDefault();
         location.href = mergeCode;
     });
 

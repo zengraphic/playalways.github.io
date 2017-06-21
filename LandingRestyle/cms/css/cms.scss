@@ -26,22 +26,50 @@ body {
 }
 
 .cms {
+    &_compose {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        .container_slider {
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            font-size: 0;
+            .slider_cms {
+                position: relative;
+                // background-color: red;
+                font-size: 0;
+                .slide_single {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+        }
+        &_slider {
+            position: relative;
+        }
+        .image_slider {}
+    }
     &_container_table {
-        &.old_landing{
-            .mainTitle{
+        &.old_landing {
+            .mainTitle {
                 font-size: 10px;
                 position: relative;
-                &:after{
+                &:after {
                     position: absolute;
                     right: 50px;
                     content: "vecchia landing";
                     color: red;
                 }
             }
-            .cms_icon_table{
+            .cms_icon_table {
                 width: 20%;
             }
-            .cms_container_cell{
+            .cms_container_cell {
                 font-size: 10px;
                 padding: 0 15px;
             }
@@ -371,5 +399,33 @@ button {
         &_cms {
             margin-bottom: 15px;
         }
+    }
+}
+
+.container_single_slider {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+}
+
+//slider
+.slider_arrows {
+    position: absolute;
+    cursor: pointer;
+}
+
+.slider_left_arrow {
+    top: calc(50% - 20px);
+    left: 0px;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.slider_right_arrow {
+    top: calc(50% - 20px);
+    right: 0px;
+    &:hover {
+        opacity: 0.5;
     }
 }
