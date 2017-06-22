@@ -1,4 +1,6 @@
 $(document).ready(function() { //alla creazione del DOM chiamo subito generate()
+
+  var sound = 'enabled';
     generate();
 
     function generate() { //generate() contiene un array
@@ -13,14 +15,25 @@ $(document).ready(function() { //alla creazione del DOM chiamo subito generate()
     }
 
     function playSound(url) {
-      var sound_file_url = 'cheer.wav';
+        var sound_file_url = 'cheer.wav';
         $('#sound_element').html(
             "<embed src='" + sound_file_url + "' hidden=true autostart=true loop=false>");
     }
-
-
+    $(".sound_on").on("click", function() { //al click sul bottone richiama generate
+        sound = 'disabled';
+        $(this).hide();
+        $('embed').remove();
+        $('.sound_off').show();
+    });
+    $(".sound_off").on("click", function() { //al click sul bottone richiama generate
+        sound = 'enabled';
+        $(this).hide();
+        $('.sound_on').show();
+    });
     $("#ball").on("click", function() { //al click sul bottone richiama generate
         generate();
-        playSound();
+        if (sound == 'enabled') {
+            playSound();
+        }
     });
 });
