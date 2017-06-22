@@ -12,8 +12,15 @@ $(document).ready(function() { //alla creazione del DOM chiamo subito generate()
         $('#quote').text(randomQuote);
     }
 
+    function playSound(url) {
+      var sound_file_url = 'cheer.wav';
+        $('#sound_element').html(
+            "<embed src='" + sound_file_url + "' hidden=true autostart=true loop=false>");
+    }
+
 
     $("#ball").on("click", function() { //al click sul bottone richiama generate
         generate();
+        playSound();
     });
 });
