@@ -1411,7 +1411,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
 .block_tabs {
   position: relative;
   max-width: 1024px;
-  margin: 0 auto; }
+  margin: 30px auto; }
   .block_tabs .nav-tabs li {
     padding-left: 0;
     padding-right: 0;
@@ -1460,7 +1460,10 @@ $color_bt_disabled: $color_grey_medium_light;*/
     .block_tabs .nav-tabs li.active a:hover {
       border: none; }
   .block_tabs .tab-content {
-    background-color: #F4F4F4; }
+    background-color: #F4F4F4;
+    font-family: "Trade Gothic Light", sans-serif;
+    float: none;
+    margin: 0; }
   .block_tabs .infoForm {
     margin: 0 auto;
     padding: 15px 33px 18px;
@@ -1531,6 +1534,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
       padding-right: 5px;
       font-size: 1em;
       border: none;
+      font-family: "Trade Gothic Light", sans-serif !important;
       color: #081430;
       outline: 0; }
       @media (max-width: 768px) {
@@ -1557,7 +1561,7 @@ $color_bt_disabled: $color_grey_medium_light;*/
 #oTable {
   background-color: #FFF !important;
   color: red !important;
-  top: 10px !important;
+  top: calc(50% - 100px) !important;
   left: calc(50% - 150px) !important;
   width: 100% !important;
   max-width: 300px;
@@ -2694,6 +2698,16 @@ h4,
 h5,
 h6 {
   line-height: 1em; }
+
+.absolute_footer_body {
+  min-height: calc(100vh - 114px) !important; }
+  @media (max-width: 768px) {
+    .absolute_footer_body {
+      min-height: calc(100vh - 114px) !important; } }
+
+.absolute_footer {
+  position: absolute;
+  bottom: 0; }
 
 .base__icon {
   background-image: url(/fileadmin/img-landing/sprite/icons_sprite.svg); }

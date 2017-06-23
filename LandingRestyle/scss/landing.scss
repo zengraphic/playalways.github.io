@@ -26,7 +26,17 @@ h5,
 h6 {
     line-height: 1em;
 }
+.absolute_footer_body{
+    min-height: calc(100vh - 114px) !important;
+    @include breakpoint(small){
+        min-height: calc(100vh - 114px) !important;
+    }
+}
 
+.absolute_footer{
+    position: absolute;
+    bottom: 0;
+}
 .base__icon {
     background-image: url(/fileadmin/img-landing/sprite/icons_sprite.svg);
 }
