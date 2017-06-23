@@ -60,6 +60,15 @@ jQuery(document).ready(function($) {
         callMsgError(item, message);
     });
 
+    $('.main_title_icon').on('mouseover', function(event) {
+        $(this).find('.preview_page').show();
+    });
+
+    $('.main_title_icon').on('mouseout', function(event) {
+        $(this).find('.preview_page').hide();
+    });
+
+
     $('.clip_btn').click(function() {
         var position = $(this).parents('.html_row');
         if (copyStep == 0) {

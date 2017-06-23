@@ -59,9 +59,12 @@ body {
             .mainTitle {
                 font-size: 10px;
                 position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                min-width: 120px;
                 &:after {
                     position: absolute;
-                    right: 50px;
+                    right: -120px;
                     content: "vecchia landing";
                     color: red;
                 }
@@ -99,6 +102,30 @@ body {
             overflow: scroll;
             padding: 15px;
             font-size: 10px;
+        }
+        .main_title_icon{
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 15px;
+            cursor: pointer;
+            position: relative;
+            .preview_page{
+                border: 3px solid $color_orange_dark;
+                display: none;
+                width: 300px;
+                z-index: 999;
+                height: auto;
+                position: fixed;
+                top: 15px;
+                right: 15px;
+            }
+            &:hover{
+                background-color: $color_orange_soft;
+            }
+            img{
+                width: 30px;
+                height: auto;
+            }
         }
         .clip_btn {
             margin: 15px 0;
@@ -159,6 +186,8 @@ body {
         }
         .mainTitle {
             font-size: 28px;
+            display: inline-block;
+            vertical-align: middle;
         }
     }
     &_strip_title {

@@ -245,10 +245,13 @@ body {
     position: relative; }
 .cms_container_table.old_landing .mainTitle {
   font-size: 10px;
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 120px; }
   .cms_container_table.old_landing .mainTitle:after {
     position: absolute;
-    right: 50px;
+    right: -120px;
     content: "vecchia landing";
     color: red; }
 .cms_container_table.old_landing .cms_icon_table {
@@ -278,6 +281,26 @@ body {
     overflow: scroll;
     padding: 15px;
     font-size: 10px; }
+  .cms_container_row .main_title_icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 15px;
+    cursor: pointer;
+    position: relative; }
+    .cms_container_row .main_title_icon .preview_page {
+      border: 3px solid #ffa000;
+      display: none;
+      width: 300px;
+      z-index: 999;
+      height: auto;
+      position: fixed;
+      top: 15px;
+      right: 15px; }
+    .cms_container_row .main_title_icon:hover {
+      background-color: #ffca28; }
+    .cms_container_row .main_title_icon img {
+      width: 30px;
+      height: auto; }
   .cms_container_row .clip_btn {
     margin: 15px 0;
     border-radius: 5px;
@@ -328,7 +351,9 @@ body {
   .cms_container_cell.cell_disabled {
     opacity: 0.2; }
   .cms_container_cell .mainTitle {
-    font-size: 28px; }
+    font-size: 28px;
+    display: inline-block;
+    vertical-align: middle; }
 .cms_strip_title {
   padding: 15px 15px;
   color: #fff;
