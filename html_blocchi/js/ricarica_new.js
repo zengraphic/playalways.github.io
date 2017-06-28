@@ -15,6 +15,7 @@
 
         });
 
+
     /**
      * TOPUP TOOL OBJECT
      */
@@ -30,32 +31,34 @@
                 midClick: true,
                 alignTop: false,
                 removalDelay: 500,
+                key: 'topup',
                 callbacks: {
-                    close: function() {
-
-
-                    },
                     open: function() {
                         TOPUPTOOL
                             .handleShoulderOpening();
 
                         r$.magnificPopup.instance.close = function(reset) {
-                            if (reset) {
+                            if (this.st.key == 'topup') {
                                 TOPUPTOOL
                                     .handleShoulderClosing();
-                            } else {
-                                TOPUPTOOL.callPopUp({
-                                    title: "Abbandona ricarica",
-                                    description: "Sei sicuro di voler abbandonare il processo di ricarica?<br>I dati non salvati andranno persi.",
-                                    button1: true,
-                                    button2: true,
-                                    labelBtn1: 'Continua',
-                                    labelBtn2: 'Abbandona',
-                                    function2: function() {
-                                        TOPUPTOOL.closeTopUpShoulder(true);
-                                    }
-                                });
-                                return;
+
+                                /*if (reset) {
+                                    TOPUPTOOL
+                                        .handleShoulderClosing();
+                                } else {
+                                    TOPUPTOOL.callPopUp({
+                                        title: "Abbandona ricarica",
+                                        description: "Sei sicuro di voler abbandonare il processo di ricarica?<br>I dati non salvati andranno persi.",
+                                        button1: true,
+                                        button2: true,
+                                        labelBtn1: 'Continua',
+                                        labelBtn2: 'Abbandona',
+                                        function2: function() {
+                                            TOPUPTOOL.closeTopUpShoulder(true);
+                                        }
+                                    });
+                                    return;
+                                }*/
                             }
 
                             r$.magnificPopup.proto.close.call(this, reset);
@@ -113,7 +116,7 @@
                     cvv: false
                 },
                 payment: false,
-                email: false
+                email: true
             }
         },
         /**
@@ -142,19 +145,19 @@
             return $TOPUP;
         },
         pushDatalayer: function(type, idRicarica, transactionProducts) {
-
+            var $TOPUP = this;
             var logged = (IsLogged()) ? 'logged' : 'not-logged';
-            var datalayer;
+            var arrDatalayer = [];
 
             switch (type) {
                 case 1:
-                    datalayer = transactionProducts;
+                    arrDatalayer = transactionProducts;
                     break;
                 case 2:
-                    datalayer = transactionProducts;
+                    arrDatalayer = transactionProducts;
                     break;
                 case 3:
-                    datalayer = {
+                    arrDatalayer = {
                         pagetype: 'Ricarica',
                         pageContent: 'exit - ' + logged,
                         event: 'TopUp',
@@ -165,49 +168,51 @@
 
             try {
                 dataLayer
-                    .push(datalayer);
+                    .push(arrDatalayer);
             } catch (e) {
                 console.warn("RICARICA:", e);
             }
+            return $TOPUP;
         },
         parseDataLayer: function(res) {
             var $TOPUP = this;
             var dataLayerObject = {};
-            var dataLayer = res.dataLayer;
+            var resDataLayer = res.dataLayer;
             if (res.success) {
                 dataLayerObject = {
                     pagetype: 'Ricarica',
-                    pageContent: dataLayer.pageContent,
-                    transactionId: dataLayer.trackId,
+                    pageContent: resDataLayer.pageContent,
+                    transactionId: resDataLayer.trackId,
                     step: '2',
                     event: 'TopUp',
-                    hpnuc: dataLayer.hpnuc,
-                    cuspid: dataLayer.cuspid,
-                    transactionAffiliation: dataLayer.affiliation,
-                    transactionTotal: parseInt(dataLayer.total),
-                    transactionTax: (parseInt(dataLayer.tax) == NaN) ? 0 : parseInt(dataLayer.tax),
-                    transactionShipping: (parseInt(dataLayer.shipping) == NaN) ? 0 : parseInt(dataLayer.shipping),
+                    hpnuc: resDataLayer.hpnuc,
+                    cuspid: resDataLayer.cuspid,
+                    transactionAffiliation: resDataLayer.affiliation,
+                    transactionTotal: parseInt(resDataLayer.total),
+                    transactionTax: (parseInt(resDataLayer.tax) == NaN) ? 0 : parseInt(resDataLayer.tax),
+                    transactionShipping: (parseInt(resDataLayer.shipping) == NaN) ? 0 : parseInt(resDataLayer.shipping),
                     transactionProducts: {
-                        sku: dataLayer.sku,
-                        name: dataLayer.product,
-                        category: dataLayer.category,
-                        price: parseInt(dataLayer.total),
-                        quantity: parseInt(dataLayer.qty),
+                        sku: resDataLayer.sku,
+                        name: resDataLayer.product,
+                        category: resDataLayer.category,
+                        price: parseInt(resDataLayer.total),
+                        quantity: parseInt(resDataLayer.qty),
                     },
                 };
             } else {
                 dataLayerObject = {
                     pagetype: 'Ricarica',
-                    pageContent: dataLayer.pageContent,
+                    pageContent: resDataLayer.pageContent,
                     step: '2',
                     event: 'TopUp',
-                    hpnuc: dataLayer.hpnuc,
-                    cuspid: dataLayer.cuspid
+                    hpnuc: resDataLayer.hpnuc,
+                    cuspid: resDataLayer.cuspid
                 };
 
             }
             $TOPUP
-                .pushDatalayer(2, dataLayer.trackId, dataLayerObject);
+                .pushDatalayer(2, resDataLayer.trackId, dataLayerObject);
+            return $TOPUP;
         },
         /**
          * SHOULDER OPEN/CLOSE
@@ -230,13 +235,14 @@
             var $TOPUP = this;
 
             if ($TOPUP.topUpHomePageBlockInput.val() == $TOPUP.topUpHomePageBlockConfirm.val()) {
-                $TOPUP.configs.homepageBlockConfirm = $TOPUP.topUpHomePageBlockConfirm.val();
+                $TOPUP.configs.homepageBlockInput = $TOPUP.topUpHomePageBlockInput.val();
                 $TOPUP.configs.homepageBlockConfirm = $TOPUP.topUpHomePageBlockConfirm.val();
                 $TOPUP.configs.homepageBlockTaglio = $TOPUP.topUpHomePageBlockTaglio.val();
 
                 $TOPUP
                     .openTopUpShoulder();
             }
+            return $TOPUP;
         },
         /**
          * SPINNER SHOW/HIDE
@@ -250,6 +256,7 @@
             $TOPUP
                 .container
                 .append('<span class="fa fa-spinner spin-animate"></span>');
+            return $TOPUP;
         },
         hideSpinner: function() {
             var $TOPUP = this;
@@ -261,6 +268,7 @@
                 .container
                 .find("span.fa.fa-spinner.spin-animate")
                 .remove();
+            return $TOPUP;
         },
         /**
          * SCROLL BAR
@@ -387,6 +395,7 @@
          * PAYMENT OPEN/CLOSE
          */
         openMethodOfPayment: function(selectedMethodBox) {
+            var $TOPUP = this;
             selectedMethodBox
                 .addClass('active');
             if (selectedMethodBox.hasClass('expandable')) {
@@ -394,8 +403,10 @@
                     .find('.cont_item1')
                     .slideDown("slow");
             }
+            return $TOPUP;
         },
         closeMethodOfPayment: function(selectedMethodBox) {
+            var $TOPUP = this;
             selectedMethodBox
                 .removeClass('active');
             if (selectedMethodBox.hasClass('expandable')) {
@@ -403,6 +414,7 @@
                     .find('.cont_item1')
                     .slideUp("slow");
             }
+            return $TOPUP;
         },
         /**
          * NEW CREDIT CARD SHOW
@@ -508,6 +520,7 @@
                 data: {
                     // id:id
                 },
+                global: false,
                 dataType: "json",
                 beforeSend: function() {
                     $TOPUP.showSpinner();
@@ -516,6 +529,7 @@
                     $TOPUP.hideSpinner();
                 }
             });
+
         },
         topUpAbbandonRequest: function() {
             var $TOPUP = this;
@@ -524,6 +538,7 @@
                 url: '/nuovaAreaClienti/wind/pages/ricarica/abbandona.action',
                 data: {},
                 dataType: "json",
+                global: false,
                 beforeSend: function() {
                     $TOPUP.showSpinner();
                 },
@@ -627,7 +642,7 @@
                 $TOPUP.topUpHomePageBlock = r$('.blocco_ricarica');
                 $TOPUP.topUpHomePageBlockInput = $TOPUP.topUpHomePageBlock.find('input[name=insert_number]');
                 $TOPUP.topUpHomePageBlockConfirm = $TOPUP.topUpHomePageBlock.find('input[name=confirm_number]');
-                $TOPUP.topUpHomePageBlockConfirm = $TOPUP.topUpHomePageBlock.find('select');
+                $TOPUP.topUpHomePageBlockTaglio = $TOPUP.topUpHomePageBlock.find('select');
             }
 
             return $TOPUP;
@@ -881,8 +896,11 @@
                     cvv: false
                 },
                 payment: false,
-                mail: false
+                email: false
             };
+
+            $TOPUP.configs.tagli = [];
+            $TOPUP.configs.numeri = [];
 
             $TOPUP.numberSelect.find('option').remove();
             $TOPUP.numberSelect.selectpicker('refresh');
@@ -896,9 +914,13 @@
             $TOPUP.hideNewNumberForm();
             $TOPUP.numberSelect.hide();
 
+            $TOPUP.topUpAmountSelect.find('option').remove();
+            $TOPUP.topUpAmountSelect.selectpicker('refresh');
+
             $TOPUP.newCreditCardNumber.val('');
             $TOPUP.removeError($TOPUP.newCreditCardNumber);
 
+            $TOPUP.newCreditCardNumber.keyup();
 
             $TOPUP.newCreditCardExpDateMonth.find('option').remove();
             $TOPUP.newCreditCardExpDateMonth.selectpicker('refresh');
@@ -1026,6 +1048,7 @@
                 r$("#confirmButton2")
                     .one('click', settings.function2);
             }
+            return $TOPUP;
         },
         callPopUpContract: function(options) {
             var $TOPUP = this;
@@ -1101,8 +1124,12 @@
                 requestAbbandonoRicarica
                     .then(function(res) {
                         console.log("RICARICA ABBANDONATA CORRETTAMENTE", res);
+                        $TOPUP
+                            .initTopUpForm();
                     }, function(err) {
                         console.warn("ERRORE DURANTE ABBANDONO RICARICA", err);
+                        $TOPUP
+                            .initTopUpForm();
                     });
             } else {
                 $TOPUP
@@ -1152,7 +1179,7 @@
                 $TOPUP
                     .populateTagli(customerData.tagli);
 
-                if (IsLogged()) {
+                if (IsLogged() && customerData.logged) {
                     if (customerData.cards.length > 0) {
                         $TOPUP
                             .handleLoggedCustomer(customerData, true);
@@ -1161,6 +1188,19 @@
                             .handleLoggedCustomer(customerData, false);
                     }
 
+                } else if (IsLogged() && !customerData.logged) {
+                    $TOPUP
+                        .callPopUp({
+                            title: "Sessione scaduta",
+                            description: 'Effettua di nuovo il login.',
+                            button2: true,
+                            labelBtn2: 'continua',
+                            function2: function() {
+                                $TOPUP
+                                    .submitLogout();
+                            }
+                        });
+                    console.warn(data.msg);
                 } else {
                     $TOPUP
                         .handleCleanCustomer();
@@ -1168,16 +1208,15 @@
                 $TOPUP
                     .filterTagliByMdp()
                     .checkNextStep();
-            } else {
+            } else if (customerData.esito == "CLOSED") {
                 $TOPUP
                     .callPopUp({
-                        title: "errore",
-                        description: data.msg,
+                        title: 'Ricarica in manutenzione',
+                        description: customerData.error_description,
                         button2: true,
-                        btnLabel2: 'chiudi',
+                        labelBtn2: 'chiudi',
                         function2: function() {
-                            $TOPUP
-                                .submitLogout();
+                            TOPUPTOOL.closeTopUpShoulder(true);
                         }
                     });
                 console.warn(data.msg);
@@ -1229,11 +1268,20 @@
                     .topUpForm
                     .find('#action_c2')
                     .detach()
-                    .insertBefore($TOPUP.showMoreLink)
-                    .prop('checked');
+                    .insertBefore($TOPUP.showMoreLink);
+
+                $TOPUP
+                    .topUpForm
+                    .find('#action_c2')
+                    .find('input')
+                    .prop('checked', true);
+                $TOPUP
+                    .handlePaymentChange();
             } else {
                 $TOPUP
-                    .populateRememberPaypal(false);
+                    .showNewCreditCardForm()
+                    .populateRememberPaypal(false)
+                    .showOtherMethodsOfPayment();
             }
             $TOPUP
                 .populateAccounts(customerData);
@@ -1246,7 +1294,11 @@
             }
             $TOPUP
                 .topUpForm
-                .show('fast');
+                .show('fast', function() {
+                    if ($TOPUP.newNumberInput.is(':visible')) {
+                        $TOPUP.newNumberInput.focus();
+                    }
+                });
             return $TOPUP;
         },
         handleCleanCustomer: function() {
@@ -1258,7 +1310,11 @@
 
             $TOPUP
                 .topUpForm
-                .show('fast');
+                .show('fast', function() {
+                    if ($TOPUP.newNumberInput.is(':visible')) {
+                        $TOPUP.newNumberInput.focus();
+                    }
+                });
             return $TOPUP;
         },
         /**
@@ -1272,7 +1328,7 @@
                 $TOPUP
                     .populateLinesSelect(lines);
                 if ($TOPUP.configs.homepageBlockInput) {
-                    if ($TOPUP.numberSelect.find('option[value="' + $TOPUP.configs.homepageBlockInput + '"]')) {
+                    if ($TOPUP.numberSelect.find('option[value="' + $TOPUP.configs.homepageBlockInput + '"]').length > 0) {
                         $TOPUP
                             .numberSelect
                             .selectpicker('val', $TOPUP.configs.homepageBlockInput);
@@ -1283,7 +1339,9 @@
                             .numberSelect
                             .selectpicker('val', 'new');
                         $TOPUP
-                            .populateLinesFromHomePage();
+                            .populateLinesFromHomePage()
+                            .showNewNumberForm();
+
                     }
                     $TOPUP
                         .topUpBox
@@ -1369,6 +1427,7 @@
             var dataTaglio = $TOPUP.topUpAmountSelect.children("option:selected").prop("data-taglio");
             $TOPUP
                 .setCookie("taglioDft", dataTaglio);
+            return $TOPUP;
         },
         /**
          * POPOLA PAGAMENTI
@@ -1387,8 +1446,10 @@
             return $TOPUP;
         },
         addCard: function(card, isDefault) {
-
+            var $TOPUP = this;
             var row = '';
+
+            card.tipo = $TOPUP.parseSavedCardIcon(card.tipo);
 
             switch (isDefault) {
                 case true:
@@ -1457,6 +1518,7 @@
             } else {
                 r$("#refill_block .showMore_content").prepend(row);
             }
+            return $TOPUP;
         },
         loadNewCreditCardYear: function() {
             var $TOPUP = this;
@@ -1559,6 +1621,7 @@
                         .checkNextStep();
 
             }
+            return $TOPUP;
         },
         handleNewNumberInput: function() {
             var $TOPUP = this;
@@ -1577,8 +1640,11 @@
                         } else {
                             $TOPUP.configs.topUpState.newNumber.input = false;
                         }
-                        $TOPUP
-                            .handleNewNumberConfirm();
+                        if (!$TOPUP.newNumberConfirm.is(':focus')) {
+                            $TOPUP
+                                .handleNewNumberConfirm();
+                        }
+
                     })
                     .fail(function(err) {
                         $TOPUP.configs.topUpState.newNumber.input = false;
@@ -1668,7 +1734,11 @@
                             }
                         });
                 }
-                if ($TOPUP.configs.default) {
+                if ($TOPUP.configs.homepageBlockTaglio) {
+                    $TOPUP
+                        .topUpAmountSelect
+                        .selectpicker('val', $TOPUP.configs.homepageBlockTaglio);
+                } else if ($TOPUP.configs.default) {
                     $TOPUP
                         .topUpAmountSelect
                         .selectpicker('val', $TOPUP.configs.default);
@@ -1751,6 +1821,7 @@
                 cvvInput
                     .removeClass('cvv_amex cvv_carta');
             }
+            return $TOPUP;
         },
         checkCard: function() {
             var $TOPUP = this;
@@ -1783,6 +1854,7 @@
             } else {
                 $TOPUP.configs.topUpState.payment = false;
             }
+            return $TOPUP;
         },
         deduceCardTypeByNumber: function() {
             var $TOPUP = this;
@@ -1835,6 +1907,7 @@
 
                 }
             }
+            return $TOPUP;
         },
         isValidCvv: function() {
             var $TOPUP = this;
@@ -1893,6 +1966,7 @@
             $TOPUP.configs.topUpState.newCard.date = true;
             $TOPUP
                 .removeError($TOPUP.newCreditCardExpDateMonth);
+            return $TOPUP;
         },
         /**
          * CONTROLLO CAMBIO PAGAMENTO
@@ -1929,6 +2003,7 @@
             $TOPUP
                 .filterTagliByMdp(selectedMethod.val())
                 .checkNextStep();
+            return $TOPUP;
         },
         /**
          * CONTROLLO NOTIFICA MAIL
@@ -1943,6 +2018,7 @@
             } else {
                 $TOPUP.configs.topUpState.email = true;
             }
+            return $TOPUP;
         },
         controlMail: function() {
             var $TOPUP = this;
@@ -2015,7 +2091,7 @@
             var cardToDelete = removeButton.closest('.item-box');
             var radioToDisable = removeButton.siblings('input[type="radio"]');
             var ccLastFourNumbers = removeButton.siblings('.label_for_creditCard').find('.card-number-clear').html();
-            var alias = removeButton.prop("data-alias");
+            var alias = removeButton.data().alias;
 
             $TOPUP
                 .callPopUp({
@@ -2024,8 +2100,8 @@
                     button2: true,
                     labelBtn1: 'rimuovi',
                     labelBtn2: 'annulla',
-                    function1: function(){
-                            $TOPUP.removeCard(cardToDelete, radioToDisable, alias);
+                    function1: function() {
+                        $TOPUP.removeCard(cardToDelete, radioToDisable, alias);
                     }
                 });
 
@@ -2061,31 +2137,37 @@
                     .addClass('deleted');
                 radio
                     .removeAttr('checked');
+                r$('input[name="mdp"]:visible:first')
+                    .prop('checked', 'checked');
+                $TOPUP
+                    .handlePaymentChange();
             } else
                 $TOPUP
                 .callPopUp({
-                title: "Errore",
-                description: "Gentile cliente, si è verificato un errore. Non è stato possibile rimuovere la carta.",
-                button2: true,
-                labelBtn2: 'chiudi',
-                function2: function() {
-                    TOPUPTOOL
-                        .closeTopUpShoulder(true);
-                }
-            });
-                console.warn(data.msg);
+                    title: "Errore",
+                    description: "Gentile cliente, si è verificato un errore. Non è stato possibile rimuovere la carta.",
+                    button2: true,
+                    labelBtn2: 'chiudi',
+                    function2: function() {
+                        TOPUPTOOL
+                            .closeTopUpShoulder(true);
+                    }
+                });
+            console.warn(data.msg);
             return $TOPUP;
         },
         /**
          * INVIO RICHIESTA RICARICA
          */
         submitRicarica: function() {
+
             var $TOPUP = this;
+            var mdp = ($TOPUP.topUpForm.find('input[name="mdp"]:checked').val().length > 8) ? 'CCX' : $TOPUP.topUpForm.find('input[name="mdp"]:checked').val();
 
             var topUpSubmitData = {
                 numero: $TOPUP.numberSelect.val(),
                 numero_ricarica: $TOPUP.newNumberConfirm.val(),
-                tipoPagamento: ($TOPUP.container.find('input[name="mdp"]:checked').val().length > 8) ? 'CCX' : $TOPUP.paymentMethods.find(':checked').val(),
+                tipoPagamento: mdp,
                 select_taglio: $TOPUP.topUpAmountSelect.val(),
                 email_utente: $TOPUP.emailNotification.val(),
                 ricorda_agreement: r$("#paypal-checkbox").is(':checked') ? 'Y' : 'N',
@@ -2105,7 +2187,7 @@
 
             submitTopUpPromise
                 .done(function(res) {
-                    $TOPUP.handleTopUpResolve(res);
+                    $TOPUP.handleTopUpResolve(res, mdp);
                 })
                 .fail(function(err) {
                     $TOPUP.handleTopUpFail(err);
@@ -2113,22 +2195,37 @@
 
             return $TOPUP;
         },
-        handleTopUpResolve: function(res) {
+        handleTopUpResolve: function(res, mdp) {
             var $TOPUP = this;
 
             $TOPUP
                 .setCookie("taglioDft", null);
 
             if (res.esito == "OK") {
-                if (res.tipo_nav == 'REDIRECT' && (mdp != "CTL" && mdp != "SME")) {
-                    window.location.href = res.url;
+                if (res.tipo_nav == 'REDIRECT') {
+                    if (mdp != "CTL" && mdp != "SME") {
+                        window.location.href = res.url;
+                    } else {
+                        $TOPUP.showEsitoRicarica(res.id);
+                    }
+
                 } else {
                     $TOPUP.showEsitoRicarica(res.id);
                 }
             } else {
-                console.warn("Errore ricarica", res.error_description);
+                console.warn("Errore ricarica", 'RES == KO');
                 $TOPUP
-                    .callPopUp($TOPUP.configs.connectionErrorPopup);
+                    .callPopUp({
+                        title: "Errore di ricarica",
+                        description: 'Gentile cliente, si è verificato un errore. Ti preghiamo di riprovare tra qualche minuto.',
+                        button1: true,
+                        button2: true,
+                        labelBtn1: 'Chiudi',
+                        labelBtn2: 'Annulla',
+                        function2: function() {
+                            TOPUPTOOL.closeTopUpShoulder(true);
+                        }
+                    });
             }
             return $TOPUP;
         },
@@ -2148,7 +2245,12 @@
             var resultRequest = $TOPUP.topUpResultRequest(id);
 
             resultRequest
-                .then($TOPUP.handleResultResponse, $TOPUP.handleResponseFail);
+                .then(function(res) {
+                    $TOPUP.handleResultResponse(res);
+                }, function(err) {
+                    $TOPUP.handleResponseFail(err);
+                });
+            return $TOPUP;
         },
         handleResultResponse: function(res) {
             var $TOPUP = this;
@@ -2167,6 +2269,7 @@
                 $TOPUP
                     .loadEsito(res);
             }
+            return $TOPUP;
         },
         handleResponseFail: function(e) {
             var $TOPUP = this;
@@ -2174,6 +2277,7 @@
             console.warn("Fail Errore ricarica", e);
             $TOPUP
                 .callPopUp($TOPUP.configs.connectionErrorPopup);
+            return $TOPUP;
         },
         loadEsito: function(res) {
             var $TOPUP = this;
@@ -2192,17 +2296,22 @@
 
             $TOPUP
                 .resultContainer
-                .html('')
+                /*.html('')*/
                 .prepend(topUpResultHtmlString);
 
             $TOPUP
                 .resultWrapper
-                .show('fast', $TOPUP.updateScrollBar());
+                .show('fast', function() {
+                    $TOPUP.updateScrollBar();
+                });
+            return $TOPUP;
         },
         parseTopUpResponse: function(res) {
+            var $TOPUP = this;
             var topUpResultHtmlString =
-                '<div class="box"><i class="left rotatey-animate base__icon icon_confirm--color"></i>' +
-                '<h3 id="TITLE" class="colored_text--orange">' + res.TITLE + '<br><small id="SUB_TITLE">' + res.SUB_TITLE + '</small>' + '</h3>' +
+                '<div class="box">' +
+                (res.success ? '<i class="left rotatey-animate base__icon icon_confirm--color"></i>' : '') +
+                '<h3 id="TITLE" class="colored_text--orange">' + res.TITLE + (!res.success ? '<br><small id="SUB_TITLE">' + res.SUB_TITLE + '</small>' : '') + '</h3>' +
                 '<div class="clear"></div>' +
                 '<hr>' +
                 '<h3 class="text strong">Riepilogo</h3>' +
@@ -2233,11 +2342,13 @@
                 '</div>' +
                 '<div class="item-box">' +
                 (res.EMAIL != "" ? '<span class="left"> Indirizzo e-mail: </span> <span class="right" id="EMAIL">' + res.EMAIL + '</span>' : '') +
-                '</div>' +
-                '<div class="item-box">' +
-                '<span class="left">Effettua una nuova ricarica</span>' +
-                '<button class="btn base__bt base__bt--or base__bt--sm right waves-effect waves-button waves-float waves-light">Ricarica</button>' +
-                '</div>';
+                '</div>'
+                /* +
+                                '<div class="item-box">' +
+                                '<span class="left">Effettua una nuova ricarica</span>' +
+                                '<button class="btn base__bt base__bt--or base__bt--sm right waves-effect waves-button waves-float waves-light">Ricarica</button>' +
+                                '</div>'*/
+            ;
             return topUpResultHtmlString;
         },
         /**
@@ -2252,8 +2363,11 @@
                 .closeTopUpShoulder(true);
 
             window.location.href = window.location.origin + window.location.pathname + "?val=" + Math.floor(Date.now() / 1000) + "#refill_block";
+            return $TOPUP;
         },
     };
+
+
 
     function Taglio(id, importo, bonus, mdp, p3x2, testoBonus, dft) {
         this.id = id;
@@ -2264,14 +2378,14 @@
         this.testoBonus = testoBonus;
         this.dft = dft;
         this.toOption = function() {
-            var dataContent = this.importo + '<span class=\'euro\'>€</span>' + (this.bonus == "0" ? "" : '<span class=\'textl\'>(+' + this.bonus + '€ in regalo)</span>');
+            var dataContent = this.importo + '<span class=\'euro\'>€</span>' + (this.bonus == "0" ? "" : '<span class=\'textl\'> (+' + Number(this.bonus).toFixed(2) + ' in omaggio)</span>');
             var topUpImportRow =
                 '<option ' +
                 'value="' + this.id + '" ' +
                 (this.dft == 'Y' ? 'selected ' : '') +
                 'data-p3x2="' + this.p3x2 + '" ' +
                 'data-content="' + dataContent + '">' +
-                this.importo + 'euro ' + (this.bonus != "0" ? '(+' + this.bonus + '€ in regalo)' : '') +
+                this.importo + '€' + (this.bonus != "0" ? ' (+' + Number(this.bonus).toFixed(2) + ' in omaggio)' : '') +
                 '</option>';
 
             return topUpImportRow;
