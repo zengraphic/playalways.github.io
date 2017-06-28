@@ -103,13 +103,13 @@ body {
             padding: 15px;
             font-size: 10px;
         }
-        .main_title_icon{
+        .main_title_icon {
             display: inline-block;
             vertical-align: middle;
             padding-right: 15px;
             cursor: pointer;
             position: relative;
-            .preview_page{
+            .preview_page {
                 border: 3px solid $color_orange_dark;
                 display: none;
                 width: 300px;
@@ -119,10 +119,10 @@ body {
                 top: 15px;
                 right: 15px;
             }
-            &:hover{
+            &:hover {
                 background-color: $color_orange_soft;
             }
-            img{
+            img {
                 width: 30px;
                 height: auto;
             }
@@ -331,6 +331,31 @@ a:visited,
 a:link,
 a:focus {
     color: inherit !important;
+}
+
+.container_old_landings{
+    display: none;
+}
+
+.show_old_landings,
+.hide_old_landings {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: $color_orange_dark;
+    border: 1px solid $color_orange_dark;
+    text-align: center;
+    color: #fff;
+    padding: 15px 30px;
+    cursor: pointer;
+    @include border-radius(5px);
+    &:hover{
+        background-color: #fff;
+        color: $color_orange_dark;
+    }
+}
+
+.hide_old_landings{
+    display: none;
 }
 
 .show_update {

@@ -51,6 +51,17 @@ jQuery(document).ready(function($) {
 
 
     });
+    $('.show_old_landings').click(function(e){
+        $('.container_old_landings').slideDown();
+        $('.hide_old_landings').show();        
+        $(this).hide();
+    });
+
+    $('.hide_old_landings').click(function(e){
+        $('.container_old_landings').slideUp();
+        $('.show_old_landings').show();        
+        $(this).hide();
+    });    
 
     $(".new_file").click(function(e) {
         e.preventDefault();
