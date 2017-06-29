@@ -1537,7 +1537,7 @@ function DOUBLEFILTER() {
                     clearTimeout($FILTER.resizeTimer);
                     $FILTER.resizeTimer = setTimeout(function() {
                         if ($FILTER.showMoreOn) {
-                            var activeSlick = r$('.tab_cards__container:visible');
+                            var activeSlick = $FILTER.container.find('.tab_cards__container').filter(':visible');
                             var $relatedCards = activeSlick.find('.card_item');
                             var $relatedShowMore = activeSlick.find('div[class*="__showMore"]');
                             if (window.outerWidth < 768) {
