@@ -1,0 +1,96 @@
+//BLOCCO 4
+.start_block {
+    background-color: $color_white;
+    max-width: 1024px;
+    margin: 0 auto;
+    @at-root #{&}__content {
+        /*max-width: 1024px;
+        margin: 0 auto;*/
+    }
+    @at-root #{&}__img {
+        margin: 0 auto;
+        text-align: center;
+        @include breakpoint(med-large) {
+            margin-top: 40px;
+        }
+    }
+    @at-root #{&}__title {
+        text-align: left;
+        padding-top: 50px;
+        margin-bottom: 30px;
+        color: $color_orange;
+        font-size: 3.2857em;
+        font-family: $weight-bold;
+        @include breakpoint(small) {
+           font-size: 2.5em;
+        }
+    }
+    @at-root #{&}__subTitle {
+        text-align: left;
+        margin-bottom: 30px;
+        color: $color_black;
+        font-family: $weight-bold;
+        font-size: 1.714em;
+        @include breakpoint(small) {
+           font-size: 1.3em;
+        }
+    }
+    @at-root #{&}__label {
+        text-align: left;
+        font-size: 1.714em;
+        margin-bottom: 30px;
+        color: $color_black;
+        font-family: $weight-normal;
+        @include breakpoint(small) {
+           font-size: 1.3em;
+        }
+    }
+    @at-root #{&}__search {
+        float: left;
+        width: calc(85% - 15px);
+        .base__input {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            height: 50px;
+        }
+    }
+    @at-root #{&}__searchContainer {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    @at-root #{&}__searchButton {
+        width: 15%;
+        float: left;
+        height: 50px;
+        margin-left: 15px;
+        .button--searchButton {
+            max-width: 120px;
+            height: 100%;
+            padding: 0.5em 0;
+        }
+    }
+}
+
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+// ============================== MEDIA QUERIES =========================
+@media all and (max-width: 767px) {
+    a.button {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .start_block {
+        &__searchButton {
+            .button--searchButton {
+                background-position: calc(4vw + 20%) -191px;
+                margin: 0;
+            }
+        }
+        &__divider {
+            margin-top: 30px;
+            &--text:before {
+                width: calc(100% - 30px);
+            }
+        }
+    }
+}
