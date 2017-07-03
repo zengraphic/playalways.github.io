@@ -125,7 +125,16 @@ jQuery(document).ready(function($) {
         $('html, body').animate({
             scrollTop: $(".blocco_store_locator").offset().top
         }, 1000, function() {
-            // codice
+            $('.form_map #indirizzo').focus();            
+            $('.form_map #indirizzo').trigger('click');
+        });
+    });
+
+    // TRIGGER CHECK DI COPERTURA
+    $('body').on("click", ".button_scroll_to_target", function() {
+        $('html, body').animate({
+            scrollTop: $(".target_scroll").offset().top
+        }, 1000, function() {
         });
     });
 
