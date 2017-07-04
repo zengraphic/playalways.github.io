@@ -3147,82 +3147,6 @@ hr.example_divider {
     margin-top: 15px;
     margin-bottom: 15px; } }
 
-.start_block {
-  background-color: #FFF;
-  max-width: 1024px;
-  margin: 0 auto; }
-  .start_block__content {
-    /*max-width: 1024px;
-        margin: 0 auto;*/ }
-  .start_block__img {
-    margin: 0 auto;
-    text-align: center; }
-    @media (max-width: 992px) {
-      .start_block__img {
-        margin-top: 40px; } }
-    .start_block__img img {
-      width: 100%;
-      max-width: 393px; }
-  .start_block__title {
-    text-align: left;
-    padding-top: 30px;
-    margin-bottom: 30px;
-    color: #F48135;
-    font-size: 3.2857em;
-    font-family: "Trade Gothic Bold"; }
-    @media (max-width: 767px) {
-      .start_block__title {
-        font-size: 2.5em; } }
-  .start_block__subTitle {
-    text-align: left;
-    margin-bottom: 30px;
-    color: #212121;
-    font-family: "Trade Gothic Bold";
-    font-size: 1.714em; }
-    @media (max-width: 767px) {
-      .start_block__subTitle {
-        font-size: 1.3em; } }
-  .start_block__label {
-    text-align: left;
-    font-size: 1.714em;
-    margin-bottom: 30px;
-    color: #212121;
-    font-family: "Trade Gothic"; }
-    @media (max-width: 767px) {
-      .start_block__label {
-        font-size: 1.3em; } }
-  .start_block__search {
-    float: left;
-    width: calc(85% - 15px); }
-    .start_block__search .base__input {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      height: 50px; }
-  .start_block__searchContainer {
-    margin-left: 0;
-    margin-right: 0; }
-  .start_block__searchButton {
-    width: 15%;
-    float: left;
-    height: 50px;
-    margin-left: 15px; }
-    .start_block__searchButton .button--searchButton {
-      max-width: 120px;
-      height: 100%;
-      padding: 0.5em 0; }
-
-@media all and (max-width: 767px) {
-  a.button, a.button--slim, a.button--ghost, a.button--ghost--transparent, a.button--search {
-    margin-left: 0px;
-    margin-right: 0px; }
-  .start_block__searchButton .button--searchButton {
-    background-position: calc(4vw + 20%) -191px;
-    margin: 0; }
-  .start_block__divider {
-    margin-top: 30px; }
-    .start_block__divider--text:before {
-      width: calc(100% - 30px); } }
-
 .newsletter_block {
   max-width: 1024px;
   margin: 0 auto;
@@ -11359,6 +11283,172 @@ sw.showcase_bundle_device {
         text-decoration: underline; }
   .showcase_bundle_block h2 {
     font-family: "Trade Gothic Bold Condensed"; }
+
+.cards {
+  max-width: 1024px;
+  margin: 0 auto 2rem; }
+  .cards__title {
+    margin-bottom: 1rem; }
+
+.card {
+  display: block;
+  height: 375px;
+  float: left;
+  position: relative;
+  transition: all .7s linear;
+  box-shadow: 0 7px 15px #D3D3D2;
+  border-radius: .75rem;
+  margin-right: 1rem;
+  width: calc((100% - 2rem)/3); }
+  .card:not(:nth-of-type(3n)) {
+    margin-right: 1rem; }
+  .card__image {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto; }
+    .card__image--container {
+      position: relative;
+      height: 206px; }
+      .card__image--container .base__icon {
+        position: relative;
+        top: 39px;
+        margin: 0 auto; }
+  .card__title {
+    font-size: 22px;
+    font-family: "Trade Gothic Bold";
+    font-weight: bold;
+    color: inherit;
+    padding: .5rem .5rem 0; }
+    .mobile .card__title {
+      color: #009BBE; }
+    .fisso .card__title {
+      color: #183989; }
+  .card__claim {
+    font-size: 16px;
+    padding: 0 .5rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    font-family: "Trade Gothic Condensed"; }
+  .card__prices--container {
+    padding: 0 .5rem;
+    margin-top: .25rem; }
+  .card__prices--old {
+    display: inline;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "Trade Gothic Condensed";
+    position: relative;
+    margin-right: .25rem;
+    text-decoration: line-through; }
+  .card__prices--new {
+    display: inline;
+    font-weight: bold;
+    font-family: "Trade Gothic Condensed";
+    font-size: 22px;
+    margin-right: .25rem; }
+  .card__prices--recurrency {
+    display: inline;
+    font-family: "Trade Gothic Condensed";
+    font-size: 14px; }
+  .card__cta {
+    color: white;
+    margin: .5rem;
+    width: calc(100% - 1rem); }
+  .card__info {
+    transition: all .3s linear;
+    background: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999999;
+    cursor: pointer;
+    width: 38px; }
+    .card__info i {
+      margin: .4rem .5rem .4rem auto;
+      width: 24px;
+      height: 24px;
+      display: block;
+      position: relative; }
+      .card__info i.plus::before, .card__info i.plus::after {
+        content: "";
+        position: absolute;
+        top: calc((100% - 1.25rem)/2);
+        left: calc((100% - .25rem)/2);
+        height: 1.25rem;
+        width: .25rem;
+        background: white;
+        -webkit-transition: all .5s linear;
+        -moz-transition: all .5s linear;
+        -ms-transition: all .5s linear;
+        -o-transition: all .5s linear;
+        transition: all .5s linear; }
+      .flipped .card__info i.plus::before {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
+      .card__info i.plus::after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
+    .mobile .card__info {
+      background: #009BBE; }
+    .fisso .card__info {
+      background: #183989; }
+    .card__info::before {
+      content: "";
+      background: inherit;
+      width: 20px;
+      z-index: 0;
+      height: 100%;
+      position: absolute;
+      left: -20px;
+      transform-origin: center top;
+      transform: skew(20deg); }
+      .mobile .card__info::before {
+        background: #009BBE; }
+      .fisso .card__info::before {
+        background: #183989; }
+  .card__bundle {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #D3D3D2;
+    padding: .125rem 0; }
+    .card__bundle--container {
+      margin-bottom: .5rem; }
+  .card.flipped .front {
+    z-index: 5; }
+  .card.flipped .back {
+    z-index: 7;
+    height: 210px;
+    opacity: 1; }
+  .card.flipped .card__info {
+    width: 100px; }
+  .card .front,
+  .card .back {
+    position: absolute;
+    background: #F4F4F4;
+    border-radius: .75rem;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all .55s linear; }
+  .card .front {
+    border-top: 5px solid transparent;
+    z-index: 7; }
+    .mobile.card .front {
+      border-top-color: #009BBE; }
+    .fisso.card .front {
+      border-top-color: #183989; }
+  .card .back {
+    z-index: 5;
+    height: 0;
+    padding: .5rem .5rem 0; }
 
 .blocco_faq .faq_accordions {
   display: none; }

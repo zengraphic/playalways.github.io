@@ -1435,6 +1435,7 @@ function DOUBLEFILTER() {
     this.activeCardContainer = false;
     this.showMore = false;
     this.tabs = false;
+    this.homeAndLifetabs = false;
     this.cards = false;
     this.showMoreOn = false;
     this.isLocked = false;
@@ -1522,6 +1523,8 @@ function DOUBLEFILTER() {
 
         }
         $FILTER.tabs = $FILTER.container.find('.tab_button');
+        $FILTER.homeAndLifetabs = $FILTER.container.find('.tab_hl_button');
+
 
         $FILTER.cardContainers = $FILTER.container.find('.tab_cards__container');
         $FILTER.isLocked = (isLocked == undefined) ? false : isLocked;
@@ -1611,6 +1614,65 @@ function DOUBLEFILTER() {
 
                 }
             });
+
+        $FILTER
+            .homeAndLifetabs
+            .on({
+                'click': function(event) {
+                    event
+                        .preventDefault();
+
+                    var $clickedTab = r$(this);
+                    var category = $clickedTab.data().filter;
+                    var $visibleContainer = $FILTER.container.find('.tab_cards__container').filter(':visible');
+                    var $visibleContainerCards = $visibleContainer.find('.ak-device');
+
+                    $clickedTab
+                        .addClass('active')
+                        .siblings('.active')
+                        .removeClass('active');
+
+                    var activeCardsCounter = 0;
+
+                    $visibleContainerCards
+                        .each(function(cardIndex, card) {
+                            if (card.attr('data-hl') == category) {
+                                activeCardsCounter++;
+                                if (activeCardsCounter < 4) {
+                                    if (card.is(':hidden')) {
+                                        card
+                                            .show();
+                                    }
+                                } else {
+                                    if (card.is(':visible')) {
+                                        card
+                                            .hide();
+                                    }
+                                }
+
+                            } else {
+                                if (card.is(':visible')) {
+                                    card
+                                        .hide();
+                                }
+                            }
+                        });
+                    if (activeCardsCounter < 4) {
+                        if ($FILTER.showMore.is(':visible')) {
+                            $FILTER
+                                .showMore
+                                .hide();
+                        }
+                    } else {
+                        if ($FILTER.showMore.is(':hidden')) {
+                            $FILTER
+                                .showMore
+                                .show();
+                        }
+                    }
+                }
+            });
+
 
         return $FILTER;
     };
