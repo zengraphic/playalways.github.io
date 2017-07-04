@@ -1,364 +1,223 @@
-// BUNDLE BLOCCO 2
-.showcase_bundle_block {
-  hyphens: none;
-  &__showMore {
-    color: $color_wind;
-    font-size: 1.250em;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: $weight-light;
-    margin-bottom: 40px;
-    cursor: pointer;
-    clear: both;
-    &:hover {
-      text-decoration: underline;
-    }
+.cards {
+  max-width: 1024px;
+  margin: 0 auto 2rem;
+  &__title{
+    margin-bottom: 1rem;
   }
-  &__container {
-    @include transition(all 0.45s ease-in-out);
-    max-width: 1024px;
-    margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 0;
-    .cardsOffer {
-      &__single {
+}
+
+.card {
+  display: block;
+  height: 375px;
+  float: left;
+  position: relative;
+  transition: all .7s linear;
+  box-shadow: 0 7px 15px $color_stroke;
+  border-radius: .75rem;
+  margin-right: 1rem;
+  width: calc((100% - 2rem)/3);
+  &:not(:nth-of-type(3n)) {
+    margin-right: 1rem;
+  }
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    &--container {
+      position: relative;
+      height: 206px;
+      .base__icon {
         position: relative;
-        font-size: 16px;
-        height: 30em;
-        text-align: center;
-        margin-bottom: 40px;
-        display: block;
-        padding-left: 30px;
-        padding-right: 30px;
-        overflow: hidden;
-        &:nth-child(n+4) {
-          display: none;
-        }
-        &:not([style*="display:none"]):not([style*="display: none"]):not(:nth-child(3n)):not(:last-child) {
-          position: relative;
-          &:after {
-            background-color: $color_stroke;
-            width: 1px;
-            content: "";
-            display: block;
-            position: absolute;
-            top: 7%;
-            bottom: 7%;
-            right: 0%;
-            min-height: 1px;
-            @include breakpoint(small) {
-              content: none;
-            }
-          }
-        }
-        &--bgContainer {
-          position: absolute;
-          z-index: 50;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 27.7em;
-        }
-        &--title {
-          position: relative;
-          z-index: 51;
-          margin-bottom: 16px;
-          //overflow: hidden;
-          color: inherit;
-          h3 {
-            font-size: 1.785em;
-            font-family: $weight-cond;
-            font-weight: 700;
-            height: 3em;
-            line-height: 1em;
-            letter-spacing: -.025em;
-            @at-root {
-              .ff #{&} {
-                letter-spacing: -.045em;
-              }
-            }
-            &:empty {
-              display: none;
-            }
-          }
-        }
-        &--subTitle {
-          display: none;
-          //position: relative;
-          //z-index: 51;
-          //height: 3em;
-          //margin-bottom: 10px;
-          //color: inherit;
-          //h4 {
-          //  font-size: 1.375em;
-          //  font-family: $weight-cond;
-          //  font-weight: 700;
-          //}
-        }
-        &--text {
-          position: relative;
-          //height: 10.9em;
-          margin-bottom: 10px;
-          z-index: 51;
-          //overflow: hidden;
-          color: $color_text;
-          &:empty {
-            display: none;
-          }
-          &--bundle {
-            //height: 4.4em;
-            //overflow: hidden;
-            font-size: 1.375em;
-            color: $color_text;
-            margin-bottom: 10px;
-            line-height: 1.1em;
-            &:empty {
-              display: none;
-            }
-          }
-          &--smallDescription {
-            //height: 3.3em;
-            //overflow: hidden;
-            font-size: 1.125em;
-            margin-bottom: 10px;
-            color: $color_text;
-            line-height: 1.1em;
-          }
-          &--bigDescription {
-            //display: none;
-            &:empty {
-              display: none;
-            }
-          }
-        }
-        &--price__container {
-          //height: 5.375em;
-          position: absolute;
-          bottom: 65px;
-          left: 0;
-          right: 0;
-          z-index: 51;
-          &--priceDiscounted {
-            font-size: 2.7em;
-            color: $color_text;
-            font-family: $weight-light;
-            position: relative;
-            line-height: 1;
-            z-index: 51;
-            &:empty {
-              display: none;
-            }
-            .price {
-              position: relative;
-              &::before {
-                border-bottom: 1px solid $color_text;
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 50%;
-              }
-              &:empty {
-                display: none;
-              }
-            }
-          }
-          &--price {
-            font-size: 2.7em;
-            color: inherit;
-            font-family: $weight-light;
-            position: relative;
-            //height: 35px;
-            line-height: 1;
-            z-index: 51;
-            &:empty {
-              display: none;
-            }
-          }
-          &--recurrency {
-            font-size: 0.875em;
-            position: relative;
-            color: $color_text;
-            z-index: 51;
-            &:empty {
-              display: none;
-            }
-          }
-        }
-        .button {
-          max-width: 300px;
-          margin: 0 auto;
-          position: absolute;
-          left: 30px;
-          right: 30px;
-          bottom: 0;
-          width: auto;
-          z-index: 51;
-        }
-        &.business {
-          color: $color_wind;
-          .cardsOffer__single--title {
-            color: $color_wind;
-          }
-        }
-        &.singleBundle {
-          .cardsOffer__single--text--bundle {
-            //height: 50px;
-            margin-bottom: 10px;
-            .bundle_single:nth-child(n+2) {
-              //display: none;
-            }
-          }
-          .cardsOffer__single--text--smallDescription {
-            //height: 5.5em;
-            margin-bottom: 10px;
-          }
-        }
-        &.no_bundle {
-          .cardsOffer__single--text--bundle {
-            //display: none;
-          }
-          .cardsOffer__single--text--bigDescription {
-            //display: block;
-            font-size: 1.375em;
-            //overflow: hidden;
-            color: $color_text;
-            line-height: 1.1em;
-            //height: 5.55em;
-            margin-bottom: 10px;
-          }
-          .cardsOffer__single--text--smallDescription {
-            //height: 2.22em;
-          }
-        }
-        &.bgAndPrice {
-          .bundle_single,
-          .cardsOffer__single--text--smallDescription,
-          .cardsOffer__single--text--bigDescription {
-            //display: none;
-          }
-        }
-        &.bgBundleAndPrice {
-          .cardsOffer__single--text {
-            //height: 12.55em;
-            //margin-bottom: 10px;
-            padding-top: 10.7em;
-            &--bundle {
-              //margin-bottom: 10px;
-              //height: 38px;
-              font-size: 1em;
-              color: $color_white;
-              .bundle_single:nth-child(n+2) {
-                //display: none;
-              }
-            }
-            &--smallDescription,
-            &--bigDescription {
-              //display: none;
-            }
-          }
-          .cardsOffer__single--price__container {
-            //height: 3.8em;
-            &--priceDiscounted {
-              //display: inline-block;
-              //margin-right: 4%;
-              //margin-bottom: 10px;
-              color: $color_white;
-              .price {
-                &::before {
-                  border-bottom: 1px solid;
-                  content: "";
-                  position: absolute;
-                  left: 0;
-                  right: 0;
-                  top: 50%;
-                }
-              }
-            }
-            &--price {
-              //display: inline-block;
-              //margin-left: 4%;
-              //margin-bottom: 10px;
-              color: $color_white;
-              .price {
-                //&:before {
-                //background-color: $color_white;
-                //width: 2px;
-                //content: "";
-                //display: block;
-                //position: absolute;
-                //top: 15%;
-                //bottom: 7%;
-                //right: 120%;
-                //min-height: 1px;
-                //}
-              }
-            }
-            &--recurrency {
-              color: $color_white;
-            }
-          }
-        }
-        &.fullBg {
-          padding-left: 15px;
-          padding-right: 15px;
-          .cardsOffer__single {
-            &--title,
-            &--subTitle,
-            &--text,
-            &--price__container {
-              //display: none;
-            }
-            &--bgContainer {
-              position: relative;
-              margin-bottom: 10px;
-              img {
-                max-width: 100%;
-              }
-            }
-          }
-        }
-        &.onlyText {
-          .cardsOffer__single--text {
-            line-height: 1.2em;
-          }
-          .cardsOffer__single--bgContainer,
-          .bundle_single,
-          .cardsOffer__single--text--smallDescription,
-          .cardsOffer__single--text--bigDescription {
-            //display: none;
-          }
-        }
-        &.fullText {
-          .cardsOffer__single--text {
-            //height: 16.8em;
-            line-height: 1.2em;
-            margin-bottom: 10px;
-          }
-          .cardsOffer__single--bgContainer,
-          .bundle_single,
-          .cardsOffer__single--text--smallDescription,
-          .cardsOffer__single--text--bigDescription,
-          .cardsOffer__single--price__container {
-            //display: none;
-          }
-        }
-      }
-    }
-    .bundle_block__showMore {
-      padding: 0 0 20px;
-      color: $color_wind;
-      font-size: 1.250em;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: $weight-light;
-      cursor: pointer;
-      &:hover {
-        text-decoration: underline;
+        top: 39px;
+        margin: 0 auto;
       }
     }
   }
-  h2 {
-    font-family: $weight-bold-cond;
+  &__title {
+    font-size: 22px;
+    font-family: "Trade Gothic Bold";
+    font-weight: bold;
+    color: inherit;
+    padding: .5rem .5rem 0;
+    &--container {}
+    @at-root {
+      .mobile #{&} {
+        color: $color_robin;
+      }
+      .fisso #{&} {
+        color: $color_infostrada;
+      }
+    }
+  }
+  &__claim {
+    font-size: 16px;
+    padding: 0 .5rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    font-family: "Trade Gothic Condensed";
+  }
+  &__prices {
+    &--container {
+      padding: 0 .5rem;
+      margin-top: .25rem;
+    }
+    &--old {
+      display: inline;
+      font-weight: bold;
+      font-size: 22px;
+      font-family: "Trade Gothic Condensed";
+      position: relative;
+      margin-right: .25rem;
+      text-decoration: line-through;
+    }
+    &--new {
+      display: inline;
+      font-weight: bold;
+      font-family: "Trade Gothic Condensed";
+      font-size: 22px;
+      margin-right: .25rem;
+    }
+    &--recurrency {
+      display: inline;
+      font-family: "Trade Gothic Condensed";
+      font-size: 14px;
+    }
+  }
+  &__cta {
+    color: white;
+    margin: .5rem;
+    width: calc(100% - 1rem);
+  }
+  &__info {
+    transition: all .3s linear;
+    background: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999999;
+    cursor: pointer;
+    width: 38px;
+    i {
+      margin: .4rem .5rem .4rem auto;
+      width: 24px;
+      height: 24px;
+      //border-radius: 50%;
+      //border: 1px solid white;
+      display: block;
+      position: relative;
+      &.plus::before,
+      &.plus::after {
+        content: "";
+        position: absolute;
+        top: calc((100% - 1.25rem)/2);
+        left: calc((100% - .25rem)/2);
+        height: 1.25rem;
+        width: .25rem;
+        background: white;
+        -webkit-transition: all .5s linear;
+           -moz-transition: all .5s linear;
+            -ms-transition: all .5s linear;
+             -o-transition: all .5s linear;
+                transition: all .5s linear;
+      }
+      &.plus::before {
+        @at-root {
+          .flipped #{&} {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+          }
+        }
+      }
+      &.plus::after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }
+    @at-root {
+      .mobile #{&} {
+        background: $color_robin;
+      }
+      .fisso #{&} {
+        background: $color_infostrada;
+      }
+    }
+    &::before {
+      content: "";
+      background: inherit;
+      width: 20px;
+      z-index: 0;
+      height: 100%;
+      position: absolute;
+      left: -20px;
+      transform-origin: center top;
+      transform: skew(20deg);
+      @at-root {
+        .mobile #{&} {
+          background: $color_robin;
+        }
+        .fisso #{&} {
+          background: $color_infostrada;
+        }
+      }
+    }
+  }
+  &__bundle {
+    font-size: 1.2rem;
+    border-bottom: 1px solid $color_stroke;
+    padding: .125rem 0;
+    &--container {
+      margin-bottom: .5rem;
+    }
+  }
+  &.flipped {
+    .front {
+      z-index: 5;
+    }
+    .back {
+      z-index: 7;
+      height: 210px;
+      opacity: 1;
+    }
+    .card__info {
+      width: 100px;
+    }
+  }
+  .front,
+  .back {
+    position: absolute;
+    background: $color_grey_light_light;
+    border-radius: .75rem;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all .55s linear;
+  }
+  .front {
+    border-top: 5px solid transparent;
+    z-index: 7;
+    //padding-top: 2.75rem;
+    @at-root {
+      .mobile#{&} {
+        border-top-color: $color_robin;
+      }
+      .fisso#{&} {
+        border-top-color: $color_infostrada;
+      }
+    }
+  }
+  .back {
+    z-index: 5;
+    height: 0;
+
+    padding: .5rem .5rem 0;
   }
 }

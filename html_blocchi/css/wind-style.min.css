@@ -11284,209 +11284,171 @@ sw.showcase_bundle_device {
   .showcase_bundle_block h2 {
     font-family: "Trade Gothic Bold Condensed"; }
 
-.showcase_bundle_block {
-  hyphens: none; }
-  .showcase_bundle_block__showMore {
-    color: #F48135;
-    font-size: 1.250em;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Trade Gothic Light";
-    margin-bottom: 40px;
-    cursor: pointer;
-    clear: both; }
-    .showcase_bundle_block__showMore:hover {
-      text-decoration: underline; }
-  .showcase_bundle_block__container {
-    -webkit-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -o-transition: all 0.45s ease-in-out;
-    transition: all 0.45s ease-in-out;
-    max-width: 1024px;
-    margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 0; }
-    .showcase_bundle_block__container .cardsOffer__single {
+.cards {
+  max-width: 1024px;
+  margin: 0 auto 2rem; }
+  .cards__title {
+    margin-bottom: 1rem; }
+
+.card {
+  display: block;
+  height: 375px;
+  float: left;
+  position: relative;
+  transition: all .7s linear;
+  box-shadow: 0 7px 15px #D3D3D2;
+  border-radius: .75rem;
+  margin-right: 1rem;
+  width: calc((100% - 2rem)/3); }
+  .card:not(:nth-of-type(3n)) {
+    margin-right: 1rem; }
+  .card__image {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto; }
+    .card__image--container {
       position: relative;
-      font-size: 16px;
-      height: 30em;
-      text-align: center;
-      margin-bottom: 40px;
+      height: 206px; }
+      .card__image--container .base__icon {
+        position: relative;
+        top: 39px;
+        margin: 0 auto; }
+  .card__title {
+    font-size: 22px;
+    font-family: "Trade Gothic Bold";
+    font-weight: bold;
+    color: inherit;
+    padding: .5rem .5rem 0; }
+    .mobile .card__title {
+      color: #009BBE; }
+    .fisso .card__title {
+      color: #183989; }
+  .card__claim {
+    font-size: 16px;
+    padding: 0 .5rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    font-family: "Trade Gothic Condensed"; }
+  .card__prices--container {
+    padding: 0 .5rem;
+    margin-top: .25rem; }
+  .card__prices--old {
+    display: inline;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "Trade Gothic Condensed";
+    position: relative;
+    margin-right: .25rem;
+    text-decoration: line-through; }
+  .card__prices--new {
+    display: inline;
+    font-weight: bold;
+    font-family: "Trade Gothic Condensed";
+    font-size: 22px;
+    margin-right: .25rem; }
+  .card__prices--recurrency {
+    display: inline;
+    font-family: "Trade Gothic Condensed";
+    font-size: 14px; }
+  .card__cta {
+    color: white;
+    margin: .5rem;
+    width: calc(100% - 1rem); }
+  .card__info {
+    transition: all .3s linear;
+    background: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999999;
+    cursor: pointer;
+    width: 38px; }
+    .card__info i {
+      margin: .4rem .5rem .4rem auto;
+      width: 24px;
+      height: 24px;
       display: block;
-      padding-left: 30px;
-      padding-right: 30px;
-      overflow: hidden; }
-      .showcase_bundle_block__container .cardsOffer__single:nth-child(n+4) {
-        display: none; }
-      .showcase_bundle_block__container .cardsOffer__single:not([style*="display:none"]):not([style*="display: none"]):not(:nth-child(3n)):not(:last-child) {
-        position: relative; }
-        .showcase_bundle_block__container .cardsOffer__single:not([style*="display:none"]):not([style*="display: none"]):not(:nth-child(3n)):not(:last-child):after {
-          background-color: #D3D3D2;
-          width: 1px;
-          content: "";
-          display: block;
-          position: absolute;
-          top: 7%;
-          bottom: 7%;
-          right: 0%;
-          min-height: 1px; }
-          @media (max-width: 767px) {
-            .showcase_bundle_block__container .cardsOffer__single:not([style*="display:none"]):not([style*="display: none"]):not(:nth-child(3n)):not(:last-child):after {
-              content: none; } }
-      .showcase_bundle_block__container .cardsOffer__single--bgContainer {
+      position: relative; }
+      .card__info i.plus::before, .card__info i.plus::after {
+        content: "";
         position: absolute;
-        z-index: 50;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 27.7em; }
-      .showcase_bundle_block__container .cardsOffer__single--title {
-        position: relative;
-        z-index: 51;
-        margin-bottom: 16px;
-        color: inherit; }
-        .showcase_bundle_block__container .cardsOffer__single--title h3 {
-          font-size: 1.785em;
-          font-family: "Trade Gothic Condensed";
-          font-weight: 700;
-          height: 3em;
-          line-height: 1em;
-          letter-spacing: -.025em; }
-          .ff .showcase_bundle_block__container .cardsOffer__single--title h3 {
-            letter-spacing: -.045em; }
-          .showcase_bundle_block__container .cardsOffer__single--title h3:empty {
-            display: none; }
-      .showcase_bundle_block__container .cardsOffer__single--subTitle {
-        display: none; }
-      .showcase_bundle_block__container .cardsOffer__single--text {
-        position: relative;
-        margin-bottom: 10px;
-        z-index: 51;
-        color: #292F36; }
-        .showcase_bundle_block__container .cardsOffer__single--text:empty {
-          display: none; }
-        .showcase_bundle_block__container .cardsOffer__single--text--bundle {
-          font-size: 1.375em;
-          color: #292F36;
-          margin-bottom: 10px;
-          line-height: 1.1em; }
-          .showcase_bundle_block__container .cardsOffer__single--text--bundle:empty {
-            display: none; }
-        .showcase_bundle_block__container .cardsOffer__single--text--smallDescription {
-          font-size: 1.125em;
-          margin-bottom: 10px;
-          color: #292F36;
-          line-height: 1.1em; }
-        .showcase_bundle_block__container .cardsOffer__single--text--bigDescription:empty {
-          display: none; }
-      .showcase_bundle_block__container .cardsOffer__single--price__container {
-        position: absolute;
-        bottom: 65px;
-        left: 0;
-        right: 0;
-        z-index: 51; }
-        .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted {
-          font-size: 2.7em;
-          color: #292F36;
-          font-family: "Trade Gothic Light";
-          position: relative;
-          line-height: 1;
-          z-index: 51; }
-          .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted:empty {
-            display: none; }
-          .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted .price {
-            position: relative; }
-            .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted .price::before {
-              border-bottom: 1px solid #292F36;
-              content: "";
-              position: absolute;
-              left: 0;
-              right: 0;
-              top: 50%; }
-            .showcase_bundle_block__container .cardsOffer__single--price__container--priceDiscounted .price:empty {
-              display: none; }
-        .showcase_bundle_block__container .cardsOffer__single--price__container--price {
-          font-size: 2.7em;
-          color: inherit;
-          font-family: "Trade Gothic Light";
-          position: relative;
-          line-height: 1;
-          z-index: 51; }
-          .showcase_bundle_block__container .cardsOffer__single--price__container--price:empty {
-            display: none; }
-        .showcase_bundle_block__container .cardsOffer__single--price__container--recurrency {
-          font-size: 0.875em;
-          position: relative;
-          color: #292F36;
-          z-index: 51; }
-          .showcase_bundle_block__container .cardsOffer__single--price__container--recurrency:empty {
-            display: none; }
-      .showcase_bundle_block__container .cardsOffer__single .button, .showcase_bundle_block__container .cardsOffer__single a.button--slim, .showcase_bundle_block__container .cardsOffer__single a.button--ghost, .showcase_bundle_block__container .cardsOffer__single a.button--ghost--transparent, .showcase_bundle_block__container .cardsOffer__single a.button--search {
-        max-width: 300px;
-        margin: 0 auto;
-        position: absolute;
-        left: 30px;
-        right: 30px;
-        bottom: 0;
-        width: auto;
-        z-index: 51; }
-      .showcase_bundle_block__container .cardsOffer__single.business {
-        color: #F48135; }
-        .showcase_bundle_block__container .cardsOffer__single.business .cardsOffer__single--title {
-          color: #F48135; }
-      .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--bundle {
-        margin-bottom: 10px; }
-      .showcase_bundle_block__container .cardsOffer__single.singleBundle .cardsOffer__single--text--smallDescription {
-        margin-bottom: 10px; }
-      .showcase_bundle_block__container .cardsOffer__single.no_bundle .cardsOffer__single--text--bigDescription {
-        font-size: 1.375em;
-        color: #292F36;
-        line-height: 1.1em;
-        margin-bottom: 10px; }
-      .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text {
-        padding-top: 10.7em; }
-        .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--text--bundle {
-          font-size: 1em;
-          color: #FFF; }
-      .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted {
-        color: #FFF; }
-        .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--priceDiscounted .price::before {
-          border-bottom: 1px solid;
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 50%; }
-      .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--price {
-        color: #FFF; }
-      .showcase_bundle_block__container .cardsOffer__single.bgBundleAndPrice .cardsOffer__single--price__container--recurrency {
-        color: #FFF; }
-      .showcase_bundle_block__container .cardsOffer__single.fullBg {
-        padding-left: 15px;
-        padding-right: 15px; }
-        .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--bgContainer {
-          position: relative;
-          margin-bottom: 10px; }
-          .showcase_bundle_block__container .cardsOffer__single.fullBg .cardsOffer__single--bgContainer img {
-            max-width: 100%; }
-      .showcase_bundle_block__container .cardsOffer__single.onlyText .cardsOffer__single--text {
-        line-height: 1.2em; }
-      .showcase_bundle_block__container .cardsOffer__single.fullText .cardsOffer__single--text {
-        line-height: 1.2em;
-        margin-bottom: 10px; }
-    .showcase_bundle_block__container .bundle_block__showMore {
-      padding: 0 0 20px;
-      color: #F48135;
-      font-size: 1.250em;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: "Trade Gothic Light";
-      cursor: pointer; }
-      .showcase_bundle_block__container .bundle_block__showMore:hover {
-        text-decoration: underline; }
-  .showcase_bundle_block h2 {
-    font-family: "Trade Gothic Bold Condensed"; }
+        top: calc((100% - 1.25rem)/2);
+        left: calc((100% - .25rem)/2);
+        height: 1.25rem;
+        width: .25rem;
+        background: white;
+        -webkit-transition: all .5s linear;
+        -moz-transition: all .5s linear;
+        -ms-transition: all .5s linear;
+        -o-transition: all .5s linear;
+        transition: all .5s linear; }
+      .flipped .card__info i.plus::before {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
+      .card__info i.plus::after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
+    .mobile .card__info {
+      background: #009BBE; }
+    .fisso .card__info {
+      background: #183989; }
+    .card__info::before {
+      content: "";
+      background: inherit;
+      width: 20px;
+      z-index: 0;
+      height: 100%;
+      position: absolute;
+      left: -20px;
+      transform-origin: center top;
+      transform: skew(20deg); }
+      .mobile .card__info::before {
+        background: #009BBE; }
+      .fisso .card__info::before {
+        background: #183989; }
+  .card__bundle {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #D3D3D2;
+    padding: .125rem 0; }
+    .card__bundle--container {
+      margin-bottom: .5rem; }
+  .card.flipped .front {
+    z-index: 5; }
+  .card.flipped .back {
+    z-index: 7;
+    height: 210px;
+    opacity: 1; }
+  .card.flipped .card__info {
+    width: 100px; }
+  .card .front,
+  .card .back {
+    position: absolute;
+    background: #F4F4F4;
+    border-radius: .75rem;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all .55s linear; }
+  .card .front {
+    border-top: 5px solid transparent;
+    z-index: 7; }
+    .mobile.card .front {
+      border-top-color: #009BBE; }
+    .fisso.card .front {
+      border-top-color: #183989; }
+  .card .back {
+    z-index: 5;
+    height: 0;
+    padding: .5rem .5rem 0; }
 
 .blocco_faq .faq_accordions {
   display: none; }
