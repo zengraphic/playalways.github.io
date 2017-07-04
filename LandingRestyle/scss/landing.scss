@@ -26,17 +26,19 @@ h5,
 h6 {
     line-height: 1em;
 }
-.absolute_footer_body{
+
+.absolute_footer_body {
     min-height: calc(100vh - 114px) !important;
-    @include breakpoint(small){
+    @include breakpoint(small) {
         min-height: calc(100vh - 114px) !important;
     }
 }
 
-.absolute_footer{
+.absolute_footer {
     position: absolute;
     bottom: 0;
 }
+
 .base__icon {
     background-image: url(/fileadmin/img-landing/sprite/icons_sprite.svg);
 }
@@ -58,7 +60,7 @@ h6 {
 }
 
 .float_right {
-    float: right;  
+    float: right;
     &.float_m_none {
         @include breakpoint(small) {
             float: none;
@@ -68,21 +70,21 @@ h6 {
     }
 }
 
+.width_calc-30 {
+    width: calc(100% - 30px) !important;
+}
+
 .landing {
     position: relative;
     // CLASSI LOGHI
-    .wind_logo{
-
-    }
-    .infostrada_logo{
-
-    }
-    .tre_logo{
+    .wind_logo {}
+    .infostrada_logo {}
+    .tre_logo {
         width: 100%;
         max-width: 180px;
         height: auto;
         margin-top: 5px;
-        @include breakpoint(small){
+        @include breakpoint(small) {
             max-width: 120px;
         }
     }
@@ -201,7 +203,7 @@ h6 {
         @include breakpoint(small) {
             padding-right: 0px !important;
         }
-    }    
+    }
     .margin_top_0 {
         margin-top: 0px !important;
     }
@@ -237,8 +239,8 @@ h6 {
     }
     .text_right {
         text-align: right;
-    }    
-    .text_left{
+    }
+    .text_left {
         text-align: left;
     }
     .text_left_m {
@@ -380,6 +382,10 @@ h6 {
     }
     .max_width_100 {
         max-width: 100%;
+    }
+    .max_width_1024 {
+        width: 100%;
+        max-width: 1024px;
     }
     .box_desktop_width_100 {
         width: 100% !important;
@@ -696,6 +702,12 @@ h6 {
                     position: static;
                 }
             }
+            &.button_small_font {
+                font-size: 14px;
+                @include breakpoint(small) {
+                    font-size: 14px;
+                }
+            }
             &.small_mobile_font {
                 @include breakpoint(small) {
                     font-size: 1rem;
@@ -850,8 +862,8 @@ h6 {
         display: none;
     }
 }
+
 //FIX ECOMMERCE
-.landing .base__popup#ecommerce-shoulder-wind .container{
+.landing .base__popup#ecommerce-shoulder-wind .container {
     padding: 0 !important;
 }
-
