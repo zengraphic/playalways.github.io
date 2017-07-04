@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <img class="bg-mock" src="img/hp-tre.jpg"/>
+    <img class="bg-mock" src="img/hp-tre.jpg" />
     <div class="particles-background"></div>
     <div id="particles-js-1"></div>
     <div id="particles-js-2"></div>
@@ -47,7 +47,7 @@
                 '<img class="logo-3 " src="img/logo-3-stranger.png" alt="" />' +
                 '</div>' +
                 '<img class="logo-netflix" src="img/Logo-netflix.png" alt="" />' +
-                '<a class="action-switch" ><img class="logo-netflix" src="img/close.png" alt="" /></a>' +
+                '<a class="action-switch" >Esci dal sottosopra</a>' +
                 '</div>' +
 
                 '</div>';
@@ -65,8 +65,21 @@
                 $('body')
                     .append(overlayHeaderHtml);
 
-                $('.overlay-header')
+                $('.logo-3, .logo-netflix')
                     .addClass('text-flicker-in-glow');
+
+                $('.action-switch')
+                    .addClass('text-flicker-infinite');
+
+                setTimeout(function() {
+
+                        $('.overlay-header')
+                        .append(overlayBannerHtml);
+                        $('.overlay-banner')
+                        .fadeIn(1000);
+                    
+
+                }, 3000);
 
             }, 4000);
 

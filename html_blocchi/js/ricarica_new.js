@@ -117,7 +117,8 @@
                 },
                 payment: false,
                 email: true
-            }
+            },
+            isResult: false
         },
         /**
          * COOKIES/DATALAYER
@@ -686,6 +687,10 @@
                         $TOPUP
                             .removeError($TOPUP.newNumberConfirm);
                     },
+                    'paste':function(event){
+                        event.preventDefault();
+                        return false;
+                    },
                     'blur': function() {
                         $TOPUP
                             .handleNewNumberConfirm()
@@ -852,8 +857,11 @@
          */
         handleShoulderOpening: function() {
             var $TOPUP = this;
-            $TOPUP
-                .initTopUpProcess();
+            if(!$TOPUP.configs.isResult){
+                $TOPUP
+                    .initTopUpProcess();
+            }
+            
             return $TOPUP;
         },
         handleShoulderClosing: function() {
@@ -977,17 +985,16 @@
             var originPathMatchesTopUp = window.location.hash.match("#refill_block");
             var originPathMatchesResult = GetParameterByName('result') == "true";
 
-            if (originPathMatchesResult) {
-                $TOPUP
-                    .showEsitoRicarica();
-
-                if (originPathMatchesTopUp) {
+            if (originPathMatchesTopUp) {
+                if (originPathMatchesResult) {
+                    $TOPUP.configs.isResult = true;
+                    $TOPUP
+                        .showEsitoRicarica()
+                        .openTopUpShoulder();
+                } else {
                     $TOPUP
                         .openTopUpShoulder();
                 }
-            } else if (originPathMatchesTopUp) {
-                $TOPUP
-                    .openTopUpShoulder();
             }
 
             return $TOPUP;
@@ -1448,8 +1455,6 @@
         addCard: function(card, isDefault) {
             var $TOPUP = this;
             var row = '';
-
-            card.tipo = $TOPUP.parseSavedCardIcon(card.tipo);
 
             switch (isDefault) {
                 case true:
@@ -2133,14 +2138,19 @@
 
             if (data.OK) {
                 card
-                    .slideUp()
-                    .addClass('deleted');
-                radio
-                    .removeAttr('checked');
-                r$('input[name="mdp"]:visible:first')
-                    .prop('checked', 'checked');
-                $TOPUP
-                    .handlePaymentChange();
+                    .addClass('deleted')
+                    .slideUp('fast', function() {
+                        radio
+                            .removeAttr('checked');
+                        if ($TOPUP.showMoreContent.is(':hidden')) {
+                            $TOPUP
+                                .showOtherMethodsOfPayment();
+                        }
+                        $TOPUP
+                            .showNewCreditCardForm()
+                            .handlePaymentChange();
+                    });
+
             } else
                 $TOPUP
                 .callPopUp({
@@ -2266,6 +2276,7 @@
                 $TOPUP
                     .callPopUp($TOPUP.configs.connectionErrorPopup);
             } else {
+
                 $TOPUP
                     .loadEsito(res);
             }
