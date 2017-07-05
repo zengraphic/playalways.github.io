@@ -1,3 +1,22 @@
+function dissolveOverlay() {
+    var particlesPromise =
+        $('#particles-js-1,#particles-js-2,#particles-js-3')
+        .fadeOut(600);
+    var overlayHeaderPromise =
+        $('.overlay-header')
+        .fadeOut(600);
+
+
+    $.when(particlesPromise, overlayHeaderPromise)
+        .then(function() {
+            $('.particles-background')
+                .fadeOut(600)
+                .css({
+                    'cursor': 'default'
+                });
+        });
+}
+
 jQuery(document)
     .ready(function($) {
         particlesJS
@@ -31,25 +50,38 @@ jQuery(document)
                 'click': function(event) {
                     event
                         .preventDefault();
+                        dissolveOverlay();
 
-                    var particlesPromise =
-                        $('#particles-js-1,#particles-js-2,#particles-js-3')
-                        .fadeOut(1000);
-                    var overlayHeaderPromise =
-                        $('.overlay-header')
-                        .fadeOut(1000);
-
-
-                    $.when(particlesPromise, overlayHeaderPromise)
-                        .then(function() {
-                            $('.particles-background')
-                                .fadeOut(1000)
-                                .css({
-                                    'cursor': 'default'
-                                });
-                        });
                 }
-            }, '.action-switch');
+            }, '.action-switch')
+            .on({
+                'click': function(event) {
+                    event
+                        .preventDefault();
+                        dissolveOverlay();
 
+                }
+            }, '#particles-js-1, .overlay-header');
 
+        $(window).on('load resize', function() {
+            var wWidth = $(window).outerWidth();
+            var $packImg = $('.pack-image');
+            var packImg = $packImg.attr('src');
+            console.log(packImg);
+            if (wWidth <= 480) {
+                if (!packImg.match('pack-small')) {
+                    $packImg.attr('src', 'img/pack-small.png');
+                }
+
+            } else if (wWidth > 480 && wWidth <= 768) {
+                if (!packImg.match('pack-medium')) {
+                    $packImg.attr('src', 'img/pack-medium.png');
+                }
+
+            } else if (wWidth > 768) {
+                if (!packImg.match('pack-large')) {
+                    $packImg.attr('src', 'img/pack-large.png');
+                }
+            }
+        });
     });

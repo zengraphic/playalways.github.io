@@ -3,6 +3,19 @@
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
+$breakpoints: ('small': (max-width: 480px), 'medium': (max-width: 768px));
+// Creating the mixin
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Couldn't find a your breakpoint named `#{$name}`.";
+  }
+}
+
 
 /**
  * ----------------------------------------
@@ -206,13 +219,16 @@ body {
   position: relative;
 }
 
-
 $bezier-curve: cubic-bezier(.895, .030, .685, .220);
 $flicker-animation: text-flicker-in-glow 4s $bezier-curve both;
-
-$red-netflix : #de0a15;
-$red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 0 0 40px $red-netflix, 0 0 70px $red-netflix, 0 0 80px $red-netflix, 0 0 100px $red-netflix;
-
+$red-netflix: #de0a15;
+$red-glow: 0 0 10px $red-netflix,
+0 0 20px $red-netflix,
+0 0 30px $red-netflix,
+0 0 40px $red-netflix,
+0 0 70px $red-netflix,
+0 0 80px $red-netflix,
+0 0 100px $red-netflix;
 #particles-js- {
   &1,
   &2,
@@ -270,15 +286,27 @@ $red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 
     &-container {
       max-width: 1024px;
       width: 100%;
-      margin: 48px auto;
+      margin: 3rem auto;
       position: relative;
+      @include breakpoint(medium) {
+        text-align: center;
+      }
       .logo-3 {
         opacity: 0;
+        @include breakpoint(small) {
+          max-width: 3rem;
+        }
         &-container {
           position: absolute;
           top: 0;
           left: 0;
-          padding: 0 14px;
+          padding: 0 1rem;
+          @include breakpoint(medium) {
+            display: inline-block;
+            vertical-align: top;
+            position: static;
+
+          }
         }
       }
       .logo-netflix {
@@ -286,19 +314,36 @@ $red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 
         display: block;
         width: auto;
         opacity: 0;
+        position: relative;
         max-width: 220px;
+        top: -1rem;
+        @include breakpoint(medium) {
+          display: inline-block;
+          vertical-align: top;
+          padding: 0 1rem;
+          top: -.5rem;
+          max-width: 180px;
+        }
       }
       .action-switch {
         opacity: 0;
         position: absolute;
         right: 0;
         text-transform: uppercase;
-        top: 50%;
+        top: calc(50% - .5rem);
         color: rgba(255, 255, 255, 0.7);
         text-shadow: $red-glow;
         font-size: 16px;
+        padding: 0 1rem;
         &:hover {
-          cursor: default;
+          cursor: pointer;
+        }
+        @include breakpoint(medium) {
+          display: inline-block;
+          text-align: center;
+          position: static;
+          margin-top: 1rem;
+          width: 100%;
         }
       }
     }
@@ -310,7 +355,7 @@ $red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 
     bottom: 0;
     left: 0;
     height: auto;
-    background: #f6f6f6;
+    //background: white;
     box-sizing: border-box;
     z-index: 100;
     display: none;
@@ -318,54 +363,119 @@ $red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 
       cursor: default;
     }
     &-container {
-      width: calc(100% - 2rem);
-      max-width: calc(1024px - 10rem);
+      width: 100%;
+      max-width: 1024px;
       margin: 0 auto;
       position: relative;
-      padding: 2rem 0;
+      padding: 1.5rem 5rem;
       font-size: 0;
       display: table;
+      background: -webkit-linear-gradient(-10, white 50%, #f6f6f6 50%);
+      background: linear-gradient(-10deg, white 50%, #f6f6f6 50%);
+      @include breakpoint(medium) {
+        display: block;
+        background: -webkit-linear-gradient(-30, white 50%, #f6f6f6 50%);
+        background: linear-gradient(-30deg, white 50%, #f6f6f6 50%);
+        padding: 1.5rem;
+      }
+      @include breakpoint(small) {
+        padding: 1rem;
+        background: -webkit-linear-gradient(-40, white 50%, #f6f6f6 50%);
+        background: linear-gradient(-40deg, white 50%, #f6f6f6 50%);
+      }
       .pack-image {
         position: absolute;
-        bottom: 0;
+        top: -75px;
+        width: 100%;
+        height: auto;
         left: 0;
+        @include breakpoint(medium) {
+          margin-bottom: 1rem;
+          top: -205px;
+        }
+        @include breakpoint(small) {
+          top: -100px;
+        }
         &-container {
           width: 200px;
           height: auto;
           display: table-cell;
           position: relative;
           vertical-align: bottom;
+          @include breakpoint(medium) {
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            height: 75px;
+          }
+          @include breakpoint(small) {
+            width: 150px;
+            height: 50px;
+          }
         }
       }
     }
     &-content {
       display: table-cell;
       padding: 0 2rem;
+      @include breakpoint(medium) {
+        display: block;
+        padding: 0;
+      }
     }
     &-title {
       font-size: 1.5rem;
-      line-height: 1.5em;
-      margin: 0 0 1rem;
+      line-height: 1.1em;
+      margin: 0 0 .5rem;
+      @include breakpoint(medium) {
+        font-size: 2.66rem;
+        text-align: center;
+        padding: 0;
+      }
+      @include breakpoint(small) {
+        font-size: 1.75rem;
+      }
       .netflix-red {
         color: $red-netflix;
       }
     }
     &-description {
       font-size: 1rem;
-      line-height: 1.5em;
+      line-height: 1.4em;
       font-family: "Helvetica";
       margin: 0;
+      @include breakpoint(medium) {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      @include breakpoint(small) {
+        display: none;
+      }
     }
     &-price {
       text-align: right;
+      @include breakpoint(medium) {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
       &-text {
         font-size: 1rem;
+        @include breakpoint(medium) {
+          text-align: center;
+          font-size: 1.5rem;
+        }
       }
       &-amount {
         font-size: 2rem;
+        line-height: 1;
         font-weight: bold;
+        @include breakpoint(medium) {
+          font-size: 3rem;
+        }
         small {
           font-weight: normal;
+          font-size: .75em;
         }
       }
     }
@@ -374,14 +484,18 @@ $red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 
         display: table-cell;
         width: 190px;
         vertical-align: middle;
+        @include breakpoint(medium) {
+          display: block;
+          margin: 0 auto;
+        }
       }
       .btn_cta {
         color: white;
-        border: 1px solid #b1060e;
-        border-radius: 4px;
+        border: 2px solid #b1060e;
+        border-radius: 5px;
         background: #e50914;
         font-size: 1rem;
-        line-height: 1.5em;
+        line-height: 1.1em;
         font-weight: normal;
         text-transform: uppercase;
         width: 190px;
@@ -390,7 +504,7 @@ $red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 
         text-align: center;
         box-sizing: border-box;
         vertical-align: middle;
-        padding: .875rem 0;
+        padding: .75rem 0;
         text-decoration: none;
       }
     }

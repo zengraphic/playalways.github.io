@@ -184,32 +184,60 @@ body {
   .overlay-header-container {
     max-width: 1024px;
     width: 100%;
-    margin: 48px auto;
+    margin: 3rem auto;
     position: relative; }
+    @media (max-width: 768px) {
+      .overlay-header-container {
+        text-align: center; } }
     .overlay-header-container .logo-3 {
       opacity: 0; }
+      @media (max-width: 480px) {
+        .overlay-header-container .logo-3 {
+          max-width: 3rem; } }
       .overlay-header-container .logo-3-container {
         position: absolute;
         top: 0;
         left: 0;
-        padding: 0 14px; }
+        padding: 0 1rem; }
+        @media (max-width: 768px) {
+          .overlay-header-container .logo-3-container {
+            display: inline-block;
+            vertical-align: top;
+            position: static; } }
     .overlay-header-container .logo-netflix {
       margin: 0 auto;
       display: block;
       width: auto;
       opacity: 0;
-      max-width: 220px; }
+      position: relative;
+      max-width: 220px;
+      top: -1rem; }
+      @media (max-width: 768px) {
+        .overlay-header-container .logo-netflix {
+          display: inline-block;
+          vertical-align: top;
+          padding: 0 1rem;
+          top: -.5rem;
+          max-width: 180px; } }
     .overlay-header-container .action-switch {
       opacity: 0;
       position: absolute;
       right: 0;
       text-transform: uppercase;
-      top: 50%;
+      top: calc(50% - .5rem);
       color: rgba(255, 255, 255, 0.7);
       text-shadow: 0 0 10px #de0a15, 0 0 20px #de0a15, 0 0 30px #de0a15, 0 0 40px #de0a15, 0 0 70px #de0a15, 0 0 80px #de0a15, 0 0 100px #de0a15;
-      font-size: 16px; }
+      font-size: 16px;
+      padding: 0 1rem; }
       .overlay-header-container .action-switch:hover {
-        cursor: default; }
+        cursor: pointer; }
+      @media (max-width: 768px) {
+        .overlay-header-container .action-switch {
+          display: inline-block;
+          text-align: center;
+          position: static;
+          margin-top: 1rem;
+          width: 100%; } }
 
 .overlay-banner {
   position: fixed;
@@ -218,64 +246,132 @@ body {
   bottom: 0;
   left: 0;
   height: auto;
-  background: #f6f6f6;
   box-sizing: border-box;
   z-index: 100;
   display: none; }
   .overlay-banner:hover {
     cursor: default; }
   .overlay-banner-container {
-    width: calc(100% - 2rem);
-    max-width: calc(1024px - 10rem);
+    width: 100%;
+    max-width: 1024px;
     margin: 0 auto;
     position: relative;
-    padding: 2rem 0;
+    padding: 1.5rem 5rem;
     font-size: 0;
-    display: table; }
+    display: table;
+    background: -webkit-linear-gradient(-10, white 50%, #f6f6f6 50%);
+    background: linear-gradient(-10deg, white 50%, #f6f6f6 50%); }
+    @media (max-width: 768px) {
+      .overlay-banner-container {
+        display: block;
+        background: -webkit-linear-gradient(-30, white 50%, #f6f6f6 50%);
+        background: linear-gradient(-30deg, white 50%, #f6f6f6 50%);
+        padding: 1.5rem; } }
+    @media (max-width: 480px) {
+      .overlay-banner-container {
+        padding: 1rem;
+        background: -webkit-linear-gradient(-40, white 50%, #f6f6f6 50%);
+        background: linear-gradient(-40deg, white 50%, #f6f6f6 50%); } }
     .overlay-banner-container .pack-image {
       position: absolute;
-      bottom: 0;
+      top: -75px;
+      width: 100%;
+      height: auto;
       left: 0; }
+      @media (max-width: 768px) {
+        .overlay-banner-container .pack-image {
+          margin-bottom: 1rem;
+          top: -205px; } }
+      @media (max-width: 480px) {
+        .overlay-banner-container .pack-image {
+          top: -100px; } }
       .overlay-banner-container .pack-image-container {
         width: 200px;
         height: auto;
         display: table-cell;
         position: relative;
         vertical-align: bottom; }
+        @media (max-width: 768px) {
+          .overlay-banner-container .pack-image-container {
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            height: 75px; } }
+        @media (max-width: 480px) {
+          .overlay-banner-container .pack-image-container {
+            width: 150px;
+            height: 50px; } }
   .overlay-banner-content {
     display: table-cell;
     padding: 0 2rem; }
+    @media (max-width: 768px) {
+      .overlay-banner-content {
+        display: block;
+        padding: 0; } }
   .overlay-banner-title {
     font-size: 1.5rem;
-    line-height: 1.5em;
-    margin: 0 0 1rem; }
+    line-height: 1.1em;
+    margin: 0 0 .5rem; }
+    @media (max-width: 768px) {
+      .overlay-banner-title {
+        font-size: 2.66rem;
+        text-align: center;
+        padding: 0; } }
+    @media (max-width: 480px) {
+      .overlay-banner-title {
+        font-size: 1.75rem; } }
     .overlay-banner-title .netflix-red {
       color: #de0a15; }
   .overlay-banner-description {
     font-size: 1rem;
-    line-height: 1.5em;
+    line-height: 1.4em;
     font-family: "Helvetica";
     margin: 0; }
+    @media (max-width: 768px) {
+      .overlay-banner-description {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem; } }
+    @media (max-width: 480px) {
+      .overlay-banner-description {
+        display: none; } }
   .overlay-banner-price {
     text-align: right; }
+    @media (max-width: 768px) {
+      .overlay-banner-price {
+        text-align: center;
+        margin-bottom: 1rem; } }
     .overlay-banner-price-text {
       font-size: 1rem; }
+      @media (max-width: 768px) {
+        .overlay-banner-price-text {
+          text-align: center;
+          font-size: 1.5rem; } }
     .overlay-banner-price-amount {
       font-size: 2rem;
+      line-height: 1;
       font-weight: bold; }
+      @media (max-width: 768px) {
+        .overlay-banner-price-amount {
+          font-size: 3rem; } }
       .overlay-banner-price-amount small {
-        font-weight: normal; }
+        font-weight: normal;
+        font-size: .75em; }
   .overlay-banner-cta-container {
     display: table-cell;
     width: 190px;
     vertical-align: middle; }
+    @media (max-width: 768px) {
+      .overlay-banner-cta-container {
+        display: block;
+        margin: 0 auto; } }
   .overlay-banner-cta .btn_cta {
     color: white;
-    border: 1px solid #b1060e;
-    border-radius: 4px;
+    border: 2px solid #b1060e;
+    border-radius: 5px;
     background: #e50914;
     font-size: 1rem;
-    line-height: 1.5em;
+    line-height: 1.1em;
     font-weight: normal;
     text-transform: uppercase;
     width: 190px;
@@ -284,7 +380,7 @@ body {
     text-align: center;
     box-sizing: border-box;
     vertical-align: middle;
-    padding: .875rem 0;
+    padding: .75rem 0;
     text-decoration: none; }
 
 /*# sourceMappingURL=tre-netflix.css.map */
