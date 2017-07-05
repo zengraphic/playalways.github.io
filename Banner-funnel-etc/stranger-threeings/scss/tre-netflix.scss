@@ -206,6 +206,13 @@ body {
   position: relative;
 }
 
+
+$bezier-curve: cubic-bezier(.895, .030, .685, .220);
+$flicker-animation: text-flicker-in-glow 4s $bezier-curve both;
+
+$red-netflix : #de0a15;
+$red-glow: 0 0 10px $red-netflix, 0 0 20px $red-netflix, 0 0 30px $red-netflix, 0 0 40px $red-netflix, 0 0 70px $red-netflix, 0 0 80px $red-netflix, 0 0 100px $red-netflix;
+
 #particles-js- {
   &1,
   &2,
@@ -235,7 +242,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /*background-color: rgba(0, 10, 20, .95);*/
     background-image: url('../img/flashlight.png');
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -257,14 +263,9 @@ body {
     width: 100%;
     left: 0;
     z-index: 100;
-    //opacity: 0;
     .text-flicker-in-glow {
-      -webkit-animation: text-flicker-in-glow 4s cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
-      animation: text-flicker-in-glow 4s cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
-    }
-    .text-flicker-infinite {
-      -webkit-animation: text-flicker-in-glow 4s infinite cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
-      animation: text-flicker-in-glow 4s infinite cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
+      -webkit-animation: $flicker-animation;
+      animation: $flicker-animation;
     }
     &-container {
       max-width: 1024px;
@@ -294,7 +295,7 @@ body {
         text-transform: uppercase;
         top: 50%;
         color: rgba(255, 255, 255, 0.7);
-        text-shadow: 0 0 10px #de0a15, 0 0 20px #de0a15, 0 0 30px #de0a15, 0 0 40px #de0a15, 0 0 70px #de0a15, 0 0 80px #de0a15, 0 0 100px #de0a15;
+        text-shadow: $red-glow;
         font-size: 16px;
         &:hover {
           cursor: default;
@@ -310,41 +311,88 @@ body {
     left: 0;
     height: auto;
     background: #f6f6f6;
-    //margin: 30px;
     box-sizing: border-box;
     z-index: 100;
+    display: none;
     &:hover {
       cursor: default;
     }
     &-container {
-      //border: 1px solid #de232b;
-      //border-radius: 8px;
-      width: 100%;
-      max-width: 1024px;
+      width: calc(100% - 2rem);
+      max-width: calc(1024px - 10rem);
       margin: 0 auto;
       position: relative;
-      padding: 2rem 5rem;
-      font-size:0;
-      p {
-        padding: 10px;
-        margin: 0;
-        //background-color: rgba(222, 35, 43, .2);
-      }
+      padding: 2rem 0;
+      font-size: 0;
+      display: table;
       .pack-image {
         position: absolute;
-        bottom: 2rem;
+        bottom: 0;
         left: 0;
         &-container {
           width: 200px;
-              height: 150px;
-
-          display: inline-block;
+          height: auto;
+          display: table-cell;
           position: relative;
+          vertical-align: bottom;
         }
       }
     }
     &-content {
-      display: inline-block;
+      display: table-cell;
+      padding: 0 2rem;
+    }
+    &-title {
+      font-size: 1.5rem;
+      line-height: 1.5em;
+      margin: 0 0 1rem;
+      .netflix-red {
+        color: $red-netflix;
+      }
+    }
+    &-description {
+      font-size: 1rem;
+      line-height: 1.5em;
+      font-family: "Helvetica";
+      margin: 0;
+    }
+    &-price {
+      text-align: right;
+      &-text {
+        font-size: 1rem;
+      }
+      &-amount {
+        font-size: 2rem;
+        font-weight: bold;
+        small {
+          font-weight: normal;
+        }
+      }
+    }
+    &-cta {
+      &-container {
+        display: table-cell;
+        width: 190px;
+        vertical-align: middle;
+      }
+      .btn_cta {
+        color: white;
+        border: 1px solid #b1060e;
+        border-radius: 4px;
+        background: #e50914;
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: normal;
+        text-transform: uppercase;
+        width: 190px;
+        display: inline-block;
+        font-family: "Helvetica";
+        text-align: center;
+        box-sizing: border-box;
+        vertical-align: middle;
+        padding: .875rem 0;
+        text-decoration: none;
+      }
     }
   }
 }
