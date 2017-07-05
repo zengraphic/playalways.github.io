@@ -16,7 +16,7 @@
 
 <body>
     <img class="bg-mock" src="img/hp-tre.jpg" />
-    <div class="s3inger_things--container">
+    <div id="s3inger_things--container">
         <div class="particles-background"></div>
         <div id="particles-js-1"></div>
         <div id="particles-js-2"></div>
@@ -29,7 +29,7 @@
                 <img class="logo-netflix" src="img/logo.png" alt="" />
                 <a class="action-switch">Esci dal sottosopra</a>
             </div>
-            <div class="overlay-banner" style="display:none;">
+            <div class="overlay-banner">
                 <div class="overlay-banner-container">
                     <div class="pack-image-container">
                         <img class="pack-image" src="img/pack.png" alt="">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="overlay-banner-cta-container">
                         <div class="overlay-banner-cta">
-                        
+                        <a href="#" class="btn_cta">Scopri l&apos;offerta</a>
                     </div>
                     </div>
                 </div>
@@ -53,75 +53,8 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script>
-    jQuery(document)
-        .ready(function($) {
-            particlesJS
-                .load('particles-js-1', 'js/particlesjs-config-1.json');
-
-            particlesJS
-                .load('particles-js-2', 'js/particlesjs-config-2.json');
-
-            particlesJS
-                .load('particles-js-3', 'js/particlesjs-config-3.json');
-
-            $("body")
-                .mousemove(function(e) {
-                    $(".particles-background")
-                        .css('background-position', (e.pageX - 1920) + 'px ' + (e.pageY - 1800) + 'px');
-                });
-
-
-
-            setTimeout(function() {
-
-
-                $('.logo-3, .logo-netflix')
-                    .addClass('text-flicker-in-glow');
-
-                $('.action-switch')
-                    .addClass('text-flicker-infinite');
-
-                setTimeout(function() {
-
-                    $('.overlay-banner')
-                        .fadeIn(1000);
-
-
-                }, 3000);
-
-            }, 4000);
-
-
-            $('body')
-                .on({
-                    'click': function(event) {
-                        event
-                            .preventDefault();
-
-                        var particlesPromise =
-                            $('#particles-js-1,#particles-js-2,#particles-js-3')
-                            .fadeOut(1000);
-                        var overlayHeaderPromise =
-                            $('.overlay-header')
-                            .fadeOut(1000);
-
-
-                        $.when(particlesPromise, overlayHeaderPromise)
-                            .then(function() {
-                                $('.particles-background')
-                                    .fadeOut(1000)
-                                    .css({
-                                        'cursor': 'default'
-                                    });
-                            });
-                    }
-                }, '.action-switch');
-
-
-        });
-    </script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/overlay_custom_scripts.js"></script>
 </body>
 
 </html>
