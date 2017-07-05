@@ -201,7 +201,8 @@ body {
       margin: 0 auto;
       display: block;
       width: auto;
-      opacity: 0; }
+      opacity: 0;
+      max-width: 220px; }
     .overlay-header-container .action-switch {
       opacity: 0;
       position: absolute;
@@ -221,14 +222,31 @@ body {
   bottom: 0;
   left: 0;
   height: auto;
-  min-height: 110px;
-  background: #b5b5b5;
+  background: #f6f6f6;
   box-sizing: border-box;
   z-index: 100; }
   .overlay-banner:hover {
     cursor: default; }
-  .overlay-banner-container p {
-    padding: 10px;
-    margin: 0; }
+  .overlay-banner-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 5rem;
+    font-size: 0; }
+    .overlay-banner-container p {
+      padding: 10px;
+      margin: 0; }
+    .overlay-banner-container .pack-image {
+      position: absolute;
+      bottom: 2rem;
+      left: 0; }
+      .overlay-banner-container .pack-image-container {
+        width: 200px;
+        height: 150px;
+        display: inline-block;
+        position: relative; }
+  .overlay-banner-content {
+    display: inline-block; }
 
 /*# sourceMappingURL=tre-netflix.css.map */

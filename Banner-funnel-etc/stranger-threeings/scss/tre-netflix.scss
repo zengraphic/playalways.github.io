@@ -285,6 +285,7 @@ body {
         display: block;
         width: auto;
         opacity: 0;
+        max-width: 220px;
       }
       .action-switch {
         opacity: 0;
@@ -308,8 +309,7 @@ body {
     bottom: 0;
     left: 0;
     height: auto;
-    min-height: 110px;
-    background: #b5b5b5;
+    background: #f6f6f6;
     //margin: 30px;
     box-sizing: border-box;
     z-index: 100;
@@ -319,12 +319,32 @@ body {
     &-container {
       //border: 1px solid #de232b;
       //border-radius: 8px;
-      //width: calc(100% - 60px);
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+      position: relative;
+      padding: 2rem 5rem;
+      font-size:0;
       p {
         padding: 10px;
         margin: 0;
         //background-color: rgba(222, 35, 43, .2);
       }
+      .pack-image {
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        &-container {
+          width: 200px;
+              height: 150px;
+
+          display: inline-block;
+          position: relative;
+        }
+      }
+    }
+    &-content {
+      display: inline-block;
     }
   }
 }
