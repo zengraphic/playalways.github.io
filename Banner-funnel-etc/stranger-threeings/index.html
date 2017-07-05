@@ -8,110 +8,73 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link media="screen" type="text/css" rel="stylesheet" title="style" href="https://www.tre.it/res/css/reset_rwd.css">
+    <link media="screen" type="text/css" rel="stylesheet" title="style" href="https://www.tre.it/res/css/layout_rwd.css?v=0.9018317056517511">
+    <link media="screen" type="text/css" rel="stylesheet" title="style" href="https://www.tre.it/res/css/css_S.css?v=0.9018317056517511">
+    <link media="screen" type="text/css" rel="stylesheet" title="style" href="https://www.tre.it/res/css/css_T.css?v=0.9018317056517511">
+    <link media="screen" type="text/css" rel="stylesheet" title="style" href="https://www.tre.it/res/css/css_W.css?v=0.9018317056517511">
+    <link media="screen" type="text/css" rel="stylesheet" title="style" href="https://www.tre.it/res/css/css_retina.css?v=0.9018317056517511">
+    <link rel="stylesheet" href="https://www.tre.it/res/css/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.tre.it/res/css/owl.theme.default.css">
+    <link rel="stylesheet" href="https://www.tre.it/res/css/tooltipster.css">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TF9G68L"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://www.tre.it/res/js/jquery.mobile.custom.min.js"></script>
+    <script type="text/javascript" src="https://www.tre.it/res/js/modernizr-latest.js"></script>
+    <script src="https://www.tre.it/res/js/placeholders.jquery.min.js"></script>
+    <script src="https://www.tre.it/res/js/owl.carousel.min.js"></script>
+    <script src="https://www.tre.it/res/js/treresponsive.js"></script>
+    <script type="text/javascript" src="https://www.tre.it/res/js/jquery.tooltipster.min.js"></script>
+    <script src="https://www.tre.it/res/js/jquery.autocomplete.gsa_responsive.js"></script>
+    <script src="https://www.tre.it/res/js/miniscroll.min.js"></script>
+    <script src="https://www.tre.it/res/js/jquery.rwdImageMaps.js"></script>
+    <script src="https://www.tre.it/res/js/js_ricaricaOnlineJsonCall.js"></script>
     <link rel="stylesheet" href="css/tre-netflix.css">
 </head>
 
 <body>
     <img class="bg-mock" src="img/hp-tre.jpg" />
-    <div class="particles-background"></div>
-    <div id="particles-js-1"></div>
-    <div id="particles-js-2"></div>
-    <div id="particles-js-3"></div>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script>
-    jQuery(document)
-        .ready(function($) {
-            particlesJS
-                .load('particles-js-1', 'js/particlesjs-config-1.json');
-
-            particlesJS
-                .load('particles-js-2', 'js/particlesjs-config-2.json');
-
-            particlesJS
-                .load('particles-js-3', 'js/particlesjs-config-3.json');
-
-            $("body")
-                .mousemove(function(e) {
-                    $(".particles-background")
-                        .css('background-position', (e.pageX - 1920) + 'px ' + (e.pageY - 1800) + 'px');
-                });
-
-            var overlayHeaderHtml =
-                '<div class="overlay-header">' +
-                '<div class="overlay-header-container">' +
-                '<div class="logo-3-container" style="">' +
-                '<img class="logo-3 " src="img/logo-3-stranger.png" alt="" />' +
-                '</div>' +
-                '<img class="logo-netflix" src="img/Logo-netflix.png" alt="" />' +
-                '<a class="action-switch" >Esci dal sottosopra</a>' +
-                '</div>' +
-
-                '</div>';
-
-            var overlayBannerHtml =
-                '<div class="overlay-banner" style="display:none;">' +
-                '<div class="overlay-banner-container">' +
-                '<p>Lorem Banner Ipsum</p>' +
-                '</div>' +
-                '</div>';
-
-
-            setTimeout(function() {
-
-                $('body')
-                    .append(overlayHeaderHtml);
-
-                $('.logo-3, .logo-netflix')
-                    .addClass('text-flicker-in-glow');
-
-                $('.action-switch')
-                    .addClass('text-flicker-infinite');
-
-                setTimeout(function() {
-
-                        $('.overlay-header')
-                        .append(overlayBannerHtml);
-                        $('.overlay-banner')
-                        .fadeIn(1000);
-                    
-
-                }, 3000);
-
-            }, 4000);
-
-
-            $('body')
-                .on({
-                    'click': function(event) {
-                        event
-                            .preventDefault();
-
-                        var particlesPromise =
-                            $('#particles-js-1,#particles-js-2,#particles-js-3')
-                            .fadeOut(1000);
-                        var overlayHeaderPromise =
-                            $('.overlay-header')
-                            .fadeOut(1000);
-
-
-                        $.when(particlesPromise, overlayHeaderPromise)
-                            .then(function() {
-                                $('.particles-background')
-                                    .fadeOut(1000)
-                                    .css({
-                                        'cursor': 'default'
-                                    });
-                            });
-                    }
-                }, '.action-switch');
-
-
-        });
-    </script>
+    <div class="js_Header"></div>
+    <div id="s3inger_things--container">
+        <div class="particles-background"></div>
+        <div id="particles-js-1"></div>
+        <div id="particles-js-2"></div>
+        <div id="particles-js-3"></div>
+        <div class="overlay-header">
+            <div class="overlay-header-container">
+                <div class="logo-3-container" style="">
+                    <img class="logo-3 " src="img/logo-3-stranger.png" alt="" />
+                </div>
+                <img class="logo-netflix" src="img/logo.png" alt="" />
+                <a class="action-switch">Esci dal sottosopra</a>
+            </div>
+            <div class="overlay-banner">
+                <div class="overlay-banner-container">
+                    <div class="pack-image-container">
+                        <img class="pack-image" src="img/pack.png" alt="">
+                    </div>
+                    <div class="overlay-banner-content">
+                        <h1 class="overlay-banner-title">Goditi 3 mesi di <span class="netflix-red">Netflix</span> con Casa3!</h1>
+                        <p class="overlay-banner-description">
+                            Iniziare a guardare le tue serie TV preferite quando vuoi e dove vuoi è facile.
+                        </p>
+                        <div class="overlay-banner-price">
+                            <span class="overlay-banner-price-text">da <span class="overlay-banner-price-amount">10<small>&euro;</small></span> al mese</span>
+                        </div>
+                    </div>
+                    <div class="overlay-banner-cta-container">
+                        <div class="overlay-banner-cta">
+                            <a href="#" class="btn_cta">Scopri l&apos;offerta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/particles.min.js"></script>
+    <script src="js/overlay_custom_scripts.js"></script>
 </body>
 
 </html>
