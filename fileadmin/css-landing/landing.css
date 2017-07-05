@@ -443,13 +443,13 @@ $color_bt_disabled: $color_grey_medium_light;*/
     top: 0; }
     @media (max-width: 768px) {
       .landing .landing__hero__imageContainer.big_mobile {
-        width: 80%;
+        width: 80% !important;
         top: 0;
         right: 0px;
         max-width: 400px; } }
     @media (max-width: 480px) {
       .landing .landing__hero__imageContainer.big_mobile {
-        width: 70%;
+        width: 70% !important;
         top: 15%; } }
     .landing .landing__hero__imageContainer.no_absolute {
       position: static; }
@@ -2746,6 +2746,9 @@ h6 {
       width: 100%;
       text-align: center; } }
 
+.width_calc-30 {
+  width: calc(100% - 30px) !important; }
+
 .landing {
   position: relative; }
   .landing .tre_logo {
@@ -2960,6 +2963,9 @@ h6 {
       position: relative; } }
   .landing .max_width_100 {
     max-width: 100%; }
+  .landing .max_width_1024 {
+    width: 100%;
+    max-width: 1024px; }
   .landing .box_desktop_width_100 {
     width: 100% !important; }
     @media (max-width: 768px) {
@@ -3231,6 +3237,11 @@ h6 {
       @media (max-width: 768px) {
         .landing a.button--standard.no_fixed {
           position: static; } }
+      .landing a.button--standard.button_small_font {
+        font-size: 14px; }
+        @media (max-width: 768px) {
+          .landing a.button--standard.button_small_font {
+            font-size: 14px; } }
       @media (max-width: 768px) {
         .landing a.button--standard.small_mobile_font {
           font-size: 1rem; } }
