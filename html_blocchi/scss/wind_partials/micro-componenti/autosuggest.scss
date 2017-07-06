@@ -1,0 +1,93 @@
+.autosuggest {
+    position:absolute;
+    padding:0.5rem 0 0 0;
+    font-family: "Trade Gothic";
+    font-size: 13px;
+    z-index:2000;
+    .as_header,
+    .as_footer{
+        position: relative;
+        height: 0px;
+        padding:0 0.5rem;
+        overflow:hidden;
+        display:none;
+        .as_corner {
+            position:absolute;
+            top:0;
+            left:0;
+            height:6px;
+            width:6px;
+        }
+        .as_bar{
+            height: 10px;
+            overflow: hidden;
+        }
+    }
+    ul{
+         list-style: none;
+        margin: 0px;
+        padding: 0;
+        background-color: rgba(255,255,255,0.9); /* Sfondo */
+        border: solid 1px;
+        border-color: #D3D3D2; /* Bordo #f19500*/
+        white-space: nowrap;
+        position: relative;
+        border-radius:0 0 4px 4px;
+        em{
+            font-style: normal;
+            color: #183989;
+            float: none !important;
+        }
+        li{
+            color: #656D78;
+            padding: 0 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            height: 32px;
+            clear: left;
+            a{
+                color: #656D78;
+                display: block;
+                text-decoration: none;
+                background-color: transparent;
+                padding: 0.5rem;
+                height: 100% ;
+                vertical-align: middle;
+                span{
+                    display: block;
+                    font-weight: bold;
+                    small{
+                        font-weight: normal;
+                        color: #656D78;
+                    }
+                }
+            }
+            &.as_highlight{
+                 color: #fff;
+                 background-color: #F29400;
+                a{
+                    color: #fff;
+                    background-position: bottom right;
+                    background-repeat: no-repeat;
+                    &:hover{
+                        color: #fff;
+                    }
+                    span{
+                        color: #fff;
+                        background-position: bottom left;
+                        background-repeat: no-repeat;
+                    }
+                }
+                em{
+                    font-style: normal;
+                    color: #183989;
+                }
+            }
+            &.as_warning{
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
