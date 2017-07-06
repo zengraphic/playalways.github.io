@@ -1,7 +1,7 @@
 .autosuggest {
     position:absolute;
     padding:0.5rem 0 0 0;
-    font-family: "Trade Gothic";
+    font-family: $weight-normal;
     font-size: 13px;
     z-index:2000;
     .as_header,
@@ -24,22 +24,22 @@
         }
     }
     ul{
-         list-style: none;
+        list-style: none;
         margin: 0px;
         padding: 0;
         background-color: rgba(255,255,255,0.9); /* Sfondo */
         border: solid 1px;
-        border-color: #D3D3D2; /* Bordo #f19500*/
+        border-color: $color_grey_stroke; /* Bordo #f19500*/
         white-space: nowrap;
         position: relative;
         border-radius:0 0 4px 4px;
         em{
             font-style: normal;
-            color: #183989;
+            color: $color_infostrada;
             float: none !important;
         }
         li{
-            color: #656D78;
+            color: $color_grey_dark_light;
             padding: 0 10px;
             margin: 0;
             width: auto;
@@ -47,7 +47,7 @@
             height: 32px;
             clear: left;
             a{
-                color: #656D78;
+                color: $color_grey_dark_light;
                 display: block;
                 text-decoration: none;
                 background-color: transparent;
@@ -59,29 +59,29 @@
                     font-weight: bold;
                     small{
                         font-weight: normal;
-                        color: #656D78;
+                        color: $color_grey_dark_light;
                     }
                 }
             }
             &.as_highlight{
-                 color: #fff;
-                 background-color: #F29400;
+                 color: $color_white;
+                 background-color: $color_wind;
                 a{
-                    color: #fff;
+                    color: $color_white;
                     background-position: bottom right;
                     background-repeat: no-repeat;
                     &:hover{
-                        color: #fff;
+                        color: $color_white;
                     }
                     span{
-                        color: #fff;
+                        color: $color_white;
                         background-position: bottom left;
                         background-repeat: no-repeat;
                     }
                 }
                 em{
                     font-style: normal;
-                    color: #183989;
+                    color: $color_infostrada;
                 }
             }
             &.as_warning{
