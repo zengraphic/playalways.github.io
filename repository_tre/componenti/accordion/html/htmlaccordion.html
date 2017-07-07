@@ -1,0 +1,42 @@
+    <!-- =================================================================== -->
+    <!-- ============================ ACCORDION ============================ -->
+    <!-- =================================================================== -->    
+    <!-- CONTENITORE PRINCIPALE -->
+    <div class="tre_accordion_container tre_generic_accordion">
+        <!-- IL BOTTONE PUO' ESSERE QUALSIASI COSA BASTA CHE SIA CHIAMATO tre_accordion_button -->
+        <!-- il data-chiudiaccordion è il testo che appare una volta aperto -->
+        <div class="tre_accordion_button" data-apriaccordion="apri accordion" data-chiudiaccordion="chiudi tutto">
+            apri accordion
+        </div>
+        <!-- CONTENUTO DA NASCONDERE, PUO' ESSERE QUALSIASI COSA BASTA CHE SIA CONTENUTO IN tre_accordion_main -->
+        <div class="tre_accordion_main">
+            Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere
+        </div>
+    </div>
+
+    <script>
+    var baseText;
+    var closeText;
+    $('body').on("click", ".tre_accordion_button", function(e) {
+        // se ha l'accordion aperto
+        baseText = $(this).data('apriaccordion')
+        closeText = $(this).data('chiudiaccordion');
+        console.log(baseText + " " + closeText);
+        $(this).toggleClass('tre_accordion_open');        
+        if ($(this).hasClass('tre_accordion_open') && (baseText != undefined) && (closeText != undefined)) {
+            $(this).text(closeText);
+        } else {
+            $(this).text(baseText);
+        }
+        $(this)
+            .parents('.tre_accordion_container')
+            .find('.tre_accordion_main')
+            .slideToggle("fast", function() {
+                //codice da fare dopo lo slide
+            });
+    });
+    </script>
+
+    <!-- =================================================================== -->
+    <!-- =================================================================== -->
+    <!-- =================================================================== -->   
