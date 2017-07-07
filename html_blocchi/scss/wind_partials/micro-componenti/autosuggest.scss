@@ -1,0 +1,118 @@
+.autosuggest {
+    position:absolute;
+    padding:0.5rem 0 0 0;
+    font-family: $weight-normal;
+    font-size: 13px;
+    z-index:2000;
+    .as_header,
+    .as_footer{
+        position: relative;
+        height: 0px;
+        padding:0 0.5rem;
+        overflow:hidden;
+        display:none;
+        .as_corner {
+            position:absolute;
+            top:0;
+            left:0;
+            height:6px;
+            width:6px;
+        }
+        .as_bar{
+            height: 10px;
+            overflow: hidden;
+        }
+    }
+    ul{
+        list-style: none;
+        margin: 0px;
+        padding: 0;
+        background-color: rgba(255,255,255,0.9); /* Sfondo */
+        border: solid 1px;
+        border-color: $color_grey_stroke; /* Bordo #f19500*/
+        white-space: nowrap;
+        position: relative;
+        border-radius:0 0 4px 4px;
+        em{
+            font-style: normal;
+            color: $color_infostrada;
+            float: none !important;
+        }
+        li{
+            color: $color_grey_dark_light;
+            padding: 0 10px;
+            margin: 0;
+            width: auto;
+            text-align: left;
+            height: 32px;
+            clear: left;
+            a{
+                color: $color_grey_dark_light;
+                display: block;
+                text-decoration: none;
+                background-color: transparent;
+                padding: 0.5rem;
+                height: 100% ;
+                vertical-align: middle;
+                span{
+                    display: block;
+                    font-weight: bold;
+                    small{
+                        font-weight: normal;
+                        color: $color_grey_dark_light;
+                    }
+                }
+            }
+            &.as_highlight{
+                color: $color_white;
+                background-color: $color_wind;
+                    a{
+                        color: $color_white;
+                        background-position: bottom right;
+                        background-repeat: no-repeat;
+                        &:hover{
+                            color: $color_white;
+                        }
+                        span{
+                            color: $color_white;
+                            background-position: bottom left;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    em{
+                        font-style: normal;
+                        color: $color_infostrada;
+                    }
+            }
+            &.as_warning{
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
+#oTable {
+    background-color: $color_white !important;
+    top: 50% !important;
+    left: calc(50% - 150px) !important;
+    width: 100% !important;
+    max-width: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.55);
+    #first_row,
+    #close_row,
+    #mid_left,
+    #mid_bottom,
+    #mid_right,
+    #virgola {
+        display: none;
+    }
+    #center_element {
+        background-image: none!important;
+        background-color: $color_white !important;
+        float: none!important;
+    }
+}

@@ -3245,82 +3245,6 @@ hr.example_divider {
   .mgm_block__title--main {
     font-size: 2.75em; } }
 
-.start_block {
-  background-color: #FFF;
-  max-width: 1024px;
-  margin: 0 auto; }
-  .start_block__content {
-    /*max-width: 1024px;
-        margin: 0 auto;*/ }
-  .start_block__img {
-    margin: 0 auto;
-    text-align: center; }
-    @media (max-width: 992px) {
-      .start_block__img {
-        margin-top: 40px; } }
-    .start_block__img img {
-      width: 100%;
-      max-width: 393px; }
-  .start_block__title {
-    text-align: left;
-    padding-top: 30px;
-    margin-bottom: 30px;
-    color: #F48135;
-    font-size: 3.2857em;
-    font-family: "Trade Gothic Bold"; }
-    @media (max-width: 767px) {
-      .start_block__title {
-        font-size: 2.5em; } }
-  .start_block__subTitle {
-    text-align: left;
-    margin-bottom: 30px;
-    color: #212121;
-    font-family: "Trade Gothic Bold";
-    font-size: 1.714em; }
-    @media (max-width: 767px) {
-      .start_block__subTitle {
-        font-size: 1.4em; } }
-  .start_block__label {
-    text-align: left;
-    font-size: 1.714em;
-    margin-bottom: 30px;
-    color: #212121;
-    font-family: "Trade Gothic"; }
-    @media (max-width: 767px) {
-      .start_block__label {
-        font-size: 1.3em; } }
-  .start_block__search {
-    float: left;
-    width: calc(85% - 15px); }
-    .start_block__search .base__input {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      height: 50px; }
-  .start_block__searchContainer {
-    margin-left: 0;
-    margin-right: 0; }
-  .start_block__searchButton {
-    width: 15%;
-    float: left;
-    height: 50px;
-    margin-left: 15px; }
-    .start_block__searchButton .button--searchButton {
-      max-width: 120px;
-      height: 100%;
-      padding: 0.5em 0; }
-
-@media all and (max-width: 767px) {
-  a.button, a.button--slim, a.button--ghost, a.button--ghost--transparent, a.button--search {
-    margin-left: 0px;
-    margin-right: 0px; }
-  .start_block__searchButton .button--searchButton {
-    background-position: calc(4vw + 20%) -191px;
-    margin: 0; }
-  .start_block__divider {
-    margin-top: 30px; }
-    .start_block__divider--text:before {
-      width: calc(100% - 30px); } }
-
 .contactApp_block {
   margin: 0 auto; }
   .contactApp_block__container {
@@ -11786,13 +11710,13 @@ sw.showcase_bundle_device {
   resize: none;
   padding-top: 10px;
   padding-left: 10px; }
-  ::-webkit-input-placeholder {
+  .storeDetail_block__contactUs__area::-webkit-input-placeholder {
     color: #AAB2BD; }
-  :-moz-placeholder {
+  .storeDetail_block__contactUs__area:-moz-placeholder {
     color: #AAB2BD; }
-  ::-moz-placeholder {
+  .storeDetail_block__contactUs__area::-moz-placeholder {
     color: #AAB2BD; }
-  :-ms-input-placeholder {
+  .storeDetail_block__contactUs__area:-ms-input-placeholder {
     color: #AAB2BD; }
 
 .storeDetail_block__contactUs__input {
@@ -12860,6 +12784,111 @@ iframe html .rc-anchor-dark {
         max-width: none; } }
     .cta_block__buttons .button:empty, .cta_block__buttons a.button--slim:empty, .cta_block__buttons a.button--ghost:empty, .cta_block__buttons a.button--ghost--transparent:empty, .cta_block__buttons a.button--search:empty {
       display: none; }
+
+.autosuggest {
+  position: absolute;
+  padding: 0.5rem 0 0 0;
+  font-family: "Trade Gothic";
+  font-size: 13px;
+  z-index: 2000; }
+  .autosuggest .as_header,
+  .autosuggest .as_footer {
+    position: relative;
+    height: 0px;
+    padding: 0 0.5rem;
+    overflow: hidden;
+    display: none; }
+    .autosuggest .as_header .as_corner,
+    .autosuggest .as_footer .as_corner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 6px; }
+    .autosuggest .as_header .as_bar,
+    .autosuggest .as_footer .as_bar {
+      height: 10px;
+      overflow: hidden; }
+  .autosuggest ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Sfondo */
+    border: solid 1px;
+    border-color: #D3D3D2;
+    /* Bordo #f19500*/
+    white-space: nowrap;
+    position: relative;
+    border-radius: 0 0 4px 4px; }
+    .autosuggest ul em {
+      font-style: normal;
+      color: #183989;
+      float: none !important; }
+    .autosuggest ul li {
+      color: #656D78;
+      padding: 0 10px;
+      margin: 0;
+      width: auto;
+      text-align: left;
+      height: 32px;
+      clear: left; }
+      .autosuggest ul li a {
+        color: #656D78;
+        display: block;
+        text-decoration: none;
+        background-color: transparent;
+        padding: 0.5rem;
+        height: 100%;
+        vertical-align: middle; }
+        .autosuggest ul li a span {
+          display: block;
+          font-weight: bold; }
+          .autosuggest ul li a span small {
+            font-weight: normal;
+            color: #656D78; }
+      .autosuggest ul li.as_highlight {
+        color: #FFF;
+        background-color: #F48135; }
+        .autosuggest ul li.as_highlight a {
+          color: #FFF;
+          background-position: bottom right;
+          background-repeat: no-repeat; }
+          .autosuggest ul li.as_highlight a:hover {
+            color: #FFF; }
+          .autosuggest ul li.as_highlight a span {
+            color: #FFF;
+            background-position: bottom left;
+            background-repeat: no-repeat; }
+        .autosuggest ul li.as_highlight em {
+          font-style: normal;
+          color: #183989; }
+      .autosuggest ul li.as_warning {
+        font-weight: bold;
+        text-align: center; }
+
+#oTable {
+  background-color: #FFF !important;
+  top: 50% !important;
+  left: calc(50% - 150px) !important;
+  width: 100% !important;
+  max-width: 300px;
+  padding: 15px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.55); }
+  #oTable #first_row,
+  #oTable #close_row,
+  #oTable #mid_left,
+  #oTable #mid_bottom,
+  #oTable #mid_right,
+  #oTable #virgola {
+    display: none; }
+  #oTable #center_element {
+    background-image: none !important;
+    background-color: #FFF !important;
+    float: none !important; }
 
 .landing_header {
   width: 100%;
