@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="msapplication-tap-highlight" content="no" />
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/comp_accordion.css">
+    <!-- =================================================================== -->
+    <!-- ============================ ACCORDION ============================ -->
+    <!-- =================================================================== -->    
+    <!-- CONTENITORE PRINCIPALE -->
+    <div class="tre_accordion_container tre_generic_accordion">
+        <!-- IL BOTTONE PUO' ESSERE QUALSIASI COSA BASTA CHE SIA CHIAMATO tre_accordion_button -->
+        <!-- il data-chiudiaccordion è il testo che appare una volta aperto -->
+        <div class="tre_accordion_button" data-apriaccordion="apri accordion" data-chiudiaccordion="chiudi tutto">
+            apri accordion
+        </div>
+        <!-- CONTENUTO DA NASCONDERE, PUO' ESSERE QUALSIASI COSA BASTA CHE SIA CONTENUTO IN tre_accordion_main -->
+        <div class="tre_accordion_main">
+            Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere Roba da nascondere Roba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondereRoba da nascondere
+        </div>
+    </div>
+
+    <script>
+    var baseText;
+    var closeText;
+    $('body').on("click", ".tre_accordion_button", function(e) {
+        // se ha l'accordion aperto
+        baseText = $(this).data('apriaccordion')
+        closeText = $(this).data('chiudiaccordion');
+        console.log(baseText + " " + closeText);
+        $(this).toggleClass('tre_accordion_open');        
+        if ($(this).hasClass('tre_accordion_open') && (baseText != undefined) && (closeText != undefined)) {
+            $(this).text(closeText);
+        } else {
+            $(this).text(baseText);
+        }
+        $(this)
+            .parents('.tre_accordion_container')
+            .find('.tre_accordion_main')
+            .slideToggle("fast", function() {
+                //codice da fare dopo lo slide
+            });
+    });
+    </script>
+
+    <!-- =================================================================== -->
+    <!-- =================================================================== -->
+    <!-- =================================================================== -->        
+</body>

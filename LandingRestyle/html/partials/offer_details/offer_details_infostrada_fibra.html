@@ -1,0 +1,46 @@
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<!-- ====================================== -->
+<div class="block_counter">
+    <div class="landing_infostrada__content--blockCounter">
+        <div class="listItem">Affrettati!!
+            <br class="onlyMobile"> L'offerta sarà disponibile ancora per</div>
+        <div class="counter">
+            <div class="counter_block_items--data">
+                <!-- data-event="2017/10/13" -->
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- =================================== -->
+<!-- ============ OFFERTA ============== -->
+<!-- =================================== -->
+<div class="landing--offer--infostrada text_color_infostrada text_uppercase font_size_30 text_centered border_infostrada padding_top_40 padding_bottom_40 padding_left_5 padding_right_5 margin_bottom_30 padding_top_m_30 padding_bottom_m_30">
+    <div class="box_width_30 display_inline vertical_middle border_right_solid_infostrada">
+        <div class="font_bold">adsl vera</div>
+        <div class="font_condensed">fino a 20 mega</div>
+    </div>
+    <div class="box_width_30 display_inline vertical_middle border_right_solid_infostrada margin_top_m_30">
+        <div class="font_bold">telefonate <span class="font_condensed">a 0 cent</span></div>
+        <div class="font_condensed">al minuto verso tutti</div>
+    </div>
+    <div class="box_width_30 display_inline vertical_middle margin_top_m_30">
+        <div class="font_bold">attivazione</div>
+        <div class="font_bold">e modem <span class="font_condensed">gratis</span></div>
+    </div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+    /**** COUNTER ****/
+    $('.counter_block_items--data').countdown('2017/06/07', function(event) {
+        var $this = $(this).html(event.strftime(''
+
+            + '<div class="items"><span class="time gg">%d</span>giorni</div>' + '<div class="items"><span class="time hh">%H</span>ore</div>' + '<br class="only_mobile"><div class="items"><span class="time mm">%M</span>minuti</div>' + '<div class="items"><span class="time sec">%S</span>secondi</div>'
+        ));
+    });
+});
+</script>
