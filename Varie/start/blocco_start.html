@@ -18,6 +18,23 @@
     <script type="text/javascript" src="../../html_blocchi/js/base.js"></script>
     <script type="text/javascript" src="../../html_blocchi/js/script.js"></script>
     <!--- /JS -->
+    <script type="text/javascript">
+    function hidePowerdByGoogle() {
+
+        $(".start_block__search .base__input").attr("style", "background:none;");
+        $(".start_block__search .base__input").val("");
+
+    }
+
+    function showPowerdByGoogle() {
+
+        if ($(".start_block__search .base__input").val().trim() == "" || $(".start_block__search .base__input").val().trim() == "Descrivi qui il tuo problema") {
+            $(".start_block__search .base__input").removeAttr("style");
+            $(".start_block__search .base__input").val("Descrivi qui il tuo problema");
+        }
+
+    }
+    </script>
 </head>
 
 <body class="home_page">
@@ -34,7 +51,7 @@
                                 <!-- titolo grande -->
                             </div>
                             <div class="start_block__subTitle">
-                                Il sito che cercavi potrebbe essere non disponibile o non più esistente. 
+                                Il sito che cercavi potrebbe essere non disponibile o non più esistente.
                                 <!-- sottotitolo -->
                             </div>
                             <div class="start_block__label">
@@ -43,7 +60,7 @@
                             </div>
                             <div class="start_block__searchContainer">
                                 <div class="start_block__search">
-                                    <input class="base__input" type="text" name="search_input" placeholder="Descrivi qui il tuo problema">
+                                    <input class="base__input" type="text" name="search_input" onclick="hidePowerdByGoogle()" onmouseout="showPowerdByGoogle()" onchange="showPowerdByGoogle()" placeholder="Descrivi qui il tuo problema">
                                     <!-- input cerca -->
                                 </div>
                                 <div class="start_block__searchButton">
