@@ -3,7 +3,7 @@
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-$breakpoints: ('small': 'only screen and (-webkit-max-device-pixel-ratio: 1) and (max-width: 640px)', 'retina-small': 'only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width:320px),only screen and ( min-resolution: 192dpi) and (max-width:320px)','retina': 'only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width:400px),only screen and ( min-resolution: 192dpi) and (max-width:400px)');
+$breakpoints: ('small': 'only screen and (-webkit-max-device-pixel-ratio: 1) and (max-width: 640px)', 'retina-small': 'only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width:360px),only screen and ( min-resolution: 192dpi) and (max-width:360px)', 'retina': 'only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width:415px),only screen and ( min-resolution: 192dpi) and (max-width:415px)', 'tab': 'only screen and (max-width: 768px)', 'desk': 'only screen and (max-width: 1024px)');
 // Creating the mixin
 @mixin breakpoint($name) {
   @if map-has-key($breakpoints, $name) {
@@ -240,25 +240,25 @@ $red-glow: 0 0 10px $red-netflix,
     left: 0;
   }
   &1 {
-    z-index: 22;
+    z-index: 100009;
   }
   &2 {
-    z-index: 16;
+    z-index: 100006;
   }
   &3 {
-    z-index: 10;
+    z-index: 100003;
   }
 }
 
 .particles {
   &-background {
     position: absolute;
-    z-index: 0;
+    z-index: 100001;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/flashlight.png');
+    background-image: url('../../imgs/casa3netflix/flashlight.png');
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
@@ -278,7 +278,7 @@ $red-glow: 0 0 10px $red-netflix,
     top: 0;
     width: 100%;
     left: 0;
-    z-index: 100;
+    z-index: 100100;
     .text-flicker-in-glow {
       -webkit-animation: $flicker-animation;
       animation: $flicker-animation;
@@ -286,22 +286,33 @@ $red-glow: 0 0 10px $red-netflix,
     &-container {
       max-width: 1024px;
       width: 100%;
-      margin: 1.5rem auto;
+      margin: 3.1rem auto;
       position: relative;
+      @include breakpoint(desk) {
+        margin: 2.9rem auto;
+        max-width: 752px;
+      }
+      @include breakpoint(tab) {
+        margin: 1.5rem auto;
+      }
       .logo-3 {
         opacity: 0;
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
+        width: 66px;
         height: auto;
+        @include breakpoint(desk) {
+          width: 51px;
+        }
+        @include breakpoint(tab) {
+          height: 100%;
+          width: auto;
+        }
         &-container {
           position: absolute;
           top: 0;
           left: 0;
           bottom: 0;
           right: 0;
-
-          padding: 0 1rem;
+          padding: 0 .9rem;
           @include breakpoint(retina) {
             max-width: 30%;
           }
@@ -313,9 +324,12 @@ $red-glow: 0 0 10px $red-netflix,
         width: auto;
         opacity: 0;
         position: relative;
-        max-width: 220px;
+        max-width: 195px;
+        @include breakpoint(desk) {
+          max-width: 165px;
+        }
         @include breakpoint(retina) {
-          max-width: 40%;
+          max-width: 35%;
         }
       }
       .action-switch {
@@ -323,19 +337,33 @@ $red-glow: 0 0 10px $red-netflix,
         position: absolute;
         right: 0;
         text-transform: uppercase;
-        top: 50%;
+        top: calc(50% - 0.25rem);
         color: rgba(255, 255, 255, 0.7);
+        font-family: "Helvetica";
         text-shadow: $red-glow;
-        font-size: 16px;
+        font-size: 11px;
+        line-height: 1.1em;
         padding: 0 1rem;
         span {
-            &.desktop {display:inline-block;}
-            &.mobile {display:none;margin-right: 1rem;}
+          &.desktop {
+            display: inline-block;
+            width: 120px;
+            text-align: center;
           }
-        @include breakpoint(retina) {
+          &.mobile {
+            font-size: 1.5rem;
+            display: none;
+            margin-right: 1rem;
+          }
+        }
+        @include breakpoint(tab) {
           span {
-            &.desktop {display:none;}
-            &.mobile {display:inline-block;}
+            &.desktop {
+              display: none;
+            }
+            &.mobile {
+              display: inline-block;
+            }
           }
         }
         &:hover {
@@ -347,15 +375,16 @@ $red-glow: 0 0 10px $red-netflix,
   }
   &-banner {
     position: fixed;
-    z-index: 10;
+    z-index: 10100;
     width: 100%;
     bottom: 0;
     left: 0;
     height: auto;
     //background: white;
     box-sizing: border-box;
-    z-index: 100;
+    z-index: 100000;
     display: none;
+    background: white;
     &:hover {
       cursor: default;
     }
@@ -367,18 +396,13 @@ $red-glow: 0 0 10px $red-netflix,
       padding: 1.5rem 5rem;
       font-size: 0;
       display: table;
-      background: -webkit-linear-gradient(-10, white 50%, #f6f6f6 50%);
-      background: linear-gradient(-10deg, white 50%, #f6f6f6 50%);
+      font-family: "Helvetica";
       @include breakpoint(retina) {
         display: block;
-        background: -webkit-linear-gradient(-30, white 50%, #f6f6f6 50%);
-        background: linear-gradient(-30deg, white 50%, #f6f6f6 50%);
-        padding: 2rem;
+        padding: 1.4rem;
       }
       @include breakpoint(small) {
         padding: 1rem;
-        background: -webkit-linear-gradient(-40, white 50%, #f6f6f6 50%);
-        background: linear-gradient(-40deg, white 50%, #f6f6f6 50%);
       }
       .pack-image {
         position: absolute;
@@ -391,8 +415,8 @@ $red-glow: 0 0 10px $red-netflix,
           top: -130px;
         }
         @include breakpoint(retina-small) {
-        top: -100px;
-      }
+          top: -100px;
+        }
         @include breakpoint(small) {
           top: -100px;
         }
@@ -409,8 +433,8 @@ $red-glow: 0 0 10px $red-netflix,
             height: 50px;
           }
           @include breakpoint(retina-small) {
-        width: 150px;
-      }
+            width: 150px;
+          }
           @include breakpoint(small) {
             width: 150px;
             height: 50px;
@@ -421,22 +445,33 @@ $red-glow: 0 0 10px $red-netflix,
     &-content {
       display: table-cell;
       padding: 0 2rem;
+      position: relative;
+      @include breakpoint(tab) {
+        padding: 0 0 0 2rem;
+      }
       @include breakpoint(retina) {
         display: block;
         padding: 0;
       }
     }
     &-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       line-height: 1.1em;
       margin: 0 0 .5rem;
+      width: 66%;
+      float: left;
+      @include breakpoint(tab) {
+        font-size: 1.4rem;
+        float: none;
+        width: auto;
+      }
       @include breakpoint(retina) {
-        font-size: 2rem;
+        font-size: 1.75rem;
         text-align: center;
         padding: 0;
       }
       @include breakpoint(retina-small) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
       }
       @include breakpoint(small) {
         font-size: 1.75rem;
@@ -448,13 +483,20 @@ $red-glow: 0 0 10px $red-netflix,
     &-description {
       font-size: 1rem;
       line-height: 1.4em;
-      font-family: "Helvetica";
       margin: 0;
+      width: 66%;
+      margin-bottom: .5rem;
+      float: left;
+      @include breakpoint(tab) {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        float: none;
+        width: auto;
+      }
       @include breakpoint(retina) {
-        font-size: 1.25rem;
         text-align: center;
-        margin-bottom: .75rem;
-        display: none;
+        margin-bottom: .9rem;
+        font-size: 1rem;
       }
       @include breakpoint(retina-small) {
         display: none;
@@ -465,23 +507,48 @@ $red-glow: 0 0 10px $red-netflix,
     }
     &-price {
       text-align: right;
+      width: 66%;
+      float: left;
+      margin-bottom: 0.8rem;
+      @include breakpoint(tab) {
+        text-align: left;
+        float: none;
+        margin-bottom: .5rem;
+        float: left;
+        width: auto;
+      }
       @include breakpoint(retina) {
         text-align: center;
+        float: none;
+      }
+      @include breakpoint(retina-small) {
         margin-bottom: .75rem;
       }
       &-text {
         font-size: 1rem;
+        @include breakpoint(tab) {
+          font-size: 1rem;
+        }
         @include breakpoint(retina) {
           text-align: center;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
+        }
+        @include breakpoint(retina-small) {
+          font-size: 1.1rem;
         }
       }
       &-amount {
-        font-size: 2rem;
+        font-size: 2.2rem;
         line-height: 1;
         font-weight: bold;
+        @include breakpoint(tab) {
+          font-size: 2.4rem;
+        }
         @include breakpoint(retina) {
-          font-size: 3rem;
+          font-size: 2.6rem;
+        }
+        @include breakpoint(retina-small) {
+          font-size: 2.2rem;
         }
         small {
           font-weight: normal;
@@ -494,9 +561,18 @@ $red-glow: 0 0 10px $red-netflix,
         display: table-cell;
         width: 190px;
         vertical-align: middle;
+        float: right;
+        position: absolute;
+        right: 0;
+        top: calc(50% - 1rem);
+        @include breakpoint(tab) {
+          display: block;
+          position: static;
+        }
         @include breakpoint(retina) {
           display: block;
           margin: 0 auto;
+          float: none;
         }
       }
       .btn_cta {

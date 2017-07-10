@@ -1623,36 +1623,55 @@ function DOUBLEFILTER() {
                         .preventDefault();
 
                     var $clickedTab = r$(this);
-                    var category = $clickedTab.data().filter;
-                    var $visibleContainer = $FILTER.container.find('.tab_cards__container').filter(':visible');
-                    var $visibleContainerCards = $visibleContainer.find('.ak-device');
 
-                    $clickedTab
-                        .addClass('active')
-                        .siblings('.active')
-                        .removeClass('active');
+                    $FILTER
+                        .handleHomeLifeTabs($clickedTab);
+                }
+            });
 
-                    var activeCardsCounter = 0;
 
-                    $visibleContainerCards
+        return $FILTER;
+    };
+    this.handleHomeLifeTabs = function($clickedTab) {
+        var $FILTER = this;
+        var category = $clickedTab.data().filter;
+        var $filterContainer = $FILTER.container.find('.tab_cards__container');
+        var $filterContainerCards, activeCardsCounter;
+
+
+        if (!$clickedTab.hasClass('active')) {
+            $clickedTab
+                .addClass('active')
+                .siblings('.active')
+                .removeClass('active');
+
+            $filterContainer
+                .each(function(containerIndex, container) {
+                    $container = r$(container);
+                    $filterContainerCards = $container.find('.ak-device');
+
+                    activeCardsCounter = 0;
+
+                    $filterContainerCards
                         .each(function(cardIndex, card) {
-                            if (card.attr('data-hl') == category) {
+                            $card = r$(card);
+                            if ($card.data().hl == category) {
                                 activeCardsCounter++;
                                 if (activeCardsCounter < 4) {
-                                    if (card.is(':hidden')) {
-                                        card
+                                    if ($card.is(':hidden')) {
+                                        $card
                                             .show();
                                     }
                                 } else {
-                                    if (card.is(':visible')) {
-                                        card
+                                    if ($card.is(':visible')) {
+                                        $card
                                             .hide();
                                     }
                                 }
 
                             } else {
-                                if (card.is(':visible')) {
-                                    card
+                                if ($card.is(':visible')) {
+                                    $card
                                         .hide();
                                 }
                             }
@@ -1670,9 +1689,50 @@ function DOUBLEFILTER() {
                                 .show();
                         }
                     }
-                }
-            });
+                });
+        } else {
+            $clickedTab
+                .removeClass('active');
 
+            $filterContainer
+                .each(function(containerIndex, container) {
+                    $container = r$(container);
+                    $filterContainerCards = $container.find('.ak-device');
+
+                    activeCardsCounter = 0;
+
+                    $filterContainerCards
+                        .each(function(cardIndex, card) {
+                            $card = r$(card);
+
+                            if (cardIndex < 3) {
+                                if ($card.is(':hidden')) {
+                                    $card
+                                        .show();
+                                }
+
+                            } else {
+                                if ($card.is(':visible')) {
+                                    $card
+                                        .hide();
+                                }
+                            }
+                        });
+                    if ($filterContainerCards.length < 4) {
+                        if ($FILTER.showMore.is(':visible')) {
+                            $FILTER
+                                .showMore
+                                .hide();
+                        }
+                    } else {
+                        if ($FILTER.showMore.is(':hidden')) {
+                            $FILTER
+                                .showMore
+                                .show();
+                        }
+                    }
+                });
+        }
 
         return $FILTER;
     };
