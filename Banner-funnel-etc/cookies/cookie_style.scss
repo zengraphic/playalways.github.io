@@ -1,0 +1,147 @@
+//===================================================================//
+//========================== DEFINIZIONE MIXIN =======================//
+//===================================================================//
+// MIXIN FOR BORDER RADIOUS
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+// SINGOLI ANGOLI BORDER RADIOUS
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/* ___________________ MIXIN __________________
+                       BREAKPOINT MIXIN */
+
+$breakpoints: ( 'super-tiny': ( max-width: 480px),
+'tiny': ( max-width: 400px),
+'small': ( max-width: 768px),
+'medium': ( max-width: 910px),
+'large': ( max-width: 1025px),
+'largest': ( max-width: 1440px),
+'min-largest':( min-width: 1439px),
+'extra-large':( min-width: 1999px),
+'min-desktop':( max-width: 1024px));
+// Creating the mixin
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints,
+    $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Couldn't find a your breakpoint named `#{$name}`.";
+    }
+}
+
+//========================================================================//
+//========================== DEFINIZIONE VARIABILI =======================//
+//========================================================================//
+$color-pale-yellow: #ffefbd;
+$color-pale-orange: #ffcb24;
+$color-yellow: #ffcc00;
+//============================================================//
+//========================== COOKIES =======================//
+//=============================================================//
+#cookie-bar {
+    background: #111111;
+    height: auto;
+    line-height: 24px;
+    color: #eeeeee;
+    text-align: left;
+    padding: 3px 30px;
+    z-index: 2999;
+    .cb-policy {
+        color: $color-pale-orange;
+        text-decoration: underline;
+        position: relative;
+        z-index: 1000;
+        &:hover {
+            color: $color-yellow;
+        }
+    }
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include opacity(0.7);
+        .cb-enable {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 800;
+        }
+        #cookie-bar {
+            #cookie-bar {
+                .cb-enable {
+                    background: #007700;
+                    &::hover {
+                        background: #009900;
+                    }
+                }
+            }
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            a {
+                color: #ffffff;
+                display: inline-block;
+                border-radius: 3px;
+                text-decoration: none;
+                padding: 0 6px;
+                margin-left: 8px;
+            }
+        }
+        &.bottom {
+            bottom: 0;
+            top: auto;
+        }
+    }
+}
+
