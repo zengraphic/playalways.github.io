@@ -11,18 +11,17 @@
             <div class="container_hero_landing fixed_height_560">
                 <div class="landing__hero--title padding_left_30 padding_top_m_20">
                     <h1 class="margin_bottom_m_10">
-                    <span class="landing__hero--title--light font_size_m_34 display_block text_normal">Promo</span>
-                    <span class="landing__hero--title--mainTitle font_size_m_48 display_block">WIND PACK</span>
+                    <span class="landing__hero--title--light vw_font_90 font_size_m_34 display_block text_normal">Promo</span>
+                    <span class="landing__hero--title--mainTitle vw_font_90 font_size_m_48 display_block">WIND PACK</span>
                 </h1>
                 </div>
                 <div class="bundle_orange__container text_color_orange margin_bottom_m_0 padding_left_30 box_width_40">
-                    <div class="hero_claim font_size_30 font_size_m_20 font_bold text_uppercase">samsung galaxy s8
+                    <div class="hero_claim font_size_50 font_size_m_30 font_bold text_uppercase">samsung galaxy s8
                     </div>
-                    <div class="hero_claim font_size_50 font_size_m_30 font_bold text_uppercase">solo 100 pezzi!</div>
-                    <div class="landing__hero--ribbon desktop_ribbon text_color_blue_99 margin_top_20">
+                    <div class="hero_claim margin_top_10 text_color_blue_99 font_size_30 font_size_m_20 font_bold text_uppercase margin_bottom_50">solo 100 pezzi!</div>
+                    <div class="margin_top_50 landing__hero--ribbon desktop_ribbon text_color_blue_99 margin_top_20">
                         <div class="recurrency">A soli</div>
-                        <div class="price margin_top_0">10<span class="currency">€</span></div>
-                        <div class="recurrency">al mese</div>
+                        <div class="price margin_top_0">10<span class="currency">€/<span class="font_size_30 font_size_m_24">mese</span></span></div>
                     </div>
                 </div>
                 <div class="landing__hero--ribbon mobile_medium_ribbon text_color_blue_99 text_color_med_white margin_top_20">
@@ -33,15 +32,27 @@
             </div>
             <div class="container_hero_landing fixed_height_560 hero_skewed margin_top_m_30">
                 <div class="skewed_image_hero">
-                    <img src="../img/gigabox_hero.png" alt="">
+                    <img src="../img/samsung_s8_hero.jpg" alt="">
                 </div>
             </div>
         </div>
         <div class="container margin_top_30">
-            <a href="javascript:void(0);" class="button_shoulder_login button button__hovering button--standard text_align--center text_uppercase small_mobile_font">cerca il negozio più vicino</a>
+            <a href="javascript:void(0);" class="button_shoulder_login button button__hovering button--standard text_align--center text_uppercase small_mobile_font counter_block_items--data"></a>
         </div>
     </div>
     <div class="landing__hero--claim">
-        <h2>in esclusiva solo su amazon <br class="only_desktop">con wind smart 10 +</h2>
+        <h2><span class="font_size_48 font_size_m_30 font_bold_condensed">in esclusiva solo su amazon con wind smart 10+</span></h2>
     </div>
 </div>
+
+<script>
+jQuery(document).ready(function($) {
+    /**** COUNTER ****/
+    $('.counter_block_items--data').countdown('2017/08/07', function(event) {
+        var $this = $(this).html(event.strftime(''
+
+            + '<div class="display_inline items"><span class="font_size_40 font_size_m_16 time gg">%d</span><span class="font_size_30 font_size_m_12 margin_left_5 margin_left_m_0" style="opacity: 0.6">giorni</span></div>' + '<div class="display_inline items"><span class="font_size_40 font_size_m_16 time hh">%H</span><span class="font_size_30 font_size_m_12 margin_left_5 margin_left_m_0" style="opacity: 0.6">ore</span></div>' + '<div class="display_inline items"><span class="font_size_40 font_size_m_16 time mm">%M</span><span class="font_size_30 font_size_m_12 margin_left_5 margin_left_m_0" style="opacity: 0.6">minuti</span></div>' + '<div class="display_inline items"><span class="font_size_40 font_size_m_16 time sec">%S</span><span class="font_size_30 font_size_m_12 margin_left_5 margin_left_m_0" style="opacity: 0.6">secondi</span></div>'
+        ));
+    });
+});
+</script>
