@@ -2,16 +2,19 @@
   font-family: 'Helvetica Light';
   src: url("fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("fonts/HelveticaNeueLTCom-Th.otf") format("opentype");
   font-weight: 300; }
+
 @font-face {
   font-family: 'Helvetica Regular';
   src: url("fonts/HelveticaNeueLTCom-Roman.woff") format("woff"), url("fonts/HelveticaNeueLTCom-Roman.otf") format("opentype");
   font-weight: 400; }
+
 @font-face {
   font-family: 'Helvetica Bold';
   src: url("fonts/HelveticaNeueLTCom-Bd.woff") format("woff"), url("fonts/HelveticaNeueLTCom-Bd.otf") format("opentype");
   font-weight: 700; }
+
 /* ___________________ MIXIN __________________
-                      BREAKPOINT MIXIN */
+                       BREAKPOINT MIXIN */
 body {
   background: #fff;
   color: #000;
@@ -51,8 +54,10 @@ a {
 
 .text_align--left {
   text-align: left; }
+
 .text_align--right {
   text-align: right; }
+
 .text_align--center {
   text-align: center; }
 
@@ -81,6 +86,7 @@ img {
 @media (max-width: 768px) {
   .box_BodyContent .box_MainContent {
     padding: 0; } }
+
 .box_BodyContent .box_Container {
   width: 100% !important; }
   @media (max-width: 768px) {
@@ -125,6 +131,7 @@ img {
     .landing__content .half_block {
       width: 100%;
       display: block; } }
+
 .landing__content p.image_caption {
   margin: 30px 40px 0 0;
   display: inline-block;
@@ -137,6 +144,7 @@ img {
     .landing__content p.image_caption {
       text-align: left;
       margin: 30px 0; } }
+
 .landing__content .container {
   position: relative;
   width: 100%;
@@ -145,6 +153,7 @@ img {
   margin: 0 auto;
   display: block;
   box-sizing: border-box; }
+
 .landing__content .netflix_button {
   display: inline-block;
   width: 100%;
@@ -162,6 +171,7 @@ img {
   font-size: 30px;
   padding: 15px;
   line-height: 1.1em;
+  height: 65px;
   font-family: "Helvetica Regular" !important;
   box-sizing: border-box; }
   .landing__content .netflix_button.ghost_button {
@@ -171,11 +181,13 @@ img {
   @media (max-width: 768px) {
     .landing__content .netflix_button {
       font-size: 16px;
-      margin: 20px 0; } }
+      margin: 20px 0;
+      height: 49px; } }
   .landing__content .netflix_button:hover {
     color: #fff !important;
     opacity: 0.8;
     filter: alpha(opacity=80); }
+
 .landing__content--header {
   display: block;
   width: 100%;
@@ -186,6 +198,7 @@ img {
     .landing__content--header .logo__casaTre,
     .landing__content--header .logo__netflix {
       max-width: 40%; } }
+
 .landing__content--hero {
   display: block;
   width: 100%;
@@ -195,7 +208,11 @@ img {
   color: #fff;
   box-sizing: border-box;
   background-image: url(../img/hero_bg.jpg);
-  background-size: cover; }
+  background-size: cover;
+  background-position: calc(50% - 115px) 0; }
+  @media (max-width: 768px) {
+    .landing__content--hero {
+      background-position: calc(50% - 375px) 0; } }
   .landing__content--hero__title {
     text-align: center;
     margin-bottom: 30px; }
@@ -243,6 +260,7 @@ img {
   .landing__content--hero--cta {
     text-align: center;
     margin-top: 20px; }
+
 .landing__content--activation {
   display: block;
   width: 100%;
@@ -302,6 +320,7 @@ img {
       font-family: "Helvetica Light"; }
   .landing__content--activation .image_cation {
     margin: 40px 0; }
+
 .landing__content--credit {
   display: block;
   width: 100%;
@@ -335,6 +354,7 @@ img {
     font-family: "Helvetica Light"; }
     .landing__content--credit--text p {
       text-shadow: 3px 4px 5px rgba(7, 4, 6, 0.8); }
+
 .landing__content .container_accordion {
   background-color: #000;
   font-family: "Helvetica Light"; }
@@ -441,6 +461,7 @@ img {
     transform: translate(10px, 0px) rotate(45deg); }
   .landing__content .container_accordion ul li input[type=checkbox]:checked ~ i:after {
     transform: translate(0, 0px) rotate(-45deg); }
+
 @keyframes flipdown {
   0% {
     opacity: 0;
@@ -457,6 +478,7 @@ img {
   100% {
     transform-origin: top center;
     transform: rotateX(0deg); } }
+
 .landing__content--privacy {
   background-color: #000;
   color: #fff;

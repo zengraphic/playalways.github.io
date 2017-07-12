@@ -117,7 +117,9 @@
             <h3 class="cards__title">Card con informazioni addizionali a tendina immagine in cima.</h3>
             <div class="cardsOffer__single card fisso">
                 <div class="front">
-                    <a class="card__info"><i class="card__info--icon plus"></i></a>
+                    <div class="card__info--container">
+                        <a class="card__info"><i class="card__info--icon plus"></i></a>
+                    </div>
                     <div class="card__image--container">
                         <i class="base__icon base__icon--lg icon_info--color"></i>
                         <div class="back">
@@ -163,7 +165,10 @@
             </div>
             <div class="cardsOffer__single card fisso">
                 <div class="front">
-                    <a class="card__info"><i class="card__info--icon plus"></i></a>
+                    <div class="card__info--container">
+                     <div class="card__info left"><span class="card__info--accent">Solo per oggi</span></div>
+                        <div class="card__info right"><i class="card__info--icon plus"></i></div>
+                    </div>
                     <div class="card__image--container">
                         <img class="card__image" src="../../img/backgrounds/visore-medio-pita.png" alt="">
                         <div class="back">
@@ -204,7 +209,7 @@
                         </div>
                         <div class="card__prices--recurrency">ogni 4 settimane</div>
                     </div>
-                    <a href="#" class="card__cta base__bt base__bt--lg base__bt--or">scopri</a>
+                    
                 </div>
             </div>
             <div class="clear"></div>
@@ -357,7 +362,7 @@
     <script type="text/javascript">
     jQuery(document)
         .ready(function(r$) {
-            r$('a.card__info')
+            r$('.card__info.right')
                 .click(function(event) {
                     event
                         .preventDefault();

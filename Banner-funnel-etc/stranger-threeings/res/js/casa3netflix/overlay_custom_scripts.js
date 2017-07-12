@@ -20,13 +20,13 @@ function dissolveOverlay() {
 jQuery(document)
     .ready(function($) {
         particlesJS
-            .load('particles-js-1', 'js/particlesjs-config-1.json');
+            .load('particles-js-1', 'res/js/casa3netflix/particlesjs-config-1.json');
 
         particlesJS
-            .load('particles-js-2', 'js/particlesjs-config-2.json');
+            .load('particles-js-2', 'res/js/casa3netflix/particlesjs-config-2.json');
 
         particlesJS
-            .load('particles-js-3', 'js/particlesjs-config-3.json');
+            .load('particles-js-3', 'res/js/casa3netflix/particlesjs-config-3.json');
 
         $("body")
             .mousemove(function(e) {
