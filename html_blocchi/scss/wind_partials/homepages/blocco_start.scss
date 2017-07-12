@@ -1,6 +1,35 @@
-//BLOCCO 4
+//PAGINA STAND-ALONE "RESKIN WIND START"
+body {
+    font-family: "Trade Gothic";
+    color: #292f36;
+}
+
+.home_page {
+    line-height: normal;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.start_header {
+    width: 100%;
+    height: 84px;
+    border-bottom: 1px solid #656D78;
+    background-color: #fff;
+    margin-bottom: 80px;
+    @at-root #{&}__container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 10px 30px;
+        .logo-wind {
+            float: left;
+        }
+    }
+}
+
 .start_block {
-    background-color: $color_white;
+    background-color: #fff;
     max-width: 1024px;
     margin: 0 auto;
     @at-root #{&}__content {
@@ -10,12 +39,15 @@
     @at-root #{&}__img {
         margin: 0 auto;
         text-align: center;
-        @include breakpoint(med-large) {
+        /*@include breakpoint(med-large) {
             margin-top: 40px;
-        }
+        }*/
         img {
             width: 100%;
             max-width: 393px;
+            display: inline;
+            margin: 0 auto;
+            height: auto;
         }
     }
     @at-root #{&}__adv {
@@ -24,7 +56,8 @@
         text-align: center;
         img {
             max-width: 100%;
-            margin: 10px 20px;
+            display: inline;
+            //margin: 10px 20px;
             //max-width: 393px;
         }
     }
@@ -32,59 +65,71 @@
         text-align: left;
         padding-top: 30px;
         margin-bottom: 30px;
-        color: $color_orange;
+        color: #F48135; //$color_orange;
         font-size: 3.2857em;
-        font-family: $weight-bold;
-        @include breakpoint(small) {
+        font-family: "Trade Gothic Bold" //$weight-bold;
+        /*@include breakpoint(small) {
             font-size: 2.5em;
-        }
+        }*/
     }
     @at-root #{&}__subTitle {
         text-align: left;
         margin-bottom: 30px;
-        color: $color_black;
-        font-family: $weight-bold;
+        color: #212121; //$color_black;
+        font-family: "Trade Gothic Bold"; //$weight-bold;
         font-size: 1.714em;
-        @include breakpoint(small) {
+        /*@include breakpoint(small) {
             font-size: 1.3em;
-        }
+        }*/
     }
     @at-root #{&}__label {
         text-align: left;
         font-size: 1.714em;
         margin-bottom: 30px;
-        color: $color_black;
-        font-family: $weight-normal;
-        @include breakpoint(small) {
+        color: #212121; //$color_black;
+        font-family: "Trade Gothic"; //$weight-normal;
+        /*@include breakpoint(small) {
             font-size: 1.3em;
-        }
-    }
-    @at-root #{&}__search {
-        float: left;
-        width: calc(85% - 15px);
-        .base__input {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            height: 50px;
-            background: url(../../html_blocchi/img/start/google_custom_search_watermark.png) right 13px no-repeat;
-        }
+        }*/
     }
     @at-root #{&}__searchContainer {
         margin-left: 0;
         margin-right: 0;
-        input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+        input.gsc-search-button,
+        input.gsc-search-button:hover,
+        input.gsc-search-button:focus {
             box-sizing: initial !important;
         }
     }
-    @at-root #{&}__searchButton {
-        width: 15%;
-        float: left;
-        height: 50px;
-        margin-left: 15px;
-        .button--searchButton {
-            max-width: 120px;
-            height: 100%;
-            padding: 0.5em 0;
+}
+
+.start_footer {
+    position: absolute;
+    width: 100%;
+    background-color: #292F36;
+    margin-top: 40px;
+    top: 100%;
+    @at-root #{&}__container {
+        display: table;
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 10px 30px;
+        .boxLeft {
+            font-family: "Trade Gothic", sans-serif;
+            display: table-cell;
+            vertical-align: middle;
+            color: #FFF;
+            font-size: 14px;
+            text-align: left;
+            .only_mobile {
+                display: none;
+            }
+        }
+        .boxRight {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
         }
     }
 }
@@ -92,22 +137,53 @@
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
 // ============================== MEDIA QUERIES =========================
-@media all and (max-width: 767px) {
-    a.button {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
+@media all and (max-width: 992px) {
     .start_block {
-        &__searchButton {
-            .button--searchButton {
-                background-position: calc(4vw + 20%) -191px;
-                margin: 0;
+        @at-root #{&}__img {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .start_header {
+        height: 69px;
+        margin-bottom: 0;
+        @at-root #{&}__container {
+            padding: 5px 30px;
+            .logo-wind {
+                img {
+                    width: 70px;
+                    height: auto;
+                    position: relative;
+                    top: 5px;
+                }
             }
         }
-        &__divider {
-            margin-top: 30px;
-            &--text:before {
-                width: calc(100% - 30px);
+    }
+    .start_block {
+        @at-root #{&}__title {
+            font-size: 2.5em;
+        }
+        @at-root #{&}__subTitle {
+            font-size: 1.3em;
+        }
+        @at-root #{&}__label {
+            font-size: 1.3em;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .start_footer {
+        @at-root #{&}__container {
+            .boxLeft {
+                .only_desktop {
+                    display: none;
+                }
+                .only_mobile {
+                    display: block;
+                }
             }
         }
     }
