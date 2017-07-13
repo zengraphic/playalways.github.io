@@ -691,11 +691,9 @@
                 main: $TOOL.configs.mainMapConfig,
                 subMapsOptions: $TOOL.configs.subMapConfig,
                 mapNameByCode: function(code, multiMap) {
-                    
                     return code + '_' + multiMap.defaultProjection;
                 },
                 mapUrlByCode: function(code, multiMap) {
-                    
                     return '../../js/coverageTool/jquery-jvectormap-' + code + '-' + multiMap.defaultProjection + '.js';
                 }
             });
@@ -826,7 +824,7 @@
             var starter = new r$.Deferred();
             r$.each($TOOL.apiData, function(continentId, continent) {
                 $TOOL
-                    .setContinentDom(continentId,continent);
+                    .setContinentDom(continentId, continent);
             });
 
             starter
@@ -834,7 +832,7 @@
 
             return starter.promise();
         },
-        setContinentDom: function(continentId,continent) {
+        setContinentDom: function(continentId, continent) {
             var $TOOL = this;
 
             var tabHtmlString =
@@ -873,7 +871,7 @@
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
                     $TOOL
-                        .setCountryDom(countryId,country);
+                        .setCountryDom(countryId, country);
                 });
             });
 
@@ -882,7 +880,7 @@
 
             return starter.promise();
         },
-        setCountryDom: function(countryId,country) {
+        setCountryDom: function(countryId, country) {
             var $TOOL = this;
             //var correctFlagName = country.flag_name.replace(/_/g, '-').toLowerCase();
             var countryHtmlString =
@@ -922,31 +920,31 @@
             }
 
 
-            var roamingLikeAtHomeHtml = 
-            '<div class="clear"></div>'+
-            '<div class="standard_block fullBand mobile fullImage light invertedDisplay transparent">'+
-                '<div class="standard_block__mainContainer">'+
-                    '<div class="standard_block__half_block image_block">'+
-                        '<div class="image_block--container">'+
-                            '<img class="testimonial" src="../../img/backgrounds/roaming-like-at-home.jpg" />'+
-                        '</div>'+
-                    '</div>'+
-                    '<div class="standard_block__half_block offer_block">'+
-                        '<div class="standard_block__title">Easy Europe</div>'+
-                        '<div class="standard_block__text">Il roaming in Europa<br>diventa più semplice.</div>'+
-                        '<div class="standard_block__singleButton">'+
-                            '<a href="https://www.wind.it/landing/promoeasy-europe/" class="btn base__bt base__bt--or">Scopri</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>';
+            var roamingLikeAtHomeHtml =
+                '<div class="clear"></div>' +
+                '<div class="standard_block fullBand mobile fullImage light invertedDisplay transparent">' +
+                '<div class="standard_block__mainContainer">' +
+                '<div class="standard_block__half_block image_block">' +
+                '<div class="image_block--container">' +
+                '<img class="testimonial" src="../../img/backgrounds/roaming-like-at-home.jpg" />' +
+                '</div>' +
+                '</div>' +
+                '<div class="standard_block__half_block offer_block">' +
+                '<div class="standard_block__title">Easy Europe</div>' +
+                '<div class="standard_block__text">Il roaming in Europa<br>diventa più semplice.</div>' +
+                '<div class="standard_block__singleButton">' +
+                '<a href="https://www.wind.it/landing/promoeasy-europe/" class="btn base__bt base__bt--or">Scopri</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
 
 
 
             countryHtmlString += '</div>' +
                 '</div>' +
                 '</div>' +
-                (country.geo_zone_id == 7?roamingLikeAtHomeHtml:'') +
+                (country.geo_zone_id == 7 ? roamingLikeAtHomeHtml : '') +
                 '</div>';
 
             $TOOL
