@@ -920,9 +920,33 @@
             } else {
                 countryHtmlString += '-';
             }
+
+
+            var roamingLikeAtHomeHtml = 
+            '<div class="clear"></div>'+
+            '<div class="standard_block fullBand mobile fullImage light invertedDisplay transparent">'+
+                '<div class="standard_block__mainContainer">'+
+                    '<div class="standard_block__half_block image_block">'+
+                        '<div class="image_block--container">'+
+                            '<img class="testimonial" src="../../img/backgrounds/roaming-like-at-home.jpg" />'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="standard_block__half_block offer_block">'+
+                        '<div class="standard_block__title">Easy Europe</div>'+
+                        '<div class="standard_block__text">Il roaming in Europa<br>diventa più semplice.</div>'+
+                        '<div class="standard_block__singleButton">'+
+                            '<a href="https://www.wind.it/landing/promoeasy-europe/" class="btn base__bt base__bt--or">Scopri</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>';
+
+
+
             countryHtmlString += '</div>' +
                 '</div>' +
                 '</div>' +
+                (country.geo_zone_id == 7?roamingLikeAtHomeHtml:'') +
                 '</div>';
 
             $TOOL

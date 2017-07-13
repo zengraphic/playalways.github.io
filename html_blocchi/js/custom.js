@@ -7,6 +7,7 @@ r$(document)
         //
         // FIX SCROLLBAR GRIGIA ON PAGELOAD
 
+        sourceck();
 
         //r$('.logo--wind a').attr('href', window.location.origin + '/' + window.location.pathname.split('/')[1] + '/');
 
@@ -375,7 +376,6 @@ r$(document)
                 });
 
 
-
             var menuPerVisore = visoreConSlider.next().find('.stripMenu');
 
             if (menuPerVisore.length == 1) {
@@ -501,8 +501,6 @@ r$(document)
     });
 
 
-
-
 r$(document)
     .ready(function() {
         var windowsize = r$(window).width();
@@ -556,7 +554,6 @@ r$(document)
                     .addClass('client_block__single--modifyHeight');
             });
     });
-
 
 
 r$(document)
@@ -775,7 +772,6 @@ r$(document)
         }
         placeholderPowermail();
     });
-
 
 
 r$(document)
@@ -1149,8 +1145,6 @@ r$(document)
                             });
 
                     }
-
-
 
 
                     r$('html, body')
@@ -2081,3 +2075,29 @@ r$(document)
 
         });
     });
+
+function sourceck() {
+
+    var param = GetParameterByName('source');
+    if (param != null) {
+        r$.get("/trksource.php?source=" + param);
+    }
+
+}
+
+
+function AkAlertPopup(title, message) {
+    r$("#ak-alert-popup .popup-title").html(title);
+    r$("#ak-alert-popup .popup-content").html(message);
+
+    r$.magnificPopup.open({
+        items: {
+            type: 'inline',
+            src: '#ak-alert-popup'
+        },
+        showCloseBtn: true,
+        closeBtnInside: true,
+        mainClass: 'mfp-fade mfp-alert',
+        midClick: true
+    });
+}
