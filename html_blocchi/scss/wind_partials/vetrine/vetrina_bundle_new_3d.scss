@@ -1,7 +1,7 @@
 .cards {
   max-width: 1024px;
   margin: 0 auto 2rem;
-  &__title{
+  &__title {
     margin-bottom: 1rem;
   }
 }
@@ -90,74 +90,86 @@
     width: calc(100% - 1rem);
   }
   &__info {
-    transition: all .3s linear;
-    background: inherit;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 999999;
-    cursor: pointer;
-    width: 38px;
-    i {
-      margin: .4rem .5rem .4rem auto;
-      width: 24px;
-      height: 24px;
-      //border-radius: 50%;
-      //border: 1px solid white;
-      display: block;
-      position: relative;
-      &.plus::before,
-      &.plus::after {
+    &--container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    &--accent {}
+    &.left {
+      width: calc(100% - 76px);
+      background: $color_wind;
+      color: white;
+      padding: 0 .5rem;
+      text-transform: uppercase;
+      height: 35px;
+      font-size: 24px;
+      line-height: 1.2em;
+      font-family: "Trade Gothic Condensed";
+      font-weight: bold;
+      &::after {
         content: "";
+        background: inherit;
+        width: 20px;
+        z-index: 0;
+        height: 100%;
         position: absolute;
-        top: calc((100% - 1.25rem)/2);
-        left: calc((100% - .25rem)/2);
-        height: 1.25rem;
-        width: .25rem;
-        background: white;
-        -webkit-transition: all .5s linear;
-           -moz-transition: all .5s linear;
-            -ms-transition: all .5s linear;
-             -o-transition: all .5s linear;
-                transition: all .5s linear;
+        right: 0;
+        top: 0;
+        transform-origin: 0 100%;
+        transform: skew(-20deg);
       }
-      &.plus::before {
-        @at-root {
-          .flipped #{&} {
-            -webkit-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
-            transform: rotate(90deg);
+    }
+    &.right {
+      background: inherit;
+      width: 38px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      i {
+        margin: .4rem .5rem .4rem auto;
+        width: 24px;
+        height: 24px;
+        //border-radius: 50%;
+        //border: 1px solid white;
+        display: block;
+        position: relative;
+        &.plus::before,
+        &.plus::after {
+          content: "";
+          position: absolute;
+          top: calc((100% - 1.25rem)/2);
+          left: calc((100% - .25rem)/2);
+          height: 1.25rem;
+          width: .25rem;
+          background: white;
+          -webkit-transition: all .5s linear;
+          -moz-transition: all .5s linear;
+          -ms-transition: all .5s linear;
+          -o-transition: all .5s linear;
+          transition: all .5s linear;
+        }
+        &.plus::before {
+          @at-root {
+            .flipped #{&} {
+              -webkit-transform: rotate(90deg);
+              -moz-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
+              -o-transform: rotate(90deg);
+              transform: rotate(90deg);
+            }
           }
         }
+        &.plus::after {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
       }
-      &.plus::after {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-      }
-    }
-    @at-root {
-      .mobile #{&} {
-        background: $color_robin;
-      }
-      .fisso #{&} {
-        background: $color_infostrada;
-      }
-    }
-    &::before {
-      content: "";
-      background: inherit;
-      width: 20px;
-      z-index: 0;
-      height: 100%;
-      position: absolute;
-      left: -20px;
-      transform-origin: center top;
-      transform: skew(20deg);
       @at-root {
         .mobile #{&} {
           background: $color_robin;
@@ -166,7 +178,30 @@
           background: $color_infostrada;
         }
       }
+      &::before {
+        content: "";
+        background: inherit;
+        width: 20px;
+        z-index: 0;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        transform-origin: 0 0;
+        transform: skew(-20deg);
+        @at-root {
+          .mobile #{&} {
+            background: $color_robin;
+          }
+          .fisso #{&} {
+            background: $color_infostrada;
+          }
+        }
+      }
     }
+    transition: all .3s linear;
+    position: relative;
+    z-index: 200;
+    cursor: pointer;
   }
   &__bundle {
     font-size: 1.2rem;
@@ -179,14 +214,19 @@
   &.flipped {
     .front {
       z-index: 5;
+      .card__info {
+        &.left {
+          //width: calc(100% - 100px);
+        }
+        &.right {
+          //width: 100px;
+        }
+      }
     }
     .back {
       z-index: 7;
       height: 210px;
       opacity: 1;
-    }
-    .card__info {
-      width: 100px;
     }
   }
   .front,
@@ -202,22 +242,23 @@
     transition: all .55s linear;
   }
   .front {
-    border-top: 5px solid transparent;
+    border-top: 5px solid $color_wind;
+    border-bottom: 5px solid transparent;
     z-index: 7;
+    padding: 2.5rem 0;
     //padding-top: 2.75rem;
     @at-root {
       .mobile#{&} {
-        border-top-color: $color_robin;
+        border-bottom-color: $color_robin;
       }
       .fisso#{&} {
-        border-top-color: $color_infostrada;
+        border-bottom-color: $color_infostrada;
       }
     }
   }
   .back {
     z-index: 5;
     height: 0;
-
     padding: .5rem .5rem 0;
   }
 }

@@ -131,6 +131,46 @@ svg {
 }
 
 .block_coverage_tool {
+  @at-root {
+    #geo-zones-popup {
+      width: 640px;
+      background: $color_black;
+      padding: 2rem;
+      margin: 2rem auto;
+      position: relative;
+      border-radius: .5rem;
+      @include breakpoint(small) {
+        width: 320px;
+        padding: .5rem;
+      }
+      .mfp-close{
+        color: #fff;
+      }
+      h3 {
+        margin-bottom: 1rem;
+      }
+      h4 {
+        margin-bottom: .5rem;
+      }
+      table {
+        td {
+          text-align: right;
+        }
+        th,td {
+          vertical-align: middle;
+        }
+        font-size: 14px;
+        th,
+        td:first-child {
+          font-size: 9px;
+          text-align: center;
+        }
+      }
+    }
+    .mfp-geozones.mfp-bg.mfp-ready {
+      opacity: 0;
+    }
+  }
   &__map {
     &__container {
       padding: 30px;
