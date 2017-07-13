@@ -27,11 +27,11 @@
   @at-root #{&}__tabs {
     color: $color_text;
     text-transform: uppercase;
-    @at-root {
-      .colored_bg--black.filter-showcase #{&} {
+    /*
+       @at-root {
+       .colored_bg--black.filter-showcase #{&} {
         color: $color_white;
-      }
-    }
+      } }*/
     &__container {
       padding-top: 21px;
       padding-bottom: 5px;
@@ -78,6 +78,9 @@
       color: inherit;
       font-size: 1em;
       cursor: pointer;
+      &.tab_hl_button {
+        color: $color_white;
+      }
       &:hover {
         color: $color_wind;
       }
