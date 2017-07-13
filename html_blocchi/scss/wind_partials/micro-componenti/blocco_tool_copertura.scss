@@ -143,7 +143,7 @@ svg {
         width: 320px;
         padding: .5rem;
       }
-      .mfp-close{
+      .mfp-close {
         color: #fff;
       }
       h3 {
@@ -156,7 +156,8 @@ svg {
         td {
           text-align: right;
         }
-        th,td {
+        th,
+        td {
           vertical-align: middle;
         }
         font-size: 14px;
@@ -214,6 +215,7 @@ svg {
     &__container {
       .country_offers_block {
         max-width: none;
+
         @include breakpoint(small) {
           padding-bottom: 0;
         }
@@ -242,6 +244,35 @@ svg {
             margin: 20px auto 30px;
             padding: 0 15px;
             height: auto;
+            .standard_block {
+              left:-1rem;
+              width: calc(100% + 2rem);
+              background: black;
+              .offer_block{
+                text-align: left;
+                @include breakpoint(small) {
+                  text-align: center;
+                }
+              }
+              &__title {
+                color: $color_white !important;
+                font-size: 6.5rem;
+                @include breakpoint(small) {
+                  font-size: 5rem;
+                }
+              }
+              &__text {
+                font-family: "Trade Gothic Bold";
+                color: $color_wind;
+                font-size: 2.4rem;
+                margin-bottom: 2rem;
+                @include breakpoint(small) {
+                  font-size: 2rem;
+                }
+              }
+              .text_block {
+              }
+            }
             &--List {
               max-width: 1024px;
               margin: 0 auto;
@@ -279,6 +310,9 @@ svg {
             }
             &--flag {
               padding-top: 23px;
+              @include breakpoint(small) {
+                  text-align: center;
+                }
             }
             &--rates {
               padding-top: 30px;

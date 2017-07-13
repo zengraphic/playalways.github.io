@@ -139,6 +139,7 @@
                 mainClass: 'mfp-fade mfp-geozones',
                 showCloseBtn: true,
                 closeBtnInside: true,
+                alignTop: false,
                 midClick: true,
                 removalDelay: 150,
                 callbacks: {
@@ -437,7 +438,7 @@
             continent.displayName = name;
             continent.continentName = lowercaseName;
             continent.countries = {};
-            $TOOL.apiData[continent.id] = continent;
+            $TOOL.apiData[lowercaseName] = continent;
 
             starter
                 .resolve();
@@ -453,7 +454,7 @@
                 r$.each(data.countries, function(countryIndex, country) {
                     if (country.continent_id !== null && continent.id == country.continent_id) {
                         $TOOL
-                            .setCountry(continent, country);
+                            .setCountry(continentId, country);
                     }
                 });
             });
@@ -464,17 +465,17 @@
             return starter.promise();
         },
 
-        setCountry: function(continent, country) {
+        setCountry: function(continentId, country) {
             var $TOOL = this;
             var starter = new r$.Deferred();
             var regExes = [
                 [/\s/g, "_"],
-                [/&amp;/g, "and"],
+                [/&/g, "and"],
                 [/[\.,]+/g, ""],
                 [/_/g, '-']
             ];
             var countryNameFormatted = country.name.toLowerCase();
-            var flagNameFormatted = country.name.toLowerCase();
+            var flagNameFormatted = country.flag_name.toLowerCase();
 
             r$.each(regExes, function(i, regEx) {
                 if (i < 3) {
@@ -489,7 +490,7 @@
             country.flag_name = flagNameFormatted;
             country.name_formatted = countryNameFormatted;
 
-            $TOOL.apiData[country.continent_id].countries[country.id] = country;
+            $TOOL.apiData[continentId].countries[country.flag_name] = country;
 
             starter
                 .resolve();
@@ -503,9 +504,9 @@
 
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
-                    if (continentId == country.continent_id) {
+                    if (continent.id == country.continent_id) {
                         r$.each(data.telecom_operators, function(operatorIndex, operator) {
-                            if (countryId == operator.country_id) {
+                            if (country.id == operator.country_id) {
                                 $TOOL
                                     .setOperator(continentId, countryId, operator);
                             }
@@ -671,7 +672,7 @@
             if (typeof $TOOL.apiData[continentId].countries[countryId].geozone.callRate === typeof undefined) {
                 $TOOL.apiData[continentId].countries[countryId].geozone.callRate = {};
             }
-            $TOOL.apiData[continentId].countries[countryId].geozone.callRate[geoZoneRate.to_geo_zone_id] = geoZoneRate;
+            $TOOL.apiData[continentId].countries[countryId].geozone.callRate[$TOOL.mapGeoZoneIdToName(geoZoneRate.to_geo_zone_id)] = geoZoneRate;
         },*/
 
         /*
@@ -690,11 +691,9 @@
                 main: $TOOL.configs.mainMapConfig,
                 subMapsOptions: $TOOL.configs.subMapConfig,
                 mapNameByCode: function(code, multiMap) {
-                    code = $TOOL.apiData[code].continentName;
                     return code + '_' + multiMap.defaultProjection;
                 },
                 mapUrlByCode: function(code, multiMap) {
-                    code = $TOOL.apiData[code].continentName;
                     return '../../js/coverageTool/jquery-jvectormap-' + code + '-' + multiMap.defaultProjection + '.js';
                 }
             });
@@ -825,7 +824,7 @@
             var starter = new r$.Deferred();
             r$.each($TOOL.apiData, function(continentId, continent) {
                 $TOOL
-                    .setContinentDom(continent);
+                    .setContinentDom(continentId, continent);
             });
 
             starter
@@ -833,12 +832,12 @@
 
             return starter.promise();
         },
-        setContinentDom: function(continent) {
+        setContinentDom: function(continentId, continent) {
             var $TOOL = this;
 
             var tabHtmlString =
                 '<li class="strip_menu_tab__item item">' +
-                '<a data-continent="' + continent.id + '" href="#' + continent.id + '">' + continent.name + '</a>' +
+                '<a data-continent="' + continentId + '" href="#' + continent.id + '">' + continent.name + '</a>' +
                 '</li>';
 
             $TOOL
@@ -872,7 +871,7 @@
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
                     $TOOL
-                        .setCountryDom(country);
+                        .setCountryDom(countryId, country);
                 });
             });
 
@@ -881,11 +880,11 @@
 
             return starter.promise();
         },
-        setCountryDom: function(country) {
+        setCountryDom: function(countryId, country) {
             var $TOOL = this;
             //var correctFlagName = country.flag_name.replace(/_/g, '-').toLowerCase();
             var countryHtmlString =
-                '<div class="country_offers_block__container__country" data-country-id="' + country.id + '">' +
+                '<div class="country_offers_block__container__country" data-country-id="' + countryId + '">' +
                 '<div class="country_offers_block__container__country--flag col-xs-12 col-sm-2 col-md-2 col-lg-2">' +
                 '<div class="country_offers_block__container-title">' + country.name + '</div>' +
                 '<div class="country_offers_block__container-image">' +
@@ -894,8 +893,8 @@
                 '</div>' +
                 '<div class="country_offers_block__container__country--rates col-xs-12 col-sm-10 col-md-10 col-lg-10">' +
                 '<div class="country_offers_block__rates_divider--left">' +
-                '<div class="country_offers_block__rates--title">Zona<br>geografica</div>' +
-                '<div class="country_offers_block__rates--price">' + country.geozone.name + '</div>' +
+                '<div class="country_offers_block__rates--title">Zona<br>tariffaria</div>' +
+                '<div class="country_offers_block__rates--price">' + $TOOL.mapGeoZoneIdToName(country.geozone.id) + '</div>' +
                 '</div>' +
                 '<div class="country_offers_block__rates_divider--left">' +
                 '<div class="country_offers_block__rates--title">Prefisso<br/>internazionale</div>' +
@@ -908,15 +907,44 @@
                 '<div class="country_offers_block__rates_divider--left">' +
                 '<div class="country_offers_block__rates--title"> Copertura <br/>satellitare </div>' +
                 '<div class="country_offers_block__rates--price">';
-
+            var satelliteCounter = 0;
             r$.each(country.operators, function(operatorIndex, operator) {
                 if (operator.frequency == 'satellitare') {
-                    countryHtmlString += operator.name + '; ';
+                    satelliteCounter++;
                 }
             });
+            if (satelliteCounter > 0) {
+                countryHtmlString += '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">';
+            } else {
+                countryHtmlString += '-';
+            }
+
+
+            var roamingLikeAtHomeHtml =
+                '<div class="clear"></div>' +
+                '<div class="standard_block fullBand mobile fullImage light invertedDisplay transparent">' +
+                '<div class="standard_block__mainContainer">' +
+                '<div class="standard_block__half_block image_block">' +
+                '<div class="image_block--container">' +
+                '<img class="testimonial" src="../../img/backgrounds/roaming-like-at-home.jpg" />' +
+                '</div>' +
+                '</div>' +
+                '<div class="standard_block__half_block offer_block">' +
+                '<div class="standard_block__title">Easy Europe</div>' +
+                '<div class="standard_block__text">Il roaming in Europa<br>diventa più semplice.</div>' +
+                '<div class="standard_block__singleButton">' +
+                '<a href="https://www.wind.it/landing/promoeasy-europe/" class="btn base__bt base__bt--or">Scopri</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+
+
             countryHtmlString += '</div>' +
                 '</div>' +
                 '</div>' +
+                (country.geo_zone_id == 7 ? roamingLikeAtHomeHtml : '') +
                 '</div>';
 
             $TOOL
@@ -1031,21 +1059,21 @@
                 '</div>' +
                 '<div class="accordion_description_block__right col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
                 '<div class="accordion_description_block__featureContent">' +
-                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">2G - GPRS</div>' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Dati 2G - GPRS</div>' +
                 '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
                 (countryServices.gprsService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
                 '</div>' +
                 '<div class="clear"></div>' +
                 '</div>' +
                 '<div class="accordion_description_block__featureContent">' +
-                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">3G - UMTS</div>' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Dati 3G - UMTS</div>' +
                 '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
                 (countryServices.umtsService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
                 '</div>' +
                 '<div class="clear"></div>' +
                 '</div>' +
                 '<div class="accordion_description_block__featureContent">' +
-                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">4G - LTE</div>' +
+                '<div class="accordion_description_block__featureContent--detail col-xs-10 col-sm-10 col-md-10 col-lg-10 ">Dati 4G - LTE</div>' +
                 '<div class="accordion_description_block__featureContent--availability col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
                 (countryServices.lteService ? '<img class="service--available" src="../../img/icons-interface/check-available.png" alt="">' : '') +
                 '</div>' +
@@ -1098,6 +1126,22 @@
 
             return starter.promise();
         },
+        mapGeoZoneIdToName: function(geoZoneId) {
+            switch (geoZoneId) {
+                case 1:
+                    return 4;
+                case 2:
+                    return 2;
+                case 3:
+                    return 3;
+                case 7:
+                    return 'UE';
+                case 5:
+                    return 'SM';
+                default:
+                    break;
+            }
+        },
         setRateDom: function(countryId, geoZone) {
             var $TOOL = this;
 
@@ -1111,9 +1155,18 @@
                 '</div>';
 
             r$.each(geoZone.callRate, function(callRateIndex, callRate) {
+                if ($TOOL.mapGeoZoneIdToName(geoZone.id) == "UE" && callRateIndex == "SM") {
+                    ratesHtmlString +=
+                        '<div class="accordion_description_block__featureContent">' +
+                        '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A zona UE</div>' +
+                        '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6"> - </div>' +
+                        '<div class="clear"></div>' +
+                        '</div>';
+
+                }
                 ratesHtmlString +=
                     '<div class="accordion_description_block__featureContent">' +
-                    '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A zona ' + callRate.to_geo_zone_id + '</div>' +
+                    '<div class="accordion_description_block__featureContent--detail col-xs-6 col-sm-6 col-md-6 col-lg-6 ">A zona ' + callRateIndex + '</div>' +
                     '<div class="accordion_description_block__featureContent--description col-xs-6 col-sm-6 col-md-6 col-lg-6">' + callRate.rate + '€/min</div>' +
                     '<div class="clear"></div>' +
                     '</div>';
@@ -1149,7 +1202,8 @@
                 '</div>' +
                 '</div>' +
                 '<div class="clear"></div>' +
-                '</div>';
+                '</div>' +
+                '<div class="clear"></div>';
 
 
             $TOOL
@@ -1184,6 +1238,7 @@
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
                     var operatorsHtmlString = '';
+                    var operatorsSatHtmlString = '';
 
                     operatorsHtmlString +=
                         '<div class="block_coverage_tool__operators__container col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
@@ -1195,16 +1250,20 @@
                         '<div class="showcase_accordions_block__container">';
 
                     r$.each(country.operators, function(operatorId, operator) {
-                        operatorsHtmlString = $TOOL
-                            .setOperatorDom(operator, operatorsHtmlString);
+                        if (operator.frequency == "satellitare") {
+                            operatorsSatHtmlString += $TOOL.setOperatorDom(operator);
+                        } else {
+                            operatorsHtmlString += $TOOL.setOperatorDom(operator);
+                        }
                     });
-
+                    operatorsHtmlString += operatorsSatHtmlString;
                     operatorsHtmlString +=
                         '</div>' +
                         '</li>' +
                         '</ul>' +
                         '</div>' +
-                        '</div>';
+                        '</div>' +
+                        '<div class="clear"></div>';
 
                     $TOOL
                         .countriesContainer
@@ -1218,10 +1277,9 @@
 
             return starter.promise();
         },
-        setOperatorDom: function(operator, operatorsHtmlString) {
-            var $TOOL = this;
-            operatorsHtmlString +=
-                '<div class="accordion_description_block__container col-xs-12">' +
+        setOperatorDom: function(operator) {
+
+            return '<div class="accordion_description_block__container col-xs-12">' +
                 '<div class="accordion_description_block__left col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
                 '<div class="accordion_description_block__feature col-xs-12 col-sm-12 col-md-12 col-lg-12">Dati Operatore</div>' +
                 '<div class="clear"></div>' +
@@ -1296,8 +1354,6 @@
                 '</div>' +
                 '<div class="clear"></div>' +
                 '</div>';
-
-            return operatorsHtmlString;
         },
 
 
@@ -1337,43 +1393,48 @@
 
             r$.each($TOOL.apiData, function(continentId, continent) {
                 r$.each(continent.countries, function(countryId, country) {
-                    if (typeof geoZoneCountries[country.geo_zone_id] === typeof undefined) {
-                        geoZoneCountries[country.geo_zone_id] = {};
-                        geoZoneCountries[country.geo_zone_id].callRate= country.geozone.callRate;
+                    var mappedGeoZone = $TOOL.mapGeoZoneIdToName(country.geo_zone_id);
+                    if (typeof geoZoneCountries[mappedGeoZone] === typeof undefined) {
+                        geoZoneCountries[mappedGeoZone] = {};
+                        geoZoneCountries[mappedGeoZone].callRate = country.geozone.callRate;
                     }
-                    if (typeof geoZoneCountries[country.geo_zone_id].countries === typeof undefined) {
-                        geoZoneCountries[country.geo_zone_id].countries = [];
+                    if (typeof geoZoneCountries[mappedGeoZone].countries === typeof undefined) {
+                        geoZoneCountries[mappedGeoZone].countries = [];
                     }
 
-                    geoZoneCountries[country.geo_zone_id].countries.push(country.name);
+                    geoZoneCountries[mappedGeoZone].countries.push(country.name);
                 });
             });
 
 
-            var geoZonesRatesHtmlTable = 
-                '<table class="table table-bordered">'+
-                '<thead>'+
+            var geoZonesRatesHtmlTable =
+                '<table class="table table-bordered">' +
+                '<thead>' +
                 '<th></th>';
 
-            r$.each(geoZoneCountries,function (geoZoneIndex, geoZone) {
+            r$.each(geoZoneCountries, function(geoZoneIndex, geoZone) {
                 geoZonesRatesHtmlTable +=
-                '<th>Zona '+ geoZoneIndex +'</th>';
+                    '<th>Zona ' + geoZoneIndex + '</th>';
             });
             geoZonesRatesHtmlTable +=
-                '</thead>'+
+                '</thead>' +
                 '<tbody>';
-            r$.each(geoZoneCountries,function (geoZoneIndex, geoZone) {
+            r$.each(geoZoneCountries, function(geoZoneIndex, geoZone) {
                 geoZonesRatesHtmlTable +=
-                '<tr><td>Zona '+ geoZoneIndex +'</td>';
-                r$.each(geoZone.callRate,function (callRateIndex,callRate) {
+                    '<tr><td>Zona ' + geoZoneIndex + '</td>';
+                r$.each(geoZone.callRate, function(callRateIndex, callRate) {
+                    if (geoZoneIndex == "UE" && callRateIndex == "SM") {
+                        geoZonesRatesHtmlTable += '<td> - </td>';
+                    }
                     geoZonesRatesHtmlTable +=
-                    '<td>'+callRate.rate+'&euro;</td>';
+                        '<td>' + callRate.rate + '<small>&euro;</small></td>';
                 });
+
                 geoZonesRatesHtmlTable +=
-                '</tr>';
+                    '</tr>';
             });
             geoZonesRatesHtmlTable +=
-                '</tbody>'+
+                '</tbody>' +
                 '</table>';
 
 
@@ -1382,7 +1443,7 @@
 
             r$.each(geoZoneCountries, function(geoZoneIndex, geoZone) {
                 geoZonesPopupHtmlString +=
-                    '<hr>'+
+                    '<hr>' +
                     '<div class="geo-zone-container ">' +
                     '<div class="geo-zone-title">' +
                     '<h4>Zona ' + geoZoneIndex + '</h4>' +
@@ -1491,7 +1552,10 @@
                 .mapContainer
                 .on({
                     'click': function() {
-
+                        $TOOL
+                            .map
+                            .history[0]
+                            .clearSelectedRegions();
                         $TOOL
                             .clearContinentsTab();
                         $TOOL
@@ -1619,8 +1683,8 @@
                 .countriesList
                 .append(defaultOptionHtmlString);
 
-            r$.each($TOOL.apiData[continentCode].countries, function(index, country) {
-                var currentOptionHtmlString = '<option value="' + country.id + '">' + country.name + '</option>';
+            r$.each($TOOL.apiData[continentCode].countries, function(countryIndex, country) {
+                var currentOptionHtmlString = '<option value="' + countryIndex + '">' + country.name + '</option>';
                 $TOOL
                     .countriesList
                     .append(currentOptionHtmlString);
@@ -1646,6 +1710,10 @@
                     .slideDown("slow", function() {
                         r$(this)
                             .addClass('activeCountry');
+                        r$('html, body')
+                            .animate({
+                                scrollTop: r$(this).offset().top
+                            }, 800);
                     });
             }
         }
