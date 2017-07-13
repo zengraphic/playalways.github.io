@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/* mixins/helpers */
+.veon .touch_scroll {
+  -webkit-overflow-scrolling: touch; }
+
+.veon .center {
+  position: relative;
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* ___________________ MIXIN __________________
+ -------->        BREAKPOINT MIXIN */
+/**
+ * HELPER CLASSES
+ */
+/* ====================DIMENSIONE TESTI=====================  */
+.veon {
+   /**
+* END HELPER CLASSES
+*/ }
+  .veon .text_size {
+    line-height: 1.2em; }
+    .veon .text_size--big {
+      font-size: 45px; }
+      @media (max-width: 768px) {
+        .veon .text_size--big {
+          font-size: 40px; } }
+    .veon .text_size--medium {
+      font-size: 25px !important; }
+    .veon .text_size--normal {
+      font-size: 16px !important; }
+      @media (max-width: 768px) {
+        .veon .text_size--normal {
+          font-size: 14px !important; } }
+    .veon .text_size--small {
+      font-size: 12px; }
+  .veon .base {
+    /*outline: thin dotted \9; /* IE6-9 */
+    /*outline: thin dotted \9; /* IE6-9 */
+    /*outline: thin dotted \9; /* IE6-9 */ }
+    .veon .base input[type="text"]:focus, .veon .base input[type="password"]:focus, .veon .base input[type="datetime"]:focus, .veon .base input[type="datetime-local"]:focus, .veon .base input[type="date"]:focus, .veon .base input[type="month"]:focus, .veon .base input[type="time"]:focus, .veon .base input[type="week"]:focus, .veon .base input[type="number"]:focus, .veon .base input[type="email"]:focus, .veon .base input[type="url"]:focus, .veon .base input[type="search"]:focus, .veon .base input[type="tel"]:focus, .veon .base input[type="color"]:focus, .veon .base input[type=file]:focus, .veon .base input[type=checkbox]:focus, .veon .base input[type=radio]:focus {
+      border-color: #f48135;
+      outline-color: transparent;
+      outline-style: none;
+      outline-offset: 0; }
+    .veon .base .uneditable-input:focus {
+      border-color: #f48135;
+      outline-color: transparent;
+      outline-style: none;
+      outline-offset: 0; }
+    .veon .base input:-webkit-autofill,
+    .veon .base textarea:-webkit-autofill,
+    .veon .base select:-webkit-autofill {
+      background-color: rgba(244, 129, 53, 0.2);
+      background-image: none;
+      color: #000000; }
+  .veon .base__scrollable {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 2rem 0 0;
+    overflow-y: hidden; }
+  .veon .base__breadcrumbs {
+    float: left;
+    padding-left: 0;
+    display: inline-block;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 2rem;
+    /*cambio en margin top */ }
+    .veon .base__breadcrumbs li {
+      display: inline;
+      cursor: pointer;
+      vertical-align: middle; }
+      .veon .base__breadcrumbs li:after {
+        content: " / ";
+        color: #f48135; }
+      .veon .base__breadcrumbs li:last-child {
+        cursor: default; }
+        .veon .base__breadcrumbs li:last-child:after {
+          content: ""; }
+  .veon .base__bullet-list {
+    list-style-type: none;
+    margin-bottom: 0;
+    display: inline-block;
+    padding-left: 0rem; }
+    .veon .base__bullet-list .fa-li {
+      font-size: 1.25rem;
+      padding-right: 1.25rem;
+      color: #f48135; }
+    .veon .base__bullet-list li {
+      padding-bottom: 1rem; }
+  .veon .base__pag.pagination {
+    margin: 1rem auto; }
+    .veon .base__pag.pagination li > a > span {
+      font-size: 0; }
+    .veon .base__pag.pagination li > a[aria-label="Previous"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; }
+      .veon .base__pag.pagination li > a[aria-label="Previous"] span:before {
+        font-size: 0.9rem;
+        font-family: "FontAwesome";
+        content: ""; }
+    .veon .base__pag.pagination li > a[aria-label="Next"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; }
+      .veon .base__pag.pagination li > a[aria-label="Next"] span:before {
+        font-size: 0.9rem;
+        font-family: "FontAwesome";
+        content: ""; }
+  .veon .base__gallery--carousel .owl-wrapper-outer .owl-wrapper .owl-item .item {
+    width: 100%;
+    display: inline-block; }
+    .veon .base__gallery--carousel .owl-wrapper-outer .owl-wrapper .owl-item .item img {
+      max-width: 100%; }
+  .veon .base__gallery--carousel .owl-controls .owl-pagination .owl-page span {
+    background-color: #f48135;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem; }
+  .veon .base__gallery--carousel .owl-controls .owl-buttons {
+    display: inline-block;
+    width: 100%; }
+    .veon .base__gallery--carousel .owl-controls .owl-buttons div {
+      padding: 1rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+      line-height: 1;
+      border-radius: 2rem;
+      -webkit-border-radius: 2rem;
+      -moz-border-radius: 2rem; }
+    .veon .base__gallery--carousel .owl-controls .owl-buttons .owl-prev {
+      position: fixed;
+      top: 45%;
+      left: 0px; }
+      .veon .base__gallery--carousel .owl-controls .owl-buttons .owl-prev:before {
+        font-family: "FontAwesome";
+        content: "";
+        font-size: 1rem;
+        color: #f48135; }
+    .veon .base__gallery--carousel .owl-controls .owl-buttons .owl-next {
+      position: fixed;
+      top: 45%;
+      right: 0px; }
+      .veon .base__gallery--carousel .owl-controls .owl-buttons .owl-next:before {
+        font-family: "FontAwesome";
+        content: "";
+        font-size: 1rem;
+        color: #f48135; }
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block; }
+  .slick-track:before {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+
+[dir="rtl"] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+.slick-slide.slick-loading img {
+  display: none; }
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+body {
+  margin: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1em; }
+
+@font-face {
+  font-family: "Trade Gothic Bold";
+  src: url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix");
+  src: url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix") format("eot"), url("../fonts/tradelicense/7cf07212-d52a-4cf9-9983-4942ecc34b0d.woff2") format("woff2"), url("../fonts/tradelicense/81ca1fb3-a435-4db8-b09c-f74e270eec60.woff") format("woff"), url("../fonts/tradelicense/28a5f1a0-5ec3-4aae-a58e-2453166d7918.ttf") format("truetype"), url("../fonts/tradelicense/11be2b3f-f734-422c-bdb7-a4f797bfa3f3.svg#11be2b3f-f734-422c-bdb7-a4f797bfa3f3") format("svg"); }
+@font-face {
+  font-family: "Trade Gothic Light";
+  src: url("../fonts/tradelicense/ab88c69c-d345-4c07-bf49-c0cc984095fa.eot?#iefix");
+  src: url("../fonts/tradelicense/ab88c69c-d345-4c07-bf49-c0cc984095fa.eot?#iefix") format("eot"), url("../fonts/tradelicense/6de16bd6-1e13-400f-80e8-8f5c69d8a2b8.woff2") format("woff2"), url("../fonts/tradelicense/73c7abdc-45a3-42a3-a1af-f07d8a348917.woff") format("woff"), url("../fonts/tradelicense/73494c38-422a-4bae-9e2c-b86e7703c1b3.ttf") format("truetype"), url("../fonts/tradelicense/b84e9482-10dd-4d9d-8ef2-539fbc5eb441.svg#b84e9482-10dd-4d9d-8ef2-539fbc5eb441") format("svg"); }
+@font-face {
+  font-family: "Trade Gothic Condensed";
+  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix");
+  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix") format("eot"), url("../fonts/tradelicense/161bc4ba-4d6b-46ef-a715-b7f726c83392.woff2") format("woff2"), url("../fonts/tradelicense/0d2481b3-5cd5-4c55-86c1-272e605452e9.woff") format("woff"), url("../fonts/tradelicense/a55a8f4f-96c7-4ba2-885d-7a535db9c13c.ttf") format("truetype"), url("../fonts/tradelicense/da83841b-fd70-4379-bca2-f8963a040918.svg#da83841b-fd70-4379-bca2-f8963a040918") format("svg"); }
+@font-face {
+  font-family: "Trade Gothic Bold Condensed";
+  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix");
+  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix") format("eot"), url("../fonts/tradelicense/161bc4ba-4d6b-46ef-a715-b7f726c83392.woff2") format("woff2"), url("../fonts/tradelicense/0d2481b3-5cd5-4c55-86c1-272e605452e9.woff") format("woff"), url("../fonts/tradelicense/a55a8f4f-96c7-4ba2-885d-7a535db9c13c.ttf") format("truetype"), url("../fonts/tradelicense/da83841b-fd70-4379-bca2-f8963a040918.svg#da83841b-fd70-4379-bca2-f8963a040918") format("svg");
+  font-weight: 700; }
+@font-face {
+  font-family: "Trade Gothic Condensed Italic";
+  src: url("../fonts/tradelicense/b088d8f2-83ab-4662-a771-1f8dfe65dc32.eot?#iefix");
+  src: url("../fonts/tradelicense/b088d8f2-83ab-4662-a771-1f8dfe65dc32.eot?#iefix") format("eot"), url("../fonts/tradelicense/5a871dd4-95c1-4157-af67-a012e7ba4358.woff2") format("woff2"), url("../fonts/tradelicense/847d5cf1-1a60-4418-9d5e-44927ff99235.woff") format("woff"), url("../fonts/tradelicense/2882b13c-d7fa-4698-bab1-4a01805326d8.ttf") format("truetype"), url("../fonts/tradelicense/1a4c3fba-e1f0-47c8-9e50-2b2cb1c4c0f7.svg#1a4c3fba-e1f0-47c8-9e50-2b2cb1c4c0f7") format("svg"); }
+@font-face {
+  font-family: "Trade Gothic";
+  src: url("../fonts/tradelicense/52926f65-1323-4d02-be2d-934b4de477fb.eot?#iefix");
+  src: url("../fonts/tradelicense/52926f65-1323-4d02-be2d-934b4de477fb.eot?#iefix") format("eot"), url("../fonts/tradelicense/54b9363e-aa6c-48e2-85c7-80683d83e617.woff2") format("woff2"), url("../fonts/tradelicense/c092dbc5-48eb-4b39-a898-4d4150c06459.woff") format("woff"), url("../fonts/tradelicense/1009b9de-005c-4462-9495-767c25320e42.ttf") format("truetype"), url("../fonts/tradelicense/26ce2652-3a0b-4804-87b6-58c68e5d60f6.svg#26ce2652-3a0b-4804-87b6-58c68e5d60f6") format("svg"); }
+
+/*# sourceMappingURL=veon.css.map */
