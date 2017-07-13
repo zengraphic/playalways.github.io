@@ -324,6 +324,9 @@ h6 {
     .reduced_letter_spacing {
         letter-spacing: -0.025em;
     }
+    .border_orange {
+        border: 1px solid $color_orange !important;
+    }    
     .border_infostrada {
         border: 1px solid $color_infostrada !important;
     }
@@ -341,6 +344,12 @@ h6 {
     }
     .border_bottom_solid {
         border-bottom: 1px solid $color_grey_dark;
+    }
+    .border_3px_thick{
+        border-width: 3px !important;
+    }
+    .border_radius_4px{
+        @include border-radius(4px);
     }
     .only_desktop {
         @include breakpoint(tiny) {
@@ -386,6 +395,28 @@ h6 {
         @include breakpoint(small) {
             position: relative;
         }
+    }
+    .max_width_200{
+        max-width: 200px;
+    }    
+    .max_width_250{
+        max-width: 250px;
+    }
+    .max_width_400{
+        max-width: 400px;
+    }  
+    .max_width_m_150{
+        @include breakpoint(small) {
+            max-width: 150px;
+        } 
+    }     
+    .max_width_m_400{
+        @include breakpoint(small) {
+            
+        }        
+    }  
+    .width_inherit{
+        width: inherit !important;
     }
     .max_width_100 {
         max-width: 100%;
