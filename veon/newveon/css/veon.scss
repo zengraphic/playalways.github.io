@@ -30,7 +30,7 @@ h6 {
 .button_veon {
     display: block;
     position: fixed;
-    bottom: 2000px;
+    bottom: -200px;
     left: 0;
     background-color: $color_veon;
     color: $color_black;
@@ -43,7 +43,7 @@ h6 {
     @include opacity(0.95);
     z-index: 999;
     @include breakpoint(small) {
-        padding: 15px 30px;
+        padding: 20px 30px;
         font-size: 18px;
     }
     &:hover{
@@ -58,6 +58,12 @@ h6 {
     }
 }
 
+.only_desktop_inline {
+    display: inline;
+    @include breakpoint(small) {
+        display: none;
+    }
+}
 .only_mobile {
     display: none;
     @include breakpoint(small) {
@@ -104,7 +110,10 @@ h6 {
             max-width: 800px;
             display: table;
             margin: 0 auto;
-            margin-top: 50px;
+            margin-top: 30px;
+            @include breakpoint(small){
+              margin-top: 0;
+            }
         }
         &_single {
             display: table-cell;
@@ -140,13 +149,13 @@ h6 {
             max-width: 800px;
             margin: 0 auto;
             .veon_title {
-                font-size: 2.286rem;
+                font-size: 2.714rem;
                 text-align: center;
                 text-transform: uppercase;
                 margin-top: 50px;
                 margin-bottom: 20px;
                 @include breakpoint(small) {
-                    font-size: 1.429rem;
+                    font-size: 1.714rem;
                 }
             }
         }
@@ -195,7 +204,7 @@ h6 {
             max-width: 300px;
             margin: 0 auto;
             @include breakpoint(small) {
-                font-size: 0.8571rem;
+                font-size: 1rem;
             }
         }
     }
@@ -223,7 +232,7 @@ h6 {
             &_title {
                 font-size: 1.143rem;
                 font-weight: 700;
-                margin-bottom: 15px;
+                margin-bottom: 5px;
                 @include breakpoint(small) {
                     font-size: 1rem;
                 }
