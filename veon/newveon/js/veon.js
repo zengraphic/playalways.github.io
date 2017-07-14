@@ -56,13 +56,17 @@ jQuery(document).ready(function($) {
         });
     }
     $('.veon_slider_container').on('afterChange', function(event, slick, currentSlide) {
-        if (currentSlide === 3) {
+        var lastSlide = 4;
+        if($(window).width() > 768){
+            lastSlide = 3;
+        }
+        if (currentSlide === lastSlide) {
             $('.right_arrow').addClass('hidden');
         }
         if (currentSlide === 0) {
             $('.left_arrow').addClass('hidden');
         }
-        if (!((currentSlide == 0) || (currentSlide == 3))) {
+        if (!((currentSlide == 0) || (currentSlide == lastSlide))) {
             $('.left_arrow').removeClass('hidden');
             $('.right_arrow').removeClass('hidden');
         }
