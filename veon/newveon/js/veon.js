@@ -35,13 +35,13 @@ jQuery(document).ready(function($) {
             dots: false,
             arrows: true,
             slidesToShow: 2,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
             infinite: false,
             speed: 800,
             autoplay: false,
             autoplaySpeed: 5000,
             nextArrow: "<img class='slider_navigation right_arrow' src='../img/icon-NEXT.png'>",
-            prevArrow: "<img class='slider_navigation left_arrow' src='../img/icon-BACK.png'>",
+            prevArrow: "<img class='slider_navigation left_arrow hidden' src='../img/icon-BACK.png'>",
             customPaging: function(slider, i) {
                 var thumb = $(slider.$slides[i]).data('thumb');
                 return '<div class="veon_slide_single"></div>';
@@ -55,7 +55,19 @@ jQuery(document).ready(function($) {
             }]
         });
     }
-
+    $('.veon_slider_container').on('afterChange', function(event, slick, currentSlide) {
+        if (currentSlide === 3) {
+            $('.right_arrow').addClass('hidden');
+        }
+        if (currentSlide === 0) {
+            $('.left_arrow').addClass('hidden');
+        }
+        if (!((currentSlide == 0) || (currentSlide == 3))) {
+            $('.left_arrow').removeClass('hidden');
+            $('.right_arrow').removeClass('hidden');
+        }
+        console.log(currentSlide);
+    })
     storeOS();
     initSliders();
 });

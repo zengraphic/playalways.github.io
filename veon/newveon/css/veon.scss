@@ -25,38 +25,41 @@ h6 {
 }
 
 .button_veon {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color-veon;
+    color: $color_black;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-align: center;
+    @include opacity(0.95);
+    z-index: 999;
+    @include breakpoint(small) {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+}
+
+.only_desktop {
+    display: block;
+    @include breakpoint(small) {
+        display: none;
+    }
+}
+
+.only_mobile {
     display: none;
     @include breakpoint(small) {
         display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        background-color: $color-veon;
-        color: $color_black;
-        width: 100%;
-        font-size: 15px;
-        padding: 10px 30px;
-        text-transform: uppercase;
-        text-align: center;
-        @include opacity(0.95);
-        z-index: 999;
     }
 }
 
 // typo
 .veon {
-    .only_desktop {
-        display: block;
-        @include breakpoint(small) {
-            display: none;
-        }
-    }
-    .only_mobile {
-        display: none;
-        @include breakpoint(small) {
-            display: block;
-        }
-    }
     // container
     &_container {
         width: 100%;
@@ -243,11 +246,10 @@ h6 {
         }
         &_container {
             background-color: $color_black;
-            &--yellow {
-                background-color: $color_veon;
-                color: $color_white;
+            &--info {
+                color: $color_light_gray;
                 padding-top: 30px;
-                padding-bottom: 100px;
+                padding-bottom: 50px;
             }
         }
         &_subcontainer {
@@ -255,12 +257,12 @@ h6 {
             margin: 0 auto;
             padding: 50px;
             @include breakpoint(small) {
-                padding: 50px 15px;
+                padding: 50px 15px 0px;
             }
         }
         &_logo {
             @include breakpoint(small) {
-                text-align: center;
+                text-align: left;
                 margin-bottom: 50px;
             }
             img {
@@ -335,4 +337,10 @@ h6 {
             width: 24px;
         }
     }
+}
+
+.left_arrow.hidden,
+.right_arrow.hidden {
+    opacity: 0;
+    pointer-events:none;
 }

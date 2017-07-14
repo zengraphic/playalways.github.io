@@ -246,34 +246,37 @@ h6 {
   line-height: 1em; }
 
 .button_veon {
-  display: none; }
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #FFCB24;
+  color: #000;
+  width: 100%;
+  font-size: 20px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.95;
+  filter: alpha(opacity=95);
+  z-index: 999; }
   @media (max-width: 768px) {
     .button_veon {
-      display: block;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      background-color: #FFCB24;
-      color: #000;
-      width: 100%;
-      font-size: 15px;
       padding: 10px 30px;
-      text-transform: uppercase;
-      text-align: center;
-      opacity: 0.95;
-      filter: alpha(opacity=95);
-      z-index: 999; } }
+      font-size: 15px; } }
 
-.veon .only_desktop {
+.only_desktop {
   display: block; }
   @media (max-width: 768px) {
-    .veon .only_desktop {
+    .only_desktop {
       display: none; } }
-.veon .only_mobile {
+
+.only_mobile {
   display: none; }
   @media (max-width: 768px) {
-    .veon .only_mobile {
+    .only_mobile {
       display: block; } }
+
 .veon_container {
   width: 100%;
   max-width: 1024px;
@@ -420,21 +423,20 @@ h6 {
       padding-left: 0px; } }
 .veon_footer_container {
   background-color: #000; }
-  .veon_footer_container--yellow {
-    background-color: #FFCB24;
-    color: #fff;
+  .veon_footer_container--info {
+    color: #666;
     padding-top: 30px;
-    padding-bottom: 100px; }
+    padding-bottom: 50px; }
 .veon_footer_subcontainer {
   max-width: 1024px;
   margin: 0 auto;
   padding: 50px; }
   @media (max-width: 768px) {
     .veon_footer_subcontainer {
-      padding: 50px 15px; } }
+      padding: 50px 15px 0px; } }
 @media (max-width: 768px) {
   .veon_footer_logo {
-    text-align: center;
+    text-align: left;
     margin-bottom: 50px; } }
 .veon_footer_logo img {
   width: 75px;
@@ -491,5 +493,10 @@ h6 {
     .slick-slider .right_arrow {
       right: 30px;
       width: 24px; } }
+
+.left_arrow.hidden,
+.right_arrow.hidden {
+  opacity: 0;
+  pointer-events: none; }
 
 /*# sourceMappingURL=veon.css.map */
