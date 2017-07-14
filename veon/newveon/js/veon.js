@@ -31,24 +31,26 @@ jQuery(document).ready(function($) {
     }
 
     function initSliders() {
-        $('.slider_1').slick({
-            dots: true,
+        $('.veon_slider_container').slick({
+            dots: false,
             arrows: true,
-            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: false,
             speed: 800,
             autoplay: false,
             autoplaySpeed: 5000,
-            nextArrow: "<img class='slider_navigation right_arrow' src='/fileadmin/veon/img/ic_arrow_right.png'>",
-            prevArrow: "<img class='slider_navigation left_arrow' src='/fileadmin/veon/img/ic_arrow_left.png'>",
-            dotsClass: 'slider_dots',
+            nextArrow: "<img class='slider_navigation right_arrow' src='../img/icon-NEXT.png'>",
+            prevArrow: "<img class='slider_navigation left_arrow' src='../img/icon-BACK.png'>",
             customPaging: function(slider, i) {
                 var thumb = $(slider.$slides[i]).data('thumb');
-                return '<div class="slide_single"></div>';
+                return '<div class="veon_slide_single"></div>';
             },
             responsive: [{
                 breakpoint: 768,
                 settings: {
-                    appendDots: $('#dotsTop_one')
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }]
         });

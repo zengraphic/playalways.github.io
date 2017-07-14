@@ -6,6 +6,13 @@
 // TEMPORANEO DA SPOSTAR
 body {
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #2C2C2C;
+}
+
+html {
+    font-size: 14px;
 }
 
 h1,
@@ -17,38 +24,315 @@ h6 {
     line-height: 1em;
 }
 
+.button_veon {
+    display: none;
+    @include breakpoint(small) {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: $color-veon;
+        color: $color_black;
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 30px;
+        text-transform: uppercase;
+        text-align: center;
+        @include opacity(0.95);
+        z-index: 999;
+    }
+}
+
 // typo
-@font-face {
-  font-family: "Trade Gothic Bold";
-  src: url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix");
-  src: url("../fonts/tradelicense/519a7aea-4569-4f88-92ce-6545742efb3b.eot?#iefix") format("eot"), url("../fonts/tradelicense/7cf07212-d52a-4cf9-9983-4942ecc34b0d.woff2") format("woff2"), url("../fonts/tradelicense/81ca1fb3-a435-4db8-b09c-f74e270eec60.woff") format("woff"), url("../fonts/tradelicense/28a5f1a0-5ec3-4aae-a58e-2453166d7918.ttf") format("truetype"), url("../fonts/tradelicense/11be2b3f-f734-422c-bdb7-a4f797bfa3f3.svg#11be2b3f-f734-422c-bdb7-a4f797bfa3f3") format("svg"); }
+.veon {
+    .only_desktop {
+        display: block;
+        @include breakpoint(small) {
+            display: none;
+        }
+    }
+    .only_mobile {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+    // container
+    &_container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    // logo
+    &_logo {
+        text-align: center;
+        margin-top: 30px;
+        img {
+            width: 150px;
+            height: auto;
+            @include breakpoint(small) {
+                width: 100px;
+            }
+        }
+    }
+    // main title
+    &_main-title {
+        font-size: 5.143rem;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 30px;
+        letter-spacing: 8px;
+        @include breakpoint(small) {
+            font-size: 4.286rem;
+        }
+    }
+    // bullet points
+    &_bullets {
+        &_container {
+            width: 100%;
+            max-width: 800px;
+            display: table;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        &_single {
+            display: table-cell;
+            width: 33%;
+            @include breakpoint(small) {
+                display: block;
+                width: 100%;
+                margin-top: 30px;
+            }
+        }
+        &_number {
+            font-size: 2.571rem;
+            line-height: 2.714rem;
+            border: 1px solid $color_veon;
+            width: 48px;
+            height: 48px;
+            padding: 5px;
+            text-align: center;
+            margin: 0 auto;
+            @include border-radius(50%);
+        }
+        &_text {
+            font-size: 1.286rem;
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 10px;
+        }
+    }
+    // blocco
+    &_block {
+        &_container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            .veon_title {
+                font-size: 2.286rem;
+                text-align: center;
+                text-transform: uppercase;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                @include breakpoint(small) {
+                    font-size: 1.429rem;
+                }
+            }
+        }
+        &_list {
+            font-size: 1.143rem;
+            padding: 0 30px;
+            @include breakpoint(small) {
+                font-size: 0.8571rem;
+                padding: 0 15px 0 30px;
+            }
+            li {
+                margin-top: 15px;
+            }
+        }
+    }
+    // slider
+    &_slider_maincontainer {
+        background-color: $color_gray;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    &_slider_title {
+        font-size: 2.286rem;
+        text-align: center;
+        text-transform: uppercase;
+        @include breakpoint(small) {
+            font-size: 1.429rem;
+        }
+    }
+    &_slider_container {}
+    &_slide {
+        &_single {}
+        &_image {
+            text-align: center;
+            img {
+                width: 220px;
+                height: auto;
+                margin: 0 auto;
+            }
+        }
+        &_description {
+            font-size: 1.143rem;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            @include breakpoint(small) {
+                font-size: 0.8571rem;
+            }
+        }
+    }
+    // faq
+    &_faq {
+        &_container {
+            margin-top: 50px;
+            padding: 0 30px;
+            @include breakpoint(small) {
+                padding: 0 15px;
+            }
+        }
+        &_main-title {
+            font-size: 2.286rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            @include breakpoint(small) {
+                font-size: 1.429rem;
+            }
+        }
+        &_single {
+            margin-bottom: 30px;
+            &_title {
+                font-size: 1.143rem;
+                font-weight: 700;
+                margin-bottom: 5px;
+                @include breakpoint(small) {
+                    font-size: 1rem;
+                }
+            }
+            &_description {
+                font-size: 1.143rem;
+                @include breakpoint(small) {
+                    font-size: 0.7143rem;
+                }
+            }
+        }
+    }
+    // footer
+    &_footer {
+        &_sx {
+            display: inline-block;
+            vertical-align: top;
+            @include breakpoint(small) {
+                display: block;
+            }
+        }
+        &_dx {
+            display: inline-block;
+            padding-left: 100px;
+            @include breakpoint(small) {
+                display: block;
+                padding-left: 0px;
+            }
+        }
+        &_container {
+            background-color: $color_black;
+            &--yellow {
+                background-color: $color_veon;
+                color: $color_white;
+                padding-top: 30px;
+                padding-bottom: 100px;
+            }
+        }
+        &_subcontainer {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 50px;
+            @include breakpoint(small) {
+                padding: 50px 15px;
+            }
+        }
+        &_logo {
+            @include breakpoint(small) {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            img {
+                width: 75px;
+                height: auto;
+            }
+        }
+        &_title {
+            font-size: 1.429rem;
+            color: $color_white;
+            font-weight: 700;
+            @include breakpoint(small) {
+                font-size: 0.8571rem;
+            }
+        }
+        &_description {
+            font-size: 1rem;
+            color: $color_white;
+            font-weight: 400;
+            margin-bottom: 30px;
+            @include breakpoint(small) {
+                font-size: 0.7143rem;
+            }
+        }
+        &_link {
+            font-size: 1rem;
+            color: $color_veon;
+            font-weight: 400;
+            margin-top: 5px;
+            @include breakpoint(small) {
+                font-size: 0.8571rem;
+            }
+        }
+    }
+}
 
-@font-face {
-  font-family: "Trade Gothic Light";
-  src: url("../fonts/tradelicense/ab88c69c-d345-4c07-bf49-c0cc984095fa.eot?#iefix");
-  src: url("../fonts/tradelicense/ab88c69c-d345-4c07-bf49-c0cc984095fa.eot?#iefix") format("eot"), url("../fonts/tradelicense/6de16bd6-1e13-400f-80e8-8f5c69d8a2b8.woff2") format("woff2"), url("../fonts/tradelicense/73c7abdc-45a3-42a3-a1af-f07d8a348917.woff") format("woff"), url("../fonts/tradelicense/73494c38-422a-4bae-9e2c-b86e7703c1b3.ttf") format("truetype"), url("../fonts/tradelicense/b84e9482-10dd-4d9d-8ef2-539fbc5eb441.svg#b84e9482-10dd-4d9d-8ef2-539fbc5eb441") format("svg"); }
-
-@font-face {
-  font-family: "Trade Gothic Condensed";
-  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix");
-  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix") format("eot"), url("../fonts/tradelicense/161bc4ba-4d6b-46ef-a715-b7f726c83392.woff2") format("woff2"), url("../fonts/tradelicense/0d2481b3-5cd5-4c55-86c1-272e605452e9.woff") format("woff"), url("../fonts/tradelicense/a55a8f4f-96c7-4ba2-885d-7a535db9c13c.ttf") format("truetype"), url("../fonts/tradelicense/da83841b-fd70-4379-bca2-f8963a040918.svg#da83841b-fd70-4379-bca2-f8963a040918") format("svg"); }
-
-@font-face {
-  font-family: "Trade Gothic Bold Condensed";
-  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix");
-  src: url("../fonts/tradelicense/0b7a972d-d4ba-4dbc-8eab-559783a67235.eot?#iefix") format("eot"), url("../fonts/tradelicense/161bc4ba-4d6b-46ef-a715-b7f726c83392.woff2") format("woff2"), url("../fonts/tradelicense/0d2481b3-5cd5-4c55-86c1-272e605452e9.woff") format("woff"), url("../fonts/tradelicense/a55a8f4f-96c7-4ba2-885d-7a535db9c13c.ttf") format("truetype"), url("../fonts/tradelicense/da83841b-fd70-4379-bca2-f8963a040918.svg#da83841b-fd70-4379-bca2-f8963a040918") format("svg");
-  font-weight: 700; }
-
-@font-face {
-  font-family: "Trade Gothic Condensed Italic";
-  src: url("../fonts/tradelicense/b088d8f2-83ab-4662-a771-1f8dfe65dc32.eot?#iefix");
-  src: url("../fonts/tradelicense/b088d8f2-83ab-4662-a771-1f8dfe65dc32.eot?#iefix") format("eot"), url("../fonts/tradelicense/5a871dd4-95c1-4157-af67-a012e7ba4358.woff2") format("woff2"), url("../fonts/tradelicense/847d5cf1-1a60-4418-9d5e-44927ff99235.woff") format("woff"), url("../fonts/tradelicense/2882b13c-d7fa-4698-bab1-4a01805326d8.ttf") format("truetype"), url("../fonts/tradelicense/1a4c3fba-e1f0-47c8-9e50-2b2cb1c4c0f7.svg#1a4c3fba-e1f0-47c8-9e50-2b2cb1c4c0f7") format("svg"); }
-
-@font-face {
-  font-family: "Trade Gothic";
-  src: url("../fonts/tradelicense/52926f65-1323-4d02-be2d-934b4de477fb.eot?#iefix");
-  src: url("../fonts/tradelicense/52926f65-1323-4d02-be2d-934b4de477fb.eot?#iefix") format("eot"), url("../fonts/tradelicense/54b9363e-aa6c-48e2-85c7-80683d83e617.woff2") format("woff2"), url("../fonts/tradelicense/c092dbc5-48eb-4b39-a898-4d4150c06459.woff") format("woff"), url("../fonts/tradelicense/1009b9de-005c-4462-9495-767c25320e42.ttf") format("truetype"), url("../fonts/tradelicense/26ce2652-3a0b-4804-87b6-58c68e5d60f6.svg#26ce2652-3a0b-4804-87b6-58c68e5d60f6") format("svg"); }
-
-
-
-  
+//============================================================//
+//========================== SLIDER ===========================//
+//=============================================================//
+.slick-slider {
+    & .slider_navigation {
+        position: absolute;
+        cursor: pointer;
+        z-index: 50;
+        @include breakpoint(small) {
+            //768
+        }
+    }
+    & .left_arrow {
+        bottom: 50%;
+        left: 10px;
+        width: 48px;
+        height: auto;
+        &:hover {
+            @include opacity(0.5);
+        }
+        @include breakpoint(small) {
+            right: 30px;
+            width: 24px;
+        }
+    }
+    & .right_arrow {
+        bottom: 50%;
+        right: 10px;
+        width: 48px;
+        height: auto;
+        &:hover {
+            @include opacity(0.5);
+        }
+        @include breakpoint(small) {
+            right: 30px;
+            width: 24px;
+        }
+    }
+}
