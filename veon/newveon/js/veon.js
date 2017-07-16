@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
             checkIosVersion();
         } else {
             $('.standard_button').css('display', 'block');
-            $('.standard_button').css('bottom', '0');
+            //$('.standard_button').css('bottom', '0');
             $('.gplay_button').css('display', 'none');
             $('.appstore_button').css('display', 'none');
         }
