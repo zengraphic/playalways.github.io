@@ -27,6 +27,55 @@ h6 {
     line-height: 1em;
 }
 
+.standard_button{
+  &_text{
+    display: block;
+    padding-bottom: 5px;
+  }
+  &_badge{
+    display: inline-block;  
+    vertical-align: middle;
+    width: 150px;
+    height: auto;   
+    margin-left: 15px; 
+    cursor: pointer;
+    &:hover{
+      @include opacity(0.8);
+    }  
+  }
+}
+
+.standard_button {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color_veon;
+    color: $color_black;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-align: center;
+    @include opacity(0.95);
+    z-index: 999;
+    @include breakpoint(small) {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+}
+
+.alert_not_compatible{
+  display: none;
+  background-color: $color_gray;
+  text-align: center;
+  padding: 30px;
+  .alert_title{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 .button_veon {
     display: block;
     position: fixed;
@@ -259,9 +308,23 @@ h6 {
         &_dx {
             display: inline-block;
             padding-left: 100px;
+            color: $color_white;
             @include breakpoint(small) {
                 display: block;
                 padding-left: 0px;
+            }
+            .mail_link{
+              margin-top: 10px;
+            }
+            .start_link{
+              margin-top: 30px;
+            }
+            .link_veon{
+              color: $color_veon;
+              text-decoration: underline;
+              &:hover{
+                color: $color_veon_light;
+              }
             }
         }
         &_container {

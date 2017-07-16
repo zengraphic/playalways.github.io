@@ -14,21 +14,53 @@ jQuery(document).ready(function($) {
 
     }
 
+    function checkWindowsVersion() {
+        $('.alert_not_compatible').css('display', 'block');
+        $('.appstore_button').css('display', 'none');
+        $('.gplay_button').css('display', 'none');
+        $('.standard_button').css('display', 'none');
+    }
+
     // function checkVideoSize(videoWidth, videoHeight, winWidth, winHeight) {
+    function getAndroidVersion(ua) {
+        ua = (ua || navigator.userAgent).toLowerCase();
+        var match = ua.match(/android\s([0-9\.]*)/);
+        return match ? match[1] : false;
+    };
+
+
+    function checkAndroidVersion() {
+        // getAndroidVersion(); //"4.2.1"
+
+        var versione = getAndroidVersion(); //4
+        versione = versione.substring(0, 3);
+        if (versione >= 4.1) {
+            $('.appstore_button').css('display', 'none');
+            $('.standard_button').css('display', 'none');
+        } else {
+            $('.alert_not_compatible').css('display', 'block');
+            $('.appstore_button').css('display', 'none');
+            $('.gplay_button').css('display', 'none');
+            $('.standard_button').css('display', 'none');
+        }
+    }
+
+    function checkIosVersion() {
+        $('.gplay_button').css('display', 'none');
+        $('.standard_button').css('display', 'none');
+    }
 
     function storeOS() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         // Windows Phone must come first because its UA also contains "Android"
         if (/windows phone/i.test(userAgent)) {
-            //WP
+            checkWindowsVersion();
         } else if (/android/i.test(userAgent)) {
             //Android
-            $('.appstore_button').css('display', 'none');
-            $('.standard_button').css('display', 'none');
+            checkAndroidVersion();
         } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             //iOS
-            $('.gplay_button').css('display', 'none');
-            $('.standard_button').css('display', 'none');
+            checkIosVersion();
         } else {
             $('.gplay_button').css('display', 'none');
             $('.appstore_button').css('display', 'none');
