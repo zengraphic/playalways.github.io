@@ -10,9 +10,13 @@ body {
     font-size: 1rem;
     color: #2C2C2C;
 }
-a:visited, a:link, a:focus {
-  text-decoration: none;
-  color: inherit; }
+
+a:visited,
+a:link,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
 
 html {
     font-size: 14px;
@@ -27,35 +31,51 @@ h6 {
     line-height: 1em;
 }
 
-.standard_button{
-  display: none;
-  &_text{
-    display: block;
-    padding-bottom: 5px;
-  }
-  &_badge{
-    display: inline-block;  
-    vertical-align: middle;
-    width: 150px;
-    height: auto;   
-    margin-left: 15px; 
-    cursor: pointer;
-    &:hover{
-      @include opacity(0.8);
-    }  
-  }
+
+.standard_button {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color_veon;
+    color: $color_black;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 999;
+    @include opacity(0.95);
+    @include breakpoint(small) {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+    &_text {
+        display: block;
+        padding-bottom: 5px;
+    }
+    &_badge {
+        display: inline-block;
+        vertical-align: middle;
+        width: 150px;
+        height: auto;
+        margin-left: 15px;
+        cursor: pointer;
+        &:hover {
+            @include opacity(0.8);
+        }
+    }
 }
 
-
-.alert_not_compatible{
-  display: none;
-  background-color: $color_gray;
-  text-align: center;
-  padding: 30px;
-  .alert_title{
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+.alert_not_compatible {
+    display: none;
+    background-color: $color_gray;
+    text-align: center;
+    padding: 30px;
+    .alert_title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 }
 
 .button_veon {
@@ -77,8 +97,8 @@ h6 {
         padding: 20px 30px;
         font-size: 18px;
     }
-    &:hover{
-      background-color: $color_veon_light; 
+    &:hover {
+        background-color: $color_veon_light;
     }
 }
 
@@ -95,6 +115,7 @@ h6 {
         display: none;
     }
 }
+
 .only_mobile {
     display: none;
     @include breakpoint(small) {
@@ -109,8 +130,7 @@ h6 {
         width: 100%;
         max-width: 1024px;
         margin: 0 auto;
-    }
-    // logo
+    } // logo
     &_logo {
         text-align: center;
         margin-top: 30px;
@@ -121,8 +141,7 @@ h6 {
                 width: 100px;
             }
         }
-    }
-    // main title
+    } // main title
     &_main-title {
         font-size: 5.143rem;
         font-weight: 400;
@@ -133,8 +152,7 @@ h6 {
         @include breakpoint(small) {
             font-size: 4.286rem;
         }
-    }
-    // bullet points
+    } // bullet points
     &_bullets {
         &_container {
             width: 100%;
@@ -142,8 +160,8 @@ h6 {
             display: table;
             margin: 0 auto;
             margin-top: 30px;
-            @include breakpoint(small){
-              margin-top: 0;
+            @include breakpoint(small) {
+                margin-top: 0;
             }
         }
         &_single {
@@ -172,8 +190,7 @@ h6 {
             text-align: center;
             padding-top: 15px;
         }
-    }
-    // blocco
+    } // blocco
     &_block {
         &_container {
             width: 100%;
@@ -202,8 +219,7 @@ h6 {
                 margin-top: 15px;
             }
         }
-    }
-    // slider
+    } // slider
     &_slider_maincontainer {
         background-color: $color_gray;
         padding-top: 30px;
@@ -220,7 +236,7 @@ h6 {
     &_slider_container {}
     &_slide {
         &_single {
-          outline: 0;
+            outline: 0;
         }
         &_image {
             text-align: center;
@@ -240,8 +256,7 @@ h6 {
                 font-size: 1rem;
             }
         }
-    }
-    // faq
+    } // faq
     &_faq {
         &_container {
             margin-top: 40px;
@@ -277,8 +292,7 @@ h6 {
                 }
             }
         }
-    }
-    // footer
+    } // footer
     &_footer {
         &_sx {
             display: inline-block;
@@ -295,18 +309,18 @@ h6 {
                 display: block;
                 padding-left: 0px;
             }
-            .mail_link{
-              margin-top: 10px;
+            .mail_link {
+                margin-top: 10px;
             }
-            .start_link{
-              margin-top: 30px;
+            .start_link {
+                margin-top: 30px;
             }
-            .link_veon{
-              color: $color_veon;
-              text-decoration: underline;
-              &:hover{
-                color: $color_veon_light;
-              }
+            .link_veon {
+                color: $color_veon;
+                text-decoration: underline;
+                &:hover {
+                    color: $color_veon_light;
+                }
             }
         }
         &_container {
@@ -407,5 +421,5 @@ h6 {
 .left_arrow.hidden,
 .right_arrow.hidden {
     opacity: 0;
-    pointer-events:none;
+    pointer-events: none;
 }
