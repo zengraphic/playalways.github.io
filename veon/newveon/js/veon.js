@@ -14,20 +14,18 @@ jQuery(document).ready(function($) {
 
     }
 
-    function checkWindowsVersion() {
-        $('.alert_not_compatible').css('display', 'block');
-        $('.appstore_button').css('display', 'none');
-        $('.gplay_button').css('display', 'none');
-        $('.standard_button').css('display', 'none');
-    }
-
-    // function checkVideoSize(videoWidth, videoHeight, winWidth, winHeight) {
     function getAndroidVersion(ua) {
         ua = (ua || navigator.userAgent).toLowerCase();
         var match = ua.match(/android\s([0-9\.]*)/);
         return match ? match[1] : false;
     };
 
+    function checkWindowsVersion() {
+        $('.alert_not_compatible').css('display', 'block');
+        $('.appstore_button').css('display', 'none');
+        $('.gplay_button').css('display', 'none');
+        $('.standard_button').css('display', 'none');
+    }
 
     function checkAndroidVersion() {
         // getAndroidVersion(); //"4.2.1"
@@ -46,9 +44,23 @@ jQuery(document).ready(function($) {
     }
 
     function checkIosVersion() {
-        $('.gplay_button').css('display', 'none');
-        $('.standard_button').css('display', 'none');
+        var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+        var ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+        if (ver[0] >= 9) {
+            $('.gplay_button').css('display', 'none');
+            $('.standard_button').css('display', 'none');
+        } else {
+            $('.alert_not_compatible').css('display', 'block');
+            $('.appstore_button').css('display', 'none');
+            $('.gplay_button').css('display', 'none');
+            $('.standard_button').css('display', 'none');
+        }
+
     }
+
+    // function checkVideoSize(videoWidth, videoHeight, winWidth, winHeight) {
+
+
 
     function storeOS() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
